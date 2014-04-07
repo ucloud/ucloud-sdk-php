@@ -2,6 +2,7 @@
 
 function _verfy_ac($private_key, $params) {
     ksort($params); 
+    print_r($params);
     $params_data = ""; 
     foreach($params as $key => $value){
         $params_data .= $key;
@@ -137,7 +138,7 @@ class UConnection{
      */
     function oAuthRequest($url, $method, $parameters, $multi = false) {
         if (strrpos($url, 'http://') !== 0 && strrpos($url, 'https://') !== 0) {
-            $url = "{$this->host}{$url}.{$this->format}";
+            $url = "{$this->host}{$url}";
         }
 
         switch ($method) {
@@ -286,6 +287,8 @@ class UcloudApiClient {
     function get($api, $params){
         $params["public_key"] = $this->public_key;
         $params["access_token"] = _verfy_ac($this->private_key, $params);
+
+    print_r($params);
         return $this->conn->get($api, $params);
     }
 
