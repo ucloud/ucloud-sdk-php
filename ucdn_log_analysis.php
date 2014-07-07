@@ -6,7 +6,7 @@ include_once "sdk.php";
 
 
 $conn = new UcloudApiClient(BASE_URL, PUBLIC_KEY, PRIVATE_KEY);
-$params["cdn_domain"] = "static.ucloud.cn";
+$params["cdn_domain"] = "ucloud.cn";
 $params["begin_time"] = "2014-04-04";
 $params["end_time"] = "2014-04-05";
 $params["type"] = 1;
@@ -25,7 +25,7 @@ print_r($response);
 #   begin_time  //查询日志分析的起始时间
 #   end_time    //查询日志分析的结束时间
 #   type        // 日志分析 的类型 1：下载最多  2：流量最多
-#   count       //查询结果显示数量
+#   count       //查询结果显示数量 最多100个
 #返回值字段说明：
 #ret_code      //执行结果状态码 0：执行成功 
 #error_message //错误提示语
@@ -34,34 +34,34 @@ print_r($response);
 #file_download_count 代表文件下载次数
 #file_traffic 代表文件下载量单位MB
 #file_url 代表访问的文件路径
-Array
-(
-    [ret_code] => 0
-    [data] => Array
-    (
-        [0] => Array
-        (
-            [file_download_count] => 68
-            [file_traffic] => 0.32
-            [file_url] => http://static.ucloud.cn/LOGO.png
-        )
-
-        [1] => Array
-        (
-            [file_download_count] => 57
-            [file_traffic] => 0.51
-            [file_url] => http://static.ucloud.cn/acea4778cdec704477c905deacc61ca2.png
-        )
-
-        [2] => Array
-        (
-            [file_download_count] => 23
-            [file_traffic] => 6.81
-            [file_url] => http://static.ucloud.cn/c4026298060cf87c6ffa40ac785cfa5f.rar
-        )
-
-    )
-
-    [error_message] => 操作成功
-)
-
+#Array
+#(
+#    [ret_code] => 0
+#    [data] => Array
+#    (
+#        [0] => Array
+#        (
+#            [file_download_count] => 68
+#            [file_traffic] => 0.32
+#            [file_url] => http://ucloud.cn/LOGO.png
+#        )
+#
+#        [1] => Array
+#        (
+#            [file_download_count] => 57
+#            [file_traffic] => 0.51
+#            [file_url] => http://ucloud.cn/acea4778cdec704477c905deacc61ca2.png
+#        )
+#
+#        [2] => Array
+#        (
+#            [file_download_count] => 23
+#            [file_traffic] => 6.81
+#            [file_url] => http://ucloud.cn/c4026298060cf87c6ffa40ac785cfa5f.rar
+#        )
+#
+#    )
+#
+#    [error_message] => 操作成功
+#)
+#
