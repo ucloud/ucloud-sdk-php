@@ -13,6 +13,7 @@ $params["end_time"] = "2014-07-16";
 $response = $conn->get("/ucdn/prefetchtask", $params);
 
 print_r($response);
+
 #API 说明:
 #   1，输入您要查询预取任务的域名，提交的开始时间和结束时间查询预取任务执行进度。
 #   2，开始时间和结束时间是字符串型，如"2014-04-04",字串长度为10，错误的格式会导致查询不成功。
