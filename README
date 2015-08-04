@@ -21,4 +21,4 @@ define("BASE_URL" ,"http://api.ucloud.cn");
 
 
 sendsms.php 使用示范
-php sendsms.php 137xxxxxxx|138xxxxxxxx 测试短信
+php sendsms.php '137xxxxxxx|138xxxxxxxx' '测试短信'
