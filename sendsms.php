@@ -11,7 +11,7 @@ if($argc < 3){
     exit;
 }
 
-$conn = new UcloudApiClient(BASE_URL, PUBLIC_KEY, PRIVATE_KEY);
+$conn = new UcloudApiClient(BASE_URL, PUBLIC_KEY, PRIVATE_KEY, PROJECT_ID);
 $params['Action'] = "SendSms";
 $params["Content"] = $argv[2];
 

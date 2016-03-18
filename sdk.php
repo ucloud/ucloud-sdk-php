@@ -276,11 +276,15 @@ class UConnection{
 
 class UcloudApiClient {
 
-    function __construct( $base_url, $public_key, $private_key)
+    function __construct( $base_url, $public_key, $private_key, $project_id)
     {
         $this->conn = new UConnection($base_url);
         $this->PublicKey = $public_key;
         $this->private_key = $private_key;
+
+        if ($project_id !== "") {
+            $this->project_id = $project_id;
+        }
     }
 
     function get($api, $params){
