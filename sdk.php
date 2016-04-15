@@ -279,7 +279,7 @@ class UcloudApiClient {
     function __construct( $base_url, $public_key, $private_key, $project_id)
     {
         $this->conn = new UConnection($base_url);
-        $this->PublicKey = $public_key;
+        $this->public_key = $public_key;
         $this->private_key = $private_key;
 
         if ($project_id !== "") {
@@ -288,13 +288,15 @@ class UcloudApiClient {
     }
 
     function get($api, $params){
-        $params["PublicKey"] = $this->PublicKey;
+        $params["PublicKey"] = $this->public_key;
+        $params["ProjectId"] = $this->project_id;
         $params["Signature"] = _verfy_ac($this->private_key, $params);
         return $this->conn->get($api, $params);
     }
 
     function post($api, $params){
         $params["PublicKey"] = $this->PublicKey;
+        $params["ProjectId"] = $this->project_id;
         $params["Signature"] = _verfy_ac($this->private_key, $params);
         return $this->conn->post($api, $params);
     }
