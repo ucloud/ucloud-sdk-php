@@ -288,15 +288,22 @@ class UcloudApiClient {
     }
 
     function get($api, $params){
-        $params["PublicKey"] = $this->public_key;
-        $params["ProjectId"] = $this->project_id;
+		$params["PublicKey"] = $this->public_key;
+
+		if ( isset($this->project_id) && !empty($this->project_id) )
+		{
+			$params["ProjectId"] = $this->project_id;
+		}
         $params["Signature"] = _verfy_ac($this->private_key, $params);
         return $this->conn->get($api, $params);
     }
 
     function post($api, $params){
-        $params["PublicKey"] = $this->PublicKey;
-        $params["ProjectId"] = $this->project_id;
+		$params["PublicKey"] = $this->PublicKey;
+		if ( isset($this->project_id) && !empty($this->project_id) )
+		{
+			$params["ProjectId"] = $this->project_id;
+		}
         $params["Signature"] = _verfy_ac($this->private_key, $params);
         return $this->conn->post($api, $params);
     }
