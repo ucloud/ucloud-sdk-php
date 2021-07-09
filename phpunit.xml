@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<phpunit backupStaticAttributes="false"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         backupStaticAttributes="false"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
@@ -8,20 +8,19 @@
          processIsolation="false"
          stopOnFailure="false"
          bootstrap="vendor/autoload.php"
->
-  <testsuites>
-    <testsuite name="unit">
-      <directory>./tests/</directory>
-    </testsuite>
-  </testsuites>
-
-  <filter>
-    <whitelist>
-      <directory suffix=".php">./src/Core</directory>
-      <exclude>
-        <directory>./vendor</directory>
-        <directory>./tests</directory>
-      </exclude>
-    </whitelist>
-  </filter>
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+    <coverage>
+        <include>
+            <directory suffix=".php">./src/Core</directory>
+        </include>
+        <exclude>
+            <directory>./vendor</directory>
+            <directory>./tests</directory>
+        </exclude>
+    </coverage>
+    <testsuites>
+        <testsuite name="unit">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
