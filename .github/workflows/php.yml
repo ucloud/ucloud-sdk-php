@@ -1,0 +1,32 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Run code sniffer
+      run: vendor/bin/phpcs
+
+    - name: Run test suite
+      run: vendor/bin/phpunit --coverage-clover=coverage.xml
+      env:
+        XDEBUG_MODE: coverage
+        UCLOUD_PUBLIC_KEY: foo
+        UCLOUD_PRIVATE_KEY: bar
+        UCLOUD_PROJECT_ID: oas
+
+    - uses: codecov/codecov-action@v1
+      with:
+        file: ./coverage.xml

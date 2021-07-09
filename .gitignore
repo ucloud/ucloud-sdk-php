@@ -1,1 +1,11 @@
-config.php
+*.lock
+package.xml
+/vendor
+.idea
+.php_cs.cache
+docs/_build
+/.vagrant
+*.phar
+.phpunit*
+build/
+coverage.xml
