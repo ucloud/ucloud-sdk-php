@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UHost\Models\IsolationGroup;
 use UCloud\UHost\Models\SpreadInfo;
 
-class DescribeIsolationGroupResponse extends Response {
+class DescribeIsolationGroupResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeIsolationGroupResponse extends Response {
      *
      * @return IsolationGroup[]|null
      */
-    public function getIsolationGroupSet(): array {
+    public function getIsolationGroupSet(): array
+    {
         $items = $this->get("IsolationGroupSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class DescribeIsolationGroupResponse extends Response {
      *
      * @param IsolationGroup[] $isolationGroupSet
      */
-    public function setIsolationGroupSet(array $isolationGroupSet) {
+    public function setIsolationGroupSet(array $isolationGroupSet)
+    {
         $result = [];
         foreach ($isolationGroupSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,9 +56,10 @@ class DescribeIsolationGroupResponse extends Response {
     /**
      * TotalCount: 硬件隔离组总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -64,9 +68,8 @@ class DescribeIsolationGroupResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

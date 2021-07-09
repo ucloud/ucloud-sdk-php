@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostClusterSet extends Response {
+class PHostClusterSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PHostClusterSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -35,7 +37,8 @@ class PHostClusterSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -44,7 +47,8 @@ class PHostClusterSet extends Response {
      *
      * @return string|null
      */
-    public function getStockStatus(): string {
+    public function getStockStatus(): string
+    {
         return $this->get("StockStatus");
     }
 
@@ -53,9 +57,8 @@ class PHostClusterSet extends Response {
      *
      * @param string $stockStatus
      */
-    public function setStockStatus(string $stockStatus) {
+    public function setStockStatus(string $stockStatus)
+    {
         $this->set("StockStatus", $stockStatus);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteNetworkAclEntryRequest extends Request {
+class DeleteNetworkAclEntryRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteNetworkAclEntry"]);
@@ -34,7 +35,8 @@ class DeleteNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DeleteNetworkAclEntryRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DeleteNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class DeleteNetworkAclEntryRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class DeleteNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getAclId(): string {
+    public function getAclId(): string
+    {
         return $this->get("AclId");
     }
 
@@ -79,7 +85,8 @@ class DeleteNetworkAclEntryRequest extends Request {
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId) {
+    public function setAclId(string $aclId)
+    {
         $this->set("AclId", $aclId);
     }
 
@@ -88,7 +95,8 @@ class DeleteNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getEntryId(): string {
+    public function getEntryId(): string
+    {
         return $this->get("EntryId");
     }
 
@@ -97,9 +105,8 @@ class DeleteNetworkAclEntryRequest extends Request {
      *
      * @param string $entryId
      */
-    public function setEntryId(string $entryId) {
+    public function setEntryId(string $entryId)
+    {
         $this->set("EntryId", $entryId);
     }
-
-
 }

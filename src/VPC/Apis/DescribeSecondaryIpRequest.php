@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeSecondaryIpRequest extends Request {
+class DescribeSecondaryIpRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeSecondaryIp"]);
@@ -34,7 +35,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -79,7 +85,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -88,7 +95,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -97,7 +105,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -106,7 +115,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @return string|null
      */
-    public function getIp(): string {
+    public function getIp(): string
+    {
         return $this->get("Ip");
     }
 
@@ -115,7 +125,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @param string $ip
      */
-    public function setIp(string $ip) {
+    public function setIp(string $ip)
+    {
         $this->set("Ip", $ip);
     }
 
@@ -124,7 +135,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @return string|null
      */
-    public function getMac(): string {
+    public function getMac(): string
+    {
         return $this->get("Mac");
     }
 
@@ -133,9 +145,8 @@ class DescribeSecondaryIpRequest extends Request {
      *
      * @param string $mac
      */
-    public function setMac(string $mac) {
+    public function setMac(string $mac)
+    {
         $this->set("Mac", $mac);
     }
-
-
 }

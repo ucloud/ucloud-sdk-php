@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetEIPPriceRequest extends Request {
+class GetEIPPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetEIPPrice"]);
@@ -34,7 +35,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getOperatorName(): string {
+    public function getOperatorName(): string
+    {
         return $this->get("OperatorName");
     }
 
@@ -79,16 +85,18 @@ class GetEIPPriceRequest extends Request {
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName) {
+    public function setOperatorName(string $operatorName)
+    {
         $this->set("OperatorName", $operatorName);
     }
 
     /**
      * Bandwidth: 弹性IP的外网带宽, 单位为Mbps, 范围 [0-800]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -97,7 +105,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -106,7 +115,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -115,7 +125,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -124,7 +135,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getPayMode(): string {
+    public function getPayMode(): string
+    {
         return $this->get("PayMode");
     }
 
@@ -133,16 +145,18 @@ class GetEIPPriceRequest extends Request {
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode) {
+    public function setPayMode(string $payMode)
+    {
         $this->set("PayMode", $payMode);
     }
 
     /**
      * Quantity: 购买时长。默认: 1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -151,9 +165,8 @@ class GetEIPPriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
-
-
 }

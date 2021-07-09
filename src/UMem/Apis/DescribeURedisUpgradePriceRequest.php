@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeURedisUpgradePriceRequest extends Request {
+class DescribeURedisUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeURedisUpgradePrice"]);
@@ -34,7 +35,8 @@ class DescribeURedisUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DescribeURedisUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DescribeURedisUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,16 +65,18 @@ class DescribeURedisUpgradePriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
     /**
      * Size: 购买uredis大小,单位:GB,范围是[1-32]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -79,7 +85,8 @@ class DescribeURedisUpgradePriceRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -88,7 +95,8 @@ class DescribeURedisUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -97,9 +105,8 @@ class DescribeURedisUpgradePriceRequest extends Request {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
-
-
 }

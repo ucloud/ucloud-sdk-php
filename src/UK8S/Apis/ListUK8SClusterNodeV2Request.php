@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ListUK8SClusterNodeV2Request extends Request {
+class ListUK8SClusterNodeV2Request extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ListUK8SClusterNodeV2"]);
@@ -33,7 +34,8 @@ class ListUK8SClusterNodeV2Request extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class ListUK8SClusterNodeV2Request extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class ListUK8SClusterNodeV2Request extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class ListUK8SClusterNodeV2Request extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class ListUK8SClusterNodeV2Request extends Request {
      *
      * @return string|null
      */
-    public function getClusterId(): string {
+    public function getClusterId(): string
+    {
         return $this->get("ClusterId");
     }
 
@@ -78,9 +84,8 @@ class ListUK8SClusterNodeV2Request extends Request {
      *
      * @param string $clusterId
      */
-    public function setClusterId(string $clusterId) {
+    public function setClusterId(string $clusterId)
+    {
         $this->set("ClusterId", $clusterId);
     }
-
-
 }

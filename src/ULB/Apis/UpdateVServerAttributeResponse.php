@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpdateVServerAttributeResponse extends Response {
+class UpdateVServerAttributeResponse extends Response
+{
     
 
 

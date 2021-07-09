@@ -19,7 +19,8 @@ namespace UCloud\UDisk\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDisk\Models\UDiskDataSet;
 
-class DescribeUDiskResponse extends Response {
+class DescribeUDiskResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUDiskResponse extends Response {
      *
      * @return UDiskDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,7 +43,8 @@ class DescribeUDiskResponse extends Response {
      *
      * @param UDiskDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -52,9 +55,10 @@ class DescribeUDiskResponse extends Response {
     /**
      * TotalCount: 根据过滤条件得到的总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -63,9 +67,8 @@ class DescribeUDiskResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

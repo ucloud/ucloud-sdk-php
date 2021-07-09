@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUcdnDomainOriginHttpCodeRequest extends Request {
+class GetUcdnDomainOriginHttpCodeRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUcdnDomainOriginHttpCode"]);
@@ -32,7 +33,8 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,16 +43,18 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Type: 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度，3表示按照1分钟粒度）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getType(): int {
+    public function getType(): int
+    {
         return $this->get("Type");
     }
 
@@ -59,7 +63,8 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @param int $type
      */
-    public function setType(int $type) {
+    public function setType(int $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -68,7 +73,8 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getDomainId(): array {
+    public function getDomainId(): array
+    {
         return $this->get("DomainId");
     }
 
@@ -77,7 +83,8 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @param string[] $domainId
      */
-    public function setDomainId(array $domainId) {
+    public function setDomainId(array $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
 
@@ -86,7 +93,8 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getAreacode(): string {
+    public function getAreacode(): string
+    {
         return $this->get("Areacode");
     }
 
@@ -95,16 +103,18 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @param string $areacode
      */
-    public function setAreacode(string $areacode) {
+    public function setAreacode(string $areacode)
+    {
         $this->set("Areacode", $areacode);
     }
 
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。如没有赋值，则返回缺少参 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -113,16 +123,18 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -131,9 +143,8 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
-
-
 }

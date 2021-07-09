@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateCubePodResponse extends Response {
+class CreateCubePodResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateCubePodResponse extends Response {
      *
      * @return string|null
      */
-    public function getPod(): string {
+    public function getPod(): string
+    {
         return $this->get("Pod");
     }
 
@@ -35,7 +37,8 @@ class CreateCubePodResponse extends Response {
      *
      * @param string $pod
      */
-    public function setPod(string $pod) {
+    public function setPod(string $pod)
+    {
         $this->set("Pod", $pod);
     }
 
@@ -44,7 +47,8 @@ class CreateCubePodResponse extends Response {
      *
      * @return string|null
      */
-    public function getCubeId(): string {
+    public function getCubeId(): string
+    {
         return $this->get("CubeId");
     }
 
@@ -53,9 +57,8 @@ class CreateCubePodResponse extends Response {
      *
      * @param string $cubeId
      */
-    public function setCubeId(string $cubeId) {
+    public function setCubeId(string $cubeId)
+    {
         $this->set("CubeId", $cubeId);
     }
-
-
 }

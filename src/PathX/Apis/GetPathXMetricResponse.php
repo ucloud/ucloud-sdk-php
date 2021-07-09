@@ -23,7 +23,8 @@ use UCloud\PathX\Models\MatricPoint;
 use UCloud\PathX\Models\MatricPoint;
 use UCloud\PathX\Models\MatricPoint;
 
-class GetPathXMetricResponse extends Response {
+class GetPathXMetricResponse extends Response
+{
     
 
     /**
@@ -31,7 +32,8 @@ class GetPathXMetricResponse extends Response {
      *
      * @return MetricPeriod|null
      */
-    public function getDataSet(): MetricPeriod {
+    public function getDataSet(): MetricPeriod
+    {
         return new MetricPeriod($this->get("DataSet"));
     }
 
@@ -40,9 +42,8 @@ class GetPathXMetricResponse extends Response {
      *
      * @param MetricPeriod $dataSet
      */
-    public function setDataSet(MetricPeriod $dataSet) {
+    public function setDataSet(MetricPeriod $dataSet)
+    {
         $this->set("DataSet", $dataSet->getAll());
     }
-
-
 }

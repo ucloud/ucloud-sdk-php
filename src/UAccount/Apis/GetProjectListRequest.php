@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetProjectListRequest extends Request {
+class GetProjectListRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetProjectList"]);
@@ -31,7 +32,8 @@ class GetProjectListRequest extends Request {
      *
      * @return string|null
      */
-    public function getIsFinance(): string {
+    public function getIsFinance(): string
+    {
         return $this->get("IsFinance");
     }
 
@@ -40,9 +42,8 @@ class GetProjectListRequest extends Request {
      *
      * @param string $isFinance
      */
-    public function setIsFinance(string $isFinance) {
+    public function setIsFinance(string $isFinance)
+    {
         $this->set("IsFinance", $isFinance);
     }
-
-
 }

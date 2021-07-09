@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeletePathXSSLRequest extends Request {
+class DeletePathXSSLRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeletePathXSSL"]);
@@ -33,7 +34,8 @@ class DeletePathXSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class DeletePathXSSLRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class DeletePathXSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getSSLId(): string {
+    public function getSSLId(): string
+    {
         return $this->get("SSLId");
     }
 
@@ -60,9 +64,8 @@ class DeletePathXSSLRequest extends Request {
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId) {
+    public function setSSLId(string $sslId)
+    {
         $this->set("SSLId", $sslId);
     }
-
-
 }

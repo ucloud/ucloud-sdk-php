@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUHostKeyPairsResponse extends Response {
+class DeleteUHostKeyPairsResponse extends Response
+{
     
 
 

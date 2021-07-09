@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateNATGWResponse extends Response {
+class CreateNATGWResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateNATGWResponse extends Response {
      *
      * @return string|null
      */
-    public function getNATGWId(): string {
+    public function getNATGWId(): string
+    {
         return $this->get("NATGWId");
     }
 
@@ -35,9 +37,8 @@ class CreateNATGWResponse extends Response {
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId) {
+    public function setNATGWId(string $natgwId)
+    {
         $this->set("NATGWId", $natgwId);
     }
-
-
 }

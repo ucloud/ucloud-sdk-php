@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class ImageList extends Response {
+class ImageList extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ImageList extends Response {
      *
      * @return string|null
      */
-    public function getStoreAddr(): string {
+    public function getStoreAddr(): string
+    {
         return $this->get("StoreAddr");
     }
 
@@ -35,7 +37,8 @@ class ImageList extends Response {
      *
      * @param string $storeAddr
      */
-    public function setStoreAddr(string $storeAddr) {
+    public function setStoreAddr(string $storeAddr)
+    {
         $this->set("StoreAddr", $storeAddr);
     }
 
@@ -44,7 +47,8 @@ class ImageList extends Response {
      *
      * @return string|null
      */
-    public function getUserName(): string {
+    public function getUserName(): string
+    {
         return $this->get("UserName");
     }
 
@@ -53,7 +57,8 @@ class ImageList extends Response {
      *
      * @param string $userName
      */
-    public function setUserName(string $userName) {
+    public function setUserName(string $userName)
+    {
         $this->set("UserName", $userName);
     }
 
@@ -62,7 +67,8 @@ class ImageList extends Response {
      *
      * @return string|null
      */
-    public function getImageKey(): string {
+    public function getImageKey(): string
+    {
         return $this->get("ImageKey");
     }
 
@@ -71,9 +77,8 @@ class ImageList extends Response {
      *
      * @param string $imageKey
      */
-    public function setImageKey(string $imageKey) {
+    public function setImageKey(string $imageKey)
+    {
         $this->set("ImageKey", $imageKey);
     }
-
-
 }

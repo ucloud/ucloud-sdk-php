@@ -21,7 +21,8 @@ use UCloud\Cube\Models\CubeExtendInfo;
 use UCloud\Cube\Models\EIPSet;
 use UCloud\Cube\Models\EIPAddr;
 
-class GetCubeExtendInfoResponse extends Response {
+class GetCubeExtendInfoResponse extends Response
+{
     
 
     /**
@@ -29,7 +30,8 @@ class GetCubeExtendInfoResponse extends Response {
      *
      * @return CubeExtendInfo[]|null
      */
-    public function getExtendInfo(): array {
+    public function getExtendInfo(): array
+    {
         $items = $this->get("ExtendInfo") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -43,13 +45,12 @@ class GetCubeExtendInfoResponse extends Response {
      *
      * @param CubeExtendInfo[] $extendInfo
      */
-    public function setExtendInfo(array $extendInfo) {
+    public function setExtendInfo(array $extendInfo)
+    {
         $result = [];
         foreach ($extendInfo as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

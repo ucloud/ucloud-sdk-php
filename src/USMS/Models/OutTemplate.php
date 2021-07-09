@@ -18,7 +18,8 @@ namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
-class OutTemplate extends Response {
+class OutTemplate extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class OutTemplate extends Response {
      *
      * @return string|null
      */
-    public function getTemplateId(): string {
+    public function getTemplateId(): string
+    {
         return $this->get("TemplateId");
     }
 
@@ -35,16 +37,18 @@ class OutTemplate extends Response {
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId) {
+    public function setTemplateId(string $templateId)
+    {
         $this->set("TemplateId", $templateId);
     }
 
     /**
      * Purpose: 模板类型，选项：1-验证码类 2-通知类 3-会员推广类
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPurpose(): int {
+    public function getPurpose(): int
+    {
         return $this->get("Purpose");
     }
 
@@ -53,7 +57,8 @@ class OutTemplate extends Response {
      *
      * @param int $purpose
      */
-    public function setPurpose(int $purpose) {
+    public function setPurpose(int $purpose)
+    {
         $this->set("Purpose", $purpose);
     }
 
@@ -62,7 +67,8 @@ class OutTemplate extends Response {
      *
      * @return string|null
      */
-    public function getTemplateName(): string {
+    public function getTemplateName(): string
+    {
         return $this->get("TemplateName");
     }
 
@@ -71,7 +77,8 @@ class OutTemplate extends Response {
      *
      * @param string $templateName
      */
-    public function setTemplateName(string $templateName) {
+    public function setTemplateName(string $templateName)
+    {
         $this->set("TemplateName", $templateName);
     }
 
@@ -80,7 +87,8 @@ class OutTemplate extends Response {
      *
      * @return string|null
      */
-    public function getTemplate(): string {
+    public function getTemplate(): string
+    {
         return $this->get("Template");
     }
 
@@ -89,7 +97,8 @@ class OutTemplate extends Response {
      *
      * @param string $template
      */
-    public function setTemplate(string $template) {
+    public function setTemplate(string $template)
+    {
         $this->set("Template", $template);
     }
 
@@ -98,7 +107,8 @@ class OutTemplate extends Response {
      *
      * @return string|null
      */
-    public function getUnsubscribeInfo(): string {
+    public function getUnsubscribeInfo(): string
+    {
         return $this->get("UnsubscribeInfo");
     }
 
@@ -107,16 +117,18 @@ class OutTemplate extends Response {
      *
      * @param string $unsubscribeInfo
      */
-    public function setUnsubscribeInfo(string $unsubscribeInfo) {
+    public function setUnsubscribeInfo(string $unsubscribeInfo)
+    {
         $this->set("UnsubscribeInfo", $unsubscribeInfo);
     }
 
     /**
      * Status: 短信模板状态；状态说明：0-待审核，1-审核中，2-审核通过，3-审核未通过，4-被禁用
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStatus(): int {
+    public function getStatus(): int
+    {
         return $this->get("Status");
     }
 
@@ -125,7 +137,8 @@ class OutTemplate extends Response {
      *
      * @param int $status
      */
-    public function setStatus(int $status) {
+    public function setStatus(int $status)
+    {
         $this->set("Status", $status);
     }
 
@@ -134,7 +147,8 @@ class OutTemplate extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -143,7 +157,8 @@ class OutTemplate extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -152,7 +167,8 @@ class OutTemplate extends Response {
      *
      * @return string|null
      */
-    public function getErrDesc(): string {
+    public function getErrDesc(): string
+    {
         return $this->get("ErrDesc");
     }
 
@@ -161,16 +177,18 @@ class OutTemplate extends Response {
      *
      * @param string $errDesc
      */
-    public function setErrDesc(string $errDesc) {
+    public function setErrDesc(string $errDesc)
+    {
         $this->set("ErrDesc", $errDesc);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -179,9 +197,8 @@ class OutTemplate extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
-
-
 }

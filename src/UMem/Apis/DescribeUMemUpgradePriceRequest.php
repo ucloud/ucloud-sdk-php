@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUMemUpgradePriceRequest extends Request {
+class DescribeUMemUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUMemUpgradePrice"]);
@@ -35,7 +36,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,16 +86,18 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Size: 购买UMem大小,单位:GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -98,7 +106,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -107,7 +116,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -116,7 +126,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -125,7 +136,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getSpaceId(): string {
+    public function getSpaceId(): string
+    {
         return $this->get("SpaceId");
     }
 
@@ -134,9 +146,8 @@ class DescribeUMemUpgradePriceRequest extends Request {
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId) {
+    public function setSpaceId(string $spaceId)
+    {
         $this->set("SpaceId", $spaceId);
     }
-
-
 }

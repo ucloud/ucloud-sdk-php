@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Models;
 
 use UCloud\Core\Response\Response;
 
-class UDiskDataSet extends Response {
+class UDiskDataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getUDiskId(): string {
+    public function getUDiskId(): string
+    {
         return $this->get("UDiskId");
     }
 
@@ -53,7 +57,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId) {
+    public function setUDiskId(string $uDiskId)
+    {
         $this->set("UDiskId", $uDiskId);
     }
 
@@ -62,7 +67,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -71,16 +77,18 @@ class UDiskDataSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * Size: 容量单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -89,7 +97,8 @@ class UDiskDataSet extends Response {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -98,7 +107,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getStatus(): string {
+    public function getStatus(): string
+    {
         return $this->get("Status");
     }
 
@@ -107,16 +117,18 @@ class UDiskDataSet extends Response {
      *
      * @param string $status
      */
-    public function setStatus(string $status) {
+    public function setStatus(string $status)
+    {
         $this->set("Status", $status);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -125,16 +137,18 @@ class UDiskDataSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ExpiredTime: 过期时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpiredTime(): int {
+    public function getExpiredTime(): int
+    {
         return $this->get("ExpiredTime");
     }
 
@@ -143,7 +157,8 @@ class UDiskDataSet extends Response {
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime(int $expiredTime) {
+    public function setExpiredTime(int $expiredTime)
+    {
         $this->set("ExpiredTime", $expiredTime);
     }
 
@@ -152,7 +167,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getUHostId(): string {
+    public function getUHostId(): string
+    {
         return $this->get("UHostId");
     }
 
@@ -161,7 +177,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId) {
+    public function setUHostId(string $uHostId)
+    {
         $this->set("UHostId", $uHostId);
     }
 
@@ -170,7 +187,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getUHostName(): string {
+    public function getUHostName(): string
+    {
         return $this->get("UHostName");
     }
 
@@ -179,7 +197,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $uHostName
      */
-    public function setUHostName(string $uHostName) {
+    public function setUHostName(string $uHostName)
+    {
         $this->set("UHostName", $uHostName);
     }
 
@@ -188,7 +207,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getUHostIP(): string {
+    public function getUHostIP(): string
+    {
         return $this->get("UHostIP");
     }
 
@@ -197,7 +217,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $uHostIP
      */
-    public function setUHostIP(string $uHostIP) {
+    public function setUHostIP(string $uHostIP)
+    {
         $this->set("UHostIP", $uHostIP);
     }
 
@@ -206,7 +227,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getHostId(): string {
+    public function getHostId(): string
+    {
         return $this->get("HostId");
     }
 
@@ -215,7 +237,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $hostId
      */
-    public function setHostId(string $hostId) {
+    public function setHostId(string $hostId)
+    {
         $this->set("HostId", $hostId);
     }
 
@@ -224,7 +247,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getHostName(): string {
+    public function getHostName(): string
+    {
         return $this->get("HostName");
     }
 
@@ -233,7 +257,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $hostName
      */
-    public function setHostName(string $hostName) {
+    public function setHostName(string $hostName)
+    {
         $this->set("HostName", $hostName);
     }
 
@@ -242,7 +267,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getHostIP(): string {
+    public function getHostIP(): string
+    {
         return $this->get("HostIP");
     }
 
@@ -251,7 +277,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $hostIP
      */
-    public function setHostIP(string $hostIP) {
+    public function setHostIP(string $hostIP)
+    {
         $this->set("HostIP", $hostIP);
     }
 
@@ -260,7 +287,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getDeviceName(): string {
+    public function getDeviceName(): string
+    {
         return $this->get("DeviceName");
     }
 
@@ -269,7 +297,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $deviceName
      */
-    public function setDeviceName(string $deviceName) {
+    public function setDeviceName(string $deviceName)
+    {
         $this->set("DeviceName", $deviceName);
     }
 
@@ -278,7 +307,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -287,7 +317,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -296,7 +327,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -305,7 +337,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -314,7 +347,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getIsExpire(): string {
+    public function getIsExpire(): string
+    {
         return $this->get("IsExpire");
     }
 
@@ -323,7 +357,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $isExpire
      */
-    public function setIsExpire(string $isExpire) {
+    public function setIsExpire(string $isExpire)
+    {
         $this->set("IsExpire", $isExpire);
     }
 
@@ -332,7 +367,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVersion(): string {
+    public function getVersion(): string
+    {
         return $this->get("Version");
     }
 
@@ -341,7 +377,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $version
      */
-    public function setVersion(string $version) {
+    public function setVersion(string $version)
+    {
         $this->set("Version", $version);
     }
 
@@ -350,7 +387,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getUDataArkMode(): string {
+    public function getUDataArkMode(): string
+    {
         return $this->get("UDataArkMode");
     }
 
@@ -359,16 +397,18 @@ class UDiskDataSet extends Response {
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode(string $uDataArkMode) {
+    public function setUDataArkMode(string $uDataArkMode)
+    {
         $this->set("UDataArkMode", $uDataArkMode);
     }
 
     /**
      * SnapshotCount: 该盘快照个数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSnapshotCount(): int {
+    public function getSnapshotCount(): int
+    {
         return $this->get("SnapshotCount");
     }
 
@@ -377,16 +417,18 @@ class UDiskDataSet extends Response {
      *
      * @param int $snapshotCount
      */
-    public function setSnapshotCount(int $snapshotCount) {
+    public function setSnapshotCount(int $snapshotCount)
+    {
         $this->set("SnapshotCount", $snapshotCount);
     }
 
     /**
      * SnapshotLimit: 该盘快照上限
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSnapshotLimit(): int {
+    public function getSnapshotLimit(): int
+    {
         return $this->get("SnapshotLimit");
     }
 
@@ -395,7 +437,8 @@ class UDiskDataSet extends Response {
      *
      * @param int $snapshotLimit
      */
-    public function setSnapshotLimit(int $snapshotLimit) {
+    public function setSnapshotLimit(int $snapshotLimit)
+    {
         $this->set("SnapshotLimit", $snapshotLimit);
     }
 
@@ -404,7 +447,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getDiskType(): string {
+    public function getDiskType(): string
+    {
         return $this->get("DiskType");
     }
 
@@ -413,16 +457,18 @@ class UDiskDataSet extends Response {
      *
      * @param string $diskType
      */
-    public function setDiskType(string $diskType) {
+    public function setDiskType(string $diskType)
+    {
         $this->set("DiskType", $diskType);
     }
 
     /**
      * CloneEnable: 是否支持克隆，1支持 ，0不支持
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCloneEnable(): int {
+    public function getCloneEnable(): int
+    {
         return $this->get("CloneEnable");
     }
 
@@ -431,16 +477,18 @@ class UDiskDataSet extends Response {
      *
      * @param int $cloneEnable
      */
-    public function setCloneEnable(int $cloneEnable) {
+    public function setCloneEnable(int $cloneEnable)
+    {
         $this->set("CloneEnable", $cloneEnable);
     }
 
     /**
      * SnapEnable: 是否支持快照，1支持 ，0不支持
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSnapEnable(): int {
+    public function getSnapEnable(): int
+    {
         return $this->get("SnapEnable");
     }
 
@@ -449,16 +497,18 @@ class UDiskDataSet extends Response {
      *
      * @param int $snapEnable
      */
-    public function setSnapEnable(int $snapEnable) {
+    public function setSnapEnable(int $snapEnable)
+    {
         $this->set("SnapEnable", $snapEnable);
     }
 
     /**
      * ArkSwitchEnable: 是否支持开启方舟，1支持 ，0不支持
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getArkSwitchEnable(): int {
+    public function getArkSwitchEnable(): int
+    {
         return $this->get("ArkSwitchEnable");
     }
 
@@ -467,7 +517,8 @@ class UDiskDataSet extends Response {
      *
      * @param int $arkSwitchEnable
      */
-    public function setArkSwitchEnable(int $arkSwitchEnable) {
+    public function setArkSwitchEnable(int $arkSwitchEnable)
+    {
         $this->set("ArkSwitchEnable", $arkSwitchEnable);
     }
 
@@ -476,7 +527,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getUKmsMode(): string {
+    public function getUKmsMode(): string
+    {
         return $this->get("UKmsMode");
     }
 
@@ -485,7 +537,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $uKmsMode
      */
-    public function setUKmsMode(string $uKmsMode) {
+    public function setUKmsMode(string $uKmsMode)
+    {
         $this->set("UKmsMode", $uKmsMode);
     }
 
@@ -494,7 +547,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getCmkId(): string {
+    public function getCmkId(): string
+    {
         return $this->get("CmkId");
     }
 
@@ -503,7 +557,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $cmkId
      */
-    public function setCmkId(string $cmkId) {
+    public function setCmkId(string $cmkId)
+    {
         $this->set("CmkId", $cmkId);
     }
 
@@ -512,7 +567,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getDataKey(): string {
+    public function getDataKey(): string
+    {
         return $this->get("DataKey");
     }
 
@@ -521,7 +577,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $dataKey
      */
-    public function setDataKey(string $dataKey) {
+    public function setDataKey(string $dataKey)
+    {
         $this->set("DataKey", $dataKey);
     }
 
@@ -530,7 +587,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getCmkIdStatus(): string {
+    public function getCmkIdStatus(): string
+    {
         return $this->get("CmkIdStatus");
     }
 
@@ -539,7 +597,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $cmkIdStatus
      */
-    public function setCmkIdStatus(string $cmkIdStatus) {
+    public function setCmkIdStatus(string $cmkIdStatus)
+    {
         $this->set("CmkIdStatus", $cmkIdStatus);
     }
 
@@ -548,7 +607,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getCmkIdAlias(): string {
+    public function getCmkIdAlias(): string
+    {
         return $this->get("CmkIdAlias");
     }
 
@@ -557,7 +617,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $cmkIdAlias
      */
-    public function setCmkIdAlias(string $cmkIdAlias) {
+    public function setCmkIdAlias(string $cmkIdAlias)
+    {
         $this->set("CmkIdAlias", $cmkIdAlias);
     }
 
@@ -566,7 +627,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getIsBoot(): string {
+    public function getIsBoot(): string
+    {
         return $this->get("IsBoot");
     }
 
@@ -575,7 +637,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot) {
+    public function setIsBoot(string $isBoot)
+    {
         $this->set("IsBoot", $isBoot);
     }
 
@@ -584,7 +647,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupMode(): string {
+    public function getBackupMode(): string
+    {
         return $this->get("BackupMode");
     }
 
@@ -593,7 +657,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $backupMode
      */
-    public function setBackupMode(string $backupMode) {
+    public function setBackupMode(string $backupMode)
+    {
         $this->set("BackupMode", $backupMode);
     }
 
@@ -602,7 +667,8 @@ class UDiskDataSet extends Response {
      *
      * @return string|null
      */
-    public function getRdmaClusterId(): string {
+    public function getRdmaClusterId(): string
+    {
         return $this->get("RdmaClusterId");
     }
 
@@ -611,9 +677,8 @@ class UDiskDataSet extends Response {
      *
      * @param string $rdmaClusterId
      */
-    public function setRdmaClusterId(string $rdmaClusterId) {
+    public function setRdmaClusterId(string $rdmaClusterId)
+    {
         $this->set("RdmaClusterId", $rdmaClusterId);
     }
-
-
 }

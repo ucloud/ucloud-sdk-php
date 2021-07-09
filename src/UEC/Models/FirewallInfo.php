@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class FirewallInfo extends Response {
+class FirewallInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class FirewallInfo extends Response {
      *
      * @return string|null
      */
-    public function getFirewallId(): string {
+    public function getFirewallId(): string
+    {
         return $this->get("FirewallId");
     }
 
@@ -35,7 +37,8 @@ class FirewallInfo extends Response {
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId) {
+    public function setFirewallId(string $firewallId)
+    {
         $this->set("FirewallId", $firewallId);
     }
 
@@ -44,7 +47,8 @@ class FirewallInfo extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -53,16 +57,18 @@ class FirewallInfo extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -71,7 +77,8 @@ class FirewallInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -80,7 +87,8 @@ class FirewallInfo extends Response {
      *
      * @return RuleInfo[]|null
      */
-    public function getRule(): array {
+    public function getRule(): array
+    {
         $items = $this->get("Rule") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -94,7 +102,8 @@ class FirewallInfo extends Response {
      *
      * @param RuleInfo[] $rule
      */
-    public function setRule(array $rule) {
+    public function setRule(array $rule)
+    {
         $result = [];
         foreach ($rule as $i => $item) {
             array_push($result, $item->getAll());
@@ -105,9 +114,10 @@ class FirewallInfo extends Response {
     /**
      * ResourceCount: 防火墙绑定资源数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getResourceCount(): int {
+    public function getResourceCount(): int
+    {
         return $this->get("ResourceCount");
     }
 
@@ -116,7 +126,8 @@ class FirewallInfo extends Response {
      *
      * @param int $resourceCount
      */
-    public function setResourceCount(int $resourceCount) {
+    public function setResourceCount(int $resourceCount)
+    {
         $this->set("ResourceCount", $resourceCount);
     }
 
@@ -125,7 +136,8 @@ class FirewallInfo extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -134,7 +146,8 @@ class FirewallInfo extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -143,7 +156,8 @@ class FirewallInfo extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -152,9 +166,8 @@ class FirewallInfo extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

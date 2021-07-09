@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class SubnetResource extends Response {
+class SubnetResource extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class SubnetResource extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -35,7 +37,8 @@ class SubnetResource extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -44,7 +47,8 @@ class SubnetResource extends Response {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -53,7 +57,8 @@ class SubnetResource extends Response {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
@@ -62,7 +67,8 @@ class SubnetResource extends Response {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -71,7 +77,8 @@ class SubnetResource extends Response {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -80,7 +87,8 @@ class SubnetResource extends Response {
      *
      * @return string|null
      */
-    public function getIP(): string {
+    public function getIP(): string
+    {
         return $this->get("IP");
     }
 
@@ -89,9 +97,8 @@ class SubnetResource extends Response {
      *
      * @param string $ip
      */
-    public function setIP(string $ip) {
+    public function setIP(string $ip)
+    {
         $this->set("IP", $ip);
     }
-
-
 }

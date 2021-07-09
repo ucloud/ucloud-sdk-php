@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class AllocateBackendRequest extends Request {
+class AllocateBackendRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "AllocateBackend"]);
@@ -37,7 +38,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -46,7 +48,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -55,7 +58,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -64,7 +68,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -73,7 +78,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getULBId(): string {
+    public function getULBId(): string
+    {
         return $this->get("ULBId");
     }
 
@@ -82,7 +88,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId) {
+    public function setULBId(string $ulbId)
+    {
         $this->set("ULBId", $ulbId);
     }
 
@@ -91,7 +98,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getVServerId(): string {
+    public function getVServerId(): string
+    {
         return $this->get("VServerId");
     }
 
@@ -100,7 +108,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId) {
+    public function setVServerId(string $vServerId)
+    {
         $this->set("VServerId", $vServerId);
     }
 
@@ -109,7 +118,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -118,7 +128,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -127,7 +138,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -136,7 +148,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
@@ -145,7 +158,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceIP(): string {
+    public function getResourceIP(): string
+    {
         return $this->get("ResourceIP");
     }
 
@@ -154,7 +168,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $resourceIP
      */
-    public function setResourceIP(string $resourceIP) {
+    public function setResourceIP(string $resourceIP)
+    {
         $this->set("ResourceIP", $resourceIP);
     }
 
@@ -163,7 +178,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -172,7 +188,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -181,7 +198,8 @@ class AllocateBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -190,16 +208,18 @@ class AllocateBackendRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
     /**
      * Port: 所添加的后端资源服务端口，取值范围[1-65535]，默认80
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -208,16 +228,18 @@ class AllocateBackendRequest extends Request {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
     /**
      * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getWeight(): int {
+    public function getWeight(): int
+    {
         return $this->get("Weight");
     }
 
@@ -226,16 +248,18 @@ class AllocateBackendRequest extends Request {
      *
      * @param int $weight
      */
-    public function setWeight(int $weight) {
+    public function setWeight(int $weight)
+    {
         $this->set("Weight", $weight);
     }
 
     /**
      * Enabled: 后端实例状态开关，枚举值： 1：启用； 0：禁用 默认为启用
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEnabled(): int {
+    public function getEnabled(): int
+    {
         return $this->get("Enabled");
     }
 
@@ -244,16 +268,18 @@ class AllocateBackendRequest extends Request {
      *
      * @param int $enabled
      */
-    public function setEnabled(int $enabled) {
+    public function setEnabled(int $enabled)
+    {
         $this->set("Enabled", $enabled);
     }
 
     /**
      * IsBackup: rs是否为backup，默认为00：普通rs1：backup的rs
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getIsBackup(): int {
+    public function getIsBackup(): int
+    {
         return $this->get("IsBackup");
     }
 
@@ -262,9 +288,8 @@ class AllocateBackendRequest extends Request {
      *
      * @param int $isBackup
      */
-    public function setIsBackup(int $isBackup) {
+    public function setIsBackup(int $isBackup)
+    {
         $this->set("IsBackup", $isBackup);
     }
-
-
 }

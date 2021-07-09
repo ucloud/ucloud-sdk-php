@@ -19,7 +19,8 @@ namespace UCloud\UDB\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDB\Models\UDBInstancePriceSet;
 
-class DescribeUDBInstancePriceResponse extends Response {
+class DescribeUDBInstancePriceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUDBInstancePriceResponse extends Response {
      *
      * @return UDBInstancePriceSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUDBInstancePriceResponse extends Response {
      *
      * @param UDBInstancePriceSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

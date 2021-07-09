@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class QueryIpLocationRequest extends Request {
+class QueryIpLocationRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "QueryIpLocation"]);
@@ -32,7 +33,8 @@ class QueryIpLocationRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getIp(): array {
+    public function getIp(): array
+    {
         return $this->get("Ip");
     }
 
@@ -41,9 +43,8 @@ class QueryIpLocationRequest extends Request {
      *
      * @param string[] $ip
      */
-    public function setIp(array $ip) {
+    public function setIp(array $ip)
+    {
         $this->set("Ip", $ip);
     }
-
-
 }

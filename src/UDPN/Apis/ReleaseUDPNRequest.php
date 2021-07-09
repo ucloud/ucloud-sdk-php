@@ -18,7 +18,8 @@ namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ReleaseUDPNRequest extends Request {
+class ReleaseUDPNRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ReleaseUDPN"]);
@@ -32,7 +33,8 @@ class ReleaseUDPNRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class ReleaseUDPNRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class ReleaseUDPNRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,7 +63,8 @@ class ReleaseUDPNRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -68,7 +73,8 @@ class ReleaseUDPNRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDPNId(): string {
+    public function getUDPNId(): string
+    {
         return $this->get("UDPNId");
     }
 
@@ -77,9 +83,8 @@ class ReleaseUDPNRequest extends Request {
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId) {
+    public function setUDPNId(string $udpnId)
+    {
         $this->set("UDPNId", $udpnId);
     }
-
-
 }

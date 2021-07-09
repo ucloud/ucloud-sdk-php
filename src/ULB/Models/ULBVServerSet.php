@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class ULBVServerSet extends Response {
+class ULBVServerSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getMonitorType(): string {
+    public function getMonitorType(): string
+    {
         return $this->get("MonitorType");
     }
 
@@ -35,7 +37,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $monitorType
      */
-    public function setMonitorType(string $monitorType) {
+    public function setMonitorType(string $monitorType)
+    {
         $this->set("MonitorType", $monitorType);
     }
 
@@ -44,7 +47,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getDomain(): string {
+    public function getDomain(): string
+    {
         return $this->get("Domain");
     }
 
@@ -53,7 +57,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $domain
      */
-    public function setDomain(string $domain) {
+    public function setDomain(string $domain)
+    {
         $this->set("Domain", $domain);
     }
 
@@ -62,7 +67,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getPath(): string {
+    public function getPath(): string
+    {
         return $this->get("Path");
     }
 
@@ -71,7 +77,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $path
      */
-    public function setPath(string $path) {
+    public function setPath(string $path)
+    {
         $this->set("Path", $path);
     }
 
@@ -80,7 +87,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getRequestMsg(): string {
+    public function getRequestMsg(): string
+    {
         return $this->get("RequestMsg");
     }
 
@@ -89,7 +97,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $requestMsg
      */
-    public function setRequestMsg(string $requestMsg) {
+    public function setRequestMsg(string $requestMsg)
+    {
         $this->set("RequestMsg", $requestMsg);
     }
 
@@ -98,7 +107,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getResponseMsg(): string {
+    public function getResponseMsg(): string
+    {
         return $this->get("ResponseMsg");
     }
 
@@ -107,7 +117,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $responseMsg
      */
-    public function setResponseMsg(string $responseMsg) {
+    public function setResponseMsg(string $responseMsg)
+    {
         $this->set("ResponseMsg", $responseMsg);
     }
 
@@ -116,7 +127,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getVServerId(): string {
+    public function getVServerId(): string
+    {
         return $this->get("VServerId");
     }
 
@@ -125,7 +137,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId) {
+    public function setVServerId(string $vServerId)
+    {
         $this->set("VServerId", $vServerId);
     }
 
@@ -134,7 +147,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getVServerName(): string {
+    public function getVServerName(): string
+    {
         return $this->get("VServerName");
     }
 
@@ -143,7 +157,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $vServerName
      */
-    public function setVServerName(string $vServerName) {
+    public function setVServerName(string $vServerName)
+    {
         $this->set("VServerName", $vServerName);
     }
 
@@ -152,7 +167,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getProtocol(): string {
+    public function getProtocol(): string
+    {
         return $this->get("Protocol");
     }
 
@@ -161,16 +177,18 @@ class ULBVServerSet extends Response {
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol) {
+    public function setProtocol(string $protocol)
+    {
         $this->set("Protocol", $protocol);
     }
 
     /**
      * FrontendPort: VServer服务端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getFrontendPort(): int {
+    public function getFrontendPort(): int
+    {
         return $this->get("FrontendPort");
     }
 
@@ -179,7 +197,8 @@ class ULBVServerSet extends Response {
      *
      * @param int $frontendPort
      */
-    public function setFrontendPort(int $frontendPort) {
+    public function setFrontendPort(int $frontendPort)
+    {
         $this->set("FrontendPort", $frontendPort);
     }
 
@@ -188,7 +207,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getMethod(): string {
+    public function getMethod(): string
+    {
         return $this->get("Method");
     }
 
@@ -197,7 +217,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $method
      */
-    public function setMethod(string $method) {
+    public function setMethod(string $method)
+    {
         $this->set("Method", $method);
     }
 
@@ -206,7 +227,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getPersistenceType(): string {
+    public function getPersistenceType(): string
+    {
         return $this->get("PersistenceType");
     }
 
@@ -215,7 +237,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $persistenceType
      */
-    public function setPersistenceType(string $persistenceType) {
+    public function setPersistenceType(string $persistenceType)
+    {
         $this->set("PersistenceType", $persistenceType);
     }
 
@@ -224,7 +247,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getPersistenceInfo(): string {
+    public function getPersistenceInfo(): string
+    {
         return $this->get("PersistenceInfo");
     }
 
@@ -233,16 +257,18 @@ class ULBVServerSet extends Response {
      *
      * @param string $persistenceInfo
      */
-    public function setPersistenceInfo(string $persistenceInfo) {
+    public function setPersistenceInfo(string $persistenceInfo)
+    {
         $this->set("PersistenceInfo", $persistenceInfo);
     }
 
     /**
      * ClientTimeout: 空闲连接的回收时间，单位：秒。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getClientTimeout(): int {
+    public function getClientTimeout(): int
+    {
         return $this->get("ClientTimeout");
     }
 
@@ -251,16 +277,18 @@ class ULBVServerSet extends Response {
      *
      * @param int $clientTimeout
      */
-    public function setClientTimeout(int $clientTimeout) {
+    public function setClientTimeout(int $clientTimeout)
+    {
         $this->set("ClientTimeout", $clientTimeout);
     }
 
     /**
      * Status: VServer的运行状态。枚举值： 0 -> rs全部运行正常;1 -> rs全部运行异常；2 -> rs部分运行异常。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStatus(): int {
+    public function getStatus(): int
+    {
         return $this->get("Status");
     }
 
@@ -269,7 +297,8 @@ class ULBVServerSet extends Response {
      *
      * @param int $status
      */
-    public function setStatus(int $status) {
+    public function setStatus(int $status)
+    {
         $this->set("Status", $status);
     }
 
@@ -278,7 +307,8 @@ class ULBVServerSet extends Response {
      *
      * @return ULBSSLSet[]|null
      */
-    public function getSSLSet(): array {
+    public function getSSLSet(): array
+    {
         $items = $this->get("SSLSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -292,7 +322,8 @@ class ULBVServerSet extends Response {
      *
      * @param ULBSSLSet[] $sslSet
      */
-    public function setSSLSet(array $sslSet) {
+    public function setSSLSet(array $sslSet)
+    {
         $result = [];
         foreach ($sslSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -305,7 +336,8 @@ class ULBVServerSet extends Response {
      *
      * @return ULBBackendSet[]|null
      */
-    public function getBackendSet(): array {
+    public function getBackendSet(): array
+    {
         $items = $this->get("BackendSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -319,7 +351,8 @@ class ULBVServerSet extends Response {
      *
      * @param ULBBackendSet[] $backendSet
      */
-    public function setBackendSet(array $backendSet) {
+    public function setBackendSet(array $backendSet)
+    {
         $result = [];
         foreach ($backendSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -332,7 +365,8 @@ class ULBVServerSet extends Response {
      *
      * @return string|null
      */
-    public function getListenType(): string {
+    public function getListenType(): string
+    {
         return $this->get("ListenType");
     }
 
@@ -341,7 +375,8 @@ class ULBVServerSet extends Response {
      *
      * @param string $listenType
      */
-    public function setListenType(string $listenType) {
+    public function setListenType(string $listenType)
+    {
         $this->set("ListenType", $listenType);
     }
 
@@ -350,7 +385,8 @@ class ULBVServerSet extends Response {
      *
      * @return ULBPolicySet[]|null
      */
-    public function getPolicySet(): array {
+    public function getPolicySet(): array
+    {
         $items = $this->get("PolicySet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -364,13 +400,12 @@ class ULBVServerSet extends Response {
      *
      * @param ULBPolicySet[] $policySet
      */
-    public function setPolicySet(array $policySet) {
+    public function setPolicySet(array $policySet)
+    {
         $result = [];
         foreach ($policySet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

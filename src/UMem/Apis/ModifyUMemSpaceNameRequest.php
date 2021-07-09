@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUMemSpaceNameRequest extends Request {
+class ModifyUMemSpaceNameRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyUMemSpaceName"]);
@@ -34,7 +35,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getSpaceId(): string {
+    public function getSpaceId(): string
+    {
         return $this->get("SpaceId");
     }
 
@@ -97,7 +105,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId) {
+    public function setSpaceId(string $spaceId)
+    {
         $this->set("SpaceId", $spaceId);
     }
 
@@ -106,7 +115,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -115,9 +125,8 @@ class ModifyUMemSpaceNameRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
-
-
 }

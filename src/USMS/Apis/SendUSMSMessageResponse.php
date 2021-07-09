@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Response\Response;
 
-class SendUSMSMessageResponse extends Response {
+class SendUSMSMessageResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class SendUSMSMessageResponse extends Response {
      *
      * @return string|null
      */
-    public function getSessionNo(): string {
+    public function getSessionNo(): string
+    {
         return $this->get("SessionNo");
     }
 
@@ -35,7 +37,8 @@ class SendUSMSMessageResponse extends Response {
      *
      * @param string $sessionNo
      */
-    public function setSessionNo(string $sessionNo) {
+    public function setSessionNo(string $sessionNo)
+    {
         $this->set("SessionNo", $sessionNo);
     }
 
@@ -44,7 +47,8 @@ class SendUSMSMessageResponse extends Response {
      *
      * @return string|null
      */
-    public function getUserId(): string {
+    public function getUserId(): string
+    {
         return $this->get("UserId");
     }
 
@@ -53,9 +57,8 @@ class SendUSMSMessageResponse extends Response {
      *
      * @param string $userId
      */
-    public function setUserId(string $userId) {
+    public function setUserId(string $userId)
+    {
         $this->set("UserId", $userId);
     }
-
-
 }

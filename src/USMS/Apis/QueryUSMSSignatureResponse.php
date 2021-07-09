@@ -19,7 +19,8 @@ namespace UCloud\USMS\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\USMS\Models\OutSignature;
 
-class QueryUSMSSignatureResponse extends Response {
+class QueryUSMSSignatureResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class QueryUSMSSignatureResponse extends Response {
      *
      * @return OutSignature|null
      */
-    public function getData(): OutSignature {
+    public function getData(): OutSignature
+    {
         return new OutSignature($this->get("Data"));
     }
 
@@ -36,9 +38,8 @@ class QueryUSMSSignatureResponse extends Response {
      *
      * @param OutSignature $data
      */
-    public function setData(OutSignature $data) {
+    public function setData(OutSignature $data)
+    {
         $this->set("Data", $data->getAll());
     }
-
-
 }

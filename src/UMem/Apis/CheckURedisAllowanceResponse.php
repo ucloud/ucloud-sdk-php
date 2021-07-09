@@ -18,15 +18,17 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CheckURedisAllowanceResponse extends Response {
+class CheckURedisAllowanceResponse extends Response
+{
     
 
     /**
      * Count: 创建实例资源时，表示可创建的数量；扩容资源时，返回1表示可以扩容，0表示可用区资源不足不能扩容
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -35,9 +37,8 @@ class CheckURedisAllowanceResponse extends Response {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\UDB\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDB\Models\UDBRWSplittingSet;
 
-class DescribeUDBSplittingInfoResponse extends Response {
+class DescribeUDBSplittingInfoResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -36,7 +38,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -45,7 +48,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getMasterDBId(): string {
+    public function getMasterDBId(): string
+    {
         return $this->get("MasterDBId");
     }
 
@@ -54,7 +58,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId(string $masterDBId) {
+    public function setMasterDBId(string $masterDBId)
+    {
         $this->set("MasterDBId", $masterDBId);
     }
 
@@ -63,7 +68,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getRWIP(): string {
+    public function getRWIP(): string
+    {
         return $this->get("RWIP");
     }
 
@@ -72,16 +78,18 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param string $rwip
      */
-    public function setRWIP(string $rwip) {
+    public function setRWIP(string $rwip)
+    {
         $this->set("RWIP", $rwip);
     }
 
     /**
      * DelayThreshold: 时间阈值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDelayThreshold(): int {
+    public function getDelayThreshold(): int
+    {
         return $this->get("DelayThreshold");
     }
 
@@ -90,16 +98,18 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param int $delayThreshold
      */
-    public function setDelayThreshold(int $delayThreshold) {
+    public function setDelayThreshold(int $delayThreshold)
+    {
         $this->set("DelayThreshold", $delayThreshold);
     }
 
     /**
      * Port: 端口号
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -108,7 +118,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
@@ -117,7 +128,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getReadModel(): string {
+    public function getReadModel(): string
+    {
         return $this->get("ReadModel");
     }
 
@@ -126,7 +138,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param string $readModel
      */
-    public function setReadModel(string $readModel) {
+    public function setReadModel(string $readModel)
+    {
         $this->set("ReadModel", $readModel);
     }
 
@@ -135,7 +148,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getDBTypeId(): string {
+    public function getDBTypeId(): string
+    {
         return $this->get("DBTypeId");
     }
 
@@ -144,7 +158,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId) {
+    public function setDBTypeId(string $dbTypeId)
+    {
         $this->set("DBTypeId", $dbTypeId);
     }
 
@@ -153,7 +168,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getRWState(): string {
+    public function getRWState(): string
+    {
         return $this->get("RWState");
     }
 
@@ -162,7 +178,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param string $rwState
      */
-    public function setRWState(string $rwState) {
+    public function setRWState(string $rwState)
+    {
         $this->set("RWState", $rwState);
     }
 
@@ -171,7 +188,8 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @return UDBRWSplittingSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -185,13 +203,12 @@ class DescribeUDBSplittingInfoResponse extends Response {
      *
      * @param UDBRWSplittingSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

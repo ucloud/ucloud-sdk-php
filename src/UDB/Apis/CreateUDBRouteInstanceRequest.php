@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUDBRouteInstanceRequest extends Request {
+class CreateUDBRouteInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUDBRouteInstance"]);
@@ -39,7 +40,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -48,7 +50,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -57,7 +60,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -66,7 +70,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -75,7 +80,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -84,7 +90,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -93,7 +100,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBTypeId(): string {
+    public function getDBTypeId(): string
+    {
         return $this->get("DBTypeId");
     }
 
@@ -102,7 +110,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId) {
+    public function setDBTypeId(string $dbTypeId)
+    {
         $this->set("DBTypeId", $dbTypeId);
     }
 
@@ -111,7 +120,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -120,16 +130,18 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * Port: 端口号，mongodb默认27017
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -138,16 +150,18 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getParamGroupId(): int {
+    public function getParamGroupId(): int
+    {
         return $this->get("ParamGroupId");
     }
 
@@ -156,16 +170,18 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId(int $paramGroupId) {
+    public function setParamGroupId(int $paramGroupId)
+    {
         $this->set("ParamGroupId", $paramGroupId);
     }
 
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 600M/1500M/3000M /6000M/15000M/30000M
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemoryLimit(): int {
+    public function getMemoryLimit(): int
+    {
         return $this->get("MemoryLimit");
     }
 
@@ -174,16 +190,18 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit(int $memoryLimit) {
+    public function setMemoryLimit(int $memoryLimit)
+    {
         $this->set("MemoryLimit", $memoryLimit);
     }
 
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 500G
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSpace(): int {
+    public function getDiskSpace(): int
+    {
         return $this->get("DiskSpace");
     }
 
@@ -192,7 +210,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace) {
+    public function setDiskSpace(int $diskSpace)
+    {
         $this->set("DiskSpace", $diskSpace);
     }
 
@@ -201,7 +220,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getConfigsvrId(): array {
+    public function getConfigsvrId(): array
+    {
         return $this->get("ConfigsvrId");
     }
 
@@ -210,7 +230,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param string[] $configsvrId
      */
-    public function setConfigsvrId(array $configsvrId) {
+    public function setConfigsvrId(array $configsvrId)
+    {
         $this->set("ConfigsvrId", $configsvrId);
     }
 
@@ -219,7 +240,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -228,16 +250,18 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长，默认值1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -246,7 +270,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -255,7 +280,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getUseSSD(): bool {
+    public function getUseSSD(): bool
+    {
         return $this->get("UseSSD");
     }
 
@@ -264,7 +290,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD(bool $useSSD) {
+    public function setUseSSD(bool $useSSD)
+    {
         $this->set("UseSSD", $useSSD);
     }
 
@@ -273,7 +300,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -282,9 +310,8 @@ class CreateUDBRouteInstanceRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

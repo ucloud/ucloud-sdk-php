@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
 
-class SetNetworkMaskRequest extends Request {
+class SetNetworkMaskRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "SetNetworkMask"]);
@@ -32,7 +33,8 @@ class SetNetworkMaskRequest extends Request {
      *
      * @return string|null
      */
-    public function getCode(): string {
+    public function getCode(): string
+    {
         return $this->get("Code");
     }
 
@@ -41,7 +43,8 @@ class SetNetworkMaskRequest extends Request {
      *
      * @param string $code
      */
-    public function setCode(string $code) {
+    public function setCode(string $code)
+    {
         $this->set("Code", $code);
     }
 
@@ -50,7 +53,8 @@ class SetNetworkMaskRequest extends Request {
      *
      * @return string|null
      */
-    public function getAPINetworkMask(): string {
+    public function getAPINetworkMask(): string
+    {
         return $this->get("APINetworkMask");
     }
 
@@ -59,7 +63,8 @@ class SetNetworkMaskRequest extends Request {
      *
      * @param string $apiNetworkMask
      */
-    public function setAPINetworkMask(string $apiNetworkMask) {
+    public function setAPINetworkMask(string $apiNetworkMask)
+    {
         $this->set("APINetworkMask", $apiNetworkMask);
     }
 
@@ -68,7 +73,8 @@ class SetNetworkMaskRequest extends Request {
      *
      * @return string|null
      */
-    public function getLoginNetworkMask(): string {
+    public function getLoginNetworkMask(): string
+    {
         return $this->get("LoginNetworkMask");
     }
 
@@ -77,9 +83,8 @@ class SetNetworkMaskRequest extends Request {
      *
      * @param string $loginNetworkMask
      */
-    public function setLoginNetworkMask(string $loginNetworkMask) {
+    public function setLoginNetworkMask(string $loginNetworkMask)
+    {
         $this->set("LoginNetworkMask", $loginNetworkMask);
     }
-
-
 }

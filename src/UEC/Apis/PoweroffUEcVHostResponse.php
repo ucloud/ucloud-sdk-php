@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class PoweroffUEcVHostResponse extends Response {
+class PoweroffUEcVHostResponse extends Response
+{
     
 
 

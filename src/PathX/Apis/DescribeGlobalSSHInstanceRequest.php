@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeGlobalSSHInstanceRequest extends Request {
+class DescribeGlobalSSHInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeGlobalSSHInstance"]);
@@ -32,7 +33,8 @@ class DescribeGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class DescribeGlobalSSHInstanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class DescribeGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceId(): string {
+    public function getInstanceId(): string
+    {
         return $this->get("InstanceId");
     }
 
@@ -59,9 +63,8 @@ class DescribeGlobalSSHInstanceRequest extends Request {
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId) {
+    public function setInstanceId(string $instanceId)
+    {
         $this->set("InstanceId", $instanceId);
     }
-
-
 }

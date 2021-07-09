@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreatePHostParamDisks extends Request {
+class CreatePHostParamDisks extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreatePHostParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getIsBoot(): string {
+    public function getIsBoot(): string
+    {
         return $this->get("IsBoot");
     }
 
@@ -35,7 +37,8 @@ class CreatePHostParamDisks extends Request {
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot) {
+    public function setIsBoot(string $isBoot)
+    {
         $this->set("IsBoot", $isBoot);
     }
 
@@ -44,7 +47,8 @@ class CreatePHostParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -53,16 +57,18 @@ class CreatePHostParamDisks extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
     /**
      * Size: 裸金属机型参数->磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB，数据盘单块盘20-32000GB。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -71,7 +77,8 @@ class CreatePHostParamDisks extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -80,7 +87,8 @@ class CreatePHostParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -89,9 +97,8 @@ class CreatePHostParamDisks extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

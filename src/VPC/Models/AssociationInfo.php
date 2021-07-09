@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class AssociationInfo extends Response {
+class AssociationInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AssociationInfo extends Response {
      *
      * @return string|null
      */
-    public function getAssociationId(): string {
+    public function getAssociationId(): string
+    {
         return $this->get("AssociationId");
     }
 
@@ -35,7 +37,8 @@ class AssociationInfo extends Response {
      *
      * @param string $associationId
      */
-    public function setAssociationId(string $associationId) {
+    public function setAssociationId(string $associationId)
+    {
         $this->set("AssociationId", $associationId);
     }
 
@@ -44,7 +47,8 @@ class AssociationInfo extends Response {
      *
      * @return string|null
      */
-    public function getAclId(): string {
+    public function getAclId(): string
+    {
         return $this->get("AclId");
     }
 
@@ -53,7 +57,8 @@ class AssociationInfo extends Response {
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId) {
+    public function setAclId(string $aclId)
+    {
         $this->set("AclId", $aclId);
     }
 
@@ -62,7 +67,8 @@ class AssociationInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string {
+    public function getSubnetworkId(): string
+    {
         return $this->get("SubnetworkId");
     }
 
@@ -71,16 +77,18 @@ class AssociationInfo extends Response {
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId) {
+    public function setSubnetworkId(string $subnetworkId)
+    {
         $this->set("SubnetworkId", $subnetworkId);
     }
 
     /**
      * CreateTime: 创建的Unix时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -89,9 +97,8 @@ class AssociationInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
-
-
 }

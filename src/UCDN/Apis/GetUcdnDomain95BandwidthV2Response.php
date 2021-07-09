@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetUcdnDomain95BandwidthV2Response extends Response {
+class GetUcdnDomain95BandwidthV2Response extends Response
+{
     
 
     /**
      * Time: 查询时间期间的95带宽时间点  Unix时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,7 +37,8 @@ class GetUcdnDomain95BandwidthV2Response extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
@@ -44,7 +47,8 @@ class GetUcdnDomain95BandwidthV2Response extends Response {
      *
      * @return float|null
      */
-    public function getCdnBandwidth(): float {
+    public function getCdnBandwidth(): float
+    {
         return $this->get("CdnBandwidth");
     }
 
@@ -53,9 +57,8 @@ class GetUcdnDomain95BandwidthV2Response extends Response {
      *
      * @param float $cdnBandwidth
      */
-    public function setCdnBandwidth(float $cdnBandwidth) {
+    public function setCdnBandwidth(float $cdnBandwidth)
+    {
         $this->set("CdnBandwidth", $cdnBandwidth);
     }
-
-
 }

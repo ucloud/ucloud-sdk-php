@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetGlobalSSHPriceRequest extends Request {
+class GetGlobalSSHPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetGlobalSSHPrice"]);
@@ -32,7 +33,8 @@ class GetGlobalSSHPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,16 +43,18 @@ class GetGlobalSSHPriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Quantity: 购买周期，如果ChargeType为Month，Quantity默认为0；其他情况必须为大于0的整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -59,7 +63,8 @@ class GetGlobalSSHPriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -68,7 +73,8 @@ class GetGlobalSSHPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -77,27 +83,28 @@ class GetGlobalSSHPriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
-     * InstanceType: 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。 
+     * InstanceType: 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。
      *
      * @return string|null
      */
-    public function getInstanceType(): string {
+    public function getInstanceType(): string
+    {
         return $this->get("InstanceType");
     }
 
     /**
-     * InstanceType: 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。 
+     * InstanceType: 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType) {
+    public function setInstanceType(string $instanceType)
+    {
         $this->set("InstanceType", $instanceType);
     }
-
-
 }

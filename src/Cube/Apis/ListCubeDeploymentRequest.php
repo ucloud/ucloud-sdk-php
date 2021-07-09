@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ListCubeDeploymentRequest extends Request {
+class ListCubeDeploymentRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ListCubeDeployment"]);
@@ -34,7 +35,8 @@ class ListCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class ListCubeDeploymentRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class ListCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class ListCubeDeploymentRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class ListCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,16 +85,18 @@ class ListCubeDeploymentRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Offset: 默认0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -97,16 +105,18 @@ class ListCubeDeploymentRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 默认20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -115,9 +125,8 @@ class ListCubeDeploymentRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

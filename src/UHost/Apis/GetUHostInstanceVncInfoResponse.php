@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetUHostInstanceVncInfoResponse extends Response {
+class GetUHostInstanceVncInfoResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetUHostInstanceVncInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getUHostId(): string {
+    public function getUHostId(): string
+    {
         return $this->get("UHostId");
     }
 
@@ -35,7 +37,8 @@ class GetUHostInstanceVncInfoResponse extends Response {
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId) {
+    public function setUHostId(string $uHostId)
+    {
         $this->set("UHostId", $uHostId);
     }
 
@@ -44,7 +47,8 @@ class GetUHostInstanceVncInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getVncIP(): string {
+    public function getVncIP(): string
+    {
         return $this->get("VncIP");
     }
 
@@ -53,16 +57,18 @@ class GetUHostInstanceVncInfoResponse extends Response {
      *
      * @param string $vncIP
      */
-    public function setVncIP(string $vncIP) {
+    public function setVncIP(string $vncIP)
+    {
         $this->set("VncIP", $vncIP);
     }
 
     /**
      * VncPort: Vnc登录端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getVncPort(): int {
+    public function getVncPort(): int
+    {
         return $this->get("VncPort");
     }
 
@@ -71,7 +77,8 @@ class GetUHostInstanceVncInfoResponse extends Response {
      *
      * @param int $vncPort
      */
-    public function setVncPort(int $vncPort) {
+    public function setVncPort(int $vncPort)
+    {
         $this->set("VncPort", $vncPort);
     }
 
@@ -80,7 +87,8 @@ class GetUHostInstanceVncInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getVncPassword(): string {
+    public function getVncPassword(): string
+    {
         return $this->get("VncPassword");
     }
 
@@ -89,9 +97,8 @@ class GetUHostInstanceVncInfoResponse extends Response {
      *
      * @param string $vncPassword
      */
-    public function setVncPassword(string $vncPassword) {
+    public function setVncPassword(string $vncPassword)
+    {
         $this->set("VncPassword", $vncPassword);
     }
-
-
 }

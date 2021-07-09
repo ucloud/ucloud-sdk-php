@@ -23,7 +23,8 @@ use UCloud\UPHost\Models\PHostDiskSet;
 use UCloud\UPHost\Models\PHostComponentSet;
 use UCloud\UPHost\Models\PHostClusterSet;
 
-class DescribePHostMachineTypeResponse extends Response {
+class DescribePHostMachineTypeResponse extends Response
+{
     
 
     /**
@@ -31,7 +32,8 @@ class DescribePHostMachineTypeResponse extends Response {
      *
      * @return PHostMachineTypeSet[]|null
      */
-    public function getMachineTypes(): array {
+    public function getMachineTypes(): array
+    {
         $items = $this->get("MachineTypes") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -45,13 +47,12 @@ class DescribePHostMachineTypeResponse extends Response {
      *
      * @param PHostMachineTypeSet[] $machineTypes
      */
-    public function setMachineTypes(array $machineTypes) {
+    public function setMachineTypes(array $machineTypes)
+    {
         $result = [];
         foreach ($machineTypes as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

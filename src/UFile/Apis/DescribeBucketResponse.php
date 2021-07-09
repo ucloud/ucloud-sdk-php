@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UFile\Models\UFileBucketSet;
 use UCloud\UFile\Models\UFileDomainSet;
 
-class DescribeBucketResponse extends Response {
+class DescribeBucketResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeBucketResponse extends Response {
      *
      * @return UFileBucketSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class DescribeBucketResponse extends Response {
      *
      * @param UFileBucketSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

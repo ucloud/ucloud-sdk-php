@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUFileTokenRequest extends Request {
+class DescribeUFileTokenRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUFileToken"]);
@@ -31,7 +32,8 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -40,7 +42,8 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -49,7 +52,8 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -58,7 +62,8 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -67,7 +72,8 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getTokenId(): string {
+    public function getTokenId(): string
+    {
         return $this->get("TokenId");
     }
 
@@ -76,7 +82,8 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @param string $tokenId
      */
-    public function setTokenId(string $tokenId) {
+    public function setTokenId(string $tokenId)
+    {
         $this->set("TokenId", $tokenId);
     }
 
@@ -85,7 +92,8 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getTokenName(): string {
+    public function getTokenName(): string
+    {
         return $this->get("TokenName");
     }
 
@@ -94,16 +102,18 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @param string $tokenName
      */
-    public function setTokenName(string $tokenName) {
+    public function setTokenName(string $tokenName)
+    {
         $this->set("TokenName", $tokenName);
     }
 
     /**
      * Display: 0表示显示部分token信息；不传递和其他情况表示显示全部token信息
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDisplay(): int {
+    public function getDisplay(): int
+    {
         return $this->get("Display");
     }
 
@@ -112,9 +122,8 @@ class DescribeUFileTokenRequest extends Request {
      *
      * @param int $display
      */
-    public function setDisplay(int $display) {
+    public function setDisplay(int $display)
+    {
         $this->set("Display", $display);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ResizeShareBandwidthRequest extends Request {
+class ResizeShareBandwidthRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ResizeShareBandwidth"]);
@@ -34,7 +35,8 @@ class ResizeShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class ResizeShareBandwidthRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class ResizeShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,16 +65,18 @@ class ResizeShareBandwidthRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * ShareBandwidth: 带宽值，单位为Mb，范围 [20-5000] (最大值受地域限制)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getShareBandwidth(): int {
+    public function getShareBandwidth(): int
+    {
         return $this->get("ShareBandwidth");
     }
 
@@ -79,7 +85,8 @@ class ResizeShareBandwidthRequest extends Request {
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth(int $shareBandwidth) {
+    public function setShareBandwidth(int $shareBandwidth)
+    {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
 
@@ -88,7 +95,8 @@ class ResizeShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string {
+    public function getShareBandwidthId(): string
+    {
         return $this->get("ShareBandwidthId");
     }
 
@@ -97,9 +105,8 @@ class ResizeShareBandwidthRequest extends Request {
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId) {
+    public function setShareBandwidthId(string $shareBandwidthId)
+    {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
-
-
 }

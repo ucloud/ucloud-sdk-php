@@ -18,7 +18,8 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class UnetEIPResourceSet extends Response {
+class UnetEIPResourceSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -35,7 +37,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -44,7 +47,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceName(): string {
+    public function getResourceName(): string
+    {
         return $this->get("ResourceName");
     }
 
@@ -53,7 +57,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @param string $resourceName
      */
-    public function setResourceName(string $resourceName) {
+    public function setResourceName(string $resourceName)
+    {
         $this->set("ResourceName", $resourceName);
     }
 
@@ -62,7 +67,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceID(): string {
+    public function getResourceID(): string
+    {
         return $this->get("ResourceID");
     }
 
@@ -71,7 +77,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @param string $resourceID
      */
-    public function setResourceID(string $resourceID) {
+    public function setResourceID(string $resourceID)
+    {
         $this->set("ResourceID", $resourceID);
     }
 
@@ -80,7 +87,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceType(): string {
+    public function getSubResourceType(): string
+    {
         return $this->get("SubResourceType");
     }
 
@@ -89,7 +97,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @param string $subResourceType
      */
-    public function setSubResourceType(string $subResourceType) {
+    public function setSubResourceType(string $subResourceType)
+    {
         $this->set("SubResourceType", $subResourceType);
     }
 
@@ -98,7 +107,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceName(): string {
+    public function getSubResourceName(): string
+    {
         return $this->get("SubResourceName");
     }
 
@@ -107,7 +117,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @param string $subResourceName
      */
-    public function setSubResourceName(string $subResourceName) {
+    public function setSubResourceName(string $subResourceName)
+    {
         $this->set("SubResourceName", $subResourceName);
     }
 
@@ -116,7 +127,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceId(): string {
+    public function getSubResourceId(): string
+    {
         return $this->get("SubResourceId");
     }
 
@@ -125,7 +137,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @param string $subResourceId
      */
-    public function setSubResourceId(string $subResourceId) {
+    public function setSubResourceId(string $subResourceId)
+    {
         $this->set("SubResourceId", $subResourceId);
     }
 
@@ -134,7 +147,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -143,9 +157,8 @@ class UnetEIPResourceSet extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
-
-
 }

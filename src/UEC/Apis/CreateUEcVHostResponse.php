@@ -19,7 +19,8 @@ namespace UCloud\UEC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UEC\Models\NodeList;
 
-class CreateUEcVHostResponse extends Response {
+class CreateUEcVHostResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class CreateUEcVHostResponse extends Response {
      *
      * @return NodeList[]|null
      */
-    public function getNodeList(): array {
+    public function getNodeList(): array
+    {
         $items = $this->get("NodeList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class CreateUEcVHostResponse extends Response {
      *
      * @param NodeList[] $nodeList
      */
-    public function setNodeList(array $nodeList) {
+    public function setNodeList(array $nodeList)
+    {
         $result = [];
         foreach ($nodeList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\UEC\Apis;
 use UCloud\Core\Request\Request;
 use UCloud\UEC\Params\UpdateUEcFirewallParamRule;
 
-class UpdateUEcFirewallRequest extends Request {
+class UpdateUEcFirewallRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateUEcFirewall"]);
@@ -33,7 +34,8 @@ class UpdateUEcFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class UpdateUEcFirewallRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class UpdateUEcFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getFirewallId(): string {
+    public function getFirewallId(): string
+    {
         return $this->get("FirewallId");
     }
 
@@ -60,16 +64,18 @@ class UpdateUEcFirewallRequest extends Request {
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId) {
+    public function setFirewallId(string $firewallId)
+    {
         $this->set("FirewallId", $firewallId);
     }
 
     /**
-     * Rule: 
+     * Rule:
      *
      * @return UpdateUEcFirewallParamRule[]|null
      */
-    public function getRule(): array {
+    public function getRule(): array
+    {
         $items = $this->get("Rule") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -79,17 +85,16 @@ class UpdateUEcFirewallRequest extends Request {
     }
 
     /**
-     * Rule: 
+     * Rule:
      *
      * @param UpdateUEcFirewallParamRule[] $rule
      */
-    public function setRule(array $rule) {
+    public function setRule(array $rule)
+    {
         $result = [];
         foreach ($rule as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

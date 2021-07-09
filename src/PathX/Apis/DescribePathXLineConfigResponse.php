@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\PathX\Models\UGAALine;
 use UCloud\PathX\Models\LineDetail;
 
-class DescribePathXLineConfigResponse extends Response {
+class DescribePathXLineConfigResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribePathXLineConfigResponse extends Response {
      *
      * @return UGAALine[]|null
      */
-    public function getLineSet(): array {
+    public function getLineSet(): array
+    {
         $items = $this->get("LineSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class DescribePathXLineConfigResponse extends Response {
      *
      * @param UGAALine[] $lineSet
      */
-    public function setLineSet(array $lineSet) {
+    public function setLineSet(array $lineSet)
+    {
         $result = [];
         foreach ($lineSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class IpLocationInfo extends Response {
+class IpLocationInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class IpLocationInfo extends Response {
      *
      * @return string|null
      */
-    public function getIp(): string {
+    public function getIp(): string
+    {
         return $this->get("Ip");
     }
 
@@ -35,7 +37,8 @@ class IpLocationInfo extends Response {
      *
      * @param string $ip
      */
-    public function setIp(string $ip) {
+    public function setIp(string $ip)
+    {
         $this->set("Ip", $ip);
     }
 
@@ -44,7 +47,8 @@ class IpLocationInfo extends Response {
      *
      * @return string|null
      */
-    public function getArea(): string {
+    public function getArea(): string
+    {
         return $this->get("Area");
     }
 
@@ -53,7 +57,8 @@ class IpLocationInfo extends Response {
      *
      * @param string $area
      */
-    public function setArea(string $area) {
+    public function setArea(string $area)
+    {
         $this->set("Area", $area);
     }
 
@@ -62,7 +67,8 @@ class IpLocationInfo extends Response {
      *
      * @return string|null
      */
-    public function getIsp(): string {
+    public function getIsp(): string
+    {
         return $this->get("Isp");
     }
 
@@ -71,7 +77,8 @@ class IpLocationInfo extends Response {
      *
      * @param string $isp
      */
-    public function setIsp(string $isp) {
+    public function setIsp(string $isp)
+    {
         $this->set("Isp", $isp);
     }
 
@@ -80,7 +87,8 @@ class IpLocationInfo extends Response {
      *
      * @return string|null
      */
-    public function getCity(): string {
+    public function getCity(): string
+    {
         return $this->get("City");
     }
 
@@ -89,7 +97,8 @@ class IpLocationInfo extends Response {
      *
      * @param string $city
      */
-    public function setCity(string $city) {
+    public function setCity(string $city)
+    {
         $this->set("City", $city);
     }
 
@@ -98,7 +107,8 @@ class IpLocationInfo extends Response {
      *
      * @return boolean|null
      */
-    public function getExist(): bool {
+    public function getExist(): bool
+    {
         return $this->get("Exist");
     }
 
@@ -107,9 +117,8 @@ class IpLocationInfo extends Response {
      *
      * @param boolean $exist
      */
-    public function setExist(bool $exist) {
+    public function setExist(bool $exist)
+    {
         $this->set("Exist", $exist);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
-class VPNTunnelDataSet extends Response {
+class VPNTunnelDataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPNTunnelId(): string {
+    public function getVPNTunnelId(): string
+    {
         return $this->get("VPNTunnelId");
     }
 
@@ -35,7 +37,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $vpnTunnelId
      */
-    public function setVPNTunnelId(string $vpnTunnelId) {
+    public function setVPNTunnelId(string $vpnTunnelId)
+    {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }
 
@@ -44,7 +47,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPNTunnelName(): string {
+    public function getVPNTunnelName(): string
+    {
         return $this->get("VPNTunnelName");
     }
 
@@ -53,7 +57,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $vpnTunnelName
      */
-    public function setVPNTunnelName(string $vpnTunnelName) {
+    public function setVPNTunnelName(string $vpnTunnelName)
+    {
         $this->set("VPNTunnelName", $vpnTunnelName);
     }
 
@@ -62,7 +67,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -71,7 +77,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -80,7 +87,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -89,7 +97,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -98,7 +107,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPNGatewayId(): string {
+    public function getVPNGatewayId(): string
+    {
         return $this->get("VPNGatewayId");
     }
 
@@ -107,7 +117,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId(string $vpnGatewayId) {
+    public function setVPNGatewayId(string $vpnGatewayId)
+    {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
 
@@ -116,7 +127,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayId(): string {
+    public function getRemoteVPNGatewayId(): string
+    {
         return $this->get("RemoteVPNGatewayId");
     }
 
@@ -125,7 +137,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId) {
+    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
+    {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }
 
@@ -134,7 +147,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPNGatewayName(): string {
+    public function getVPNGatewayName(): string
+    {
         return $this->get("VPNGatewayName");
     }
 
@@ -143,7 +157,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $vpnGatewayName
      */
-    public function setVPNGatewayName(string $vpnGatewayName) {
+    public function setVPNGatewayName(string $vpnGatewayName)
+    {
         $this->set("VPNGatewayName", $vpnGatewayName);
     }
 
@@ -152,7 +167,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayName(): string {
+    public function getRemoteVPNGatewayName(): string
+    {
         return $this->get("RemoteVPNGatewayName");
     }
 
@@ -161,7 +177,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $remoteVPNGatewayName
      */
-    public function setRemoteVPNGatewayName(string $remoteVPNGatewayName) {
+    public function setRemoteVPNGatewayName(string $remoteVPNGatewayName)
+    {
         $this->set("RemoteVPNGatewayName", $remoteVPNGatewayName);
     }
 
@@ -170,7 +187,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -179,7 +197,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -188,7 +207,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCName(): string {
+    public function getVPCName(): string
+    {
         return $this->get("VPCName");
     }
 
@@ -197,16 +217,18 @@ class VPNTunnelDataSet extends Response {
      *
      * @param string $vpcName
      */
-    public function setVPCName(string $vpcName) {
+    public function setVPCName(string $vpcName)
+    {
         $this->set("VPCName", $vpcName);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -215,7 +237,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -224,7 +247,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return IKEData|null
      */
-    public function getIKEData(): IKEData {
+    public function getIKEData(): IKEData
+    {
         return new IKEData($this->get("IKEData"));
     }
 
@@ -233,7 +257,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param IKEData $ikeData
      */
-    public function setIKEData(IKEData $ikeData) {
+    public function setIKEData(IKEData $ikeData)
+    {
         $this->set("IKEData", $ikeData->getAll());
     }
 
@@ -242,7 +267,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @return IPSecData|null
      */
-    public function getIPSecData(): IPSecData {
+    public function getIPSecData(): IPSecData
+    {
         return new IPSecData($this->get("IPSecData"));
     }
 
@@ -251,9 +277,8 @@ class VPNTunnelDataSet extends Response {
      *
      * @param IPSecData $ipSecData
      */
-    public function setIPSecData(IPSecData $ipSecData) {
+    public function setIPSecData(IPSecData $ipSecData)
+    {
         $this->set("IPSecData", $ipSecData->getAll());
     }
-
-
 }

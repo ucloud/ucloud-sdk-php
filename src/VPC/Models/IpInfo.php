@@ -18,116 +18,127 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class IpInfo extends Response {
+class IpInfo extends Response
+{
     
 
     /**
-     * Ip: 
+     * Ip:
      *
      * @return string|null
      */
-    public function getIp(): string {
+    public function getIp(): string
+    {
         return $this->get("Ip");
     }
 
     /**
-     * Ip: 
+     * Ip:
      *
      * @param string $ip
      */
-    public function setIp(string $ip) {
+    public function setIp(string $ip)
+    {
         $this->set("Ip", $ip);
     }
 
     /**
-     * Mask: 
+     * Mask:
      *
      * @return string|null
      */
-    public function getMask(): string {
+    public function getMask(): string
+    {
         return $this->get("Mask");
     }
 
     /**
-     * Mask: 
+     * Mask:
      *
      * @param string $mask
      */
-    public function setMask(string $mask) {
+    public function setMask(string $mask)
+    {
         $this->set("Mask", $mask);
     }
 
     /**
-     * Gateway: 
+     * Gateway:
      *
      * @return string|null
      */
-    public function getGateway(): string {
+    public function getGateway(): string
+    {
         return $this->get("Gateway");
     }
 
     /**
-     * Gateway: 
+     * Gateway:
      *
      * @param string $gateway
      */
-    public function setGateway(string $gateway) {
+    public function setGateway(string $gateway)
+    {
         $this->set("Gateway", $gateway);
     }
 
     /**
-     * Mac: 
+     * Mac:
      *
      * @return string|null
      */
-    public function getMac(): string {
+    public function getMac(): string
+    {
         return $this->get("Mac");
     }
 
     /**
-     * Mac: 
+     * Mac:
      *
      * @param string $mac
      */
-    public function setMac(string $mac) {
+    public function setMac(string $mac)
+    {
         $this->set("Mac", $mac);
     }
 
     /**
-     * SubnetId: 
+     * SubnetId:
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
     /**
-     * SubnetId: 
+     * SubnetId:
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
     /**
-     * VPCId: 
+     * VPCId:
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
     /**
-     * VPCId: 
+     * VPCId:
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
-
-
 }

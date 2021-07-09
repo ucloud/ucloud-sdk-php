@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Response\Response;
 
-class FreezeMemberResponse extends Response {
+class FreezeMemberResponse extends Response
+{
     
 
 

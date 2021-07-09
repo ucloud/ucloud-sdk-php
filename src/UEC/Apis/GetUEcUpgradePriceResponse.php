@@ -18,15 +18,17 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetUEcUpgradePriceResponse extends Response {
+class GetUEcUpgradePriceResponse extends Response
+{
     
 
     /**
      * Price: 规格调整差价
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -35,9 +37,8 @@ class GetUEcUpgradePriceResponse extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
-
-
 }

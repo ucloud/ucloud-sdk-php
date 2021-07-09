@@ -134,7 +134,8 @@ use UCloud\UDB\Apis\UploadUDBParamGroupResponse;
 /**
  * This client is used to call actions of **UDB** service
  */
-class UDBClient extends Client {
+class UDBClient extends Client
+{
 
     /**
      * BackupUDBInstance - 备份UDB实例
@@ -162,7 +163,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function backupUDBInstance(BackupUDBInstanceRequest $request = null): BackupUDBInstanceResponse {
+    public function backupUDBInstance(BackupUDBInstanceRequest $request = null): BackupUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new BackupUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -190,7 +192,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function backupUDBInstanceBinlog(BackupUDBInstanceBinlogRequest $request = null): BackupUDBInstanceBinlogResponse {
+    public function backupUDBInstanceBinlog(BackupUDBInstanceBinlogRequest $request = null): BackupUDBInstanceBinlogResponse
+    {
         $resp = $this->invoke($request);
         return new BackupUDBInstanceBinlogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -217,7 +220,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function backupUDBInstanceErrorLog(BackupUDBInstanceErrorLogRequest $request = null): BackupUDBInstanceErrorLogResponse {
+    public function backupUDBInstanceErrorLog(BackupUDBInstanceErrorLogRequest $request = null): BackupUDBInstanceErrorLogResponse
+    {
         $resp = $this->invoke($request);
         return new BackupUDBInstanceErrorLogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -245,7 +249,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogRequest $request = null): BackupUDBInstanceSlowLogResponse {
+    public function backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogRequest $request = null): BackupUDBInstanceSlowLogResponse
+    {
         $resp = $this->invoke($request);
         return new BackupUDBInstanceSlowLogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -272,7 +277,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function changeUDBParamGroup(ChangeUDBParamGroupRequest $request = null): ChangeUDBParamGroupResponse {
+    public function changeUDBParamGroup(ChangeUDBParamGroupRequest $request = null): ChangeUDBParamGroupResponse
+    {
         $resp = $this->invoke($request);
         return new ChangeUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -299,7 +305,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function checkRecoverUDBInstance(CheckRecoverUDBInstanceRequest $request = null): CheckRecoverUDBInstanceResponse {
+    public function checkRecoverUDBInstance(CheckRecoverUDBInstanceRequest $request = null): CheckRecoverUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new CheckRecoverUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -325,7 +332,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function checkUDBInstanceToHAAllowance(CheckUDBInstanceToHAAllowanceRequest $request = null): CheckUDBInstanceToHAAllowanceResponse {
+    public function checkUDBInstanceToHAAllowance(CheckUDBInstanceToHAAllowanceRequest $request = null): CheckUDBInstanceToHAAllowanceResponse
+    {
         $resp = $this->invoke($request);
         return new CheckUDBInstanceToHAAllowanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -353,7 +361,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function clearUDBLog(ClearUDBLogRequest $request = null): ClearUDBLogResponse {
+    public function clearUDBLog(ClearUDBLogRequest $request = null): ClearUDBLogResponse
+    {
         $resp = $this->invoke($request);
         return new ClearUDBLogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -400,7 +409,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createMongoDBReplicaSet(CreateMongoDBReplicaSetRequest $request = null): CreateMongoDBReplicaSetResponse {
+    public function createMongoDBReplicaSet(CreateMongoDBReplicaSetRequest $request = null): CreateMongoDBReplicaSetResponse
+    {
         $resp = $this->invoke($request);
         return new CreateMongoDBReplicaSetResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -454,7 +464,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUDBInstance(CreateUDBInstanceRequest $request = null): CreateUDBInstanceResponse {
+    public function createUDBInstance(CreateUDBInstanceRequest $request = null): CreateUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -491,7 +502,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUDBInstanceByRecovery(CreateUDBInstanceByRecoveryRequest $request = null): CreateUDBInstanceByRecoveryResponse {
+    public function createUDBInstanceByRecovery(CreateUDBInstanceByRecoveryRequest $request = null): CreateUDBInstanceByRecoveryResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDBInstanceByRecoveryResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -522,7 +534,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUDBParamGroup(CreateUDBParamGroupRequest $request = null): CreateUDBParamGroupResponse {
+    public function createUDBParamGroup(CreateUDBParamGroupRequest $request = null): CreateUDBParamGroupResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -554,7 +567,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUDBReplicationInstance(CreateUDBReplicationInstanceRequest $request = null): CreateUDBReplicationInstanceResponse {
+    public function createUDBReplicationInstance(CreateUDBReplicationInstanceRequest $request = null): CreateUDBReplicationInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDBReplicationInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -591,7 +605,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUDBRouteInstance(CreateUDBRouteInstanceRequest $request = null): CreateUDBRouteInstanceResponse {
+    public function createUDBRouteInstance(CreateUDBRouteInstanceRequest $request = null): CreateUDBRouteInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDBRouteInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -633,7 +648,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUDBSlave(CreateUDBSlaveRequest $request = null): CreateUDBSlaveResponse {
+    public function createUDBSlave(CreateUDBSlaveRequest $request = null): CreateUDBSlaveResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDBSlaveResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -660,7 +676,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteUDBInstance(DeleteUDBInstanceRequest $request = null): DeleteUDBInstanceResponse {
+    public function deleteUDBInstance(DeleteUDBInstanceRequest $request = null): DeleteUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -687,7 +704,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteUDBLogPackage(DeleteUDBLogPackageRequest $request = null): DeleteUDBLogPackageResponse {
+    public function deleteUDBLogPackage(DeleteUDBLogPackageRequest $request = null): DeleteUDBLogPackageResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUDBLogPackageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -714,7 +732,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteUDBParamGroup(DeleteUDBParamGroupRequest $request = null): DeleteUDBParamGroupResponse {
+    public function deleteUDBParamGroup(DeleteUDBParamGroupRequest $request = null): DeleteUDBParamGroupResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -761,7 +780,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBBackup(DescribeUDBBackupRequest $request = null): DescribeUDBBackupResponse {
+    public function describeUDBBackup(DescribeUDBBackupRequest $request = null): DescribeUDBBackupResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBBackupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -788,7 +808,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBBackupBlacklist(DescribeUDBBackupBlacklistRequest $request = null): DescribeUDBBackupBlacklistResponse {
+    public function describeUDBBackupBlacklist(DescribeUDBBackupBlacklistRequest $request = null): DescribeUDBBackupBlacklistResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBBackupBlacklistResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -816,7 +837,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBBinlogBackupURL(DescribeUDBBinlogBackupURLRequest $request = null): DescribeUDBBinlogBackupURLResponse {
+    public function describeUDBBinlogBackupURL(DescribeUDBBinlogBackupURLRequest $request = null): DescribeUDBBinlogBackupURLResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBBinlogBackupURLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -936,7 +958,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstance(DescribeUDBInstanceRequest $request = null): DescribeUDBInstanceResponse {
+    public function describeUDBInstance(DescribeUDBInstanceRequest $request = null): DescribeUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -964,7 +987,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstanceBackupState(DescribeUDBInstanceBackupStateRequest $request = null): DescribeUDBInstanceBackupStateResponse {
+    public function describeUDBInstanceBackupState(DescribeUDBInstanceBackupStateRequest $request = null): DescribeUDBInstanceBackupStateResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceBackupStateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -993,7 +1017,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstanceBackupURL(DescribeUDBInstanceBackupURLRequest $request = null): DescribeUDBInstanceBackupURLResponse {
+    public function describeUDBInstanceBackupURL(DescribeUDBInstanceBackupURLRequest $request = null): DescribeUDBInstanceBackupURLResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceBackupURLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1029,7 +1054,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstanceBinlog(DescribeUDBInstanceBinlogRequest $request = null): DescribeUDBInstanceBinlogResponse {
+    public function describeUDBInstanceBinlog(DescribeUDBInstanceBinlogRequest $request = null): DescribeUDBInstanceBinlogResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceBinlogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1057,7 +1083,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstanceBinlogBackupState(DescribeUDBInstanceBinlogBackupStateRequest $request = null): DescribeUDBInstanceBinlogBackupStateResponse {
+    public function describeUDBInstanceBinlogBackupState(DescribeUDBInstanceBinlogBackupStateRequest $request = null): DescribeUDBInstanceBinlogBackupStateResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceBinlogBackupStateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1088,7 +1115,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstanceLog(DescribeUDBInstanceLogRequest $request = null): DescribeUDBInstanceLogResponse {
+    public function describeUDBInstanceLog(DescribeUDBInstanceLogRequest $request = null): DescribeUDBInstanceLogResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceLogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1127,7 +1155,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstancePrice(DescribeUDBInstancePriceRequest $request = null): DescribeUDBInstancePriceResponse {
+    public function describeUDBInstancePrice(DescribeUDBInstancePriceRequest $request = null): DescribeUDBInstancePriceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstancePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1154,7 +1183,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstanceState(DescribeUDBInstanceStateRequest $request = null): DescribeUDBInstanceStateResponse {
+    public function describeUDBInstanceState(DescribeUDBInstanceStateRequest $request = null): DescribeUDBInstanceStateResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceStateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1185,7 +1215,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBInstanceUpgradePrice(DescribeUDBInstanceUpgradePriceRequest $request = null): DescribeUDBInstanceUpgradePriceResponse {
+    public function describeUDBInstanceUpgradePrice(DescribeUDBInstanceUpgradePriceRequest $request = null): DescribeUDBInstanceUpgradePriceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1214,7 +1245,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBLogBackupURL(DescribeUDBLogBackupURLRequest $request = null): DescribeUDBLogBackupURLResponse {
+    public function describeUDBLogBackupURL(DescribeUDBLogBackupURLRequest $request = null): DescribeUDBLogBackupURLResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBLogBackupURLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1261,7 +1293,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBLogPackage(DescribeUDBLogPackageRequest $request = null): DescribeUDBLogPackageResponse {
+    public function describeUDBLogPackage(DescribeUDBLogPackageRequest $request = null): DescribeUDBLogPackageResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBLogPackageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1313,7 +1346,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBParamGroup(DescribeUDBParamGroupRequest $request = null): DescribeUDBParamGroupResponse {
+    public function describeUDBParamGroup(DescribeUDBParamGroupRequest $request = null): DescribeUDBParamGroupResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1355,7 +1389,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBSplittingInfo(DescribeUDBSplittingInfoRequest $request = null): DescribeUDBSplittingInfoResponse {
+    public function describeUDBSplittingInfo(DescribeUDBSplittingInfoRequest $request = null): DescribeUDBSplittingInfoResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBSplittingInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1389,7 +1424,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDBType(DescribeUDBTypeRequest $request = null): DescribeUDBTypeResponse {
+    public function describeUDBType(DescribeUDBTypeRequest $request = null): DescribeUDBTypeResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDBTypeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1414,7 +1450,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function disableUDBRWSplitting(DisableUDBRWSplittingRequest $request = null): DisableUDBRWSplittingResponse {
+    public function disableUDBRWSplitting(DisableUDBRWSplittingRequest $request = null): DisableUDBRWSplittingResponse
+    {
         $resp = $this->invoke($request);
         return new DisableUDBRWSplittingResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1441,7 +1478,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function editUDBBackupBlacklist(EditUDBBackupBlacklistRequest $request = null): EditUDBBackupBlacklistResponse {
+    public function editUDBBackupBlacklist(EditUDBBackupBlacklistRequest $request = null): EditUDBBackupBlacklistResponse
+    {
         $resp = $this->invoke($request);
         return new EditUDBBackupBlacklistResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1469,7 +1507,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function enableUDBRWSplitting(EnableUDBRWSplittingRequest $request = null): EnableUDBRWSplittingResponse {
+    public function enableUDBRWSplitting(EnableUDBRWSplittingRequest $request = null): EnableUDBRWSplittingResponse
+    {
         $resp = $this->invoke($request);
         return new EnableUDBRWSplittingResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1496,7 +1535,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function extractUDBParamGroup(ExtractUDBParamGroupRequest $request = null): ExtractUDBParamGroupResponse {
+    public function extractUDBParamGroup(ExtractUDBParamGroupRequest $request = null): ExtractUDBParamGroupResponse
+    {
         $resp = $this->invoke($request);
         return new ExtractUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1523,7 +1563,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function fetchUDBInstanceEarliestRecoverTime(FetchUDBInstanceEarliestRecoverTimeRequest $request = null): FetchUDBInstanceEarliestRecoverTimeResponse {
+    public function fetchUDBInstanceEarliestRecoverTime(FetchUDBInstanceEarliestRecoverTimeRequest $request = null): FetchUDBInstanceEarliestRecoverTimeResponse
+    {
         $resp = $this->invoke($request);
         return new FetchUDBInstanceEarliestRecoverTimeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1550,7 +1591,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyUDBInstanceName(ModifyUDBInstanceNameRequest $request = null): ModifyUDBInstanceNameResponse {
+    public function modifyUDBInstanceName(ModifyUDBInstanceNameRequest $request = null): ModifyUDBInstanceNameResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyUDBInstanceNameResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1578,7 +1620,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyUDBInstancePassword(ModifyUDBInstancePasswordRequest $request = null): ModifyUDBInstancePasswordResponse {
+    public function modifyUDBInstancePassword(ModifyUDBInstancePasswordRequest $request = null): ModifyUDBInstancePasswordResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyUDBInstancePasswordResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1603,7 +1646,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function promoteUDBInstanceToHA(PromoteUDBInstanceToHARequest $request = null): PromoteUDBInstanceToHAResponse {
+    public function promoteUDBInstanceToHA(PromoteUDBInstanceToHARequest $request = null): PromoteUDBInstanceToHAResponse
+    {
         $resp = $this->invoke($request);
         return new PromoteUDBInstanceToHAResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1630,7 +1674,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function promoteUDBSlave(PromoteUDBSlaveRequest $request = null): PromoteUDBSlaveResponse {
+    public function promoteUDBSlave(PromoteUDBSlaveRequest $request = null): PromoteUDBSlaveResponse
+    {
         $resp = $this->invoke($request);
         return new PromoteUDBSlaveResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1665,7 +1710,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function resizeUDBInstance(ResizeUDBInstanceRequest $request = null): ResizeUDBInstanceResponse {
+    public function resizeUDBInstance(ResizeUDBInstanceRequest $request = null): ResizeUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new ResizeUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1690,7 +1736,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function restartRWSplitting(RestartRWSplittingRequest $request = null): RestartRWSplittingResponse {
+    public function restartRWSplitting(RestartRWSplittingRequest $request = null): RestartRWSplittingResponse
+    {
         $resp = $this->invoke($request);
         return new RestartRWSplittingResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1716,7 +1763,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function restartUDBInstance(RestartUDBInstanceRequest $request = null): RestartUDBInstanceResponse {
+    public function restartUDBInstance(RestartUDBInstanceRequest $request = null): RestartUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new RestartUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1745,7 +1793,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function setUDBRWSplitting(SetUDBRWSplittingRequest $request = null): SetUDBRWSplittingResponse {
+    public function setUDBRWSplitting(SetUDBRWSplittingRequest $request = null): SetUDBRWSplittingResponse
+    {
         $resp = $this->invoke($request);
         return new SetUDBRWSplittingResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1771,7 +1820,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function startUDBInstance(StartUDBInstanceRequest $request = null): StartUDBInstanceResponse {
+    public function startUDBInstance(StartUDBInstanceRequest $request = null): StartUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new StartUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1798,7 +1848,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function stopUDBInstance(StopUDBInstanceRequest $request = null): StopUDBInstanceResponse {
+    public function stopUDBInstance(StopUDBInstanceRequest $request = null): StopUDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new StopUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1824,7 +1875,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest $request = null): SwitchUDBHAToSentinelResponse {
+    public function switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest $request = null): SwitchUDBHAToSentinelResponse
+    {
         $resp = $this->invoke($request);
         return new SwitchUDBHAToSentinelResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1850,7 +1902,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function switchUDBInstanceToHA(SwitchUDBInstanceToHARequest $request = null): SwitchUDBInstanceToHAResponse {
+    public function switchUDBInstanceToHA(SwitchUDBInstanceToHARequest $request = null): SwitchUDBInstanceToHAResponse
+    {
         $resp = $this->invoke($request);
         return new SwitchUDBInstanceToHAResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1880,7 +1933,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateUDBInstanceBackupStrategy(UpdateUDBInstanceBackupStrategyRequest $request = null): UpdateUDBInstanceBackupStrategyResponse {
+    public function updateUDBInstanceBackupStrategy(UpdateUDBInstanceBackupStrategyRequest $request = null): UpdateUDBInstanceBackupStrategyResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateUDBInstanceBackupStrategyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1908,7 +1962,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateUDBInstanceSlaveBackupSwitch(UpdateUDBInstanceSlaveBackupSwitchRequest $request = null): UpdateUDBInstanceSlaveBackupSwitchResponse {
+    public function updateUDBInstanceSlaveBackupSwitch(UpdateUDBInstanceSlaveBackupSwitchRequest $request = null): UpdateUDBInstanceSlaveBackupSwitchResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateUDBInstanceSlaveBackupSwitchResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1939,7 +1994,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateUDBParamGroup(UpdateUDBParamGroupRequest $request = null): UpdateUDBParamGroupResponse {
+    public function updateUDBParamGroup(UpdateUDBParamGroupRequest $request = null): UpdateUDBParamGroupResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1970,7 +2026,8 @@ class UDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function uploadUDBParamGroup(UploadUDBParamGroupRequest $request = null): UploadUDBParamGroupResponse {
+    public function uploadUDBParamGroup(UploadUDBParamGroupRequest $request = null): UploadUDBParamGroupResponse
+    {
         $resp = $this->invoke($request);
         return new UploadUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
     }

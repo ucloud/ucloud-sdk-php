@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\LogSetList;
 use UCloud\UCDN\Models\LogSetInfo;
 
-class GetUcdnDomainLogResponse extends Response {
+class GetUcdnDomainLogResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class GetUcdnDomainLogResponse extends Response {
      *
      * @return LogSetList[]|null
      */
-    public function getLogSet(): array {
+    public function getLogSet(): array
+    {
         $items = $this->get("LogSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class GetUcdnDomainLogResponse extends Response {
      *
      * @param LogSetList[] $logSet
      */
-    public function setLogSet(array $logSet) {
+    public function setLogSet(array $logSet)
+    {
         $result = [];
         foreach ($logSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

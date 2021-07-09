@@ -19,15 +19,17 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\DomainBaseInfo;
 
-class GetUcdnDomainInfoListResponse extends Response {
+class GetUcdnDomainInfoListResponse extends Response
+{
     
 
     /**
      * TotalCount: 账户下域名总个数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -36,7 +38,8 @@ class GetUcdnDomainInfoListResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -45,7 +48,8 @@ class GetUcdnDomainInfoListResponse extends Response {
      *
      * @return DomainBaseInfo[]|null
      */
-    public function getDomainInfoList(): array {
+    public function getDomainInfoList(): array
+    {
         $items = $this->get("DomainInfoList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class GetUcdnDomainInfoListResponse extends Response {
      *
      * @param DomainBaseInfo[] $domainInfoList
      */
-    public function setDomainInfoList(array $domainInfoList) {
+    public function setDomainInfoList(array $domainInfoList)
+    {
         $result = [];
         foreach ($domainInfoList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

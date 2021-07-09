@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class GetPHostPriceParamDisks extends Request {
+class GetPHostPriceParamDisks extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetPHostPriceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getIsBoot(): string {
+    public function getIsBoot(): string
+    {
         return $this->get("IsBoot");
     }
 
@@ -35,7 +37,8 @@ class GetPHostPriceParamDisks extends Request {
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot) {
+    public function setIsBoot(string $isBoot)
+    {
         $this->set("IsBoot", $isBoot);
     }
 
@@ -44,7 +47,8 @@ class GetPHostPriceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -53,7 +57,8 @@ class GetPHostPriceParamDisks extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -62,7 +67,8 @@ class GetPHostPriceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getSize(): string {
+    public function getSize(): string
+    {
         return $this->get("Size");
     }
 
@@ -71,9 +77,8 @@ class GetPHostPriceParamDisks extends Request {
      *
      * @param string $size
      */
-    public function setSize(string $size) {
+    public function setSize(string $size)
+    {
         $this->set("Size", $size);
     }
-
-
 }

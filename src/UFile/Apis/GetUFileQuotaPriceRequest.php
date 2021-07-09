@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUFileQuotaPriceRequest extends Request {
+class GetUFileQuotaPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUFileQuotaPrice"]);
@@ -32,7 +33,8 @@ class GetUFileQuotaPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,16 +43,18 @@ class GetUFileQuotaPriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
     /**
      * StorageVolume: 存储容量，单位: GB*天，范围: [0, 30 000 000]，步长：100GB*天
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStorageVolume(): int {
+    public function getStorageVolume(): int
+    {
         return $this->get("StorageVolume");
     }
 
@@ -59,16 +63,18 @@ class GetUFileQuotaPriceRequest extends Request {
      *
      * @param int $storageVolume
      */
-    public function setStorageVolume(int $storageVolume) {
+    public function setStorageVolume(int $storageVolume)
+    {
         $this->set("StorageVolume", $storageVolume);
     }
 
     /**
      * DownloadTraffic: 下载流量，单位: GB，范围: [0, 60 000]，步长：1GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDownloadTraffic(): int {
+    public function getDownloadTraffic(): int
+    {
         return $this->get("DownloadTraffic");
     }
 
@@ -77,16 +83,18 @@ class GetUFileQuotaPriceRequest extends Request {
      *
      * @param int $downloadTraffic
      */
-    public function setDownloadTraffic(int $downloadTraffic) {
+    public function setDownloadTraffic(int $downloadTraffic)
+    {
         $this->set("DownloadTraffic", $downloadTraffic);
     }
 
     /**
      * RequestCount: 请求次数，单位：万次，范围：[0, 1 000 000]，步长：1万次
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRequestCount(): int {
+    public function getRequestCount(): int
+    {
         return $this->get("RequestCount");
     }
 
@@ -95,9 +103,8 @@ class GetUFileQuotaPriceRequest extends Request {
      *
      * @param int $requestCount
      */
-    public function setRequestCount(int $requestCount) {
+    public function setRequestCount(int $requestCount)
+    {
         $this->set("RequestCount", $requestCount);
     }
-
-
 }

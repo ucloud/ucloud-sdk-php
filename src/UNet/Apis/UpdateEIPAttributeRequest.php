@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateEIPAttributeRequest extends Request {
+class UpdateEIPAttributeRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateEIPAttribute"]);
@@ -33,7 +34,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -78,7 +84,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
@@ -87,7 +94,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -96,7 +104,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -105,7 +114,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -114,7 +124,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -123,7 +134,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -132,9 +144,8 @@ class UpdateEIPAttributeRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

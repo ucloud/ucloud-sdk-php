@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateMongoDBReplicaSetResponse extends Response {
+class CreateMongoDBReplicaSetResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateMongoDBReplicaSetResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getDBIds(): array {
+    public function getDBIds(): array
+    {
         return $this->get("DBIds");
     }
 
@@ -35,9 +37,8 @@ class CreateMongoDBReplicaSetResponse extends Response {
      *
      * @param string[] $dbIds
      */
-    public function setDBIds(array $dbIds) {
+    public function setDBIds(array $dbIds)
+    {
         $this->set("DBIds", $dbIds);
     }
-
-
 }

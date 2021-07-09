@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDBParamGroupRequest extends Request {
+class DescribeUDBParamGroupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDBParamGroup"]);
@@ -32,7 +33,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -59,7 +63,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -68,7 +73,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -77,16 +83,18 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Offset: 分页显示的起始偏移，列表操作则指定
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -95,16 +103,18 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 分页显示的条目数，列表操作则指定
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -113,16 +123,18 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
     /**
      * GroupId: 参数组id，如果指定则获取描述，否则是列表操作，需要 指定Offset/Limit
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getGroupId(): int {
+    public function getGroupId(): int
+    {
         return $this->get("GroupId");
     }
 
@@ -131,7 +143,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId) {
+    public function setGroupId(int $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
@@ -140,7 +153,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getIsInUDBC(): bool {
+    public function getIsInUDBC(): bool
+    {
         return $this->get("IsInUDBC");
     }
 
@@ -149,7 +163,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param boolean $isInUDBC
      */
-    public function setIsInUDBC(bool $isInUDBC) {
+    public function setIsInUDBC(bool $isInUDBC)
+    {
         $this->set("IsInUDBC", $isInUDBC);
     }
 
@@ -158,7 +173,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool {
+    public function getRegionFlag(): bool
+    {
         return $this->get("RegionFlag");
     }
 
@@ -167,7 +183,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag) {
+    public function setRegionFlag(bool $regionFlag)
+    {
         $this->set("RegionFlag", $regionFlag);
     }
 
@@ -176,7 +193,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getClassType(): string {
+    public function getClassType(): string
+    {
         return $this->get("ClassType");
     }
 
@@ -185,9 +203,8 @@ class DescribeUDBParamGroupRequest extends Request {
      *
      * @param string $classType
      */
-    public function setClassType(string $classType) {
+    public function setClassType(string $classType)
+    {
         $this->set("ClassType", $classType);
     }
-
-
 }

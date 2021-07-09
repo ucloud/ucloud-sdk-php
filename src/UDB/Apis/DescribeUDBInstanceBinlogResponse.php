@@ -19,7 +19,8 @@ namespace UCloud\UDB\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDB\Models\UDBInstanceBinlogSet;
 
-class DescribeUDBInstanceBinlogResponse extends Response {
+class DescribeUDBInstanceBinlogResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUDBInstanceBinlogResponse extends Response {
      *
      * @return UDBInstanceBinlogSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUDBInstanceBinlogResponse extends Response {
      *
      * @param UDBInstanceBinlogSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

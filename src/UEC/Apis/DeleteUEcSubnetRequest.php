@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteUEcSubnetRequest extends Request {
+class DeleteUEcSubnetRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteUEcSubnet"]);
@@ -32,7 +33,8 @@ class DeleteUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class DeleteUEcSubnetRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class DeleteUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -59,9 +63,8 @@ class DeleteUEcSubnetRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
-
-
 }

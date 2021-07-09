@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUK8SImageRequest extends Request {
+class DescribeUK8SImageRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUK8SImage"]);
@@ -32,7 +33,8 @@ class DescribeUK8SImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeUK8SImageRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeUK8SImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -59,7 +63,8 @@ class DescribeUK8SImageRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -68,7 +73,8 @@ class DescribeUK8SImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -77,9 +83,8 @@ class DescribeUK8SImageRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
-
-
 }

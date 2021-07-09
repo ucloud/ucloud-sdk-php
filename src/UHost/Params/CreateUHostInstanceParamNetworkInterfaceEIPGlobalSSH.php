@@ -18,7 +18,8 @@ namespace UCloud\UHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request {
+class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request {
      *
      * @return string|null
      */
-    public function getArea(): string {
+    public function getArea(): string
+    {
         return $this->get("Area");
     }
 
@@ -35,16 +37,18 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request {
      *
      * @param string $area
      */
-    public function setArea(string $area) {
+    public function setArea(string $area)
+    {
         $this->set("Area", $area);
     }
 
     /**
      * Port: SSH端口，1-65535且不能使用80，443端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -53,7 +57,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
@@ -62,7 +67,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request {
      *
      * @return string|null
      */
-    public function getAreaCode(): string {
+    public function getAreaCode(): string
+    {
         return $this->get("AreaCode");
     }
 
@@ -71,9 +77,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request {
      *
      * @param string $areaCode
      */
-    public function setAreaCode(string $areaCode) {
+    public function setAreaCode(string $areaCode)
+    {
         $this->set("AreaCode", $areaCode);
     }
-
-
 }

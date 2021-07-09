@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUHostInstanceResponse extends Response {
+class CreateUHostInstanceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUHostInstanceResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getUHostIds(): array {
+    public function getUHostIds(): array
+    {
         return $this->get("UHostIds");
     }
 
@@ -35,7 +37,8 @@ class CreateUHostInstanceResponse extends Response {
      *
      * @param string[] $uHostIds
      */
-    public function setUHostIds(array $uHostIds) {
+    public function setUHostIds(array $uHostIds)
+    {
         $this->set("UHostIds", $uHostIds);
     }
 
@@ -44,7 +47,8 @@ class CreateUHostInstanceResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getIPs(): array {
+    public function getIPs(): array
+    {
         return $this->get("IPs");
     }
 
@@ -53,9 +57,8 @@ class CreateUHostInstanceResponse extends Response {
      *
      * @param string[] $iPs
      */
-    public function setIPs(array $iPs) {
+    public function setIPs(array $iPs)
+    {
         $this->set("IPs", $iPs);
     }
-
-
 }

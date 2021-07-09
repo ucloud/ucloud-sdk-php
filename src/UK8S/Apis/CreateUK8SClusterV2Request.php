@@ -21,7 +21,8 @@ use UCloud\UK8S\Params\CreateUK8SClusterV2ParamMaster;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodes;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamKubeProxy;
 
-class CreateUK8SClusterV2Request extends Request {
+class CreateUK8SClusterV2Request extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUK8SClusterV2"]);
@@ -44,7 +45,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -53,7 +55,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -62,7 +65,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -71,7 +75,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -80,7 +85,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -89,7 +95,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -98,7 +105,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -107,7 +115,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -116,7 +125,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getServiceCIDR(): string {
+    public function getServiceCIDR(): string
+    {
         return $this->get("ServiceCIDR");
     }
 
@@ -125,7 +135,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $serviceCIDR
      */
-    public function setServiceCIDR(string $serviceCIDR) {
+    public function setServiceCIDR(string $serviceCIDR)
+    {
         $this->set("ServiceCIDR", $serviceCIDR);
     }
 
@@ -134,7 +145,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getClusterName(): string {
+    public function getClusterName(): string
+    {
         return $this->get("ClusterName");
     }
 
@@ -143,7 +155,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $clusterName
      */
-    public function setClusterName(string $clusterName) {
+    public function setClusterName(string $clusterName)
+    {
         $this->set("ClusterName", $clusterName);
     }
 
@@ -152,7 +165,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->get("Password");
     }
 
@@ -161,16 +175,18 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->set("Password", $password);
     }
 
     /**
-     * Master: 
+     * Master:
      *
      * @return CreateUK8SClusterV2ParamMaster[]|null
      */
-    public function getMaster(): array {
+    public function getMaster(): array
+    {
         $items = $this->get("Master") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -180,11 +196,12 @@ class CreateUK8SClusterV2Request extends Request {
     }
 
     /**
-     * Master: 
+     * Master:
      *
      * @param CreateUK8SClusterV2ParamMaster[] $master
      */
-    public function setMaster(array $master) {
+    public function setMaster(array $master)
+    {
         $result = [];
         foreach ($master as $i => $item) {
             array_push($result, $item->getAll());
@@ -197,7 +214,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getMasterMachineType(): string {
+    public function getMasterMachineType(): string
+    {
         return $this->get("MasterMachineType");
     }
 
@@ -206,16 +224,18 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $masterMachineType
      */
-    public function setMasterMachineType(string $masterMachineType) {
+    public function setMasterMachineType(string $masterMachineType)
+    {
         $this->set("MasterMachineType", $masterMachineType);
     }
 
     /**
      * MasterCPU: Master节点的虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMasterCPU(): int {
+    public function getMasterCPU(): int
+    {
         return $this->get("MasterCPU");
     }
 
@@ -224,16 +244,18 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param int $masterCPU
      */
-    public function setMasterCPU(int $masterCPU) {
+    public function setMasterCPU(int $masterCPU)
+    {
         $this->set("MasterCPU", $masterCPU);
     }
 
     /**
      * MasterMem: Master节点的内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMasterMem(): int {
+    public function getMasterMem(): int
+    {
         return $this->get("MasterMem");
     }
 
@@ -242,16 +264,18 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param int $masterMem
      */
-    public function setMasterMem(int $masterMem) {
+    public function setMasterMem(int $masterMem)
+    {
         $this->set("MasterMem", $masterMem);
     }
 
     /**
-     * Nodes: 
+     * Nodes:
      *
      * @return CreateUK8SClusterV2ParamNodes[]|null
      */
-    public function getNodes(): array {
+    public function getNodes(): array
+    {
         $items = $this->get("Nodes") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -261,11 +285,12 @@ class CreateUK8SClusterV2Request extends Request {
     }
 
     /**
-     * Nodes: 
+     * Nodes:
      *
      * @param CreateUK8SClusterV2ParamNodes[] $nodes
      */
-    public function setNodes(array $nodes) {
+    public function setNodes(array $nodes)
+    {
         $result = [];
         foreach ($nodes as $i => $item) {
             array_push($result, $item->getAll());
@@ -278,7 +303,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getMasterBootDiskType(): string {
+    public function getMasterBootDiskType(): string
+    {
         return $this->get("MasterBootDiskType");
     }
 
@@ -287,7 +313,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $masterBootDiskType
      */
-    public function setMasterBootDiskType(string $masterBootDiskType) {
+    public function setMasterBootDiskType(string $masterBootDiskType)
+    {
         $this->set("MasterBootDiskType", $masterBootDiskType);
     }
 
@@ -296,7 +323,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getMasterDataDiskType(): string {
+    public function getMasterDataDiskType(): string
+    {
         return $this->get("MasterDataDiskType");
     }
 
@@ -305,7 +333,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $masterDataDiskType
      */
-    public function setMasterDataDiskType(string $masterDataDiskType) {
+    public function setMasterDataDiskType(string $masterDataDiskType)
+    {
         $this->set("MasterDataDiskType", $masterDataDiskType);
     }
 
@@ -314,7 +343,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getMasterMinmalCpuPlatform(): string {
+    public function getMasterMinmalCpuPlatform(): string
+    {
         return $this->get("MasterMinmalCpuPlatform");
     }
 
@@ -323,16 +353,18 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $masterMinmalCpuPlatform
      */
-    public function setMasterMinmalCpuPlatform(string $masterMinmalCpuPlatform) {
+    public function setMasterMinmalCpuPlatform(string $masterMinmalCpuPlatform)
+    {
         $this->set("MasterMinmalCpuPlatform", $masterMinmalCpuPlatform);
     }
 
     /**
      * MasterDataDiskSize: Master节点的数据盘大小，单位GB，默认为0。范围 ：[20, 1000]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMasterDataDiskSize(): int {
+    public function getMasterDataDiskSize(): int
+    {
         return $this->get("MasterDataDiskSize");
     }
 
@@ -341,7 +373,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param int $masterDataDiskSize
      */
-    public function setMasterDataDiskSize(int $masterDataDiskSize) {
+    public function setMasterDataDiskSize(int $masterDataDiskSize)
+    {
         $this->set("MasterDataDiskSize", $masterDataDiskSize);
     }
 
@@ -350,7 +383,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -359,7 +393,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -368,7 +403,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getK8sVersion(): string {
+    public function getK8sVersion(): string
+    {
         return $this->get("K8sVersion");
     }
 
@@ -377,16 +413,18 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $k8sVersion
      */
-    public function setK8sVersion(string $k8sVersion) {
+    public function setK8sVersion(string $k8sVersion)
+    {
         $this->set("K8sVersion", $k8sVersion);
     }
 
     /**
      * Quantity: 购买时长。默认为1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -395,7 +433,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -404,7 +443,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getExternalApiServer(): string {
+    public function getExternalApiServer(): string
+    {
         return $this->get("ExternalApiServer");
     }
 
@@ -413,7 +453,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $externalApiServer
      */
-    public function setExternalApiServer(string $externalApiServer) {
+    public function setExternalApiServer(string $externalApiServer)
+    {
         $this->set("ExternalApiServer", $externalApiServer);
     }
 
@@ -422,7 +463,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getMasterIsolationGroup(): string {
+    public function getMasterIsolationGroup(): string
+    {
         return $this->get("MasterIsolationGroup");
     }
 
@@ -431,25 +473,28 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $masterIsolationGroup
      */
-    public function setMasterIsolationGroup(string $masterIsolationGroup) {
+    public function setMasterIsolationGroup(string $masterIsolationGroup)
+    {
         $this->set("MasterIsolationGroup", $masterIsolationGroup);
     }
 
     /**
-     * KubeProxy: 
+     * KubeProxy:
      *
      * @return CreateUK8SClusterV2ParamKubeProxy|null
      */
-    public function getKubeProxy(): CreateUK8SClusterV2ParamKubeProxy {
+    public function getKubeProxy(): CreateUK8SClusterV2ParamKubeProxy
+    {
         return new CreateUK8SClusterV2ParamKubeProxy($this->get("KubeProxy"));
     }
 
     /**
-     * KubeProxy: 
+     * KubeProxy:
      *
      * @param CreateUK8SClusterV2ParamKubeProxy $kubeProxy
      */
-    public function setKubeProxy(CreateUK8SClusterV2ParamKubeProxy $kubeProxy) {
+    public function setKubeProxy(CreateUK8SClusterV2ParamKubeProxy $kubeProxy)
+    {
         $this->set("KubeProxy", $kubeProxy->getAll());
     }
 
@@ -458,7 +503,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -467,7 +513,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
@@ -476,7 +523,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getUserData(): string {
+    public function getUserData(): string
+    {
         return $this->get("UserData");
     }
 
@@ -485,7 +533,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $userData
      */
-    public function setUserData(string $userData) {
+    public function setUserData(string $userData)
+    {
         $this->set("UserData", $userData);
     }
 
@@ -494,7 +543,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @return string|null
      */
-    public function getInitScript(): string {
+    public function getInitScript(): string
+    {
         return $this->get("InitScript");
     }
 
@@ -503,9 +553,8 @@ class CreateUK8SClusterV2Request extends Request {
      *
      * @param string $initScript
      */
-    public function setInitScript(string $initScript) {
+    public function setInitScript(string $initScript)
+    {
         $this->set("InitScript", $initScript);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeShareBandwidthRequest extends Request {
+class DescribeShareBandwidthRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeShareBandwidth"]);
@@ -32,7 +33,8 @@ class DescribeShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeShareBandwidthRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,7 +63,8 @@ class DescribeShareBandwidthRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -68,7 +73,8 @@ class DescribeShareBandwidthRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getShareBandwidthIds(): array {
+    public function getShareBandwidthIds(): array
+    {
         return $this->get("ShareBandwidthIds");
     }
 
@@ -77,9 +83,8 @@ class DescribeShareBandwidthRequest extends Request {
      *
      * @param string[] $shareBandwidthIds
      */
-    public function setShareBandwidthIds(array $shareBandwidthIds) {
+    public function setShareBandwidthIds(array $shareBandwidthIds)
+    {
         $this->set("ShareBandwidthIds", $shareBandwidthIds);
     }
-
-
 }

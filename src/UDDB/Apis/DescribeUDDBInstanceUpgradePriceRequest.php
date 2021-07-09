@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDDBInstanceUpgradePriceRequest extends Request {
+class DescribeUDDBInstanceUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDDBInstanceUpgradePrice"]);
@@ -37,7 +38,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -46,7 +48,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -55,7 +58,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -64,7 +68,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -73,7 +78,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -82,7 +88,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -91,7 +98,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDDBId(): string {
+    public function getUDDBId(): string
+    {
         return $this->get("UDDBId");
     }
 
@@ -100,7 +108,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $uddbId
      */
-    public function setUDDBId(string $uddbId) {
+    public function setUDDBId(string $uddbId)
+    {
         $this->set("UDDBId", $uddbId);
     }
 
@@ -109,7 +118,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRouterVersion(): string {
+    public function getRouterVersion(): string
+    {
         return $this->get("RouterVersion");
     }
 
@@ -118,16 +128,18 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $routerVersion
      */
-    public function setRouterVersion(string $routerVersion) {
+    public function setRouterVersion(string $routerVersion)
+    {
         $this->set("RouterVersion", $routerVersion);
     }
 
     /**
      * RouterNodeNum: 其他版本：该参数可不填；专享版：物理机节点的个数。一台物理机有2个节点
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRouterNodeNum(): int {
+    public function getRouterNodeNum(): int
+    {
         return $this->get("RouterNodeNum");
     }
 
@@ -136,16 +148,18 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param int $routerNodeNum
      */
-    public function setRouterNodeNum(int $routerNodeNum) {
+    public function setRouterNodeNum(int $routerNodeNum)
+    {
         $this->set("RouterNodeNum", $routerNodeNum);
     }
 
     /**
      * DataNodeCount: 新的数据节点个数 取值必须>0.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeCount(): int {
+    public function getDataNodeCount(): int
+    {
         return $this->get("DataNodeCount");
     }
 
@@ -154,16 +168,18 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param int $dataNodeCount
      */
-    public function setDataNodeCount(int $dataNodeCount) {
+    public function setDataNodeCount(int $dataNodeCount)
+    {
         $this->set("DataNodeCount", $dataNodeCount);
     }
 
     /**
      * DataNodeMemory: 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeMemory(): int {
+    public function getDataNodeMemory(): int
+    {
         return $this->get("DataNodeMemory");
     }
 
@@ -172,16 +188,18 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory(int $dataNodeMemory) {
+    public function setDataNodeMemory(int $dataNodeMemory)
+    {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
 
     /**
      * DataNodeDiskSpace: 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeDiskSpace(): int {
+    public function getDataNodeDiskSpace(): int
+    {
         return $this->get("DataNodeDiskSpace");
     }
 
@@ -190,16 +208,18 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace(int $dataNodeDiskSpace) {
+    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
+    {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
 
     /**
      * DataNodeSlaveCount: 每个数据节点的只读实例个数, 取值必须>=0.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeSlaveCount(): int {
+    public function getDataNodeSlaveCount(): int
+    {
         return $this->get("DataNodeSlaveCount");
     }
 
@@ -208,7 +228,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param int $dataNodeSlaveCount
      */
-    public function setDataNodeSlaveCount(int $dataNodeSlaveCount) {
+    public function setDataNodeSlaveCount(int $dataNodeSlaveCount)
+    {
         $this->set("DataNodeSlaveCount", $dataNodeSlaveCount);
     }
 
@@ -217,7 +238,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceMode(): string {
+    public function getInstanceMode(): string
+    {
         return $this->get("InstanceMode");
     }
 
@@ -226,7 +248,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode(string $instanceMode) {
+    public function setInstanceMode(string $instanceMode)
+    {
         $this->set("InstanceMode", $instanceMode);
     }
 
@@ -235,7 +258,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceType(): string {
+    public function getInstanceType(): string
+    {
         return $this->get("InstanceType");
     }
 
@@ -244,9 +268,8 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType) {
+    public function setInstanceType(string $instanceType)
+    {
         $this->set("InstanceType", $instanceType);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateNATGWPolicyResponse extends Response {
+class CreateNATGWPolicyResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateNATGWPolicyResponse extends Response {
      *
      * @return string|null
      */
-    public function getPolicyId(): string {
+    public function getPolicyId(): string
+    {
         return $this->get("PolicyId");
     }
 
@@ -35,9 +37,8 @@ class CreateNATGWPolicyResponse extends Response {
      *
      * @param string $policyId
      */
-    public function setPolicyId(string $policyId) {
+    public function setPolicyId(string $policyId)
+    {
         $this->set("PolicyId", $policyId);
     }
-
-
 }

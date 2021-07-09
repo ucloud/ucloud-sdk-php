@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUEcFirewallResponse extends Response {
+class CreateUEcFirewallResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUEcFirewallResponse extends Response {
      *
      * @return string|null
      */
-    public function getFirewallId(): string {
+    public function getFirewallId(): string
+    {
         return $this->get("FirewallId");
     }
 
@@ -35,9 +37,8 @@ class CreateUEcFirewallResponse extends Response {
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId) {
+    public function setFirewallId(string $firewallId)
+    {
         $this->set("FirewallId", $firewallId);
     }
-
-
 }

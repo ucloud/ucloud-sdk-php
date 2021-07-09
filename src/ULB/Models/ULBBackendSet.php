@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class ULBBackendSet extends Response {
+class ULBBackendSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getBackendId(): string {
+    public function getBackendId(): string
+    {
         return $this->get("BackendId");
     }
 
@@ -35,7 +37,8 @@ class ULBBackendSet extends Response {
      *
      * @param string $backendId
      */
-    public function setBackendId(string $backendId) {
+    public function setBackendId(string $backendId)
+    {
         $this->set("BackendId", $backendId);
     }
 
@@ -44,7 +47,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -53,7 +57,8 @@ class ULBBackendSet extends Response {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -62,7 +67,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -71,7 +77,8 @@ class ULBBackendSet extends Response {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
@@ -80,7 +87,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceName(): string {
+    public function getResourceName(): string
+    {
         return $this->get("ResourceName");
     }
 
@@ -89,7 +97,8 @@ class ULBBackendSet extends Response {
      *
      * @param string $resourceName
      */
-    public function setResourceName(string $resourceName) {
+    public function setResourceName(string $resourceName)
+    {
         $this->set("ResourceName", $resourceName);
     }
 
@@ -98,7 +107,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceType(): string {
+    public function getSubResourceType(): string
+    {
         return $this->get("SubResourceType");
     }
 
@@ -107,7 +117,8 @@ class ULBBackendSet extends Response {
      *
      * @param string $subResourceType
      */
-    public function setSubResourceType(string $subResourceType) {
+    public function setSubResourceType(string $subResourceType)
+    {
         $this->set("SubResourceType", $subResourceType);
     }
 
@@ -116,7 +127,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceId(): string {
+    public function getSubResourceId(): string
+    {
         return $this->get("SubResourceId");
     }
 
@@ -125,7 +137,8 @@ class ULBBackendSet extends Response {
      *
      * @param string $subResourceId
      */
-    public function setSubResourceId(string $subResourceId) {
+    public function setSubResourceId(string $subResourceId)
+    {
         $this->set("SubResourceId", $subResourceId);
     }
 
@@ -134,7 +147,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceName(): string {
+    public function getSubResourceName(): string
+    {
         return $this->get("SubResourceName");
     }
 
@@ -143,7 +157,8 @@ class ULBBackendSet extends Response {
      *
      * @param string $subResourceName
      */
-    public function setSubResourceName(string $subResourceName) {
+    public function setSubResourceName(string $subResourceName)
+    {
         $this->set("SubResourceName", $subResourceName);
     }
 
@@ -152,7 +167,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getPrivateIP(): string {
+    public function getPrivateIP(): string
+    {
         return $this->get("PrivateIP");
     }
 
@@ -161,16 +177,18 @@ class ULBBackendSet extends Response {
      *
      * @param string $privateIP
      */
-    public function setPrivateIP(string $privateIP) {
+    public function setPrivateIP(string $privateIP)
+    {
         $this->set("PrivateIP", $privateIP);
     }
 
     /**
      * Port: 后端提供服务的端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -179,16 +197,18 @@ class ULBBackendSet extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
     /**
      * Enabled: 后端提供服务的实例启用与否，枚举值：0 禁用 1 启用
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEnabled(): int {
+    public function getEnabled(): int
+    {
         return $this->get("Enabled");
     }
 
@@ -197,16 +217,18 @@ class ULBBackendSet extends Response {
      *
      * @param int $enabled
      */
-    public function setEnabled(int $enabled) {
+    public function setEnabled(int $enabled)
+    {
         $this->set("Enabled", $enabled);
     }
 
     /**
      * Status: 后端提供服务的实例运行状态，枚举值：0健康检查健康状态 1 健康检查异常
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStatus(): int {
+    public function getStatus(): int
+    {
         return $this->get("Status");
     }
 
@@ -215,7 +237,8 @@ class ULBBackendSet extends Response {
      *
      * @param int $status
      */
-    public function setStatus(int $status) {
+    public function setStatus(int $status)
+    {
         $this->set("Status", $status);
     }
 
@@ -224,7 +247,8 @@ class ULBBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -233,16 +257,18 @@ class ULBBackendSet extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
     /**
      * IsBackup: 是否为backup，只有当vserver的Backup属性为1时才会有此字段，说明：0：主rs1：备rs
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getIsBackup(): int {
+    public function getIsBackup(): int
+    {
         return $this->get("IsBackup");
     }
 
@@ -251,9 +277,8 @@ class ULBBackendSet extends Response {
      *
      * @param int $isBackup
      */
-    public function setIsBackup(int $isBackup) {
+    public function setIsBackup(int $isBackup)
+    {
         $this->set("IsBackup", $isBackup);
     }
-
-
 }

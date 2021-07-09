@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class UGAAInfo extends Response {
+class UGAAInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UGAAInfo extends Response {
      *
      * @return string|null
      */
-    public function getUGAId(): string {
+    public function getUGAId(): string
+    {
         return $this->get("UGAId");
     }
 
@@ -35,7 +37,8 @@ class UGAAInfo extends Response {
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId) {
+    public function setUGAId(string $ugaId)
+    {
         $this->set("UGAId", $ugaId);
     }
 
@@ -44,7 +47,8 @@ class UGAAInfo extends Response {
      *
      * @return string|null
      */
-    public function getCName(): string {
+    public function getCName(): string
+    {
         return $this->get("CName");
     }
 
@@ -53,7 +57,8 @@ class UGAAInfo extends Response {
      *
      * @param string $cName
      */
-    public function setCName(string $cName) {
+    public function setCName(string $cName)
+    {
         $this->set("CName", $cName);
     }
 
@@ -62,7 +67,8 @@ class UGAAInfo extends Response {
      *
      * @return string|null
      */
-    public function getUGAName(): string {
+    public function getUGAName(): string
+    {
         return $this->get("UGAName");
     }
 
@@ -71,7 +77,8 @@ class UGAAInfo extends Response {
      *
      * @param string $ugaName
      */
-    public function setUGAName(string $ugaName) {
+    public function setUGAName(string $ugaName)
+    {
         $this->set("UGAName", $ugaName);
     }
 
@@ -80,7 +87,8 @@ class UGAAInfo extends Response {
      *
      * @return string[]|null
      */
-    public function getIPList(): array {
+    public function getIPList(): array
+    {
         return $this->get("IPList");
     }
 
@@ -89,7 +97,8 @@ class UGAAInfo extends Response {
      *
      * @param string[] $ipList
      */
-    public function setIPList(array $ipList) {
+    public function setIPList(array $ipList)
+    {
         $this->set("IPList", $ipList);
     }
 
@@ -98,7 +107,8 @@ class UGAAInfo extends Response {
      *
      * @return string|null
      */
-    public function getDomain(): string {
+    public function getDomain(): string
+    {
         return $this->get("Domain");
     }
 
@@ -107,7 +117,8 @@ class UGAAInfo extends Response {
      *
      * @param string $domain
      */
-    public function setDomain(string $domain) {
+    public function setDomain(string $domain)
+    {
         $this->set("Domain", $domain);
     }
 
@@ -116,7 +127,8 @@ class UGAAInfo extends Response {
      *
      * @return string|null
      */
-    public function getLocation(): string {
+    public function getLocation(): string
+    {
         return $this->get("Location");
     }
 
@@ -125,7 +137,8 @@ class UGAAInfo extends Response {
      *
      * @param string $location
      */
-    public function setLocation(string $location) {
+    public function setLocation(string $location)
+    {
         $this->set("Location", $location);
     }
 
@@ -134,7 +147,8 @@ class UGAAInfo extends Response {
      *
      * @return UPathSet[]|null
      */
-    public function getUPathSet(): array {
+    public function getUPathSet(): array
+    {
         $items = $this->get("UPathSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -148,7 +162,8 @@ class UGAAInfo extends Response {
      *
      * @param UPathSet[] $uPathSet
      */
-    public function setUPathSet(array $uPathSet) {
+    public function setUPathSet(array $uPathSet)
+    {
         $result = [];
         foreach ($uPathSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -161,7 +176,8 @@ class UGAAInfo extends Response {
      *
      * @return UGAATask[]|null
      */
-    public function getTaskSet(): array {
+    public function getTaskSet(): array
+    {
         $items = $this->get("TaskSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -175,7 +191,8 @@ class UGAAInfo extends Response {
      *
      * @param UGAATask[] $taskSet
      */
-    public function setTaskSet(array $taskSet) {
+    public function setTaskSet(array $taskSet)
+    {
         $result = [];
         foreach ($taskSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -188,7 +205,8 @@ class UGAAInfo extends Response {
      *
      * @return UGAL4Forwarder[]|null
      */
-    public function getL4ForwarderSet(): array {
+    public function getL4ForwarderSet(): array
+    {
         $items = $this->get("L4ForwarderSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -202,7 +220,8 @@ class UGAAInfo extends Response {
      *
      * @param UGAL4Forwarder[] $l4ForwarderSet
      */
-    public function setL4ForwarderSet(array $l4ForwarderSet) {
+    public function setL4ForwarderSet(array $l4ForwarderSet)
+    {
         $result = [];
         foreach ($l4ForwarderSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -215,7 +234,8 @@ class UGAAInfo extends Response {
      *
      * @return UGAL7Forwarder[]|null
      */
-    public function getL7ForwarderSet(): array {
+    public function getL7ForwarderSet(): array
+    {
         $items = $this->get("L7ForwarderSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -229,7 +249,8 @@ class UGAAInfo extends Response {
      *
      * @param UGAL7Forwarder[] $l7ForwarderSet
      */
-    public function setL7ForwarderSet(array $l7ForwarderSet) {
+    public function setL7ForwarderSet(array $l7ForwarderSet)
+    {
         $result = [];
         foreach ($l7ForwarderSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -242,7 +263,8 @@ class UGAAInfo extends Response {
      *
      * @return OutPublicIpInfo[]|null
      */
-    public function getOutPublicIpList(): array {
+    public function getOutPublicIpList(): array
+    {
         $items = $this->get("OutPublicIpList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -256,13 +278,12 @@ class UGAAInfo extends Response {
      *
      * @param OutPublicIpInfo[] $outPublicIpList
      */
-    public function setOutPublicIpList(array $outPublicIpList) {
+    public function setOutPublicIpList(array $outPublicIpList)
+    {
         $result = [];
         foreach ($outPublicIpList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

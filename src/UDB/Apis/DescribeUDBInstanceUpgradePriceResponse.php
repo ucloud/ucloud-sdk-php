@@ -18,15 +18,17 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DescribeUDBInstanceUpgradePriceResponse extends Response {
+class DescribeUDBInstanceUpgradePriceResponse extends Response
+{
     
 
     /**
      * Price: 价格，单位为分
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -35,9 +37,8 @@ class DescribeUDBInstanceUpgradePriceResponse extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
-
-
 }

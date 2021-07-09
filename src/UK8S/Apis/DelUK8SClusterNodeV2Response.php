@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DelUK8SClusterNodeV2Response extends Response {
+class DelUK8SClusterNodeV2Response extends Response
+{
     
 
 

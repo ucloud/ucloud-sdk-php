@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateBucketRequest extends Request {
+class CreateBucketRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateBucket"]);
@@ -33,7 +34,8 @@ class CreateBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class CreateBucketRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class CreateBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class CreateBucketRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class CreateBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getBucketName(): string {
+    public function getBucketName(): string
+    {
         return $this->get("BucketName");
     }
 
@@ -78,7 +84,8 @@ class CreateBucketRequest extends Request {
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName) {
+    public function setBucketName(string $bucketName)
+    {
         $this->set("BucketName", $bucketName);
     }
 
@@ -87,7 +94,8 @@ class CreateBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -96,9 +104,8 @@ class CreateBucketRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
-
-
 }

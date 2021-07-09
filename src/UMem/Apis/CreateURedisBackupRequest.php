@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateURedisBackupRequest extends Request {
+class CreateURedisBackupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateURedisBackup"]);
@@ -34,7 +35,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -97,7 +105,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
@@ -106,7 +115,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackupName(): string {
+    public function getBackupName(): string
+    {
         return $this->get("BackupName");
     }
 
@@ -115,7 +125,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @param string $backupName
      */
-    public function setBackupName(string $backupName) {
+    public function setBackupName(string $backupName)
+    {
         $this->set("BackupName", $backupName);
     }
 
@@ -124,7 +135,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getSlaveZone(): string {
+    public function getSlaveZone(): string
+    {
         return $this->get("SlaveZone");
     }
 
@@ -133,9 +145,8 @@ class CreateURedisBackupRequest extends Request {
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone(string $slaveZone) {
+    public function setSlaveZone(string $slaveZone)
+    {
         $this->set("SlaveZone", $slaveZone);
     }
-
-
 }

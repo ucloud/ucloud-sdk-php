@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUMemcacheUpgradePriceRequest extends Request {
+class DescribeUMemcacheUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUMemcacheUpgradePrice"]);
@@ -31,9 +32,10 @@ class DescribeUMemcacheUpgradePriceRequest extends Request {
     /**
      * Size: 购买umemcache大小,单位:GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -42,7 +44,8 @@ class DescribeUMemcacheUpgradePriceRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -51,7 +54,8 @@ class DescribeUMemcacheUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -60,9 +64,8 @@ class DescribeUMemcacheUpgradePriceRequest extends Request {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
-
-
 }

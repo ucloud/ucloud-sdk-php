@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class SetUFileRefererRequest extends Request {
+class SetUFileRefererRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "SetUFileReferer"]);
@@ -33,7 +34,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @return string|null
      */
-    public function getBucketName(): string {
+    public function getBucketName(): string
+    {
         return $this->get("BucketName");
     }
 
@@ -78,7 +84,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName) {
+    public function setBucketName(string $bucketName)
+    {
         $this->set("BucketName", $bucketName);
     }
 
@@ -87,7 +94,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @return string|null
      */
-    public function getRefererStatus(): string {
+    public function getRefererStatus(): string
+    {
         return $this->get("RefererStatus");
     }
 
@@ -96,34 +104,38 @@ class SetUFileRefererRequest extends Request {
      *
      * @param string $refererStatus
      */
-    public function setRefererStatus(string $refererStatus) {
+    public function setRefererStatus(string $refererStatus)
+    {
         $this->set("RefererStatus", $refererStatus);
     }
 
     /**
-     * RefererAllowNull: RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true; 
+     * RefererAllowNull: RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true;
      *
      * @return boolean|null
      */
-    public function getRefererAllowNull(): bool {
+    public function getRefererAllowNull(): bool
+    {
         return $this->get("RefererAllowNull");
     }
 
     /**
-     * RefererAllowNull: RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true; 
+     * RefererAllowNull: RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true;
      *
      * @param boolean $refererAllowNull
      */
-    public function setRefererAllowNull(bool $refererAllowNull) {
+    public function setRefererAllowNull(bool $refererAllowNull)
+    {
         $this->set("RefererAllowNull", $refererAllowNull);
     }
 
     /**
      * RefererType: 防盗链Referer类型，支持两种类型，黑名单和白名单; 1黑名单，2白名单；RefererStatus为"on"时此参数必填；
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRefererType(): int {
+    public function getRefererType(): int
+    {
         return $this->get("RefererType");
     }
 
@@ -132,7 +144,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @param int $refererType
      */
-    public function setRefererType(int $refererType) {
+    public function setRefererType(int $refererType)
+    {
         $this->set("RefererType", $refererType);
     }
 
@@ -141,7 +154,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getReferers(): array {
+    public function getReferers(): array
+    {
         return $this->get("Referers");
     }
 
@@ -150,9 +164,8 @@ class SetUFileRefererRequest extends Request {
      *
      * @param string[] $referers
      */
-    public function setReferers(array $referers) {
+    public function setReferers(array $referers)
+    {
         $this->set("Referers", $referers);
     }
-
-
 }

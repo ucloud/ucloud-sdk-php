@@ -18,15 +18,17 @@ namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
-class UFileReportSet extends Response {
+class UFileReportSet extends Response
+{
     
 
     /**
      * Time: 配额消费时间，unix时间戳，精确到日期
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,7 +37,8 @@ class UFileReportSet extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
@@ -44,7 +47,8 @@ class UFileReportSet extends Response {
      *
      * @return float|null
      */
-    public function getStorageVolume(): float {
+    public function getStorageVolume(): float
+    {
         return $this->get("StorageVolume");
     }
 
@@ -53,7 +57,8 @@ class UFileReportSet extends Response {
      *
      * @param float $storageVolume
      */
-    public function setStorageVolume(float $storageVolume) {
+    public function setStorageVolume(float $storageVolume)
+    {
         $this->set("StorageVolume", $storageVolume);
     }
 
@@ -62,7 +67,8 @@ class UFileReportSet extends Response {
      *
      * @return float|null
      */
-    public function getDownloadTraffic(): float {
+    public function getDownloadTraffic(): float
+    {
         return $this->get("DownloadTraffic");
     }
 
@@ -71,7 +77,8 @@ class UFileReportSet extends Response {
      *
      * @param float $downloadTraffic
      */
-    public function setDownloadTraffic(float $downloadTraffic) {
+    public function setDownloadTraffic(float $downloadTraffic)
+    {
         $this->set("DownloadTraffic", $downloadTraffic);
     }
 
@@ -80,7 +87,8 @@ class UFileReportSet extends Response {
      *
      * @return float|null
      */
-    public function getRequestCount(): float {
+    public function getRequestCount(): float
+    {
         return $this->get("RequestCount");
     }
 
@@ -89,9 +97,8 @@ class UFileReportSet extends Response {
      *
      * @param float $requestCount
      */
-    public function setRequestCount(float $requestCount) {
+    public function setRequestCount(float $requestCount)
+    {
         $this->set("RequestCount", $requestCount);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpgradeUDDBDataNodeResponse extends Response {
+class UpgradeUDDBDataNodeResponse extends Response
+{
     
 
 

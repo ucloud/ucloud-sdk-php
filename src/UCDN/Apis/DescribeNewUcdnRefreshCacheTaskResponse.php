@@ -20,15 +20,17 @@ use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\TaskInfo;
 use UCloud\UCDN\Models\UrlProgressInfo;
 
-class DescribeNewUcdnRefreshCacheTaskResponse extends Response {
+class DescribeNewUcdnRefreshCacheTaskResponse extends Response
+{
     
 
     /**
      * TotalCount: 刷新任务的总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -37,7 +39,8 @@ class DescribeNewUcdnRefreshCacheTaskResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -46,7 +49,8 @@ class DescribeNewUcdnRefreshCacheTaskResponse extends Response {
      *
      * @return TaskInfo[]|null
      */
-    public function getTaskList(): array {
+    public function getTaskList(): array
+    {
         $items = $this->get("TaskList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -60,13 +64,12 @@ class DescribeNewUcdnRefreshCacheTaskResponse extends Response {
      *
      * @param TaskInfo[] $taskList
      */
-    public function setTaskList(array $taskList) {
+    public function setTaskList(array $taskList)
+    {
         $result = [];
         foreach ($taskList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

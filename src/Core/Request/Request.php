@@ -132,12 +132,15 @@ class Request implements RequestInterface
         if (!empty($fields)) {
             throw new UCloudException(
                 UCloudException::EXC_TYPE_VALIDATION,
-                "field "  . implode(",", $fields) . " is required", -1,
+                "field "  . implode(",", $fields) . " is required",
+                -1,
             );
         }
     }
 
     /**
+     * Get all data for arguments
+     *
      * @return array
      */
     public function getAll(): array

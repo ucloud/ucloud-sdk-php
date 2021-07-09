@@ -19,7 +19,8 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\GetAvailableResourceForPolicyDataSet;
 
-class GetAvailableResourceForPolicyResponse extends Response {
+class GetAvailableResourceForPolicyResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetAvailableResourceForPolicyResponse extends Response {
      *
      * @return GetAvailableResourceForPolicyDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetAvailableResourceForPolicyResponse extends Response {
      *
      * @param GetAvailableResourceForPolicyDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

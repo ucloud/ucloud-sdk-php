@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyEIPWeightRequest extends Request {
+class ModifyEIPWeightRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyEIPWeight"]);
@@ -34,7 +35,8 @@ class ModifyEIPWeightRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class ModifyEIPWeightRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class ModifyEIPWeightRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class ModifyEIPWeightRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class ModifyEIPWeightRequest extends Request {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -79,16 +85,18 @@ class ModifyEIPWeightRequest extends Request {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
     /**
      * Weight: 外网出口权重, 范围[0-100] 取值为0时, 该弹性IP不会被使用. 取值为100时, 同主机下只会使用这个弹性IP，其他弹性IP不会被使用 请勿将多个绑定在同一资源的弹性IP设置为相同权重
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getWeight(): int {
+    public function getWeight(): int
+    {
         return $this->get("Weight");
     }
 
@@ -97,9 +105,8 @@ class ModifyEIPWeightRequest extends Request {
      *
      * @param int $weight
      */
-    public function setWeight(int $weight) {
+    public function setWeight(int $weight)
+    {
         $this->set("Weight", $weight);
     }
-
-
 }

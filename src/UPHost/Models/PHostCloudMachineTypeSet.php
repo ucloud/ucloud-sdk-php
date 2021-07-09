@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostCloudMachineTypeSet extends Response {
+class PHostCloudMachineTypeSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -35,7 +37,8 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -44,7 +47,8 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @return PHostCPUSet|null
      */
-    public function getCPU(): PHostCPUSet {
+    public function getCPU(): PHostCPUSet
+    {
         return new PHostCPUSet($this->get("CPU"));
     }
 
@@ -53,16 +57,18 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @param PHostCPUSet $cpu
      */
-    public function setCPU(PHostCPUSet $cpu) {
+    public function setCPU(PHostCPUSet $cpu)
+    {
         $this->set("CPU", $cpu->getAll());
     }
 
     /**
      * Memory: 内存大小，单位MB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemory(): int {
+    public function getMemory(): int
+    {
         return $this->get("Memory");
     }
 
@@ -71,7 +77,8 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @param int $memory
      */
-    public function setMemory(int $memory) {
+    public function setMemory(int $memory)
+    {
         $this->set("Memory", $memory);
     }
 
@@ -80,7 +87,8 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @return PHostComponentSet|null
      */
-    public function getComponents(): PHostComponentSet {
+    public function getComponents(): PHostComponentSet
+    {
         return new PHostComponentSet($this->get("Components"));
     }
 
@@ -89,7 +97,8 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @param PHostComponentSet $components
      */
-    public function setComponents(PHostComponentSet $components) {
+    public function setComponents(PHostComponentSet $components)
+    {
         $this->set("Components", $components->getAll());
     }
 
@@ -98,7 +107,8 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @return PHostClusterSet[]|null
      */
-    public function getClusters(): array {
+    public function getClusters(): array
+    {
         $items = $this->get("Clusters") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -112,13 +122,12 @@ class PHostCloudMachineTypeSet extends Response {
      *
      * @param PHostClusterSet[] $clusters
      */
-    public function setClusters(array $clusters) {
+    public function setClusters(array $clusters)
+    {
         $result = [];
         foreach ($clusters as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

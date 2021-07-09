@@ -19,15 +19,17 @@ namespace UCloud\UNet\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UNet\Models\UnetBandwidthUsageEIPSet;
 
-class DescribeBandwidthUsageResponse extends Response {
+class DescribeBandwidthUsageResponse extends Response
+{
     
 
     /**
      * TotalCount: EIPSet中的元素个数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -36,7 +38,8 @@ class DescribeBandwidthUsageResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -45,7 +48,8 @@ class DescribeBandwidthUsageResponse extends Response {
      *
      * @return UnetBandwidthUsageEIPSet[]|null
      */
-    public function getEIPSet(): array {
+    public function getEIPSet(): array
+    {
         $items = $this->get("EIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class DescribeBandwidthUsageResponse extends Response {
      *
      * @param UnetBandwidthUsageEIPSet[] $eipSet
      */
-    public function setEIPSet(array $eipSet) {
+    public function setEIPSet(array $eipSet)
+    {
         $result = [];
         foreach ($eipSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 
-class AddUK8SUHostNodeRequest extends Request {
+class AddUK8SUHostNodeRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "AddUK8SUHostNode"]);
@@ -39,7 +40,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -48,7 +50,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -57,7 +60,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -66,7 +70,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -75,7 +80,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -84,7 +90,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -93,7 +100,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getClusterId(): string {
+    public function getClusterId(): string
+    {
         return $this->get("ClusterId");
     }
 
@@ -102,16 +110,18 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $clusterId
      */
-    public function setClusterId(string $clusterId) {
+    public function setClusterId(string $clusterId)
+    {
         $this->set("ClusterId", $clusterId);
     }
 
     /**
      * CPU: 虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。默认值: 4。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCPU(): int {
+    public function getCPU(): int
+    {
         return $this->get("CPU");
     }
 
@@ -120,16 +130,18 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param int $cpu
      */
-    public function setCPU(int $cpu) {
+    public function setCPU(int $cpu)
+    {
         $this->set("CPU", $cpu);
     }
 
     /**
      * Count: 创建Node节点数量，取值范围是[1,50]。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -138,7 +150,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
 
@@ -147,7 +160,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->get("Password");
     }
 
@@ -156,16 +170,18 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->set("Password", $password);
     }
 
     /**
      * Mem: 内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMem(): int {
+    public function getMem(): int
+    {
         return $this->get("Mem");
     }
 
@@ -174,7 +190,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param int $mem
      */
-    public function setMem(int $mem) {
+    public function setMem(int $mem)
+    {
         $this->set("Mem", $mem);
     }
 
@@ -183,7 +200,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -192,7 +210,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -201,7 +220,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getBootDiskType(): string {
+    public function getBootDiskType(): string
+    {
         return $this->get("BootDiskType");
     }
 
@@ -210,7 +230,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $bootDiskType
      */
-    public function setBootDiskType(string $bootDiskType) {
+    public function setBootDiskType(string $bootDiskType)
+    {
         $this->set("BootDiskType", $bootDiskType);
     }
 
@@ -219,7 +240,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getDataDiskType(): string {
+    public function getDataDiskType(): string
+    {
         return $this->get("DataDiskType");
     }
 
@@ -228,16 +250,18 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $dataDiskType
      */
-    public function setDataDiskType(string $dataDiskType) {
+    public function setDataDiskType(string $dataDiskType)
+    {
         $this->set("DataDiskType", $dataDiskType);
     }
 
     /**
      * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataDiskSize(): int {
+    public function getDataDiskSize(): int
+    {
         return $this->get("DataDiskSize");
     }
 
@@ -246,16 +270,18 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param int $dataDiskSize
      */
-    public function setDataDiskSize(int $dataDiskSize) {
+    public function setDataDiskSize(int $dataDiskSize)
+    {
         $this->set("DataDiskSize", $dataDiskSize);
     }
 
     /**
      * Quantity: 购买时长。默认: 1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -264,7 +290,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -273,7 +300,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getMachineType(): string {
+    public function getMachineType(): string
+    {
         return $this->get("MachineType");
     }
 
@@ -282,7 +310,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $machineType
      */
-    public function setMachineType(string $machineType) {
+    public function setMachineType(string $machineType)
+    {
         $this->set("MachineType", $machineType);
     }
 
@@ -291,7 +320,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getMinmalCpuPlatform(): string {
+    public function getMinmalCpuPlatform(): string
+    {
         return $this->get("MinmalCpuPlatform");
     }
 
@@ -300,7 +330,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $minmalCpuPlatform
      */
-    public function setMinmalCpuPlatform(string $minmalCpuPlatform) {
+    public function setMinmalCpuPlatform(string $minmalCpuPlatform)
+    {
         $this->set("MinmalCpuPlatform", $minmalCpuPlatform);
     }
 
@@ -309,7 +340,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getGpuType(): string {
+    public function getGpuType(): string
+    {
         return $this->get("GpuType");
     }
 
@@ -318,16 +350,18 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $gpuType
      */
-    public function setGpuType(string $gpuType) {
+    public function setGpuType(string $gpuType)
+    {
         $this->set("GpuType", $gpuType);
     }
 
     /**
      * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getGPU(): int {
+    public function getGPU(): int
+    {
         return $this->get("GPU");
     }
 
@@ -336,7 +370,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param int $gpu
      */
-    public function setGPU(int $gpu) {
+    public function setGPU(int $gpu)
+    {
         $this->set("GPU", $gpu);
     }
 
@@ -345,7 +380,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getLabels(): string {
+    public function getLabels(): string
+    {
         return $this->get("Labels");
     }
 
@@ -354,16 +390,18 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $labels
      */
-    public function setLabels(string $labels) {
+    public function setLabels(string $labels)
+    {
         $this->set("Labels", $labels);
     }
 
     /**
      * MaxPods: 默认110，生产环境建议小于等于110。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMaxPods(): int {
+    public function getMaxPods(): int
+    {
         return $this->get("MaxPods");
     }
 
@@ -372,7 +410,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param int $maxPods
      */
-    public function setMaxPods(int $maxPods) {
+    public function setMaxPods(int $maxPods)
+    {
         $this->set("MaxPods", $maxPods);
     }
 
@@ -381,7 +420,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getIsolationGroup(): string {
+    public function getIsolationGroup(): string
+    {
         return $this->get("IsolationGroup");
     }
 
@@ -390,7 +430,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup(string $isolationGroup) {
+    public function setIsolationGroup(string $isolationGroup)
+    {
         $this->set("IsolationGroup", $isolationGroup);
     }
 
@@ -399,7 +440,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -408,7 +450,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
@@ -417,7 +460,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -426,7 +470,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -435,7 +480,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getDisableSchedule(): bool {
+    public function getDisableSchedule(): bool
+    {
         return $this->get("DisableSchedule");
     }
 
@@ -444,7 +490,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param boolean $disableSchedule
      */
-    public function setDisableSchedule(bool $disableSchedule) {
+    public function setDisableSchedule(bool $disableSchedule)
+    {
         $this->set("DisableSchedule", $disableSchedule);
     }
 
@@ -453,7 +500,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getUserData(): string {
+    public function getUserData(): string
+    {
         return $this->get("UserData");
     }
 
@@ -462,7 +510,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $userData
      */
-    public function setUserData(string $userData) {
+    public function setUserData(string $userData)
+    {
         $this->set("UserData", $userData);
     }
 
@@ -471,7 +520,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getInitScript(): string {
+    public function getInitScript(): string
+    {
         return $this->get("InitScript");
     }
 
@@ -480,9 +530,8 @@ class AddUK8SUHostNodeRequest extends Request {
      *
      * @param string $initScript
      */
-    public function setInitScript(string $initScript) {
+    public function setInitScript(string $initScript)
+    {
         $this->set("InitScript", $initScript);
     }
-
-
 }

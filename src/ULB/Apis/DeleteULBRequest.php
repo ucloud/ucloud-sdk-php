@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteULBRequest extends Request {
+class DeleteULBRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteULB"]);
@@ -33,7 +34,8 @@ class DeleteULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DeleteULBRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DeleteULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class DeleteULBRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class DeleteULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getULBId(): string {
+    public function getULBId(): string
+    {
         return $this->get("ULBId");
     }
 
@@ -78,7 +84,8 @@ class DeleteULBRequest extends Request {
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId) {
+    public function setULBId(string $ulbId)
+    {
         $this->set("ULBId", $ulbId);
     }
 
@@ -87,7 +94,8 @@ class DeleteULBRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getReleaseEip(): bool {
+    public function getReleaseEip(): bool
+    {
         return $this->get("ReleaseEip");
     }
 
@@ -96,9 +104,8 @@ class DeleteULBRequest extends Request {
      *
      * @param boolean $releaseEip
      */
-    public function setReleaseEip(bool $releaseEip) {
+    public function setReleaseEip(bool $releaseEip)
+    {
         $this->set("ReleaseEip", $releaseEip);
     }
-
-
 }

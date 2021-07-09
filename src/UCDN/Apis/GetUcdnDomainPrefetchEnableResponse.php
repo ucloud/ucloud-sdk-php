@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetUcdnDomainPrefetchEnableResponse extends Response {
+class GetUcdnDomainPrefetchEnableResponse extends Response
+{
     
 
     /**
      * Enable: 0表示该域名未开启预取，1表示该域名已开启预取
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEnable(): int {
+    public function getEnable(): int
+    {
         return $this->get("Enable");
     }
 
@@ -35,9 +37,8 @@ class GetUcdnDomainPrefetchEnableResponse extends Response {
      *
      * @param int $enable
      */
-    public function setEnable(int $enable) {
+    public function setEnable(int $enable)
+    {
         $this->set("Enable", $enable);
     }
-
-
 }

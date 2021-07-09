@@ -18,7 +18,8 @@ namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class UHostKeyPair extends Response {
+class UHostKeyPair extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UHostKeyPair extends Response {
      *
      * @return string|null
      */
-    public function getKeyPairId(): string {
+    public function getKeyPairId(): string
+    {
         return $this->get("KeyPairId");
     }
 
@@ -35,7 +37,8 @@ class UHostKeyPair extends Response {
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId(string $keyPairId) {
+    public function setKeyPairId(string $keyPairId)
+    {
         $this->set("KeyPairId", $keyPairId);
     }
 
@@ -44,7 +47,8 @@ class UHostKeyPair extends Response {
      *
      * @return string|null
      */
-    public function getKeyPairState(): string {
+    public function getKeyPairState(): string
+    {
         return $this->get("KeyPairState");
     }
 
@@ -53,9 +57,8 @@ class UHostKeyPair extends Response {
      *
      * @param string $keyPairState
      */
-    public function setKeyPairState(string $keyPairState) {
+    public function setKeyPairState(string $keyPairState)
+    {
         $this->set("KeyPairState", $keyPairState);
     }
-
-
 }

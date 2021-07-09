@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUGAForwarderResponse extends Response {
+class CreateUGAForwarderResponse extends Response
+{
     
 
 

@@ -18,7 +18,8 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class UnetAllocateEIPSet extends Response {
+class UnetAllocateEIPSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UnetAllocateEIPSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -35,16 +37,18 @@ class UnetAllocateEIPSet extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
     /**
-     * EIPAddr: 申请到的IPv4地址. 
+     * EIPAddr: 申请到的IPv4地址.
      *
      * @return UnetEIPAddrSet[]|null
      */
-    public function getEIPAddr(): array {
+    public function getEIPAddr(): array
+    {
         $items = $this->get("EIPAddr") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -54,17 +58,16 @@ class UnetAllocateEIPSet extends Response {
     }
 
     /**
-     * EIPAddr: 申请到的IPv4地址. 
+     * EIPAddr: 申请到的IPv4地址.
      *
      * @param UnetEIPAddrSet[] $eipAddr
      */
-    public function setEIPAddr(array $eipAddr) {
+    public function setEIPAddr(array $eipAddr)
+    {
         $result = [];
         foreach ($eipAddr as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

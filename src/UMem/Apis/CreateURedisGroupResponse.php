@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateURedisGroupResponse extends Response {
+class CreateURedisGroupResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateURedisGroupResponse extends Response {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -35,9 +37,8 @@ class CreateURedisGroupResponse extends Response {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
-
-
 }

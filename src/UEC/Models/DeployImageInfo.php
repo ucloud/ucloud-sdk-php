@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class DeployImageInfo extends Response {
+class DeployImageInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DeployImageInfo extends Response {
      *
      * @return string|null
      */
-    public function getIdcId(): string {
+    public function getIdcId(): string
+    {
         return $this->get("IdcId");
     }
 
@@ -35,16 +37,18 @@ class DeployImageInfo extends Response {
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId) {
+    public function setIdcId(string $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
     /**
      * State: 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getState(): int {
+    public function getState(): int
+    {
         return $this->get("State");
     }
 
@@ -53,9 +57,8 @@ class DeployImageInfo extends Response {
      *
      * @param int $state
      */
-    public function setState(int $state) {
+    public function setState(int $state)
+    {
         $this->set("State", $state);
     }
-
-
 }

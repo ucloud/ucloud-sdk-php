@@ -18,7 +18,8 @@ namespace UCloud\UHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class GetUHostInstancePriceParamDisks extends Request {
+class GetUHostInstancePriceParamDisks extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetUHostInstancePriceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getIsBoot(): string {
+    public function getIsBoot(): string
+    {
         return $this->get("IsBoot");
     }
 
@@ -35,16 +37,18 @@ class GetUHostInstancePriceParamDisks extends Request {
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot) {
+    public function setIsBoot(string $isBoot)
+    {
         $this->set("IsBoot", $isBoot);
     }
 
     /**
      * Size: 磁盘大小，单位GB。请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -53,7 +57,8 @@ class GetUHostInstancePriceParamDisks extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -62,7 +67,8 @@ class GetUHostInstancePriceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -71,7 +77,8 @@ class GetUHostInstancePriceParamDisks extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -80,7 +87,8 @@ class GetUHostInstancePriceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getBackupType(): string {
+    public function getBackupType(): string
+    {
         return $this->get("BackupType");
     }
 
@@ -89,9 +97,8 @@ class GetUHostInstancePriceParamDisks extends Request {
      *
      * @param string $backupType
      */
-    public function setBackupType(string $backupType) {
+    public function setBackupType(string $backupType)
+    {
         $this->set("BackupType", $backupType);
     }
-
-
 }

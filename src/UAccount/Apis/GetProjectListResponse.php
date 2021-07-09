@@ -19,15 +19,17 @@ namespace UCloud\UAccount\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UAccount\Models\ProjectListInfo;
 
-class GetProjectListResponse extends Response {
+class GetProjectListResponse extends Response
+{
     
 
     /**
      * ProjectCount: 项目总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getProjectCount(): int {
+    public function getProjectCount(): int
+    {
         return $this->get("ProjectCount");
     }
 
@@ -36,7 +38,8 @@ class GetProjectListResponse extends Response {
      *
      * @param int $projectCount
      */
-    public function setProjectCount(int $projectCount) {
+    public function setProjectCount(int $projectCount)
+    {
         $this->set("ProjectCount", $projectCount);
     }
 
@@ -45,7 +48,8 @@ class GetProjectListResponse extends Response {
      *
      * @return ProjectListInfo[]|null
      */
-    public function getProjectSet(): array {
+    public function getProjectSet(): array
+    {
         $items = $this->get("ProjectSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class GetProjectListResponse extends Response {
      *
      * @param ProjectListInfo[] $projectSet
      */
-    public function setProjectSet(array $projectSet) {
+    public function setProjectSet(array $projectSet)
+    {
         $result = [];
         foreach ($projectSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

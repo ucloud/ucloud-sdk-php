@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class VPCNetworkInfo extends Response {
+class VPCNetworkInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class VPCNetworkInfo extends Response {
      *
      * @return string|null
      */
-    public function getNetwork(): string {
+    public function getNetwork(): string
+    {
         return $this->get("Network");
     }
 
@@ -35,16 +37,18 @@ class VPCNetworkInfo extends Response {
      *
      * @param string $network
      */
-    public function setNetwork(string $network) {
+    public function setNetwork(string $network)
+    {
         $this->set("Network", $network);
     }
 
     /**
      * SubnetCount: 地址空间中子网数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSubnetCount(): int {
+    public function getSubnetCount(): int
+    {
         return $this->get("SubnetCount");
     }
 
@@ -53,9 +57,8 @@ class VPCNetworkInfo extends Response {
      *
      * @param int $subnetCount
      */
-    public function setSubnetCount(int $subnetCount) {
+    public function setSubnetCount(int $subnetCount)
+    {
         $this->set("SubnetCount", $subnetCount);
     }
-
-
 }

@@ -19,26 +19,27 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\IpInfo;
 
-class AllocateSecondaryIpResponse extends Response {
+class AllocateSecondaryIpResponse extends Response
+{
     
 
     /**
-     * IpInfo: 
+     * IpInfo:
      *
      * @return IpInfo|null
      */
-    public function getIpInfo(): IpInfo {
+    public function getIpInfo(): IpInfo
+    {
         return new IpInfo($this->get("IpInfo"));
     }
 
     /**
-     * IpInfo: 
+     * IpInfo:
      *
      * @param IpInfo $ipInfo
      */
-    public function setIpInfo(IpInfo $ipInfo) {
+    public function setIpInfo(IpInfo $ipInfo)
+    {
         $this->set("IpInfo", $ipInfo->getAll());
     }
-
-
 }

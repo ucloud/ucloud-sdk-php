@@ -19,7 +19,8 @@ namespace UCloud\UEC\Apis;
 use UCloud\Core\Request\Request;
 use UCloud\UEC\Params\CreateUEcFirewallParamRule;
 
-class CreateUEcFirewallRequest extends Request {
+class CreateUEcFirewallRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUEcFirewall"]);
@@ -33,7 +34,8 @@ class CreateUEcFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class CreateUEcFirewallRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class CreateUEcFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -60,16 +64,18 @@ class CreateUEcFirewallRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
-     * Rule: 
+     * Rule:
      *
      * @return CreateUEcFirewallParamRule[]|null
      */
-    public function getRule(): array {
+    public function getRule(): array
+    {
         $items = $this->get("Rule") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -79,11 +85,12 @@ class CreateUEcFirewallRequest extends Request {
     }
 
     /**
-     * Rule: 
+     * Rule:
      *
      * @param CreateUEcFirewallParamRule[] $rule
      */
-    public function setRule(array $rule) {
+    public function setRule(array $rule)
+    {
         $result = [];
         foreach ($rule as $i => $item) {
             array_push($result, $item->getAll());
@@ -96,7 +103,8 @@ class CreateUEcFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -105,9 +113,8 @@ class CreateUEcFirewallRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

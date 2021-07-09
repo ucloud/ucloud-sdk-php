@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUEcVHostRequest extends Request {
+class DescribeUEcVHostRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUEcVHost"]);
@@ -31,7 +32,8 @@ class DescribeUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,7 +42,8 @@ class DescribeUEcVHostRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -49,7 +52,8 @@ class DescribeUEcVHostRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getIdcId(): array {
+    public function getIdcId(): array
+    {
         return $this->get("IdcId");
     }
 
@@ -58,7 +62,8 @@ class DescribeUEcVHostRequest extends Request {
      *
      * @param string[] $idcId
      */
-    public function setIdcId(array $idcId) {
+    public function setIdcId(array $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
@@ -67,7 +72,8 @@ class DescribeUEcVHostRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getNodeId(): array {
+    public function getNodeId(): array
+    {
         return $this->get("NodeId");
     }
 
@@ -76,16 +82,18 @@ class DescribeUEcVHostRequest extends Request {
      *
      * @param string[] $nodeId
      */
-    public function setNodeId(array $nodeId) {
+    public function setNodeId(array $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
 
     /**
      * Offset: 数据偏移量，默认0，非负整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -94,16 +102,18 @@ class DescribeUEcVHostRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 返回数据长度， 默认20，非负整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -112,9 +122,8 @@ class DescribeUEcVHostRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

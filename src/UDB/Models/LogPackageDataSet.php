@@ -18,15 +18,17 @@ namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
-class LogPackageDataSet extends Response {
+class LogPackageDataSet extends Response
+{
     
 
     /**
      * BackupId: 备份id
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupId(): int {
+    public function getBackupId(): int
+    {
         return $this->get("BackupId");
     }
 
@@ -35,7 +37,8 @@ class LogPackageDataSet extends Response {
      *
      * @param int $backupId
      */
-    public function setBackupId(int $backupId) {
+    public function setBackupId(int $backupId)
+    {
         $this->set("BackupId", $backupId);
     }
 
@@ -44,7 +47,8 @@ class LogPackageDataSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupName(): string {
+    public function getBackupName(): string
+    {
         return $this->get("BackupName");
     }
 
@@ -53,16 +57,18 @@ class LogPackageDataSet extends Response {
      *
      * @param string $backupName
      */
-    public function setBackupName(string $backupName) {
+    public function setBackupName(string $backupName)
+    {
         $this->set("BackupName", $backupName);
     }
 
     /**
      * BackupTime: 备份时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupTime(): int {
+    public function getBackupTime(): int
+    {
         return $this->get("BackupTime");
     }
 
@@ -71,16 +77,18 @@ class LogPackageDataSet extends Response {
      *
      * @param int $backupTime
      */
-    public function setBackupTime(int $backupTime) {
+    public function setBackupTime(int $backupTime)
+    {
         $this->set("BackupTime", $backupTime);
     }
 
     /**
      * BackupSize: 备份文件大小
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupSize(): int {
+    public function getBackupSize(): int
+    {
         return $this->get("BackupSize");
     }
 
@@ -89,16 +97,18 @@ class LogPackageDataSet extends Response {
      *
      * @param int $backupSize
      */
-    public function setBackupSize(int $backupSize) {
+    public function setBackupSize(int $backupSize)
+    {
         $this->set("BackupSize", $backupSize);
     }
 
     /**
      * BackupType: 备份类型，包括2-binlog备份，3-slowlog备份
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupType(): int {
+    public function getBackupType(): int
+    {
         return $this->get("BackupType");
     }
 
@@ -107,7 +117,8 @@ class LogPackageDataSet extends Response {
      *
      * @param int $backupType
      */
-    public function setBackupType(int $backupType) {
+    public function setBackupType(int $backupType)
+    {
         $this->set("BackupType", $backupType);
     }
 
@@ -116,7 +127,8 @@ class LogPackageDataSet extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -125,7 +137,8 @@ class LogPackageDataSet extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
 
@@ -134,7 +147,8 @@ class LogPackageDataSet extends Response {
      *
      * @return string|null
      */
-    public function getDBId(): string {
+    public function getDBId(): string
+    {
         return $this->get("DBId");
     }
 
@@ -143,7 +157,8 @@ class LogPackageDataSet extends Response {
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId) {
+    public function setDBId(string $dbId)
+    {
         $this->set("DBId", $dbId);
     }
 
@@ -152,7 +167,8 @@ class LogPackageDataSet extends Response {
      *
      * @return string|null
      */
-    public function getDBName(): string {
+    public function getDBName(): string
+    {
         return $this->get("DBName");
     }
 
@@ -161,7 +177,8 @@ class LogPackageDataSet extends Response {
      *
      * @param string $dbName
      */
-    public function setDBName(string $dbName) {
+    public function setDBName(string $dbName)
+    {
         $this->set("DBName", $dbName);
     }
 
@@ -170,7 +187,8 @@ class LogPackageDataSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -179,7 +197,8 @@ class LogPackageDataSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -188,7 +207,8 @@ class LogPackageDataSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupZone(): string {
+    public function getBackupZone(): string
+    {
         return $this->get("BackupZone");
     }
 
@@ -197,9 +217,8 @@ class LogPackageDataSet extends Response {
      *
      * @param string $backupZone
      */
-    public function setBackupZone(string $backupZone) {
+    public function setBackupZone(string $backupZone)
+    {
         $this->set("BackupZone", $backupZone);
     }
-
-
 }

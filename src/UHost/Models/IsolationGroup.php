@@ -18,7 +18,8 @@ namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class IsolationGroup extends Response {
+class IsolationGroup extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class IsolationGroup extends Response {
      *
      * @return string|null
      */
-    public function getGroupName(): string {
+    public function getGroupName(): string
+    {
         return $this->get("GroupName");
     }
 
@@ -35,7 +37,8 @@ class IsolationGroup extends Response {
      *
      * @param string $groupName
      */
-    public function setGroupName(string $groupName) {
+    public function setGroupName(string $groupName)
+    {
         $this->set("GroupName", $groupName);
     }
 
@@ -44,7 +47,8 @@ class IsolationGroup extends Response {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -53,7 +57,8 @@ class IsolationGroup extends Response {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
@@ -62,7 +67,8 @@ class IsolationGroup extends Response {
      *
      * @return SpreadInfo[]|null
      */
-    public function getSpreadInfoSet(): array {
+    public function getSpreadInfoSet(): array
+    {
         $items = $this->get("SpreadInfoSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -76,7 +82,8 @@ class IsolationGroup extends Response {
      *
      * @param SpreadInfo[] $spreadInfoSet
      */
-    public function setSpreadInfoSet(array $spreadInfoSet) {
+    public function setSpreadInfoSet(array $spreadInfoSet)
+    {
         $result = [];
         foreach ($spreadInfoSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -89,7 +96,8 @@ class IsolationGroup extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -98,9 +106,8 @@ class IsolationGroup extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

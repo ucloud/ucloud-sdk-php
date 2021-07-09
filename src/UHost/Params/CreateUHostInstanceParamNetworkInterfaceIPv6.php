@@ -18,7 +18,8 @@ namespace UCloud\UHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUHostInstanceParamNetworkInterfaceIPv6 extends Request {
+class CreateUHostInstanceParamNetworkInterfaceIPv6 extends Request
+{
     
 
 

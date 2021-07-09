@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class CacheAllConfig extends Response {
+class CacheAllConfig extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CacheAllConfig extends Response {
      *
      * @return string|null
      */
-    public function getCacheHost(): string {
+    public function getCacheHost(): string
+    {
         return $this->get("CacheHost");
     }
 
@@ -35,7 +37,8 @@ class CacheAllConfig extends Response {
      *
      * @param string $cacheHost
      */
-    public function setCacheHost(string $cacheHost) {
+    public function setCacheHost(string $cacheHost)
+    {
         $this->set("CacheHost", $cacheHost);
     }
 
@@ -44,7 +47,8 @@ class CacheAllConfig extends Response {
      *
      * @return CacheConf[]|null
      */
-    public function getCacheList(): array {
+    public function getCacheList(): array
+    {
         $items = $this->get("CacheList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -58,7 +62,8 @@ class CacheAllConfig extends Response {
      *
      * @param CacheConf[] $cacheList
      */
-    public function setCacheList(array $cacheList) {
+    public function setCacheList(array $cacheList)
+    {
         $result = [];
         foreach ($cacheList as $i => $item) {
             array_push($result, $item->getAll());
@@ -71,7 +76,8 @@ class CacheAllConfig extends Response {
      *
      * @return CacheConf[]|null
      */
-    public function getHttpCodeCacheList(): array {
+    public function getHttpCodeCacheList(): array
+    {
         $items = $this->get("HttpCodeCacheList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -85,7 +91,8 @@ class CacheAllConfig extends Response {
      *
      * @param CacheConf[] $httpCodeCacheList
      */
-    public function setHttpCodeCacheList(array $httpCodeCacheList) {
+    public function setHttpCodeCacheList(array $httpCodeCacheList)
+    {
         $result = [];
         foreach ($httpCodeCacheList as $i => $item) {
             array_push($result, $item->getAll());
@@ -98,7 +105,8 @@ class CacheAllConfig extends Response {
      *
      * @return CacheKeyInfo[]|null
      */
-    public function getCacheKeyList(): array {
+    public function getCacheKeyList(): array
+    {
         $items = $this->get("CacheKeyList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -112,13 +120,12 @@ class CacheAllConfig extends Response {
      *
      * @param CacheKeyInfo[] $cacheKeyList
      */
-    public function setCacheKeyList(array $cacheKeyList) {
+    public function setCacheKeyList(array $cacheKeyList)
+    {
         $result = [];
         foreach ($cacheKeyList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

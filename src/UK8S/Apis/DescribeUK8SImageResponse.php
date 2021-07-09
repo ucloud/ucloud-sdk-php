@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UK8S\Models\ImageInfo;
 use UCloud\UK8S\Models\ImageInfo;
 
-class DescribeUK8SImageResponse extends Response {
+class DescribeUK8SImageResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeUK8SImageResponse extends Response {
      *
      * @return ImageInfo[]|null
      */
-    public function getImageSet(): array {
+    public function getImageSet(): array
+    {
         $items = $this->get("ImageSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class DescribeUK8SImageResponse extends Response {
      *
      * @param ImageInfo[] $imageSet
      */
-    public function setImageSet(array $imageSet) {
+    public function setImageSet(array $imageSet)
+    {
         $result = [];
         foreach ($imageSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -55,7 +58,8 @@ class DescribeUK8SImageResponse extends Response {
      *
      * @return ImageInfo[]|null
      */
-    public function getPHostImageSet(): array {
+    public function getPHostImageSet(): array
+    {
         $items = $this->get("PHostImageSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -69,13 +73,12 @@ class DescribeUK8SImageResponse extends Response {
      *
      * @param ImageInfo[] $pHostImageSet
      */
-    public function setPHostImageSet(array $pHostImageSet) {
+    public function setPHostImageSet(array $pHostImageSet)
+    {
         $result = [];
         foreach ($pHostImageSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

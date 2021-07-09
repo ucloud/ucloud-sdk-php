@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CheckUDredisSpaceAllowanceRequest extends Request {
+class CheckUDredisSpaceAllowanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CheckUDredisSpaceAllowance"]);
@@ -35,7 +36,8 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,16 +66,18 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
     /**
      * Size: 创建实例的容量大小,，扩容时的分片目标容量大小
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -80,7 +86,8 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -89,7 +96,8 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCount(): string {
+    public function getCount(): string
+    {
         return $this->get("Count");
     }
 
@@ -98,7 +106,8 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @param string $count
      */
-    public function setCount(string $count) {
+    public function setCount(string $count)
+    {
         $this->set("Count", $count);
     }
 
@@ -107,7 +116,8 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -116,9 +126,8 @@ class CheckUDredisSpaceAllowanceRequest extends Request {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ChangeUDDBSlaveCountRequest extends Request {
+class ChangeUDDBSlaveCountRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ChangeUDDBSlaveCount"]);
@@ -36,7 +37,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,7 +67,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -72,7 +77,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -81,7 +87,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -90,7 +97,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDDBId(): string {
+    public function getUDDBId(): string
+    {
         return $this->get("UDDBId");
     }
 
@@ -99,7 +107,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @param string $uddbId
      */
-    public function setUDDBId(string $uddbId) {
+    public function setUDDBId(string $uddbId)
+    {
         $this->set("UDDBId", $uddbId);
     }
 
@@ -108,7 +117,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @return string|null
      */
-    public function getSlaveCount(): string {
+    public function getSlaveCount(): string
+    {
         return $this->get("SlaveCount");
     }
 
@@ -117,9 +127,8 @@ class ChangeUDDBSlaveCountRequest extends Request {
      *
      * @param string $slaveCount
      */
-    public function setSlaveCount(string $slaveCount) {
+    public function setSlaveCount(string $slaveCount)
+    {
         $this->set("SlaveCount", $slaveCount);
     }
-
-
 }

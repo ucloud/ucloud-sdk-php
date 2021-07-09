@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class UMemcacheGroupSet extends Response {
+class UMemcacheGroupSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -35,7 +37,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
@@ -44,7 +47,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -53,7 +57,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -62,7 +67,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getConfigId(): string {
+    public function getConfigId(): string
+    {
         return $this->get("ConfigId");
     }
 
@@ -71,7 +77,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @param string $configId
      */
-    public function setConfigId(string $configId) {
+    public function setConfigId(string $configId)
+    {
         $this->set("ConfigId", $configId);
     }
 
@@ -80,7 +87,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getVirtualIP(): string {
+    public function getVirtualIP(): string
+    {
         return $this->get("VirtualIP");
     }
 
@@ -89,16 +97,18 @@ class UMemcacheGroupSet extends Response {
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP(string $virtualIP) {
+    public function setVirtualIP(string $virtualIP)
+    {
         $this->set("VirtualIP", $virtualIP);
     }
 
     /**
      * Port: 节点分配的服务端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -107,16 +117,18 @@ class UMemcacheGroupSet extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
     /**
      * Size: 容量单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -125,16 +137,18 @@ class UMemcacheGroupSet extends Response {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
     /**
      * UsedSize: 使用量单位MB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getUsedSize(): int {
+    public function getUsedSize(): int
+    {
         return $this->get("UsedSize");
     }
 
@@ -143,7 +157,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @param int $usedSize
      */
-    public function setUsedSize(int $usedSize) {
+    public function setUsedSize(int $usedSize)
+    {
         $this->set("UsedSize", $usedSize);
     }
 
@@ -152,7 +167,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getVersion(): string {
+    public function getVersion(): string
+    {
         return $this->get("Version");
     }
 
@@ -161,7 +177,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @param string $version
      */
-    public function setVersion(string $version) {
+    public function setVersion(string $version)
+    {
         $this->set("Version", $version);
     }
 
@@ -170,7 +187,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -179,16 +197,18 @@ class UMemcacheGroupSet extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
 
     /**
      * CreateTime: 创建时间 (UNIX时间戳)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -197,16 +217,18 @@ class UMemcacheGroupSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ModifyTime: 修改时间 (UNIX时间戳)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getModifyTime(): int {
+    public function getModifyTime(): int
+    {
         return $this->get("ModifyTime");
     }
 
@@ -215,16 +237,18 @@ class UMemcacheGroupSet extends Response {
      *
      * @param int $modifyTime
      */
-    public function setModifyTime(int $modifyTime) {
+    public function setModifyTime(int $modifyTime)
+    {
         $this->set("ModifyTime", $modifyTime);
     }
 
     /**
      * ExpireTime: 过期时间 (UNIX时间戳)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -233,7 +257,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
@@ -242,7 +267,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -251,7 +277,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -260,7 +287,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -269,9 +297,8 @@ class UMemcacheGroupSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
-
-
 }

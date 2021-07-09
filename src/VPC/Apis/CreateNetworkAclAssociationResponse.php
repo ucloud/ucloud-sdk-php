@@ -19,7 +19,8 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\AssociationInfo;
 
-class CreateNetworkAclAssociationResponse extends Response {
+class CreateNetworkAclAssociationResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class CreateNetworkAclAssociationResponse extends Response {
      *
      * @return string|null
      */
-    public function getAssociationId(): string {
+    public function getAssociationId(): string
+    {
         return $this->get("AssociationId");
     }
 
@@ -36,7 +38,8 @@ class CreateNetworkAclAssociationResponse extends Response {
      *
      * @param string $associationId
      */
-    public function setAssociationId(string $associationId) {
+    public function setAssociationId(string $associationId)
+    {
         $this->set("AssociationId", $associationId);
     }
 
@@ -45,7 +48,8 @@ class CreateNetworkAclAssociationResponse extends Response {
      *
      * @return AssociationInfo|null
      */
-    public function getPrevAssociation(): AssociationInfo {
+    public function getPrevAssociation(): AssociationInfo
+    {
         return new AssociationInfo($this->get("PrevAssociation"));
     }
 
@@ -54,9 +58,8 @@ class CreateNetworkAclAssociationResponse extends Response {
      *
      * @param AssociationInfo $prevAssociation
      */
-    public function setPrevAssociation(AssociationInfo $prevAssociation) {
+    public function setPrevAssociation(AssociationInfo $prevAssociation)
+    {
         $this->set("PrevAssociation", $prevAssociation->getAll());
     }
-
-
 }

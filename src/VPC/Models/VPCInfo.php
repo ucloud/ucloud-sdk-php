@@ -18,15 +18,17 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class VPCInfo extends Response {
+class VPCInfo extends Response
+{
     
 
     /**
-     * NetworkInfo: 
+     * NetworkInfo:
      *
      * @return VPCNetworkInfo[]|null
      */
-    public function getNetworkInfo(): array {
+    public function getNetworkInfo(): array
+    {
         $items = $this->get("NetworkInfo") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -36,11 +38,12 @@ class VPCInfo extends Response {
     }
 
     /**
-     * NetworkInfo: 
+     * NetworkInfo:
      *
      * @param VPCNetworkInfo[] $networkInfo
      */
-    public function setNetworkInfo(array $networkInfo) {
+    public function setNetworkInfo(array $networkInfo)
+    {
         $result = [];
         foreach ($networkInfo as $i => $item) {
             array_push($result, $item->getAll());
@@ -49,92 +52,102 @@ class VPCInfo extends Response {
     }
 
     /**
-     * SubnetCount: 
+     * SubnetCount:
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSubnetCount(): int {
+    public function getSubnetCount(): int
+    {
         return $this->get("SubnetCount");
     }
 
     /**
-     * SubnetCount: 
+     * SubnetCount:
      *
      * @param int $subnetCount
      */
-    public function setSubnetCount(int $subnetCount) {
+    public function setSubnetCount(int $subnetCount)
+    {
         $this->set("SubnetCount", $subnetCount);
     }
 
     /**
-     * CreateTime: 
+     * CreateTime:
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
     /**
-     * CreateTime: 
+     * CreateTime:
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
-     * UpdateTime: 
+     * UpdateTime:
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getUpdateTime(): int {
+    public function getUpdateTime(): int
+    {
         return $this->get("UpdateTime");
     }
 
     /**
-     * UpdateTime: 
+     * UpdateTime:
      *
      * @param int $updateTime
      */
-    public function setUpdateTime(int $updateTime) {
+    public function setUpdateTime(int $updateTime)
+    {
         $this->set("UpdateTime", $updateTime);
     }
 
     /**
-     * Tag: 
+     * Tag:
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
     /**
-     * Tag: 
+     * Tag:
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
-     * Name: 
+     * Name:
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
     /**
-     * Name: 
+     * Name:
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -143,7 +156,8 @@ class VPCInfo extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -152,25 +166,28 @@ class VPCInfo extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
     /**
-     * Network: 
+     * Network:
      *
      * @return string[]|null
      */
-    public function getNetwork(): array {
+    public function getNetwork(): array
+    {
         return $this->get("Network");
     }
 
     /**
-     * Network: 
+     * Network:
      *
      * @param string[] $network
      */
-    public function setNetwork(array $network) {
+    public function setNetwork(array $network)
+    {
         $this->set("Network", $network);
     }
 
@@ -179,7 +196,8 @@ class VPCInfo extends Response {
      *
      * @return string|null
      */
-    public function getIPv6Network(): string {
+    public function getIPv6Network(): string
+    {
         return $this->get("IPv6Network");
     }
 
@@ -188,7 +206,8 @@ class VPCInfo extends Response {
      *
      * @param string $iPv6Network
      */
-    public function setIPv6Network(string $iPv6Network) {
+    public function setIPv6Network(string $iPv6Network)
+    {
         $this->set("IPv6Network", $iPv6Network);
     }
 
@@ -197,7 +216,8 @@ class VPCInfo extends Response {
      *
      * @return string|null
      */
-    public function getOperatorName(): string {
+    public function getOperatorName(): string
+    {
         return $this->get("OperatorName");
     }
 
@@ -206,9 +226,8 @@ class VPCInfo extends Response {
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName) {
+    public function setOperatorName(string $operatorName)
+    {
         $this->set("OperatorName", $operatorName);
     }
-
-
 }

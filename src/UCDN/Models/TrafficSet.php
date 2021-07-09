@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class TrafficSet extends Response {
+class TrafficSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class TrafficSet extends Response {
      *
      * @return string|null
      */
-    public function getAreacode(): string {
+    public function getAreacode(): string
+    {
         return $this->get("Areacode");
     }
 
@@ -35,7 +37,8 @@ class TrafficSet extends Response {
      *
      * @param string $areacode
      */
-    public function setAreacode(string $areacode) {
+    public function setAreacode(string $areacode)
+    {
         $this->set("Areacode", $areacode);
     }
 
@@ -44,7 +47,8 @@ class TrafficSet extends Response {
      *
      * @return float|null
      */
-    public function getTrafficTotal(): float {
+    public function getTrafficTotal(): float
+    {
         return $this->get("TrafficTotal");
     }
 
@@ -53,7 +57,8 @@ class TrafficSet extends Response {
      *
      * @param float $trafficTotal
      */
-    public function setTrafficTotal(float $trafficTotal) {
+    public function setTrafficTotal(float $trafficTotal)
+    {
         $this->set("TrafficTotal", $trafficTotal);
     }
 
@@ -62,7 +67,8 @@ class TrafficSet extends Response {
      *
      * @return float|null
      */
-    public function getTrafficLeft(): float {
+    public function getTrafficLeft(): float
+    {
         return $this->get("TrafficLeft");
     }
 
@@ -71,7 +77,8 @@ class TrafficSet extends Response {
      *
      * @param float $trafficLeft
      */
-    public function setTrafficLeft(float $trafficLeft) {
+    public function setTrafficLeft(float $trafficLeft)
+    {
         $this->set("TrafficLeft", $trafficLeft);
     }
 
@@ -80,7 +87,8 @@ class TrafficSet extends Response {
      *
      * @return float|null
      */
-    public function getTrafficUsed(): float {
+    public function getTrafficUsed(): float
+    {
         return $this->get("TrafficUsed");
     }
 
@@ -89,9 +97,8 @@ class TrafficSet extends Response {
      *
      * @param float $trafficUsed
      */
-    public function setTrafficUsed(float $trafficUsed) {
+    public function setTrafficUsed(float $trafficUsed)
+    {
         $this->set("TrafficUsed", $trafficUsed);
     }
-
-
 }

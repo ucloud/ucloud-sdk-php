@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUcdnDomainTrafficRequest extends Request {
+class GetUcdnDomainTrafficRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUcdnDomainTraffic"]);
@@ -31,7 +32,8 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,7 +42,8 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -49,7 +52,8 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @return string|null
      */
-    public function getAccountType(): string {
+    public function getAccountType(): string
+    {
         return $this->get("AccountType");
     }
 
@@ -58,7 +62,8 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @param string $accountType
      */
-    public function setAccountType(string $accountType) {
+    public function setAccountType(string $accountType)
+    {
         $this->set("AccountType", $accountType);
     }
 
@@ -67,7 +72,8 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getDomainId(): array {
+    public function getDomainId(): array
+    {
         return $this->get("DomainId");
     }
 
@@ -76,7 +82,8 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @param string[] $domainId
      */
-    public function setDomainId(array $domainId) {
+    public function setDomainId(array $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
 
@@ -85,7 +92,8 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @return string|null
      */
-    public function getAreacode(): string {
+    public function getAreacode(): string
+    {
         return $this->get("Areacode");
     }
 
@@ -94,16 +102,18 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @param string $areacode
      */
-    public function setAreacode(string $areacode) {
+    public function setAreacode(string $areacode)
+    {
         $this->set("Areacode", $areacode);
     }
 
     /**
      * BeginTime: 查询的起始日期，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -112,16 +122,18 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 查询的结束日期，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -130,9 +142,8 @@ class GetUcdnDomainTrafficRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
-
-
 }

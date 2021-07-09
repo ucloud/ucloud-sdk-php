@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUHostKeyPairsRequest extends Request {
+class DescribeUHostKeyPairsRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUHostKeyPairs"]);
@@ -31,7 +32,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -40,7 +42,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -49,7 +52,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -58,7 +62,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -67,7 +72,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -76,7 +82,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -85,7 +92,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @return string|null
      */
-    public function getKeyPairName(): string {
+    public function getKeyPairName(): string
+    {
         return $this->get("KeyPairName");
     }
 
@@ -94,7 +102,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName(string $keyPairName) {
+    public function setKeyPairName(string $keyPairName)
+    {
         $this->set("KeyPairName", $keyPairName);
     }
 
@@ -103,7 +112,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @return string|null
      */
-    public function getKeyPairFingerPrint(): string {
+    public function getKeyPairFingerPrint(): string
+    {
         return $this->get("KeyPairFingerPrint");
     }
 
@@ -112,16 +122,18 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @param string $keyPairFingerPrint
      */
-    public function setKeyPairFingerPrint(string $keyPairFingerPrint) {
+    public function setKeyPairFingerPrint(string $keyPairFingerPrint)
+    {
         $this->set("KeyPairFingerPrint", $keyPairFingerPrint);
     }
 
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -130,16 +142,18 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 返回数据长度，默认为20，最大100
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -148,9 +162,8 @@ class DescribeUHostKeyPairsRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUFSVolumeRequest extends Request {
+class CreateUFSVolumeRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUFSVolume"]);
@@ -35,7 +36,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -62,16 +66,18 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Size: 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -80,7 +86,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -89,7 +96,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getStorageType(): string {
+    public function getStorageType(): string
+    {
         return $this->get("StorageType");
     }
 
@@ -98,7 +106,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $storageType
      */
-    public function setStorageType(string $storageType) {
+    public function setStorageType(string $storageType)
+    {
         $this->set("StorageType", $storageType);
     }
 
@@ -107,7 +116,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getProtocolType(): string {
+    public function getProtocolType(): string
+    {
         return $this->get("ProtocolType");
     }
 
@@ -116,7 +126,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $protocolType
      */
-    public function setProtocolType(string $protocolType) {
+    public function setProtocolType(string $protocolType)
+    {
         $this->set("ProtocolType", $protocolType);
     }
 
@@ -125,7 +136,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getVolumeName(): string {
+    public function getVolumeName(): string
+    {
         return $this->get("VolumeName");
     }
 
@@ -134,7 +146,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $volumeName
      */
-    public function setVolumeName(string $volumeName) {
+    public function setVolumeName(string $volumeName)
+    {
         $this->set("VolumeName", $volumeName);
     }
 
@@ -143,7 +156,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -152,7 +166,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -161,7 +176,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -170,7 +186,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -179,7 +196,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -188,16 +206,18 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长 默认: 1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -206,7 +226,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -215,7 +236,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -224,9 +246,8 @@ class CreateUFSVolumeRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

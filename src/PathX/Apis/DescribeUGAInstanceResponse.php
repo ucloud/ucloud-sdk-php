@@ -24,7 +24,8 @@ use UCloud\PathX\Models\UGAL4Forwarder;
 use UCloud\PathX\Models\UGAL7Forwarder;
 use UCloud\PathX\Models\OutPublicIpInfo;
 
-class DescribeUGAInstanceResponse extends Response {
+class DescribeUGAInstanceResponse extends Response
+{
     
 
     /**
@@ -32,7 +33,8 @@ class DescribeUGAInstanceResponse extends Response {
      *
      * @return UGAAInfo[]|null
      */
-    public function getUGAList(): array {
+    public function getUGAList(): array
+    {
         $items = $this->get("UGAList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -46,7 +48,8 @@ class DescribeUGAInstanceResponse extends Response {
      *
      * @param UGAAInfo[] $ugaList
      */
-    public function setUGAList(array $ugaList) {
+    public function setUGAList(array $ugaList)
+    {
         $result = [];
         foreach ($ugaList as $i => $item) {
             array_push($result, $item->getAll());
@@ -57,9 +60,10 @@ class DescribeUGAInstanceResponse extends Response {
     /**
      * TotalCount: 符合条件的总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -68,9 +72,8 @@ class DescribeUGAInstanceResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

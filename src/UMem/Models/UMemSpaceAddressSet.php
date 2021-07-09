@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class UMemSpaceAddressSet extends Response {
+class UMemSpaceAddressSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UMemSpaceAddressSet extends Response {
      *
      * @return string|null
      */
-    public function getIP(): string {
+    public function getIP(): string
+    {
         return $this->get("IP");
     }
 
@@ -35,16 +37,18 @@ class UMemSpaceAddressSet extends Response {
      *
      * @param string $ip
      */
-    public function setIP(string $ip) {
+    public function setIP(string $ip)
+    {
         $this->set("IP", $ip);
     }
 
     /**
      * Port: UMem实例访问Port
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -53,9 +57,8 @@ class UMemSpaceAddressSet extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
-
-
 }

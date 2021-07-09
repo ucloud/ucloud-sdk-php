@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\NatGWWhitelistDataSet;
 use UCloud\VPC\Models\DescribeWhiteListResourceObjectIPInfo;
 
-class DescribeWhiteListResourceResponse extends Response {
+class DescribeWhiteListResourceResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeWhiteListResourceResponse extends Response {
      *
      * @return NatGWWhitelistDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class DescribeWhiteListResourceResponse extends Response {
      *
      * @param NatGWWhitelistDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,9 +56,10 @@ class DescribeWhiteListResourceResponse extends Response {
     /**
      * TotalCount: 上述DataSet总数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -64,9 +68,8 @@ class DescribeWhiteListResourceResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

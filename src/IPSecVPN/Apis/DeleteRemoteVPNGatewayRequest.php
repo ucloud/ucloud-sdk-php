@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteRemoteVPNGatewayRequest extends Request {
+class DeleteRemoteVPNGatewayRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteRemoteVPNGateway"]);
@@ -34,7 +35,8 @@ class DeleteRemoteVPNGatewayRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DeleteRemoteVPNGatewayRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DeleteRemoteVPNGatewayRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class DeleteRemoteVPNGatewayRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class DeleteRemoteVPNGatewayRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayId(): string {
+    public function getRemoteVPNGatewayId(): string
+    {
         return $this->get("RemoteVPNGatewayId");
     }
 
@@ -79,9 +85,8 @@ class DeleteRemoteVPNGatewayRequest extends Request {
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId) {
+    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
+    {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }
-
-
 }

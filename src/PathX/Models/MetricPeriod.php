@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class MetricPeriod extends Response {
+class MetricPeriod extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class MetricPeriod extends Response {
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkOut(): array {
+    public function getNetworkOut(): array
+    {
         $items = $this->get("NetworkOut") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -40,7 +42,8 @@ class MetricPeriod extends Response {
      *
      * @param MatricPoint[] $networkOut
      */
-    public function setNetworkOut(array $networkOut) {
+    public function setNetworkOut(array $networkOut)
+    {
         $result = [];
         foreach ($networkOut as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,7 +56,8 @@ class MetricPeriod extends Response {
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkIn(): array {
+    public function getNetworkIn(): array
+    {
         $items = $this->get("NetworkIn") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -67,7 +71,8 @@ class MetricPeriod extends Response {
      *
      * @param MatricPoint[] $networkIn
      */
-    public function setNetworkIn(array $networkIn) {
+    public function setNetworkIn(array $networkIn)
+    {
         $result = [];
         foreach ($networkIn as $i => $item) {
             array_push($result, $item->getAll());
@@ -80,7 +85,8 @@ class MetricPeriod extends Response {
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkOutUsage(): array {
+    public function getNetworkOutUsage(): array
+    {
         $items = $this->get("NetworkOutUsage") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -94,7 +100,8 @@ class MetricPeriod extends Response {
      *
      * @param MatricPoint[] $networkOutUsage
      */
-    public function setNetworkOutUsage(array $networkOutUsage) {
+    public function setNetworkOutUsage(array $networkOutUsage)
+    {
         $result = [];
         foreach ($networkOutUsage as $i => $item) {
             array_push($result, $item->getAll());
@@ -107,7 +114,8 @@ class MetricPeriod extends Response {
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkInUsage(): array {
+    public function getNetworkInUsage(): array
+    {
         $items = $this->get("NetworkInUsage") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -121,13 +129,12 @@ class MetricPeriod extends Response {
      *
      * @param MatricPoint[] $networkInUsage
      */
-    public function setNetworkInUsage(array $networkInUsage) {
+    public function setNetworkInUsage(array $networkInUsage)
+    {
         $result = [];
         foreach ($networkInUsage as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

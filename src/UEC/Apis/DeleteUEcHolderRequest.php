@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteUEcHolderRequest extends Request {
+class DeleteUEcHolderRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteUEcHolder"]);
@@ -32,7 +33,8 @@ class DeleteUEcHolderRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class DeleteUEcHolderRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class DeleteUEcHolderRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getHolderId(): array {
+    public function getHolderId(): array
+    {
         return $this->get("HolderId");
     }
 
@@ -59,9 +63,8 @@ class DeleteUEcHolderRequest extends Request {
      *
      * @param string[] $holderId
      */
-    public function setHolderId(array $holderId) {
+    public function setHolderId(array $holderId)
+    {
         $this->set("HolderId", $holderId);
     }
-
-
 }

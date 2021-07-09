@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class URedisVersionSet extends Response {
+class URedisVersionSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class URedisVersionSet extends Response {
      *
      * @return string|null
      */
-    public function getVersion(): string {
+    public function getVersion(): string
+    {
         return $this->get("Version");
     }
 
@@ -35,9 +37,8 @@ class URedisVersionSet extends Response {
      *
      * @param string $version
      */
-    public function setVersion(string $version) {
+    public function setVersion(string $version)
+    {
         $this->set("Version", $version);
     }
-
-
 }

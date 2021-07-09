@@ -18,7 +18,8 @@ namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
-class UDBSlaveInstanceSet extends Response {
+class UDBSlaveInstanceSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getDBId(): string {
+    public function getDBId(): string
+    {
         return $this->get("DBId");
     }
 
@@ -53,7 +57,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId) {
+    public function setDBId(string $dbId)
+    {
         $this->set("DBId", $dbId);
     }
 
@@ -62,7 +67,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -71,7 +77,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -80,7 +87,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getDBTypeId(): string {
+    public function getDBTypeId(): string
+    {
         return $this->get("DBTypeId");
     }
 
@@ -89,16 +97,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId) {
+    public function setDBTypeId(string $dbTypeId)
+    {
         $this->set("DBTypeId", $dbTypeId);
     }
 
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getParamGroupId(): int {
+    public function getParamGroupId(): int
+    {
         return $this->get("ParamGroupId");
     }
 
@@ -107,7 +117,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId(int $paramGroupId) {
+    public function setParamGroupId(int $paramGroupId)
+    {
         $this->set("ParamGroupId", $paramGroupId);
     }
 
@@ -116,7 +127,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getAdminUser(): string {
+    public function getAdminUser(): string
+    {
         return $this->get("AdminUser");
     }
 
@@ -125,7 +137,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $adminUser
      */
-    public function setAdminUser(string $adminUser) {
+    public function setAdminUser(string $adminUser)
+    {
         $this->set("AdminUser", $adminUser);
     }
 
@@ -134,7 +147,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getVirtualIP(): string {
+    public function getVirtualIP(): string
+    {
         return $this->get("VirtualIP");
     }
 
@@ -143,7 +157,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP(string $virtualIP) {
+    public function setVirtualIP(string $virtualIP)
+    {
         $this->set("VirtualIP", $virtualIP);
     }
 
@@ -152,7 +167,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getVirtualIPMac(): string {
+    public function getVirtualIPMac(): string
+    {
         return $this->get("VirtualIPMac");
     }
 
@@ -161,16 +177,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $virtualIPMac
      */
-    public function setVirtualIPMac(string $virtualIPMac) {
+    public function setVirtualIPMac(string $virtualIPMac)
+    {
         $this->set("VirtualIPMac", $virtualIPMac);
     }
 
     /**
      * Port: 端口号，mysql默认3306，mongodb默认27017
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -179,7 +197,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
@@ -188,7 +207,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getSrcDBId(): string {
+    public function getSrcDBId(): string
+    {
         return $this->get("SrcDBId");
     }
 
@@ -197,16 +217,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $srcDBId
      */
-    public function setSrcDBId(string $srcDBId) {
+    public function setSrcDBId(string $srcDBId)
+    {
         $this->set("SrcDBId", $srcDBId);
     }
 
     /**
      * BackupCount: 备份策略，不可修改，备份文件保留的数量，默认7次
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupCount(): int {
+    public function getBackupCount(): int
+    {
         return $this->get("BackupCount");
     }
 
@@ -215,16 +237,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $backupCount
      */
-    public function setBackupCount(int $backupCount) {
+    public function setBackupCount(int $backupCount)
+    {
         $this->set("BackupCount", $backupCount);
     }
 
     /**
      * BackupBeginTime: 备份策略，不可修改，开始时间，单位小时计，默认3点
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupBeginTime(): int {
+    public function getBackupBeginTime(): int
+    {
         return $this->get("BackupBeginTime");
     }
 
@@ -233,16 +257,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $backupBeginTime
      */
-    public function setBackupBeginTime(int $backupBeginTime) {
+    public function setBackupBeginTime(int $backupBeginTime)
+    {
         $this->set("BackupBeginTime", $backupBeginTime);
     }
 
     /**
      * BackupDuration: 备份策略，一天内备份时间间隔，单位小时，默认24小时
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupDuration(): int {
+    public function getBackupDuration(): int
+    {
         return $this->get("BackupDuration");
     }
 
@@ -251,7 +277,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $backupDuration
      */
-    public function setBackupDuration(int $backupDuration) {
+    public function setBackupDuration(int $backupDuration)
+    {
         $this->set("BackupDuration", $backupDuration);
     }
 
@@ -260,7 +287,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupBlacklist(): string {
+    public function getBackupBlacklist(): string
+    {
         return $this->get("BackupBlacklist");
     }
 
@@ -269,7 +297,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $backupBlacklist
      */
-    public function setBackupBlacklist(string $backupBlacklist) {
+    public function setBackupBlacklist(string $backupBlacklist)
+    {
         $this->set("BackupBlacklist", $backupBlacklist);
     }
 
@@ -278,7 +307,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -287,16 +317,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
 
     /**
      * CreateTime: DB实例创建时间，采用UTC计时时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -305,16 +337,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ModifyTime: DB实例修改时间，采用UTC计时时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getModifyTime(): int {
+    public function getModifyTime(): int
+    {
         return $this->get("ModifyTime");
     }
 
@@ -323,16 +357,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $modifyTime
      */
-    public function setModifyTime(int $modifyTime) {
+    public function setModifyTime(int $modifyTime)
+    {
         $this->set("ModifyTime", $modifyTime);
     }
 
     /**
      * ExpiredTime: DB实例过期时间，采用UTC计时时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpiredTime(): int {
+    public function getExpiredTime(): int
+    {
         return $this->get("ExpiredTime");
     }
 
@@ -341,7 +377,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime(int $expiredTime) {
+    public function setExpiredTime(int $expiredTime)
+    {
         $this->set("ExpiredTime", $expiredTime);
     }
 
@@ -350,7 +387,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -359,16 +397,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * MemoryLimit: 内存限制(MB)，默认根据配置机型
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemoryLimit(): int {
+    public function getMemoryLimit(): int
+    {
         return $this->get("MemoryLimit");
     }
 
@@ -377,16 +417,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit(int $memoryLimit) {
+    public function setMemoryLimit(int $memoryLimit)
+    {
         $this->set("MemoryLimit", $memoryLimit);
     }
 
     /**
      * DiskSpace: 磁盘空间(GB), 默认根据配置机型
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSpace(): int {
+    public function getDiskSpace(): int
+    {
         return $this->get("DiskSpace");
     }
 
@@ -395,7 +437,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace) {
+    public function setDiskSpace(int $diskSpace)
+    {
         $this->set("DiskSpace", $diskSpace);
     }
 
@@ -404,7 +447,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return boolean|null
      */
-    public function getUseSSD(): bool {
+    public function getUseSSD(): bool
+    {
         return $this->get("UseSSD");
     }
 
@@ -413,7 +457,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD(bool $useSSD) {
+    public function setUseSSD(bool $useSSD)
+    {
         $this->set("UseSSD", $useSSD);
     }
 
@@ -422,7 +467,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getSSDType(): string {
+    public function getSSDType(): string
+    {
         return $this->get("SSDType");
     }
 
@@ -431,7 +477,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $ssdType
      */
-    public function setSSDType(string $ssdType) {
+    public function setSSDType(string $ssdType)
+    {
         $this->set("SSDType", $ssdType);
     }
 
@@ -440,7 +487,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getRole(): string {
+    public function getRole(): string
+    {
         return $this->get("Role");
     }
 
@@ -449,7 +497,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $role
      */
-    public function setRole(string $role) {
+    public function setRole(string $role)
+    {
         $this->set("Role", $role);
     }
 
@@ -458,7 +507,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return float|null
      */
-    public function getDiskUsedSize(): float {
+    public function getDiskUsedSize(): float
+    {
         return $this->get("DiskUsedSize");
     }
 
@@ -467,7 +517,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param float $diskUsedSize
      */
-    public function setDiskUsedSize(float $diskUsedSize) {
+    public function setDiskUsedSize(float $diskUsedSize)
+    {
         $this->set("DiskUsedSize", $diskUsedSize);
     }
 
@@ -476,7 +527,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return float|null
      */
-    public function getDataFileSize(): float {
+    public function getDataFileSize(): float
+    {
         return $this->get("DataFileSize");
     }
 
@@ -485,7 +537,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param float $dataFileSize
      */
-    public function setDataFileSize(float $dataFileSize) {
+    public function setDataFileSize(float $dataFileSize)
+    {
         $this->set("DataFileSize", $dataFileSize);
     }
 
@@ -494,7 +547,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return float|null
      */
-    public function getSystemFileSize(): float {
+    public function getSystemFileSize(): float
+    {
         return $this->get("SystemFileSize");
     }
 
@@ -503,7 +557,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param float $systemFileSize
      */
-    public function setSystemFileSize(float $systemFileSize) {
+    public function setSystemFileSize(float $systemFileSize)
+    {
         $this->set("SystemFileSize", $systemFileSize);
     }
 
@@ -512,7 +567,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return float|null
      */
-    public function getLogFileSize(): float {
+    public function getLogFileSize(): float
+    {
         return $this->get("LogFileSize");
     }
 
@@ -521,7 +577,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param float $logFileSize
      */
-    public function setLogFileSize(float $logFileSize) {
+    public function setLogFileSize(float $logFileSize)
+    {
         $this->set("LogFileSize", $logFileSize);
     }
 
@@ -530,7 +587,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupDate(): string {
+    public function getBackupDate(): string
+    {
         return $this->get("BackupDate");
     }
 
@@ -539,7 +597,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $backupDate
      */
-    public function setBackupDate(string $backupDate) {
+    public function setBackupDate(string $backupDate)
+    {
         $this->set("BackupDate", $backupDate);
     }
 
@@ -548,7 +607,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getInstanceMode(): string {
+    public function getInstanceMode(): string
+    {
         return $this->get("InstanceMode");
     }
 
@@ -557,7 +617,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode(string $instanceMode) {
+    public function setInstanceMode(string $instanceMode)
+    {
         $this->set("InstanceMode", $instanceMode);
     }
 
@@ -566,7 +627,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getClusterRole(): string {
+    public function getClusterRole(): string
+    {
         return $this->get("ClusterRole");
     }
 
@@ -575,7 +637,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $clusterRole
      */
-    public function setClusterRole(string $clusterRole) {
+    public function setClusterRole(string $clusterRole)
+    {
         $this->set("ClusterRole", $clusterRole);
     }
 
@@ -584,7 +647,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -593,7 +657,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -602,7 +667,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -611,7 +677,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -620,7 +687,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getInstanceType(): string {
+    public function getInstanceType(): string
+    {
         return $this->get("InstanceType");
     }
 
@@ -629,16 +697,18 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType) {
+    public function setInstanceType(string $instanceType)
+    {
         $this->set("InstanceType", $instanceType);
     }
 
     /**
      * InstanceTypeId: UDB数据库机型ID
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getInstanceTypeId(): int {
+    public function getInstanceTypeId(): int
+    {
         return $this->get("InstanceTypeId");
     }
 
@@ -647,7 +717,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param int $instanceTypeId
      */
-    public function setInstanceTypeId(int $instanceTypeId) {
+    public function setInstanceTypeId(int $instanceTypeId)
+    {
         $this->set("InstanceTypeId", $instanceTypeId);
     }
 
@@ -656,7 +727,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -665,7 +737,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -674,7 +747,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @return string|null
      */
-    public function getIPv6Address(): string {
+    public function getIPv6Address(): string
+    {
         return $this->get("IPv6Address");
     }
 
@@ -683,9 +757,8 @@ class UDBSlaveInstanceSet extends Response {
      *
      * @param string $iPv6Address
      */
-    public function setIPv6Address(string $iPv6Address) {
+    public function setIPv6Address(string $iPv6Address)
+    {
         $this->set("IPv6Address", $iPv6Address);
     }
-
-
 }

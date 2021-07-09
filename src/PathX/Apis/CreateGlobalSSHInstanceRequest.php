@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateGlobalSSHInstanceRequest extends Request {
+class CreateGlobalSSHInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateGlobalSSHInstance"]);
@@ -36,7 +37,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -45,7 +47,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -54,7 +57,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getArea(): string {
+    public function getArea(): string
+    {
         return $this->get("Area");
     }
 
@@ -63,7 +67,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $area
      */
-    public function setArea(string $area) {
+    public function setArea(string $area)
+    {
         $this->set("Area", $area);
     }
 
@@ -72,7 +77,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getTargetIP(): string {
+    public function getTargetIP(): string
+    {
         return $this->get("TargetIP");
     }
 
@@ -81,16 +87,18 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $targetIP
      */
-    public function setTargetIP(string $targetIP) {
+    public function setTargetIP(string $targetIP)
+    {
         $this->set("TargetIP", $targetIP);
     }
 
     /**
      * Port: 源站服务器监听的SSH端口，可取范围[1-65535]，不能使用80，443,  65123端口。如果InstanceType=Free，取值范围缩小为[22,3389],linux系统选择22，windows系统自动选3389。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -99,7 +107,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
@@ -108,7 +117,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getAreaCode(): string {
+    public function getAreaCode(): string
+    {
         return $this->get("AreaCode");
     }
 
@@ -117,7 +127,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $areaCode
      */
-    public function setAreaCode(string $areaCode) {
+    public function setAreaCode(string $areaCode)
+    {
         $this->set("AreaCode", $areaCode);
     }
 
@@ -126,7 +137,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -135,7 +147,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -144,7 +157,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -153,16 +167,18 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -171,7 +187,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -180,7 +197,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceType(): string {
+    public function getInstanceType(): string
+    {
         return $this->get("InstanceType");
     }
 
@@ -189,16 +207,18 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType) {
+    public function setInstanceType(string $instanceType)
+    {
         $this->set("InstanceType", $instanceType);
     }
 
     /**
      * BandwidthPackage: Ultimate版本带宽包大小,枚举值：[0,20,40]。单位MB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidthPackage(): int {
+    public function getBandwidthPackage(): int
+    {
         return $this->get("BandwidthPackage");
     }
 
@@ -207,7 +227,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param int $bandwidthPackage
      */
-    public function setBandwidthPackage(int $bandwidthPackage) {
+    public function setBandwidthPackage(int $bandwidthPackage)
+    {
         $this->set("BandwidthPackage", $bandwidthPackage);
     }
 
@@ -216,7 +237,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getForwardRegion(): string {
+    public function getForwardRegion(): string
+    {
         return $this->get("ForwardRegion");
     }
 
@@ -225,7 +247,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $forwardRegion
      */
-    public function setForwardRegion(string $forwardRegion) {
+    public function setForwardRegion(string $forwardRegion)
+    {
         $this->set("ForwardRegion", $forwardRegion);
     }
 
@@ -234,7 +257,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -243,9 +267,8 @@ class CreateGlobalSSHInstanceRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUHostInstanceRequest extends Request {
+class DescribeUHostInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUHostInstance"]);
@@ -32,7 +33,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -59,7 +63,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -68,7 +73,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -77,7 +83,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -86,7 +93,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getUHostIds(): array {
+    public function getUHostIds(): array
+    {
         return $this->get("UHostIds");
     }
 
@@ -95,7 +103,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string[] $uHostIds
      */
-    public function setUHostIds(array $uHostIds) {
+    public function setUHostIds(array $uHostIds)
+    {
         $this->set("UHostIds", $uHostIds);
     }
 
@@ -104,7 +113,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -113,16 +123,18 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -131,16 +143,18 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 返回数据长度，默认为20，最大100
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -149,7 +163,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -158,7 +173,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getIsolationGroup(): string {
+    public function getIsolationGroup(): string
+    {
         return $this->get("IsolationGroup");
     }
 
@@ -167,7 +183,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup(string $isolationGroup) {
+    public function setIsolationGroup(string $isolationGroup)
+    {
         $this->set("IsolationGroup", $isolationGroup);
     }
 
@@ -176,7 +193,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -185,7 +203,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -194,7 +213,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -203,7 +223,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -212,7 +233,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDiskIdForAttachment(): string {
+    public function getUDiskIdForAttachment(): string
+    {
         return $this->get("UDiskIdForAttachment");
     }
 
@@ -221,9 +243,8 @@ class DescribeUHostInstanceRequest extends Request {
      *
      * @param string $uDiskIdForAttachment
      */
-    public function setUDiskIdForAttachment(string $uDiskIdForAttachment) {
+    public function setUDiskIdForAttachment(string $uDiskIdForAttachment)
+    {
         $this->set("UDiskIdForAttachment", $uDiskIdForAttachment);
     }
-
-
 }

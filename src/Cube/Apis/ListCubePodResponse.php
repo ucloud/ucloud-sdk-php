@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ListCubePodResponse extends Response {
+class ListCubePodResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ListCubePodResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getPods(): array {
+    public function getPods(): array
+    {
         return $this->get("Pods");
     }
 
@@ -35,16 +37,18 @@ class ListCubePodResponse extends Response {
      *
      * @param string[] $pods
      */
-    public function setPods(array $pods) {
+    public function setPods(array $pods)
+    {
         $this->set("Pods", $pods);
     }
 
     /**
      * TotalCount: Cube的总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -53,9 +57,8 @@ class ListCubePodResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

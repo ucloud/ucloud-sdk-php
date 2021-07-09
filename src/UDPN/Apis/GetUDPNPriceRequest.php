@@ -18,7 +18,8 @@ namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUDPNPriceRequest extends Request {
+class GetUDPNPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUDPNPrice"]);
@@ -34,7 +35,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getPeer1(): string {
+    public function getPeer1(): string
+    {
         return $this->get("Peer1");
     }
 
@@ -61,7 +65,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @param string $peer1
      */
-    public function setPeer1(string $peer1) {
+    public function setPeer1(string $peer1)
+    {
         $this->set("Peer1", $peer1);
     }
 
@@ -70,7 +75,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getPeer2(): string {
+    public function getPeer2(): string
+    {
         return $this->get("Peer2");
     }
 
@@ -79,16 +85,18 @@ class GetUDPNPriceRequest extends Request {
      *
      * @param string $peer2
      */
-    public function setPeer2(string $peer2) {
+    public function setPeer2(string $peer2)
+    {
         $this->set("Peer2", $peer2);
     }
 
     /**
      * Bandwidth: 带宽信息
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -97,7 +105,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -106,7 +115,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -115,16 +125,18 @@ class GetUDPNPriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -133,7 +145,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -142,7 +155,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getPayMode(): string {
+    public function getPayMode(): string
+    {
         return $this->get("PayMode");
     }
 
@@ -151,9 +165,8 @@ class GetUDPNPriceRequest extends Request {
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode) {
+    public function setPayMode(string $payMode)
+    {
         $this->set("PayMode", $payMode);
     }
-
-
 }

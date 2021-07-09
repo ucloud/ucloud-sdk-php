@@ -48,7 +48,8 @@ use UCloud\IPSecVPN\Apis\UpdateVPNTunnelAttributeResponse;
 /**
  * This client is used to call actions of **IPSecVPN** service
  */
-class IPSecVPNClient extends Client {
+class IPSecVPNClient extends Client
+{
 
     /**
      * CreateRemoteVPNGateway - 创建客户VPN网关
@@ -74,7 +75,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createRemoteVPNGateway(CreateRemoteVPNGatewayRequest $request = null): CreateRemoteVPNGatewayResponse {
+    public function createRemoteVPNGateway(CreateRemoteVPNGatewayRequest $request = null): CreateRemoteVPNGatewayResponse
+    {
         $resp = $this->invoke($request);
         return new CreateRemoteVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -109,7 +111,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createVPNGateway(CreateVPNGatewayRequest $request = null): CreateVPNGatewayResponse {
+    public function createVPNGateway(CreateVPNGatewayRequest $request = null): CreateVPNGatewayResponse
+    {
         $resp = $this->invoke($request);
         return new CreateVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -157,7 +160,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createVPNTunnel(CreateVPNTunnelRequest $request = null): CreateVPNTunnelResponse {
+    public function createVPNTunnel(CreateVPNTunnelRequest $request = null): CreateVPNTunnelResponse
+    {
         $resp = $this->invoke($request);
         return new CreateVPNTunnelResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -182,7 +186,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteRemoteVPNGateway(DeleteRemoteVPNGatewayRequest $request = null): DeleteRemoteVPNGatewayResponse {
+    public function deleteRemoteVPNGateway(DeleteRemoteVPNGatewayRequest $request = null): DeleteRemoteVPNGatewayResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteRemoteVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -208,7 +213,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteVPNGateway(DeleteVPNGatewayRequest $request = null): DeleteVPNGatewayResponse {
+    public function deleteVPNGateway(DeleteVPNGatewayRequest $request = null): DeleteVPNGatewayResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -233,7 +239,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteVPNTunnel(DeleteVPNTunnelRequest $request = null): DeleteVPNTunnelResponse {
+    public function deleteVPNTunnel(DeleteVPNTunnelRequest $request = null): DeleteVPNTunnelResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteVPNTunnelResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -273,7 +280,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeRemoteVPNGateway(DescribeRemoteVPNGatewayRequest $request = null): DescribeRemoteVPNGatewayResponse {
+    public function describeRemoteVPNGateway(DescribeRemoteVPNGatewayRequest $request = null): DescribeRemoteVPNGatewayResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeRemoteVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -321,7 +329,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeVPNGateway(DescribeVPNGatewayRequest $request = null): DescribeVPNGatewayResponse {
+    public function describeVPNGateway(DescribeVPNGatewayRequest $request = null): DescribeVPNGatewayResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -386,7 +395,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeVPNTunnel(DescribeVPNTunnelRequest $request = null): DescribeVPNTunnelResponse {
+    public function describeVPNTunnel(DescribeVPNTunnelRequest $request = null): DescribeVPNTunnelResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeVPNTunnelResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -420,7 +430,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getVPNGatewayPrice(GetVPNGatewayPriceRequest $request = null): GetVPNGatewayPriceResponse {
+    public function getVPNGatewayPrice(GetVPNGatewayPriceRequest $request = null): GetVPNGatewayPriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetVPNGatewayPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -447,7 +458,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getVPNGatewayUpgradePrice(GetVPNGatewayUpgradePriceRequest $request = null): GetVPNGatewayUpgradePriceResponse {
+    public function getVPNGatewayUpgradePrice(GetVPNGatewayUpgradePriceRequest $request = null): GetVPNGatewayUpgradePriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetVPNGatewayUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -473,7 +485,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateVPNGateway(UpdateVPNGatewayRequest $request = null): UpdateVPNGatewayResponse {
+    public function updateVPNGateway(UpdateVPNGatewayRequest $request = null): UpdateVPNGatewayResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -515,7 +528,8 @@ class IPSecVPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateVPNTunnelAttribute(UpdateVPNTunnelAttributeRequest $request = null): UpdateVPNTunnelAttributeResponse {
+    public function updateVPNTunnelAttribute(UpdateVPNTunnelAttributeRequest $request = null): UpdateVPNTunnelAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateVPNTunnelAttributeResponse($resp->toArray(), $resp->getRequestId());
     }

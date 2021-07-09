@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class UMemBackupSet extends Response {
+class UMemBackupSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UMemBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupName(): string {
+    public function getBackupName(): string
+    {
         return $this->get("BackupName");
     }
 
@@ -35,16 +37,18 @@ class UMemBackupSet extends Response {
      *
      * @param string $backupName
      */
-    public function setBackupName(string $backupName) {
+    public function setBackupName(string $backupName)
+    {
         $this->set("BackupName", $backupName);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -53,7 +57,8 @@ class UMemBackupSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -62,7 +67,8 @@ class UMemBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -71,7 +77,8 @@ class UMemBackupSet extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
 
@@ -80,7 +87,8 @@ class UMemBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupId(): string {
+    public function getBackupId(): string
+    {
         return $this->get("BackupId");
     }
 
@@ -89,7 +97,8 @@ class UMemBackupSet extends Response {
      *
      * @param string $backupId
      */
-    public function setBackupId(string $backupId) {
+    public function setBackupId(string $backupId)
+    {
         $this->set("BackupId", $backupId);
     }
 
@@ -98,7 +107,8 @@ class UMemBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupType(): string {
+    public function getBackupType(): string
+    {
         return $this->get("BackupType");
     }
 
@@ -107,16 +117,18 @@ class UMemBackupSet extends Response {
      *
      * @param string $backupType
      */
-    public function setBackupType(string $backupType) {
+    public function setBackupType(string $backupType)
+    {
         $this->set("BackupType", $backupType);
     }
 
     /**
      * BlockCount: 本次备份，分片的数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBlockCount(): int {
+    public function getBlockCount(): int
+    {
         return $this->get("BlockCount");
     }
 
@@ -125,9 +137,8 @@ class UMemBackupSet extends Response {
      *
      * @param int $blockCount
      */
-    public function setBlockCount(int $blockCount) {
+    public function setBlockCount(int $blockCount)
+    {
         $this->set("BlockCount", $blockCount);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteRemoteVPNGatewayResponse extends Response {
+class DeleteRemoteVPNGatewayResponse extends Response
+{
     
 
 

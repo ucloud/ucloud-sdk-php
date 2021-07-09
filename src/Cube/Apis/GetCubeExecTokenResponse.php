@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetCubeExecTokenResponse extends Response {
+class GetCubeExecTokenResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetCubeExecTokenResponse extends Response {
      *
      * @return string|null
      */
-    public function getToken(): string {
+    public function getToken(): string
+    {
         return $this->get("Token");
     }
 
@@ -35,7 +37,8 @@ class GetCubeExecTokenResponse extends Response {
      *
      * @param string $token
      */
-    public function setToken(string $token) {
+    public function setToken(string $token)
+    {
         $this->set("Token", $token);
     }
 
@@ -44,7 +47,8 @@ class GetCubeExecTokenResponse extends Response {
      *
      * @return string|null
      */
-    public function getTerminalUrl(): string {
+    public function getTerminalUrl(): string
+    {
         return $this->get("TerminalUrl");
     }
 
@@ -53,9 +57,8 @@ class GetCubeExecTokenResponse extends Response {
      *
      * @param string $terminalUrl
      */
-    public function setTerminalUrl(string $terminalUrl) {
+    public function setTerminalUrl(string $terminalUrl)
+    {
         $this->set("TerminalUrl", $terminalUrl);
     }
-
-
 }

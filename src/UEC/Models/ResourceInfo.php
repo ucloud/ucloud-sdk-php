@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class ResourceInfo extends Response {
+class ResourceInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -35,7 +37,8 @@ class ResourceInfo extends Response {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
@@ -44,7 +47,8 @@ class ResourceInfo extends Response {
      *
      * @return string[]|null
      */
-    public function getPublicIpList(): array {
+    public function getPublicIpList(): array
+    {
         return $this->get("PublicIpList");
     }
 
@@ -53,7 +57,8 @@ class ResourceInfo extends Response {
      *
      * @param string[] $publicIpList
      */
-    public function setPublicIpList(array $publicIpList) {
+    public function setPublicIpList(array $publicIpList)
+    {
         $this->set("PublicIpList", $publicIpList);
     }
 
@@ -62,7 +67,8 @@ class ResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -71,16 +77,18 @@ class ResourceInfo extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * State: 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getState(): int {
+    public function getState(): int
+    {
         return $this->get("State");
     }
 
@@ -89,7 +97,8 @@ class ResourceInfo extends Response {
      *
      * @param int $state
      */
-    public function setState(int $state) {
+    public function setState(int $state)
+    {
         $this->set("State", $state);
     }
 
@@ -98,7 +107,8 @@ class ResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -107,9 +117,8 @@ class ResourceInfo extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetGlobalSSHUpdatePriceRequest extends Request {
+class GetGlobalSSHUpdatePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetGlobalSSHUpdatePrice"]);
@@ -33,7 +34,8 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceType(): string {
+    public function getInstanceType(): string
+    {
         return $this->get("InstanceType");
     }
 
@@ -60,7 +64,8 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType) {
+    public function setInstanceType(string $instanceType)
+    {
         $this->set("InstanceType", $instanceType);
     }
 
@@ -69,7 +74,8 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceId(): string {
+    public function getInstanceId(): string
+    {
         return $this->get("InstanceId");
     }
 
@@ -78,16 +84,18 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId) {
+    public function setInstanceId(string $instanceId)
+    {
         $this->set("InstanceId", $instanceId);
     }
 
     /**
      * Quantity: 购买周期，如果ChargeType为Month，Quantity可以不填默认为0；其他情况必须为正整数。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -96,7 +104,8 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -105,7 +114,8 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -114,9 +124,8 @@ class GetGlobalSSHUpdatePriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateBandwidthPackageResponse extends Response {
+class CreateBandwidthPackageResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateBandwidthPackageResponse extends Response {
      *
      * @return string|null
      */
-    public function getBandwidthPackageId(): string {
+    public function getBandwidthPackageId(): string
+    {
         return $this->get("BandwidthPackageId");
     }
 
@@ -35,9 +37,8 @@ class CreateBandwidthPackageResponse extends Response {
      *
      * @param string $bandwidthPackageId
      */
-    public function setBandwidthPackageId(string $bandwidthPackageId) {
+    public function setBandwidthPackageId(string $bandwidthPackageId)
+    {
         $this->set("BandwidthPackageId", $bandwidthPackageId);
     }
-
-
 }

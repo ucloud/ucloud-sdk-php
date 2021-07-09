@@ -18,15 +18,17 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetCubePriceResponse extends Response {
+class GetCubePriceResponse extends Response
+{
     
 
     /**
      * Price: 折扣后价格，单位为分
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -35,16 +37,18 @@ class GetCubePriceResponse extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
 
     /**
      * OriginalPrice: 列表价格，单位为分
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginalPrice(): int {
+    public function getOriginalPrice(): int
+    {
         return $this->get("OriginalPrice");
     }
 
@@ -53,9 +57,8 @@ class GetCubePriceResponse extends Response {
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice) {
+    public function setOriginalPrice(int $originalPrice)
+    {
         $this->set("OriginalPrice", $originalPrice);
     }
-
-
 }

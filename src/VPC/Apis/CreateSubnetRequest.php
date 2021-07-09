@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateSubnetRequest extends Request {
+class CreateSubnetRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateSubnet"]);
@@ -34,7 +35,8 @@ class CreateSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class CreateSubnetRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class CreateSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class CreateSubnetRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class CreateSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -79,7 +85,8 @@ class CreateSubnetRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -88,7 +95,8 @@ class CreateSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnet(): string {
+    public function getSubnet(): string
+    {
         return $this->get("Subnet");
     }
 
@@ -97,16 +105,18 @@ class CreateSubnetRequest extends Request {
      *
      * @param string $subnet
      */
-    public function setSubnet(string $subnet) {
+    public function setSubnet(string $subnet)
+    {
         $this->set("Subnet", $subnet);
     }
 
     /**
      * Netmask: 子网网络号位数，默认为24
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getNetmask(): int {
+    public function getNetmask(): int
+    {
         return $this->get("Netmask");
     }
 
@@ -115,7 +125,8 @@ class CreateSubnetRequest extends Request {
      *
      * @param int $netmask
      */
-    public function setNetmask(int $netmask) {
+    public function setNetmask(int $netmask)
+    {
         $this->set("Netmask", $netmask);
     }
 
@@ -124,7 +135,8 @@ class CreateSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetName(): string {
+    public function getSubnetName(): string
+    {
         return $this->get("SubnetName");
     }
 
@@ -133,7 +145,8 @@ class CreateSubnetRequest extends Request {
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName) {
+    public function setSubnetName(string $subnetName)
+    {
         $this->set("SubnetName", $subnetName);
     }
 
@@ -142,7 +155,8 @@ class CreateSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -151,7 +165,8 @@ class CreateSubnetRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -160,7 +175,8 @@ class CreateSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -169,9 +185,8 @@ class CreateSubnetRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

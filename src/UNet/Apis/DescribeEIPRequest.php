@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeEIPRequest extends Request {
+class DescribeEIPRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeEIP"]);
@@ -32,7 +33,8 @@ class DescribeEIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeEIPRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeEIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,7 +63,8 @@ class DescribeEIPRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -68,7 +73,8 @@ class DescribeEIPRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getEIPIds(): array {
+    public function getEIPIds(): array
+    {
         return $this->get("EIPIds");
     }
 
@@ -77,16 +83,18 @@ class DescribeEIPRequest extends Request {
      *
      * @param string[] $eipIds
      */
-    public function setEIPIds(array $eipIds) {
+    public function setEIPIds(array $eipIds)
+    {
         $this->set("EIPIds", $eipIds);
     }
 
     /**
      * Offset: 数据偏移量, 默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -95,16 +103,18 @@ class DescribeEIPRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 数据分页值, 默认为20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -113,7 +123,8 @@ class DescribeEIPRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -122,7 +133,8 @@ class DescribeEIPRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getIPs(): array {
+    public function getIPs(): array
+    {
         return $this->get("IPs");
     }
 
@@ -131,9 +143,8 @@ class DescribeEIPRequest extends Request {
      *
      * @param string[] $iPs
      */
-    public function setIPs(array $iPs) {
+    public function setIPs(array $iPs)
+    {
         $this->set("IPs", $iPs);
     }
-
-
 }

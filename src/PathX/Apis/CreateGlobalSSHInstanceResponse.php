@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateGlobalSSHInstanceResponse extends Response {
+class CreateGlobalSSHInstanceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateGlobalSSHInstanceResponse extends Response {
      *
      * @return string|null
      */
-    public function getInstanceId(): string {
+    public function getInstanceId(): string
+    {
         return $this->get("InstanceId");
     }
 
@@ -35,7 +37,8 @@ class CreateGlobalSSHInstanceResponse extends Response {
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId) {
+    public function setInstanceId(string $instanceId)
+    {
         $this->set("InstanceId", $instanceId);
     }
 
@@ -44,7 +47,8 @@ class CreateGlobalSSHInstanceResponse extends Response {
      *
      * @return string|null
      */
-    public function getAcceleratingDomain(): string {
+    public function getAcceleratingDomain(): string
+    {
         return $this->get("AcceleratingDomain");
     }
 
@@ -53,9 +57,8 @@ class CreateGlobalSSHInstanceResponse extends Response {
      *
      * @param string $acceleratingDomain
      */
-    public function setAcceleratingDomain(string $acceleratingDomain) {
+    public function setAcceleratingDomain(string $acceleratingDomain)
+    {
         $this->set("AcceleratingDomain", $acceleratingDomain);
     }
-
-
 }

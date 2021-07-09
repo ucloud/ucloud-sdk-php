@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateUDBInstanceBackupStrategyRequest extends Request {
+class UpdateUDBInstanceBackupStrategyRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateUDBInstanceBackupStrategy"]);
@@ -33,7 +34,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -60,7 +64,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -69,7 +74,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -78,7 +84,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -87,7 +94,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBId(): string {
+    public function getDBId(): string
+    {
         return $this->get("DBId");
     }
 
@@ -96,16 +104,18 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId) {
+    public function setDBId(string $dbId)
+    {
         $this->set("DBId", $dbId);
     }
 
     /**
      * BackupTime: 备份的整点时间，范围[0,23]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupTime(): int {
+    public function getBackupTime(): int
+    {
         return $this->get("BackupTime");
     }
 
@@ -114,7 +124,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @param int $backupTime
      */
-    public function setBackupTime(int $backupTime) {
+    public function setBackupTime(int $backupTime)
+    {
         $this->set("BackupTime", $backupTime);
     }
 
@@ -123,7 +134,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackupDate(): string {
+    public function getBackupDate(): string
+    {
         return $this->get("BackupDate");
     }
 
@@ -132,7 +144,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @param string $backupDate
      */
-    public function setBackupDate(string $backupDate) {
+    public function setBackupDate(string $backupDate)
+    {
         $this->set("BackupDate", $backupDate);
     }
 
@@ -141,7 +154,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getForceDump(): bool {
+    public function getForceDump(): bool
+    {
         return $this->get("ForceDump");
     }
 
@@ -150,7 +164,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @param boolean $forceDump
      */
-    public function setForceDump(bool $forceDump) {
+    public function setForceDump(bool $forceDump)
+    {
         $this->set("ForceDump", $forceDump);
     }
 
@@ -159,7 +174,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackupMethod(): string {
+    public function getBackupMethod(): string
+    {
         return $this->get("BackupMethod");
     }
 
@@ -168,9 +184,8 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request {
      *
      * @param string $backupMethod
      */
-    public function setBackupMethod(string $backupMethod) {
+    public function setBackupMethod(string $backupMethod)
+    {
         $this->set("BackupMethod", $backupMethod);
     }
-
-
 }

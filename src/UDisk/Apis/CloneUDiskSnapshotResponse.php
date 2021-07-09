@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CloneUDiskSnapshotResponse extends Response {
+class CloneUDiskSnapshotResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CloneUDiskSnapshotResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getUDiskId(): array {
+    public function getUDiskId(): array
+    {
         return $this->get("UDiskId");
     }
 
@@ -35,9 +37,8 @@ class CloneUDiskSnapshotResponse extends Response {
      *
      * @param string[] $uDiskId
      */
-    public function setUDiskId(array $uDiskId) {
+    public function setUDiskId(array $uDiskId)
+    {
         $this->set("UDiskId", $uDiskId);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUDPNBandwidthRequest extends Request {
+class ModifyUDPNBandwidthRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyUDPNBandwidth"]);
@@ -33,7 +34,8 @@ class ModifyUDPNBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class ModifyUDPNBandwidthRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class ModifyUDPNBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDPNId(): string {
+    public function getUDPNId(): string
+    {
         return $this->get("UDPNId");
     }
 
@@ -60,16 +64,18 @@ class ModifyUDPNBandwidthRequest extends Request {
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId) {
+    public function setUDPNId(string $udpnId)
+    {
         $this->set("UDPNId", $udpnId);
     }
 
     /**
      * Bandwidth: 调整后专线带宽, 单位为Mbps，取值范围为大于等于2且小于等于1000([2-1000])的整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -78,7 +84,8 @@ class ModifyUDPNBandwidthRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -87,7 +94,8 @@ class ModifyUDPNBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -96,9 +104,8 @@ class ModifyUDPNBandwidthRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUGAInstanceResponse extends Response {
+class DeleteUGAInstanceResponse extends Response
+{
     
 
 

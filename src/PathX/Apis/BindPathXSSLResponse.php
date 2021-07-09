@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
-class BindPathXSSLResponse extends Response {
+class BindPathXSSLResponse extends Response
+{
     
 
 

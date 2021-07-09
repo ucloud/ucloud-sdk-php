@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpgradeUDDBInstanceRequest extends Request {
+class UpgradeUDDBInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpgradeUDDBInstance"]);
@@ -36,7 +37,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,7 +67,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -72,7 +77,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -81,7 +87,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -90,7 +97,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDDBId(): string {
+    public function getUDDBId(): string
+    {
         return $this->get("UDDBId");
     }
 
@@ -99,7 +107,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @param string $uddbId
      */
-    public function setUDDBId(string $uddbId) {
+    public function setUDDBId(string $uddbId)
+    {
         $this->set("UDDBId", $uddbId);
     }
 
@@ -108,7 +117,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRouterVersion(): string {
+    public function getRouterVersion(): string
+    {
         return $this->get("RouterVersion");
     }
 
@@ -117,16 +127,18 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @param string $routerVersion
      */
-    public function setRouterVersion(string $routerVersion) {
+    public function setRouterVersion(string $routerVersion)
+    {
         $this->set("RouterVersion", $routerVersion);
     }
 
     /**
      * RouterNodeNum: 其他版本：该参数可不填；专享版：物理机台数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRouterNodeNum(): int {
+    public function getRouterNodeNum(): int
+    {
         return $this->get("RouterNodeNum");
     }
 
@@ -135,7 +147,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @param int $routerNodeNum
      */
-    public function setRouterNodeNum(int $routerNodeNum) {
+    public function setRouterNodeNum(int $routerNodeNum)
+    {
         $this->set("RouterNodeNum", $routerNodeNum);
     }
 
@@ -144,7 +157,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -153,9 +167,8 @@ class UpgradeUDDBInstanceRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

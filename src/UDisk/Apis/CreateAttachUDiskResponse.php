@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateAttachUDiskResponse extends Response {
+class CreateAttachUDiskResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateAttachUDiskResponse extends Response {
      *
      * @return string|null
      */
-    public function getUDiskId(): string {
+    public function getUDiskId(): string
+    {
         return $this->get("UDiskId");
     }
 
@@ -35,7 +37,8 @@ class CreateAttachUDiskResponse extends Response {
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId) {
+    public function setUDiskId(string $uDiskId)
+    {
         $this->set("UDiskId", $uDiskId);
     }
 
@@ -44,7 +47,8 @@ class CreateAttachUDiskResponse extends Response {
      *
      * @return string|null
      */
-    public function getUHostId(): string {
+    public function getUHostId(): string
+    {
         return $this->get("UHostId");
     }
 
@@ -53,7 +57,8 @@ class CreateAttachUDiskResponse extends Response {
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId) {
+    public function setUHostId(string $uHostId)
+    {
         $this->set("UHostId", $uHostId);
     }
 
@@ -62,7 +67,8 @@ class CreateAttachUDiskResponse extends Response {
      *
      * @return string|null
      */
-    public function getHostId(): string {
+    public function getHostId(): string
+    {
         return $this->get("HostId");
     }
 
@@ -71,7 +77,8 @@ class CreateAttachUDiskResponse extends Response {
      *
      * @param string $hostId
      */
-    public function setHostId(string $hostId) {
+    public function setHostId(string $hostId)
+    {
         $this->set("HostId", $hostId);
     }
 
@@ -80,7 +87,8 @@ class CreateAttachUDiskResponse extends Response {
      *
      * @return string|null
      */
-    public function getDeviceName(): string {
+    public function getDeviceName(): string
+    {
         return $this->get("DeviceName");
     }
 
@@ -89,9 +97,8 @@ class CreateAttachUDiskResponse extends Response {
      *
      * @param string $deviceName
      */
-    public function setDeviceName(string $deviceName) {
+    public function setDeviceName(string $deviceName)
+    {
         $this->set("DeviceName", $deviceName);
     }
-
-
 }

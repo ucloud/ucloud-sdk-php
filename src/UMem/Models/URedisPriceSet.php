@@ -18,15 +18,17 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class URedisPriceSet extends Response {
+class URedisPriceSet extends Response
+{
     
 
     /**
      * OriginalPrice: 原价
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginalPrice(): int {
+    public function getOriginalPrice(): int
+    {
         return $this->get("OriginalPrice");
     }
 
@@ -35,7 +37,8 @@ class URedisPriceSet extends Response {
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice) {
+    public function setOriginalPrice(int $originalPrice)
+    {
         $this->set("OriginalPrice", $originalPrice);
     }
 
@@ -44,7 +47,8 @@ class URedisPriceSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -53,16 +57,18 @@ class URedisPriceSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * ListPrice: 产品列表价
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getListPrice(): int {
+    public function getListPrice(): int
+    {
         return $this->get("ListPrice");
     }
 
@@ -71,16 +77,18 @@ class URedisPriceSet extends Response {
      *
      * @param int $listPrice
      */
-    public function setListPrice(int $listPrice) {
+    public function setListPrice(int $listPrice)
+    {
         $this->set("ListPrice", $listPrice);
     }
 
     /**
      * Price: 总价格
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -89,9 +97,8 @@ class URedisPriceSet extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
-
-
 }

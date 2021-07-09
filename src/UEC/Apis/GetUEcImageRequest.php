@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUEcImageRequest extends Request {
+class GetUEcImageRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUEcImage"]);
@@ -31,7 +32,8 @@ class GetUEcImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,7 +42,8 @@ class GetUEcImageRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -49,7 +52,8 @@ class GetUEcImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageType(): string {
+    public function getImageType(): string
+    {
         return $this->get("ImageType");
     }
 
@@ -58,16 +62,18 @@ class GetUEcImageRequest extends Request {
      *
      * @param string $imageType
      */
-    public function setImageType(string $imageType) {
+    public function setImageType(string $imageType)
+    {
         $this->set("ImageType", $imageType);
     }
 
     /**
      * Offset: 数据偏移量，默认0，非负整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -76,16 +82,18 @@ class GetUEcImageRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 返回数据长度， 默认20，非负整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -94,9 +102,8 @@ class GetUEcImageRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

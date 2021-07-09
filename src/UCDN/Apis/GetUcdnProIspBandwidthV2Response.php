@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\ProIspBandwidthSet;
 use UCloud\UCDN\Models\ProIspBandwidthList;
 
-class GetUcdnProIspBandwidthV2Response extends Response {
+class GetUcdnProIspBandwidthV2Response extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class GetUcdnProIspBandwidthV2Response extends Response {
      *
      * @return ProIspBandwidthSet[]|null
      */
-    public function getBandwidthSet(): array {
+    public function getBandwidthSet(): array
+    {
         $items = $this->get("BandwidthSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class GetUcdnProIspBandwidthV2Response extends Response {
      *
      * @param ProIspBandwidthSet[] $bandwidthSet
      */
-    public function setBandwidthSet(array $bandwidthSet) {
+    public function setBandwidthSet(array $bandwidthSet)
+    {
         $result = [];
         foreach ($bandwidthSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

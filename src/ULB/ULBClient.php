@@ -62,7 +62,8 @@ use UCloud\ULB\Apis\UpdateVServerAttributeResponse;
 /**
  * This client is used to call actions of **ULB** service
  */
-class ULBClient extends Client {
+class ULBClient extends Client
+{
 
     /**
      * AllocateBackend - 添加ULB后端资源实例
@@ -95,7 +96,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function allocateBackend(AllocateBackendRequest $request = null): AllocateBackendResponse {
+    public function allocateBackend(AllocateBackendRequest $request = null): AllocateBackendResponse
+    {
         $resp = $this->invoke($request);
         return new AllocateBackendResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -122,7 +124,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function bindSSL(BindSSLRequest $request = null): BindSSLResponse {
+    public function bindSSL(BindSSLRequest $request = null): BindSSLResponse
+    {
         $resp = $this->invoke($request);
         return new BindSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -153,7 +156,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createPolicy(CreatePolicyRequest $request = null): CreatePolicyResponse {
+    public function createPolicy(CreatePolicyRequest $request = null): CreatePolicyResponse
+    {
         $resp = $this->invoke($request);
         return new CreatePolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -184,7 +188,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createSSL(CreateSSLRequest $request = null): CreateSSLResponse {
+    public function createSSL(CreateSSLRequest $request = null): CreateSSLResponse
+    {
         $resp = $this->invoke($request);
         return new CreateSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -221,7 +226,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createULB(CreateULBRequest $request = null): CreateULBResponse {
+    public function createULB(CreateULBRequest $request = null): CreateULBResponse
+    {
         $resp = $this->invoke($request);
         return new CreateULBResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -260,7 +266,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createVServer(CreateVServerRequest $request = null): CreateVServerResponse {
+    public function createVServer(CreateVServerRequest $request = null): CreateVServerResponse
+    {
         $resp = $this->invoke($request);
         return new CreateVServerResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -286,7 +293,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deletePolicy(DeletePolicyRequest $request = null): DeletePolicyResponse {
+    public function deletePolicy(DeletePolicyRequest $request = null): DeletePolicyResponse
+    {
         $resp = $this->invoke($request);
         return new DeletePolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -311,7 +319,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteSSL(DeleteSSLRequest $request = null): DeleteSSLResponse {
+    public function deleteSSL(DeleteSSLRequest $request = null): DeleteSSLResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -337,7 +346,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteULB(DeleteULBRequest $request = null): DeleteULBResponse {
+    public function deleteULB(DeleteULBRequest $request = null): DeleteULBResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteULBResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -363,7 +373,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteVServer(DeleteVServerRequest $request = null): DeleteVServerResponse {
+    public function deleteVServer(DeleteVServerRequest $request = null): DeleteVServerResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteVServerResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -409,7 +420,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeSSL(DescribeSSLRequest $request = null): DescribeSSLResponse {
+    public function describeSSL(DescribeSSLRequest $request = null): DescribeSSLResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -557,7 +569,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeULB(DescribeULBRequest $request = null): DescribeULBResponse {
+    public function describeULB(DescribeULBRequest $request = null): DescribeULBResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeULBResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -628,7 +641,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeULBSimple(DescribeULBSimpleRequest $request = null): DescribeULBSimpleResponse {
+    public function describeULBSimple(DescribeULBSimpleRequest $request = null): DescribeULBSimpleResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeULBSimpleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -735,7 +749,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeVServer(DescribeVServerRequest $request = null): DescribeVServerResponse {
+    public function describeVServer(DescribeVServerRequest $request = null): DescribeVServerResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeVServerResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -761,7 +776,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function releaseBackend(ReleaseBackendRequest $request = null): ReleaseBackendResponse {
+    public function releaseBackend(ReleaseBackendRequest $request = null): ReleaseBackendResponse
+    {
         $resp = $this->invoke($request);
         return new ReleaseBackendResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -788,7 +804,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function unbindSSL(UnbindSSLRequest $request = null): UnbindSSLResponse {
+    public function unbindSSL(UnbindSSLRequest $request = null): UnbindSSLResponse
+    {
         $resp = $this->invoke($request);
         return new UnbindSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -818,7 +835,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateBackendAttribute(UpdateBackendAttributeRequest $request = null): UpdateBackendAttributeResponse {
+    public function updateBackendAttribute(UpdateBackendAttributeRequest $request = null): UpdateBackendAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateBackendAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -848,7 +866,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updatePolicy(UpdatePolicyRequest $request = null): UpdatePolicyResponse {
+    public function updatePolicy(UpdatePolicyRequest $request = null): UpdatePolicyResponse
+    {
         $resp = $this->invoke($request);
         return new UpdatePolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -876,7 +895,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateULBAttribute(UpdateULBAttributeRequest $request = null): UpdateULBAttributeResponse {
+    public function updateULBAttribute(UpdateULBAttributeRequest $request = null): UpdateULBAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateULBAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -912,7 +932,8 @@ class ULBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateVServerAttribute(UpdateVServerAttributeRequest $request = null): UpdateVServerAttributeResponse {
+    public function updateVServerAttribute(UpdateVServerAttributeRequest $request = null): UpdateVServerAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateVServerAttributeResponse($resp->toArray(), $resp->getRequestId());
     }

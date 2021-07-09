@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUEcVHostRequest extends Request {
+class CreateUEcVHostRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUEcVHost"]);
@@ -37,7 +38,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -46,7 +48,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -55,7 +58,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getIdcId(): string {
+    public function getIdcId(): string
+    {
         return $this->get("IdcId");
     }
 
@@ -64,16 +68,18 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId) {
+    public function setIdcId(string $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
     /**
      * CpuCore: cpu核心数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCpuCore(): int {
+    public function getCpuCore(): int
+    {
         return $this->get("CpuCore");
     }
 
@@ -82,16 +88,18 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int $cpuCore
      */
-    public function setCpuCore(int $cpuCore) {
+    public function setCpuCore(int $cpuCore)
+    {
         $this->set("CpuCore", $cpuCore);
     }
 
     /**
      * MemSize: 内存大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemSize(): int {
+    public function getMemSize(): int
+    {
         return $this->get("MemSize");
     }
 
@@ -100,16 +108,18 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int $memSize
      */
-    public function setMemSize(int $memSize) {
+    public function setMemSize(int $memSize)
+    {
         $this->set("MemSize", $memSize);
     }
 
     /**
      * DiskSize: 数据盘大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSize(): int {
+    public function getDiskSize(): int
+    {
         return $this->get("DiskSize");
     }
 
@@ -118,7 +128,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int $diskSize
      */
-    public function setDiskSize(int $diskSize) {
+    public function setDiskSize(int $diskSize)
+    {
         $this->set("DiskSize", $diskSize);
     }
 
@@ -127,7 +138,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -136,16 +148,18 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
     /**
      * NetLimit: 节点带宽限制，单位Mbs
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getNetLimit(): int {
+    public function getNetLimit(): int
+    {
         return $this->get("NetLimit");
     }
 
@@ -154,7 +168,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int $netLimit
      */
-    public function setNetLimit(int $netLimit) {
+    public function setNetLimit(int $netLimit)
+    {
         $this->set("NetLimit", $netLimit);
     }
 
@@ -163,7 +178,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getNodeName(): string {
+    public function getNodeName(): string
+    {
         return $this->get("NodeName");
     }
 
@@ -172,16 +188,18 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $nodeName
      */
-    public function setNodeName(string $nodeName) {
+    public function setNodeName(string $nodeName)
+    {
         $this->set("NodeName", $nodeName);
     }
 
     /**
      * SysDiskSize: 系统盘大小，单位GB， 默认20GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSysDiskSize(): int {
+    public function getSysDiskSize(): int
+    {
         return $this->get("SysDiskSize");
     }
 
@@ -190,7 +208,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize(int $sysDiskSize) {
+    public function setSysDiskSize(int $sysDiskSize)
+    {
         $this->set("SysDiskSize", $sysDiskSize);
     }
 
@@ -199,7 +218,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getAccountName(): string {
+    public function getAccountName(): string
+    {
         return $this->get("AccountName");
     }
 
@@ -208,7 +228,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $accountName
      */
-    public function setAccountName(string $accountName) {
+    public function setAccountName(string $accountName)
+    {
         $this->set("AccountName", $accountName);
     }
 
@@ -217,7 +238,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getPassWord(): string {
+    public function getPassWord(): string
+    {
         return $this->get("PassWord");
     }
 
@@ -226,16 +248,18 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $passWord
      */
-    public function setPassWord(string $passWord) {
+    public function setPassWord(string $passWord)
+    {
         $this->set("PassWord", $passWord);
     }
 
     /**
      * NodeCount: 创建节点数量，默认1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getNodeCount(): int {
+    public function getNodeCount(): int
+    {
         return $this->get("NodeCount");
     }
 
@@ -244,16 +268,18 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int $nodeCount
      */
-    public function setNodeCount(int $nodeCount) {
+    public function setNodeCount(int $nodeCount)
+    {
         $this->set("NodeCount", $nodeCount);
     }
 
     /**
      * ChargeType: 付费方式，1按时，2按月，3按年，默认2
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getChargeType(): int {
+    public function getChargeType(): int
+    {
         return $this->get("ChargeType");
     }
 
@@ -262,16 +288,18 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int $chargeType
      */
-    public function setChargeType(int $chargeType) {
+    public function setChargeType(int $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * ChargeQuantity: 月数或者年数，0计费到月底， 默认0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getChargeQuantity(): int {
+    public function getChargeQuantity(): int
+    {
         return $this->get("ChargeQuantity");
     }
 
@@ -280,7 +308,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity(int $chargeQuantity) {
+    public function setChargeQuantity(int $chargeQuantity)
+    {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
 
@@ -289,7 +318,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -298,7 +328,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -307,7 +338,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getProductType(): string {
+    public function getProductType(): string
+    {
         return $this->get("ProductType");
     }
 
@@ -316,7 +348,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $productType
      */
-    public function setProductType(string $productType) {
+    public function setProductType(string $productType)
+    {
         $this->set("ProductType", $productType);
     }
 
@@ -325,7 +358,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getFirewallId(): string {
+    public function getFirewallId(): string
+    {
         return $this->get("FirewallId");
     }
 
@@ -334,7 +368,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId) {
+    public function setFirewallId(string $firewallId)
+    {
         $this->set("FirewallId", $firewallId);
     }
 
@@ -343,7 +378,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getIsp(): array {
+    public function getIsp(): array
+    {
         return $this->get("Isp");
     }
 
@@ -352,7 +388,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param int[] $isp
      */
-    public function setIsp(array $isp) {
+    public function setIsp(array $isp)
+    {
         $this->set("Isp", $isp);
     }
 
@@ -361,7 +398,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getIsNeedOuterIp(): string {
+    public function getIsNeedOuterIp(): string
+    {
         return $this->get("IsNeedOuterIp");
     }
 
@@ -370,9 +408,8 @@ class CreateUEcVHostRequest extends Request {
      *
      * @param string $isNeedOuterIp
      */
-    public function setIsNeedOuterIp(string $isNeedOuterIp) {
+    public function setIsNeedOuterIp(string $isNeedOuterIp)
+    {
         $this->set("IsNeedOuterIp", $isNeedOuterIp);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class TaskInfo extends Response {
+class TaskInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class TaskInfo extends Response {
      *
      * @return string|null
      */
-    public function getTaskId(): string {
+    public function getTaskId(): string
+    {
         return $this->get("TaskId");
     }
 
@@ -35,7 +37,8 @@ class TaskInfo extends Response {
      *
      * @param string $taskId
      */
-    public function setTaskId(string $taskId) {
+    public function setTaskId(string $taskId)
+    {
         $this->set("TaskId", $taskId);
     }
 
@@ -44,7 +47,8 @@ class TaskInfo extends Response {
      *
      * @return UrlProgressInfo[]|null
      */
-    public function getUrlLists(): array {
+    public function getUrlLists(): array
+    {
         $items = $this->get("UrlLists") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -58,7 +62,8 @@ class TaskInfo extends Response {
      *
      * @param UrlProgressInfo[] $urlLists
      */
-    public function setUrlLists(array $urlLists) {
+    public function setUrlLists(array $urlLists)
+    {
         $result = [];
         foreach ($urlLists as $i => $item) {
             array_push($result, $item->getAll());
@@ -69,9 +74,10 @@ class TaskInfo extends Response {
     /**
      * CreateTime: 刷新任务创建的时间。格式为Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -80,7 +86,8 @@ class TaskInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -89,7 +96,8 @@ class TaskInfo extends Response {
      *
      * @return string|null
      */
-    public function getStatus(): string {
+    public function getStatus(): string
+    {
         return $this->get("Status");
     }
 
@@ -98,9 +106,8 @@ class TaskInfo extends Response {
      *
      * @param string $status
      */
-    public function setStatus(string $status) {
+    public function setStatus(string $status)
+    {
         $this->set("Status", $status);
     }
-
-
 }

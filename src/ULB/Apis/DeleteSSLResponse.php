@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteSSLResponse extends Response {
+class DeleteSSLResponse extends Response
+{
     
 
 

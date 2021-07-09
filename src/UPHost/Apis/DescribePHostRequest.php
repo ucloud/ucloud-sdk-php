@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribePHostRequest extends Request {
+class DescribePHostRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribePHost"]);
@@ -32,7 +33,8 @@ class DescribePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribePHostRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -59,7 +63,8 @@ class DescribePHostRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -68,7 +73,8 @@ class DescribePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -77,7 +83,8 @@ class DescribePHostRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -86,7 +93,8 @@ class DescribePHostRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getPHostId(): array {
+    public function getPHostId(): array
+    {
         return $this->get("PHostId");
     }
 
@@ -95,16 +103,18 @@ class DescribePHostRequest extends Request {
      *
      * @param string[] $pHostId
      */
-    public function setPHostId(array $pHostId) {
+    public function setPHostId(array $pHostId)
+    {
         $this->set("PHostId", $pHostId);
     }
 
     /**
      * Offset: 数据偏移量，默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -113,16 +123,18 @@ class DescribePHostRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 返回数据长度，默认为20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -131,7 +143,8 @@ class DescribePHostRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -140,7 +153,8 @@ class DescribePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDiskIdForAttachment(): string {
+    public function getUDiskIdForAttachment(): string
+    {
         return $this->get("UDiskIdForAttachment");
     }
 
@@ -149,7 +163,8 @@ class DescribePHostRequest extends Request {
      *
      * @param string $uDiskIdForAttachment
      */
-    public function setUDiskIdForAttachment(string $uDiskIdForAttachment) {
+    public function setUDiskIdForAttachment(string $uDiskIdForAttachment)
+    {
         $this->set("UDiskIdForAttachment", $uDiskIdForAttachment);
     }
 
@@ -158,7 +173,8 @@ class DescribePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -167,9 +183,8 @@ class DescribePHostRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GrantFirewallRequest extends Request {
+class GrantFirewallRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GrantFirewall"]);
@@ -35,7 +36,8 @@ class GrantFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class GrantFirewallRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class GrantFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -62,7 +66,8 @@ class GrantFirewallRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -71,7 +76,8 @@ class GrantFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getFWId(): string {
+    public function getFWId(): string
+    {
         return $this->get("FWId");
     }
 
@@ -80,7 +86,8 @@ class GrantFirewallRequest extends Request {
      *
      * @param string $fwId
      */
-    public function setFWId(string $fwId) {
+    public function setFWId(string $fwId)
+    {
         $this->set("FWId", $fwId);
     }
 
@@ -89,7 +96,8 @@ class GrantFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -98,7 +106,8 @@ class GrantFirewallRequest extends Request {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -107,7 +116,8 @@ class GrantFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -116,9 +126,8 @@ class GrantFirewallRequest extends Request {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
-
-
 }

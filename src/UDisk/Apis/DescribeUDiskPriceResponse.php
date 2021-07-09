@@ -19,7 +19,8 @@ namespace UCloud\UDisk\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDisk\Models\UDiskPriceDataSet;
 
-class DescribeUDiskPriceResponse extends Response {
+class DescribeUDiskPriceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUDiskPriceResponse extends Response {
      *
      * @return UDiskPriceDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUDiskPriceResponse extends Response {
      *
      * @param UDiskPriceDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

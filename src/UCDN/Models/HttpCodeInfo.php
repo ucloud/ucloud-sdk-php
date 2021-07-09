@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class HttpCodeInfo extends Response {
+class HttpCodeInfo extends Response
+{
     
 
     /**
      * Time: 带宽获取的时间点。格式：时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,16 +37,18 @@ class HttpCodeInfo extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
     /**
      * HttpOneXX: 1xx数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getHttpOneXX(): int {
+    public function getHttpOneXX(): int
+    {
         return $this->get("HttpOneXX");
     }
 
@@ -53,16 +57,18 @@ class HttpCodeInfo extends Response {
      *
      * @param int $httpOneXX
      */
-    public function setHttpOneXX(int $httpOneXX) {
+    public function setHttpOneXX(int $httpOneXX)
+    {
         $this->set("HttpOneXX", $httpOneXX);
     }
 
     /**
      * HttpTwoXX: 2xx数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getHttpTwoXX(): int {
+    public function getHttpTwoXX(): int
+    {
         return $this->get("HttpTwoXX");
     }
 
@@ -71,16 +77,18 @@ class HttpCodeInfo extends Response {
      *
      * @param int $httpTwoXX
      */
-    public function setHttpTwoXX(int $httpTwoXX) {
+    public function setHttpTwoXX(int $httpTwoXX)
+    {
         $this->set("HttpTwoXX", $httpTwoXX);
     }
 
     /**
      * HttpThreeXX: 3xx数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getHttpThreeXX(): int {
+    public function getHttpThreeXX(): int
+    {
         return $this->get("HttpThreeXX");
     }
 
@@ -89,16 +97,18 @@ class HttpCodeInfo extends Response {
      *
      * @param int $httpThreeXX
      */
-    public function setHttpThreeXX(int $httpThreeXX) {
+    public function setHttpThreeXX(int $httpThreeXX)
+    {
         $this->set("HttpThreeXX", $httpThreeXX);
     }
 
     /**
      * HttpFourXX: 4xx数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getHttpFourXX(): int {
+    public function getHttpFourXX(): int
+    {
         return $this->get("HttpFourXX");
     }
 
@@ -107,16 +117,18 @@ class HttpCodeInfo extends Response {
      *
      * @param int $httpFourXX
      */
-    public function setHttpFourXX(int $httpFourXX) {
+    public function setHttpFourXX(int $httpFourXX)
+    {
         $this->set("HttpFourXX", $httpFourXX);
     }
 
     /**
      * HttpFiveXX: 5xx数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getHttpFiveXX(): int {
+    public function getHttpFiveXX(): int
+    {
         return $this->get("HttpFiveXX");
     }
 
@@ -125,9 +137,8 @@ class HttpCodeInfo extends Response {
      *
      * @param int $httpFiveXX
      */
-    public function setHttpFiveXX(int $httpFiveXX) {
+    public function setHttpFiveXX(int $httpFiveXX)
+    {
         $this->set("HttpFiveXX", $httpFiveXX);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUK8SClusterV2ParamNodes extends Request {
+class CreateUK8SClusterV2ParamNodes extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @return string|null
      */
-    public function getMachineType(): string {
+    public function getMachineType(): string
+    {
         return $this->get("MachineType");
     }
 
@@ -53,16 +57,18 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param string $machineType
      */
-    public function setMachineType(string $machineType) {
+    public function setMachineType(string $machineType)
+    {
         $this->set("MachineType", $machineType);
     }
 
     /**
      * CPU: 一组Node节点的虚拟CPU核数。单位：核，范围：[2, 64]，可选范围参考控制台。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCPU(): int {
+    public function getCPU(): int
+    {
         return $this->get("CPU");
     }
 
@@ -71,16 +77,18 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param int $cpu
      */
-    public function setCPU(int $cpu) {
+    public function setCPU(int $cpu)
+    {
         $this->set("CPU", $cpu);
     }
 
     /**
      * Mem: 一组Node节点的内存大小。单位：MB,范围 ：[4096, 262144]，取值为1024的倍数，可选范围参考控制台。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMem(): int {
+    public function getMem(): int
+    {
         return $this->get("Mem");
     }
 
@@ -89,16 +97,18 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param int $mem
      */
-    public function setMem(int $mem) {
+    public function setMem(int $mem)
+    {
         $this->set("Mem", $mem);
     }
 
     /**
      * Count: 一组Node节点的数量，范围：[1,10]。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -107,7 +117,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
 
@@ -116,7 +127,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @return string|null
      */
-    public function getIsolationGroup(): string {
+    public function getIsolationGroup(): string
+    {
         return $this->get("IsolationGroup");
     }
 
@@ -125,16 +137,18 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup(string $isolationGroup) {
+    public function setIsolationGroup(string $isolationGroup)
+    {
         $this->set("IsolationGroup", $isolationGroup);
     }
 
     /**
      * MaxPods: Node节点上可运行最大节点数，默认为110。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMaxPods(): int {
+    public function getMaxPods(): int
+    {
         return $this->get("MaxPods");
     }
 
@@ -143,7 +157,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param int $maxPods
      */
-    public function setMaxPods(int $maxPods) {
+    public function setMaxPods(int $maxPods)
+    {
         $this->set("MaxPods", $maxPods);
     }
 
@@ -152,7 +167,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @return string|null
      */
-    public function getLabels(): string {
+    public function getLabels(): string
+    {
         return $this->get("Labels");
     }
 
@@ -161,7 +177,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param string $labels
      */
-    public function setLabels(string $labels) {
+    public function setLabels(string $labels)
+    {
         $this->set("Labels", $labels);
     }
 
@@ -170,7 +187,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @return string|null
      */
-    public function getBootDiskType(): string {
+    public function getBootDiskType(): string
+    {
         return $this->get("BootDiskType");
     }
 
@@ -179,7 +197,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param string $bootDiskType
      */
-    public function setBootDiskType(string $bootDiskType) {
+    public function setBootDiskType(string $bootDiskType)
+    {
         $this->set("BootDiskType", $bootDiskType);
     }
 
@@ -188,7 +207,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @return string|null
      */
-    public function getDataDiskType(): string {
+    public function getDataDiskType(): string
+    {
         return $this->get("DataDiskType");
     }
 
@@ -197,7 +217,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param string $dataDiskType
      */
-    public function setDataDiskType(string $dataDiskType) {
+    public function setDataDiskType(string $dataDiskType)
+    {
         $this->set("DataDiskType", $dataDiskType);
     }
 
@@ -206,7 +227,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @return string|null
      */
-    public function getMinmalCpuPlatform(): string {
+    public function getMinmalCpuPlatform(): string
+    {
         return $this->get("MinmalCpuPlatform");
     }
 
@@ -215,7 +237,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param string $minmalCpuPlatform
      */
-    public function setMinmalCpuPlatform(string $minmalCpuPlatform) {
+    public function setMinmalCpuPlatform(string $minmalCpuPlatform)
+    {
         $this->set("MinmalCpuPlatform", $minmalCpuPlatform);
     }
 
@@ -224,7 +247,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @return string|null
      */
-    public function getGpuType(): string {
+    public function getGpuType(): string
+    {
         return $this->get("GpuType");
     }
 
@@ -233,16 +257,18 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param string $gpuType
      */
-    public function setGpuType(string $gpuType) {
+    public function setGpuType(string $gpuType)
+    {
         $this->set("GpuType", $gpuType);
     }
 
     /**
      * GPU: 一组Node节点的GPU卡核心数，仅GPU机型支持此字段。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getGPU(): int {
+    public function getGPU(): int
+    {
         return $this->get("GPU");
     }
 
@@ -251,16 +277,18 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param int $gpu
      */
-    public function setGPU(int $gpu) {
+    public function setGPU(int $gpu)
+    {
         $this->set("GPU", $gpu);
     }
 
     /**
      * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataDiskSize(): int {
+    public function getDataDiskSize(): int
+    {
         return $this->get("DataDiskSize");
     }
 
@@ -269,9 +297,8 @@ class CreateUK8SClusterV2ParamNodes extends Request {
      *
      * @param int $dataDiskSize
      */
-    public function setDataDiskSize(int $dataDiskSize) {
+    public function setDataDiskSize(int $dataDiskSize)
+    {
         $this->set("DataDiskSize", $dataDiskSize);
     }
-
-
 }

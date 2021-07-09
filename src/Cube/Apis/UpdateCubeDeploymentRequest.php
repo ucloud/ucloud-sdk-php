@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateCubeDeploymentRequest extends Request {
+class UpdateCubeDeploymentRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateCubeDeployment"]);
@@ -34,7 +35,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getDeploymentId(): string {
+    public function getDeploymentId(): string
+    {
         return $this->get("DeploymentId");
     }
 
@@ -97,7 +105,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @param string $deploymentId
      */
-    public function setDeploymentId(string $deploymentId) {
+    public function setDeploymentId(string $deploymentId)
+    {
         $this->set("DeploymentId", $deploymentId);
     }
 
@@ -106,7 +115,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getDeployment(): string {
+    public function getDeployment(): string
+    {
         return $this->get("Deployment");
     }
 
@@ -115,7 +125,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @param string $deployment
      */
-    public function setDeployment(string $deployment) {
+    public function setDeployment(string $deployment)
+    {
         $this->set("Deployment", $deployment);
     }
 
@@ -124,7 +135,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -133,9 +145,8 @@ class UpdateCubeDeploymentRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
-
-
 }

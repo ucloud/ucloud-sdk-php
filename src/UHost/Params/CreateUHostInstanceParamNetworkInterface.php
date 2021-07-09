@@ -18,42 +18,47 @@ namespace UCloud\UHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUHostInstanceParamNetworkInterface extends Request {
+class CreateUHostInstanceParamNetworkInterface extends Request
+{
     
 
     /**
-     * EIP: 
+     * EIP:
      *
      * @return CreateUHostInstanceParamNetworkInterfaceEIP|null
      */
-    public function getEIP(): CreateUHostInstanceParamNetworkInterfaceEIP {
+    public function getEIP(): CreateUHostInstanceParamNetworkInterfaceEIP
+    {
         return new CreateUHostInstanceParamNetworkInterfaceEIP($this->get("EIP"));
     }
 
     /**
-     * EIP: 
+     * EIP:
      *
      * @param CreateUHostInstanceParamNetworkInterfaceEIP $eip
      */
-    public function setEIP(CreateUHostInstanceParamNetworkInterfaceEIP $eip) {
+    public function setEIP(CreateUHostInstanceParamNetworkInterfaceEIP $eip)
+    {
         $this->set("EIP", $eip->getAll());
     }
 
     /**
-     * IPv6: 
+     * IPv6:
      *
      * @return CreateUHostInstanceParamNetworkInterfaceIPv6|null
      */
-    public function getIPv6(): CreateUHostInstanceParamNetworkInterfaceIPv6 {
+    public function getIPv6(): CreateUHostInstanceParamNetworkInterfaceIPv6
+    {
         return new CreateUHostInstanceParamNetworkInterfaceIPv6($this->get("IPv6"));
     }
 
     /**
-     * IPv6: 
+     * IPv6:
      *
      * @param CreateUHostInstanceParamNetworkInterfaceIPv6 $iPv6
      */
-    public function setIPv6(CreateUHostInstanceParamNetworkInterfaceIPv6 $iPv6) {
+    public function setIPv6(CreateUHostInstanceParamNetworkInterfaceIPv6 $iPv6)
+    {
         $this->set("IPv6", $iPv6->getAll());
     }
 
@@ -62,7 +67,8 @@ class CreateUHostInstanceParamNetworkInterface extends Request {
      *
      * @return boolean|null
      */
-    public function getCreateCernetIp(): bool {
+    public function getCreateCernetIp(): bool
+    {
         return $this->get("CreateCernetIp");
     }
 
@@ -71,9 +77,8 @@ class CreateUHostInstanceParamNetworkInterface extends Request {
      *
      * @param boolean $createCernetIp
      */
-    public function setCreateCernetIp(bool $createCernetIp) {
+    public function setCreateCernetIp(bool $createCernetIp)
+    {
         $this->set("CreateCernetIp", $createCernetIp);
     }
-
-
 }

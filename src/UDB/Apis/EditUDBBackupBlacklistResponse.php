@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class EditUDBBackupBlacklistResponse extends Response {
+class EditUDBBackupBlacklistResponse extends Response
+{
     
 
 

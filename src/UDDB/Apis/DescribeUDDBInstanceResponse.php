@@ -21,7 +21,8 @@ use UCloud\UDDB\Models\DataSetUDDB;
 use UCloud\UDDB\Models\DataNodeInfo;
 use UCloud\UDDB\Models\SlaveInfo;
 
-class DescribeUDDBInstanceResponse extends Response {
+class DescribeUDDBInstanceResponse extends Response
+{
     
 
     /**
@@ -29,7 +30,8 @@ class DescribeUDDBInstanceResponse extends Response {
      *
      * @return DataSetUDDB[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -43,13 +45,12 @@ class DescribeUDDBInstanceResponse extends Response {
      *
      * @param DataSetUDDB[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

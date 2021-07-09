@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetEIPUpgradePriceRequest extends Request {
+class GetEIPUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetEIPUpgradePrice"]);
@@ -34,7 +35,8 @@ class GetEIPUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class GetEIPUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class GetEIPUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class GetEIPUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class GetEIPUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -79,16 +85,18 @@ class GetEIPUpgradePriceRequest extends Request {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
     /**
      * Bandwidth: 弹性IP的外网带宽, 单位为Mbps, 范围 [1-800]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -97,9 +105,8 @@ class GetEIPUpgradePriceRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
-
-
 }

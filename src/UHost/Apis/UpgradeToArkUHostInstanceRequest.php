@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpgradeToArkUHostInstanceRequest extends Request {
+class UpgradeToArkUHostInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpgradeToArkUHostInstance"]);
@@ -34,7 +35,8 @@ class UpgradeToArkUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class UpgradeToArkUHostInstanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class UpgradeToArkUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class UpgradeToArkUHostInstanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class UpgradeToArkUHostInstanceRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getUHostIds(): array {
+    public function getUHostIds(): array
+    {
         return $this->get("UHostIds");
     }
 
@@ -79,7 +85,8 @@ class UpgradeToArkUHostInstanceRequest extends Request {
      *
      * @param string[] $uHostIds
      */
-    public function setUHostIds(array $uHostIds) {
+    public function setUHostIds(array $uHostIds)
+    {
         $this->set("UHostIds", $uHostIds);
     }
 
@@ -88,7 +95,8 @@ class UpgradeToArkUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -97,9 +105,8 @@ class UpgradeToArkUHostInstanceRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

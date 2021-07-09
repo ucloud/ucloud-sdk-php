@@ -18,7 +18,8 @@ namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Response\Response;
 
-class RemoveUFSVolumeResponse extends Response {
+class RemoveUFSVolumeResponse extends Response
+{
     
 
 

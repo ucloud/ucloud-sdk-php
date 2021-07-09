@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class NatGWIPResInfo extends Response {
+class NatGWIPResInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NatGWIPResInfo extends Response {
      *
      * @return string|null
      */
-    public function getOperatorName(): string {
+    public function getOperatorName(): string
+    {
         return $this->get("OperatorName");
     }
 
@@ -35,7 +37,8 @@ class NatGWIPResInfo extends Response {
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName) {
+    public function setOperatorName(string $operatorName)
+    {
         $this->set("OperatorName", $operatorName);
     }
 
@@ -44,7 +47,8 @@ class NatGWIPResInfo extends Response {
      *
      * @return string|null
      */
-    public function getEIP(): string {
+    public function getEIP(): string
+    {
         return $this->get("EIP");
     }
 
@@ -53,9 +57,8 @@ class NatGWIPResInfo extends Response {
      *
      * @param string $eip
      */
-    public function setEIP(string $eip) {
+    public function setEIP(string $eip)
+    {
         $this->set("EIP", $eip);
     }
-
-
 }

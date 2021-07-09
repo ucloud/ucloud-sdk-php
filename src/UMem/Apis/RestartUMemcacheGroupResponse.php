@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class RestartUMemcacheGroupResponse extends Response {
+class RestartUMemcacheGroupResponse extends Response
+{
     
 
 

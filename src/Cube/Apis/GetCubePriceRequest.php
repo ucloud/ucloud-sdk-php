@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetCubePriceRequest extends Request {
+class GetCubePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetCubePrice"]);
@@ -38,7 +39,8 @@ class GetCubePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -47,7 +49,8 @@ class GetCubePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -56,7 +59,8 @@ class GetCubePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -65,7 +69,8 @@ class GetCubePriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -74,7 +79,8 @@ class GetCubePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -83,7 +89,8 @@ class GetCubePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -92,7 +99,8 @@ class GetCubePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCount(): string {
+    public function getCount(): string
+    {
         return $this->get("Count");
     }
 
@@ -101,7 +109,8 @@ class GetCubePriceRequest extends Request {
      *
      * @param string $count
      */
-    public function setCount(string $count) {
+    public function setCount(string $count)
+    {
         $this->set("Count", $count);
     }
 
@@ -110,7 +119,8 @@ class GetCubePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCpu(): string {
+    public function getCpu(): string
+    {
         return $this->get("Cpu");
     }
 
@@ -119,7 +129,8 @@ class GetCubePriceRequest extends Request {
      *
      * @param string $cpu
      */
-    public function setCpu(string $cpu) {
+    public function setCpu(string $cpu)
+    {
         $this->set("Cpu", $cpu);
     }
 
@@ -128,7 +139,8 @@ class GetCubePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getMem(): string {
+    public function getMem(): string
+    {
         return $this->get("Mem");
     }
 
@@ -137,7 +149,8 @@ class GetCubePriceRequest extends Request {
      *
      * @param string $mem
      */
-    public function setMem(string $mem) {
+    public function setMem(string $mem)
+    {
         $this->set("Mem", $mem);
     }
 
@@ -146,7 +159,8 @@ class GetCubePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -155,16 +169,18 @@ class GetCubePriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长。默认:值 1。按小时购买（Dynamic/Postpay）时无需此参数。 月付时，此参数传0，代表购买至月末。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -173,9 +189,8 @@ class GetCubePriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
-
-
 }

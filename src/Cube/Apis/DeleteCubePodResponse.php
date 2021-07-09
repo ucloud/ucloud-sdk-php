@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteCubePodResponse extends Response {
+class DeleteCubePodResponse extends Response
+{
     
 
 

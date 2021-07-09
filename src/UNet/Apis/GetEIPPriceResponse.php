@@ -19,7 +19,8 @@ namespace UCloud\UNet\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UNet\Models\EIPPriceDetailSet;
 
-class GetEIPPriceResponse extends Response {
+class GetEIPPriceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetEIPPriceResponse extends Response {
      *
      * @return EIPPriceDetailSet[]|null
      */
-    public function getPriceSet(): array {
+    public function getPriceSet(): array
+    {
         $items = $this->get("PriceSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetEIPPriceResponse extends Response {
      *
      * @param EIPPriceDetailSet[] $priceSet
      */
-    public function setPriceSet(array $priceSet) {
+    public function setPriceSet(array $priceSet)
+    {
         $result = [];
         foreach ($priceSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DescribeUDBInstanceLogResponse extends Response {
+class DescribeUDBInstanceLogResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DescribeUDBInstanceLogResponse extends Response {
      *
      * @return string|null
      */
-    public function getLog(): string {
+    public function getLog(): string
+    {
         return $this->get("Log");
     }
 
@@ -35,7 +37,8 @@ class DescribeUDBInstanceLogResponse extends Response {
      *
      * @param string $log
      */
-    public function setLog(string $log) {
+    public function setLog(string $log)
+    {
         $this->set("Log", $log);
     }
 
@@ -44,7 +47,8 @@ class DescribeUDBInstanceLogResponse extends Response {
      *
      * @return string|null
      */
-    public function getNextTime(): string {
+    public function getNextTime(): string
+    {
         return $this->get("NextTime");
     }
 
@@ -53,9 +57,8 @@ class DescribeUDBInstanceLogResponse extends Response {
      *
      * @param string $nextTime
      */
-    public function setNextTime(string $nextTime) {
+    public function setNextTime(string $nextTime)
+    {
         $this->set("NextTime", $nextTime);
     }
-
-
 }

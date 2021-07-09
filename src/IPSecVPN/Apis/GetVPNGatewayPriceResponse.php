@@ -19,7 +19,8 @@ namespace UCloud\IPSecVPN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\IPSecVPN\Models\VPNGatewayPriceSet;
 
-class GetVPNGatewayPriceResponse extends Response {
+class GetVPNGatewayPriceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetVPNGatewayPriceResponse extends Response {
      *
      * @return VPNGatewayPriceSet[]|null
      */
-    public function getPriceSet(): array {
+    public function getPriceSet(): array
+    {
         $items = $this->get("PriceSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetVPNGatewayPriceResponse extends Response {
      *
      * @param VPNGatewayPriceSet[] $priceSet
      */
-    public function setPriceSet(array $priceSet) {
+    public function setPriceSet(array $priceSet)
+    {
         $result = [];
         foreach ($priceSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

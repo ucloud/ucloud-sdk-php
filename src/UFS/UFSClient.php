@@ -30,7 +30,8 @@ use UCloud\UFS\Apis\RemoveUFSVolumeResponse;
 /**
  * This client is used to call actions of **UFS** service
  */
-class UFSClient extends Client {
+class UFSClient extends Client
+{
 
     /**
      * CreateUFSVolume - 创建文件系统
@@ -63,7 +64,8 @@ class UFSClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUFSVolume(CreateUFSVolumeRequest $request = null): CreateUFSVolumeResponse {
+    public function createUFSVolume(CreateUFSVolumeRequest $request = null): CreateUFSVolumeResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -108,7 +110,8 @@ class UFSClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUFSVolume2(DescribeUFSVolume2Request $request = null): DescribeUFSVolume2Response {
+    public function describeUFSVolume2(DescribeUFSVolume2Request $request = null): DescribeUFSVolume2Response
+    {
         $resp = $this->invoke($request);
         return new DescribeUFSVolume2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -134,7 +137,8 @@ class UFSClient extends Client {
      *
      * @throws UCloudException
      */
-    public function extendUFSVolume(ExtendUFSVolumeRequest $request = null): ExtendUFSVolumeResponse {
+    public function extendUFSVolume(ExtendUFSVolumeRequest $request = null): ExtendUFSVolumeResponse
+    {
         $resp = $this->invoke($request);
         return new ExtendUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -159,7 +163,8 @@ class UFSClient extends Client {
      *
      * @throws UCloudException
      */
-    public function removeUFSVolume(RemoveUFSVolumeRequest $request = null): RemoveUFSVolumeResponse {
+    public function removeUFSVolume(RemoveUFSVolumeRequest $request = null): RemoveUFSVolumeResponse
+    {
         $resp = $this->invoke($request);
         return new RemoveUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
     }

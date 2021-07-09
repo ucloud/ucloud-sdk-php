@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UEC\Models\ImageInfo;
 use UCloud\UEC\Models\DeployImageInfo;
 
-class GetUEcImageResponse extends Response {
+class GetUEcImageResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class GetUEcImageResponse extends Response {
      *
      * @return ImageInfo[]|null
      */
-    public function getImageList(): array {
+    public function getImageList(): array
+    {
         $items = $this->get("ImageList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class GetUEcImageResponse extends Response {
      *
      * @param ImageInfo[] $imageList
      */
-    public function setImageList(array $imageList) {
+    public function setImageList(array $imageList)
+    {
         $result = [];
         foreach ($imageList as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,9 +56,10 @@ class GetUEcImageResponse extends Response {
     /**
      * TotalCount: 镜像总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -64,9 +68,8 @@ class GetUEcImageResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

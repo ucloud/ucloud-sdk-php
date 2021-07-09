@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class EnableUDBRWSplittingResponse extends Response {
+class EnableUDBRWSplittingResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class EnableUDBRWSplittingResponse extends Response {
      *
      * @return string|null
      */
-    public function getMasterDBId(): string {
+    public function getMasterDBId(): string
+    {
         return $this->get("MasterDBId");
     }
 
@@ -35,7 +37,8 @@ class EnableUDBRWSplittingResponse extends Response {
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId(string $masterDBId) {
+    public function setMasterDBId(string $masterDBId)
+    {
         $this->set("MasterDBId", $masterDBId);
     }
 
@@ -44,7 +47,8 @@ class EnableUDBRWSplittingResponse extends Response {
      *
      * @return string|null
      */
-    public function getRWIp(): string {
+    public function getRWIp(): string
+    {
         return $this->get("RWIp");
     }
 
@@ -53,9 +57,8 @@ class EnableUDBRWSplittingResponse extends Response {
      *
      * @param string $rwIp
      */
-    public function setRWIp(string $rwIp) {
+    public function setRWIp(string $rwIp)
+    {
         $this->set("RWIp", $rwIp);
     }
-
-
 }

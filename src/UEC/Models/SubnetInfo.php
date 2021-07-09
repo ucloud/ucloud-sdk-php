@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class SubnetInfo extends Response {
+class SubnetInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -35,7 +37,8 @@ class SubnetInfo extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -44,7 +47,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubnetName(): string {
+    public function getSubnetName(): string
+    {
         return $this->get("SubnetName");
     }
 
@@ -53,7 +57,8 @@ class SubnetInfo extends Response {
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName) {
+    public function setSubnetName(string $subnetName)
+    {
         $this->set("SubnetName", $subnetName);
     }
 
@@ -62,7 +67,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getIdcId(): string {
+    public function getIdcId(): string
+    {
         return $this->get("IdcId");
     }
 
@@ -71,7 +77,8 @@ class SubnetInfo extends Response {
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId) {
+    public function setIdcId(string $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
@@ -80,7 +87,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getCIDR(): string {
+    public function getCIDR(): string
+    {
         return $this->get("CIDR");
     }
 
@@ -89,16 +97,18 @@ class SubnetInfo extends Response {
      *
      * @param string $cidr
      */
-    public function setCIDR(string $cidr) {
+    public function setCIDR(string $cidr)
+    {
         $this->set("CIDR", $cidr);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -107,7 +117,8 @@ class SubnetInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -116,7 +127,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getComment(): string {
+    public function getComment(): string
+    {
         return $this->get("Comment");
     }
 
@@ -125,16 +137,18 @@ class SubnetInfo extends Response {
      *
      * @param string $comment
      */
-    public function setComment(string $comment) {
+    public function setComment(string $comment)
+    {
         $this->set("Comment", $comment);
     }
 
     /**
      * TotalIpCnt: 总ip数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalIpCnt(): int {
+    public function getTotalIpCnt(): int
+    {
         return $this->get("TotalIpCnt");
     }
 
@@ -143,16 +157,18 @@ class SubnetInfo extends Response {
      *
      * @param int $totalIpCnt
      */
-    public function setTotalIpCnt(int $totalIpCnt) {
+    public function setTotalIpCnt(int $totalIpCnt)
+    {
         $this->set("TotalIpCnt", $totalIpCnt);
     }
 
     /**
      * AvailableIPCnt: 可用ip数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getAvailableIPCnt(): int {
+    public function getAvailableIPCnt(): int
+    {
         return $this->get("AvailableIPCnt");
     }
 
@@ -161,9 +177,8 @@ class SubnetInfo extends Response {
      *
      * @param int $availableIPCnt
      */
-    public function setAvailableIPCnt(int $availableIPCnt) {
+    public function setAvailableIPCnt(int $availableIPCnt)
+    {
         $this->set("AvailableIPCnt", $availableIPCnt);
     }
-
-
 }

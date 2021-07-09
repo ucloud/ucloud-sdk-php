@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteUDBParamGroupRequest extends Request {
+class DeleteUDBParamGroupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteUDBParamGroup"]);
@@ -34,7 +35,8 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,16 +85,18 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * GroupId: 参数组id,可通过DescribeUDBParamGroup获取
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getGroupId(): int {
+    public function getGroupId(): int
+    {
         return $this->get("GroupId");
     }
 
@@ -97,7 +105,8 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId) {
+    public function setGroupId(int $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
@@ -106,7 +115,8 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool {
+    public function getRegionFlag(): bool
+    {
         return $this->get("RegionFlag");
     }
 
@@ -115,9 +125,8 @@ class DeleteUDBParamGroupRequest extends Request {
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag) {
+    public function setRegionFlag(bool $regionFlag)
+    {
         $this->set("RegionFlag", $regionFlag);
     }
-
-
 }

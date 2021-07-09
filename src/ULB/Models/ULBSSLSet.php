@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class ULBSSLSet extends Response {
+class ULBSSLSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ULBSSLSet extends Response {
      *
      * @return string|null
      */
-    public function getSSLId(): string {
+    public function getSSLId(): string
+    {
         return $this->get("SSLId");
     }
 
@@ -35,7 +37,8 @@ class ULBSSLSet extends Response {
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId) {
+    public function setSSLId(string $sslId)
+    {
         $this->set("SSLId", $sslId);
     }
 
@@ -44,7 +47,8 @@ class ULBSSLSet extends Response {
      *
      * @return string|null
      */
-    public function getSSLName(): string {
+    public function getSSLName(): string
+    {
         return $this->get("SSLName");
     }
 
@@ -53,7 +57,8 @@ class ULBSSLSet extends Response {
      *
      * @param string $sslName
      */
-    public function setSSLName(string $sslName) {
+    public function setSSLName(string $sslName)
+    {
         $this->set("SSLName", $sslName);
     }
 
@@ -62,7 +67,8 @@ class ULBSSLSet extends Response {
      *
      * @return string|null
      */
-    public function getSSLType(): string {
+    public function getSSLType(): string
+    {
         return $this->get("SSLType");
     }
 
@@ -71,7 +77,8 @@ class ULBSSLSet extends Response {
      *
      * @param string $sslType
      */
-    public function setSSLType(string $sslType) {
+    public function setSSLType(string $sslType)
+    {
         $this->set("SSLType", $sslType);
     }
 
@@ -80,7 +87,8 @@ class ULBSSLSet extends Response {
      *
      * @return string|null
      */
-    public function getSSLContent(): string {
+    public function getSSLContent(): string
+    {
         return $this->get("SSLContent");
     }
 
@@ -89,16 +97,18 @@ class ULBSSLSet extends Response {
      *
      * @param string $sslContent
      */
-    public function setSSLContent(string $sslContent) {
+    public function setSSLContent(string $sslContent)
+    {
         $this->set("SSLContent", $sslContent);
     }
 
     /**
      * CreateTime: SSL证书的创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -107,7 +117,8 @@ class ULBSSLSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -116,7 +127,8 @@ class ULBSSLSet extends Response {
      *
      * @return string|null
      */
-    public function getHashValue(): string {
+    public function getHashValue(): string
+    {
         return $this->get("HashValue");
     }
 
@@ -125,7 +137,8 @@ class ULBSSLSet extends Response {
      *
      * @param string $hashValue
      */
-    public function setHashValue(string $hashValue) {
+    public function setHashValue(string $hashValue)
+    {
         $this->set("HashValue", $hashValue);
     }
 
@@ -134,7 +147,8 @@ class ULBSSLSet extends Response {
      *
      * @return SSLBindedTargetSet[]|null
      */
-    public function getBindedTargetSet(): array {
+    public function getBindedTargetSet(): array
+    {
         $items = $this->get("BindedTargetSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -148,13 +162,12 @@ class ULBSSLSet extends Response {
      *
      * @param SSLBindedTargetSet[] $bindedTargetSet
      */
-    public function setBindedTargetSet(array $bindedTargetSet) {
+    public function setBindedTargetSet(array $bindedTargetSet)
+    {
         $result = [];
         foreach ($bindedTargetSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

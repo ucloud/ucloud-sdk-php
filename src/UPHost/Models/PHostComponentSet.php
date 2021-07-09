@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostComponentSet extends Response {
+class PHostComponentSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PHostComponentSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -35,16 +37,18 @@ class PHostComponentSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * Count: 组件数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -53,9 +57,8 @@ class PHostComponentSet extends Response {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
-
-
 }

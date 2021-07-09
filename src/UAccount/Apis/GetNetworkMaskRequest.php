@@ -18,13 +18,10 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetNetworkMaskRequest extends Request {
+class GetNetworkMaskRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetNetworkMask"]);
     }
-
-    
-
-
 }

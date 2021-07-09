@@ -18,13 +18,10 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUEcIDCCutInfoRequest extends Request {
+class GetUEcIDCCutInfoRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUEcIDCCutInfo"]);
     }
-
-    
-
-
 }

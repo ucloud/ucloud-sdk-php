@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUEcHolderRequest extends Request {
+class DescribeUEcHolderRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUEcHolder"]);
@@ -31,7 +32,8 @@ class DescribeUEcHolderRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,7 +42,8 @@ class DescribeUEcHolderRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -49,7 +52,8 @@ class DescribeUEcHolderRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getHolderId(): array {
+    public function getHolderId(): array
+    {
         return $this->get("HolderId");
     }
 
@@ -58,16 +62,18 @@ class DescribeUEcHolderRequest extends Request {
      *
      * @param string[] $holderId
      */
-    public function setHolderId(array $holderId) {
+    public function setHolderId(array $holderId)
+    {
         $this->set("HolderId", $holderId);
     }
 
     /**
      * Limit: 返回数据长度，默认为20，非负整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -76,16 +82,18 @@ class DescribeUEcHolderRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
     /**
      * Offset: 列表起始位置偏移量，默认为0。非负整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -94,9 +102,8 @@ class DescribeUEcHolderRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
-
-
 }

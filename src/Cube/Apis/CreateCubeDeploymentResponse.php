@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateCubeDeploymentResponse extends Response {
+class CreateCubeDeploymentResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateCubeDeploymentResponse extends Response {
      *
      * @return string|null
      */
-    public function getDeploymentId(): string {
+    public function getDeploymentId(): string
+    {
         return $this->get("DeploymentId");
     }
 
@@ -35,7 +37,8 @@ class CreateCubeDeploymentResponse extends Response {
      *
      * @param string $deploymentId
      */
-    public function setDeploymentId(string $deploymentId) {
+    public function setDeploymentId(string $deploymentId)
+    {
         $this->set("DeploymentId", $deploymentId);
     }
 
@@ -44,7 +47,8 @@ class CreateCubeDeploymentResponse extends Response {
      *
      * @return string|null
      */
-    public function getDeployment(): string {
+    public function getDeployment(): string
+    {
         return $this->get("Deployment");
     }
 
@@ -53,9 +57,8 @@ class CreateCubeDeploymentResponse extends Response {
      *
      * @param string $deployment
      */
-    public function setDeployment(string $deployment) {
+    public function setDeployment(string $deployment)
+    {
         $this->set("Deployment", $deployment);
     }
-
-
 }

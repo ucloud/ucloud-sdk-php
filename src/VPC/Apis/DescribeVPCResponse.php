@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\VPCInfo;
 use UCloud\VPC\Models\VPCNetworkInfo;
 
-class DescribeVPCResponse extends Response {
+class DescribeVPCResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeVPCResponse extends Response {
      *
      * @return VPCInfo[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class DescribeVPCResponse extends Response {
      *
      * @param VPCInfo[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

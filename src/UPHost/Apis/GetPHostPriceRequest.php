@@ -19,7 +19,8 @@ namespace UCloud\UPHost\Apis;
 use UCloud\Core\Request\Request;
 use UCloud\UPHost\Params\GetPHostPriceParamDisks;
 
-class GetPHostPriceRequest extends Request {
+class GetPHostPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetPHostPrice"]);
@@ -36,7 +37,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,7 +67,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -72,7 +77,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -81,16 +87,18 @@ class GetPHostPriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Count: 购买数量，范围[1-5]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -99,7 +107,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
 
@@ -108,7 +117,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -117,16 +127,18 @@ class GetPHostPriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长，1-10个月或1-10年；默认值为1。月付时，此参数传0，代表购买至月末，1代表整月。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -135,7 +147,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -144,7 +157,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCluster(): string {
+    public function getCluster(): string
+    {
         return $this->get("Cluster");
     }
 
@@ -153,7 +167,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @param string $cluster
      */
-    public function setCluster(string $cluster) {
+    public function setCluster(string $cluster)
+    {
         $this->set("Cluster", $cluster);
     }
 
@@ -162,7 +177,8 @@ class GetPHostPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -171,16 +187,18 @@ class GetPHostPriceRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
     /**
-     * Disks: 
+     * Disks:
      *
      * @return GetPHostPriceParamDisks[]|null
      */
-    public function getDisks(): array {
+    public function getDisks(): array
+    {
         $items = $this->get("Disks") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -190,17 +208,16 @@ class GetPHostPriceRequest extends Request {
     }
 
     /**
-     * Disks: 
+     * Disks:
      *
      * @param GetPHostPriceParamDisks[] $disks
      */
-    public function setDisks(array $disks) {
+    public function setDisks(array $disks)
+    {
         $result = [];
         foreach ($disks as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

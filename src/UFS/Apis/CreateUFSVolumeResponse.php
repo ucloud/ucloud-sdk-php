@@ -18,7 +18,8 @@ namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUFSVolumeResponse extends Response {
+class CreateUFSVolumeResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUFSVolumeResponse extends Response {
      *
      * @return string|null
      */
-    public function getVolumeName(): string {
+    public function getVolumeName(): string
+    {
         return $this->get("VolumeName");
     }
 
@@ -35,7 +37,8 @@ class CreateUFSVolumeResponse extends Response {
      *
      * @param string $volumeName
      */
-    public function setVolumeName(string $volumeName) {
+    public function setVolumeName(string $volumeName)
+    {
         $this->set("VolumeName", $volumeName);
     }
 
@@ -44,7 +47,8 @@ class CreateUFSVolumeResponse extends Response {
      *
      * @return string|null
      */
-    public function getVolumeId(): string {
+    public function getVolumeId(): string
+    {
         return $this->get("VolumeId");
     }
 
@@ -53,7 +57,8 @@ class CreateUFSVolumeResponse extends Response {
      *
      * @param string $volumeId
      */
-    public function setVolumeId(string $volumeId) {
+    public function setVolumeId(string $volumeId)
+    {
         $this->set("VolumeId", $volumeId);
     }
 
@@ -62,7 +67,8 @@ class CreateUFSVolumeResponse extends Response {
      *
      * @return string|null
      */
-    public function getVolumeStatus(): string {
+    public function getVolumeStatus(): string
+    {
         return $this->get("VolumeStatus");
     }
 
@@ -71,9 +77,8 @@ class CreateUFSVolumeResponse extends Response {
      *
      * @param string $volumeStatus
      */
-    public function setVolumeStatus(string $volumeStatus) {
+    public function setVolumeStatus(string $volumeStatus)
+    {
         $this->set("VolumeStatus", $volumeStatus);
     }
-
-
 }

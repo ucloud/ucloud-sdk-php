@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Models;
 
 use UCloud\Core\Response\Response;
 
-class KubeProxy extends Response {
+class KubeProxy extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class KubeProxy extends Response {
      *
      * @return string|null
      */
-    public function getMode(): string {
+    public function getMode(): string
+    {
         return $this->get("Mode");
     }
 
@@ -35,9 +37,8 @@ class KubeProxy extends Response {
      *
      * @param string $mode
      */
-    public function setMode(string $mode) {
+    public function setMode(string $mode)
+    {
         $this->set("Mode", $mode);
     }
-
-
 }

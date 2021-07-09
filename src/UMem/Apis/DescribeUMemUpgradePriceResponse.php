@@ -18,15 +18,17 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DescribeUMemUpgradePriceResponse extends Response {
+class DescribeUMemUpgradePriceResponse extends Response
+{
     
 
     /**
      * Price: 价格
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -35,16 +37,18 @@ class DescribeUMemUpgradePriceResponse extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
 
     /**
      * OriginalPrice: 原价
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginalPrice(): int {
+    public function getOriginalPrice(): int
+    {
         return $this->get("OriginalPrice");
     }
 
@@ -53,9 +57,8 @@ class DescribeUMemUpgradePriceResponse extends Response {
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice) {
+    public function setOriginalPrice(int $originalPrice)
+    {
         $this->set("OriginalPrice", $originalPrice);
     }
-
-
 }

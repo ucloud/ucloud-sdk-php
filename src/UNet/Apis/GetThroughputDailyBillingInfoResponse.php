@@ -19,7 +19,8 @@ namespace UCloud\UNet\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UNet\Models\ThroughputDailyBillingInfo;
 
-class GetThroughputDailyBillingInfoResponse extends Response {
+class GetThroughputDailyBillingInfoResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetThroughputDailyBillingInfoResponse extends Response {
      *
      * @return ThroughputDailyBillingInfo[]|null
      */
-    public function getStats(): array {
+    public function getStats(): array
+    {
         $items = $this->get("Stats") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,7 +43,8 @@ class GetThroughputDailyBillingInfoResponse extends Response {
      *
      * @param ThroughputDailyBillingInfo[] $stats
      */
-    public function setStats(array $stats) {
+    public function setStats(array $stats)
+    {
         $result = [];
         foreach ($stats as $i => $item) {
             array_push($result, $item->getAll());
@@ -52,9 +55,10 @@ class GetThroughputDailyBillingInfoResponse extends Response {
     /**
      * TotalOutMoney: 计费总金额
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalOutMoney(): int {
+    public function getTotalOutMoney(): int
+    {
         return $this->get("TotalOutMoney");
     }
 
@@ -63,7 +67,8 @@ class GetThroughputDailyBillingInfoResponse extends Response {
      *
      * @param int $totalOutMoney
      */
-    public function setTotalOutMoney(int $totalOutMoney) {
+    public function setTotalOutMoney(int $totalOutMoney)
+    {
         $this->set("TotalOutMoney", $totalOutMoney);
     }
 
@@ -72,7 +77,8 @@ class GetThroughputDailyBillingInfoResponse extends Response {
      *
      * @return string|null
      */
-    public function getTotalOutSize(): string {
+    public function getTotalOutSize(): string
+    {
         return $this->get("TotalOutSize");
     }
 
@@ -81,9 +87,8 @@ class GetThroughputDailyBillingInfoResponse extends Response {
      *
      * @param string $totalOutSize
      */
-    public function setTotalOutSize(string $totalOutSize) {
+    public function setTotalOutSize(string $totalOutSize)
+    {
         $this->set("TotalOutSize", $totalOutSize);
     }
-
-
 }

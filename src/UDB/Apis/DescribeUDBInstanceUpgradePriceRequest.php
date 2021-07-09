@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDBInstanceUpgradePriceRequest extends Request {
+class DescribeUDBInstanceUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDBInstanceUpgradePrice"]);
@@ -35,7 +36,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,7 +86,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -89,7 +96,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBId(): string {
+    public function getDBId(): string
+    {
         return $this->get("DBId");
     }
 
@@ -98,16 +106,18 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId) {
+    public function setDBId(string $dbId)
+    {
         $this->set("DBId", $dbId);
     }
 
     /**
      * MemoryLimit: 内存限制(MB)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemoryLimit(): int {
+    public function getMemoryLimit(): int
+    {
         return $this->get("MemoryLimit");
     }
 
@@ -116,16 +126,18 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit(int $memoryLimit) {
+    public function setMemoryLimit(int $memoryLimit)
+    {
         $this->set("MemoryLimit", $memoryLimit);
     }
 
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 500G
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSpace(): int {
+    public function getDiskSpace(): int
+    {
         return $this->get("DiskSpace");
     }
 
@@ -134,7 +146,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace) {
+    public function setDiskSpace(int $diskSpace)
+    {
         $this->set("DiskSpace", $diskSpace);
     }
 
@@ -143,7 +156,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getUseSSD(): bool {
+    public function getUseSSD(): bool
+    {
         return $this->get("UseSSD");
     }
 
@@ -152,7 +166,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD(bool $useSSD) {
+    public function setUseSSD(bool $useSSD)
+    {
         $this->set("UseSSD", $useSSD);
     }
 
@@ -161,7 +176,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getSSDType(): string {
+    public function getSSDType(): string
+    {
         return $this->get("SSDType");
     }
 
@@ -170,9 +186,8 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request {
      *
      * @param string $ssdType
      */
-    public function setSSDType(string $ssdType) {
+    public function setSSDType(string $ssdType)
+    {
         $this->set("SSDType", $ssdType);
     }
-
-
 }

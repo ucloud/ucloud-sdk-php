@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateNATGWSubnetRequest extends Request {
+class UpdateNATGWSubnetRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateNATGWSubnet"]);
@@ -34,7 +35,8 @@ class UpdateNATGWSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class UpdateNATGWSubnetRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class UpdateNATGWSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class UpdateNATGWSubnetRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class UpdateNATGWSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getNATGWId(): string {
+    public function getNATGWId(): string
+    {
         return $this->get("NATGWId");
     }
 
@@ -79,7 +85,8 @@ class UpdateNATGWSubnetRequest extends Request {
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId) {
+    public function setNATGWId(string $natgwId)
+    {
         $this->set("NATGWId", $natgwId);
     }
 
@@ -88,7 +95,8 @@ class UpdateNATGWSubnetRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getSubnetworkIds(): array {
+    public function getSubnetworkIds(): array
+    {
         return $this->get("SubnetworkIds");
     }
 
@@ -97,9 +105,8 @@ class UpdateNATGWSubnetRequest extends Request {
      *
      * @param string[] $subnetworkIds
      */
-    public function setSubnetworkIds(array $subnetworkIds) {
+    public function setSubnetworkIds(array $subnetworkIds)
+    {
         $this->set("SubnetworkIds", $subnetworkIds);
     }
-
-
 }

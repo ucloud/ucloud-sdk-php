@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\Cube\Models\MetricDataSet;
 use UCloud\Cube\Models\ValueSet;
 
-class GetCubeMetricsResponse extends Response {
+class GetCubeMetricsResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class GetCubeMetricsResponse extends Response {
      *
      * @return MetricDataSet[]|null
      */
-    public function getDataSets(): array {
+    public function getDataSets(): array
+    {
         $items = $this->get("DataSets") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class GetCubeMetricsResponse extends Response {
      *
      * @param MetricDataSet[] $dataSets
      */
-    public function setDataSets(array $dataSets) {
+    public function setDataSets(array $dataSets)
+    {
         $result = [];
         foreach ($dataSets as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

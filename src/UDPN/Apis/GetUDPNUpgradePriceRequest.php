@@ -18,7 +18,8 @@ namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUDPNUpgradePriceRequest extends Request {
+class GetUDPNUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUDPNUpgradePrice"]);
@@ -33,7 +34,8 @@ class GetUDPNUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class GetUDPNUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class GetUDPNUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class GetUDPNUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class GetUDPNUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDPNId(): string {
+    public function getUDPNId(): string
+    {
         return $this->get("UDPNId");
     }
 
@@ -78,16 +84,18 @@ class GetUDPNUpgradePriceRequest extends Request {
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId) {
+    public function setUDPNId(string $udpnId)
+    {
         $this->set("UDPNId", $udpnId);
     }
 
     /**
      * Bandwidth: 带宽
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -96,9 +104,8 @@ class GetUDPNUpgradePriceRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class EnvList extends Response {
+class EnvList extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class EnvList extends Response {
      *
      * @return string|null
      */
-    public function getKey(): string {
+    public function getKey(): string
+    {
         return $this->get("Key");
     }
 
@@ -35,7 +37,8 @@ class EnvList extends Response {
      *
      * @param string $key
      */
-    public function setKey(string $key) {
+    public function setKey(string $key)
+    {
         $this->set("Key", $key);
     }
 
@@ -44,7 +47,8 @@ class EnvList extends Response {
      *
      * @return string|null
      */
-    public function getValue(): string {
+    public function getValue(): string
+    {
         return $this->get("Value");
     }
 
@@ -53,9 +57,8 @@ class EnvList extends Response {
      *
      * @param string $value
      */
-    public function setValue(string $value) {
+    public function setValue(string $value)
+    {
         $this->set("Value", $value);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
-class UDBRWSplittingSet extends Response {
+class UDBRWSplittingSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UDBRWSplittingSet extends Response {
      *
      * @return string|null
      */
-    public function getDBId(): string {
+    public function getDBId(): string
+    {
         return $this->get("DBId");
     }
 
@@ -35,7 +37,8 @@ class UDBRWSplittingSet extends Response {
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId) {
+    public function setDBId(string $dbId)
+    {
         $this->set("DBId", $dbId);
     }
 
@@ -44,7 +47,8 @@ class UDBRWSplittingSet extends Response {
      *
      * @return string|null
      */
-    public function getRole(): string {
+    public function getRole(): string
+    {
         return $this->get("Role");
     }
 
@@ -53,7 +57,8 @@ class UDBRWSplittingSet extends Response {
      *
      * @param string $role
      */
-    public function setRole(string $role) {
+    public function setRole(string $role)
+    {
         $this->set("Role", $role);
     }
 
@@ -62,7 +67,8 @@ class UDBRWSplittingSet extends Response {
      *
      * @return string|null
      */
-    public function getVirtualIP(): string {
+    public function getVirtualIP(): string
+    {
         return $this->get("VirtualIP");
     }
 
@@ -71,16 +77,18 @@ class UDBRWSplittingSet extends Response {
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP(string $virtualIP) {
+    public function setVirtualIP(string $virtualIP)
+    {
         $this->set("VirtualIP", $virtualIP);
     }
 
     /**
      * ReadWeight: 读写分离比重
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getReadWeight(): int {
+    public function getReadWeight(): int
+    {
         return $this->get("ReadWeight");
     }
 
@@ -89,7 +97,8 @@ class UDBRWSplittingSet extends Response {
      *
      * @param int $readWeight
      */
-    public function setReadWeight(int $readWeight) {
+    public function setReadWeight(int $readWeight)
+    {
         $this->set("ReadWeight", $readWeight);
     }
 
@@ -98,7 +107,8 @@ class UDBRWSplittingSet extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -107,9 +117,8 @@ class UDBRWSplittingSet extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
-
-
 }

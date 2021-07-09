@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeVPNTunnelRequest extends Request {
+class DescribeVPNTunnelRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeVPNTunnel"]);
@@ -33,7 +34,8 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getVPNTunnelIds(): array {
+    public function getVPNTunnelIds(): array
+    {
         return $this->get("VPNTunnelIds");
     }
 
@@ -78,16 +84,18 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @param string[] $vpnTunnelIds
      */
-    public function setVPNTunnelIds(array $vpnTunnelIds) {
+    public function setVPNTunnelIds(array $vpnTunnelIds)
+    {
         $this->set("VPNTunnelIds", $vpnTunnelIds);
     }
 
     /**
      * Offset: 数据偏移量, 默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -96,16 +104,18 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 数据分页值, 默认为20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -114,7 +124,8 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -123,7 +134,8 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -132,9 +144,8 @@ class DescribeVPNTunnelRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
-
-
 }

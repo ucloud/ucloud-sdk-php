@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UDB\Models\UDBParamGroupSet;
 use UCloud\UDB\Models\UDBParamMemberSet;
 
-class DescribeUDBParamGroupResponse extends Response {
+class DescribeUDBParamGroupResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeUDBParamGroupResponse extends Response {
      *
      * @return UDBParamGroupSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class DescribeUDBParamGroupResponse extends Response {
      *
      * @param UDBParamGroupSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,9 +56,10 @@ class DescribeUDBParamGroupResponse extends Response {
     /**
      * TotalCount: 参数组总数，列表操作时才会有该参数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -64,9 +68,8 @@ class DescribeUDBParamGroupResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

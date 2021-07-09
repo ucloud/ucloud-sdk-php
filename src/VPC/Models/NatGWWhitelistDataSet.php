@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class NatGWWhitelistDataSet extends Response {
+class NatGWWhitelistDataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NatGWWhitelistDataSet extends Response {
      *
      * @return string|null
      */
-    public function getNATGWId(): string {
+    public function getNATGWId(): string
+    {
         return $this->get("NATGWId");
     }
 
@@ -35,16 +37,18 @@ class NatGWWhitelistDataSet extends Response {
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId) {
+    public function setNATGWId(string $natgwId)
+    {
         $this->set("NATGWId", $natgwId);
     }
 
     /**
      * IfOpen: 白名单开关标记
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getIfOpen(): int {
+    public function getIfOpen(): int
+    {
         return $this->get("IfOpen");
     }
 
@@ -53,7 +57,8 @@ class NatGWWhitelistDataSet extends Response {
      *
      * @param int $ifOpen
      */
-    public function setIfOpen(int $ifOpen) {
+    public function setIfOpen(int $ifOpen)
+    {
         $this->set("IfOpen", $ifOpen);
     }
 
@@ -62,7 +67,8 @@ class NatGWWhitelistDataSet extends Response {
      *
      * @return DescribeWhiteListResourceObjectIPInfo[]|null
      */
-    public function getObjectIPInfo(): array {
+    public function getObjectIPInfo(): array
+    {
         $items = $this->get("ObjectIPInfo") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -76,13 +82,12 @@ class NatGWWhitelistDataSet extends Response {
      *
      * @param DescribeWhiteListResourceObjectIPInfo[] $objectIPInfo
      */
-    public function setObjectIPInfo(array $objectIPInfo) {
+    public function setObjectIPInfo(array $objectIPInfo)
+    {
         $result = [];
         foreach ($objectIPInfo as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

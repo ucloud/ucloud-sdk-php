@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostTagSet extends Response {
+class PHostTagSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PHostTagSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -35,16 +37,18 @@ class PHostTagSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
      * TotalCount: 该业务组中包含的主机个数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -53,9 +57,8 @@ class PHostTagSet extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

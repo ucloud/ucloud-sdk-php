@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class UcdnDomainTrafficSet extends Response {
+class UcdnDomainTrafficSet extends Response
+{
     
 
     /**
      * Time: 流量获取的时间点，格式为Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,7 +37,8 @@ class UcdnDomainTrafficSet extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
@@ -44,7 +47,8 @@ class UcdnDomainTrafficSet extends Response {
      *
      * @return float|null
      */
-    public function getValue(): float {
+    public function getValue(): float
+    {
         return $this->get("Value");
     }
 
@@ -53,9 +57,8 @@ class UcdnDomainTrafficSet extends Response {
      *
      * @param float $value
      */
-    public function setValue(float $value) {
+    public function setValue(float $value)
+    {
         $this->set("Value", $value);
     }
-
-
 }

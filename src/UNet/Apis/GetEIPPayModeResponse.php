@@ -19,7 +19,8 @@ namespace UCloud\UNet\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UNet\Models\EIPPayModeSet;
 
-class GetEIPPayModeResponse extends Response {
+class GetEIPPayModeResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetEIPPayModeResponse extends Response {
      *
      * @return EIPPayModeSet[]|null
      */
-    public function getEIPPayMode(): array {
+    public function getEIPPayMode(): array
+    {
         $items = $this->get("EIPPayMode") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetEIPPayModeResponse extends Response {
      *
      * @param EIPPayModeSet[] $eipPayMode
      */
-    public function setEIPPayMode(array $eipPayMode) {
+    public function setEIPPayMode(array $eipPayMode)
+    {
         $result = [];
         foreach ($eipPayMode as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\UPHost\Apis;
 use UCloud\Core\Request\Request;
 use UCloud\UPHost\Params\CreatePHostParamDisks;
 
-class CreatePHostRequest extends Request {
+class CreatePHostRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreatePHost"]);
@@ -36,7 +37,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,7 +67,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -72,7 +77,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -81,7 +87,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -90,7 +97,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -99,7 +107,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
@@ -108,7 +117,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->get("Password");
     }
 
@@ -117,7 +127,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->set("Password", $password);
     }
 
@@ -126,7 +137,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -135,7 +147,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -144,7 +157,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -153,7 +167,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -162,7 +177,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -171,7 +187,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -180,7 +197,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -189,7 +207,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -198,7 +217,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -207,7 +227,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -216,7 +237,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getQuantity(): string {
+    public function getQuantity(): string
+    {
         return $this->get("Quantity");
     }
 
@@ -225,7 +247,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $quantity
      */
-    public function setQuantity(string $quantity) {
+    public function setQuantity(string $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -234,7 +257,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getSecurityGroupId(): string {
+    public function getSecurityGroupId(): string
+    {
         return $this->get("SecurityGroupId");
     }
 
@@ -243,7 +267,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $securityGroupId
      */
-    public function setSecurityGroupId(string $securityGroupId) {
+    public function setSecurityGroupId(string $securityGroupId)
+    {
         $this->set("SecurityGroupId", $securityGroupId);
     }
 
@@ -252,7 +277,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getRaid(): string {
+    public function getRaid(): string
+    {
         return $this->get("Raid");
     }
 
@@ -261,7 +287,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $raid
      */
-    public function setRaid(string $raid) {
+    public function setRaid(string $raid)
+    {
         $this->set("Raid", $raid);
     }
 
@@ -270,7 +297,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -279,7 +307,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -288,7 +317,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -297,7 +327,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -306,7 +337,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getCluster(): string {
+    public function getCluster(): string
+    {
         return $this->get("Cluster");
     }
 
@@ -315,16 +347,18 @@ class CreatePHostRequest extends Request {
      *
      * @param string $cluster
      */
-    public function setCluster(string $cluster) {
+    public function setCluster(string $cluster)
+    {
         $this->set("Cluster", $cluster);
     }
 
     /**
-     * Disks: 
+     * Disks:
      *
      * @return CreatePHostParamDisks[]|null
      */
-    public function getDisks(): array {
+    public function getDisks(): array
+    {
         $items = $this->get("Disks") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -334,11 +368,12 @@ class CreatePHostRequest extends Request {
     }
 
     /**
-     * Disks: 
+     * Disks:
      *
      * @param CreatePHostParamDisks[] $disks
      */
-    public function setDisks(array $disks) {
+    public function setDisks(array $disks)
+    {
         $result = [];
         foreach ($disks as $i => $item) {
             array_push($result, $item->getAll());
@@ -351,7 +386,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getVpcIp(): string {
+    public function getVpcIp(): string
+    {
         return $this->get("VpcIp");
     }
 
@@ -360,7 +396,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $vpcIp
      */
-    public function setVpcIp(string $vpcIp) {
+    public function setVpcIp(string $vpcIp)
+    {
         $this->set("VpcIp", $vpcIp);
     }
 
@@ -369,7 +406,8 @@ class CreatePHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -378,9 +416,8 @@ class CreatePHostRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

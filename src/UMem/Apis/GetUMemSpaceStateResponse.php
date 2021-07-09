@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetUMemSpaceStateResponse extends Response {
+class GetUMemSpaceStateResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetUMemSpaceStateResponse extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -35,9 +37,8 @@ class GetUMemSpaceStateResponse extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
-
-
 }

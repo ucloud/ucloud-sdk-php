@@ -18,44 +18,47 @@ namespace UCloud\Cube\Models;
 
 use UCloud\Core\Response\Response;
 
-class ValueSet extends Response {
+class ValueSet extends Response
+{
     
 
     /**
-     * Value: 
+     * Value:
      *
      * @return float|null
      */
-    public function getValue(): float {
+    public function getValue(): float
+    {
         return $this->get("Value");
     }
 
     /**
-     * Value: 
+     * Value:
      *
      * @param float $value
      */
-    public function setValue(float $value) {
+    public function setValue(float $value)
+    {
         $this->set("Value", $value);
     }
 
     /**
-     * Timestamp: 
+     * Timestamp:
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTimestamp(): int {
+    public function getTimestamp(): int
+    {
         return $this->get("Timestamp");
     }
 
     /**
-     * Timestamp: 
+     * Timestamp:
      *
      * @param int $timestamp
      */
-    public function setTimestamp(int $timestamp) {
+    public function setTimestamp(int $timestamp)
+    {
         $this->set("Timestamp", $timestamp);
     }
-
-
 }

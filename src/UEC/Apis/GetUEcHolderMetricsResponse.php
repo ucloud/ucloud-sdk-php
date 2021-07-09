@@ -25,7 +25,8 @@ use UCloud\UEC\Models\MonitorInfo;
 use UCloud\UEC\Models\MonitorInfo;
 use UCloud\UEC\Models\MonitorInfo;
 
-class GetUEcHolderMetricsResponse extends Response {
+class GetUEcHolderMetricsResponse extends Response
+{
     
 
     /**
@@ -33,7 +34,8 @@ class GetUEcHolderMetricsResponse extends Response {
      *
      * @return MetricisDataSet|null
      */
-    public function getDataSets(): MetricisDataSet {
+    public function getDataSets(): MetricisDataSet
+    {
         return new MetricisDataSet($this->get("DataSets"));
     }
 
@@ -42,9 +44,8 @@ class GetUEcHolderMetricsResponse extends Response {
      *
      * @param MetricisDataSet $dataSets
      */
-    public function setDataSets(MetricisDataSet $dataSets) {
+    public function setDataSets(MetricisDataSet $dataSets)
+    {
         $this->set("DataSets", $dataSets->getAll());
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\UcdnDomainTrafficSet;
 
-class GetUcdnDomainTrafficResponse extends Response {
+class GetUcdnDomainTrafficResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetUcdnDomainTrafficResponse extends Response {
      *
      * @return UcdnDomainTrafficSet[]|null
      */
-    public function getTrafficSet(): array {
+    public function getTrafficSet(): array
+    {
         $items = $this->get("TrafficSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetUcdnDomainTrafficResponse extends Response {
      *
      * @param UcdnDomainTrafficSet[] $trafficSet
      */
-    public function setTrafficSet(array $trafficSet) {
+    public function setTrafficSet(array $trafficSet)
+    {
         $result = [];
         foreach ($trafficSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

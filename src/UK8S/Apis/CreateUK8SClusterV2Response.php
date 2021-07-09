@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUK8SClusterV2Response extends Response {
+class CreateUK8SClusterV2Response extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUK8SClusterV2Response extends Response {
      *
      * @return string|null
      */
-    public function getClusterId(): string {
+    public function getClusterId(): string
+    {
         return $this->get("ClusterId");
     }
 
@@ -35,9 +37,8 @@ class CreateUK8SClusterV2Response extends Response {
      *
      * @param string $clusterId
      */
-    public function setClusterId(string $clusterId) {
+    public function setClusterId(string $clusterId)
+    {
         $this->set("ClusterId", $clusterId);
     }
-
-
 }

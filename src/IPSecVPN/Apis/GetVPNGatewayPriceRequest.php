@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetVPNGatewayPriceRequest extends Request {
+class GetVPNGatewayPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetVPNGatewayPrice"]);
@@ -34,7 +35,8 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getGrade(): string {
+    public function getGrade(): string
+    {
         return $this->get("Grade");
     }
 
@@ -79,7 +85,8 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @param string $grade
      */
-    public function setGrade(string $grade) {
+    public function setGrade(string $grade)
+    {
         $this->set("Grade", $grade);
     }
 
@@ -88,7 +95,8 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -97,16 +105,18 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长, 默认: 1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -115,9 +125,8 @@ class GetVPNGatewayPriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
-
-
 }

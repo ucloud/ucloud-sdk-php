@@ -18,15 +18,17 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CheckRecoverUDBInstanceResponse extends Response {
+class CheckRecoverUDBInstanceResponse extends Response
+{
     
 
     /**
      * LastestTime: 核查成功返回值为可以回档到的最近时刻,核查失败不返回
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLastestTime(): int {
+    public function getLastestTime(): int
+    {
         return $this->get("LastestTime");
     }
 
@@ -35,9 +37,8 @@ class CheckRecoverUDBInstanceResponse extends Response {
      *
      * @param int $lastestTime
      */
-    public function setLastestTime(int $lastestTime) {
+    public function setLastestTime(int $lastestTime)
+    {
         $this->set("LastestTime", $lastestTime);
     }
-
-
 }

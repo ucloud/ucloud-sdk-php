@@ -19,7 +19,8 @@ namespace UCloud\UEC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UEC\Models\SubnetInfo;
 
-class DescribeUEcSubnetResponse extends Response {
+class DescribeUEcSubnetResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUEcSubnetResponse extends Response {
      *
      * @return SubnetInfo[]|null
      */
-    public function getSubnetList(): array {
+    public function getSubnetList(): array
+    {
         $items = $this->get("SubnetList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUEcSubnetResponse extends Response {
      *
      * @param SubnetInfo[] $subnetList
      */
-    public function setSubnetList(array $subnetList) {
+    public function setSubnetList(array $subnetList)
+    {
         $result = [];
         foreach ($subnetList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

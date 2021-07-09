@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUMemcacheGroupRequest extends Request {
+class CreateUMemcacheGroupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUMemcacheGroup"]);
@@ -33,7 +34,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -60,7 +64,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -69,7 +74,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -78,7 +84,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -87,7 +94,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -96,16 +104,18 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * Size: 每个节点的内存大小,单位GB,默认1GB 目前仅支持1/2/4/8/16/32这几档
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -114,7 +124,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -123,7 +134,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getConfigId(): string {
+    public function getConfigId(): string
+    {
         return $this->get("ConfigId");
     }
 
@@ -132,7 +144,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $configId
      */
-    public function setConfigId(string $configId) {
+    public function setConfigId(string $configId)
+    {
         $this->set("ConfigId", $configId);
     }
 
@@ -141,7 +154,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getVersion(): string {
+    public function getVersion(): string
+    {
         return $this->get("Version");
     }
 
@@ -150,7 +164,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $version
      */
-    public function setVersion(string $version) {
+    public function setVersion(string $version)
+    {
         $this->set("Version", $version);
     }
 
@@ -159,7 +174,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -168,16 +184,18 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长，默认为1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -186,7 +204,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -195,7 +214,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -204,25 +224,28 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
-     * Protocol: 
+     * Protocol:
      *
      * @return string|null
      */
-    public function getProtocol(): string {
+    public function getProtocol(): string
+    {
         return $this->get("Protocol");
     }
 
     /**
-     * Protocol: 
+     * Protocol:
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol) {
+    public function setProtocol(string $protocol)
+    {
         $this->set("Protocol", $protocol);
     }
 
@@ -231,7 +254,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -240,9 +264,8 @@ class CreateUMemcacheGroupRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

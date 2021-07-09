@@ -46,7 +46,8 @@ use UCloud\UDDB\Apis\UpgradeUDDBInstanceResponse;
 /**
  * This client is used to call actions of **UDDB** service
  */
-class UDDBClient extends Client {
+class UDDBClient extends Client
+{
 
     /**
      * ChangeUDDBInstanceName - 修改分布式数据库中间件名称
@@ -70,7 +71,8 @@ class UDDBClient extends Client {
      *
      * @throws UCloudException
      */
-    public function changeUDDBInstanceName(ChangeUDDBInstanceNameRequest $request = null): ChangeUDDBInstanceNameResponse {
+    public function changeUDDBInstanceName(ChangeUDDBInstanceNameRequest $request = null): ChangeUDDBInstanceNameResponse
+    {
         $resp = $this->invoke($request);
         return new ChangeUDDBInstanceNameResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -103,7 +105,8 @@ Running: 系统正常运行中
      *
      * @throws UCloudException
      */
-    public function changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest $request = null): ChangeUDDBSlaveCountResponse {
+    public function changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest $request = null): ChangeUDDBSlaveCountResponse
+    {
         $resp = $this->invoke($request);
         return new ChangeUDDBSlaveCountResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -147,7 +150,8 @@ Running: 系统正常运行中
      *
      * @throws UCloudException
      */
-    public function createUDDBInstance(CreateUDDBInstanceRequest $request = null): CreateUDDBInstanceResponse {
+    public function createUDDBInstance(CreateUDDBInstanceRequest $request = null): CreateUDDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -177,7 +181,8 @@ Shutoff: 已关闭
      *
      * @throws UCloudException
      */
-    public function deleteUDDBInstance(DeleteUDDBInstanceRequest $request = null): DeleteUDDBInstanceResponse {
+    public function deleteUDDBInstance(DeleteUDDBInstanceRequest $request = null): DeleteUDDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -245,7 +250,8 @@ Shutoff: 已关闭
      *
      * @throws UCloudException
      */
-    public function describeUDDBInstance(DescribeUDDBInstanceRequest $request = null): DescribeUDDBInstanceResponse {
+    public function describeUDDBInstance(DescribeUDDBInstanceRequest $request = null): DescribeUDDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -285,7 +291,8 @@ Shutoff: 已关闭
      *
      * @throws UCloudException
      */
-    public function describeUDDBInstancePrice(DescribeUDDBInstancePriceRequest $request = null): DescribeUDDBInstancePriceResponse {
+    public function describeUDDBInstancePrice(DescribeUDDBInstancePriceRequest $request = null): DescribeUDDBInstancePriceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstancePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -324,7 +331,8 @@ Shutoff: 已关闭
      *
      * @throws UCloudException
      */
-    public function describeUDDBInstanceUpgradePrice(DescribeUDDBInstanceUpgradePriceRequest $request = null): DescribeUDDBInstanceUpgradePriceResponse {
+    public function describeUDDBInstanceUpgradePrice(DescribeUDDBInstanceUpgradePriceRequest $request = null): DescribeUDDBInstanceUpgradePriceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstanceUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -356,7 +364,8 @@ Abnormal: 异常运行中
      *
      * @throws UCloudException
      */
-    public function restartUDDBInstance(RestartUDDBInstanceRequest $request = null): RestartUDDBInstanceResponse {
+    public function restartUDDBInstance(RestartUDDBInstanceRequest $request = null): RestartUDDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new RestartUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -387,7 +396,8 @@ Shutoff: 已关闭
      *
      * @throws UCloudException
      */
-    public function startUDDBInstance(StartUDDBInstanceRequest $request = null): StartUDDBInstanceResponse {
+    public function startUDDBInstance(StartUDDBInstanceRequest $request = null): StartUDDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new StartUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -419,7 +429,8 @@ Abnormal: 异常运行中
      *
      * @throws UCloudException
      */
-    public function stopUDDBInstance(StopUDDBInstanceRequest $request = null): StopUDDBInstanceResponse {
+    public function stopUDDBInstance(StopUDDBInstanceRequest $request = null): StopUDDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new StopUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -457,7 +468,8 @@ Shutoff: 已关闭
      *
      * @throws UCloudException
      */
-    public function upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest $request = null): UpgradeUDDBDataNodeResponse {
+    public function upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest $request = null): UpgradeUDDBDataNodeResponse
+    {
         $resp = $this->invoke($request);
         return new UpgradeUDDBDataNodeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -493,7 +505,8 @@ Running: 系统正常运行中
      *
      * @throws UCloudException
      */
-    public function upgradeUDDBInstance(UpgradeUDDBInstanceRequest $request = null): UpgradeUDDBInstanceResponse {
+    public function upgradeUDDBInstance(UpgradeUDDBInstanceRequest $request = null): UpgradeUDDBInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new UpgradeUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }

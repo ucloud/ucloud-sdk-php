@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CopyCustomImageRequest extends Request {
+class CopyCustomImageRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CopyCustomImage"]);
@@ -34,7 +35,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getSourceImageId(): string {
+    public function getSourceImageId(): string
+    {
         return $this->get("SourceImageId");
     }
 
@@ -97,7 +105,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @param string $sourceImageId
      */
-    public function setSourceImageId(string $sourceImageId) {
+    public function setSourceImageId(string $sourceImageId)
+    {
         $this->set("SourceImageId", $sourceImageId);
     }
 
@@ -106,7 +115,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getTargetProjectId(): string {
+    public function getTargetProjectId(): string
+    {
         return $this->get("TargetProjectId");
     }
 
@@ -115,7 +125,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @param string $targetProjectId
      */
-    public function setTargetProjectId(string $targetProjectId) {
+    public function setTargetProjectId(string $targetProjectId)
+    {
         $this->set("TargetProjectId", $targetProjectId);
     }
 
@@ -124,7 +135,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getTargetRegion(): string {
+    public function getTargetRegion(): string
+    {
         return $this->get("TargetRegion");
     }
 
@@ -133,7 +145,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @param string $targetRegion
      */
-    public function setTargetRegion(string $targetRegion) {
+    public function setTargetRegion(string $targetRegion)
+    {
         $this->set("TargetRegion", $targetRegion);
     }
 
@@ -142,7 +155,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getTargetImageName(): string {
+    public function getTargetImageName(): string
+    {
         return $this->get("TargetImageName");
     }
 
@@ -151,7 +165,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @param string $targetImageName
      */
-    public function setTargetImageName(string $targetImageName) {
+    public function setTargetImageName(string $targetImageName)
+    {
         $this->set("TargetImageName", $targetImageName);
     }
 
@@ -160,7 +175,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getTargetImageDescription(): string {
+    public function getTargetImageDescription(): string
+    {
         return $this->get("TargetImageDescription");
     }
 
@@ -169,9 +185,8 @@ class CopyCustomImageRequest extends Request {
      *
      * @param string $targetImageDescription
      */
-    public function setTargetImageDescription(string $targetImageDescription) {
+    public function setTargetImageDescription(string $targetImageDescription)
+    {
         $this->set("TargetImageDescription", $targetImageDescription);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetCubeMetricsRequest extends Request {
+class GetCubeMetricsRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetCubeMetrics"]);
@@ -38,7 +39,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -47,7 +49,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -56,7 +59,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -65,7 +69,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -74,7 +79,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -83,7 +89,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -92,7 +99,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -101,7 +109,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
@@ -110,7 +119,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getMetricName(): array {
+    public function getMetricName(): array
+    {
         return $this->get("MetricName");
     }
 
@@ -119,16 +129,18 @@ class GetCubeMetricsRequest extends Request {
      *
      * @param string[] $metricName
      */
-    public function setMetricName(array $metricName) {
+    public function setMetricName(array $metricName)
+    {
         $this->set("MetricName", $metricName);
     }
 
     /**
      * BeginTime: 开始时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -137,16 +149,18 @@ class GetCubeMetricsRequest extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 结束时间，必须大于开始时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -155,7 +169,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
@@ -164,7 +179,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @return string|null
      */
-    public function getContainerName(): string {
+    public function getContainerName(): string
+    {
         return $this->get("ContainerName");
     }
 
@@ -173,9 +189,8 @@ class GetCubeMetricsRequest extends Request {
      *
      * @param string $containerName
      */
-    public function setContainerName(string $containerName) {
+    public function setContainerName(string $containerName)
+    {
         $this->set("ContainerName", $containerName);
     }
-
-
 }

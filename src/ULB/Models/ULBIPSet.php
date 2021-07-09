@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class ULBIPSet extends Response {
+class ULBIPSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ULBIPSet extends Response {
      *
      * @return string|null
      */
-    public function getOperatorName(): string {
+    public function getOperatorName(): string
+    {
         return $this->get("OperatorName");
     }
 
@@ -35,7 +37,8 @@ class ULBIPSet extends Response {
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName) {
+    public function setOperatorName(string $operatorName)
+    {
         $this->set("OperatorName", $operatorName);
     }
 
@@ -44,7 +47,8 @@ class ULBIPSet extends Response {
      *
      * @return string|null
      */
-    public function getEIP(): string {
+    public function getEIP(): string
+    {
         return $this->get("EIP");
     }
 
@@ -53,7 +57,8 @@ class ULBIPSet extends Response {
      *
      * @param string $eip
      */
-    public function setEIP(string $eip) {
+    public function setEIP(string $eip)
+    {
         $this->set("EIP", $eip);
     }
 
@@ -62,7 +67,8 @@ class ULBIPSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -71,16 +77,18 @@ class ULBIPSet extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
     /**
      * BandwidthType: 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidthType(): int {
+    public function getBandwidthType(): int
+    {
         return $this->get("BandwidthType");
     }
 
@@ -89,16 +97,18 @@ class ULBIPSet extends Response {
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType(int $bandwidthType) {
+    public function setBandwidthType(int $bandwidthType)
+    {
         $this->set("BandwidthType", $bandwidthType);
     }
 
     /**
      * Bandwidth: 弹性IP的带宽值（暂未对外开放）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -107,9 +117,8 @@ class ULBIPSet extends Response {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
-
-
 }

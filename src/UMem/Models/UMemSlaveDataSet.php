@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class UMemSlaveDataSet extends Response {
+class UMemSlaveDataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -53,7 +57,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -62,7 +67,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -71,34 +77,38 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
     /**
-     * VirtualIP: 
+     * VirtualIP:
      *
      * @return string|null
      */
-    public function getVirtualIP(): string {
+    public function getVirtualIP(): string
+    {
         return $this->get("VirtualIP");
     }
 
     /**
-     * VirtualIP: 
+     * VirtualIP:
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP(string $virtualIP) {
+    public function setVirtualIP(string $virtualIP)
+    {
         $this->set("VirtualIP", $virtualIP);
     }
 
     /**
      * RewriteTime: 主备Redis返回运维时间 0//0点 1 //1点 以此类推
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRewriteTime(): int {
+    public function getRewriteTime(): int
+    {
         return $this->get("RewriteTime");
     }
 
@@ -107,7 +117,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param int $rewriteTime
      */
-    public function setRewriteTime(int $rewriteTime) {
+    public function setRewriteTime(int $rewriteTime)
+    {
         $this->set("RewriteTime", $rewriteTime);
     }
 
@@ -116,7 +127,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getMasterGroupId(): string {
+    public function getMasterGroupId(): string
+    {
         return $this->get("MasterGroupId");
     }
 
@@ -125,7 +137,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $masterGroupId
      */
-    public function setMasterGroupId(string $masterGroupId) {
+    public function setMasterGroupId(string $masterGroupId)
+    {
         $this->set("MasterGroupId", $masterGroupId);
     }
 
@@ -134,7 +147,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -143,16 +157,18 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
     /**
      * Port: 端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -161,16 +177,18 @@ class UMemSlaveDataSet extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
     /**
      * MemorySize: 实力大小
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemorySize(): int {
+    public function getMemorySize(): int
+    {
         return $this->get("MemorySize");
     }
 
@@ -179,7 +197,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param int $memorySize
      */
-    public function setMemorySize(int $memorySize) {
+    public function setMemorySize(int $memorySize)
+    {
         $this->set("MemorySize", $memorySize);
     }
 
@@ -188,7 +207,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getGroupName(): string {
+    public function getGroupName(): string
+    {
         return $this->get("GroupName");
     }
 
@@ -197,7 +217,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $groupName
      */
-    public function setGroupName(string $groupName) {
+    public function setGroupName(string $groupName)
+    {
         $this->set("GroupName", $groupName);
     }
 
@@ -206,7 +227,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getRole(): string {
+    public function getRole(): string
+    {
         return $this->get("Role");
     }
 
@@ -215,16 +237,18 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $role
      */
-    public function setRole(string $role) {
+    public function setRole(string $role)
+    {
         $this->set("Role", $role);
     }
 
     /**
      * ModifyTime: 修改时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getModifyTime(): int {
+    public function getModifyTime(): int
+    {
         return $this->get("ModifyTime");
     }
 
@@ -233,7 +257,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param int $modifyTime
      */
-    public function setModifyTime(int $modifyTime) {
+    public function setModifyTime(int $modifyTime)
+    {
         $this->set("ModifyTime", $modifyTime);
     }
 
@@ -242,7 +267,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -251,16 +277,18 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -269,16 +297,18 @@ class UMemSlaveDataSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ExpireTime: 到期时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -287,16 +317,18 @@ class UMemSlaveDataSet extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
     /**
      * Size: 容量单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -305,16 +337,18 @@ class UMemSlaveDataSet extends Response {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
     /**
      * UsedSize: 使用量单位MB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getUsedSize(): int {
+    public function getUsedSize(): int
+    {
         return $this->get("UsedSize");
     }
 
@@ -323,7 +357,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param int $usedSize
      */
-    public function setUsedSize(int $usedSize) {
+    public function setUsedSize(int $usedSize)
+    {
         $this->set("UsedSize", $usedSize);
     }
 
@@ -332,7 +367,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -341,7 +377,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
 
@@ -350,7 +387,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -359,7 +397,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -368,7 +407,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -377,7 +417,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -386,7 +427,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -395,7 +437,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -404,7 +447,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getConfigId(): string {
+    public function getConfigId(): string
+    {
         return $this->get("ConfigId");
     }
 
@@ -413,7 +457,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $configId
      */
-    public function setConfigId(string $configId) {
+    public function setConfigId(string $configId)
+    {
         $this->set("ConfigId", $configId);
     }
 
@@ -422,7 +467,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVersion(): string {
+    public function getVersion(): string
+    {
         return $this->get("Version");
     }
 
@@ -431,9 +477,8 @@ class UMemSlaveDataSet extends Response {
      *
      * @param string $version
      */
-    public function setVersion(string $version) {
+    public function setVersion(string $version)
+    {
         $this->set("Version", $version);
     }
-
-
 }

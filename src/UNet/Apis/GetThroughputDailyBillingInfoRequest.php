@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetThroughputDailyBillingInfoRequest extends Request {
+class GetThroughputDailyBillingInfoRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetThroughputDailyBillingInfo"]);
@@ -35,7 +36,8 @@ class GetThroughputDailyBillingInfoRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class GetThroughputDailyBillingInfoRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class GetThroughputDailyBillingInfoRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -62,7 +66,8 @@ class GetThroughputDailyBillingInfoRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -71,7 +76,8 @@ class GetThroughputDailyBillingInfoRequest extends Request {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -80,16 +86,18 @@ class GetThroughputDailyBillingInfoRequest extends Request {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
     /**
      * StartTime: 查询开始时间时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStartTime(): int {
+    public function getStartTime(): int
+    {
         return $this->get("StartTime");
     }
 
@@ -98,16 +106,18 @@ class GetThroughputDailyBillingInfoRequest extends Request {
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime) {
+    public function setStartTime(int $startTime)
+    {
         $this->set("StartTime", $startTime);
     }
 
     /**
      * EndTime: 查询结束时间时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -116,9 +126,8 @@ class GetThroughputDailyBillingInfoRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
-
-
 }

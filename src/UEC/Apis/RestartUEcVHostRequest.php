@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class RestartUEcVHostRequest extends Request {
+class RestartUEcVHostRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "RestartUEcVHost"]);
@@ -32,7 +33,8 @@ class RestartUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class RestartUEcVHostRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class RestartUEcVHostRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getNodeId(): array {
+    public function getNodeId(): array
+    {
         return $this->get("NodeId");
     }
 
@@ -59,9 +63,8 @@ class RestartUEcVHostRequest extends Request {
      *
      * @param string[] $nodeId
      */
-    public function setNodeId(array $nodeId) {
+    public function setNodeId(array $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
-
-
 }

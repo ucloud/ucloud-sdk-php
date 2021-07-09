@@ -18,7 +18,8 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class EIPAddrSet extends Response {
+class EIPAddrSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class EIPAddrSet extends Response {
      *
      * @return string|null
      */
-    public function getOperatorName(): string {
+    public function getOperatorName(): string
+    {
         return $this->get("OperatorName");
     }
 
@@ -35,7 +37,8 @@ class EIPAddrSet extends Response {
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName) {
+    public function setOperatorName(string $operatorName)
+    {
         $this->set("OperatorName", $operatorName);
     }
 
@@ -44,7 +47,8 @@ class EIPAddrSet extends Response {
      *
      * @return string|null
      */
-    public function getIP(): string {
+    public function getIP(): string
+    {
         return $this->get("IP");
     }
 
@@ -53,9 +57,8 @@ class EIPAddrSet extends Response {
      *
      * @param string $ip
      */
-    public function setIP(string $ip) {
+    public function setIP(string $ip)
+    {
         $this->set("IP", $ip);
     }
-
-
 }

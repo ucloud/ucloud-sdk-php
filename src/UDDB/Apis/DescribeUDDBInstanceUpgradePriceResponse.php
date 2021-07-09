@@ -19,7 +19,8 @@ namespace UCloud\UDDB\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDDB\Models\PriceInfo;
 
-class DescribeUDDBInstanceUpgradePriceResponse extends Response {
+class DescribeUDDBInstanceUpgradePriceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUDDBInstanceUpgradePriceResponse extends Response {
      *
      * @return PriceInfo|null
      */
-    public function getPriceInfo(): PriceInfo {
+    public function getPriceInfo(): PriceInfo
+    {
         return new PriceInfo($this->get("PriceInfo"));
     }
 
@@ -36,9 +38,8 @@ class DescribeUDDBInstanceUpgradePriceResponse extends Response {
      *
      * @param PriceInfo $priceInfo
      */
-    public function setPriceInfo(PriceInfo $priceInfo) {
+    public function setPriceInfo(PriceInfo $priceInfo)
+    {
         $this->set("PriceInfo", $priceInfo->getAll());
     }
-
-
 }

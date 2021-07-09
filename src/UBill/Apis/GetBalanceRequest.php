@@ -18,13 +18,10 @@ namespace UCloud\UBill\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetBalanceRequest extends Request {
+class GetBalanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetBalance"]);
     }
-
-    
-
-
 }

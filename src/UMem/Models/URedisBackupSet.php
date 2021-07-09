@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class URedisBackupSet extends Response {
+class URedisBackupSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class URedisBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupId(): string {
+    public function getBackupId(): string
+    {
         return $this->get("BackupId");
     }
 
@@ -35,7 +37,8 @@ class URedisBackupSet extends Response {
      *
      * @param string $backupId
      */
-    public function setBackupId(string $backupId) {
+    public function setBackupId(string $backupId)
+    {
         $this->set("BackupId", $backupId);
     }
 
@@ -44,7 +47,8 @@ class URedisBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -53,7 +57,8 @@ class URedisBackupSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -62,7 +67,8 @@ class URedisBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -71,7 +77,8 @@ class URedisBackupSet extends Response {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
@@ -80,7 +87,8 @@ class URedisBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getGroupName(): string {
+    public function getGroupName(): string
+    {
         return $this->get("GroupName");
     }
 
@@ -89,7 +97,8 @@ class URedisBackupSet extends Response {
      *
      * @param string $groupName
      */
-    public function setGroupName(string $groupName) {
+    public function setGroupName(string $groupName)
+    {
         $this->set("GroupName", $groupName);
     }
 
@@ -98,7 +107,8 @@ class URedisBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupName(): string {
+    public function getBackupName(): string
+    {
         return $this->get("BackupName");
     }
 
@@ -107,16 +117,18 @@ class URedisBackupSet extends Response {
      *
      * @param string $backupName
      */
-    public function setBackupName(string $backupName) {
+    public function setBackupName(string $backupName)
+    {
         $this->set("BackupName", $backupName);
     }
 
     /**
      * BackupTime: 备份时间 (UNIX时间戳)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupTime(): int {
+    public function getBackupTime(): int
+    {
         return $this->get("BackupTime");
     }
 
@@ -125,16 +137,18 @@ class URedisBackupSet extends Response {
      *
      * @param int $backupTime
      */
-    public function setBackupTime(int $backupTime) {
+    public function setBackupTime(int $backupTime)
+    {
         $this->set("BackupTime", $backupTime);
     }
 
     /**
      * BackupSize: 备份文件大小, 以字节为单位
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupSize(): int {
+    public function getBackupSize(): int
+    {
         return $this->get("BackupSize");
     }
 
@@ -143,7 +157,8 @@ class URedisBackupSet extends Response {
      *
      * @param int $backupSize
      */
-    public function setBackupSize(int $backupSize) {
+    public function setBackupSize(int $backupSize)
+    {
         $this->set("BackupSize", $backupSize);
     }
 
@@ -152,7 +167,8 @@ class URedisBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupType(): string {
+    public function getBackupType(): string
+    {
         return $this->get("BackupType");
     }
 
@@ -161,7 +177,8 @@ class URedisBackupSet extends Response {
      *
      * @param string $backupType
      */
-    public function setBackupType(string $backupType) {
+    public function setBackupType(string $backupType)
+    {
         $this->set("BackupType", $backupType);
     }
 
@@ -170,7 +187,8 @@ class URedisBackupSet extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -179,9 +197,8 @@ class URedisBackupSet extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
-
-
 }

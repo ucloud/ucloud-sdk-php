@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class PolicyBackendSet extends Response {
+class PolicyBackendSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PolicyBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getBackendId(): string {
+    public function getBackendId(): string
+    {
         return $this->get("BackendId");
     }
 
@@ -35,7 +37,8 @@ class PolicyBackendSet extends Response {
      *
      * @param string $backendId
      */
-    public function setBackendId(string $backendId) {
+    public function setBackendId(string $backendId)
+    {
         $this->set("BackendId", $backendId);
     }
 
@@ -44,7 +47,8 @@ class PolicyBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -53,7 +57,8 @@ class PolicyBackendSet extends Response {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -62,7 +67,8 @@ class PolicyBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceName(): string {
+    public function getResourceName(): string
+    {
         return $this->get("ResourceName");
     }
 
@@ -71,7 +77,8 @@ class PolicyBackendSet extends Response {
      *
      * @param string $resourceName
      */
-    public function setResourceName(string $resourceName) {
+    public function setResourceName(string $resourceName)
+    {
         $this->set("ResourceName", $resourceName);
     }
 
@@ -80,7 +87,8 @@ class PolicyBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceId(): string {
+    public function getSubResourceId(): string
+    {
         return $this->get("SubResourceId");
     }
 
@@ -89,7 +97,8 @@ class PolicyBackendSet extends Response {
      *
      * @param string $subResourceId
      */
-    public function setSubResourceId(string $subResourceId) {
+    public function setSubResourceId(string $subResourceId)
+    {
         $this->set("SubResourceId", $subResourceId);
     }
 
@@ -98,7 +107,8 @@ class PolicyBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceName(): string {
+    public function getSubResourceName(): string
+    {
         return $this->get("SubResourceName");
     }
 
@@ -107,7 +117,8 @@ class PolicyBackendSet extends Response {
      *
      * @param string $subResourceName
      */
-    public function setSubResourceName(string $subResourceName) {
+    public function setSubResourceName(string $subResourceName)
+    {
         $this->set("SubResourceName", $subResourceName);
     }
 
@@ -116,7 +127,8 @@ class PolicyBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceType(): string {
+    public function getSubResourceType(): string
+    {
         return $this->get("SubResourceType");
     }
 
@@ -125,7 +137,8 @@ class PolicyBackendSet extends Response {
      *
      * @param string $subResourceType
      */
-    public function setSubResourceType(string $subResourceType) {
+    public function setSubResourceType(string $subResourceType)
+    {
         $this->set("SubResourceType", $subResourceType);
     }
 
@@ -134,7 +147,8 @@ class PolicyBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getObjectId(): string {
+    public function getObjectId(): string
+    {
         return $this->get("ObjectId");
     }
 
@@ -143,16 +157,18 @@ class PolicyBackendSet extends Response {
      *
      * @param string $objectId
      */
-    public function setObjectId(string $objectId) {
+    public function setObjectId(string $objectId)
+    {
         $this->set("ObjectId", $objectId);
     }
 
     /**
      * Port: 所添加的后端资源服务端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -161,7 +177,8 @@ class PolicyBackendSet extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
@@ -170,7 +187,8 @@ class PolicyBackendSet extends Response {
      *
      * @return string|null
      */
-    public function getPrivateIP(): string {
+    public function getPrivateIP(): string
+    {
         return $this->get("PrivateIP");
     }
 
@@ -179,9 +197,8 @@ class PolicyBackendSet extends Response {
      *
      * @param string $privateIP
      */
-    public function setPrivateIP(string $privateIP) {
+    public function setPrivateIP(string $privateIP)
+    {
         $this->set("PrivateIP", $privateIP);
     }
-
-
 }

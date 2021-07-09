@@ -19,15 +19,17 @@ namespace UCloud\UDPN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDPN\Models\UDPNLineSet;
 
-class GetUDPNLineListResponse extends Response {
+class GetUDPNLineListResponse extends Response
+{
     
 
     /**
      * TotalCount: DataSet中的元素个数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -36,7 +38,8 @@ class GetUDPNLineListResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -45,7 +48,8 @@ class GetUDPNLineListResponse extends Response {
      *
      * @return UDPNLineSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class GetUDPNLineListResponse extends Response {
      *
      * @param UDPNLineSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

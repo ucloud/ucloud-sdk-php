@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUEcIDCRequest extends Request {
+class DescribeUEcIDCRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUEcIDC"]);
@@ -33,7 +34,8 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,16 +44,18 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Cpu: 节点cpu核数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCpu(): int {
+    public function getCpu(): int
+    {
         return $this->get("Cpu");
     }
 
@@ -60,16 +64,18 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @param int $cpu
      */
-    public function setCpu(int $cpu) {
+    public function setCpu(int $cpu)
+    {
         $this->set("Cpu", $cpu);
     }
 
     /**
      * Memory: 节点内存大小， 单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemory(): int {
+    public function getMemory(): int
+    {
         return $this->get("Memory");
     }
 
@@ -78,7 +84,8 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @param int $memory
      */
-    public function setMemory(int $memory) {
+    public function setMemory(int $memory)
+    {
         $this->set("Memory", $memory);
     }
 
@@ -87,7 +94,8 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getIdcId(): array {
+    public function getIdcId(): array
+    {
         return $this->get("IdcId");
     }
 
@@ -96,16 +104,18 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @param string[] $idcId
      */
-    public function setIdcId(array $idcId) {
+    public function setIdcId(array $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
     /**
      * Type: 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getType(): int {
+    public function getType(): int
+    {
         return $this->get("Type");
     }
 
@@ -114,7 +124,8 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @param int $type
      */
-    public function setType(int $type) {
+    public function setType(int $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -123,7 +134,8 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @return string|null
      */
-    public function getProductType(): string {
+    public function getProductType(): string
+    {
         return $this->get("ProductType");
     }
 
@@ -132,9 +144,8 @@ class DescribeUEcIDCRequest extends Request {
      *
      * @param string $productType
      */
-    public function setProductType(string $productType) {
+    public function setProductType(string $productType)
+    {
         $this->set("ProductType", $productType);
     }
-
-
 }

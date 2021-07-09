@@ -19,15 +19,17 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\IpInfo;
 
-class DescribeSecondaryIpResponse extends Response {
+class DescribeSecondaryIpResponse extends Response
+{
     
 
     /**
-     * DataSet: 
+     * DataSet:
      *
      * @return IpInfo[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -37,17 +39,16 @@ class DescribeSecondaryIpResponse extends Response {
     }
 
     /**
-     * DataSet: 
+     * DataSet:
      *
      * @param IpInfo[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

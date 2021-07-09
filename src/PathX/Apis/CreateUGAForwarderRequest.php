@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUGAForwarderRequest extends Request {
+class CreateUGAForwarderRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUGAForwarder"]);
@@ -33,7 +34,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return string|null
      */
-    public function getUGAId(): string {
+    public function getUGAId(): string
+    {
         return $this->get("UGAId");
     }
 
@@ -60,7 +64,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId) {
+    public function setUGAId(string $ugaId)
+    {
         $this->set("UGAId", $ugaId);
     }
 
@@ -69,7 +74,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPHTTP(): array {
+    public function getHTTPHTTP(): array
+    {
         return $this->get("HTTPHTTP");
     }
 
@@ -78,7 +84,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $httphttp
      */
-    public function setHTTPHTTP(array $httphttp) {
+    public function setHTTPHTTP(array $httphttp)
+    {
         $this->set("HTTPHTTP", $httphttp);
     }
 
@@ -87,7 +94,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPHTTPRS(): array {
+    public function getHTTPHTTPRS(): array
+    {
         return $this->get("HTTPHTTPRS");
     }
 
@@ -96,7 +104,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $httphttprs
      */
-    public function setHTTPHTTPRS(array $httphttprs) {
+    public function setHTTPHTTPRS(array $httphttprs)
+    {
         $this->set("HTTPHTTPRS", $httphttprs);
     }
 
@@ -105,7 +114,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTP(): array {
+    public function getHTTPSHTTP(): array
+    {
         return $this->get("HTTPSHTTP");
     }
 
@@ -114,7 +124,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $httpshttp
      */
-    public function setHTTPSHTTP(array $httpshttp) {
+    public function setHTTPSHTTP(array $httpshttp)
+    {
         $this->set("HTTPSHTTP", $httpshttp);
     }
 
@@ -123,7 +134,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPRS(): array {
+    public function getHTTPSHTTPRS(): array
+    {
         return $this->get("HTTPSHTTPRS");
     }
 
@@ -132,7 +144,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $httpshttprs
      */
-    public function setHTTPSHTTPRS(array $httpshttprs) {
+    public function setHTTPSHTTPRS(array $httpshttprs)
+    {
         $this->set("HTTPSHTTPRS", $httpshttprs);
     }
 
@@ -141,7 +154,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPS(): array {
+    public function getHTTPSHTTPS(): array
+    {
         return $this->get("HTTPSHTTPS");
     }
 
@@ -150,7 +164,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $httpshttps
      */
-    public function setHTTPSHTTPS(array $httpshttps) {
+    public function setHTTPSHTTPS(array $httpshttps)
+    {
         $this->set("HTTPSHTTPS", $httpshttps);
     }
 
@@ -159,7 +174,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPSRS(): array {
+    public function getHTTPSHTTPSRS(): array
+    {
         return $this->get("HTTPSHTTPSRS");
     }
 
@@ -168,7 +184,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $httpshttpsrs
      */
-    public function setHTTPSHTTPSRS(array $httpshttpsrs) {
+    public function setHTTPSHTTPSRS(array $httpshttpsrs)
+    {
         $this->set("HTTPSHTTPSRS", $httpshttpsrs);
     }
 
@@ -177,7 +194,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getTCP(): array {
+    public function getTCP(): array
+    {
         return $this->get("TCP");
     }
 
@@ -186,7 +204,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $tcp
      */
-    public function setTCP(array $tcp) {
+    public function setTCP(array $tcp)
+    {
         $this->set("TCP", $tcp);
     }
 
@@ -195,7 +214,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getTCPRS(): array {
+    public function getTCPRS(): array
+    {
         return $this->get("TCPRS");
     }
 
@@ -204,7 +224,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $tcprs
      */
-    public function setTCPRS(array $tcprs) {
+    public function setTCPRS(array $tcprs)
+    {
         $this->set("TCPRS", $tcprs);
     }
 
@@ -213,7 +234,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getUDP(): array {
+    public function getUDP(): array
+    {
         return $this->get("UDP");
     }
 
@@ -222,7 +244,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $udp
      */
-    public function setUDP(array $udp) {
+    public function setUDP(array $udp)
+    {
         $this->set("UDP", $udp);
     }
 
@@ -231,7 +254,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getUDPRS(): array {
+    public function getUDPRS(): array
+    {
         return $this->get("UDPRS");
     }
 
@@ -240,9 +264,8 @@ class CreateUGAForwarderRequest extends Request {
      *
      * @param int[] $udprs
      */
-    public function setUDPRS(array $udprs) {
+    public function setUDPRS(array $udprs)
+    {
         $this->set("UDPRS", $udprs);
     }
-
-
 }

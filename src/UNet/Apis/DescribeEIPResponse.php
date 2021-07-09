@@ -22,15 +22,17 @@ use UCloud\UNet\Models\UnetEIPResourceSet;
 use UCloud\UNet\Models\UnetEIPAddrSet;
 use UCloud\UNet\Models\ShareBandwidthSet;
 
-class DescribeEIPResponse extends Response {
+class DescribeEIPResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的弹性IP总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -39,16 +41,18 @@ class DescribeEIPResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
     /**
      * UnbindCount: 未绑定的弹性IP总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getUnbindCount(): int {
+    public function getUnbindCount(): int
+    {
         return $this->get("UnbindCount");
     }
 
@@ -57,16 +61,18 @@ class DescribeEIPResponse extends Response {
      *
      * @param int $unbindCount
      */
-    public function setUnbindCount(int $unbindCount) {
+    public function setUnbindCount(int $unbindCount)
+    {
         $this->set("UnbindCount", $unbindCount);
     }
 
     /**
      * TotalBandwidth: 满足条件的弹性IP带宽总和, 单位Mbps
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalBandwidth(): int {
+    public function getTotalBandwidth(): int
+    {
         return $this->get("TotalBandwidth");
     }
 
@@ -75,7 +81,8 @@ class DescribeEIPResponse extends Response {
      *
      * @param int $totalBandwidth
      */
-    public function setTotalBandwidth(int $totalBandwidth) {
+    public function setTotalBandwidth(int $totalBandwidth)
+    {
         $this->set("TotalBandwidth", $totalBandwidth);
     }
 
@@ -84,7 +91,8 @@ class DescribeEIPResponse extends Response {
      *
      * @return UnetEIPSet[]|null
      */
-    public function getEIPSet(): array {
+    public function getEIPSet(): array
+    {
         $items = $this->get("EIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -98,13 +106,12 @@ class DescribeEIPResponse extends Response {
      *
      * @param UnetEIPSet[] $eipSet
      */
-    public function setEIPSet(array $eipSet) {
+    public function setEIPSet(array $eipSet)
+    {
         $result = [];
         foreach ($eipSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

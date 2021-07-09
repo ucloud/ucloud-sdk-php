@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class RemoveUDRedisDataResponse extends Response {
+class RemoveUDRedisDataResponse extends Response
+{
     
 
 

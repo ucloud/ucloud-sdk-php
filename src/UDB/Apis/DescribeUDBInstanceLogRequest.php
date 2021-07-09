@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDBInstanceLogRequest extends Request {
+class DescribeUDBInstanceLogRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDBInstanceLog"]);
@@ -36,7 +37,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,7 +67,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -72,7 +77,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -81,7 +87,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -90,7 +97,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBId(): string {
+    public function getDBId(): string
+    {
         return $this->get("DBId");
     }
 
@@ -99,16 +107,18 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId) {
+    public function setDBId(string $dbId)
+    {
         $this->set("DBId", $dbId);
     }
 
     /**
      * BeginTime: 查询的日志开始的时间戳（Unix Timestamp）。对于实时查询，这个参数应该是上次轮询请求时的时间戳，后台会返回从该值到当前时间的日志内容。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -117,16 +127,18 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 查询日志的结束时间戳(Unix Timestamp），对于实时查询不传该值，与BeginTime的差值不超过24小时：(EndTime-BeginTime) < 24*60*60
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -135,7 +147,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
@@ -144,7 +157,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getLogType(): string {
+    public function getLogType(): string
+    {
         return $this->get("LogType");
     }
 
@@ -153,9 +167,8 @@ class DescribeUDBInstanceLogRequest extends Request {
      *
      * @param string $logType
      */
-    public function setLogType(string $logType) {
+    public function setLogType(string $logType)
+    {
         $this->set("LogType", $logType);
     }
-
-
 }

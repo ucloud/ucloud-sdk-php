@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeFirewallResourceRequest extends Request {
+class DescribeFirewallResourceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeFirewallResource"]);
@@ -33,7 +34,8 @@ class DescribeFirewallResourceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DescribeFirewallResourceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DescribeFirewallResourceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class DescribeFirewallResourceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class DescribeFirewallResourceRequest extends Request {
      *
      * @return string|null
      */
-    public function getFWId(): string {
+    public function getFWId(): string
+    {
         return $this->get("FWId");
     }
 
@@ -78,16 +84,18 @@ class DescribeFirewallResourceRequest extends Request {
      *
      * @param string $fwId
      */
-    public function setFWId(string $fwId) {
+    public function setFWId(string $fwId)
+    {
         $this->set("FWId", $fwId);
     }
 
     /**
      * Limit: 返回数据长度，默认为20，最大10000000
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -96,16 +104,18 @@ class DescribeFirewallResourceRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -114,9 +124,8 @@ class DescribeFirewallResourceRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUPathResponse extends Response {
+class CreateUPathResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUPathResponse extends Response {
      *
      * @return string|null
      */
-    public function getUPathId(): string {
+    public function getUPathId(): string
+    {
         return $this->get("UPathId");
     }
 
@@ -35,9 +37,8 @@ class CreateUPathResponse extends Response {
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId) {
+    public function setUPathId(string $uPathId)
+    {
         $this->set("UPathId", $uPathId);
     }
-
-
 }

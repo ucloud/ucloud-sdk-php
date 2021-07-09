@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUEcSubnetRequest extends Request {
+class DescribeUEcSubnetRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUEcSubnet"]);
@@ -31,7 +32,8 @@ class DescribeUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,7 +42,8 @@ class DescribeUEcSubnetRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -49,7 +52,8 @@ class DescribeUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getIdcId(): string {
+    public function getIdcId(): string
+    {
         return $this->get("IdcId");
     }
 
@@ -58,7 +62,8 @@ class DescribeUEcSubnetRequest extends Request {
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId) {
+    public function setIdcId(string $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
@@ -67,7 +72,8 @@ class DescribeUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -76,9 +82,8 @@ class DescribeUEcSubnetRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
-
-
 }

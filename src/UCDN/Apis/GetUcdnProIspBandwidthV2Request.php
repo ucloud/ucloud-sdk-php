@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUcdnProIspBandwidthV2Request extends Request {
+class GetUcdnProIspBandwidthV2Request extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUcdnProIspBandwidthV2"]);
@@ -34,7 +35,8 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -43,52 +45,58 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
-     * BeginTime: 查询的起始日期，格式为Unix Timestamp  
+     * BeginTime: 查询的起始日期，格式为Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
     /**
-     * BeginTime: 查询的起始日期，格式为Unix Timestamp  
+     * BeginTime: 查询的起始日期，格式为Unix Timestamp
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
-     * EndTime: 查询的结束日期，格式为Unix Timestamp  
+     * EndTime: 查询的结束日期，格式为Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
     /**
-     * EndTime: 查询的结束日期，格式为Unix Timestamp  
+     * EndTime: 查询的结束日期，格式为Unix Timestamp
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
     /**
      * Type: 时间粒度0 (按5分钟粒度)1 (按小时粒度)2(按天粒度)3(按分钟粒度）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getType(): int {
+    public function getType(): int
+    {
         return $this->get("Type");
     }
 
@@ -97,7 +105,8 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @param int $type
      */
-    public function setType(int $type) {
+    public function setType(int $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -106,7 +115,8 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @return string[]|null
      */
-    public function getDomainId(): array {
+    public function getDomainId(): array
+    {
         return $this->get("DomainId");
     }
 
@@ -115,7 +125,8 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @param string[] $domainId
      */
-    public function setDomainId(array $domainId) {
+    public function setDomainId(array $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
 
@@ -124,7 +135,8 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @return string[]|null
      */
-    public function getProvince(): array {
+    public function getProvince(): array
+    {
         return $this->get("Province");
     }
 
@@ -133,7 +145,8 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @param string[] $province
      */
-    public function setProvince(array $province) {
+    public function setProvince(array $province)
+    {
         $this->set("Province", $province);
     }
 
@@ -142,7 +155,8 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @return string|null
      */
-    public function getIsp(): string {
+    public function getIsp(): string
+    {
         return $this->get("Isp");
     }
 
@@ -151,9 +165,8 @@ class GetUcdnProIspBandwidthV2Request extends Request {
      *
      * @param string $isp
      */
-    public function setIsp(string $isp) {
+    public function setIsp(string $isp)
+    {
         $this->set("Isp", $isp);
     }
-
-
 }

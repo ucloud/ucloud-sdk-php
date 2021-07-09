@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDiskRequest extends Request {
+class DescribeUDiskRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDisk"]);
@@ -32,7 +33,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -59,7 +63,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -68,7 +73,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -77,7 +83,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -86,7 +93,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDiskId(): string {
+    public function getUDiskId(): string
+    {
         return $this->get("UDiskId");
     }
 
@@ -95,16 +103,18 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId) {
+    public function setUDiskId(string $uDiskId)
+    {
         $this->set("UDiskId", $uDiskId);
     }
 
     /**
      * Offset: 数据偏移量, 默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -113,16 +123,18 @@ class DescribeUDiskRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 返回数据长度, 默认为20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -131,7 +143,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -140,7 +153,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getDiskType(): string {
+    public function getDiskType(): string
+    {
         return $this->get("DiskType");
     }
 
@@ -149,16 +163,18 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $diskType
      */
-    public function setDiskType(string $diskType) {
+    public function setDiskType(string $diskType)
+    {
         $this->set("DiskType", $diskType);
     }
 
     /**
      * ProtocolVersion: 请求协议版本，建议升级为1，为1时DiskType与UHost磁盘类型定义一致；默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getProtocolVersion(): int {
+    public function getProtocolVersion(): int
+    {
         return $this->get("ProtocolVersion");
     }
 
@@ -167,7 +183,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param int $protocolVersion
      */
-    public function setProtocolVersion(int $protocolVersion) {
+    public function setProtocolVersion(int $protocolVersion)
+    {
         $this->set("ProtocolVersion", $protocolVersion);
     }
 
@@ -176,7 +193,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getIsBoot(): string {
+    public function getIsBoot(): string
+    {
         return $this->get("IsBoot");
     }
 
@@ -185,7 +203,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot) {
+    public function setIsBoot(string $isBoot)
+    {
         $this->set("IsBoot", $isBoot);
     }
 
@@ -194,7 +213,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getIgnoreUBillInfo(): string {
+    public function getIgnoreUBillInfo(): string
+    {
         return $this->get("IgnoreUBillInfo");
     }
 
@@ -203,7 +223,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $ignoreUBillInfo
      */
-    public function setIgnoreUBillInfo(string $ignoreUBillInfo) {
+    public function setIgnoreUBillInfo(string $ignoreUBillInfo)
+    {
         $this->set("IgnoreUBillInfo", $ignoreUBillInfo);
     }
 
@@ -212,7 +233,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getUHostIdForAttachment(): string {
+    public function getUHostIdForAttachment(): string
+    {
         return $this->get("UHostIdForAttachment");
     }
 
@@ -221,7 +243,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $uHostIdForAttachment
      */
-    public function setUHostIdForAttachment(string $uHostIdForAttachment) {
+    public function setUHostIdForAttachment(string $uHostIdForAttachment)
+    {
         $this->set("UHostIdForAttachment", $uHostIdForAttachment);
     }
 
@@ -230,7 +253,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getHostIdForAttachment(): string {
+    public function getHostIdForAttachment(): string
+    {
         return $this->get("HostIdForAttachment");
     }
 
@@ -239,7 +263,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $hostIdForAttachment
      */
-    public function setHostIdForAttachment(string $hostIdForAttachment) {
+    public function setHostIdForAttachment(string $hostIdForAttachment)
+    {
         $this->set("HostIdForAttachment", $hostIdForAttachment);
     }
 
@@ -248,7 +273,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getHostProduct(): string {
+    public function getHostProduct(): string
+    {
         return $this->get("HostProduct");
     }
 
@@ -257,9 +283,8 @@ class DescribeUDiskRequest extends Request {
      *
      * @param string $hostProduct
      */
-    public function setHostProduct(string $hostProduct) {
+    public function setHostProduct(string $hostProduct)
+    {
         $this->set("HostProduct", $hostProduct);
     }
-
-
 }

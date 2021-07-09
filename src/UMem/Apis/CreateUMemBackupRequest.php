@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUMemBackupRequest extends Request {
+class CreateUMemBackupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUMemBackup"]);
@@ -35,7 +36,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,7 +86,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -89,7 +96,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getSpaceId(): string {
+    public function getSpaceId(): string
+    {
         return $this->get("SpaceId");
     }
 
@@ -98,7 +106,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId) {
+    public function setSpaceId(string $spaceId)
+    {
         $this->set("SpaceId", $spaceId);
     }
 
@@ -107,7 +116,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackupName(): string {
+    public function getBackupName(): string
+    {
         return $this->get("BackupName");
     }
 
@@ -116,9 +126,8 @@ class CreateUMemBackupRequest extends Request {
      *
      * @param string $backupName
      */
-    public function setBackupName(string $backupName) {
+    public function setBackupName(string $backupName)
+    {
         $this->set("BackupName", $backupName);
     }
-
-
 }

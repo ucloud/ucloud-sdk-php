@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeVIPRequest extends Request {
+class DescribeVIPRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeVIP"]);
@@ -33,7 +34,8 @@ class DescribeVIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DescribeVIPRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DescribeVIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -60,7 +64,8 @@ class DescribeVIPRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -69,7 +74,8 @@ class DescribeVIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -78,7 +84,8 @@ class DescribeVIPRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -87,7 +94,8 @@ class DescribeVIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -96,7 +104,8 @@ class DescribeVIPRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -105,7 +114,8 @@ class DescribeVIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -114,7 +124,8 @@ class DescribeVIPRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -123,7 +134,8 @@ class DescribeVIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getVIPId(): string {
+    public function getVIPId(): string
+    {
         return $this->get("VIPId");
     }
 
@@ -132,7 +144,8 @@ class DescribeVIPRequest extends Request {
      *
      * @param string $vipId
      */
-    public function setVIPId(string $vipId) {
+    public function setVIPId(string $vipId)
+    {
         $this->set("VIPId", $vipId);
     }
 
@@ -141,7 +154,8 @@ class DescribeVIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -150,7 +164,8 @@ class DescribeVIPRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -159,7 +174,8 @@ class DescribeVIPRequest extends Request {
      *
      * @return string|null
      */
-    public function getBusinessId(): string {
+    public function getBusinessId(): string
+    {
         return $this->get("BusinessId");
     }
 
@@ -168,9 +184,8 @@ class DescribeVIPRequest extends Request {
      *
      * @param string $businessId
      */
-    public function setBusinessId(string $businessId) {
+    public function setBusinessId(string $businessId)
+    {
         $this->set("BusinessId", $businessId);
     }
-
-
 }

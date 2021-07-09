@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateULBRequest extends Request {
+class CreateULBRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateULB"]);
@@ -32,7 +33,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,7 +63,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -68,7 +73,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getULBName(): string {
+    public function getULBName(): string
+    {
         return $this->get("ULBName");
     }
 
@@ -77,7 +83,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $ulbName
      */
-    public function setULBName(string $ulbName) {
+    public function setULBName(string $ulbName)
+    {
         $this->set("ULBName", $ulbName);
     }
 
@@ -86,7 +93,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -95,7 +103,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -104,7 +113,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -113,7 +123,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -122,7 +133,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getOuterMode(): string {
+    public function getOuterMode(): string
+    {
         return $this->get("OuterMode");
     }
 
@@ -131,7 +143,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $outerMode
      */
-    public function setOuterMode(string $outerMode) {
+    public function setOuterMode(string $outerMode)
+    {
         $this->set("OuterMode", $outerMode);
     }
 
@@ -140,7 +153,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getInnerMode(): string {
+    public function getInnerMode(): string
+    {
         return $this->get("InnerMode");
     }
 
@@ -149,7 +163,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $innerMode
      */
-    public function setInnerMode(string $innerMode) {
+    public function setInnerMode(string $innerMode)
+    {
         $this->set("InnerMode", $innerMode);
     }
 
@@ -158,7 +173,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -167,7 +183,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -176,7 +193,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -185,7 +203,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -194,7 +213,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -203,7 +223,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -212,7 +233,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getBusinessId(): string {
+    public function getBusinessId(): string
+    {
         return $this->get("BusinessId");
     }
 
@@ -221,7 +243,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $businessId
      */
-    public function setBusinessId(string $businessId) {
+    public function setBusinessId(string $businessId)
+    {
         $this->set("BusinessId", $businessId);
     }
 
@@ -230,7 +253,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getFirewallId(): string {
+    public function getFirewallId(): string
+    {
         return $this->get("FirewallId");
     }
 
@@ -239,7 +263,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId) {
+    public function setFirewallId(string $firewallId)
+    {
         $this->set("FirewallId", $firewallId);
     }
 
@@ -248,7 +273,8 @@ class CreateULBRequest extends Request {
      *
      * @return string|null
      */
-    public function getListenType(): string {
+    public function getListenType(): string
+    {
         return $this->get("ListenType");
     }
 
@@ -257,9 +283,8 @@ class CreateULBRequest extends Request {
      *
      * @param string $listenType
      */
-    public function setListenType(string $listenType) {
+    public function setListenType(string $listenType)
+    {
         $this->set("ListenType", $listenType);
     }
-
-
 }

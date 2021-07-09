@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUDiskSnapshotResponse extends Response {
+class DeleteUDiskSnapshotResponse extends Response
+{
     
 
 

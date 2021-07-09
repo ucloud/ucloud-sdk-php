@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ResizePHostAttachedDiskResponse extends Response {
+class ResizePHostAttachedDiskResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ResizePHostAttachedDiskResponse extends Response {
      *
      * @return string|null
      */
-    public function getUDiskId(): string {
+    public function getUDiskId(): string
+    {
         return $this->get("UDiskId");
     }
 
@@ -35,9 +37,8 @@ class ResizePHostAttachedDiskResponse extends Response {
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId) {
+    public function setUDiskId(string $uDiskId)
+    {
         $this->set("UDiskId", $uDiskId);
     }
-
-
 }

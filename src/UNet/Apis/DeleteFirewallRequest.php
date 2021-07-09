@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteFirewallRequest extends Request {
+class DeleteFirewallRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteFirewall"]);
@@ -33,7 +34,8 @@ class DeleteFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DeleteFirewallRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DeleteFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class DeleteFirewallRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class DeleteFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getFWId(): string {
+    public function getFWId(): string
+    {
         return $this->get("FWId");
     }
 
@@ -78,9 +84,8 @@ class DeleteFirewallRequest extends Request {
      *
      * @param string $fwId
      */
-    public function setFWId(string $fwId) {
+    public function setFWId(string $fwId)
+    {
         $this->set("FWId", $fwId);
     }
-
-
 }

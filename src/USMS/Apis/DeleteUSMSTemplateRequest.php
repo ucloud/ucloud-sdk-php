@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteUSMSTemplateRequest extends Request {
+class DeleteUSMSTemplateRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteUSMSTemplate"]);
@@ -33,7 +34,8 @@ class DeleteUSMSTemplateRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class DeleteUSMSTemplateRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class DeleteUSMSTemplateRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getTemplateIds(): array {
+    public function getTemplateIds(): array
+    {
         return $this->get("TemplateIds");
     }
 
@@ -60,9 +64,8 @@ class DeleteUSMSTemplateRequest extends Request {
      *
      * @param string[] $templateIds
      */
-    public function setTemplateIds(array $templateIds) {
+    public function setTemplateIds(array $templateIds)
+    {
         $this->set("TemplateIds", $templateIds);
     }
-
-
 }

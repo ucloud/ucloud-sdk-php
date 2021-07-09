@@ -18,7 +18,8 @@ namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ExtendUFSVolumeRequest extends Request {
+class ExtendUFSVolumeRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ExtendUFSVolume"]);
@@ -34,7 +35,8 @@ class ExtendUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class ExtendUFSVolumeRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class ExtendUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class ExtendUFSVolumeRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class ExtendUFSVolumeRequest extends Request {
      *
      * @return string|null
      */
-    public function getVolumeId(): string {
+    public function getVolumeId(): string
+    {
         return $this->get("VolumeId");
     }
 
@@ -79,16 +85,18 @@ class ExtendUFSVolumeRequest extends Request {
      *
      * @param string $volumeId
      */
-    public function setVolumeId(string $volumeId) {
+    public function setVolumeId(string $volumeId)
+    {
         $this->set("VolumeId", $volumeId);
     }
 
     /**
      * Size: 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -97,9 +105,8 @@ class ExtendUFSVolumeRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
-
-
 }

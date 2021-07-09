@@ -19,7 +19,8 @@ namespace UCloud\UMem\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UMem\Models\URedisPriceSet;
 
-class DescribeURedisPriceResponse extends Response {
+class DescribeURedisPriceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeURedisPriceResponse extends Response {
      *
      * @return URedisPriceSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeURedisPriceResponse extends Response {
      *
      * @param URedisPriceSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

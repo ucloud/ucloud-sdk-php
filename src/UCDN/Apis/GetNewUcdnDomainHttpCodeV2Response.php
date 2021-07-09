@@ -19,7 +19,8 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\HttpCodeV2Detail;
 
-class GetNewUcdnDomainHttpCodeV2Response extends Response {
+class GetNewUcdnDomainHttpCodeV2Response extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetNewUcdnDomainHttpCodeV2Response extends Response {
      *
      * @return HttpCodeV2Detail[]|null
      */
-    public function getHttpCodeV2Detail(): array {
+    public function getHttpCodeV2Detail(): array
+    {
         $items = $this->get("HttpCodeV2Detail") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetNewUcdnDomainHttpCodeV2Response extends Response {
      *
      * @param HttpCodeV2Detail[] $httpCodeV2Detail
      */
-    public function setHttpCodeV2Detail(array $httpCodeV2Detail) {
+    public function setHttpCodeV2Detail(array $httpCodeV2Detail)
+    {
         $result = [];
         foreach ($httpCodeV2Detail as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

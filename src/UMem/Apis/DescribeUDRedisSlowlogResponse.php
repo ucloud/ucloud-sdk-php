@@ -19,15 +19,17 @@ namespace UCloud\UMem\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UMem\Models\UDRedisSlowlogSet;
 
-class DescribeUDRedisSlowlogResponse extends Response {
+class DescribeUDRedisSlowlogResponse extends Response
+{
     
 
     /**
      * TotalCount: 总条目数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -36,7 +38,8 @@ class DescribeUDRedisSlowlogResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -45,7 +48,8 @@ class DescribeUDRedisSlowlogResponse extends Response {
      *
      * @return UDRedisSlowlogSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class DescribeUDRedisSlowlogResponse extends Response {
      *
      * @param UDRedisSlowlogSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

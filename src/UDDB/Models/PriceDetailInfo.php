@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Models;
 
 use UCloud\Core\Response\Response;
 
-class PriceDetailInfo extends Response {
+class PriceDetailInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PriceDetailInfo extends Response {
      *
      * @return float|null
      */
-    public function getMiddlewarePrice(): float {
+    public function getMiddlewarePrice(): float
+    {
         return $this->get("MiddlewarePrice");
     }
 
@@ -35,7 +37,8 @@ class PriceDetailInfo extends Response {
      *
      * @param float $middlewarePrice
      */
-    public function setMiddlewarePrice(float $middlewarePrice) {
+    public function setMiddlewarePrice(float $middlewarePrice)
+    {
         $this->set("MiddlewarePrice", $middlewarePrice);
     }
 
@@ -44,7 +47,8 @@ class PriceDetailInfo extends Response {
      *
      * @return float|null
      */
-    public function getDataNodePrice(): float {
+    public function getDataNodePrice(): float
+    {
         return $this->get("DataNodePrice");
     }
 
@@ -53,7 +57,8 @@ class PriceDetailInfo extends Response {
      *
      * @param float $dataNodePrice
      */
-    public function setDataNodePrice(float $dataNodePrice) {
+    public function setDataNodePrice(float $dataNodePrice)
+    {
         $this->set("DataNodePrice", $dataNodePrice);
     }
 
@@ -62,7 +67,8 @@ class PriceDetailInfo extends Response {
      *
      * @return float|null
      */
-    public function getDataNodeSlavePrice(): float {
+    public function getDataNodeSlavePrice(): float
+    {
         return $this->get("DataNodeSlavePrice");
     }
 
@@ -71,9 +77,8 @@ class PriceDetailInfo extends Response {
      *
      * @param float $dataNodeSlavePrice
      */
-    public function setDataNodeSlavePrice(float $dataNodeSlavePrice) {
+    public function setDataNodeSlavePrice(float $dataNodeSlavePrice)
+    {
         $this->set("DataNodeSlavePrice", $dataNodeSlavePrice);
     }
-
-
 }

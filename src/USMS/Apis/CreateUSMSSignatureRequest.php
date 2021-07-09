@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUSMSSignatureRequest extends Request {
+class CreateUSMSSignatureRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUSMSSignature"]);
@@ -38,7 +39,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -47,7 +49,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -56,7 +59,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getSigContent(): string {
+    public function getSigContent(): string
+    {
         return $this->get("SigContent");
     }
 
@@ -65,16 +69,18 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent) {
+    public function setSigContent(string $sigContent)
+    {
         $this->set("SigContent", $sigContent);
     }
 
     /**
      * SigType: 签名类型，说明如下：0-公司或企业的全称或简称；1-App应用的全称或简称；2-工信部备案网站的全称或简称；3-公众号或小程序的全称或简称；4-商标名的全称或简称；5-政府/机关事业单位/其他单位的全称或简称；
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSigType(): int {
+    public function getSigType(): int
+    {
         return $this->get("SigType");
     }
 
@@ -83,16 +89,18 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param int $sigType
      */
-    public function setSigType(int $sigType) {
+    public function setSigType(int $sigType)
+    {
         $this->set("SigType", $sigType);
     }
 
     /**
      * SigPurpose: 签名用途，0-自用，1-他用；
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSigPurpose(): int {
+    public function getSigPurpose(): int
+    {
         return $this->get("SigPurpose");
     }
 
@@ -101,16 +109,18 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param int $sigPurpose
      */
-    public function setSigPurpose(int $sigPurpose) {
+    public function setSigPurpose(int $sigPurpose)
+    {
         $this->set("SigPurpose", $sigPurpose);
     }
 
     /**
      * CertificateType: 签名的资质证明文件类型，需与签名类型保持一致，说明如下：0-三证合一/企业营业执照/组织机构代码证书/社会信用代码证书；1-应用商店后台开发者管理截图；2-备案服务商的备案成功截图(含域名，网站名称，备案号)；3-公众号或小程序的管理界面截图；4-商标注册证书；5-组织机构代码证书、社会信用代码证书；
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCertificateType(): int {
+    public function getCertificateType(): int
+    {
         return $this->get("CertificateType");
     }
 
@@ -119,7 +129,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param int $certificateType
      */
-    public function setCertificateType(int $certificateType) {
+    public function setCertificateType(int $certificateType)
+    {
         $this->set("CertificateType", $certificateType);
     }
 
@@ -128,7 +139,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getDescription(): string {
+    public function getDescription(): string
+    {
         return $this->get("Description");
     }
 
@@ -137,7 +149,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    public function setDescription(string $description)
+    {
         $this->set("Description", $description);
     }
 
@@ -146,7 +159,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getFile(): string {
+    public function getFile(): string
+    {
         return $this->get("File");
     }
 
@@ -155,7 +169,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param string $file
      */
-    public function setFile(string $file) {
+    public function setFile(string $file)
+    {
         $this->set("File", $file);
     }
 
@@ -164,7 +179,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getInternational(): bool {
+    public function getInternational(): bool
+    {
         return $this->get("International");
     }
 
@@ -173,7 +189,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param boolean $international
      */
-    public function setInternational(bool $international) {
+    public function setInternational(bool $international)
+    {
         $this->set("International", $international);
     }
 
@@ -182,7 +199,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getProxyFile(): string {
+    public function getProxyFile(): string
+    {
         return $this->get("ProxyFile");
     }
 
@@ -191,9 +209,8 @@ class CreateUSMSSignatureRequest extends Request {
      *
      * @param string $proxyFile
      */
-    public function setProxyFile(string $proxyFile) {
+    public function setProxyFile(string $proxyFile)
+    {
         $this->set("ProxyFile", $proxyFile);
     }
-
-
 }

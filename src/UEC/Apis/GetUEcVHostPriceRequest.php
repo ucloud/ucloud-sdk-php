@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUEcVHostPriceRequest extends Request {
+class GetUEcVHostPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUEcVHostPrice"]);
@@ -32,7 +33,8 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getIdcId(): string {
+    public function getIdcId(): string
+    {
         return $this->get("IdcId");
     }
 
@@ -41,16 +43,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId) {
+    public function setIdcId(string $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
     /**
      * NodeCount: 节点数量，默认1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getNodeCount(): int {
+    public function getNodeCount(): int
+    {
         return $this->get("NodeCount");
     }
 
@@ -59,16 +63,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $nodeCount
      */
-    public function setNodeCount(int $nodeCount) {
+    public function setNodeCount(int $nodeCount)
+    {
         $this->set("NodeCount", $nodeCount);
     }
 
     /**
      * CpuCore: CPU核数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCpuCore(): int {
+    public function getCpuCore(): int
+    {
         return $this->get("CpuCore");
     }
 
@@ -77,16 +83,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $cpuCore
      */
-    public function setCpuCore(int $cpuCore) {
+    public function setCpuCore(int $cpuCore)
+    {
         $this->set("CpuCore", $cpuCore);
     }
 
     /**
      * MemSize: 内存大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemSize(): int {
+    public function getMemSize(): int
+    {
         return $this->get("MemSize");
     }
 
@@ -95,16 +103,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $memSize
      */
-    public function setMemSize(int $memSize) {
+    public function setMemSize(int $memSize)
+    {
         $this->set("MemSize", $memSize);
     }
 
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSysDiskSize(): int {
+    public function getSysDiskSize(): int
+    {
         return $this->get("SysDiskSize");
     }
 
@@ -113,16 +123,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize(int $sysDiskSize) {
+    public function setSysDiskSize(int $sysDiskSize)
+    {
         $this->set("SysDiskSize", $sysDiskSize);
     }
 
     /**
      * DiskSize: 数据盘大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSize(): int {
+    public function getDiskSize(): int
+    {
         return $this->get("DiskSize");
     }
 
@@ -131,16 +143,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $diskSize
      */
-    public function setDiskSize(int $diskSize) {
+    public function setDiskSize(int $diskSize)
+    {
         $this->set("DiskSize", $diskSize);
     }
 
     /**
      * NetLimit: 网络带宽限速，单位Mbs
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getNetLimit(): int {
+    public function getNetLimit(): int
+    {
         return $this->get("NetLimit");
     }
 
@@ -149,16 +163,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $netLimit
      */
-    public function setNetLimit(int $netLimit) {
+    public function setNetLimit(int $netLimit)
+    {
         $this->set("NetLimit", $netLimit);
     }
 
     /**
      * ChargeType: 付费方式，1按时，2按月，3按年，默认2
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getChargeType(): int {
+    public function getChargeType(): int
+    {
         return $this->get("ChargeType");
     }
 
@@ -167,16 +183,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $chargeType
      */
-    public function setChargeType(int $chargeType) {
+    public function setChargeType(int $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * ChargeQuantity: 月数或者年数，0计费到月底， 默认0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getChargeQuantity(): int {
+    public function getChargeQuantity(): int
+    {
         return $this->get("ChargeQuantity");
     }
 
@@ -185,7 +203,8 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity(int $chargeQuantity) {
+    public function setChargeQuantity(int $chargeQuantity)
+    {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
 
@@ -194,7 +213,8 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProductType(): string {
+    public function getProductType(): string
+    {
         return $this->get("ProductType");
     }
 
@@ -203,16 +223,18 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param string $productType
      */
-    public function setProductType(string $productType) {
+    public function setProductType(string $productType)
+    {
         $this->set("ProductType", $productType);
     }
 
     /**
      * IpCount: 外网IP的数量，默认1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getIpCount(): int {
+    public function getIpCount(): int
+    {
         return $this->get("IpCount");
     }
 
@@ -221,9 +243,8 @@ class GetUEcVHostPriceRequest extends Request {
      *
      * @param int $ipCount
      */
-    public function setIpCount(int $ipCount) {
+    public function setIpCount(int $ipCount)
+    {
         $this->set("IpCount", $ipCount);
     }
-
-
 }

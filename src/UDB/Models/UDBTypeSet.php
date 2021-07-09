@@ -18,7 +18,8 @@ namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
-class UDBTypeSet extends Response {
+class UDBTypeSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UDBTypeSet extends Response {
      *
      * @return string|null
      */
-    public function getDBTypeId(): string {
+    public function getDBTypeId(): string
+    {
         return $this->get("DBTypeId");
     }
 
@@ -35,9 +37,8 @@ class UDBTypeSet extends Response {
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId) {
+    public function setDBTypeId(string $dbTypeId)
+    {
         $this->set("DBTypeId", $dbTypeId);
     }
-
-
 }

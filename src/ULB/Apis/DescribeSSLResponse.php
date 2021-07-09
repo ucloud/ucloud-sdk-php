@@ -20,15 +20,17 @@ use UCloud\Core\Response\Response;
 use UCloud\ULB\Models\ULBSSLSet;
 use UCloud\ULB\Models\SSLBindedTargetSet;
 
-class DescribeSSLResponse extends Response {
+class DescribeSSLResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的SSL证书总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -37,7 +39,8 @@ class DescribeSSLResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -46,7 +49,8 @@ class DescribeSSLResponse extends Response {
      *
      * @return ULBSSLSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -60,13 +64,12 @@ class DescribeSSLResponse extends Response {
      *
      * @param ULBSSLSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

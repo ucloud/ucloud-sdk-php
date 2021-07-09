@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class DomainConfigInfo extends Response {
+class DomainConfigInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getAreaCode(): string {
+    public function getAreaCode(): string
+    {
         return $this->get("AreaCode");
     }
 
@@ -35,7 +37,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $areaCode
      */
-    public function setAreaCode(string $areaCode) {
+    public function setAreaCode(string $areaCode)
+    {
         $this->set("AreaCode", $areaCode);
     }
 
@@ -44,7 +47,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getCdnType(): string {
+    public function getCdnType(): string
+    {
         return $this->get("CdnType");
     }
 
@@ -53,7 +57,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $cdnType
      */
-    public function setCdnType(string $cdnType) {
+    public function setCdnType(string $cdnType)
+    {
         $this->set("CdnType", $cdnType);
     }
 
@@ -62,7 +67,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getStatus(): string {
+    public function getStatus(): string
+    {
         return $this->get("Status");
     }
 
@@ -71,7 +77,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $status
      */
-    public function setStatus(string $status) {
+    public function setStatus(string $status)
+    {
         $this->set("Status", $status);
     }
 
@@ -80,7 +87,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getCname(): string {
+    public function getCname(): string
+    {
         return $this->get("Cname");
     }
 
@@ -89,16 +97,18 @@ class DomainConfigInfo extends Response {
      *
      * @param string $cname
      */
-    public function setCname(string $cname) {
+    public function setCname(string $cname)
+    {
         $this->set("Cname", $cname);
     }
 
     /**
      * CreateTime: 域名创建的时间。格式：时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -107,7 +117,8 @@ class DomainConfigInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -116,7 +127,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getTestUrl(): string {
+    public function getTestUrl(): string
+    {
         return $this->get("TestUrl");
     }
 
@@ -125,7 +137,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $testUrl
      */
-    public function setTestUrl(string $testUrl) {
+    public function setTestUrl(string $testUrl)
+    {
         $this->set("TestUrl", $testUrl);
     }
 
@@ -134,7 +147,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getHttpsStatusCn(): string {
+    public function getHttpsStatusCn(): string
+    {
         return $this->get("HttpsStatusCn");
     }
 
@@ -143,7 +157,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $httpsStatusCn
      */
-    public function setHttpsStatusCn(string $httpsStatusCn) {
+    public function setHttpsStatusCn(string $httpsStatusCn)
+    {
         $this->set("HttpsStatusCn", $httpsStatusCn);
     }
 
@@ -152,7 +167,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getHttpsStatusAbroad(): string {
+    public function getHttpsStatusAbroad(): string
+    {
         return $this->get("HttpsStatusAbroad");
     }
 
@@ -161,7 +177,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $httpsStatusAbroad
      */
-    public function setHttpsStatusAbroad(string $httpsStatusAbroad) {
+    public function setHttpsStatusAbroad(string $httpsStatusAbroad)
+    {
         $this->set("HttpsStatusAbroad", $httpsStatusAbroad);
     }
 
@@ -170,7 +187,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getCertNameCn(): string {
+    public function getCertNameCn(): string
+    {
         return $this->get("CertNameCn");
     }
 
@@ -179,7 +197,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $certNameCn
      */
-    public function setCertNameCn(string $certNameCn) {
+    public function setCertNameCn(string $certNameCn)
+    {
         $this->set("CertNameCn", $certNameCn);
     }
 
@@ -188,7 +207,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getCertNameAbroad(): string {
+    public function getCertNameAbroad(): string
+    {
         return $this->get("CertNameAbroad");
     }
 
@@ -197,7 +217,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $certNameAbroad
      */
-    public function setCertNameAbroad(string $certNameAbroad) {
+    public function setCertNameAbroad(string $certNameAbroad)
+    {
         $this->set("CertNameAbroad", $certNameAbroad);
     }
 
@@ -206,7 +227,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -215,7 +237,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -224,7 +247,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getDomainId(): string {
+    public function getDomainId(): string
+    {
         return $this->get("DomainId");
     }
 
@@ -233,7 +257,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $domainId
      */
-    public function setDomainId(string $domainId) {
+    public function setDomainId(string $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
 
@@ -242,7 +267,8 @@ class DomainConfigInfo extends Response {
      *
      * @return string|null
      */
-    public function getDomain(): string {
+    public function getDomain(): string
+    {
         return $this->get("Domain");
     }
 
@@ -251,7 +277,8 @@ class DomainConfigInfo extends Response {
      *
      * @param string $domain
      */
-    public function setDomain(string $domain) {
+    public function setDomain(string $domain)
+    {
         $this->set("Domain", $domain);
     }
 
@@ -260,7 +287,8 @@ class DomainConfigInfo extends Response {
      *
      * @return OriginConf|null
      */
-    public function getOriginConf(): OriginConf {
+    public function getOriginConf(): OriginConf
+    {
         return new OriginConf($this->get("OriginConf"));
     }
 
@@ -269,7 +297,8 @@ class DomainConfigInfo extends Response {
      *
      * @param OriginConf $originConf
      */
-    public function setOriginConf(OriginConf $originConf) {
+    public function setOriginConf(OriginConf $originConf)
+    {
         $this->set("OriginConf", $originConf->getAll());
     }
 
@@ -278,7 +307,8 @@ class DomainConfigInfo extends Response {
      *
      * @return AccessControlConf|null
      */
-    public function getAccessControlConf(): AccessControlConf {
+    public function getAccessControlConf(): AccessControlConf
+    {
         return new AccessControlConf($this->get("AccessControlConf"));
     }
 
@@ -287,7 +317,8 @@ class DomainConfigInfo extends Response {
      *
      * @param AccessControlConf $accessControlConf
      */
-    public function setAccessControlConf(AccessControlConf $accessControlConf) {
+    public function setAccessControlConf(AccessControlConf $accessControlConf)
+    {
         $this->set("AccessControlConf", $accessControlConf->getAll());
     }
 
@@ -296,7 +327,8 @@ class DomainConfigInfo extends Response {
      *
      * @return CacheAllConfig|null
      */
-    public function getCacheConf(): CacheAllConfig {
+    public function getCacheConf(): CacheAllConfig
+    {
         return new CacheAllConfig($this->get("CacheConf"));
     }
 
@@ -305,7 +337,8 @@ class DomainConfigInfo extends Response {
      *
      * @param CacheAllConfig $cacheConf
      */
-    public function setCacheConf(CacheAllConfig $cacheConf) {
+    public function setCacheConf(CacheAllConfig $cacheConf)
+    {
         $this->set("CacheConf", $cacheConf->getAll());
     }
 
@@ -314,7 +347,8 @@ class DomainConfigInfo extends Response {
      *
      * @return AdvancedConf|null
      */
-    public function getAdvancedConf(): AdvancedConf {
+    public function getAdvancedConf(): AdvancedConf
+    {
         return new AdvancedConf($this->get("AdvancedConf"));
     }
 
@@ -323,9 +357,8 @@ class DomainConfigInfo extends Response {
      *
      * @param AdvancedConf $advancedConf
      */
-    public function setAdvancedConf(AdvancedConf $advancedConf) {
+    public function setAdvancedConf(AdvancedConf $advancedConf)
+    {
         $this->set("AdvancedConf", $advancedConf->getAll());
     }
-
-
 }

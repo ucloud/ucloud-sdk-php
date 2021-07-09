@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpdateUSMSSignatureResponse extends Response {
+class UpdateUSMSSignatureResponse extends Response
+{
     
 
 

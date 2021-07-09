@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ModifyURedisGroupNameResponse extends Response {
+class ModifyURedisGroupNameResponse extends Response
+{
     
 
 

@@ -19,7 +19,8 @@ namespace UCloud\UNet\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UNet\Models\ResourceSet;
 
-class DescribeFirewallResourceResponse extends Response {
+class DescribeFirewallResourceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeFirewallResourceResponse extends Response {
      *
      * @return ResourceSet[]|null
      */
-    public function getResourceSet(): array {
+    public function getResourceSet(): array
+    {
         $items = $this->get("ResourceSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,7 +43,8 @@ class DescribeFirewallResourceResponse extends Response {
      *
      * @param ResourceSet[] $resourceSet
      */
-    public function setResourceSet(array $resourceSet) {
+    public function setResourceSet(array $resourceSet)
+    {
         $result = [];
         foreach ($resourceSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -52,9 +55,10 @@ class DescribeFirewallResourceResponse extends Response {
     /**
      * TotalCount: 绑定资源总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -63,9 +67,8 @@ class DescribeFirewallResourceResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

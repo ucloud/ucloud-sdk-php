@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class DockerInfo extends Response {
+class DockerInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DockerInfo extends Response {
      *
      * @return float|null
      */
-    public function getCpuCores(): float {
+    public function getCpuCores(): float
+    {
         return $this->get("CpuCores");
     }
 
@@ -35,7 +37,8 @@ class DockerInfo extends Response {
      *
      * @param float $cpuCores
      */
-    public function setCpuCores(float $cpuCores) {
+    public function setCpuCores(float $cpuCores)
+    {
         $this->set("CpuCores", $cpuCores);
     }
 
@@ -44,7 +47,8 @@ class DockerInfo extends Response {
      *
      * @return float|null
      */
-    public function getMemSize(): float {
+    public function getMemSize(): float
+    {
         return $this->get("MemSize");
     }
 
@@ -53,7 +57,8 @@ class DockerInfo extends Response {
      *
      * @param float $memSize
      */
-    public function setMemSize(float $memSize) {
+    public function setMemSize(float $memSize)
+    {
         $this->set("MemSize", $memSize);
     }
 
@@ -62,7 +67,8 @@ class DockerInfo extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -71,25 +77,28 @@ class DockerInfo extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
-     * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常 
+     * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getState(): int {
+    public function getState(): int
+    {
         return $this->get("State");
     }
 
     /**
-     * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常 
+     * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常
      *
      * @param int $state
      */
-    public function setState(int $state) {
+    public function setState(int $state)
+    {
         $this->set("State", $state);
     }
 
@@ -98,7 +107,8 @@ class DockerInfo extends Response {
      *
      * @return string|null
      */
-    public function getImageName(): string {
+    public function getImageName(): string
+    {
         return $this->get("ImageName");
     }
 
@@ -107,7 +117,8 @@ class DockerInfo extends Response {
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName) {
+    public function setImageName(string $imageName)
+    {
         $this->set("ImageName", $imageName);
     }
 
@@ -116,7 +127,8 @@ class DockerInfo extends Response {
      *
      * @return string|null
      */
-    public function getWorkDir(): string {
+    public function getWorkDir(): string
+    {
         return $this->get("WorkDir");
     }
 
@@ -125,7 +137,8 @@ class DockerInfo extends Response {
      *
      * @param string $workDir
      */
-    public function setWorkDir(string $workDir) {
+    public function setWorkDir(string $workDir)
+    {
         $this->set("WorkDir", $workDir);
     }
 
@@ -134,7 +147,8 @@ class DockerInfo extends Response {
      *
      * @return string|null
      */
-    public function getCommand(): string {
+    public function getCommand(): string
+    {
         return $this->get("Command");
     }
 
@@ -143,7 +157,8 @@ class DockerInfo extends Response {
      *
      * @param string $command
      */
-    public function setCommand(string $command) {
+    public function setCommand(string $command)
+    {
         $this->set("Command", $command);
     }
 
@@ -152,7 +167,8 @@ class DockerInfo extends Response {
      *
      * @return string|null
      */
-    public function getArgs(): string {
+    public function getArgs(): string
+    {
         return $this->get("Args");
     }
 
@@ -161,7 +177,8 @@ class DockerInfo extends Response {
      *
      * @param string $args
      */
-    public function setArgs(string $args) {
+    public function setArgs(string $args)
+    {
         $this->set("Args", $args);
     }
 
@@ -170,7 +187,8 @@ class DockerInfo extends Response {
      *
      * @return EnvList[]|null
      */
-    public function getEnvList(): array {
+    public function getEnvList(): array
+    {
         $items = $this->get("EnvList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -184,7 +202,8 @@ class DockerInfo extends Response {
      *
      * @param EnvList[] $envList
      */
-    public function setEnvList(array $envList) {
+    public function setEnvList(array $envList)
+    {
         $result = [];
         foreach ($envList as $i => $item) {
             array_push($result, $item->getAll());
@@ -197,7 +216,8 @@ class DockerInfo extends Response {
      *
      * @return CfgDictList[]|null
      */
-    public function getCfgDictList(): array {
+    public function getCfgDictList(): array
+    {
         $items = $this->get("CfgDictList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -211,13 +231,12 @@ class DockerInfo extends Response {
      *
      * @param CfgDictList[] $cfgDictList
      */
-    public function setCfgDictList(array $cfgDictList) {
+    public function setCfgDictList(array $cfgDictList)
+    {
         $result = [];
         foreach ($cfgDictList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetPHostDiskUpgradePriceRequest extends Request {
+class GetPHostDiskUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetPHostDiskUpgradePrice"]);
@@ -35,7 +36,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,7 +86,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -89,7 +96,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getPHostId(): string {
+    public function getPHostId(): string
+    {
         return $this->get("PHostId");
     }
 
@@ -98,16 +106,18 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId) {
+    public function setPHostId(string $pHostId)
+    {
         $this->set("PHostId", $pHostId);
     }
 
     /**
      * DiskSpace: 磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB，数据盘单块盘20-32000GB。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSpace(): int {
+    public function getDiskSpace(): int
+    {
         return $this->get("DiskSpace");
     }
 
@@ -116,7 +126,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace) {
+    public function setDiskSpace(int $diskSpace)
+    {
         $this->set("DiskSpace", $diskSpace);
     }
 
@@ -125,7 +136,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDiskId(): string {
+    public function getUDiskId(): string
+    {
         return $this->get("UDiskId");
     }
 
@@ -134,7 +146,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId) {
+    public function setUDiskId(string $uDiskId)
+    {
         $this->set("UDiskId", $uDiskId);
     }
 
@@ -143,7 +156,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getReinstallTag(): bool {
+    public function getReinstallTag(): bool
+    {
         return $this->get("ReinstallTag");
     }
 
@@ -152,9 +166,8 @@ class GetPHostDiskUpgradePriceRequest extends Request {
      *
      * @param boolean $reinstallTag
      */
-    public function setReinstallTag(bool $reinstallTag) {
+    public function setReinstallTag(bool $reinstallTag)
+    {
         $this->set("ReinstallTag", $reinstallTag);
     }
-
-
 }

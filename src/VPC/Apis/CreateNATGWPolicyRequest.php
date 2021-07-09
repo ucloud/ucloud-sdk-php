@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateNATGWPolicyRequest extends Request {
+class CreateNATGWPolicyRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateNATGWPolicy"]);
@@ -38,7 +39,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -47,7 +49,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -56,7 +59,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -65,7 +69,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -74,7 +79,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getNATGWId(): string {
+    public function getNATGWId(): string
+    {
         return $this->get("NATGWId");
     }
 
@@ -83,7 +89,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId) {
+    public function setNATGWId(string $natgwId)
+    {
         $this->set("NATGWId", $natgwId);
     }
 
@@ -92,7 +99,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getProtocol(): string {
+    public function getProtocol(): string
+    {
         return $this->get("Protocol");
     }
 
@@ -101,7 +109,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol) {
+    public function setProtocol(string $protocol)
+    {
         $this->set("Protocol", $protocol);
     }
 
@@ -110,7 +119,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getSrcEIPId(): string {
+    public function getSrcEIPId(): string
+    {
         return $this->get("SrcEIPId");
     }
 
@@ -119,7 +129,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $srcEIPId
      */
-    public function setSrcEIPId(string $srcEIPId) {
+    public function setSrcEIPId(string $srcEIPId)
+    {
         $this->set("SrcEIPId", $srcEIPId);
     }
 
@@ -128,7 +139,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getSrcPort(): string {
+    public function getSrcPort(): string
+    {
         return $this->get("SrcPort");
     }
 
@@ -137,7 +149,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $srcPort
      */
-    public function setSrcPort(string $srcPort) {
+    public function setSrcPort(string $srcPort)
+    {
         $this->set("SrcPort", $srcPort);
     }
 
@@ -146,7 +159,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getDstIP(): string {
+    public function getDstIP(): string
+    {
         return $this->get("DstIP");
     }
 
@@ -155,7 +169,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $dstIP
      */
-    public function setDstIP(string $dstIP) {
+    public function setDstIP(string $dstIP)
+    {
         $this->set("DstIP", $dstIP);
     }
 
@@ -164,7 +179,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getDstPort(): string {
+    public function getDstPort(): string
+    {
         return $this->get("DstPort");
     }
 
@@ -173,7 +189,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $dstPort
      */
-    public function setDstPort(string $dstPort) {
+    public function setDstPort(string $dstPort)
+    {
         $this->set("DstPort", $dstPort);
     }
 
@@ -182,7 +199,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getPolicyName(): string {
+    public function getPolicyName(): string
+    {
         return $this->get("PolicyName");
     }
 
@@ -191,9 +209,8 @@ class CreateNATGWPolicyRequest extends Request {
      *
      * @param string $policyName
      */
-    public function setPolicyName(string $policyName) {
+    public function setPolicyName(string $policyName)
+    {
         $this->set("PolicyName", $policyName);
     }
-
-
 }

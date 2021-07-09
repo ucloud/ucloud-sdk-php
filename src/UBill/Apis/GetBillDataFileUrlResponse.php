@@ -18,7 +18,8 @@ namespace UCloud\UBill\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetBillDataFileUrlResponse extends Response {
+class GetBillDataFileUrlResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetBillDataFileUrlResponse extends Response {
      *
      * @return string|null
      */
-    public function getFileUrl(): string {
+    public function getFileUrl(): string
+    {
         return $this->get("FileUrl");
     }
 
@@ -35,7 +37,8 @@ class GetBillDataFileUrlResponse extends Response {
      *
      * @param string $fileUrl
      */
-    public function setFileUrl(string $fileUrl) {
+    public function setFileUrl(string $fileUrl)
+    {
         $this->set("FileUrl", $fileUrl);
     }
 
@@ -44,7 +47,8 @@ class GetBillDataFileUrlResponse extends Response {
      *
      * @return string|null
      */
-    public function getIsValid(): string {
+    public function getIsValid(): string
+    {
         return $this->get("IsValid");
     }
 
@@ -53,9 +57,8 @@ class GetBillDataFileUrlResponse extends Response {
      *
      * @param string $isValid
      */
-    public function setIsValid(string $isValid) {
+    public function setIsValid(string $isValid)
+    {
         $this->set("IsValid", $isValid);
     }
-
-
 }

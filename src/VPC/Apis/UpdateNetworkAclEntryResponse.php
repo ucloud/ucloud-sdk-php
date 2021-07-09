@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpdateNetworkAclEntryResponse extends Response {
+class UpdateNetworkAclEntryResponse extends Response
+{
     
 
 

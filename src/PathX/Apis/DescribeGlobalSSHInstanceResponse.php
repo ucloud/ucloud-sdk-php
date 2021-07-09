@@ -19,7 +19,8 @@ namespace UCloud\PathX\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\PathX\Models\GlobalSSHInfo;
 
-class DescribeGlobalSSHInstanceResponse extends Response {
+class DescribeGlobalSSHInstanceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeGlobalSSHInstanceResponse extends Response {
      *
      * @return GlobalSSHInfo[]|null
      */
-    public function getInstanceSet(): array {
+    public function getInstanceSet(): array
+    {
         $items = $this->get("InstanceSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeGlobalSSHInstanceResponse extends Response {
      *
      * @param GlobalSSHInfo[] $instanceSet
      */
-    public function setInstanceSet(array $instanceSet) {
+    public function setInstanceSet(array $instanceSet)
+    {
         $result = [];
         foreach ($instanceSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

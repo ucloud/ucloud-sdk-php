@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUEcVHostISPRequest extends Request {
+class DescribeUEcVHostISPRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUEcVHostISP"]);
@@ -31,7 +32,8 @@ class DescribeUEcVHostISPRequest extends Request {
      *
      * @return string|null
      */
-    public function getIspName(): string {
+    public function getIspName(): string
+    {
         return $this->get("IspName");
     }
 
@@ -40,7 +42,8 @@ class DescribeUEcVHostISPRequest extends Request {
      *
      * @param string $ispName
      */
-    public function setIspName(string $ispName) {
+    public function setIspName(string $ispName)
+    {
         $this->set("IspName", $ispName);
     }
 
@@ -49,7 +52,8 @@ class DescribeUEcVHostISPRequest extends Request {
      *
      * @return string|null
      */
-    public function getProvince(): string {
+    public function getProvince(): string
+    {
         return $this->get("Province");
     }
 
@@ -58,7 +62,8 @@ class DescribeUEcVHostISPRequest extends Request {
      *
      * @param string $province
      */
-    public function setProvince(string $province) {
+    public function setProvince(string $province)
+    {
         $this->set("Province", $province);
     }
 
@@ -67,7 +72,8 @@ class DescribeUEcVHostISPRequest extends Request {
      *
      * @return string|null
      */
-    public function getCity(): string {
+    public function getCity(): string
+    {
         return $this->get("City");
     }
 
@@ -76,9 +82,8 @@ class DescribeUEcVHostISPRequest extends Request {
      *
      * @param string $city
      */
-    public function setCity(string $city) {
+    public function setCity(string $city)
+    {
         $this->set("City", $city);
     }
-
-
 }

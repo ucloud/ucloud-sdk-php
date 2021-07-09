@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateVServerResponse extends Response {
+class CreateVServerResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateVServerResponse extends Response {
      *
      * @return string|null
      */
-    public function getVServerId(): string {
+    public function getVServerId(): string
+    {
         return $this->get("VServerId");
     }
 
@@ -35,9 +37,8 @@ class CreateVServerResponse extends Response {
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId) {
+    public function setVServerId(string $vServerId)
+    {
         $this->set("VServerId", $vServerId);
     }
-
-
 }

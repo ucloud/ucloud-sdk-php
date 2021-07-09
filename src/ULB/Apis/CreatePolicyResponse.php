@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreatePolicyResponse extends Response {
+class CreatePolicyResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreatePolicyResponse extends Response {
      *
      * @return string|null
      */
-    public function getPolicyId(): string {
+    public function getPolicyId(): string
+    {
         return $this->get("PolicyId");
     }
 
@@ -35,9 +37,8 @@ class CreatePolicyResponse extends Response {
      *
      * @param string $policyId
      */
-    public function setPolicyId(string $policyId) {
+    public function setPolicyId(string $policyId)
+    {
         $this->set("PolicyId", $policyId);
     }
-
-
 }

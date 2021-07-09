@@ -18,7 +18,8 @@ namespace UCloud\UHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUHostInstanceParamDisks extends Request {
+class CreateUHostInstanceParamDisks extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getIsBoot(): string {
+    public function getIsBoot(): string
+    {
         return $this->get("IsBoot");
     }
 
@@ -35,7 +37,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot) {
+    public function setIsBoot(string $isBoot)
+    {
         $this->set("IsBoot", $isBoot);
     }
 
@@ -44,7 +47,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -53,16 +57,18 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
     /**
      * Size: 磁盘大小，单位GB，必须是10GB的整数倍。请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -71,7 +77,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -80,7 +87,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getBackupType(): string {
+    public function getBackupType(): string
+    {
         return $this->get("BackupType");
     }
 
@@ -89,7 +97,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @param string $backupType
      */
-    public function setBackupType(string $backupType) {
+    public function setBackupType(string $backupType)
+    {
         $this->set("BackupType", $backupType);
     }
 
@@ -98,7 +107,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @return boolean|null
      */
-    public function getEncrypted(): bool {
+    public function getEncrypted(): bool
+    {
         return $this->get("Encrypted");
     }
 
@@ -107,7 +117,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @param boolean $encrypted
      */
-    public function setEncrypted(bool $encrypted) {
+    public function setEncrypted(bool $encrypted)
+    {
         $this->set("Encrypted", $encrypted);
     }
 
@@ -116,7 +127,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getKmsKeyId(): string {
+    public function getKmsKeyId(): string
+    {
         return $this->get("KmsKeyId");
     }
 
@@ -125,7 +137,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @param string $kmsKeyId
      */
-    public function setKmsKeyId(string $kmsKeyId) {
+    public function setKmsKeyId(string $kmsKeyId)
+    {
         $this->set("KmsKeyId", $kmsKeyId);
     }
 
@@ -134,7 +147,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -143,9 +157,8 @@ class CreateUHostInstanceParamDisks extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

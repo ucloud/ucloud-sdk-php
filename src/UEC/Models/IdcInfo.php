@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class IdcInfo extends Response {
+class IdcInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class IdcInfo extends Response {
      *
      * @return string|null
      */
-    public function getIdcId(): string {
+    public function getIdcId(): string
+    {
         return $this->get("IdcId");
     }
 
@@ -35,7 +37,8 @@ class IdcInfo extends Response {
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId) {
+    public function setIdcId(string $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
@@ -44,7 +47,8 @@ class IdcInfo extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -53,7 +57,8 @@ class IdcInfo extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -62,7 +67,8 @@ class IdcInfo extends Response {
      *
      * @return string|null
      */
-    public function getIsp(): string {
+    public function getIsp(): string
+    {
         return $this->get("Isp");
     }
 
@@ -71,7 +77,8 @@ class IdcInfo extends Response {
      *
      * @param string $isp
      */
-    public function setIsp(string $isp) {
+    public function setIsp(string $isp)
+    {
         $this->set("Isp", $isp);
     }
 
@@ -80,7 +87,8 @@ class IdcInfo extends Response {
      *
      * @return string|null
      */
-    public function getProvince(): string {
+    public function getProvince(): string
+    {
         return $this->get("Province");
     }
 
@@ -89,7 +97,8 @@ class IdcInfo extends Response {
      *
      * @param string $province
      */
-    public function setProvince(string $province) {
+    public function setProvince(string $province)
+    {
         $this->set("Province", $province);
     }
 
@@ -98,7 +107,8 @@ class IdcInfo extends Response {
      *
      * @return string|null
      */
-    public function getCity(): string {
+    public function getCity(): string
+    {
         return $this->get("City");
     }
 
@@ -107,16 +117,18 @@ class IdcInfo extends Response {
      *
      * @param string $city
      */
-    public function setCity(string $city) {
+    public function setCity(string $city)
+    {
         $this->set("City", $city);
     }
 
     /**
      * Type: 运营商类型：0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getType(): int {
+    public function getType(): int
+    {
         return $this->get("Type");
     }
 
@@ -125,16 +137,18 @@ class IdcInfo extends Response {
      *
      * @param int $type
      */
-    public function setType(int $type) {
+    public function setType(int $type)
+    {
         $this->set("Type", $type);
     }
 
     /**
      * MaxNodeCnt: 机房可创建节点最大数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMaxNodeCnt(): int {
+    public function getMaxNodeCnt(): int
+    {
         return $this->get("MaxNodeCnt");
     }
 
@@ -143,9 +157,8 @@ class IdcInfo extends Response {
      *
      * @param int $maxNodeCnt
      */
-    public function setMaxNodeCnt(int $maxNodeCnt) {
+    public function setMaxNodeCnt(int $maxNodeCnt)
+    {
         $this->set("MaxNodeCnt", $maxNodeCnt);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class QueryUSMSSignatureRequest extends Request {
+class QueryUSMSSignatureRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "QueryUSMSSignature"]);
@@ -31,7 +32,8 @@ class QueryUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,7 +42,8 @@ class QueryUSMSSignatureRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -49,7 +52,8 @@ class QueryUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getSigId(): string {
+    public function getSigId(): string
+    {
         return $this->get("SigId");
     }
 
@@ -58,7 +62,8 @@ class QueryUSMSSignatureRequest extends Request {
      *
      * @param string $sigId
      */
-    public function setSigId(string $sigId) {
+    public function setSigId(string $sigId)
+    {
         $this->set("SigId", $sigId);
     }
 
@@ -67,7 +72,8 @@ class QueryUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getSigContent(): string {
+    public function getSigContent(): string
+    {
         return $this->get("SigContent");
     }
 
@@ -76,9 +82,8 @@ class QueryUSMSSignatureRequest extends Request {
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent) {
+    public function setSigContent(string $sigContent)
+    {
         $this->set("SigContent", $sigContent);
     }
-
-
 }

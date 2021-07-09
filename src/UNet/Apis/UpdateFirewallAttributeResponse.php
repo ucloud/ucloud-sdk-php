@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpdateFirewallAttributeResponse extends Response {
+class UpdateFirewallAttributeResponse extends Response
+{
     
 
 

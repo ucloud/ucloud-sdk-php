@@ -19,7 +19,8 @@ namespace UCloud\UMem\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UMem\Models\UMemBackupSet;
 
-class DescribeUMemBackupResponse extends Response {
+class DescribeUMemBackupResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUMemBackupResponse extends Response {
      *
      * @return UMemBackupSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUMemBackupResponse extends Response {
      *
      * @param UMemBackupSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

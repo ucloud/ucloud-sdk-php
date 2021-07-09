@@ -18,15 +18,17 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUDBParamGroupResponse extends Response {
+class CreateUDBParamGroupResponse extends Response
+{
     
 
     /**
      * GroupId: 新配置参数组id
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getGroupId(): int {
+    public function getGroupId(): int
+    {
         return $this->get("GroupId");
     }
 
@@ -35,9 +37,8 @@ class CreateUDBParamGroupResponse extends Response {
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId) {
+    public function setGroupId(int $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
-
-
 }

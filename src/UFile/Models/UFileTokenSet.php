@@ -18,7 +18,8 @@ namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
-class UFileTokenSet extends Response {
+class UFileTokenSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UFileTokenSet extends Response {
      *
      * @return string|null
      */
-    public function getTokenId(): string {
+    public function getTokenId(): string
+    {
         return $this->get("TokenId");
     }
 
@@ -35,7 +37,8 @@ class UFileTokenSet extends Response {
      *
      * @param string $tokenId
      */
-    public function setTokenId(string $tokenId) {
+    public function setTokenId(string $tokenId)
+    {
         $this->set("TokenId", $tokenId);
     }
 
@@ -44,7 +47,8 @@ class UFileTokenSet extends Response {
      *
      * @return string|null
      */
-    public function getTokenName(): string {
+    public function getTokenName(): string
+    {
         return $this->get("TokenName");
     }
 
@@ -53,7 +57,8 @@ class UFileTokenSet extends Response {
      *
      * @param string $tokenName
      */
-    public function setTokenName(string $tokenName) {
+    public function setTokenName(string $tokenName)
+    {
         $this->set("TokenName", $tokenName);
     }
 
@@ -62,7 +67,8 @@ class UFileTokenSet extends Response {
      *
      * @return string|null
      */
-    public function getPublicKey(): string {
+    public function getPublicKey(): string
+    {
         return $this->get("PublicKey");
     }
 
@@ -71,7 +77,8 @@ class UFileTokenSet extends Response {
      *
      * @param string $publicKey
      */
-    public function setPublicKey(string $publicKey) {
+    public function setPublicKey(string $publicKey)
+    {
         $this->set("PublicKey", $publicKey);
     }
 
@@ -80,7 +87,8 @@ class UFileTokenSet extends Response {
      *
      * @return string|null
      */
-    public function getPrivateKey(): string {
+    public function getPrivateKey(): string
+    {
         return $this->get("PrivateKey");
     }
 
@@ -89,7 +97,8 @@ class UFileTokenSet extends Response {
      *
      * @param string $privateKey
      */
-    public function setPrivateKey(string $privateKey) {
+    public function setPrivateKey(string $privateKey)
+    {
         $this->set("PrivateKey", $privateKey);
     }
 
@@ -98,7 +107,8 @@ class UFileTokenSet extends Response {
      *
      * @return string[]|null
      */
-    public function getAllowedOps(): array {
+    public function getAllowedOps(): array
+    {
         return $this->get("AllowedOps");
     }
 
@@ -107,7 +117,8 @@ class UFileTokenSet extends Response {
      *
      * @param string[] $allowedOps
      */
-    public function setAllowedOps(array $allowedOps) {
+    public function setAllowedOps(array $allowedOps)
+    {
         $this->set("AllowedOps", $allowedOps);
     }
 
@@ -116,7 +127,8 @@ class UFileTokenSet extends Response {
      *
      * @return string[]|null
      */
-    public function getAllowedPrefixes(): array {
+    public function getAllowedPrefixes(): array
+    {
         return $this->get("AllowedPrefixes");
     }
 
@@ -125,7 +137,8 @@ class UFileTokenSet extends Response {
      *
      * @param string[] $allowedPrefixes
      */
-    public function setAllowedPrefixes(array $allowedPrefixes) {
+    public function setAllowedPrefixes(array $allowedPrefixes)
+    {
         $this->set("AllowedPrefixes", $allowedPrefixes);
     }
 
@@ -134,7 +147,8 @@ class UFileTokenSet extends Response {
      *
      * @return string[]|null
      */
-    public function getAllowedBuckets(): array {
+    public function getAllowedBuckets(): array
+    {
         return $this->get("AllowedBuckets");
     }
 
@@ -143,16 +157,18 @@ class UFileTokenSet extends Response {
      *
      * @param string[] $allowedBuckets
      */
-    public function setAllowedBuckets(array $allowedBuckets) {
+    public function setAllowedBuckets(array $allowedBuckets)
+    {
         $this->set("AllowedBuckets", $allowedBuckets);
     }
 
     /**
      * ExpireTime: 令牌的超时时间点
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -161,16 +177,18 @@ class UFileTokenSet extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -179,16 +197,18 @@ class UFileTokenSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ModifyTime: 修改时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getModifyTime(): int {
+    public function getModifyTime(): int
+    {
         return $this->get("ModifyTime");
     }
 
@@ -197,7 +217,8 @@ class UFileTokenSet extends Response {
      *
      * @param int $modifyTime
      */
-    public function setModifyTime(int $modifyTime) {
+    public function setModifyTime(int $modifyTime)
+    {
         $this->set("ModifyTime", $modifyTime);
     }
 
@@ -206,7 +227,8 @@ class UFileTokenSet extends Response {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -215,9 +237,8 @@ class UFileTokenSet extends Response {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
-
-
 }

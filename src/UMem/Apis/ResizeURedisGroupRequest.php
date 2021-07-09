@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ResizeURedisGroupRequest extends Request {
+class ResizeURedisGroupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ResizeURedisGroup"]);
@@ -34,7 +35,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -97,16 +105,18 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
     /**
      * Size: 内存大小, 单位:GB (需要大于原size,且小于等于32) 目前仅支持1/2/4/8/16/32 G 六种容量规格
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -115,25 +125,28 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
     /**
-     * ChargeType: 
+     * ChargeType:
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
     /**
-     * ChargeType: 
+     * ChargeType:
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -142,7 +155,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -151,16 +165,18 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
     /**
      * CouponId: 代金券ID 请参考DescribeCoupon接口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCouponId(): int {
+    public function getCouponId(): int
+    {
         return $this->get("CouponId");
     }
 
@@ -169,9 +185,8 @@ class ResizeURedisGroupRequest extends Request {
      *
      * @param int $couponId
      */
-    public function setCouponId(int $couponId) {
+    public function setCouponId(int $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

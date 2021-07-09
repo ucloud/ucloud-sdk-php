@@ -18,15 +18,17 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class URedisSlowlogSet extends Response {
+class URedisSlowlogSet extends Response
+{
     
 
     /**
      * StartTime: 查询发生的时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStartTime(): int {
+    public function getStartTime(): int
+    {
         return $this->get("StartTime");
     }
 
@@ -35,16 +37,18 @@ class URedisSlowlogSet extends Response {
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime) {
+    public function setStartTime(int $startTime)
+    {
         $this->set("StartTime", $startTime);
     }
 
     /**
      * SpendTime: 查询消耗的时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSpendTime(): int {
+    public function getSpendTime(): int
+    {
         return $this->get("SpendTime");
     }
 
@@ -53,7 +57,8 @@ class URedisSlowlogSet extends Response {
      *
      * @param int $spendTime
      */
-    public function setSpendTime(int $spendTime) {
+    public function setSpendTime(int $spendTime)
+    {
         $this->set("SpendTime", $spendTime);
     }
 
@@ -62,7 +67,8 @@ class URedisSlowlogSet extends Response {
      *
      * @return string|null
      */
-    public function getCommand(): string {
+    public function getCommand(): string
+    {
         return $this->get("Command");
     }
 
@@ -71,9 +77,8 @@ class URedisSlowlogSet extends Response {
      *
      * @param string $command
      */
-    public function setCommand(string $command) {
+    public function setCommand(string $command)
+    {
         $this->set("Command", $command);
     }
-
-
 }

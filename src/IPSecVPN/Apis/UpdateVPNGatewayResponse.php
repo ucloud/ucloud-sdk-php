@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpdateVPNGatewayResponse extends Response {
+class UpdateVPNGatewayResponse extends Response
+{
     
 
 

@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteUGAForwarderRequest extends Request {
+class DeleteUGAForwarderRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteUGAForwarder"]);
@@ -33,7 +34,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @return string|null
      */
-    public function getUGAId(): string {
+    public function getUGAId(): string
+    {
         return $this->get("UGAId");
     }
 
@@ -60,7 +64,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId) {
+    public function setUGAId(string $ugaId)
+    {
         $this->set("UGAId", $ugaId);
     }
 
@@ -69,7 +74,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPHTTP(): array {
+    public function getHTTPHTTP(): array
+    {
         return $this->get("HTTPHTTP");
     }
 
@@ -78,7 +84,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @param int[] $httphttp
      */
-    public function setHTTPHTTP(array $httphttp) {
+    public function setHTTPHTTP(array $httphttp)
+    {
         $this->set("HTTPHTTP", $httphttp);
     }
 
@@ -87,7 +94,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTP(): array {
+    public function getHTTPSHTTP(): array
+    {
         return $this->get("HTTPSHTTP");
     }
 
@@ -96,7 +104,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @param int[] $httpshttp
      */
-    public function setHTTPSHTTP(array $httpshttp) {
+    public function setHTTPSHTTP(array $httpshttp)
+    {
         $this->set("HTTPSHTTP", $httpshttp);
     }
 
@@ -105,7 +114,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPS(): array {
+    public function getHTTPSHTTPS(): array
+    {
         return $this->get("HTTPSHTTPS");
     }
 
@@ -114,7 +124,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @param int[] $httpshttps
      */
-    public function setHTTPSHTTPS(array $httpshttps) {
+    public function setHTTPSHTTPS(array $httpshttps)
+    {
         $this->set("HTTPSHTTPS", $httpshttps);
     }
 
@@ -123,7 +134,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getTCP(): array {
+    public function getTCP(): array
+    {
         return $this->get("TCP");
     }
 
@@ -132,7 +144,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @param int[] $tcp
      */
-    public function setTCP(array $tcp) {
+    public function setTCP(array $tcp)
+    {
         $this->set("TCP", $tcp);
     }
 
@@ -141,7 +154,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getUDP(): array {
+    public function getUDP(): array
+    {
         return $this->get("UDP");
     }
 
@@ -150,9 +164,8 @@ class DeleteUGAForwarderRequest extends Request {
      *
      * @param int[] $udp
      */
-    public function setUDP(array $udp) {
+    public function setUDP(array $udp)
+    {
         $this->set("UDP", $udp);
     }
-
-
 }

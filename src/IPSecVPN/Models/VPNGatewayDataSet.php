@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
-class VPNGatewayDataSet extends Response {
+class VPNGatewayDataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPNGatewayId(): string {
+    public function getVPNGatewayId(): string
+    {
         return $this->get("VPNGatewayId");
     }
 
@@ -35,7 +37,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId(string $vpnGatewayId) {
+    public function setVPNGatewayId(string $vpnGatewayId)
+    {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
 
@@ -44,7 +47,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPNGatewayName(): string {
+    public function getVPNGatewayName(): string
+    {
         return $this->get("VPNGatewayName");
     }
 
@@ -53,7 +57,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $vpnGatewayName
      */
-    public function setVPNGatewayName(string $vpnGatewayName) {
+    public function setVPNGatewayName(string $vpnGatewayName)
+    {
         $this->set("VPNGatewayName", $vpnGatewayName);
     }
 
@@ -62,7 +67,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -71,7 +77,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -80,7 +87,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -89,7 +97,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -98,7 +107,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -107,7 +117,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -116,7 +127,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCName(): string {
+    public function getVPCName(): string
+    {
         return $this->get("VPCName");
     }
 
@@ -125,7 +137,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $vpcName
      */
-    public function setVPCName(string $vpcName) {
+    public function setVPCName(string $vpcName)
+    {
         $this->set("VPCName", $vpcName);
     }
 
@@ -134,7 +147,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -143,16 +157,18 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -161,16 +177,18 @@ class VPNGatewayDataSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ExpireTime: 到期时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -179,7 +197,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
@@ -188,7 +207,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getAutoRenew(): string {
+    public function getAutoRenew(): string
+    {
         return $this->get("AutoRenew");
     }
 
@@ -197,7 +217,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $autoRenew
      */
-    public function setAutoRenew(string $autoRenew) {
+    public function setAutoRenew(string $autoRenew)
+    {
         $this->set("AutoRenew", $autoRenew);
     }
 
@@ -206,7 +227,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getGrade(): string {
+    public function getGrade(): string
+    {
         return $this->get("Grade");
     }
 
@@ -215,7 +237,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $grade
      */
-    public function setGrade(string $grade) {
+    public function setGrade(string $grade)
+    {
         $this->set("Grade", $grade);
     }
 
@@ -224,7 +247,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getEIP(): string {
+    public function getEIP(): string
+    {
         return $this->get("EIP");
     }
 
@@ -233,7 +257,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $eip
      */
-    public function setEIP(string $eip) {
+    public function setEIP(string $eip)
+    {
         $this->set("EIP", $eip);
     }
 
@@ -242,7 +267,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPType(): string {
+    public function getEIPType(): string
+    {
         return $this->get("EIPType");
     }
 
@@ -251,7 +277,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $eipType
      */
-    public function setEIPType(string $eipType) {
+    public function setEIPType(string $eipType)
+    {
         $this->set("EIPType", $eipType);
     }
 
@@ -260,7 +287,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -269,9 +297,8 @@ class VPNGatewayDataSet extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CheckURedisAllowanceRequest extends Request {
+class CheckURedisAllowanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CheckURedisAllowance"]);
@@ -35,7 +36,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,16 +86,18 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Size: 创建实例的容量大小, 单位:GB 目前仅支持1/2/4/8/16/32六种规格；扩缩容时，表示实例的目标资源大小
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -98,16 +106,18 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
     /**
      * Count: 创建实例的数量，[1-10]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -116,25 +126,28 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
 
     /**
-     * Protocol: 
+     * Protocol:
      *
      * @return string|null
      */
-    public function getProtocol(): string {
+    public function getProtocol(): string
+    {
         return $this->get("Protocol");
     }
 
     /**
-     * Protocol: 
+     * Protocol:
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol) {
+    public function setProtocol(string $protocol)
+    {
         $this->set("Protocol", $protocol);
     }
 
@@ -143,7 +156,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool {
+    public function getRegionFlag(): bool
+    {
         return $this->get("RegionFlag");
     }
 
@@ -152,7 +166,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag) {
+    public function setRegionFlag(bool $regionFlag)
+    {
         $this->set("RegionFlag", $regionFlag);
     }
 
@@ -161,7 +176,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -170,9 +186,8 @@ class CheckURedisAllowanceRequest extends Request {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
-
-
 }

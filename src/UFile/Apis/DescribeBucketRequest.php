@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeBucketRequest extends Request {
+class DescribeBucketRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeBucket"]);
@@ -31,7 +32,8 @@ class DescribeBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -40,7 +42,8 @@ class DescribeBucketRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -49,7 +52,8 @@ class DescribeBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -58,7 +62,8 @@ class DescribeBucketRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -67,7 +72,8 @@ class DescribeBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getBucketName(): string {
+    public function getBucketName(): string
+    {
         return $this->get("BucketName");
     }
 
@@ -76,16 +82,18 @@ class DescribeBucketRequest extends Request {
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName) {
+    public function setBucketName(string $bucketName)
+    {
         $this->set("BucketName", $bucketName);
     }
 
     /**
      * Offset: 获取所有Bucket列表的偏移数目，默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -94,16 +102,18 @@ class DescribeBucketRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 获取所有Bucket列表的限制数目，默认为20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -112,9 +122,8 @@ class DescribeBucketRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

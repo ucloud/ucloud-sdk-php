@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class PromoteUDBInstanceToHAResponse extends Response {
+class PromoteUDBInstanceToHAResponse extends Response
+{
     
 
 

@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class URedisGroupSet extends Response {
+class URedisGroupSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,16 +37,18 @@ class URedisGroupSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
     /**
      * RewriteTime: 返回运维时间 0 //0点 1 //1点 以此类推
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRewriteTime(): int {
+    public function getRewriteTime(): int
+    {
         return $this->get("RewriteTime");
     }
 
@@ -53,7 +57,8 @@ class URedisGroupSet extends Response {
      *
      * @param int $rewriteTime
      */
-    public function setRewriteTime(int $rewriteTime) {
+    public function setRewriteTime(int $rewriteTime)
+    {
         $this->set("RewriteTime", $rewriteTime);
     }
 
@@ -62,7 +67,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getRole(): string {
+    public function getRole(): string
+    {
         return $this->get("Role");
     }
 
@@ -71,7 +77,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $role
      */
-    public function setRole(string $role) {
+    public function setRole(string $role)
+    {
         $this->set("Role", $role);
     }
 
@@ -80,7 +87,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -89,7 +97,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -98,7 +107,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -107,7 +117,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -116,7 +127,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -125,7 +137,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
@@ -134,7 +147,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -143,7 +157,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -152,7 +167,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -161,7 +177,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -170,7 +187,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getProtocol(): string {
+    public function getProtocol(): string
+    {
         return $this->get("Protocol");
     }
 
@@ -179,16 +197,18 @@ class URedisGroupSet extends Response {
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol) {
+    public function setProtocol(string $protocol)
+    {
         $this->set("Protocol", $protocol);
     }
 
     /**
      * MemorySize: 容量单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemorySize(): int {
+    public function getMemorySize(): int
+    {
         return $this->get("MemorySize");
     }
 
@@ -197,7 +217,8 @@ class URedisGroupSet extends Response {
      *
      * @param int $memorySize
      */
-    public function setMemorySize(int $memorySize) {
+    public function setMemorySize(int $memorySize)
+    {
         $this->set("MemorySize", $memorySize);
     }
 
@@ -206,7 +227,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getGroupName(): string {
+    public function getGroupName(): string
+    {
         return $this->get("GroupName");
     }
 
@@ -215,7 +237,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $groupName
      */
-    public function setGroupName(string $groupName) {
+    public function setGroupName(string $groupName)
+    {
         $this->set("GroupName", $groupName);
     }
 
@@ -224,7 +247,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getConfigId(): string {
+    public function getConfigId(): string
+    {
         return $this->get("ConfigId");
     }
 
@@ -233,7 +257,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $configId
      */
-    public function setConfigId(string $configId) {
+    public function setConfigId(string $configId)
+    {
         $this->set("ConfigId", $configId);
     }
 
@@ -242,7 +267,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getVirtualIP(): string {
+    public function getVirtualIP(): string
+    {
         return $this->get("VirtualIP");
     }
 
@@ -251,16 +277,18 @@ class URedisGroupSet extends Response {
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP(string $virtualIP) {
+    public function setVirtualIP(string $virtualIP)
+    {
         $this->set("VirtualIP", $virtualIP);
     }
 
     /**
      * Port: 节点分配的服务端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -269,16 +297,18 @@ class URedisGroupSet extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
     /**
      * Size: 容量单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -287,16 +317,18 @@ class URedisGroupSet extends Response {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
     /**
      * UsedSize: 使用量单位MB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getUsedSize(): int {
+    public function getUsedSize(): int
+    {
         return $this->get("UsedSize");
     }
 
@@ -305,7 +337,8 @@ class URedisGroupSet extends Response {
      *
      * @param int $usedSize
      */
-    public function setUsedSize(int $usedSize) {
+    public function setUsedSize(int $usedSize)
+    {
         $this->set("UsedSize", $usedSize);
     }
 
@@ -314,7 +347,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getAutoBackup(): string {
+    public function getAutoBackup(): string
+    {
         return $this->get("AutoBackup");
     }
 
@@ -323,16 +357,18 @@ class URedisGroupSet extends Response {
      *
      * @param string $autoBackup
      */
-    public function setAutoBackup(string $autoBackup) {
+    public function setAutoBackup(string $autoBackup)
+    {
         $this->set("AutoBackup", $autoBackup);
     }
 
     /**
      * BackupTime: 组自动备份开始时间,单位小时计,范围[0-23]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupTime(): int {
+    public function getBackupTime(): int
+    {
         return $this->get("BackupTime");
     }
 
@@ -341,7 +377,8 @@ class URedisGroupSet extends Response {
      *
      * @param int $backupTime
      */
-    public function setBackupTime(int $backupTime) {
+    public function setBackupTime(int $backupTime)
+    {
         $this->set("BackupTime", $backupTime);
     }
 
@@ -350,7 +387,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getHighAvailability(): string {
+    public function getHighAvailability(): string
+    {
         return $this->get("HighAvailability");
     }
 
@@ -359,7 +397,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $highAvailability
      */
-    public function setHighAvailability(string $highAvailability) {
+    public function setHighAvailability(string $highAvailability)
+    {
         $this->set("HighAvailability", $highAvailability);
     }
 
@@ -368,7 +407,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getVersion(): string {
+    public function getVersion(): string
+    {
         return $this->get("Version");
     }
 
@@ -377,16 +417,18 @@ class URedisGroupSet extends Response {
      *
      * @param string $version
      */
-    public function setVersion(string $version) {
+    public function setVersion(string $version)
+    {
         $this->set("Version", $version);
     }
 
     /**
      * ExpireTime: 过期时间 (UNIX时间戳)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -395,7 +437,8 @@ class URedisGroupSet extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
@@ -404,7 +447,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -413,7 +457,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -422,7 +467,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return $this->get("State");
     }
 
@@ -431,16 +477,18 @@ class URedisGroupSet extends Response {
      *
      * @param string $state
      */
-    public function setState(string $state) {
+    public function setState(string $state)
+    {
         $this->set("State", $state);
     }
 
     /**
      * CreateTime: 创建时间 (UNIX时间戳)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -449,16 +497,18 @@ class URedisGroupSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ModifyTime: 修改时间 (UNIX时间戳)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getModifyTime(): int {
+    public function getModifyTime(): int
+    {
         return $this->get("ModifyTime");
     }
 
@@ -467,7 +517,8 @@ class URedisGroupSet extends Response {
      *
      * @param int $modifyTime
      */
-    public function setModifyTime(int $modifyTime) {
+    public function setModifyTime(int $modifyTime)
+    {
         $this->set("ModifyTime", $modifyTime);
     }
 
@@ -476,7 +527,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -485,7 +537,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -494,7 +547,8 @@ class URedisGroupSet extends Response {
      *
      * @return string|null
      */
-    public function getSlaveZone(): string {
+    public function getSlaveZone(): string
+    {
         return $this->get("SlaveZone");
     }
 
@@ -503,9 +557,8 @@ class URedisGroupSet extends Response {
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone(string $slaveZone) {
+    public function setSlaveZone(string $slaveZone)
+    {
         $this->set("SlaveZone", $slaveZone);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ReinstallUEcVHostRequest extends Request {
+class ReinstallUEcVHostRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ReinstallUEcVHost"]);
@@ -33,7 +34,8 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getNodeId(): string {
+    public function getNodeId(): string
+    {
         return $this->get("NodeId");
     }
 
@@ -60,7 +64,8 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId) {
+    public function setNodeId(string $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
 
@@ -69,7 +74,8 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -78,16 +84,18 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
     /**
      * KeepData: 是否保留数据盘数据， 0-不保留，1-保留，默认为1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getKeepData(): int {
+    public function getKeepData(): int
+    {
         return $this->get("KeepData");
     }
 
@@ -96,7 +104,8 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @param int $keepData
      */
-    public function setKeepData(int $keepData) {
+    public function setKeepData(int $keepData)
+    {
         $this->set("KeepData", $keepData);
     }
 
@@ -105,7 +114,8 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->get("Password");
     }
 
@@ -114,16 +124,18 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->set("Password", $password);
     }
 
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSysDiskSize(): int {
+    public function getSysDiskSize(): int
+    {
         return $this->get("SysDiskSize");
     }
 
@@ -132,9 +144,8 @@ class ReinstallUEcVHostRequest extends Request {
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize(int $sysDiskSize) {
+    public function setSysDiskSize(int $sysDiskSize)
+    {
         $this->set("SysDiskSize", $sysDiskSize);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUSMSTemplateResponse extends Response {
+class CreateUSMSTemplateResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUSMSTemplateResponse extends Response {
      *
      * @return string|null
      */
-    public function getTemplateId(): string {
+    public function getTemplateId(): string
+    {
         return $this->get("TemplateId");
     }
 
@@ -35,9 +37,8 @@ class CreateUSMSTemplateResponse extends Response {
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId) {
+    public function setTemplateId(string $templateId)
+    {
         $this->set("TemplateId", $templateId);
     }
-
-
 }

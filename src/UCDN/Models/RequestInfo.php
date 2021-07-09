@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class RequestInfo extends Response {
+class RequestInfo extends Response
+{
     
 
     /**
      * Time: 带宽获取的时间点。格式：时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,7 +37,8 @@ class RequestInfo extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
@@ -44,7 +47,8 @@ class RequestInfo extends Response {
      *
      * @return float|null
      */
-    public function getCdnRequest(): float {
+    public function getCdnRequest(): float
+    {
         return $this->get("CdnRequest");
     }
 
@@ -53,7 +57,8 @@ class RequestInfo extends Response {
      *
      * @param float $cdnRequest
      */
-    public function setCdnRequest(float $cdnRequest) {
+    public function setCdnRequest(float $cdnRequest)
+    {
         $this->set("CdnRequest", $cdnRequest);
     }
 
@@ -62,7 +67,8 @@ class RequestInfo extends Response {
      *
      * @return float|null
      */
-    public function getOriginRequest(): float {
+    public function getOriginRequest(): float
+    {
         return $this->get("OriginRequest");
     }
 
@@ -71,9 +77,8 @@ class RequestInfo extends Response {
      *
      * @param float $originRequest
      */
-    public function setOriginRequest(float $originRequest) {
+    public function setOriginRequest(float $originRequest)
+    {
         $this->set("OriginRequest", $originRequest);
     }
-
-
 }

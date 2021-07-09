@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class LoginUEcDockerResponse extends Response {
+class LoginUEcDockerResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class LoginUEcDockerResponse extends Response {
      *
      * @return string|null
      */
-    public function getSessionId(): string {
+    public function getSessionId(): string
+    {
         return $this->get("SessionId");
     }
 
@@ -35,7 +37,8 @@ class LoginUEcDockerResponse extends Response {
      *
      * @param string $sessionId
      */
-    public function setSessionId(string $sessionId) {
+    public function setSessionId(string $sessionId)
+    {
         $this->set("SessionId", $sessionId);
     }
 
@@ -44,7 +47,8 @@ class LoginUEcDockerResponse extends Response {
      *
      * @return string|null
      */
-    public function getLink(): string {
+    public function getLink(): string
+    {
         return $this->get("Link");
     }
 
@@ -53,16 +57,18 @@ class LoginUEcDockerResponse extends Response {
      *
      * @param string $link
      */
-    public function setLink(string $link) {
+    public function setLink(string $link)
+    {
         $this->set("Link", $link);
     }
 
     /**
      * LinkPort: 登录端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLinkPort(): int {
+    public function getLinkPort(): int
+    {
         return $this->get("LinkPort");
     }
 
@@ -71,9 +77,8 @@ class LoginUEcDockerResponse extends Response {
      *
      * @param int $linkPort
      */
-    public function setLinkPort(int $linkPort) {
+    public function setLinkPort(int $linkPort)
+    {
         $this->set("LinkPort", $linkPort);
     }
-
-
 }

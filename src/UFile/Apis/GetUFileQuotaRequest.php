@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUFileQuotaRequest extends Request {
+class GetUFileQuotaRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUFileQuota"]);
@@ -32,7 +33,8 @@ class GetUFileQuotaRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class GetUFileQuotaRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class GetUFileQuotaRequest extends Request {
      *
      * @return string|null
      */
-    public function getQuotaType(): string {
+    public function getQuotaType(): string
+    {
         return $this->get("QuotaType");
     }
 
@@ -59,9 +63,8 @@ class GetUFileQuotaRequest extends Request {
      *
      * @param string $quotaType
      */
-    public function setQuotaType(string $quotaType) {
+    public function setQuotaType(string $quotaType)
+    {
         $this->set("QuotaType", $quotaType);
     }
-
-
 }

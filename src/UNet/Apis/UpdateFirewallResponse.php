@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpdateFirewallResponse extends Response {
+class UpdateFirewallResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UpdateFirewallResponse extends Response {
      *
      * @return string|null
      */
-    public function getFWId(): string {
+    public function getFWId(): string
+    {
         return $this->get("FWId");
     }
 
@@ -35,9 +37,8 @@ class UpdateFirewallResponse extends Response {
      *
      * @param string $fwId
      */
-    public function setFWId(string $fwId) {
+    public function setFWId(string $fwId)
+    {
         $this->set("FWId", $fwId);
     }
-
-
 }

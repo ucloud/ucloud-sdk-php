@@ -19,15 +19,17 @@ namespace UCloud\UHost\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UHost\Models\UHostTagSet;
 
-class DescribeUHostTagsResponse extends Response {
+class DescribeUHostTagsResponse extends Response
+{
     
 
     /**
      * TotalCount: 已有主机的业务组总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -36,7 +38,8 @@ class DescribeUHostTagsResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -45,7 +48,8 @@ class DescribeUHostTagsResponse extends Response {
      *
      * @return UHostTagSet[]|null
      */
-    public function getTagSet(): array {
+    public function getTagSet(): array
+    {
         $items = $this->get("TagSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class DescribeUHostTagsResponse extends Response {
      *
      * @param UHostTagSet[] $tagSet
      */
-    public function setTagSet(array $tagSet) {
+    public function setTagSet(array $tagSet)
+    {
         $result = [];
         foreach ($tagSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

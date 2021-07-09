@@ -18,7 +18,8 @@ namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ReleaseUDPNResponse extends Response {
+class ReleaseUDPNResponse extends Response
+{
     
 
 

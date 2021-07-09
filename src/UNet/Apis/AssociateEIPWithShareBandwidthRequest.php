@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class AssociateEIPWithShareBandwidthRequest extends Request {
+class AssociateEIPWithShareBandwidthRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "AssociateEIPWithShareBandwidth"]);
@@ -34,7 +35,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getEIPIds(): array {
+    public function getEIPIds(): array
+    {
         return $this->get("EIPIds");
     }
 
@@ -79,7 +85,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string[] $eipIds
      */
-    public function setEIPIds(array $eipIds) {
+    public function setEIPIds(array $eipIds)
+    {
         $this->set("EIPIds", $eipIds);
     }
 
@@ -88,7 +95,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string {
+    public function getShareBandwidthId(): string
+    {
         return $this->get("ShareBandwidthId");
     }
 
@@ -97,7 +105,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId) {
+    public function setShareBandwidthId(string $shareBandwidthId)
+    {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
 
@@ -106,7 +115,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getIPVersion(): string {
+    public function getIPVersion(): string
+    {
         return $this->get("IPVersion");
     }
 
@@ -115,9 +125,8 @@ class AssociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $ipVersion
      */
-    public function setIPVersion(string $ipVersion) {
+    public function setIPVersion(string $ipVersion)
+    {
         $this->set("IPVersion", $ipVersion);
     }
-
-
 }

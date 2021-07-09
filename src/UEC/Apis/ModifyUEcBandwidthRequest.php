@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUEcBandwidthRequest extends Request {
+class ModifyUEcBandwidthRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyUEcBandwidth"]);
@@ -33,7 +34,8 @@ class ModifyUEcBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class ModifyUEcBandwidthRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class ModifyUEcBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getNodeId(): string {
+    public function getNodeId(): string
+    {
         return $this->get("NodeId");
     }
 
@@ -60,7 +64,8 @@ class ModifyUEcBandwidthRequest extends Request {
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId) {
+    public function setNodeId(string $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
 
@@ -69,7 +74,8 @@ class ModifyUEcBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getNetLimit(): string {
+    public function getNetLimit(): string
+    {
         return $this->get("NetLimit");
     }
 
@@ -78,9 +84,8 @@ class ModifyUEcBandwidthRequest extends Request {
      *
      * @param string $netLimit
      */
-    public function setNetLimit(string $netLimit) {
+    public function setNetLimit(string $netLimit)
+    {
         $this->set("NetLimit", $netLimit);
     }
-
-
 }

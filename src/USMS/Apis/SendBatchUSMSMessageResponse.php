@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\USMS\Models\BatchInfo;
 use UCloud\USMS\Models\FailPhoneDetail;
 
-class SendBatchUSMSMessageResponse extends Response {
+class SendBatchUSMSMessageResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class SendBatchUSMSMessageResponse extends Response {
      *
      * @return string|null
      */
-    public function getSessionNo(): string {
+    public function getSessionNo(): string
+    {
         return $this->get("SessionNo");
     }
 
@@ -37,7 +39,8 @@ class SendBatchUSMSMessageResponse extends Response {
      *
      * @param string $sessionNo
      */
-    public function setSessionNo(string $sessionNo) {
+    public function setSessionNo(string $sessionNo)
+    {
         $this->set("SessionNo", $sessionNo);
     }
 
@@ -46,7 +49,8 @@ class SendBatchUSMSMessageResponse extends Response {
      *
      * @return string|null
      */
-    public function getReqUuid(): string {
+    public function getReqUuid(): string
+    {
         return $this->get("ReqUuid");
     }
 
@@ -55,16 +59,18 @@ class SendBatchUSMSMessageResponse extends Response {
      *
      * @param string $reqUuid
      */
-    public function setReqUuid(string $reqUuid) {
+    public function setReqUuid(string $reqUuid)
+    {
         $this->set("ReqUuid", $reqUuid);
     }
 
     /**
      * SuccessCount: 成功提交短信（未拆分）条数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSuccessCount(): int {
+    public function getSuccessCount(): int
+    {
         return $this->get("SuccessCount");
     }
 
@@ -73,7 +79,8 @@ class SendBatchUSMSMessageResponse extends Response {
      *
      * @param int $successCount
      */
-    public function setSuccessCount(int $successCount) {
+    public function setSuccessCount(int $successCount)
+    {
         $this->set("SuccessCount", $successCount);
     }
 
@@ -82,7 +89,8 @@ class SendBatchUSMSMessageResponse extends Response {
      *
      * @return BatchInfo[]|null
      */
-    public function getFailContent(): array {
+    public function getFailContent(): array
+    {
         $items = $this->get("FailContent") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -96,13 +104,12 @@ class SendBatchUSMSMessageResponse extends Response {
      *
      * @param BatchInfo[] $failContent
      */
-    public function setFailContent(array $failContent) {
+    public function setFailContent(array $failContent)
+    {
         $result = [];
         foreach ($failContent as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

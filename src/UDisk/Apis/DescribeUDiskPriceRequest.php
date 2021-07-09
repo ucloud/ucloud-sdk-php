@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDiskPriceRequest extends Request {
+class DescribeUDiskPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDiskPrice"]);
@@ -34,7 +35,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,16 +85,18 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Size: 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘：范围[1~4000]；RSSD数据盘：范围[1~32000]；RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -97,7 +105,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -106,7 +115,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -115,16 +125,18 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买UDisk的时长，默认值为1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -133,7 +145,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -142,7 +155,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDataArkMode(): string {
+    public function getUDataArkMode(): string
+    {
         return $this->get("UDataArkMode");
     }
 
@@ -151,7 +165,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode(string $uDataArkMode) {
+    public function setUDataArkMode(string $uDataArkMode)
+    {
         $this->set("UDataArkMode", $uDataArkMode);
     }
 
@@ -160,7 +175,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getSnapshotService(): string {
+    public function getSnapshotService(): string
+    {
         return $this->get("SnapshotService");
     }
 
@@ -169,7 +185,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $snapshotService
      */
-    public function setSnapshotService(string $snapshotService) {
+    public function setSnapshotService(string $snapshotService)
+    {
         $this->set("SnapshotService", $snapshotService);
     }
 
@@ -178,7 +195,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getDiskType(): string {
+    public function getDiskType(): string
+    {
         return $this->get("DiskType");
     }
 
@@ -187,7 +205,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $diskType
      */
-    public function setDiskType(string $diskType) {
+    public function setDiskType(string $diskType)
+    {
         $this->set("DiskType", $diskType);
     }
 
@@ -196,7 +215,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getIsTotalPrice(): string {
+    public function getIsTotalPrice(): string
+    {
         return $this->get("IsTotalPrice");
     }
 
@@ -205,7 +225,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $isTotalPrice
      */
-    public function setIsTotalPrice(string $isTotalPrice) {
+    public function setIsTotalPrice(string $isTotalPrice)
+    {
         $this->set("IsTotalPrice", $isTotalPrice);
     }
 
@@ -214,7 +235,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getMachineType(): string {
+    public function getMachineType(): string
+    {
         return $this->get("MachineType");
     }
 
@@ -223,9 +245,8 @@ class DescribeUDiskPriceRequest extends Request {
      *
      * @param string $machineType
      */
-    public function setMachineType(string $machineType) {
+    public function setMachineType(string $machineType)
+    {
         $this->set("MachineType", $machineType);
     }
-
-
 }

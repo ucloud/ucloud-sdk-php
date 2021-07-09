@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostMachineTypeSet extends Response {
+class PHostMachineTypeSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -35,7 +37,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -44,7 +47,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @return PHostCPUSet|null
      */
-    public function getCPU(): PHostCPUSet {
+    public function getCPU(): PHostCPUSet
+    {
         return new PHostCPUSet($this->get("CPU"));
     }
 
@@ -53,16 +57,18 @@ class PHostMachineTypeSet extends Response {
      *
      * @param PHostCPUSet $cpu
      */
-    public function setCPU(PHostCPUSet $cpu) {
+    public function setCPU(PHostCPUSet $cpu)
+    {
         $this->set("CPU", $cpu->getAll());
     }
 
     /**
      * Memory: 内存大小，单位MB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemory(): int {
+    public function getMemory(): int
+    {
         return $this->get("Memory");
     }
 
@@ -71,7 +77,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @param int $memory
      */
-    public function setMemory(int $memory) {
+    public function setMemory(int $memory)
+    {
         $this->set("Memory", $memory);
     }
 
@@ -80,7 +87,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @return PHostDiskSet[]|null
      */
-    public function getDisks(): array {
+    public function getDisks(): array
+    {
         $items = $this->get("Disks") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -94,7 +102,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @param PHostDiskSet[] $disks
      */
-    public function setDisks(array $disks) {
+    public function setDisks(array $disks)
+    {
         $result = [];
         foreach ($disks as $i => $item) {
             array_push($result, $item->getAll());
@@ -107,7 +116,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @return PHostComponentSet|null
      */
-    public function getComponents(): PHostComponentSet {
+    public function getComponents(): PHostComponentSet
+    {
         return new PHostComponentSet($this->get("Components"));
     }
 
@@ -116,7 +126,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @param PHostComponentSet $components
      */
-    public function setComponents(PHostComponentSet $components) {
+    public function setComponents(PHostComponentSet $components)
+    {
         $this->set("Components", $components->getAll());
     }
 
@@ -125,7 +136,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @return PHostClusterSet[]|null
      */
-    public function getClusters(): array {
+    public function getClusters(): array
+    {
         $items = $this->get("Clusters") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -139,7 +151,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @param PHostClusterSet[] $clusters
      */
-    public function setClusters(array $clusters) {
+    public function setClusters(array $clusters)
+    {
         $result = [];
         foreach ($clusters as $i => $item) {
             array_push($result, $item->getAll());
@@ -152,7 +165,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @return string|null
      */
-    public function getRaidSupported(): string {
+    public function getRaidSupported(): string
+    {
         return $this->get("RaidSupported");
     }
 
@@ -161,9 +175,8 @@ class PHostMachineTypeSet extends Response {
      *
      * @param string $raidSupported
      */
-    public function setRaidSupported(string $raidSupported) {
+    public function setRaidSupported(string $raidSupported)
+    {
         $this->set("RaidSupported", $raidSupported);
     }
-
-
 }

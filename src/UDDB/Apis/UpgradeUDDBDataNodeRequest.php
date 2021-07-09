@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpgradeUDDBDataNodeRequest extends Request {
+class UpgradeUDDBDataNodeRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpgradeUDDBDataNode"]);
@@ -36,7 +37,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,7 +67,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -72,7 +77,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -81,7 +87,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -90,7 +97,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDDBId(): string {
+    public function getUDDBId(): string
+    {
         return $this->get("UDDBId");
     }
 
@@ -99,16 +107,18 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @param string $uddbId
      */
-    public function setUDDBId(string $uddbId) {
+    public function setUDDBId(string $uddbId)
+    {
         $this->set("UDDBId", $uddbId);
     }
 
     /**
      * DataNodeMemory: 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeMemory(): int {
+    public function getDataNodeMemory(): int
+    {
         return $this->get("DataNodeMemory");
     }
 
@@ -117,16 +127,18 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory(int $dataNodeMemory) {
+    public function setDataNodeMemory(int $dataNodeMemory)
+    {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
 
     /**
      * DataNodeDiskSpace: 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeDiskSpace(): int {
+    public function getDataNodeDiskSpace(): int
+    {
         return $this->get("DataNodeDiskSpace");
     }
 
@@ -135,7 +147,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace(int $dataNodeDiskSpace) {
+    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
+    {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
 
@@ -144,7 +157,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -153,9 +167,8 @@ class UpgradeUDDBDataNodeRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

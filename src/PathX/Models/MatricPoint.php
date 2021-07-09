@@ -18,33 +18,37 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class MatricPoint extends Response {
+class MatricPoint extends Response
+{
     
 
     /**
-     * Timestamp: 时间戳 
+     * Timestamp: 时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTimestamp(): int {
+    public function getTimestamp(): int
+    {
         return $this->get("Timestamp");
     }
 
     /**
-     * Timestamp: 时间戳 
+     * Timestamp: 时间戳
      *
      * @param int $timestamp
      */
-    public function setTimestamp(int $timestamp) {
+    public function setTimestamp(int $timestamp)
+    {
         $this->set("Timestamp", $timestamp);
     }
 
     /**
      * Value: 监控点数值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getValue(): int {
+    public function getValue(): int
+    {
         return $this->get("Value");
     }
 
@@ -53,9 +57,8 @@ class MatricPoint extends Response {
      *
      * @param int $value
      */
-    public function setValue(int $value) {
+    public function setValue(int $value)
+    {
         $this->set("Value", $value);
     }
-
-
 }

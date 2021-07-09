@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeSubnetRequest extends Request {
+class DescribeSubnetRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeSubnet"]);
@@ -32,7 +33,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,7 +63,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -68,7 +73,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getSubnetIds(): array {
+    public function getSubnetIds(): array
+    {
         return $this->get("SubnetIds");
     }
 
@@ -77,7 +83,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @param string[] $subnetIds
      */
-    public function setSubnetIds(array $subnetIds) {
+    public function setSubnetIds(array $subnetIds)
+    {
         $this->set("SubnetIds", $subnetIds);
     }
 
@@ -86,7 +93,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -95,7 +103,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -104,7 +113,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getRouteTableId(): string {
+    public function getRouteTableId(): string
+    {
         return $this->get("RouteTableId");
     }
 
@@ -113,7 +123,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId(string $routeTableId) {
+    public function setRouteTableId(string $routeTableId)
+    {
         $this->set("RouteTableId", $routeTableId);
     }
 
@@ -122,7 +133,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -131,7 +143,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -140,7 +153,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -149,16 +163,18 @@ class DescribeSubnetRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
      * Offset: 偏移量，默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -167,16 +183,18 @@ class DescribeSubnetRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 列表长度，默认为20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -185,7 +203,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -194,7 +213,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getShowAvailableIPs(): bool {
+    public function getShowAvailableIPs(): bool
+    {
         return $this->get("ShowAvailableIPs");
     }
 
@@ -203,9 +223,8 @@ class DescribeSubnetRequest extends Request {
      *
      * @param boolean $showAvailableIPs
      */
-    public function setShowAvailableIPs(bool $showAvailableIPs) {
+    public function setShowAvailableIPs(bool $showAvailableIPs)
+    {
         $this->set("ShowAvailableIPs", $showAvailableIPs);
     }
-
-
 }

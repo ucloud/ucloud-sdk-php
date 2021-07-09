@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateBucketRequest extends Request {
+class UpdateBucketRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateBucket"]);
@@ -33,7 +34,8 @@ class UpdateBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class UpdateBucketRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class UpdateBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getBucketName(): string {
+    public function getBucketName(): string
+    {
         return $this->get("BucketName");
     }
 
@@ -60,7 +64,8 @@ class UpdateBucketRequest extends Request {
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName) {
+    public function setBucketName(string $bucketName)
+    {
         $this->set("BucketName", $bucketName);
     }
 
@@ -69,7 +74,8 @@ class UpdateBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -78,9 +84,8 @@ class UpdateBucketRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
-
-
 }

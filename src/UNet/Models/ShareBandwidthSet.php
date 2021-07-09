@@ -18,15 +18,17 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class ShareBandwidthSet extends Response {
+class ShareBandwidthSet extends Response
+{
     
 
     /**
      * ShareBandwidth: 共享带宽带宽值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getShareBandwidth(): int {
+    public function getShareBandwidth(): int
+    {
         return $this->get("ShareBandwidth");
     }
 
@@ -35,7 +37,8 @@ class ShareBandwidthSet extends Response {
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth(int $shareBandwidth) {
+    public function setShareBandwidth(int $shareBandwidth)
+    {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
 
@@ -44,7 +47,8 @@ class ShareBandwidthSet extends Response {
      *
      * @return string|null
      */
-    public function getShareBandwidthName(): string {
+    public function getShareBandwidthName(): string
+    {
         return $this->get("ShareBandwidthName");
     }
 
@@ -53,7 +57,8 @@ class ShareBandwidthSet extends Response {
      *
      * @param string $shareBandwidthName
      */
-    public function setShareBandwidthName(string $shareBandwidthName) {
+    public function setShareBandwidthName(string $shareBandwidthName)
+    {
         $this->set("ShareBandwidthName", $shareBandwidthName);
     }
 
@@ -62,7 +67,8 @@ class ShareBandwidthSet extends Response {
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string {
+    public function getShareBandwidthId(): string
+    {
         return $this->get("ShareBandwidthId");
     }
 
@@ -71,9 +77,8 @@ class ShareBandwidthSet extends Response {
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId) {
+    public function setShareBandwidthId(string $shareBandwidthId)
+    {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
-
-
 }

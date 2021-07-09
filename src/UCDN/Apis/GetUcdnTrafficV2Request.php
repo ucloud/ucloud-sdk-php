@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUcdnTrafficV2Request extends Request {
+class GetUcdnTrafficV2Request extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUcdnTrafficV2"]);
@@ -31,7 +32,8 @@ class GetUcdnTrafficV2Request extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,9 +42,8 @@ class GetUcdnTrafficV2Request extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
-
-
 }

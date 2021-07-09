@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetUHostUpgradePriceResponse extends Response {
+class GetUHostUpgradePriceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetUHostUpgradePriceResponse extends Response {
      *
      * @return float|null
      */
-    public function getPrice(): float {
+    public function getPrice(): float
+    {
         return $this->get("Price");
     }
 
@@ -35,7 +37,8 @@ class GetUHostUpgradePriceResponse extends Response {
      *
      * @param float $price
      */
-    public function setPrice(float $price) {
+    public function setPrice(float $price)
+    {
         $this->set("Price", $price);
     }
 
@@ -44,7 +47,8 @@ class GetUHostUpgradePriceResponse extends Response {
      *
      * @return float|null
      */
-    public function getOriginalPrice(): float {
+    public function getOriginalPrice(): float
+    {
         return $this->get("OriginalPrice");
     }
 
@@ -53,9 +57,8 @@ class GetUHostUpgradePriceResponse extends Response {
      *
      * @param float $originalPrice
      */
-    public function setOriginalPrice(float $originalPrice) {
+    public function setOriginalPrice(float $originalPrice)
+    {
         $this->set("OriginalPrice", $originalPrice);
     }
-
-
 }

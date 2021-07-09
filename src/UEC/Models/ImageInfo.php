@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class ImageInfo extends Response {
+class ImageInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ImageInfo extends Response {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -35,7 +37,8 @@ class ImageInfo extends Response {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
@@ -44,7 +47,8 @@ class ImageInfo extends Response {
      *
      * @return string|null
      */
-    public function getImageName(): string {
+    public function getImageName(): string
+    {
         return $this->get("ImageName");
     }
 
@@ -53,16 +57,18 @@ class ImageInfo extends Response {
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName) {
+    public function setImageName(string $imageName)
+    {
         $this->set("ImageName", $imageName);
     }
 
     /**
      * ImageType: 镜像类型：1标准镜像，2行业镜像，3自定义镜像
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getImageType(): int {
+    public function getImageType(): int
+    {
         return $this->get("ImageType");
     }
 
@@ -71,7 +77,8 @@ class ImageInfo extends Response {
      *
      * @param int $imageType
      */
-    public function setImageType(int $imageType) {
+    public function setImageType(int $imageType)
+    {
         $this->set("ImageType", $imageType);
     }
 
@@ -80,7 +87,8 @@ class ImageInfo extends Response {
      *
      * @return string|null
      */
-    public function getOcType(): string {
+    public function getOcType(): string
+    {
         return $this->get("OcType");
     }
 
@@ -89,7 +97,8 @@ class ImageInfo extends Response {
      *
      * @param string $ocType
      */
-    public function setOcType(string $ocType) {
+    public function setOcType(string $ocType)
+    {
         $this->set("OcType", $ocType);
     }
 
@@ -98,7 +107,8 @@ class ImageInfo extends Response {
      *
      * @return string|null
      */
-    public function getImageDesc(): string {
+    public function getImageDesc(): string
+    {
         return $this->get("ImageDesc");
     }
 
@@ -107,16 +117,18 @@ class ImageInfo extends Response {
      *
      * @param string $imageDesc
      */
-    public function setImageDesc(string $imageDesc) {
+    public function setImageDesc(string $imageDesc)
+    {
         $this->set("ImageDesc", $imageDesc);
     }
 
     /**
      * State: 镜像状态：镜像状态 1可用，2不可用
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getState(): int {
+    public function getState(): int
+    {
         return $this->get("State");
     }
 
@@ -125,16 +137,18 @@ class ImageInfo extends Response {
      *
      * @param int $state
      */
-    public function setState(int $state) {
+    public function setState(int $state)
+    {
         $this->set("State", $state);
     }
 
     /**
      * ImageSize: 镜像大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getImageSize(): int {
+    public function getImageSize(): int
+    {
         return $this->get("ImageSize");
     }
 
@@ -143,16 +157,18 @@ class ImageInfo extends Response {
      *
      * @param int $imageSize
      */
-    public function setImageSize(int $imageSize) {
+    public function setImageSize(int $imageSize)
+    {
         $this->set("ImageSize", $imageSize);
     }
 
     /**
      * CreateTime: 镜像创建时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -161,7 +177,8 @@ class ImageInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -170,7 +187,8 @@ class ImageInfo extends Response {
      *
      * @return DeployImageInfo[]|null
      */
-    public function getDeployInfoList(): array {
+    public function getDeployInfoList(): array
+    {
         $items = $this->get("DeployInfoList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -184,13 +202,12 @@ class ImageInfo extends Response {
      *
      * @param DeployImageInfo[] $deployInfoList
      */
-    public function setDeployInfoList(array $deployInfoList) {
+    public function setDeployInfoList(array $deployInfoList)
+    {
         $result = [];
         foreach ($deployInfoList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

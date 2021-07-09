@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class UMemPriceSet extends Response {
+class UMemPriceSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UMemPriceSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -35,16 +37,18 @@ class UMemPriceSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Price: 现价
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -53,16 +57,18 @@ class UMemPriceSet extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
 
     /**
      * OriginalPrice: 原价
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginalPrice(): int {
+    public function getOriginalPrice(): int
+    {
         return $this->get("OriginalPrice");
     }
 
@@ -71,9 +77,8 @@ class UMemPriceSet extends Response {
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice) {
+    public function setOriginalPrice(int $originalPrice)
+    {
         $this->set("OriginalPrice", $originalPrice);
     }
-
-
 }

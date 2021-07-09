@@ -18,33 +18,37 @@ namespace UCloud\Cube\Models;
 
 use UCloud\Core\Response\Response;
 
-class MetricDataSet extends Response {
+class MetricDataSet extends Response
+{
     
 
     /**
-     * MetricName: 
+     * MetricName:
      *
      * @return string|null
      */
-    public function getMetricName(): string {
+    public function getMetricName(): string
+    {
         return $this->get("MetricName");
     }
 
     /**
-     * MetricName: 
+     * MetricName:
      *
      * @param string $metricName
      */
-    public function setMetricName(string $metricName) {
+    public function setMetricName(string $metricName)
+    {
         $this->set("MetricName", $metricName);
     }
 
     /**
-     * Values: 
+     * Values:
      *
      * @return ValueSet[]|null
      */
-    public function getValues(): array {
+    public function getValues(): array
+    {
         $items = $this->get("Values") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -54,17 +58,16 @@ class MetricDataSet extends Response {
     }
 
     /**
-     * Values: 
+     * Values:
      *
      * @param ValueSet[] $values
      */
-    public function setValues(array $values) {
+    public function setValues(array $values)
+    {
         $result = [];
         foreach ($values as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

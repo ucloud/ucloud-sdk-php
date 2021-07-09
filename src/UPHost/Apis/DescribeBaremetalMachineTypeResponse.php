@@ -22,7 +22,8 @@ use UCloud\UPHost\Models\PHostCPUSet;
 use UCloud\UPHost\Models\PHostComponentSet;
 use UCloud\UPHost\Models\PHostClusterSet;
 
-class DescribeBaremetalMachineTypeResponse extends Response {
+class DescribeBaremetalMachineTypeResponse extends Response
+{
     
 
     /**
@@ -30,7 +31,8 @@ class DescribeBaremetalMachineTypeResponse extends Response {
      *
      * @return PHostCloudMachineTypeSet[]|null
      */
-    public function getMachineTypes(): array {
+    public function getMachineTypes(): array
+    {
         $items = $this->get("MachineTypes") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -44,13 +46,12 @@ class DescribeBaremetalMachineTypeResponse extends Response {
      *
      * @param PHostCloudMachineTypeSet[] $machineTypes
      */
-    public function setMachineTypes(array $machineTypes) {
+    public function setMachineTypes(array $machineTypes)
+    {
         $result = [];
         foreach ($machineTypes as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

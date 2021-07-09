@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUMemSpaceResponse extends Response {
+class CreateUMemSpaceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUMemSpaceResponse extends Response {
      *
      * @return string|null
      */
-    public function getSpaceId(): string {
+    public function getSpaceId(): string
+    {
         return $this->get("SpaceId");
     }
 
@@ -35,9 +37,8 @@ class CreateUMemSpaceResponse extends Response {
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId) {
+    public function setSpaceId(string $spaceId)
+    {
         $this->set("SpaceId", $spaceId);
     }
-
-
 }

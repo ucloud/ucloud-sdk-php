@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class TerminateUHostInstanceResponse extends Response {
+class TerminateUHostInstanceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class TerminateUHostInstanceResponse extends Response {
      *
      * @return string|null
      */
-    public function getInRecycle(): string {
+    public function getInRecycle(): string
+    {
         return $this->get("InRecycle");
     }
 
@@ -35,7 +37,8 @@ class TerminateUHostInstanceResponse extends Response {
      *
      * @param string $inRecycle
      */
-    public function setInRecycle(string $inRecycle) {
+    public function setInRecycle(string $inRecycle)
+    {
         $this->set("InRecycle", $inRecycle);
     }
 
@@ -44,7 +47,8 @@ class TerminateUHostInstanceResponse extends Response {
      *
      * @return string|null
      */
-    public function getUHostId(): string {
+    public function getUHostId(): string
+    {
         return $this->get("UHostId");
     }
 
@@ -53,9 +57,8 @@ class TerminateUHostInstanceResponse extends Response {
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId) {
+    public function setUHostId(string $uHostId)
+    {
         $this->set("UHostId", $uHostId);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDBInstanceRequest extends Request {
+class DescribeUDBInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDBInstance"]);
@@ -32,7 +33,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -59,7 +63,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -68,7 +73,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -77,7 +83,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -86,7 +93,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getClassType(): string {
+    public function getClassType(): string
+    {
         return $this->get("ClassType");
     }
 
@@ -95,16 +103,18 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param string $classType
      */
-    public function setClassType(string $classType) {
+    public function setClassType(string $classType)
+    {
         $this->set("ClassType", $classType);
     }
 
     /**
      * Offset: 分页显示起始偏移位置，列表操作时必填
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -113,16 +123,18 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 分页显示数量，列表操作时必填
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -131,7 +143,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -140,7 +153,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBId(): string {
+    public function getDBId(): string
+    {
         return $this->get("DBId");
     }
 
@@ -149,7 +163,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId) {
+    public function setDBId(string $dbId)
+    {
         $this->set("DBId", $dbId);
     }
 
@@ -158,7 +173,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getIsInUDBC(): bool {
+    public function getIsInUDBC(): bool
+    {
         return $this->get("IsInUDBC");
     }
 
@@ -167,7 +183,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param boolean $isInUDBC
      */
-    public function setIsInUDBC(bool $isInUDBC) {
+    public function setIsInUDBC(bool $isInUDBC)
+    {
         $this->set("IsInUDBC", $isInUDBC);
     }
 
@@ -176,7 +193,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDBCId(): string {
+    public function getUDBCId(): string
+    {
         return $this->get("UDBCId");
     }
 
@@ -185,7 +203,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param string $udbcId
      */
-    public function setUDBCId(string $udbcId) {
+    public function setUDBCId(string $udbcId)
+    {
         $this->set("UDBCId", $udbcId);
     }
 
@@ -194,7 +213,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getIncludeSlaves(): bool {
+    public function getIncludeSlaves(): bool
+    {
         return $this->get("IncludeSlaves");
     }
 
@@ -203,9 +223,8 @@ class DescribeUDBInstanceRequest extends Request {
      *
      * @param boolean $includeSlaves
      */
-    public function setIncludeSlaves(bool $includeSlaves) {
+    public function setIncludeSlaves(bool $includeSlaves)
+    {
         $this->set("IncludeSlaves", $includeSlaves);
     }
-
-
 }

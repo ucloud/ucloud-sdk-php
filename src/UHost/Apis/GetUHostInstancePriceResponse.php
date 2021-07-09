@@ -19,7 +19,8 @@ namespace UCloud\UHost\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UHost\Models\UHostPriceSet;
 
-class GetUHostInstancePriceResponse extends Response {
+class GetUHostInstancePriceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetUHostInstancePriceResponse extends Response {
      *
      * @return UHostPriceSet[]|null
      */
-    public function getPriceSet(): array {
+    public function getPriceSet(): array
+    {
         $items = $this->get("PriceSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetUHostInstancePriceResponse extends Response {
      *
      * @param UHostPriceSet[] $priceSet
      */
-    public function setPriceSet(array $priceSet) {
+    public function setPriceSet(array $priceSet)
+    {
         $result = [];
         foreach ($priceSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

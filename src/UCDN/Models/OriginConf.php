@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class OriginConf extends Response {
+class OriginConf extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class OriginConf extends Response {
      *
      * @return string[]|null
      */
-    public function getOriginIpList(): array {
+    public function getOriginIpList(): array
+    {
         return $this->get("OriginIpList");
     }
 
@@ -35,7 +37,8 @@ class OriginConf extends Response {
      *
      * @param string[] $originIpList
      */
-    public function setOriginIpList(array $originIpList) {
+    public function setOriginIpList(array $originIpList)
+    {
         $this->set("OriginIpList", $originIpList);
     }
 
@@ -44,7 +47,8 @@ class OriginConf extends Response {
      *
      * @return string|null
      */
-    public function getOriginHost(): string {
+    public function getOriginHost(): string
+    {
         return $this->get("OriginHost");
     }
 
@@ -53,16 +57,18 @@ class OriginConf extends Response {
      *
      * @param string $originHost
      */
-    public function setOriginHost(string $originHost) {
+    public function setOriginHost(string $originHost)
+    {
         $this->set("OriginHost", $originHost);
     }
 
     /**
      * OriginPort: 回源端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginPort(): int {
+    public function getOriginPort(): int
+    {
         return $this->get("OriginPort");
     }
 
@@ -71,7 +77,8 @@ class OriginConf extends Response {
      *
      * @param int $originPort
      */
-    public function setOriginPort(int $originPort) {
+    public function setOriginPort(int $originPort)
+    {
         $this->set("OriginPort", $originPort);
     }
 
@@ -80,7 +87,8 @@ class OriginConf extends Response {
      *
      * @return boolean|null
      */
-    public function getBackupOriginEnable(): bool {
+    public function getBackupOriginEnable(): bool
+    {
         return $this->get("BackupOriginEnable");
     }
 
@@ -89,7 +97,8 @@ class OriginConf extends Response {
      *
      * @param boolean $backupOriginEnable
      */
-    public function setBackupOriginEnable(bool $backupOriginEnable) {
+    public function setBackupOriginEnable(bool $backupOriginEnable)
+    {
         $this->set("BackupOriginEnable", $backupOriginEnable);
     }
 
@@ -98,7 +107,8 @@ class OriginConf extends Response {
      *
      * @return string[]|null
      */
-    public function getBackupOriginIpList(): array {
+    public function getBackupOriginIpList(): array
+    {
         return $this->get("BackupOriginIpList");
     }
 
@@ -107,7 +117,8 @@ class OriginConf extends Response {
      *
      * @param string[] $backupOriginIpList
      */
-    public function setBackupOriginIpList(array $backupOriginIpList) {
+    public function setBackupOriginIpList(array $backupOriginIpList)
+    {
         $this->set("BackupOriginIpList", $backupOriginIpList);
     }
 
@@ -116,7 +127,8 @@ class OriginConf extends Response {
      *
      * @return string|null
      */
-    public function getBackupOriginHost(): string {
+    public function getBackupOriginHost(): string
+    {
         return $this->get("BackupOriginHost");
     }
 
@@ -125,7 +137,8 @@ class OriginConf extends Response {
      *
      * @param string $backupOriginHost
      */
-    public function setBackupOriginHost(string $backupOriginHost) {
+    public function setBackupOriginHost(string $backupOriginHost)
+    {
         $this->set("BackupOriginHost", $backupOriginHost);
     }
 
@@ -134,7 +147,8 @@ class OriginConf extends Response {
      *
      * @return string|null
      */
-    public function getOriginErrorCode(): string {
+    public function getOriginErrorCode(): string
+    {
         return $this->get("OriginErrorCode");
     }
 
@@ -143,16 +157,18 @@ class OriginConf extends Response {
      *
      * @param string $originErrorCode
      */
-    public function setOriginErrorCode(string $originErrorCode) {
+    public function setOriginErrorCode(string $originErrorCode)
+    {
         $this->set("OriginErrorCode", $originErrorCode);
     }
 
     /**
      * OriginErrorNum: 回主源的回源失败数，默认1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginErrorNum(): int {
+    public function getOriginErrorNum(): int
+    {
         return $this->get("OriginErrorNum");
     }
 
@@ -161,7 +177,8 @@ class OriginConf extends Response {
      *
      * @param int $originErrorNum
      */
-    public function setOriginErrorNum(int $originErrorNum) {
+    public function setOriginErrorNum(int $originErrorNum)
+    {
         $this->set("OriginErrorNum", $originErrorNum);
     }
 
@@ -170,7 +187,8 @@ class OriginConf extends Response {
      *
      * @return string|null
      */
-    public function getOriginProtocol(): string {
+    public function getOriginProtocol(): string
+    {
         return $this->get("OriginProtocol");
     }
 
@@ -179,16 +197,18 @@ class OriginConf extends Response {
      *
      * @param string $originProtocol
      */
-    public function setOriginProtocol(string $originProtocol) {
+    public function setOriginProtocol(string $originProtocol)
+    {
         $this->set("OriginProtocol", $originProtocol);
     }
 
     /**
      * OriginFollow301: 跟随301跳转  0=不跟随 1=跟随
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginFollow301(): int {
+    public function getOriginFollow301(): int
+    {
         return $this->get("OriginFollow301");
     }
 
@@ -197,9 +217,8 @@ class OriginConf extends Response {
      *
      * @param int $originFollow301
      */
-    public function setOriginFollow301(int $originFollow301) {
+    public function setOriginFollow301(int $originFollow301)
+    {
         $this->set("OriginFollow301", $originFollow301);
     }
-
-
 }

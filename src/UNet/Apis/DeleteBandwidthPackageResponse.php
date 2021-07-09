@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteBandwidthPackageResponse extends Response {
+class DeleteBandwidthPackageResponse extends Response
+{
     
 
 

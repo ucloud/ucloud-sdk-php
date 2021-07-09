@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ImportUEcCustomImageResponse extends Response {
+class ImportUEcCustomImageResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ImportUEcCustomImageResponse extends Response {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -35,9 +37,8 @@ class ImportUEcCustomImageResponse extends Response {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
-
-
 }

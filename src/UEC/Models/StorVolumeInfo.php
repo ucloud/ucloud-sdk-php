@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class StorVolumeInfo extends Response {
+class StorVolumeInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class StorVolumeInfo extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -35,7 +37,8 @@ class StorVolumeInfo extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -44,7 +47,8 @@ class StorVolumeInfo extends Response {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -53,7 +57,8 @@ class StorVolumeInfo extends Response {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
@@ -62,7 +67,8 @@ class StorVolumeInfo extends Response {
      *
      * @return string|null
      */
-    public function getMountPoint(): string {
+    public function getMountPoint(): string
+    {
         return $this->get("MountPoint");
     }
 
@@ -71,16 +77,18 @@ class StorVolumeInfo extends Response {
      *
      * @param string $mountPoint
      */
-    public function setMountPoint(string $mountPoint) {
+    public function setMountPoint(string $mountPoint)
+    {
         $this->set("MountPoint", $mountPoint);
     }
 
     /**
      * DiskSize: 容量（单位GB）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSize(): int {
+    public function getDiskSize(): int
+    {
         return $this->get("DiskSize");
     }
 
@@ -89,9 +97,8 @@ class StorVolumeInfo extends Response {
      *
      * @param int $diskSize
      */
-    public function setDiskSize(int $diskSize) {
+    public function setDiskSize(int $diskSize)
+    {
         $this->set("DiskSize", $diskSize);
     }
-
-
 }

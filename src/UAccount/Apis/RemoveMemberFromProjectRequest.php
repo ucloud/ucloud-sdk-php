@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
 
-class RemoveMemberFromProjectRequest extends Request {
+class RemoveMemberFromProjectRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "RemoveMemberFromProject"]);
@@ -29,20 +30,22 @@ class RemoveMemberFromProjectRequest extends Request {
     
 
     /**
-     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 
+     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 
+     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class RemoveMemberFromProjectRequest extends Request {
      *
      * @return string|null
      */
-    public function getMemberEmail(): string {
+    public function getMemberEmail(): string
+    {
         return $this->get("MemberEmail");
     }
 
@@ -60,9 +64,8 @@ class RemoveMemberFromProjectRequest extends Request {
      *
      * @param string $memberEmail
      */
-    public function setMemberEmail(string $memberEmail) {
+    public function setMemberEmail(string $memberEmail)
+    {
         $this->set("MemberEmail", $memberEmail);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class UGAALine extends Response {
+class UGAALine extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UGAALine extends Response {
      *
      * @return string|null
      */
-    public function getLineFrom(): string {
+    public function getLineFrom(): string
+    {
         return $this->get("LineFrom");
     }
 
@@ -35,7 +37,8 @@ class UGAALine extends Response {
      *
      * @param string $lineFrom
      */
-    public function setLineFrom(string $lineFrom) {
+    public function setLineFrom(string $lineFrom)
+    {
         $this->set("LineFrom", $lineFrom);
     }
 
@@ -44,7 +47,8 @@ class UGAALine extends Response {
      *
      * @return string|null
      */
-    public function getLineTo(): string {
+    public function getLineTo(): string
+    {
         return $this->get("LineTo");
     }
 
@@ -53,7 +57,8 @@ class UGAALine extends Response {
      *
      * @param string $lineTo
      */
-    public function setLineTo(string $lineTo) {
+    public function setLineTo(string $lineTo)
+    {
         $this->set("LineTo", $lineTo);
     }
 
@@ -62,7 +67,8 @@ class UGAALine extends Response {
      *
      * @return string|null
      */
-    public function getLineFromName(): string {
+    public function getLineFromName(): string
+    {
         return $this->get("LineFromName");
     }
 
@@ -71,7 +77,8 @@ class UGAALine extends Response {
      *
      * @param string $lineFromName
      */
-    public function setLineFromName(string $lineFromName) {
+    public function setLineFromName(string $lineFromName)
+    {
         $this->set("LineFromName", $lineFromName);
     }
 
@@ -80,7 +87,8 @@ class UGAALine extends Response {
      *
      * @return string|null
      */
-    public function getLineToName(): string {
+    public function getLineToName(): string
+    {
         return $this->get("LineToName");
     }
 
@@ -89,16 +97,18 @@ class UGAALine extends Response {
      *
      * @param string $lineToName
      */
-    public function setLineToName(string $lineToName) {
+    public function setLineToName(string $lineToName)
+    {
         $this->set("LineToName", $lineToName);
     }
 
     /**
      * MaxBandwidth: 线路可售最大带宽
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMaxBandwidth(): int {
+    public function getMaxBandwidth(): int
+    {
         return $this->get("MaxBandwidth");
     }
 
@@ -107,7 +117,8 @@ class UGAALine extends Response {
      *
      * @param int $maxBandwidth
      */
-    public function setMaxBandwidth(int $maxBandwidth) {
+    public function setMaxBandwidth(int $maxBandwidth)
+    {
         $this->set("MaxBandwidth", $maxBandwidth);
     }
 
@@ -116,7 +127,8 @@ class UGAALine extends Response {
      *
      * @return string|null
      */
-    public function getLineId(): string {
+    public function getLineId(): string
+    {
         return $this->get("LineId");
     }
 
@@ -125,7 +137,8 @@ class UGAALine extends Response {
      *
      * @param string $lineId
      */
-    public function setLineId(string $lineId) {
+    public function setLineId(string $lineId)
+    {
         $this->set("LineId", $lineId);
     }
 
@@ -134,7 +147,8 @@ class UGAALine extends Response {
      *
      * @return LineDetail[]|null
      */
-    public function getLineDetail(): array {
+    public function getLineDetail(): array
+    {
         $items = $this->get("LineDetail") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -148,13 +162,12 @@ class UGAALine extends Response {
      *
      * @param LineDetail[] $lineDetail
      */
-    public function setLineDetail(array $lineDetail) {
+    public function setLineDetail(array $lineDetail)
+    {
         $result = [];
         foreach ($lineDetail as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UBill\Models;
 
 use UCloud\Core\Response\Response;
 
-class AccountInfo extends Response {
+class AccountInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AccountInfo extends Response {
      *
      * @return string|null
      */
-    public function getAmountFreeze(): string {
+    public function getAmountFreeze(): string
+    {
         return $this->get("AmountFreeze");
     }
 
@@ -35,7 +37,8 @@ class AccountInfo extends Response {
      *
      * @param string $amountFreeze
      */
-    public function setAmountFreeze(string $amountFreeze) {
+    public function setAmountFreeze(string $amountFreeze)
+    {
         $this->set("AmountFreeze", $amountFreeze);
     }
 
@@ -44,7 +47,8 @@ class AccountInfo extends Response {
      *
      * @return string|null
      */
-    public function getAmountCredit(): string {
+    public function getAmountCredit(): string
+    {
         return $this->get("AmountCredit");
     }
 
@@ -53,7 +57,8 @@ class AccountInfo extends Response {
      *
      * @param string $amountCredit
      */
-    public function setAmountCredit(string $amountCredit) {
+    public function setAmountCredit(string $amountCredit)
+    {
         $this->set("AmountCredit", $amountCredit);
     }
 
@@ -62,7 +67,8 @@ class AccountInfo extends Response {
      *
      * @return string|null
      */
-    public function getAmountFree(): string {
+    public function getAmountFree(): string
+    {
         return $this->get("AmountFree");
     }
 
@@ -71,7 +77,8 @@ class AccountInfo extends Response {
      *
      * @param string $amountFree
      */
-    public function setAmountFree(string $amountFree) {
+    public function setAmountFree(string $amountFree)
+    {
         $this->set("AmountFree", $amountFree);
     }
 
@@ -80,7 +87,8 @@ class AccountInfo extends Response {
      *
      * @return string|null
      */
-    public function getAmount(): string {
+    public function getAmount(): string
+    {
         return $this->get("Amount");
     }
 
@@ -89,7 +97,8 @@ class AccountInfo extends Response {
      *
      * @param string $amount
      */
-    public function setAmount(string $amount) {
+    public function setAmount(string $amount)
+    {
         $this->set("Amount", $amount);
     }
 
@@ -98,7 +107,8 @@ class AccountInfo extends Response {
      *
      * @return string|null
      */
-    public function getAmountAvailable(): string {
+    public function getAmountAvailable(): string
+    {
         return $this->get("AmountAvailable");
     }
 
@@ -107,9 +117,8 @@ class AccountInfo extends Response {
      *
      * @param string $amountAvailable
      */
-    public function setAmountAvailable(string $amountAvailable) {
+    public function setAmountAvailable(string $amountAvailable)
+    {
         $this->set("AmountAvailable", $amountAvailable);
     }
-
-
 }

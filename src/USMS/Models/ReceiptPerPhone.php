@@ -18,7 +18,8 @@ namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
-class ReceiptPerPhone extends Response {
+class ReceiptPerPhone extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ReceiptPerPhone extends Response {
      *
      * @return string|null
      */
-    public function getPhone(): string {
+    public function getPhone(): string
+    {
         return $this->get("Phone");
     }
 
@@ -35,16 +37,18 @@ class ReceiptPerPhone extends Response {
      *
      * @param string $phone
      */
-    public function setPhone(string $phone) {
+    public function setPhone(string $phone)
+    {
         $this->set("Phone", $phone);
     }
 
     /**
      * CostCount: 消耗短信条数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCostCount(): int {
+    public function getCostCount(): int
+    {
         return $this->get("CostCount");
     }
 
@@ -53,7 +57,8 @@ class ReceiptPerPhone extends Response {
      *
      * @param int $costCount
      */
-    public function setCostCount(int $costCount) {
+    public function setCostCount(int $costCount)
+    {
         $this->set("CostCount", $costCount);
     }
 
@@ -62,7 +67,8 @@ class ReceiptPerPhone extends Response {
      *
      * @return string|null
      */
-    public function getReceiptResult(): string {
+    public function getReceiptResult(): string
+    {
         return $this->get("ReceiptResult");
     }
 
@@ -71,7 +77,8 @@ class ReceiptPerPhone extends Response {
      *
      * @param string $receiptResult
      */
-    public function setReceiptResult(string $receiptResult) {
+    public function setReceiptResult(string $receiptResult)
+    {
         $this->set("ReceiptResult", $receiptResult);
     }
 
@@ -80,7 +87,8 @@ class ReceiptPerPhone extends Response {
      *
      * @return string|null
      */
-    public function getReceiptCode(): string {
+    public function getReceiptCode(): string
+    {
         return $this->get("ReceiptCode");
     }
 
@@ -89,7 +97,8 @@ class ReceiptPerPhone extends Response {
      *
      * @param string $receiptCode
      */
-    public function setReceiptCode(string $receiptCode) {
+    public function setReceiptCode(string $receiptCode)
+    {
         $this->set("ReceiptCode", $receiptCode);
     }
 
@@ -98,7 +107,8 @@ class ReceiptPerPhone extends Response {
      *
      * @return string|null
      */
-    public function getReceiptDesc(): string {
+    public function getReceiptDesc(): string
+    {
         return $this->get("ReceiptDesc");
     }
 
@@ -107,16 +117,18 @@ class ReceiptPerPhone extends Response {
      *
      * @param string $receiptDesc
      */
-    public function setReceiptDesc(string $receiptDesc) {
+    public function setReceiptDesc(string $receiptDesc)
+    {
         $this->set("ReceiptDesc", $receiptDesc);
     }
 
     /**
      * ReceiptTime: 回执返回时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getReceiptTime(): int {
+    public function getReceiptTime(): int
+    {
         return $this->get("ReceiptTime");
     }
 
@@ -125,7 +137,8 @@ class ReceiptPerPhone extends Response {
      *
      * @param int $receiptTime
      */
-    public function setReceiptTime(int $receiptTime) {
+    public function setReceiptTime(int $receiptTime)
+    {
         $this->set("ReceiptTime", $receiptTime);
     }
 
@@ -134,7 +147,8 @@ class ReceiptPerPhone extends Response {
      *
      * @return string|null
      */
-    public function getUserId(): string {
+    public function getUserId(): string
+    {
         return $this->get("UserId");
     }
 
@@ -143,9 +157,8 @@ class ReceiptPerPhone extends Response {
      *
      * @param string $userId
      */
-    public function setUserId(string $userId) {
+    public function setUserId(string $userId)
+    {
         $this->set("UserId", $userId);
     }
-
-
 }

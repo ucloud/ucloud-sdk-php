@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
 
-class AddUK8SExistingUHostResponse extends Response {
+class AddUK8SExistingUHostResponse extends Response
+{
     
 
 

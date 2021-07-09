@@ -21,7 +21,8 @@ use UCloud\UK8S\Models\NodeInfoV2;
 use UCloud\UK8S\Models\UHostIPSet;
 use UCloud\UK8S\Models\KubeProxy;
 
-class ListUK8SClusterNodeV2Response extends Response {
+class ListUK8SClusterNodeV2Response extends Response
+{
     
 
     /**
@@ -29,7 +30,8 @@ class ListUK8SClusterNodeV2Response extends Response {
      *
      * @return NodeInfoV2[]|null
      */
-    public function getNodeSet(): array {
+    public function getNodeSet(): array
+    {
         $items = $this->get("NodeSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -43,7 +45,8 @@ class ListUK8SClusterNodeV2Response extends Response {
      *
      * @param NodeInfoV2[] $nodeSet
      */
-    public function setNodeSet(array $nodeSet) {
+    public function setNodeSet(array $nodeSet)
+    {
         $result = [];
         foreach ($nodeSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -54,9 +57,10 @@ class ListUK8SClusterNodeV2Response extends Response {
     /**
      * TotalCount: 满足条件的节点数量，包括Master。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -65,9 +69,8 @@ class ListUK8SClusterNodeV2Response extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

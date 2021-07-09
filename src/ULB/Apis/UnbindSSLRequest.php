@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UnbindSSLRequest extends Request {
+class UnbindSSLRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UnbindSSL"]);
@@ -36,7 +37,8 @@ class UnbindSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class UnbindSSLRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class UnbindSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -63,7 +67,8 @@ class UnbindSSLRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -72,7 +77,8 @@ class UnbindSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getULBId(): string {
+    public function getULBId(): string
+    {
         return $this->get("ULBId");
     }
 
@@ -81,7 +87,8 @@ class UnbindSSLRequest extends Request {
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId) {
+    public function setULBId(string $ulbId)
+    {
         $this->set("ULBId", $ulbId);
     }
 
@@ -90,7 +97,8 @@ class UnbindSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getVServerId(): string {
+    public function getVServerId(): string
+    {
         return $this->get("VServerId");
     }
 
@@ -99,7 +107,8 @@ class UnbindSSLRequest extends Request {
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId) {
+    public function setVServerId(string $vServerId)
+    {
         $this->set("VServerId", $vServerId);
     }
 
@@ -108,7 +117,8 @@ class UnbindSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getSSLId(): string {
+    public function getSSLId(): string
+    {
         return $this->get("SSLId");
     }
 
@@ -117,9 +127,8 @@ class UnbindSSLRequest extends Request {
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId) {
+    public function setSSLId(string $sslId)
+    {
         $this->set("SSLId", $sslId);
     }
-
-
 }

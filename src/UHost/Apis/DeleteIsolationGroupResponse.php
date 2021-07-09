@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteIsolationGroupResponse extends Response {
+class DeleteIsolationGroupResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DeleteIsolationGroupResponse extends Response {
      *
      * @return string|null
      */
-    public function getGroupId(): string {
+    public function getGroupId(): string
+    {
         return $this->get("GroupId");
     }
 
@@ -35,9 +37,8 @@ class DeleteIsolationGroupResponse extends Response {
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId) {
+    public function setGroupId(string $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
-
-
 }

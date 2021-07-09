@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUK8SClusterV2ParamMaster extends Request {
+class CreateUK8SClusterV2ParamMaster extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUK8SClusterV2ParamMaster extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,9 +37,8 @@ class CreateUK8SClusterV2ParamMaster extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
-
-
 }

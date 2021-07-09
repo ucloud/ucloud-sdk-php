@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class NodeList extends Response {
+class NodeList extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NodeList extends Response {
      *
      * @return string|null
      */
-    public function getNodeId(): string {
+    public function getNodeId(): string
+    {
         return $this->get("NodeId");
     }
 
@@ -35,9 +37,8 @@ class NodeList extends Response {
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId) {
+    public function setNodeId(string $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
-
-
 }

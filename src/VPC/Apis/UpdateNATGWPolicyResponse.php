@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpdateNATGWPolicyResponse extends Response {
+class UpdateNATGWPolicyResponse extends Response
+{
     
 
 

@@ -22,15 +22,17 @@ use UCloud\UHost\Models\UHostDiskSet;
 use UCloud\UHost\Models\UHostIPSet;
 use UCloud\UHost\Models\UHostKeyPair;
 
-class DescribeUHostInstanceResponse extends Response {
+class DescribeUHostInstanceResponse extends Response
+{
     
 
     /**
      * TotalCount: UHostInstance总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -39,7 +41,8 @@ class DescribeUHostInstanceResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -48,7 +51,8 @@ class DescribeUHostInstanceResponse extends Response {
      *
      * @return UHostInstanceSet[]|null
      */
-    public function getUHostSet(): array {
+    public function getUHostSet(): array
+    {
         $items = $this->get("UHostSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -62,13 +66,12 @@ class DescribeUHostInstanceResponse extends Response {
      *
      * @param UHostInstanceSet[] $uHostSet
      */
-    public function setUHostSet(array $uHostSet) {
+    public function setUHostSet(array $uHostSet)
+    {
         $result = [];
         foreach ($uHostSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

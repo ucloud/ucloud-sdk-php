@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateUDBParamGroupRequest extends Request {
+class UpdateUDBParamGroupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateUDBParamGroup"]);
@@ -34,7 +35,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,16 +85,18 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * GroupId: 配置参数组id，使用DescribeUDBParamGroup获得
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getGroupId(): int {
+    public function getGroupId(): int
+    {
         return $this->get("GroupId");
     }
 
@@ -97,7 +105,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId) {
+    public function setGroupId(int $groupId)
+    {
         $this->set("GroupId", $groupId);
     }
 
@@ -106,7 +115,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getKey(): string {
+    public function getKey(): string
+    {
         return $this->get("Key");
     }
 
@@ -115,7 +125,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param string $key
      */
-    public function setKey(string $key) {
+    public function setKey(string $key)
+    {
         $this->set("Key", $key);
     }
 
@@ -124,7 +135,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getValue(): string {
+    public function getValue(): string
+    {
         return $this->get("Value");
     }
 
@@ -133,7 +145,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param string $value
      */
-    public function setValue(string $value) {
+    public function setValue(string $value)
+    {
         $this->set("Value", $value);
     }
 
@@ -142,7 +155,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -151,7 +165,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -160,7 +175,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getDescription(): string {
+    public function getDescription(): string
+    {
         return $this->get("Description");
     }
 
@@ -169,7 +185,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    public function setDescription(string $description)
+    {
         $this->set("Description", $description);
     }
 
@@ -178,7 +195,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool {
+    public function getRegionFlag(): bool
+    {
         return $this->get("RegionFlag");
     }
 
@@ -187,9 +205,8 @@ class UpdateUDBParamGroupRequest extends Request {
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag) {
+    public function setRegionFlag(bool $regionFlag)
+    {
         $this->set("RegionFlag", $regionFlag);
     }
-
-
 }

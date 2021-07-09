@@ -19,7 +19,8 @@ namespace UCloud\USMS\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\USMS\Models\OutTemplate;
 
-class QueryUSMSTemplateResponse extends Response {
+class QueryUSMSTemplateResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class QueryUSMSTemplateResponse extends Response {
      *
      * @return OutTemplate|null
      */
-    public function getData(): OutTemplate {
+    public function getData(): OutTemplate
+    {
         return new OutTemplate($this->get("Data"));
     }
 
@@ -36,9 +38,8 @@ class QueryUSMSTemplateResponse extends Response {
      *
      * @param OutTemplate $data
      */
-    public function setData(OutTemplate $data) {
+    public function setData(OutTemplate $data)
+    {
         $this->set("Data", $data->getAll());
     }
-
-
 }

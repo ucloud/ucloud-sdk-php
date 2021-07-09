@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Response\Response;
 
-class AddMemberToProjectResponse extends Response {
+class AddMemberToProjectResponse extends Response
+{
     
 
 

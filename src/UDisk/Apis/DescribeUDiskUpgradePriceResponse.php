@@ -18,15 +18,17 @@ namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DescribeUDiskUpgradePriceResponse extends Response {
+class DescribeUDiskUpgradePriceResponse extends Response
+{
     
 
     /**
      * Price: 价格
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -35,16 +37,18 @@ class DescribeUDiskUpgradePriceResponse extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
 
     /**
      * OriginalPrice: 用户折后价 (对应计费CustomPrice)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginalPrice(): int {
+    public function getOriginalPrice(): int
+    {
         return $this->get("OriginalPrice");
     }
 
@@ -53,9 +57,8 @@ class DescribeUDiskUpgradePriceResponse extends Response {
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice) {
+    public function setOriginalPrice(int $originalPrice)
+    {
         $this->set("OriginalPrice", $originalPrice);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ReinstallPHostRequest extends Request {
+class ReinstallPHostRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ReinstallPHost"]);
@@ -35,7 +36,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,7 +86,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -89,7 +96,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getPHostId(): string {
+    public function getPHostId(): string
+    {
         return $this->get("PHostId");
     }
 
@@ -98,7 +106,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId) {
+    public function setPHostId(string $pHostId)
+    {
         $this->set("PHostId", $pHostId);
     }
 
@@ -107,7 +116,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->get("Password");
     }
 
@@ -116,7 +126,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->set("Password", $password);
     }
 
@@ -125,7 +136,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -134,7 +146,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
@@ -143,7 +156,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -152,7 +166,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -161,7 +176,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -170,7 +186,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -179,7 +196,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -188,7 +206,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -197,7 +216,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getReserveDisk(): string {
+    public function getReserveDisk(): string
+    {
         return $this->get("ReserveDisk");
     }
 
@@ -206,7 +226,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $reserveDisk
      */
-    public function setReserveDisk(string $reserveDisk) {
+    public function setReserveDisk(string $reserveDisk)
+    {
         $this->set("ReserveDisk", $reserveDisk);
     }
 
@@ -215,7 +236,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @return string|null
      */
-    public function getRaid(): string {
+    public function getRaid(): string
+    {
         return $this->get("Raid");
     }
 
@@ -224,16 +246,18 @@ class ReinstallPHostRequest extends Request {
      *
      * @param string $raid
      */
-    public function setRaid(string $raid) {
+    public function setRaid(string $raid)
+    {
         $this->set("Raid", $raid);
     }
 
     /**
      * BootDiskSpace: 裸金属机型参数->系统盘大小。 单位：GB， 范围[20,500]， 步长：10
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBootDiskSpace(): int {
+    public function getBootDiskSpace(): int
+    {
         return $this->get("BootDiskSpace");
     }
 
@@ -242,9 +266,8 @@ class ReinstallPHostRequest extends Request {
      *
      * @param int $bootDiskSpace
      */
-    public function setBootDiskSpace(int $bootDiskSpace) {
+    public function setBootDiskSpace(int $bootDiskSpace)
+    {
         $this->set("BootDiskSpace", $bootDiskSpace);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class UnetBandwidthPackageSet extends Response {
+class UnetBandwidthPackageSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @return string|null
      */
-    public function getBandwidthPackageId(): string {
+    public function getBandwidthPackageId(): string
+    {
         return $this->get("BandwidthPackageId");
     }
 
@@ -35,16 +37,18 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @param string $bandwidthPackageId
      */
-    public function setBandwidthPackageId(string $bandwidthPackageId) {
+    public function setBandwidthPackageId(string $bandwidthPackageId)
+    {
         $this->set("BandwidthPackageId", $bandwidthPackageId);
     }
 
     /**
      * EnableTime: 生效时间, 格式为 Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEnableTime(): int {
+    public function getEnableTime(): int
+    {
         return $this->get("EnableTime");
     }
 
@@ -53,16 +57,18 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @param int $enableTime
      */
-    public function setEnableTime(int $enableTime) {
+    public function setEnableTime(int $enableTime)
+    {
         $this->set("EnableTime", $enableTime);
     }
 
     /**
      * DisableTime: 失效时间, 格式为 Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDisableTime(): int {
+    public function getDisableTime(): int
+    {
         return $this->get("DisableTime");
     }
 
@@ -71,16 +77,18 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @param int $disableTime
      */
-    public function setDisableTime(int $disableTime) {
+    public function setDisableTime(int $disableTime)
+    {
         $this->set("DisableTime", $disableTime);
     }
 
     /**
      * CreateTime: 创建时间, 格式为 Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -89,16 +97,18 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * Bandwidth: 带宽包的临时带宽值, 单位Mbps
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -107,7 +117,8 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -116,7 +127,8 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -125,7 +137,8 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
@@ -134,7 +147,8 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @return EIPAddrSet[]|null
      */
-    public function getEIPAddr(): array {
+    public function getEIPAddr(): array
+    {
         $items = $this->get("EIPAddr") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -148,13 +162,12 @@ class UnetBandwidthPackageSet extends Response {
      *
      * @param EIPAddrSet[] $eipAddr
      */
-    public function setEIPAddr(array $eipAddr) {
+    public function setEIPAddr(array $eipAddr)
+    {
         $result = [];
         foreach ($eipAddr as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class UHostIPSet extends Response {
+class UHostIPSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getIPMode(): string {
+    public function getIPMode(): string
+    {
         return $this->get("IPMode");
     }
 
@@ -35,7 +37,8 @@ class UHostIPSet extends Response {
      *
      * @param string $ipMode
      */
-    public function setIPMode(string $ipMode) {
+    public function setIPMode(string $ipMode)
+    {
         $this->set("IPMode", $ipMode);
     }
 
@@ -44,7 +47,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getDefault(): string {
+    public function getDefault(): string
+    {
         return $this->get("Default");
     }
 
@@ -53,7 +57,8 @@ class UHostIPSet extends Response {
      *
      * @param string $default
      */
-    public function setDefault(string $default) {
+    public function setDefault(string $default)
+    {
         $this->set("Default", $default);
     }
 
@@ -62,7 +67,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getMac(): string {
+    public function getMac(): string
+    {
         return $this->get("Mac");
     }
 
@@ -71,16 +77,18 @@ class UHostIPSet extends Response {
      *
      * @param string $mac
      */
-    public function setMac(string $mac) {
+    public function setMac(string $mac)
+    {
         $this->set("Mac", $mac);
     }
 
     /**
      * Weight: 当前EIP的权重。权重最大的为当前的出口IP。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getWeight(): int {
+    public function getWeight(): int
+    {
         return $this->get("Weight");
     }
 
@@ -89,7 +97,8 @@ class UHostIPSet extends Response {
      *
      * @param int $weight
      */
-    public function setWeight(int $weight) {
+    public function setWeight(int $weight)
+    {
         $this->set("Weight", $weight);
     }
 
@@ -98,7 +107,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -107,7 +117,8 @@ class UHostIPSet extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -116,7 +127,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getIPId(): string {
+    public function getIPId(): string
+    {
         return $this->get("IPId");
     }
 
@@ -125,7 +137,8 @@ class UHostIPSet extends Response {
      *
      * @param string $ipId
      */
-    public function setIPId(string $ipId) {
+    public function setIPId(string $ipId)
+    {
         $this->set("IPId", $ipId);
     }
 
@@ -134,7 +147,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getIP(): string {
+    public function getIP(): string
+    {
         return $this->get("IP");
     }
 
@@ -143,16 +157,18 @@ class UHostIPSet extends Response {
      *
      * @param string $ip
      */
-    public function setIP(string $ip) {
+    public function setIP(string $ip)
+    {
         $this->set("IP", $ip);
     }
 
     /**
      * Bandwidth: IP对应的带宽, 单位: Mb  (内网IP不显示带宽信息)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -161,7 +177,8 @@ class UHostIPSet extends Response {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -170,7 +187,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -179,7 +197,8 @@ class UHostIPSet extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -188,7 +207,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -197,7 +217,8 @@ class UHostIPSet extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -206,7 +227,8 @@ class UHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getNetworkInterfaceId(): string {
+    public function getNetworkInterfaceId(): string
+    {
         return $this->get("NetworkInterfaceId");
     }
 
@@ -215,9 +237,8 @@ class UHostIPSet extends Response {
      *
      * @param string $networkInterfaceId
      */
-    public function setNetworkInterfaceId(string $networkInterfaceId) {
+    public function setNetworkInterfaceId(string $networkInterfaceId)
+    {
         $this->set("NetworkInterfaceId", $networkInterfaceId);
     }
-
-
 }

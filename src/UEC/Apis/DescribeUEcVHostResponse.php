@@ -20,15 +20,17 @@ use UCloud\Core\Response\Response;
 use UCloud\UEC\Models\NodeInfo;
 use UCloud\UEC\Models\NodeIpList;
 
-class DescribeUEcVHostResponse extends Response {
+class DescribeUEcVHostResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的节点总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -37,7 +39,8 @@ class DescribeUEcVHostResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -46,7 +49,8 @@ class DescribeUEcVHostResponse extends Response {
      *
      * @return NodeInfo[]|null
      */
-    public function getNodeList(): array {
+    public function getNodeList(): array
+    {
         $items = $this->get("NodeList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -60,13 +64,12 @@ class DescribeUEcVHostResponse extends Response {
      *
      * @param NodeInfo[] $nodeList
      */
-    public function setNodeList(array $nodeList) {
+    public function setNodeList(array $nodeList)
+    {
         $result = [];
         foreach ($nodeList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

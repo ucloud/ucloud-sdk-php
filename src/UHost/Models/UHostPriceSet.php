@@ -18,7 +18,8 @@ namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class UHostPriceSet extends Response {
+class UHostPriceSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UHostPriceSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -35,7 +37,8 @@ class UHostPriceSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -44,7 +47,8 @@ class UHostPriceSet extends Response {
      *
      * @return float|null
      */
-    public function getPrice(): float {
+    public function getPrice(): float
+    {
         return $this->get("Price");
     }
 
@@ -53,7 +57,8 @@ class UHostPriceSet extends Response {
      *
      * @param float $price
      */
-    public function setPrice(float $price) {
+    public function setPrice(float $price)
+    {
         $this->set("Price", $price);
     }
 
@@ -62,7 +67,8 @@ class UHostPriceSet extends Response {
      *
      * @return float|null
      */
-    public function getOriginalPrice(): float {
+    public function getOriginalPrice(): float
+    {
         return $this->get("OriginalPrice");
     }
 
@@ -71,7 +77,8 @@ class UHostPriceSet extends Response {
      *
      * @param float $originalPrice
      */
-    public function setOriginalPrice(float $originalPrice) {
+    public function setOriginalPrice(float $originalPrice)
+    {
         $this->set("OriginalPrice", $originalPrice);
     }
 
@@ -80,7 +87,8 @@ class UHostPriceSet extends Response {
      *
      * @return float|null
      */
-    public function getListPrice(): float {
+    public function getListPrice(): float
+    {
         return $this->get("ListPrice");
     }
 
@@ -89,9 +97,8 @@ class UHostPriceSet extends Response {
      *
      * @param float $listPrice
      */
-    public function setListPrice(float $listPrice) {
+    public function setListPrice(float $listPrice)
+    {
         $this->set("ListPrice", $listPrice);
     }
-
-
 }

@@ -21,7 +21,8 @@ use UCloud\PathX\Models\UPathInfo;
 use UCloud\PathX\Models\PathXUGAInfo;
 use UCloud\PathX\Models\OutPublicIpInfo;
 
-class DescribeUPathResponse extends Response {
+class DescribeUPathResponse extends Response
+{
     
 
     /**
@@ -29,7 +30,8 @@ class DescribeUPathResponse extends Response {
      *
      * @return UPathInfo[]|null
      */
-    public function getUPathSet(): array {
+    public function getUPathSet(): array
+    {
         $items = $this->get("UPathSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -43,13 +45,12 @@ class DescribeUPathResponse extends Response {
      *
      * @param UPathInfo[] $uPathSet
      */
-    public function setUPathSet(array $uPathSet) {
+    public function setUPathSet(array $uPathSet)
+    {
         $result = [];
         foreach ($uPathSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

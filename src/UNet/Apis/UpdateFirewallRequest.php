@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateFirewallRequest extends Request {
+class UpdateFirewallRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateFirewall"]);
@@ -34,7 +35,8 @@ class UpdateFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class UpdateFirewallRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class UpdateFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class UpdateFirewallRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class UpdateFirewallRequest extends Request {
      *
      * @return string|null
      */
-    public function getFWId(): string {
+    public function getFWId(): string
+    {
         return $this->get("FWId");
     }
 
@@ -79,7 +85,8 @@ class UpdateFirewallRequest extends Request {
      *
      * @param string $fwId
      */
-    public function setFWId(string $fwId) {
+    public function setFWId(string $fwId)
+    {
         $this->set("FWId", $fwId);
     }
 
@@ -88,7 +95,8 @@ class UpdateFirewallRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getRule(): array {
+    public function getRule(): array
+    {
         return $this->get("Rule");
     }
 
@@ -97,9 +105,8 @@ class UpdateFirewallRequest extends Request {
      *
      * @param string[] $rule
      */
-    public function setRule(array $rule) {
+    public function setRule(array $rule)
+    {
         $this->set("Rule", $rule);
     }
-
-
 }

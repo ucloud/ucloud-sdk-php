@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ImportUHostKeyPairsResponse extends Response {
+class ImportUHostKeyPairsResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ImportUHostKeyPairsResponse extends Response {
      *
      * @return string|null
      */
-    public function getKeyPairName(): string {
+    public function getKeyPairName(): string
+    {
         return $this->get("KeyPairName");
     }
 
@@ -35,7 +37,8 @@ class ImportUHostKeyPairsResponse extends Response {
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName(string $keyPairName) {
+    public function setKeyPairName(string $keyPairName)
+    {
         $this->set("KeyPairName", $keyPairName);
     }
 
@@ -44,7 +47,8 @@ class ImportUHostKeyPairsResponse extends Response {
      *
      * @return string|null
      */
-    public function getKeyPairId(): string {
+    public function getKeyPairId(): string
+    {
         return $this->get("KeyPairId");
     }
 
@@ -53,7 +57,8 @@ class ImportUHostKeyPairsResponse extends Response {
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId(string $keyPairId) {
+    public function setKeyPairId(string $keyPairId)
+    {
         $this->set("KeyPairId", $keyPairId);
     }
 
@@ -62,7 +67,8 @@ class ImportUHostKeyPairsResponse extends Response {
      *
      * @return string|null
      */
-    public function getKeyPairFingerPrint(): string {
+    public function getKeyPairFingerPrint(): string
+    {
         return $this->get("KeyPairFingerPrint");
     }
 
@@ -71,9 +77,8 @@ class ImportUHostKeyPairsResponse extends Response {
      *
      * @param string $keyPairFingerPrint
      */
-    public function setKeyPairFingerPrint(string $keyPairFingerPrint) {
+    public function setKeyPairFingerPrint(string $keyPairFingerPrint)
+    {
         $this->set("KeyPairFingerPrint", $keyPairFingerPrint);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class SSLBindedTargetSet extends Response {
+class SSLBindedTargetSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class SSLBindedTargetSet extends Response {
      *
      * @return string|null
      */
-    public function getVServerId(): string {
+    public function getVServerId(): string
+    {
         return $this->get("VServerId");
     }
 
@@ -35,7 +37,8 @@ class SSLBindedTargetSet extends Response {
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId) {
+    public function setVServerId(string $vServerId)
+    {
         $this->set("VServerId", $vServerId);
     }
 
@@ -44,7 +47,8 @@ class SSLBindedTargetSet extends Response {
      *
      * @return string|null
      */
-    public function getVServerName(): string {
+    public function getVServerName(): string
+    {
         return $this->get("VServerName");
     }
 
@@ -53,7 +57,8 @@ class SSLBindedTargetSet extends Response {
      *
      * @param string $vServerName
      */
-    public function setVServerName(string $vServerName) {
+    public function setVServerName(string $vServerName)
+    {
         $this->set("VServerName", $vServerName);
     }
 
@@ -62,7 +67,8 @@ class SSLBindedTargetSet extends Response {
      *
      * @return string|null
      */
-    public function getULBId(): string {
+    public function getULBId(): string
+    {
         return $this->get("ULBId");
     }
 
@@ -71,7 +77,8 @@ class SSLBindedTargetSet extends Response {
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId) {
+    public function setULBId(string $ulbId)
+    {
         $this->set("ULBId", $ulbId);
     }
 
@@ -80,7 +87,8 @@ class SSLBindedTargetSet extends Response {
      *
      * @return string|null
      */
-    public function getULBName(): string {
+    public function getULBName(): string
+    {
         return $this->get("ULBName");
     }
 
@@ -89,9 +97,8 @@ class SSLBindedTargetSet extends Response {
      *
      * @param string $ulbName
      */
-    public function setULBName(string $ulbName) {
+    public function setULBName(string $ulbName)
+    {
         $this->set("ULBName", $ulbName);
     }
-
-
 }

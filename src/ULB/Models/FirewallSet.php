@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class FirewallSet extends Response {
+class FirewallSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class FirewallSet extends Response {
      *
      * @return string|null
      */
-    public function getFirewallName(): string {
+    public function getFirewallName(): string
+    {
         return $this->get("FirewallName");
     }
 
@@ -35,7 +37,8 @@ class FirewallSet extends Response {
      *
      * @param string $firewallName
      */
-    public function setFirewallName(string $firewallName) {
+    public function setFirewallName(string $firewallName)
+    {
         $this->set("FirewallName", $firewallName);
     }
 
@@ -44,7 +47,8 @@ class FirewallSet extends Response {
      *
      * @return string|null
      */
-    public function getFirewallId(): string {
+    public function getFirewallId(): string
+    {
         return $this->get("FirewallId");
     }
 
@@ -53,9 +57,8 @@ class FirewallSet extends Response {
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId) {
+    public function setFirewallId(string $firewallId)
+    {
         $this->set("FirewallId", $firewallId);
     }
-
-
 }

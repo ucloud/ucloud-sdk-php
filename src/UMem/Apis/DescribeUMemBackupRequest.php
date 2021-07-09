@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUMemBackupRequest extends Request {
+class DescribeUMemBackupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUMemBackup"]);
@@ -34,7 +35,8 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @return string|null
      */
-    public function getSpaceId(): string {
+    public function getSpaceId(): string
+    {
         return $this->get("SpaceId");
     }
 
@@ -97,16 +105,18 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId) {
+    public function setSpaceId(string $spaceId)
+    {
         $this->set("SpaceId", $spaceId);
     }
 
     /**
      * Offset: 分页显示的起始偏移, 默认值为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -115,16 +125,18 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 分页显示的条目数, 默认值为10
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -133,9 +145,8 @@ class DescribeUMemBackupRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

@@ -27,7 +27,8 @@ use UCloud\UCDN\Models\CacheConf;
 use UCloud\UCDN\Models\CacheKeyInfo;
 use UCloud\UCDN\Models\AdvancedConf;
 
-class GetUcdnDomainConfigResponse extends Response {
+class GetUcdnDomainConfigResponse extends Response
+{
     
 
     /**
@@ -35,7 +36,8 @@ class GetUcdnDomainConfigResponse extends Response {
      *
      * @return DomainConfigInfo[]|null
      */
-    public function getDomainList(): array {
+    public function getDomainList(): array
+    {
         $items = $this->get("DomainList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -49,13 +51,12 @@ class GetUcdnDomainConfigResponse extends Response {
      *
      * @param DomainConfigInfo[] $domainList
      */
-    public function setDomainList(array $domainList) {
+    public function setDomainList(array $domainList)
+    {
         $result = [];
         foreach ($domainList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\AssociationInfo;
 
-class DescribeNetworkAclAssociationBySubnetResponse extends Response {
+class DescribeNetworkAclAssociationBySubnetResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeNetworkAclAssociationBySubnetResponse extends Response {
      *
      * @return AssociationInfo|null
      */
-    public function getAssociation(): AssociationInfo {
+    public function getAssociation(): AssociationInfo
+    {
         return new AssociationInfo($this->get("Association"));
     }
 
@@ -36,9 +38,8 @@ class DescribeNetworkAclAssociationBySubnetResponse extends Response {
      *
      * @param AssociationInfo $association
      */
-    public function setAssociation(AssociationInfo $association) {
+    public function setAssociation(AssociationInfo $association)
+    {
         $this->set("Association", $association->getAll());
     }
-
-
 }

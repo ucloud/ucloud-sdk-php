@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUEcPodPriceRequest extends Request {
+class GetUEcPodPriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUEcPodPrice"]);
@@ -32,7 +33,8 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getIdcId(): string {
+    public function getIdcId(): string
+    {
         return $this->get("IdcId");
     }
 
@@ -41,7 +43,8 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId) {
+    public function setIdcId(string $idcId)
+    {
         $this->set("IdcId", $idcId);
     }
 
@@ -50,7 +53,8 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @return float|null
      */
-    public function getCpuCore(): float {
+    public function getCpuCore(): float
+    {
         return $this->get("CpuCore");
     }
 
@@ -59,16 +63,18 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @param float $cpuCore
      */
-    public function setCpuCore(float $cpuCore) {
+    public function setCpuCore(float $cpuCore)
+    {
         $this->set("CpuCore", $cpuCore);
     }
 
     /**
      * MemSize: 容器组总内存大小（单位M）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemSize(): int {
+    public function getMemSize(): int
+    {
         return $this->get("MemSize");
     }
 
@@ -77,16 +83,18 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @param int $memSize
      */
-    public function setMemSize(int $memSize) {
+    public function setMemSize(int $memSize)
+    {
         $this->set("MemSize", $memSize);
     }
 
     /**
      * ChargeType: 支付类型（2按月，3按年，默认2）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getChargeType(): int {
+    public function getChargeType(): int
+    {
         return $this->get("ChargeType");
     }
 
@@ -95,16 +103,18 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @param int $chargeType
      */
-    public function setChargeType(int $chargeType) {
+    public function setChargeType(int $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * ChargeQuantity: 月数或年数（默认值：1，当支付类型为按月时，默认值为0）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getChargeQuantity(): int {
+    public function getChargeQuantity(): int
+    {
         return $this->get("ChargeQuantity");
     }
 
@@ -113,7 +123,8 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity(int $chargeQuantity) {
+    public function setChargeQuantity(int $chargeQuantity)
+    {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
 
@@ -122,7 +133,8 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProductType(): string {
+    public function getProductType(): string
+    {
         return $this->get("ProductType");
     }
 
@@ -131,7 +143,8 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @param string $productType
      */
-    public function setProductType(string $productType) {
+    public function setProductType(string $productType)
+    {
         $this->set("ProductType", $productType);
     }
 
@@ -140,7 +153,8 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getElasticIp(): string {
+    public function getElasticIp(): string
+    {
         return $this->get("ElasticIp");
     }
 
@@ -149,16 +163,18 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @param string $elasticIp
      */
-    public function setElasticIp(string $elasticIp) {
+    public function setElasticIp(string $elasticIp)
+    {
         $this->set("ElasticIp", $elasticIp);
     }
 
     /**
      * Bandwidth: 绑定的带宽，默认0，当绑定外网IP时默认1（单位M）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -167,9 +183,8 @@ class GetUEcPodPriceRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
-
-
 }

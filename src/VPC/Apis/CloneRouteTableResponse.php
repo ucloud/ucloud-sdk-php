@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CloneRouteTableResponse extends Response {
+class CloneRouteTableResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CloneRouteTableResponse extends Response {
      *
      * @return string|null
      */
-    public function getRouteTableId(): string {
+    public function getRouteTableId(): string
+    {
         return $this->get("RouteTableId");
     }
 
@@ -35,9 +37,8 @@ class CloneRouteTableResponse extends Response {
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId(string $routeTableId) {
+    public function setRouteTableId(string $routeTableId)
+    {
         $this->set("RouteTableId", $routeTableId);
     }
-
-
 }

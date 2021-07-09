@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUDDBInstanceResponse extends Response {
+class CreateUDDBInstanceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUDDBInstanceResponse extends Response {
      *
      * @return string|null
      */
-    public function getUDDBId(): string {
+    public function getUDDBId(): string
+    {
         return $this->get("UDDBId");
     }
 
@@ -35,9 +37,8 @@ class CreateUDDBInstanceResponse extends Response {
      *
      * @param string $uddbId
      */
-    public function setUDDBId(string $uddbId) {
+    public function setUDDBId(string $uddbId)
+    {
         $this->set("UDDBId", $uddbId);
     }
-
-
 }

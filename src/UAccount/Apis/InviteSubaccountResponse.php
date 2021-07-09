@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Response\Response;
 
-class InviteSubaccountResponse extends Response {
+class InviteSubaccountResponse extends Response
+{
     
 
 

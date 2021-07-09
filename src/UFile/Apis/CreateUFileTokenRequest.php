@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUFileTokenRequest extends Request {
+class CreateUFileTokenRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUFileToken"]);
@@ -32,7 +33,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,7 +63,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -68,7 +73,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getTokenName(): string {
+    public function getTokenName(): string
+    {
         return $this->get("TokenName");
     }
 
@@ -77,7 +83,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @param string $tokenName
      */
-    public function setTokenName(string $tokenName) {
+    public function setTokenName(string $tokenName)
+    {
         $this->set("TokenName", $tokenName);
     }
 
@@ -86,7 +93,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getAllowedOps(): array {
+    public function getAllowedOps(): array
+    {
         return $this->get("AllowedOps");
     }
 
@@ -95,7 +103,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @param string[] $allowedOps
      */
-    public function setAllowedOps(array $allowedOps) {
+    public function setAllowedOps(array $allowedOps)
+    {
         $this->set("AllowedOps", $allowedOps);
     }
 
@@ -104,7 +113,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getAllowedPrefixes(): array {
+    public function getAllowedPrefixes(): array
+    {
         return $this->get("AllowedPrefixes");
     }
 
@@ -113,7 +123,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @param string[] $allowedPrefixes
      */
-    public function setAllowedPrefixes(array $allowedPrefixes) {
+    public function setAllowedPrefixes(array $allowedPrefixes)
+    {
         $this->set("AllowedPrefixes", $allowedPrefixes);
     }
 
@@ -122,7 +133,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getAllowedBuckets(): array {
+    public function getAllowedBuckets(): array
+    {
         return $this->get("AllowedBuckets");
     }
 
@@ -131,16 +143,18 @@ class CreateUFileTokenRequest extends Request {
      *
      * @param string[] $allowedBuckets
      */
-    public function setAllowedBuckets(array $allowedBuckets) {
+    public function setAllowedBuckets(array $allowedBuckets)
+    {
         $this->set("AllowedBuckets", $allowedBuckets);
     }
 
     /**
      * ExpireTime: Unix 时间戳，精确到秒，为令牌过期时间点。默认过期时间为一天（即当前Unix时间戳+86400）；注意：过期时间不能超过 4102416000
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -149,9 +163,8 @@ class CreateUFileTokenRequest extends Request {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
-
-
 }

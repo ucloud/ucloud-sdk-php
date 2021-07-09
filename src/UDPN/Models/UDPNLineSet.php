@@ -18,7 +18,8 @@ namespace UCloud\UDPN\Models;
 
 use UCloud\Core\Response\Response;
 
-class UDPNLineSet extends Response {
+class UDPNLineSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UDPNLineSet extends Response {
      *
      * @return string|null
      */
-    public function getLocalRegion(): string {
+    public function getLocalRegion(): string
+    {
         return $this->get("LocalRegion");
     }
 
@@ -35,7 +37,8 @@ class UDPNLineSet extends Response {
      *
      * @param string $localRegion
      */
-    public function setLocalRegion(string $localRegion) {
+    public function setLocalRegion(string $localRegion)
+    {
         $this->set("LocalRegion", $localRegion);
     }
 
@@ -44,7 +47,8 @@ class UDPNLineSet extends Response {
      *
      * @return string|null
      */
-    public function getRemoteRegion(): string {
+    public function getRemoteRegion(): string
+    {
         return $this->get("RemoteRegion");
     }
 
@@ -53,16 +57,18 @@ class UDPNLineSet extends Response {
      *
      * @param string $remoteRegion
      */
-    public function setRemoteRegion(string $remoteRegion) {
+    public function setRemoteRegion(string $remoteRegion)
+    {
         $this->set("RemoteRegion", $remoteRegion);
     }
 
     /**
      * BandwidthUpperLimit: 线路带宽上限,单位 M
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidthUpperLimit(): int {
+    public function getBandwidthUpperLimit(): int
+    {
         return $this->get("BandwidthUpperLimit");
     }
 
@@ -71,9 +77,8 @@ class UDPNLineSet extends Response {
      *
      * @param int $bandwidthUpperLimit
      */
-    public function setBandwidthUpperLimit(int $bandwidthUpperLimit) {
+    public function setBandwidthUpperLimit(int $bandwidthUpperLimit)
+    {
         $this->set("BandwidthUpperLimit", $bandwidthUpperLimit);
     }
-
-
 }

@@ -21,7 +21,8 @@ use UCloud\UNet\Models\UnetShareBandwidthSet;
 use UCloud\UNet\Models\EIPSetData;
 use UCloud\UNet\Models\EIPAddrSet;
 
-class DescribeShareBandwidthResponse extends Response {
+class DescribeShareBandwidthResponse extends Response
+{
     
 
     /**
@@ -29,7 +30,8 @@ class DescribeShareBandwidthResponse extends Response {
      *
      * @return UnetShareBandwidthSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -43,7 +45,8 @@ class DescribeShareBandwidthResponse extends Response {
      *
      * @param UnetShareBandwidthSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -54,9 +57,10 @@ class DescribeShareBandwidthResponse extends Response {
     /**
      * TotalCount: 符合条件的共享带宽总数，大于等于返回DataSet长度
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -65,9 +69,8 @@ class DescribeShareBandwidthResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

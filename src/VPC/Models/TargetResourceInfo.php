@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class TargetResourceInfo extends Response {
+class TargetResourceInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class TargetResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string {
+    public function getSubnetworkId(): string
+    {
         return $this->get("SubnetworkId");
     }
 
@@ -35,7 +37,8 @@ class TargetResourceInfo extends Response {
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId) {
+    public function setSubnetworkId(string $subnetworkId)
+    {
         $this->set("SubnetworkId", $subnetworkId);
     }
 
@@ -44,7 +47,8 @@ class TargetResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getResourceName(): string {
+    public function getResourceName(): string
+    {
         return $this->get("ResourceName");
     }
 
@@ -53,7 +57,8 @@ class TargetResourceInfo extends Response {
      *
      * @param string $resourceName
      */
-    public function setResourceName(string $resourceName) {
+    public function setResourceName(string $resourceName)
+    {
         $this->set("ResourceName", $resourceName);
     }
 
@@ -62,7 +67,8 @@ class TargetResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -71,16 +77,18 @@ class TargetResourceInfo extends Response {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
     /**
      * ResourceType: 资源类型
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getResourceType(): int {
+    public function getResourceType(): int
+    {
         return $this->get("ResourceType");
     }
 
@@ -89,7 +97,8 @@ class TargetResourceInfo extends Response {
      *
      * @param int $resourceType
      */
-    public function setResourceType(int $resourceType) {
+    public function setResourceType(int $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -98,7 +107,8 @@ class TargetResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceName(): string {
+    public function getSubResourceName(): string
+    {
         return $this->get("SubResourceName");
     }
 
@@ -107,7 +117,8 @@ class TargetResourceInfo extends Response {
      *
      * @param string $subResourceName
      */
-    public function setSubResourceName(string $subResourceName) {
+    public function setSubResourceName(string $subResourceName)
+    {
         $this->set("SubResourceName", $subResourceName);
     }
 
@@ -116,7 +127,8 @@ class TargetResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubResourceId(): string {
+    public function getSubResourceId(): string
+    {
         return $this->get("SubResourceId");
     }
 
@@ -125,16 +137,18 @@ class TargetResourceInfo extends Response {
      *
      * @param string $subResourceId
      */
-    public function setSubResourceId(string $subResourceId) {
+    public function setSubResourceId(string $subResourceId)
+    {
         $this->set("SubResourceId", $subResourceId);
     }
 
     /**
      * SubResourceType: 资源绑定虚拟网卡的类型
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSubResourceType(): int {
+    public function getSubResourceType(): int
+    {
         return $this->get("SubResourceType");
     }
 
@@ -143,7 +157,8 @@ class TargetResourceInfo extends Response {
      *
      * @param int $subResourceType
      */
-    public function setSubResourceType(int $subResourceType) {
+    public function setSubResourceType(int $subResourceType)
+    {
         $this->set("SubResourceType", $subResourceType);
     }
 
@@ -152,7 +167,8 @@ class TargetResourceInfo extends Response {
      *
      * @return string|null
      */
-    public function getPrivateIp(): string {
+    public function getPrivateIp(): string
+    {
         return $this->get("PrivateIp");
     }
 
@@ -161,9 +177,8 @@ class TargetResourceInfo extends Response {
      *
      * @param string $privateIp
      */
-    public function setPrivateIp(string $privateIp) {
+    public function setPrivateIp(string $privateIp)
+    {
         $this->set("PrivateIp", $privateIp);
     }
-
-
 }

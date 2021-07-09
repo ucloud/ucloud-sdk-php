@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
 
-class AddMemberToProjectRequest extends Request {
+class AddMemberToProjectRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "AddMemberToProject"]);
@@ -29,20 +30,22 @@ class AddMemberToProjectRequest extends Request {
     
 
     /**
-     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。 
+     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。 
+     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class AddMemberToProjectRequest extends Request {
      *
      * @return string|null
      */
-    public function getMemberEmail(): string {
+    public function getMemberEmail(): string
+    {
         return $this->get("MemberEmail");
     }
 
@@ -60,7 +64,8 @@ class AddMemberToProjectRequest extends Request {
      *
      * @param string $memberEmail
      */
-    public function setMemberEmail(string $memberEmail) {
+    public function setMemberEmail(string $memberEmail)
+    {
         $this->set("MemberEmail", $memberEmail);
     }
 
@@ -69,7 +74,8 @@ class AddMemberToProjectRequest extends Request {
      *
      * @return string|null
      */
-    public function getCharacterId(): string {
+    public function getCharacterId(): string
+    {
         return $this->get("CharacterId");
     }
 
@@ -78,9 +84,8 @@ class AddMemberToProjectRequest extends Request {
      *
      * @param string $characterId
      */
-    public function setCharacterId(string $characterId) {
+    public function setCharacterId(string $characterId)
+    {
         $this->set("CharacterId", $characterId);
     }
-
-
 }

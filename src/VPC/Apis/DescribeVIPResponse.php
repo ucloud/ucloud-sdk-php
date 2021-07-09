@@ -19,7 +19,8 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\VIPDetailSet;
 
-class DescribeVIPResponse extends Response {
+class DescribeVIPResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeVIPResponse extends Response {
      *
      * @return VIPDetailSet[]|null
      */
-    public function getVIPSet(): array {
+    public function getVIPSet(): array
+    {
         $items = $this->get("VIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,7 +43,8 @@ class DescribeVIPResponse extends Response {
      *
      * @param VIPDetailSet[] $vipSet
      */
-    public function setVIPSet(array $vipSet) {
+    public function setVIPSet(array $vipSet)
+    {
         $result = [];
         foreach ($vipSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -54,7 +57,8 @@ class DescribeVIPResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         return $this->get("DataSet");
     }
 
@@ -63,16 +67,18 @@ class DescribeVIPResponse extends Response {
      *
      * @param string[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $this->set("DataSet", $dataSet);
     }
 
     /**
      * TotalCount: vip数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -81,9 +87,8 @@ class DescribeVIPResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class NodeIspList extends Response {
+class NodeIspList extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NodeIspList extends Response {
      *
      * @return string|null
      */
-    public function getProvince(): string {
+    public function getProvince(): string
+    {
         return $this->get("Province");
     }
 
@@ -35,7 +37,8 @@ class NodeIspList extends Response {
      *
      * @param string $province
      */
-    public function setProvince(string $province) {
+    public function setProvince(string $province)
+    {
         $this->set("Province", $province);
     }
 
@@ -44,7 +47,8 @@ class NodeIspList extends Response {
      *
      * @return string|null
      */
-    public function getCity(): string {
+    public function getCity(): string
+    {
         return $this->get("City");
     }
 
@@ -53,7 +57,8 @@ class NodeIspList extends Response {
      *
      * @param string $city
      */
-    public function setCity(string $city) {
+    public function setCity(string $city)
+    {
         $this->set("City", $city);
     }
 
@@ -62,7 +67,8 @@ class NodeIspList extends Response {
      *
      * @return string|null
      */
-    public function getLineType(): string {
+    public function getLineType(): string
+    {
         return $this->get("LineType");
     }
 
@@ -71,7 +77,8 @@ class NodeIspList extends Response {
      *
      * @param string $lineType
      */
-    public function setLineType(string $lineType) {
+    public function setLineType(string $lineType)
+    {
         $this->set("LineType", $lineType);
     }
 
@@ -80,7 +87,8 @@ class NodeIspList extends Response {
      *
      * @return string|null
      */
-    public function getIspName(): string {
+    public function getIspName(): string
+    {
         return $this->get("IspName");
     }
 
@@ -89,7 +97,8 @@ class NodeIspList extends Response {
      *
      * @param string $ispName
      */
-    public function setIspName(string $ispName) {
+    public function setIspName(string $ispName)
+    {
         $this->set("IspName", $ispName);
     }
 
@@ -98,7 +107,8 @@ class NodeIspList extends Response {
      *
      * @return string|null
      */
-    public function getIdcName(): string {
+    public function getIdcName(): string
+    {
         return $this->get("IdcName");
     }
 
@@ -107,9 +117,8 @@ class NodeIspList extends Response {
      *
      * @param string $idcName
      */
-    public function setIdcName(string $idcName) {
+    public function setIdcName(string $idcName)
+    {
         $this->set("IdcName", $idcName);
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\UFile\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UFile\Models\UFileReportSet;
 
-class GetUFileReportResponse extends Response {
+class GetUFileReportResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetUFileReportResponse extends Response {
      *
      * @return UFileReportSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetUFileReportResponse extends Response {
      *
      * @param UFileReportSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\VIPSet;
 
-class AllocateVIPResponse extends Response {
+class AllocateVIPResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class AllocateVIPResponse extends Response {
      *
      * @return VIPSet[]|null
      */
-    public function getVIPSet(): array {
+    public function getVIPSet(): array
+    {
         $items = $this->get("VIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,7 +43,8 @@ class AllocateVIPResponse extends Response {
      *
      * @param VIPSet[] $vipSet
      */
-    public function setVIPSet(array $vipSet) {
+    public function setVIPSet(array $vipSet)
+    {
         $result = [];
         foreach ($vipSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -54,7 +57,8 @@ class AllocateVIPResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         return $this->get("DataSet");
     }
 
@@ -63,9 +67,8 @@ class AllocateVIPResponse extends Response {
      *
      * @param string[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $this->set("DataSet", $dataSet);
     }
-
-
 }

@@ -42,7 +42,8 @@ use UCloud\UK8S\Apis\ListUK8SClusterV2Response;
 /**
  * This client is used to call actions of **UK8S** service
  */
-class UK8SClient extends Client {
+class UK8SClient extends Client
+{
 
     /**
      * AddUK8SExistingUHost - 将预先创建好的云主机加入到UK8S集群，需要注意的是，该云主机依然会执行重装系统的操作。
@@ -74,7 +75,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function addUK8SExistingUHost(AddUK8SExistingUHostRequest $request = null): AddUK8SExistingUHostResponse {
+    public function addUK8SExistingUHost(AddUK8SExistingUHostRequest $request = null): AddUK8SExistingUHostResponse
+    {
         $resp = $this->invoke($request);
         return new AddUK8SExistingUHostResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -113,7 +115,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function addUK8SPHostNode(AddUK8SPHostNodeRequest $request = null): AddUK8SPHostNodeResponse {
+    public function addUK8SPHostNode(AddUK8SPHostNodeRequest $request = null): AddUK8SPHostNodeResponse
+    {
         $resp = $this->invoke($request);
         return new AddUK8SPHostNodeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -161,7 +164,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function addUK8SUHostNode(AddUK8SUHostNodeRequest $request = null): AddUK8SUHostNodeResponse {
+    public function addUK8SUHostNode(AddUK8SUHostNodeRequest $request = null): AddUK8SUHostNodeResponse
+    {
         $resp = $this->invoke($request);
         return new AddUK8SUHostNodeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -232,7 +236,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUK8SClusterV2(CreateUK8SClusterV2Request $request = null): CreateUK8SClusterV2Response {
+    public function createUK8SClusterV2(CreateUK8SClusterV2Request $request = null): CreateUK8SClusterV2Response
+    {
         $resp = $this->invoke($request);
         return new CreateUK8SClusterV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -258,7 +263,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function delUK8SCluster(DelUK8SClusterRequest $request = null): DelUK8SClusterResponse {
+    public function delUK8SCluster(DelUK8SClusterRequest $request = null): DelUK8SClusterResponse
+    {
         $resp = $this->invoke($request);
         return new DelUK8SClusterResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -285,7 +291,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request $request = null): DelUK8SClusterNodeV2Response {
+    public function delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request $request = null): DelUK8SClusterNodeV2Response
+    {
         $resp = $this->invoke($request);
         return new DelUK8SClusterNodeV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -326,7 +333,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUK8SImage(DescribeUK8SImageRequest $request = null): DescribeUK8SImageResponse {
+    public function describeUK8SImage(DescribeUK8SImageRequest $request = null): DescribeUK8SImageResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUK8SImageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -352,7 +360,7 @@ class UK8SClient extends Client {
      *     "Labels" => (array<string>) 字符串数组，每一项是类似 "kubernetes.io/arch=amd64" 的标签
      *     "Annotations" => (array<string>) 字符串数组，每一项是类似 "node.alpha.kubernetes.io/ttl=0" 的注解
      *     "CreationTimestamp" => (integer) 时间戳，单位是 秒
-     *     "ProviderID" => (string) 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc" 
+     *     "ProviderID" => (string) 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc"
      *     "KernelVersion" => (string) 内核版本，如："4.19.0-6.el7.ucloud.x86_64"
      *     "OSImage" => (string) 操作系统类型，如："CentOS Linux 7 (Core)"
      *     "ContainerRuntimeVersion" => (string) 容器运行时版本，如："docker://18.9.9"
@@ -389,7 +397,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUK8SNode(DescribeUK8SNodeRequest $request = null): DescribeUK8SNodeResponse {
+    public function describeUK8SNode(DescribeUK8SNodeRequest $request = null): DescribeUK8SNodeResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUK8SNodeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -451,7 +460,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request $request = null): ListUK8SClusterNodeV2Response {
+    public function listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request $request = null): ListUK8SClusterNodeV2Response
+    {
         $resp = $this->invoke($request);
         return new ListUK8SClusterNodeV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -489,7 +499,7 @@ class UK8SClient extends Client {
      *             "ClusterLogInfo" => (string) 创建集群时判断如果为NORESOURCE则为没资源，否则为空
      *             "CreateTime" => (integer) 创建时间
      *             "NodeCount" => (integer) Node节点数量
-     *             "ExternalApiServer" => (string) 集群外部apiserver地址	
+     *             "ExternalApiServer" => (string) 集群外部apiserver地址
      *             "Status" => (string) 集群状态，枚举值：初始化："INITIALIZING"；启动中："STARTING"；创建失败："CREATEFAILED"；正常运行："RUNNING"；添加节点："ADDNODE"；删除节点："DELNODE"；删除中："DELETING"；删除失败："DELETEFAILED"；错误："ERROR"；升级插件："UPDATE_PLUGIN"；更新插件信息："UPDATE_PLUGIN_INFO"；异常："ABNORMAL"；升级集群中："UPGRADING"；容器运行时切换："CONVERTING"
      *         ]
      *     ]
@@ -497,7 +507,8 @@ class UK8SClient extends Client {
      *
      * @throws UCloudException
      */
-    public function listUK8SClusterV2(ListUK8SClusterV2Request $request = null): ListUK8SClusterV2Response {
+    public function listUK8SClusterV2(ListUK8SClusterV2Request $request = null): ListUK8SClusterV2Response
+    {
         $resp = $this->invoke($request);
         return new ListUK8SClusterV2Response($resp->toArray(), $resp->getRequestId());
     }

@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeNetworkAclRequest extends Request {
+class DescribeNetworkAclRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeNetworkAcl"]);
@@ -32,7 +33,8 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,16 +63,18 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Offset: 列表偏移量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -77,7 +83,8 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
@@ -86,7 +93,8 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @return string|null
      */
-    public function getLimit(): string {
+    public function getLimit(): string
+    {
         return $this->get("Limit");
     }
 
@@ -95,7 +103,8 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @param string $limit
      */
-    public function setLimit(string $limit) {
+    public function setLimit(string $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -104,7 +113,8 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @return string|null
      */
-    public function getVpcId(): string {
+    public function getVpcId(): string
+    {
         return $this->get("VpcId");
     }
 
@@ -113,9 +123,8 @@ class DescribeNetworkAclRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVpcId(string $vpcId) {
+    public function setVpcId(string $vpcId)
+    {
         $this->set("VpcId", $vpcId);
     }
-
-
 }

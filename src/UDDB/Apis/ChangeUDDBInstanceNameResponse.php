@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ChangeUDDBInstanceNameResponse extends Response {
+class ChangeUDDBInstanceNameResponse extends Response
+{
     
 
 

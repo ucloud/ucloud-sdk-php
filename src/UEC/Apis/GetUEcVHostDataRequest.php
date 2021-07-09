@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUEcVHostDataRequest extends Request {
+class GetUEcVHostDataRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUEcVHostData"]);
@@ -33,7 +34,8 @@ class GetUEcVHostDataRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class GetUEcVHostDataRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class GetUEcVHostDataRequest extends Request {
      *
      * @return string|null
      */
-    public function getNodeId(): string {
+    public function getNodeId(): string
+    {
         return $this->get("NodeId");
     }
 
@@ -60,7 +64,8 @@ class GetUEcVHostDataRequest extends Request {
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId) {
+    public function setNodeId(string $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
 
@@ -69,7 +74,8 @@ class GetUEcVHostDataRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getType(): array {
+    public function getType(): array
+    {
         return $this->get("Type");
     }
 
@@ -78,16 +84,18 @@ class GetUEcVHostDataRequest extends Request {
      *
      * @param int[] $type
      */
-    public function setType(array $type) {
+    public function setType(array $type)
+    {
         $this->set("Type", $type);
     }
 
     /**
      * BeginTime: 查询起始时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -96,16 +104,18 @@ class GetUEcVHostDataRequest extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 查询结束时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -114,9 +124,8 @@ class GetUEcVHostDataRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class UHostTagSet extends Response {
+class UHostTagSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UHostTagSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -35,16 +37,18 @@ class UHostTagSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
      * TotalCount: 该业务组中包含的主机个数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -53,7 +57,8 @@ class UHostTagSet extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -62,7 +67,8 @@ class UHostTagSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -71,9 +77,8 @@ class UHostTagSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
-
-
 }

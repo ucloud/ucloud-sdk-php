@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DisableUDBRWSplittingResponse extends Response {
+class DisableUDBRWSplittingResponse extends Response
+{
     
 
 

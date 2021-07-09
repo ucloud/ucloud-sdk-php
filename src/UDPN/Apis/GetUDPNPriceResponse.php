@@ -18,15 +18,17 @@ namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetUDPNPriceResponse extends Response {
+class GetUDPNPriceResponse extends Response
+{
     
 
     /**
      * PurchaseValue: 资源有效期 unix 时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPurchaseValue(): int {
+    public function getPurchaseValue(): int
+    {
         return $this->get("PurchaseValue");
     }
 
@@ -35,7 +37,8 @@ class GetUDPNPriceResponse extends Response {
      *
      * @param int $purchaseValue
      */
-    public function setPurchaseValue(int $purchaseValue) {
+    public function setPurchaseValue(int $purchaseValue)
+    {
         $this->set("PurchaseValue", $purchaseValue);
     }
 
@@ -44,7 +47,8 @@ class GetUDPNPriceResponse extends Response {
      *
      * @return float|null
      */
-    public function getPrice(): float {
+    public function getPrice(): float
+    {
         return $this->get("Price");
     }
 
@@ -53,9 +57,8 @@ class GetUDPNPriceResponse extends Response {
      *
      * @param float $price
      */
-    public function setPrice(float $price) {
+    public function setPrice(float $price)
+    {
         $this->set("Price", $price);
     }
-
-
 }

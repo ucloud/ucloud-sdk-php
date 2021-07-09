@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUcdnDomain95BandwidthV2Request extends Request {
+class GetUcdnDomain95BandwidthV2Request extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUcdnDomain95BandwidthV2"]);
@@ -33,7 +34,8 @@ class GetUcdnDomain95BandwidthV2Request extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,43 +44,48 @@ class GetUcdnDomain95BandwidthV2Request extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
-     * BeginTime: 查询的起始日期，格式为Unix Timestamp  
+     * BeginTime: 查询的起始日期，格式为Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
     /**
-     * BeginTime: 查询的起始日期，格式为Unix Timestamp  
+     * BeginTime: 查询的起始日期，格式为Unix Timestamp
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
-     * EndTime: 查询的结束日期，格式为Unix Timestamp 
+     * EndTime: 查询的结束日期，格式为Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
     /**
-     * EndTime: 查询的结束日期，格式为Unix Timestamp 
+     * EndTime: 查询的结束日期，格式为Unix Timestamp
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
@@ -87,7 +94,8 @@ class GetUcdnDomain95BandwidthV2Request extends Request {
      *
      * @return string[]|null
      */
-    public function getDomainId(): array {
+    public function getDomainId(): array
+    {
         return $this->get("DomainId");
     }
 
@@ -96,7 +104,8 @@ class GetUcdnDomain95BandwidthV2Request extends Request {
      *
      * @param string[] $domainId
      */
-    public function setDomainId(array $domainId) {
+    public function setDomainId(array $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
 
@@ -105,7 +114,8 @@ class GetUcdnDomain95BandwidthV2Request extends Request {
      *
      * @return string|null
      */
-    public function getAreacode(): string {
+    public function getAreacode(): string
+    {
         return $this->get("Areacode");
     }
 
@@ -114,9 +124,8 @@ class GetUcdnDomain95BandwidthV2Request extends Request {
      *
      * @param string $areacode
      */
-    public function setAreacode(string $areacode) {
+    public function setAreacode(string $areacode)
+    {
         $this->set("Areacode", $areacode);
     }
-
-
 }

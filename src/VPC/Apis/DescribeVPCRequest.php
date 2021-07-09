@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeVPCRequest extends Request {
+class DescribeVPCRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeVPC"]);
@@ -33,7 +34,8 @@ class DescribeVPCRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DescribeVPCRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DescribeVPCRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class DescribeVPCRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class DescribeVPCRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getVPCIds(): array {
+    public function getVPCIds(): array
+    {
         return $this->get("VPCIds");
     }
 
@@ -78,7 +84,8 @@ class DescribeVPCRequest extends Request {
      *
      * @param string[] $vpcIds
      */
-    public function setVPCIds(array $vpcIds) {
+    public function setVPCIds(array $vpcIds)
+    {
         $this->set("VPCIds", $vpcIds);
     }
 
@@ -87,7 +94,8 @@ class DescribeVPCRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -96,45 +104,48 @@ class DescribeVPCRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
-     * Offset: 
+     * Offset:
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
     /**
-     * Offset: 
+     * Offset:
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
-     * Limit: 
+     * Limit:
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
     /**
-     * Limit: 
+     * Limit:
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

@@ -22,15 +22,17 @@ use UCloud\VPC\Models\NatGatewaySubnetSet;
 use UCloud\VPC\Models\NatGatewayIPSet;
 use UCloud\VPC\Models\NatGWIPResInfo;
 
-class DescribeNATGWResponse extends Response {
+class DescribeNATGWResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的实例的总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -39,7 +41,8 @@ class DescribeNATGWResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -48,7 +51,8 @@ class DescribeNATGWResponse extends Response {
      *
      * @return NatGatewayDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -62,13 +66,12 @@ class DescribeNATGWResponse extends Response {
      *
      * @param NatGatewayDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

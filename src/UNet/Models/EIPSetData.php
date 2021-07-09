@@ -18,15 +18,17 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class EIPSetData extends Response {
+class EIPSetData extends Response
+{
     
 
     /**
      * Bandwidth: EIP带宽值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -35,7 +37,8 @@ class EIPSetData extends Response {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -44,7 +47,8 @@ class EIPSetData extends Response {
      *
      * @return EIPAddrSet[]|null
      */
-    public function getEIPAddr(): array {
+    public function getEIPAddr(): array
+    {
         $items = $this->get("EIPAddr") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -58,7 +62,8 @@ class EIPSetData extends Response {
      *
      * @param EIPAddrSet[] $eipAddr
      */
-    public function setEIPAddr(array $eipAddr) {
+    public function setEIPAddr(array $eipAddr)
+    {
         $result = [];
         foreach ($eipAddr as $i => $item) {
             array_push($result, $item->getAll());
@@ -71,7 +76,8 @@ class EIPSetData extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -80,9 +86,8 @@ class EIPSetData extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
-
-
 }

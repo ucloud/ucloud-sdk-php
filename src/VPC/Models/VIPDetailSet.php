@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class VIPDetailSet extends Response {
+class VIPDetailSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class VIPDetailSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getVIPId(): string {
+    public function getVIPId(): string
+    {
         return $this->get("VIPId");
     }
 
@@ -53,16 +57,18 @@ class VIPDetailSet extends Response {
      *
      * @param string $vipId
      */
-    public function setVIPId(string $vipId) {
+    public function setVIPId(string $vipId)
+    {
         $this->set("VIPId", $vipId);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -71,7 +77,8 @@ class VIPDetailSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -80,7 +87,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getRealIp(): string {
+    public function getRealIp(): string
+    {
         return $this->get("RealIp");
     }
 
@@ -89,7 +97,8 @@ class VIPDetailSet extends Response {
      *
      * @param string $realIp
      */
-    public function setRealIp(string $realIp) {
+    public function setRealIp(string $realIp)
+    {
         $this->set("RealIp", $realIp);
     }
 
@@ -98,7 +107,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getVIP(): string {
+    public function getVIP(): string
+    {
         return $this->get("VIP");
     }
 
@@ -107,7 +117,8 @@ class VIPDetailSet extends Response {
      *
      * @param string $vip
      */
-    public function setVIP(string $vip) {
+    public function setVIP(string $vip)
+    {
         $this->set("VIP", $vip);
     }
 
@@ -116,7 +127,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -125,7 +137,8 @@ class VIPDetailSet extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -134,7 +147,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -143,7 +157,8 @@ class VIPDetailSet extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -152,7 +167,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -161,7 +177,8 @@ class VIPDetailSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -170,7 +187,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -179,7 +197,8 @@ class VIPDetailSet extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -188,7 +207,8 @@ class VIPDetailSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -197,9 +217,8 @@ class VIPDetailSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
-
-
 }

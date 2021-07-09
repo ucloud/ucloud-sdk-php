@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ReinstallUHostInstanceRequest extends Request {
+class ReinstallUHostInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ReinstallUHostInstance"]);
@@ -33,7 +34,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -60,7 +64,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -69,7 +74,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -78,7 +84,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -87,7 +94,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUHostId(): string {
+    public function getUHostId(): string
+    {
         return $this->get("UHostId");
     }
 
@@ -96,7 +104,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId) {
+    public function setUHostId(string $uHostId)
+    {
         $this->set("UHostId", $uHostId);
     }
 
@@ -105,7 +114,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->get("Password");
     }
 
@@ -114,7 +124,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->set("Password", $password);
     }
 
@@ -123,7 +134,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -132,7 +144,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
@@ -141,7 +154,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getReserveDisk(): string {
+    public function getReserveDisk(): string
+    {
         return $this->get("ReserveDisk");
     }
 
@@ -150,16 +164,18 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $reserveDisk
      */
-    public function setReserveDisk(string $reserveDisk) {
+    public function setReserveDisk(string $reserveDisk)
+    {
         $this->set("ReserveDisk", $reserveDisk);
     }
 
     /**
      * BootDiskSpace: 系统盘大小。 单位：GB， 范围[20,100]， 步长：10
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBootDiskSpace(): int {
+    public function getBootDiskSpace(): int
+    {
         return $this->get("BootDiskSpace");
     }
 
@@ -168,7 +184,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param int $bootDiskSpace
      */
-    public function setBootDiskSpace(int $bootDiskSpace) {
+    public function setBootDiskSpace(int $bootDiskSpace)
+    {
         $this->set("BootDiskSpace", $bootDiskSpace);
     }
 
@@ -177,7 +194,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUserData(): string {
+    public function getUserData(): string
+    {
         return $this->get("UserData");
     }
 
@@ -186,7 +204,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $userData
      */
-    public function setUserData(string $userData) {
+    public function setUserData(string $userData)
+    {
         $this->set("UserData", $userData);
     }
 
@@ -195,7 +214,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getAutoDataDiskInit(): string {
+    public function getAutoDataDiskInit(): string
+    {
         return $this->get("AutoDataDiskInit");
     }
 
@@ -204,7 +224,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $autoDataDiskInit
      */
-    public function setAutoDataDiskInit(string $autoDataDiskInit) {
+    public function setAutoDataDiskInit(string $autoDataDiskInit)
+    {
         $this->set("AutoDataDiskInit", $autoDataDiskInit);
     }
 
@@ -213,7 +234,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getLoginMode(): string {
+    public function getLoginMode(): string
+    {
         return $this->get("LoginMode");
     }
 
@@ -222,7 +244,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $loginMode
      */
-    public function setLoginMode(string $loginMode) {
+    public function setLoginMode(string $loginMode)
+    {
         $this->set("LoginMode", $loginMode);
     }
 
@@ -231,7 +254,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getKeyPairId(): string {
+    public function getKeyPairId(): string
+    {
         return $this->get("KeyPairId");
     }
 
@@ -240,9 +264,8 @@ class ReinstallUHostInstanceRequest extends Request {
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId(string $keyPairId) {
+    public function setKeyPairId(string $keyPairId)
+    {
         $this->set("KeyPairId", $keyPairId);
     }
-
-
 }

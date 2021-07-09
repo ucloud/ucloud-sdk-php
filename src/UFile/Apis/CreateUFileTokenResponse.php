@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUFileTokenResponse extends Response {
+class CreateUFileTokenResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUFileTokenResponse extends Response {
      *
      * @return string|null
      */
-    public function getTokenId(): string {
+    public function getTokenId(): string
+    {
         return $this->get("TokenId");
     }
 
@@ -35,9 +37,8 @@ class CreateUFileTokenResponse extends Response {
      *
      * @param string $tokenId
      */
-    public function setTokenId(string $tokenId) {
+    public function setTokenId(string $tokenId)
+    {
         $this->set("TokenId", $tokenId);
     }
-
-
 }

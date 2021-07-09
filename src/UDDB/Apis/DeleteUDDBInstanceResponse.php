@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUDDBInstanceResponse extends Response {
+class DeleteUDDBInstanceResponse extends Response
+{
     
 
 

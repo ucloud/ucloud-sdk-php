@@ -76,7 +76,8 @@ use UCloud\PathX\Apis\UnBindPathXSSLResponse;
 /**
  * This client is used to call actions of **PathX** service
  */
-class PathXClient extends Client {
+class PathXClient extends Client
+{
 
     /**
      * BindPathXSSL - 绑定PathX SSL证书
@@ -99,7 +100,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function bindPathXSSL(BindPathXSSLRequest $request = null): BindPathXSSLResponse {
+    public function bindPathXSSL(BindPathXSSLRequest $request = null): BindPathXSSLResponse
+    {
         $resp = $this->invoke($request);
         return new BindPathXSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -135,7 +137,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createGlobalSSHInstance(CreateGlobalSSHInstanceRequest $request = null): CreateGlobalSSHInstanceResponse {
+    public function createGlobalSSHInstance(CreateGlobalSSHInstanceRequest $request = null): CreateGlobalSSHInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new CreateGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -165,7 +168,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createPathXSSL(CreatePathXSSLRequest $request = null): CreatePathXSSLResponse {
+    public function createPathXSSL(CreatePathXSSLRequest $request = null): CreatePathXSSLResponse
+    {
         $resp = $this->invoke($request);
         return new CreatePathXSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -199,7 +203,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUGAForwarder(CreateUGAForwarderRequest $request = null): CreateUGAForwarderResponse {
+    public function createUGAForwarder(CreateUGAForwarderRequest $request = null): CreateUGAForwarderResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUGAForwarderResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -229,7 +234,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUGAInstance(CreateUGAInstanceRequest $request = null): CreateUGAInstanceResponse {
+    public function createUGAInstance(CreateUGAInstanceRequest $request = null): CreateUGAInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -260,7 +266,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUPath(CreateUPathRequest $request = null): CreateUPathResponse {
+    public function createUPath(CreateUPathRequest $request = null): CreateUPathResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUPathResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -284,7 +291,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteGlobalSSHInstance(DeleteGlobalSSHInstanceRequest $request = null): DeleteGlobalSSHInstanceResponse {
+    public function deleteGlobalSSHInstance(DeleteGlobalSSHInstanceRequest $request = null): DeleteGlobalSSHInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -308,7 +316,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deletePathXSSL(DeletePathXSSLRequest $request = null): DeletePathXSSLResponse {
+    public function deletePathXSSL(DeletePathXSSLRequest $request = null): DeletePathXSSLResponse
+    {
         $resp = $this->invoke($request);
         return new DeletePathXSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -337,7 +346,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteUGAForwarder(DeleteUGAForwarderRequest $request = null): DeleteUGAForwarderResponse {
+    public function deleteUGAForwarder(DeleteUGAForwarderRequest $request = null): DeleteUGAForwarderResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUGAForwarderResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -361,7 +371,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteUGAInstance(DeleteUGAInstanceRequest $request = null): DeleteUGAInstanceResponse {
+    public function deleteUGAInstance(DeleteUGAInstanceRequest $request = null): DeleteUGAInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -385,7 +396,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteUPath(DeleteUPathRequest $request = null): DeleteUPathResponse {
+    public function deleteUPath(DeleteUPathRequest $request = null): DeleteUPathResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUPathResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -427,7 +439,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeGlobalSSHInstance(DescribeGlobalSSHInstanceRequest $request = null): DescribeGlobalSSHInstanceResponse {
+    public function describeGlobalSSHInstance(DescribeGlobalSSHInstanceRequest $request = null): DescribeGlobalSSHInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -469,7 +482,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describePathXLineConfig(DescribePathXLineConfigRequest $request = null): DescribePathXLineConfigResponse {
+    public function describePathXLineConfig(DescribePathXLineConfigRequest $request = null): DescribePathXLineConfigResponse
+    {
         $resp = $this->invoke($request);
         return new DescribePathXLineConfigResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -515,7 +529,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describePathXSSL(DescribePathXSSLRequest $request = null): DescribePathXSSLResponse {
+    public function describePathXSSL(DescribePathXSSLRequest $request = null): DescribePathXSSLResponse
+    {
         $resp = $this->invoke($request);
         return new DescribePathXSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -592,7 +607,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUGAInstance(DescribeUGAInstanceRequest $request = null): DescribeUGAInstanceResponse {
+    public function describeUGAInstance(DescribeUGAInstanceRequest $request = null): DescribeUGAInstanceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -643,7 +659,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUPath(DescribeUPathRequest $request = null): DescribeUPathResponse {
+    public function describeUPath(DescribeUPathRequest $request = null): DescribeUPathResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUPathResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -680,7 +697,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUPathTemplate(DescribeUPathTemplateRequest $request = null): DescribeUPathTemplateResponse {
+    public function describeUPathTemplate(DescribeUPathTemplateRequest $request = null): DescribeUPathTemplateResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUPathTemplateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -696,7 +714,7 @@ class PathXClient extends Client {
      *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
      *     "Quantity" => (integer) 购买周期，如果ChargeType为Month，Quantity默认为0；其他情况必须为大于0的整数
      *     "ChargeType" => (string) 计费类型：Dynamic，Month，Year
-     *     "InstanceType" => (string) 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。 
+     *     "InstanceType" => (string) 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。
      * ]
      *
      * Outputs:
@@ -707,7 +725,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getGlobalSSHPrice(GetGlobalSSHPriceRequest $request = null): GetGlobalSSHPriceResponse {
+    public function getGlobalSSHPrice(GetGlobalSSHPriceRequest $request = null): GetGlobalSSHPriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetGlobalSSHPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -735,7 +754,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getGlobalSSHUpdatePrice(GetGlobalSSHUpdatePriceRequest $request = null): GetGlobalSSHUpdatePriceResponse {
+    public function getGlobalSSHUpdatePrice(GetGlobalSSHUpdatePriceRequest $request = null): GetGlobalSSHUpdatePriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetGlobalSSHUpdatePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -749,7 +769,7 @@ class PathXClient extends Client {
      *
      * $args = [
      *     "ProjectId" => (string) 项目ID。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "ResourceId" => (string) ResourceId，如upath ID  和 uga ID 
+     *     "ResourceId" => (string) ResourceId，如upath ID  和 uga ID
      *     "BeginTime" => (integer) 查询起始时间，10位长度时间戳
      *     "EndTime" => (integer) 查询结束时间，10位长度时间戳
      *     "MetricName" => (array<string>) 查询监控的指标项。目前仅允许以下四项：NetworkOut:出向带宽，NetworkIn:入向带宽，NetworkOutUsage:出向带宽使用率，NetworkInUsage:入向带宽使用率
@@ -763,25 +783,25 @@ class PathXClient extends Client {
      *     "DataSet" => (object) 监控数据结果集[
      *         "NetworkOut" => (array<object>) 出向带宽[
      *             [
-     *                 "Timestamp" => (integer) 时间戳 
+     *                 "Timestamp" => (integer) 时间戳
      *                 "Value" => (integer) 监控点数值
      *             ]
      *         ]
      *         "NetworkIn" => (array<object>) 入向带宽[
      *             [
-     *                 "Timestamp" => (integer) 时间戳 
+     *                 "Timestamp" => (integer) 时间戳
      *                 "Value" => (integer) 监控点数值
      *             ]
      *         ]
      *         "NetworkOutUsage" => (array<object>) 出向带宽使用率[
      *             [
-     *                 "Timestamp" => (integer) 时间戳 
+     *                 "Timestamp" => (integer) 时间戳
      *                 "Value" => (integer) 监控点数值
      *             ]
      *         ]
      *         "NetworkInUsage" => (array<object>) 入向带宽使用率[
      *             [
-     *                 "Timestamp" => (integer) 时间戳 
+     *                 "Timestamp" => (integer) 时间戳
      *                 "Value" => (integer) 监控点数值
      *             ]
      *         ]
@@ -790,7 +810,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getPathXMetric(GetPathXMetricRequest $request = null): GetPathXMetricResponse {
+    public function getPathXMetric(GetPathXMetricRequest $request = null): GetPathXMetricResponse
+    {
         $resp = $this->invoke($request);
         return new GetPathXMetricResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -815,7 +836,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyGlobalSSHPort(ModifyGlobalSSHPortRequest $request = null): ModifyGlobalSSHPortResponse {
+    public function modifyGlobalSSHPort(ModifyGlobalSSHPortRequest $request = null): ModifyGlobalSSHPortResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyGlobalSSHPortResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -843,7 +865,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyGlobalSSHType(ModifyGlobalSSHTypeRequest $request = null): ModifyGlobalSSHTypeResponse {
+    public function modifyGlobalSSHType(ModifyGlobalSSHTypeRequest $request = null): ModifyGlobalSSHTypeResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyGlobalSSHTypeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -868,7 +891,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyUPathBandwidth(ModifyUPathBandwidthRequest $request = null): ModifyUPathBandwidthResponse {
+    public function modifyUPathBandwidth(ModifyUPathBandwidthRequest $request = null): ModifyUPathBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyUPathBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -899,7 +923,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyUPathTemplate(ModifyUPathTemplateRequest $request = null): ModifyUPathTemplateResponse {
+    public function modifyUPathTemplate(ModifyUPathTemplateRequest $request = null): ModifyUPathTemplateResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyUPathTemplateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -925,7 +950,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function ugaBindUPath(UGABindUPathRequest $request = null): UGABindUPathResponse {
+    public function ugaBindUPath(UGABindUPathRequest $request = null): UGABindUPathResponse
+    {
         $resp = $this->invoke($request);
         return new UGABindUPathResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -950,7 +976,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function ugaUnBindUPath(UGAUnBindUPathRequest $request = null): UGAUnBindUPathResponse {
+    public function ugaUnBindUPath(UGAUnBindUPathRequest $request = null): UGAUnBindUPathResponse
+    {
         $resp = $this->invoke($request);
         return new UGAUnBindUPathResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -976,7 +1003,8 @@ class PathXClient extends Client {
      *
      * @throws UCloudException
      */
-    public function unBindPathXSSL(UnBindPathXSSLRequest $request = null): UnBindPathXSSLResponse {
+    public function unBindPathXSSL(UnBindPathXSSLRequest $request = null): UnBindPathXSSLResponse
+    {
         $resp = $this->invoke($request);
         return new UnBindPathXSSLResponse($resp->toArray(), $resp->getRequestId());
     }

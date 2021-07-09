@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UGABindUPathRequest extends Request {
+class UGABindUPathRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UGABindUPath"]);
@@ -34,7 +35,8 @@ class UGABindUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -43,7 +45,8 @@ class UGABindUPathRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -52,7 +55,8 @@ class UGABindUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getUGAId(): string {
+    public function getUGAId(): string
+    {
         return $this->get("UGAId");
     }
 
@@ -61,7 +65,8 @@ class UGABindUPathRequest extends Request {
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId) {
+    public function setUGAId(string $ugaId)
+    {
         $this->set("UGAId", $ugaId);
     }
 
@@ -70,7 +75,8 @@ class UGABindUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getUPathId(): string {
+    public function getUPathId(): string
+    {
         return $this->get("UPathId");
     }
 
@@ -79,7 +85,8 @@ class UGABindUPathRequest extends Request {
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId) {
+    public function setUPathId(string $uPathId)
+    {
         $this->set("UPathId", $uPathId);
     }
 
@@ -88,7 +95,8 @@ class UGABindUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -97,9 +105,8 @@ class UGABindUPathRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

@@ -18,15 +18,17 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostDescDiskSet extends Response {
+class PHostDescDiskSet extends Response
+{
     
 
     /**
      * Space: 单盘大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSpace(): int {
+    public function getSpace(): int
+    {
         return $this->get("Space");
     }
 
@@ -35,16 +37,18 @@ class PHostDescDiskSet extends Response {
      *
      * @param int $space
      */
-    public function setSpace(int $space) {
+    public function setSpace(int $space)
+    {
         $this->set("Space", $space);
     }
 
     /**
      * Count: 磁盘数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -53,7 +57,8 @@ class PHostDescDiskSet extends Response {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
 
@@ -62,7 +67,8 @@ class PHostDescDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -71,7 +77,8 @@ class PHostDescDiskSet extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -80,7 +87,8 @@ class PHostDescDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -89,16 +97,18 @@ class PHostDescDiskSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * IOCap: 磁盘IO性能，单位MB/s（待废弃）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getIOCap(): int {
+    public function getIOCap(): int
+    {
         return $this->get("IOCap");
     }
 
@@ -107,7 +117,8 @@ class PHostDescDiskSet extends Response {
      *
      * @param int $ioCap
      */
-    public function setIOCap(int $ioCap) {
+    public function setIOCap(int $ioCap)
+    {
         $this->set("IOCap", $ioCap);
     }
 
@@ -116,7 +127,8 @@ class PHostDescDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getDrive(): string {
+    public function getDrive(): string
+    {
         return $this->get("Drive");
     }
 
@@ -125,7 +137,8 @@ class PHostDescDiskSet extends Response {
      *
      * @param string $drive
      */
-    public function setDrive(string $drive) {
+    public function setDrive(string $drive)
+    {
         $this->set("Drive", $drive);
     }
 
@@ -134,7 +147,8 @@ class PHostDescDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getDiskId(): string {
+    public function getDiskId(): string
+    {
         return $this->get("DiskId");
     }
 
@@ -143,7 +157,8 @@ class PHostDescDiskSet extends Response {
      *
      * @param string $diskId
      */
-    public function setDiskId(string $diskId) {
+    public function setDiskId(string $diskId)
+    {
         $this->set("DiskId", $diskId);
     }
 
@@ -152,7 +167,8 @@ class PHostDescDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getIsBoot(): string {
+    public function getIsBoot(): string
+    {
         return $this->get("IsBoot");
     }
 
@@ -161,9 +177,8 @@ class PHostDescDiskSet extends Response {
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot) {
+    public function setIsBoot(string $isBoot)
+    {
         $this->set("IsBoot", $isBoot);
     }
-
-
 }

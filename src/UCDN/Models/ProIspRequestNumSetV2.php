@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class ProIspRequestNumSetV2 extends Response {
+class ProIspRequestNumSetV2 extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ProIspRequestNumSetV2 extends Response {
      *
      * @return string|null
      */
-    public function getProvince(): string {
+    public function getProvince(): string
+    {
         return $this->get("Province");
     }
 
@@ -35,7 +37,8 @@ class ProIspRequestNumSetV2 extends Response {
      *
      * @param string $province
      */
-    public function setProvince(string $province) {
+    public function setProvince(string $province)
+    {
         $this->set("Province", $province);
     }
 
@@ -44,7 +47,8 @@ class ProIspRequestNumSetV2 extends Response {
      *
      * @return ProIspRequestListV2[]|null
      */
-    public function getRequestList(): array {
+    public function getRequestList(): array
+    {
         $items = $this->get("RequestList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -58,13 +62,12 @@ class ProIspRequestNumSetV2 extends Response {
      *
      * @param ProIspRequestListV2[] $requestList
      */
-    public function setRequestList(array $requestList) {
+    public function setRequestList(array $requestList)
+    {
         $result = [];
         foreach ($requestList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

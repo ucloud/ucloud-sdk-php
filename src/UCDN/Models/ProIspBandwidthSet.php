@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class ProIspBandwidthSet extends Response {
+class ProIspBandwidthSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ProIspBandwidthSet extends Response {
      *
      * @return string|null
      */
-    public function getProvince(): string {
+    public function getProvince(): string
+    {
         return $this->get("Province");
     }
 
@@ -35,7 +37,8 @@ class ProIspBandwidthSet extends Response {
      *
      * @param string $province
      */
-    public function setProvince(string $province) {
+    public function setProvince(string $province)
+    {
         $this->set("Province", $province);
     }
 
@@ -44,7 +47,8 @@ class ProIspBandwidthSet extends Response {
      *
      * @return ProIspBandwidthList[]|null
      */
-    public function getBandwidthTrafficList(): array {
+    public function getBandwidthTrafficList(): array
+    {
         $items = $this->get("BandwidthTrafficList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -58,13 +62,12 @@ class ProIspBandwidthSet extends Response {
      *
      * @param ProIspBandwidthList[] $bandwidthTrafficList
      */
-    public function setBandwidthTrafficList(array $bandwidthTrafficList) {
+    public function setBandwidthTrafficList(array $bandwidthTrafficList)
+    {
         $result = [];
         foreach ($bandwidthTrafficList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
-class VPNGatewayPriceSet extends Response {
+class VPNGatewayPriceSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class VPNGatewayPriceSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -35,7 +37,8 @@ class VPNGatewayPriceSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -44,7 +47,8 @@ class VPNGatewayPriceSet extends Response {
      *
      * @return float|null
      */
-    public function getPrice(): float {
+    public function getPrice(): float
+    {
         return $this->get("Price");
     }
 
@@ -53,16 +57,18 @@ class VPNGatewayPriceSet extends Response {
      *
      * @param float $price
      */
-    public function setPrice(float $price) {
+    public function setPrice(float $price)
+    {
         $this->set("Price", $price);
     }
 
     /**
      * PurchaseValue: 资源有效期, 以Unix Timestamp表示
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPurchaseValue(): int {
+    public function getPurchaseValue(): int
+    {
         return $this->get("PurchaseValue");
     }
 
@@ -71,9 +77,8 @@ class VPNGatewayPriceSet extends Response {
      *
      * @param int $purchaseValue
      */
-    public function setPurchaseValue(int $purchaseValue) {
+    public function setPurchaseValue(int $purchaseValue)
+    {
         $this->set("PurchaseValue", $purchaseValue);
     }
-
-
 }

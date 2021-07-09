@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class RouteTableInfo extends Response {
+class RouteTableInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class RouteTableInfo extends Response {
      *
      * @return string|null
      */
-    public function getRouteTableId(): string {
+    public function getRouteTableId(): string
+    {
         return $this->get("RouteTableId");
     }
 
@@ -35,16 +37,18 @@ class RouteTableInfo extends Response {
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId(string $routeTableId) {
+    public function setRouteTableId(string $routeTableId)
+    {
         $this->set("RouteTableId", $routeTableId);
     }
 
     /**
      * RouteTableType: 路由表类型。1为默认路由表，0为自定义路由表
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRouteTableType(): int {
+    public function getRouteTableType(): int
+    {
         return $this->get("RouteTableType");
     }
 
@@ -53,16 +57,18 @@ class RouteTableInfo extends Response {
      *
      * @param int $routeTableType
      */
-    public function setRouteTableType(int $routeTableType) {
+    public function setRouteTableType(int $routeTableType)
+    {
         $this->set("RouteTableType", $routeTableType);
     }
 
     /**
      * SubnetCount: 绑定该路由表的子网数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSubnetCount(): int {
+    public function getSubnetCount(): int
+    {
         return $this->get("SubnetCount");
     }
 
@@ -71,7 +77,8 @@ class RouteTableInfo extends Response {
      *
      * @param int $subnetCount
      */
-    public function setSubnetCount(int $subnetCount) {
+    public function setSubnetCount(int $subnetCount)
+    {
         $this->set("SubnetCount", $subnetCount);
     }
 
@@ -80,7 +87,8 @@ class RouteTableInfo extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -89,7 +97,8 @@ class RouteTableInfo extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -98,7 +107,8 @@ class RouteTableInfo extends Response {
      *
      * @return string|null
      */
-    public function getVPCName(): string {
+    public function getVPCName(): string
+    {
         return $this->get("VPCName");
     }
 
@@ -107,7 +117,8 @@ class RouteTableInfo extends Response {
      *
      * @param string $vpcName
      */
-    public function setVPCName(string $vpcName) {
+    public function setVPCName(string $vpcName)
+    {
         $this->set("VPCName", $vpcName);
     }
 
@@ -116,7 +127,8 @@ class RouteTableInfo extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -125,7 +137,8 @@ class RouteTableInfo extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -134,7 +147,8 @@ class RouteTableInfo extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -143,16 +157,18 @@ class RouteTableInfo extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
     /**
      * CreateTime: 创建时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -161,7 +177,8 @@ class RouteTableInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -170,7 +187,8 @@ class RouteTableInfo extends Response {
      *
      * @return RouteRuleInfo[]|null
      */
-    public function getRouteRules(): array {
+    public function getRouteRules(): array
+    {
         $items = $this->get("RouteRules") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -184,13 +202,12 @@ class RouteTableInfo extends Response {
      *
      * @param RouteRuleInfo[] $routeRules
      */
-    public function setRouteRules(array $routeRules) {
+    public function setRouteRules(array $routeRules)
+    {
         $result = [];
         foreach ($routeRules as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

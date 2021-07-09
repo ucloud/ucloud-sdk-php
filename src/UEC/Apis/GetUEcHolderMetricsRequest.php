@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUEcHolderMetricsRequest extends Request {
+class GetUEcHolderMetricsRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUEcHolderMetrics"]);
@@ -34,7 +35,8 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -43,7 +45,8 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -52,7 +55,8 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @return string|null
      */
-    public function getPackName(): string {
+    public function getPackName(): string
+    {
         return $this->get("PackName");
     }
 
@@ -61,7 +65,8 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @param string $packName
      */
-    public function setPackName(string $packName) {
+    public function setPackName(string $packName)
+    {
         $this->set("PackName", $packName);
     }
 
@@ -70,7 +75,8 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getType(): array {
+    public function getType(): array
+    {
         return $this->get("Type");
     }
 
@@ -79,7 +85,8 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @param string[] $type
      */
-    public function setType(array $type) {
+    public function setType(array $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -88,7 +95,8 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -97,16 +105,18 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
     /**
      * StartTime: 开始时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStartTime(): int {
+    public function getStartTime(): int
+    {
         return $this->get("StartTime");
     }
 
@@ -115,16 +125,18 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime) {
+    public function setStartTime(int $startTime)
+    {
         $this->set("StartTime", $startTime);
     }
 
     /**
      * EndTime: 结束时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -133,9 +145,8 @@ class GetUEcHolderMetricsRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class SpreadInfo extends Response {
+class SpreadInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class SpreadInfo extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,16 +37,18 @@ class SpreadInfo extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
     /**
      * UHostCount: 当前地域所有可用区中硬件隔离组中云主机的数量，不超过7。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getUHostCount(): int {
+    public function getUHostCount(): int
+    {
         return $this->get("UHostCount");
     }
 
@@ -53,9 +57,8 @@ class SpreadInfo extends Response {
      *
      * @param int $uHostCount
      */
-    public function setUHostCount(int $uHostCount) {
+    public function setUHostCount(int $uHostCount)
+    {
         $this->set("UHostCount", $uHostCount);
     }
-
-
 }

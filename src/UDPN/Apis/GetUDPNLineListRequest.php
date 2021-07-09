@@ -18,7 +18,8 @@ namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUDPNLineListRequest extends Request {
+class GetUDPNLineListRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUDPNLineList"]);
@@ -31,7 +32,8 @@ class GetUDPNLineListRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -40,27 +42,28 @@ class GetUDPNLineListRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
     /**
-     * ProjectId: 
+     * ProjectId:
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 
+     * ProjectId:
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
-
-
 }

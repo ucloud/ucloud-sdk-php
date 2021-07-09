@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateSSLResponse extends Response {
+class CreateSSLResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateSSLResponse extends Response {
      *
      * @return string|null
      */
-    public function getSSLId(): string {
+    public function getSSLId(): string
+    {
         return $this->get("SSLId");
     }
 
@@ -35,9 +37,8 @@ class CreateSSLResponse extends Response {
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId) {
+    public function setSSLId(string $sslId)
+    {
         $this->set("SSLId", $sslId);
     }
-
-
 }

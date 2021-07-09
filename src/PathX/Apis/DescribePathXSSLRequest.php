@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribePathXSSLRequest extends Request {
+class DescribePathXSSLRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribePathXSSL"]);
@@ -32,7 +33,8 @@ class DescribePathXSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class DescribePathXSSLRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class DescribePathXSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getSSLId(): string {
+    public function getSSLId(): string
+    {
         return $this->get("SSLId");
     }
 
@@ -59,7 +63,8 @@ class DescribePathXSSLRequest extends Request {
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId) {
+    public function setSSLId(string $sslId)
+    {
         $this->set("SSLId", $sslId);
     }
 
@@ -68,7 +73,8 @@ class DescribePathXSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getSearchValue(): string {
+    public function getSearchValue(): string
+    {
         return $this->get("SearchValue");
     }
 
@@ -77,16 +83,18 @@ class DescribePathXSSLRequest extends Request {
      *
      * @param string $searchValue
      */
-    public function setSearchValue(string $searchValue) {
+    public function setSearchValue(string $searchValue)
+    {
         $this->set("SearchValue", $searchValue);
     }
 
     /**
      * Limit: 最大返回条数，默认100，最大400
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -95,16 +103,18 @@ class DescribePathXSSLRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
     /**
      * Offset: 偏移值 默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -113,9 +123,8 @@ class DescribePathXSSLRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
-
-
 }

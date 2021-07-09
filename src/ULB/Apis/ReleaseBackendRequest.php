@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ReleaseBackendRequest extends Request {
+class ReleaseBackendRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ReleaseBackend"]);
@@ -35,7 +36,8 @@ class ReleaseBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class ReleaseBackendRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class ReleaseBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -62,7 +66,8 @@ class ReleaseBackendRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -71,7 +76,8 @@ class ReleaseBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getULBId(): string {
+    public function getULBId(): string
+    {
         return $this->get("ULBId");
     }
 
@@ -80,7 +86,8 @@ class ReleaseBackendRequest extends Request {
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId) {
+    public function setULBId(string $ulbId)
+    {
         $this->set("ULBId", $ulbId);
     }
 
@@ -89,7 +96,8 @@ class ReleaseBackendRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackendId(): string {
+    public function getBackendId(): string
+    {
         return $this->get("BackendId");
     }
 
@@ -98,9 +106,8 @@ class ReleaseBackendRequest extends Request {
      *
      * @param string $backendId
      */
-    public function setBackendId(string $backendId) {
+    public function setBackendId(string $backendId)
+    {
         $this->set("BackendId", $backendId);
     }
-
-
 }

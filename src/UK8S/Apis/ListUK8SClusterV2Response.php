@@ -19,15 +19,17 @@ namespace UCloud\UK8S\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UK8S\Models\ClusterSet;
 
-class ListUK8SClusterV2Response extends Response {
+class ListUK8SClusterV2Response extends Response
+{
     
 
     /**
      * ClusterCount: 满足条件的集群数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getClusterCount(): int {
+    public function getClusterCount(): int
+    {
         return $this->get("ClusterCount");
     }
 
@@ -36,7 +38,8 @@ class ListUK8SClusterV2Response extends Response {
      *
      * @param int $clusterCount
      */
-    public function setClusterCount(int $clusterCount) {
+    public function setClusterCount(int $clusterCount)
+    {
         $this->set("ClusterCount", $clusterCount);
     }
 
@@ -45,7 +48,8 @@ class ListUK8SClusterV2Response extends Response {
      *
      * @return ClusterSet[]|null
      */
-    public function getClusterSet(): array {
+    public function getClusterSet(): array
+    {
         $items = $this->get("ClusterSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class ListUK8SClusterV2Response extends Response {
      *
      * @param ClusterSet[] $clusterSet
      */
-    public function setClusterSet(array $clusterSet) {
+    public function setClusterSet(array $clusterSet)
+    {
         $result = [];
         foreach ($clusterSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

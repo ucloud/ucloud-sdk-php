@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class BandwidthInfoDetail extends Response {
+class BandwidthInfoDetail extends Response
+{
     
 
     /**
      * Time: 宽获取的时间点。格式：时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,7 +37,8 @@ class BandwidthInfoDetail extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
@@ -44,7 +47,8 @@ class BandwidthInfoDetail extends Response {
      *
      * @return float|null
      */
-    public function getBandwidth(): float {
+    public function getBandwidth(): float
+    {
         return $this->get("Bandwidth");
     }
 
@@ -53,9 +57,8 @@ class BandwidthInfoDetail extends Response {
      *
      * @param float $bandwidth
      */
-    public function setBandwidth(float $bandwidth) {
+    public function setBandwidth(float $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
-
-
 }

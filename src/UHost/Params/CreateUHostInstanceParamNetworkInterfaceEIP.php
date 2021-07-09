@@ -18,15 +18,17 @@ namespace UCloud\UHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
+class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
+{
     
 
     /**
      * Bandwidth: 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -35,7 +37,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -44,7 +47,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @return string|null
      */
-    public function getPayMode(): string {
+    public function getPayMode(): string
+    {
         return $this->get("PayMode");
     }
 
@@ -53,7 +57,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode) {
+    public function setPayMode(string $payMode)
+    {
         $this->set("PayMode", $payMode);
     }
 
@@ -62,7 +67,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string {
+    public function getShareBandwidthId(): string
+    {
         return $this->get("ShareBandwidthId");
     }
 
@@ -71,25 +77,28 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId) {
+    public function setShareBandwidthId(string $shareBandwidthId)
+    {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
 
     /**
-     * GlobalSSH: 
+     * GlobalSSH:
      *
      * @return CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH|null
      */
-    public function getGlobalSSH(): CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH {
+    public function getGlobalSSH(): CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH
+    {
         return new CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH($this->get("GlobalSSH"));
     }
 
     /**
-     * GlobalSSH: 
+     * GlobalSSH:
      *
      * @param CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH $globalSSH
      */
-    public function setGlobalSSH(CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH $globalSSH) {
+    public function setGlobalSSH(CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH $globalSSH)
+    {
         $this->set("GlobalSSH", $globalSSH->getAll());
     }
 
@@ -98,7 +107,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @return string|null
      */
-    public function getOperatorName(): string {
+    public function getOperatorName(): string
+    {
         return $this->get("OperatorName");
     }
 
@@ -107,7 +117,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName) {
+    public function setOperatorName(string $operatorName)
+    {
         $this->set("OperatorName", $operatorName);
     }
 
@@ -116,7 +127,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -125,9 +137,8 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

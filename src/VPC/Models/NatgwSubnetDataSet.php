@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class NatgwSubnetDataSet extends Response {
+class NatgwSubnetDataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -35,7 +37,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -44,7 +47,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnet(): string {
+    public function getSubnet(): string
+    {
         return $this->get("Subnet");
     }
 
@@ -53,7 +57,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @param string $subnet
      */
-    public function setSubnet(string $subnet) {
+    public function setSubnet(string $subnet)
+    {
         $this->set("Subnet", $subnet);
     }
 
@@ -62,7 +67,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @return string|null
      */
-    public function getNetmask(): string {
+    public function getNetmask(): string
+    {
         return $this->get("Netmask");
     }
 
@@ -71,7 +77,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @param string $netmask
      */
-    public function setNetmask(string $netmask) {
+    public function setNetmask(string $netmask)
+    {
         $this->set("Netmask", $netmask);
     }
 
@@ -80,7 +87,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetName(): string {
+    public function getSubnetName(): string
+    {
         return $this->get("SubnetName");
     }
 
@@ -89,7 +97,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName) {
+    public function setSubnetName(string $subnetName)
+    {
         $this->set("SubnetName", $subnetName);
     }
 
@@ -98,7 +107,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @return boolean|null
      */
-    public function getHasNATGW(): bool {
+    public function getHasNATGW(): bool
+    {
         return $this->get("HasNATGW");
     }
 
@@ -107,9 +117,8 @@ class NatgwSubnetDataSet extends Response {
      *
      * @param boolean $hasNATGW
      */
-    public function setHasNATGW(bool $hasNATGW) {
+    public function setHasNATGW(bool $hasNATGW)
+    {
         $this->set("HasNATGW", $hasNATGW);
     }
-
-
 }

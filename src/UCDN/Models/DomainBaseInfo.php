@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class DomainBaseInfo extends Response {
+class DomainBaseInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DomainBaseInfo extends Response {
      *
      * @return string|null
      */
-    public function getDomain(): string {
+    public function getDomain(): string
+    {
         return $this->get("Domain");
     }
 
@@ -35,7 +37,8 @@ class DomainBaseInfo extends Response {
      *
      * @param string $domain
      */
-    public function setDomain(string $domain) {
+    public function setDomain(string $domain)
+    {
         $this->set("Domain", $domain);
     }
 
@@ -44,7 +47,8 @@ class DomainBaseInfo extends Response {
      *
      * @return string|null
      */
-    public function getDomainId(): string {
+    public function getDomainId(): string
+    {
         return $this->get("DomainId");
     }
 
@@ -53,9 +57,8 @@ class DomainBaseInfo extends Response {
      *
      * @param string $domainId
      */
-    public function setDomainId(string $domainId) {
+    public function setDomainId(string $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
-
-
 }

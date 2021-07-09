@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUPathRequest extends Request {
+class DescribeUPathRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUPath"]);
@@ -32,7 +33,8 @@ class DescribeUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class DescribeUPathRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class DescribeUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getUPathId(): string {
+    public function getUPathId(): string
+    {
         return $this->get("UPathId");
     }
 
@@ -59,9 +63,8 @@ class DescribeUPathRequest extends Request {
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId) {
+    public function setUPathId(string $uPathId)
+    {
         $this->set("UPathId", $uPathId);
     }
-
-
 }

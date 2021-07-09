@@ -18,7 +18,8 @@ namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
-class BatchInfo extends Response {
+class BatchInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class BatchInfo extends Response {
      *
      * @return string|null
      */
-    public function getTemplateId(): string {
+    public function getTemplateId(): string
+    {
         return $this->get("TemplateId");
     }
 
@@ -35,7 +37,8 @@ class BatchInfo extends Response {
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId) {
+    public function setTemplateId(string $templateId)
+    {
         $this->set("TemplateId", $templateId);
     }
 
@@ -44,7 +47,8 @@ class BatchInfo extends Response {
      *
      * @return string|null
      */
-    public function getSigContent(): string {
+    public function getSigContent(): string
+    {
         return $this->get("SigContent");
     }
 
@@ -53,7 +57,8 @@ class BatchInfo extends Response {
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent) {
+    public function setSigContent(string $sigContent)
+    {
         $this->set("SigContent", $sigContent);
     }
 
@@ -62,7 +67,8 @@ class BatchInfo extends Response {
      *
      * @return FailPhoneDetail[]|null
      */
-    public function getTarget(): array {
+    public function getTarget(): array
+    {
         $items = $this->get("Target") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -76,7 +82,8 @@ class BatchInfo extends Response {
      *
      * @param FailPhoneDetail[] $target
      */
-    public function setTarget(array $target) {
+    public function setTarget(array $target)
+    {
         $result = [];
         foreach ($target as $i => $item) {
             array_push($result, $item->getAll());
@@ -89,7 +96,8 @@ class BatchInfo extends Response {
      *
      * @return string|null
      */
-    public function getFailureDetails(): string {
+    public function getFailureDetails(): string
+    {
         return $this->get("FailureDetails");
     }
 
@@ -98,9 +106,8 @@ class BatchInfo extends Response {
      *
      * @param string $failureDetails
      */
-    public function setFailureDetails(string $failureDetails) {
+    public function setFailureDetails(string $failureDetails)
+    {
         $this->set("FailureDetails", $failureDetails);
     }
-
-
 }

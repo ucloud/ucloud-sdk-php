@@ -18,15 +18,17 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostDiskSet extends Response {
+class PHostDiskSet extends Response
+{
     
 
     /**
      * Space: 单盘大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSpace(): int {
+    public function getSpace(): int
+    {
         return $this->get("Space");
     }
 
@@ -35,16 +37,18 @@ class PHostDiskSet extends Response {
      *
      * @param int $space
      */
-    public function setSpace(int $space) {
+    public function setSpace(int $space)
+    {
         $this->set("Space", $space);
     }
 
     /**
      * Count: 磁盘数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -53,7 +57,8 @@ class PHostDiskSet extends Response {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
 
@@ -62,7 +67,8 @@ class PHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -71,7 +77,8 @@ class PHostDiskSet extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -80,7 +87,8 @@ class PHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -89,16 +97,18 @@ class PHostDiskSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
     /**
      * IOCap: 磁盘IO性能，单位MB/s（待废弃）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getIOCap(): int {
+    public function getIOCap(): int
+    {
         return $this->get("IOCap");
     }
 
@@ -107,9 +117,8 @@ class PHostDiskSet extends Response {
      *
      * @param int $ioCap
      */
-    public function setIOCap(int $ioCap) {
+    public function setIOCap(int $ioCap)
+    {
         $this->set("IOCap", $ioCap);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateNATGWRequest extends Request {
+class CreateNATGWRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateNATGW"]);
@@ -35,7 +36,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -62,7 +66,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -71,7 +76,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getNATGWName(): string {
+    public function getNATGWName(): string
+    {
         return $this->get("NATGWName");
     }
 
@@ -80,7 +86,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param string $natgwName
      */
-    public function setNATGWName(string $natgwName) {
+    public function setNATGWName(string $natgwName)
+    {
         $this->set("NATGWName", $natgwName);
     }
 
@@ -89,7 +96,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getEIPIds(): array {
+    public function getEIPIds(): array
+    {
         return $this->get("EIPIds");
     }
 
@@ -98,7 +106,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param string[] $eipIds
      */
-    public function setEIPIds(array $eipIds) {
+    public function setEIPIds(array $eipIds)
+    {
         $this->set("EIPIds", $eipIds);
     }
 
@@ -107,7 +116,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getFirewallId(): string {
+    public function getFirewallId(): string
+    {
         return $this->get("FirewallId");
     }
 
@@ -116,7 +126,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId) {
+    public function setFirewallId(string $firewallId)
+    {
         $this->set("FirewallId", $firewallId);
     }
 
@@ -125,7 +136,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getSubnetworkIds(): array {
+    public function getSubnetworkIds(): array
+    {
         return $this->get("SubnetworkIds");
     }
 
@@ -134,7 +146,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param string[] $subnetworkIds
      */
-    public function setSubnetworkIds(array $subnetworkIds) {
+    public function setSubnetworkIds(array $subnetworkIds)
+    {
         $this->set("SubnetworkIds", $subnetworkIds);
     }
 
@@ -143,7 +156,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -152,16 +166,18 @@ class CreateNATGWRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
     /**
      * IfOpen: 白名单开关标记。0表示关闭，1表示开启。默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getIfOpen(): int {
+    public function getIfOpen(): int
+    {
         return $this->get("IfOpen");
     }
 
@@ -170,7 +186,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param int $ifOpen
      */
-    public function setIfOpen(int $ifOpen) {
+    public function setIfOpen(int $ifOpen)
+    {
         $this->set("IfOpen", $ifOpen);
     }
 
@@ -179,7 +196,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -188,7 +206,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -197,7 +216,8 @@ class CreateNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -206,9 +226,8 @@ class CreateNATGWRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

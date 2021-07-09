@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeNetworkAclAssociationRequest extends Request {
+class DescribeNetworkAclAssociationRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeNetworkAclAssociation"]);
@@ -33,7 +34,8 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @return string|null
      */
-    public function getAclId(): string {
+    public function getAclId(): string
+    {
         return $this->get("AclId");
     }
 
@@ -78,16 +84,18 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId) {
+    public function setAclId(string $aclId)
+    {
         $this->set("AclId", $aclId);
     }
 
     /**
      * Offset: 列表偏移量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -96,7 +104,8 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
@@ -105,7 +114,8 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @return string|null
      */
-    public function getLimit(): string {
+    public function getLimit(): string
+    {
         return $this->get("Limit");
     }
 
@@ -114,9 +124,8 @@ class DescribeNetworkAclAssociationRequest extends Request {
      *
      * @param string $limit
      */
-    public function setLimit(string $limit) {
+    public function setLimit(string $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

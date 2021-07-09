@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class NatGatewayIPSet extends Response {
+class NatGatewayIPSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NatGatewayIPSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -35,16 +37,18 @@ class NatGatewayIPSet extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
     /**
      * Weight: 权重为100的为出口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getWeight(): int {
+    public function getWeight(): int
+    {
         return $this->get("Weight");
     }
 
@@ -53,7 +57,8 @@ class NatGatewayIPSet extends Response {
      *
      * @param int $weight
      */
-    public function setWeight(int $weight) {
+    public function setWeight(int $weight)
+    {
         $this->set("Weight", $weight);
     }
 
@@ -62,7 +67,8 @@ class NatGatewayIPSet extends Response {
      *
      * @return string|null
      */
-    public function getBandwidthType(): string {
+    public function getBandwidthType(): string
+    {
         return $this->get("BandwidthType");
     }
 
@@ -71,16 +77,18 @@ class NatGatewayIPSet extends Response {
      *
      * @param string $bandwidthType
      */
-    public function setBandwidthType(string $bandwidthType) {
+    public function setBandwidthType(string $bandwidthType)
+    {
         $this->set("BandwidthType", $bandwidthType);
     }
 
     /**
      * Bandwidth: 带宽
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -89,7 +97,8 @@ class NatGatewayIPSet extends Response {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -98,7 +107,8 @@ class NatGatewayIPSet extends Response {
      *
      * @return NatGWIPResInfo[]|null
      */
-    public function getIPResInfo(): array {
+    public function getIPResInfo(): array
+    {
         $items = $this->get("IPResInfo") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -112,13 +122,12 @@ class NatGatewayIPSet extends Response {
      *
      * @param NatGWIPResInfo[] $ipResInfo
      */
-    public function setIPResInfo(array $ipResInfo) {
+    public function setIPResInfo(array $ipResInfo)
+    {
         $result = [];
         foreach ($ipResInfo as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

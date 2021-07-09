@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUcdnDomainLogRequest extends Request {
+class GetUcdnDomainLogRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUcdnDomainLog"]);
@@ -31,7 +32,8 @@ class GetUcdnDomainLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,7 +42,8 @@ class GetUcdnDomainLogRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -49,7 +52,8 @@ class GetUcdnDomainLogRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getDomainId(): array {
+    public function getDomainId(): array
+    {
         return $this->get("DomainId");
     }
 
@@ -58,16 +62,18 @@ class GetUcdnDomainLogRequest extends Request {
      *
      * @param string[] $domainId
      */
-    public function setDomainId(array $domainId) {
+    public function setDomainId(array $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
 
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -76,16 +82,18 @@ class GetUcdnDomainLogRequest extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -94,16 +102,18 @@ class GetUcdnDomainLogRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
     /**
      * Type: 查询粒度  0=default(没有粒度) 1=按小时  2=按天
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getType(): int {
+    public function getType(): int
+    {
         return $this->get("Type");
     }
 
@@ -112,9 +122,8 @@ class GetUcdnDomainLogRequest extends Request {
      *
      * @param int $type
      */
-    public function setType(int $type) {
+    public function setType(int $type)
+    {
         $this->set("Type", $type);
     }
-
-
 }

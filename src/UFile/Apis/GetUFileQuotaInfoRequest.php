@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUFileQuotaInfoRequest extends Request {
+class GetUFileQuotaInfoRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUFileQuotaInfo"]);
@@ -33,7 +34,8 @@ class GetUFileQuotaInfoRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class GetUFileQuotaInfoRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class GetUFileQuotaInfoRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class GetUFileQuotaInfoRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class GetUFileQuotaInfoRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getQuotaType(): array {
+    public function getQuotaType(): array
+    {
         return $this->get("QuotaType");
     }
 
@@ -78,9 +84,8 @@ class GetUFileQuotaInfoRequest extends Request {
      *
      * @param string[] $quotaType
      */
-    public function setQuotaType(array $quotaType) {
+    public function setQuotaType(array $quotaType)
+    {
         $this->set("QuotaType", $quotaType);
     }
-
-
 }

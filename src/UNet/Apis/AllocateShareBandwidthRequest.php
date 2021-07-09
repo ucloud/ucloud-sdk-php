@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class AllocateShareBandwidthRequest extends Request {
+class AllocateShareBandwidthRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "AllocateShareBandwidth"]);
@@ -35,7 +36,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -62,7 +66,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -71,7 +76,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -80,7 +86,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -89,7 +96,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -98,16 +106,18 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * ShareBandwidth: 共享带宽值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getShareBandwidth(): int {
+    public function getShareBandwidth(): int
+    {
         return $this->get("ShareBandwidth");
     }
 
@@ -116,16 +126,18 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth(int $shareBandwidth) {
+    public function setShareBandwidth(int $shareBandwidth)
+    {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
 
     /**
      * Quantity: 购买时长
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -134,7 +146,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -143,7 +156,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getIPVersion(): string {
+    public function getIPVersion(): string
+    {
         return $this->get("IPVersion");
     }
 
@@ -152,9 +166,8 @@ class AllocateShareBandwidthRequest extends Request {
      *
      * @param string $ipVersion
      */
-    public function setIPVersion(string $ipVersion) {
+    public function setIPVersion(string $ipVersion)
+    {
         $this->set("IPVersion", $ipVersion);
     }
-
-
 }

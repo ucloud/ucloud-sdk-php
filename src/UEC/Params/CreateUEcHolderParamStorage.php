@@ -18,7 +18,8 @@ namespace UCloud\UEC\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUEcHolderParamStorage extends Request {
+class CreateUEcHolderParamStorage extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUEcHolderParamStorage extends Request {
      *
      * @return string|null
      */
-    public function getPath(): string {
+    public function getPath(): string
+    {
         return $this->get("Path");
     }
 
@@ -35,7 +37,8 @@ class CreateUEcHolderParamStorage extends Request {
      *
      * @param string $path
      */
-    public function setPath(string $path) {
+    public function setPath(string $path)
+    {
         $this->set("Path", $path);
     }
 
@@ -44,7 +47,8 @@ class CreateUEcHolderParamStorage extends Request {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -53,9 +57,8 @@ class CreateUEcHolderParamStorage extends Request {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
-
-
 }

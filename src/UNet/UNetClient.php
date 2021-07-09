@@ -82,7 +82,8 @@ use UCloud\UNet\Apis\UpdateFirewallAttributeResponse;
 /**
  * This client is used to call actions of **UNet** service
  */
-class UNetClient extends Client {
+class UNetClient extends Client
+{
 
     /**
      * AllocateEIP - 根据提供信息, 申请弹性IP
@@ -93,7 +94,7 @@ class UNetClient extends Client {
      *
      * $args = [
      *     "Region" => (string) 地域。
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。
      *     "OperatorName" => (string) 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。
      *     "Bandwidth" => (integer) 弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-10000]
      *     "Tag" => (string) 业务组名称, 默认为 "Default"
@@ -124,7 +125,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function allocateEIP(AllocateEIPRequest $request = null): AllocateEIPResponse {
+    public function allocateEIP(AllocateEIPRequest $request = null): AllocateEIPResponse
+    {
         $resp = $this->invoke($request);
         return new AllocateEIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -154,7 +156,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function allocateShareBandwidth(AllocateShareBandwidthRequest $request = null): AllocateShareBandwidthResponse {
+    public function allocateShareBandwidth(AllocateShareBandwidthRequest $request = null): AllocateShareBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new AllocateShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -181,7 +184,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthRequest $request = null): AssociateEIPWithShareBandwidthResponse {
+    public function associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthRequest $request = null): AssociateEIPWithShareBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new AssociateEIPWithShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -208,7 +212,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function bindEIP(BindEIPRequest $request = null): BindEIPResponse {
+    public function bindEIP(BindEIPRequest $request = null): BindEIPResponse
+    {
         $resp = $this->invoke($request);
         return new BindEIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -237,7 +242,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createBandwidthPackage(CreateBandwidthPackageRequest $request = null): CreateBandwidthPackageResponse {
+    public function createBandwidthPackage(CreateBandwidthPackageRequest $request = null): CreateBandwidthPackageResponse
+    {
         $resp = $this->invoke($request);
         return new CreateBandwidthPackageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -266,7 +272,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createFirewall(CreateFirewallRequest $request = null): CreateFirewallResponse {
+    public function createFirewall(CreateFirewallRequest $request = null): CreateFirewallResponse
+    {
         $resp = $this->invoke($request);
         return new CreateFirewallResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -291,7 +298,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteBandwidthPackage(DeleteBandwidthPackageRequest $request = null): DeleteBandwidthPackageResponse {
+    public function deleteBandwidthPackage(DeleteBandwidthPackageRequest $request = null): DeleteBandwidthPackageResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteBandwidthPackageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -316,7 +324,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteFirewall(DeleteFirewallRequest $request = null): DeleteFirewallResponse {
+    public function deleteFirewall(DeleteFirewallRequest $request = null): DeleteFirewallResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteFirewallResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -359,7 +368,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeBandwidthPackage(DescribeBandwidthPackageRequest $request = null): DescribeBandwidthPackageResponse {
+    public function describeBandwidthPackage(DescribeBandwidthPackageRequest $request = null): DescribeBandwidthPackageResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeBandwidthPackageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -393,7 +403,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeBandwidthUsage(DescribeBandwidthUsageRequest $request = null): DescribeBandwidthUsageResponse {
+    public function describeBandwidthUsage(DescribeBandwidthUsageRequest $request = null): DescribeBandwidthUsageResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeBandwidthUsageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -461,7 +472,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeEIP(DescribeEIPRequest $request = null): DescribeEIPResponse {
+    public function describeEIP(DescribeEIPRequest $request = null): DescribeEIPResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeEIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -513,7 +525,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeFirewall(DescribeFirewallRequest $request = null): DescribeFirewallResponse {
+    public function describeFirewall(DescribeFirewallRequest $request = null): DescribeFirewallResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeFirewallResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -553,7 +566,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeFirewallResource(DescribeFirewallResourceRequest $request = null): DescribeFirewallResourceResponse {
+    public function describeFirewallResource(DescribeFirewallResourceRequest $request = null): DescribeFirewallResourceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeFirewallResourceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -602,7 +616,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeShareBandwidth(DescribeShareBandwidthRequest $request = null): DescribeShareBandwidthResponse {
+    public function describeShareBandwidth(DescribeShareBandwidthRequest $request = null): DescribeShareBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -631,7 +646,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthRequest $request = null): DisassociateEIPWithShareBandwidthResponse {
+    public function disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthRequest $request = null): DisassociateEIPWithShareBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new DisassociateEIPWithShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -662,7 +678,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getEIPPayMode(GetEIPPayModeRequest $request = null): GetEIPPayModeResponse {
+    public function getEIPPayMode(GetEIPPayModeRequest $request = null): GetEIPPayModeResponse
+    {
         $resp = $this->invoke($request);
         return new GetEIPPayModeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -699,7 +716,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getEIPPrice(GetEIPPriceRequest $request = null): GetEIPPriceResponse {
+    public function getEIPPrice(GetEIPPriceRequest $request = null): GetEIPPriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetEIPPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -726,7 +744,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getEIPUpgradePrice(GetEIPUpgradePriceRequest $request = null): GetEIPUpgradePriceResponse {
+    public function getEIPUpgradePrice(GetEIPUpgradePriceRequest $request = null): GetEIPUpgradePriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetEIPUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -764,7 +783,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getThroughputDailyBillingInfo(GetThroughputDailyBillingInfoRequest $request = null): GetThroughputDailyBillingInfoResponse {
+    public function getThroughputDailyBillingInfo(GetThroughputDailyBillingInfoRequest $request = null): GetThroughputDailyBillingInfoResponse
+    {
         $resp = $this->invoke($request);
         return new GetThroughputDailyBillingInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -791,7 +811,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function grantFirewall(GrantFirewallRequest $request = null): GrantFirewallResponse {
+    public function grantFirewall(GrantFirewallRequest $request = null): GrantFirewallResponse
+    {
         $resp = $this->invoke($request);
         return new GrantFirewallResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -817,7 +838,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyEIPBandwidth(ModifyEIPBandwidthRequest $request = null): ModifyEIPBandwidthResponse {
+    public function modifyEIPBandwidth(ModifyEIPBandwidthRequest $request = null): ModifyEIPBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyEIPBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -843,7 +865,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyEIPWeight(ModifyEIPWeightRequest $request = null): ModifyEIPWeightResponse {
+    public function modifyEIPWeight(ModifyEIPWeightRequest $request = null): ModifyEIPWeightResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyEIPWeightResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -868,7 +891,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function releaseEIP(ReleaseEIPRequest $request = null): ReleaseEIPResponse {
+    public function releaseEIP(ReleaseEIPRequest $request = null): ReleaseEIPResponse
+    {
         $resp = $this->invoke($request);
         return new ReleaseEIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -895,7 +919,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function releaseShareBandwidth(ReleaseShareBandwidthRequest $request = null): ReleaseShareBandwidthResponse {
+    public function releaseShareBandwidth(ReleaseShareBandwidthRequest $request = null): ReleaseShareBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new ReleaseShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -921,7 +946,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function resizeShareBandwidth(ResizeShareBandwidthRequest $request = null): ResizeShareBandwidthResponse {
+    public function resizeShareBandwidth(ResizeShareBandwidthRequest $request = null): ResizeShareBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new ResizeShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -948,7 +974,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function setEIPPayMode(SetEIPPayModeRequest $request = null): SetEIPPayModeResponse {
+    public function setEIPPayMode(SetEIPPayModeRequest $request = null): SetEIPPayModeResponse
+    {
         $resp = $this->invoke($request);
         return new SetEIPPayModeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -975,7 +1002,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function unBindEIP(UnBindEIPRequest $request = null): UnBindEIPResponse {
+    public function unBindEIP(UnBindEIPRequest $request = null): UnBindEIPResponse
+    {
         $resp = $this->invoke($request);
         return new UnBindEIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1003,7 +1031,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateEIPAttribute(UpdateEIPAttributeRequest $request = null): UpdateEIPAttributeResponse {
+    public function updateEIPAttribute(UpdateEIPAttributeRequest $request = null): UpdateEIPAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateEIPAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1030,7 +1059,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateFirewall(UpdateFirewallRequest $request = null): UpdateFirewallResponse {
+    public function updateFirewall(UpdateFirewallRequest $request = null): UpdateFirewallResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateFirewallResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1058,7 +1088,8 @@ class UNetClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateFirewallAttribute(UpdateFirewallAttributeRequest $request = null): UpdateFirewallAttributeResponse {
+    public function updateFirewallAttribute(UpdateFirewallAttributeRequest $request = null): UpdateFirewallAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateFirewallAttributeResponse($resp->toArray(), $resp->getRequestId());
     }

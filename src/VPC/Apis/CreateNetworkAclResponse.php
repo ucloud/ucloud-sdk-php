@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateNetworkAclResponse extends Response {
+class CreateNetworkAclResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateNetworkAclResponse extends Response {
      *
      * @return string|null
      */
-    public function getAclId(): string {
+    public function getAclId(): string
+    {
         return $this->get("AclId");
     }
 
@@ -35,9 +37,8 @@ class CreateNetworkAclResponse extends Response {
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId) {
+    public function setAclId(string $aclId)
+    {
         $this->set("AclId", $aclId);
     }
-
-
 }

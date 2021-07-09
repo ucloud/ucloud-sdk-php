@@ -18,15 +18,17 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class FetchUDBInstanceEarliestRecoverTimeResponse extends Response {
+class FetchUDBInstanceEarliestRecoverTimeResponse extends Response
+{
     
 
     /**
      * EarliestTime: 获取最早可回档时间点
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEarliestTime(): int {
+    public function getEarliestTime(): int
+    {
         return $this->get("EarliestTime");
     }
 
@@ -35,9 +37,8 @@ class FetchUDBInstanceEarliestRecoverTimeResponse extends Response {
      *
      * @param int $earliestTime
      */
-    public function setEarliestTime(int $earliestTime) {
+    public function setEarliestTime(int $earliestTime)
+    {
         $this->set("EarliestTime", $earliestTime);
     }
-
-
 }

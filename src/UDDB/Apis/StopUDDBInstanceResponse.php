@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class StopUDDBInstanceResponse extends Response {
+class StopUDDBInstanceResponse extends Response
+{
     
 
 

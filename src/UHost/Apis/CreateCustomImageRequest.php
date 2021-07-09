@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateCustomImageRequest extends Request {
+class CreateCustomImageRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateCustomImage"]);
@@ -34,7 +35,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getUHostId(): string {
+    public function getUHostId(): string
+    {
         return $this->get("UHostId");
     }
 
@@ -97,7 +105,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId) {
+    public function setUHostId(string $uHostId)
+    {
         $this->set("UHostId", $uHostId);
     }
 
@@ -106,7 +115,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageName(): string {
+    public function getImageName(): string
+    {
         return $this->get("ImageName");
     }
 
@@ -115,7 +125,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName) {
+    public function setImageName(string $imageName)
+    {
         $this->set("ImageName", $imageName);
     }
 
@@ -124,7 +135,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageDescription(): string {
+    public function getImageDescription(): string
+    {
         return $this->get("ImageDescription");
     }
 
@@ -133,9 +145,8 @@ class CreateCustomImageRequest extends Request {
      *
      * @param string $imageDescription
      */
-    public function setImageDescription(string $imageDescription) {
+    public function setImageDescription(string $imageDescription)
+    {
         $this->set("ImageDescription", $imageDescription);
     }
-
-
 }

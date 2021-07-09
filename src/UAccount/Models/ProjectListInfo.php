@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Models;
 
 use UCloud\Core\Response\Response;
 
-class ProjectListInfo extends Response {
+class ProjectListInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ProjectListInfo extends Response {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -35,7 +37,8 @@ class ProjectListInfo extends Response {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -44,7 +47,8 @@ class ProjectListInfo extends Response {
      *
      * @return string|null
      */
-    public function getProjectName(): string {
+    public function getProjectName(): string
+    {
         return $this->get("ProjectName");
     }
 
@@ -53,16 +57,18 @@ class ProjectListInfo extends Response {
      *
      * @param string $projectName
      */
-    public function setProjectName(string $projectName) {
+    public function setProjectName(string $projectName)
+    {
         $this->set("ProjectName", $projectName);
     }
 
     /**
      * CreateTime: 创建时间(Unix时间戳)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -71,7 +77,8 @@ class ProjectListInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -80,7 +87,8 @@ class ProjectListInfo extends Response {
      *
      * @return boolean|null
      */
-    public function getIsDefault(): bool {
+    public function getIsDefault(): bool
+    {
         return $this->get("IsDefault");
     }
 
@@ -89,16 +97,18 @@ class ProjectListInfo extends Response {
      *
      * @param boolean $isDefault
      */
-    public function setIsDefault(bool $isDefault) {
+    public function setIsDefault(bool $isDefault)
+    {
         $this->set("IsDefault", $isDefault);
     }
 
     /**
      * ResourceCount: 项目下资源数量（已废弃，不建议使用）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getResourceCount(): int {
+    public function getResourceCount(): int
+    {
         return $this->get("ResourceCount");
     }
 
@@ -107,16 +117,18 @@ class ProjectListInfo extends Response {
      *
      * @param int $resourceCount
      */
-    public function setResourceCount(int $resourceCount) {
+    public function setResourceCount(int $resourceCount)
+    {
         $this->set("ResourceCount", $resourceCount);
     }
 
     /**
      * MemberCount: 项目下成员数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemberCount(): int {
+    public function getMemberCount(): int
+    {
         return $this->get("MemberCount");
     }
 
@@ -125,7 +137,8 @@ class ProjectListInfo extends Response {
      *
      * @param int $memberCount
      */
-    public function setMemberCount(int $memberCount) {
+    public function setMemberCount(int $memberCount)
+    {
         $this->set("MemberCount", $memberCount);
     }
 
@@ -134,7 +147,8 @@ class ProjectListInfo extends Response {
      *
      * @return string|null
      */
-    public function getParentId(): string {
+    public function getParentId(): string
+    {
         return $this->get("ParentId");
     }
 
@@ -143,7 +157,8 @@ class ProjectListInfo extends Response {
      *
      * @param string $parentId
      */
-    public function setParentId(string $parentId) {
+    public function setParentId(string $parentId)
+    {
         $this->set("ParentId", $parentId);
     }
 
@@ -152,7 +167,8 @@ class ProjectListInfo extends Response {
      *
      * @return string|null
      */
-    public function getParentName(): string {
+    public function getParentName(): string
+    {
         return $this->get("ParentName");
     }
 
@@ -161,9 +177,8 @@ class ProjectListInfo extends Response {
      *
      * @param string $parentName
      */
-    public function setParentName(string $parentName) {
+    public function setParentName(string $parentName)
+    {
         $this->set("ParentName", $parentName);
     }
-
-
 }

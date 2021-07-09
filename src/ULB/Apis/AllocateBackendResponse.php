@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class AllocateBackendResponse extends Response {
+class AllocateBackendResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AllocateBackendResponse extends Response {
      *
      * @return string|null
      */
-    public function getBackendId(): string {
+    public function getBackendId(): string
+    {
         return $this->get("BackendId");
     }
 
@@ -35,9 +37,8 @@ class AllocateBackendResponse extends Response {
      *
      * @param string $backendId
      */
-    public function setBackendId(string $backendId) {
+    public function setBackendId(string $backendId)
+    {
         $this->set("BackendId", $backendId);
     }
-
-
 }

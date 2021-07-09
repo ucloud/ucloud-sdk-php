@@ -18,15 +18,17 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUEcCustomImageResponse extends Response {
+class DeleteUEcCustomImageResponse extends Response
+{
     
 
     /**
      * ImageId: 镜像ID
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getImageId(): int {
+    public function getImageId(): int
+    {
         return $this->get("ImageId");
     }
 
@@ -35,9 +37,8 @@ class DeleteUEcCustomImageResponse extends Response {
      *
      * @param int $imageId
      */
-    public function setImageId(int $imageId) {
+    public function setImageId(int $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
-
-
 }

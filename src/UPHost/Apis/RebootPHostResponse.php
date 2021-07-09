@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class RebootPHostResponse extends Response {
+class RebootPHostResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class RebootPHostResponse extends Response {
      *
      * @return string|null
      */
-    public function getPHostId(): string {
+    public function getPHostId(): string
+    {
         return $this->get("PHostId");
     }
 
@@ -35,9 +37,8 @@ class RebootPHostResponse extends Response {
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId) {
+    public function setPHostId(string $pHostId)
+    {
         $this->set("PHostId", $pHostId);
     }
-
-
 }

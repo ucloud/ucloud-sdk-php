@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUSMSTemplateResponse extends Response {
+class DeleteUSMSTemplateResponse extends Response
+{
     
 
 

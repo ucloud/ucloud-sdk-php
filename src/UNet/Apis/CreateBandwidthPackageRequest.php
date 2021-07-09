@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateBandwidthPackageRequest extends Request {
+class CreateBandwidthPackageRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateBandwidthPackage"]);
@@ -35,7 +36,8 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,16 +46,18 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
     /**
      * Bandwidth: 带宽大小(单位Mbps), 取值范围[2,800] (最大值受地域限制)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -62,7 +66,8 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -71,7 +76,8 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -80,16 +86,18 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
     /**
      * TimeRange: 带宽包有效时长, 取值范围为大于0的整数, 即该带宽包在EnableTime到 EnableTime+TimeRange时间段内生效
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTimeRange(): int {
+    public function getTimeRange(): int
+    {
         return $this->get("TimeRange");
     }
 
@@ -98,16 +106,18 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @param int $timeRange
      */
-    public function setTimeRange(int $timeRange) {
+    public function setTimeRange(int $timeRange)
+    {
         $this->set("TimeRange", $timeRange);
     }
 
     /**
      * EnableTime: 生效时间, 格式为 Unix timestamp, 默认为立即开通
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEnableTime(): int {
+    public function getEnableTime(): int
+    {
         return $this->get("EnableTime");
     }
 
@@ -116,7 +126,8 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @param int $enableTime
      */
-    public function setEnableTime(int $enableTime) {
+    public function setEnableTime(int $enableTime)
+    {
         $this->set("EnableTime", $enableTime);
     }
 
@@ -125,7 +136,8 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -134,9 +146,8 @@ class CreateBandwidthPackageRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

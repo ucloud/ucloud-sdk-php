@@ -18,7 +18,8 @@ namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
-class UMemBlockInfo extends Response {
+class UMemBlockInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UMemBlockInfo extends Response {
      *
      * @return string|null
      */
-    public function getBlockId(): string {
+    public function getBlockId(): string
+    {
         return $this->get("BlockId");
     }
 
@@ -35,7 +37,8 @@ class UMemBlockInfo extends Response {
      *
      * @param string $blockId
      */
-    public function setBlockId(string $blockId) {
+    public function setBlockId(string $blockId)
+    {
         $this->set("BlockId", $blockId);
     }
 
@@ -44,7 +47,8 @@ class UMemBlockInfo extends Response {
      *
      * @return string|null
      */
-    public function getBlockVip(): string {
+    public function getBlockVip(): string
+    {
         return $this->get("BlockVip");
     }
 
@@ -53,16 +57,18 @@ class UMemBlockInfo extends Response {
      *
      * @param string $blockVip
      */
-    public function setBlockVip(string $blockVip) {
+    public function setBlockVip(string $blockVip)
+    {
         $this->set("BlockVip", $blockVip);
     }
 
     /**
      * BlockPort: 分片端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBlockPort(): int {
+    public function getBlockPort(): int
+    {
         return $this->get("BlockPort");
     }
 
@@ -71,16 +77,18 @@ class UMemBlockInfo extends Response {
      *
      * @param int $blockPort
      */
-    public function setBlockPort(int $blockPort) {
+    public function setBlockPort(int $blockPort)
+    {
         $this->set("BlockPort", $blockPort);
     }
 
     /**
      * BlockSize: 容量单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBlockSize(): int {
+    public function getBlockSize(): int
+    {
         return $this->get("BlockSize");
     }
 
@@ -89,16 +97,18 @@ class UMemBlockInfo extends Response {
      *
      * @param int $blockSize
      */
-    public function setBlockSize(int $blockSize) {
+    public function setBlockSize(int $blockSize)
+    {
         $this->set("BlockSize", $blockSize);
     }
 
     /**
      * BlockUsedSize: 使用量单位MB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBlockUsedSize(): int {
+    public function getBlockUsedSize(): int
+    {
         return $this->get("BlockUsedSize");
     }
 
@@ -107,7 +117,8 @@ class UMemBlockInfo extends Response {
      *
      * @param int $blockUsedSize
      */
-    public function setBlockUsedSize(int $blockUsedSize) {
+    public function setBlockUsedSize(int $blockUsedSize)
+    {
         $this->set("BlockUsedSize", $blockUsedSize);
     }
 
@@ -116,7 +127,8 @@ class UMemBlockInfo extends Response {
      *
      * @return string|null
      */
-    public function getBlockState(): string {
+    public function getBlockState(): string
+    {
         return $this->get("BlockState");
     }
 
@@ -125,16 +137,18 @@ class UMemBlockInfo extends Response {
      *
      * @param string $blockState
      */
-    public function setBlockState(string $blockState) {
+    public function setBlockState(string $blockState)
+    {
         $this->set("BlockState", $blockState);
     }
 
     /**
      * BlockSlotBegin: 分片维护的键槽起始值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBlockSlotBegin(): int {
+    public function getBlockSlotBegin(): int
+    {
         return $this->get("BlockSlotBegin");
     }
 
@@ -143,16 +157,18 @@ class UMemBlockInfo extends Response {
      *
      * @param int $blockSlotBegin
      */
-    public function setBlockSlotBegin(int $blockSlotBegin) {
+    public function setBlockSlotBegin(int $blockSlotBegin)
+    {
         $this->set("BlockSlotBegin", $blockSlotBegin);
     }
 
     /**
      * BlockSlotEnd: 分片维护的键槽结束值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBlockSlotEnd(): int {
+    public function getBlockSlotEnd(): int
+    {
         return $this->get("BlockSlotEnd");
     }
 
@@ -161,9 +177,8 @@ class UMemBlockInfo extends Response {
      *
      * @param int $blockSlotEnd
      */
-    public function setBlockSlotEnd(int $blockSlotEnd) {
+    public function setBlockSlotEnd(int $blockSlotEnd)
+    {
         $this->set("BlockSlotEnd", $blockSlotEnd);
     }
-
-
 }

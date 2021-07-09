@@ -19,7 +19,8 @@ namespace UCloud\UFile\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UFile\Models\UFileTokenSet;
 
-class DescribeUFileTokenResponse extends Response {
+class DescribeUFileTokenResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUFileTokenResponse extends Response {
      *
      * @return UFileTokenSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUFileTokenResponse extends Response {
      *
      * @param UFileTokenSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

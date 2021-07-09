@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\ProIspRequestNumSetV2;
 use UCloud\UCDN\Models\ProIspRequestListV2;
 
-class GetUcdnProIspRequestNumV2Response extends Response {
+class GetUcdnProIspRequestNumV2Response extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class GetUcdnProIspRequestNumV2Response extends Response {
      *
      * @return ProIspRequestNumSetV2[]|null
      */
-    public function getRequestNumSet(): array {
+    public function getRequestNumSet(): array
+    {
         $items = $this->get("RequestNumSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class GetUcdnProIspRequestNumV2Response extends Response {
      *
      * @param ProIspRequestNumSetV2[] $requestNumSet
      */
-    public function setRequestNumSet(array $requestNumSet) {
+    public function setRequestNumSet(array $requestNumSet)
+    {
         $result = [];
         foreach ($requestNumSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

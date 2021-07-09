@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateUEcSubnetRequest extends Request {
+class UpdateUEcSubnetRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateUEcSubnet"]);
@@ -32,7 +33,8 @@ class UpdateUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class UpdateUEcSubnetRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class UpdateUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -59,7 +63,8 @@ class UpdateUEcSubnetRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -68,7 +73,8 @@ class UpdateUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetName(): string {
+    public function getSubnetName(): string
+    {
         return $this->get("SubnetName");
     }
 
@@ -77,7 +83,8 @@ class UpdateUEcSubnetRequest extends Request {
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName) {
+    public function setSubnetName(string $subnetName)
+    {
         $this->set("SubnetName", $subnetName);
     }
 
@@ -86,7 +93,8 @@ class UpdateUEcSubnetRequest extends Request {
      *
      * @return string|null
      */
-    public function getComment(): string {
+    public function getComment(): string
+    {
         return $this->get("Comment");
     }
 
@@ -95,9 +103,8 @@ class UpdateUEcSubnetRequest extends Request {
      *
      * @param string $comment
      */
-    public function setComment(string $comment) {
+    public function setComment(string $comment)
+    {
         $this->set("Comment", $comment);
     }
-
-
 }

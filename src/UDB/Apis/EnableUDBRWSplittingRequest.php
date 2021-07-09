@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class EnableUDBRWSplittingRequest extends Request {
+class EnableUDBRWSplittingRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "EnableUDBRWSplitting"]);
@@ -34,7 +35,8 @@ class EnableUDBRWSplittingRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class EnableUDBRWSplittingRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class EnableUDBRWSplittingRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class EnableUDBRWSplittingRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class EnableUDBRWSplittingRequest extends Request {
      *
      * @return string|null
      */
-    public function getMasterDBId(): string {
+    public function getMasterDBId(): string
+    {
         return $this->get("MasterDBId");
     }
 
@@ -79,7 +85,8 @@ class EnableUDBRWSplittingRequest extends Request {
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId(string $masterDBId) {
+    public function setMasterDBId(string $masterDBId)
+    {
         $this->set("MasterDBId", $masterDBId);
     }
 
@@ -88,7 +95,8 @@ class EnableUDBRWSplittingRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackupZone(): string {
+    public function getBackupZone(): string
+    {
         return $this->get("BackupZone");
     }
 
@@ -97,9 +105,8 @@ class EnableUDBRWSplittingRequest extends Request {
      *
      * @param string $backupZone
      */
-    public function setBackupZone(string $backupZone) {
+    public function setBackupZone(string $backupZone)
+    {
         $this->set("BackupZone", $backupZone);
     }
-
-
 }

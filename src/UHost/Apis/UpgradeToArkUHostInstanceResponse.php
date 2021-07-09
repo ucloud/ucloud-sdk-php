@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpgradeToArkUHostInstanceResponse extends Response {
+class UpgradeToArkUHostInstanceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UpgradeToArkUHostInstanceResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getUHostSet(): array {
+    public function getUHostSet(): array
+    {
         return $this->get("UHostSet");
     }
 
@@ -35,9 +37,8 @@ class UpgradeToArkUHostInstanceResponse extends Response {
      *
      * @param string[] $uHostSet
      */
-    public function setUHostSet(array $uHostSet) {
+    public function setUHostSet(array $uHostSet)
+    {
         $this->set("UHostSet", $uHostSet);
     }
-
-
 }

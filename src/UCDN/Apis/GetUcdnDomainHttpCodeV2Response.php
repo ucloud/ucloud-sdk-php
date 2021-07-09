@@ -25,7 +25,8 @@ use UCloud\UCDN\Models\HttpCodeV2Detail;
 use UCloud\UCDN\Models\HttpCodeV2Detail;
 use UCloud\UCDN\Models\HttpCodeV2Detail;
 
-class GetUcdnDomainHttpCodeV2Response extends Response {
+class GetUcdnDomainHttpCodeV2Response extends Response
+{
     
 
     /**
@@ -33,7 +34,8 @@ class GetUcdnDomainHttpCodeV2Response extends Response {
      *
      * @return HttpCodeInfoV2[]|null
      */
-    public function getHttpCodeDetail(): array {
+    public function getHttpCodeDetail(): array
+    {
         $items = $this->get("HttpCodeDetail") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -47,13 +49,12 @@ class GetUcdnDomainHttpCodeV2Response extends Response {
      *
      * @param HttpCodeInfoV2[] $httpCodeDetail
      */
-    public function setHttpCodeDetail(array $httpCodeDetail) {
+    public function setHttpCodeDetail(array $httpCodeDetail)
+    {
         $result = [];
         foreach ($httpCodeDetail as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

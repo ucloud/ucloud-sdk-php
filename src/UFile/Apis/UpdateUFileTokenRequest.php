@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateUFileTokenRequest extends Request {
+class UpdateUFileTokenRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateUFileToken"]);
@@ -33,7 +34,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getTokenId(): string {
+    public function getTokenId(): string
+    {
         return $this->get("TokenId");
     }
 
@@ -78,7 +84,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @param string $tokenId
      */
-    public function setTokenId(string $tokenId) {
+    public function setTokenId(string $tokenId)
+    {
         $this->set("TokenId", $tokenId);
     }
 
@@ -87,7 +94,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @return string|null
      */
-    public function getTokenName(): string {
+    public function getTokenName(): string
+    {
         return $this->get("TokenName");
     }
 
@@ -96,7 +104,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @param string $tokenName
      */
-    public function setTokenName(string $tokenName) {
+    public function setTokenName(string $tokenName)
+    {
         $this->set("TokenName", $tokenName);
     }
 
@@ -105,7 +114,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getAllowedOps(): array {
+    public function getAllowedOps(): array
+    {
         return $this->get("AllowedOps");
     }
 
@@ -114,7 +124,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @param string[] $allowedOps
      */
-    public function setAllowedOps(array $allowedOps) {
+    public function setAllowedOps(array $allowedOps)
+    {
         $this->set("AllowedOps", $allowedOps);
     }
 
@@ -123,7 +134,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getAllowedPrefixes(): array {
+    public function getAllowedPrefixes(): array
+    {
         return $this->get("AllowedPrefixes");
     }
 
@@ -132,7 +144,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @param string[] $allowedPrefixes
      */
-    public function setAllowedPrefixes(array $allowedPrefixes) {
+    public function setAllowedPrefixes(array $allowedPrefixes)
+    {
         $this->set("AllowedPrefixes", $allowedPrefixes);
     }
 
@@ -141,7 +154,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getAllowedBuckets(): array {
+    public function getAllowedBuckets(): array
+    {
         return $this->get("AllowedBuckets");
     }
 
@@ -150,16 +164,18 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @param string[] $allowedBuckets
      */
-    public function setAllowedBuckets(array $allowedBuckets) {
+    public function setAllowedBuckets(array $allowedBuckets)
+    {
         $this->set("AllowedBuckets", $allowedBuckets);
     }
 
     /**
      * ExpireTime: 令牌的超时时间点（时间戳）;注意：过期时间不能超过 4102416000
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -168,9 +184,8 @@ class UpdateUFileTokenRequest extends Request {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
-
-
 }

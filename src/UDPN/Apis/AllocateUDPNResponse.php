@@ -18,7 +18,8 @@ namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class AllocateUDPNResponse extends Response {
+class AllocateUDPNResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AllocateUDPNResponse extends Response {
      *
      * @return string|null
      */
-    public function getUDPNId(): string {
+    public function getUDPNId(): string
+    {
         return $this->get("UDPNId");
     }
 
@@ -35,9 +37,8 @@ class AllocateUDPNResponse extends Response {
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId) {
+    public function setUDPNId(string $udpnId)
+    {
         $this->set("UDPNId", $udpnId);
     }
-
-
 }

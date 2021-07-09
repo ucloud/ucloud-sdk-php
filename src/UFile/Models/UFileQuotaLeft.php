@@ -18,7 +18,8 @@ namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
-class UFileQuotaLeft extends Response {
+class UFileQuotaLeft extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UFileQuotaLeft extends Response {
      *
      * @return float|null
      */
-    public function getLeft(): float {
+    public function getLeft(): float
+    {
         return $this->get("Left");
     }
 
@@ -35,9 +37,8 @@ class UFileQuotaLeft extends Response {
      *
      * @param float $left
      */
-    public function setLeft(float $left) {
+    public function setLeft(float $left)
+    {
         $this->set("Left", $left);
     }
-
-
 }

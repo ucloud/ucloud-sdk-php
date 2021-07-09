@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DelUK8SClusterNodeV2Request extends Request {
+class DelUK8SClusterNodeV2Request extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DelUK8SClusterNodeV2"]);
@@ -34,7 +35,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -43,7 +45,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -52,7 +55,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -61,7 +65,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -70,7 +75,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @return string|null
      */
-    public function getClusterId(): string {
+    public function getClusterId(): string
+    {
         return $this->get("ClusterId");
     }
 
@@ -79,7 +85,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @param string $clusterId
      */
-    public function setClusterId(string $clusterId) {
+    public function setClusterId(string $clusterId)
+    {
         $this->set("ClusterId", $clusterId);
     }
 
@@ -88,7 +95,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @return string|null
      */
-    public function getNodeId(): string {
+    public function getNodeId(): string
+    {
         return $this->get("NodeId");
     }
 
@@ -97,7 +105,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId) {
+    public function setNodeId(string $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
 
@@ -106,7 +115,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @return boolean|null
      */
-    public function getReleaseDataUDisk(): bool {
+    public function getReleaseDataUDisk(): bool
+    {
         return $this->get("ReleaseDataUDisk");
     }
 
@@ -115,9 +125,8 @@ class DelUK8SClusterNodeV2Request extends Request {
      *
      * @param boolean $releaseDataUDisk
      */
-    public function setReleaseDataUDisk(bool $releaseDataUDisk) {
+    public function setReleaseDataUDisk(bool $releaseDataUDisk)
+    {
         $this->set("ReleaseDataUDisk", $releaseDataUDisk);
     }
-
-
 }

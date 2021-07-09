@@ -18,15 +18,17 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class MonitorInfo extends Response {
+class MonitorInfo extends Response
+{
     
 
     /**
      * TimeStamp: 时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTimeStamp(): int {
+    public function getTimeStamp(): int
+    {
         return $this->get("TimeStamp");
     }
 
@@ -35,16 +37,18 @@ class MonitorInfo extends Response {
      *
      * @param int $timeStamp
      */
-    public function setTimeStamp(int $timeStamp) {
+    public function setTimeStamp(int $timeStamp)
+    {
         $this->set("TimeStamp", $timeStamp);
     }
 
     /**
      * Value: 值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getValue(): int {
+    public function getValue(): int
+    {
         return $this->get("Value");
     }
 
@@ -53,9 +57,8 @@ class MonitorInfo extends Response {
      *
      * @param int $value
      */
-    public function setValue(int $value) {
+    public function setValue(int $value)
+    {
         $this->set("Value", $value);
     }
-
-
 }

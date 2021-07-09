@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class SwitchUcdnChargeTypeRequest extends Request {
+class SwitchUcdnChargeTypeRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "SwitchUcdnChargeType"]);
@@ -32,7 +33,8 @@ class SwitchUcdnChargeTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class SwitchUcdnChargeTypeRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class SwitchUcdnChargeTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -59,9 +63,8 @@ class SwitchUcdnChargeTypeRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
-
-
 }

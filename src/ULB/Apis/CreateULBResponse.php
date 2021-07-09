@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateULBResponse extends Response {
+class CreateULBResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateULBResponse extends Response {
      *
      * @return string|null
      */
-    public function getULBId(): string {
+    public function getULBId(): string
+    {
         return $this->get("ULBId");
     }
 
@@ -35,7 +37,8 @@ class CreateULBResponse extends Response {
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId) {
+    public function setULBId(string $ulbId)
+    {
         $this->set("ULBId", $ulbId);
     }
 
@@ -44,7 +47,8 @@ class CreateULBResponse extends Response {
      *
      * @return string|null
      */
-    public function getIPv6AddressId(): string {
+    public function getIPv6AddressId(): string
+    {
         return $this->get("IPv6AddressId");
     }
 
@@ -53,9 +57,8 @@ class CreateULBResponse extends Response {
      *
      * @param string $iPv6AddressId
      */
-    public function setIPv6AddressId(string $iPv6AddressId) {
+    public function setIPv6AddressId(string $iPv6AddressId)
+    {
         $this->set("IPv6AddressId", $iPv6AddressId);
     }
-
-
 }

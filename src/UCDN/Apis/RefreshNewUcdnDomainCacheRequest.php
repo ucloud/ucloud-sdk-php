@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class RefreshNewUcdnDomainCacheRequest extends Request {
+class RefreshNewUcdnDomainCacheRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "RefreshNewUcdnDomainCache"]);
@@ -33,7 +34,8 @@ class RefreshNewUcdnDomainCacheRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class RefreshNewUcdnDomainCacheRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class RefreshNewUcdnDomainCacheRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -60,7 +64,8 @@ class RefreshNewUcdnDomainCacheRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -69,7 +74,8 @@ class RefreshNewUcdnDomainCacheRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getUrlList(): array {
+    public function getUrlList(): array
+    {
         return $this->get("UrlList");
     }
 
@@ -78,9 +84,8 @@ class RefreshNewUcdnDomainCacheRequest extends Request {
      *
      * @param string[] $urlList
      */
-    public function setUrlList(array $urlList) {
+    public function setUrlList(array $urlList)
+    {
         $this->set("UrlList", $urlList);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Response\Response;
 
-class SetUFileRefererResponse extends Response {
+class SetUFileRefererResponse extends Response
+{
     
 
 

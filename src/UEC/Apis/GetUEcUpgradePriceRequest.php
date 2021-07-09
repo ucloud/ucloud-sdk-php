@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUEcUpgradePriceRequest extends Request {
+class GetUEcUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUEcUpgradePrice"]);
@@ -32,7 +33,8 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getNodeId(): string {
+    public function getNodeId(): string
+    {
         return $this->get("NodeId");
     }
 
@@ -59,16 +63,18 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId) {
+    public function setNodeId(string $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
 
     /**
      * CpuCore: cpu核心数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCpuCore(): int {
+    public function getCpuCore(): int
+    {
         return $this->get("CpuCore");
     }
 
@@ -77,16 +83,18 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @param int $cpuCore
      */
-    public function setCpuCore(int $cpuCore) {
+    public function setCpuCore(int $cpuCore)
+    {
         $this->set("CpuCore", $cpuCore);
     }
 
     /**
      * MemSize: 内存大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemSize(): int {
+    public function getMemSize(): int
+    {
         return $this->get("MemSize");
     }
 
@@ -95,16 +103,18 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @param int $memSize
      */
-    public function setMemSize(int $memSize) {
+    public function setMemSize(int $memSize)
+    {
         $this->set("MemSize", $memSize);
     }
 
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSysDiskSize(): int {
+    public function getSysDiskSize(): int
+    {
         return $this->get("SysDiskSize");
     }
 
@@ -113,16 +123,18 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize(int $sysDiskSize) {
+    public function setSysDiskSize(int $sysDiskSize)
+    {
         $this->set("SysDiskSize", $sysDiskSize);
     }
 
     /**
      * DiskSize: 数据盘大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSize(): int {
+    public function getDiskSize(): int
+    {
         return $this->get("DiskSize");
     }
 
@@ -131,16 +143,18 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @param int $diskSize
      */
-    public function setDiskSize(int $diskSize) {
+    public function setDiskSize(int $diskSize)
+    {
         $this->set("DiskSize", $diskSize);
     }
 
     /**
      * NetLimit: 节点带宽限制，单位Mbs
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getNetLimit(): int {
+    public function getNetLimit(): int
+    {
         return $this->get("NetLimit");
     }
 
@@ -149,9 +163,8 @@ class GetUEcUpgradePriceRequest extends Request {
      *
      * @param int $netLimit
      */
-    public function setNetLimit(int $netLimit) {
+    public function setNetLimit(int $netLimit)
+    {
         $this->set("NetLimit", $netLimit);
     }
-
-
 }

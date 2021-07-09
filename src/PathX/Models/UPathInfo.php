@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class UPathInfo extends Response {
+class UPathInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UPathInfo extends Response {
      *
      * @return boolean|null
      */
-    public function getPostPaid(): bool {
+    public function getPostPaid(): bool
+    {
         return $this->get("PostPaid");
     }
 
@@ -35,7 +37,8 @@ class UPathInfo extends Response {
      *
      * @param boolean $postPaid
      */
-    public function setPostPaid(bool $postPaid) {
+    public function setPostPaid(bool $postPaid)
+    {
         $this->set("PostPaid", $postPaid);
     }
 
@@ -44,7 +47,8 @@ class UPathInfo extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -53,7 +57,8 @@ class UPathInfo extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -62,7 +67,8 @@ class UPathInfo extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -71,7 +77,8 @@ class UPathInfo extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -80,7 +87,8 @@ class UPathInfo extends Response {
      *
      * @return string|null
      */
-    public function getUPathId(): string {
+    public function getUPathId(): string
+    {
         return $this->get("UPathId");
     }
 
@@ -89,16 +97,18 @@ class UPathInfo extends Response {
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId) {
+    public function setUPathId(string $uPathId)
+    {
         $this->set("UPathId", $uPathId);
     }
 
     /**
      * Bandwidth: 带宽，单位Mbps
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -107,7 +117,8 @@ class UPathInfo extends Response {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -116,7 +127,8 @@ class UPathInfo extends Response {
      *
      * @return string|null
      */
-    public function getLineId(): string {
+    public function getLineId(): string
+    {
         return $this->get("LineId");
     }
 
@@ -125,7 +137,8 @@ class UPathInfo extends Response {
      *
      * @param string $lineId
      */
-    public function setLineId(string $lineId) {
+    public function setLineId(string $lineId)
+    {
         $this->set("LineId", $lineId);
     }
 
@@ -134,7 +147,8 @@ class UPathInfo extends Response {
      *
      * @return PathXUGAInfo[]|null
      */
-    public function getUGAList(): array {
+    public function getUGAList(): array
+    {
         $items = $this->get("UGAList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -148,7 +162,8 @@ class UPathInfo extends Response {
      *
      * @param PathXUGAInfo[] $ugaList
      */
-    public function setUGAList(array $ugaList) {
+    public function setUGAList(array $ugaList)
+    {
         $result = [];
         foreach ($ugaList as $i => $item) {
             array_push($result, $item->getAll());
@@ -159,9 +174,10 @@ class UPathInfo extends Response {
     /**
      * CreateTime: UPath创建的时间，10位时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -170,16 +186,18 @@ class UPathInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ExpireTime: UPath的过期时间，10位时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -188,7 +206,8 @@ class UPathInfo extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
@@ -197,7 +216,8 @@ class UPathInfo extends Response {
      *
      * @return string|null
      */
-    public function getLineFromName(): string {
+    public function getLineFromName(): string
+    {
         return $this->get("LineFromName");
     }
 
@@ -206,7 +226,8 @@ class UPathInfo extends Response {
      *
      * @param string $lineFromName
      */
-    public function setLineFromName(string $lineFromName) {
+    public function setLineFromName(string $lineFromName)
+    {
         $this->set("LineFromName", $lineFromName);
     }
 
@@ -215,7 +236,8 @@ class UPathInfo extends Response {
      *
      * @return string|null
      */
-    public function getLineToName(): string {
+    public function getLineToName(): string
+    {
         return $this->get("LineToName");
     }
 
@@ -224,7 +246,8 @@ class UPathInfo extends Response {
      *
      * @param string $lineToName
      */
-    public function setLineToName(string $lineToName) {
+    public function setLineToName(string $lineToName)
+    {
         $this->set("LineToName", $lineToName);
     }
 
@@ -233,7 +256,8 @@ class UPathInfo extends Response {
      *
      * @return OutPublicIpInfo[]|null
      */
-    public function getOutPublicIpList(): array {
+    public function getOutPublicIpList(): array
+    {
         $items = $this->get("OutPublicIpList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -247,13 +271,12 @@ class UPathInfo extends Response {
      *
      * @param OutPublicIpInfo[] $outPublicIpList
      */
-    public function setOutPublicIpList(array $outPublicIpList) {
+    public function setOutPublicIpList(array $outPublicIpList)
+    {
         $result = [];
         foreach ($outPublicIpList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

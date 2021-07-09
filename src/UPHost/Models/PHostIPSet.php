@@ -18,24 +18,27 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostIPSet extends Response {
+class PHostIPSet extends Response
+{
     
 
     /**
-     * OperatorName:  国际: Internation， BGP: BGP， 内网: Private 
+     * OperatorName:  国际: Internation， BGP: BGP， 内网: Private
      *
      * @return string|null
      */
-    public function getOperatorName(): string {
+    public function getOperatorName(): string
+    {
         return $this->get("OperatorName");
     }
 
     /**
-     * OperatorName:  国际: Internation， BGP: BGP， 内网: Private 
+     * OperatorName:  国际: Internation， BGP: BGP， 内网: Private
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName) {
+    public function setOperatorName(string $operatorName)
+    {
         $this->set("OperatorName", $operatorName);
     }
 
@@ -44,7 +47,8 @@ class PHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getIPId(): string {
+    public function getIPId(): string
+    {
         return $this->get("IPId");
     }
 
@@ -53,7 +57,8 @@ class PHostIPSet extends Response {
      *
      * @param string $ipId
      */
-    public function setIPId(string $ipId) {
+    public function setIPId(string $ipId)
+    {
         $this->set("IPId", $ipId);
     }
 
@@ -62,7 +67,8 @@ class PHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getIPAddr(): string {
+    public function getIPAddr(): string
+    {
         return $this->get("IPAddr");
     }
 
@@ -71,7 +77,8 @@ class PHostIPSet extends Response {
      *
      * @param string $ipAddr
      */
-    public function setIPAddr(string $ipAddr) {
+    public function setIPAddr(string $ipAddr)
+    {
         $this->set("IPAddr", $ipAddr);
     }
 
@@ -80,7 +87,8 @@ class PHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getMACAddr(): string {
+    public function getMACAddr(): string
+    {
         return $this->get("MACAddr");
     }
 
@@ -89,16 +97,18 @@ class PHostIPSet extends Response {
      *
      * @param string $macAddr
      */
-    public function setMACAddr(string $macAddr) {
+    public function setMACAddr(string $macAddr)
+    {
         $this->set("MACAddr", $macAddr);
     }
 
     /**
      * Bandwidth: IP对应带宽，单位Mb，内网IP不显示带宽信息
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -107,7 +117,8 @@ class PHostIPSet extends Response {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -116,7 +127,8 @@ class PHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -125,7 +137,8 @@ class PHostIPSet extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -134,7 +147,8 @@ class PHostIPSet extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -143,9 +157,8 @@ class PHostIPSet extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
-
-
 }

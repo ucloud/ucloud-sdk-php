@@ -18,7 +18,8 @@ namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class UHostDiskSet extends Response {
+class UHostDiskSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getDiskType(): string {
+    public function getDiskType(): string
+    {
         return $this->get("DiskType");
     }
 
@@ -35,7 +37,8 @@ class UHostDiskSet extends Response {
      *
      * @param string $diskType
      */
-    public function setDiskType(string $diskType) {
+    public function setDiskType(string $diskType)
+    {
         $this->set("DiskType", $diskType);
     }
 
@@ -44,7 +47,8 @@ class UHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getIsBoot(): string {
+    public function getIsBoot(): string
+    {
         return $this->get("IsBoot");
     }
 
@@ -53,7 +57,8 @@ class UHostDiskSet extends Response {
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot) {
+    public function setIsBoot(string $isBoot)
+    {
         $this->set("IsBoot", $isBoot);
     }
 
@@ -62,7 +67,8 @@ class UHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getEncrypted(): string {
+    public function getEncrypted(): string
+    {
         return $this->get("Encrypted");
     }
 
@@ -71,7 +77,8 @@ class UHostDiskSet extends Response {
      *
      * @param string $encrypted
      */
-    public function setEncrypted(string $encrypted) {
+    public function setEncrypted(string $encrypted)
+    {
         $this->set("Encrypted", $encrypted);
     }
 
@@ -80,7 +87,8 @@ class UHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -89,7 +97,8 @@ class UHostDiskSet extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -98,7 +107,8 @@ class UHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getDiskId(): string {
+    public function getDiskId(): string
+    {
         return $this->get("DiskId");
     }
 
@@ -107,7 +117,8 @@ class UHostDiskSet extends Response {
      *
      * @param string $diskId
      */
-    public function setDiskId(string $diskId) {
+    public function setDiskId(string $diskId)
+    {
         $this->set("DiskId", $diskId);
     }
 
@@ -116,7 +127,8 @@ class UHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -125,7 +137,8 @@ class UHostDiskSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -134,7 +147,8 @@ class UHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getDrive(): string {
+    public function getDrive(): string
+    {
         return $this->get("Drive");
     }
 
@@ -143,16 +157,18 @@ class UHostDiskSet extends Response {
      *
      * @param string $drive
      */
-    public function setDrive(string $drive) {
+    public function setDrive(string $drive)
+    {
         $this->set("Drive", $drive);
     }
 
     /**
      * Size: 磁盘大小，单位: GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -161,7 +177,8 @@ class UHostDiskSet extends Response {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -170,7 +187,8 @@ class UHostDiskSet extends Response {
      *
      * @return string|null
      */
-    public function getBackupType(): string {
+    public function getBackupType(): string
+    {
         return $this->get("BackupType");
     }
 
@@ -179,9 +197,8 @@ class UHostDiskSet extends Response {
      *
      * @param string $backupType
      */
-    public function setBackupType(string $backupType) {
+    public function setBackupType(string $backupType)
+    {
         $this->set("BackupType", $backupType);
     }
-
-
 }

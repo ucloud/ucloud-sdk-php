@@ -18,7 +18,8 @@ namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteBucketRequest extends Request {
+class DeleteBucketRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteBucket"]);
@@ -32,7 +33,8 @@ class DeleteBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class DeleteBucketRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class DeleteBucketRequest extends Request {
      *
      * @return string|null
      */
-    public function getBucketName(): string {
+    public function getBucketName(): string
+    {
         return $this->get("BucketName");
     }
 
@@ -59,9 +63,8 @@ class DeleteBucketRequest extends Request {
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName) {
+    public function setBucketName(string $bucketName)
+    {
         $this->set("BucketName", $bucketName);
     }
-
-
 }

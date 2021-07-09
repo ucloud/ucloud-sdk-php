@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ResizeAttachedDiskResponse extends Response {
+class ResizeAttachedDiskResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ResizeAttachedDiskResponse extends Response {
      *
      * @return string|null
      */
-    public function getDiskId(): string {
+    public function getDiskId(): string
+    {
         return $this->get("DiskId");
     }
 
@@ -35,7 +37,8 @@ class ResizeAttachedDiskResponse extends Response {
      *
      * @param string $diskId
      */
-    public function setDiskId(string $diskId) {
+    public function setDiskId(string $diskId)
+    {
         $this->set("DiskId", $diskId);
     }
 
@@ -44,7 +47,8 @@ class ResizeAttachedDiskResponse extends Response {
      *
      * @return boolean|null
      */
-    public function getNeedRestart(): bool {
+    public function getNeedRestart(): bool
+    {
         return $this->get("NeedRestart");
     }
 
@@ -53,9 +57,8 @@ class ResizeAttachedDiskResponse extends Response {
      *
      * @param boolean $needRestart
      */
-    public function setNeedRestart(bool $needRestart) {
+    public function setNeedRestart(bool $needRestart)
+    {
         $this->set("NeedRestart", $needRestart);
     }
-
-
 }

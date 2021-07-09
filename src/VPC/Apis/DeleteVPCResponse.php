@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteVPCResponse extends Response {
+class DeleteVPCResponse extends Response
+{
     
 
 

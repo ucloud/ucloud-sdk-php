@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class ULBPolicySet extends Response {
+class ULBPolicySet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ULBPolicySet extends Response {
      *
      * @return string|null
      */
-    public function getPolicyId(): string {
+    public function getPolicyId(): string
+    {
         return $this->get("PolicyId");
     }
 
@@ -35,7 +37,8 @@ class ULBPolicySet extends Response {
      *
      * @param string $policyId
      */
-    public function setPolicyId(string $policyId) {
+    public function setPolicyId(string $policyId)
+    {
         $this->set("PolicyId", $policyId);
     }
 
@@ -44,7 +47,8 @@ class ULBPolicySet extends Response {
      *
      * @return string|null
      */
-    public function getPolicyType(): string {
+    public function getPolicyType(): string
+    {
         return $this->get("PolicyType");
     }
 
@@ -53,7 +57,8 @@ class ULBPolicySet extends Response {
      *
      * @param string $policyType
      */
-    public function setPolicyType(string $policyType) {
+    public function setPolicyType(string $policyType)
+    {
         $this->set("PolicyType", $policyType);
     }
 
@@ -62,7 +67,8 @@ class ULBPolicySet extends Response {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -71,7 +77,8 @@ class ULBPolicySet extends Response {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
@@ -80,7 +87,8 @@ class ULBPolicySet extends Response {
      *
      * @return string|null
      */
-    public function getMatch(): string {
+    public function getMatch(): string
+    {
         return $this->get("Match");
     }
 
@@ -89,16 +97,18 @@ class ULBPolicySet extends Response {
      *
      * @param string $match
      */
-    public function setMatch(string $match) {
+    public function setMatch(string $match)
+    {
         $this->set("Match", $match);
     }
 
     /**
      * PolicyPriority: 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPolicyPriority(): int {
+    public function getPolicyPriority(): int
+    {
         return $this->get("PolicyPriority");
     }
 
@@ -107,7 +117,8 @@ class ULBPolicySet extends Response {
      *
      * @param int $policyPriority
      */
-    public function setPolicyPriority(int $policyPriority) {
+    public function setPolicyPriority(int $policyPriority)
+    {
         $this->set("PolicyPriority", $policyPriority);
     }
 
@@ -116,7 +127,8 @@ class ULBPolicySet extends Response {
      *
      * @return string|null
      */
-    public function getVServerId(): string {
+    public function getVServerId(): string
+    {
         return $this->get("VServerId");
     }
 
@@ -125,16 +137,18 @@ class ULBPolicySet extends Response {
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId) {
+    public function setVServerId(string $vServerId)
+    {
         $this->set("VServerId", $vServerId);
     }
 
     /**
      * TotalCount: 默认内容转发类型下返回当前rs总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -143,7 +157,8 @@ class ULBPolicySet extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -152,7 +167,8 @@ class ULBPolicySet extends Response {
      *
      * @return PolicyBackendSet[]|null
      */
-    public function getBackendSet(): array {
+    public function getBackendSet(): array
+    {
         $items = $this->get("BackendSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -166,13 +182,12 @@ class ULBPolicySet extends Response {
      *
      * @param PolicyBackendSet[] $backendSet
      */
-    public function setBackendSet(array $backendSet) {
+    public function setBackendSet(array $backendSet)
+    {
         $result = [];
         foreach ($backendSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

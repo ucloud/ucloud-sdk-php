@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class AdvancedConf extends Response {
+class AdvancedConf extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AdvancedConf extends Response {
      *
      * @return string[]|null
      */
-    public function getHttpClientHeader(): array {
+    public function getHttpClientHeader(): array
+    {
         return $this->get("HttpClientHeader");
     }
 
@@ -35,7 +37,8 @@ class AdvancedConf extends Response {
      *
      * @param string[] $httpClientHeader
      */
-    public function setHttpClientHeader(array $httpClientHeader) {
+    public function setHttpClientHeader(array $httpClientHeader)
+    {
         $this->set("HttpClientHeader", $httpClientHeader);
     }
 
@@ -44,7 +47,8 @@ class AdvancedConf extends Response {
      *
      * @return string[]|null
      */
-    public function getHttpOriginHeader(): array {
+    public function getHttpOriginHeader(): array
+    {
         return $this->get("HttpOriginHeader");
     }
 
@@ -53,7 +57,8 @@ class AdvancedConf extends Response {
      *
      * @param string[] $httpOriginHeader
      */
-    public function setHttpOriginHeader(array $httpOriginHeader) {
+    public function setHttpOriginHeader(array $httpOriginHeader)
+    {
         $this->set("HttpOriginHeader", $httpOriginHeader);
     }
 
@@ -62,7 +67,8 @@ class AdvancedConf extends Response {
      *
      * @return boolean|null
      */
-    public function getHttp2Https(): bool {
+    public function getHttp2Https(): bool
+    {
         return $this->get("Http2Https");
     }
 
@@ -71,9 +77,8 @@ class AdvancedConf extends Response {
      *
      * @param boolean $http2Https
      */
-    public function setHttp2Https(bool $http2Https) {
+    public function setHttp2Https(bool $http2Https)
+    {
         $this->set("Http2Https", $http2Https);
     }
-
-
 }

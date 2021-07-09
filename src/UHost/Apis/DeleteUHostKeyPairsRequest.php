@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteUHostKeyPairsRequest extends Request {
+class DeleteUHostKeyPairsRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteUHostKeyPairs"]);
@@ -32,7 +33,8 @@ class DeleteUHostKeyPairsRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DeleteUHostKeyPairsRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DeleteUHostKeyPairsRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -59,7 +63,8 @@ class DeleteUHostKeyPairsRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -68,7 +73,8 @@ class DeleteUHostKeyPairsRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -77,7 +83,8 @@ class DeleteUHostKeyPairsRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -86,7 +93,8 @@ class DeleteUHostKeyPairsRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getKeyPairIds(): array {
+    public function getKeyPairIds(): array
+    {
         return $this->get("KeyPairIds");
     }
 
@@ -95,9 +103,8 @@ class DeleteUHostKeyPairsRequest extends Request {
      *
      * @param string[] $keyPairIds
      */
-    public function setKeyPairIds(array $keyPairIds) {
+    public function setKeyPairIds(array $keyPairIds)
+    {
         $this->set("KeyPairIds", $keyPairIds);
     }
-
-
 }

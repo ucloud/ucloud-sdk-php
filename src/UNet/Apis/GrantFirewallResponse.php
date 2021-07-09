@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GrantFirewallResponse extends Response {
+class GrantFirewallResponse extends Response
+{
     
 
 

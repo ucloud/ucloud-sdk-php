@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class IDCCutInfo extends Response {
+class IDCCutInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class IDCCutInfo extends Response {
      *
      * @return string|null
      */
-    public function getIDCName(): string {
+    public function getIDCName(): string
+    {
         return $this->get("IDCName");
     }
 
@@ -35,7 +37,8 @@ class IDCCutInfo extends Response {
      *
      * @param string $idcName
      */
-    public function setIDCName(string $idcName) {
+    public function setIDCName(string $idcName)
+    {
         $this->set("IDCName", $idcName);
     }
 
@@ -44,7 +47,8 @@ class IDCCutInfo extends Response {
      *
      * @return string|null
      */
-    public function getProvince(): string {
+    public function getProvince(): string
+    {
         return $this->get("Province");
     }
 
@@ -53,7 +57,8 @@ class IDCCutInfo extends Response {
      *
      * @param string $province
      */
-    public function setProvince(string $province) {
+    public function setProvince(string $province)
+    {
         $this->set("Province", $province);
     }
 
@@ -62,7 +67,8 @@ class IDCCutInfo extends Response {
      *
      * @return string|null
      */
-    public function getCity(): string {
+    public function getCity(): string
+    {
         return $this->get("City");
     }
 
@@ -71,16 +77,18 @@ class IDCCutInfo extends Response {
      *
      * @param string $city
      */
-    public function setCity(string $city) {
+    public function setCity(string $city)
+    {
         $this->set("City", $city);
     }
 
     /**
      * StartTime: 割接开始时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStartTime(): int {
+    public function getStartTime(): int
+    {
         return $this->get("StartTime");
     }
 
@@ -89,16 +97,18 @@ class IDCCutInfo extends Response {
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime) {
+    public function setStartTime(int $startTime)
+    {
         $this->set("StartTime", $startTime);
     }
 
     /**
      * EndTime: 割接结束时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -107,7 +117,8 @@ class IDCCutInfo extends Response {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
@@ -116,7 +127,8 @@ class IDCCutInfo extends Response {
      *
      * @return string|null
      */
-    public function getCutType(): string {
+    public function getCutType(): string
+    {
         return $this->get("CutType");
     }
 
@@ -125,7 +137,8 @@ class IDCCutInfo extends Response {
      *
      * @param string $cutType
      */
-    public function setCutType(string $cutType) {
+    public function setCutType(string $cutType)
+    {
         $this->set("CutType", $cutType);
     }
 
@@ -134,7 +147,8 @@ class IDCCutInfo extends Response {
      *
      * @return ResourceSet[]|null
      */
-    public function getResourceSet(): array {
+    public function getResourceSet(): array
+    {
         $items = $this->get("ResourceSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -148,13 +162,12 @@ class IDCCutInfo extends Response {
      *
      * @param ResourceSet[] $resourceSet
      */
-    public function setResourceSet(array $resourceSet) {
+    public function setResourceSet(array $resourceSet)
+    {
         $result = [];
         foreach ($resourceSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

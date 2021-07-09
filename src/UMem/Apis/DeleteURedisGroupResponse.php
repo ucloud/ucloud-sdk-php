@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteURedisGroupResponse extends Response {
+class DeleteURedisGroupResponse extends Response
+{
     
 
 

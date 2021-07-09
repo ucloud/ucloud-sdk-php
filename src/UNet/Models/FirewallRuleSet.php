@@ -18,7 +18,8 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class FirewallRuleSet extends Response {
+class FirewallRuleSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class FirewallRuleSet extends Response {
      *
      * @return string|null
      */
-    public function getSrcIP(): string {
+    public function getSrcIP(): string
+    {
         return $this->get("SrcIP");
     }
 
@@ -35,7 +37,8 @@ class FirewallRuleSet extends Response {
      *
      * @param string $srcIP
      */
-    public function setSrcIP(string $srcIP) {
+    public function setSrcIP(string $srcIP)
+    {
         $this->set("SrcIP", $srcIP);
     }
 
@@ -44,7 +47,8 @@ class FirewallRuleSet extends Response {
      *
      * @return string|null
      */
-    public function getPriority(): string {
+    public function getPriority(): string
+    {
         return $this->get("Priority");
     }
 
@@ -53,7 +57,8 @@ class FirewallRuleSet extends Response {
      *
      * @param string $priority
      */
-    public function setPriority(string $priority) {
+    public function setPriority(string $priority)
+    {
         $this->set("Priority", $priority);
     }
 
@@ -62,7 +67,8 @@ class FirewallRuleSet extends Response {
      *
      * @return string|null
      */
-    public function getProtocolType(): string {
+    public function getProtocolType(): string
+    {
         return $this->get("ProtocolType");
     }
 
@@ -71,7 +77,8 @@ class FirewallRuleSet extends Response {
      *
      * @param string $protocolType
      */
-    public function setProtocolType(string $protocolType) {
+    public function setProtocolType(string $protocolType)
+    {
         $this->set("ProtocolType", $protocolType);
     }
 
@@ -80,7 +87,8 @@ class FirewallRuleSet extends Response {
      *
      * @return string|null
      */
-    public function getDstPort(): string {
+    public function getDstPort(): string
+    {
         return $this->get("DstPort");
     }
 
@@ -89,7 +97,8 @@ class FirewallRuleSet extends Response {
      *
      * @param string $dstPort
      */
-    public function setDstPort(string $dstPort) {
+    public function setDstPort(string $dstPort)
+    {
         $this->set("DstPort", $dstPort);
     }
 
@@ -98,7 +107,8 @@ class FirewallRuleSet extends Response {
      *
      * @return string|null
      */
-    public function getRuleAction(): string {
+    public function getRuleAction(): string
+    {
         return $this->get("RuleAction");
     }
 
@@ -107,7 +117,8 @@ class FirewallRuleSet extends Response {
      *
      * @param string $ruleAction
      */
-    public function setRuleAction(string $ruleAction) {
+    public function setRuleAction(string $ruleAction)
+    {
         $this->set("RuleAction", $ruleAction);
     }
 
@@ -116,7 +127,8 @@ class FirewallRuleSet extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -125,9 +137,8 @@ class FirewallRuleSet extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

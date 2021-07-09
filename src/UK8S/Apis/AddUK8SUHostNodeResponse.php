@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
 
-class AddUK8SUHostNodeResponse extends Response {
+class AddUK8SUHostNodeResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AddUK8SUHostNodeResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getNodeIds(): array {
+    public function getNodeIds(): array
+    {
         return $this->get("NodeIds");
     }
 
@@ -35,9 +37,8 @@ class AddUK8SUHostNodeResponse extends Response {
      *
      * @param string[] $nodeIds
      */
-    public function setNodeIds(array $nodeIds) {
+    public function setNodeIds(array $nodeIds)
+    {
         $this->set("NodeIds", $nodeIds);
     }
-
-
 }

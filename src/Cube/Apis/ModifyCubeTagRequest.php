@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyCubeTagRequest extends Request {
+class ModifyCubeTagRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyCubeTag"]);
@@ -34,7 +35,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @return string|null
      */
-    public function getCubeId(): string {
+    public function getCubeId(): string
+    {
         return $this->get("CubeId");
     }
 
@@ -97,7 +105,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @param string $cubeId
      */
-    public function setCubeId(string $cubeId) {
+    public function setCubeId(string $cubeId)
+    {
         $this->set("CubeId", $cubeId);
     }
 
@@ -106,7 +115,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -115,9 +125,8 @@ class ModifyCubeTagRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUEcSubnetResponse extends Response {
+class CreateUEcSubnetResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUEcSubnetResponse extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -35,9 +37,8 @@ class CreateUEcSubnetResponse extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
-
-
 }

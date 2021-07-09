@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class HitRateInfo extends Response {
+class HitRateInfo extends Response
+{
     
 
     /**
      * Time: 带宽获取的时间点。格式：时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,7 +37,8 @@ class HitRateInfo extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
@@ -44,7 +47,8 @@ class HitRateInfo extends Response {
      *
      * @return float|null
      */
-    public function getFlowHitRate(): float {
+    public function getFlowHitRate(): float
+    {
         return $this->get("FlowHitRate");
     }
 
@@ -53,7 +57,8 @@ class HitRateInfo extends Response {
      *
      * @param float $flowHitRate
      */
-    public function setFlowHitRate(float $flowHitRate) {
+    public function setFlowHitRate(float $flowHitRate)
+    {
         $this->set("FlowHitRate", $flowHitRate);
     }
 
@@ -62,7 +67,8 @@ class HitRateInfo extends Response {
      *
      * @return float|null
      */
-    public function getRequestHitRate(): float {
+    public function getRequestHitRate(): float
+    {
         return $this->get("RequestHitRate");
     }
 
@@ -71,9 +77,8 @@ class HitRateInfo extends Response {
      *
      * @param float $requestHitRate
      */
-    public function setRequestHitRate(float $requestHitRate) {
+    public function setRequestHitRate(float $requestHitRate)
+    {
         $this->set("RequestHitRate", $requestHitRate);
     }
-
-
 }

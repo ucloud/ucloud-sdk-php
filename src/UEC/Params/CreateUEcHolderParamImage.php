@@ -18,7 +18,8 @@ namespace UCloud\UEC\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUEcHolderParamImage extends Request {
+class CreateUEcHolderParamImage extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUEcHolderParamImage extends Request {
      *
      * @return string|null
      */
-    public function getMessage(): string {
+    public function getMessage(): string
+    {
         return $this->get("Message");
     }
 
@@ -35,7 +37,8 @@ class CreateUEcHolderParamImage extends Request {
      *
      * @param string $message
      */
-    public function setMessage(string $message) {
+    public function setMessage(string $message)
+    {
         $this->set("Message", $message);
     }
 
@@ -44,7 +47,8 @@ class CreateUEcHolderParamImage extends Request {
      *
      * @return string|null
      */
-    public function getStoreAddress(): string {
+    public function getStoreAddress(): string
+    {
         return $this->get("StoreAddress");
     }
 
@@ -53,9 +57,8 @@ class CreateUEcHolderParamImage extends Request {
      *
      * @param string $storeAddress
      */
-    public function setStoreAddress(string $storeAddress) {
+    public function setStoreAddress(string $storeAddress)
+    {
         $this->set("StoreAddress", $storeAddress);
     }
-
-
 }

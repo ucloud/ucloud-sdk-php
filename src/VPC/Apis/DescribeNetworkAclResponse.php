@@ -22,7 +22,8 @@ use UCloud\VPC\Models\AclEntryInfo;
 use UCloud\VPC\Models\TargetResourceInfo;
 use UCloud\VPC\Models\AssociationInfo;
 
-class DescribeNetworkAclResponse extends Response {
+class DescribeNetworkAclResponse extends Response
+{
     
 
     /**
@@ -30,7 +31,8 @@ class DescribeNetworkAclResponse extends Response {
      *
      * @return AclInfo[]|null
      */
-    public function getAclList(): array {
+    public function getAclList(): array
+    {
         $items = $this->get("AclList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -44,13 +46,12 @@ class DescribeNetworkAclResponse extends Response {
      *
      * @param AclInfo[] $aclList
      */
-    public function setAclList(array $aclList) {
+    public function setAclList(array $aclList)
+    {
         $result = [];
         foreach ($aclList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

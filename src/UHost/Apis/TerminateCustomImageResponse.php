@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class TerminateCustomImageResponse extends Response {
+class TerminateCustomImageResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class TerminateCustomImageResponse extends Response {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -35,9 +37,8 @@ class TerminateCustomImageResponse extends Response {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
-
-
 }

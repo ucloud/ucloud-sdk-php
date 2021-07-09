@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class ResourceSet extends Response {
+class ResourceSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getNodeId(): string {
+    public function getNodeId(): string
+    {
         return $this->get("NodeId");
     }
 
@@ -35,7 +37,8 @@ class ResourceSet extends Response {
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId) {
+    public function setNodeId(string $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
 
@@ -44,7 +47,8 @@ class ResourceSet extends Response {
      *
      * @return string[]|null
      */
-    public function getOuterIps(): array {
+    public function getOuterIps(): array
+    {
         return $this->get("OuterIps");
     }
 
@@ -53,9 +57,8 @@ class ResourceSet extends Response {
      *
      * @param string[] $outerIps
      */
-    public function setOuterIps(array $outerIps) {
+    public function setOuterIps(array $outerIps)
+    {
         $this->set("OuterIps", $outerIps);
     }
-
-
 }

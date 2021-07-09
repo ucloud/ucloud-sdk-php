@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUPathRequest extends Request {
+class CreateUPathRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUPath"]);
@@ -35,7 +36,8 @@ class CreateUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -44,7 +46,8 @@ class CreateUPathRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -53,7 +56,8 @@ class CreateUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -62,7 +66,8 @@ class CreateUPathRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -71,7 +76,8 @@ class CreateUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getLineId(): string {
+    public function getLineId(): string
+    {
         return $this->get("LineId");
     }
 
@@ -80,16 +86,18 @@ class CreateUPathRequest extends Request {
      *
      * @param string $lineId
      */
-    public function setLineId(string $lineId) {
+    public function setLineId(string $lineId)
+    {
         $this->set("LineId", $lineId);
     }
 
     /**
      * Bandwidth: 线路带宽，最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -98,7 +106,8 @@ class CreateUPathRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -107,7 +116,8 @@ class CreateUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -116,16 +126,18 @@ class CreateUPathRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买周期，ChargeType为Month时，Quantity默认为0代表购买到月底，按时和按年付费该参数必须大于0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -134,7 +146,8 @@ class CreateUPathRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -143,7 +156,8 @@ class CreateUPathRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getPostPaid(): bool {
+    public function getPostPaid(): bool
+    {
         return $this->get("PostPaid");
     }
 
@@ -152,7 +166,8 @@ class CreateUPathRequest extends Request {
      *
      * @param boolean $postPaid
      */
-    public function setPostPaid(bool $postPaid) {
+    public function setPostPaid(bool $postPaid)
+    {
         $this->set("PostPaid", $postPaid);
     }
 
@@ -161,7 +176,8 @@ class CreateUPathRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -170,9 +186,8 @@ class CreateUPathRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteUSMSSignatureRequest extends Request {
+class DeleteUSMSSignatureRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteUSMSSignature"]);
@@ -33,7 +34,8 @@ class DeleteUSMSSignatureRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,27 +44,28 @@ class DeleteUSMSSignatureRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
-     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入   
+     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入
      *
      * @return string[]|null
      */
-    public function getSigIds(): array {
+    public function getSigIds(): array
+    {
         return $this->get("SigIds");
     }
 
     /**
-     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入   
+     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入
      *
      * @param string[] $sigIds
      */
-    public function setSigIds(array $sigIds) {
+    public function setSigIds(array $sigIds)
+    {
         $this->set("SigIds", $sigIds);
     }
-
-
 }

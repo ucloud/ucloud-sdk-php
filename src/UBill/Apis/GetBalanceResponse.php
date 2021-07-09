@@ -19,7 +19,8 @@ namespace UCloud\UBill\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UBill\Models\AccountInfo;
 
-class GetBalanceResponse extends Response {
+class GetBalanceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetBalanceResponse extends Response {
      *
      * @return AccountInfo|null
      */
-    public function getAccountInfo(): AccountInfo {
+    public function getAccountInfo(): AccountInfo
+    {
         return new AccountInfo($this->get("AccountInfo"));
     }
 
@@ -36,9 +38,8 @@ class GetBalanceResponse extends Response {
      *
      * @param AccountInfo $accountInfo
      */
-    public function setAccountInfo(AccountInfo $accountInfo) {
+    public function setAccountInfo(AccountInfo $accountInfo)
+    {
         $this->set("AccountInfo", $accountInfo->getAll());
     }
-
-
 }

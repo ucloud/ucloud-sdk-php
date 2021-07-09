@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateURedisBackupResponse extends Response {
+class CreateURedisBackupResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateURedisBackupResponse extends Response {
      *
      * @return string|null
      */
-    public function getBackupId(): string {
+    public function getBackupId(): string
+    {
         return $this->get("BackupId");
     }
 
@@ -35,9 +37,8 @@ class CreateURedisBackupResponse extends Response {
      *
      * @param string $backupId
      */
-    public function setBackupId(string $backupId) {
+    public function setBackupId(string $backupId)
+    {
         $this->set("BackupId", $backupId);
     }
-
-
 }

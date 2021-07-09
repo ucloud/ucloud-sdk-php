@@ -18,7 +18,8 @@ namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUDDBInstanceRequest extends Request {
+class CreateUDDBInstanceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUDDBInstance"]);
@@ -42,7 +43,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -51,7 +53,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -60,7 +63,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -69,7 +73,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -78,7 +83,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -87,7 +93,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -96,7 +103,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBTypeId(): string {
+    public function getDBTypeId(): string
+    {
         return $this->get("DBTypeId");
     }
 
@@ -105,7 +113,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId) {
+    public function setDBTypeId(string $dbTypeId)
+    {
         $this->set("DBTypeId", $dbTypeId);
     }
 
@@ -114,7 +123,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -123,7 +133,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -132,7 +143,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getAdminPassword(): string {
+    public function getAdminPassword(): string
+    {
         return $this->get("AdminPassword");
     }
 
@@ -141,7 +153,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $adminPassword
      */
-    public function setAdminPassword(string $adminPassword) {
+    public function setAdminPassword(string $adminPassword)
+    {
         $this->set("AdminPassword", $adminPassword);
     }
 
@@ -150,7 +163,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRouterVersion(): string {
+    public function getRouterVersion(): string
+    {
         return $this->get("RouterVersion");
     }
 
@@ -159,16 +173,18 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $routerVersion
      */
-    public function setRouterVersion(string $routerVersion) {
+    public function setRouterVersion(string $routerVersion)
+    {
         $this->set("RouterVersion", $routerVersion);
     }
 
     /**
      * RouterNodeNum: 其他版本：该参数可不填；专享版：物理机台数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRouterNodeNum(): int {
+    public function getRouterNodeNum(): int
+    {
         return $this->get("RouterNodeNum");
     }
 
@@ -177,16 +193,18 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param int $routerNodeNum
      */
-    public function setRouterNodeNum(int $routerNodeNum) {
+    public function setRouterNodeNum(int $routerNodeNum)
+    {
         $this->set("RouterNodeNum", $routerNodeNum);
     }
 
     /**
      * DataNodeCount: 初始的数据节点个数 取值必须>0.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeCount(): int {
+    public function getDataNodeCount(): int
+    {
         return $this->get("DataNodeCount");
     }
 
@@ -195,16 +213,18 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param int $dataNodeCount
      */
-    public function setDataNodeCount(int $dataNodeCount) {
+    public function setDataNodeCount(int $dataNodeCount)
+    {
         $this->set("DataNodeCount", $dataNodeCount);
     }
 
     /**
      * DataNodeMemory: 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeMemory(): int {
+    public function getDataNodeMemory(): int
+    {
         return $this->get("DataNodeMemory");
     }
 
@@ -213,16 +233,18 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory(int $dataNodeMemory) {
+    public function setDataNodeMemory(int $dataNodeMemory)
+    {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
 
     /**
      * DataNodeDiskSpace: 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeDiskSpace(): int {
+    public function getDataNodeDiskSpace(): int
+    {
         return $this->get("DataNodeDiskSpace");
     }
 
@@ -231,7 +253,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace(int $dataNodeDiskSpace) {
+    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
+    {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
 
@@ -240,7 +263,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceMode(): string {
+    public function getInstanceMode(): string
+    {
         return $this->get("InstanceMode");
     }
 
@@ -249,7 +273,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode(string $instanceMode) {
+    public function setInstanceMode(string $instanceMode)
+    {
         $this->set("InstanceMode", $instanceMode);
     }
 
@@ -258,7 +283,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceType(): string {
+    public function getInstanceType(): string
+    {
         return $this->get("InstanceType");
     }
 
@@ -267,7 +293,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType) {
+    public function setInstanceType(string $instanceType)
+    {
         $this->set("InstanceType", $instanceType);
     }
 
@@ -276,7 +303,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -285,16 +313,18 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长，默认值1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -303,7 +333,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -312,7 +343,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getAdminUser(): string {
+    public function getAdminUser(): string
+    {
         return $this->get("AdminUser");
     }
 
@@ -321,16 +353,18 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $adminUser
      */
-    public function setAdminUser(string $adminUser) {
+    public function setAdminUser(string $adminUser)
+    {
         $this->set("AdminUser", $adminUser);
     }
 
     /**
      * Port: 端口号，mysql默认端口为3306
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -339,16 +373,18 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
     /**
      * DataNodeSlaveCount: 每个数据节点的只读实例个数, 取值必须>=0. 默认取值为0.
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDataNodeSlaveCount(): int {
+    public function getDataNodeSlaveCount(): int
+    {
         return $this->get("DataNodeSlaveCount");
     }
 
@@ -357,7 +393,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param int $dataNodeSlaveCount
      */
-    public function setDataNodeSlaveCount(int $dataNodeSlaveCount) {
+    public function setDataNodeSlaveCount(int $dataNodeSlaveCount)
+    {
         $this->set("DataNodeSlaveCount", $dataNodeSlaveCount);
     }
 
@@ -366,7 +403,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -375,7 +413,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -384,7 +423,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -393,7 +433,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -402,7 +443,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -411,9 +453,8 @@ class CreateUDDBInstanceRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

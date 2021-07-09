@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUSMSSignatureResponse extends Response {
+class CreateUSMSSignatureResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUSMSSignatureResponse extends Response {
      *
      * @return string|null
      */
-    public function getSigId(): string {
+    public function getSigId(): string
+    {
         return $this->get("SigId");
     }
 
@@ -35,9 +37,8 @@ class CreateUSMSSignatureResponse extends Response {
      *
      * @param string $sigId
      */
-    public function setSigId(string $sigId) {
+    public function setSigId(string $sigId)
+    {
         $this->set("SigId", $sigId);
     }
-
-
 }

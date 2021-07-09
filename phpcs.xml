@@ -16,7 +16,7 @@
     <rule ref="Generic.Commenting.DocComment.SpacingBeforeTags" />
     <rule ref="Generic.Commenting.DocComment.SpacingBeforeTags" />
     <rule ref="MySource.Commenting.FunctionComment.InvalidReturn" />
-    <rule ref="MySource.Commenting.FunctionComment.MissingParamComment" />
+<!--    <rule ref="MySource.Commenting.FunctionComment.MissingParamComment" />-->
     <rule ref="MySource.Commenting.FunctionComment.TypeHintMissing" />
     <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
     <rule ref="Generic.Classes.DuplicateClassName" />

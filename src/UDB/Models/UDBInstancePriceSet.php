@@ -18,7 +18,8 @@ namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
-class UDBInstancePriceSet extends Response {
+class UDBInstancePriceSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UDBInstancePriceSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -35,16 +37,18 @@ class UDBInstancePriceSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Price: 价格，单位为分
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -53,9 +57,8 @@ class UDBInstancePriceSet extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
-
-
 }

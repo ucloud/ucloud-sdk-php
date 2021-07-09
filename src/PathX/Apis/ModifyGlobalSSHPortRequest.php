@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyGlobalSSHPortRequest extends Request {
+class ModifyGlobalSSHPortRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyGlobalSSHPort"]);
@@ -34,7 +35,8 @@ class ModifyGlobalSSHPortRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -43,7 +45,8 @@ class ModifyGlobalSSHPortRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -52,7 +55,8 @@ class ModifyGlobalSSHPortRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceId(): string {
+    public function getInstanceId(): string
+    {
         return $this->get("InstanceId");
     }
 
@@ -61,16 +65,18 @@ class ModifyGlobalSSHPortRequest extends Request {
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId) {
+    public function setInstanceId(string $instanceId)
+    {
         $this->set("InstanceId", $instanceId);
     }
 
     /**
      * Port: 源站服务器监听的SSH端口号。收费版本端口范围[1,65535]且不能为80，443，65123端口。免费版不支持修改端口。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -79,9 +85,8 @@ class ModifyGlobalSSHPortRequest extends Request {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
-
-
 }

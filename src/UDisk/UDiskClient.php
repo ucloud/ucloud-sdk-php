@@ -62,7 +62,8 @@ use UCloud\UDisk\Apis\SetUDiskUDataArkModeResponse;
 /**
  * This client is used to call actions of **UDisk** service
  */
-class UDiskClient extends Client {
+class UDiskClient extends Client
+{
 
     /**
      * AttachUDisk - 将一个可用的UDisk挂载到某台主机上，当UDisk挂载成功后，还需要在主机内部进行文件系统操作
@@ -92,7 +93,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function attachUDisk(AttachUDiskRequest $request = null): AttachUDiskResponse {
+    public function attachUDisk(AttachUDiskRequest $request = null): AttachUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new AttachUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -128,7 +130,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function cloneUDisk(CloneUDiskRequest $request = null): CloneUDiskResponse {
+    public function cloneUDisk(CloneUDiskRequest $request = null): CloneUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new CloneUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -165,7 +168,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function cloneUDiskSnapshot(CloneUDiskSnapshotRequest $request = null): CloneUDiskSnapshotResponse {
+    public function cloneUDiskSnapshot(CloneUDiskSnapshotRequest $request = null): CloneUDiskSnapshotResponse
+    {
         $resp = $this->invoke($request);
         return new CloneUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -203,7 +207,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function cloneUDiskUDataArk(CloneUDiskUDataArkRequest $request = null): CloneUDiskUDataArkResponse {
+    public function cloneUDiskUDataArk(CloneUDiskUDataArkRequest $request = null): CloneUDiskUDataArkResponse
+    {
         $resp = $this->invoke($request);
         return new CloneUDiskUDataArkResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -246,7 +251,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createAttachUDisk(CreateAttachUDiskRequest $request = null): CreateAttachUDiskResponse {
+    public function createAttachUDisk(CreateAttachUDiskRequest $request = null): CreateAttachUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new CreateAttachUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -284,7 +290,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUDisk(CreateUDiskRequest $request = null): CreateUDiskResponse {
+    public function createUDisk(CreateUDiskRequest $request = null): CreateUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -315,7 +322,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createUDiskSnapshot(CreateUDiskSnapshotRequest $request = null): CreateUDiskSnapshotResponse {
+    public function createUDiskSnapshot(CreateUDiskSnapshotRequest $request = null): CreateUDiskSnapshotResponse
+    {
         $resp = $this->invoke($request);
         return new CreateUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -341,7 +349,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteUDisk(DeleteUDiskRequest $request = null): DeleteUDiskResponse {
+    public function deleteUDisk(DeleteUDiskRequest $request = null): DeleteUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -368,7 +377,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteUDiskSnapshot(DeleteUDiskSnapshotRequest $request = null): DeleteUDiskSnapshotResponse {
+    public function deleteUDiskSnapshot(DeleteUDiskSnapshotRequest $request = null): DeleteUDiskSnapshotResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -408,7 +418,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeRecycleUDisk(DescribeRecycleUDiskRequest $request = null): DescribeRecycleUDiskResponse {
+    public function describeRecycleUDisk(DescribeRecycleUDiskRequest $request = null): DescribeRecycleUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeRecycleUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -481,7 +492,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDisk(DescribeUDiskRequest $request = null): DescribeUDiskResponse {
+    public function describeUDisk(DescribeUDiskRequest $request = null): DescribeUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -523,7 +535,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDiskPrice(DescribeUDiskPriceRequest $request = null): DescribeUDiskPriceResponse {
+    public function describeUDiskPrice(DescribeUDiskPriceRequest $request = null): DescribeUDiskPriceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDiskPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -576,7 +589,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDiskSnapshot(DescribeUDiskSnapshotRequest $request = null): DescribeUDiskSnapshotResponse {
+    public function describeUDiskSnapshot(DescribeUDiskSnapshotRequest $request = null): DescribeUDiskSnapshotResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -609,7 +623,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDiskUpgradePrice(DescribeUDiskUpgradePriceRequest $request = null): DescribeUDiskUpgradePriceResponse {
+    public function describeUDiskUpgradePrice(DescribeUDiskUpgradePriceRequest $request = null): DescribeUDiskUpgradePriceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDiskUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -640,7 +655,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function detachUDisk(DetachUDiskRequest $request = null): DetachUDiskResponse {
+    public function detachUDisk(DetachUDiskRequest $request = null): DetachUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new DetachUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -668,7 +684,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function recoverUDisk(RecoverUDiskRequest $request = null): RecoverUDiskResponse {
+    public function recoverUDisk(RecoverUDiskRequest $request = null): RecoverUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new RecoverUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -695,7 +712,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function renameUDisk(RenameUDiskRequest $request = null): RenameUDiskResponse {
+    public function renameUDisk(RenameUDiskRequest $request = null): RenameUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new RenameUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -724,7 +742,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function resizeUDisk(ResizeUDiskRequest $request = null): ResizeUDiskResponse {
+    public function resizeUDisk(ResizeUDiskRequest $request = null): ResizeUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new ResizeUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -752,7 +771,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function restoreUDisk(RestoreUDiskRequest $request = null): RestoreUDiskResponse {
+    public function restoreUDisk(RestoreUDiskRequest $request = null): RestoreUDiskResponse
+    {
         $resp = $this->invoke($request);
         return new RestoreUDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -780,7 +800,8 @@ class UDiskClient extends Client {
      *
      * @throws UCloudException
      */
-    public function setUDiskUDataArkMode(SetUDiskUDataArkModeRequest $request = null): SetUDiskUDataArkModeResponse {
+    public function setUDiskUDataArkMode(SetUDiskUDataArkModeRequest $request = null): SetUDiskUDataArkModeResponse
+    {
         $resp = $this->invoke($request);
         return new SetUDiskUDataArkModeResponse($resp->toArray(), $resp->getRequestId());
     }

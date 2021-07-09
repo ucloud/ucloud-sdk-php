@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class RefreshNewUcdnDomainCacheResponse extends Response {
+class RefreshNewUcdnDomainCacheResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class RefreshNewUcdnDomainCacheResponse extends Response {
      *
      * @return string|null
      */
-    public function getTaskId(): string {
+    public function getTaskId(): string
+    {
         return $this->get("TaskId");
     }
 
@@ -35,9 +37,8 @@ class RefreshNewUcdnDomainCacheResponse extends Response {
      *
      * @param string $taskId
      */
-    public function setTaskId(string $taskId) {
+    public function setTaskId(string $taskId)
+    {
         $this->set("TaskId", $taskId);
     }
-
-
 }

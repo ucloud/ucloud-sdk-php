@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class NATGWSnatRule extends Response {
+class NATGWSnatRule extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NATGWSnatRule extends Response {
      *
      * @return string|null
      */
-    public function getSnatIp(): string {
+    public function getSnatIp(): string
+    {
         return $this->get("SnatIp");
     }
 
@@ -35,7 +37,8 @@ class NATGWSnatRule extends Response {
      *
      * @param string $snatIp
      */
-    public function setSnatIp(string $snatIp) {
+    public function setSnatIp(string $snatIp)
+    {
         $this->set("SnatIp", $snatIp);
     }
 
@@ -44,7 +47,8 @@ class NATGWSnatRule extends Response {
      *
      * @return string|null
      */
-    public function getSourceIp(): string {
+    public function getSourceIp(): string
+    {
         return $this->get("SourceIp");
     }
 
@@ -53,7 +57,8 @@ class NATGWSnatRule extends Response {
      *
      * @param string $sourceIp
      */
-    public function setSourceIp(string $sourceIp) {
+    public function setSourceIp(string $sourceIp)
+    {
         $this->set("SourceIp", $sourceIp);
     }
 
@@ -62,7 +67,8 @@ class NATGWSnatRule extends Response {
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string {
+    public function getSubnetworkId(): string
+    {
         return $this->get("SubnetworkId");
     }
 
@@ -71,7 +77,8 @@ class NATGWSnatRule extends Response {
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId) {
+    public function setSubnetworkId(string $subnetworkId)
+    {
         $this->set("SubnetworkId", $subnetworkId);
     }
 
@@ -80,7 +87,8 @@ class NATGWSnatRule extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -89,9 +97,8 @@ class NATGWSnatRule extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
-
-
 }

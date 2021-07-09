@@ -19,7 +19,8 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\IpLocationInfo;
 
-class QueryIpLocationResponse extends Response {
+class QueryIpLocationResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class QueryIpLocationResponse extends Response {
      *
      * @return IpLocationInfo[]|null
      */
-    public function getData(): array {
+    public function getData(): array
+    {
         $items = $this->get("Data") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class QueryIpLocationResponse extends Response {
      *
      * @param IpLocationInfo[] $data
      */
-    public function setData(array $data) {
+    public function setData(array $data)
+    {
         $result = [];
         foreach ($data as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\RequestInfoV2;
 
-class GetUcdnDomainOriginRequestNumResponse extends Response {
+class GetUcdnDomainOriginRequestNumResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetUcdnDomainOriginRequestNumResponse extends Response {
      *
      * @return RequestInfoV2[]|null
      */
-    public function getRequestList(): array {
+    public function getRequestList(): array
+    {
         $items = $this->get("RequestList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetUcdnDomainOriginRequestNumResponse extends Response {
      *
      * @param RequestInfoV2[] $requestList
      */
-    public function setRequestList(array $requestList) {
+    public function setRequestList(array $requestList)
+    {
         $result = [];
         foreach ($requestList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

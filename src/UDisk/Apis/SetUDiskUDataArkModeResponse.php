@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Response\Response;
 
-class SetUDiskUDataArkModeResponse extends Response {
+class SetUDiskUDataArkModeResponse extends Response
+{
     
 
 

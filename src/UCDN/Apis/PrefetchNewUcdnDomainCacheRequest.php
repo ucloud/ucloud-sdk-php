@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class PrefetchNewUcdnDomainCacheRequest extends Request {
+class PrefetchNewUcdnDomainCacheRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "PrefetchNewUcdnDomainCache"]);
@@ -32,7 +33,8 @@ class PrefetchNewUcdnDomainCacheRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class PrefetchNewUcdnDomainCacheRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class PrefetchNewUcdnDomainCacheRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getUrlList(): array {
+    public function getUrlList(): array
+    {
         return $this->get("UrlList");
     }
 
@@ -59,9 +63,8 @@ class PrefetchNewUcdnDomainCacheRequest extends Request {
      *
      * @param string[] $urlList
      */
-    public function setUrlList(array $urlList) {
+    public function setUrlList(array $urlList)
+    {
         $this->set("UrlList", $urlList);
     }
-
-
 }

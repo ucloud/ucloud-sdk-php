@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetAttachedDiskUpgradePriceRequest extends Request {
+class GetAttachedDiskUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetAttachedDiskUpgradePrice"]);
@@ -35,7 +36,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,16 +86,18 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * DiskSpace: 磁盘大小，单位GB，步长为10。取值范围需大于当前磁盘大小，最大值请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSpace(): int {
+    public function getDiskSpace(): int
+    {
         return $this->get("DiskSpace");
     }
 
@@ -98,7 +106,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace) {
+    public function setDiskSpace(int $diskSpace)
+    {
         $this->set("DiskSpace", $diskSpace);
     }
 
@@ -107,7 +116,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getDiskId(): string {
+    public function getDiskId(): string
+    {
         return $this->get("DiskId");
     }
 
@@ -116,7 +126,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @param string $diskId
      */
-    public function setDiskId(string $diskId) {
+    public function setDiskId(string $diskId)
+    {
         $this->set("DiskId", $diskId);
     }
 
@@ -125,7 +136,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUHostId(): string {
+    public function getUHostId(): string
+    {
         return $this->get("UHostId");
     }
 
@@ -134,7 +146,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId) {
+    public function setUHostId(string $uHostId)
+    {
         $this->set("UHostId", $uHostId);
     }
 
@@ -143,7 +156,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackupMode(): string {
+    public function getBackupMode(): string
+    {
         return $this->get("BackupMode");
     }
 
@@ -152,9 +166,8 @@ class GetAttachedDiskUpgradePriceRequest extends Request {
      *
      * @param string $backupMode
      */
-    public function setBackupMode(string $backupMode) {
+    public function setBackupMode(string $backupMode)
+    {
         $this->set("BackupMode", $backupMode);
     }
-
-
 }

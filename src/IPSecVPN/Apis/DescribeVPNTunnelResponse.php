@@ -21,15 +21,17 @@ use UCloud\IPSecVPN\Models\VPNTunnelDataSet;
 use UCloud\IPSecVPN\Models\IKEData;
 use UCloud\IPSecVPN\Models\IPSecData;
 
-class DescribeVPNTunnelResponse extends Response {
+class DescribeVPNTunnelResponse extends Response
+{
     
 
     /**
      * TotalCount: VPN隧道总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -38,7 +40,8 @@ class DescribeVPNTunnelResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -47,7 +50,8 @@ class DescribeVPNTunnelResponse extends Response {
      *
      * @return VPNTunnelDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -61,13 +65,12 @@ class DescribeVPNTunnelResponse extends Response {
      *
      * @param VPNTunnelDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

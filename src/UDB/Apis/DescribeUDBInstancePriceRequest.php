@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDBInstancePriceRequest extends Request {
+class DescribeUDBInstancePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDBInstancePrice"]);
@@ -36,7 +37,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,16 +67,18 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
     /**
      * MemoryLimit: 内存限制(MB)，单位为MB.目前支持：1000-96000
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemoryLimit(): int {
+    public function getMemoryLimit(): int
+    {
         return $this->get("MemoryLimit");
     }
 
@@ -81,16 +87,18 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit(int $memoryLimit) {
+    public function setMemoryLimit(int $memoryLimit)
+    {
         $this->set("MemoryLimit", $memoryLimit);
     }
 
     /**
      * DiskSpace: 磁盘空间(GB),暂时支持20(GB) - 3000(GB), 输入不带单位
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDiskSpace(): int {
+    public function getDiskSpace(): int
+    {
         return $this->get("DiskSpace");
     }
 
@@ -99,7 +107,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace) {
+    public function setDiskSpace(int $diskSpace)
+    {
         $this->set("DiskSpace", $diskSpace);
     }
 
@@ -108,7 +117,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBTypeId(): string {
+    public function getDBTypeId(): string
+    {
         return $this->get("DBTypeId");
     }
 
@@ -117,16 +127,18 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId) {
+    public function setDBTypeId(string $dbTypeId)
+    {
         $this->set("DBTypeId", $dbTypeId);
     }
 
     /**
      * Count: 购买DB实例数量,最大数量为10台, 默认为1台
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCount(): int {
+    public function getCount(): int
+    {
         return $this->get("Count");
     }
 
@@ -135,7 +147,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param int $count
      */
-    public function setCount(int $count) {
+    public function setCount(int $count)
+    {
         $this->set("Count", $count);
     }
 
@@ -144,7 +157,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -153,16 +167,18 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: DB购买多少个"计费时间单位"，默认值为1。比如：买2个月，Quantity就是2。如果计费单位是“按月”，并且Quantity为0，表示“购买到月底”
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -171,7 +187,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -180,7 +197,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getUseSSD(): string {
+    public function getUseSSD(): string
+    {
         return $this->get("UseSSD");
     }
 
@@ -189,7 +207,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param string $useSSD
      */
-    public function setUseSSD(string $useSSD) {
+    public function setUseSSD(string $useSSD)
+    {
         $this->set("UseSSD", $useSSD);
     }
 
@@ -198,7 +217,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getSSDType(): string {
+    public function getSSDType(): string
+    {
         return $this->get("SSDType");
     }
 
@@ -207,7 +227,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param string $ssdType
      */
-    public function setSSDType(string $ssdType) {
+    public function setSSDType(string $ssdType)
+    {
         $this->set("SSDType", $ssdType);
     }
 
@@ -216,7 +237,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceMode(): string {
+    public function getInstanceMode(): string
+    {
         return $this->get("InstanceMode");
     }
 
@@ -225,9 +247,8 @@ class DescribeUDBInstancePriceRequest extends Request {
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode(string $instanceMode) {
+    public function setInstanceMode(string $instanceMode)
+    {
         $this->set("InstanceMode", $instanceMode);
     }
-
-
 }

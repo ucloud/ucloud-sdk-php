@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UnBindPathXSSLRequest extends Request {
+class UnBindPathXSSLRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UnBindPathXSSL"]);
@@ -35,7 +36,8 @@ class UnBindPathXSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -44,7 +46,8 @@ class UnBindPathXSSLRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -53,7 +56,8 @@ class UnBindPathXSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getUGAId(): string {
+    public function getUGAId(): string
+    {
         return $this->get("UGAId");
     }
 
@@ -62,7 +66,8 @@ class UnBindPathXSSLRequest extends Request {
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId) {
+    public function setUGAId(string $ugaId)
+    {
         $this->set("UGAId", $ugaId);
     }
 
@@ -71,7 +76,8 @@ class UnBindPathXSSLRequest extends Request {
      *
      * @return string|null
      */
-    public function getSSLId(): string {
+    public function getSSLId(): string
+    {
         return $this->get("SSLId");
     }
 
@@ -80,7 +86,8 @@ class UnBindPathXSSLRequest extends Request {
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId) {
+    public function setSSLId(string $sslId)
+    {
         $this->set("SSLId", $sslId);
     }
 
@@ -89,7 +96,8 @@ class UnBindPathXSSLRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getPort(): array {
+    public function getPort(): array
+    {
         return $this->get("Port");
     }
 
@@ -98,9 +106,8 @@ class UnBindPathXSSLRequest extends Request {
      *
      * @param int[] $port
      */
-    public function setPort(array $port) {
+    public function setPort(array $port)
+    {
         $this->set("Port", $port);
     }
-
-
 }

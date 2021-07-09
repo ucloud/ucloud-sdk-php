@@ -19,7 +19,8 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\HitRateInfoV2;
 
-class GetUcdnDomainHitRateResponse extends Response {
+class GetUcdnDomainHitRateResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetUcdnDomainHitRateResponse extends Response {
      *
      * @return HitRateInfoV2[]|null
      */
-    public function getHitRateList(): array {
+    public function getHitRateList(): array
+    {
         $items = $this->get("HitRateList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetUcdnDomainHitRateResponse extends Response {
      *
      * @param HitRateInfoV2[] $hitRateList
      */
-    public function setHitRateList(array $hitRateList) {
+    public function setHitRateList(array $hitRateList)
+    {
         $result = [];
         foreach ($hitRateList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

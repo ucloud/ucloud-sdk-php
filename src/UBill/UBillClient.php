@@ -26,7 +26,8 @@ use UCloud\UBill\Apis\GetBillDataFileUrlResponse;
 /**
  * This client is used to call actions of **UBill** service
  */
-class UBillClient extends Client {
+class UBillClient extends Client
+{
 
     /**
      * GetBalance - 获取账户余额
@@ -52,7 +53,8 @@ class UBillClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getBalance(GetBalanceRequest $request = null): GetBalanceResponse {
+    public function getBalance(GetBalanceRequest $request = null): GetBalanceResponse
+    {
         $resp = $this->invoke($request);
         return new GetBalanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -80,7 +82,8 @@ class UBillClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getBillDataFileUrl(GetBillDataFileUrlRequest $request = null): GetBillDataFileUrlResponse {
+    public function getBillDataFileUrl(GetBillDataFileUrlRequest $request = null): GetBillDataFileUrlResponse
+    {
         $resp = $this->invoke($request);
         return new GetBillDataFileUrlResponse($resp->toArray(), $resp->getRequestId());
     }

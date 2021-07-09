@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUSMSTemplateRequest extends Request {
+class CreateUSMSTemplateRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUSMSTemplate"]);
@@ -35,7 +36,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -44,16 +46,18 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Purpose: 短信模板用途类型：1-验证码类短信模板；2-系统通知类短信模板；3-会员推广类短信模板；
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPurpose(): int {
+    public function getPurpose(): int
+    {
         return $this->get("Purpose");
     }
 
@@ -62,7 +66,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @param int $purpose
      */
-    public function setPurpose(int $purpose) {
+    public function setPurpose(int $purpose)
+    {
         $this->set("Purpose", $purpose);
     }
 
@@ -71,7 +76,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @return string|null
      */
-    public function getTemplateName(): string {
+    public function getTemplateName(): string
+    {
         return $this->get("TemplateName");
     }
 
@@ -80,7 +86,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @param string $templateName
      */
-    public function setTemplateName(string $templateName) {
+    public function setTemplateName(string $templateName)
+    {
         $this->set("TemplateName", $templateName);
     }
 
@@ -89,7 +96,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @return string|null
      */
-    public function getTemplate(): string {
+    public function getTemplate(): string
+    {
         return $this->get("Template");
     }
 
@@ -98,7 +106,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @param string $template
      */
-    public function setTemplate(string $template) {
+    public function setTemplate(string $template)
+    {
         $this->set("Template", $template);
     }
 
@@ -107,7 +116,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getInternational(): bool {
+    public function getInternational(): bool
+    {
         return $this->get("International");
     }
 
@@ -116,7 +126,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @param boolean $international
      */
-    public function setInternational(bool $international) {
+    public function setInternational(bool $international)
+    {
         $this->set("International", $international);
     }
 
@@ -125,7 +136,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -134,9 +146,8 @@ class CreateUSMSTemplateRequest extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

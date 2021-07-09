@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetCubeDeploymentRequest extends Request {
+class GetCubeDeploymentRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetCubeDeployment"]);
@@ -33,7 +34,8 @@ class GetCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class GetCubeDeploymentRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class GetCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -60,7 +64,8 @@ class GetCubeDeploymentRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -69,7 +74,8 @@ class GetCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -78,7 +84,8 @@ class GetCubeDeploymentRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -87,7 +94,8 @@ class GetCubeDeploymentRequest extends Request {
      *
      * @return string|null
      */
-    public function getDeploymentId(): string {
+    public function getDeploymentId(): string
+    {
         return $this->get("DeploymentId");
     }
 
@@ -96,9 +104,8 @@ class GetCubeDeploymentRequest extends Request {
      *
      * @param string $deploymentId
      */
-    public function setDeploymentId(string $deploymentId) {
+    public function setDeploymentId(string $deploymentId)
+    {
         $this->set("DeploymentId", $deploymentId);
     }
-
-
 }

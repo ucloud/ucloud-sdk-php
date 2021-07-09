@@ -19,7 +19,8 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\BandwidthInfo;
 
-class GetNewUcdnDomainBandwidthResponse extends Response {
+class GetNewUcdnDomainBandwidthResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetNewUcdnDomainBandwidthResponse extends Response {
      *
      * @return BandwidthInfo[]|null
      */
-    public function getBandwidthList(): array {
+    public function getBandwidthList(): array
+    {
         $items = $this->get("BandwidthList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,7 +43,8 @@ class GetNewUcdnDomainBandwidthResponse extends Response {
      *
      * @param BandwidthInfo[] $bandwidthList
      */
-    public function setBandwidthList(array $bandwidthList) {
+    public function setBandwidthList(array $bandwidthList)
+    {
         $result = [];
         foreach ($bandwidthList as $i => $item) {
             array_push($result, $item->getAll());
@@ -54,7 +57,8 @@ class GetNewUcdnDomainBandwidthResponse extends Response {
      *
      * @return float|null
      */
-    public function getTraffic(): float {
+    public function getTraffic(): float
+    {
         return $this->get("Traffic");
     }
 
@@ -63,9 +67,8 @@ class GetNewUcdnDomainBandwidthResponse extends Response {
      *
      * @param float $traffic
      */
-    public function setTraffic(float $traffic) {
+    public function setTraffic(float $traffic)
+    {
         $this->set("Traffic", $traffic);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreatePolicyRequest extends Request {
+class CreatePolicyRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreatePolicy"]);
@@ -37,7 +38,8 @@ class CreatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -46,7 +48,8 @@ class CreatePolicyRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -55,7 +58,8 @@ class CreatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -64,7 +68,8 @@ class CreatePolicyRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -73,7 +78,8 @@ class CreatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getULBId(): string {
+    public function getULBId(): string
+    {
         return $this->get("ULBId");
     }
 
@@ -82,7 +88,8 @@ class CreatePolicyRequest extends Request {
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId) {
+    public function setULBId(string $ulbId)
+    {
         $this->set("ULBId", $ulbId);
     }
 
@@ -91,7 +98,8 @@ class CreatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getVServerId(): string {
+    public function getVServerId(): string
+    {
         return $this->get("VServerId");
     }
 
@@ -100,7 +108,8 @@ class CreatePolicyRequest extends Request {
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId) {
+    public function setVServerId(string $vServerId)
+    {
         $this->set("VServerId", $vServerId);
     }
 
@@ -109,7 +118,8 @@ class CreatePolicyRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getBackendId(): array {
+    public function getBackendId(): array
+    {
         return $this->get("BackendId");
     }
 
@@ -118,7 +128,8 @@ class CreatePolicyRequest extends Request {
      *
      * @param string[] $backendId
      */
-    public function setBackendId(array $backendId) {
+    public function setBackendId(array $backendId)
+    {
         $this->set("BackendId", $backendId);
     }
 
@@ -127,7 +138,8 @@ class CreatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getMatch(): string {
+    public function getMatch(): string
+    {
         return $this->get("Match");
     }
 
@@ -136,7 +148,8 @@ class CreatePolicyRequest extends Request {
      *
      * @param string $match
      */
-    public function setMatch(string $match) {
+    public function setMatch(string $match)
+    {
         $this->set("Match", $match);
     }
 
@@ -145,7 +158,8 @@ class CreatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -154,16 +168,18 @@ class CreatePolicyRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
 
     /**
      * PolicyPriority: 策略优先级，1-9999
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPolicyPriority(): int {
+    public function getPolicyPriority(): int
+    {
         return $this->get("PolicyPriority");
     }
 
@@ -172,9 +188,8 @@ class CreatePolicyRequest extends Request {
      *
      * @param int $policyPriority
      */
-    public function setPolicyPriority(int $policyPriority) {
+    public function setPolicyPriority(int $policyPriority)
+    {
         $this->set("PolicyPriority", $policyPriority);
     }
-
-
 }

@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UEC\Models\FirewallInfo;
 use UCloud\UEC\Models\RuleInfo;
 
-class DescribeUEcFirewallResponse extends Response {
+class DescribeUEcFirewallResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeUEcFirewallResponse extends Response {
      *
      * @return FirewallInfo[]|null
      */
-    public function getFirewallSet(): array {
+    public function getFirewallSet(): array
+    {
         $items = $this->get("FirewallSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class DescribeUEcFirewallResponse extends Response {
      *
      * @param FirewallInfo[] $firewallSet
      */
-    public function setFirewallSet(array $firewallSet) {
+    public function setFirewallSet(array $firewallSet)
+    {
         $result = [];
         foreach ($firewallSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,9 +56,10 @@ class DescribeUEcFirewallResponse extends Response {
     /**
      * TotalCount: 满足条件的节点总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -64,9 +68,8 @@ class DescribeUEcFirewallResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

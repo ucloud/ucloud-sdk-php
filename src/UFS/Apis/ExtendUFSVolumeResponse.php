@@ -18,7 +18,8 @@ namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ExtendUFSVolumeResponse extends Response {
+class ExtendUFSVolumeResponse extends Response
+{
     
 
 

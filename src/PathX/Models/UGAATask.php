@@ -18,15 +18,17 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class UGAATask extends Response {
+class UGAATask extends Response
+{
     
 
     /**
      * Port: 接入端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -35,7 +37,8 @@ class UGAATask extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
@@ -44,7 +47,8 @@ class UGAATask extends Response {
      *
      * @return string|null
      */
-    public function getProtocol(): string {
+    public function getProtocol(): string
+    {
         return $this->get("Protocol");
     }
 
@@ -53,9 +57,8 @@ class UGAATask extends Response {
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol) {
+    public function setProtocol(string $protocol)
+    {
         $this->set("Protocol", $protocol);
     }
-
-
 }

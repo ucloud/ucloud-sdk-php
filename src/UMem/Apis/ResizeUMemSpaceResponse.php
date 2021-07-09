@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ResizeUMemSpaceResponse extends Response {
+class ResizeUMemSpaceResponse extends Response
+{
     
 
 

@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class RestartUEcHolderRequest extends Request {
+class RestartUEcHolderRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "RestartUEcHolder"]);
@@ -32,7 +33,8 @@ class RestartUEcHolderRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -41,7 +43,8 @@ class RestartUEcHolderRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -50,7 +53,8 @@ class RestartUEcHolderRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getResourceId(): array {
+    public function getResourceId(): array
+    {
         return $this->get("ResourceId");
     }
 
@@ -59,9 +63,8 @@ class RestartUEcHolderRequest extends Request {
      *
      * @param string[] $resourceId
      */
-    public function setResourceId(array $resourceId) {
+    public function setResourceId(array $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
-
-
 }

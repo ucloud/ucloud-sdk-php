@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUGAInstanceResponse extends Response {
+class CreateUGAInstanceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUGAInstanceResponse extends Response {
      *
      * @return string|null
      */
-    public function getUGAId(): string {
+    public function getUGAId(): string
+    {
         return $this->get("UGAId");
     }
 
@@ -35,7 +37,8 @@ class CreateUGAInstanceResponse extends Response {
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId) {
+    public function setUGAId(string $ugaId)
+    {
         $this->set("UGAId", $ugaId);
     }
 
@@ -44,7 +47,8 @@ class CreateUGAInstanceResponse extends Response {
      *
      * @return string|null
      */
-    public function getCName(): string {
+    public function getCName(): string
+    {
         return $this->get("CName");
     }
 
@@ -53,9 +57,8 @@ class CreateUGAInstanceResponse extends Response {
      *
      * @param string $cName
      */
-    public function setCName(string $cName) {
+    public function setCName(string $cName)
+    {
         $this->set("CName", $cName);
     }
-
-
 }

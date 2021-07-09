@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeletePathXSSLResponse extends Response {
+class DeletePathXSSLResponse extends Response
+{
     
 
 

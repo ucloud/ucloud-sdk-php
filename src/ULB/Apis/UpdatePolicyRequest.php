@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdatePolicyRequest extends Request {
+class UpdatePolicyRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdatePolicy"]);
@@ -36,7 +37,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -63,7 +67,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -72,7 +77,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getULBId(): string {
+    public function getULBId(): string
+    {
         return $this->get("ULBId");
     }
 
@@ -81,7 +87,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId) {
+    public function setULBId(string $ulbId)
+    {
         $this->set("ULBId", $ulbId);
     }
 
@@ -90,7 +97,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getVServerId(): string {
+    public function getVServerId(): string
+    {
         return $this->get("VServerId");
     }
 
@@ -99,7 +107,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId) {
+    public function setVServerId(string $vServerId)
+    {
         $this->set("VServerId", $vServerId);
     }
 
@@ -108,7 +117,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getMatch(): string {
+    public function getMatch(): string
+    {
         return $this->get("Match");
     }
 
@@ -117,7 +127,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @param string $match
      */
-    public function setMatch(string $match) {
+    public function setMatch(string $match)
+    {
         $this->set("Match", $match);
     }
 
@@ -126,7 +137,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getPolicyId(): string {
+    public function getPolicyId(): string
+    {
         return $this->get("PolicyId");
     }
 
@@ -135,7 +147,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @param string $policyId
      */
-    public function setPolicyId(string $policyId) {
+    public function setPolicyId(string $policyId)
+    {
         $this->set("PolicyId", $policyId);
     }
 
@@ -144,7 +157,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getBackendId(): array {
+    public function getBackendId(): array
+    {
         return $this->get("BackendId");
     }
 
@@ -153,7 +167,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @param string[] $backendId
      */
-    public function setBackendId(array $backendId) {
+    public function setBackendId(array $backendId)
+    {
         $this->set("BackendId", $backendId);
     }
 
@@ -162,7 +177,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @return string|null
      */
-    public function getType(): string {
+    public function getType(): string
+    {
         return $this->get("Type");
     }
 
@@ -171,9 +187,8 @@ class UpdatePolicyRequest extends Request {
      *
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->set("Type", $type);
     }
-
-
 }

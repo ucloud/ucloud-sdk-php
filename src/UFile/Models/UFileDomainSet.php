@@ -18,7 +18,8 @@ namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
-class UFileDomainSet extends Response {
+class UFileDomainSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UFileDomainSet extends Response {
      *
      * @return string[]|null
      */
-    public function getSrc(): array {
+    public function getSrc(): array
+    {
         return $this->get("Src");
     }
 
@@ -35,7 +37,8 @@ class UFileDomainSet extends Response {
      *
      * @param string[] $src
      */
-    public function setSrc(array $src) {
+    public function setSrc(array $src)
+    {
         $this->set("Src", $src);
     }
 
@@ -44,7 +47,8 @@ class UFileDomainSet extends Response {
      *
      * @return string[]|null
      */
-    public function getCdn(): array {
+    public function getCdn(): array
+    {
         return $this->get("Cdn");
     }
 
@@ -53,7 +57,8 @@ class UFileDomainSet extends Response {
      *
      * @param string[] $cdn
      */
-    public function setCdn(array $cdn) {
+    public function setCdn(array $cdn)
+    {
         $this->set("Cdn", $cdn);
     }
 
@@ -62,7 +67,8 @@ class UFileDomainSet extends Response {
      *
      * @return string[]|null
      */
-    public function getCustomSrc(): array {
+    public function getCustomSrc(): array
+    {
         return $this->get("CustomSrc");
     }
 
@@ -71,7 +77,8 @@ class UFileDomainSet extends Response {
      *
      * @param string[] $customSrc
      */
-    public function setCustomSrc(array $customSrc) {
+    public function setCustomSrc(array $customSrc)
+    {
         $this->set("CustomSrc", $customSrc);
     }
 
@@ -80,7 +87,8 @@ class UFileDomainSet extends Response {
      *
      * @return string[]|null
      */
-    public function getCustomCdn(): array {
+    public function getCustomCdn(): array
+    {
         return $this->get("CustomCdn");
     }
 
@@ -89,9 +97,8 @@ class UFileDomainSet extends Response {
      *
      * @param string[] $customCdn
      */
-    public function setCustomCdn(array $customCdn) {
+    public function setCustomCdn(array $customCdn)
+    {
         $this->set("CustomCdn", $customCdn);
     }
-
-
 }

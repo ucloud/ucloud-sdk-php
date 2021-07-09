@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UNet\Models\UnetAllocateEIPSet;
 use UCloud\UNet\Models\UnetEIPAddrSet;
 
-class AllocateEIPResponse extends Response {
+class AllocateEIPResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class AllocateEIPResponse extends Response {
      *
      * @return UnetAllocateEIPSet[]|null
      */
-    public function getEIPSet(): array {
+    public function getEIPSet(): array
+    {
         $items = $this->get("EIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class AllocateEIPResponse extends Response {
      *
      * @param UnetAllocateEIPSet[] $eipSet
      */
-    public function setEIPSet(array $eipSet) {
+    public function setEIPSet(array $eipSet)
+    {
         $result = [];
         foreach ($eipSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\UEC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UEC\Models\NodeIspList;
 
-class DescribeUEcVHostISPResponse extends Response {
+class DescribeUEcVHostISPResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUEcVHostISPResponse extends Response {
      *
      * @return NodeIspList[]|null
      */
-    public function getNodeIspList(): array {
+    public function getNodeIspList(): array
+    {
         $items = $this->get("NodeIspList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUEcVHostISPResponse extends Response {
      *
      * @param NodeIspList[] $nodeIspList
      */
-    public function setNodeIspList(array $nodeIspList) {
+    public function setNodeIspList(array $nodeIspList)
+    {
         $result = [];
         foreach ($nodeIspList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

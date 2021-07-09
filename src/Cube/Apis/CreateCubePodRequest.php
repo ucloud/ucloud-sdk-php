@@ -18,7 +18,8 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateCubePodRequest extends Request {
+class CreateCubePodRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateCubePod"]);
@@ -36,7 +37,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,7 +67,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -72,7 +77,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -81,7 +87,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -90,7 +97,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -99,7 +107,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -108,7 +117,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -117,7 +127,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -126,7 +137,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getPod(): string {
+    public function getPod(): string
+    {
         return $this->get("Pod");
     }
 
@@ -135,7 +147,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $pod
      */
-    public function setPod(string $pod) {
+    public function setPod(string $pod)
+    {
         $this->set("Pod", $pod);
     }
 
@@ -144,7 +157,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getGroup(): string {
+    public function getGroup(): string
+    {
         return $this->get("Group");
     }
 
@@ -153,7 +167,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $group
      */
-    public function setGroup(string $group) {
+    public function setGroup(string $group)
+    {
         $this->set("Group", $group);
     }
 
@@ -162,7 +177,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -171,7 +187,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -180,7 +197,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -189,7 +207,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -198,7 +217,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getCpuPlatform(): string {
+    public function getCpuPlatform(): string
+    {
         return $this->get("CpuPlatform");
     }
 
@@ -207,7 +227,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $cpuPlatform
      */
-    public function setCpuPlatform(string $cpuPlatform) {
+    public function setCpuPlatform(string $cpuPlatform)
+    {
         $this->set("CpuPlatform", $cpuPlatform);
     }
 
@@ -216,7 +237,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -225,16 +247,18 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长。默认:值 1。 月付时，此参数传0，代表购买至月末。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -243,7 +267,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -252,7 +277,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getKubeConfig(): string {
+    public function getKubeConfig(): string
+    {
         return $this->get("KubeConfig");
     }
 
@@ -261,7 +287,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $kubeConfig
      */
-    public function setKubeConfig(string $kubeConfig) {
+    public function setKubeConfig(string $kubeConfig)
+    {
         $this->set("KubeConfig", $kubeConfig);
     }
 
@@ -270,7 +297,8 @@ class CreateCubePodRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -279,9 +307,8 @@ class CreateCubePodRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

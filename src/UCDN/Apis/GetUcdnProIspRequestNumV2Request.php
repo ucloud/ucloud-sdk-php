@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUcdnProIspRequestNumV2Request extends Request {
+class GetUcdnProIspRequestNumV2Request extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUcdnProIspRequestNumV2"]);
@@ -33,7 +34,8 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,16 +44,18 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * BeginTime: 查询的起始日期，格式为Unix Timestamp  忽略时间部分
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -60,16 +64,18 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 查询的结束日期，格式为Unix Timestamp  忽略时间部分
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -78,7 +84,8 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
@@ -87,7 +94,8 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @return string[]|null
      */
-    public function getDomainId(): array {
+    public function getDomainId(): array
+    {
         return $this->get("DomainId");
     }
 
@@ -96,7 +104,8 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @param string[] $domainId
      */
-    public function setDomainId(array $domainId) {
+    public function setDomainId(array $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
 
@@ -105,7 +114,8 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @return string[]|null
      */
-    public function getProvince(): array {
+    public function getProvince(): array
+    {
         return $this->get("Province");
     }
 
@@ -114,7 +124,8 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @param string[] $province
      */
-    public function setProvince(array $province) {
+    public function setProvince(array $province)
+    {
         $this->set("Province", $province);
     }
 
@@ -123,7 +134,8 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @return string|null
      */
-    public function getIsp(): string {
+    public function getIsp(): string
+    {
         return $this->get("Isp");
     }
 
@@ -132,16 +144,18 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @param string $isp
      */
-    public function setIsp(string $isp) {
+    public function setIsp(string $isp)
+    {
         $this->set("Isp", $isp);
     }
 
     /**
      * Type: 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天粒度，3表示按照一分钟粒度）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getType(): int {
+    public function getType(): int
+    {
         return $this->get("Type");
     }
 
@@ -150,9 +164,8 @@ class GetUcdnProIspRequestNumV2Request extends Request {
      *
      * @param int $type
      */
-    public function setType(int $type) {
+    public function setType(int $type)
+    {
         $this->set("Type", $type);
     }
-
-
 }

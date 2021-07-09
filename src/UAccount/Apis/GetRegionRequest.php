@@ -18,13 +18,10 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetRegionRequest extends Request {
+class GetRegionRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetRegion"]);
     }
-
-    
-
-
 }

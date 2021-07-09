@@ -25,7 +25,8 @@ use UCloud\UEC\Models\CfgDictList;
 use UCloud\UEC\Models\StorVolumeInfo;
 use UCloud\UEC\Models\ImageList;
 
-class DescribeUEcHolderResponse extends Response {
+class DescribeUEcHolderResponse extends Response
+{
     
 
     /**
@@ -33,7 +34,8 @@ class DescribeUEcHolderResponse extends Response {
      *
      * @return HolderList[]|null
      */
-    public function getHolderList(): array {
+    public function getHolderList(): array
+    {
         $items = $this->get("HolderList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -47,7 +49,8 @@ class DescribeUEcHolderResponse extends Response {
      *
      * @param HolderList[] $holderList
      */
-    public function setHolderList(array $holderList) {
+    public function setHolderList(array $holderList)
+    {
         $result = [];
         foreach ($holderList as $i => $item) {
             array_push($result, $item->getAll());
@@ -58,9 +61,10 @@ class DescribeUEcHolderResponse extends Response {
     /**
      * TotalCount: 满足条件的容器组总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -69,9 +73,8 @@ class DescribeUEcHolderResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

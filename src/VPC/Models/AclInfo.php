@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class AclInfo extends Response {
+class AclInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AclInfo extends Response {
      *
      * @return string|null
      */
-    public function getVpcId(): string {
+    public function getVpcId(): string
+    {
         return $this->get("VpcId");
     }
 
@@ -35,7 +37,8 @@ class AclInfo extends Response {
      *
      * @param string $vpcId
      */
-    public function setVpcId(string $vpcId) {
+    public function setVpcId(string $vpcId)
+    {
         $this->set("VpcId", $vpcId);
     }
 
@@ -44,7 +47,8 @@ class AclInfo extends Response {
      *
      * @return string|null
      */
-    public function getAclId(): string {
+    public function getAclId(): string
+    {
         return $this->get("AclId");
     }
 
@@ -53,7 +57,8 @@ class AclInfo extends Response {
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId) {
+    public function setAclId(string $aclId)
+    {
         $this->set("AclId", $aclId);
     }
 
@@ -62,7 +67,8 @@ class AclInfo extends Response {
      *
      * @return string|null
      */
-    public function getAclName(): string {
+    public function getAclName(): string
+    {
         return $this->get("AclName");
     }
 
@@ -71,7 +77,8 @@ class AclInfo extends Response {
      *
      * @param string $aclName
      */
-    public function setAclName(string $aclName) {
+    public function setAclName(string $aclName)
+    {
         $this->set("AclName", $aclName);
     }
 
@@ -80,7 +87,8 @@ class AclInfo extends Response {
      *
      * @return string|null
      */
-    public function getDescription(): string {
+    public function getDescription(): string
+    {
         return $this->get("Description");
     }
 
@@ -89,7 +97,8 @@ class AclInfo extends Response {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    public function setDescription(string $description)
+    {
         $this->set("Description", $description);
     }
 
@@ -98,7 +107,8 @@ class AclInfo extends Response {
      *
      * @return AclEntryInfo[]|null
      */
-    public function getEntries(): array {
+    public function getEntries(): array
+    {
         $items = $this->get("Entries") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -112,7 +122,8 @@ class AclInfo extends Response {
      *
      * @param AclEntryInfo[] $entries
      */
-    public function setEntries(array $entries) {
+    public function setEntries(array $entries)
+    {
         $result = [];
         foreach ($entries as $i => $item) {
             array_push($result, $item->getAll());
@@ -125,7 +136,8 @@ class AclInfo extends Response {
      *
      * @return AssociationInfo[]|null
      */
-    public function getAssociations(): array {
+    public function getAssociations(): array
+    {
         $items = $this->get("Associations") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -139,7 +151,8 @@ class AclInfo extends Response {
      *
      * @param AssociationInfo[] $associations
      */
-    public function setAssociations(array $associations) {
+    public function setAssociations(array $associations)
+    {
         $result = [];
         foreach ($associations as $i => $item) {
             array_push($result, $item->getAll());
@@ -150,9 +163,10 @@ class AclInfo extends Response {
     /**
      * CreateTime: 创建的Unix时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -161,16 +175,18 @@ class AclInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * UpdateTime: 更改的Unix时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getUpdateTime(): int {
+    public function getUpdateTime(): int
+    {
         return $this->get("UpdateTime");
     }
 
@@ -179,9 +195,8 @@ class AclInfo extends Response {
      *
      * @param int $updateTime
      */
-    public function setUpdateTime(int $updateTime) {
+    public function setUpdateTime(int $updateTime)
+    {
         $this->set("UpdateTime", $updateTime);
     }
-
-
 }

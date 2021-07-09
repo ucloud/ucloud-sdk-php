@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUPathBandwidthRequest extends Request {
+class ModifyUPathBandwidthRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyUPathBandwidth"]);
@@ -34,7 +35,8 @@ class ModifyUPathBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -43,7 +45,8 @@ class ModifyUPathBandwidthRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -52,7 +55,8 @@ class ModifyUPathBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getUPathId(): string {
+    public function getUPathId(): string
+    {
         return $this->get("UPathId");
     }
 
@@ -61,16 +65,18 @@ class ModifyUPathBandwidthRequest extends Request {
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId) {
+    public function setUPathId(string $uPathId)
+    {
         $this->set("UPathId", $uPathId);
     }
 
     /**
      * Bandwidth: 线路带宽，单位Mbps。最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -79,9 +85,8 @@ class ModifyUPathBandwidthRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
-
-
 }

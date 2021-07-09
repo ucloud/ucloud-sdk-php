@@ -18,7 +18,8 @@ namespace UCloud\UEC\Params;
 
 use UCloud\Core\Request\Request;
 
-class UpdateUEcFirewallParamRule extends Request {
+class UpdateUEcFirewallParamRule extends Request
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @return string|null
      */
-    public function getProtocolType(): string {
+    public function getProtocolType(): string
+    {
         return $this->get("ProtocolType");
     }
 
@@ -35,7 +37,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @param string $protocolType
      */
-    public function setProtocolType(string $protocolType) {
+    public function setProtocolType(string $protocolType)
+    {
         $this->set("ProtocolType", $protocolType);
     }
 
@@ -44,7 +47,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @return string|null
      */
-    public function getPort(): string {
+    public function getPort(): string
+    {
         return $this->get("Port");
     }
 
@@ -53,7 +57,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @param string $port
      */
-    public function setPort(string $port) {
+    public function setPort(string $port)
+    {
         $this->set("Port", $port);
     }
 
@@ -62,7 +67,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @return string|null
      */
-    public function getSrcIp(): string {
+    public function getSrcIp(): string
+    {
         return $this->get("SrcIp");
     }
 
@@ -71,7 +77,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @param string $srcIp
      */
-    public function setSrcIp(string $srcIp) {
+    public function setSrcIp(string $srcIp)
+    {
         $this->set("SrcIp", $srcIp);
     }
 
@@ -80,7 +87,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @return string|null
      */
-    public function getAction(): string {
+    public function getAction(): string
+    {
         return $this->get("Action");
     }
 
@@ -89,25 +97,28 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @param string $action
      */
-    public function setAction(string $action) {
+    public function setAction(string $action)
+    {
         $this->set("Action", $action);
     }
 
     /**
-     * Priority: 	优先级：HIGH（高），MEDIUM（中），LOW（低）
+     * Priority:    优先级：HIGH（高），MEDIUM（中），LOW（低）
      *
      * @return string|null
      */
-    public function getPriority(): string {
+    public function getPriority(): string
+    {
         return $this->get("Priority");
     }
 
     /**
-     * Priority: 	优先级：HIGH（高），MEDIUM（中），LOW（低）
+     * Priority:    优先级：HIGH（高），MEDIUM（中），LOW（低）
      *
      * @param string $priority
      */
-    public function setPriority(string $priority) {
+    public function setPriority(string $priority)
+    {
         $this->set("Priority", $priority);
     }
 
@@ -116,7 +127,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -125,9 +137,8 @@ class UpdateUEcFirewallParamRule extends Request {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
-
-
 }

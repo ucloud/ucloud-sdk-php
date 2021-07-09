@@ -18,15 +18,17 @@ namespace UCloud\UAccount\Models;
 
 use UCloud\Core\Response\Response;
 
-class RegionInfo extends Response {
+class RegionInfo extends Response
+{
     
 
     /**
      * RegionId: 数据中心ID
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRegionId(): int {
+    public function getRegionId(): int
+    {
         return $this->get("RegionId");
     }
 
@@ -35,7 +37,8 @@ class RegionInfo extends Response {
      *
      * @param int $regionId
      */
-    public function setRegionId(int $regionId) {
+    public function setRegionId(int $regionId)
+    {
         $this->set("RegionId", $regionId);
     }
 
@@ -44,7 +47,8 @@ class RegionInfo extends Response {
      *
      * @return string|null
      */
-    public function getRegionName(): string {
+    public function getRegionName(): string
+    {
         return $this->get("RegionName");
     }
 
@@ -53,7 +57,8 @@ class RegionInfo extends Response {
      *
      * @param string $regionName
      */
-    public function setRegionName(string $regionName) {
+    public function setRegionName(string $regionName)
+    {
         $this->set("RegionName", $regionName);
     }
 
@@ -62,7 +67,8 @@ class RegionInfo extends Response {
      *
      * @return boolean|null
      */
-    public function getIsDefault(): bool {
+    public function getIsDefault(): bool
+    {
         return $this->get("IsDefault");
     }
 
@@ -71,7 +77,8 @@ class RegionInfo extends Response {
      *
      * @param boolean $isDefault
      */
-    public function setIsDefault(bool $isDefault) {
+    public function setIsDefault(bool $isDefault)
+    {
         $this->set("IsDefault", $isDefault);
     }
 
@@ -80,7 +87,8 @@ class RegionInfo extends Response {
      *
      * @return string|null
      */
-    public function getBitMaps(): string {
+    public function getBitMaps(): string
+    {
         return $this->get("BitMaps");
     }
 
@@ -89,7 +97,8 @@ class RegionInfo extends Response {
      *
      * @param string $bitMaps
      */
-    public function setBitMaps(string $bitMaps) {
+    public function setBitMaps(string $bitMaps)
+    {
         $this->set("BitMaps", $bitMaps);
     }
 
@@ -98,7 +107,8 @@ class RegionInfo extends Response {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -107,7 +117,8 @@ class RegionInfo extends Response {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -116,7 +127,8 @@ class RegionInfo extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -125,9 +137,8 @@ class RegionInfo extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
-
-
 }

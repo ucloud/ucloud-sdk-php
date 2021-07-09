@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DescribeUDBBackupBlacklistResponse extends Response {
+class DescribeUDBBackupBlacklistResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DescribeUDBBackupBlacklistResponse extends Response {
      *
      * @return string|null
      */
-    public function getBlacklist(): string {
+    public function getBlacklist(): string
+    {
         return $this->get("Blacklist");
     }
 
@@ -35,9 +37,8 @@ class DescribeUDBBackupBlacklistResponse extends Response {
      *
      * @param string $blacklist
      */
-    public function setBlacklist(string $blacklist) {
+    public function setBlacklist(string $blacklist)
+    {
         $this->set("Blacklist", $blacklist);
     }
-
-
 }

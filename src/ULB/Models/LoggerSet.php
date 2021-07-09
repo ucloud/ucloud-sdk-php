@@ -18,7 +18,8 @@ namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
-class LoggerSet extends Response {
+class LoggerSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class LoggerSet extends Response {
      *
      * @return string|null
      */
-    public function getBucketName(): string {
+    public function getBucketName(): string
+    {
         return $this->get("BucketName");
     }
 
@@ -35,7 +37,8 @@ class LoggerSet extends Response {
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName) {
+    public function setBucketName(string $bucketName)
+    {
         $this->set("BucketName", $bucketName);
     }
 
@@ -44,7 +47,8 @@ class LoggerSet extends Response {
      *
      * @return string|null
      */
-    public function getTokenID(): string {
+    public function getTokenID(): string
+    {
         return $this->get("TokenID");
     }
 
@@ -53,7 +57,8 @@ class LoggerSet extends Response {
      *
      * @param string $tokenID
      */
-    public function setTokenID(string $tokenID) {
+    public function setTokenID(string $tokenID)
+    {
         $this->set("TokenID", $tokenID);
     }
 
@@ -62,7 +67,8 @@ class LoggerSet extends Response {
      *
      * @return string|null
      */
-    public function getTokenName(): string {
+    public function getTokenName(): string
+    {
         return $this->get("TokenName");
     }
 
@@ -71,9 +77,8 @@ class LoggerSet extends Response {
      *
      * @param string $tokenName
      */
-    public function setTokenName(string $tokenName) {
+    public function setTokenName(string $tokenName)
+    {
         $this->set("TokenName", $tokenName);
     }
-
-
 }

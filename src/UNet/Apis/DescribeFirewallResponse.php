@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UNet\Models\FirewallDataSet;
 use UCloud\UNet\Models\FirewallRuleSet;
 
-class DescribeFirewallResponse extends Response {
+class DescribeFirewallResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeFirewallResponse extends Response {
      *
      * @return FirewallDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class DescribeFirewallResponse extends Response {
      *
      * @param FirewallDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,9 +56,10 @@ class DescribeFirewallResponse extends Response {
     /**
      * TotalCount: 防火墙资源数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -64,9 +68,8 @@ class DescribeFirewallResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

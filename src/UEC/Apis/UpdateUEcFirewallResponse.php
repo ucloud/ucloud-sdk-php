@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UpdateUEcFirewallResponse extends Response {
+class UpdateUEcFirewallResponse extends Response
+{
     
 
 

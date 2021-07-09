@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Response\Response;
 
-class SetNetworkMaskResponse extends Response {
+class SetNetworkMaskResponse extends Response
+{
     
 
 

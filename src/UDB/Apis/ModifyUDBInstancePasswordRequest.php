@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUDBInstancePasswordRequest extends Request {
+class ModifyUDBInstancePasswordRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyUDBInstancePassword"]);
@@ -34,7 +35,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBId(): string {
+    public function getDBId(): string
+    {
         return $this->get("DBId");
     }
 
@@ -97,7 +105,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId) {
+    public function setDBId(string $dbId)
+    {
         $this->set("DBId", $dbId);
     }
 
@@ -106,7 +115,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @return string|null
      */
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->get("Password");
     }
 
@@ -115,7 +125,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->set("Password", $password);
     }
 
@@ -124,7 +135,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @return string|null
      */
-    public function getAccountName(): string {
+    public function getAccountName(): string
+    {
         return $this->get("AccountName");
     }
 
@@ -133,9 +145,8 @@ class ModifyUDBInstancePasswordRequest extends Request {
      *
      * @param string $accountName
      */
-    public function setAccountName(string $accountName) {
+    public function setAccountName(string $accountName)
+    {
         $this->set("AccountName", $accountName);
     }
-
-
 }

@@ -54,7 +54,8 @@ use UCloud\UPHost\Apis\TerminatePHostResponse;
 /**
  * This client is used to call actions of **UPHost** service
  */
-class UPHostClient extends Client {
+class UPHostClient extends Client
+{
 
     /**
      * CreatePHost - 指定数据中心，根据资源使用量创建指定数量的UPHost物理云主机实例。
@@ -100,7 +101,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createPHost(CreatePHostRequest $request = null): CreatePHostResponse {
+    public function createPHost(CreatePHostRequest $request = null): CreatePHostResponse
+    {
         $resp = $this->invoke($request);
         return new CreatePHostResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -148,7 +150,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeBaremetalMachineType(DescribeBaremetalMachineTypeRequest $request = null): DescribeBaremetalMachineTypeResponse {
+    public function describeBaremetalMachineType(DescribeBaremetalMachineTypeRequest $request = null): DescribeBaremetalMachineTypeResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeBaremetalMachineTypeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -212,7 +215,7 @@ class UPHostClient extends Client {
      *             ]
      *             "IPSet" => (array<object>) IP信息，见 PHostIPSet[
      *                 [
-     *                     "OperatorName" => (string)  国际: Internation， BGP: BGP， 内网: Private 
+     *                     "OperatorName" => (string)  国际: Internation， BGP: BGP， 内网: Private
      *                     "IPId" => (string) IP资源ID(内网IP无资源ID)（待废弃）
      *                     "IPAddr" => (string) IP地址，
      *                     "MACAddr" => (string) MAC地址
@@ -234,7 +237,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describePHost(DescribePHostRequest $request = null): DescribePHostResponse {
+    public function describePHost(DescribePHostRequest $request = null): DescribePHostResponse
+    {
         $resp = $this->invoke($request);
         return new DescribePHostResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -275,7 +279,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describePHostImage(DescribePHostImageRequest $request = null): DescribePHostImageResponse {
+    public function describePHostImage(DescribePHostImageRequest $request = null): DescribePHostImageResponse
+    {
         $resp = $this->invoke($request);
         return new DescribePHostImageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -333,7 +338,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describePHostMachineType(DescribePHostMachineTypeRequest $request = null): DescribePHostMachineTypeResponse {
+    public function describePHostMachineType(DescribePHostMachineTypeRequest $request = null): DescribePHostMachineTypeResponse
+    {
         $resp = $this->invoke($request);
         return new DescribePHostMachineTypeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -365,7 +371,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describePHostTags(DescribePHostTagsRequest $request = null): DescribePHostTagsResponse {
+    public function describePHostTags(DescribePHostTagsRequest $request = null): DescribePHostTagsResponse
+    {
         $resp = $this->invoke($request);
         return new DescribePHostTagsResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -396,7 +403,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getPHostDiskUpgradePrice(GetPHostDiskUpgradePriceRequest $request = null): GetPHostDiskUpgradePriceResponse {
+    public function getPHostDiskUpgradePrice(GetPHostDiskUpgradePriceRequest $request = null): GetPHostDiskUpgradePriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetPHostDiskUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -441,7 +449,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getPHostPrice(GetPHostPriceRequest $request = null): GetPHostPriceResponse {
+    public function getPHostPrice(GetPHostPriceRequest $request = null): GetPHostPriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetPHostPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -471,7 +480,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyPHostInfo(ModifyPHostInfoRequest $request = null): ModifyPHostInfoResponse {
+    public function modifyPHostInfo(ModifyPHostInfoRequest $request = null): ModifyPHostInfoResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyPHostInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -498,7 +508,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function poweroffPHost(PoweroffPHostRequest $request = null): PoweroffPHostResponse {
+    public function poweroffPHost(PoweroffPHostRequest $request = null): PoweroffPHostResponse
+    {
         $resp = $this->invoke($request);
         return new PoweroffPHostResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -525,7 +536,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function rebootPHost(RebootPHostRequest $request = null): RebootPHostResponse {
+    public function rebootPHost(RebootPHostRequest $request = null): RebootPHostResponse
+    {
         $resp = $this->invoke($request);
         return new RebootPHostResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -560,7 +572,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function reinstallPHost(ReinstallPHostRequest $request = null): ReinstallPHostResponse {
+    public function reinstallPHost(ReinstallPHostRequest $request = null): ReinstallPHostResponse
+    {
         $resp = $this->invoke($request);
         return new ReinstallPHostResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -588,7 +601,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function resetPHostPassword(ResetPHostPasswordRequest $request = null): ResetPHostPasswordResponse {
+    public function resetPHostPassword(ResetPHostPasswordRequest $request = null): ResetPHostPasswordResponse
+    {
         $resp = $this->invoke($request);
         return new ResetPHostPasswordResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -617,7 +631,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function resizePHostAttachedDisk(ResizePHostAttachedDiskRequest $request = null): ResizePHostAttachedDiskResponse {
+    public function resizePHostAttachedDisk(ResizePHostAttachedDiskRequest $request = null): ResizePHostAttachedDiskResponse
+    {
         $resp = $this->invoke($request);
         return new ResizePHostAttachedDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -644,7 +659,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function startPHost(StartPHostRequest $request = null): StartPHostResponse {
+    public function startPHost(StartPHostRequest $request = null): StartPHostResponse
+    {
         $resp = $this->invoke($request);
         return new StartPHostResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -673,7 +689,8 @@ class UPHostClient extends Client {
      *
      * @throws UCloudException
      */
-    public function terminatePHost(TerminatePHostRequest $request = null): TerminatePHostResponse {
+    public function terminatePHost(TerminatePHostRequest $request = null): TerminatePHostResponse
+    {
         $resp = $this->invoke($request);
         return new TerminatePHostResponse($resp->toArray(), $resp->getRequestId());
     }

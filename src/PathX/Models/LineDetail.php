@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class LineDetail extends Response {
+class LineDetail extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class LineDetail extends Response {
      *
      * @return string|null
      */
-    public function getLineFrom(): string {
+    public function getLineFrom(): string
+    {
         return $this->get("LineFrom");
     }
 
@@ -35,7 +37,8 @@ class LineDetail extends Response {
      *
      * @param string $lineFrom
      */
-    public function setLineFrom(string $lineFrom) {
+    public function setLineFrom(string $lineFrom)
+    {
         $this->set("LineFrom", $lineFrom);
     }
 
@@ -44,7 +47,8 @@ class LineDetail extends Response {
      *
      * @return string|null
      */
-    public function getLineTo(): string {
+    public function getLineTo(): string
+    {
         return $this->get("LineTo");
     }
 
@@ -53,7 +57,8 @@ class LineDetail extends Response {
      *
      * @param string $lineTo
      */
-    public function setLineTo(string $lineTo) {
+    public function setLineTo(string $lineTo)
+    {
         $this->set("LineTo", $lineTo);
     }
 
@@ -62,7 +67,8 @@ class LineDetail extends Response {
      *
      * @return string|null
      */
-    public function getLineId(): string {
+    public function getLineId(): string
+    {
         return $this->get("LineId");
     }
 
@@ -71,7 +77,8 @@ class LineDetail extends Response {
      *
      * @param string $lineId
      */
-    public function setLineId(string $lineId) {
+    public function setLineId(string $lineId)
+    {
         $this->set("LineId", $lineId);
     }
 
@@ -80,7 +87,8 @@ class LineDetail extends Response {
      *
      * @return string|null
      */
-    public function getLineFromName(): string {
+    public function getLineFromName(): string
+    {
         return $this->get("LineFromName");
     }
 
@@ -89,7 +97,8 @@ class LineDetail extends Response {
      *
      * @param string $lineFromName
      */
-    public function setLineFromName(string $lineFromName) {
+    public function setLineFromName(string $lineFromName)
+    {
         $this->set("LineFromName", $lineFromName);
     }
 
@@ -98,7 +107,8 @@ class LineDetail extends Response {
      *
      * @return string|null
      */
-    public function getLineToName(): string {
+    public function getLineToName(): string
+    {
         return $this->get("LineToName");
     }
 
@@ -107,9 +117,8 @@ class LineDetail extends Response {
      *
      * @param string $lineToName
      */
-    public function setLineToName(string $lineToName) {
+    public function setLineToName(string $lineToName)
+    {
         $this->set("LineToName", $lineToName);
     }
-
-
 }

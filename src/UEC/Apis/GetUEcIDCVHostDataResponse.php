@@ -29,7 +29,8 @@ use UCloud\UEC\Models\MonitorInfo;
 use UCloud\UEC\Models\MonitorInfo;
 use UCloud\UEC\Models\MonitorInfo;
 
-class GetUEcIDCVHostDataResponse extends Response {
+class GetUEcIDCVHostDataResponse extends Response
+{
     
 
     /**
@@ -37,7 +38,8 @@ class GetUEcIDCVHostDataResponse extends Response {
      *
      * @return DataSet|null
      */
-    public function getDataSets(): DataSet {
+    public function getDataSets(): DataSet
+    {
         return new DataSet($this->get("DataSets"));
     }
 
@@ -46,9 +48,8 @@ class GetUEcIDCVHostDataResponse extends Response {
      *
      * @param DataSet $dataSets
      */
-    public function setDataSets(DataSet $dataSets) {
+    public function setDataSets(DataSet $dataSets)
+    {
         $this->set("DataSets", $dataSets->getAll());
     }
-
-
 }

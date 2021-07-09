@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateVPCResponse extends Response {
+class CreateVPCResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateVPCResponse extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -35,9 +37,8 @@ class CreateVPCResponse extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\GetAvailableResourceForSnatRuleDataSet;
 
-class GetAvailableResourceForSnatRuleResponse extends Response {
+class GetAvailableResourceForSnatRuleResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetAvailableResourceForSnatRuleResponse extends Response {
      *
      * @return GetAvailableResourceForSnatRuleDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,7 +43,8 @@ class GetAvailableResourceForSnatRuleResponse extends Response {
      *
      * @param GetAvailableResourceForSnatRuleDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -52,9 +55,10 @@ class GetAvailableResourceForSnatRuleResponse extends Response {
     /**
      * TotalCount: 总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -63,9 +67,8 @@ class GetAvailableResourceForSnatRuleResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

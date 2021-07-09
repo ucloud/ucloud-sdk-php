@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class SetUDBRWSplittingRequest extends Request {
+class SetUDBRWSplittingRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "SetUDBRWSplitting"]);
@@ -36,7 +37,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -45,7 +47,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -54,7 +57,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -63,7 +67,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -72,7 +77,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @return string|null
      */
-    public function getMasterDBId(): string {
+    public function getMasterDBId(): string
+    {
         return $this->get("MasterDBId");
     }
 
@@ -81,7 +87,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId(string $masterDBId) {
+    public function setMasterDBId(string $masterDBId)
+    {
         $this->set("MasterDBId", $masterDBId);
     }
 
@@ -90,7 +97,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @return string|null
      */
-    public function getReadModel(): string {
+    public function getReadModel(): string
+    {
         return $this->get("ReadModel");
     }
 
@@ -99,7 +107,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @param string $readModel
      */
-    public function setReadModel(string $readModel) {
+    public function setReadModel(string $readModel)
+    {
         $this->set("ReadModel", $readModel);
     }
 
@@ -108,7 +117,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getDBIds(): array {
+    public function getDBIds(): array
+    {
         return $this->get("DBIds");
     }
 
@@ -117,7 +127,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @param string[] $dbIds
      */
-    public function setDBIds(array $dbIds) {
+    public function setDBIds(array $dbIds)
+    {
         $this->set("DBIds", $dbIds);
     }
 
@@ -126,7 +137,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getReadPercents(): array {
+    public function getReadPercents(): array
+    {
         return $this->get("ReadPercents");
     }
 
@@ -135,16 +147,18 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @param string[] $readPercents
      */
-    public function setReadPercents(array $readPercents) {
+    public function setReadPercents(array $readPercents)
+    {
         $this->set("ReadPercents", $readPercents);
     }
 
     /**
      * DelayThreshold: 时间阙值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getDelayThreshold(): int {
+    public function getDelayThreshold(): int
+    {
         return $this->get("DelayThreshold");
     }
 
@@ -153,9 +167,8 @@ class SetUDBRWSplittingRequest extends Request {
      *
      * @param int $delayThreshold
      */
-    public function setDelayThreshold(int $delayThreshold) {
+    public function setDelayThreshold(int $delayThreshold)
+    {
         $this->set("DelayThreshold", $delayThreshold);
     }
-
-
 }

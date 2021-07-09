@@ -18,7 +18,8 @@ namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
-class FailPhoneDetail extends Response {
+class FailPhoneDetail extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class FailPhoneDetail extends Response {
      *
      * @return string[]|null
      */
-    public function getTemplateParams(): array {
+    public function getTemplateParams(): array
+    {
         return $this->get("TemplateParams");
     }
 
@@ -35,7 +37,8 @@ class FailPhoneDetail extends Response {
      *
      * @param string[] $templateParams
      */
-    public function setTemplateParams(array $templateParams) {
+    public function setTemplateParams(array $templateParams)
+    {
         $this->set("TemplateParams", $templateParams);
     }
 
@@ -44,7 +47,8 @@ class FailPhoneDetail extends Response {
      *
      * @return string|null
      */
-    public function getPhone(): string {
+    public function getPhone(): string
+    {
         return $this->get("Phone");
     }
 
@@ -53,7 +57,8 @@ class FailPhoneDetail extends Response {
      *
      * @param string $phone
      */
-    public function setPhone(string $phone) {
+    public function setPhone(string $phone)
+    {
         $this->set("Phone", $phone);
     }
 
@@ -62,7 +67,8 @@ class FailPhoneDetail extends Response {
      *
      * @return string|null
      */
-    public function getExtendCode(): string {
+    public function getExtendCode(): string
+    {
         return $this->get("ExtendCode");
     }
 
@@ -71,7 +77,8 @@ class FailPhoneDetail extends Response {
      *
      * @param string $extendCode
      */
-    public function setExtendCode(string $extendCode) {
+    public function setExtendCode(string $extendCode)
+    {
         $this->set("ExtendCode", $extendCode);
     }
 
@@ -80,7 +87,8 @@ class FailPhoneDetail extends Response {
      *
      * @return string|null
      */
-    public function getUserId(): string {
+    public function getUserId(): string
+    {
         return $this->get("UserId");
     }
 
@@ -89,7 +97,8 @@ class FailPhoneDetail extends Response {
      *
      * @param string $userId
      */
-    public function setUserId(string $userId) {
+    public function setUserId(string $userId)
+    {
         $this->set("UserId", $userId);
     }
 
@@ -98,7 +107,8 @@ class FailPhoneDetail extends Response {
      *
      * @return string|null
      */
-    public function getFailureDetails(): string {
+    public function getFailureDetails(): string
+    {
         return $this->get("FailureDetails");
     }
 
@@ -107,9 +117,8 @@ class FailPhoneDetail extends Response {
      *
      * @param string $failureDetails
      */
-    public function setFailureDetails(string $failureDetails) {
+    public function setFailureDetails(string $failureDetails)
+    {
         $this->set("FailureDetails", $failureDetails);
     }
-
-
 }

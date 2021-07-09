@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DescribeURedisBackupURLResponse extends Response {
+class DescribeURedisBackupURLResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DescribeURedisBackupURLResponse extends Response {
      *
      * @return string|null
      */
-    public function getBackupURL(): string {
+    public function getBackupURL(): string
+    {
         return $this->get("BackupURL");
     }
 
@@ -35,7 +37,8 @@ class DescribeURedisBackupURLResponse extends Response {
      *
      * @param string $backupURL
      */
-    public function setBackupURL(string $backupURL) {
+    public function setBackupURL(string $backupURL)
+    {
         $this->set("BackupURL", $backupURL);
     }
 
@@ -44,7 +47,8 @@ class DescribeURedisBackupURLResponse extends Response {
      *
      * @return string|null
      */
-    public function getBackupPath(): string {
+    public function getBackupPath(): string
+    {
         return $this->get("BackupPath");
     }
 
@@ -53,9 +57,8 @@ class DescribeURedisBackupURLResponse extends Response {
      *
      * @param string $backupPath
      */
-    public function setBackupPath(string $backupPath) {
+    public function setBackupPath(string $backupPath)
+    {
         $this->set("BackupPath", $backupPath);
     }
-
-
 }

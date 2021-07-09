@@ -22,15 +22,17 @@ use UCloud\ULB\Models\ULBIPSet;
 use UCloud\ULB\Models\FirewallSet;
 use UCloud\ULB\Models\LoggerSet;
 
-class DescribeULBSimpleResponse extends Response {
+class DescribeULBSimpleResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的ULB总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -39,7 +41,8 @@ class DescribeULBSimpleResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -48,7 +51,8 @@ class DescribeULBSimpleResponse extends Response {
      *
      * @return ULBSimpleSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -62,13 +66,12 @@ class DescribeULBSimpleResponse extends Response {
      *
      * @param ULBSimpleSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

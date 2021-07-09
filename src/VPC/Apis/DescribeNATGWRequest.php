@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeNATGWRequest extends Request {
+class DescribeNATGWRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeNATGW"]);
@@ -32,7 +33,8 @@ class DescribeNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeNATGWRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeNATGWRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,7 +63,8 @@ class DescribeNATGWRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -68,7 +73,8 @@ class DescribeNATGWRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getNATGWIds(): array {
+    public function getNATGWIds(): array
+    {
         return $this->get("NATGWIds");
     }
 
@@ -77,16 +83,18 @@ class DescribeNATGWRequest extends Request {
      *
      * @param string[] $natgwIds
      */
-    public function setNATGWIds(array $natgwIds) {
+    public function setNATGWIds(array $natgwIds)
+    {
         $this->set("NATGWIds", $natgwIds);
     }
 
     /**
      * Offset: 数据偏移量。默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -95,16 +103,18 @@ class DescribeNATGWRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 数据分页值。默认为20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -113,9 +123,8 @@ class DescribeNATGWRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

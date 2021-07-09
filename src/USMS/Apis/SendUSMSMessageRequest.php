@@ -18,7 +18,8 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class SendUSMSMessageRequest extends Request {
+class SendUSMSMessageRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "SendUSMSMessage"]);
@@ -35,7 +36,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -44,7 +46,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -53,7 +56,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getPhoneNumbers(): array {
+    public function getPhoneNumbers(): array
+    {
         return $this->get("PhoneNumbers");
     }
 
@@ -62,7 +66,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @param string[] $phoneNumbers
      */
-    public function setPhoneNumbers(array $phoneNumbers) {
+    public function setPhoneNumbers(array $phoneNumbers)
+    {
         $this->set("PhoneNumbers", $phoneNumbers);
     }
 
@@ -71,7 +76,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @return string|null
      */
-    public function getSigContent(): string {
+    public function getSigContent(): string
+    {
         return $this->get("SigContent");
     }
 
@@ -80,7 +86,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent) {
+    public function setSigContent(string $sigContent)
+    {
         $this->set("SigContent", $sigContent);
     }
 
@@ -89,7 +96,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @return string|null
      */
-    public function getTemplateId(): string {
+    public function getTemplateId(): string
+    {
         return $this->get("TemplateId");
     }
 
@@ -98,7 +106,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId) {
+    public function setTemplateId(string $templateId)
+    {
         $this->set("TemplateId", $templateId);
     }
 
@@ -107,7 +116,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getTemplateParams(): array {
+    public function getTemplateParams(): array
+    {
         return $this->get("TemplateParams");
     }
 
@@ -116,7 +126,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @param string[] $templateParams
      */
-    public function setTemplateParams(array $templateParams) {
+    public function setTemplateParams(array $templateParams)
+    {
         $this->set("TemplateParams", $templateParams);
     }
 
@@ -125,7 +136,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @return string|null
      */
-    public function getExtendCode(): string {
+    public function getExtendCode(): string
+    {
         return $this->get("ExtendCode");
     }
 
@@ -134,7 +146,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @param string $extendCode
      */
-    public function setExtendCode(string $extendCode) {
+    public function setExtendCode(string $extendCode)
+    {
         $this->set("ExtendCode", $extendCode);
     }
 
@@ -143,7 +156,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @return string|null
      */
-    public function getUserId(): string {
+    public function getUserId(): string
+    {
         return $this->get("UserId");
     }
 
@@ -152,9 +166,8 @@ class SendUSMSMessageRequest extends Request {
      *
      * @param string $userId
      */
-    public function setUserId(string $userId) {
+    public function setUserId(string $userId)
+    {
         $this->set("UserId", $userId);
     }
-
-
 }

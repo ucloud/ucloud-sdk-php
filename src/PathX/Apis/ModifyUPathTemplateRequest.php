@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUPathTemplateRequest extends Request {
+class ModifyUPathTemplateRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyUPathTemplate"]);
@@ -33,7 +34,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return string|null
      */
-    public function getUPathId(): string {
+    public function getUPathId(): string
+    {
         return $this->get("UPathId");
     }
 
@@ -60,7 +64,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId) {
+    public function setUPathId(string $uPathId)
+    {
         $this->set("UPathId", $uPathId);
     }
 
@@ -69,7 +74,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getMetricName(): array {
+    public function getMetricName(): array
+    {
         return $this->get("MetricName");
     }
 
@@ -78,7 +84,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param string[] $metricName
      */
-    public function setMetricName(array $metricName) {
+    public function setMetricName(array $metricName)
+    {
         $this->set("MetricName", $metricName);
     }
 
@@ -87,7 +94,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getThreshold(): array {
+    public function getThreshold(): array
+    {
         return $this->get("Threshold");
     }
 
@@ -96,7 +104,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param int[] $threshold
      */
-    public function setThreshold(array $threshold) {
+    public function setThreshold(array $threshold)
+    {
         $this->set("Threshold", $threshold);
     }
 
@@ -105,7 +114,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getAlarmFrequency(): array {
+    public function getAlarmFrequency(): array
+    {
         return $this->get("AlarmFrequency");
     }
 
@@ -114,7 +124,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param int[] $alarmFrequency
      */
-    public function setAlarmFrequency(array $alarmFrequency) {
+    public function setAlarmFrequency(array $alarmFrequency)
+    {
         $this->set("AlarmFrequency", $alarmFrequency);
     }
 
@@ -123,7 +134,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getContactGroupId(): array {
+    public function getContactGroupId(): array
+    {
         return $this->get("ContactGroupId");
     }
 
@@ -132,7 +144,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param int[] $contactGroupId
      */
-    public function setContactGroupId(array $contactGroupId) {
+    public function setContactGroupId(array $contactGroupId)
+    {
         $this->set("ContactGroupId", $contactGroupId);
     }
 
@@ -141,7 +154,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getCompare(): array {
+    public function getCompare(): array
+    {
         return $this->get("Compare");
     }
 
@@ -150,7 +164,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param string[] $compare
      */
-    public function setCompare(array $compare) {
+    public function setCompare(array $compare)
+    {
         $this->set("Compare", $compare);
     }
 
@@ -159,7 +174,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getAlarmStrategy(): array {
+    public function getAlarmStrategy(): array
+    {
         return $this->get("AlarmStrategy");
     }
 
@@ -168,7 +184,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param string[] $alarmStrategy
      */
-    public function setAlarmStrategy(array $alarmStrategy) {
+    public function setAlarmStrategy(array $alarmStrategy)
+    {
         $this->set("AlarmStrategy", $alarmStrategy);
     }
 
@@ -177,7 +194,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @return int[]|null
      */
-    public function getTriggerCount(): array {
+    public function getTriggerCount(): array
+    {
         return $this->get("TriggerCount");
     }
 
@@ -186,9 +204,8 @@ class ModifyUPathTemplateRequest extends Request {
      *
      * @param int[] $triggerCount
      */
-    public function setTriggerCount(array $triggerCount) {
+    public function setTriggerCount(array $triggerCount)
+    {
         $this->set("TriggerCount", $triggerCount);
     }
-
-
 }

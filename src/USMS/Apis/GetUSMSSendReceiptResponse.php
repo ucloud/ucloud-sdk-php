@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\USMS\Models\ReceiptPerSession;
 use UCloud\USMS\Models\ReceiptPerPhone;
 
-class GetUSMSSendReceiptResponse extends Response {
+class GetUSMSSendReceiptResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class GetUSMSSendReceiptResponse extends Response {
      *
      * @return ReceiptPerSession[]|null
      */
-    public function getData(): array {
+    public function getData(): array
+    {
         $items = $this->get("Data") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,13 +44,12 @@ class GetUSMSSendReceiptResponse extends Response {
      *
      * @param ReceiptPerSession[] $data
      */
-    public function setData(array $data) {
+    public function setData(array $data)
+    {
         $result = [];
         foreach ($data as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

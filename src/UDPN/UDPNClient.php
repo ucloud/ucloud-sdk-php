@@ -36,7 +36,8 @@ use UCloud\UDPN\Apis\ReleaseUDPNResponse;
 /**
  * This client is used to call actions of **UDPN** service
  */
-class UDPNClient extends Client {
+class UDPNClient extends Client
+{
 
     /**
      * AllocateUDPN - 分配一条 UDPN 专线
@@ -65,7 +66,8 @@ class UDPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function allocateUDPN(AllocateUDPNRequest $request = null): AllocateUDPNResponse {
+    public function allocateUDPN(AllocateUDPNRequest $request = null): AllocateUDPNResponse
+    {
         $resp = $this->invoke($request);
         return new AllocateUDPNResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -104,7 +106,8 @@ class UDPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeUDPN(DescribeUDPNRequest $request = null): DescribeUDPNResponse {
+    public function describeUDPN(DescribeUDPNRequest $request = null): DescribeUDPNResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeUDPNResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -118,7 +121,7 @@ class UDPNClient extends Client {
      *
      * $args = [
      *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 
+     *     "ProjectId" => (string)
      * ]
      *
      * Outputs:
@@ -136,7 +139,8 @@ class UDPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getUDPNLineList(GetUDPNLineListRequest $request = null): GetUDPNLineListResponse {
+    public function getUDPNLineList(GetUDPNLineListRequest $request = null): GetUDPNLineListResponse
+    {
         $resp = $this->invoke($request);
         return new GetUDPNLineListResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -167,7 +171,8 @@ class UDPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getUDPNPrice(GetUDPNPriceRequest $request = null): GetUDPNPriceResponse {
+    public function getUDPNPrice(GetUDPNPriceRequest $request = null): GetUDPNPriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetUDPNPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -194,7 +199,8 @@ class UDPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getUDPNUpgradePrice(GetUDPNUpgradePriceRequest $request = null): GetUDPNUpgradePriceResponse {
+    public function getUDPNUpgradePrice(GetUDPNUpgradePriceRequest $request = null): GetUDPNUpgradePriceResponse
+    {
         $resp = $this->invoke($request);
         return new GetUDPNUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -220,7 +226,8 @@ class UDPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyUDPNBandwidth(ModifyUDPNBandwidthRequest $request = null): ModifyUDPNBandwidthResponse {
+    public function modifyUDPNBandwidth(ModifyUDPNBandwidthRequest $request = null): ModifyUDPNBandwidthResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyUDPNBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -245,7 +252,8 @@ class UDPNClient extends Client {
      *
      * @throws UCloudException
      */
-    public function releaseUDPN(ReleaseUDPNRequest $request = null): ReleaseUDPNResponse {
+    public function releaseUDPN(ReleaseUDPNRequest $request = null): ReleaseUDPNResponse
+    {
         $resp = $this->invoke($request);
         return new ReleaseUDPNResponse($resp->toArray(), $resp->getRequestId());
     }

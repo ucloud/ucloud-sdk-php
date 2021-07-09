@@ -22,7 +22,8 @@ use UCloud\UFile\Models\UFileQuotaLeft;
 use UCloud\UFile\Models\UFileQuotaLeft;
 use UCloud\UFile\Models\UFileQuotaLeft;
 
-class GetUFileQuotaInfoResponse extends Response {
+class GetUFileQuotaInfoResponse extends Response
+{
     
 
     /**
@@ -30,7 +31,8 @@ class GetUFileQuotaInfoResponse extends Response {
      *
      * @return UFileQuotaDataSetItem[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -44,13 +46,12 @@ class GetUFileQuotaInfoResponse extends Response {
      *
      * @param UFileQuotaDataSetItem[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

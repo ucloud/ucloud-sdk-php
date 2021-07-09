@@ -19,15 +19,17 @@ namespace UCloud\UFS\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UFS\Models\UFSVolumeInfo2;
 
-class DescribeUFSVolume2Response extends Response {
+class DescribeUFSVolume2Response extends Response
+{
     
 
     /**
      * TotalCount: 文件系统总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -36,7 +38,8 @@ class DescribeUFSVolume2Response extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -45,7 +48,8 @@ class DescribeUFSVolume2Response extends Response {
      *
      * @return UFSVolumeInfo2[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class DescribeUFSVolume2Response extends Response {
      *
      * @param UFSVolumeInfo2[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

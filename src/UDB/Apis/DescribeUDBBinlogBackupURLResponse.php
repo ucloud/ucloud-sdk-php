@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DescribeUDBBinlogBackupURLResponse extends Response {
+class DescribeUDBBinlogBackupURLResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DescribeUDBBinlogBackupURLResponse extends Response {
      *
      * @return string|null
      */
-    public function getBackupPath(): string {
+    public function getBackupPath(): string
+    {
         return $this->get("BackupPath");
     }
 
@@ -35,7 +37,8 @@ class DescribeUDBBinlogBackupURLResponse extends Response {
      *
      * @param string $backupPath
      */
-    public function setBackupPath(string $backupPath) {
+    public function setBackupPath(string $backupPath)
+    {
         $this->set("BackupPath", $backupPath);
     }
 
@@ -44,7 +47,8 @@ class DescribeUDBBinlogBackupURLResponse extends Response {
      *
      * @return string|null
      */
-    public function getInnerBackupPath(): string {
+    public function getInnerBackupPath(): string
+    {
         return $this->get("InnerBackupPath");
     }
 
@@ -53,9 +57,8 @@ class DescribeUDBBinlogBackupURLResponse extends Response {
      *
      * @param string $innerBackupPath
      */
-    public function setInnerBackupPath(string $innerBackupPath) {
+    public function setInnerBackupPath(string $innerBackupPath)
+    {
         $this->set("InnerBackupPath", $innerBackupPath);
     }
-
-
 }

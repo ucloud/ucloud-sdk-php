@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetVPNGatewayUpgradePriceRequest extends Request {
+class GetVPNGatewayUpgradePriceRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetVPNGatewayUpgradePrice"]);
@@ -35,7 +36,8 @@ class GetVPNGatewayUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class GetVPNGatewayUpgradePriceRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class GetVPNGatewayUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -62,7 +66,8 @@ class GetVPNGatewayUpgradePriceRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -71,7 +76,8 @@ class GetVPNGatewayUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPNGatewayId(): string {
+    public function getVPNGatewayId(): string
+    {
         return $this->get("VPNGatewayId");
     }
 
@@ -80,7 +86,8 @@ class GetVPNGatewayUpgradePriceRequest extends Request {
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId(string $vpnGatewayId) {
+    public function setVPNGatewayId(string $vpnGatewayId)
+    {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
 
@@ -89,7 +96,8 @@ class GetVPNGatewayUpgradePriceRequest extends Request {
      *
      * @return string|null
      */
-    public function getGrade(): string {
+    public function getGrade(): string
+    {
         return $this->get("Grade");
     }
 
@@ -98,9 +106,8 @@ class GetVPNGatewayUpgradePriceRequest extends Request {
      *
      * @param string $grade
      */
-    public function setGrade(string $grade) {
+    public function setGrade(string $grade)
+    {
         $this->set("Grade", $grade);
     }
-
-
 }

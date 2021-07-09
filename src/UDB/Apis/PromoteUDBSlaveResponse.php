@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class PromoteUDBSlaveResponse extends Response {
+class PromoteUDBSlaveResponse extends Response
+{
     
 
 

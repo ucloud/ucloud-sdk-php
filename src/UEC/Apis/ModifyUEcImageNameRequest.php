@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUEcImageNameRequest extends Request {
+class ModifyUEcImageNameRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "ModifyUEcImageName"]);
@@ -33,7 +34,8 @@ class ModifyUEcImageNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class ModifyUEcImageNameRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class ModifyUEcImageNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageId(): string {
+    public function getImageId(): string
+    {
         return $this->get("ImageId");
     }
 
@@ -60,7 +64,8 @@ class ModifyUEcImageNameRequest extends Request {
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId) {
+    public function setImageId(string $imageId)
+    {
         $this->set("ImageId", $imageId);
     }
 
@@ -69,7 +74,8 @@ class ModifyUEcImageNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageName(): string {
+    public function getImageName(): string
+    {
         return $this->get("ImageName");
     }
 
@@ -78,7 +84,8 @@ class ModifyUEcImageNameRequest extends Request {
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName) {
+    public function setImageName(string $imageName)
+    {
         $this->set("ImageName", $imageName);
     }
 
@@ -87,7 +94,8 @@ class ModifyUEcImageNameRequest extends Request {
      *
      * @return string|null
      */
-    public function getImageDesc(): string {
+    public function getImageDesc(): string
+    {
         return $this->get("ImageDesc");
     }
 
@@ -96,9 +104,8 @@ class ModifyUEcImageNameRequest extends Request {
      *
      * @param string $imageDesc
      */
-    public function setImageDesc(string $imageDesc) {
+    public function setImageDesc(string $imageDesc)
+    {
         $this->set("ImageDesc", $imageDesc);
     }
-
-
 }

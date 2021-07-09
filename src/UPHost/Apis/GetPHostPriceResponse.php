@@ -19,7 +19,8 @@ namespace UCloud\UPHost\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UPHost\Models\PHostPriceSet;
 
-class GetPHostPriceResponse extends Response {
+class GetPHostPriceResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetPHostPriceResponse extends Response {
      *
      * @return PHostPriceSet[]|null
      */
-    public function getPriceSet(): array {
+    public function getPriceSet(): array
+    {
         $items = $this->get("PriceSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetPHostPriceResponse extends Response {
      *
      * @param PHostPriceSet[] $priceSet
      */
-    public function setPriceSet(array $priceSet) {
+    public function setPriceSet(array $priceSet)
+    {
         $result = [];
         foreach ($priceSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

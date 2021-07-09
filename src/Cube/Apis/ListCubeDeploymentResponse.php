@@ -18,24 +18,27 @@ namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ListCubeDeploymentResponse extends Response {
+class ListCubeDeploymentResponse extends Response
+{
     
 
     /**
-     * TotalCount: 
+     * TotalCount:
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
     /**
-     * TotalCount: 
+     * TotalCount:
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -44,7 +47,8 @@ class ListCubeDeploymentResponse extends Response {
      *
      * @return string[]|null
      */
-    public function getDeployments(): array {
+    public function getDeployments(): array
+    {
         return $this->get("Deployments");
     }
 
@@ -53,9 +57,8 @@ class ListCubeDeploymentResponse extends Response {
      *
      * @param string[] $deployments
      */
-    public function setDeployments(array $deployments) {
+    public function setDeployments(array $deployments)
+    {
         $this->set("Deployments", $deployments);
     }
-
-
 }

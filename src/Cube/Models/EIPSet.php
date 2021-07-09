@@ -18,15 +18,17 @@ namespace UCloud\Cube\Models;
 
 use UCloud\Core\Response\Response;
 
-class EIPSet extends Response {
+class EIPSet extends Response
+{
     
 
     /**
      * Bandwidth: EIP带宽值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -35,16 +37,18 @@ class EIPSet extends Response {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
     /**
      * BandwidthType: 带宽类型0标准普通带宽，1表示共享带宽
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidthType(): int {
+    public function getBandwidthType(): int
+    {
         return $this->get("BandwidthType");
     }
 
@@ -53,16 +57,18 @@ class EIPSet extends Response {
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType(int $bandwidthType) {
+    public function setBandwidthType(int $bandwidthType)
+    {
         $this->set("BandwidthType", $bandwidthType);
     }
 
     /**
      * CreateTime: EIP创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -71,7 +77,8 @@ class EIPSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -80,7 +87,8 @@ class EIPSet extends Response {
      *
      * @return EIPAddr[]|null
      */
-    public function getEIPAddr(): array {
+    public function getEIPAddr(): array
+    {
         $items = $this->get("EIPAddr") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -94,7 +102,8 @@ class EIPSet extends Response {
      *
      * @param EIPAddr[] $eipAddr
      */
-    public function setEIPAddr(array $eipAddr) {
+    public function setEIPAddr(array $eipAddr)
+    {
         $result = [];
         foreach ($eipAddr as $i => $item) {
             array_push($result, $item->getAll());
@@ -107,7 +116,8 @@ class EIPSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -116,7 +126,8 @@ class EIPSet extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
@@ -125,7 +136,8 @@ class EIPSet extends Response {
      *
      * @return string|null
      */
-    public function getPayMode(): string {
+    public function getPayMode(): string
+    {
         return $this->get("PayMode");
     }
 
@@ -134,7 +146,8 @@ class EIPSet extends Response {
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode) {
+    public function setPayMode(string $payMode)
+    {
         $this->set("PayMode", $payMode);
     }
 
@@ -143,7 +156,8 @@ class EIPSet extends Response {
      *
      * @return string|null
      */
-    public function getResource(): string {
+    public function getResource(): string
+    {
         return $this->get("Resource");
     }
 
@@ -152,7 +166,8 @@ class EIPSet extends Response {
      *
      * @param string $resource
      */
-    public function setResource(string $resource) {
+    public function setResource(string $resource)
+    {
         $this->set("Resource", $resource);
     }
 
@@ -161,7 +176,8 @@ class EIPSet extends Response {
      *
      * @return string|null
      */
-    public function getStatus(): string {
+    public function getStatus(): string
+    {
         return $this->get("Status");
     }
 
@@ -170,16 +186,18 @@ class EIPSet extends Response {
      *
      * @param string $status
      */
-    public function setStatus(string $status) {
+    public function setStatus(string $status)
+    {
         $this->set("Status", $status);
     }
 
     /**
      * Weight: EIP权重
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getWeight(): int {
+    public function getWeight(): int
+    {
         return $this->get("Weight");
     }
 
@@ -188,9 +206,8 @@ class EIPSet extends Response {
      *
      * @param int $weight
      */
-    public function setWeight(int $weight) {
+    public function setWeight(int $weight)
+    {
         $this->set("Weight", $weight);
     }
-
-
 }

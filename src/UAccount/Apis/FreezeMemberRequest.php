@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
 
-class FreezeMemberRequest extends Request {
+class FreezeMemberRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "FreezeMember"]);
@@ -32,7 +33,8 @@ class FreezeMemberRequest extends Request {
      *
      * @return string|null
      */
-    public function getMemberEmail(): string {
+    public function getMemberEmail(): string
+    {
         return $this->get("MemberEmail");
     }
 
@@ -41,9 +43,8 @@ class FreezeMemberRequest extends Request {
      *
      * @param string $memberEmail
      */
-    public function setMemberEmail(string $memberEmail) {
+    public function setMemberEmail(string $memberEmail)
+    {
         $this->set("MemberEmail", $memberEmail);
     }
-
-
 }

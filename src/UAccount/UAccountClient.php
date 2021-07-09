@@ -40,7 +40,8 @@ use UCloud\UAccount\Apis\SetNetworkMaskResponse;
 /**
  * This client is used to call actions of **UAccount** service
  */
-class UAccountClient extends Client {
+class UAccountClient extends Client
+{
 
     /**
      * AddMemberToProject - 添加成员到项目
@@ -50,7 +51,7 @@ class UAccountClient extends Client {
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。 
+     *     "ProjectId" => (string) 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。
      *     "MemberEmail" => (string) 被加入成员Email
      *     "CharacterId" => (string) 被加入成员归属角色ID
      * ]
@@ -62,7 +63,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function addMemberToProject(AddMemberToProjectRequest $request = null): AddMemberToProjectResponse {
+    public function addMemberToProject(AddMemberToProjectRequest $request = null): AddMemberToProjectResponse
+    {
         $resp = $this->invoke($request);
         return new AddMemberToProjectResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -86,7 +88,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createProject(CreateProjectRequest $request = null): CreateProjectResponse {
+    public function createProject(CreateProjectRequest $request = null): CreateProjectResponse
+    {
         $resp = $this->invoke($request);
         return new CreateProjectResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -109,7 +112,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function freezeMember(FreezeMemberRequest $request = null): FreezeMemberResponse {
+    public function freezeMember(FreezeMemberRequest $request = null): FreezeMemberResponse
+    {
         $resp = $this->invoke($request);
         return new FreezeMemberResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -135,7 +139,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getNetworkMask(GetNetworkMaskRequest $request = null): GetNetworkMaskResponse {
+    public function getNetworkMask(GetNetworkMaskRequest $request = null): GetNetworkMaskResponse
+    {
         $resp = $this->invoke($request);
         return new GetNetworkMaskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -171,7 +176,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getProjectList(GetProjectListRequest $request = null): GetProjectListResponse {
+    public function getProjectList(GetProjectListRequest $request = null): GetProjectListResponse
+    {
         $resp = $this->invoke($request);
         return new GetProjectListResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -203,7 +209,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getRegion(GetRegionRequest $request = null): GetRegionResponse {
+    public function getRegion(GetRegionRequest $request = null): GetRegionResponse
+    {
         $resp = $this->invoke($request);
         return new GetRegionResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -229,7 +236,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function inviteSubaccount(InviteSubaccountRequest $request = null): InviteSubaccountResponse {
+    public function inviteSubaccount(InviteSubaccountRequest $request = null): InviteSubaccountResponse
+    {
         $resp = $this->invoke($request);
         return new InviteSubaccountResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -242,7 +250,7 @@ class UAccountClient extends Client {
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 
+     *     "ProjectId" => (string) 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。
      *     "MemberEmail" => (string) 需要被移除成员Email
      * ]
      *
@@ -253,7 +261,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function removeMemberFromProject(RemoveMemberFromProjectRequest $request = null): RemoveMemberFromProjectResponse {
+    public function removeMemberFromProject(RemoveMemberFromProjectRequest $request = null): RemoveMemberFromProjectResponse
+    {
         $resp = $this->invoke($request);
         return new RemoveMemberFromProjectResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -278,7 +287,8 @@ class UAccountClient extends Client {
      *
      * @throws UCloudException
      */
-    public function setNetworkMask(SetNetworkMaskRequest $request = null): SetNetworkMaskResponse {
+    public function setNetworkMask(SetNetworkMaskRequest $request = null): SetNetworkMaskResponse
+    {
         $resp = $this->invoke($request);
         return new SetNetworkMaskResponse($resp->toArray(), $resp->getRequestId());
     }

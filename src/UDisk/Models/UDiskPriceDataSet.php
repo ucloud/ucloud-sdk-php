@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Models;
 
 use UCloud\Core\Response\Response;
 
-class UDiskPriceDataSet extends Response {
+class UDiskPriceDataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UDiskPriceDataSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -35,16 +37,18 @@ class UDiskPriceDataSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Price: 实际价格 (单位: 分)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPrice(): int {
+    public function getPrice(): int
+    {
         return $this->get("Price");
     }
 
@@ -53,7 +57,8 @@ class UDiskPriceDataSet extends Response {
      *
      * @param int $price
      */
-    public function setPrice(int $price) {
+    public function setPrice(int $price)
+    {
         $this->set("Price", $price);
     }
 
@@ -62,7 +67,8 @@ class UDiskPriceDataSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeName(): string {
+    public function getChargeName(): string
+    {
         return $this->get("ChargeName");
     }
 
@@ -71,16 +77,18 @@ class UDiskPriceDataSet extends Response {
      *
      * @param string $chargeName
      */
-    public function setChargeName(string $chargeName) {
+    public function setChargeName(string $chargeName)
+    {
         $this->set("ChargeName", $chargeName);
     }
 
     /**
      * OriginalPrice: 用户折后价(对应计费CustomPrice)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOriginalPrice(): int {
+    public function getOriginalPrice(): int
+    {
         return $this->get("OriginalPrice");
     }
 
@@ -89,16 +97,18 @@ class UDiskPriceDataSet extends Response {
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice) {
+    public function setOriginalPrice(int $originalPrice)
+    {
         $this->set("OriginalPrice", $originalPrice);
     }
 
     /**
      * ListPrice: 原价(对应计费OriginalPrice)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getListPrice(): int {
+    public function getListPrice(): int
+    {
         return $this->get("ListPrice");
     }
 
@@ -107,9 +117,8 @@ class UDiskPriceDataSet extends Response {
      *
      * @param int $listPrice
      */
-    public function setListPrice(int $listPrice) {
+    public function setListPrice(int $listPrice)
+    {
         $this->set("ListPrice", $listPrice);
     }
-
-
 }

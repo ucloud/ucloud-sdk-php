@@ -19,15 +19,17 @@ namespace UCloud\UDisk\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDisk\Models\RecycleUDiskSet;
 
-class DescribeRecycleUDiskResponse extends Response {
+class DescribeRecycleUDiskResponse extends Response
+{
     
 
     /**
      * TotalCount: 磁盘数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -36,7 +38,8 @@ class DescribeRecycleUDiskResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -45,7 +48,8 @@ class DescribeRecycleUDiskResponse extends Response {
      *
      * @return RecycleUDiskSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class DescribeRecycleUDiskResponse extends Response {
      *
      * @param RecycleUDiskSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class AccessControlConf extends Response {
+class AccessControlConf extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AccessControlConf extends Response {
      *
      * @return string[]|null
      */
-    public function getIpBlackList(): array {
+    public function getIpBlackList(): array
+    {
         return $this->get("IpBlackList");
     }
 
@@ -35,7 +37,8 @@ class AccessControlConf extends Response {
      *
      * @param string[] $ipBlackList
      */
-    public function setIpBlackList(array $ipBlackList) {
+    public function setIpBlackList(array $ipBlackList)
+    {
         $this->set("IpBlackList", $ipBlackList);
     }
 
@@ -44,7 +47,8 @@ class AccessControlConf extends Response {
      *
      * @return ReferConf|null
      */
-    public function getReferConf(): ReferConf {
+    public function getReferConf(): ReferConf
+    {
         return new ReferConf($this->get("ReferConf"));
     }
 
@@ -53,9 +57,8 @@ class AccessControlConf extends Response {
      *
      * @param ReferConf $referConf
      */
-    public function setReferConf(ReferConf $referConf) {
+    public function setReferConf(ReferConf $referConf)
+    {
         $this->set("ReferConf", $referConf->getAll());
     }
-
-
 }

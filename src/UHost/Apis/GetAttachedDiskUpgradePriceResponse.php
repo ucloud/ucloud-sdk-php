@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetAttachedDiskUpgradePriceResponse extends Response {
+class GetAttachedDiskUpgradePriceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetAttachedDiskUpgradePriceResponse extends Response {
      *
      * @return float|null
      */
-    public function getPrice(): float {
+    public function getPrice(): float
+    {
         return $this->get("Price");
     }
 
@@ -35,9 +37,8 @@ class GetAttachedDiskUpgradePriceResponse extends Response {
      *
      * @param float $price
      */
-    public function setPrice(float $price) {
+    public function setPrice(float $price)
+    {
         $this->set("Price", $price);
     }
-
-
 }

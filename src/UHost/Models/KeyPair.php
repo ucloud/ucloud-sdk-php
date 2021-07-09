@@ -18,7 +18,8 @@ namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class KeyPair extends Response {
+class KeyPair extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class KeyPair extends Response {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -35,7 +37,8 @@ class KeyPair extends Response {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -44,7 +47,8 @@ class KeyPair extends Response {
      *
      * @return string|null
      */
-    public function getKeyPairId(): string {
+    public function getKeyPairId(): string
+    {
         return $this->get("KeyPairId");
     }
 
@@ -53,7 +57,8 @@ class KeyPair extends Response {
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId(string $keyPairId) {
+    public function setKeyPairId(string $keyPairId)
+    {
         $this->set("KeyPairId", $keyPairId);
     }
 
@@ -62,7 +67,8 @@ class KeyPair extends Response {
      *
      * @return string|null
      */
-    public function getKeyPairName(): string {
+    public function getKeyPairName(): string
+    {
         return $this->get("KeyPairName");
     }
 
@@ -71,7 +77,8 @@ class KeyPair extends Response {
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName(string $keyPairName) {
+    public function setKeyPairName(string $keyPairName)
+    {
         $this->set("KeyPairName", $keyPairName);
     }
 
@@ -80,7 +87,8 @@ class KeyPair extends Response {
      *
      * @return string|null
      */
-    public function getKeyPairFingerPrint(): string {
+    public function getKeyPairFingerPrint(): string
+    {
         return $this->get("KeyPairFingerPrint");
     }
 
@@ -89,7 +97,8 @@ class KeyPair extends Response {
      *
      * @param string $keyPairFingerPrint
      */
-    public function setKeyPairFingerPrint(string $keyPairFingerPrint) {
+    public function setKeyPairFingerPrint(string $keyPairFingerPrint)
+    {
         $this->set("KeyPairFingerPrint", $keyPairFingerPrint);
     }
 
@@ -98,7 +107,8 @@ class KeyPair extends Response {
      *
      * @return string|null
      */
-    public function getPrivateKeyBody(): string {
+    public function getPrivateKeyBody(): string
+    {
         return $this->get("PrivateKeyBody");
     }
 
@@ -107,16 +117,18 @@ class KeyPair extends Response {
      *
      * @param string $privateKeyBody
      */
-    public function setPrivateKeyBody(string $privateKeyBody) {
+    public function setPrivateKeyBody(string $privateKeyBody)
+    {
         $this->set("PrivateKeyBody", $privateKeyBody);
     }
 
     /**
      * CreateTime: 密钥对的创建时间，格式为Unix Timestamp。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -125,9 +137,8 @@ class KeyPair extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
-
-
 }

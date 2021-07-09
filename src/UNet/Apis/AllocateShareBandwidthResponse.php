@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
 
-class AllocateShareBandwidthResponse extends Response {
+class AllocateShareBandwidthResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AllocateShareBandwidthResponse extends Response {
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string {
+    public function getShareBandwidthId(): string
+    {
         return $this->get("ShareBandwidthId");
     }
 
@@ -35,9 +37,8 @@ class AllocateShareBandwidthResponse extends Response {
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId) {
+    public function setShareBandwidthId(string $shareBandwidthId)
+    {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
-
-
 }

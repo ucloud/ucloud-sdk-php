@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Models;
 
 use UCloud\Core\Response\Response;
 
-class NetworkMask extends Response {
+class NetworkMask extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NetworkMask extends Response {
      *
      * @return string|null
      */
-    public function getAPINetworkMask(): string {
+    public function getAPINetworkMask(): string
+    {
         return $this->get("APINetworkMask");
     }
 
@@ -35,7 +37,8 @@ class NetworkMask extends Response {
      *
      * @param string $apiNetworkMask
      */
-    public function setAPINetworkMask(string $apiNetworkMask) {
+    public function setAPINetworkMask(string $apiNetworkMask)
+    {
         $this->set("APINetworkMask", $apiNetworkMask);
     }
 
@@ -44,7 +47,8 @@ class NetworkMask extends Response {
      *
      * @return string|null
      */
-    public function getLoginNetworkMask(): string {
+    public function getLoginNetworkMask(): string
+    {
         return $this->get("LoginNetworkMask");
     }
 
@@ -53,9 +57,8 @@ class NetworkMask extends Response {
      *
      * @param string $loginNetworkMask
      */
-    public function setLoginNetworkMask(string $loginNetworkMask) {
+    public function setLoginNetworkMask(string $loginNetworkMask)
+    {
         $this->set("LoginNetworkMask", $loginNetworkMask);
     }
-
-
 }

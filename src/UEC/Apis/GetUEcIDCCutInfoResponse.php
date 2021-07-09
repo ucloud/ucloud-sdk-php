@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\UEC\Models\IDCCutInfo;
 use UCloud\UEC\Models\ResourceSet;
 
-class GetUEcIDCCutInfoResponse extends Response {
+class GetUEcIDCCutInfoResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class GetUEcIDCCutInfoResponse extends Response {
      *
      * @return IDCCutInfo[]|null
      */
-    public function getIDCCutInfo(): array {
+    public function getIDCCutInfo(): array
+    {
         $items = $this->get("IDCCutInfo") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class GetUEcIDCCutInfoResponse extends Response {
      *
      * @param IDCCutInfo[] $idcCutInfo
      */
-    public function setIDCCutInfo(array $idcCutInfo) {
+    public function setIDCCutInfo(array $idcCutInfo)
+    {
         $result = [];
         foreach ($idcCutInfo as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,9 +56,10 @@ class GetUEcIDCCutInfoResponse extends Response {
     /**
      * TotalCount: 满足条件的机房总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -64,9 +68,8 @@ class GetUEcIDCCutInfoResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

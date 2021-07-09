@@ -18,7 +18,8 @@ namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
-class UDBParamMemberSet extends Response {
+class UDBParamMemberSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UDBParamMemberSet extends Response {
      *
      * @return string|null
      */
-    public function getKey(): string {
+    public function getKey(): string
+    {
         return $this->get("Key");
     }
 
@@ -35,7 +37,8 @@ class UDBParamMemberSet extends Response {
      *
      * @param string $key
      */
-    public function setKey(string $key) {
+    public function setKey(string $key)
+    {
         $this->set("Key", $key);
     }
 
@@ -44,7 +47,8 @@ class UDBParamMemberSet extends Response {
      *
      * @return string|null
      */
-    public function getValue(): string {
+    public function getValue(): string
+    {
         return $this->get("Value");
     }
 
@@ -53,16 +57,18 @@ class UDBParamMemberSet extends Response {
      *
      * @param string $value
      */
-    public function setValue(string $value) {
+    public function setValue(string $value)
+    {
         $this->set("Value", $value);
     }
 
     /**
      * ValueType: 参数值应用类型，取值范围为{0,10,20,30},各值 代表意义为 0-unknown、10-int、20-string、 30-bool
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getValueType(): int {
+    public function getValueType(): int
+    {
         return $this->get("ValueType");
     }
 
@@ -71,7 +77,8 @@ class UDBParamMemberSet extends Response {
      *
      * @param int $valueType
      */
-    public function setValueType(int $valueType) {
+    public function setValueType(int $valueType)
+    {
         $this->set("ValueType", $valueType);
     }
 
@@ -80,7 +87,8 @@ class UDBParamMemberSet extends Response {
      *
      * @return string|null
      */
-    public function getAllowedVal(): string {
+    public function getAllowedVal(): string
+    {
         return $this->get("AllowedVal");
     }
 
@@ -89,16 +97,18 @@ class UDBParamMemberSet extends Response {
      *
      * @param string $allowedVal
      */
-    public function setAllowedVal(string $allowedVal) {
+    public function setAllowedVal(string $allowedVal)
+    {
         $this->set("AllowedVal", $allowedVal);
     }
 
     /**
      * ApplyType: 参数值应用类型,取值范围为{0,10,20}，各值代表 意义为0-unknown、10-static、20-dynamic
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getApplyType(): int {
+    public function getApplyType(): int
+    {
         return $this->get("ApplyType");
     }
 
@@ -107,7 +117,8 @@ class UDBParamMemberSet extends Response {
      *
      * @param int $applyType
      */
-    public function setApplyType(int $applyType) {
+    public function setApplyType(int $applyType)
+    {
         $this->set("ApplyType", $applyType);
     }
 
@@ -116,7 +127,8 @@ class UDBParamMemberSet extends Response {
      *
      * @return boolean|null
      */
-    public function getModifiable(): bool {
+    public function getModifiable(): bool
+    {
         return $this->get("Modifiable");
     }
 
@@ -125,16 +137,18 @@ class UDBParamMemberSet extends Response {
      *
      * @param boolean $modifiable
      */
-    public function setModifiable(bool $modifiable) {
+    public function setModifiable(bool $modifiable)
+    {
         $this->set("Modifiable", $modifiable);
     }
 
     /**
      * FormatType: 允许值的格式类型，取值范围为{0,10,20}，意义分 别为PVFT_UNKOWN=0,PVFT_RANGE=10, PVFT_ENUM=20
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getFormatType(): int {
+    public function getFormatType(): int
+    {
         return $this->get("FormatType");
     }
 
@@ -143,9 +157,8 @@ class UDBParamMemberSet extends Response {
      *
      * @param int $formatType
      */
-    public function setFormatType(int $formatType) {
+    public function setFormatType(int $formatType)
+    {
         $this->set("FormatType", $formatType);
     }
-
-
 }

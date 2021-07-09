@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeVPCIntercomRequest extends Request {
+class DescribeVPCIntercomRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeVPCIntercom"]);
@@ -33,7 +34,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -60,7 +64,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -69,7 +74,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -78,7 +84,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -87,7 +94,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getDstRegion(): string {
+    public function getDstRegion(): string
+    {
         return $this->get("DstRegion");
     }
 
@@ -96,7 +104,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @param string $dstRegion
      */
-    public function setDstRegion(string $dstRegion) {
+    public function setDstRegion(string $dstRegion)
+    {
         $this->set("DstRegion", $dstRegion);
     }
 
@@ -105,7 +114,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getDstProjectId(): string {
+    public function getDstProjectId(): string
+    {
         return $this->get("DstProjectId");
     }
 
@@ -114,9 +124,8 @@ class DescribeVPCIntercomRequest extends Request {
      *
      * @param string $dstProjectId
      */
-    public function setDstProjectId(string $dstProjectId) {
+    public function setDstProjectId(string $dstProjectId)
+    {
         $this->set("DstProjectId", $dstProjectId);
     }
-
-
 }

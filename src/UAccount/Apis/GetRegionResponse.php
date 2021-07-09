@@ -19,7 +19,8 @@ namespace UCloud\UAccount\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UAccount\Models\RegionInfo;
 
-class GetRegionResponse extends Response {
+class GetRegionResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetRegionResponse extends Response {
      *
      * @return RegionInfo[]|null
      */
-    public function getRegions(): array {
+    public function getRegions(): array
+    {
         $items = $this->get("Regions") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetRegionResponse extends Response {
      *
      * @param RegionInfo[] $regions
      */
-    public function setRegions(array $regions) {
+    public function setRegions(array $regions)
+    {
         $result = [];
         foreach ($regions as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -24,15 +24,17 @@ use UCloud\ULB\Models\ULBBackendSet;
 use UCloud\ULB\Models\ULBPolicySet;
 use UCloud\ULB\Models\PolicyBackendSet;
 
-class DescribeVServerResponse extends Response {
+class DescribeVServerResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的VServer总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -41,7 +43,8 @@ class DescribeVServerResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -50,7 +53,8 @@ class DescribeVServerResponse extends Response {
      *
      * @return ULBVServerSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -64,13 +68,12 @@ class DescribeVServerResponse extends Response {
      *
      * @param ULBVServerSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

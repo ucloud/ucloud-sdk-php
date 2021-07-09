@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateNetworkAclEntryRequest extends Request {
+class CreateNetworkAclEntryRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateNetworkAclEntry"]);
@@ -39,7 +40,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -48,7 +50,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -57,7 +60,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -66,7 +70,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -75,7 +80,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getAclId(): string {
+    public function getAclId(): string
+    {
         return $this->get("AclId");
     }
 
@@ -84,16 +90,18 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId) {
+    public function setAclId(string $aclId)
+    {
         $this->set("AclId", $aclId);
     }
 
     /**
      * Priority: Entry的优先级，对于同样的Direction来说，不能重复
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPriority(): int {
+    public function getPriority(): int
+    {
         return $this->get("Priority");
     }
 
@@ -102,7 +110,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param int $priority
      */
-    public function setPriority(int $priority) {
+    public function setPriority(int $priority)
+    {
         $this->set("Priority", $priority);
     }
 
@@ -111,7 +120,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getDirection(): string {
+    public function getDirection(): string
+    {
         return $this->get("Direction");
     }
 
@@ -120,7 +130,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $direction
      */
-    public function setDirection(string $direction) {
+    public function setDirection(string $direction)
+    {
         $this->set("Direction", $direction);
     }
 
@@ -129,7 +140,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getIpProtocol(): string {
+    public function getIpProtocol(): string
+    {
         return $this->get("IpProtocol");
     }
 
@@ -138,7 +150,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $ipProtocol
      */
-    public function setIpProtocol(string $ipProtocol) {
+    public function setIpProtocol(string $ipProtocol)
+    {
         $this->set("IpProtocol", $ipProtocol);
     }
 
@@ -147,7 +160,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getCidrBlock(): string {
+    public function getCidrBlock(): string
+    {
         return $this->get("CidrBlock");
     }
 
@@ -156,7 +170,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $cidrBlock
      */
-    public function setCidrBlock(string $cidrBlock) {
+    public function setCidrBlock(string $cidrBlock)
+    {
         $this->set("CidrBlock", $cidrBlock);
     }
 
@@ -165,7 +180,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getPortRange(): string {
+    public function getPortRange(): string
+    {
         return $this->get("PortRange");
     }
 
@@ -174,7 +190,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $portRange
      */
-    public function setPortRange(string $portRange) {
+    public function setPortRange(string $portRange)
+    {
         $this->set("PortRange", $portRange);
     }
 
@@ -183,7 +200,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getEntryAction(): string {
+    public function getEntryAction(): string
+    {
         return $this->get("EntryAction");
     }
 
@@ -192,7 +210,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $entryAction
      */
-    public function setEntryAction(string $entryAction) {
+    public function setEntryAction(string $entryAction)
+    {
         $this->set("EntryAction", $entryAction);
     }
 
@@ -201,7 +220,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string|null
      */
-    public function getDescription(): string {
+    public function getDescription(): string
+    {
         return $this->get("Description");
     }
 
@@ -210,16 +230,18 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string $description
      */
-    public function setDescription(string $description) {
+    public function setDescription(string $description)
+    {
         $this->set("Description", $description);
     }
 
     /**
      * TargetType: 应用目标类型。0代表“子网内全部资源”，1代表“子网内指定资源”，默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTargetType(): int {
+    public function getTargetType(): int
+    {
         return $this->get("TargetType");
     }
 
@@ -228,7 +250,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param int $targetType
      */
-    public function setTargetType(int $targetType) {
+    public function setTargetType(int $targetType)
+    {
         $this->set("TargetType", $targetType);
     }
 
@@ -237,7 +260,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getTargetResourceIds(): array {
+    public function getTargetResourceIds(): array
+    {
         return $this->get("TargetResourceIds");
     }
 
@@ -246,9 +270,8 @@ class CreateNetworkAclEntryRequest extends Request {
      *
      * @param string[] $targetResourceIds
      */
-    public function setTargetResourceIds(array $targetResourceIds) {
+    public function setTargetResourceIds(array $targetResourceIds)
+    {
         $this->set("TargetResourceIds", $targetResourceIds);
     }
-
-
 }

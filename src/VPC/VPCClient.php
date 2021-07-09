@@ -146,7 +146,8 @@ use UCloud\VPC\Apis\UpdateVPCNetworkResponse;
 /**
  * This client is used to call actions of **VPC** service
  */
-class VPCClient extends Client {
+class VPCClient extends Client
+{
 
     /**
      * AddSnatRule - 对于绑定了多个EIP的NAT网关，您可以将一个子网下的某台云主机映射到某个特定的EIP上，规则生效后，则该云主机通过该特定的EIP访问互联网。
@@ -171,7 +172,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function addSnatRule(AddSnatRuleRequest $request = null): AddSnatRuleResponse {
+    public function addSnatRule(AddSnatRuleRequest $request = null): AddSnatRuleResponse
+    {
         $resp = $this->invoke($request);
         return new AddSnatRuleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -197,7 +199,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function addVPCNetwork(AddVPCNetworkRequest $request = null): AddVPCNetworkResponse {
+    public function addVPCNetwork(AddVPCNetworkRequest $request = null): AddVPCNetworkResponse
+    {
         $resp = $this->invoke($request);
         return new AddVPCNetworkResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -223,7 +226,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function addWhiteListResource(AddWhiteListResourceRequest $request = null): AddWhiteListResourceResponse {
+    public function addWhiteListResource(AddWhiteListResourceRequest $request = null): AddWhiteListResourceResponse
+    {
         $resp = $this->invoke($request);
         return new AddWhiteListResourceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -250,18 +254,19 @@ class VPCClient extends Client {
      *
      * $outputs = [
      *     "IpInfo" => (object) [
-     *         "Ip" => (string) 
-     *         "Mask" => (string) 
-     *         "Gateway" => (string) 
-     *         "Mac" => (string) 
-     *         "SubnetId" => (string) 
-     *         "VPCId" => (string) 
+     *         "Ip" => (string)
+     *         "Mask" => (string)
+     *         "Gateway" => (string)
+     *         "Mac" => (string)
+     *         "SubnetId" => (string)
+     *         "VPCId" => (string)
      *     ]
      * ]
      *
      * @throws UCloudException
      */
-    public function allocateSecondaryIp(AllocateSecondaryIpRequest $request = null): AllocateSecondaryIpResponse {
+    public function allocateSecondaryIp(AllocateSecondaryIpRequest $request = null): AllocateSecondaryIpResponse
+    {
         $resp = $this->invoke($request);
         return new AllocateSecondaryIpResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -302,7 +307,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function allocateVIP(AllocateVIPRequest $request = null): AllocateVIPResponse {
+    public function allocateVIP(AllocateVIPRequest $request = null): AllocateVIPResponse
+    {
         $resp = $this->invoke($request);
         return new AllocateVIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -328,7 +334,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function associateRouteTable(AssociateRouteTableRequest $request = null): AssociateRouteTableResponse {
+    public function associateRouteTable(AssociateRouteTableRequest $request = null): AssociateRouteTableResponse
+    {
         $resp = $this->invoke($request);
         return new AssociateRouteTableResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -354,7 +361,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function cloneRouteTable(CloneRouteTableRequest $request = null): CloneRouteTableResponse {
+    public function cloneRouteTable(CloneRouteTableRequest $request = null): CloneRouteTableResponse
+    {
         $resp = $this->invoke($request);
         return new CloneRouteTableResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -387,7 +395,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createNATGW(CreateNATGWRequest $request = null): CreateNATGWResponse {
+    public function createNATGW(CreateNATGWRequest $request = null): CreateNATGWResponse
+    {
         $resp = $this->invoke($request);
         return new CreateNATGWResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -419,7 +428,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createNATGWPolicy(CreateNATGWPolicyRequest $request = null): CreateNATGWPolicyResponse {
+    public function createNATGWPolicy(CreateNATGWPolicyRequest $request = null): CreateNATGWPolicyResponse
+    {
         $resp = $this->invoke($request);
         return new CreateNATGWPolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -447,7 +457,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createNetworkAcl(CreateNetworkAclRequest $request = null): CreateNetworkAclResponse {
+    public function createNetworkAcl(CreateNetworkAclRequest $request = null): CreateNetworkAclResponse
+    {
         $resp = $this->invoke($request);
         return new CreateNetworkAclResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -480,7 +491,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createNetworkAclAssociation(CreateNetworkAclAssociationRequest $request = null): CreateNetworkAclAssociationResponse {
+    public function createNetworkAclAssociation(CreateNetworkAclAssociationRequest $request = null): CreateNetworkAclAssociationResponse
+    {
         $resp = $this->invoke($request);
         return new CreateNetworkAclAssociationResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -515,7 +527,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createNetworkAclEntry(CreateNetworkAclEntryRequest $request = null): CreateNetworkAclEntryResponse {
+    public function createNetworkAclEntry(CreateNetworkAclEntryRequest $request = null): CreateNetworkAclEntryResponse
+    {
         $resp = $this->invoke($request);
         return new CreateNetworkAclEntryResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -544,7 +557,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createRouteTable(CreateRouteTableRequest $request = null): CreateRouteTableResponse {
+    public function createRouteTable(CreateRouteTableRequest $request = null): CreateRouteTableResponse
+    {
         $resp = $this->invoke($request);
         return new CreateRouteTableResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -575,7 +589,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createSubnet(CreateSubnetRequest $request = null): CreateSubnetResponse {
+    public function createSubnet(CreateSubnetRequest $request = null): CreateSubnetResponse
+    {
         $resp = $this->invoke($request);
         return new CreateSubnetResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -604,7 +619,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createVPC(CreateVPCRequest $request = null): CreateVPCResponse {
+    public function createVPC(CreateVPCRequest $request = null): CreateVPCResponse
+    {
         $resp = $this->invoke($request);
         return new CreateVPCResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -632,7 +648,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function createVPCIntercom(CreateVPCIntercomRequest $request = null): CreateVPCIntercomResponse {
+    public function createVPCIntercom(CreateVPCIntercomRequest $request = null): CreateVPCIntercomResponse
+    {
         $resp = $this->invoke($request);
         return new CreateVPCIntercomResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -658,7 +675,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteNATGW(DeleteNATGWRequest $request = null): DeleteNATGWResponse {
+    public function deleteNATGW(DeleteNATGWRequest $request = null): DeleteNATGWResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteNATGWResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -684,7 +702,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteNATGWPolicy(DeleteNATGWPolicyRequest $request = null): DeleteNATGWPolicyResponse {
+    public function deleteNATGWPolicy(DeleteNATGWPolicyRequest $request = null): DeleteNATGWPolicyResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteNATGWPolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -709,7 +728,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteNetworkAcl(DeleteNetworkAclRequest $request = null): DeleteNetworkAclResponse {
+    public function deleteNetworkAcl(DeleteNetworkAclRequest $request = null): DeleteNetworkAclResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteNetworkAclResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -735,7 +755,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteNetworkAclAssociation(DeleteNetworkAclAssociationRequest $request = null): DeleteNetworkAclAssociationResponse {
+    public function deleteNetworkAclAssociation(DeleteNetworkAclAssociationRequest $request = null): DeleteNetworkAclAssociationResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteNetworkAclAssociationResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -761,7 +782,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteNetworkAclEntry(DeleteNetworkAclEntryRequest $request = null): DeleteNetworkAclEntryResponse {
+    public function deleteNetworkAclEntry(DeleteNetworkAclEntryRequest $request = null): DeleteNetworkAclEntryResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteNetworkAclEntryResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -786,7 +808,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteRouteTable(DeleteRouteTableRequest $request = null): DeleteRouteTableResponse {
+    public function deleteRouteTable(DeleteRouteTableRequest $request = null): DeleteRouteTableResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteRouteTableResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -816,7 +839,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteSecondaryIp(DeleteSecondaryIpRequest $request = null): DeleteSecondaryIpResponse {
+    public function deleteSecondaryIp(DeleteSecondaryIpRequest $request = null): DeleteSecondaryIpResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteSecondaryIpResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -842,7 +866,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteSnatRule(DeleteSnatRuleRequest $request = null): DeleteSnatRuleResponse {
+    public function deleteSnatRule(DeleteSnatRuleRequest $request = null): DeleteSnatRuleResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteSnatRuleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -867,7 +892,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteSubnet(DeleteSubnetRequest $request = null): DeleteSubnetResponse {
+    public function deleteSubnet(DeleteSubnetRequest $request = null): DeleteSubnetResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteSubnetResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -892,7 +918,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteVPC(DeleteVPCRequest $request = null): DeleteVPCResponse {
+    public function deleteVPC(DeleteVPCRequest $request = null): DeleteVPCResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteVPCResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -920,7 +947,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteVPCIntercom(DeleteVPCIntercomRequest $request = null): DeleteVPCIntercomResponse {
+    public function deleteVPCIntercom(DeleteVPCIntercomRequest $request = null): DeleteVPCIntercomResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteVPCIntercomResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -946,7 +974,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function deleteWhiteListResource(DeleteWhiteListResourceRequest $request = null): DeleteWhiteListResourceResponse {
+    public function deleteWhiteListResource(DeleteWhiteListResourceRequest $request = null): DeleteWhiteListResourceResponse
+    {
         $resp = $this->invoke($request);
         return new DeleteWhiteListResourceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1007,7 +1036,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeNATGW(DescribeNATGWRequest $request = null): DescribeNATGWResponse {
+    public function describeNATGW(DescribeNATGWRequest $request = null): DescribeNATGWResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeNATGWResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1048,7 +1078,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeNATGWPolicy(DescribeNATGWPolicyRequest $request = null): DescribeNATGWPolicyResponse {
+    public function describeNATGWPolicy(DescribeNATGWPolicyRequest $request = null): DescribeNATGWPolicyResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeNATGWPolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1120,7 +1151,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeNetworkAcl(DescribeNetworkAclRequest $request = null): DescribeNetworkAclResponse {
+    public function describeNetworkAcl(DescribeNetworkAclRequest $request = null): DescribeNetworkAclResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeNetworkAclResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1155,7 +1187,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeNetworkAclAssociation(DescribeNetworkAclAssociationRequest $request = null): DescribeNetworkAclAssociationResponse {
+    public function describeNetworkAclAssociation(DescribeNetworkAclAssociationRequest $request = null): DescribeNetworkAclAssociationResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeNetworkAclAssociationResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1186,7 +1219,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeNetworkAclAssociationBySubnet(DescribeNetworkAclAssociationBySubnetRequest $request = null): DescribeNetworkAclAssociationBySubnetResponse {
+    public function describeNetworkAclAssociationBySubnet(DescribeNetworkAclAssociationBySubnetRequest $request = null): DescribeNetworkAclAssociationBySubnetResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeNetworkAclAssociationBySubnetResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1238,7 +1272,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeNetworkAclEntry(DescribeNetworkAclEntryRequest $request = null): DescribeNetworkAclEntryResponse {
+    public function describeNetworkAclEntry(DescribeNetworkAclEntryRequest $request = null): DescribeNetworkAclEntryResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeNetworkAclEntryResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1298,7 +1333,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeRouteTable(DescribeRouteTableRequest $request = null): DescribeRouteTableResponse {
+    public function describeRouteTable(DescribeRouteTableRequest $request = null): DescribeRouteTableResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeRouteTableResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1324,19 +1360,20 @@ class VPCClient extends Client {
      * $outputs = [
      *     "DataSet" => (array<object>) [
      *         [
-     *             "Ip" => (string) 
-     *             "Mask" => (string) 
-     *             "Gateway" => (string) 
-     *             "Mac" => (string) 
-     *             "SubnetId" => (string) 
-     *             "VPCId" => (string) 
+     *             "Ip" => (string)
+     *             "Mask" => (string)
+     *             "Gateway" => (string)
+     *             "Mac" => (string)
+     *             "SubnetId" => (string)
+     *             "VPCId" => (string)
      *         ]
      *     ]
      * ]
      *
      * @throws UCloudException
      */
-    public function describeSecondaryIp(DescribeSecondaryIpRequest $request = null): DescribeSecondaryIpResponse {
+    public function describeSecondaryIp(DescribeSecondaryIpRequest $request = null): DescribeSecondaryIpResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeSecondaryIpResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1374,7 +1411,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeSnatRule(DescribeSnatRuleRequest $request = null): DescribeSnatRuleResponse {
+    public function describeSnatRule(DescribeSnatRuleRequest $request = null): DescribeSnatRuleResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeSnatRuleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1427,7 +1465,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeSubnet(DescribeSubnetRequest $request = null): DescribeSubnetResponse {
+    public function describeSubnet(DescribeSubnetRequest $request = null): DescribeSubnetResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeSubnetResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1464,7 +1503,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeSubnetResource(DescribeSubnetResourceRequest $request = null): DescribeSubnetResourceResponse {
+    public function describeSubnetResource(DescribeSubnetResourceRequest $request = null): DescribeSubnetResourceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeSubnetResourceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1510,7 +1550,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeVIP(DescribeVIPRequest $request = null): DescribeVIPResponse {
+    public function describeVIP(DescribeVIPRequest $request = null): DescribeVIPResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeVIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1527,8 +1568,8 @@ class VPCClient extends Client {
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *     "VPCIds" => (array<string>) VPCId
      *     "Tag" => (string) 业务组名称
-     *     "Offset" => (integer) 
-     *     "Limit" => (integer) 
+     *     "Offset" => (integer)
+     *     "Limit" => (integer)
      * ]
      *
      * Outputs:
@@ -1542,13 +1583,13 @@ class VPCClient extends Client {
      *                     "SubnetCount" => (integer) 地址空间中子网数量
      *                 ]
      *             ]
-     *             "SubnetCount" => (integer) 
-     *             "CreateTime" => (integer) 
-     *             "UpdateTime" => (integer) 
-     *             "Tag" => (string) 
-     *             "Name" => (string) 
+     *             "SubnetCount" => (integer)
+     *             "CreateTime" => (integer)
+     *             "UpdateTime" => (integer)
+     *             "Tag" => (string)
+     *             "Name" => (string)
      *             "VPCId" => (string) VPCId
-     *             "Network" => (array<string>) 
+     *             "Network" => (array<string>)
      *             "IPv6Network" => (string) VPC关联的IPv6网段
      *             "OperatorName" => (string) VPC关联的IPv6网段所属运营商
      *         ]
@@ -1557,7 +1598,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeVPC(DescribeVPCRequest $request = null): DescribeVPCResponse {
+    public function describeVPC(DescribeVPCRequest $request = null): DescribeVPCResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeVPCResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1596,7 +1638,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeVPCIntercom(DescribeVPCIntercomRequest $request = null): DescribeVPCIntercomResponse {
+    public function describeVPCIntercom(DescribeVPCIntercomRequest $request = null): DescribeVPCIntercomResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeVPCIntercomResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1643,7 +1686,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function describeWhiteListResource(DescribeWhiteListResourceRequest $request = null): DescribeWhiteListResourceResponse {
+    public function describeWhiteListResource(DescribeWhiteListResourceRequest $request = null): DescribeWhiteListResourceResponse
+    {
         $resp = $this->invoke($request);
         return new DescribeWhiteListResourceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1669,7 +1713,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function enableWhiteList(EnableWhiteListRequest $request = null): EnableWhiteListResponse {
+    public function enableWhiteList(EnableWhiteListRequest $request = null): EnableWhiteListResponse
+    {
         $resp = $this->invoke($request);
         return new EnableWhiteListResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1703,7 +1748,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getAvailableResourceForPolicy(GetAvailableResourceForPolicyRequest $request = null): GetAvailableResourceForPolicyResponse {
+    public function getAvailableResourceForPolicy(GetAvailableResourceForPolicyRequest $request = null): GetAvailableResourceForPolicyResponse
+    {
         $resp = $this->invoke($request);
         return new GetAvailableResourceForPolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1741,7 +1787,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getAvailableResourceForSnatRule(GetAvailableResourceForSnatRuleRequest $request = null): GetAvailableResourceForSnatRuleResponse {
+    public function getAvailableResourceForSnatRule(GetAvailableResourceForSnatRuleRequest $request = null): GetAvailableResourceForSnatRuleResponse
+    {
         $resp = $this->invoke($request);
         return new GetAvailableResourceForSnatRuleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1782,7 +1829,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getAvailableResourceForWhiteList(GetAvailableResourceForWhiteListRequest $request = null): GetAvailableResourceForWhiteListResponse {
+    public function getAvailableResourceForWhiteList(GetAvailableResourceForWhiteListRequest $request = null): GetAvailableResourceForWhiteListResponse
+    {
         $resp = $this->invoke($request);
         return new GetAvailableResourceForWhiteListResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1820,7 +1868,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function getNetworkAclTargetResource(GetNetworkAclTargetResourceRequest $request = null): GetNetworkAclTargetResourceResponse {
+    public function getNetworkAclTargetResource(GetNetworkAclTargetResourceRequest $request = null): GetNetworkAclTargetResourceResponse
+    {
         $resp = $this->invoke($request);
         return new GetNetworkAclTargetResourceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1854,7 +1903,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function listSubnetForNATGW(ListSubnetForNATGWRequest $request = null): ListSubnetForNATGWResponse {
+    public function listSubnetForNATGW(ListSubnetForNATGWRequest $request = null): ListSubnetForNATGWResponse
+    {
         $resp = $this->invoke($request);
         return new ListSubnetForNATGWResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1870,7 +1920,7 @@ class VPCClient extends Client {
      *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *     "RouteTableId" => (string) 通过DescribeRouteTable拿到
-     *     "RouteRule" => (array<string>) 格式: RouteRuleId | 目的网段 | 下一跳类型（支持INSTANCE、VIP） | 下一跳 |优先级（保留字段，填写0即可）| 备注 | 增、删、改标志（add/delete/update） 。"添加"示例: test_id | 10.8.0.0/16 | instance | uhost-xd8ja | 0 | Default Route Rule| add (添加的RouteRuleId填任意非空字符串) 。"删除"示例: routerule-xk3jxa | 10.8.0.0/16 | instance | uhost-xd8ja | 0 | Default Route Rule| delete (RouteRuleId来自DescribeRouteTable中)     。“修改”示例: routerule-xk3jxa | 10.8.0.0/16 | instance | uhost-cjksa2 | 0 | Default Route Rule| update (RouteRuleId来自DescribeRouteTable中)   
+     *     "RouteRule" => (array<string>) 格式: RouteRuleId | 目的网段 | 下一跳类型（支持INSTANCE、VIP） | 下一跳 |优先级（保留字段，填写0即可）| 备注 | 增、删、改标志（add/delete/update） 。"添加"示例: test_id | 10.8.0.0/16 | instance | uhost-xd8ja | 0 | Default Route Rule| add (添加的RouteRuleId填任意非空字符串) 。"删除"示例: routerule-xk3jxa | 10.8.0.0/16 | instance | uhost-xd8ja | 0 | Default Route Rule| delete (RouteRuleId来自DescribeRouteTable中)     。“修改”示例: routerule-xk3jxa | 10.8.0.0/16 | instance | uhost-cjksa2 | 0 | Default Route Rule| update (RouteRuleId来自DescribeRouteTable中)
      * ]
      *
      * Outputs:
@@ -1880,7 +1930,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function modifyRouteRule(ModifyRouteRuleRequest $request = null): ModifyRouteRuleResponse {
+    public function modifyRouteRule(ModifyRouteRuleRequest $request = null): ModifyRouteRuleResponse
+    {
         $resp = $this->invoke($request);
         return new ModifyRouteRuleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1908,7 +1959,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function moveSecondaryIPMac(MoveSecondaryIPMacRequest $request = null): MoveSecondaryIPMacResponse {
+    public function moveSecondaryIPMac(MoveSecondaryIPMacRequest $request = null): MoveSecondaryIPMacResponse
+    {
         $resp = $this->invoke($request);
         return new MoveSecondaryIPMacResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1934,7 +1986,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function releaseVIP(ReleaseVIPRequest $request = null): ReleaseVIPResponse {
+    public function releaseVIP(ReleaseVIPRequest $request = null): ReleaseVIPResponse
+    {
         $resp = $this->invoke($request);
         return new ReleaseVIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1961,7 +2014,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function setGwDefaultExport(SetGwDefaultExportRequest $request = null): SetGwDefaultExportResponse {
+    public function setGwDefaultExport(SetGwDefaultExportRequest $request = null): SetGwDefaultExportResponse
+    {
         $resp = $this->invoke($request);
         return new SetGwDefaultExportResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1993,7 +2047,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateNATGWPolicy(UpdateNATGWPolicyRequest $request = null): UpdateNATGWPolicyResponse {
+    public function updateNATGWPolicy(UpdateNATGWPolicyRequest $request = null): UpdateNATGWPolicyResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateNATGWPolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -2019,7 +2074,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateNATGWSubnet(UpdateNATGWSubnetRequest $request = null): UpdateNATGWSubnetResponse {
+    public function updateNATGWSubnet(UpdateNATGWSubnetRequest $request = null): UpdateNATGWSubnetResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateNATGWSubnetResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -2046,7 +2102,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateNetworkAcl(UpdateNetworkAclRequest $request = null): UpdateNetworkAclResponse {
+    public function updateNetworkAcl(UpdateNetworkAclRequest $request = null): UpdateNetworkAclResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateNetworkAclResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -2081,7 +2138,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateNetworkAclEntry(UpdateNetworkAclEntryRequest $request = null): UpdateNetworkAclEntryResponse {
+    public function updateNetworkAclEntry(UpdateNetworkAclEntryRequest $request = null): UpdateNetworkAclEntryResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateNetworkAclEntryResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -2109,7 +2167,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateRouteTableAttribute(UpdateRouteTableAttributeRequest $request = null): UpdateRouteTableAttributeResponse {
+    public function updateRouteTableAttribute(UpdateRouteTableAttributeRequest $request = null): UpdateRouteTableAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateRouteTableAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -2137,7 +2196,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateSnatRule(UpdateSnatRuleRequest $request = null): UpdateSnatRuleResponse {
+    public function updateSnatRule(UpdateSnatRuleRequest $request = null): UpdateSnatRuleResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateSnatRuleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -2164,7 +2224,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateSubnetAttribute(UpdateSubnetAttributeRequest $request = null): UpdateSubnetAttributeResponse {
+    public function updateSubnetAttribute(UpdateSubnetAttributeRequest $request = null): UpdateSubnetAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateSubnetAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -2192,7 +2253,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateVIPAttribute(UpdateVIPAttributeRequest $request = null): UpdateVIPAttributeResponse {
+    public function updateVIPAttribute(UpdateVIPAttributeRequest $request = null): UpdateVIPAttributeResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateVIPAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -2218,7 +2280,8 @@ class VPCClient extends Client {
      *
      * @throws UCloudException
      */
-    public function updateVPCNetwork(UpdateVPCNetworkRequest $request = null): UpdateVPCNetworkResponse {
+    public function updateVPCNetwork(UpdateVPCNetworkRequest $request = null): UpdateVPCNetworkResponse
+    {
         $resp = $this->invoke($request);
         return new UpdateVPCNetworkResponse($resp->toArray(), $resp->getRequestId());
     }

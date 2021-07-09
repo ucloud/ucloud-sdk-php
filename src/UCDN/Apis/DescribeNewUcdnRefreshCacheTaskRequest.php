@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
+class DescribeNewUcdnRefreshCacheTaskRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeNewUcdnRefreshCacheTask"]);
@@ -31,7 +32,8 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,7 +42,8 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -49,7 +52,8 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getTaskId(): array {
+    public function getTaskId(): array
+    {
         return $this->get("TaskId");
     }
 
@@ -58,16 +62,18 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @param string[] $taskId
      */
-    public function setTaskId(array $taskId) {
+    public function setTaskId(array $taskId)
+    {
         $this->set("TaskId", $taskId);
     }
 
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -76,16 +82,18 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -94,7 +102,8 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
@@ -103,7 +112,8 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @return string|null
      */
-    public function getStatus(): string {
+    public function getStatus(): string
+    {
         return $this->get("Status");
     }
 
@@ -112,16 +122,18 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @param string $status
      */
-    public function setStatus(string $status) {
+    public function setStatus(string $status)
+    {
         $this->set("Status", $status);
     }
 
     /**
      * Offset: 数据偏移量，默认为0，自然数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -130,16 +142,18 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 返回数据长度,默认全部，自然数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -148,9 +162,8 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUEcHolderLogRequest extends Request {
+class GetUEcHolderLogRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUEcHolderLog"]);
@@ -33,7 +34,8 @@ class GetUEcHolderLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -42,7 +44,8 @@ class GetUEcHolderLogRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -51,7 +54,8 @@ class GetUEcHolderLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getPackName(): string {
+    public function getPackName(): string
+    {
         return $this->get("PackName");
     }
 
@@ -60,7 +64,8 @@ class GetUEcHolderLogRequest extends Request {
      *
      * @param string $packName
      */
-    public function setPackName(string $packName) {
+    public function setPackName(string $packName)
+    {
         $this->set("PackName", $packName);
     }
 
@@ -69,7 +74,8 @@ class GetUEcHolderLogRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -78,9 +84,8 @@ class GetUEcHolderLogRequest extends Request {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
-
-
 }

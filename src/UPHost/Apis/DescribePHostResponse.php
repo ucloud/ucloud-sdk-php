@@ -22,15 +22,17 @@ use UCloud\UPHost\Models\PHostCPUSet;
 use UCloud\UPHost\Models\PHostDescDiskSet;
 use UCloud\UPHost\Models\PHostIPSet;
 
-class DescribePHostResponse extends Response {
+class DescribePHostResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的PHost总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -39,7 +41,8 @@ class DescribePHostResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -48,7 +51,8 @@ class DescribePHostResponse extends Response {
      *
      * @return PHostSet[]|null
      */
-    public function getPHostSet(): array {
+    public function getPHostSet(): array
+    {
         $items = $this->get("PHostSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -62,13 +66,12 @@ class DescribePHostResponse extends Response {
      *
      * @param PHostSet[] $pHostSet
      */
-    public function setPHostSet(array $pHostSet) {
+    public function setPHostSet(array $pHostSet)
+    {
         $result = [];
         foreach ($pHostSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class EIPPayModeSet extends Response {
+class EIPPayModeSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class EIPPayModeSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPId(): string {
+    public function getEIPId(): string
+    {
         return $this->get("EIPId");
     }
 
@@ -35,7 +37,8 @@ class EIPPayModeSet extends Response {
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId) {
+    public function setEIPId(string $eipId)
+    {
         $this->set("EIPId", $eipId);
     }
 
@@ -44,7 +47,8 @@ class EIPPayModeSet extends Response {
      *
      * @return string|null
      */
-    public function getEIPPayMode(): string {
+    public function getEIPPayMode(): string
+    {
         return $this->get("EIPPayMode");
     }
 
@@ -53,9 +57,8 @@ class EIPPayModeSet extends Response {
      *
      * @param string $eipPayMode
      */
-    public function setEIPPayMode(string $eipPayMode) {
+    public function setEIPPayMode(string $eipPayMode)
+    {
         $this->set("EIPPayMode", $eipPayMode);
     }
-
-
 }

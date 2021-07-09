@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ExtractUDBParamGroupResponse extends Response {
+class ExtractUDBParamGroupResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ExtractUDBParamGroupResponse extends Response {
      *
      * @return string|null
      */
-    public function getContent(): string {
+    public function getContent(): string
+    {
         return $this->get("Content");
     }
 
@@ -35,9 +37,8 @@ class ExtractUDBParamGroupResponse extends Response {
      *
      * @param string $content
      */
-    public function setContent(string $content) {
+    public function setContent(string $content)
+    {
         $this->set("Content", $content);
     }
-
-
 }

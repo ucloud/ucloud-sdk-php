@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CheckUDBInstanceToHAAllowanceResponse extends Response {
+class CheckUDBInstanceToHAAllowanceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CheckUDBInstanceToHAAllowanceResponse extends Response {
      *
      * @return string|null
      */
-    public function getAllowance(): string {
+    public function getAllowance(): string
+    {
         return $this->get("Allowance");
     }
 
@@ -35,9 +37,8 @@ class CheckUDBInstanceToHAAllowanceResponse extends Response {
      *
      * @param string $allowance
      */
-    public function setAllowance(string $allowance) {
+    public function setAllowance(string $allowance)
+    {
         $this->set("Allowance", $allowance);
     }
-
-
 }

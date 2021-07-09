@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreatePathXSSLResponse extends Response {
+class CreatePathXSSLResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreatePathXSSLResponse extends Response {
      *
      * @return string|null
      */
-    public function getSSLId(): string {
+    public function getSSLId(): string
+    {
         return $this->get("SSLId");
     }
 
@@ -35,9 +37,8 @@ class CreatePathXSSLResponse extends Response {
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId) {
+    public function setSSLId(string $sslId)
+    {
         $this->set("SSLId", $sslId);
     }
-
-
 }

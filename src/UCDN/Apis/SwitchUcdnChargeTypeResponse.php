@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class SwitchUcdnChargeTypeResponse extends Response {
+class SwitchUcdnChargeTypeResponse extends Response
+{
     
 
 

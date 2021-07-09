@@ -18,15 +18,17 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class ThroughputDailyBillingInfo extends Response {
+class ThroughputDailyBillingInfo extends Response
+{
     
 
     /**
      * StartTime: 计费开始时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStartTime(): int {
+    public function getStartTime(): int
+    {
         return $this->get("StartTime");
     }
 
@@ -35,16 +37,18 @@ class ThroughputDailyBillingInfo extends Response {
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime) {
+    public function setStartTime(int $startTime)
+    {
         $this->set("StartTime", $startTime);
     }
 
     /**
      * EndTime: 计费结束时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -53,16 +57,18 @@ class ThroughputDailyBillingInfo extends Response {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
     /**
      * QuantityOutSize: 计费流量，单位“GB”
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantityOutSize(): int {
+    public function getQuantityOutSize(): int
+    {
         return $this->get("QuantityOutSize");
     }
 
@@ -71,16 +77,18 @@ class ThroughputDailyBillingInfo extends Response {
      *
      * @param int $quantityOutSize
      */
-    public function setQuantityOutSize(int $quantityOutSize) {
+    public function setQuantityOutSize(int $quantityOutSize)
+    {
         $this->set("QuantityOutSize", $quantityOutSize);
     }
 
     /**
      * QuantityOutMoney: 计费金额，单位“元”
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantityOutMoney(): int {
+    public function getQuantityOutMoney(): int
+    {
         return $this->get("QuantityOutMoney");
     }
 
@@ -89,7 +97,8 @@ class ThroughputDailyBillingInfo extends Response {
      *
      * @param int $quantityOutMoney
      */
-    public function setQuantityOutMoney(int $quantityOutMoney) {
+    public function setQuantityOutMoney(int $quantityOutMoney)
+    {
         $this->set("QuantityOutMoney", $quantityOutMoney);
     }
 
@@ -98,7 +107,8 @@ class ThroughputDailyBillingInfo extends Response {
      *
      * @return string|null
      */
-    public function getBillingState(): string {
+    public function getBillingState(): string
+    {
         return $this->get("BillingState");
     }
 
@@ -107,9 +117,8 @@ class ThroughputDailyBillingInfo extends Response {
      *
      * @param string $billingState
      */
-    public function setBillingState(string $billingState) {
+    public function setBillingState(string $billingState)
+    {
         $this->set("BillingState", $billingState);
     }
-
-
 }

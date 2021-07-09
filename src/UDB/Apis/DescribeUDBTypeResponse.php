@@ -19,7 +19,8 @@ namespace UCloud\UDB\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UDB\Models\UDBTypeSet;
 
-class DescribeUDBTypeResponse extends Response {
+class DescribeUDBTypeResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUDBTypeResponse extends Response {
      *
      * @return UDBTypeSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUDBTypeResponse extends Response {
      *
      * @param UDBTypeSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

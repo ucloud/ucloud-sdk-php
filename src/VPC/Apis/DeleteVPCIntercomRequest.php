@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteVPCIntercomRequest extends Request {
+class DeleteVPCIntercomRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DeleteVPCIntercom"]);
@@ -34,7 +35,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -79,7 +85,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -88,7 +95,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getDstVPCId(): string {
+    public function getDstVPCId(): string
+    {
         return $this->get("DstVPCId");
     }
 
@@ -97,7 +105,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @param string $dstVPCId
      */
-    public function setDstVPCId(string $dstVPCId) {
+    public function setDstVPCId(string $dstVPCId)
+    {
         $this->set("DstVPCId", $dstVPCId);
     }
 
@@ -106,7 +115,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getDstRegion(): string {
+    public function getDstRegion(): string
+    {
         return $this->get("DstRegion");
     }
 
@@ -115,7 +125,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @param string $dstRegion
      */
-    public function setDstRegion(string $dstRegion) {
+    public function setDstRegion(string $dstRegion)
+    {
         $this->set("DstRegion", $dstRegion);
     }
 
@@ -124,7 +135,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @return string|null
      */
-    public function getDstProjectId(): string {
+    public function getDstProjectId(): string
+    {
         return $this->get("DstProjectId");
     }
 
@@ -133,9 +145,8 @@ class DeleteVPCIntercomRequest extends Request {
      *
      * @param string $dstProjectId
      */
-    public function setDstProjectId(string $dstProjectId) {
+    public function setDstProjectId(string $dstProjectId)
+    {
         $this->set("DstProjectId", $dstProjectId);
     }
-
-
 }

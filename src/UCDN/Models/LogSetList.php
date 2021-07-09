@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class LogSetList extends Response {
+class LogSetList extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class LogSetList extends Response {
      *
      * @return string|null
      */
-    public function getDomain(): string {
+    public function getDomain(): string
+    {
         return $this->get("Domain");
     }
 
@@ -35,7 +37,8 @@ class LogSetList extends Response {
      *
      * @param string $domain
      */
-    public function setDomain(string $domain) {
+    public function setDomain(string $domain)
+    {
         $this->set("Domain", $domain);
     }
 
@@ -44,7 +47,8 @@ class LogSetList extends Response {
      *
      * @return LogSetInfo[]|null
      */
-    public function getLogs(): array {
+    public function getLogs(): array
+    {
         $items = $this->get("Logs") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -58,13 +62,12 @@ class LogSetList extends Response {
      *
      * @param LogSetInfo[] $logs
      */
-    public function setLogs(array $logs) {
+    public function setLogs(array $logs)
+    {
         $result = [];
         foreach ($logs as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -21,7 +21,8 @@ use UCloud\UDB\Models\UDBInstanceSet;
 use UCloud\UDB\Models\UDBSlaveInstanceSet;
 use UCloud\UDB\Models\UFileDataSet;
 
-class DescribeUDBInstanceResponse extends Response {
+class DescribeUDBInstanceResponse extends Response
+{
     
 
     /**
@@ -29,7 +30,8 @@ class DescribeUDBInstanceResponse extends Response {
      *
      * @return UDBInstanceSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -43,7 +45,8 @@ class DescribeUDBInstanceResponse extends Response {
      *
      * @param UDBInstanceSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -54,9 +57,10 @@ class DescribeUDBInstanceResponse extends Response {
     /**
      * TotalCount: 用户db组的数量，对于 mysql: 主从结对数量，没有slave，则只有master mongodb: 副本集数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -65,9 +69,8 @@ class DescribeUDBInstanceResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UFS\Models;
 
 use UCloud\Core\Response\Response;
 
-class UFSVolumeInfo2 extends Response {
+class UFSVolumeInfo2 extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @return string|null
      */
-    public function getVolumeName(): string {
+    public function getVolumeName(): string
+    {
         return $this->get("VolumeName");
     }
 
@@ -35,7 +37,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param string $volumeName
      */
-    public function setVolumeName(string $volumeName) {
+    public function setVolumeName(string $volumeName)
+    {
         $this->set("VolumeName", $volumeName);
     }
 
@@ -44,7 +47,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @return string|null
      */
-    public function getVolumeId(): string {
+    public function getVolumeId(): string
+    {
         return $this->get("VolumeId");
     }
 
@@ -53,16 +57,18 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param string $volumeId
      */
-    public function setVolumeId(string $volumeId) {
+    public function setVolumeId(string $volumeId)
+    {
         $this->set("VolumeId", $volumeId);
     }
 
     /**
      * TotalMountPointNum: 当前文件系统已创建的挂载点数目
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalMountPointNum(): int {
+    public function getTotalMountPointNum(): int
+    {
         return $this->get("TotalMountPointNum");
     }
 
@@ -71,16 +77,18 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param int $totalMountPointNum
      */
-    public function setTotalMountPointNum(int $totalMountPointNum) {
+    public function setTotalMountPointNum(int $totalMountPointNum)
+    {
         $this->set("TotalMountPointNum", $totalMountPointNum);
     }
 
     /**
      * MaxMountPointNum: 文件系统允许创建的最大挂载点数目
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMaxMountPointNum(): int {
+    public function getMaxMountPointNum(): int
+    {
         return $this->get("MaxMountPointNum");
     }
 
@@ -89,7 +97,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param int $maxMountPointNum
      */
-    public function setMaxMountPointNum(int $maxMountPointNum) {
+    public function setMaxMountPointNum(int $maxMountPointNum)
+    {
         $this->set("MaxMountPointNum", $maxMountPointNum);
     }
 
@@ -98,7 +107,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @return string|null
      */
-    public function getStorageType(): string {
+    public function getStorageType(): string
+    {
         return $this->get("StorageType");
     }
 
@@ -107,7 +117,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param string $storageType
      */
-    public function setStorageType(string $storageType) {
+    public function setStorageType(string $storageType)
+    {
         $this->set("StorageType", $storageType);
     }
 
@@ -116,7 +127,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @return string|null
      */
-    public function getProtocolType(): string {
+    public function getProtocolType(): string
+    {
         return $this->get("ProtocolType");
     }
 
@@ -125,7 +137,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param string $protocolType
      */
-    public function setProtocolType(string $protocolType) {
+    public function setProtocolType(string $protocolType)
+    {
         $this->set("ProtocolType", $protocolType);
     }
 
@@ -134,7 +147,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -143,7 +157,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -152,7 +167,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -161,16 +177,18 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
      * CreateTime: 文件系统创建时间（unix时间戳）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -179,16 +197,18 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ExpiredTime: 文件系统过期时间（unix时间戳）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpiredTime(): int {
+    public function getExpiredTime(): int
+    {
         return $this->get("ExpiredTime");
     }
 
@@ -197,16 +217,18 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime(int $expiredTime) {
+    public function setExpiredTime(int $expiredTime)
+    {
         $this->set("ExpiredTime", $expiredTime);
     }
 
     /**
      * Size: 文件系统大小，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -215,16 +237,18 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
     /**
      * UsedSize: 文件系统当前使用容量，单位GB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getUsedSize(): int {
+    public function getUsedSize(): int
+    {
         return $this->get("UsedSize");
     }
 
@@ -233,7 +257,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param int $usedSize
      */
-    public function setUsedSize(int $usedSize) {
+    public function setUsedSize(int $usedSize)
+    {
         $this->set("UsedSize", $usedSize);
     }
 
@@ -242,7 +267,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @return string|null
      */
-    public function getIsExpired(): string {
+    public function getIsExpired(): string
+    {
         return $this->get("IsExpired");
     }
 
@@ -251,9 +277,8 @@ class UFSVolumeInfo2 extends Response {
      *
      * @param string $isExpired
      */
-    public function setIsExpired(string $isExpired) {
+    public function setIsExpired(string $isExpired)
+    {
         $this->set("IsExpired", $isExpired);
     }
-
-
 }

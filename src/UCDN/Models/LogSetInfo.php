@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class LogSetInfo extends Response {
+class LogSetInfo extends Response
+{
     
 
     /**
      * Time: 日志时间UnixTime
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,7 +37,8 @@ class LogSetInfo extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
@@ -44,7 +47,8 @@ class LogSetInfo extends Response {
      *
      * @return string[]|null
      */
-    public function getCnLog(): array {
+    public function getCnLog(): array
+    {
         return $this->get("CnLog");
     }
 
@@ -53,7 +57,8 @@ class LogSetInfo extends Response {
      *
      * @param string[] $cnLog
      */
-    public function setCnLog(array $cnLog) {
+    public function setCnLog(array $cnLog)
+    {
         $this->set("CnLog", $cnLog);
     }
 
@@ -62,7 +67,8 @@ class LogSetInfo extends Response {
      *
      * @return string[]|null
      */
-    public function getAbroadLog(): array {
+    public function getAbroadLog(): array
+    {
         return $this->get("AbroadLog");
     }
 
@@ -71,9 +77,8 @@ class LogSetInfo extends Response {
      *
      * @param string[] $abroadLog
      */
-    public function setAbroadLog(array $abroadLog) {
+    public function setAbroadLog(array $abroadLog)
+    {
         $this->set("AbroadLog", $abroadLog);
     }
-
-
 }

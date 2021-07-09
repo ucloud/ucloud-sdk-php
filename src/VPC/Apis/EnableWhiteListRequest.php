@@ -18,7 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
 
-class EnableWhiteListRequest extends Request {
+class EnableWhiteListRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "EnableWhiteList"]);
@@ -34,7 +35,8 @@ class EnableWhiteListRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class EnableWhiteListRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class EnableWhiteListRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class EnableWhiteListRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class EnableWhiteListRequest extends Request {
      *
      * @return string|null
      */
-    public function getNATGWId(): string {
+    public function getNATGWId(): string
+    {
         return $this->get("NATGWId");
     }
 
@@ -79,16 +85,18 @@ class EnableWhiteListRequest extends Request {
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId) {
+    public function setNATGWId(string $natgwId)
+    {
         $this->set("NATGWId", $natgwId);
     }
 
     /**
      * IfOpen: 白名单开关标记。0：关闭；1：开启。默认为0
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getIfOpen(): int {
+    public function getIfOpen(): int
+    {
         return $this->get("IfOpen");
     }
 
@@ -97,9 +105,8 @@ class EnableWhiteListRequest extends Request {
      *
      * @param int $ifOpen
      */
-    public function setIfOpen(int $ifOpen) {
+    public function setIfOpen(int $ifOpen)
+    {
         $this->set("IfOpen", $ifOpen);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class GlobalSSHInfo extends Response {
+class GlobalSSHInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return string|null
      */
-    public function getInstanceId(): string {
+    public function getInstanceId(): string
+    {
         return $this->get("InstanceId");
     }
 
@@ -35,7 +37,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId) {
+    public function setInstanceId(string $instanceId)
+    {
         $this->set("InstanceId", $instanceId);
     }
 
@@ -44,7 +47,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return string|null
      */
-    public function getInstanceType(): string {
+    public function getInstanceType(): string
+    {
         return $this->get("InstanceType");
     }
 
@@ -53,7 +57,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType) {
+    public function setInstanceType(string $instanceType)
+    {
         $this->set("InstanceType", $instanceType);
     }
 
@@ -62,7 +67,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return string|null
      */
-    public function getAcceleratingDomain(): string {
+    public function getAcceleratingDomain(): string
+    {
         return $this->get("AcceleratingDomain");
     }
 
@@ -71,7 +77,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param string $acceleratingDomain
      */
-    public function setAcceleratingDomain(string $acceleratingDomain) {
+    public function setAcceleratingDomain(string $acceleratingDomain)
+    {
         $this->set("AcceleratingDomain", $acceleratingDomain);
     }
 
@@ -80,7 +87,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return string|null
      */
-    public function getArea(): string {
+    public function getArea(): string
+    {
         return $this->get("Area");
     }
 
@@ -89,7 +97,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param string $area
      */
-    public function setArea(string $area) {
+    public function setArea(string $area)
+    {
         $this->set("Area", $area);
     }
 
@@ -98,7 +107,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return string|null
      */
-    public function getTargetIP(): string {
+    public function getTargetIP(): string
+    {
         return $this->get("TargetIP");
     }
 
@@ -107,7 +117,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param string $targetIP
      */
-    public function setTargetIP(string $targetIP) {
+    public function setTargetIP(string $targetIP)
+    {
         $this->set("TargetIP", $targetIP);
     }
 
@@ -116,7 +127,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -125,16 +137,18 @@ class GlobalSSHInfo extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
     /**
      * Port: 源站服务器监听的SSH端口，windows系统为RDP端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -143,16 +157,18 @@ class GlobalSSHInfo extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
     /**
      * GlobalSSHPort: InstanceType等于Free时，由系统自动分配，不等于源站Port值。InstanceType不等于Free时，与源站Port值相同。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getGlobalSSHPort(): int {
+    public function getGlobalSSHPort(): int
+    {
         return $this->get("GlobalSSHPort");
     }
 
@@ -161,7 +177,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param int $globalSSHPort
      */
-    public function setGlobalSSHPort(int $globalSSHPort) {
+    public function setGlobalSSHPort(int $globalSSHPort)
+    {
         $this->set("GlobalSSHPort", $globalSSHPort);
     }
 
@@ -170,7 +187,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -179,16 +197,18 @@ class GlobalSSHInfo extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * CreateTime: 资源创建时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -197,16 +217,18 @@ class GlobalSSHInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ExpireTime: 资源过期时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -215,7 +237,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
@@ -224,7 +247,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return boolean|null
      */
-    public function getExpire(): bool {
+    public function getExpire(): bool
+    {
         return $this->get("Expire");
     }
 
@@ -233,16 +257,18 @@ class GlobalSSHInfo extends Response {
      *
      * @param boolean $expire
      */
-    public function setExpire(bool $expire) {
+    public function setExpire(bool $expire)
+    {
         $this->set("Expire", $expire);
     }
 
     /**
      * BandwidthPackage: globalssh Ultimate带宽包大小
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidthPackage(): int {
+    public function getBandwidthPackage(): int
+    {
         return $this->get("BandwidthPackage");
     }
 
@@ -251,7 +277,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param int $bandwidthPackage
      */
-    public function setBandwidthPackage(int $bandwidthPackage) {
+    public function setBandwidthPackage(int $bandwidthPackage)
+    {
         $this->set("BandwidthPackage", $bandwidthPackage);
     }
 
@@ -260,7 +287,8 @@ class GlobalSSHInfo extends Response {
      *
      * @return string|null
      */
-    public function getForwardRegion(): string {
+    public function getForwardRegion(): string
+    {
         return $this->get("ForwardRegion");
     }
 
@@ -269,9 +297,8 @@ class GlobalSSHInfo extends Response {
      *
      * @param string $forwardRegion
      */
-    public function setForwardRegion(string $forwardRegion) {
+    public function setForwardRegion(string $forwardRegion)
+    {
         $this->set("ForwardRegion", $forwardRegion);
     }
-
-
 }

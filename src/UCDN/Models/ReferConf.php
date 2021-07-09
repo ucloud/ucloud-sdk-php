@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class ReferConf extends Response {
+class ReferConf extends Response
+{
     
 
     /**
      * ReferType: Refer防盗链配置  0白名单，1黑名单
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getReferType(): int {
+    public function getReferType(): int
+    {
         return $this->get("ReferType");
     }
 
@@ -35,16 +37,18 @@ class ReferConf extends Response {
      *
      * @param int $referType
      */
-    public function setReferType(int $referType) {
+    public function setReferType(int $referType)
+    {
         $this->set("ReferType", $referType);
     }
 
     /**
      * NullRefer: ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getNullRefer(): int {
+    public function getNullRefer(): int
+    {
         return $this->get("NullRefer");
     }
 
@@ -53,7 +57,8 @@ class ReferConf extends Response {
      *
      * @param int $nullRefer
      */
-    public function setNullRefer(int $nullRefer) {
+    public function setNullRefer(int $nullRefer)
+    {
         $this->set("NullRefer", $nullRefer);
     }
 
@@ -62,7 +67,8 @@ class ReferConf extends Response {
      *
      * @return string[]|null
      */
-    public function getReferList(): array {
+    public function getReferList(): array
+    {
         return $this->get("ReferList");
     }
 
@@ -71,9 +77,8 @@ class ReferConf extends Response {
      *
      * @param string[] $referList
      */
-    public function setReferList(array $referList) {
+    public function setReferList(array $referList)
+    {
         $this->set("ReferList", $referList);
     }
-
-
 }

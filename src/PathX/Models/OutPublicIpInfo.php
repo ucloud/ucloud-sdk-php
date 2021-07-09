@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class OutPublicIpInfo extends Response {
+class OutPublicIpInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class OutPublicIpInfo extends Response {
      *
      * @return string|null
      */
-    public function getIP(): string {
+    public function getIP(): string
+    {
         return $this->get("IP");
     }
 
@@ -35,7 +37,8 @@ class OutPublicIpInfo extends Response {
      *
      * @param string $ip
      */
-    public function setIP(string $ip) {
+    public function setIP(string $ip)
+    {
         $this->set("IP", $ip);
     }
 
@@ -44,7 +47,8 @@ class OutPublicIpInfo extends Response {
      *
      * @return string|null
      */
-    public function getArea(): string {
+    public function getArea(): string
+    {
         return $this->get("Area");
     }
 
@@ -53,9 +57,8 @@ class OutPublicIpInfo extends Response {
      *
      * @param string $area
      */
-    public function setArea(string $area) {
+    public function setArea(string $area)
+    {
         $this->set("Area", $area);
     }
-
-
 }

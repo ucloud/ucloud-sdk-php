@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUEcHolderResponse extends Response {
+class DeleteUEcHolderResponse extends Response
+{
     
 
 

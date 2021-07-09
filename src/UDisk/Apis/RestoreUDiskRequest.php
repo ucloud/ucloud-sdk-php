@@ -18,7 +18,8 @@ namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Request\Request;
 
-class RestoreUDiskRequest extends Request {
+class RestoreUDiskRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "RestoreUDisk"]);
@@ -34,7 +35,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDiskId(): string {
+    public function getUDiskId(): string
+    {
         return $this->get("UDiskId");
     }
 
@@ -97,7 +105,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId) {
+    public function setUDiskId(string $uDiskId)
+    {
         $this->set("UDiskId", $uDiskId);
     }
 
@@ -106,7 +115,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @return string|null
      */
-    public function getSnapshotId(): string {
+    public function getSnapshotId(): string
+    {
         return $this->get("SnapshotId");
     }
 
@@ -115,16 +125,18 @@ class RestoreUDiskRequest extends Request {
      *
      * @param string $snapshotId
      */
-    public function setSnapshotId(string $snapshotId) {
+    public function setSnapshotId(string $snapshotId)
+    {
         $this->set("SnapshotId", $snapshotId);
     }
 
     /**
      * SnapshotTime: 指定从方舟恢复的备份时间点
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSnapshotTime(): int {
+    public function getSnapshotTime(): int
+    {
         return $this->get("SnapshotTime");
     }
 
@@ -133,9 +145,8 @@ class RestoreUDiskRequest extends Request {
      *
      * @param int $snapshotTime
      */
-    public function setSnapshotTime(int $snapshotTime) {
+    public function setSnapshotTime(int $snapshotTime)
+    {
         $this->set("SnapshotTime", $snapshotTime);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateUEcHolderResponse extends Response {
+class CreateUEcHolderResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateUEcHolderResponse extends Response {
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
@@ -35,9 +37,8 @@ class CreateUEcHolderResponse extends Response {
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
-
-
 }

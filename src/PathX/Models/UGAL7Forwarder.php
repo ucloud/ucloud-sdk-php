@@ -18,15 +18,17 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class UGAL7Forwarder extends Response {
+class UGAL7Forwarder extends Response
+{
     
 
     /**
      * Port: 接入端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPort(): int {
+    public function getPort(): int
+    {
         return $this->get("Port");
     }
 
@@ -35,7 +37,8 @@ class UGAL7Forwarder extends Response {
      *
      * @param int $port
      */
-    public function setPort(int $port) {
+    public function setPort(int $port)
+    {
         $this->set("Port", $port);
     }
 
@@ -44,7 +47,8 @@ class UGAL7Forwarder extends Response {
      *
      * @return string|null
      */
-    public function getProtocol(): string {
+    public function getProtocol(): string
+    {
         return $this->get("Protocol");
     }
 
@@ -53,16 +57,18 @@ class UGAL7Forwarder extends Response {
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol) {
+    public function setProtocol(string $protocol)
+    {
         $this->set("Protocol", $protocol);
     }
 
     /**
      * RSPort: RSPort，源站监听端口
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRSPort(): int {
+    public function getRSPort(): int
+    {
         return $this->get("RSPort");
     }
 
@@ -71,7 +77,8 @@ class UGAL7Forwarder extends Response {
      *
      * @param int $rsPort
      */
-    public function setRSPort(int $rsPort) {
+    public function setRSPort(int $rsPort)
+    {
         $this->set("RSPort", $rsPort);
     }
 
@@ -80,7 +87,8 @@ class UGAL7Forwarder extends Response {
      *
      * @return string|null
      */
-    public function getSSLId(): string {
+    public function getSSLId(): string
+    {
         return $this->get("SSLId");
     }
 
@@ -89,7 +97,8 @@ class UGAL7Forwarder extends Response {
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId) {
+    public function setSSLId(string $sslId)
+    {
         $this->set("SSLId", $sslId);
     }
 
@@ -98,7 +107,8 @@ class UGAL7Forwarder extends Response {
      *
      * @return string|null
      */
-    public function getSSLName(): string {
+    public function getSSLName(): string
+    {
         return $this->get("SSLName");
     }
 
@@ -107,9 +117,8 @@ class UGAL7Forwarder extends Response {
      *
      * @param string $sslName
      */
-    public function setSSLName(string $sslName) {
+    public function setSSLName(string $sslName)
+    {
         $this->set("SSLName", $sslName);
     }
-
-
 }

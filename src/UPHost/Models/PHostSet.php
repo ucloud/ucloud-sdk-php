@@ -18,7 +18,8 @@ namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
-class PHostSet extends Response {
+class PHostSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class PHostSet extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getPHostId(): string {
+    public function getPHostId(): string
+    {
         return $this->get("PHostId");
     }
 
@@ -53,7 +57,8 @@ class PHostSet extends Response {
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId) {
+    public function setPHostId(string $pHostId)
+    {
         $this->set("PHostId", $pHostId);
     }
 
@@ -62,7 +67,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getSN(): string {
+    public function getSN(): string
+    {
         return $this->get("SN");
     }
 
@@ -71,7 +77,8 @@ class PHostSet extends Response {
      *
      * @param string $sn
      */
-    public function setSN(string $sn) {
+    public function setSN(string $sn)
+    {
         $this->set("SN", $sn);
     }
 
@@ -80,7 +87,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getPMStatus(): string {
+    public function getPMStatus(): string
+    {
         return $this->get("PMStatus");
     }
 
@@ -89,7 +97,8 @@ class PHostSet extends Response {
      *
      * @param string $pmStatus
      */
-    public function setPMStatus(string $pmStatus) {
+    public function setPMStatus(string $pmStatus)
+    {
         $this->set("PMStatus", $pmStatus);
     }
 
@@ -98,7 +107,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -107,7 +117,8 @@ class PHostSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -116,7 +127,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -125,7 +137,8 @@ class PHostSet extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -134,7 +147,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -143,7 +157,8 @@ class PHostSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -152,7 +167,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getImageName(): string {
+    public function getImageName(): string
+    {
         return $this->get("ImageName");
     }
 
@@ -161,7 +177,8 @@ class PHostSet extends Response {
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName) {
+    public function setImageName(string $imageName)
+    {
         $this->set("ImageName", $imageName);
     }
 
@@ -170,7 +187,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getOSname(): string {
+    public function getOSname(): string
+    {
         return $this->get("OSname");
     }
 
@@ -179,16 +197,18 @@ class PHostSet extends Response {
      *
      * @param string $oSname
      */
-    public function setOSname(string $oSname) {
+    public function setOSname(string $oSname)
+    {
         $this->set("OSname", $oSname);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -197,16 +217,18 @@ class PHostSet extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ExpireTime: 到期时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -215,7 +237,8 @@ class PHostSet extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
@@ -224,7 +247,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -233,7 +257,8 @@ class PHostSet extends Response {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
@@ -242,7 +267,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getPowerState(): string {
+    public function getPowerState(): string
+    {
         return $this->get("PowerState");
     }
 
@@ -251,7 +277,8 @@ class PHostSet extends Response {
      *
      * @param string $powerState
      */
-    public function setPowerState(string $powerState) {
+    public function setPowerState(string $powerState)
+    {
         $this->set("PowerState", $powerState);
     }
 
@@ -260,7 +287,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getPHostType(): string {
+    public function getPHostType(): string
+    {
         return $this->get("PHostType");
     }
 
@@ -269,16 +297,18 @@ class PHostSet extends Response {
      *
      * @param string $pHostType
      */
-    public function setPHostType(string $pHostType) {
+    public function setPHostType(string $pHostType)
+    {
         $this->set("PHostType", $pHostType);
     }
 
     /**
      * Memory: 内存大小，单位：MB
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemory(): int {
+    public function getMemory(): int
+    {
         return $this->get("Memory");
     }
 
@@ -287,7 +317,8 @@ class PHostSet extends Response {
      *
      * @param int $memory
      */
-    public function setMemory(int $memory) {
+    public function setMemory(int $memory)
+    {
         $this->set("Memory", $memory);
     }
 
@@ -296,7 +327,8 @@ class PHostSet extends Response {
      *
      * @return PHostCPUSet|null
      */
-    public function getCPUSet(): PHostCPUSet {
+    public function getCPUSet(): PHostCPUSet
+    {
         return new PHostCPUSet($this->get("CPUSet"));
     }
 
@@ -305,7 +337,8 @@ class PHostSet extends Response {
      *
      * @param PHostCPUSet $cpuSet
      */
-    public function setCPUSet(PHostCPUSet $cpuSet) {
+    public function setCPUSet(PHostCPUSet $cpuSet)
+    {
         $this->set("CPUSet", $cpuSet->getAll());
     }
 
@@ -314,7 +347,8 @@ class PHostSet extends Response {
      *
      * @return PHostDescDiskSet[]|null
      */
-    public function getDiskSet(): array {
+    public function getDiskSet(): array
+    {
         $items = $this->get("DiskSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -328,7 +362,8 @@ class PHostSet extends Response {
      *
      * @param PHostDescDiskSet[] $diskSet
      */
-    public function setDiskSet(array $diskSet) {
+    public function setDiskSet(array $diskSet)
+    {
         $result = [];
         foreach ($diskSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -341,7 +376,8 @@ class PHostSet extends Response {
      *
      * @return PHostIPSet[]|null
      */
-    public function getIPSet(): array {
+    public function getIPSet(): array
+    {
         $items = $this->get("IPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -355,7 +391,8 @@ class PHostSet extends Response {
      *
      * @param PHostIPSet[] $ipSet
      */
-    public function setIPSet(array $ipSet) {
+    public function setIPSet(array $ipSet)
+    {
         $result = [];
         foreach ($ipSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -368,7 +405,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getCluster(): string {
+    public function getCluster(): string
+    {
         return $this->get("Cluster");
     }
 
@@ -377,7 +415,8 @@ class PHostSet extends Response {
      *
      * @param string $cluster
      */
-    public function setCluster(string $cluster) {
+    public function setCluster(string $cluster)
+    {
         $this->set("Cluster", $cluster);
     }
 
@@ -386,7 +425,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getAutoRenew(): string {
+    public function getAutoRenew(): string
+    {
         return $this->get("AutoRenew");
     }
 
@@ -395,7 +435,8 @@ class PHostSet extends Response {
      *
      * @param string $autoRenew
      */
-    public function setAutoRenew(string $autoRenew) {
+    public function setAutoRenew(string $autoRenew)
+    {
         $this->set("AutoRenew", $autoRenew);
     }
 
@@ -404,7 +445,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getIsSupportKVM(): string {
+    public function getIsSupportKVM(): string
+    {
         return $this->get("IsSupportKVM");
     }
 
@@ -413,7 +455,8 @@ class PHostSet extends Response {
      *
      * @param string $isSupportKVM
      */
-    public function setIsSupportKVM(string $isSupportKVM) {
+    public function setIsSupportKVM(string $isSupportKVM)
+    {
         $this->set("IsSupportKVM", $isSupportKVM);
     }
 
@@ -422,7 +465,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getOSType(): string {
+    public function getOSType(): string
+    {
         return $this->get("OSType");
     }
 
@@ -431,7 +475,8 @@ class PHostSet extends Response {
      *
      * @param string $osType
      */
-    public function setOSType(string $osType) {
+    public function setOSType(string $osType)
+    {
         $this->set("OSType", $osType);
     }
 
@@ -440,7 +485,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getComponents(): string {
+    public function getComponents(): string
+    {
         return $this->get("Components");
     }
 
@@ -449,7 +495,8 @@ class PHostSet extends Response {
      *
      * @param string $components
      */
-    public function setComponents(string $components) {
+    public function setComponents(string $components)
+    {
         $this->set("Components", $components);
     }
 
@@ -458,7 +505,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getRaidSupported(): string {
+    public function getRaidSupported(): string
+    {
         return $this->get("RaidSupported");
     }
 
@@ -467,7 +515,8 @@ class PHostSet extends Response {
      *
      * @param string $raidSupported
      */
-    public function setRaidSupported(string $raidSupported) {
+    public function setRaidSupported(string $raidSupported)
+    {
         $this->set("RaidSupported", $raidSupported);
     }
 
@@ -476,7 +525,8 @@ class PHostSet extends Response {
      *
      * @return string|null
      */
-    public function getPhostClass(): string {
+    public function getPhostClass(): string
+    {
         return $this->get("PhostClass");
     }
 
@@ -485,9 +535,8 @@ class PHostSet extends Response {
      *
      * @param string $phostClass
      */
-    public function setPhostClass(string $phostClass) {
+    public function setPhostClass(string $phostClass)
+    {
         $this->set("PhostClass", $phostClass);
     }
-
-
 }

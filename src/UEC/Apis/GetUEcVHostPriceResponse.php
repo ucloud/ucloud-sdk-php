@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class GetUEcVHostPriceResponse extends Response {
+class GetUEcVHostPriceResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class GetUEcVHostPriceResponse extends Response {
      *
      * @return float|null
      */
-    public function getNodePrice(): float {
+    public function getNodePrice(): float
+    {
         return $this->get("NodePrice");
     }
 
@@ -35,7 +37,8 @@ class GetUEcVHostPriceResponse extends Response {
      *
      * @param float $nodePrice
      */
-    public function setNodePrice(float $nodePrice) {
+    public function setNodePrice(float $nodePrice)
+    {
         $this->set("NodePrice", $nodePrice);
     }
 
@@ -44,7 +47,8 @@ class GetUEcVHostPriceResponse extends Response {
      *
      * @return float|null
      */
-    public function getIpPrice(): float {
+    public function getIpPrice(): float
+    {
         return $this->get("IpPrice");
     }
 
@@ -53,9 +57,8 @@ class GetUEcVHostPriceResponse extends Response {
      *
      * @param float $ipPrice
      */
-    public function setIpPrice(float $ipPrice) {
+    public function setIpPrice(float $ipPrice)
+    {
         $this->set("IpPrice", $ipPrice);
     }
-
-
 }

@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class PathXUGAInfo extends Response {
+class PathXUGAInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class PathXUGAInfo extends Response {
      *
      * @return string|null
      */
-    public function getUGAId(): string {
+    public function getUGAId(): string
+    {
         return $this->get("UGAId");
     }
 
@@ -35,7 +37,8 @@ class PathXUGAInfo extends Response {
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId) {
+    public function setUGAId(string $ugaId)
+    {
         $this->set("UGAId", $ugaId);
     }
 
@@ -44,7 +47,8 @@ class PathXUGAInfo extends Response {
      *
      * @return string[]|null
      */
-    public function getIPList(): array {
+    public function getIPList(): array
+    {
         return $this->get("IPList");
     }
 
@@ -53,7 +57,8 @@ class PathXUGAInfo extends Response {
      *
      * @param string[] $ipList
      */
-    public function setIPList(array $ipList) {
+    public function setIPList(array $ipList)
+    {
         $this->set("IPList", $ipList);
     }
 
@@ -62,7 +67,8 @@ class PathXUGAInfo extends Response {
      *
      * @return string|null
      */
-    public function getDomain(): string {
+    public function getDomain(): string
+    {
         return $this->get("Domain");
     }
 
@@ -71,9 +77,8 @@ class PathXUGAInfo extends Response {
      *
      * @param string $domain
      */
-    public function setDomain(string $domain) {
+    public function setDomain(string $domain)
+    {
         $this->set("Domain", $domain);
     }
-
-
 }

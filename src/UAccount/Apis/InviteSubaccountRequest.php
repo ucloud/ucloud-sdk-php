@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
 
-class InviteSubaccountRequest extends Request {
+class InviteSubaccountRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "InviteSubaccount"]);
@@ -35,7 +36,8 @@ class InviteSubaccountRequest extends Request {
      *
      * @return string|null
      */
-    public function getUserEmail(): string {
+    public function getUserEmail(): string
+    {
         return $this->get("UserEmail");
     }
 
@@ -44,7 +46,8 @@ class InviteSubaccountRequest extends Request {
      *
      * @param string $userEmail
      */
-    public function setUserEmail(string $userEmail) {
+    public function setUserEmail(string $userEmail)
+    {
         $this->set("UserEmail", $userEmail);
     }
 
@@ -53,7 +56,8 @@ class InviteSubaccountRequest extends Request {
      *
      * @return string|null
      */
-    public function getUserPhone(): string {
+    public function getUserPhone(): string
+    {
         return $this->get("UserPhone");
     }
 
@@ -62,7 +66,8 @@ class InviteSubaccountRequest extends Request {
      *
      * @param string $userPhone
      */
-    public function setUserPhone(string $userPhone) {
+    public function setUserPhone(string $userPhone)
+    {
         $this->set("UserPhone", $userPhone);
     }
 
@@ -71,7 +76,8 @@ class InviteSubaccountRequest extends Request {
      *
      * @return string|null
      */
-    public function getUserName(): string {
+    public function getUserName(): string
+    {
         return $this->get("UserName");
     }
 
@@ -80,7 +86,8 @@ class InviteSubaccountRequest extends Request {
      *
      * @param string $userName
      */
-    public function setUserName(string $userName) {
+    public function setUserName(string $userName)
+    {
         $this->set("UserName", $userName);
     }
 
@@ -89,7 +96,8 @@ class InviteSubaccountRequest extends Request {
      *
      * @return string|null
      */
-    public function getIsFinance(): string {
+    public function getIsFinance(): string
+    {
         return $this->get("IsFinance");
     }
 
@@ -98,9 +106,8 @@ class InviteSubaccountRequest extends Request {
      *
      * @param string $isFinance
      */
-    public function setIsFinance(string $isFinance) {
+    public function setIsFinance(string $isFinance)
+    {
         $this->set("IsFinance", $isFinance);
     }
-
-
 }

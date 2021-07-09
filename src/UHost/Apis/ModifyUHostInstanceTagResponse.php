@@ -18,7 +18,8 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ModifyUHostInstanceTagResponse extends Response {
+class ModifyUHostInstanceTagResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ModifyUHostInstanceTagResponse extends Response {
      *
      * @return string|null
      */
-    public function getUHostId(): string {
+    public function getUHostId(): string
+    {
         return $this->get("UHostId");
     }
 
@@ -35,9 +37,8 @@ class ModifyUHostInstanceTagResponse extends Response {
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId) {
+    public function setUHostId(string $uHostId)
+    {
         $this->set("UHostId", $uHostId);
     }
-
-
 }

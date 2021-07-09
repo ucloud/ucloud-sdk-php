@@ -18,7 +18,8 @@ namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class UnbindSSLResponse extends Response {
+class UnbindSSLResponse extends Response
+{
     
 
 

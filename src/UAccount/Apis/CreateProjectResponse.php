@@ -18,7 +18,8 @@ namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateProjectResponse extends Response {
+class CreateProjectResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateProjectResponse extends Response {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -35,9 +37,8 @@ class CreateProjectResponse extends Response {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
-
-
 }

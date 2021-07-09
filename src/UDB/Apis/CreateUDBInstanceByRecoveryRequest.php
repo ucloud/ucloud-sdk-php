@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateUDBInstanceByRecoveryRequest extends Request {
+class CreateUDBInstanceByRecoveryRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateUDBInstanceByRecovery"]);
@@ -35,7 +36,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,7 +86,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -89,7 +96,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -98,7 +106,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -107,7 +116,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getSrcDBId(): string {
+    public function getSrcDBId(): string
+    {
         return $this->get("SrcDBId");
     }
 
@@ -116,16 +126,18 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $srcDBId
      */
-    public function setSrcDBId(string $srcDBId) {
+    public function setSrcDBId(string $srcDBId)
+    {
         $this->set("SrcDBId", $srcDBId);
     }
 
     /**
      * RecoveryTime: 恢复到某个时间点的时间戳(UTC时间格式，默认单位秒)
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getRecoveryTime(): int {
+    public function getRecoveryTime(): int
+    {
         return $this->get("RecoveryTime");
     }
 
@@ -134,7 +146,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param int $recoveryTime
      */
-    public function setRecoveryTime(int $recoveryTime) {
+    public function setRecoveryTime(int $recoveryTime)
+    {
         $this->set("RecoveryTime", $recoveryTime);
     }
 
@@ -143,7 +156,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -152,16 +166,18 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长，默认值1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -170,7 +186,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -179,7 +196,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getUseSSD(): bool {
+    public function getUseSSD(): bool
+    {
         return $this->get("UseSSD");
     }
 
@@ -188,7 +206,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD(bool $useSSD) {
+    public function setUseSSD(bool $useSSD)
+    {
         $this->set("UseSSD", $useSSD);
     }
 
@@ -197,7 +216,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getUDBCId(): string {
+    public function getUDBCId(): string
+    {
         return $this->get("UDBCId");
     }
 
@@ -206,7 +226,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $udbcId
      */
-    public function setUDBCId(string $udbcId) {
+    public function setUDBCId(string $udbcId)
+    {
         $this->set("UDBCId", $udbcId);
     }
 
@@ -215,7 +236,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -224,7 +246,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -233,7 +256,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -242,7 +266,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -251,7 +276,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getEnableIpV6(): bool {
+    public function getEnableIpV6(): bool
+    {
         return $this->get("EnableIpV6");
     }
 
@@ -260,7 +286,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param boolean $enableIpV6
      */
-    public function setEnableIpV6(bool $enableIpV6) {
+    public function setEnableIpV6(bool $enableIpV6)
+    {
         $this->set("EnableIpV6", $enableIpV6);
     }
 
@@ -269,7 +296,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -278,9 +306,8 @@ class CreateUDBInstanceByRecoveryRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

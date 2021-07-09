@@ -18,7 +18,8 @@ namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DisassociateEIPWithShareBandwidthRequest extends Request {
+class DisassociateEIPWithShareBandwidthRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DisassociateEIPWithShareBandwidth"]);
@@ -34,7 +35,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -61,7 +65,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -70,7 +75,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string {
+    public function getShareBandwidthId(): string
+    {
         return $this->get("ShareBandwidthId");
     }
 
@@ -79,16 +85,18 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId) {
+    public function setShareBandwidthId(string $shareBandwidthId)
+    {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
 
     /**
      * Bandwidth: 移出共享带宽后，EIP的外网带宽, 单位为Mbps. 各地域带宽范围如下：  流量计费[1-200],带宽计费[1-800]
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBandwidth(): int {
+    public function getBandwidth(): int
+    {
         return $this->get("Bandwidth");
     }
 
@@ -97,7 +105,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth) {
+    public function setBandwidth(int $bandwidth)
+    {
         $this->set("Bandwidth", $bandwidth);
     }
 
@@ -106,7 +115,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getEIPIds(): array {
+    public function getEIPIds(): array
+    {
         return $this->get("EIPIds");
     }
 
@@ -115,7 +125,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string[] $eipIds
      */
-    public function setEIPIds(array $eipIds) {
+    public function setEIPIds(array $eipIds)
+    {
         $this->set("EIPIds", $eipIds);
     }
 
@@ -124,7 +135,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getPayMode(): string {
+    public function getPayMode(): string
+    {
         return $this->get("PayMode");
     }
 
@@ -133,7 +145,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode) {
+    public function setPayMode(string $payMode)
+    {
         $this->set("PayMode", $payMode);
     }
 
@@ -142,7 +155,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @return string|null
      */
-    public function getIPVersion(): string {
+    public function getIPVersion(): string
+    {
         return $this->get("IPVersion");
     }
 
@@ -151,9 +165,8 @@ class DisassociateEIPWithShareBandwidthRequest extends Request {
      *
      * @param string $ipVersion
      */
-    public function setIPVersion(string $ipVersion) {
+    public function setIPVersion(string $ipVersion)
+    {
         $this->set("IPVersion", $ipVersion);
     }
-
-
 }

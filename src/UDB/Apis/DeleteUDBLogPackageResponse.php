@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUDBLogPackageResponse extends Response {
+class DeleteUDBLogPackageResponse extends Response
+{
     
 
 

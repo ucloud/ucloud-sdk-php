@@ -19,7 +19,8 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\HttpCodeInfo;
 
-class GetUcdnDomainOriginHttpCodeResponse extends Response {
+class GetUcdnDomainOriginHttpCodeResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetUcdnDomainOriginHttpCodeResponse extends Response {
      *
      * @return HttpCodeInfo[]|null
      */
-    public function getHttpCodeDetail(): array {
+    public function getHttpCodeDetail(): array
+    {
         $items = $this->get("HttpCodeDetail") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetUcdnDomainOriginHttpCodeResponse extends Response {
      *
      * @param HttpCodeInfo[] $httpCodeDetail
      */
-    public function setHttpCodeDetail(array $httpCodeDetail) {
+    public function setHttpCodeDetail(array $httpCodeDetail)
+    {
         $result = [];
         foreach ($httpCodeDetail as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

@@ -20,7 +20,8 @@ use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\RouteTableInfo;
 use UCloud\VPC\Models\RouteRuleInfo;
 
-class DescribeRouteTableResponse extends Response {
+class DescribeRouteTableResponse extends Response
+{
     
 
     /**
@@ -28,7 +29,8 @@ class DescribeRouteTableResponse extends Response {
      *
      * @return RouteTableInfo[]|null
      */
-    public function getRouteTables(): array {
+    public function getRouteTables(): array
+    {
         $items = $this->get("RouteTables") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -42,7 +44,8 @@ class DescribeRouteTableResponse extends Response {
      *
      * @param RouteTableInfo[] $routeTables
      */
-    public function setRouteTables(array $routeTables) {
+    public function setRouteTables(array $routeTables)
+    {
         $result = [];
         foreach ($routeTables as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,9 +56,10 @@ class DescribeRouteTableResponse extends Response {
     /**
      * TotalCount: RouteTables字段的数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -64,9 +68,8 @@ class DescribeRouteTableResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
-
-
 }

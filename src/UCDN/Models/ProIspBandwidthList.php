@@ -18,15 +18,17 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class ProIspBandwidthList extends Response {
+class ProIspBandwidthList extends Response
+{
     
 
     /**
      * Time: 带宽获取的时间点。格式：时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTime(): int {
+    public function getTime(): int
+    {
         return $this->get("Time");
     }
 
@@ -35,7 +37,8 @@ class ProIspBandwidthList extends Response {
      *
      * @param int $time
      */
-    public function setTime(int $time) {
+    public function setTime(int $time)
+    {
         $this->set("Time", $time);
     }
 
@@ -44,7 +47,8 @@ class ProIspBandwidthList extends Response {
      *
      * @return float|null
      */
-    public function getCdnBandwidth(): float {
+    public function getCdnBandwidth(): float
+    {
         return $this->get("CdnBandwidth");
     }
 
@@ -53,7 +57,8 @@ class ProIspBandwidthList extends Response {
      *
      * @param float $cdnBandwidth
      */
-    public function setCdnBandwidth(float $cdnBandwidth) {
+    public function setCdnBandwidth(float $cdnBandwidth)
+    {
         $this->set("CdnBandwidth", $cdnBandwidth);
     }
 
@@ -62,7 +67,8 @@ class ProIspBandwidthList extends Response {
      *
      * @return float|null
      */
-    public function getTraffic(): float {
+    public function getTraffic(): float
+    {
         return $this->get("Traffic");
     }
 
@@ -71,9 +77,8 @@ class ProIspBandwidthList extends Response {
      *
      * @param float $traffic
      */
-    public function setTraffic(float $traffic) {
+    public function setTraffic(float $traffic)
+    {
         $this->set("Traffic", $traffic);
     }
-
-
 }

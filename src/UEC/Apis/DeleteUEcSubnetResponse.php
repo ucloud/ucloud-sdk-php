@@ -18,7 +18,8 @@ namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUEcSubnetResponse extends Response {
+class DeleteUEcSubnetResponse extends Response
+{
     
 
 

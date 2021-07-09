@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
+class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "UpdateUDBInstanceSlaveBackupSwitch"]);
@@ -34,7 +35,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -43,7 +45,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -52,7 +55,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -61,7 +65,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -70,7 +75,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -79,7 +85,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -88,7 +95,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @return string|null
      */
-    public function getMasterDBId(): string {
+    public function getMasterDBId(): string
+    {
         return $this->get("MasterDBId");
     }
 
@@ -97,16 +105,18 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId(string $masterDBId) {
+    public function setMasterDBId(string $masterDBId)
+    {
         $this->set("MasterDBId", $masterDBId);
     }
 
     /**
      * BackupSwitch: 从库的备份开关，范围[0,1],0表示从库备份功能关闭,1 表示从库备份开关打开。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupSwitch(): int {
+    public function getBackupSwitch(): int
+    {
         return $this->get("BackupSwitch");
     }
 
@@ -115,7 +125,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @param int $backupSwitch
      */
-    public function setBackupSwitch(int $backupSwitch) {
+    public function setBackupSwitch(int $backupSwitch)
+    {
         $this->set("BackupSwitch", $backupSwitch);
     }
 
@@ -124,7 +135,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @return string|null
      */
-    public function getSlaveDBId(): string {
+    public function getSlaveDBId(): string
+    {
         return $this->get("SlaveDBId");
     }
 
@@ -133,9 +145,8 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
      *
      * @param string $slaveDBId
      */
-    public function setSlaveDBId(string $slaveDBId) {
+    public function setSlaveDBId(string $slaveDBId)
+    {
         $this->set("SlaveDBId", $slaveDBId);
     }
-
-
 }

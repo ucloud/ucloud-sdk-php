@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUcdnDomainConfigRequest extends Request {
+class GetUcdnDomainConfigRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetUcdnDomainConfig"]);
@@ -31,7 +32,8 @@ class GetUcdnDomainConfigRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -40,16 +42,18 @@ class GetUcdnDomainConfigRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
      * Offset: 数据偏移量，默认0，非负整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -58,16 +62,18 @@ class GetUcdnDomainConfigRequest extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 返回数据长度， 默认全部，非负整数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -76,7 +82,8 @@ class GetUcdnDomainConfigRequest extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
 
@@ -85,7 +92,8 @@ class GetUcdnDomainConfigRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getDomainId(): array {
+    public function getDomainId(): array
+    {
         return $this->get("DomainId");
     }
 
@@ -94,7 +102,8 @@ class GetUcdnDomainConfigRequest extends Request {
      *
      * @param string[] $domainId
      */
-    public function setDomainId(array $domainId) {
+    public function setDomainId(array $domainId)
+    {
         $this->set("DomainId", $domainId);
     }
 
@@ -103,7 +112,8 @@ class GetUcdnDomainConfigRequest extends Request {
      *
      * @return string|null
      */
-    public function getChannelType(): string {
+    public function getChannelType(): string
+    {
         return $this->get("ChannelType");
     }
 
@@ -112,9 +122,8 @@ class GetUcdnDomainConfigRequest extends Request {
      *
      * @param string $channelType
      */
-    public function setChannelType(string $channelType) {
+    public function setChannelType(string $channelType)
+    {
         $this->set("ChannelType", $channelType);
     }
-
-
 }

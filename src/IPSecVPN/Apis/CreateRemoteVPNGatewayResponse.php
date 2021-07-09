@@ -18,7 +18,8 @@ namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateRemoteVPNGatewayResponse extends Response {
+class CreateRemoteVPNGatewayResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class CreateRemoteVPNGatewayResponse extends Response {
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayId(): string {
+    public function getRemoteVPNGatewayId(): string
+    {
         return $this->get("RemoteVPNGatewayId");
     }
 
@@ -35,9 +37,8 @@ class CreateRemoteVPNGatewayResponse extends Response {
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId) {
+    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
+    {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }
-
-
 }

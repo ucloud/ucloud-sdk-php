@@ -18,7 +18,8 @@ namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUFSVolume2Request extends Request {
+class DescribeUFSVolume2Request extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUFSVolume2"]);
@@ -32,7 +33,8 @@ class DescribeUFSVolume2Request extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -41,7 +43,8 @@ class DescribeUFSVolume2Request extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -50,7 +53,8 @@ class DescribeUFSVolume2Request extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -59,7 +63,8 @@ class DescribeUFSVolume2Request extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -68,7 +73,8 @@ class DescribeUFSVolume2Request extends Request {
      *
      * @return string|null
      */
-    public function getVolumeId(): string {
+    public function getVolumeId(): string
+    {
         return $this->get("VolumeId");
     }
 
@@ -77,16 +83,18 @@ class DescribeUFSVolume2Request extends Request {
      *
      * @param string $volumeId
      */
-    public function setVolumeId(string $volumeId) {
+    public function setVolumeId(string $volumeId)
+    {
         $this->set("VolumeId", $volumeId);
     }
 
     /**
      * Offset: 文件列表起始
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getOffset(): int {
+    public function getOffset(): int
+    {
         return $this->get("Offset");
     }
 
@@ -95,16 +103,18 @@ class DescribeUFSVolume2Request extends Request {
      *
      * @param int $offset
      */
-    public function setOffset(int $offset) {
+    public function setOffset(int $offset)
+    {
         $this->set("Offset", $offset);
     }
 
     /**
      * Limit: 文件列表长度
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getLimit(): int {
+    public function getLimit(): int
+    {
         return $this->get("Limit");
     }
 
@@ -113,9 +123,8 @@ class DescribeUFSVolume2Request extends Request {
      *
      * @param int $limit
      */
-    public function setLimit(int $limit) {
+    public function setLimit(int $limit)
+    {
         $this->set("Limit", $limit);
     }
-
-
 }

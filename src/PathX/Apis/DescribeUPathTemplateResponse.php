@@ -19,7 +19,8 @@ namespace UCloud\PathX\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\PathX\Models\AlarmRuler;
 
-class DescribeUPathTemplateResponse extends Response {
+class DescribeUPathTemplateResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUPathTemplateResponse extends Response {
      *
      * @return AlarmRuler[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUPathTemplateResponse extends Response {
      *
      * @param AlarmRuler[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

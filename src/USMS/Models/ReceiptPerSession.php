@@ -18,7 +18,8 @@ namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
-class ReceiptPerSession extends Response {
+class ReceiptPerSession extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class ReceiptPerSession extends Response {
      *
      * @return string|null
      */
-    public function getSessionNo(): string {
+    public function getSessionNo(): string
+    {
         return $this->get("SessionNo");
     }
 
@@ -35,7 +37,8 @@ class ReceiptPerSession extends Response {
      *
      * @param string $sessionNo
      */
-    public function setSessionNo(string $sessionNo) {
+    public function setSessionNo(string $sessionNo)
+    {
         $this->set("SessionNo", $sessionNo);
     }
 
@@ -44,7 +47,8 @@ class ReceiptPerSession extends Response {
      *
      * @return ReceiptPerPhone[]|null
      */
-    public function getReceiptSet(): array {
+    public function getReceiptSet(): array
+    {
         $items = $this->get("ReceiptSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -58,13 +62,12 @@ class ReceiptPerSession extends Response {
      *
      * @param ReceiptPerPhone[] $receiptSet
      */
-    public function setReceiptSet(array $receiptSet) {
+    public function setReceiptSet(array $receiptSet)
+    {
         $result = [];
         foreach ($receiptSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

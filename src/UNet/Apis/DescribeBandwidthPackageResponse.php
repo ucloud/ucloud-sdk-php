@@ -20,15 +20,17 @@ use UCloud\Core\Response\Response;
 use UCloud\UNet\Models\UnetBandwidthPackageSet;
 use UCloud\UNet\Models\EIPAddrSet;
 
-class DescribeBandwidthPackageResponse extends Response {
+class DescribeBandwidthPackageResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的带宽包总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -37,7 +39,8 @@ class DescribeBandwidthPackageResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -46,7 +49,8 @@ class DescribeBandwidthPackageResponse extends Response {
      *
      * @return UnetBandwidthPackageSet[]|null
      */
-    public function getDataSets(): array {
+    public function getDataSets(): array
+    {
         $items = $this->get("DataSets") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -60,13 +64,12 @@ class DescribeBandwidthPackageResponse extends Response {
      *
      * @param UnetBandwidthPackageSet[] $dataSets
      */
-    public function setDataSets(array $dataSets) {
+    public function setDataSets(array $dataSets)
+    {
         $result = [];
         foreach ($dataSets as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

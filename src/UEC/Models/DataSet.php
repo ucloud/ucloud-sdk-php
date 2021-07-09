@@ -18,7 +18,8 @@ namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
-class DataSet extends Response {
+class DataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getCPUUtilization(): array {
+    public function getCPUUtilization(): array
+    {
         $items = $this->get("CPUUtilization") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -40,7 +42,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $cpuUtilization
      */
-    public function setCPUUtilization(array $cpuUtilization) {
+    public function setCPUUtilization(array $cpuUtilization)
+    {
         $result = [];
         foreach ($cpuUtilization as $i => $item) {
             array_push($result, $item->getAll());
@@ -53,7 +56,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getMemUtilization(): array {
+    public function getMemUtilization(): array
+    {
         $items = $this->get("MemUtilization") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -67,7 +71,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $memUtilization
      */
-    public function setMemUtilization(array $memUtilization) {
+    public function setMemUtilization(array $memUtilization)
+    {
         $result = [];
         foreach ($memUtilization as $i => $item) {
             array_push($result, $item->getAll());
@@ -80,7 +85,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getNICOut(): array {
+    public function getNICOut(): array
+    {
         $items = $this->get("NICOut") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -94,7 +100,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $nicOut
      */
-    public function setNICOut(array $nicOut) {
+    public function setNICOut(array $nicOut)
+    {
         $result = [];
         foreach ($nicOut as $i => $item) {
             array_push($result, $item->getAll());
@@ -107,7 +114,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getNICIn(): array {
+    public function getNICIn(): array
+    {
         $items = $this->get("NICIn") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -121,7 +129,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $nicIn
      */
-    public function setNICIn(array $nicIn) {
+    public function setNICIn(array $nicIn)
+    {
         $result = [];
         foreach ($nicIn as $i => $item) {
             array_push($result, $item->getAll());
@@ -134,7 +143,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getNetPacketOut(): array {
+    public function getNetPacketOut(): array
+    {
         $items = $this->get("NetPacketOut") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -148,7 +158,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $netPacketOut
      */
-    public function setNetPacketOut(array $netPacketOut) {
+    public function setNetPacketOut(array $netPacketOut)
+    {
         $result = [];
         foreach ($netPacketOut as $i => $item) {
             array_push($result, $item->getAll());
@@ -161,7 +172,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getNetPacketIn(): array {
+    public function getNetPacketIn(): array
+    {
         $items = $this->get("NetPacketIn") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -175,7 +187,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $netPacketIn
      */
-    public function setNetPacketIn(array $netPacketIn) {
+    public function setNetPacketIn(array $netPacketIn)
+    {
         $result = [];
         foreach ($netPacketIn as $i => $item) {
             array_push($result, $item->getAll());
@@ -188,7 +201,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getIORead(): array {
+    public function getIORead(): array
+    {
         $items = $this->get("IORead") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -202,7 +216,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $ioRead
      */
-    public function setIORead(array $ioRead) {
+    public function setIORead(array $ioRead)
+    {
         $result = [];
         foreach ($ioRead as $i => $item) {
             array_push($result, $item->getAll());
@@ -215,7 +230,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getIOWrite(): array {
+    public function getIOWrite(): array
+    {
         $items = $this->get("IOWrite") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -229,7 +245,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $ioWrite
      */
-    public function setIOWrite(array $ioWrite) {
+    public function setIOWrite(array $ioWrite)
+    {
         $result = [];
         foreach ($ioWrite as $i => $item) {
             array_push($result, $item->getAll());
@@ -242,7 +259,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getDiskReadOps(): array {
+    public function getDiskReadOps(): array
+    {
         $items = $this->get("DiskReadOps") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -256,7 +274,8 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $diskReadOps
      */
-    public function setDiskReadOps(array $diskReadOps) {
+    public function setDiskReadOps(array $diskReadOps)
+    {
         $result = [];
         foreach ($diskReadOps as $i => $item) {
             array_push($result, $item->getAll());
@@ -269,7 +288,8 @@ class DataSet extends Response {
      *
      * @return MonitorInfo[]|null
      */
-    public function getDiskWriteOps(): array {
+    public function getDiskWriteOps(): array
+    {
         $items = $this->get("DiskWriteOps") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -283,13 +303,12 @@ class DataSet extends Response {
      *
      * @param MonitorInfo[] $diskWriteOps
      */
-    public function setDiskWriteOps(array $diskWriteOps) {
+    public function setDiskWriteOps(array $diskWriteOps)
+    {
         $result = [];
         foreach ($diskWriteOps as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

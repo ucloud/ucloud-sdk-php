@@ -19,15 +19,17 @@ namespace UCloud\UPHost\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UPHost\Models\PHostImageSet;
 
-class DescribePHostImageResponse extends Response {
+class DescribePHostImageResponse extends Response
+{
     
 
     /**
      * TotalCount: 满足条件的镜像总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -36,7 +38,8 @@ class DescribePHostImageResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -45,7 +48,8 @@ class DescribePHostImageResponse extends Response {
      *
      * @return PHostImageSet[]|null
      */
-    public function getImageSet(): array {
+    public function getImageSet(): array
+    {
         $items = $this->get("ImageSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -59,13 +63,12 @@ class DescribePHostImageResponse extends Response {
      *
      * @param PHostImageSet[] $imageSet
      */
-    public function setImageSet(array $imageSet) {
+    public function setImageSet(array $imageSet)
+    {
         $result = [];
         foreach ($imageSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

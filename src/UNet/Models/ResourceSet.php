@@ -18,15 +18,17 @@ namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
-class ResourceSet extends Response {
+class ResourceSet extends Response
+{
     
 
     /**
      * Zone: 可用区
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getZone(): int {
+    public function getZone(): int
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class ResourceSet extends Response {
      *
      * @param int $zone
      */
-    public function setZone(int $zone) {
+    public function setZone(int $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class ResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -53,7 +57,8 @@ class ResourceSet extends Response {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -62,7 +67,8 @@ class ResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getPrivateIP(): string {
+    public function getPrivateIP(): string
+    {
         return $this->get("PrivateIP");
     }
 
@@ -71,7 +77,8 @@ class ResourceSet extends Response {
      *
      * @param string $privateIP
      */
-    public function setPrivateIP(string $privateIP) {
+    public function setPrivateIP(string $privateIP)
+    {
         $this->set("PrivateIP", $privateIP);
     }
 
@@ -80,7 +87,8 @@ class ResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -89,7 +97,8 @@ class ResourceSet extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -98,7 +107,8 @@ class ResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceID(): string {
+    public function getResourceID(): string
+    {
         return $this->get("ResourceID");
     }
 
@@ -107,7 +117,8 @@ class ResourceSet extends Response {
      *
      * @param string $resourceID
      */
-    public function setResourceID(string $resourceID) {
+    public function setResourceID(string $resourceID)
+    {
         $this->set("ResourceID", $resourceID);
     }
 
@@ -116,7 +127,8 @@ class ResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -125,16 +137,18 @@ class ResourceSet extends Response {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
     /**
      * Status: 状态
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStatus(): int {
+    public function getStatus(): int
+    {
         return $this->get("Status");
     }
 
@@ -143,7 +157,8 @@ class ResourceSet extends Response {
      *
      * @param int $status
      */
-    public function setStatus(int $status) {
+    public function setStatus(int $status)
+    {
         $this->set("Status", $status);
     }
 
@@ -152,7 +167,8 @@ class ResourceSet extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -161,9 +177,8 @@ class ResourceSet extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
-
-
 }

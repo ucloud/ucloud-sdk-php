@@ -19,7 +19,8 @@ namespace UCloud\VPC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\NatgwSubnetDataSet;
 
-class ListSubnetForNATGWResponse extends Response {
+class ListSubnetForNATGWResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class ListSubnetForNATGWResponse extends Response {
      *
      * @return NatgwSubnetDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class ListSubnetForNATGWResponse extends Response {
      *
      * @param NatgwSubnetDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

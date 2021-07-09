@@ -19,7 +19,8 @@ namespace UCloud\UCDN\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UCDN\Models\BandwidthTrafficInfo;
 
-class GetUcdnDomainBandwidthV2Response extends Response {
+class GetUcdnDomainBandwidthV2Response extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class GetUcdnDomainBandwidthV2Response extends Response {
      *
      * @return BandwidthTrafficInfo[]|null
      */
-    public function getBandwidthTrafficList(): array {
+    public function getBandwidthTrafficList(): array
+    {
         $items = $this->get("BandwidthTrafficList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class GetUcdnDomainBandwidthV2Response extends Response {
      *
      * @param BandwidthTrafficInfo[] $bandwidthTrafficList
      */
-    public function setBandwidthTrafficList(array $bandwidthTrafficList) {
+    public function setBandwidthTrafficList(array $bandwidthTrafficList)
+    {
         $result = [];
         foreach ($bandwidthTrafficList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

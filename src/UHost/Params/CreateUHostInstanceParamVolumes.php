@@ -18,7 +18,8 @@ namespace UCloud\UHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUHostInstanceParamVolumes extends Request {
+class CreateUHostInstanceParamVolumes extends Request
+{
     
 
 

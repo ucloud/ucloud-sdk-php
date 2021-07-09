@@ -18,7 +18,8 @@ namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
-class UrlProgressInfo extends Response {
+class UrlProgressInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UrlProgressInfo extends Response {
      *
      * @return string|null
      */
-    public function getUrl(): string {
+    public function getUrl(): string
+    {
         return $this->get("Url");
     }
 
@@ -35,16 +37,18 @@ class UrlProgressInfo extends Response {
      *
      * @param string $url
      */
-    public function setUrl(string $url) {
+    public function setUrl(string $url)
+    {
         $this->set("Url", $url);
     }
 
     /**
      * CreateTime: 刷新任务创建的时间。格式为Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -53,16 +57,18 @@ class UrlProgressInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * FinishTime: 任务完成时间。格式为Unix Timestamp
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getFinishTime(): int {
+    public function getFinishTime(): int
+    {
         return $this->get("FinishTime");
     }
 
@@ -71,7 +77,8 @@ class UrlProgressInfo extends Response {
      *
      * @param int $finishTime
      */
-    public function setFinishTime(int $finishTime) {
+    public function setFinishTime(int $finishTime)
+    {
         $this->set("FinishTime", $finishTime);
     }
 
@@ -80,7 +87,8 @@ class UrlProgressInfo extends Response {
      *
      * @return string|null
      */
-    public function getStatus(): string {
+    public function getStatus(): string
+    {
         return $this->get("Status");
     }
 
@@ -89,16 +97,18 @@ class UrlProgressInfo extends Response {
      *
      * @param string $status
      */
-    public function setStatus(string $status) {
+    public function setStatus(string $status)
+    {
         $this->set("Status", $status);
     }
 
     /**
      * Progress: 刷新进度，单位%
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getProgress(): int {
+    public function getProgress(): int
+    {
         return $this->get("Progress");
     }
 
@@ -107,9 +117,8 @@ class UrlProgressInfo extends Response {
      *
      * @param int $progress
      */
-    public function setProgress(int $progress) {
+    public function setProgress(int $progress)
+    {
         $this->set("Progress", $progress);
     }
-
-
 }

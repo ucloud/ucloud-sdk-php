@@ -18,7 +18,8 @@ namespace UCloud\UBill\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetBillDataFileUrlRequest extends Request {
+class GetBillDataFileUrlRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetBillDataFileUrl"]);
@@ -31,9 +32,10 @@ class GetBillDataFileUrlRequest extends Request {
     /**
      * BillPeriod: 账期（时间戳格式）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBillPeriod(): int {
+    public function getBillPeriod(): int
+    {
         return $this->get("BillPeriod");
     }
 
@@ -42,16 +44,18 @@ class GetBillDataFileUrlRequest extends Request {
      *
      * @param int $billPeriod
      */
-    public function setBillPeriod(int $billPeriod) {
+    public function setBillPeriod(int $billPeriod)
+    {
         $this->set("BillPeriod", $billPeriod);
     }
 
     /**
      * BillType: 账单类型，传 0 时获取账单总览报表，传 1 获取账单明细报表
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBillType(): int {
+    public function getBillType(): int
+    {
         return $this->get("BillType");
     }
 
@@ -60,16 +64,18 @@ class GetBillDataFileUrlRequest extends Request {
      *
      * @param int $billType
      */
-    public function setBillType(int $billType) {
+    public function setBillType(int $billType)
+    {
         $this->set("BillType", $billType);
     }
 
     /**
      * PaidType: 获取账单总览报表时，账单的支付状态，传 0 时获取待支付账单，传 1 时获取已支付账单。获取账单明细报表时该参数无效
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getPaidType(): int {
+    public function getPaidType(): int
+    {
         return $this->get("PaidType");
     }
 
@@ -78,7 +84,8 @@ class GetBillDataFileUrlRequest extends Request {
      *
      * @param int $paidType
      */
-    public function setPaidType(int $paidType) {
+    public function setPaidType(int $paidType)
+    {
         $this->set("PaidType", $paidType);
     }
 
@@ -87,7 +94,8 @@ class GetBillDataFileUrlRequest extends Request {
      *
      * @return string|null
      */
-    public function getRequireVersion(): string {
+    public function getRequireVersion(): string
+    {
         return $this->get("RequireVersion");
     }
 
@@ -96,9 +104,8 @@ class GetBillDataFileUrlRequest extends Request {
      *
      * @param string $requireVersion
      */
-    public function setRequireVersion(string $requireVersion) {
+    public function setRequireVersion(string $requireVersion)
+    {
         $this->set("RequireVersion", $requireVersion);
     }
-
-
 }

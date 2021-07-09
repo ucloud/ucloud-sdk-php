@@ -18,7 +18,8 @@ namespace UCloud\UK8S\Models;
 
 use UCloud\Core\Response\Response;
 
-class NodeInfoV2 extends Response {
+class NodeInfoV2 extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getNodeId(): string {
+    public function getNodeId(): string
+    {
         return $this->get("NodeId");
     }
 
@@ -53,7 +57,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId) {
+    public function setNodeId(string $nodeId)
+    {
         $this->set("NodeId", $nodeId);
     }
 
@@ -62,7 +67,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getNodeRole(): string {
+    public function getNodeRole(): string
+    {
         return $this->get("NodeRole");
     }
 
@@ -71,7 +77,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $nodeRole
      */
-    public function setNodeRole(string $nodeRole) {
+    public function setNodeRole(string $nodeRole)
+    {
         $this->set("NodeRole", $nodeRole);
     }
 
@@ -80,7 +87,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getNodeStatus(): string {
+    public function getNodeStatus(): string
+    {
         return $this->get("NodeStatus");
     }
 
@@ -89,7 +97,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $nodeStatus
      */
-    public function setNodeStatus(string $nodeStatus) {
+    public function setNodeStatus(string $nodeStatus)
+    {
         $this->set("NodeStatus", $nodeStatus);
     }
 
@@ -98,7 +107,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getInstanceType(): string {
+    public function getInstanceType(): string
+    {
         return $this->get("InstanceType");
     }
 
@@ -107,7 +117,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType) {
+    public function setInstanceType(string $instanceType)
+    {
         $this->set("InstanceType", $instanceType);
     }
 
@@ -116,7 +127,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getInstanceName(): string {
+    public function getInstanceName(): string
+    {
         return $this->get("InstanceName");
     }
 
@@ -125,7 +137,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $instanceName
      */
-    public function setInstanceName(string $instanceName) {
+    public function setInstanceName(string $instanceName)
+    {
         $this->set("InstanceName", $instanceName);
     }
 
@@ -134,7 +147,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getInstanceId(): string {
+    public function getInstanceId(): string
+    {
         return $this->get("InstanceId");
     }
 
@@ -143,7 +157,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId) {
+    public function setInstanceId(string $instanceId)
+    {
         $this->set("InstanceId", $instanceId);
     }
 
@@ -152,7 +167,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getMachineType(): string {
+    public function getMachineType(): string
+    {
         return $this->get("MachineType");
     }
 
@@ -161,7 +177,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $machineType
      */
-    public function setMachineType(string $machineType) {
+    public function setMachineType(string $machineType)
+    {
         $this->set("MachineType", $machineType);
     }
 
@@ -170,7 +187,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getOsType(): string {
+    public function getOsType(): string
+    {
         return $this->get("OsType");
     }
 
@@ -179,7 +197,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $osType
      */
-    public function setOsType(string $osType) {
+    public function setOsType(string $osType)
+    {
         $this->set("OsType", $osType);
     }
 
@@ -188,7 +207,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getOsName(): string {
+    public function getOsName(): string
+    {
         return $this->get("OsName");
     }
 
@@ -197,16 +217,18 @@ class NodeInfoV2 extends Response {
      *
      * @param string $osName
      */
-    public function setOsName(string $osName) {
+    public function setOsName(string $osName)
+    {
         $this->set("OsName", $osName);
     }
 
     /**
      * CPU: Node节点CPU核数，单位: 个。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCPU(): int {
+    public function getCPU(): int
+    {
         return $this->get("CPU");
     }
 
@@ -215,16 +237,18 @@ class NodeInfoV2 extends Response {
      *
      * @param int $cpu
      */
-    public function setCPU(int $cpu) {
+    public function setCPU(int $cpu)
+    {
         $this->set("CPU", $cpu);
     }
 
     /**
      * Memory: 内存大小，单位: MB。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getMemory(): int {
+    public function getMemory(): int
+    {
         return $this->get("Memory");
     }
 
@@ -233,7 +257,8 @@ class NodeInfoV2 extends Response {
      *
      * @param int $memory
      */
-    public function setMemory(int $memory) {
+    public function setMemory(int $memory)
+    {
         $this->set("Memory", $memory);
     }
 
@@ -242,7 +267,8 @@ class NodeInfoV2 extends Response {
      *
      * @return UHostIPSet[]|null
      */
-    public function getIPSet(): array {
+    public function getIPSet(): array
+    {
         $items = $this->get("IPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -256,7 +282,8 @@ class NodeInfoV2 extends Response {
      *
      * @param UHostIPSet[] $ipSet
      */
-    public function setIPSet(array $ipSet) {
+    public function setIPSet(array $ipSet)
+    {
         $result = [];
         foreach ($ipSet as $i => $item) {
             array_push($result, $item->getAll());
@@ -267,9 +294,10 @@ class NodeInfoV2 extends Response {
     /**
      * CreateTime: 节点创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -278,16 +306,18 @@ class NodeInfoV2 extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
     /**
      * ExpireTime: 节点计费到期时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getExpireTime(): int {
+    public function getExpireTime(): int
+    {
         return $this->get("ExpireTime");
     }
 
@@ -296,7 +326,8 @@ class NodeInfoV2 extends Response {
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime) {
+    public function setExpireTime(int $expireTime)
+    {
         $this->set("ExpireTime", $expireTime);
     }
 
@@ -305,7 +336,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getAsgId(): string {
+    public function getAsgId(): string
+    {
         return $this->get("AsgId");
     }
 
@@ -314,7 +346,8 @@ class NodeInfoV2 extends Response {
      *
      * @param string $asgId
      */
-    public function setAsgId(string $asgId) {
+    public function setAsgId(string $asgId)
+    {
         $this->set("AsgId", $asgId);
     }
 
@@ -323,7 +356,8 @@ class NodeInfoV2 extends Response {
      *
      * @return boolean|null
      */
-    public function getUnschedulable(): bool {
+    public function getUnschedulable(): bool
+    {
         return $this->get("Unschedulable");
     }
 
@@ -332,7 +366,8 @@ class NodeInfoV2 extends Response {
      *
      * @param boolean $unschedulable
      */
-    public function setUnschedulable(bool $unschedulable) {
+    public function setUnschedulable(bool $unschedulable)
+    {
         $this->set("Unschedulable", $unschedulable);
     }
 
@@ -341,7 +376,8 @@ class NodeInfoV2 extends Response {
      *
      * @return KubeProxy|null
      */
-    public function getKubeProxy(): KubeProxy {
+    public function getKubeProxy(): KubeProxy
+    {
         return new KubeProxy($this->get("KubeProxy"));
     }
 
@@ -350,7 +386,8 @@ class NodeInfoV2 extends Response {
      *
      * @param KubeProxy $kubeProxy
      */
-    public function setKubeProxy(KubeProxy $kubeProxy) {
+    public function setKubeProxy(KubeProxy $kubeProxy)
+    {
         $this->set("KubeProxy", $kubeProxy->getAll());
     }
 
@@ -359,7 +396,8 @@ class NodeInfoV2 extends Response {
      *
      * @return string|null
      */
-    public function getNodeLogInfo(): string {
+    public function getNodeLogInfo(): string
+    {
         return $this->get("NodeLogInfo");
     }
 
@@ -368,16 +406,18 @@ class NodeInfoV2 extends Response {
      *
      * @param string $nodeLogInfo
      */
-    public function setNodeLogInfo(string $nodeLogInfo) {
+    public function setNodeLogInfo(string $nodeLogInfo)
+    {
         $this->set("NodeLogInfo", $nodeLogInfo);
     }
 
     /**
      * GPU: 节点的GPU颗数。
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getGPU(): int {
+    public function getGPU(): int
+    {
         return $this->get("GPU");
     }
 
@@ -386,9 +426,8 @@ class NodeInfoV2 extends Response {
      *
      * @param int $gpu
      */
-    public function setGPU(int $gpu) {
+    public function setGPU(int $gpu)
+    {
         $this->set("GPU", $gpu);
     }
-
-
 }

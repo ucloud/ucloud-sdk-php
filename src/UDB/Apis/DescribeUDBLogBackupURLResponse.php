@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DescribeUDBLogBackupURLResponse extends Response {
+class DescribeUDBLogBackupURLResponse extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class DescribeUDBLogBackupURLResponse extends Response {
      *
      * @return string|null
      */
-    public function getBackupPath(): string {
+    public function getBackupPath(): string
+    {
         return $this->get("BackupPath");
     }
 
@@ -35,7 +37,8 @@ class DescribeUDBLogBackupURLResponse extends Response {
      *
      * @param string $backupPath
      */
-    public function setBackupPath(string $backupPath) {
+    public function setBackupPath(string $backupPath)
+    {
         $this->set("BackupPath", $backupPath);
     }
 
@@ -44,7 +47,8 @@ class DescribeUDBLogBackupURLResponse extends Response {
      *
      * @return string|null
      */
-    public function getUsernetPath(): string {
+    public function getUsernetPath(): string
+    {
         return $this->get("UsernetPath");
     }
 
@@ -53,9 +57,8 @@ class DescribeUDBLogBackupURLResponse extends Response {
      *
      * @param string $usernetPath
      */
-    public function setUsernetPath(string $usernetPath) {
+    public function setUsernetPath(string $usernetPath)
+    {
         $this->set("UsernetPath", $usernetPath);
     }
-
-
 }

@@ -19,7 +19,8 @@ namespace UCloud\UEC\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UEC\Models\IdcInfo;
 
-class DescribeUEcHolderIDCResponse extends Response {
+class DescribeUEcHolderIDCResponse extends Response
+{
     
 
     /**
@@ -27,7 +28,8 @@ class DescribeUEcHolderIDCResponse extends Response {
      *
      * @return IdcInfo[]|null
      */
-    public function getIdcList(): array {
+    public function getIdcList(): array
+    {
         $items = $this->get("IdcList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -41,13 +43,12 @@ class DescribeUEcHolderIDCResponse extends Response {
      *
      * @param IdcInfo[] $idcList
      */
-    public function setIdcList(array $idcList) {
+    public function setIdcList(array $idcList)
+    {
         $result = [];
         foreach ($idcList as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

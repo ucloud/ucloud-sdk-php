@@ -18,7 +18,8 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DescribeUDBTypeRequest extends Request {
+class DescribeUDBTypeRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeUDBType"]);
@@ -33,7 +34,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -42,7 +44,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -51,7 +54,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -60,7 +64,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -69,7 +74,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackupZone(): string {
+    public function getBackupZone(): string
+    {
         return $this->get("BackupZone");
     }
 
@@ -78,7 +84,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @param string $backupZone
      */
-    public function setBackupZone(string $backupZone) {
+    public function setBackupZone(string $backupZone)
+    {
         $this->set("BackupZone", $backupZone);
     }
 
@@ -87,7 +94,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getDBClusterType(): string {
+    public function getDBClusterType(): string
+    {
         return $this->get("DBClusterType");
     }
 
@@ -96,7 +104,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @param string $dbClusterType
      */
-    public function setDBClusterType(string $dbClusterType) {
+    public function setDBClusterType(string $dbClusterType)
+    {
         $this->set("DBClusterType", $dbClusterType);
     }
 
@@ -105,7 +114,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getInstanceMode(): string {
+    public function getInstanceMode(): string
+    {
         return $this->get("InstanceMode");
     }
 
@@ -114,7 +124,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode(string $instanceMode) {
+    public function setInstanceMode(string $instanceMode)
+    {
         $this->set("InstanceMode", $instanceMode);
     }
 
@@ -123,7 +134,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getDiskType(): string {
+    public function getDiskType(): string
+    {
         return $this->get("DiskType");
     }
 
@@ -132,7 +144,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @param string $diskType
      */
-    public function setDiskType(string $diskType) {
+    public function setDiskType(string $diskType)
+    {
         $this->set("DiskType", $diskType);
     }
 
@@ -141,7 +154,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @return string|null
      */
-    public function getCompatibleWithDBType(): string {
+    public function getCompatibleWithDBType(): string
+    {
         return $this->get("CompatibleWithDBType");
     }
 
@@ -150,9 +164,8 @@ class DescribeUDBTypeRequest extends Request {
      *
      * @param string $compatibleWithDBType
      */
-    public function setCompatibleWithDBType(string $compatibleWithDBType) {
+    public function setCompatibleWithDBType(string $compatibleWithDBType)
+    {
         $this->set("CompatibleWithDBType", $compatibleWithDBType);
     }
-
-
 }

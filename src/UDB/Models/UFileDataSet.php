@@ -18,7 +18,8 @@ namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
-class UFileDataSet extends Response {
+class UFileDataSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class UFileDataSet extends Response {
      *
      * @return string|null
      */
-    public function getTokenID(): string {
+    public function getTokenID(): string
+    {
         return $this->get("TokenID");
     }
 
@@ -35,7 +37,8 @@ class UFileDataSet extends Response {
      *
      * @param string $tokenID
      */
-    public function setTokenID(string $tokenID) {
+    public function setTokenID(string $tokenID)
+    {
         $this->set("TokenID", $tokenID);
     }
 
@@ -44,7 +47,8 @@ class UFileDataSet extends Response {
      *
      * @return string|null
      */
-    public function getBucket(): string {
+    public function getBucket(): string
+    {
         return $this->get("Bucket");
     }
 
@@ -53,9 +57,8 @@ class UFileDataSet extends Response {
      *
      * @param string $bucket
      */
-    public function setBucket(string $bucket) {
+    public function setBucket(string $bucket)
+    {
         $this->set("Bucket", $bucket);
     }
-
-
 }

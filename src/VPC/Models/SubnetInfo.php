@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class SubnetInfo extends Response {
+class SubnetInfo extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -35,7 +37,8 @@ class SubnetInfo extends Response {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -44,7 +47,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getIPv6Network(): string {
+    public function getIPv6Network(): string
+    {
         return $this->get("IPv6Network");
     }
 
@@ -53,7 +57,8 @@ class SubnetInfo extends Response {
      *
      * @param string $iPv6Network
      */
-    public function setIPv6Network(string $iPv6Network) {
+    public function setIPv6Network(string $iPv6Network)
+    {
         $this->set("IPv6Network", $iPv6Network);
     }
 
@@ -62,7 +67,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -71,7 +77,8 @@ class SubnetInfo extends Response {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -80,7 +87,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getVPCName(): string {
+    public function getVPCName(): string
+    {
         return $this->get("VPCName");
     }
 
@@ -89,7 +97,8 @@ class SubnetInfo extends Response {
      *
      * @param string $vpcName
      */
-    public function setVPCName(string $vpcName) {
+    public function setVPCName(string $vpcName)
+    {
         $this->set("VPCName", $vpcName);
     }
 
@@ -98,7 +107,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -107,7 +117,8 @@ class SubnetInfo extends Response {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -116,7 +127,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubnetName(): string {
+    public function getSubnetName(): string
+    {
         return $this->get("SubnetName");
     }
 
@@ -125,7 +137,8 @@ class SubnetInfo extends Response {
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName) {
+    public function setSubnetName(string $subnetName)
+    {
         $this->set("SubnetName", $subnetName);
     }
 
@@ -134,7 +147,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getRemark(): string {
+    public function getRemark(): string
+    {
         return $this->get("Remark");
     }
 
@@ -143,7 +157,8 @@ class SubnetInfo extends Response {
      *
      * @param string $remark
      */
-    public function setRemark(string $remark) {
+    public function setRemark(string $remark)
+    {
         $this->set("Remark", $remark);
     }
 
@@ -152,7 +167,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -161,16 +177,18 @@ class SubnetInfo extends Response {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
     /**
      * SubnetType: 子网类型
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSubnetType(): int {
+    public function getSubnetType(): int
+    {
         return $this->get("SubnetType");
     }
 
@@ -179,7 +197,8 @@ class SubnetInfo extends Response {
      *
      * @param int $subnetType
      */
-    public function setSubnetType(int $subnetType) {
+    public function setSubnetType(int $subnetType)
+    {
         $this->set("SubnetType", $subnetType);
     }
 
@@ -188,7 +207,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getSubnet(): string {
+    public function getSubnet(): string
+    {
         return $this->get("Subnet");
     }
 
@@ -197,7 +217,8 @@ class SubnetInfo extends Response {
      *
      * @param string $subnet
      */
-    public function setSubnet(string $subnet) {
+    public function setSubnet(string $subnet)
+    {
         $this->set("Subnet", $subnet);
     }
 
@@ -206,7 +227,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getNetmask(): string {
+    public function getNetmask(): string
+    {
         return $this->get("Netmask");
     }
 
@@ -215,7 +237,8 @@ class SubnetInfo extends Response {
      *
      * @param string $netmask
      */
-    public function setNetmask(string $netmask) {
+    public function setNetmask(string $netmask)
+    {
         $this->set("Netmask", $netmask);
     }
 
@@ -224,7 +247,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getGateway(): string {
+    public function getGateway(): string
+    {
         return $this->get("Gateway");
     }
 
@@ -233,16 +257,18 @@ class SubnetInfo extends Response {
      *
      * @param string $gateway
      */
-    public function setGateway(string $gateway) {
+    public function setGateway(string $gateway)
+    {
         $this->set("Gateway", $gateway);
     }
 
     /**
      * CreateTime: 创建时间
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getCreateTime(): int {
+    public function getCreateTime(): int
+    {
         return $this->get("CreateTime");
     }
 
@@ -251,7 +277,8 @@ class SubnetInfo extends Response {
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime) {
+    public function setCreateTime(int $createTime)
+    {
         $this->set("CreateTime", $createTime);
     }
 
@@ -260,7 +287,8 @@ class SubnetInfo extends Response {
      *
      * @return boolean|null
      */
-    public function getHasNATGW(): bool {
+    public function getHasNATGW(): bool
+    {
         return $this->get("HasNATGW");
     }
 
@@ -269,7 +297,8 @@ class SubnetInfo extends Response {
      *
      * @param boolean $hasNATGW
      */
-    public function setHasNATGW(bool $hasNATGW) {
+    public function setHasNATGW(bool $hasNATGW)
+    {
         $this->set("HasNATGW", $hasNATGW);
     }
 
@@ -278,7 +307,8 @@ class SubnetInfo extends Response {
      *
      * @return string|null
      */
-    public function getRouteTableId(): string {
+    public function getRouteTableId(): string
+    {
         return $this->get("RouteTableId");
     }
 
@@ -287,16 +317,18 @@ class SubnetInfo extends Response {
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId(string $routeTableId) {
+    public function setRouteTableId(string $routeTableId)
+    {
         $this->set("RouteTableId", $routeTableId);
     }
 
     /**
      * AvailableIPs: 可用IP数量
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getAvailableIPs(): int {
+    public function getAvailableIPs(): int
+    {
         return $this->get("AvailableIPs");
     }
 
@@ -305,9 +337,8 @@ class SubnetInfo extends Response {
      *
      * @param int $availableIPs
      */
-    public function setAvailableIPs(int $availableIPs) {
+    public function setAvailableIPs(int $availableIPs)
+    {
         $this->set("AvailableIPs", $availableIPs);
     }
-
-
 }

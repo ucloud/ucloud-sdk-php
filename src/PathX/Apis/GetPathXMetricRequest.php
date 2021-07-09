@@ -18,7 +18,8 @@ namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetPathXMetricRequest extends Request {
+class GetPathXMetricRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "GetPathXMetric"]);
@@ -38,7 +39,8 @@ class GetPathXMetricRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -47,34 +49,38 @@ class GetPathXMetricRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
     /**
-     * ResourceId: ResourceId，如upath ID  和 uga ID 
+     * ResourceId: ResourceId，如upath ID  和 uga ID
      *
      * @return string|null
      */
-    public function getResourceId(): string {
+    public function getResourceId(): string
+    {
         return $this->get("ResourceId");
     }
 
     /**
-     * ResourceId: ResourceId，如upath ID  和 uga ID 
+     * ResourceId: ResourceId，如upath ID  和 uga ID
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId) {
+    public function setResourceId(string $resourceId)
+    {
         $this->set("ResourceId", $resourceId);
     }
 
     /**
      * BeginTime: 查询起始时间，10位长度时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBeginTime(): int {
+    public function getBeginTime(): int
+    {
         return $this->get("BeginTime");
     }
 
@@ -83,16 +89,18 @@ class GetPathXMetricRequest extends Request {
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime) {
+    public function setBeginTime(int $beginTime)
+    {
         $this->set("BeginTime", $beginTime);
     }
 
     /**
      * EndTime: 查询结束时间，10位长度时间戳
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getEndTime(): int {
+    public function getEndTime(): int
+    {
         return $this->get("EndTime");
     }
 
@@ -101,7 +109,8 @@ class GetPathXMetricRequest extends Request {
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime) {
+    public function setEndTime(int $endTime)
+    {
         $this->set("EndTime", $endTime);
     }
 
@@ -110,7 +119,8 @@ class GetPathXMetricRequest extends Request {
      *
      * @return string[]|null
      */
-    public function getMetricName(): array {
+    public function getMetricName(): array
+    {
         return $this->get("MetricName");
     }
 
@@ -119,7 +129,8 @@ class GetPathXMetricRequest extends Request {
      *
      * @param string[] $metricName
      */
-    public function setMetricName(array $metricName) {
+    public function setMetricName(array $metricName)
+    {
         $this->set("MetricName", $metricName);
     }
 
@@ -128,7 +139,8 @@ class GetPathXMetricRequest extends Request {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -137,7 +149,8 @@ class GetPathXMetricRequest extends Request {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
 
@@ -146,7 +159,8 @@ class GetPathXMetricRequest extends Request {
      *
      * @return string|null
      */
-    public function getLineId(): string {
+    public function getLineId(): string
+    {
         return $this->get("LineId");
     }
 
@@ -155,9 +169,8 @@ class GetPathXMetricRequest extends Request {
      *
      * @param string $lineId
      */
-    public function setLineId(string $lineId) {
+    public function setLineId(string $lineId)
+    {
         $this->set("LineId", $lineId);
     }
-
-
 }

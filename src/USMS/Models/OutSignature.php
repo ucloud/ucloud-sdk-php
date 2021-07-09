@@ -18,7 +18,8 @@ namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
-class OutSignature extends Response {
+class OutSignature extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class OutSignature extends Response {
      *
      * @return string|null
      */
-    public function getSigId(): string {
+    public function getSigId(): string
+    {
         return $this->get("SigId");
     }
 
@@ -35,7 +37,8 @@ class OutSignature extends Response {
      *
      * @param string $sigId
      */
-    public function setSigId(string $sigId) {
+    public function setSigId(string $sigId)
+    {
         $this->set("SigId", $sigId);
     }
 
@@ -44,7 +47,8 @@ class OutSignature extends Response {
      *
      * @return string|null
      */
-    public function getSigContent(): string {
+    public function getSigContent(): string
+    {
         return $this->get("SigContent");
     }
 
@@ -53,25 +57,28 @@ class OutSignature extends Response {
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent) {
+    public function setSigContent(string $sigContent)
+    {
         $this->set("SigContent", $sigContent);
     }
 
     /**
-     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 
+     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getStatus(): int {
+    public function getStatus(): int
+    {
         return $this->get("Status");
     }
 
     /**
-     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 
+     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
      *
      * @param int $status
      */
-    public function setStatus(int $status) {
+    public function setStatus(int $status)
+    {
         $this->set("Status", $status);
     }
 
@@ -80,7 +87,8 @@ class OutSignature extends Response {
      *
      * @return string|null
      */
-    public function getErrDesc(): string {
+    public function getErrDesc(): string
+    {
         return $this->get("ErrDesc");
     }
 
@@ -89,9 +97,8 @@ class OutSignature extends Response {
      *
      * @param string $errDesc
      */
-    public function setErrDesc(string $errDesc) {
+    public function setErrDesc(string $errDesc)
+    {
         $this->set("ErrDesc", $errDesc);
     }
-
-
 }

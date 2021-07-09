@@ -18,7 +18,8 @@ namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
-class AlarmRuler extends Response {
+class AlarmRuler extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class AlarmRuler extends Response {
      *
      * @return string|null
      */
-    public function getAlarmStrategy(): string {
+    public function getAlarmStrategy(): string
+    {
         return $this->get("AlarmStrategy");
     }
 
@@ -35,16 +37,18 @@ class AlarmRuler extends Response {
      *
      * @param string $alarmStrategy
      */
-    public function setAlarmStrategy(string $alarmStrategy) {
+    public function setAlarmStrategy(string $alarmStrategy)
+    {
         $this->set("AlarmStrategy", $alarmStrategy);
     }
 
     /**
      * AlarmFrequency: 告警探测周期，单位秒
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getAlarmFrequency(): int {
+    public function getAlarmFrequency(): int
+    {
         return $this->get("AlarmFrequency");
     }
 
@@ -53,7 +57,8 @@ class AlarmRuler extends Response {
      *
      * @param int $alarmFrequency
      */
-    public function setAlarmFrequency(int $alarmFrequency) {
+    public function setAlarmFrequency(int $alarmFrequency)
+    {
         $this->set("AlarmFrequency", $alarmFrequency);
     }
 
@@ -62,7 +67,8 @@ class AlarmRuler extends Response {
      *
      * @return string|null
      */
-    public function getCompare(): string {
+    public function getCompare(): string
+    {
         return $this->get("Compare");
     }
 
@@ -71,16 +77,18 @@ class AlarmRuler extends Response {
      *
      * @param string $compare
      */
-    public function setCompare(string $compare) {
+    public function setCompare(string $compare)
+    {
         $this->set("Compare", $compare);
     }
 
     /**
      * ContactGroupId: 联系组ID
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getContactGroupId(): int {
+    public function getContactGroupId(): int
+    {
         return $this->get("ContactGroupId");
     }
 
@@ -89,7 +97,8 @@ class AlarmRuler extends Response {
      *
      * @param int $contactGroupId
      */
-    public function setContactGroupId(int $contactGroupId) {
+    public function setContactGroupId(int $contactGroupId)
+    {
         $this->set("ContactGroupId", $contactGroupId);
     }
 
@@ -98,7 +107,8 @@ class AlarmRuler extends Response {
      *
      * @return string|null
      */
-    public function getMetricName(): string {
+    public function getMetricName(): string
+    {
         return $this->get("MetricName");
     }
 
@@ -107,16 +117,18 @@ class AlarmRuler extends Response {
      *
      * @param string $metricName
      */
-    public function setMetricName(string $metricName) {
+    public function setMetricName(string $metricName)
+    {
         $this->set("MetricName", $metricName);
     }
 
     /**
      * Threshold: 告警阈值，带宽使用率的阈值范围是[50,100]的正整数，带宽告警阈值为1000000的倍数, 如大于2Mbps则告警 阈值应该传 2000000
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getThreshold(): int {
+    public function getThreshold(): int
+    {
         return $this->get("Threshold");
     }
 
@@ -125,16 +137,18 @@ class AlarmRuler extends Response {
      *
      * @param int $threshold
      */
-    public function setThreshold(int $threshold) {
+    public function setThreshold(int $threshold)
+    {
         $this->set("Threshold", $threshold);
     }
 
     /**
      * TriggerCount: 告警触发周期（次数）
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTriggerCount(): int {
+    public function getTriggerCount(): int
+    {
         return $this->get("TriggerCount");
     }
 
@@ -143,16 +157,18 @@ class AlarmRuler extends Response {
      *
      * @param int $triggerCount
      */
-    public function setTriggerCount(int $triggerCount) {
+    public function setTriggerCount(int $triggerCount)
+    {
         $this->set("TriggerCount", $triggerCount);
     }
 
     /**
      * AlarmTemplateRuleId: 告警模板策略ID
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getAlarmTemplateRuleId(): int {
+    public function getAlarmTemplateRuleId(): int
+    {
         return $this->get("AlarmTemplateRuleId");
     }
 
@@ -161,7 +177,8 @@ class AlarmRuler extends Response {
      *
      * @param int $alarmTemplateRuleId
      */
-    public function setAlarmTemplateRuleId(int $alarmTemplateRuleId) {
+    public function setAlarmTemplateRuleId(int $alarmTemplateRuleId)
+    {
         $this->set("AlarmTemplateRuleId", $alarmTemplateRuleId);
     }
 
@@ -170,7 +187,8 @@ class AlarmRuler extends Response {
      *
      * @return string|null
      */
-    public function getResourceType(): string {
+    public function getResourceType(): string
+    {
         return $this->get("ResourceType");
     }
 
@@ -179,9 +197,8 @@ class AlarmRuler extends Response {
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType) {
+    public function setResourceType(string $resourceType)
+    {
         $this->set("ResourceType", $resourceType);
     }
-
-
 }

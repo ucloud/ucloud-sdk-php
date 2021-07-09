@@ -21,15 +21,17 @@ use UCloud\UMem\Models\UMemDataSet;
 use UCloud\UMem\Models\UMemSlaveDataSet;
 use UCloud\UMem\Models\UMemSpaceAddressSet;
 
-class DescribeUMemResponse extends Response {
+class DescribeUMemResponse extends Response
+{
     
 
     /**
      * TotalCount: 根据过滤条件得到的总数
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getTotalCount(): int {
+    public function getTotalCount(): int
+    {
         return $this->get("TotalCount");
     }
 
@@ -38,7 +40,8 @@ class DescribeUMemResponse extends Response {
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount) {
+    public function setTotalCount(int $totalCount)
+    {
         $this->set("TotalCount", $totalCount);
     }
 
@@ -47,7 +50,8 @@ class DescribeUMemResponse extends Response {
      *
      * @return UMemDataSet[]|null
      */
-    public function getDataSet(): array {
+    public function getDataSet(): array
+    {
         $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
@@ -61,13 +65,12 @@ class DescribeUMemResponse extends Response {
      *
      * @param UMemDataSet[] $dataSet
      */
-    public function setDataSet(array $dataSet) {
+    public function setDataSet(array $dataSet)
+    {
         $result = [];
         foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
     }
-
-
 }

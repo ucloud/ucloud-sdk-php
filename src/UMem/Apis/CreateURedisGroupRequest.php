@@ -18,7 +18,8 @@ namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
 
-class CreateURedisGroupRequest extends Request {
+class CreateURedisGroupRequest extends Request
+{
     public function __construct()
     {
         parent::__construct(["Action" => "CreateURedisGroup"]);
@@ -35,7 +36,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getRegion(): string {
+    public function getRegion(): string
+    {
         return $this->get("Region");
     }
 
@@ -44,7 +46,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $region
      */
-    public function setRegion(string $region) {
+    public function setRegion(string $region)
+    {
         $this->set("Region", $region);
     }
 
@@ -53,7 +56,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getZone(): string {
+    public function getZone(): string
+    {
         return $this->get("Zone");
     }
 
@@ -62,7 +66,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $zone
      */
-    public function setZone(string $zone) {
+    public function setZone(string $zone)
+    {
         $this->set("Zone", $zone);
     }
 
@@ -71,7 +76,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getProjectId(): string {
+    public function getProjectId(): string
+    {
         return $this->get("ProjectId");
     }
 
@@ -80,7 +86,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId) {
+    public function setProjectId(string $projectId)
+    {
         $this->set("ProjectId", $projectId);
     }
 
@@ -89,7 +96,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->get("Name");
     }
 
@@ -98,7 +106,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $name
      */
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->set("Name", $name);
     }
 
@@ -107,7 +116,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getHighAvailability(): string {
+    public function getHighAvailability(): string
+    {
         return $this->get("HighAvailability");
     }
 
@@ -116,16 +126,18 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $highAvailability
      */
-    public function setHighAvailability(string $highAvailability) {
+    public function setHighAvailability(string $highAvailability)
+    {
         $this->set("HighAvailability", $highAvailability);
     }
 
     /**
      * Size: 每个节点的内存大小,单位GB,默认1GB,目前仅支持1/2/4/8/16/32,六种
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getSize(): int {
+    public function getSize(): int
+    {
         return $this->get("Size");
     }
 
@@ -134,7 +146,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param int $size
      */
-    public function setSize(int $size) {
+    public function setSize(int $size)
+    {
         $this->set("Size", $size);
     }
 
@@ -143,7 +156,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getAutoBackup(): string {
+    public function getAutoBackup(): string
+    {
         return $this->get("AutoBackup");
     }
 
@@ -152,16 +166,18 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $autoBackup
      */
-    public function setAutoBackup(string $autoBackup) {
+    public function setAutoBackup(string $autoBackup)
+    {
         $this->set("AutoBackup", $autoBackup);
     }
 
     /**
      * BackupTime: 自动备份开始时间,范围[0-23],默认3点
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getBackupTime(): int {
+    public function getBackupTime(): int
+    {
         return $this->get("BackupTime");
     }
 
@@ -170,7 +186,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param int $backupTime
      */
-    public function setBackupTime(int $backupTime) {
+    public function setBackupTime(int $backupTime)
+    {
         $this->set("BackupTime", $backupTime);
     }
 
@@ -179,7 +196,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getConfigId(): string {
+    public function getConfigId(): string
+    {
         return $this->get("ConfigId");
     }
 
@@ -188,7 +206,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $configId
      */
-    public function setConfigId(string $configId) {
+    public function setConfigId(string $configId)
+    {
         $this->set("ConfigId", $configId);
     }
 
@@ -197,7 +216,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getVersion(): string {
+    public function getVersion(): string
+    {
         return $this->get("Version");
     }
 
@@ -206,7 +226,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $version
      */
-    public function setVersion(string $version) {
+    public function setVersion(string $version)
+    {
         $this->set("Version", $version);
     }
 
@@ -215,7 +236,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getChargeType(): string {
+    public function getChargeType(): string
+    {
         return $this->get("ChargeType");
     }
 
@@ -224,16 +246,18 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType) {
+    public function setChargeType(string $chargeType)
+    {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
      * Quantity: 购买时长，默认为1
      *
-     * @return int|null
+     * @return integer|null
      */
-    public function getQuantity(): int {
+    public function getQuantity(): int
+    {
         return $this->get("Quantity");
     }
 
@@ -242,7 +266,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity) {
+    public function setQuantity(int $quantity)
+    {
         $this->set("Quantity", $quantity);
     }
 
@@ -251,7 +276,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getTag(): string {
+    public function getTag(): string
+    {
         return $this->get("Tag");
     }
 
@@ -260,7 +286,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $tag
      */
-    public function setTag(string $tag) {
+    public function setTag(string $tag)
+    {
         $this->set("Tag", $tag);
     }
 
@@ -269,7 +296,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getPassword(): string {
+    public function getPassword(): string
+    {
         return $this->get("Password");
     }
 
@@ -278,7 +306,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->set("Password", $password);
     }
 
@@ -287,7 +316,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getBackupId(): string {
+    public function getBackupId(): string
+    {
         return $this->get("BackupId");
     }
 
@@ -296,7 +326,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $backupId
      */
-    public function setBackupId(string $backupId) {
+    public function setBackupId(string $backupId)
+    {
         $this->set("BackupId", $backupId);
     }
 
@@ -305,7 +336,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getSlaveZone(): string {
+    public function getSlaveZone(): string
+    {
         return $this->get("SlaveZone");
     }
 
@@ -314,7 +346,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone(string $slaveZone) {
+    public function setSlaveZone(string $slaveZone)
+    {
         $this->set("SlaveZone", $slaveZone);
     }
 
@@ -323,7 +356,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getMasterGroupId(): string {
+    public function getMasterGroupId(): string
+    {
         return $this->get("MasterGroupId");
     }
 
@@ -332,7 +366,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $masterGroupId
      */
-    public function setMasterGroupId(string $masterGroupId) {
+    public function setMasterGroupId(string $masterGroupId)
+    {
         $this->set("MasterGroupId", $masterGroupId);
     }
 
@@ -341,7 +376,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return boolean|null
      */
-    public function getEnableIpV6(): bool {
+    public function getEnableIpV6(): bool
+    {
         return $this->get("EnableIpV6");
     }
 
@@ -350,7 +386,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param boolean $enableIpV6
      */
-    public function setEnableIpV6(bool $enableIpV6) {
+    public function setEnableIpV6(bool $enableIpV6)
+    {
         $this->set("EnableIpV6", $enableIpV6);
     }
 
@@ -359,7 +396,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getSubnetId(): string {
+    public function getSubnetId(): string
+    {
         return $this->get("SubnetId");
     }
 
@@ -368,7 +406,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId) {
+    public function setSubnetId(string $subnetId)
+    {
         $this->set("SubnetId", $subnetId);
     }
 
@@ -377,7 +416,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getVPCId(): string {
+    public function getVPCId(): string
+    {
         return $this->get("VPCId");
     }
 
@@ -386,7 +426,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId) {
+    public function setVPCId(string $vpcId)
+    {
         $this->set("VPCId", $vpcId);
     }
 
@@ -395,7 +436,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @return string|null
      */
-    public function getCouponId(): string {
+    public function getCouponId(): string
+    {
         return $this->get("CouponId");
     }
 
@@ -404,9 +446,8 @@ class CreateURedisGroupRequest extends Request {
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId) {
+    public function setCouponId(string $couponId)
+    {
         $this->set("CouponId", $couponId);
     }
-
-
 }

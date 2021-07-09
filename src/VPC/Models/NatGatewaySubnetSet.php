@@ -18,7 +18,8 @@ namespace UCloud\VPC\Models;
 
 use UCloud\Core\Response\Response;
 
-class NatGatewaySubnetSet extends Response {
+class NatGatewaySubnetSet extends Response
+{
     
 
     /**
@@ -26,7 +27,8 @@ class NatGatewaySubnetSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string {
+    public function getSubnetworkId(): string
+    {
         return $this->get("SubnetworkId");
     }
 
@@ -35,7 +37,8 @@ class NatGatewaySubnetSet extends Response {
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId) {
+    public function setSubnetworkId(string $subnetworkId)
+    {
         $this->set("SubnetworkId", $subnetworkId);
     }
 
@@ -44,7 +47,8 @@ class NatGatewaySubnetSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnet(): string {
+    public function getSubnet(): string
+    {
         return $this->get("Subnet");
     }
 
@@ -53,7 +57,8 @@ class NatGatewaySubnetSet extends Response {
      *
      * @param string $subnet
      */
-    public function setSubnet(string $subnet) {
+    public function setSubnet(string $subnet)
+    {
         $this->set("Subnet", $subnet);
     }
 
@@ -62,7 +67,8 @@ class NatGatewaySubnetSet extends Response {
      *
      * @return string|null
      */
-    public function getSubnetName(): string {
+    public function getSubnetName(): string
+    {
         return $this->get("SubnetName");
     }
 
@@ -71,9 +77,8 @@ class NatGatewaySubnetSet extends Response {
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName) {
+    public function setSubnetName(string $subnetName)
+    {
         $this->set("SubnetName", $subnetName);
     }
-
-
 }
