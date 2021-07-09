@@ -1,0 +1,12 @@
+image: hub.ucloudadmin.com/esl_ipdd/composer:latest
+
+test:
+  script:
+    - composer install
+    - make test-cov
+    - make lint
+  tags:
+    - uaek-c1
+  artifacts:
+    paths:
+      - build/
