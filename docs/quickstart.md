@@ -5,7 +5,7 @@
 使用 `composer` 安装（推荐）：
 
 ```bash
-$ composer require ucloud/ucloud-sdk-php
+$ composer require ucloud-sdks/ucloud-sdk-php
 ```
 
 ## 初次使用
