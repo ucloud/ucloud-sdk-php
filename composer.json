@@ -1,5 +1,5 @@
 {
-    "name": "ucloud-sdks/ucloud-sdk-php",
+    "name": "ucloud/ucloud-sdk-php",
     "type": "library",
     "description": "UCloud",
     "keywords": ["php", "ucloud"],
