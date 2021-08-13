@@ -249,7 +249,7 @@ class UConnection{
 
         foreach ($params as $parameter => $value) {
 
-            if( in_array($parameter, array('pic', 'image')) && $value{0} == '@' ) {
+            if( in_array($parameter, array('pic', 'image')) && $value[0] == '@' ) {
                 $url = ltrim( $value, '@' );
                 $content = file_get_contents( $url );
                 $array = explode( '?', basename( $url ) );
