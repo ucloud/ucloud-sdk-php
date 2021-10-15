@@ -14,7 +14,7 @@ use UCloud\Core\Transport\TransportInterface;
 
 class Client implements ClientInterface
 {
-    const VERSION = "0.0.1";
+    const VERSION = "0.1.0";
 
     /**
      * Credential object
