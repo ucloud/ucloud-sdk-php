@@ -27,7 +27,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupURL(): string
+    public function getBackupURL()
     {
         return $this->get("BackupURL");
     }
@@ -37,7 +37,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @param string $backupURL
      */
-    public function setBackupURL(string $backupURL)
+    public function setBackupURL($backupURL)
     {
         $this->set("BackupURL", $backupURL);
     }
@@ -47,7 +47,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupPath(): string
+    public function getBackupPath()
     {
         return $this->get("BackupPath");
     }
@@ -57,7 +57,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @param string $backupPath
      */
-    public function setBackupPath(string $backupPath)
+    public function setBackupPath($backupPath)
     {
         $this->set("BackupPath", $backupPath);
     }

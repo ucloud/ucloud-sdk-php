@@ -27,7 +27,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -37,7 +37,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -47,7 +47,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getPrivateIP(): string
+    public function getPrivateIP()
     {
         return $this->get("PrivateIP");
     }
@@ -57,7 +57,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @param string $privateIP
      */
-    public function setPrivateIP(string $privateIP)
+    public function setPrivateIP($privateIP)
     {
         $this->set("PrivateIP", $privateIP);
     }
@@ -67,7 +67,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceType(): string
+    public function getResourceType()
     {
         return $this->get("ResourceType");
     }
@@ -77,7 +77,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType)
+    public function setResourceType($resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }

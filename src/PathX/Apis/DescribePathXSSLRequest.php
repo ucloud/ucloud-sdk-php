@@ -33,7 +33,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLId(): string
+    public function getSSLId()
     {
         return $this->get("SSLId");
     }
@@ -63,7 +63,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId)
+    public function setSSLId($sslId)
     {
         $this->set("SSLId", $sslId);
     }
@@ -73,7 +73,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSearchValue(): string
+    public function getSearchValue()
     {
         return $this->get("SearchValue");
     }
@@ -83,7 +83,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $searchValue
      */
-    public function setSearchValue(string $searchValue)
+    public function setSearchValue($searchValue)
     {
         $this->set("SearchValue", $searchValue);
     }
@@ -93,7 +93,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -103,7 +103,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -113,7 +113,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -123,7 +123,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }

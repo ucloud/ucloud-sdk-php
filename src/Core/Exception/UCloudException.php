@@ -21,7 +21,7 @@ class UCloudException extends Exception
      *
      * @var string
      */
-    private string $type;
+    private $type;
 
     /**
      * Request UUID
@@ -30,7 +30,16 @@ class UCloudException extends Exception
      */
     private $requestId;
 
-    public function __construct(string $type, string $message = "", int $retCode = 0, Throwable $previous = null, $requestId = "")
+    /**
+     * UCloudException constructor.
+     *
+     * @param string $type
+     * @param string|string $message
+     * @param int|int $retCode
+     * @param Throwable|null $previous
+     * @param string $requestId
+     */
+    public function __construct($type, $message = "", $retCode = 0, $previous = null, $requestId = "")
     {
         $this->type = $type;
         $this->requestId = $requestId;
@@ -42,7 +51,7 @@ class UCloudException extends Exception
      *
      * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->type;
     }
@@ -52,7 +61,7 @@ class UCloudException extends Exception
      *
      * @return string
      */
-    public function getRequestId(): string
+    public function getRequestId()
     {
         return $this->requestId;
     }

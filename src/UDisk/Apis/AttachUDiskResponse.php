@@ -27,7 +27,7 @@ class AttachUDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getUHostId(): string
+    public function getUHostId()
     {
         return $this->get("UHostId");
     }
@@ -37,7 +37,7 @@ class AttachUDiskResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId)
+    public function setUHostId($uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -47,7 +47,7 @@ class AttachUDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getUDiskId(): string
+    public function getUDiskId()
     {
         return $this->get("UDiskId");
     }
@@ -57,7 +57,7 @@ class AttachUDiskResponse extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId)
+    public function setUDiskId($uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -67,7 +67,7 @@ class AttachUDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getDeviceName(): string
+    public function getDeviceName()
     {
         return $this->get("DeviceName");
     }
@@ -77,7 +77,7 @@ class AttachUDiskResponse extends Response
      *
      * @param string $deviceName
      */
-    public function setDeviceName(string $deviceName)
+    public function setDeviceName($deviceName)
     {
         $this->set("DeviceName", $deviceName);
     }
@@ -87,7 +87,7 @@ class AttachUDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getHostId(): string
+    public function getHostId()
     {
         return $this->get("HostId");
     }
@@ -97,7 +97,7 @@ class AttachUDiskResponse extends Response
      *
      * @param string $hostId
      */
-    public function setHostId(string $hostId)
+    public function setHostId($hostId)
     {
         $this->set("HostId", $hostId);
     }

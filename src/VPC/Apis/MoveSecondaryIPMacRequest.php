@@ -37,7 +37,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -67,7 +67,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -77,7 +77,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getIp(): string
+    public function getIp()
     {
         return $this->get("Ip");
     }
@@ -87,7 +87,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $ip
      */
-    public function setIp(string $ip)
+    public function setIp($ip)
     {
         $this->set("Ip", $ip);
     }
@@ -97,7 +97,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getOldMac(): string
+    public function getOldMac()
     {
         return $this->get("OldMac");
     }
@@ -107,7 +107,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $oldMac
      */
-    public function setOldMac(string $oldMac)
+    public function setOldMac($oldMac)
     {
         $this->set("OldMac", $oldMac);
     }
@@ -117,7 +117,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getNewMac(): string
+    public function getNewMac()
     {
         return $this->get("NewMac");
     }
@@ -127,7 +127,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $newMac
      */
-    public function setNewMac(string $newMac)
+    public function setNewMac($newMac)
     {
         $this->set("NewMac", $newMac);
     }
@@ -137,7 +137,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -147,7 +147,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }

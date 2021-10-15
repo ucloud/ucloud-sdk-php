@@ -96,7 +96,7 @@ class UHostClient extends Client
     /**
      * CopyCustomImage - 复制自制镜像
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/copy_custom_image
+     * See also: https://docs.ucloud.cn/api/uhost-api/copy_custom_image
      *
      * Arguments:
      *
@@ -117,9 +117,10 @@ class UHostClient extends Client
      *     "TargetImageId" => (string) 目标镜像Id
      * ]
      *
+     * @return CopyCustomImageResponse
      * @throws UCloudException
      */
-    public function copyCustomImage(CopyCustomImageRequest $request = null): CopyCustomImageResponse
+    public function copyCustomImage(CopyCustomImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CopyCustomImageResponse($resp->toArray(), $resp->getRequestId());
@@ -128,7 +129,7 @@ class UHostClient extends Client
     /**
      * CreateCustomImage - 从指定UHost实例，生成自定义镜像。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/create_custom_image
+     * See also: https://docs.ucloud.cn/api/uhost-api/create_custom_image
      *
      * Arguments:
      *
@@ -147,9 +148,10 @@ class UHostClient extends Client
      *     "ImageId" => (string) 镜像Id
      * ]
      *
+     * @return CreateCustomImageResponse
      * @throws UCloudException
      */
-    public function createCustomImage(CreateCustomImageRequest $request = null): CreateCustomImageResponse
+    public function createCustomImage(CreateCustomImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateCustomImageResponse($resp->toArray(), $resp->getRequestId());
@@ -158,7 +160,7 @@ class UHostClient extends Client
     /**
      * CreateIsolationGroup - 创建硬件隔离组，组内机器严格隔离在不同宿主机上。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/create_isolation_group
+     * See also: https://docs.ucloud.cn/api/uhost-api/create_isolation_group
      *
      * Arguments:
      *
@@ -175,9 +177,10 @@ class UHostClient extends Client
      *     "GroupId" => (string) 硬件隔离组id
      * ]
      *
+     * @return CreateIsolationGroupResponse
      * @throws UCloudException
      */
-    public function createIsolationGroup(CreateIsolationGroupRequest $request = null): CreateIsolationGroupResponse
+    public function createIsolationGroup(CreateIsolationGroupRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateIsolationGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -186,7 +189,7 @@ class UHostClient extends Client
     /**
      * CreateUHostInstance - 创建UHost实例。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/create_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/create_uhost_instance
      *
      * Arguments:
      *
@@ -215,9 +218,8 @@ class UHostClient extends Client
      *     "UHostType" => (string) 【建议后续不再使用】云主机机型（V1.0），在本字段和字段MachineType中，仅需要其中1个字段即可。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *     "CPU" => (integer) 虚拟CPU核数。可选参数：1-64（具体机型与CPU的对应关系参照控制台）。默认值: 4。
      *     "Memory" => (integer) 内存大小。单位：MB。范围 ：[1024, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
-     *     "GpuType" => (string) GPU类型，枚举值["K80", "P40", "V100", "T4", "T4S","2080Ti","2080Ti-4C","1080Ti"]，MachineType为G时必填
+     *     "GpuType" => (string) GPU类型，枚举值["K80", "P40", "V100", "T4", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S"]，MachineType为G时必填
      *     "GPU" => (integer) GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
-     *     "VirtualGpu" => (object)
      *     "NetCapability" => (string) 网络增强特性。枚举值：Normal（默认），不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（仅支持部分可用区，请参考控制台）
      *     "HotplugFeature" => (boolean) 热升级特性。True为开启，False为未开启，默认False。
      *     "VPCId" => (string) VPC ID。默认为当前地域的默认VPC。
@@ -226,8 +228,8 @@ class UHostClient extends Client
      *     "SecurityGroupId" => (string) 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
      *     "IsolationGroup" => (string) 硬件隔离组id。可通过DescribeIsolationGroup获取。
      *     "AlarmTemplateId" => (integer) 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败只会在后台有日志，不会影响创建主机流程，也不会在前端报错。
-     *     "MachineType" => (string) 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OS", "OPRO", "OMAX", "O.BM"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
-     *     "MinimalCpuPlatform" => (string) 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"。
+     *     "MachineType" => (string) 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OS", "OM", "OPRO", "OMAX", "O.BM", "O.EPC"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     *     "MinimalCpuPlatform" => (string) 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Amd/Epyc2", "Amd/Auto"],默认值是"Intel/Auto"。
      *     "MaxCount" => (integer) 本次最大创建主机数量，取值范围是[1,100]，默认值为1。
      *     "NetworkInterface" => (array<object>) [
      *         [
@@ -251,6 +253,9 @@ class UHostClient extends Client
      *     "AutoDataDiskInit" => (string) 数据盘是否需要自动分区挂载。当镜像支持“Cloud-init”Feature时可填写此字段。取值 >“On” 自动挂载（默认值）> “Off” 不自动挂载。
      *     "Volumes" => (array<object>)
      *     "KeyPairId" => (string) KeypairId 密钥对ID，LoginMode为KeyPair时此项必须
+     *     "Features" => (object) [
+     *         "UNI" => (boolean) 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。
+     *     ]
      *     "CouponId" => (string) 主机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看
      * ]
      *
@@ -261,9 +266,10 @@ class UHostClient extends Client
      *     "IPs" => (array<string>) 【批量创建不会返回】IP信息
      * ]
      *
+     * @return CreateUHostInstanceResponse
      * @throws UCloudException
      */
-    public function createUHostInstance(CreateUHostInstanceRequest $request = null): CreateUHostInstanceResponse
+    public function createUHostInstance(CreateUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -272,7 +278,7 @@ class UHostClient extends Client
     /**
      * CreateUHostKeyPair - 创建主机密钥对信息
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/create_uhost_key_pair
+     * See also: https://docs.ucloud.cn/api/uhost-api/create_uhost_key_pair
      *
      * Arguments:
      *
@@ -296,9 +302,10 @@ class UHostClient extends Client
      *     ]
      * ]
      *
+     * @return CreateUHostKeyPairResponse
      * @throws UCloudException
      */
-    public function createUHostKeyPair(CreateUHostKeyPairRequest $request = null): CreateUHostKeyPairResponse
+    public function createUHostKeyPair(CreateUHostKeyPairRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUHostKeyPairResponse($resp->toArray(), $resp->getRequestId());
@@ -307,7 +314,7 @@ class UHostClient extends Client
     /**
      * DeleteIsolationGroup - 删除硬件隔离组。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/delete_isolation_group
+     * See also: https://docs.ucloud.cn/api/uhost-api/delete_isolation_group
      *
      * Arguments:
      *
@@ -323,9 +330,10 @@ class UHostClient extends Client
      *     "GroupId" => (string) 硬件隔离组id
      * ]
      *
+     * @return DeleteIsolationGroupResponse
      * @throws UCloudException
      */
-    public function deleteIsolationGroup(DeleteIsolationGroupRequest $request = null): DeleteIsolationGroupResponse
+    public function deleteIsolationGroup(DeleteIsolationGroupRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteIsolationGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -334,7 +342,7 @@ class UHostClient extends Client
     /**
      * DeleteUHostKeyPairs - 删除一对或者多对密钥对。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/delete_uhost_key_pairs
+     * See also: https://docs.ucloud.cn/api/uhost-api/delete_uhost_key_pairs
      *
      * Arguments:
      *
@@ -350,9 +358,10 @@ class UHostClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUHostKeyPairsResponse
      * @throws UCloudException
      */
-    public function deleteUHostKeyPairs(DeleteUHostKeyPairsRequest $request = null): DeleteUHostKeyPairsResponse
+    public function deleteUHostKeyPairs(DeleteUHostKeyPairsRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUHostKeyPairsResponse($resp->toArray(), $resp->getRequestId());
@@ -361,7 +370,7 @@ class UHostClient extends Client
     /**
      * DescribeImage - 获取指定数据中心镜像列表，用户可通过指定操作系统类型，镜像Id进行过滤。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/describe_image
+     * See also: https://docs.ucloud.cn/api/uhost-api/describe_image
      *
      * Arguments:
      *
@@ -403,9 +412,10 @@ class UHostClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeImageResponse
      * @throws UCloudException
      */
-    public function describeImage(DescribeImageRequest $request = null): DescribeImageResponse
+    public function describeImage(DescribeImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeImageResponse($resp->toArray(), $resp->getRequestId());
@@ -414,7 +424,7 @@ class UHostClient extends Client
     /**
      * DescribeIsolationGroup - 查询硬件隔离组列表。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/describe_isolation_group
+     * See also: https://docs.ucloud.cn/api/uhost-api/describe_isolation_group
      *
      * Arguments:
      *
@@ -445,9 +455,10 @@ class UHostClient extends Client
      *     "TotalCount" => (integer) 硬件隔离组总数
      * ]
      *
+     * @return DescribeIsolationGroupResponse
      * @throws UCloudException
      */
-    public function describeIsolationGroup(DescribeIsolationGroupRequest $request = null): DescribeIsolationGroupResponse
+    public function describeIsolationGroup(DescribeIsolationGroupRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeIsolationGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -456,7 +467,7 @@ class UHostClient extends Client
     /**
      * DescribeUHostInstance - 获取主机或主机列表信息，并可根据数据中心，主机ID等参数进行过滤。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/describe_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/describe_uhost_instance
      *
      * Arguments:
      *
@@ -553,9 +564,10 @@ class UHostClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUHostInstanceResponse
      * @throws UCloudException
      */
-    public function describeUHostInstance(DescribeUHostInstanceRequest $request = null): DescribeUHostInstanceResponse
+    public function describeUHostInstance(DescribeUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -564,7 +576,7 @@ class UHostClient extends Client
     /**
      * DescribeUHostKeyPairs - 查询一个或多个密钥对。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/describe_uhost_key_pairs
+     * See also: https://docs.ucloud.cn/api/uhost-api/describe_uhost_key_pairs
      *
      * Arguments:
      *
@@ -587,16 +599,16 @@ class UHostClient extends Client
      *             "KeyPairId" => (string) 密钥对ID。
      *             "KeyPairName" => (string) 密钥对名称。 长度为1~63个英文或中文字符。
      *             "KeyPairFingerPrint" => (string) 密钥对指纹。md5(ProjectId|KeyPairId|PublicKey)
-     *             "PrivateKeyBody" => (string) 密钥对的私钥内容。只有创建接口才会返回。
      *             "CreateTime" => (integer) 密钥对的创建时间，格式为Unix Timestamp。
      *         ]
      *     ]
      *     "TotalCount" => (integer) 密钥对总数
      * ]
      *
+     * @return DescribeUHostKeyPairsResponse
      * @throws UCloudException
      */
-    public function describeUHostKeyPairs(DescribeUHostKeyPairsRequest $request = null): DescribeUHostKeyPairsResponse
+    public function describeUHostKeyPairs(DescribeUHostKeyPairsRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUHostKeyPairsResponse($resp->toArray(), $resp->getRequestId());
@@ -605,7 +617,7 @@ class UHostClient extends Client
     /**
      * DescribeUHostTags - 获取指定数据中心的业务组列表。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/describe_uhost_tags
+     * See also: https://docs.ucloud.cn/api/uhost-api/describe_uhost_tags
      *
      * Arguments:
      *
@@ -628,9 +640,10 @@ class UHostClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUHostTagsResponse
      * @throws UCloudException
      */
-    public function describeUHostTags(DescribeUHostTagsRequest $request = null): DescribeUHostTagsResponse
+    public function describeUHostTags(DescribeUHostTagsRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUHostTagsResponse($resp->toArray(), $resp->getRequestId());
@@ -639,7 +652,7 @@ class UHostClient extends Client
     /**
      * GetAttachedDiskUpgradePrice - 获取挂载磁盘的升级价格
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/get_attached_disk_upgrade_price
+     * See also: https://docs.ucloud.cn/api/uhost-api/get_attached_disk_upgrade_price
      *
      * Arguments:
      *
@@ -659,9 +672,10 @@ class UHostClient extends Client
      *     "Price" => (number) 升级差价。精度为小数点后2位。
      * ]
      *
+     * @return GetAttachedDiskUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getAttachedDiskUpgradePrice(GetAttachedDiskUpgradePriceRequest $request = null): GetAttachedDiskUpgradePriceResponse
+    public function getAttachedDiskUpgradePrice(GetAttachedDiskUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetAttachedDiskUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -670,7 +684,7 @@ class UHostClient extends Client
     /**
      * GetUHostInstancePrice - 根据UHost实例配置，获取UHost实例的价格。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/get_uhost_instance_price
+     * See also: https://docs.ucloud.cn/api/uhost-api/get_uhost_instance_price
      *
      * Arguments:
      *
@@ -715,9 +729,10 @@ class UHostClient extends Client
      *     ]
      * ]
      *
+     * @return GetUHostInstancePriceResponse
      * @throws UCloudException
      */
-    public function getUHostInstancePrice(GetUHostInstancePriceRequest $request = null): GetUHostInstancePriceResponse
+    public function getUHostInstancePrice(GetUHostInstancePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUHostInstancePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -726,7 +741,7 @@ class UHostClient extends Client
     /**
      * GetUHostInstanceVncInfo - 获取指定UHost实例的管理VNC配置详细信息。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/get_uhost_instance_vnc_info
+     * See also: https://docs.ucloud.cn/api/uhost-api/get_uhost_instance_vnc_info
      *
      * Arguments:
      *
@@ -746,9 +761,10 @@ class UHostClient extends Client
      *     "VncPassword" => (string) Vnc 登录密码
      * ]
      *
+     * @return GetUHostInstanceVncInfoResponse
      * @throws UCloudException
      */
-    public function getUHostInstanceVncInfo(GetUHostInstanceVncInfoRequest $request = null): GetUHostInstanceVncInfoResponse
+    public function getUHostInstanceVncInfo(GetUHostInstanceVncInfoRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUHostInstanceVncInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -757,7 +773,7 @@ class UHostClient extends Client
     /**
      * GetUHostUpgradePrice - 获取UHost实例升级配置的价格。可选配置范围请参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/get_uhost_upgrade_price
+     * See also: https://docs.ucloud.cn/api/uhost-api/get_uhost_upgrade_price
      *
      * Arguments:
      *
@@ -778,9 +794,10 @@ class UHostClient extends Client
      *     "OriginalPrice" => (number) 限时优惠的折前原价
      * ]
      *
+     * @return GetUHostUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getUHostUpgradePrice(GetUHostUpgradePriceRequest $request = null): GetUHostUpgradePriceResponse
+    public function getUHostUpgradePrice(GetUHostUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUHostUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -789,7 +806,7 @@ class UHostClient extends Client
     /**
      * ImportCustomImage - 把UFile的镜像文件导入到UHost，生成自定义镜像
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/import_custom_image
+     * See also: https://docs.ucloud.cn/api/uhost-api/import_custom_image
      *
      * Arguments:
      *
@@ -811,9 +828,10 @@ class UHostClient extends Client
      *     "ImageId" => (string) 镜像Id
      * ]
      *
+     * @return ImportCustomImageResponse
      * @throws UCloudException
      */
-    public function importCustomImage(ImportCustomImageRequest $request = null): ImportCustomImageResponse
+    public function importCustomImage(ImportCustomImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ImportCustomImageResponse($resp->toArray(), $resp->getRequestId());
@@ -822,7 +840,7 @@ class UHostClient extends Client
     /**
      * ImportUHostKeyPairs - 导入密钥对后，仅保管公钥部分，需自行妥善保存密钥对的私钥部分。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/import_uhost_key_pairs
+     * See also: https://docs.ucloud.cn/api/uhost-api/import_uhost_key_pairs
      *
      * Arguments:
      *
@@ -842,9 +860,10 @@ class UHostClient extends Client
      *     "KeyPairFingerPrint" => (string) 密钥对指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。算法处理的具体信息格式：`ProjectIdKeyPairId|PublicKeyBody`。
      * ]
      *
+     * @return ImportUHostKeyPairsResponse
      * @throws UCloudException
      */
-    public function importUHostKeyPairs(ImportUHostKeyPairsRequest $request = null): ImportUHostKeyPairsResponse
+    public function importUHostKeyPairs(ImportUHostKeyPairsRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ImportUHostKeyPairsResponse($resp->toArray(), $resp->getRequestId());
@@ -853,7 +872,7 @@ class UHostClient extends Client
     /**
      * LeaveIsolationGroup - 移除硬件隔离组中的主机
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/leave_isolation_group
+     * See also: https://docs.ucloud.cn/api/uhost-api/leave_isolation_group
      *
      * Arguments:
      *
@@ -871,9 +890,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) 主机id
      * ]
      *
+     * @return LeaveIsolationGroupResponse
      * @throws UCloudException
      */
-    public function leaveIsolationGroup(LeaveIsolationGroupRequest $request = null): LeaveIsolationGroupResponse
+    public function leaveIsolationGroup(LeaveIsolationGroupRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new LeaveIsolationGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -882,7 +902,7 @@ class UHostClient extends Client
     /**
      * ModifyUHostIP - 修改云主机内网 IP 地址
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/modify_uhost_ip
+     * See also: https://docs.ucloud.cn/api/uhost-api/modify_uhost_ip
      *
      * Arguments:
      *
@@ -901,9 +921,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) 目标云主机 ID
      * ]
      *
+     * @return ModifyUHostIPResponse
      * @throws UCloudException
      */
-    public function modifyUHostIP(ModifyUHostIPRequest $request = null): ModifyUHostIPResponse
+    public function modifyUHostIP(ModifyUHostIPRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUHostIPResponse($resp->toArray(), $resp->getRequestId());
@@ -912,7 +933,7 @@ class UHostClient extends Client
     /**
      * ModifyUHostInstanceName - 修改指定UHost实例名称，需要给出数据中心，UHostId，及新的实例名称。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/modify_uhost_instance_name
+     * See also: https://docs.ucloud.cn/api/uhost-api/modify_uhost_instance_name
      *
      * Arguments:
      *
@@ -930,9 +951,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例ID
      * ]
      *
+     * @return ModifyUHostInstanceNameResponse
      * @throws UCloudException
      */
-    public function modifyUHostInstanceName(ModifyUHostInstanceNameRequest $request = null): ModifyUHostInstanceNameResponse
+    public function modifyUHostInstanceName(ModifyUHostInstanceNameRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUHostInstanceNameResponse($resp->toArray(), $resp->getRequestId());
@@ -941,7 +963,7 @@ class UHostClient extends Client
     /**
      * ModifyUHostInstanceRemark - 修改指定UHost实例备注信息。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/modify_uhost_instance_remark
+     * See also: https://docs.ucloud.cn/api/uhost-api/modify_uhost_instance_remark
      *
      * Arguments:
      *
@@ -959,9 +981,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例ID
      * ]
      *
+     * @return ModifyUHostInstanceRemarkResponse
      * @throws UCloudException
      */
-    public function modifyUHostInstanceRemark(ModifyUHostInstanceRemarkRequest $request = null): ModifyUHostInstanceRemarkResponse
+    public function modifyUHostInstanceRemark(ModifyUHostInstanceRemarkRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUHostInstanceRemarkResponse($resp->toArray(), $resp->getRequestId());
@@ -970,7 +993,7 @@ class UHostClient extends Client
     /**
      * ModifyUHostInstanceTag - 修改指定UHost实例业务组标识。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/modify_uhost_instance_tag
+     * See also: https://docs.ucloud.cn/api/uhost-api/modify_uhost_instance_tag
      *
      * Arguments:
      *
@@ -988,9 +1011,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例ID
      * ]
      *
+     * @return ModifyUHostInstanceTagResponse
      * @throws UCloudException
      */
-    public function modifyUHostInstanceTag(ModifyUHostInstanceTagRequest $request = null): ModifyUHostInstanceTagResponse
+    public function modifyUHostInstanceTag(ModifyUHostInstanceTagRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUHostInstanceTagResponse($resp->toArray(), $resp->getRequestId());
@@ -999,7 +1023,7 @@ class UHostClient extends Client
     /**
      * PoweroffUHostInstance - 直接关闭UHost实例电源，无需等待实例正常关闭。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/poweroff_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/poweroff_uhost_instance
      *
      * Arguments:
      *
@@ -1016,9 +1040,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost的实例ID
      * ]
      *
+     * @return PoweroffUHostInstanceResponse
      * @throws UCloudException
      */
-    public function poweroffUHostInstance(PoweroffUHostInstanceRequest $request = null): PoweroffUHostInstanceResponse
+    public function poweroffUHostInstance(PoweroffUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new PoweroffUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1027,7 +1052,7 @@ class UHostClient extends Client
     /**
      * RebootUHostInstance - 重新启动UHost实例，需要指定数据中心及UHostID两个参数的值。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/reboot_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/reboot_uhost_instance
      *
      * Arguments:
      *
@@ -1045,9 +1070,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例ID
      * ]
      *
+     * @return RebootUHostInstanceResponse
      * @throws UCloudException
      */
-    public function rebootUHostInstance(RebootUHostInstanceRequest $request = null): RebootUHostInstanceResponse
+    public function rebootUHostInstance(RebootUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RebootUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1056,7 +1082,7 @@ class UHostClient extends Client
     /**
      * ReinstallUHostInstance - 重新安装指定UHost实例的操作系统
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/reinstall_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/reinstall_uhost_instance
      *
      * Arguments:
      *
@@ -1081,9 +1107,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例资源ID
      * ]
      *
+     * @return ReinstallUHostInstanceResponse
      * @throws UCloudException
      */
-    public function reinstallUHostInstance(ReinstallUHostInstanceRequest $request = null): ReinstallUHostInstanceResponse
+    public function reinstallUHostInstance(ReinstallUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ReinstallUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1092,7 +1119,7 @@ class UHostClient extends Client
     /**
      * ResetUHostInstancePassword - 重置UHost实例的管理员密码。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/reset_uhost_instance_password
+     * See also: https://docs.ucloud.cn/api/uhost-api/reset_uhost_instance_password
      *
      * Arguments:
      *
@@ -1110,9 +1137,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例ID
      * ]
      *
+     * @return ResetUHostInstancePasswordResponse
      * @throws UCloudException
      */
-    public function resetUHostInstancePassword(ResetUHostInstancePasswordRequest $request = null): ResetUHostInstancePasswordResponse
+    public function resetUHostInstancePassword(ResetUHostInstancePasswordRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ResetUHostInstancePasswordResponse($resp->toArray(), $resp->getRequestId());
@@ -1121,7 +1149,7 @@ class UHostClient extends Client
     /**
      * ResizeAttachedDisk - 修改挂载的磁盘大小，包含系统盘和数据盘
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/resize_attached_disk
+     * See also: https://docs.ucloud.cn/api/uhost-api/resize_attached_disk
      *
      * Arguments:
      *
@@ -1142,9 +1170,10 @@ class UHostClient extends Client
      *     "NeedRestart" => (boolean) 扩容后的状态。NeedRestart = true，必须关闭后启动实例才能使用扩容的磁盘空间。NeedRestart = false,磁盘扩容后无需重启操作。
      * ]
      *
+     * @return ResizeAttachedDiskResponse
      * @throws UCloudException
      */
-    public function resizeAttachedDisk(ResizeAttachedDiskRequest $request = null): ResizeAttachedDiskResponse
+    public function resizeAttachedDisk(ResizeAttachedDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ResizeAttachedDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -1153,7 +1182,7 @@ class UHostClient extends Client
     /**
      * ResizeUHostInstance - 修改指定UHost实例的资源配置，如CPU核心数，内存容量大小，网络增强等。可选配置范围请参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/resize_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/resize_uhost_instance
      *
      * Arguments:
      *
@@ -1173,9 +1202,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例ID
      * ]
      *
+     * @return ResizeUHostInstanceResponse
      * @throws UCloudException
      */
-    public function resizeUHostInstance(ResizeUHostInstanceRequest $request = null): ResizeUHostInstanceResponse
+    public function resizeUHostInstance(ResizeUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ResizeUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1184,7 +1214,7 @@ class UHostClient extends Client
     /**
      * StartUHostInstance - 启动处于关闭状态的UHost实例，需要指定数据中心及UHostID两个参数的值。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/start_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/start_uhost_instance
      *
      * Arguments:
      *
@@ -1202,9 +1232,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例ID
      * ]
      *
+     * @return StartUHostInstanceResponse
      * @throws UCloudException
      */
-    public function startUHostInstance(StartUHostInstanceRequest $request = null): StartUHostInstanceResponse
+    public function startUHostInstance(StartUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new StartUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1213,7 +1244,7 @@ class UHostClient extends Client
     /**
      * StopUHostInstance - 指停止处于运行状态的UHost实例，需指定数据中心及UhostID。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/stop_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/stop_uhost_instance
      *
      * Arguments:
      *
@@ -1230,9 +1261,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost实例ID
      * ]
      *
+     * @return StopUHostInstanceResponse
      * @throws UCloudException
      */
-    public function stopUHostInstance(StopUHostInstanceRequest $request = null): StopUHostInstanceResponse
+    public function stopUHostInstance(StopUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new StopUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1241,7 +1273,7 @@ class UHostClient extends Client
     /**
      * TerminateCustomImage - 删除用户自定义镜像
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/terminate_custom_image
+     * See also: https://docs.ucloud.cn/api/uhost-api/terminate_custom_image
      *
      * Arguments:
      *
@@ -1257,9 +1289,10 @@ class UHostClient extends Client
      *     "ImageId" => (string) 自制镜像Id
      * ]
      *
+     * @return TerminateCustomImageResponse
      * @throws UCloudException
      */
-    public function terminateCustomImage(TerminateCustomImageRequest $request = null): TerminateCustomImageResponse
+    public function terminateCustomImage(TerminateCustomImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new TerminateCustomImageResponse($resp->toArray(), $resp->getRequestId());
@@ -1268,7 +1301,7 @@ class UHostClient extends Client
     /**
      * TerminateUHostInstance - 删除指定数据中心的UHost实例。
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/terminate_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/terminate_uhost_instance
      *
      * Arguments:
      *
@@ -1288,9 +1321,10 @@ class UHostClient extends Client
      *     "UHostId" => (string) UHost 实例 Id
      * ]
      *
+     * @return TerminateUHostInstanceResponse
      * @throws UCloudException
      */
-    public function terminateUHostInstance(TerminateUHostInstanceRequest $request = null): TerminateUHostInstanceResponse
+    public function terminateUHostInstance(TerminateUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new TerminateUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1299,7 +1333,7 @@ class UHostClient extends Client
     /**
      * UpgradeToArkUHostInstance - 普通升级为方舟机型
      *
-     * See also: https://docs.ucloud.cn/api/UHost-api/upgrade_to_ark_uhost_instance
+     * See also: https://docs.ucloud.cn/api/uhost-api/upgrade_to_ark_uhost_instance
      *
      * Arguments:
      *
@@ -1316,9 +1350,10 @@ class UHostClient extends Client
      *     "UHostSet" => (array<string>) UHost主机的资源ID数组
      * ]
      *
+     * @return UpgradeToArkUHostInstanceResponse
      * @throws UCloudException
      */
-    public function upgradeToArkUHostInstance(UpgradeToArkUHostInstanceRequest $request = null): UpgradeToArkUHostInstanceResponse
+    public function upgradeToArkUHostInstance(UpgradeToArkUHostInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpgradeToArkUHostInstanceResponse($resp->toArray(), $resp->getRequestId());

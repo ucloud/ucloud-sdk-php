@@ -28,9 +28,12 @@ class DescribeUEcVHostISPResponse extends Response
      *
      * @return NodeIspList[]|null
      */
-    public function getNodeIspList(): array
+    public function getNodeIspList()
     {
-        $items = $this->get("NodeIspList") ?? [];
+        $items = $this->get("NodeIspList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NodeIspList($item));

@@ -34,7 +34,7 @@ class SendBatchUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class SendBatchUSMSMessageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class SendBatchUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getTaskContent(): string
+    public function getTaskContent()
     {
         return $this->get("TaskContent");
     }
@@ -64,7 +64,7 @@ class SendBatchUSMSMessageRequest extends Request
      *
      * @param string $taskContent
      */
-    public function setTaskContent(string $taskContent)
+    public function setTaskContent($taskContent)
     {
         $this->set("TaskContent", $taskContent);
     }

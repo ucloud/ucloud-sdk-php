@@ -33,7 +33,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -83,7 +83,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -93,7 +93,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageType(): string
+    public function getImageType()
     {
         return $this->get("ImageType");
     }
@@ -103,7 +103,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $imageType
      */
-    public function setImageType(string $imageType)
+    public function setImageType($imageType)
     {
         $this->set("ImageType", $imageType);
     }
@@ -113,7 +113,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getOsType(): string
+    public function getOsType()
     {
         return $this->get("OsType");
     }
@@ -123,7 +123,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $osType
      */
-    public function setOsType(string $osType)
+    public function setOsType($osType)
     {
         $this->set("OsType", $osType);
     }
@@ -133,7 +133,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -143,7 +143,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -153,7 +153,7 @@ class DescribeImageRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -163,7 +163,7 @@ class DescribeImageRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -173,7 +173,7 @@ class DescribeImageRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -183,7 +183,7 @@ class DescribeImageRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -193,7 +193,7 @@ class DescribeImageRequest extends Request
      *
      * @return integer|null
      */
-    public function getPriceSet(): int
+    public function getPriceSet()
     {
         return $this->get("PriceSet");
     }
@@ -203,7 +203,7 @@ class DescribeImageRequest extends Request
      *
      * @param int $priceSet
      */
-    public function setPriceSet(int $priceSet)
+    public function setPriceSet($priceSet)
     {
         $this->set("PriceSet", $priceSet);
     }

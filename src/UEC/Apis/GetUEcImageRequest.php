@@ -32,7 +32,7 @@ class GetUEcImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class GetUEcImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class GetUEcImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageType(): string
+    public function getImageType()
     {
         return $this->get("ImageType");
     }
@@ -62,7 +62,7 @@ class GetUEcImageRequest extends Request
      *
      * @param string $imageType
      */
-    public function setImageType(string $imageType)
+    public function setImageType($imageType)
     {
         $this->set("ImageType", $imageType);
     }
@@ -72,7 +72,7 @@ class GetUEcImageRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -82,7 +82,7 @@ class GetUEcImageRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -92,7 +92,7 @@ class GetUEcImageRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -102,7 +102,7 @@ class GetUEcImageRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }

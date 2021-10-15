@@ -27,7 +27,7 @@ class URedisBackupSet extends Response
      *
      * @return string|null
      */
-    public function getBackupId(): string
+    public function getBackupId()
     {
         return $this->get("BackupId");
     }
@@ -37,7 +37,7 @@ class URedisBackupSet extends Response
      *
      * @param string $backupId
      */
-    public function setBackupId(string $backupId)
+    public function setBackupId($backupId)
     {
         $this->set("BackupId", $backupId);
     }
@@ -47,7 +47,7 @@ class URedisBackupSet extends Response
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -57,7 +57,7 @@ class URedisBackupSet extends Response
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -67,7 +67,7 @@ class URedisBackupSet extends Response
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -77,7 +77,7 @@ class URedisBackupSet extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -87,7 +87,7 @@ class URedisBackupSet extends Response
      *
      * @return string|null
      */
-    public function getGroupName(): string
+    public function getGroupName()
     {
         return $this->get("GroupName");
     }
@@ -97,7 +97,7 @@ class URedisBackupSet extends Response
      *
      * @param string $groupName
      */
-    public function setGroupName(string $groupName)
+    public function setGroupName($groupName)
     {
         $this->set("GroupName", $groupName);
     }
@@ -107,7 +107,7 @@ class URedisBackupSet extends Response
      *
      * @return string|null
      */
-    public function getBackupName(): string
+    public function getBackupName()
     {
         return $this->get("BackupName");
     }
@@ -117,7 +117,7 @@ class URedisBackupSet extends Response
      *
      * @param string $backupName
      */
-    public function setBackupName(string $backupName)
+    public function setBackupName($backupName)
     {
         $this->set("BackupName", $backupName);
     }
@@ -127,7 +127,7 @@ class URedisBackupSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupTime(): int
+    public function getBackupTime()
     {
         return $this->get("BackupTime");
     }
@@ -137,7 +137,7 @@ class URedisBackupSet extends Response
      *
      * @param int $backupTime
      */
-    public function setBackupTime(int $backupTime)
+    public function setBackupTime($backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
@@ -147,7 +147,7 @@ class URedisBackupSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupSize(): int
+    public function getBackupSize()
     {
         return $this->get("BackupSize");
     }
@@ -157,7 +157,7 @@ class URedisBackupSet extends Response
      *
      * @param int $backupSize
      */
-    public function setBackupSize(int $backupSize)
+    public function setBackupSize($backupSize)
     {
         $this->set("BackupSize", $backupSize);
     }
@@ -167,7 +167,7 @@ class URedisBackupSet extends Response
      *
      * @return string|null
      */
-    public function getBackupType(): string
+    public function getBackupType()
     {
         return $this->get("BackupType");
     }
@@ -177,7 +177,7 @@ class URedisBackupSet extends Response
      *
      * @param string $backupType
      */
-    public function setBackupType(string $backupType)
+    public function setBackupType($backupType)
     {
         $this->set("BackupType", $backupType);
     }
@@ -187,7 +187,7 @@ class URedisBackupSet extends Response
      *
      * @return string|null
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->get("State");
     }
@@ -197,7 +197,7 @@ class URedisBackupSet extends Response
      *
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }

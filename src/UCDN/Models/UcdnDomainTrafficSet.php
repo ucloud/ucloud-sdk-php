@@ -27,7 +27,7 @@ class UcdnDomainTrafficSet extends Response
      *
      * @return integer|null
      */
-    public function getTime(): int
+    public function getTime()
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class UcdnDomainTrafficSet extends Response
      *
      * @param int $time
      */
-    public function setTime(int $time)
+    public function setTime($time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class UcdnDomainTrafficSet extends Response
      *
      * @return float|null
      */
-    public function getValue(): float
+    public function getValue()
     {
         return $this->get("Value");
     }
@@ -57,7 +57,7 @@ class UcdnDomainTrafficSet extends Response
      *
      * @param float $value
      */
-    public function setValue(float $value)
+    public function setValue($value)
     {
         $this->set("Value", $value);
     }

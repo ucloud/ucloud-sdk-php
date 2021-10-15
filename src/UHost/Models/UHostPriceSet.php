@@ -27,7 +27,7 @@ class UHostPriceSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -37,7 +37,7 @@ class UHostPriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -47,7 +47,7 @@ class UHostPriceSet extends Response
      *
      * @return float|null
      */
-    public function getPrice(): float
+    public function getPrice()
     {
         return $this->get("Price");
     }
@@ -57,7 +57,7 @@ class UHostPriceSet extends Response
      *
      * @param float $price
      */
-    public function setPrice(float $price)
+    public function setPrice($price)
     {
         $this->set("Price", $price);
     }
@@ -67,7 +67,7 @@ class UHostPriceSet extends Response
      *
      * @return float|null
      */
-    public function getOriginalPrice(): float
+    public function getOriginalPrice()
     {
         return $this->get("OriginalPrice");
     }
@@ -77,7 +77,7 @@ class UHostPriceSet extends Response
      *
      * @param float $originalPrice
      */
-    public function setOriginalPrice(float $originalPrice)
+    public function setOriginalPrice($originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }
@@ -87,7 +87,7 @@ class UHostPriceSet extends Response
      *
      * @return float|null
      */
-    public function getListPrice(): float
+    public function getListPrice()
     {
         return $this->get("ListPrice");
     }
@@ -97,7 +97,7 @@ class UHostPriceSet extends Response
      *
      * @param float $listPrice
      */
-    public function setListPrice(float $listPrice)
+    public function setListPrice($listPrice)
     {
         $this->set("ListPrice", $listPrice);
     }

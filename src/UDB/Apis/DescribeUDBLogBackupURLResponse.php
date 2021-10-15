@@ -27,7 +27,7 @@ class DescribeUDBLogBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupPath(): string
+    public function getBackupPath()
     {
         return $this->get("BackupPath");
     }
@@ -37,7 +37,7 @@ class DescribeUDBLogBackupURLResponse extends Response
      *
      * @param string $backupPath
      */
-    public function setBackupPath(string $backupPath)
+    public function setBackupPath($backupPath)
     {
         $this->set("BackupPath", $backupPath);
     }
@@ -47,7 +47,7 @@ class DescribeUDBLogBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getUsernetPath(): string
+    public function getUsernetPath()
     {
         return $this->get("UsernetPath");
     }
@@ -57,7 +57,7 @@ class DescribeUDBLogBackupURLResponse extends Response
      *
      * @param string $usernetPath
      */
-    public function setUsernetPath(string $usernetPath)
+    public function setUsernetPath($usernetPath)
     {
         $this->set("UsernetPath", $usernetPath);
     }

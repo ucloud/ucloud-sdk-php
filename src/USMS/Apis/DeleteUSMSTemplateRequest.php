@@ -34,7 +34,7 @@ class DeleteUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class DeleteUSMSTemplateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DeleteUSMSTemplateRequest extends Request
      *
      * @return string[]|null
      */
-    public function getTemplateIds(): array
+    public function getTemplateIds()
     {
         return $this->get("TemplateIds");
     }

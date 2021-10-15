@@ -27,7 +27,7 @@ class UploadUDBParamGroupResponse extends Response
      *
      * @return integer|null
      */
-    public function getGroupId(): int
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -37,7 +37,7 @@ class UploadUDBParamGroupResponse extends Response
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }

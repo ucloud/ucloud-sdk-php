@@ -27,7 +27,7 @@ class CreateUFileTokenResponse extends Response
      *
      * @return string|null
      */
-    public function getTokenId(): string
+    public function getTokenId()
     {
         return $this->get("TokenId");
     }
@@ -37,7 +37,7 @@ class CreateUFileTokenResponse extends Response
      *
      * @param string $tokenId
      */
-    public function setTokenId(string $tokenId)
+    public function setTokenId($tokenId)
     {
         $this->set("TokenId", $tokenId);
     }

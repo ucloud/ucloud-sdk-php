@@ -27,7 +27,7 @@ class FailPhoneDetail extends Response
      *
      * @return string[]|null
      */
-    public function getTemplateParams(): array
+    public function getTemplateParams()
     {
         return $this->get("TemplateParams");
     }
@@ -47,7 +47,7 @@ class FailPhoneDetail extends Response
      *
      * @return string|null
      */
-    public function getPhone(): string
+    public function getPhone()
     {
         return $this->get("Phone");
     }
@@ -57,7 +57,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $phone
      */
-    public function setPhone(string $phone)
+    public function setPhone($phone)
     {
         $this->set("Phone", $phone);
     }
@@ -67,7 +67,7 @@ class FailPhoneDetail extends Response
      *
      * @return string|null
      */
-    public function getExtendCode(): string
+    public function getExtendCode()
     {
         return $this->get("ExtendCode");
     }
@@ -77,7 +77,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $extendCode
      */
-    public function setExtendCode(string $extendCode)
+    public function setExtendCode($extendCode)
     {
         $this->set("ExtendCode", $extendCode);
     }
@@ -87,7 +87,7 @@ class FailPhoneDetail extends Response
      *
      * @return string|null
      */
-    public function getUserId(): string
+    public function getUserId()
     {
         return $this->get("UserId");
     }
@@ -97,7 +97,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $userId
      */
-    public function setUserId(string $userId)
+    public function setUserId($userId)
     {
         $this->set("UserId", $userId);
     }
@@ -107,7 +107,7 @@ class FailPhoneDetail extends Response
      *
      * @return string|null
      */
-    public function getFailureDetails(): string
+    public function getFailureDetails()
     {
         return $this->get("FailureDetails");
     }
@@ -117,7 +117,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $failureDetails
      */
-    public function setFailureDetails(string $failureDetails)
+    public function setFailureDetails($failureDetails)
     {
         $this->set("FailureDetails", $failureDetails);
     }

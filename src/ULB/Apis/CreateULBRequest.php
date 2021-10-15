@@ -29,41 +29,41 @@ class CreateULBRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getULBName(): string
+    public function getULBName()
     {
         return $this->get("ULBName");
     }
@@ -83,7 +83,7 @@ class CreateULBRequest extends Request
      *
      * @param string $ulbName
      */
-    public function setULBName(string $ulbName)
+    public function setULBName($ulbName)
     {
         $this->set("ULBName", $ulbName);
     }
@@ -93,7 +93,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -103,7 +103,7 @@ class CreateULBRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -113,7 +113,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -123,7 +123,7 @@ class CreateULBRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -133,7 +133,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getOuterMode(): string
+    public function getOuterMode()
     {
         return $this->get("OuterMode");
     }
@@ -143,7 +143,7 @@ class CreateULBRequest extends Request
      *
      * @param string $outerMode
      */
-    public function setOuterMode(string $outerMode)
+    public function setOuterMode($outerMode)
     {
         $this->set("OuterMode", $outerMode);
     }
@@ -153,7 +153,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getInnerMode(): string
+    public function getInnerMode()
     {
         return $this->get("InnerMode");
     }
@@ -163,7 +163,7 @@ class CreateULBRequest extends Request
      *
      * @param string $innerMode
      */
-    public function setInnerMode(string $innerMode)
+    public function setInnerMode($innerMode)
     {
         $this->set("InnerMode", $innerMode);
     }
@@ -173,7 +173,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -183,7 +183,7 @@ class CreateULBRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -193,7 +193,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -203,27 +203,27 @@ class CreateULBRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
 
     /**
-     * SubnetId: 内网ULB 所属的子网ID，如果不传则使用默认的子网
+     * SubnetId: ULB 所属的子网ID，如果不传则随机选择一个。
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
 
     /**
-     * SubnetId: 内网ULB 所属的子网ID，如果不传则使用默认的子网
+     * SubnetId: ULB 所属的子网ID，如果不传则随机选择一个。
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -233,7 +233,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getBusinessId(): string
+    public function getBusinessId()
     {
         return $this->get("BusinessId");
     }
@@ -243,7 +243,7 @@ class CreateULBRequest extends Request
      *
      * @param string $businessId
      */
-    public function setBusinessId(string $businessId)
+    public function setBusinessId($businessId)
     {
         $this->set("BusinessId", $businessId);
     }
@@ -253,7 +253,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getFirewallId(): string
+    public function getFirewallId()
     {
         return $this->get("FirewallId");
     }
@@ -263,27 +263,27 @@ class CreateULBRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId)
+    public function setFirewallId($firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
 
     /**
-     * ListenType: ULB 监听器类型，枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。默认为RequestProxy
+     * ListenType: ULB 监听器类型，外网ULB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。
      *
      * @return string|null
      */
-    public function getListenType(): string
+    public function getListenType()
     {
         return $this->get("ListenType");
     }
 
     /**
-     * ListenType: ULB 监听器类型，枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。默认为RequestProxy
+     * ListenType: ULB 监听器类型，外网ULB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。
      *
      * @param string $listenType
      */
-    public function setListenType(string $listenType)
+    public function setListenType($listenType)
     {
         $this->set("ListenType", $listenType);
     }

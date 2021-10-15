@@ -28,7 +28,7 @@ class DescribeBandwidthUsageResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -38,7 +38,7 @@ class DescribeBandwidthUsageResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -48,9 +48,12 @@ class DescribeBandwidthUsageResponse extends Response
      *
      * @return UnetBandwidthUsageEIPSet[]|null
      */
-    public function getEIPSet(): array
+    public function getEIPSet()
     {
-        $items = $this->get("EIPSet") ?? [];
+        $items = $this->get("EIPSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UnetBandwidthUsageEIPSet($item));

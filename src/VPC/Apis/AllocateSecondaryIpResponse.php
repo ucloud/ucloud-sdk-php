@@ -28,7 +28,7 @@ class AllocateSecondaryIpResponse extends Response
      *
      * @return IpInfo|null
      */
-    public function getIpInfo(): IpInfo
+    public function getIpInfo()
     {
         return new IpInfo($this->get("IpInfo"));
     }
@@ -38,7 +38,7 @@ class AllocateSecondaryIpResponse extends Response
      *
      * @param IpInfo $ipInfo
      */
-    public function setIpInfo(IpInfo $ipInfo)
+    public function setIpInfo(array $ipInfo)
     {
         $this->set("IpInfo", $ipInfo->getAll());
     }

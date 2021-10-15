@@ -27,7 +27,7 @@ class CreateURedisGroupResponse extends Response
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -37,7 +37,7 @@ class CreateURedisGroupResponse extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }

@@ -110,7 +110,7 @@ class UECClient extends Client
     /**
      * BindUEcFirewall - 绑定防火墙，应用防火墙规则
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/bind_u_ec_firewall
+     * See also: https://docs.ucloud.cn/api/uec-api/bind_u_ec_firewall
      *
      * Arguments:
      *
@@ -125,9 +125,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return BindUEcFirewallResponse
      * @throws UCloudException
      */
-    public function bindUEcFirewall(BindUEcFirewallRequest $request = null): BindUEcFirewallResponse
+    public function bindUEcFirewall(BindUEcFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new BindUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -136,7 +137,7 @@ class UECClient extends Client
     /**
      * CreateUEcFirewall - 创建外网防火墙
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/create_u_ec_firewall
+     * See also: https://docs.ucloud.cn/api/uec-api/create_u_ec_firewall
      *
      * Arguments:
      *
@@ -162,9 +163,10 @@ class UECClient extends Client
      *     "FirewallId" => (string) 防火墙Id
      * ]
      *
+     * @return CreateUEcFirewallResponse
      * @throws UCloudException
      */
-    public function createUEcFirewall(CreateUEcFirewallRequest $request = null): CreateUEcFirewallResponse
+    public function createUEcFirewall(CreateUEcFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -173,7 +175,7 @@ class UECClient extends Client
     /**
      * CreateUEcHolder - 创建容器组
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/create_u_ec_holder
+     * See also: https://docs.ucloud.cn/api/uec-api/create_u_ec_holder
      *
      * Arguments:
      *
@@ -184,7 +186,7 @@ class UECClient extends Client
      *     "MemSize" => (integer) 容器组总内存，单位MB
      *     "SubnetId" => (string) 子网ID
      *     "Name" => (string) 容器组名称（默认default）
-     *     "ProductType" => (string) 机型（normal-标准型，hf-高性能型，默认normal）
+     *     "ProductType" => (string) 机型（normal-经济型，hf-标准型，默认normal）
      *     "RestartStrategy" => (integer) 重启策略（0总是，1失败是，2永不，默认0）
      *     "ElasticIp" => (string) 绑定外网ip（yes-绑定，no-不绑定，默认no）
      *     "Bandwidth" => (integer) 外网绑定的带宽（单位M，默认0，只有当ElasticIp为yes时，默认1）
@@ -224,9 +226,10 @@ class UECClient extends Client
      *     "ResourceId" => (string) 容器组资源id
      * ]
      *
+     * @return CreateUEcHolderResponse
      * @throws UCloudException
      */
-    public function createUEcHolder(CreateUEcHolderRequest $request = null): CreateUEcHolderResponse
+    public function createUEcHolder(CreateUEcHolderRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUEcHolderResponse($resp->toArray(), $resp->getRequestId());
@@ -235,7 +238,7 @@ class UECClient extends Client
     /**
      * CreateUEcSubnet - 创建子网
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/create_u_ec_subnet
+     * See also: https://docs.ucloud.cn/api/uec-api/create_u_ec_subnet
      *
      * Arguments:
      *
@@ -253,9 +256,10 @@ class UECClient extends Client
      *     "SubnetId" => (string) 子网ID
      * ]
      *
+     * @return CreateUEcSubnetResponse
      * @throws UCloudException
      */
-    public function createUEcSubnet(CreateUEcSubnetRequest $request = null): CreateUEcSubnetResponse
+    public function createUEcSubnet(CreateUEcSubnetRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUEcSubnetResponse($resp->toArray(), $resp->getRequestId());
@@ -264,7 +268,7 @@ class UECClient extends Client
     /**
      * CreateUEcVHost - 创建虚拟机v2.0
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/create_u_ec_v_host
+     * See also: https://docs.ucloud.cn/api/uec-api/create_u_ec_v_host
      *
      * Arguments:
      *
@@ -284,10 +288,12 @@ class UECClient extends Client
      *     "ChargeType" => (integer) 付费方式，1按时，2按月，3按年，默认2
      *     "ChargeQuantity" => (integer) 月数或者年数，0计费到月底， 默认0
      *     "SubnetId" => (string) 子网ID
-     *     "ProductType" => (string) 产品类型：normal（标准型），hf（高频型）
+     *     "ProductType" => (string) 产品类型：normal（经济型），hf（标准型）,g(Gpu型)
      *     "FirewallId" => (string) 外网防护墙规则组，默认
      *     "Isp" => (array<integer>) 运营商（1-电信，2-联通，4移动）
-     *     "IsNeedOuterIp" => (string) （已废弃）是否需要外网ip（yes-是，no-否）
+     *     "IsNeedOuterIp" => (string) 是否需要外网ip（no-否）
+     *     "Gpu" => (integer) Gpu卡核心数。仅Gpu机型支持此字段
+     *     "GpuType" => (string) Gpu类型，枚举值["T4S"],ProductType为G时必填
      * ]
      *
      * Outputs:
@@ -300,9 +306,10 @@ class UECClient extends Client
      *     ]
      * ]
      *
+     * @return CreateUEcVHostResponse
      * @throws UCloudException
      */
-    public function createUEcVHost(CreateUEcVHostRequest $request = null): CreateUEcVHostResponse
+    public function createUEcVHost(CreateUEcVHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -311,7 +318,7 @@ class UECClient extends Client
     /**
      * DeleteUEcCustomImage - 删除UEDN客户自定义镜像
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/delete_u_ec_custom_image
+     * See also: https://docs.ucloud.cn/api/uec-api/delete_u_ec_custom_image
      *
      * Arguments:
      *
@@ -327,9 +334,10 @@ class UECClient extends Client
      *     "ImageId" => (integer) 镜像ID
      * ]
      *
+     * @return DeleteUEcCustomImageResponse
      * @throws UCloudException
      */
-    public function deleteUEcCustomImage(DeleteUEcCustomImageRequest $request = null): DeleteUEcCustomImageResponse
+    public function deleteUEcCustomImage(DeleteUEcCustomImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUEcCustomImageResponse($resp->toArray(), $resp->getRequestId());
@@ -338,7 +346,7 @@ class UECClient extends Client
     /**
      * DeleteUEcHolder - 删除容器组
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/delete_u_ec_holder
+     * See also: https://docs.ucloud.cn/api/uec-api/delete_u_ec_holder
      *
      * Arguments:
      *
@@ -352,9 +360,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUEcHolderResponse
      * @throws UCloudException
      */
-    public function deleteUEcHolder(DeleteUEcHolderRequest $request = null): DeleteUEcHolderResponse
+    public function deleteUEcHolder(DeleteUEcHolderRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUEcHolderResponse($resp->toArray(), $resp->getRequestId());
@@ -363,7 +372,7 @@ class UECClient extends Client
     /**
      * DeleteUEcSubnet - 删除子网
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/delete_u_ec_subnet
+     * See also: https://docs.ucloud.cn/api/uec-api/delete_u_ec_subnet
      *
      * Arguments:
      *
@@ -377,9 +386,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUEcSubnetResponse
      * @throws UCloudException
      */
-    public function deleteUEcSubnet(DeleteUEcSubnetRequest $request = null): DeleteUEcSubnetResponse
+    public function deleteUEcSubnet(DeleteUEcSubnetRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUEcSubnetResponse($resp->toArray(), $resp->getRequestId());
@@ -388,7 +398,7 @@ class UECClient extends Client
     /**
      * DeleteUEcVHost - 删除vhost虚拟机 v2.0
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/delete_u_ec_v_host
+     * See also: https://docs.ucloud.cn/api/uec-api/delete_u_ec_v_host
      *
      * Arguments:
      *
@@ -402,9 +412,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUEcVHostResponse
      * @throws UCloudException
      */
-    public function deleteUEcVHost(DeleteUEcVHostRequest $request = null): DeleteUEcVHostResponse
+    public function deleteUEcVHost(DeleteUEcVHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -413,7 +424,7 @@ class UECClient extends Client
     /**
      * DescribeUEcFirewall - 获取防火墙信息
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/describe_u_ec_firewall
+     * See also: https://docs.ucloud.cn/api/uec-api/describe_u_ec_firewall
      *
      * Arguments:
      *
@@ -451,9 +462,10 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 满足条件的节点总数
      * ]
      *
+     * @return DescribeUEcFirewallResponse
      * @throws UCloudException
      */
-    public function describeUEcFirewall(DescribeUEcFirewallRequest $request = null): DescribeUEcFirewallResponse
+    public function describeUEcFirewall(DescribeUEcFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -462,7 +474,7 @@ class UECClient extends Client
     /**
      * DescribeUEcFirewallResource - 防火墙绑定的资源列表
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/describe_u_ec_firewall_resource
+     * See also: https://docs.ucloud.cn/api/uec-api/describe_u_ec_firewall_resource
      *
      * Arguments:
      *
@@ -486,9 +498,10 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 资源总数
      * ]
      *
+     * @return DescribeUEcFirewallResourceResponse
      * @throws UCloudException
      */
-    public function describeUEcFirewallResource(DescribeUEcFirewallResourceRequest $request = null): DescribeUEcFirewallResourceResponse
+    public function describeUEcFirewallResource(DescribeUEcFirewallResourceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUEcFirewallResourceResponse($resp->toArray(), $resp->getRequestId());
@@ -497,7 +510,7 @@ class UECClient extends Client
     /**
      * DescribeUEcHolder - 获得容器组信息
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/describe_u_ec_holder
+     * See also: https://docs.ucloud.cn/api/uec-api/describe_u_ec_holder
      *
      * Arguments:
      *
@@ -558,7 +571,7 @@ class UECClient extends Client
      *                     ]
      *                 ]
      *             ]
-     *             "ProductType" => (string) 机器类型（normal通用型，hf高性能型）
+     *             "ProductType" => (string) 机器类型（normal经济型，hf标准型）
      *             "NetLimit" => (integer) 外网绑定的带宽
      *             "FirewallId" => (string) 外网防火墙id
      *             "StorVolumeInfo" => (array<object>) 存储卷信息（详情参考StorVolumeInfo）[
@@ -582,9 +595,10 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 满足条件的容器组总数
      * ]
      *
+     * @return DescribeUEcHolderResponse
      * @throws UCloudException
      */
-    public function describeUEcHolder(DescribeUEcHolderRequest $request = null): DescribeUEcHolderResponse
+    public function describeUEcHolder(DescribeUEcHolderRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUEcHolderResponse($resp->toArray(), $resp->getRequestId());
@@ -593,7 +607,7 @@ class UECClient extends Client
     /**
      * DescribeUEcHolderIDC - 获取容器组机房信息
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/describe_u_ec_holder_idc
+     * See also: https://docs.ucloud.cn/api/uec-api/describe_u_ec_holder_idc
      *
      * Arguments:
      *
@@ -622,9 +636,10 @@ class UECClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUEcHolderIDCResponse
      * @throws UCloudException
      */
-    public function describeUEcHolderIDC(DescribeUEcHolderIDCRequest $request = null): DescribeUEcHolderIDCResponse
+    public function describeUEcHolderIDC(DescribeUEcHolderIDCRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUEcHolderIDCResponse($resp->toArray(), $resp->getRequestId());
@@ -633,7 +648,7 @@ class UECClient extends Client
     /**
      * DescribeUEcIDC - 获取IDC机房列表
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/describe_u_ec_idc
+     * See also: https://docs.ucloud.cn/api/uec-api/describe_u_ec_idc
      *
      * Arguments:
      *
@@ -662,9 +677,10 @@ class UECClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUEcIDCResponse
      * @throws UCloudException
      */
-    public function describeUEcIDC(DescribeUEcIDCRequest $request = null): DescribeUEcIDCResponse
+    public function describeUEcIDC(DescribeUEcIDCRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUEcIDCResponse($resp->toArray(), $resp->getRequestId());
@@ -673,7 +689,7 @@ class UECClient extends Client
     /**
      * DescribeUEcSubnet - 获取子网列表
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/describe_u_ec_subnet
+     * See also: https://docs.ucloud.cn/api/uec-api/describe_u_ec_subnet
      *
      * Arguments:
      *
@@ -700,9 +716,10 @@ class UECClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUEcSubnetResponse
      * @throws UCloudException
      */
-    public function describeUEcSubnet(DescribeUEcSubnetRequest $request = null): DescribeUEcSubnetResponse
+    public function describeUEcSubnet(DescribeUEcSubnetRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUEcSubnetResponse($resp->toArray(), $resp->getRequestId());
@@ -711,7 +728,7 @@ class UECClient extends Client
     /**
      * DescribeUEcVHost - 获取虚拟机列表 2.0
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/describe_u_ec_v_host
+     * See also: https://docs.ucloud.cn/api/uec-api/describe_u_ec_v_host
      *
      * Arguments:
      *
@@ -754,14 +771,15 @@ class UECClient extends Client
      *                 ]
      *             ]
      *             "FirewallId" => (string) 防火墙Id
-     *             "ProductType" => (string) 机器类型
+     *             "ProductType" => (string) 机器类型(normal-经济型,hf-标准型,g-GPU型)
      *         ]
      *     ]
      * ]
      *
+     * @return DescribeUEcVHostResponse
      * @throws UCloudException
      */
-    public function describeUEcVHost(DescribeUEcVHostRequest $request = null): DescribeUEcVHostResponse
+    public function describeUEcVHost(DescribeUEcVHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -770,7 +788,7 @@ class UECClient extends Client
     /**
      * DescribeUEcVHostISP - 获取虚拟机运营商信息
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/describe_u_ec_v_host_isp
+     * See also: https://docs.ucloud.cn/api/uec-api/describe_u_ec_v_host_isp
      *
      * Arguments:
      *
@@ -794,9 +812,10 @@ class UECClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUEcVHostISPResponse
      * @throws UCloudException
      */
-    public function describeUEcVHostISP(DescribeUEcVHostISPRequest $request = null): DescribeUEcVHostISPResponse
+    public function describeUEcVHostISP(DescribeUEcVHostISPRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUEcVHostISPResponse($resp->toArray(), $resp->getRequestId());
@@ -805,7 +824,7 @@ class UECClient extends Client
     /**
      * GetUEcHolderLog - 获取单个容器日志
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_holder_log
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_holder_log
      *
      * Arguments:
      *
@@ -821,9 +840,10 @@ class UECClient extends Client
      *     "Data" => (string) 返回的日志数据
      * ]
      *
+     * @return GetUEcHolderLogResponse
      * @throws UCloudException
      */
-    public function getUEcHolderLog(GetUEcHolderLogRequest $request = null): GetUEcHolderLogResponse
+    public function getUEcHolderLog(GetUEcHolderLogRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcHolderLogResponse($resp->toArray(), $resp->getRequestId());
@@ -832,7 +852,7 @@ class UECClient extends Client
     /**
      * GetUEcHolderMetrics - 获取容器（CPU利用率，带宽，内存）数据
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_holder_metrics
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_holder_metrics
      *
      * Arguments:
      *
@@ -888,9 +908,10 @@ class UECClient extends Client
      *     ]
      * ]
      *
+     * @return GetUEcHolderMetricsResponse
      * @throws UCloudException
      */
-    public function getUEcHolderMetrics(GetUEcHolderMetricsRequest $request = null): GetUEcHolderMetricsResponse
+    public function getUEcHolderMetrics(GetUEcHolderMetricsRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcHolderMetricsResponse($resp->toArray(), $resp->getRequestId());
@@ -899,7 +920,7 @@ class UECClient extends Client
     /**
      * GetUEcIDCCutInfo - 获取机房割接信息
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_idc_cut_info
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_idc_cut_info
      *
      * Arguments:
      *
@@ -928,9 +949,10 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 满足条件的机房总数
      * ]
      *
+     * @return GetUEcIDCCutInfoResponse
      * @throws UCloudException
      */
-    public function getUEcIDCCutInfo(GetUEcIDCCutInfoRequest $request = null): GetUEcIDCCutInfoResponse
+    public function getUEcIDCCutInfo(GetUEcIDCCutInfoRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcIDCCutInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -939,7 +961,7 @@ class UECClient extends Client
     /**
      * GetUEcIDCVHostData - 获取机房虚拟机监控数据
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_idcv_host_data
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_idcv_host_data
      *
      * Arguments:
      *
@@ -1018,9 +1040,10 @@ class UECClient extends Client
      *     ]
      * ]
      *
+     * @return GetUEcIDCVHostDataResponse
      * @throws UCloudException
      */
-    public function getUEcIDCVHostData(GetUEcIDCVHostDataRequest $request = null): GetUEcIDCVHostDataResponse
+    public function getUEcIDCVHostData(GetUEcIDCVHostDataRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcIDCVHostDataResponse($resp->toArray(), $resp->getRequestId());
@@ -1029,7 +1052,7 @@ class UECClient extends Client
     /**
      * GetUEcImage - uec2.0
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_image
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_image
      *
      * Arguments:
      *
@@ -1050,7 +1073,7 @@ class UECClient extends Client
      *             "ImageType" => (integer) 镜像类型：1标准镜像，2行业镜像，3自定义镜像
      *             "OcType" => (string) 系统类型：unix, windows
      *             "ImageDesc" => (string) 镜像描述
-     *             "State" => (integer) 镜像状态：镜像状态 1可用，2不可用
+     *             "State" => (integer) 镜像状态：镜像状态 1可用，2不可用，3制作中
      *             "ImageSize" => (integer) 镜像大小，单位GB
      *             "CreateTime" => (integer) 镜像创建时间戳
      *             "DeployInfoList" => (array<object>) 部署详情列表[
@@ -1059,14 +1082,16 @@ class UECClient extends Client
      *                     "State" => (integer) 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中
      *                 ]
      *             ]
+     *             "Gpu" => (integer) 是否支持Gpu(1-支持,0-不支持)
      *         ]
      *     ]
      *     "TotalCount" => (integer) 镜像总数
      * ]
      *
+     * @return GetUEcImageResponse
      * @throws UCloudException
      */
-    public function getUEcImage(GetUEcImageRequest $request = null): GetUEcImageResponse
+    public function getUEcImage(GetUEcImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcImageResponse($resp->toArray(), $resp->getRequestId());
@@ -1075,7 +1100,7 @@ class UECClient extends Client
     /**
      * GetUEcPodPrice - 获得容器组价格
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_pod_price
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_pod_price
      *
      * Arguments:
      *
@@ -1097,9 +1122,10 @@ class UECClient extends Client
      *     "IpPrice" => (number) IP和带宽价格
      * ]
      *
+     * @return GetUEcPodPriceResponse
      * @throws UCloudException
      */
-    public function getUEcPodPrice(GetUEcPodPriceRequest $request = null): GetUEcPodPriceResponse
+    public function getUEcPodPrice(GetUEcPodPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcPodPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -1108,7 +1134,7 @@ class UECClient extends Client
     /**
      * GetUEcUpgradePrice - 获取虚拟机调整差价
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_upgrade_price
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_upgrade_price
      *
      * Arguments:
      *
@@ -1128,9 +1154,10 @@ class UECClient extends Client
      *     "Price" => (integer) 规格调整差价
      * ]
      *
+     * @return GetUEcUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getUEcUpgradePrice(GetUEcUpgradePriceRequest $request = null): GetUEcUpgradePriceResponse
+    public function getUEcUpgradePrice(GetUEcUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -1139,7 +1166,7 @@ class UECClient extends Client
     /**
      * GetUEcVHostData - 获取虚拟机监控数据
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_v_host_data
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_v_host_data
      *
      * Arguments:
      *
@@ -1218,9 +1245,10 @@ class UECClient extends Client
      *     ]
      * ]
      *
+     * @return GetUEcVHostDataResponse
      * @throws UCloudException
      */
-    public function getUEcVHostData(GetUEcVHostDataRequest $request = null): GetUEcVHostDataResponse
+    public function getUEcVHostData(GetUEcVHostDataRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcVHostDataResponse($resp->toArray(), $resp->getRequestId());
@@ -1229,7 +1257,7 @@ class UECClient extends Client
     /**
      * GetUEcVHostPrice - 获取虚拟机价格
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/get_u_ec_v_host_price
+     * See also: https://docs.ucloud.cn/api/uec-api/get_u_ec_v_host_price
      *
      * Arguments:
      *
@@ -1243,8 +1271,10 @@ class UECClient extends Client
      *     "NetLimit" => (integer) 网络带宽限速，单位Mbs
      *     "ChargeType" => (integer) 付费方式，1按时，2按月，3按年，默认2
      *     "ChargeQuantity" => (integer) 月数或者年数，0计费到月底， 默认0
-     *     "ProductType" => (string) 产品类型：normal（标准型），hf（高频型），默认normal
+     *     "ProductType" => (string) 产品类型：normal（经济型），hf（标准型），g(Gpu型),默认normal
      *     "IpCount" => (integer) 外网IP的数量，默认1
+     *     "Gpu" => (integer) Gpu卡核心数。仅Gpu机型支持此字段
+     *     "GpuType" => (string) Gpu类型，枚举值["T4"],ProductType为g时必填
      * ]
      *
      * Outputs:
@@ -1254,9 +1284,10 @@ class UECClient extends Client
      *     "IpPrice" => (number) Ip和带宽价格
      * ]
      *
+     * @return GetUEcVHostPriceResponse
      * @throws UCloudException
      */
-    public function getUEcVHostPrice(GetUEcVHostPriceRequest $request = null): GetUEcVHostPriceResponse
+    public function getUEcVHostPrice(GetUEcVHostPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUEcVHostPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -1265,7 +1296,7 @@ class UECClient extends Client
     /**
      * ImportUEcCustomImage - 导入自定义镜像
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/import_u_ec_custom_image
+     * See also: https://docs.ucloud.cn/api/uec-api/import_u_ec_custom_image
      *
      * Arguments:
      *
@@ -1286,9 +1317,10 @@ class UECClient extends Client
      *     "ImageId" => (string) 镜像Id
      * ]
      *
+     * @return ImportUEcCustomImageResponse
      * @throws UCloudException
      */
-    public function importUEcCustomImage(ImportUEcCustomImageRequest $request = null): ImportUEcCustomImageResponse
+    public function importUEcCustomImage(ImportUEcCustomImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ImportUEcCustomImageResponse($resp->toArray(), $resp->getRequestId());
@@ -1297,7 +1329,7 @@ class UECClient extends Client
     /**
      * LoginUEcDocker - 登录容器
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/login_u_ec_docker
+     * See also: https://docs.ucloud.cn/api/uec-api/login_u_ec_docker
      *
      * Arguments:
      *
@@ -1315,9 +1347,10 @@ class UECClient extends Client
      *     "LinkPort" => (integer) 登录端口
      * ]
      *
+     * @return LoginUEcDockerResponse
      * @throws UCloudException
      */
-    public function loginUEcDocker(LoginUEcDockerRequest $request = null): LoginUEcDockerResponse
+    public function loginUEcDocker(LoginUEcDockerRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new LoginUEcDockerResponse($resp->toArray(), $resp->getRequestId());
@@ -1326,7 +1359,7 @@ class UECClient extends Client
     /**
      * ModifyUEcBandwidth - 修改节点带宽限制
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/modify_u_ec_bandwidth
+     * See also: https://docs.ucloud.cn/api/uec-api/modify_u_ec_bandwidth
      *
      * Arguments:
      *
@@ -1341,9 +1374,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyUEcBandwidthResponse
      * @throws UCloudException
      */
-    public function modifyUEcBandwidth(ModifyUEcBandwidthRequest $request = null): ModifyUEcBandwidthResponse
+    public function modifyUEcBandwidth(ModifyUEcBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUEcBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -1352,7 +1386,7 @@ class UECClient extends Client
     /**
      * ModifyUEcHolderName - 修改容器组名称
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/modify_u_ec_holder_name
+     * See also: https://docs.ucloud.cn/api/uec-api/modify_u_ec_holder_name
      *
      * Arguments:
      *
@@ -1367,9 +1401,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyUEcHolderNameResponse
      * @throws UCloudException
      */
-    public function modifyUEcHolderName(ModifyUEcHolderNameRequest $request = null): ModifyUEcHolderNameResponse
+    public function modifyUEcHolderName(ModifyUEcHolderNameRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUEcHolderNameResponse($resp->toArray(), $resp->getRequestId());
@@ -1378,7 +1413,7 @@ class UECClient extends Client
     /**
      * ModifyUEcImageName - 修改镜像名称
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/modify_u_ec_image_name
+     * See also: https://docs.ucloud.cn/api/uec-api/modify_u_ec_image_name
      *
      * Arguments:
      *
@@ -1394,9 +1429,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyUEcImageNameResponse
      * @throws UCloudException
      */
-    public function modifyUEcImageName(ModifyUEcImageNameRequest $request = null): ModifyUEcImageNameResponse
+    public function modifyUEcImageName(ModifyUEcImageNameRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUEcImageNameResponse($resp->toArray(), $resp->getRequestId());
@@ -1405,7 +1441,7 @@ class UECClient extends Client
     /**
      * PoweroffUEcVHost - 虚拟机断电
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/poweroff_u_ec_v_host
+     * See also: https://docs.ucloud.cn/api/uec-api/poweroff_u_ec_v_host
      *
      * Arguments:
      *
@@ -1419,9 +1455,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return PoweroffUEcVHostResponse
      * @throws UCloudException
      */
-    public function poweroffUEcVHost(PoweroffUEcVHostRequest $request = null): PoweroffUEcVHostResponse
+    public function poweroffUEcVHost(PoweroffUEcVHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new PoweroffUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1430,7 +1467,7 @@ class UECClient extends Client
     /**
      * ReinstallUEcVHost - 虚拟机重装系统
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/reinstall_u_ec_v_host
+     * See also: https://docs.ucloud.cn/api/uec-api/reinstall_u_ec_v_host
      *
      * Arguments:
      *
@@ -1448,9 +1485,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ReinstallUEcVHostResponse
      * @throws UCloudException
      */
-    public function reinstallUEcVHost(ReinstallUEcVHostRequest $request = null): ReinstallUEcVHostResponse
+    public function reinstallUEcVHost(ReinstallUEcVHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ReinstallUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1459,7 +1497,7 @@ class UECClient extends Client
     /**
      * RestartUEcHolder - 重启容器组
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/restart_u_ec_holder
+     * See also: https://docs.ucloud.cn/api/uec-api/restart_u_ec_holder
      *
      * Arguments:
      *
@@ -1473,9 +1511,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return RestartUEcHolderResponse
      * @throws UCloudException
      */
-    public function restartUEcHolder(RestartUEcHolderRequest $request = null): RestartUEcHolderResponse
+    public function restartUEcHolder(RestartUEcHolderRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RestartUEcHolderResponse($resp->toArray(), $resp->getRequestId());
@@ -1484,7 +1523,7 @@ class UECClient extends Client
     /**
      * RestartUEcVHost - 重启虚拟机v2.0
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/restart_u_ec_v_host
+     * See also: https://docs.ucloud.cn/api/uec-api/restart_u_ec_v_host
      *
      * Arguments:
      *
@@ -1498,9 +1537,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return RestartUEcVHostResponse
      * @throws UCloudException
      */
-    public function restartUEcVHost(RestartUEcVHostRequest $request = null): RestartUEcVHostResponse
+    public function restartUEcVHost(RestartUEcVHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RestartUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1509,7 +1549,7 @@ class UECClient extends Client
     /**
      * StartUEcVHost - 启动UEC虚拟机
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/start_u_ec_v_host
+     * See also: https://docs.ucloud.cn/api/uec-api/start_u_ec_v_host
      *
      * Arguments:
      *
@@ -1523,9 +1563,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return StartUEcVHostResponse
      * @throws UCloudException
      */
-    public function startUEcVHost(StartUEcVHostRequest $request = null): StartUEcVHostResponse
+    public function startUEcVHost(StartUEcVHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new StartUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1534,7 +1575,7 @@ class UECClient extends Client
     /**
      * StopUEcVHost - 停止UEC虚拟机
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/stop_u_ec_v_host
+     * See also: https://docs.ucloud.cn/api/uec-api/stop_u_ec_v_host
      *
      * Arguments:
      *
@@ -1548,9 +1589,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return StopUEcVHostResponse
      * @throws UCloudException
      */
-    public function stopUEcVHost(StopUEcVHostRequest $request = null): StopUEcVHostResponse
+    public function stopUEcVHost(StopUEcVHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new StopUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1559,7 +1601,7 @@ class UECClient extends Client
     /**
      * UnBindUEcFirewall - 解绑防火墙
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/un_bind_u_ec_firewall
+     * See also: https://docs.ucloud.cn/api/uec-api/un_bind_u_ec_firewall
      *
      * Arguments:
      *
@@ -1574,9 +1616,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UnBindUEcFirewallResponse
      * @throws UCloudException
      */
-    public function unBindUEcFirewall(UnBindUEcFirewallRequest $request = null): UnBindUEcFirewallResponse
+    public function unBindUEcFirewall(UnBindUEcFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UnBindUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -1585,7 +1628,7 @@ class UECClient extends Client
     /**
      * UpdateUEcFirewall - 更新防火墙信息，新增和删除规则
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/update_u_ec_firewall
+     * See also: https://docs.ucloud.cn/api/uec-api/update_u_ec_firewall
      *
      * Arguments:
      *
@@ -1609,9 +1652,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateUEcFirewallResponse
      * @throws UCloudException
      */
-    public function updateUEcFirewall(UpdateUEcFirewallRequest $request = null): UpdateUEcFirewallResponse
+    public function updateUEcFirewall(UpdateUEcFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -1620,7 +1664,7 @@ class UECClient extends Client
     /**
      * UpdateUEcFirewallAttribute - 更新防火墙名称及描述
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/update_u_ec_firewall_attribute
+     * See also: https://docs.ucloud.cn/api/uec-api/update_u_ec_firewall_attribute
      *
      * Arguments:
      *
@@ -1636,9 +1680,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateUEcFirewallAttributeResponse
      * @throws UCloudException
      */
-    public function updateUEcFirewallAttribute(UpdateUEcFirewallAttributeRequest $request = null): UpdateUEcFirewallAttributeResponse
+    public function updateUEcFirewallAttribute(UpdateUEcFirewallAttributeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateUEcFirewallAttributeResponse($resp->toArray(), $resp->getRequestId());
@@ -1647,7 +1692,7 @@ class UECClient extends Client
     /**
      * UpdateUEcSubnet - 更新子网信息
      *
-     * See also: https://docs.ucloud.cn/api/UEC-api/update_u_ec_subnet
+     * See also: https://docs.ucloud.cn/api/uec-api/update_u_ec_subnet
      *
      * Arguments:
      *
@@ -1663,9 +1708,10 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateUEcSubnetResponse
      * @throws UCloudException
      */
-    public function updateUEcSubnet(UpdateUEcSubnetRequest $request = null): UpdateUEcSubnetResponse
+    public function updateUEcSubnet(UpdateUEcSubnetRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateUEcSubnetResponse($resp->toArray(), $resp->getRequestId());

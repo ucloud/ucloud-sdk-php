@@ -36,7 +36,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -86,7 +86,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -96,7 +96,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getCount(): string
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -106,7 +106,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @param string $count
      */
-    public function setCount(string $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }
@@ -116,7 +116,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -126,7 +126,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }

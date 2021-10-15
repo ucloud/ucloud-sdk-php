@@ -27,7 +27,7 @@ class GetCubeExecTokenResponse extends Response
      *
      * @return string|null
      */
-    public function getToken(): string
+    public function getToken()
     {
         return $this->get("Token");
     }
@@ -37,7 +37,7 @@ class GetCubeExecTokenResponse extends Response
      *
      * @param string $token
      */
-    public function setToken(string $token)
+    public function setToken($token)
     {
         $this->set("Token", $token);
     }
@@ -47,7 +47,7 @@ class GetCubeExecTokenResponse extends Response
      *
      * @return string|null
      */
-    public function getTerminalUrl(): string
+    public function getTerminalUrl()
     {
         return $this->get("TerminalUrl");
     }
@@ -57,7 +57,7 @@ class GetCubeExecTokenResponse extends Response
      *
      * @param string $terminalUrl
      */
-    public function setTerminalUrl(string $terminalUrl)
+    public function setTerminalUrl($terminalUrl)
     {
         $this->set("TerminalUrl", $terminalUrl);
     }

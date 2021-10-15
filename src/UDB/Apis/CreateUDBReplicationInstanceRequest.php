@@ -35,7 +35,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getSrcId(): string
+    public function getSrcId()
     {
         return $this->get("SrcId");
     }
@@ -105,7 +105,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $srcId
      */
-    public function setSrcId(string $srcId)
+    public function setSrcId($srcId)
     {
         $this->set("SrcId", $srcId);
     }
@@ -115,7 +115,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -125,7 +125,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -135,7 +135,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -145,7 +145,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -155,7 +155,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getIsArbiter(): bool
+    public function getIsArbiter()
     {
         return $this->get("IsArbiter");
     }
@@ -165,7 +165,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param boolean $isArbiter
      */
-    public function setIsArbiter(bool $isArbiter)
+    public function setIsArbiter($isArbiter)
     {
         $this->set("IsArbiter", $isArbiter);
     }
@@ -175,7 +175,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getUseSSD(): bool
+    public function getUseSSD()
     {
         return $this->get("UseSSD");
     }
@@ -185,7 +185,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD(bool $useSSD)
+    public function setUseSSD($useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
@@ -195,7 +195,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -205,7 +205,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

@@ -27,7 +27,7 @@ class ProjectListInfo extends Response
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -37,7 +37,7 @@ class ProjectListInfo extends Response
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -47,7 +47,7 @@ class ProjectListInfo extends Response
      *
      * @return string|null
      */
-    public function getProjectName(): string
+    public function getProjectName()
     {
         return $this->get("ProjectName");
     }
@@ -57,7 +57,7 @@ class ProjectListInfo extends Response
      *
      * @param string $projectName
      */
-    public function setProjectName(string $projectName)
+    public function setProjectName($projectName)
     {
         $this->set("ProjectName", $projectName);
     }
@@ -67,7 +67,7 @@ class ProjectListInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -77,7 +77,7 @@ class ProjectListInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -87,7 +87,7 @@ class ProjectListInfo extends Response
      *
      * @return boolean|null
      */
-    public function getIsDefault(): bool
+    public function getIsDefault()
     {
         return $this->get("IsDefault");
     }
@@ -97,7 +97,7 @@ class ProjectListInfo extends Response
      *
      * @param boolean $isDefault
      */
-    public function setIsDefault(bool $isDefault)
+    public function setIsDefault($isDefault)
     {
         $this->set("IsDefault", $isDefault);
     }
@@ -107,7 +107,7 @@ class ProjectListInfo extends Response
      *
      * @return integer|null
      */
-    public function getResourceCount(): int
+    public function getResourceCount()
     {
         return $this->get("ResourceCount");
     }
@@ -117,7 +117,7 @@ class ProjectListInfo extends Response
      *
      * @param int $resourceCount
      */
-    public function setResourceCount(int $resourceCount)
+    public function setResourceCount($resourceCount)
     {
         $this->set("ResourceCount", $resourceCount);
     }
@@ -127,7 +127,7 @@ class ProjectListInfo extends Response
      *
      * @return integer|null
      */
-    public function getMemberCount(): int
+    public function getMemberCount()
     {
         return $this->get("MemberCount");
     }
@@ -137,7 +137,7 @@ class ProjectListInfo extends Response
      *
      * @param int $memberCount
      */
-    public function setMemberCount(int $memberCount)
+    public function setMemberCount($memberCount)
     {
         $this->set("MemberCount", $memberCount);
     }
@@ -147,7 +147,7 @@ class ProjectListInfo extends Response
      *
      * @return string|null
      */
-    public function getParentId(): string
+    public function getParentId()
     {
         return $this->get("ParentId");
     }
@@ -157,7 +157,7 @@ class ProjectListInfo extends Response
      *
      * @param string $parentId
      */
-    public function setParentId(string $parentId)
+    public function setParentId($parentId)
     {
         $this->set("ParentId", $parentId);
     }
@@ -167,7 +167,7 @@ class ProjectListInfo extends Response
      *
      * @return string|null
      */
-    public function getParentName(): string
+    public function getParentName()
     {
         return $this->get("ParentName");
     }
@@ -177,7 +177,7 @@ class ProjectListInfo extends Response
      *
      * @param string $parentName
      */
-    public function setParentName(string $parentName)
+    public function setParentName($parentName)
     {
         $this->set("ParentName", $parentName);
     }

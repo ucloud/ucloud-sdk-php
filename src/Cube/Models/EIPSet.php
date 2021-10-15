@@ -27,7 +27,7 @@ class EIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -37,7 +37,7 @@ class EIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -47,7 +47,7 @@ class EIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidthType(): int
+    public function getBandwidthType()
     {
         return $this->get("BandwidthType");
     }
@@ -57,7 +57,7 @@ class EIPSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType(int $bandwidthType)
+    public function setBandwidthType($bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
@@ -67,7 +67,7 @@ class EIPSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -77,7 +77,7 @@ class EIPSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -87,9 +87,12 @@ class EIPSet extends Response
      *
      * @return EIPAddr[]|null
      */
-    public function getEIPAddr(): array
+    public function getEIPAddr()
     {
-        $items = $this->get("EIPAddr") ?? [];
+        $items = $this->get("EIPAddr");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EIPAddr($item));
@@ -116,7 +119,7 @@ class EIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -126,7 +129,7 @@ class EIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -136,7 +139,7 @@ class EIPSet extends Response
      *
      * @return string|null
      */
-    public function getPayMode(): string
+    public function getPayMode()
     {
         return $this->get("PayMode");
     }
@@ -146,7 +149,7 @@ class EIPSet extends Response
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode)
+    public function setPayMode($payMode)
     {
         $this->set("PayMode", $payMode);
     }
@@ -156,7 +159,7 @@ class EIPSet extends Response
      *
      * @return string|null
      */
-    public function getResource(): string
+    public function getResource()
     {
         return $this->get("Resource");
     }
@@ -166,7 +169,7 @@ class EIPSet extends Response
      *
      * @param string $resource
      */
-    public function setResource(string $resource)
+    public function setResource($resource)
     {
         $this->set("Resource", $resource);
     }
@@ -176,7 +179,7 @@ class EIPSet extends Response
      *
      * @return string|null
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->get("Status");
     }
@@ -186,7 +189,7 @@ class EIPSet extends Response
      *
      * @param string $status
      */
-    public function setStatus(string $status)
+    public function setStatus($status)
     {
         $this->set("Status", $status);
     }
@@ -196,7 +199,7 @@ class EIPSet extends Response
      *
      * @return integer|null
      */
-    public function getWeight(): int
+    public function getWeight()
     {
         return $this->get("Weight");
     }
@@ -206,7 +209,7 @@ class EIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight(int $weight)
+    public function setWeight($weight)
     {
         $this->set("Weight", $weight);
     }

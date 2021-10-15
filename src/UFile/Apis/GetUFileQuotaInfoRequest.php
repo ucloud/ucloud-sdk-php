@@ -34,7 +34,7 @@ class GetUFileQuotaInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class GetUFileQuotaInfoRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class GetUFileQuotaInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class GetUFileQuotaInfoRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class GetUFileQuotaInfoRequest extends Request
      *
      * @return string[]|null
      */
-    public function getQuotaType(): array
+    public function getQuotaType()
     {
         return $this->get("QuotaType");
     }

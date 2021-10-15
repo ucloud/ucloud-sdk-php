@@ -27,7 +27,7 @@ class ReferConf extends Response
      *
      * @return integer|null
      */
-    public function getReferType(): int
+    public function getReferType()
     {
         return $this->get("ReferType");
     }
@@ -37,7 +37,7 @@ class ReferConf extends Response
      *
      * @param int $referType
      */
-    public function setReferType(int $referType)
+    public function setReferType($referType)
     {
         $this->set("ReferType", $referType);
     }
@@ -47,7 +47,7 @@ class ReferConf extends Response
      *
      * @return integer|null
      */
-    public function getNullRefer(): int
+    public function getNullRefer()
     {
         return $this->get("NullRefer");
     }
@@ -57,7 +57,7 @@ class ReferConf extends Response
      *
      * @param int $nullRefer
      */
-    public function setNullRefer(int $nullRefer)
+    public function setNullRefer($nullRefer)
     {
         $this->set("NullRefer", $nullRefer);
     }
@@ -67,7 +67,7 @@ class ReferConf extends Response
      *
      * @return string[]|null
      */
-    public function getReferList(): array
+    public function getReferList()
     {
         return $this->get("ReferList");
     }

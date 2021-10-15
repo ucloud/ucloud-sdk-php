@@ -34,7 +34,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupId(): string
+    public function getBackupId()
     {
         return $this->get("BackupId");
     }
@@ -104,7 +104,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @param string $backupId
      */
-    public function setBackupId(string $backupId)
+    public function setBackupId($backupId)
     {
         $this->set("BackupId", $backupId);
     }
@@ -114,7 +114,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool
+    public function getRegionFlag()
     {
         return $this->get("RegionFlag");
     }
@@ -124,7 +124,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag)
+    public function setRegionFlag($regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }
@@ -134,7 +134,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -144,7 +144,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -154,7 +154,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getSlaveZone(): string
+    public function getSlaveZone()
     {
         return $this->get("SlaveZone");
     }
@@ -164,7 +164,7 @@ class DescribeURedisBackupURLRequest extends Request
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone(string $slaveZone)
+    public function setSlaveZone($slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
     }

@@ -27,7 +27,7 @@ class ResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -37,7 +37,7 @@ class ResourceInfo extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -47,7 +47,7 @@ class ResourceInfo extends Response
      *
      * @return string[]|null
      */
-    public function getPublicIpList(): array
+    public function getPublicIpList()
     {
         return $this->get("PublicIpList");
     }
@@ -67,7 +67,7 @@ class ResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -77,7 +77,7 @@ class ResourceInfo extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -87,7 +87,7 @@ class ResourceInfo extends Response
      *
      * @return integer|null
      */
-    public function getState(): int
+    public function getState()
     {
         return $this->get("State");
     }
@@ -97,7 +97,7 @@ class ResourceInfo extends Response
      *
      * @param int $state
      */
-    public function setState(int $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }
@@ -107,7 +107,7 @@ class ResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -117,7 +117,7 @@ class ResourceInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }

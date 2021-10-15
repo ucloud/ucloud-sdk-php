@@ -29,9 +29,12 @@ class AllocateEIPResponse extends Response
      *
      * @return UnetAllocateEIPSet[]|null
      */
-    public function getEIPSet(): array
+    public function getEIPSet()
     {
-        $items = $this->get("EIPSet") ?? [];
+        $items = $this->get("EIPSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UnetAllocateEIPSet($item));

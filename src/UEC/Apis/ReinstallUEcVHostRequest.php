@@ -34,7 +34,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getNodeId(): string
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }
@@ -64,7 +64,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId)
+    public function setNodeId($nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -74,7 +74,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -84,7 +84,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -94,7 +94,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getKeepData(): int
+    public function getKeepData()
     {
         return $this->get("KeepData");
     }
@@ -104,7 +104,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param int $keepData
      */
-    public function setKeepData(int $keepData)
+    public function setKeepData($keepData)
     {
         $this->set("KeepData", $keepData);
     }
@@ -114,7 +114,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->get("Password");
     }
@@ -124,7 +124,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword(string $password)
+    public function setPassword($password)
     {
         $this->set("Password", $password);
     }
@@ -134,7 +134,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getSysDiskSize(): int
+    public function getSysDiskSize()
     {
         return $this->get("SysDiskSize");
     }
@@ -144,7 +144,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize(int $sysDiskSize)
+    public function setSysDiskSize($sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }

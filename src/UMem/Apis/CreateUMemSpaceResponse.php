@@ -27,7 +27,7 @@ class CreateUMemSpaceResponse extends Response
      *
      * @return string|null
      */
-    public function getSpaceId(): string
+    public function getSpaceId()
     {
         return $this->get("SpaceId");
     }
@@ -37,7 +37,7 @@ class CreateUMemSpaceResponse extends Response
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId)
+    public function setSpaceId($spaceId)
     {
         $this->set("SpaceId", $spaceId);
     }

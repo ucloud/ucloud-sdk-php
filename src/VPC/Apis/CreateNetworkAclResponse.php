@@ -27,7 +27,7 @@ class CreateNetworkAclResponse extends Response
      *
      * @return string|null
      */
-    public function getAclId(): string
+    public function getAclId()
     {
         return $this->get("AclId");
     }
@@ -37,7 +37,7 @@ class CreateNetworkAclResponse extends Response
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId)
+    public function setAclId($aclId)
     {
         $this->set("AclId", $aclId);
     }

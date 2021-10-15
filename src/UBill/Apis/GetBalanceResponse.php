@@ -28,7 +28,7 @@ class GetBalanceResponse extends Response
      *
      * @return AccountInfo|null
      */
-    public function getAccountInfo(): AccountInfo
+    public function getAccountInfo()
     {
         return new AccountInfo($this->get("AccountInfo"));
     }
@@ -38,7 +38,7 @@ class GetBalanceResponse extends Response
      *
      * @param AccountInfo $accountInfo
      */
-    public function setAccountInfo(AccountInfo $accountInfo)
+    public function setAccountInfo(array $accountInfo)
     {
         $this->set("AccountInfo", $accountInfo->getAll());
     }

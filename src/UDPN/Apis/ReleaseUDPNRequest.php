@@ -33,7 +33,7 @@ class ReleaseUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class ReleaseUDPNRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class ReleaseUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -63,7 +63,7 @@ class ReleaseUDPNRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class ReleaseUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getUDPNId(): string
+    public function getUDPNId()
     {
         return $this->get("UDPNId");
     }
@@ -83,7 +83,7 @@ class ReleaseUDPNRequest extends Request
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId)
+    public function setUDPNId($udpnId)
     {
         $this->set("UDPNId", $udpnId);
     }

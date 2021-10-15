@@ -33,7 +33,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -63,7 +63,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -73,7 +73,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetName(): string
+    public function getSubnetName()
     {
         return $this->get("SubnetName");
     }
@@ -83,7 +83,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName)
+    public function setSubnetName($subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -93,7 +93,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getComment(): string
+    public function getComment()
     {
         return $this->get("Comment");
     }
@@ -103,7 +103,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @param string $comment
      */
-    public function setComment(string $comment)
+    public function setComment($comment)
     {
         $this->set("Comment", $comment);
     }

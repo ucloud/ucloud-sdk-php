@@ -36,7 +36,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class CreateUDiskRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -106,7 +106,7 @@ class CreateUDiskRequest extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -116,7 +116,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -126,7 +126,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -136,7 +136,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -146,7 +146,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -156,7 +156,7 @@ class CreateUDiskRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -166,7 +166,7 @@ class CreateUDiskRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -176,7 +176,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUDataArkMode(): string
+    public function getUDataArkMode()
     {
         return $this->get("UDataArkMode");
     }
@@ -186,7 +186,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode(string $uDataArkMode)
+    public function setUDataArkMode($uDataArkMode)
     {
         $this->set("UDataArkMode", $uDataArkMode);
     }
@@ -196,7 +196,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getSnapshotService(): string
+    public function getSnapshotService()
     {
         return $this->get("SnapshotService");
     }
@@ -206,7 +206,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $snapshotService
      */
-    public function setSnapshotService(string $snapshotService)
+    public function setSnapshotService($snapshotService)
     {
         $this->set("SnapshotService", $snapshotService);
     }
@@ -216,7 +216,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -226,7 +226,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -236,7 +236,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getDiskType(): string
+    public function getDiskType()
     {
         return $this->get("DiskType");
     }
@@ -246,7 +246,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $diskType
      */
-    public function setDiskType(string $diskType)
+    public function setDiskType($diskType)
     {
         $this->set("DiskType", $diskType);
     }
@@ -256,7 +256,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUKmsMode(): string
+    public function getUKmsMode()
     {
         return $this->get("UKmsMode");
     }
@@ -266,7 +266,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $uKmsMode
      */
-    public function setUKmsMode(string $uKmsMode)
+    public function setUKmsMode($uKmsMode)
     {
         $this->set("UKmsMode", $uKmsMode);
     }
@@ -276,7 +276,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getCmkId(): string
+    public function getCmkId()
     {
         return $this->get("CmkId");
     }
@@ -286,7 +286,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $cmkId
      */
-    public function setCmkId(string $cmkId)
+    public function setCmkId($cmkId)
     {
         $this->set("CmkId", $cmkId);
     }
@@ -296,7 +296,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getRdmaClusterId(): string
+    public function getRdmaClusterId()
     {
         return $this->get("RdmaClusterId");
     }
@@ -306,7 +306,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $rdmaClusterId
      */
-    public function setRdmaClusterId(string $rdmaClusterId)
+    public function setRdmaClusterId($rdmaClusterId)
     {
         $this->set("RdmaClusterId", $rdmaClusterId);
     }
@@ -316,7 +316,7 @@ class CreateUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -326,7 +326,7 @@ class CreateUDiskRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

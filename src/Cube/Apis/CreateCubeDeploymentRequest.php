@@ -37,7 +37,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -87,7 +87,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -107,7 +107,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -117,7 +117,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -127,7 +127,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -137,7 +137,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getDeployment(): string
+    public function getDeployment()
     {
         return $this->get("Deployment");
     }
@@ -147,7 +147,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $deployment
      */
-    public function setDeployment(string $deployment)
+    public function setDeployment($deployment)
     {
         $this->set("Deployment", $deployment);
     }
@@ -157,7 +157,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -167,7 +167,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -177,7 +177,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -187,7 +187,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -197,7 +197,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getCpuPlatform(): string
+    public function getCpuPlatform()
     {
         return $this->get("CpuPlatform");
     }
@@ -207,7 +207,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $cpuPlatform
      */
-    public function setCpuPlatform(string $cpuPlatform)
+    public function setCpuPlatform($cpuPlatform)
     {
         $this->set("CpuPlatform", $cpuPlatform);
     }
@@ -217,7 +217,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getKubeConfig(): string
+    public function getKubeConfig()
     {
         return $this->get("KubeConfig");
     }
@@ -227,7 +227,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $kubeConfig
      */
-    public function setKubeConfig(string $kubeConfig)
+    public function setKubeConfig($kubeConfig)
     {
         $this->set("KubeConfig", $kubeConfig);
     }
@@ -237,7 +237,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -247,7 +247,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -257,7 +257,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -267,7 +267,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }

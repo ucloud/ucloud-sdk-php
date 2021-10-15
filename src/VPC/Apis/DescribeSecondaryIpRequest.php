@@ -35,7 +35,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -85,7 +85,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -95,7 +95,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -105,7 +105,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -115,7 +115,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getIp(): string
+    public function getIp()
     {
         return $this->get("Ip");
     }
@@ -125,7 +125,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @param string $ip
      */
-    public function setIp(string $ip)
+    public function setIp($ip)
     {
         $this->set("Ip", $ip);
     }
@@ -135,7 +135,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getMac(): string
+    public function getMac()
     {
         return $this->get("Mac");
     }
@@ -145,7 +145,7 @@ class DescribeSecondaryIpRequest extends Request
      *
      * @param string $mac
      */
-    public function setMac(string $mac)
+    public function setMac($mac)
     {
         $this->set("Mac", $mac);
     }

@@ -28,7 +28,7 @@ class ListUK8SClusterV2Response extends Response
      *
      * @return integer|null
      */
-    public function getClusterCount(): int
+    public function getClusterCount()
     {
         return $this->get("ClusterCount");
     }
@@ -38,7 +38,7 @@ class ListUK8SClusterV2Response extends Response
      *
      * @param int $clusterCount
      */
-    public function setClusterCount(int $clusterCount)
+    public function setClusterCount($clusterCount)
     {
         $this->set("ClusterCount", $clusterCount);
     }
@@ -48,9 +48,12 @@ class ListUK8SClusterV2Response extends Response
      *
      * @return ClusterSet[]|null
      */
-    public function getClusterSet(): array
+    public function getClusterSet()
     {
-        $items = $this->get("ClusterSet") ?? [];
+        $items = $this->get("ClusterSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ClusterSet($item));

@@ -27,7 +27,7 @@ class AdvancedConf extends Response
      *
      * @return string[]|null
      */
-    public function getHttpClientHeader(): array
+    public function getHttpClientHeader()
     {
         return $this->get("HttpClientHeader");
     }
@@ -47,7 +47,7 @@ class AdvancedConf extends Response
      *
      * @return string[]|null
      */
-    public function getHttpOriginHeader(): array
+    public function getHttpOriginHeader()
     {
         return $this->get("HttpOriginHeader");
     }
@@ -67,7 +67,7 @@ class AdvancedConf extends Response
      *
      * @return boolean|null
      */
-    public function getHttp2Https(): bool
+    public function getHttp2Https()
     {
         return $this->get("Http2Https");
     }
@@ -77,7 +77,7 @@ class AdvancedConf extends Response
      *
      * @param boolean $http2Https
      */
-    public function setHttp2Https(bool $http2Https)
+    public function setHttp2Https($http2Https)
     {
         $this->set("Http2Https", $http2Https);
     }

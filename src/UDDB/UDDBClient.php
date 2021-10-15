@@ -52,7 +52,7 @@ class UDDBClient extends Client
     /**
      * ChangeUDDBInstanceName - 修改分布式数据库中间件名称
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/change_uddb_instance_name
+     * See also: https://docs.ucloud.cn/api/uddb-api/change_uddb_instance_name
      *
      * Arguments:
      *
@@ -69,9 +69,10 @@ class UDDBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ChangeUDDBInstanceNameResponse
      * @throws UCloudException
      */
-    public function changeUDDBInstanceName(ChangeUDDBInstanceNameRequest $request = null): ChangeUDDBInstanceNameResponse
+    public function changeUDDBInstanceName(ChangeUDDBInstanceNameRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ChangeUDDBInstanceNameResponse($resp->toArray(), $resp->getRequestId());
@@ -86,7 +87,7 @@ class UDDBClient extends Client
 Running: 系统正常运行中
 当请求返回成功之后，UDDB实例的状态变成"ChangingSlaveCount"; 如果返回失败, UDDB实例状态保持不变 当UDDB更改数据分区的只读实例个数成功之后, UDDB实例的状态变成"Running"(正常运行中); 如果更改过程中出现异常, 状态变成"Abnormal"(异常运行中)或者"Error"(运行错误)
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/change_uddb_slave_count
+     * See also: https://docs.ucloud.cn/api/uddb-api/change_uddb_slave_count
      *
      * Arguments:
      *
@@ -103,9 +104,10 @@ Running: 系统正常运行中
      * $outputs = [
      * ]
      *
+     * @return ChangeUDDBSlaveCountResponse
      * @throws UCloudException
      */
-    public function changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest $request = null): ChangeUDDBSlaveCountResponse
+    public function changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ChangeUDDBSlaveCountResponse($resp->toArray(), $resp->getRequestId());
@@ -114,7 +116,7 @@ Running: 系统正常运行中
     /**
      * CreateUDDBInstance - 创建创建分布式数据库UDDB实例, 简称UDDB实例。
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/create_uddb_instance
+     * See also: https://docs.ucloud.cn/api/uddb-api/create_uddb_instance
      *
      * Arguments:
      *
@@ -148,9 +150,10 @@ Running: 系统正常运行中
      *     "UDDBId" => (string) UDDB实例ID
      * ]
      *
+     * @return CreateUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function createUDDBInstance(CreateUDDBInstanceRequest $request = null): CreateUDDBInstanceResponse
+    public function createUDDBInstance(CreateUDDBInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -163,7 +166,7 @@ InitFail: 初始化失败
 Shutoff: 已关闭
 当请求返回成功之后，UDDB实例就已经被删除, 列表上看不到对应的UDDB实例
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/delete_uddb_instance
+     * See also: https://docs.ucloud.cn/api/uddb-api/delete_uddb_instance
      *
      * Arguments:
      *
@@ -179,9 +182,10 @@ Shutoff: 已关闭
      * $outputs = [
      * ]
      *
+     * @return DeleteUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function deleteUDDBInstance(DeleteUDDBInstanceRequest $request = null): DeleteUDDBInstanceResponse
+    public function deleteUDDBInstance(DeleteUDDBInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -190,7 +194,7 @@ Shutoff: 已关闭
     /**
      * DescribeUDDBInstance - 获取分布式数据库UDDB的详细信息
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/describe_uddb_instance
+     * See also: https://docs.ucloud.cn/api/uddb-api/describe_uddb_instance
      *
      * Arguments:
      *
@@ -248,9 +252,10 @@ Shutoff: 已关闭
      *     ]
      * ]
      *
+     * @return DescribeUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function describeUDDBInstance(DescribeUDDBInstanceRequest $request = null): DescribeUDDBInstanceResponse
+    public function describeUDDBInstance(DescribeUDDBInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -259,7 +264,7 @@ Shutoff: 已关闭
     /**
      * DescribeUDDBInstancePrice - 获取分布式数据库UDDB价格
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/describe_uddb_instance_price
+     * See also: https://docs.ucloud.cn/api/uddb-api/describe_uddb_instance_price
      *
      * Arguments:
      *
@@ -289,9 +294,10 @@ Shutoff: 已关闭
      *     ]
      * ]
      *
+     * @return DescribeUDDBInstancePriceResponse
      * @throws UCloudException
      */
-    public function describeUDDBInstancePrice(DescribeUDDBInstancePriceRequest $request = null): DescribeUDDBInstancePriceResponse
+    public function describeUDDBInstancePrice(DescribeUDDBInstancePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstancePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -300,7 +306,7 @@ Shutoff: 已关闭
     /**
      * DescribeUDDBInstanceUpgradePrice - 升级UDDB时，获取升级后的价格
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/describe_uddb_instance_upgrade_price
+     * See also: https://docs.ucloud.cn/api/uddb-api/describe_uddb_instance_upgrade_price
      *
      * Arguments:
      *
@@ -329,9 +335,10 @@ Shutoff: 已关闭
      *     ]
      * ]
      *
+     * @return DescribeUDDBInstanceUpgradePriceResponse
      * @throws UCloudException
      */
-    public function describeUDDBInstanceUpgradePrice(DescribeUDDBInstanceUpgradePriceRequest $request = null): DescribeUDDBInstanceUpgradePriceResponse
+    public function describeUDDBInstanceUpgradePrice(DescribeUDDBInstanceUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstanceUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -346,7 +353,7 @@ Running: 正常运行中
 Abnormal: 异常运行中
 当请求返回成功之后，UDDB实例的状态变成"Starting"(启动中); 如果返回失败, UDDB实例状态保持不变 UDDB实例在重启过程中, 当UDDB实例启动成功之后, UDDB实例的状态变成"Running"(正常运行中); 如果启动过程中出现异常, 状态变成"Abnormal"(异常运行中), 或者"Shutoff"(已关闭
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/restart_uddb_instance
+     * See also: https://docs.ucloud.cn/api/uddb-api/restart_uddb_instance
      *
      * Arguments:
      *
@@ -362,9 +369,10 @@ Abnormal: 异常运行中
      * $outputs = [
      * ]
      *
+     * @return RestartUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function restartUDDBInstance(RestartUDDBInstanceRequest $request = null): RestartUDDBInstanceResponse
+    public function restartUDDBInstance(RestartUDDBInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RestartUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -378,7 +386,7 @@ Abnormal: 异常运行中
 Shutoff: 已关闭
 当请求返回成功之后，UDDB实例的状态变成"Starting"(启动中); 如果返回失败, UDDB实例状态保持不变 UDDB实例在启动过程中, 当UDDB实例启动成功之后, UDDB实例的状态变成"Running"(正常运行中); 如果启动过程中出现异常, 状态变成"Abnormal"(异常运行中), 或者"Shutoff"(已关闭)
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/start_uddb_instance
+     * See also: https://docs.ucloud.cn/api/uddb-api/start_uddb_instance
      *
      * Arguments:
      *
@@ -394,9 +402,10 @@ Shutoff: 已关闭
      * $outputs = [
      * ]
      *
+     * @return StartUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function startUDDBInstance(StartUDDBInstanceRequest $request = null): StartUDDBInstanceResponse
+    public function startUDDBInstance(StartUDDBInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new StartUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -411,7 +420,7 @@ Running: 正常运行中
 Abnormal: 异常运行中
 当请求返回成功之后，UDDB实例的状态变成"Shutdown"(关闭中); 如果返回失败, UDDB实例状态保持不变 UDDB实例在关闭过程中, 当UDDB实例关闭成功之后, UDDB实例的状态变成"Shutoff"(已关闭); 如果关闭过程中出现异常, 根据UDDB实例的情况, 状态变成"Abnormal"(异常运行中), 或者"Running"(正常运行中)
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/stop_uddb_instance
+     * See also: https://docs.ucloud.cn/api/uddb-api/stop_uddb_instance
      *
      * Arguments:
      *
@@ -427,9 +436,10 @@ Abnormal: 异常运行中
      * $outputs = [
      * ]
      *
+     * @return StopUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function stopUDDBInstance(StopUDDBInstanceRequest $request = null): StopUDDBInstanceResponse
+    public function stopUDDBInstance(StopUDDBInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new StopUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -447,7 +457,7 @@ Abnormal: 异常运行中
 Shutoff: 已关闭
 当请求返回成功之后，UDDB实例的状态变成"UpgradingDataNode"，相关数据节点的状态变成"Upgrading"; 如果返回失败, UDDB实例状态保持不变 当UDDB实例升级结束之后, UDDB实例的状态变成"Shutoff"
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/upgrade_uddb_data_node
+     * See also: https://docs.ucloud.cn/api/uddb-api/upgrade_uddb_data_node
      *
      * Arguments:
      *
@@ -466,9 +476,10 @@ Shutoff: 已关闭
      * $outputs = [
      * ]
      *
+     * @return UpgradeUDDBDataNodeResponse
      * @throws UCloudException
      */
-    public function upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest $request = null): UpgradeUDDBDataNodeResponse
+    public function upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpgradeUDDBDataNodeResponse($resp->toArray(), $resp->getRequestId());
@@ -484,7 +495,7 @@ Shutoff: 已关闭
 Running: 系统正常运行中
 当请求返回成功之后，UDDB实例的状态变成"UpgradingUDDB"; 如果返回失败, UDDB实例状态保持不变 当UDDB实例升级成功之后, UDDB实例的状态变成"Running"; 如果更改过程中出现异常, 状态变成"Abnormal", 或者"Error"
      *
-     * See also: https://docs.ucloud.cn/api/UDDB-api/upgrade_uddb_instance
+     * See also: https://docs.ucloud.cn/api/uddb-api/upgrade_uddb_instance
      *
      * Arguments:
      *
@@ -503,9 +514,10 @@ Running: 系统正常运行中
      * $outputs = [
      * ]
      *
+     * @return UpgradeUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function upgradeUDDBInstance(UpgradeUDDBInstanceRequest $request = null): UpgradeUDDBInstanceResponse
+    public function upgradeUDDBInstance(UpgradeUDDBInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpgradeUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());

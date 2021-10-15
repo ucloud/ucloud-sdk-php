@@ -39,7 +39,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -49,7 +49,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -59,7 +59,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -69,7 +69,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -79,7 +79,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -89,7 +89,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -99,7 +99,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCPU(): int
+    public function getCPU()
     {
         return $this->get("CPU");
     }
@@ -109,7 +109,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCPU(int $cpu)
+    public function setCPU($cpu)
     {
         $this->set("CPU", $cpu);
     }
@@ -119,7 +119,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemory(): int
+    public function getMemory()
     {
         return $this->get("Memory");
     }
@@ -129,7 +129,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $memory
      */
-    public function setMemory(int $memory)
+    public function setMemory($memory)
     {
         $this->set("Memory", $memory);
     }
@@ -139,7 +139,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -149,7 +149,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }
@@ -159,9 +159,12 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return GetUHostInstancePriceParamDisks[]|null
      */
-    public function getDisks(): array
+    public function getDisks()
     {
-        $items = $this->get("Disks") ?? [];
+        $items = $this->get("Disks");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new GetUHostInstancePriceParamDisks($item));
@@ -188,7 +191,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -198,7 +201,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -208,7 +211,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getGPU(): int
+    public function getGPU()
     {
         return $this->get("GPU");
     }
@@ -218,7 +221,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $gpu
      */
-    public function setGPU(int $gpu)
+    public function setGPU($gpu)
     {
         $this->set("GPU", $gpu);
     }
@@ -228,7 +231,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -238,7 +241,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -248,7 +251,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getNetCapability(): string
+    public function getNetCapability()
     {
         return $this->get("NetCapability");
     }
@@ -258,7 +261,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $netCapability
      */
-    public function setNetCapability(string $netCapability)
+    public function setNetCapability($netCapability)
     {
         $this->set("NetCapability", $netCapability);
     }
@@ -268,7 +271,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getUHostType(): string
+    public function getUHostType()
     {
         return $this->get("UHostType");
     }
@@ -278,7 +281,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $uHostType
      */
-    public function setUHostType(string $uHostType)
+    public function setUHostType($uHostType)
     {
         $this->set("UHostType", $uHostType);
     }
@@ -288,7 +291,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getMachineType(): string
+    public function getMachineType()
     {
         return $this->get("MachineType");
     }
@@ -298,7 +301,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $machineType
      */
-    public function setMachineType(string $machineType)
+    public function setMachineType($machineType)
     {
         $this->set("MachineType", $machineType);
     }
@@ -308,7 +311,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getGpuType(): string
+    public function getGpuType()
     {
         return $this->get("GpuType");
     }
@@ -318,7 +321,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $gpuType
      */
-    public function setGpuType(string $gpuType)
+    public function setGpuType($gpuType)
     {
         $this->set("GpuType", $gpuType);
     }
@@ -328,7 +331,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -338,7 +341,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -348,7 +351,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getCpuPlatform(): string
+    public function getCpuPlatform()
     {
         return $this->get("CpuPlatform");
     }
@@ -358,7 +361,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $cpuPlatform
      */
-    public function setCpuPlatform(string $cpuPlatform)
+    public function setCpuPlatform($cpuPlatform)
     {
         $this->set("CpuPlatform", $cpuPlatform);
     }
@@ -368,9 +371,12 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return GetUHostInstancePriceParamVolumes[]|null
      */
-    public function getVolumes(): array
+    public function getVolumes()
     {
-        $items = $this->get("Volumes") ?? [];
+        $items = $this->get("Volumes");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new GetUHostInstancePriceParamVolumes($item));
@@ -397,7 +403,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @return GetUHostInstancePriceParamVirtualGpu|null
      */
-    public function getVirtualGpu(): GetUHostInstancePriceParamVirtualGpu
+    public function getVirtualGpu()
     {
         return new GetUHostInstancePriceParamVirtualGpu($this->get("VirtualGpu"));
     }
@@ -407,7 +413,7 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param GetUHostInstancePriceParamVirtualGpu $virtualGpu
      */
-    public function setVirtualGpu(GetUHostInstancePriceParamVirtualGpu $virtualGpu)
+    public function setVirtualGpu(array $virtualGpu)
     {
         $this->set("VirtualGpu", $virtualGpu->getAll());
     }

@@ -54,7 +54,7 @@ class IPSecVPNClient extends Client
     /**
      * CreateRemoteVPNGateway - 创建客户VPN网关
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/create_remote_vpn_gateway
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/create_remote_vpn_gateway
      *
      * Arguments:
      *
@@ -73,9 +73,10 @@ class IPSecVPNClient extends Client
      *     "RemoteVPNGatewayId" => (string) 新建客户VPN网关的资源ID
      * ]
      *
+     * @return CreateRemoteVPNGatewayResponse
      * @throws UCloudException
      */
-    public function createRemoteVPNGateway(CreateRemoteVPNGatewayRequest $request = null): CreateRemoteVPNGatewayResponse
+    public function createRemoteVPNGateway(CreateRemoteVPNGatewayRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateRemoteVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
@@ -84,7 +85,7 @@ class IPSecVPNClient extends Client
     /**
      * CreateVPNGateway - 创建VPN网关
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/create_vpn_gateway
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/create_vpn_gateway
      *
      * Arguments:
      *
@@ -109,9 +110,10 @@ class IPSecVPNClient extends Client
      *     "VPNGatewayId" => (string) 新建VPN网关的资源ID
      * ]
      *
+     * @return CreateVPNGatewayResponse
      * @throws UCloudException
      */
-    public function createVPNGateway(CreateVPNGatewayRequest $request = null): CreateVPNGatewayResponse
+    public function createVPNGateway(CreateVPNGatewayRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
@@ -120,7 +122,7 @@ class IPSecVPNClient extends Client
     /**
      * CreateVPNTunnel - 创建VPN隧道
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/create_vpn_tunnel
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/create_vpn_tunnel
      *
      * Arguments:
      *
@@ -158,9 +160,10 @@ class IPSecVPNClient extends Client
      *     "VPNTunnelId" => (string) VPN隧道的资源ID
      * ]
      *
+     * @return CreateVPNTunnelResponse
      * @throws UCloudException
      */
-    public function createVPNTunnel(CreateVPNTunnelRequest $request = null): CreateVPNTunnelResponse
+    public function createVPNTunnel(CreateVPNTunnelRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateVPNTunnelResponse($resp->toArray(), $resp->getRequestId());
@@ -169,7 +172,7 @@ class IPSecVPNClient extends Client
     /**
      * DeleteRemoteVPNGateway - 删除客户VPN网关
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/delete_remote_vpn_gateway
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/delete_remote_vpn_gateway
      *
      * Arguments:
      *
@@ -184,9 +187,10 @@ class IPSecVPNClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteRemoteVPNGatewayResponse
      * @throws UCloudException
      */
-    public function deleteRemoteVPNGateway(DeleteRemoteVPNGatewayRequest $request = null): DeleteRemoteVPNGatewayResponse
+    public function deleteRemoteVPNGateway(DeleteRemoteVPNGatewayRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteRemoteVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
@@ -195,7 +199,7 @@ class IPSecVPNClient extends Client
     /**
      * DeleteVPNGateway - 删除VPN网关
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/delete_vpn_gateway
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/delete_vpn_gateway
      *
      * Arguments:
      *
@@ -211,9 +215,10 @@ class IPSecVPNClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteVPNGatewayResponse
      * @throws UCloudException
      */
-    public function deleteVPNGateway(DeleteVPNGatewayRequest $request = null): DeleteVPNGatewayResponse
+    public function deleteVPNGateway(DeleteVPNGatewayRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
@@ -222,7 +227,7 @@ class IPSecVPNClient extends Client
     /**
      * DeleteVPNTunnel - 删除VPN隧道
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/delete_vpn_tunnel
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/delete_vpn_tunnel
      *
      * Arguments:
      *
@@ -237,9 +242,10 @@ class IPSecVPNClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteVPNTunnelResponse
      * @throws UCloudException
      */
-    public function deleteVPNTunnel(DeleteVPNTunnelRequest $request = null): DeleteVPNTunnelResponse
+    public function deleteVPNTunnel(DeleteVPNTunnelRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteVPNTunnelResponse($resp->toArray(), $resp->getRequestId());
@@ -248,7 +254,7 @@ class IPSecVPNClient extends Client
     /**
      * DescribeRemoteVPNGateway - 获取客户VPN网关信息
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/describe_remote_vpn_gateway
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/describe_remote_vpn_gateway
      *
      * Arguments:
      *
@@ -278,9 +284,10 @@ class IPSecVPNClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeRemoteVPNGatewayResponse
      * @throws UCloudException
      */
-    public function describeRemoteVPNGateway(DescribeRemoteVPNGatewayRequest $request = null): DescribeRemoteVPNGatewayResponse
+    public function describeRemoteVPNGateway(DescribeRemoteVPNGatewayRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeRemoteVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
@@ -289,7 +296,7 @@ class IPSecVPNClient extends Client
     /**
      * DescribeVPNGateway - 获取VPN网关信息
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/describe_vpn_gateway
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/describe_vpn_gateway
      *
      * Arguments:
      *
@@ -327,9 +334,10 @@ class IPSecVPNClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeVPNGatewayResponse
      * @throws UCloudException
      */
-    public function describeVPNGateway(DescribeVPNGatewayRequest $request = null): DescribeVPNGatewayResponse
+    public function describeVPNGateway(DescribeVPNGatewayRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
@@ -338,7 +346,7 @@ class IPSecVPNClient extends Client
     /**
      * DescribeVPNTunnel - 获取VPN隧道信息
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/describe_vpn_tunnel
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/describe_vpn_tunnel
      *
      * Arguments:
      *
@@ -393,9 +401,10 @@ class IPSecVPNClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeVPNTunnelResponse
      * @throws UCloudException
      */
-    public function describeVPNTunnel(DescribeVPNTunnelRequest $request = null): DescribeVPNTunnelResponse
+    public function describeVPNTunnel(DescribeVPNTunnelRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeVPNTunnelResponse($resp->toArray(), $resp->getRequestId());
@@ -404,7 +413,7 @@ class IPSecVPNClient extends Client
     /**
      * GetVPNGatewayPrice - 获取VPN价格
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/get_vpn_gateway_price
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/get_vpn_gateway_price
      *
      * Arguments:
      *
@@ -428,9 +437,10 @@ class IPSecVPNClient extends Client
      *     ]
      * ]
      *
+     * @return GetVPNGatewayPriceResponse
      * @throws UCloudException
      */
-    public function getVPNGatewayPrice(GetVPNGatewayPriceRequest $request = null): GetVPNGatewayPriceResponse
+    public function getVPNGatewayPrice(GetVPNGatewayPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetVPNGatewayPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -439,7 +449,7 @@ class IPSecVPNClient extends Client
     /**
      * GetVPNGatewayUpgradePrice - 获取VPN网关规格改动价格
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/get_vpn_gateway_upgrade_price
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/get_vpn_gateway_upgrade_price
      *
      * Arguments:
      *
@@ -456,9 +466,10 @@ class IPSecVPNClient extends Client
      *     "Price" => (number) 调整规格后的VPN网关价格, 单位为"元", 如需退费此处为负值
      * ]
      *
+     * @return GetVPNGatewayUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getVPNGatewayUpgradePrice(GetVPNGatewayUpgradePriceRequest $request = null): GetVPNGatewayUpgradePriceResponse
+    public function getVPNGatewayUpgradePrice(GetVPNGatewayUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetVPNGatewayUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -467,7 +478,7 @@ class IPSecVPNClient extends Client
     /**
      * UpdateVPNGateway - 更改VPN网关规格
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/update_vpn_gateway
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/update_vpn_gateway
      *
      * Arguments:
      *
@@ -483,9 +494,10 @@ class IPSecVPNClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateVPNGatewayResponse
      * @throws UCloudException
      */
-    public function updateVPNGateway(UpdateVPNGatewayRequest $request = null): UpdateVPNGatewayResponse
+    public function updateVPNGateway(UpdateVPNGatewayRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateVPNGatewayResponse($resp->toArray(), $resp->getRequestId());
@@ -494,7 +506,7 @@ class IPSecVPNClient extends Client
     /**
      * UpdateVPNTunnelAttribute - 更新VPN隧道属性
      *
-     * See also: https://docs.ucloud.cn/api/IPSecVPN-api/update_vpn_tunnel_attribute
+     * See also: https://docs.ucloud.cn/api/ipsecvpn-api/update_vpn_tunnel_attribute
      *
      * Arguments:
      *
@@ -526,9 +538,10 @@ class IPSecVPNClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateVPNTunnelAttributeResponse
      * @throws UCloudException
      */
-    public function updateVPNTunnelAttribute(UpdateVPNTunnelAttributeRequest $request = null): UpdateVPNTunnelAttributeResponse
+    public function updateVPNTunnelAttribute(UpdateVPNTunnelAttributeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateVPNTunnelAttributeResponse($resp->toArray(), $resp->getRequestId());

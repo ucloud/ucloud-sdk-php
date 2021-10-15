@@ -27,7 +27,7 @@ class DescribeUDBInstanceBackupStateResponse extends Response
      *
      * @return string|null
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->get("State");
     }
@@ -37,7 +37,7 @@ class DescribeUDBInstanceBackupStateResponse extends Response
      *
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }

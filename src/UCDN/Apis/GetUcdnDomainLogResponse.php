@@ -29,9 +29,12 @@ class GetUcdnDomainLogResponse extends Response
      *
      * @return LogSetList[]|null
      */
-    public function getLogSet(): array
+    public function getLogSet()
     {
-        $items = $this->get("LogSet") ?? [];
+        $items = $this->get("LogSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new LogSetList($item));

@@ -28,9 +28,12 @@ class GetUcdnPassBandwidthV2Response extends Response
      *
      * @return BandwidthInfoDetail[]|null
      */
-    public function getBandwidthList(): array
+    public function getBandwidthList()
     {
-        $items = $this->get("BandwidthList") ?? [];
+        $items = $this->get("BandwidthList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new BandwidthInfoDetail($item));

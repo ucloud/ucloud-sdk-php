@@ -12,49 +12,49 @@ class Config
      *
      * @var string
      */
-    private string $region;
+    private $region;
 
     /**
      * Project id
      *
      * @var string
      */
-    private string $projectId;
+    private $projectId;
 
     /**
      * Base url
      *
      * @var string
      */
-    private string $baseUrl;
+    private $baseUrl;
 
     /**
      * User agent
      *
      * @var string
      */
-    private string $userAgent;
+    private $userAgent;
 
     /**
      * Timeout
      *
      * @var integer
      */
-    private int $timeout;
+    private $timeout;
 
     /**
      * Max retries count
      *
      * @var integer
      */
-    private int $maxRetries;
+    private $maxRetries;
 
     /**
      * Logger
      *
      * @var LoggerInterface
      */
-    private LoggerInterface $logger;
+    private $logger;
 
     /**
      * UCloud SDK
@@ -83,13 +83,13 @@ class Config
      */
     public function __construct(array $args)
     {
-        $this->setRegion($args["region"] ?? "");
-        $this->setProjectId($args["projectId"] ?? "");
-        $this->setBaseUrl($args["baseUrl"] ?? "https://api.ucloud.cn");
-        $this->setUserAgent($args["userAgent"] ?? "");
-        $this->setTimeout($args["timeout"] ?? 30);
-        $this->setMaxRetries($args["maxRetries"] ?? 0);
-        $this->setLogger($args["logger"] ?? new DefaultLogger());
+        $this->setRegion(isset($args["region"]) ? $args["region"] : "");
+        $this->setProjectId(isset($args["projectId"]) ? $args["projectId"] : "");
+        $this->setBaseUrl(isset($args["baseUrl"]) ? $args["baseUrl"] : "https://api.ucloud.cn");
+        $this->setUserAgent(isset($args["userAgent"]) ? $args["userAgent"] : "");
+        $this->setTimeout(isset($args["timeout"]) ? $args["timeout"] : 30);
+        $this->setMaxRetries(isset($args["maxRetries"]) ? $args["maxRetries"] : 0);
+        $this->setLogger(isset($args["logger"]) ? $args["logger"] : new DefaultLogger());
     }
 
     /**
@@ -97,7 +97,7 @@ class Config
      *
      * @return string
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->region;
     }
@@ -107,7 +107,7 @@ class Config
      *
      * @param string $region region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->region = $region;
     }
@@ -117,7 +117,7 @@ class Config
      *
      * @return string
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->projectId;
     }
@@ -127,7 +127,7 @@ class Config
      *
      * @param string $projectId project id
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->projectId = $projectId;
     }
@@ -137,7 +137,7 @@ class Config
      *
      * @return string
      */
-    public function getBaseUrl(): string
+    public function getBaseUrl()
     {
         return $this->baseUrl;
     }
@@ -147,7 +147,7 @@ class Config
      *
      * @param string $baseUrl base url
      */
-    public function setBaseUrl(string $baseUrl)
+    public function setBaseUrl($baseUrl)
     {
         $this->baseUrl = $baseUrl;
     }
@@ -157,7 +157,7 @@ class Config
      *
      * @return string
      */
-    public function getUserAgent(): string
+    public function getUserAgent()
     {
         return $this->userAgent;
     }
@@ -167,7 +167,7 @@ class Config
      *
      * @param string $userAgent user agent
      */
-    public function setUserAgent(string $userAgent)
+    public function setUserAgent($userAgent)
     {
         $this->userAgent = $userAgent;
     }
@@ -177,7 +177,7 @@ class Config
      *
      * @return integer
      */
-    public function getTimeout(): int
+    public function getTimeout()
     {
         return $this->timeout;
     }
@@ -187,7 +187,7 @@ class Config
      *
      * @param int $timeout timeout
      */
-    public function setTimeout(int $timeout)
+    public function setTimeout($timeout)
     {
         $this->timeout = $timeout;
     }
@@ -197,7 +197,7 @@ class Config
      *
      * @return integer
      */
-    public function getMaxRetries(): int
+    public function getMaxRetries()
     {
         return $this->maxRetries;
     }
@@ -207,7 +207,7 @@ class Config
      *
      * @param int $maxRetries max retries
      */
-    public function setMaxRetries(int $maxRetries)
+    public function setMaxRetries($maxRetries)
     {
         $this->maxRetries = $maxRetries;
     }
@@ -217,7 +217,7 @@ class Config
      *
      * @return LoggerInterface
      */
-    public function getLogger(): LoggerInterface
+    public function getLogger()
     {
         return $this->logger;
     }
@@ -227,7 +227,7 @@ class Config
      *
      * @param LoggerInterface $logger logger
      */
-    public function setLogger(LoggerInterface $logger): void
+    public function setLogger(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }

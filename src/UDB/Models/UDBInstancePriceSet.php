@@ -27,7 +27,7 @@ class UDBInstancePriceSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -37,7 +37,7 @@ class UDBInstancePriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -47,7 +47,7 @@ class UDBInstancePriceSet extends Response
      *
      * @return integer|null
      */
-    public function getPrice(): int
+    public function getPrice()
     {
         return $this->get("Price");
     }
@@ -57,7 +57,7 @@ class UDBInstancePriceSet extends Response
      *
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->set("Price", $price);
     }

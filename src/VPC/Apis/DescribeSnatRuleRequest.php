@@ -34,7 +34,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getNATGWId(): string
+    public function getNATGWId()
     {
         return $this->get("NATGWId");
     }
@@ -84,7 +84,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId)
+    public function setNATGWId($natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -94,7 +94,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getSourceIp(): string
+    public function getSourceIp()
     {
         return $this->get("SourceIp");
     }
@@ -104,7 +104,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @param string $sourceIp
      */
-    public function setSourceIp(string $sourceIp)
+    public function setSourceIp($sourceIp)
     {
         $this->set("SourceIp", $sourceIp);
     }
@@ -114,7 +114,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getSnatIp(): string
+    public function getSnatIp()
     {
         return $this->get("SnatIp");
     }
@@ -124,7 +124,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @param string $snatIp
      */
-    public function setSnatIp(string $snatIp)
+    public function setSnatIp($snatIp)
     {
         $this->set("SnatIp", $snatIp);
     }
@@ -134,7 +134,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getOffset(): string
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -144,7 +144,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @param string $offset
      */
-    public function setOffset(string $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -154,7 +154,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getLimit(): string
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -164,7 +164,7 @@ class DescribeSnatRuleRequest extends Request
      *
      * @param string $limit
      */
-    public function setLimit(string $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }

@@ -27,7 +27,7 @@ class GetUEcHolderLogResponse extends Response
      *
      * @return string|null
      */
-    public function getData(): string
+    public function getData()
     {
         return $this->get("Data");
     }
@@ -37,7 +37,7 @@ class GetUEcHolderLogResponse extends Response
      *
      * @param string $data
      */
-    public function setData(string $data)
+    public function setData($data)
     {
         $this->set("Data", $data);
     }

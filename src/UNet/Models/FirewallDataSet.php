@@ -27,7 +27,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getFWId(): string
+    public function getFWId()
     {
         return $this->get("FWId");
     }
@@ -37,7 +37,7 @@ class FirewallDataSet extends Response
      *
      * @param string $fwId
      */
-    public function setFWId(string $fwId)
+    public function setFWId($fwId)
     {
         $this->set("FWId", $fwId);
     }
@@ -47,7 +47,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -57,7 +57,7 @@ class FirewallDataSet extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -67,7 +67,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -77,7 +77,7 @@ class FirewallDataSet extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -87,7 +87,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -97,7 +97,7 @@ class FirewallDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -107,7 +107,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -117,7 +117,7 @@ class FirewallDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -127,7 +127,7 @@ class FirewallDataSet extends Response
      *
      * @return integer|null
      */
-    public function getResourceCount(): int
+    public function getResourceCount()
     {
         return $this->get("ResourceCount");
     }
@@ -137,7 +137,7 @@ class FirewallDataSet extends Response
      *
      * @param int $resourceCount
      */
-    public function setResourceCount(int $resourceCount)
+    public function setResourceCount($resourceCount)
     {
         $this->set("ResourceCount", $resourceCount);
     }
@@ -147,7 +147,7 @@ class FirewallDataSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -157,7 +157,7 @@ class FirewallDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -167,7 +167,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -177,7 +177,7 @@ class FirewallDataSet extends Response
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -187,9 +187,12 @@ class FirewallDataSet extends Response
      *
      * @return FirewallRuleSet[]|null
      */
-    public function getRule(): array
+    public function getRule()
     {
-        $items = $this->get("Rule") ?? [];
+        $items = $this->get("Rule");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new FirewallRuleSet($item));

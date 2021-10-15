@@ -28,7 +28,7 @@ class DescribeUDDBInstancePriceResponse extends Response
      *
      * @return PriceDetailInfo|null
      */
-    public function getPriceInfo(): PriceDetailInfo
+    public function getPriceInfo()
     {
         return new PriceDetailInfo($this->get("PriceInfo"));
     }
@@ -38,7 +38,7 @@ class DescribeUDDBInstancePriceResponse extends Response
      *
      * @param PriceDetailInfo $priceInfo
      */
-    public function setPriceInfo(PriceDetailInfo $priceInfo)
+    public function setPriceInfo(array $priceInfo)
     {
         $this->set("PriceInfo", $priceInfo->getAll());
     }

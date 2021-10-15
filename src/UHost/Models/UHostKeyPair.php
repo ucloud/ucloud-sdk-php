@@ -27,7 +27,7 @@ class UHostKeyPair extends Response
      *
      * @return string|null
      */
-    public function getKeyPairId(): string
+    public function getKeyPairId()
     {
         return $this->get("KeyPairId");
     }
@@ -37,7 +37,7 @@ class UHostKeyPair extends Response
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId(string $keyPairId)
+    public function setKeyPairId($keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
@@ -47,7 +47,7 @@ class UHostKeyPair extends Response
      *
      * @return string|null
      */
-    public function getKeyPairState(): string
+    public function getKeyPairState()
     {
         return $this->get("KeyPairState");
     }
@@ -57,7 +57,7 @@ class UHostKeyPair extends Response
      *
      * @param string $keyPairState
      */
-    public function setKeyPairState(string $keyPairState)
+    public function setKeyPairState($keyPairState)
     {
         $this->set("KeyPairState", $keyPairState);
     }

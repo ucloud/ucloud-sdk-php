@@ -30,9 +30,12 @@ class GetCubeExtendInfoResponse extends Response
      *
      * @return CubeExtendInfo[]|null
      */
-    public function getExtendInfo(): array
+    public function getExtendInfo()
     {
-        $items = $this->get("ExtendInfo") ?? [];
+        $items = $this->get("ExtendInfo");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CubeExtendInfo($item));

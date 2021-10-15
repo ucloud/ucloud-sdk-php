@@ -33,7 +33,7 @@ class CreateUHostKeyPairRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class CreateUHostKeyPairRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class CreateUHostKeyPairRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class CreateUHostKeyPairRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class CreateUHostKeyPairRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -83,7 +83,7 @@ class CreateUHostKeyPairRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -93,7 +93,7 @@ class CreateUHostKeyPairRequest extends Request
      *
      * @return string|null
      */
-    public function getKeyPairName(): string
+    public function getKeyPairName()
     {
         return $this->get("KeyPairName");
     }
@@ -103,7 +103,7 @@ class CreateUHostKeyPairRequest extends Request
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName(string $keyPairName)
+    public function setKeyPairName($keyPairName)
     {
         $this->set("KeyPairName", $keyPairName);
     }

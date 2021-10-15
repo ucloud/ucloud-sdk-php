@@ -33,7 +33,7 @@ class DescribeUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class DescribeUPathRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class DescribeUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getUPathId(): string
+    public function getUPathId()
     {
         return $this->get("UPathId");
     }
@@ -63,7 +63,7 @@ class DescribeUPathRequest extends Request
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId)
+    public function setUPathId($uPathId)
     {
         $this->set("UPathId", $uPathId);
     }

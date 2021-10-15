@@ -27,7 +27,7 @@ class UDBRWSplittingSet extends Response
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -37,7 +37,7 @@ class UDBRWSplittingSet extends Response
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -47,7 +47,7 @@ class UDBRWSplittingSet extends Response
      *
      * @return string|null
      */
-    public function getRole(): string
+    public function getRole()
     {
         return $this->get("Role");
     }
@@ -57,7 +57,7 @@ class UDBRWSplittingSet extends Response
      *
      * @param string $role
      */
-    public function setRole(string $role)
+    public function setRole($role)
     {
         $this->set("Role", $role);
     }
@@ -67,7 +67,7 @@ class UDBRWSplittingSet extends Response
      *
      * @return string|null
      */
-    public function getVirtualIP(): string
+    public function getVirtualIP()
     {
         return $this->get("VirtualIP");
     }
@@ -77,7 +77,7 @@ class UDBRWSplittingSet extends Response
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP(string $virtualIP)
+    public function setVirtualIP($virtualIP)
     {
         $this->set("VirtualIP", $virtualIP);
     }
@@ -87,7 +87,7 @@ class UDBRWSplittingSet extends Response
      *
      * @return integer|null
      */
-    public function getReadWeight(): int
+    public function getReadWeight()
     {
         return $this->get("ReadWeight");
     }
@@ -97,7 +97,7 @@ class UDBRWSplittingSet extends Response
      *
      * @param int $readWeight
      */
-    public function setReadWeight(int $readWeight)
+    public function setReadWeight($readWeight)
     {
         $this->set("ReadWeight", $readWeight);
     }
@@ -107,7 +107,7 @@ class UDBRWSplittingSet extends Response
      *
      * @return string|null
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->get("State");
     }
@@ -117,7 +117,7 @@ class UDBRWSplittingSet extends Response
      *
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }

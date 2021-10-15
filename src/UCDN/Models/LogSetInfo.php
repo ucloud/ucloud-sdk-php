@@ -27,7 +27,7 @@ class LogSetInfo extends Response
      *
      * @return integer|null
      */
-    public function getTime(): int
+    public function getTime()
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class LogSetInfo extends Response
      *
      * @param int $time
      */
-    public function setTime(int $time)
+    public function setTime($time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class LogSetInfo extends Response
      *
      * @return string[]|null
      */
-    public function getCnLog(): array
+    public function getCnLog()
     {
         return $this->get("CnLog");
     }
@@ -67,7 +67,7 @@ class LogSetInfo extends Response
      *
      * @return string[]|null
      */
-    public function getAbroadLog(): array
+    public function getAbroadLog()
     {
         return $this->get("AbroadLog");
     }

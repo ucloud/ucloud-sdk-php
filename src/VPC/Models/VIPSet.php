@@ -27,7 +27,7 @@ class VIPSet extends Response
      *
      * @return string|null
      */
-    public function getVIP(): string
+    public function getVIP()
     {
         return $this->get("VIP");
     }
@@ -37,7 +37,7 @@ class VIPSet extends Response
      *
      * @param string $vip
      */
-    public function setVIP(string $vip)
+    public function setVIP($vip)
     {
         $this->set("VIP", $vip);
     }
@@ -47,7 +47,7 @@ class VIPSet extends Response
      *
      * @return string|null
      */
-    public function getVIPId(): string
+    public function getVIPId()
     {
         return $this->get("VIPId");
     }
@@ -57,7 +57,7 @@ class VIPSet extends Response
      *
      * @param string $vipId
      */
-    public function setVIPId(string $vipId)
+    public function setVIPId($vipId)
     {
         $this->set("VIPId", $vipId);
     }
@@ -67,7 +67,7 @@ class VIPSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -77,7 +77,7 @@ class VIPSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }

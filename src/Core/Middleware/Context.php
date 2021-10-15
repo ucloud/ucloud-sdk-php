@@ -16,42 +16,42 @@ class Context
      *
      * @var Credential
      */
-    private Credential $credential;
+    private $credential;
 
     /**
      * Config
      *
      * @var Config
      */
-    private Config $config;
+    private $config;
 
     /**
      * Request
      *
      * @var Request
      */
-    private Request $request;
+    private $request;
 
     /**
      * Response
      *
      * @var Response
      */
-    private Response $response;
+    private $response;
 
     /**
      * Exception
      *
      * @var UCloudException
      */
-    private UCloudException $exception;
+    private $exception;
 
     /**
      * Get credential
      *
      * @return Credential
      */
-    public function getCredential(): Credential
+    public function getCredential()
     {
         return $this->credential;
     }
@@ -61,7 +61,7 @@ class Context
      *
      * @param Credential $credential Credential
      */
-    public function setCredential(Credential $credential): void
+    public function setCredential(Credential $credential)
     {
         $this->credential = $credential;
     }
@@ -71,7 +71,7 @@ class Context
      *
      * @return Config
      */
-    public function getConfig(): Config
+    public function getConfig()
     {
         return $this->config;
     }
@@ -81,7 +81,7 @@ class Context
      *
      * @param Config $config Config
      */
-    public function setConfig(Config $config): void
+    public function setConfig(Config $config)
     {
         $this->config = $config;
     }
@@ -91,7 +91,7 @@ class Context
      *
      * @return Request
      */
-    public function getRequest(): Request
+    public function getRequest()
     {
         return $this->request;
     }
@@ -101,7 +101,7 @@ class Context
      *
      * @param Request $request Request
      */
-    public function setRequest(Request $request): void
+    public function setRequest(Request $request)
     {
         $this->request = $request;
     }
@@ -111,7 +111,7 @@ class Context
      *
      * @return Response
      */
-    public function getResponse(): Response
+    public function getResponse()
     {
         return $this->response;
     }
@@ -121,7 +121,7 @@ class Context
      *
      * @param Response $response Response
      */
-    public function setResponse(Response $response): void
+    public function setResponse(Response $response)
     {
         $this->response = $response;
     }
@@ -131,7 +131,7 @@ class Context
      *
      * @return UCloudException
      */
-    public function getException(): UCloudException
+    public function getException()
     {
         return $this->exception;
     }
@@ -141,7 +141,7 @@ class Context
      *
      * @param UCloudException $exception Exception
      */
-    public function setException(UCloudException $exception): void
+    public function setException(UCloudException $exception)
     {
         $this->exception = $exception;
     }

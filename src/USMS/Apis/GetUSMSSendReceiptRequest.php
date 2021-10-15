@@ -33,7 +33,7 @@ class GetUSMSSendReceiptRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class GetUSMSSendReceiptRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class GetUSMSSendReceiptRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class GetUSMSSendReceiptRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class GetUSMSSendReceiptRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -83,23 +83,23 @@ class GetUSMSSendReceiptRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
 
     /**
-     * SessionNoSet: 发送短信时返回的SessionNo集合，SessionNoSet.0,SessionNoSet.1....格式
+     * SessionNoSet: 发送短信时返回的SessionNo集合，SessionNoSet.0,SessionNoSet.1....格式，单次调用集合数需控制在100个以内
      *
      * @return string[]|null
      */
-    public function getSessionNoSet(): array
+    public function getSessionNoSet()
     {
         return $this->get("SessionNoSet");
     }
 
     /**
-     * SessionNoSet: 发送短信时返回的SessionNo集合，SessionNoSet.0,SessionNoSet.1....格式
+     * SessionNoSet: 发送短信时返回的SessionNo集合，SessionNoSet.0,SessionNoSet.1....格式，单次调用集合数需控制在100个以内
      *
      * @param string[] $sessionNoSet
      */

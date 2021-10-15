@@ -29,9 +29,12 @@ class DescribeUK8SImageResponse extends Response
      *
      * @return ImageInfo[]|null
      */
-    public function getImageSet(): array
+    public function getImageSet()
     {
-        $items = $this->get("ImageSet") ?? [];
+        $items = $this->get("ImageSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ImageInfo($item));
@@ -58,9 +61,12 @@ class DescribeUK8SImageResponse extends Response
      *
      * @return ImageInfo[]|null
      */
-    public function getPHostImageSet(): array
+    public function getPHostImageSet()
     {
-        $items = $this->get("PHostImageSet") ?? [];
+        $items = $this->get("PHostImageSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ImageInfo($item));

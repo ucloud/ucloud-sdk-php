@@ -36,7 +36,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getPHostId(): string
+    public function getPHostId()
     {
         return $this->get("PHostId");
     }
@@ -106,7 +106,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId)
+    public function setPHostId($pHostId)
     {
         $this->set("PHostId", $pHostId);
     }
@@ -116,7 +116,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->get("Password");
     }
@@ -126,7 +126,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword(string $password)
+    public function setPassword($password)
     {
         $this->set("Password", $password);
     }
@@ -136,7 +136,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -146,7 +146,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -156,7 +156,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -166,7 +166,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -176,7 +176,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -186,7 +186,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -196,7 +196,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -206,7 +206,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -216,7 +216,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getReserveDisk(): string
+    public function getReserveDisk()
     {
         return $this->get("ReserveDisk");
     }
@@ -226,7 +226,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $reserveDisk
      */
-    public function setReserveDisk(string $reserveDisk)
+    public function setReserveDisk($reserveDisk)
     {
         $this->set("ReserveDisk", $reserveDisk);
     }
@@ -236,7 +236,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return string|null
      */
-    public function getRaid(): string
+    public function getRaid()
     {
         return $this->get("Raid");
     }
@@ -246,7 +246,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $raid
      */
-    public function setRaid(string $raid)
+    public function setRaid($raid)
     {
         $this->set("Raid", $raid);
     }
@@ -256,7 +256,7 @@ class ReinstallPHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getBootDiskSpace(): int
+    public function getBootDiskSpace()
     {
         return $this->get("BootDiskSpace");
     }
@@ -266,7 +266,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param int $bootDiskSpace
      */
-    public function setBootDiskSpace(int $bootDiskSpace)
+    public function setBootDiskSpace($bootDiskSpace)
     {
         $this->set("BootDiskSpace", $bootDiskSpace);
     }

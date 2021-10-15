@@ -27,7 +27,7 @@ class AclInfo extends Response
      *
      * @return string|null
      */
-    public function getVpcId(): string
+    public function getVpcId()
     {
         return $this->get("VpcId");
     }
@@ -37,7 +37,7 @@ class AclInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVpcId(string $vpcId)
+    public function setVpcId($vpcId)
     {
         $this->set("VpcId", $vpcId);
     }
@@ -47,7 +47,7 @@ class AclInfo extends Response
      *
      * @return string|null
      */
-    public function getAclId(): string
+    public function getAclId()
     {
         return $this->get("AclId");
     }
@@ -57,7 +57,7 @@ class AclInfo extends Response
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId)
+    public function setAclId($aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -67,7 +67,7 @@ class AclInfo extends Response
      *
      * @return string|null
      */
-    public function getAclName(): string
+    public function getAclName()
     {
         return $this->get("AclName");
     }
@@ -77,7 +77,7 @@ class AclInfo extends Response
      *
      * @param string $aclName
      */
-    public function setAclName(string $aclName)
+    public function setAclName($aclName)
     {
         $this->set("AclName", $aclName);
     }
@@ -87,7 +87,7 @@ class AclInfo extends Response
      *
      * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->get("Description");
     }
@@ -97,7 +97,7 @@ class AclInfo extends Response
      *
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->set("Description", $description);
     }
@@ -107,9 +107,12 @@ class AclInfo extends Response
      *
      * @return AclEntryInfo[]|null
      */
-    public function getEntries(): array
+    public function getEntries()
     {
-        $items = $this->get("Entries") ?? [];
+        $items = $this->get("Entries");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AclEntryInfo($item));
@@ -136,9 +139,12 @@ class AclInfo extends Response
      *
      * @return AssociationInfo[]|null
      */
-    public function getAssociations(): array
+    public function getAssociations()
     {
-        $items = $this->get("Associations") ?? [];
+        $items = $this->get("Associations");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AssociationInfo($item));
@@ -165,7 +171,7 @@ class AclInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -175,7 +181,7 @@ class AclInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -185,7 +191,7 @@ class AclInfo extends Response
      *
      * @return integer|null
      */
-    public function getUpdateTime(): int
+    public function getUpdateTime()
     {
         return $this->get("UpdateTime");
     }
@@ -195,7 +201,7 @@ class AclInfo extends Response
      *
      * @param int $updateTime
      */
-    public function setUpdateTime(int $updateTime)
+    public function setUpdateTime($updateTime)
     {
         $this->set("UpdateTime", $updateTime);
     }

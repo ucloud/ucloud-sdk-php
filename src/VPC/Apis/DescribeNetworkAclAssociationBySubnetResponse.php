@@ -28,7 +28,7 @@ class DescribeNetworkAclAssociationBySubnetResponse extends Response
      *
      * @return AssociationInfo|null
      */
-    public function getAssociation(): AssociationInfo
+    public function getAssociation()
     {
         return new AssociationInfo($this->get("Association"));
     }
@@ -38,7 +38,7 @@ class DescribeNetworkAclAssociationBySubnetResponse extends Response
      *
      * @param AssociationInfo $association
      */
-    public function setAssociation(AssociationInfo $association)
+    public function setAssociation(array $association)
     {
         $this->set("Association", $association->getAll());
     }

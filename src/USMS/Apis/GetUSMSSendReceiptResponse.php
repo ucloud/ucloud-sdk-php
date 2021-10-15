@@ -29,9 +29,12 @@ class GetUSMSSendReceiptResponse extends Response
      *
      * @return ReceiptPerSession[]|null
      */
-    public function getData(): array
+    public function getData()
     {
-        $items = $this->get("Data") ?? [];
+        $items = $this->get("Data");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ReceiptPerSession($item));

@@ -27,7 +27,7 @@ class CreateUK8SClusterV2Response extends Response
      *
      * @return string|null
      */
-    public function getClusterId(): string
+    public function getClusterId()
     {
         return $this->get("ClusterId");
     }
@@ -37,7 +37,7 @@ class CreateUK8SClusterV2Response extends Response
      *
      * @param string $clusterId
      */
-    public function setClusterId(string $clusterId)
+    public function setClusterId($clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }

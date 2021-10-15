@@ -27,7 +27,7 @@ class NetworkMask extends Response
      *
      * @return string|null
      */
-    public function getAPINetworkMask(): string
+    public function getAPINetworkMask()
     {
         return $this->get("APINetworkMask");
     }
@@ -37,7 +37,7 @@ class NetworkMask extends Response
      *
      * @param string $apiNetworkMask
      */
-    public function setAPINetworkMask(string $apiNetworkMask)
+    public function setAPINetworkMask($apiNetworkMask)
     {
         $this->set("APINetworkMask", $apiNetworkMask);
     }
@@ -47,7 +47,7 @@ class NetworkMask extends Response
      *
      * @return string|null
      */
-    public function getLoginNetworkMask(): string
+    public function getLoginNetworkMask()
     {
         return $this->get("LoginNetworkMask");
     }
@@ -57,7 +57,7 @@ class NetworkMask extends Response
      *
      * @param string $loginNetworkMask
      */
-    public function setLoginNetworkMask(string $loginNetworkMask)
+    public function setLoginNetworkMask($loginNetworkMask)
     {
         $this->set("LoginNetworkMask", $loginNetworkMask);
     }

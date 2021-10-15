@@ -36,7 +36,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -46,7 +46,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -56,7 +56,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return integer|null
      */
-    public function getPurpose(): int
+    public function getPurpose()
     {
         return $this->get("Purpose");
     }
@@ -66,7 +66,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param int $purpose
      */
-    public function setPurpose(int $purpose)
+    public function setPurpose($purpose)
     {
         $this->set("Purpose", $purpose);
     }
@@ -76,7 +76,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplateName(): string
+    public function getTemplateName()
     {
         return $this->get("TemplateName");
     }
@@ -86,7 +86,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $templateName
      */
-    public function setTemplateName(string $templateName)
+    public function setTemplateName($templateName)
     {
         $this->set("TemplateName", $templateName);
     }
@@ -96,7 +96,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplate(): string
+    public function getTemplate()
     {
         return $this->get("Template");
     }
@@ -106,7 +106,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $template
      */
-    public function setTemplate(string $template)
+    public function setTemplate($template)
     {
         $this->set("Template", $template);
     }
@@ -116,7 +116,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return boolean|null
      */
-    public function getInternational(): bool
+    public function getInternational()
     {
         return $this->get("International");
     }
@@ -126,7 +126,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param boolean $international
      */
-    public function setInternational(bool $international)
+    public function setInternational($international)
     {
         $this->set("International", $international);
     }
@@ -136,7 +136,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -146,8 +146,28 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
+    }
+
+    /**
+     * UnsubscribeInfo: 当Purpose为3时，也即会员推广类短信模板，该项必填。枚举值：TD退订、回T退订、回N退订、回TD退订、退订回T、退订回D、退订回TD、退订回复T、退订回复D、退订回复N、退订回复TD、拒收回T
+     *
+     * @return string|null
+     */
+    public function getUnsubscribeInfo()
+    {
+        return $this->get("UnsubscribeInfo");
+    }
+
+    /**
+     * UnsubscribeInfo: 当Purpose为3时，也即会员推广类短信模板，该项必填。枚举值：TD退订、回T退订、回N退订、回TD退订、退订回T、退订回D、退订回TD、退订回复T、退订回复D、退订回复N、退订回复TD、拒收回T
+     *
+     * @param string $unsubscribeInfo
+     */
+    public function setUnsubscribeInfo($unsubscribeInfo)
+    {
+        $this->set("UnsubscribeInfo", $unsubscribeInfo);
     }
 }

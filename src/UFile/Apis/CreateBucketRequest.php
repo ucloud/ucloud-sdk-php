@@ -34,7 +34,7 @@ class CreateBucketRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class CreateBucketRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class CreateBucketRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class CreateBucketRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class CreateBucketRequest extends Request
      *
      * @return string|null
      */
-    public function getBucketName(): string
+    public function getBucketName()
     {
         return $this->get("BucketName");
     }
@@ -84,7 +84,7 @@ class CreateBucketRequest extends Request
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName)
+    public function setBucketName($bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
@@ -94,7 +94,7 @@ class CreateBucketRequest extends Request
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -104,7 +104,7 @@ class CreateBucketRequest extends Request
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }

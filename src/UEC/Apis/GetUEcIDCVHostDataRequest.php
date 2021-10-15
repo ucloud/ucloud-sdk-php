@@ -34,7 +34,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @return string[]|null
      */
-    public function getNodeId(): array
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }
@@ -74,7 +74,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @return string[]|null
      */
-    public function getType(): array
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -94,7 +94,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -104,7 +104,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -114,7 +114,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -124,7 +124,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }

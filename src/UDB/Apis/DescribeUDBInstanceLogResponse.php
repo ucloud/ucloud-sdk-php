@@ -27,7 +27,7 @@ class DescribeUDBInstanceLogResponse extends Response
      *
      * @return string|null
      */
-    public function getLog(): string
+    public function getLog()
     {
         return $this->get("Log");
     }
@@ -37,7 +37,7 @@ class DescribeUDBInstanceLogResponse extends Response
      *
      * @param string $log
      */
-    public function setLog(string $log)
+    public function setLog($log)
     {
         $this->set("Log", $log);
     }
@@ -47,7 +47,7 @@ class DescribeUDBInstanceLogResponse extends Response
      *
      * @return string|null
      */
-    public function getNextTime(): string
+    public function getNextTime()
     {
         return $this->get("NextTime");
     }
@@ -57,7 +57,7 @@ class DescribeUDBInstanceLogResponse extends Response
      *
      * @param string $nextTime
      */
-    public function setNextTime(string $nextTime)
+    public function setNextTime($nextTime)
     {
         $this->set("NextTime", $nextTime);
     }

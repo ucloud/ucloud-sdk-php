@@ -28,9 +28,12 @@ class DescribeGlobalSSHInstanceResponse extends Response
      *
      * @return GlobalSSHInfo[]|null
      */
-    public function getInstanceSet(): array
+    public function getInstanceSet()
     {
-        $items = $this->get("InstanceSet") ?? [];
+        $items = $this->get("InstanceSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new GlobalSSHInfo($item));

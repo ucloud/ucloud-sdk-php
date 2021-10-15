@@ -27,7 +27,7 @@ class CreateUDDBInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getUDDBId(): string
+    public function getUDDBId()
     {
         return $this->get("UDDBId");
     }
@@ -37,7 +37,7 @@ class CreateUDDBInstanceResponse extends Response
      *
      * @param string $uddbId
      */
-    public function setUDDBId(string $uddbId)
+    public function setUDDBId($uddbId)
     {
         $this->set("UDDBId", $uddbId);
     }

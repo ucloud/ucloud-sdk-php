@@ -36,7 +36,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -66,7 +66,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -76,7 +76,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -86,7 +86,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -96,7 +96,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getTimeRange(): int
+    public function getTimeRange()
     {
         return $this->get("TimeRange");
     }
@@ -106,7 +106,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $timeRange
      */
-    public function setTimeRange(int $timeRange)
+    public function setTimeRange($timeRange)
     {
         $this->set("TimeRange", $timeRange);
     }
@@ -116,7 +116,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getEnableTime(): int
+    public function getEnableTime()
     {
         return $this->get("EnableTime");
     }
@@ -126,7 +126,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $enableTime
      */
-    public function setEnableTime(int $enableTime)
+    public function setEnableTime($enableTime)
     {
         $this->set("EnableTime", $enableTime);
     }
@@ -136,7 +136,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -146,7 +146,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

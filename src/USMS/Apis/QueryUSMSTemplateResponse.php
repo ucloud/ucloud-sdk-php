@@ -28,7 +28,7 @@ class QueryUSMSTemplateResponse extends Response
      *
      * @return OutTemplate|null
      */
-    public function getData(): OutTemplate
+    public function getData()
     {
         return new OutTemplate($this->get("Data"));
     }
@@ -38,7 +38,7 @@ class QueryUSMSTemplateResponse extends Response
      *
      * @param OutTemplate $data
      */
-    public function setData(OutTemplate $data)
+    public function setData(array $data)
     {
         $this->set("Data", $data->getAll());
     }

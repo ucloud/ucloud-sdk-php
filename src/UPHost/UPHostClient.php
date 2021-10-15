@@ -60,7 +60,7 @@ class UPHostClient extends Client
     /**
      * CreatePHost - 指定数据中心，根据资源使用量创建指定数量的UPHost物理云主机实例。
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/create_phost
+     * See also: https://docs.ucloud.cn/api/uphost-api/create_phost
      *
      * Arguments:
      *
@@ -99,9 +99,10 @@ class UPHostClient extends Client
      *     "PHostId" => (array<string>) PHost的资源ID数组
      * ]
      *
+     * @return CreatePHostResponse
      * @throws UCloudException
      */
-    public function createPHost(CreatePHostRequest $request = null): CreatePHostResponse
+    public function createPHost(CreatePHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreatePHostResponse($resp->toArray(), $resp->getRequestId());
@@ -110,7 +111,7 @@ class UPHostClient extends Client
     /**
      * DescribeBaremetalMachineType - 获取裸金属机型的详细描述信息
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/describe_baremetal_machine_type
+     * See also: https://docs.ucloud.cn/api/uphost-api/describe_baremetal_machine_type
      *
      * Arguments:
      *
@@ -148,9 +149,10 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeBaremetalMachineTypeResponse
      * @throws UCloudException
      */
-    public function describeBaremetalMachineType(DescribeBaremetalMachineTypeRequest $request = null): DescribeBaremetalMachineTypeResponse
+    public function describeBaremetalMachineType(DescribeBaremetalMachineTypeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeBaremetalMachineTypeResponse($resp->toArray(), $resp->getRequestId());
@@ -159,7 +161,7 @@ class UPHostClient extends Client
     /**
      * DescribePHost - 获取物理机详细信息
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/describe_phost
+     * See also: https://docs.ucloud.cn/api/uphost-api/describe_phost
      *
      * Arguments:
      *
@@ -235,9 +237,10 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
+     * @return DescribePHostResponse
      * @throws UCloudException
      */
-    public function describePHost(DescribePHostRequest $request = null): DescribePHostResponse
+    public function describePHost(DescribePHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribePHostResponse($resp->toArray(), $resp->getRequestId());
@@ -246,7 +249,7 @@ class UPHostClient extends Client
     /**
      * DescribePHostImage - 获取物理云主机镜像列表
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/describe_phost_image
+     * See also: https://docs.ucloud.cn/api/uphost-api/describe_phost_image
      *
      * Arguments:
      *
@@ -277,9 +280,10 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
+     * @return DescribePHostImageResponse
      * @throws UCloudException
      */
-    public function describePHostImage(DescribePHostImageRequest $request = null): DescribePHostImageResponse
+    public function describePHostImage(DescribePHostImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribePHostImageResponse($resp->toArray(), $resp->getRequestId());
@@ -288,7 +292,7 @@ class UPHostClient extends Client
     /**
      * DescribePHostMachineType - 获取物理云机型的详细描述信息
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/describe_phost_machine_type
+     * See also: https://docs.ucloud.cn/api/uphost-api/describe_phost_machine_type
      *
      * Arguments:
      *
@@ -336,9 +340,10 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
+     * @return DescribePHostMachineTypeResponse
      * @throws UCloudException
      */
-    public function describePHostMachineType(DescribePHostMachineTypeRequest $request = null): DescribePHostMachineTypeResponse
+    public function describePHostMachineType(DescribePHostMachineTypeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribePHostMachineTypeResponse($resp->toArray(), $resp->getRequestId());
@@ -347,7 +352,7 @@ class UPHostClient extends Client
     /**
      * DescribePHostTags - 获取物理机tag列表（业务组）
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/describe_phost_tags
+     * See also: https://docs.ucloud.cn/api/uphost-api/describe_phost_tags
      *
      * Arguments:
      *
@@ -369,9 +374,10 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
+     * @return DescribePHostTagsResponse
      * @throws UCloudException
      */
-    public function describePHostTags(DescribePHostTagsRequest $request = null): DescribePHostTagsResponse
+    public function describePHostTags(DescribePHostTagsRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribePHostTagsResponse($resp->toArray(), $resp->getRequestId());
@@ -380,7 +386,7 @@ class UPHostClient extends Client
     /**
      * GetPHostDiskUpgradePrice - 获取物理云裸金属挂载磁盘的升级价格
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/get_phost_disk_upgrade_price
+     * See also: https://docs.ucloud.cn/api/uphost-api/get_phost_disk_upgrade_price
      *
      * Arguments:
      *
@@ -401,9 +407,10 @@ class UPHostClient extends Client
      *     "OriginalPrice" => (number) 升价差价原价。精度为小数点后2位。
      * ]
      *
+     * @return GetPHostDiskUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getPHostDiskUpgradePrice(GetPHostDiskUpgradePriceRequest $request = null): GetPHostDiskUpgradePriceResponse
+    public function getPHostDiskUpgradePrice(GetPHostDiskUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetPHostDiskUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -412,7 +419,7 @@ class UPHostClient extends Client
     /**
      * GetPHostPrice - 获取物理机价格列表
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/get_phost_price
+     * See also: https://docs.ucloud.cn/api/uphost-api/get_phost_price
      *
      * Arguments:
      *
@@ -447,9 +454,10 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
+     * @return GetPHostPriceResponse
      * @throws UCloudException
      */
-    public function getPHostPrice(GetPHostPriceRequest $request = null): GetPHostPriceResponse
+    public function getPHostPrice(GetPHostPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetPHostPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -458,7 +466,7 @@ class UPHostClient extends Client
     /**
      * ModifyPHostInfo - 更改物理机信息
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/modify_phost_info
+     * See also: https://docs.ucloud.cn/api/uphost-api/modify_phost_info
      *
      * Arguments:
      *
@@ -478,9 +486,10 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
+     * @return ModifyPHostInfoResponse
      * @throws UCloudException
      */
-    public function modifyPHostInfo(ModifyPHostInfoRequest $request = null): ModifyPHostInfoResponse
+    public function modifyPHostInfo(ModifyPHostInfoRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyPHostInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -489,7 +498,7 @@ class UPHostClient extends Client
     /**
      * PoweroffPHost - 断电物理云主机
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/poweroff_phost
+     * See also: https://docs.ucloud.cn/api/uphost-api/poweroff_phost
      *
      * Arguments:
      *
@@ -506,9 +515,10 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
+     * @return PoweroffPHostResponse
      * @throws UCloudException
      */
-    public function poweroffPHost(PoweroffPHostRequest $request = null): PoweroffPHostResponse
+    public function poweroffPHost(PoweroffPHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new PoweroffPHostResponse($resp->toArray(), $resp->getRequestId());
@@ -517,7 +527,7 @@ class UPHostClient extends Client
     /**
      * RebootPHost - 重启物理机
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/reboot_phost
+     * See also: https://docs.ucloud.cn/api/uphost-api/reboot_phost
      *
      * Arguments:
      *
@@ -534,9 +544,10 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
+     * @return RebootPHostResponse
      * @throws UCloudException
      */
-    public function rebootPHost(RebootPHostRequest $request = null): RebootPHostResponse
+    public function rebootPHost(RebootPHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RebootPHostResponse($resp->toArray(), $resp->getRequestId());
@@ -545,7 +556,7 @@ class UPHostClient extends Client
     /**
      * ReinstallPHost - 重装物理机操作系统
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/reinstall_phost
+     * See also: https://docs.ucloud.cn/api/uphost-api/reinstall_phost
      *
      * Arguments:
      *
@@ -570,9 +581,10 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
+     * @return ReinstallPHostResponse
      * @throws UCloudException
      */
-    public function reinstallPHost(ReinstallPHostRequest $request = null): ReinstallPHostResponse
+    public function reinstallPHost(ReinstallPHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ReinstallPHostResponse($resp->toArray(), $resp->getRequestId());
@@ -581,7 +593,7 @@ class UPHostClient extends Client
     /**
      * ResetPHostPassword - 重置裸金属实例的管理员密码
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/reset_phost_password
+     * See also: https://docs.ucloud.cn/api/uphost-api/reset_phost_password
      *
      * Arguments:
      *
@@ -599,9 +611,10 @@ class UPHostClient extends Client
      *     "PHostId" => (string) 裸金属实例ID
      * ]
      *
+     * @return ResetPHostPasswordResponse
      * @throws UCloudException
      */
-    public function resetPHostPassword(ResetPHostPasswordRequest $request = null): ResetPHostPasswordResponse
+    public function resetPHostPassword(ResetPHostPasswordRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ResetPHostPasswordResponse($resp->toArray(), $resp->getRequestId());
@@ -610,7 +623,7 @@ class UPHostClient extends Client
     /**
      * ResizePHostAttachedDisk - 修改裸金属物理云已经挂载的云盘容量大小
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/resize_phost_attached_disk
+     * See also: https://docs.ucloud.cn/api/uphost-api/resize_phost_attached_disk
      *
      * Arguments:
      *
@@ -629,9 +642,10 @@ class UPHostClient extends Client
      *     "UDiskId" => (string) 改配成功的磁盘id
      * ]
      *
+     * @return ResizePHostAttachedDiskResponse
      * @throws UCloudException
      */
-    public function resizePHostAttachedDisk(ResizePHostAttachedDiskRequest $request = null): ResizePHostAttachedDiskResponse
+    public function resizePHostAttachedDisk(ResizePHostAttachedDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ResizePHostAttachedDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -640,7 +654,7 @@ class UPHostClient extends Client
     /**
      * StartPHost - 启动物理机
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/start_phost
+     * See also: https://docs.ucloud.cn/api/uphost-api/start_phost
      *
      * Arguments:
      *
@@ -657,9 +671,10 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
+     * @return StartPHostResponse
      * @throws UCloudException
      */
-    public function startPHost(StartPHostRequest $request = null): StartPHostResponse
+    public function startPHost(StartPHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new StartPHostResponse($resp->toArray(), $resp->getRequestId());
@@ -668,7 +683,7 @@ class UPHostClient extends Client
     /**
      * TerminatePHost - 删除物理云主机
      *
-     * See also: https://docs.ucloud.cn/api/UPHost-api/terminate_phost
+     * See also: https://docs.ucloud.cn/api/uphost-api/terminate_phost
      *
      * Arguments:
      *
@@ -687,9 +702,10 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
+     * @return TerminatePHostResponse
      * @throws UCloudException
      */
-    public function terminatePHost(TerminatePHostRequest $request = null): TerminatePHostResponse
+    public function terminatePHost(TerminatePHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new TerminatePHostResponse($resp->toArray(), $resp->getRequestId());

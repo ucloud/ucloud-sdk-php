@@ -33,7 +33,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getStorageVolume(): int
+    public function getStorageVolume()
     {
         return $this->get("StorageVolume");
     }
@@ -63,7 +63,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @param int $storageVolume
      */
-    public function setStorageVolume(int $storageVolume)
+    public function setStorageVolume($storageVolume)
     {
         $this->set("StorageVolume", $storageVolume);
     }
@@ -73,7 +73,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDownloadTraffic(): int
+    public function getDownloadTraffic()
     {
         return $this->get("DownloadTraffic");
     }
@@ -83,7 +83,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @param int $downloadTraffic
      */
-    public function setDownloadTraffic(int $downloadTraffic)
+    public function setDownloadTraffic($downloadTraffic)
     {
         $this->set("DownloadTraffic", $downloadTraffic);
     }
@@ -93,7 +93,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getRequestCount(): int
+    public function getRequestCount()
     {
         return $this->get("RequestCount");
     }
@@ -103,7 +103,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @param int $requestCount
      */
-    public function setRequestCount(int $requestCount)
+    public function setRequestCount($requestCount)
     {
         $this->set("RequestCount", $requestCount);
     }

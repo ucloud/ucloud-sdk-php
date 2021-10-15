@@ -27,7 +27,7 @@ class AssociationInfo extends Response
      *
      * @return string|null
      */
-    public function getAssociationId(): string
+    public function getAssociationId()
     {
         return $this->get("AssociationId");
     }
@@ -37,7 +37,7 @@ class AssociationInfo extends Response
      *
      * @param string $associationId
      */
-    public function setAssociationId(string $associationId)
+    public function setAssociationId($associationId)
     {
         $this->set("AssociationId", $associationId);
     }
@@ -47,7 +47,7 @@ class AssociationInfo extends Response
      *
      * @return string|null
      */
-    public function getAclId(): string
+    public function getAclId()
     {
         return $this->get("AclId");
     }
@@ -57,7 +57,7 @@ class AssociationInfo extends Response
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId)
+    public function setAclId($aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -67,7 +67,7 @@ class AssociationInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string
+    public function getSubnetworkId()
     {
         return $this->get("SubnetworkId");
     }
@@ -77,7 +77,7 @@ class AssociationInfo extends Response
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId)
+    public function setSubnetworkId($subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }
@@ -87,7 +87,7 @@ class AssociationInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -97,7 +97,7 @@ class AssociationInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }

@@ -35,7 +35,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getDeploymentId(): string
+    public function getDeploymentId()
     {
         return $this->get("DeploymentId");
     }
@@ -105,7 +105,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @param string $deploymentId
      */
-    public function setDeploymentId(string $deploymentId)
+    public function setDeploymentId($deploymentId)
     {
         $this->set("DeploymentId", $deploymentId);
     }
@@ -115,7 +115,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getDeployment(): string
+    public function getDeployment()
     {
         return $this->get("Deployment");
     }
@@ -125,7 +125,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @param string $deployment
      */
-    public function setDeployment(string $deployment)
+    public function setDeployment($deployment)
     {
         $this->set("Deployment", $deployment);
     }
@@ -135,7 +135,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -145,7 +145,7 @@ class UpdateCubeDeploymentRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }

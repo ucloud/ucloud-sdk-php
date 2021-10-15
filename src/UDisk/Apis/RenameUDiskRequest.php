@@ -36,7 +36,7 @@ class RenameUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class RenameUDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class RenameUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class RenameUDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class RenameUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class RenameUDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class RenameUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskId(): string
+    public function getUDiskId()
     {
         return $this->get("UDiskId");
     }
@@ -106,7 +106,7 @@ class RenameUDiskRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId)
+    public function setUDiskId($uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -116,7 +116,7 @@ class RenameUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskName(): string
+    public function getUDiskName()
     {
         return $this->get("UDiskName");
     }
@@ -126,7 +126,7 @@ class RenameUDiskRequest extends Request
      *
      * @param string $uDiskName
      */
-    public function setUDiskName(string $uDiskName)
+    public function setUDiskName($uDiskName)
     {
         $this->set("UDiskName", $uDiskName);
     }

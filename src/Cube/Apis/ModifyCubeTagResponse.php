@@ -27,7 +27,7 @@ class ModifyCubeTagResponse extends Response
      *
      * @return string|null
      */
-    public function getCubeId(): string
+    public function getCubeId()
     {
         return $this->get("CubeId");
     }
@@ -37,7 +37,7 @@ class ModifyCubeTagResponse extends Response
      *
      * @param string $cubeId
      */
-    public function setCubeId(string $cubeId)
+    public function setCubeId($cubeId)
     {
         $this->set("CubeId", $cubeId);
     }

@@ -31,7 +31,7 @@ class DescribeEIPResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -41,7 +41,7 @@ class DescribeEIPResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -51,7 +51,7 @@ class DescribeEIPResponse extends Response
      *
      * @return integer|null
      */
-    public function getUnbindCount(): int
+    public function getUnbindCount()
     {
         return $this->get("UnbindCount");
     }
@@ -61,7 +61,7 @@ class DescribeEIPResponse extends Response
      *
      * @param int $unbindCount
      */
-    public function setUnbindCount(int $unbindCount)
+    public function setUnbindCount($unbindCount)
     {
         $this->set("UnbindCount", $unbindCount);
     }
@@ -71,7 +71,7 @@ class DescribeEIPResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalBandwidth(): int
+    public function getTotalBandwidth()
     {
         return $this->get("TotalBandwidth");
     }
@@ -81,7 +81,7 @@ class DescribeEIPResponse extends Response
      *
      * @param int $totalBandwidth
      */
-    public function setTotalBandwidth(int $totalBandwidth)
+    public function setTotalBandwidth($totalBandwidth)
     {
         $this->set("TotalBandwidth", $totalBandwidth);
     }
@@ -91,9 +91,12 @@ class DescribeEIPResponse extends Response
      *
      * @return UnetEIPSet[]|null
      */
-    public function getEIPSet(): array
+    public function getEIPSet()
     {
-        $items = $this->get("EIPSet") ?? [];
+        $items = $this->get("EIPSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UnetEIPSet($item));

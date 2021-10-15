@@ -35,7 +35,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getVPNTunnelId(): string
+    public function getVPNTunnelId()
     {
         return $this->get("VPNTunnelId");
     }
@@ -85,7 +85,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $vpnTunnelId
      */
-    public function setVPNTunnelId(string $vpnTunnelId)
+    public function setVPNTunnelId($vpnTunnelId)
     {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }
@@ -95,7 +95,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKEPreSharedKey(): string
+    public function getIKEPreSharedKey()
     {
         return $this->get("IKEPreSharedKey");
     }
@@ -105,7 +105,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikePreSharedKey
      */
-    public function setIKEPreSharedKey(string $ikePreSharedKey)
+    public function setIKEPreSharedKey($ikePreSharedKey)
     {
         $this->set("IKEPreSharedKey", $ikePreSharedKey);
     }
@@ -115,7 +115,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKEEncryptionAlgorithm(): string
+    public function getIKEEncryptionAlgorithm()
     {
         return $this->get("IKEEncryptionAlgorithm");
     }
@@ -125,7 +125,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeEncryptionAlgorithm
      */
-    public function setIKEEncryptionAlgorithm(string $ikeEncryptionAlgorithm)
+    public function setIKEEncryptionAlgorithm($ikeEncryptionAlgorithm)
     {
         $this->set("IKEEncryptionAlgorithm", $ikeEncryptionAlgorithm);
     }
@@ -135,7 +135,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKEAuthenticationAlgorithm(): string
+    public function getIKEAuthenticationAlgorithm()
     {
         return $this->get("IKEAuthenticationAlgorithm");
     }
@@ -145,7 +145,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeAuthenticationAlgorithm
      */
-    public function setIKEAuthenticationAlgorithm(string $ikeAuthenticationAlgorithm)
+    public function setIKEAuthenticationAlgorithm($ikeAuthenticationAlgorithm)
     {
         $this->set("IKEAuthenticationAlgorithm", $ikeAuthenticationAlgorithm);
     }
@@ -155,7 +155,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKEExchangeMode(): string
+    public function getIKEExchangeMode()
     {
         return $this->get("IKEExchangeMode");
     }
@@ -165,7 +165,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeExchangeMode
      */
-    public function setIKEExchangeMode(string $ikeExchangeMode)
+    public function setIKEExchangeMode($ikeExchangeMode)
     {
         $this->set("IKEExchangeMode", $ikeExchangeMode);
     }
@@ -175,7 +175,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKELocalId(): string
+    public function getIKELocalId()
     {
         return $this->get("IKELocalId");
     }
@@ -185,7 +185,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeLocalId
      */
-    public function setIKELocalId(string $ikeLocalId)
+    public function setIKELocalId($ikeLocalId)
     {
         $this->set("IKELocalId", $ikeLocalId);
     }
@@ -195,7 +195,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKERemoteId(): string
+    public function getIKERemoteId()
     {
         return $this->get("IKERemoteId");
     }
@@ -205,7 +205,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeRemoteId
      */
-    public function setIKERemoteId(string $ikeRemoteId)
+    public function setIKERemoteId($ikeRemoteId)
     {
         $this->set("IKERemoteId", $ikeRemoteId);
     }
@@ -215,7 +215,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKEDhGroup(): string
+    public function getIKEDhGroup()
     {
         return $this->get("IKEDhGroup");
     }
@@ -225,7 +225,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeDhGroup
      */
-    public function setIKEDhGroup(string $ikeDhGroup)
+    public function setIKEDhGroup($ikeDhGroup)
     {
         $this->set("IKEDhGroup", $ikeDhGroup);
     }
@@ -235,7 +235,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKESALifetime(): string
+    public function getIKESALifetime()
     {
         return $this->get("IKESALifetime");
     }
@@ -245,7 +245,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikesaLifetime
      */
-    public function setIKESALifetime(string $ikesaLifetime)
+    public function setIKESALifetime($ikesaLifetime)
     {
         $this->set("IKESALifetime", $ikesaLifetime);
     }
@@ -255,7 +255,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIPSecProtocol(): string
+    public function getIPSecProtocol()
     {
         return $this->get("IPSecProtocol");
     }
@@ -265,7 +265,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecProtocol
      */
-    public function setIPSecProtocol(string $ipSecProtocol)
+    public function setIPSecProtocol($ipSecProtocol)
     {
         $this->set("IPSecProtocol", $ipSecProtocol);
     }
@@ -275,7 +275,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIPSecLocalSubnetIds(): array
+    public function getIPSecLocalSubnetIds()
     {
         return $this->get("IPSecLocalSubnetIds");
     }
@@ -295,7 +295,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIPSecRemoteSubnets(): array
+    public function getIPSecRemoteSubnets()
     {
         return $this->get("IPSecRemoteSubnets");
     }
@@ -315,7 +315,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIPSecEncryptionAlgorithm(): string
+    public function getIPSecEncryptionAlgorithm()
     {
         return $this->get("IPSecEncryptionAlgorithm");
     }
@@ -325,7 +325,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecEncryptionAlgorithm
      */
-    public function setIPSecEncryptionAlgorithm(string $ipSecEncryptionAlgorithm)
+    public function setIPSecEncryptionAlgorithm($ipSecEncryptionAlgorithm)
     {
         $this->set("IPSecEncryptionAlgorithm", $ipSecEncryptionAlgorithm);
     }
@@ -335,7 +335,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIPSecAuthenticationAlgorithm(): string
+    public function getIPSecAuthenticationAlgorithm()
     {
         return $this->get("IPSecAuthenticationAlgorithm");
     }
@@ -345,7 +345,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecAuthenticationAlgorithm
      */
-    public function setIPSecAuthenticationAlgorithm(string $ipSecAuthenticationAlgorithm)
+    public function setIPSecAuthenticationAlgorithm($ipSecAuthenticationAlgorithm)
     {
         $this->set("IPSecAuthenticationAlgorithm", $ipSecAuthenticationAlgorithm);
     }
@@ -355,7 +355,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIPSecSALifetime(): string
+    public function getIPSecSALifetime()
     {
         return $this->get("IPSecSALifetime");
     }
@@ -365,7 +365,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecSALifetime
      */
-    public function setIPSecSALifetime(string $ipSecSALifetime)
+    public function setIPSecSALifetime($ipSecSALifetime)
     {
         $this->set("IPSecSALifetime", $ipSecSALifetime);
     }
@@ -375,7 +375,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIPSecSALifetimeBytes(): string
+    public function getIPSecSALifetimeBytes()
     {
         return $this->get("IPSecSALifetimeBytes");
     }
@@ -385,7 +385,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecSALifetimeBytes
      */
-    public function setIPSecSALifetimeBytes(string $ipSecSALifetimeBytes)
+    public function setIPSecSALifetimeBytes($ipSecSALifetimeBytes)
     {
         $this->set("IPSecSALifetimeBytes", $ipSecSALifetimeBytes);
     }
@@ -395,7 +395,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIPSecPFSDhGroup(): string
+    public function getIPSecPFSDhGroup()
     {
         return $this->get("IPSecPFSDhGroup");
     }
@@ -405,7 +405,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecPFSDhGroup
      */
-    public function setIPSecPFSDhGroup(string $ipSecPFSDhGroup)
+    public function setIPSecPFSDhGroup($ipSecPFSDhGroup)
     {
         $this->set("IPSecPFSDhGroup", $ipSecPFSDhGroup);
     }
@@ -415,7 +415,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getIKEVersion(): string
+    public function getIKEVersion()
     {
         return $this->get("IKEVersion");
     }
@@ -425,7 +425,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeVersion
      */
-    public function setIKEVersion(string $ikeVersion)
+    public function setIKEVersion($ikeVersion)
     {
         $this->set("IKEVersion", $ikeVersion);
     }

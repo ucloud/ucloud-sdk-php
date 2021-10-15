@@ -33,7 +33,7 @@ class GetUFileQuotaRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class GetUFileQuotaRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class GetUFileQuotaRequest extends Request
      *
      * @return string|null
      */
-    public function getQuotaType(): string
+    public function getQuotaType()
     {
         return $this->get("QuotaType");
     }
@@ -63,7 +63,7 @@ class GetUFileQuotaRequest extends Request
      *
      * @param string $quotaType
      */
-    public function setQuotaType(string $quotaType)
+    public function setQuotaType($quotaType)
     {
         $this->set("QuotaType", $quotaType);
     }

@@ -35,7 +35,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getVpcId(): string
+    public function getVpcId()
     {
         return $this->get("VpcId");
     }
@@ -85,7 +85,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVpcId(string $vpcId)
+    public function setVpcId($vpcId)
     {
         $this->set("VpcId", $vpcId);
     }
@@ -95,7 +95,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getAclName(): string
+    public function getAclName()
     {
         return $this->get("AclName");
     }
@@ -105,7 +105,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @param string $aclName
      */
-    public function setAclName(string $aclName)
+    public function setAclName($aclName)
     {
         $this->set("AclName", $aclName);
     }
@@ -115,7 +115,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->get("Description");
     }
@@ -125,7 +125,7 @@ class CreateNetworkAclRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->set("Description", $description);
     }

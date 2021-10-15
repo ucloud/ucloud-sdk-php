@@ -36,7 +36,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -106,7 +106,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -116,7 +116,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getSrcDBId(): string
+    public function getSrcDBId()
     {
         return $this->get("SrcDBId");
     }
@@ -126,7 +126,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $srcDBId
      */
-    public function setSrcDBId(string $srcDBId)
+    public function setSrcDBId($srcDBId)
     {
         $this->set("SrcDBId", $srcDBId);
     }
@@ -136,7 +136,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return integer|null
      */
-    public function getRecoveryTime(): int
+    public function getRecoveryTime()
     {
         return $this->get("RecoveryTime");
     }
@@ -146,7 +146,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param int $recoveryTime
      */
-    public function setRecoveryTime(int $recoveryTime)
+    public function setRecoveryTime($recoveryTime)
     {
         $this->set("RecoveryTime", $recoveryTime);
     }
@@ -156,7 +156,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -166,7 +166,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -176,7 +176,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -186,7 +186,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -196,7 +196,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return boolean|null
      */
-    public function getUseSSD(): bool
+    public function getUseSSD()
     {
         return $this->get("UseSSD");
     }
@@ -206,7 +206,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD(bool $useSSD)
+    public function setUseSSD($useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
@@ -216,7 +216,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getUDBCId(): string
+    public function getUDBCId()
     {
         return $this->get("UDBCId");
     }
@@ -226,7 +226,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $udbcId
      */
-    public function setUDBCId(string $udbcId)
+    public function setUDBCId($udbcId)
     {
         $this->set("UDBCId", $udbcId);
     }
@@ -236,7 +236,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -246,7 +246,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -256,7 +256,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -266,7 +266,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -276,7 +276,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return boolean|null
      */
-    public function getEnableIpV6(): bool
+    public function getEnableIpV6()
     {
         return $this->get("EnableIpV6");
     }
@@ -286,7 +286,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param boolean $enableIpV6
      */
-    public function setEnableIpV6(bool $enableIpV6)
+    public function setEnableIpV6($enableIpV6)
     {
         $this->set("EnableIpV6", $enableIpV6);
     }
@@ -296,7 +296,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -306,7 +306,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

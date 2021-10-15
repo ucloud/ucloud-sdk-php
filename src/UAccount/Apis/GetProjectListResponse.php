@@ -28,7 +28,7 @@ class GetProjectListResponse extends Response
      *
      * @return integer|null
      */
-    public function getProjectCount(): int
+    public function getProjectCount()
     {
         return $this->get("ProjectCount");
     }
@@ -38,7 +38,7 @@ class GetProjectListResponse extends Response
      *
      * @param int $projectCount
      */
-    public function setProjectCount(int $projectCount)
+    public function setProjectCount($projectCount)
     {
         $this->set("ProjectCount", $projectCount);
     }
@@ -48,9 +48,12 @@ class GetProjectListResponse extends Response
      *
      * @return ProjectListInfo[]|null
      */
-    public function getProjectSet(): array
+    public function getProjectSet()
     {
-        $items = $this->get("ProjectSet") ?? [];
+        $items = $this->get("ProjectSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ProjectListInfo($item));

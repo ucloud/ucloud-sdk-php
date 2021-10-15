@@ -27,7 +27,7 @@ class TerminateCustomImageResponse extends Response
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -37,7 +37,7 @@ class TerminateCustomImageResponse extends Response
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }

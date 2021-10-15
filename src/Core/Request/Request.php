@@ -13,41 +13,40 @@ class Request implements RequestInterface
      *
      * @var array
      */
-    private array $args;
+    private $args;
 
     /**
      * Request timeout
      *
      * @var int
      */
-    private int $timeout = 0;
+    private $timeout = 0;
 
     /**
      * Max retries count
      *
      * @var int
      */
-    private int $maxRetries = 0;
+    private $maxRetries = 0;
 
     /**
      * Required fields
      *
      * @var array
      */
-    private array $requiredFields = [];
+    private $requiredFields = [];
 
     public function __construct(array $args = null)
     {
-        $this->args = $args ?? [];
+        $this->args = isset($args) ? $args : [];
     }
 
     /**
      * Set any field in first-level of data
      *
      * @param string $key field name
-     * @param mixed $value field value
      */
-    public function set(string $key, mixed $value)
+    public function set($key, $value)
     {
         $this->args[$key] = $value;
     }
@@ -58,9 +57,9 @@ class Request implements RequestInterface
      * @param string $key field name
      * @return mixed
      */
-    public function get(string $key)
+    public function get($key)
     {
-        return $this->args[$key] ?? null;
+        return isset($this->args[$key]) ? $this->args[$key] : null;
     }
 
     /**
@@ -69,7 +68,7 @@ class Request implements RequestInterface
      * @param string $key field name
      * @return boolean
      */
-    public function has(string $key): bool
+    public function has($key)
     {
         return array_key_exists($key, $this->args);
     }
@@ -79,7 +78,7 @@ class Request implements RequestInterface
      *
      * @return string
      */
-    public function getAction(): string
+    public function getAction()
     {
         return $this->get(self::FIELD_ACTION);
     }
@@ -89,7 +88,7 @@ class Request implements RequestInterface
      *
      * @param string $action action name
      */
-    public function setAction(string $action)
+    public function setAction($action)
     {
         $this->set(self::FIELD_ACTION, $action);
     }
@@ -99,7 +98,7 @@ class Request implements RequestInterface
      *
      * @return array
      */
-    public function toArray(): array
+    public function toArray()
     {
         return $this->encode($this->args);
     }
@@ -109,7 +108,7 @@ class Request implements RequestInterface
      *
      * @param string $field
      */
-    public function markRequired(string $field)
+    public function markRequired($field)
     {
         array_push($this->requiredFields, $field);
     }
@@ -133,7 +132,7 @@ class Request implements RequestInterface
             throw new UCloudException(
                 UCloudException::EXC_TYPE_VALIDATION,
                 "field "  . implode(",", $fields) . " is required",
-                -1,
+                -1
             );
         }
     }
@@ -143,7 +142,7 @@ class Request implements RequestInterface
      *
      * @return array
      */
-    public function getAll(): array
+    public function getAll()
     {
         return $this->args;
     }
@@ -154,7 +153,7 @@ class Request implements RequestInterface
      * @param array $args array of arguments
      * @return array
      */
-    private static function encode(array $args): array
+    private static function encode(array $args)
     {
         $result = [];
         foreach ($args as $key => $value) {
@@ -175,9 +174,9 @@ class Request implements RequestInterface
      *
      * @return integer
      */
-    public function loadTimeout(): int
+    public function loadTimeout()
     {
-        return $this->timeout || 0;
+        return $this->timeout;
     }
 
     /**
@@ -185,7 +184,7 @@ class Request implements RequestInterface
      *
      * @param int $timeout timeout
      */
-    public function withTimeout(int $timeout): void
+    public function withTimeout($timeout)
     {
         $this->timeout = $timeout;
     }
@@ -195,9 +194,9 @@ class Request implements RequestInterface
      *
      * @return integer
      */
-    public function loadMaxRetries(): int
+    public function loadMaxRetries()
     {
-        return $this->maxRetries || 0;
+        return $this->maxRetries;
     }
 
     /**
@@ -205,7 +204,7 @@ class Request implements RequestInterface
      *
      * @param int $maxRetries max retries
      */
-    public function withMaxRetries(int $maxRetries): void
+    public function withMaxRetries($maxRetries)
     {
         $this->maxRetries = $maxRetries;
     }

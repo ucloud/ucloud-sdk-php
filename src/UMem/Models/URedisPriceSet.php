@@ -27,7 +27,7 @@ class URedisPriceSet extends Response
      *
      * @return integer|null
      */
-    public function getOriginalPrice(): int
+    public function getOriginalPrice()
     {
         return $this->get("OriginalPrice");
     }
@@ -37,7 +37,7 @@ class URedisPriceSet extends Response
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice)
+    public function setOriginalPrice($originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }
@@ -47,7 +47,7 @@ class URedisPriceSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -57,7 +57,7 @@ class URedisPriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -67,7 +67,7 @@ class URedisPriceSet extends Response
      *
      * @return integer|null
      */
-    public function getListPrice(): int
+    public function getListPrice()
     {
         return $this->get("ListPrice");
     }
@@ -77,7 +77,7 @@ class URedisPriceSet extends Response
      *
      * @param int $listPrice
      */
-    public function setListPrice(int $listPrice)
+    public function setListPrice($listPrice)
     {
         $this->set("ListPrice", $listPrice);
     }
@@ -87,7 +87,7 @@ class URedisPriceSet extends Response
      *
      * @return integer|null
      */
-    public function getPrice(): int
+    public function getPrice()
     {
         return $this->get("Price");
     }
@@ -97,7 +97,7 @@ class URedisPriceSet extends Response
      *
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->set("Price", $price);
     }

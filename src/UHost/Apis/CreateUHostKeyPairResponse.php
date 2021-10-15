@@ -28,7 +28,7 @@ class CreateUHostKeyPairResponse extends Response
      *
      * @return KeyPair|null
      */
-    public function getKeyPair(): KeyPair
+    public function getKeyPair()
     {
         return new KeyPair($this->get("KeyPair"));
     }
@@ -38,7 +38,7 @@ class CreateUHostKeyPairResponse extends Response
      *
      * @param KeyPair $keyPair
      */
-    public function setKeyPair(KeyPair $keyPair)
+    public function setKeyPair(array $keyPair)
     {
         $this->set("KeyPair", $keyPair->getAll());
     }

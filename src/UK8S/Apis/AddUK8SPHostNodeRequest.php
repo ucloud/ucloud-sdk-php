@@ -38,7 +38,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -48,7 +48,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -58,7 +58,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -68,7 +68,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -78,7 +78,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -88,7 +88,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -98,7 +98,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getClusterId(): string
+    public function getClusterId()
     {
         return $this->get("ClusterId");
     }
@@ -108,7 +108,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId(string $clusterId)
+    public function setClusterId($clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
@@ -118,7 +118,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return integer|null
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -128,7 +128,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }
@@ -138,7 +138,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->get("Password");
     }
@@ -148,7 +148,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword(string $password)
+    public function setPassword($password)
     {
         $this->set("Password", $password);
     }
@@ -158,7 +158,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -168,7 +168,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -178,7 +178,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -188,7 +188,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -198,7 +198,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getLabels(): string
+    public function getLabels()
     {
         return $this->get("Labels");
     }
@@ -208,7 +208,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $labels
      */
-    public function setLabels(string $labels)
+    public function setLabels($labels)
     {
         $this->set("Labels", $labels);
     }
@@ -218,7 +218,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return integer|null
      */
-    public function getMaxPods(): int
+    public function getMaxPods()
     {
         return $this->get("MaxPods");
     }
@@ -228,7 +228,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param int $maxPods
      */
-    public function setMaxPods(int $maxPods)
+    public function setMaxPods($maxPods)
     {
         $this->set("MaxPods", $maxPods);
     }
@@ -238,7 +238,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -248,7 +248,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -258,7 +258,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getRaid(): string
+    public function getRaid()
     {
         return $this->get("Raid");
     }
@@ -268,7 +268,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $raid
      */
-    public function setRaid(string $raid)
+    public function setRaid($raid)
     {
         $this->set("Raid", $raid);
     }
@@ -278,7 +278,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getNIC(): string
+    public function getNIC()
     {
         return $this->get("NIC");
     }
@@ -288,7 +288,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $nic
      */
-    public function setNIC(string $nic)
+    public function setNIC($nic)
     {
         $this->set("NIC", $nic);
     }
@@ -298,7 +298,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -308,7 +308,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -318,7 +318,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -328,7 +328,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -338,7 +338,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return boolean|null
      */
-    public function getDisableSchedule(): bool
+    public function getDisableSchedule()
     {
         return $this->get("DisableSchedule");
     }
@@ -348,7 +348,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param boolean $disableSchedule
      */
-    public function setDisableSchedule(bool $disableSchedule)
+    public function setDisableSchedule($disableSchedule)
     {
         $this->set("DisableSchedule", $disableSchedule);
     }
@@ -358,7 +358,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getInitScript(): string
+    public function getInitScript()
     {
         return $this->get("InitScript");
     }
@@ -368,7 +368,7 @@ class AddUK8SPHostNodeRequest extends Request
      *
      * @param string $initScript
      */
-    public function setInitScript(string $initScript)
+    public function setInitScript($initScript)
     {
         $this->set("InitScript", $initScript);
     }

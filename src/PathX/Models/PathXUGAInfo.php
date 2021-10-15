@@ -27,7 +27,7 @@ class PathXUGAInfo extends Response
      *
      * @return string|null
      */
-    public function getUGAId(): string
+    public function getUGAId()
     {
         return $this->get("UGAId");
     }
@@ -37,7 +37,7 @@ class PathXUGAInfo extends Response
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId)
+    public function setUGAId($ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -47,7 +47,7 @@ class PathXUGAInfo extends Response
      *
      * @return string[]|null
      */
-    public function getIPList(): array
+    public function getIPList()
     {
         return $this->get("IPList");
     }
@@ -67,7 +67,7 @@ class PathXUGAInfo extends Response
      *
      * @return string|null
      */
-    public function getDomain(): string
+    public function getDomain()
     {
         return $this->get("Domain");
     }
@@ -77,7 +77,7 @@ class PathXUGAInfo extends Response
      *
      * @param string $domain
      */
-    public function setDomain(string $domain)
+    public function setDomain($domain)
     {
         $this->set("Domain", $domain);
     }

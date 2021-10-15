@@ -35,7 +35,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getUPathId(): string
+    public function getUPathId()
     {
         return $this->get("UPathId");
     }
@@ -65,7 +65,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId)
+    public function setUPathId($uPathId)
     {
         $this->set("UPathId", $uPathId);
     }
@@ -75,7 +75,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -85,7 +85,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

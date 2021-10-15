@@ -29,9 +29,12 @@ class GetCubeMetricsResponse extends Response
      *
      * @return MetricDataSet[]|null
      */
-    public function getDataSets(): array
+    public function getDataSets()
     {
-        $items = $this->get("DataSets") ?? [];
+        $items = $this->get("DataSets");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MetricDataSet($item));

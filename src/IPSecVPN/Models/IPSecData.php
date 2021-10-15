@@ -27,7 +27,7 @@ class IPSecData extends Response
      *
      * @return string|null
      */
-    public function getIPSecAuthenticationAlgorithm(): string
+    public function getIPSecAuthenticationAlgorithm()
     {
         return $this->get("IPSecAuthenticationAlgorithm");
     }
@@ -37,7 +37,7 @@ class IPSecData extends Response
      *
      * @param string $ipSecAuthenticationAlgorithm
      */
-    public function setIPSecAuthenticationAlgorithm(string $ipSecAuthenticationAlgorithm)
+    public function setIPSecAuthenticationAlgorithm($ipSecAuthenticationAlgorithm)
     {
         $this->set("IPSecAuthenticationAlgorithm", $ipSecAuthenticationAlgorithm);
     }
@@ -47,7 +47,7 @@ class IPSecData extends Response
      *
      * @return string|null
      */
-    public function getIPSecEncryptionAlgorithm(): string
+    public function getIPSecEncryptionAlgorithm()
     {
         return $this->get("IPSecEncryptionAlgorithm");
     }
@@ -57,7 +57,7 @@ class IPSecData extends Response
      *
      * @param string $ipSecEncryptionAlgorithm
      */
-    public function setIPSecEncryptionAlgorithm(string $ipSecEncryptionAlgorithm)
+    public function setIPSecEncryptionAlgorithm($ipSecEncryptionAlgorithm)
     {
         $this->set("IPSecEncryptionAlgorithm", $ipSecEncryptionAlgorithm);
     }
@@ -67,7 +67,7 @@ class IPSecData extends Response
      *
      * @return string[]|null
      */
-    public function getIPSecLocalSubnetIds(): array
+    public function getIPSecLocalSubnetIds()
     {
         return $this->get("IPSecLocalSubnetIds");
     }
@@ -87,7 +87,7 @@ class IPSecData extends Response
      *
      * @return string|null
      */
-    public function getIPSecProtocol(): string
+    public function getIPSecProtocol()
     {
         return $this->get("IPSecProtocol");
     }
@@ -97,7 +97,7 @@ class IPSecData extends Response
      *
      * @param string $ipSecProtocol
      */
-    public function setIPSecProtocol(string $ipSecProtocol)
+    public function setIPSecProtocol($ipSecProtocol)
     {
         $this->set("IPSecProtocol", $ipSecProtocol);
     }
@@ -107,7 +107,7 @@ class IPSecData extends Response
      *
      * @return string[]|null
      */
-    public function getIPSecRemoteSubnets(): array
+    public function getIPSecRemoteSubnets()
     {
         return $this->get("IPSecRemoteSubnets");
     }
@@ -127,7 +127,7 @@ class IPSecData extends Response
      *
      * @return string|null
      */
-    public function getIPSecSALifetime(): string
+    public function getIPSecSALifetime()
     {
         return $this->get("IPSecSALifetime");
     }
@@ -137,7 +137,7 @@ class IPSecData extends Response
      *
      * @param string $ipSecSALifetime
      */
-    public function setIPSecSALifetime(string $ipSecSALifetime)
+    public function setIPSecSALifetime($ipSecSALifetime)
     {
         $this->set("IPSecSALifetime", $ipSecSALifetime);
     }
@@ -147,7 +147,7 @@ class IPSecData extends Response
      *
      * @return string|null
      */
-    public function getIPSecSALifetimeBytes(): string
+    public function getIPSecSALifetimeBytes()
     {
         return $this->get("IPSecSALifetimeBytes");
     }
@@ -157,7 +157,7 @@ class IPSecData extends Response
      *
      * @param string $ipSecSALifetimeBytes
      */
-    public function setIPSecSALifetimeBytes(string $ipSecSALifetimeBytes)
+    public function setIPSecSALifetimeBytes($ipSecSALifetimeBytes)
     {
         $this->set("IPSecSALifetimeBytes", $ipSecSALifetimeBytes);
     }
@@ -167,7 +167,7 @@ class IPSecData extends Response
      *
      * @return string|null
      */
-    public function getIPSecPFSDhGroup(): string
+    public function getIPSecPFSDhGroup()
     {
         return $this->get("IPSecPFSDhGroup");
     }
@@ -177,7 +177,7 @@ class IPSecData extends Response
      *
      * @param string $ipSecPFSDhGroup
      */
-    public function setIPSecPFSDhGroup(string $ipSecPFSDhGroup)
+    public function setIPSecPFSDhGroup($ipSecPFSDhGroup)
     {
         $this->set("IPSecPFSDhGroup", $ipSecPFSDhGroup);
     }

@@ -27,7 +27,7 @@ class UFileDataSet extends Response
      *
      * @return string|null
      */
-    public function getTokenID(): string
+    public function getTokenID()
     {
         return $this->get("TokenID");
     }
@@ -37,7 +37,7 @@ class UFileDataSet extends Response
      *
      * @param string $tokenID
      */
-    public function setTokenID(string $tokenID)
+    public function setTokenID($tokenID)
     {
         $this->set("TokenID", $tokenID);
     }
@@ -47,7 +47,7 @@ class UFileDataSet extends Response
      *
      * @return string|null
      */
-    public function getBucket(): string
+    public function getBucket()
     {
         return $this->get("Bucket");
     }
@@ -57,7 +57,7 @@ class UFileDataSet extends Response
      *
      * @param string $bucket
      */
-    public function setBucket(string $bucket)
+    public function setBucket($bucket)
     {
         $this->set("Bucket", $bucket);
     }

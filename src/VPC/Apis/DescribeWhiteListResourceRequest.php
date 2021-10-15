@@ -35,7 +35,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -65,7 +65,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -75,7 +75,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @return string[]|null
      */
-    public function getNATGWIds(): array
+    public function getNATGWIds()
     {
         return $this->get("NATGWIds");
     }
@@ -95,7 +95,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -105,7 +105,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -115,7 +115,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -125,7 +125,7 @@ class DescribeWhiteListResourceRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }

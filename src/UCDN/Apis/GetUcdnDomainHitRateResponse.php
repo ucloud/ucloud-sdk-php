@@ -28,9 +28,12 @@ class GetUcdnDomainHitRateResponse extends Response
      *
      * @return HitRateInfoV2[]|null
      */
-    public function getHitRateList(): array
+    public function getHitRateList()
     {
-        $items = $this->get("HitRateList") ?? [];
+        $items = $this->get("HitRateList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new HitRateInfoV2($item));

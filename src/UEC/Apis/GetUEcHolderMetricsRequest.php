@@ -35,7 +35,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return string|null
      */
-    public function getPackName(): string
+    public function getPackName()
     {
         return $this->get("PackName");
     }
@@ -65,7 +65,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param string $packName
      */
-    public function setPackName(string $packName)
+    public function setPackName($packName)
     {
         $this->set("PackName", $packName);
     }
@@ -75,7 +75,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return string[]|null
      */
-    public function getType(): array
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -95,7 +95,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -105,7 +105,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -115,7 +115,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return integer|null
      */
-    public function getStartTime(): int
+    public function getStartTime()
     {
         return $this->get("StartTime");
     }
@@ -125,7 +125,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime)
+    public function setStartTime($startTime)
     {
         $this->set("StartTime", $startTime);
     }
@@ -135,7 +135,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -145,7 +145,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }

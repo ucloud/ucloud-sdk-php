@@ -27,7 +27,7 @@ class StorVolumeInfo extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class StorVolumeInfo extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class StorVolumeInfo extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -57,7 +57,7 @@ class StorVolumeInfo extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -67,7 +67,7 @@ class StorVolumeInfo extends Response
      *
      * @return string|null
      */
-    public function getMountPoint(): string
+    public function getMountPoint()
     {
         return $this->get("MountPoint");
     }
@@ -77,7 +77,7 @@ class StorVolumeInfo extends Response
      *
      * @param string $mountPoint
      */
-    public function setMountPoint(string $mountPoint)
+    public function setMountPoint($mountPoint)
     {
         $this->set("MountPoint", $mountPoint);
     }
@@ -87,7 +87,7 @@ class StorVolumeInfo extends Response
      *
      * @return integer|null
      */
-    public function getDiskSize(): int
+    public function getDiskSize()
     {
         return $this->get("DiskSize");
     }
@@ -97,7 +97,7 @@ class StorVolumeInfo extends Response
      *
      * @param int $diskSize
      */
-    public function setDiskSize(int $diskSize)
+    public function setDiskSize($diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }

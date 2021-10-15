@@ -27,7 +27,7 @@ class NatGWWhitelistDataSet extends Response
      *
      * @return string|null
      */
-    public function getNATGWId(): string
+    public function getNATGWId()
     {
         return $this->get("NATGWId");
     }
@@ -37,7 +37,7 @@ class NatGWWhitelistDataSet extends Response
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId)
+    public function setNATGWId($natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -47,7 +47,7 @@ class NatGWWhitelistDataSet extends Response
      *
      * @return integer|null
      */
-    public function getIfOpen(): int
+    public function getIfOpen()
     {
         return $this->get("IfOpen");
     }
@@ -57,7 +57,7 @@ class NatGWWhitelistDataSet extends Response
      *
      * @param int $ifOpen
      */
-    public function setIfOpen(int $ifOpen)
+    public function setIfOpen($ifOpen)
     {
         $this->set("IfOpen", $ifOpen);
     }
@@ -67,9 +67,12 @@ class NatGWWhitelistDataSet extends Response
      *
      * @return DescribeWhiteListResourceObjectIPInfo[]|null
      */
-    public function getObjectIPInfo(): array
+    public function getObjectIPInfo()
     {
-        $items = $this->get("ObjectIPInfo") ?? [];
+        $items = $this->get("ObjectIPInfo");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new DescribeWhiteListResourceObjectIPInfo($item));

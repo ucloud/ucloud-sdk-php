@@ -27,7 +27,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string
+    public function getSubnetworkId()
     {
         return $this->get("SubnetworkId");
     }
@@ -37,7 +37,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId)
+    public function setSubnetworkId($subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }
@@ -47,7 +47,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @return string|null
      */
-    public function getSubnet(): string
+    public function getSubnet()
     {
         return $this->get("Subnet");
     }
@@ -57,7 +57,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @param string $subnet
      */
-    public function setSubnet(string $subnet)
+    public function setSubnet($subnet)
     {
         $this->set("Subnet", $subnet);
     }
@@ -67,7 +67,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetName(): string
+    public function getSubnetName()
     {
         return $this->get("SubnetName");
     }
@@ -77,7 +77,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName)
+    public function setSubnetName($subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }

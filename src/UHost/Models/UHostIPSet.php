@@ -27,7 +27,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getIPMode(): string
+    public function getIPMode()
     {
         return $this->get("IPMode");
     }
@@ -37,7 +37,7 @@ class UHostIPSet extends Response
      *
      * @param string $ipMode
      */
-    public function setIPMode(string $ipMode)
+    public function setIPMode($ipMode)
     {
         $this->set("IPMode", $ipMode);
     }
@@ -47,7 +47,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getDefault(): string
+    public function getDefault()
     {
         return $this->get("Default");
     }
@@ -57,7 +57,7 @@ class UHostIPSet extends Response
      *
      * @param string $default
      */
-    public function setDefault(string $default)
+    public function setDefault($default)
     {
         $this->set("Default", $default);
     }
@@ -67,7 +67,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getMac(): string
+    public function getMac()
     {
         return $this->get("Mac");
     }
@@ -77,7 +77,7 @@ class UHostIPSet extends Response
      *
      * @param string $mac
      */
-    public function setMac(string $mac)
+    public function setMac($mac)
     {
         $this->set("Mac", $mac);
     }
@@ -87,7 +87,7 @@ class UHostIPSet extends Response
      *
      * @return integer|null
      */
-    public function getWeight(): int
+    public function getWeight()
     {
         return $this->get("Weight");
     }
@@ -97,7 +97,7 @@ class UHostIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight(int $weight)
+    public function setWeight($weight)
     {
         $this->set("Weight", $weight);
     }
@@ -107,7 +107,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -117,7 +117,7 @@ class UHostIPSet extends Response
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -127,7 +127,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getIPId(): string
+    public function getIPId()
     {
         return $this->get("IPId");
     }
@@ -137,7 +137,7 @@ class UHostIPSet extends Response
      *
      * @param string $ipId
      */
-    public function setIPId(string $ipId)
+    public function setIPId($ipId)
     {
         $this->set("IPId", $ipId);
     }
@@ -147,7 +147,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getIP(): string
+    public function getIP()
     {
         return $this->get("IP");
     }
@@ -157,7 +157,7 @@ class UHostIPSet extends Response
      *
      * @param string $ip
      */
-    public function setIP(string $ip)
+    public function setIP($ip)
     {
         $this->set("IP", $ip);
     }
@@ -167,7 +167,7 @@ class UHostIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -177,7 +177,7 @@ class UHostIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -187,7 +187,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -197,7 +197,7 @@ class UHostIPSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -207,7 +207,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -217,7 +217,7 @@ class UHostIPSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -227,7 +227,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getNetworkInterfaceId(): string
+    public function getNetworkInterfaceId()
     {
         return $this->get("NetworkInterfaceId");
     }
@@ -237,7 +237,7 @@ class UHostIPSet extends Response
      *
      * @param string $networkInterfaceId
      */
-    public function setNetworkInterfaceId(string $networkInterfaceId)
+    public function setNetworkInterfaceId($networkInterfaceId)
     {
         $this->set("NetworkInterfaceId", $networkInterfaceId);
     }

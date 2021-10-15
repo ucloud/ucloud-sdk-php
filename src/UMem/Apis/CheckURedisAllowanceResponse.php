@@ -27,7 +27,7 @@ class CheckURedisAllowanceResponse extends Response
      *
      * @return integer|null
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -37,7 +37,7 @@ class CheckURedisAllowanceResponse extends Response
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }

@@ -27,7 +27,7 @@ class UGAL4Forwarder extends Response
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -37,7 +37,7 @@ class UGAL4Forwarder extends Response
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -47,7 +47,7 @@ class UGAL4Forwarder extends Response
      *
      * @return string|null
      */
-    public function getProtocol(): string
+    public function getProtocol()
     {
         return $this->get("Protocol");
     }
@@ -57,7 +57,7 @@ class UGAL4Forwarder extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol)
+    public function setProtocol($protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -67,7 +67,7 @@ class UGAL4Forwarder extends Response
      *
      * @return integer|null
      */
-    public function getRSPort(): int
+    public function getRSPort()
     {
         return $this->get("RSPort");
     }
@@ -77,7 +77,7 @@ class UGAL4Forwarder extends Response
      *
      * @param int $rsPort
      */
-    public function setRSPort(int $rsPort)
+    public function setRSPort($rsPort)
     {
         $this->set("RSPort", $rsPort);
     }

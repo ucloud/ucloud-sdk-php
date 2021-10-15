@@ -27,7 +27,7 @@ class DescribeUDBBackupBlacklistResponse extends Response
      *
      * @return string|null
      */
-    public function getBlacklist(): string
+    public function getBlacklist()
     {
         return $this->get("Blacklist");
     }
@@ -37,7 +37,7 @@ class DescribeUDBBackupBlacklistResponse extends Response
      *
      * @param string $blacklist
      */
-    public function setBlacklist(string $blacklist)
+    public function setBlacklist($blacklist)
     {
         $this->set("Blacklist", $blacklist);
     }

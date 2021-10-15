@@ -30,6 +30,8 @@ use UCloud\UFile\Apis\DescribeBucketRequest;
 use UCloud\UFile\Apis\DescribeBucketResponse;
 use UCloud\UFile\Apis\DescribeUFileTokenRequest;
 use UCloud\UFile\Apis\DescribeUFileTokenResponse;
+use UCloud\UFile\Apis\GetUFileDailyReportRequest;
+use UCloud\UFile\Apis\GetUFileDailyReportResponse;
 use UCloud\UFile\Apis\GetUFileQuotaRequest;
 use UCloud\UFile\Apis\GetUFileQuotaResponse;
 use UCloud\UFile\Apis\GetUFileQuotaInfoRequest;
@@ -54,7 +56,7 @@ class UFileClient extends Client
     /**
      * CreateBucket - 创建Bucket
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/create_bucket
+     * See also: https://docs.ucloud.cn/api/ufile-api/create_bucket
      *
      * Arguments:
      *
@@ -72,9 +74,10 @@ class UFileClient extends Client
      *     "BucketId" => (string) 已创建Bucket的ID
      * ]
      *
+     * @return CreateBucketResponse
      * @throws UCloudException
      */
-    public function createBucket(CreateBucketRequest $request = null): CreateBucketResponse
+    public function createBucket(CreateBucketRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateBucketResponse($resp->toArray(), $resp->getRequestId());
@@ -83,7 +86,7 @@ class UFileClient extends Client
     /**
      * CreateUFileToken - 创建US3令牌
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/create_ufile_token
+     * See also: https://docs.ucloud.cn/api/ufile-api/create_ufile_token
      *
      * Arguments:
      *
@@ -103,9 +106,10 @@ class UFileClient extends Client
      *     "TokenId" => (string) 创建令牌的token_id
      * ]
      *
+     * @return CreateUFileTokenResponse
      * @throws UCloudException
      */
-    public function createUFileToken(CreateUFileTokenRequest $request = null): CreateUFileTokenResponse
+    public function createUFileToken(CreateUFileTokenRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUFileTokenResponse($resp->toArray(), $resp->getRequestId());
@@ -114,7 +118,7 @@ class UFileClient extends Client
     /**
      * DeleteBucket - 删除Bucket
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/delete_bucket
+     * See also: https://docs.ucloud.cn/api/ufile-api/delete_bucket
      *
      * Arguments:
      *
@@ -130,9 +134,10 @@ class UFileClient extends Client
      *     "BucketId" => (string) Bucket的ID
      * ]
      *
+     * @return DeleteBucketResponse
      * @throws UCloudException
      */
-    public function deleteBucket(DeleteBucketRequest $request = null): DeleteBucketResponse
+    public function deleteBucket(DeleteBucketRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteBucketResponse($resp->toArray(), $resp->getRequestId());
@@ -141,7 +146,7 @@ class UFileClient extends Client
     /**
      * DeleteUFileToken - 删除令牌
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/delete_ufile_token
+     * See also: https://docs.ucloud.cn/api/ufile-api/delete_ufile_token
      *
      * Arguments:
      *
@@ -156,9 +161,10 @@ class UFileClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUFileTokenResponse
      * @throws UCloudException
      */
-    public function deleteUFileToken(DeleteUFileTokenRequest $request = null): DeleteUFileTokenResponse
+    public function deleteUFileToken(DeleteUFileTokenRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUFileTokenResponse($resp->toArray(), $resp->getRequestId());
@@ -167,7 +173,7 @@ class UFileClient extends Client
     /**
      * DescribeBucket - 获取Bucket的描述信息
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/describe_bucket
+     * See also: https://docs.ucloud.cn/api/ufile-api/describe_bucket
      *
      * Arguments:
      *
@@ -204,9 +210,10 @@ class UFileClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeBucketResponse
      * @throws UCloudException
      */
-    public function describeBucket(DescribeBucketRequest $request = null): DescribeBucketResponse
+    public function describeBucket(DescribeBucketRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeBucketResponse($resp->toArray(), $resp->getRequestId());
@@ -215,7 +222,7 @@ class UFileClient extends Client
     /**
      * DescribeUFileToken - 获取令牌信息
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/describe_ufile_token
+     * See also: https://docs.ucloud.cn/api/ufile-api/describe_ufile_token
      *
      * Arguments:
      *
@@ -247,18 +254,76 @@ class UFileClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUFileTokenResponse
      * @throws UCloudException
      */
-    public function describeUFileToken(DescribeUFileTokenRequest $request = null): DescribeUFileTokenResponse
+    public function describeUFileToken(DescribeUFileTokenRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUFileTokenResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
+     * GetUFileDailyReport - 查看日消费报表
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_ufile_daily_report
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "StartTime" => (integer) 查询开始时间;unix时间戳，单位s
+     *     "EndTime" => (integer) 查询结束时间;unix时间戳,单位s
+     *     "BucketName" => (string) 空间名称。此字段不为空，返回此Bucket日使用量；否则，返回这个项目的日使用量
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (array<object>) 消费情况[
+     *         [
+     *             "Total" => (array<object>) 总消费情况[
+     *                 [
+     *                     "Flow" => (number) 下载流量：单位byte；国内无此字段
+     *                     "IdleFlow" => (number) 闲时流量；单位byte；海外无此字段
+     *                     "BusyFlow" => (number) 忙时流量；单位byte；海外无此字段
+     *                     "CdnFlow" => (number) cdn回源流量;单位byte
+     *                     "ApiTimes" => (number) API请求次数（次）
+     *                 ]
+     *             ]
+     *             "Daily" => (array<object>) 日消费情况[
+     *                 [
+     *                     "Storage" => (number) 标准存储量；单位byte
+     *                     "IaStorage" => (number) 低频存储量；单位byte
+     *                     "AcStorage" => (number) 冷存（归档）存储量；单位byte
+     *                     "IaGetSize" => (number) 低频数据取回量；单位byte
+     *                     "AcRestore" => (number) 冷存激活量，即归档数据取回量；单位byte
+     *                     "BusyFlow" => (number) 忙时流量；单位byte；海外无此字段
+     *                     "IdleFlow" => (number) 闲时流量；单位byte；海外无此字段
+     *                     "CdnFlow" => (number) cdn回源流量;单位byte
+     *                     "Flow" => (number) 下载流量：单位byte；国内无此字段
+     *                     "Date" => (integer) 配额消费时间，unix时间戳（单位s），精确到日期
+     *                     "ApiTimes" => (number) API请求次数（次）
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUFileDailyReportResponse
+     * @throws UCloudException
+     */
+    public function getUFileDailyReport(GetUFileDailyReportRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUFileDailyReportResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * GetUFileQuota - 查看配额状态
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/get_ufile_quota
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_ufile_quota
      *
      * Arguments:
      *
@@ -273,9 +338,10 @@ class UFileClient extends Client
      *     "LeftQuota" => (number) 剩余的配额数值
      * ]
      *
+     * @return GetUFileQuotaResponse
      * @throws UCloudException
      */
-    public function getUFileQuota(GetUFileQuotaRequest $request = null): GetUFileQuotaResponse
+    public function getUFileQuota(GetUFileQuotaRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUFileQuotaResponse($resp->toArray(), $resp->getRequestId());
@@ -284,7 +350,7 @@ class UFileClient extends Client
     /**
      * GetUFileQuotaInfo - 获取配额信息
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/get_ufile_quota_info
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_ufile_quota_info
      *
      * Arguments:
      *
@@ -314,9 +380,10 @@ class UFileClient extends Client
      *     ]
      * ]
      *
+     * @return GetUFileQuotaInfoResponse
      * @throws UCloudException
      */
-    public function getUFileQuotaInfo(GetUFileQuotaInfoRequest $request = null): GetUFileQuotaInfoResponse
+    public function getUFileQuotaInfo(GetUFileQuotaInfoRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUFileQuotaInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -325,7 +392,7 @@ class UFileClient extends Client
     /**
      * GetUFileQuotaPrice - 根据US3的购买配额，查询需要支付的价格。
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/get_ufile_quota_price
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_ufile_quota_price
      *
      * Arguments:
      *
@@ -342,9 +409,10 @@ class UFileClient extends Client
      *     "Price" => (number) 待支付价格，单位：分
      * ]
      *
+     * @return GetUFileQuotaPriceResponse
      * @throws UCloudException
      */
-    public function getUFileQuotaPrice(GetUFileQuotaPriceRequest $request = null): GetUFileQuotaPriceResponse
+    public function getUFileQuotaPrice(GetUFileQuotaPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUFileQuotaPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -353,7 +421,7 @@ class UFileClient extends Client
     /**
      * GetUFileReport - 查看配额使用报表
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/get_ufile_report
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_ufile_report
      *
      * Arguments:
      *
@@ -377,9 +445,10 @@ class UFileClient extends Client
      *     ]
      * ]
      *
+     * @return GetUFileReportResponse
      * @throws UCloudException
      */
-    public function getUFileReport(GetUFileReportRequest $request = null): GetUFileReportResponse
+    public function getUFileReport(GetUFileReportRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUFileReportResponse($resp->toArray(), $resp->getRequestId());
@@ -388,7 +457,7 @@ class UFileClient extends Client
     /**
      * SetUFileReferer - 设置对象存储防盗链
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/set_ufile_referer
+     * See also: https://docs.ucloud.cn/api/ufile-api/set_ufile_referer
      *
      * Arguments:
      *
@@ -407,9 +476,10 @@ class UFileClient extends Client
      * $outputs = [
      * ]
      *
+     * @return SetUFileRefererResponse
      * @throws UCloudException
      */
-    public function setUFileReferer(SetUFileRefererRequest $request = null): SetUFileRefererResponse
+    public function setUFileReferer(SetUFileRefererRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new SetUFileRefererResponse($resp->toArray(), $resp->getRequestId());
@@ -418,7 +488,7 @@ class UFileClient extends Client
     /**
      * UpdateBucket - 更改Bucket的属性
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/update_bucket
+     * See also: https://docs.ucloud.cn/api/ufile-api/update_bucket
      *
      * Arguments:
      *
@@ -435,9 +505,10 @@ class UFileClient extends Client
      *     "BucketId" => (string) Bucket的ID
      * ]
      *
+     * @return UpdateBucketResponse
      * @throws UCloudException
      */
-    public function updateBucket(UpdateBucketRequest $request = null): UpdateBucketResponse
+    public function updateBucket(UpdateBucketRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateBucketResponse($resp->toArray(), $resp->getRequestId());
@@ -446,7 +517,7 @@ class UFileClient extends Client
     /**
      * UpdateUFileToken - 更新令牌的操作权限，可操作key的前缀，可操作bucket和令牌超时时间点
      *
-     * See also: https://docs.ucloud.cn/api/UFile-api/update_ufile_token
+     * See also: https://docs.ucloud.cn/api/ufile-api/update_ufile_token
      *
      * Arguments:
      *
@@ -466,9 +537,10 @@ class UFileClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateUFileTokenResponse
      * @throws UCloudException
      */
-    public function updateUFileToken(UpdateUFileTokenRequest $request = null): UpdateUFileTokenResponse
+    public function updateUFileToken(UpdateUFileTokenRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateUFileTokenResponse($resp->toArray(), $resp->getRequestId());

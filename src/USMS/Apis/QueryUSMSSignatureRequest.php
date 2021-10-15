@@ -32,7 +32,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getSigId(): string
+    public function getSigId()
     {
         return $this->get("SigId");
     }
@@ -62,7 +62,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $sigId
      */
-    public function setSigId(string $sigId)
+    public function setSigId($sigId)
     {
         $this->set("SigId", $sigId);
     }
@@ -72,7 +72,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getSigContent(): string
+    public function getSigContent()
     {
         return $this->get("SigContent");
     }
@@ -82,7 +82,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent)
+    public function setSigContent($sigContent)
     {
         $this->set("SigContent", $sigContent);
     }

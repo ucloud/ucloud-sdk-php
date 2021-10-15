@@ -34,7 +34,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getUPathId(): string
+    public function getUPathId()
     {
         return $this->get("UPathId");
     }
@@ -64,7 +64,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId)
+    public function setUPathId($uPathId)
     {
         $this->set("UPathId", $uPathId);
     }
@@ -74,7 +74,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return string[]|null
      */
-    public function getMetricName(): array
+    public function getMetricName()
     {
         return $this->get("MetricName");
     }
@@ -94,7 +94,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return int[]|null
      */
-    public function getThreshold(): array
+    public function getThreshold()
     {
         return $this->get("Threshold");
     }
@@ -114,7 +114,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return int[]|null
      */
-    public function getAlarmFrequency(): array
+    public function getAlarmFrequency()
     {
         return $this->get("AlarmFrequency");
     }
@@ -134,7 +134,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return int[]|null
      */
-    public function getContactGroupId(): array
+    public function getContactGroupId()
     {
         return $this->get("ContactGroupId");
     }
@@ -154,7 +154,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return string[]|null
      */
-    public function getCompare(): array
+    public function getCompare()
     {
         return $this->get("Compare");
     }
@@ -174,7 +174,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return string[]|null
      */
-    public function getAlarmStrategy(): array
+    public function getAlarmStrategy()
     {
         return $this->get("AlarmStrategy");
     }
@@ -194,7 +194,7 @@ class ModifyUPathTemplateRequest extends Request
      *
      * @return int[]|null
      */
-    public function getTriggerCount(): array
+    public function getTriggerCount()
     {
         return $this->get("TriggerCount");
     }

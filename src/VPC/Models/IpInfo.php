@@ -27,7 +27,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getIp(): string
+    public function getIp()
     {
         return $this->get("Ip");
     }
@@ -37,7 +37,7 @@ class IpInfo extends Response
      *
      * @param string $ip
      */
-    public function setIp(string $ip)
+    public function setIp($ip)
     {
         $this->set("Ip", $ip);
     }
@@ -47,7 +47,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getMask(): string
+    public function getMask()
     {
         return $this->get("Mask");
     }
@@ -57,7 +57,7 @@ class IpInfo extends Response
      *
      * @param string $mask
      */
-    public function setMask(string $mask)
+    public function setMask($mask)
     {
         $this->set("Mask", $mask);
     }
@@ -67,7 +67,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getGateway(): string
+    public function getGateway()
     {
         return $this->get("Gateway");
     }
@@ -77,7 +77,7 @@ class IpInfo extends Response
      *
      * @param string $gateway
      */
-    public function setGateway(string $gateway)
+    public function setGateway($gateway)
     {
         $this->set("Gateway", $gateway);
     }
@@ -87,7 +87,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getMac(): string
+    public function getMac()
     {
         return $this->get("Mac");
     }
@@ -97,7 +97,7 @@ class IpInfo extends Response
      *
      * @param string $mac
      */
-    public function setMac(string $mac)
+    public function setMac($mac)
     {
         $this->set("Mac", $mac);
     }
@@ -107,7 +107,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -117,7 +117,7 @@ class IpInfo extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -127,7 +127,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -137,7 +137,7 @@ class IpInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }

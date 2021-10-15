@@ -27,7 +27,7 @@ class ResizePHostAttachedDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getUDiskId(): string
+    public function getUDiskId()
     {
         return $this->get("UDiskId");
     }
@@ -37,7 +37,7 @@ class ResizePHostAttachedDiskResponse extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId)
+    public function setUDiskId($uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }

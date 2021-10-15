@@ -27,7 +27,7 @@ class IDCCutInfo extends Response
      *
      * @return string|null
      */
-    public function getIDCName(): string
+    public function getIDCName()
     {
         return $this->get("IDCName");
     }
@@ -37,7 +37,7 @@ class IDCCutInfo extends Response
      *
      * @param string $idcName
      */
-    public function setIDCName(string $idcName)
+    public function setIDCName($idcName)
     {
         $this->set("IDCName", $idcName);
     }
@@ -47,7 +47,7 @@ class IDCCutInfo extends Response
      *
      * @return string|null
      */
-    public function getProvince(): string
+    public function getProvince()
     {
         return $this->get("Province");
     }
@@ -57,7 +57,7 @@ class IDCCutInfo extends Response
      *
      * @param string $province
      */
-    public function setProvince(string $province)
+    public function setProvince($province)
     {
         $this->set("Province", $province);
     }
@@ -67,7 +67,7 @@ class IDCCutInfo extends Response
      *
      * @return string|null
      */
-    public function getCity(): string
+    public function getCity()
     {
         return $this->get("City");
     }
@@ -77,7 +77,7 @@ class IDCCutInfo extends Response
      *
      * @param string $city
      */
-    public function setCity(string $city)
+    public function setCity($city)
     {
         $this->set("City", $city);
     }
@@ -87,7 +87,7 @@ class IDCCutInfo extends Response
      *
      * @return integer|null
      */
-    public function getStartTime(): int
+    public function getStartTime()
     {
         return $this->get("StartTime");
     }
@@ -97,7 +97,7 @@ class IDCCutInfo extends Response
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime)
+    public function setStartTime($startTime)
     {
         $this->set("StartTime", $startTime);
     }
@@ -107,7 +107,7 @@ class IDCCutInfo extends Response
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -117,7 +117,7 @@ class IDCCutInfo extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -127,7 +127,7 @@ class IDCCutInfo extends Response
      *
      * @return string|null
      */
-    public function getCutType(): string
+    public function getCutType()
     {
         return $this->get("CutType");
     }
@@ -137,7 +137,7 @@ class IDCCutInfo extends Response
      *
      * @param string $cutType
      */
-    public function setCutType(string $cutType)
+    public function setCutType($cutType)
     {
         $this->set("CutType", $cutType);
     }
@@ -147,9 +147,12 @@ class IDCCutInfo extends Response
      *
      * @return ResourceSet[]|null
      */
-    public function getResourceSet(): array
+    public function getResourceSet()
     {
-        $items = $this->get("ResourceSet") ?? [];
+        $items = $this->get("ResourceSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ResourceSet($item));

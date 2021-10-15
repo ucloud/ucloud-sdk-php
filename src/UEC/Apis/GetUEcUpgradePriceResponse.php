@@ -27,7 +27,7 @@ class GetUEcUpgradePriceResponse extends Response
      *
      * @return integer|null
      */
-    public function getPrice(): int
+    public function getPrice()
     {
         return $this->get("Price");
     }
@@ -37,7 +37,7 @@ class GetUEcUpgradePriceResponse extends Response
      *
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->set("Price", $price);
     }

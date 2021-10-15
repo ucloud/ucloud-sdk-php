@@ -27,7 +27,7 @@ class PathXSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSSLId(): string
+    public function getSSLId()
     {
         return $this->get("SSLId");
     }
@@ -37,7 +37,7 @@ class PathXSSLSet extends Response
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId)
+    public function setSSLId($sslId)
     {
         $this->set("SSLId", $sslId);
     }
@@ -47,7 +47,7 @@ class PathXSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSSLName(): string
+    public function getSSLName()
     {
         return $this->get("SSLName");
     }
@@ -57,7 +57,7 @@ class PathXSSLSet extends Response
      *
      * @param string $sslName
      */
-    public function setSSLName(string $sslName)
+    public function setSSLName($sslName)
     {
         $this->set("SSLName", $sslName);
     }
@@ -67,7 +67,7 @@ class PathXSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSubjectName(): string
+    public function getSubjectName()
     {
         return $this->get("SubjectName");
     }
@@ -77,7 +77,7 @@ class PathXSSLSet extends Response
      *
      * @param string $subjectName
      */
-    public function setSubjectName(string $subjectName)
+    public function setSubjectName($subjectName)
     {
         $this->set("SubjectName", $subjectName);
     }
@@ -87,7 +87,7 @@ class PathXSSLSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime(): int
+    public function getExpireTime()
     {
         return $this->get("ExpireTime");
     }
@@ -97,7 +97,7 @@ class PathXSSLSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime)
+    public function setExpireTime($expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -107,7 +107,7 @@ class PathXSSLSet extends Response
      *
      * @return integer|null
      */
-    public function getSourceType(): int
+    public function getSourceType()
     {
         return $this->get("SourceType");
     }
@@ -117,7 +117,7 @@ class PathXSSLSet extends Response
      *
      * @param int $sourceType
      */
-    public function setSourceType(int $sourceType)
+    public function setSourceType($sourceType)
     {
         $this->set("SourceType", $sourceType);
     }
@@ -127,7 +127,7 @@ class PathXSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSSLMD5(): string
+    public function getSSLMD5()
     {
         return $this->get("SSLMD5");
     }
@@ -137,7 +137,7 @@ class PathXSSLSet extends Response
      *
      * @param string $sslmd5
      */
-    public function setSSLMD5(string $sslmd5)
+    public function setSSLMD5($sslmd5)
     {
         $this->set("SSLMD5", $sslmd5);
     }
@@ -147,7 +147,7 @@ class PathXSSLSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -157,7 +157,7 @@ class PathXSSLSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -167,9 +167,12 @@ class PathXSSLSet extends Response
      *
      * @return SSLBindedTargetSet[]|null
      */
-    public function getSSLBindedTargetSet(): array
+    public function getSSLBindedTargetSet()
     {
-        $items = $this->get("SSLBindedTargetSet") ?? [];
+        $items = $this->get("SSLBindedTargetSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new SSLBindedTargetSet($item));
@@ -196,7 +199,7 @@ class PathXSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSSLContent(): string
+    public function getSSLContent()
     {
         return $this->get("SSLContent");
     }
@@ -206,7 +209,7 @@ class PathXSSLSet extends Response
      *
      * @param string $sslContent
      */
-    public function setSSLContent(string $sslContent)
+    public function setSSLContent($sslContent)
     {
         $this->set("SSLContent", $sslContent);
     }

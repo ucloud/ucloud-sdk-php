@@ -27,7 +27,7 @@ class ModifyUHostInstanceTagResponse extends Response
      *
      * @return string|null
      */
-    public function getUHostId(): string
+    public function getUHostId()
     {
         return $this->get("UHostId");
     }
@@ -37,7 +37,7 @@ class ModifyUHostInstanceTagResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId)
+    public function setUHostId($uHostId)
     {
         $this->set("UHostId", $uHostId);
     }

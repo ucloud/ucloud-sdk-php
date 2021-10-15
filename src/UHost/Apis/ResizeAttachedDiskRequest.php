@@ -37,7 +37,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -87,7 +87,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUHostId(): string
+    public function getUHostId()
     {
         return $this->get("UHostId");
     }
@@ -107,7 +107,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId)
+    public function setUHostId($uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -117,7 +117,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSpace(): int
+    public function getDiskSpace()
     {
         return $this->get("DiskSpace");
     }
@@ -127,7 +127,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace)
+    public function setDiskSpace($diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -137,7 +137,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getDiskId(): string
+    public function getDiskId()
     {
         return $this->get("DiskId");
     }
@@ -147,7 +147,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @param string $diskId
      */
-    public function setDiskId(string $diskId)
+    public function setDiskId($diskId)
     {
         $this->set("DiskId", $diskId);
     }
@@ -157,7 +157,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @return boolean|null
      */
-    public function getDryRun(): bool
+    public function getDryRun()
     {
         return $this->get("DryRun");
     }
@@ -167,7 +167,7 @@ class ResizeAttachedDiskRequest extends Request
      *
      * @param boolean $dryRun
      */
-    public function setDryRun(bool $dryRun)
+    public function setDryRun($dryRun)
     {
         $this->set("DryRun", $dryRun);
     }

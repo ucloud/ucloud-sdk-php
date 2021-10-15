@@ -27,7 +27,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getRouteTableId(): string
+    public function getRouteTableId()
     {
         return $this->get("RouteTableId");
     }
@@ -37,7 +37,7 @@ class RouteTableInfo extends Response
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId(string $routeTableId)
+    public function setRouteTableId($routeTableId)
     {
         $this->set("RouteTableId", $routeTableId);
     }
@@ -47,7 +47,7 @@ class RouteTableInfo extends Response
      *
      * @return integer|null
      */
-    public function getRouteTableType(): int
+    public function getRouteTableType()
     {
         return $this->get("RouteTableType");
     }
@@ -57,7 +57,7 @@ class RouteTableInfo extends Response
      *
      * @param int $routeTableType
      */
-    public function setRouteTableType(int $routeTableType)
+    public function setRouteTableType($routeTableType)
     {
         $this->set("RouteTableType", $routeTableType);
     }
@@ -67,7 +67,7 @@ class RouteTableInfo extends Response
      *
      * @return integer|null
      */
-    public function getSubnetCount(): int
+    public function getSubnetCount()
     {
         return $this->get("SubnetCount");
     }
@@ -77,7 +77,7 @@ class RouteTableInfo extends Response
      *
      * @param int $subnetCount
      */
-    public function setSubnetCount(int $subnetCount)
+    public function setSubnetCount($subnetCount)
     {
         $this->set("SubnetCount", $subnetCount);
     }
@@ -87,7 +87,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -97,7 +97,7 @@ class RouteTableInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -107,7 +107,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCName(): string
+    public function getVPCName()
     {
         return $this->get("VPCName");
     }
@@ -117,7 +117,7 @@ class RouteTableInfo extends Response
      *
      * @param string $vpcName
      */
-    public function setVPCName(string $vpcName)
+    public function setVPCName($vpcName)
     {
         $this->set("VPCName", $vpcName);
     }
@@ -127,7 +127,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -137,7 +137,7 @@ class RouteTableInfo extends Response
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -147,7 +147,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -157,7 +157,7 @@ class RouteTableInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -167,7 +167,7 @@ class RouteTableInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -177,7 +177,7 @@ class RouteTableInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -187,9 +187,12 @@ class RouteTableInfo extends Response
      *
      * @return RouteRuleInfo[]|null
      */
-    public function getRouteRules(): array
+    public function getRouteRules()
     {
-        $items = $this->get("RouteRules") ?? [];
+        $items = $this->get("RouteRules");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new RouteRuleInfo($item));

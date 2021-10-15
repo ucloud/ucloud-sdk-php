@@ -27,7 +27,7 @@ class ReceiptPerSession extends Response
      *
      * @return string|null
      */
-    public function getSessionNo(): string
+    public function getSessionNo()
     {
         return $this->get("SessionNo");
     }
@@ -37,7 +37,7 @@ class ReceiptPerSession extends Response
      *
      * @param string $sessionNo
      */
-    public function setSessionNo(string $sessionNo)
+    public function setSessionNo($sessionNo)
     {
         $this->set("SessionNo", $sessionNo);
     }
@@ -47,9 +47,12 @@ class ReceiptPerSession extends Response
      *
      * @return ReceiptPerPhone[]|null
      */
-    public function getReceiptSet(): array
+    public function getReceiptSet()
     {
-        $items = $this->get("ReceiptSet") ?? [];
+        $items = $this->get("ReceiptSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ReceiptPerPhone($item));

@@ -27,7 +27,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class DataSetUDDB extends Response
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getUDDBId(): string
+    public function getUDDBId()
     {
         return $this->get("UDDBId");
     }
@@ -57,7 +57,7 @@ class DataSetUDDB extends Response
      *
      * @param string $uddbId
      */
-    public function setUDDBId(string $uddbId)
+    public function setUDDBId($uddbId)
     {
         $this->set("UDDBId", $uddbId);
     }
@@ -67,7 +67,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -77,7 +77,7 @@ class DataSetUDDB extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -87,7 +87,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getDBTypeId(): string
+    public function getDBTypeId()
     {
         return $this->get("DBTypeId");
     }
@@ -97,7 +97,7 @@ class DataSetUDDB extends Response
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId)
+    public function setDBTypeId($dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
@@ -107,7 +107,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getAdminUser(): string
+    public function getAdminUser()
     {
         return $this->get("AdminUser");
     }
@@ -117,7 +117,7 @@ class DataSetUDDB extends Response
      *
      * @param string $adminUser
      */
-    public function setAdminUser(string $adminUser)
+    public function setAdminUser($adminUser)
     {
         $this->set("AdminUser", $adminUser);
     }
@@ -127,7 +127,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getVirtualIP(): string
+    public function getVirtualIP()
     {
         return $this->get("VirtualIP");
     }
@@ -137,7 +137,7 @@ class DataSetUDDB extends Response
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP(string $virtualIP)
+    public function setVirtualIP($virtualIP)
     {
         $this->set("VirtualIP", $virtualIP);
     }
@@ -147,7 +147,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -157,7 +157,7 @@ class DataSetUDDB extends Response
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -167,7 +167,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->get("State");
     }
@@ -177,7 +177,7 @@ class DataSetUDDB extends Response
      *
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }
@@ -187,7 +187,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -197,7 +197,7 @@ class DataSetUDDB extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -207,7 +207,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getExpiredTime(): int
+    public function getExpiredTime()
     {
         return $this->get("ExpiredTime");
     }
@@ -217,7 +217,7 @@ class DataSetUDDB extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime(int $expiredTime)
+    public function setExpiredTime($expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
@@ -227,7 +227,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -237,7 +237,7 @@ class DataSetUDDB extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -247,7 +247,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getRouterVersion(): string
+    public function getRouterVersion()
     {
         return $this->get("RouterVersion");
     }
@@ -257,7 +257,7 @@ class DataSetUDDB extends Response
      *
      * @param string $routerVersion
      */
-    public function setRouterVersion(string $routerVersion)
+    public function setRouterVersion($routerVersion)
     {
         $this->set("RouterVersion", $routerVersion);
     }
@@ -267,7 +267,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getRouterNodeNum(): int
+    public function getRouterNodeNum()
     {
         return $this->get("RouterNodeNum");
     }
@@ -277,7 +277,7 @@ class DataSetUDDB extends Response
      *
      * @param int $routerNodeNum
      */
-    public function setRouterNodeNum(int $routerNodeNum)
+    public function setRouterNodeNum($routerNodeNum)
     {
         $this->set("RouterNodeNum", $routerNodeNum);
     }
@@ -287,7 +287,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getRefQps(): int
+    public function getRefQps()
     {
         return $this->get("RefQps");
     }
@@ -297,7 +297,7 @@ class DataSetUDDB extends Response
      *
      * @param int $refQps
      */
-    public function setRefQps(int $refQps)
+    public function setRefQps($refQps)
     {
         $this->set("RefQps", $refQps);
     }
@@ -307,7 +307,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getDataNodeCount(): int
+    public function getDataNodeCount()
     {
         return $this->get("DataNodeCount");
     }
@@ -317,7 +317,7 @@ class DataSetUDDB extends Response
      *
      * @param int $dataNodeCount
      */
-    public function setDataNodeCount(int $dataNodeCount)
+    public function setDataNodeCount($dataNodeCount)
     {
         $this->set("DataNodeCount", $dataNodeCount);
     }
@@ -327,7 +327,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getDataNodeMemory(): int
+    public function getDataNodeMemory()
     {
         return $this->get("DataNodeMemory");
     }
@@ -337,7 +337,7 @@ class DataSetUDDB extends Response
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory(int $dataNodeMemory)
+    public function setDataNodeMemory($dataNodeMemory)
     {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
@@ -347,7 +347,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getDataNodeDiskSpace(): int
+    public function getDataNodeDiskSpace()
     {
         return $this->get("DataNodeDiskSpace");
     }
@@ -357,7 +357,7 @@ class DataSetUDDB extends Response
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
+    public function setDataNodeDiskSpace($dataNodeDiskSpace)
     {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
@@ -367,7 +367,7 @@ class DataSetUDDB extends Response
      *
      * @return integer|null
      */
-    public function getDataNodeSlaveCount(): int
+    public function getDataNodeSlaveCount()
     {
         return $this->get("DataNodeSlaveCount");
     }
@@ -377,7 +377,7 @@ class DataSetUDDB extends Response
      *
      * @param int $dataNodeSlaveCount
      */
-    public function setDataNodeSlaveCount(int $dataNodeSlaveCount)
+    public function setDataNodeSlaveCount($dataNodeSlaveCount)
     {
         $this->set("DataNodeSlaveCount", $dataNodeSlaveCount);
     }
@@ -387,9 +387,12 @@ class DataSetUDDB extends Response
      *
      * @return DataNodeInfo[]|null
      */
-    public function getDataNodeList(): array
+    public function getDataNodeList()
     {
-        $items = $this->get("DataNodeList") ?? [];
+        $items = $this->get("DataNodeList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new DataNodeInfo($item));
@@ -416,7 +419,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getInstanceMode(): string
+    public function getInstanceMode()
     {
         return $this->get("InstanceMode");
     }
@@ -426,7 +429,7 @@ class DataSetUDDB extends Response
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode(string $instanceMode)
+    public function setInstanceMode($instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
@@ -436,7 +439,7 @@ class DataSetUDDB extends Response
      *
      * @return string|null
      */
-    public function getInstanceType(): string
+    public function getInstanceType()
     {
         return $this->get("InstanceType");
     }
@@ -446,7 +449,7 @@ class DataSetUDDB extends Response
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType)
+    public function setInstanceType($instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }

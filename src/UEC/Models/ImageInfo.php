@@ -27,7 +27,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -37,7 +37,7 @@ class ImageInfo extends Response
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -47,7 +47,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageName(): string
+    public function getImageName()
     {
         return $this->get("ImageName");
     }
@@ -57,7 +57,7 @@ class ImageInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName)
+    public function setImageName($imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -67,7 +67,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getImageType(): int
+    public function getImageType()
     {
         return $this->get("ImageType");
     }
@@ -77,7 +77,7 @@ class ImageInfo extends Response
      *
      * @param int $imageType
      */
-    public function setImageType(int $imageType)
+    public function setImageType($imageType)
     {
         $this->set("ImageType", $imageType);
     }
@@ -87,7 +87,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getOcType(): string
+    public function getOcType()
     {
         return $this->get("OcType");
     }
@@ -97,7 +97,7 @@ class ImageInfo extends Response
      *
      * @param string $ocType
      */
-    public function setOcType(string $ocType)
+    public function setOcType($ocType)
     {
         $this->set("OcType", $ocType);
     }
@@ -107,7 +107,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageDesc(): string
+    public function getImageDesc()
     {
         return $this->get("ImageDesc");
     }
@@ -117,27 +117,27 @@ class ImageInfo extends Response
      *
      * @param string $imageDesc
      */
-    public function setImageDesc(string $imageDesc)
+    public function setImageDesc($imageDesc)
     {
         $this->set("ImageDesc", $imageDesc);
     }
 
     /**
-     * State: 镜像状态：镜像状态 1可用，2不可用
+     * State: 镜像状态：镜像状态 1可用，2不可用，3制作中
      *
      * @return integer|null
      */
-    public function getState(): int
+    public function getState()
     {
         return $this->get("State");
     }
 
     /**
-     * State: 镜像状态：镜像状态 1可用，2不可用
+     * State: 镜像状态：镜像状态 1可用，2不可用，3制作中
      *
      * @param int $state
      */
-    public function setState(int $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }
@@ -147,7 +147,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getImageSize(): int
+    public function getImageSize()
     {
         return $this->get("ImageSize");
     }
@@ -157,7 +157,7 @@ class ImageInfo extends Response
      *
      * @param int $imageSize
      */
-    public function setImageSize(int $imageSize)
+    public function setImageSize($imageSize)
     {
         $this->set("ImageSize", $imageSize);
     }
@@ -167,7 +167,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -177,7 +177,7 @@ class ImageInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -187,9 +187,12 @@ class ImageInfo extends Response
      *
      * @return DeployImageInfo[]|null
      */
-    public function getDeployInfoList(): array
+    public function getDeployInfoList()
     {
-        $items = $this->get("DeployInfoList") ?? [];
+        $items = $this->get("DeployInfoList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new DeployImageInfo($item));
@@ -209,5 +212,25 @@ class ImageInfo extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * Gpu: 是否支持Gpu(1-支持,0-不支持)
+     *
+     * @return integer|null
+     */
+    public function getGpu()
+    {
+        return $this->get("Gpu");
+    }
+
+    /**
+     * Gpu: 是否支持Gpu(1-支持,0-不支持)
+     *
+     * @param int $gpu
+     */
+    public function setGpu($gpu)
+    {
+        $this->set("Gpu", $gpu);
     }
 }

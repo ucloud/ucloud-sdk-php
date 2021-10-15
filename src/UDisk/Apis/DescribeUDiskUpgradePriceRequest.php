@@ -36,7 +36,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -106,7 +106,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -116,7 +116,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getSourceId(): string
+    public function getSourceId()
     {
         return $this->get("SourceId");
     }
@@ -126,7 +126,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @param string $sourceId
      */
-    public function setSourceId(string $sourceId)
+    public function setSourceId($sourceId)
     {
         $this->set("SourceId", $sourceId);
     }
@@ -136,7 +136,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDataArkMode(): string
+    public function getUDataArkMode()
     {
         return $this->get("UDataArkMode");
     }
@@ -146,27 +146,27 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode(string $uDataArkMode)
+    public function setUDataArkMode($uDataArkMode)
     {
         $this->set("UDataArkMode", $uDataArkMode);
     }
 
     /**
-     * SnapshotService: 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
+     * SnapshotService: 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No。仅支持查询开启快照服务的价格。
      *
      * @return string|null
      */
-    public function getSnapshotService(): string
+    public function getSnapshotService()
     {
         return $this->get("SnapshotService");
     }
 
     /**
-     * SnapshotService: 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
+     * SnapshotService: 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No。仅支持查询开启快照服务的价格。
      *
      * @param string $snapshotService
      */
-    public function setSnapshotService(string $snapshotService)
+    public function setSnapshotService($snapshotService)
     {
         $this->set("SnapshotService", $snapshotService);
     }
@@ -176,7 +176,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getDiskType(): string
+    public function getDiskType()
     {
         return $this->get("DiskType");
     }
@@ -186,7 +186,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @param string $diskType
      */
-    public function setDiskType(string $diskType)
+    public function setDiskType($diskType)
     {
         $this->set("DiskType", $diskType);
     }
@@ -196,7 +196,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getMachineType(): string
+    public function getMachineType()
     {
         return $this->get("MachineType");
     }
@@ -206,7 +206,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
      *
      * @param string $machineType
      */
-    public function setMachineType(string $machineType)
+    public function setMachineType($machineType)
     {
         $this->set("MachineType", $machineType);
     }

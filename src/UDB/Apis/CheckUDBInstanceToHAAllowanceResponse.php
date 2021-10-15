@@ -27,7 +27,7 @@ class CheckUDBInstanceToHAAllowanceResponse extends Response
      *
      * @return string|null
      */
-    public function getAllowance(): string
+    public function getAllowance()
     {
         return $this->get("Allowance");
     }
@@ -37,7 +37,7 @@ class CheckUDBInstanceToHAAllowanceResponse extends Response
      *
      * @param string $allowance
      */
-    public function setAllowance(string $allowance)
+    public function setAllowance($allowance)
     {
         $this->set("Allowance", $allowance);
     }

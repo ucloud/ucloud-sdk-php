@@ -27,7 +27,7 @@ class RegionInfo extends Response
      *
      * @return integer|null
      */
-    public function getRegionId(): int
+    public function getRegionId()
     {
         return $this->get("RegionId");
     }
@@ -37,7 +37,7 @@ class RegionInfo extends Response
      *
      * @param int $regionId
      */
-    public function setRegionId(int $regionId)
+    public function setRegionId($regionId)
     {
         $this->set("RegionId", $regionId);
     }
@@ -47,7 +47,7 @@ class RegionInfo extends Response
      *
      * @return string|null
      */
-    public function getRegionName(): string
+    public function getRegionName()
     {
         return $this->get("RegionName");
     }
@@ -57,7 +57,7 @@ class RegionInfo extends Response
      *
      * @param string $regionName
      */
-    public function setRegionName(string $regionName)
+    public function setRegionName($regionName)
     {
         $this->set("RegionName", $regionName);
     }
@@ -67,7 +67,7 @@ class RegionInfo extends Response
      *
      * @return boolean|null
      */
-    public function getIsDefault(): bool
+    public function getIsDefault()
     {
         return $this->get("IsDefault");
     }
@@ -77,7 +77,7 @@ class RegionInfo extends Response
      *
      * @param boolean $isDefault
      */
-    public function setIsDefault(bool $isDefault)
+    public function setIsDefault($isDefault)
     {
         $this->set("IsDefault", $isDefault);
     }
@@ -87,7 +87,7 @@ class RegionInfo extends Response
      *
      * @return string|null
      */
-    public function getBitMaps(): string
+    public function getBitMaps()
     {
         return $this->get("BitMaps");
     }
@@ -97,7 +97,7 @@ class RegionInfo extends Response
      *
      * @param string $bitMaps
      */
-    public function setBitMaps(string $bitMaps)
+    public function setBitMaps($bitMaps)
     {
         $this->set("BitMaps", $bitMaps);
     }
@@ -107,7 +107,7 @@ class RegionInfo extends Response
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -117,7 +117,7 @@ class RegionInfo extends Response
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -127,7 +127,7 @@ class RegionInfo extends Response
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -137,7 +137,7 @@ class RegionInfo extends Response
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }

@@ -27,7 +27,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -37,7 +37,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -47,7 +47,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return integer|null
      */
-    public function getOwe(): int
+    public function getOwe()
     {
         return $this->get("Owe");
     }
@@ -57,7 +57,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param int $owe
      */
-    public function setOwe(int $owe)
+    public function setOwe($owe)
     {
         $this->set("Owe", $owe);
     }
@@ -67,7 +67,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return UFileQuotaLeft|null
      */
-    public function getStorage(): UFileQuotaLeft
+    public function getStorage()
     {
         return new UFileQuotaLeft($this->get("Storage"));
     }
@@ -77,7 +77,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param UFileQuotaLeft $storage
      */
-    public function setStorage(UFileQuotaLeft $storage)
+    public function setStorage(array $storage)
     {
         $this->set("Storage", $storage->getAll());
     }
@@ -87,7 +87,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return UFileQuotaLeft|null
      */
-    public function getDownloadFlow(): UFileQuotaLeft
+    public function getDownloadFlow()
     {
         return new UFileQuotaLeft($this->get("DownloadFlow"));
     }
@@ -97,7 +97,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param UFileQuotaLeft $downloadFlow
      */
-    public function setDownloadFlow(UFileQuotaLeft $downloadFlow)
+    public function setDownloadFlow(array $downloadFlow)
     {
         $this->set("DownloadFlow", $downloadFlow->getAll());
     }
@@ -107,7 +107,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return UFileQuotaLeft|null
      */
-    public function getRequestCnt(): UFileQuotaLeft
+    public function getRequestCnt()
     {
         return new UFileQuotaLeft($this->get("RequestCnt"));
     }
@@ -117,7 +117,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param UFileQuotaLeft $requestCnt
      */
-    public function setRequestCnt(UFileQuotaLeft $requestCnt)
+    public function setRequestCnt(array $requestCnt)
     {
         $this->set("RequestCnt", $requestCnt->getAll());
     }

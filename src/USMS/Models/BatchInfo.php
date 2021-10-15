@@ -27,7 +27,7 @@ class BatchInfo extends Response
      *
      * @return string|null
      */
-    public function getTemplateId(): string
+    public function getTemplateId()
     {
         return $this->get("TemplateId");
     }
@@ -37,7 +37,7 @@ class BatchInfo extends Response
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId)
+    public function setTemplateId($templateId)
     {
         $this->set("TemplateId", $templateId);
     }
@@ -47,7 +47,7 @@ class BatchInfo extends Response
      *
      * @return string|null
      */
-    public function getSigContent(): string
+    public function getSigContent()
     {
         return $this->get("SigContent");
     }
@@ -57,7 +57,7 @@ class BatchInfo extends Response
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent)
+    public function setSigContent($sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
@@ -67,9 +67,12 @@ class BatchInfo extends Response
      *
      * @return FailPhoneDetail[]|null
      */
-    public function getTarget(): array
+    public function getTarget()
     {
-        $items = $this->get("Target") ?? [];
+        $items = $this->get("Target");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new FailPhoneDetail($item));
@@ -96,7 +99,7 @@ class BatchInfo extends Response
      *
      * @return string|null
      */
-    public function getFailureDetails(): string
+    public function getFailureDetails()
     {
         return $this->get("FailureDetails");
     }
@@ -106,7 +109,7 @@ class BatchInfo extends Response
      *
      * @param string $failureDetails
      */
-    public function setFailureDetails(string $failureDetails)
+    public function setFailureDetails($failureDetails)
     {
         $this->set("FailureDetails", $failureDetails);
     }

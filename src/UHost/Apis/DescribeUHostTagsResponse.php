@@ -28,7 +28,7 @@ class DescribeUHostTagsResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -38,7 +38,7 @@ class DescribeUHostTagsResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -48,9 +48,12 @@ class DescribeUHostTagsResponse extends Response
      *
      * @return UHostTagSet[]|null
      */
-    public function getTagSet(): array
+    public function getTagSet()
     {
-        $items = $this->get("TagSet") ?? [];
+        $items = $this->get("TagSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UHostTagSet($item));

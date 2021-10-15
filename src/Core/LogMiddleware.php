@@ -10,7 +10,7 @@ use UCloud\Core\Response\Response;
 
 class LogMiddleware extends Middleware
 {
-    public function handleRequest(Context $ctx): Request
+    public function handleRequest(Context $ctx)
     {
         $req = $ctx->getRequest();
         $logger = $ctx->getConfig()->getLogger();
@@ -20,7 +20,7 @@ class LogMiddleware extends Middleware
         return $req;
     }
 
-    public function handleResponse(Context $ctx): Response
+    public function handleResponse(Context $ctx)
     {
         $resp = $ctx->getResponse();
         $logger = $ctx->getConfig()->getLogger();

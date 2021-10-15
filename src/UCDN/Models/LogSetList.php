@@ -27,7 +27,7 @@ class LogSetList extends Response
      *
      * @return string|null
      */
-    public function getDomain(): string
+    public function getDomain()
     {
         return $this->get("Domain");
     }
@@ -37,7 +37,7 @@ class LogSetList extends Response
      *
      * @param string $domain
      */
-    public function setDomain(string $domain)
+    public function setDomain($domain)
     {
         $this->set("Domain", $domain);
     }
@@ -47,9 +47,12 @@ class LogSetList extends Response
      *
      * @return LogSetInfo[]|null
      */
-    public function getLogs(): array
+    public function getLogs()
     {
-        $items = $this->get("Logs") ?? [];
+        $items = $this->get("Logs");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new LogSetInfo($item));

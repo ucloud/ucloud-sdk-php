@@ -35,7 +35,7 @@ class DeletePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DeletePolicyRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DeletePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class DeletePolicyRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class DeletePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getPolicyId(): string
+    public function getPolicyId()
     {
         return $this->get("PolicyId");
     }
@@ -85,7 +85,7 @@ class DeletePolicyRequest extends Request
      *
      * @param string $policyId
      */
-    public function setPolicyId(string $policyId)
+    public function setPolicyId($policyId)
     {
         $this->set("PolicyId", $policyId);
     }
@@ -95,7 +95,7 @@ class DeletePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerId(): string
+    public function getVServerId()
     {
         return $this->get("VServerId");
     }
@@ -105,7 +105,7 @@ class DeletePolicyRequest extends Request
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId)
+    public function setVServerId($vServerId)
     {
         $this->set("VServerId", $vServerId);
     }

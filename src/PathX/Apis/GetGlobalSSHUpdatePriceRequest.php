@@ -34,7 +34,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType(): string
+    public function getInstanceType()
     {
         return $this->get("InstanceType");
     }
@@ -64,7 +64,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType)
+    public function setInstanceType($instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -74,7 +74,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceId(): string
+    public function getInstanceId()
     {
         return $this->get("InstanceId");
     }
@@ -84,7 +84,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId)
+    public function setInstanceId($instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -94,7 +94,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -104,7 +104,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -114,7 +114,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -124,7 +124,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }

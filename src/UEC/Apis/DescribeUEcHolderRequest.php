@@ -32,7 +32,7 @@ class DescribeUEcHolderRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class DescribeUEcHolderRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class DescribeUEcHolderRequest extends Request
      *
      * @return string[]|null
      */
-    public function getHolderId(): array
+    public function getHolderId()
     {
         return $this->get("HolderId");
     }
@@ -72,7 +72,7 @@ class DescribeUEcHolderRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -82,7 +82,7 @@ class DescribeUEcHolderRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -92,7 +92,7 @@ class DescribeUEcHolderRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -102,7 +102,7 @@ class DescribeUEcHolderRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }

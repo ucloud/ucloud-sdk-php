@@ -28,9 +28,12 @@ class GetNetworkAclTargetResourceResponse extends Response
      *
      * @return TargetResourceInfo[]|null
      */
-    public function getTargetResourceList(): array
+    public function getTargetResourceList()
     {
-        $items = $this->get("TargetResourceList") ?? [];
+        $items = $this->get("TargetResourceList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new TargetResourceInfo($item));
@@ -57,7 +60,7 @@ class GetNetworkAclTargetResourceResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -67,7 +70,7 @@ class GetNetworkAclTargetResourceResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

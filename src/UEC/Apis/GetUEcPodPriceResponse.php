@@ -27,7 +27,7 @@ class GetUEcPodPriceResponse extends Response
      *
      * @return float|null
      */
-    public function getHolderPrice(): float
+    public function getHolderPrice()
     {
         return $this->get("HolderPrice");
     }
@@ -37,7 +37,7 @@ class GetUEcPodPriceResponse extends Response
      *
      * @param float $holderPrice
      */
-    public function setHolderPrice(float $holderPrice)
+    public function setHolderPrice($holderPrice)
     {
         $this->set("HolderPrice", $holderPrice);
     }
@@ -47,7 +47,7 @@ class GetUEcPodPriceResponse extends Response
      *
      * @return float|null
      */
-    public function getIpPrice(): float
+    public function getIpPrice()
     {
         return $this->get("IpPrice");
     }
@@ -57,7 +57,7 @@ class GetUEcPodPriceResponse extends Response
      *
      * @param float $ipPrice
      */
-    public function setIpPrice(float $ipPrice)
+    public function setIpPrice($ipPrice)
     {
         $this->set("IpPrice", $ipPrice);
     }

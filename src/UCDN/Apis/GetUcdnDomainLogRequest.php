@@ -32,7 +32,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @return string[]|null
      */
-    public function getDomainId(): array
+    public function getDomainId()
     {
         return $this->get("DomainId");
     }
@@ -72,7 +72,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -82,7 +82,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -92,7 +92,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -102,7 +102,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -112,7 +112,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @return integer|null
      */
-    public function getType(): int
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -122,7 +122,7 @@ class GetUcdnDomainLogRequest extends Request
      *
      * @param int $type
      */
-    public function setType(int $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }

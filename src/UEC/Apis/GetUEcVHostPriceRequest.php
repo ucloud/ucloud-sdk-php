@@ -33,7 +33,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getIdcId(): string
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -43,7 +43,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId)
+    public function setIdcId($idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -53,7 +53,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getNodeCount(): int
+    public function getNodeCount()
     {
         return $this->get("NodeCount");
     }
@@ -63,7 +63,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $nodeCount
      */
-    public function setNodeCount(int $nodeCount)
+    public function setNodeCount($nodeCount)
     {
         $this->set("NodeCount", $nodeCount);
     }
@@ -73,7 +73,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCpuCore(): int
+    public function getCpuCore()
     {
         return $this->get("CpuCore");
     }
@@ -83,7 +83,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $cpuCore
      */
-    public function setCpuCore(int $cpuCore)
+    public function setCpuCore($cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
@@ -93,7 +93,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemSize(): int
+    public function getMemSize()
     {
         return $this->get("MemSize");
     }
@@ -103,7 +103,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize(int $memSize)
+    public function setMemSize($memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -113,7 +113,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSysDiskSize(): int
+    public function getSysDiskSize()
     {
         return $this->get("SysDiskSize");
     }
@@ -123,7 +123,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize(int $sysDiskSize)
+    public function setSysDiskSize($sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
@@ -133,7 +133,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSize(): int
+    public function getDiskSize()
     {
         return $this->get("DiskSize");
     }
@@ -143,7 +143,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $diskSize
      */
-    public function setDiskSize(int $diskSize)
+    public function setDiskSize($diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }
@@ -153,7 +153,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getNetLimit(): int
+    public function getNetLimit()
     {
         return $this->get("NetLimit");
     }
@@ -163,7 +163,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $netLimit
      */
-    public function setNetLimit(int $netLimit)
+    public function setNetLimit($netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }
@@ -173,7 +173,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getChargeType(): int
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -183,7 +183,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $chargeType
      */
-    public function setChargeType(int $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -193,7 +193,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getChargeQuantity(): int
+    public function getChargeQuantity()
     {
         return $this->get("ChargeQuantity");
     }
@@ -203,27 +203,27 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity(int $chargeQuantity)
+    public function setChargeQuantity($chargeQuantity)
     {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
 
     /**
-     * ProductType: 产品类型：normal（标准型），hf（高频型），默认normal
+     * ProductType: 产品类型：normal（经济型），hf（标准型），g(Gpu型),默认normal
      *
      * @return string|null
      */
-    public function getProductType(): string
+    public function getProductType()
     {
         return $this->get("ProductType");
     }
 
     /**
-     * ProductType: 产品类型：normal（标准型），hf（高频型），默认normal
+     * ProductType: 产品类型：normal（经济型），hf（标准型），g(Gpu型),默认normal
      *
      * @param string $productType
      */
-    public function setProductType(string $productType)
+    public function setProductType($productType)
     {
         $this->set("ProductType", $productType);
     }
@@ -233,7 +233,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getIpCount(): int
+    public function getIpCount()
     {
         return $this->get("IpCount");
     }
@@ -243,8 +243,48 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $ipCount
      */
-    public function setIpCount(int $ipCount)
+    public function setIpCount($ipCount)
     {
         $this->set("IpCount", $ipCount);
+    }
+
+    /**
+     * Gpu: Gpu卡核心数。仅Gpu机型支持此字段
+     *
+     * @return integer|null
+     */
+    public function getGpu()
+    {
+        return $this->get("Gpu");
+    }
+
+    /**
+     * Gpu: Gpu卡核心数。仅Gpu机型支持此字段
+     *
+     * @param int $gpu
+     */
+    public function setGpu($gpu)
+    {
+        $this->set("Gpu", $gpu);
+    }
+
+    /**
+     * GpuType: Gpu类型，枚举值["T4"],ProductType为g时必填
+     *
+     * @return string|null
+     */
+    public function getGpuType()
+    {
+        return $this->get("GpuType");
+    }
+
+    /**
+     * GpuType: Gpu类型，枚举值["T4"],ProductType为g时必填
+     *
+     * @param string $gpuType
+     */
+    public function setGpuType($gpuType)
+    {
+        $this->set("GpuType", $gpuType);
     }
 }

@@ -34,9 +34,12 @@ class DescribeUEcHolderResponse extends Response
      *
      * @return HolderList[]|null
      */
-    public function getHolderList(): array
+    public function getHolderList()
     {
-        $items = $this->get("HolderList") ?? [];
+        $items = $this->get("HolderList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new HolderList($item));
@@ -63,7 +66,7 @@ class DescribeUEcHolderResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -73,7 +76,7 @@ class DescribeUEcHolderResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

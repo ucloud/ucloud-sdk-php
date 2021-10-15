@@ -29,7 +29,7 @@ class DescribeBandwidthPackageResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -39,7 +39,7 @@ class DescribeBandwidthPackageResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -49,9 +49,12 @@ class DescribeBandwidthPackageResponse extends Response
      *
      * @return UnetBandwidthPackageSet[]|null
      */
-    public function getDataSets(): array
+    public function getDataSets()
     {
-        $items = $this->get("DataSets") ?? [];
+        $items = $this->get("DataSets");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UnetBandwidthPackageSet($item));

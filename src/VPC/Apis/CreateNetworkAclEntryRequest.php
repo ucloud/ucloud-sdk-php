@@ -40,7 +40,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -50,7 +50,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -60,7 +60,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -70,7 +70,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -80,7 +80,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getAclId(): string
+    public function getAclId()
     {
         return $this->get("AclId");
     }
@@ -90,7 +90,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId)
+    public function setAclId($aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -100,7 +100,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return integer|null
      */
-    public function getPriority(): int
+    public function getPriority()
     {
         return $this->get("Priority");
     }
@@ -110,7 +110,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param int $priority
      */
-    public function setPriority(int $priority)
+    public function setPriority($priority)
     {
         $this->set("Priority", $priority);
     }
@@ -120,7 +120,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getDirection(): string
+    public function getDirection()
     {
         return $this->get("Direction");
     }
@@ -130,7 +130,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $direction
      */
-    public function setDirection(string $direction)
+    public function setDirection($direction)
     {
         $this->set("Direction", $direction);
     }
@@ -140,7 +140,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getIpProtocol(): string
+    public function getIpProtocol()
     {
         return $this->get("IpProtocol");
     }
@@ -150,7 +150,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $ipProtocol
      */
-    public function setIpProtocol(string $ipProtocol)
+    public function setIpProtocol($ipProtocol)
     {
         $this->set("IpProtocol", $ipProtocol);
     }
@@ -160,7 +160,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getCidrBlock(): string
+    public function getCidrBlock()
     {
         return $this->get("CidrBlock");
     }
@@ -170,7 +170,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $cidrBlock
      */
-    public function setCidrBlock(string $cidrBlock)
+    public function setCidrBlock($cidrBlock)
     {
         $this->set("CidrBlock", $cidrBlock);
     }
@@ -180,7 +180,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getPortRange(): string
+    public function getPortRange()
     {
         return $this->get("PortRange");
     }
@@ -190,7 +190,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $portRange
      */
-    public function setPortRange(string $portRange)
+    public function setPortRange($portRange)
     {
         $this->set("PortRange", $portRange);
     }
@@ -200,7 +200,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getEntryAction(): string
+    public function getEntryAction()
     {
         return $this->get("EntryAction");
     }
@@ -210,7 +210,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $entryAction
      */
-    public function setEntryAction(string $entryAction)
+    public function setEntryAction($entryAction)
     {
         $this->set("EntryAction", $entryAction);
     }
@@ -220,7 +220,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->get("Description");
     }
@@ -230,7 +230,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->set("Description", $description);
     }
@@ -240,7 +240,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return integer|null
      */
-    public function getTargetType(): int
+    public function getTargetType()
     {
         return $this->get("TargetType");
     }
@@ -250,7 +250,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @param int $targetType
      */
-    public function setTargetType(int $targetType)
+    public function setTargetType($targetType)
     {
         $this->set("TargetType", $targetType);
     }
@@ -260,7 +260,7 @@ class CreateNetworkAclEntryRequest extends Request
      *
      * @return string[]|null
      */
-    public function getTargetResourceIds(): array
+    public function getTargetResourceIds()
     {
         return $this->get("TargetResourceIds");
     }

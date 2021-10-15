@@ -28,9 +28,12 @@ class DescribeUEcHolderIDCResponse extends Response
      *
      * @return IdcInfo[]|null
      */
-    public function getIdcList(): array
+    public function getIdcList()
     {
-        $items = $this->get("IdcList") ?? [];
+        $items = $this->get("IdcList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new IdcInfo($item));

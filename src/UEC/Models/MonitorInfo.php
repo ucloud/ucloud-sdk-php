@@ -27,7 +27,7 @@ class MonitorInfo extends Response
      *
      * @return integer|null
      */
-    public function getTimeStamp(): int
+    public function getTimeStamp()
     {
         return $this->get("TimeStamp");
     }
@@ -37,7 +37,7 @@ class MonitorInfo extends Response
      *
      * @param int $timeStamp
      */
-    public function setTimeStamp(int $timeStamp)
+    public function setTimeStamp($timeStamp)
     {
         $this->set("TimeStamp", $timeStamp);
     }
@@ -47,7 +47,7 @@ class MonitorInfo extends Response
      *
      * @return integer|null
      */
-    public function getValue(): int
+    public function getValue()
     {
         return $this->get("Value");
     }
@@ -57,7 +57,7 @@ class MonitorInfo extends Response
      *
      * @param int $value
      */
-    public function setValue(int $value)
+    public function setValue($value)
     {
         $this->set("Value", $value);
     }

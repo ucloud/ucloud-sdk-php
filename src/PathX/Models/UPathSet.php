@@ -27,7 +27,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getUPathName(): string
+    public function getUPathName()
     {
         return $this->get("UPathName");
     }
@@ -37,7 +37,7 @@ class UPathSet extends Response
      *
      * @param string $uPathName
      */
-    public function setUPathName(string $uPathName)
+    public function setUPathName($uPathName)
     {
         $this->set("UPathName", $uPathName);
     }
@@ -47,7 +47,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getUPathId(): string
+    public function getUPathId()
     {
         return $this->get("UPathId");
     }
@@ -57,7 +57,7 @@ class UPathSet extends Response
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId)
+    public function setUPathId($uPathId)
     {
         $this->set("UPathId", $uPathId);
     }
@@ -67,7 +67,7 @@ class UPathSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -77,7 +77,7 @@ class UPathSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -87,7 +87,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineId(): string
+    public function getLineId()
     {
         return $this->get("LineId");
     }
@@ -97,7 +97,7 @@ class UPathSet extends Response
      *
      * @param string $lineId
      */
-    public function setLineId(string $lineId)
+    public function setLineId($lineId)
     {
         $this->set("LineId", $lineId);
     }
@@ -107,7 +107,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineFromName(): string
+    public function getLineFromName()
     {
         return $this->get("LineFromName");
     }
@@ -117,7 +117,7 @@ class UPathSet extends Response
      *
      * @param string $lineFromName
      */
-    public function setLineFromName(string $lineFromName)
+    public function setLineFromName($lineFromName)
     {
         $this->set("LineFromName", $lineFromName);
     }
@@ -127,7 +127,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineToName(): string
+    public function getLineToName()
     {
         return $this->get("LineToName");
     }
@@ -137,7 +137,7 @@ class UPathSet extends Response
      *
      * @param string $lineToName
      */
-    public function setLineToName(string $lineToName)
+    public function setLineToName($lineToName)
     {
         $this->set("LineToName", $lineToName);
     }
@@ -147,7 +147,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineFrom(): string
+    public function getLineFrom()
     {
         return $this->get("LineFrom");
     }
@@ -157,7 +157,7 @@ class UPathSet extends Response
      *
      * @param string $lineFrom
      */
-    public function setLineFrom(string $lineFrom)
+    public function setLineFrom($lineFrom)
     {
         $this->set("LineFrom", $lineFrom);
     }
@@ -167,7 +167,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineTo(): string
+    public function getLineTo()
     {
         return $this->get("LineTo");
     }
@@ -177,7 +177,7 @@ class UPathSet extends Response
      *
      * @param string $lineTo
      */
-    public function setLineTo(string $lineTo)
+    public function setLineTo($lineTo)
     {
         $this->set("LineTo", $lineTo);
     }

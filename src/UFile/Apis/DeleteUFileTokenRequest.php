@@ -35,7 +35,7 @@ class DeleteUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DeleteUFileTokenRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DeleteUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class DeleteUFileTokenRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class DeleteUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getTokenId(): string
+    public function getTokenId()
     {
         return $this->get("TokenId");
     }
@@ -85,7 +85,7 @@ class DeleteUFileTokenRequest extends Request
      *
      * @param string $tokenId
      */
-    public function setTokenId(string $tokenId)
+    public function setTokenId($tokenId)
     {
         $this->set("TokenId", $tokenId);
     }

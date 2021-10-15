@@ -29,7 +29,7 @@ class DescribeUEcVHostResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -39,7 +39,7 @@ class DescribeUEcVHostResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -49,9 +49,12 @@ class DescribeUEcVHostResponse extends Response
      *
      * @return NodeInfo[]|null
      */
-    public function getNodeList(): array
+    public function getNodeList()
     {
-        $items = $this->get("NodeList") ?? [];
+        $items = $this->get("NodeList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NodeInfo($item));

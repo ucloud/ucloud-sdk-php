@@ -28,7 +28,7 @@ class GetNetworkMaskResponse extends Response
      *
      * @return NetworkMask|null
      */
-    public function getData(): NetworkMask
+    public function getData()
     {
         return new NetworkMask($this->get("Data"));
     }
@@ -38,7 +38,7 @@ class GetNetworkMaskResponse extends Response
      *
      * @param NetworkMask $data
      */
-    public function setData(NetworkMask $data)
+    public function setData(array $data)
     {
         $this->set("Data", $data->getAll());
     }

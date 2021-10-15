@@ -27,7 +27,7 @@ class SlaveInfo extends Response
      *
      * @return string|null
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->get("Id");
     }
@@ -37,7 +37,7 @@ class SlaveInfo extends Response
      *
      * @param string $id
      */
-    public function setId(string $id)
+    public function setId($id)
     {
         $this->set("Id", $id);
     }
@@ -47,7 +47,7 @@ class SlaveInfo extends Response
      *
      * @return string|null
      */
-    public function getDataNodeId(): string
+    public function getDataNodeId()
     {
         return $this->get("DataNodeId");
     }
@@ -57,7 +57,7 @@ class SlaveInfo extends Response
      *
      * @param string $dataNodeId
      */
-    public function setDataNodeId(string $dataNodeId)
+    public function setDataNodeId($dataNodeId)
     {
         $this->set("DataNodeId", $dataNodeId);
     }
@@ -67,7 +67,7 @@ class SlaveInfo extends Response
      *
      * @return string|null
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->get("State");
     }
@@ -77,7 +77,7 @@ class SlaveInfo extends Response
      *
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }

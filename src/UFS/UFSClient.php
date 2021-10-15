@@ -36,7 +36,7 @@ class UFSClient extends Client
     /**
      * CreateUFSVolume - 创建文件系统
      *
-     * See also: https://docs.ucloud.cn/api/UFS-api/create_ufs_volume
+     * See also: https://docs.ucloud.cn/api/ufs-api/create_ufs_volume
      *
      * Arguments:
      *
@@ -62,9 +62,10 @@ class UFSClient extends Client
      *     "VolumeStatus" => (string) 文件系统挂载点状态
      * ]
      *
+     * @return CreateUFSVolumeResponse
      * @throws UCloudException
      */
-    public function createUFSVolume(CreateUFSVolumeRequest $request = null): CreateUFSVolumeResponse
+    public function createUFSVolume(CreateUFSVolumeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
@@ -73,7 +74,7 @@ class UFSClient extends Client
     /**
      * DescribeUFSVolume2 - 获取文件系统列表
      *
-     * See also: https://docs.ucloud.cn/api/UFS-api/describe_ufs_volume2
+     * See also: https://docs.ucloud.cn/api/ufs-api/describe_ufs_volume2
      *
      * Arguments:
      *
@@ -108,9 +109,10 @@ class UFSClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUFSVolume2Response
      * @throws UCloudException
      */
-    public function describeUFSVolume2(DescribeUFSVolume2Request $request = null): DescribeUFSVolume2Response
+    public function describeUFSVolume2(DescribeUFSVolume2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUFSVolume2Response($resp->toArray(), $resp->getRequestId());
@@ -119,7 +121,7 @@ class UFSClient extends Client
     /**
      * ExtendUFSVolume - 文件系统扩容
      *
-     * See also: https://docs.ucloud.cn/api/UFS-api/extend_ufs_volume
+     * See also: https://docs.ucloud.cn/api/ufs-api/extend_ufs_volume
      *
      * Arguments:
      *
@@ -135,9 +137,10 @@ class UFSClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ExtendUFSVolumeResponse
      * @throws UCloudException
      */
-    public function extendUFSVolume(ExtendUFSVolumeRequest $request = null): ExtendUFSVolumeResponse
+    public function extendUFSVolume(ExtendUFSVolumeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ExtendUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
@@ -146,7 +149,7 @@ class UFSClient extends Client
     /**
      * RemoveUFSVolume - 删除UFS文件系统
      *
-     * See also: https://docs.ucloud.cn/api/UFS-api/remove_ufs_volume
+     * See also: https://docs.ucloud.cn/api/ufs-api/remove_ufs_volume
      *
      * Arguments:
      *
@@ -161,9 +164,10 @@ class UFSClient extends Client
      * $outputs = [
      * ]
      *
+     * @return RemoveUFSVolumeResponse
      * @throws UCloudException
      */
-    public function removeUFSVolume(RemoveUFSVolumeRequest $request = null): RemoveUFSVolumeResponse
+    public function removeUFSVolume(RemoveUFSVolumeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RemoveUFSVolumeResponse($resp->toArray(), $resp->getRequestId());

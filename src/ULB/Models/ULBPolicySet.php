@@ -27,7 +27,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getPolicyId(): string
+    public function getPolicyId()
     {
         return $this->get("PolicyId");
     }
@@ -37,7 +37,7 @@ class ULBPolicySet extends Response
      *
      * @param string $policyId
      */
-    public function setPolicyId(string $policyId)
+    public function setPolicyId($policyId)
     {
         $this->set("PolicyId", $policyId);
     }
@@ -47,7 +47,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getPolicyType(): string
+    public function getPolicyType()
     {
         return $this->get("PolicyType");
     }
@@ -57,7 +57,7 @@ class ULBPolicySet extends Response
      *
      * @param string $policyType
      */
-    public function setPolicyType(string $policyType)
+    public function setPolicyType($policyType)
     {
         $this->set("PolicyType", $policyType);
     }
@@ -67,7 +67,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -77,7 +77,7 @@ class ULBPolicySet extends Response
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -87,7 +87,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getMatch(): string
+    public function getMatch()
     {
         return $this->get("Match");
     }
@@ -97,7 +97,7 @@ class ULBPolicySet extends Response
      *
      * @param string $match
      */
-    public function setMatch(string $match)
+    public function setMatch($match)
     {
         $this->set("Match", $match);
     }
@@ -107,7 +107,7 @@ class ULBPolicySet extends Response
      *
      * @return integer|null
      */
-    public function getPolicyPriority(): int
+    public function getPolicyPriority()
     {
         return $this->get("PolicyPriority");
     }
@@ -117,7 +117,7 @@ class ULBPolicySet extends Response
      *
      * @param int $policyPriority
      */
-    public function setPolicyPriority(int $policyPriority)
+    public function setPolicyPriority($policyPriority)
     {
         $this->set("PolicyPriority", $policyPriority);
     }
@@ -127,7 +127,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getVServerId(): string
+    public function getVServerId()
     {
         return $this->get("VServerId");
     }
@@ -137,7 +137,7 @@ class ULBPolicySet extends Response
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId)
+    public function setVServerId($vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -147,7 +147,7 @@ class ULBPolicySet extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -157,7 +157,7 @@ class ULBPolicySet extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -167,9 +167,12 @@ class ULBPolicySet extends Response
      *
      * @return PolicyBackendSet[]|null
      */
-    public function getBackendSet(): array
+    public function getBackendSet()
     {
-        $items = $this->get("BackendSet") ?? [];
+        $items = $this->get("BackendSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new PolicyBackendSet($item));

@@ -34,7 +34,7 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -44,7 +44,7 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -54,7 +54,7 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -64,7 +64,7 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }

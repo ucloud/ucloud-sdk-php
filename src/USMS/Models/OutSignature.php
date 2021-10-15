@@ -27,7 +27,7 @@ class OutSignature extends Response
      *
      * @return string|null
      */
-    public function getSigId(): string
+    public function getSigId()
     {
         return $this->get("SigId");
     }
@@ -37,7 +37,7 @@ class OutSignature extends Response
      *
      * @param string $sigId
      */
-    public function setSigId(string $sigId)
+    public function setSigId($sigId)
     {
         $this->set("SigId", $sigId);
     }
@@ -47,7 +47,7 @@ class OutSignature extends Response
      *
      * @return string|null
      */
-    public function getSigContent(): string
+    public function getSigContent()
     {
         return $this->get("SigContent");
     }
@@ -57,7 +57,7 @@ class OutSignature extends Response
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent)
+    public function setSigContent($sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
@@ -67,7 +67,7 @@ class OutSignature extends Response
      *
      * @return integer|null
      */
-    public function getStatus(): int
+    public function getStatus()
     {
         return $this->get("Status");
     }
@@ -77,7 +77,7 @@ class OutSignature extends Response
      *
      * @param int $status
      */
-    public function setStatus(int $status)
+    public function setStatus($status)
     {
         $this->set("Status", $status);
     }
@@ -87,7 +87,7 @@ class OutSignature extends Response
      *
      * @return string|null
      */
-    public function getErrDesc(): string
+    public function getErrDesc()
     {
         return $this->get("ErrDesc");
     }
@@ -97,7 +97,7 @@ class OutSignature extends Response
      *
      * @param string $errDesc
      */
-    public function setErrDesc(string $errDesc)
+    public function setErrDesc($errDesc)
     {
         $this->set("ErrDesc", $errDesc);
     }

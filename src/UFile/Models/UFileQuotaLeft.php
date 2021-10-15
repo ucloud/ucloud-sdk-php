@@ -27,7 +27,7 @@ class UFileQuotaLeft extends Response
      *
      * @return float|null
      */
-    public function getLeft(): float
+    public function getLeft()
     {
         return $this->get("Left");
     }
@@ -37,7 +37,7 @@ class UFileQuotaLeft extends Response
      *
      * @param float $left
      */
-    public function setLeft(float $left)
+    public function setLeft($left)
     {
         $this->set("Left", $left);
     }

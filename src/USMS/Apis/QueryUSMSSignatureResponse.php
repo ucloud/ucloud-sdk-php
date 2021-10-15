@@ -28,7 +28,7 @@ class QueryUSMSSignatureResponse extends Response
      *
      * @return OutSignature|null
      */
-    public function getData(): OutSignature
+    public function getData()
     {
         return new OutSignature($this->get("Data"));
     }
@@ -38,7 +38,7 @@ class QueryUSMSSignatureResponse extends Response
      *
      * @param OutSignature $data
      */
-    public function setData(OutSignature $data)
+    public function setData(array $data)
     {
         $this->set("Data", $data->getAll());
     }

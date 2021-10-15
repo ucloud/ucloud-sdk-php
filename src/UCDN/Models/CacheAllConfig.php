@@ -27,7 +27,7 @@ class CacheAllConfig extends Response
      *
      * @return string|null
      */
-    public function getCacheHost(): string
+    public function getCacheHost()
     {
         return $this->get("CacheHost");
     }
@@ -37,7 +37,7 @@ class CacheAllConfig extends Response
      *
      * @param string $cacheHost
      */
-    public function setCacheHost(string $cacheHost)
+    public function setCacheHost($cacheHost)
     {
         $this->set("CacheHost", $cacheHost);
     }
@@ -47,9 +47,12 @@ class CacheAllConfig extends Response
      *
      * @return CacheConf[]|null
      */
-    public function getCacheList(): array
+    public function getCacheList()
     {
-        $items = $this->get("CacheList") ?? [];
+        $items = $this->get("CacheList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CacheConf($item));
@@ -76,9 +79,12 @@ class CacheAllConfig extends Response
      *
      * @return CacheConf[]|null
      */
-    public function getHttpCodeCacheList(): array
+    public function getHttpCodeCacheList()
     {
-        $items = $this->get("HttpCodeCacheList") ?? [];
+        $items = $this->get("HttpCodeCacheList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CacheConf($item));
@@ -105,9 +111,12 @@ class CacheAllConfig extends Response
      *
      * @return CacheKeyInfo[]|null
      */
-    public function getCacheKeyList(): array
+    public function getCacheKeyList()
     {
-        $items = $this->get("CacheKeyList") ?? [];
+        $items = $this->get("CacheKeyList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CacheKeyInfo($item));

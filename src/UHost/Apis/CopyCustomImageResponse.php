@@ -27,7 +27,7 @@ class CopyCustomImageResponse extends Response
      *
      * @return string|null
      */
-    public function getTargetImageId(): string
+    public function getTargetImageId()
     {
         return $this->get("TargetImageId");
     }
@@ -37,7 +37,7 @@ class CopyCustomImageResponse extends Response
      *
      * @param string $targetImageId
      */
-    public function setTargetImageId(string $targetImageId)
+    public function setTargetImageId($targetImageId)
     {
         $this->set("TargetImageId", $targetImageId);
     }

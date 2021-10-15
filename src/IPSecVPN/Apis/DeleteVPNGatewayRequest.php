@@ -35,7 +35,7 @@ class DeleteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DeleteVPNGatewayRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DeleteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class DeleteVPNGatewayRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class DeleteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getVPNGatewayId(): string
+    public function getVPNGatewayId()
     {
         return $this->get("VPNGatewayId");
     }
@@ -85,7 +85,7 @@ class DeleteVPNGatewayRequest extends Request
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId(string $vpnGatewayId)
+    public function setVPNGatewayId($vpnGatewayId)
     {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
@@ -95,7 +95,7 @@ class DeleteVPNGatewayRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseEip(): bool
+    public function getReleaseEip()
     {
         return $this->get("ReleaseEip");
     }
@@ -105,7 +105,7 @@ class DeleteVPNGatewayRequest extends Request
      *
      * @param boolean $releaseEip
      */
-    public function setReleaseEip(bool $releaseEip)
+    public function setReleaseEip($releaseEip)
     {
         $this->set("ReleaseEip", $releaseEip);
     }

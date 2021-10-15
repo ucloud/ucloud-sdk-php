@@ -33,7 +33,7 @@ class FreezeMemberRequest extends Request
      *
      * @return string|null
      */
-    public function getMemberEmail(): string
+    public function getMemberEmail()
     {
         return $this->get("MemberEmail");
     }
@@ -43,7 +43,7 @@ class FreezeMemberRequest extends Request
      *
      * @param string $memberEmail
      */
-    public function setMemberEmail(string $memberEmail)
+    public function setMemberEmail($memberEmail)
     {
         $this->set("MemberEmail", $memberEmail);
     }

@@ -21,28 +21,28 @@ class Client implements ClientInterface
      *
      * @var Credential
      */
-    private Credential $credential;
+    private $credential;
 
     /**
      * Config object
      *
      * @var Config
      */
-    private Config $config;
+    private $config;
 
     /**
      * Middleware array
      *
      * @var array<Middleware>
      */
-    private array $middlewares;
+    private $middlewares;
 
     /**
      * Transport object, customized transport is allowed
      *
      * @var TransportInterface
      */
-    private TransportInterface $transport;
+    private $transport;
 
     /**
      * Client constructor.
@@ -72,7 +72,7 @@ class Client implements ClientInterface
      * @return Response response
      * @throws UCloudException
      */
-    public function invoke(Request $req): Response
+    public function invoke(Request $req)
     {
         $ctx = new Context();
         $ctx->setConfig($this->getConfig());
@@ -125,7 +125,7 @@ class Client implements ClientInterface
      *
      * @return Config
      */
-    public function getConfig(): Config
+    public function getConfig()
     {
         return $this->config;
     }
@@ -135,7 +135,7 @@ class Client implements ClientInterface
      *
      * @return Credential
      */
-    public function getCredential(): Credential
+    public function getCredential()
     {
         return $this->credential;
     }
@@ -145,7 +145,7 @@ class Client implements ClientInterface
      *
      * @return TransportInterface transport
      */
-    public function getTransport(): TransportInterface
+    public function getTransport()
     {
         return $this->transport;
     }
@@ -155,7 +155,7 @@ class Client implements ClientInterface
      *
      * @param TransportInterface $transport transport
      */
-    public function setTransport(TransportInterface $transport): void
+    public function setTransport(TransportInterface $transport)
     {
         $this->transport = $transport;
     }
@@ -170,7 +170,7 @@ class Client implements ClientInterface
      * @return Response
      * @throws UCloudException
      */
-    protected function call(string $product, string $action, Request $req): Response
+    protected function call($product, $action, Request $req)
     {
         $req->setAction($action);
         $outputs = $this->invoke($req)->toArray();

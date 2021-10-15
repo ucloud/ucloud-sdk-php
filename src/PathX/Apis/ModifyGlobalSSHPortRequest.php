@@ -35,7 +35,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceId(): string
+    public function getInstanceId()
     {
         return $this->get("InstanceId");
     }
@@ -65,7 +65,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId)
+    public function setInstanceId($instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -75,7 +75,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -85,7 +85,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }

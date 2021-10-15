@@ -27,7 +27,7 @@ class RefreshNewUcdnDomainCacheResponse extends Response
      *
      * @return string|null
      */
-    public function getTaskId(): string
+    public function getTaskId()
     {
         return $this->get("TaskId");
     }
@@ -37,7 +37,7 @@ class RefreshNewUcdnDomainCacheResponse extends Response
      *
      * @param string $taskId
      */
-    public function setTaskId(string $taskId)
+    public function setTaskId($taskId)
     {
         $this->set("TaskId", $taskId);
     }

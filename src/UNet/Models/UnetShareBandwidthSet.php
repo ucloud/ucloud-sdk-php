@@ -27,7 +27,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getIPVersion(): string
+    public function getIPVersion()
     {
         return $this->get("IPVersion");
     }
@@ -37,7 +37,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $ipVersion
      */
-    public function setIPVersion(string $ipVersion)
+    public function setIPVersion($ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }
@@ -47,7 +47,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return integer|null
      */
-    public function getShareBandwidth(): int
+    public function getShareBandwidth()
     {
         return $this->get("ShareBandwidth");
     }
@@ -57,7 +57,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth(int $shareBandwidth)
+    public function setShareBandwidth($shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
@@ -67,7 +67,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string
+    public function getShareBandwidthId()
     {
         return $this->get("ShareBandwidthId");
     }
@@ -77,7 +77,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId)
+    public function setShareBandwidthId($shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
@@ -87,7 +87,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -97,7 +97,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -107,7 +107,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -117,7 +117,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -127,7 +127,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime(): int
+    public function getExpireTime()
     {
         return $this->get("ExpireTime");
     }
@@ -137,7 +137,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime)
+    public function setExpireTime($expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -147,9 +147,12 @@ class UnetShareBandwidthSet extends Response
      *
      * @return EIPSetData[]|null
      */
-    public function getEIPSet(): array
+    public function getEIPSet()
     {
-        $items = $this->get("EIPSet") ?? [];
+        $items = $this->get("EIPSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EIPSetData($item));
@@ -176,7 +179,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -186,7 +189,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }

@@ -8,12 +8,12 @@ use UCloud\Core\Response\Response;
 
 abstract class Middleware implements MiddlewareInterface
 {
-    public function handleRequest(Context $ctx): Request
+    public function handleRequest(Context $ctx)
     {
         return $ctx->getRequest();
     }
 
-    public function handleResponse(Context $ctx): Response
+    public function handleResponse(Context $ctx)
     {
         return $ctx->getResponse();
     }

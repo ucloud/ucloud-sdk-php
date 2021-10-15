@@ -68,7 +68,7 @@ class UDiskClient extends Client
     /**
      * AttachUDisk - 将一个可用的UDisk挂载到某台主机上，当UDisk挂载成功后，还需要在主机内部进行文件系统操作
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/attach_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/attach_udisk
      *
      * Arguments:
      *
@@ -91,9 +91,10 @@ class UDiskClient extends Client
      *     "HostId" => (string) 挂载的Host实例ID
      * ]
      *
+     * @return AttachUDiskResponse
      * @throws UCloudException
      */
-    public function attachUDisk(AttachUDiskRequest $request = null): AttachUDiskResponse
+    public function attachUDisk(AttachUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AttachUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -102,7 +103,7 @@ class UDiskClient extends Client
     /**
      * CloneUDisk - 从UDisk创建UDisk克隆
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/clone_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/clone_udisk
      *
      * Arguments:
      *
@@ -118,7 +119,8 @@ class UDiskClient extends Client
      *     "Comment" => (string) Disk注释
      *     "ChargeType" => (string) Year , Month, Dynamic，Postpay，Trial 默认: Month
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]
      *
@@ -128,9 +130,10 @@ class UDiskClient extends Client
      *     "UDiskId" => (array<string>) 创建UDisk Id
      * ]
      *
+     * @return CloneUDiskResponse
      * @throws UCloudException
      */
-    public function cloneUDisk(CloneUDiskRequest $request = null): CloneUDiskResponse
+    public function cloneUDisk(CloneUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CloneUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -139,7 +142,7 @@ class UDiskClient extends Client
     /**
      * CloneUDiskSnapshot - 从快照创建UDisk克隆
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/clone_udisk_snapshot
+     * See also: https://docs.ucloud.cn/api/udisk-api/clone_udisk_snapshot
      *
      * Arguments:
      *
@@ -156,7 +159,8 @@ class UDiskClient extends Client
      *     "UDataArkMode" => (string) 【开启数据方舟入口已关闭】是否开启数据方舟。Yes：开启，No：不开启，默认值：No
      *     "SnapshotService" => (string) 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]
      *
@@ -166,9 +170,10 @@ class UDiskClient extends Client
      *     "UDiskId" => (array<string>) 创建UDisk Id
      * ]
      *
+     * @return CloneUDiskSnapshotResponse
      * @throws UCloudException
      */
-    public function cloneUDiskSnapshot(CloneUDiskSnapshotRequest $request = null): CloneUDiskSnapshotResponse
+    public function cloneUDiskSnapshot(CloneUDiskSnapshotRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CloneUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
@@ -177,7 +182,7 @@ class UDiskClient extends Client
     /**
      * CloneUDiskUDataArk - 从数据方舟的备份创建UDisk
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/clone_udisk_udataark
+     * See also: https://docs.ucloud.cn/api/udisk-api/clone_udisk_udataark
      *
      * Arguments:
      *
@@ -195,7 +200,8 @@ class UDiskClient extends Client
      *     "SnapshotService" => (string) 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
      *     "Size" => (integer) 购买UDisk大小,单位:GB,范围[1~8000]。(UDisk大小设定对本地盘备份有效，对云盘备份无效)
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]
      *
@@ -205,9 +211,10 @@ class UDiskClient extends Client
      *     "UDiskId" => (array<string>) 创建UDisk Id
      * ]
      *
+     * @return CloneUDiskUDataArkResponse
      * @throws UCloudException
      */
-    public function cloneUDiskUDataArk(CloneUDiskUDataArkRequest $request = null): CloneUDiskUDataArkResponse
+    public function cloneUDiskUDataArk(CloneUDiskUDataArkRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CloneUDiskUDataArkResponse($resp->toArray(), $resp->getRequestId());
@@ -216,7 +223,7 @@ class UDiskClient extends Client
     /**
      * CreateAttachUDisk - 创建并挂载UDisk磁盘
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/create_attach_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/create_attach_udisk
      *
      * Arguments:
      *
@@ -249,9 +256,10 @@ class UDiskClient extends Client
      *     "DeviceName" => (string) 挂载设备名称
      * ]
      *
+     * @return CreateAttachUDiskResponse
      * @throws UCloudException
      */
-    public function createAttachUDisk(CreateAttachUDiskRequest $request = null): CreateAttachUDiskResponse
+    public function createAttachUDisk(CreateAttachUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateAttachUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -260,7 +268,7 @@ class UDiskClient extends Client
     /**
      * CreateUDisk - 创建UDisk磁盘
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/create_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/create_udisk
      *
      * Arguments:
      *
@@ -288,9 +296,10 @@ class UDiskClient extends Client
      *     "UDiskId" => (array<string>) UDisk实例Id
      * ]
      *
+     * @return CreateUDiskResponse
      * @throws UCloudException
      */
-    public function createUDisk(CreateUDiskRequest $request = null): CreateUDiskResponse
+    public function createUDisk(CreateUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -299,7 +308,7 @@ class UDiskClient extends Client
     /**
      * CreateUDiskSnapshot - 创建snapshot快照
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/create_udisk_snapshot
+     * See also: https://docs.ucloud.cn/api/udisk-api/create_udisk_snapshot
      *
      * Arguments:
      *
@@ -320,9 +329,10 @@ class UDiskClient extends Client
      *     "SnapshotId" => (array<string>) 快照Id
      * ]
      *
+     * @return CreateUDiskSnapshotResponse
      * @throws UCloudException
      */
-    public function createUDiskSnapshot(CreateUDiskSnapshotRequest $request = null): CreateUDiskSnapshotResponse
+    public function createUDiskSnapshot(CreateUDiskSnapshotRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
@@ -331,7 +341,7 @@ class UDiskClient extends Client
     /**
      * DeleteUDisk - 删除UDisk
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/delete_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/delete_udisk
      *
      * Arguments:
      *
@@ -347,9 +357,10 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUDiskResponse
      * @throws UCloudException
      */
-    public function deleteUDisk(DeleteUDiskRequest $request = null): DeleteUDiskResponse
+    public function deleteUDisk(DeleteUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -358,7 +369,7 @@ class UDiskClient extends Client
     /**
      * DeleteUDiskSnapshot - 删除Snapshot
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/delete_udisk_snapshot
+     * See also: https://docs.ucloud.cn/api/udisk-api/delete_udisk_snapshot
      *
      * Arguments:
      *
@@ -375,9 +386,10 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUDiskSnapshotResponse
      * @throws UCloudException
      */
-    public function deleteUDiskSnapshot(DeleteUDiskSnapshotRequest $request = null): DeleteUDiskSnapshotResponse
+    public function deleteUDiskSnapshot(DeleteUDiskSnapshotRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
@@ -386,7 +398,7 @@ class UDiskClient extends Client
     /**
      * DescribeRecycleUDisk - 拉取回收站中云硬盘列表
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/describe_recycle_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/describe_recycle_udisk
      *
      * Arguments:
      *
@@ -416,9 +428,10 @@ class UDiskClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeRecycleUDiskResponse
      * @throws UCloudException
      */
-    public function describeRecycleUDisk(DescribeRecycleUDiskRequest $request = null): DescribeRecycleUDiskResponse
+    public function describeRecycleUDisk(DescribeRecycleUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeRecycleUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -427,23 +440,26 @@ class UDiskClient extends Client
     /**
      * DescribeUDisk - 获取UDisk实例
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/describe_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/describe_udisk
      *
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "UDiskId" => (string) UDisk Id(留空返回全部)
      *     "Offset" => (integer) 数据偏移量, 默认为0
      *     "Limit" => (integer) 返回数据长度, 默认为20
-     *     "DiskType" => (string) ProtocolVersion字段为1时，需结合IsBoot确定具体磁盘类型:普通数据盘：DiskType:"CLOUD_NORMAL",IsBoot:"False"；普通系统盘：DiskType:"CLOUD_NORMAL",IsBoot:"True"；SSD数据盘：DiskType:"CLOUD_SSD",IsBoot:"False"；SSD系统盘：DiskType:"CLOUD_SSD",IsBoot:"True"；RSSD数据盘：DiskType:"CLOUD_RSSD",IsBoot:"False"；为空拉取所有。ProtocolVersion字段为0或没有该字段时，可设为以下几个值:普通数据盘：DataDisk；普通系统盘：SystemDisk；SSD数据盘：SSDDataDisk；SSD系统盘：SSDSystemDisk；RSSD数据盘：RSSDDataDisk；为空拉取所有。
+     *     "DiskType" => (string) ProtocolVersion字段为1时，需结合IsBoot确定具体磁盘类型:普通数据盘：DiskType:"CLOUD_NORMAL",IsBoot:"False"；普通系统盘：DiskType:"CLOUD_NORMAL",IsBoot:"True"；SSD数据盘：DiskType:"CLOUD_SSD",IsBoot:"False"；SSD系统盘：DiskType:"CLOUD_SSD",IsBoot:"True"；RSSD数据盘：DiskType:"CLOUD_RSSD",IsBoot:"False"；RSSD系统盘：DiskType:"CLOUD_RSSD",IsBoot:"True"；高效数据盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"False"；高效系统盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"True"；为空拉取所有。ProtocolVersion字段为0或没有该字段时，可设为以下几个值:普通数据盘：DataDisk；普通系统盘：SystemDisk；SSD数据盘：SSDDataDisk；SSD系统盘：SSDSystemDisk；RSSD数据盘：RSSDDataDisk；RSSD系统盘：RSSDSystemDisk：高效数据盘：EfficiencyDataDisk；高效系统盘：EfficiencySystemDisk；为空拉取所有。
      *     "ProtocolVersion" => (integer) 请求协议版本，建议升级为1，为1时DiskType与UHost磁盘类型定义一致；默认为0
      *     "IsBoot" => (string) ProtocolVersion字段为1且DiskType不为空时，必须设置，设置规则请参照DiskType；ProtocolVersion字段为1且DiskType为空时，该字段无效。ProtocolVersion字段为0或没有该字段时，该字段无效。
      *     "IgnoreUBillInfo" => (string) 是否忽略计费信息。Yes：忽略，No：不忽略，默认值（No）。（如不关心账单信息，建议选填“Yes”，可降低请求延时）
-     *     "UHostIdForAttachment" => (string) 根据传入的UHostIdForAttachment，筛选出虚机在同一PodId下的云盘【本字段即将废弃，建议使用HostIdForAttachment】
-     *     "HostIdForAttachment" => (string) 根据传入的HostIdForAttachment，筛选出虚机在同一PodId下的云盘
+     *     "IgnoreBackupMode" => (string) 是否忽略快照服务信息。Yes：忽略，No：不忽略，默认值（No）。（如不关心快照服务信息，建议选填“Yes”，可降低请求延时）
+     *     "UDiskBasicInfo" => (string) 是否只返回云盘基础信息（只包含云盘及关联主机的资源信息）。Yes：是，No：否，默认值（No）。（如仅需要基础信息，建议选填“Yes”，可降低请求延时）
+     *     "UHostIdForAttachment" => (string) 根据传入的UHostIdForAttachment，筛选出能被挂载在该主机上的云盘【本字段即将废弃，建议使用HostIdForAttachment】
+     *     "HostIdForAttachment" => (string) 根据传入的HostIdForAttachment，筛选出能被挂载在该主机上的云盘。目前主要针对RSSD云盘。
+     *     "HostId" => (string) 根据传入的HostId，返回与该主机关联的云盘信息。
      *     "HostProduct" => (string) 宿主产品类型，可筛选挂载在该类型宿主上的云盘。可选值：uhost, uphost。为空拉取所有。（当HostIdForAttachment字段不为空时，该字段可以不填，若HostIdForAttachment与该字段宿主类型冲突，则以HostIdForAttachment字段为准。）
      * ]
      *
@@ -473,7 +489,7 @@ class UDiskClient extends Client
      *             "UDataArkMode" => (string) 是否开启数据方舟，开启:"Yes", 不支持:"No"
      *             "SnapshotCount" => (integer) 该盘快照个数
      *             "SnapshotLimit" => (integer) 该盘快照上限
-     *             "DiskType" => (string) 请求中的ProtocolVersion字段为1时，需结合IsBoot确定具体磁盘类型:普通数据盘：DiskType:"CLOUD_NORMAL",IsBoot:"False"； 普通系统盘：DiskType:"CLOUD_NORMAL",IsBoot:"True"；SSD数据盘：DiskType:"CLOUD_SSD",IsBoot:"False"；SSD系统盘：DiskType:"CLOUD_SSD",IsBoot:"True"；RSSD数据盘：DiskType:"CLOUD_RSSD",IsBoot:"False"。请求中的ProtocolVersion字段为0或没有该字段时，云硬盘类型参照如下:普通数据盘：DataDisk；普通系统盘：SystemDisk；SSD数据盘：SSDDataDisk；SSD系统盘：SSDSystemDisk；RSSD数据盘：RSSDDataDisk。
+     *             "DiskType" => (string) 请求中的ProtocolVersion字段为1时，需结合IsBoot确定具体磁盘类型:普通数据盘：DiskType:"CLOUD_NORMAL",IsBoot:"False"； 普通系统盘：DiskType:"CLOUD_NORMAL",IsBoot:"True"；SSD数据盘：DiskType:"CLOUD_SSD",IsBoot:"False"；SSD系统盘：DiskType:"CLOUD_SSD",IsBoot:"True"；RSSD数据盘：DiskType:"CLOUD_RSSD",IsBoot:"False"；RSSD系统盘：DiskType:"CLOUD_RSSD",IsBoot:"True"；高效数据盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"False"；高效系统盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"True"。请求中的ProtocolVersion字段为0或没有该字段时，云硬盘类型参照如下:普通数据盘：DataDisk；普通系统盘：SystemDisk；SSD数据盘：SSDDataDisk；SSD系统盘：SSDSystemDisk；RSSD数据盘：RSSDDataDisk；RSSD系统盘：RSSDSystemDisk；高效数据盘：EfficiencyDataDisk；高效系统盘：EfficiencySystemDisk。
      *             "CloneEnable" => (integer) 是否支持克隆，1支持 ，0不支持
      *             "SnapEnable" => (integer) 是否支持快照，1支持 ，0不支持
      *             "ArkSwitchEnable" => (integer) 是否支持开启方舟，1支持 ，0不支持
@@ -490,9 +506,10 @@ class UDiskClient extends Client
      *     "TotalCount" => (integer) 根据过滤条件得到的总数
      * ]
      *
+     * @return DescribeUDiskResponse
      * @throws UCloudException
      */
-    public function describeUDisk(DescribeUDiskRequest $request = null): DescribeUDiskResponse
+    public function describeUDisk(DescribeUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -501,7 +518,7 @@ class UDiskClient extends Client
     /**
      * DescribeUDiskPrice - 获取UDisk实例价格信息
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/describe_udisk_price
+     * See also: https://docs.ucloud.cn/api/udisk-api/describe_udisk_price
      *
      * Arguments:
      *
@@ -533,9 +550,10 @@ class UDiskClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUDiskPriceResponse
      * @throws UCloudException
      */
-    public function describeUDiskPrice(DescribeUDiskPriceRequest $request = null): DescribeUDiskPriceResponse
+    public function describeUDiskPrice(DescribeUDiskPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUDiskPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -544,14 +562,14 @@ class UDiskClient extends Client
     /**
      * DescribeUDiskSnapshot - 获取UDisk快照
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/describe_udisk_snapshot
+     * See also: https://docs.ucloud.cn/api/udisk-api/describe_udisk_snapshot
      *
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "Offset" => (integer) 数据偏移量, 默认为0
      *     "Limit" => (integer) 返回数据长度, 默认为20
      *     "UDiskId" => (string) UDiskId,返回该盘所做快照.(必须同时传Zone)
@@ -571,7 +589,7 @@ class UDiskClient extends Client
      *             "CreateTime" => (integer) 创建时间
      *             "Size" => (integer) 容量单位GB
      *             "Status" => (string) 快照状态，Normal:正常,Failed:失败,Creating:制作中
-     *             "DiskType" => (integer) 磁盘类型，0:数据盘，1:系统盘
+     *             "DiskType" => (integer) 磁盘类型，0：普通数据盘；1：普通系统盘；2：SSD数据盘；3：SSD系统盘；4：RSSD数据盘；5：RSSD系统盘。
      *             "ExpiredTime" => (integer) 过期时间
      *             "Comment" => (string) 快照描述
      *             "IsUDiskAvailable" => (boolean) 对应磁盘是否处于可用状态
@@ -587,9 +605,10 @@ class UDiskClient extends Client
      *     "TotalCount" => (integer) 根据过滤条件得到的总数
      * ]
      *
+     * @return DescribeUDiskSnapshotResponse
      * @throws UCloudException
      */
-    public function describeUDiskSnapshot(DescribeUDiskSnapshotRequest $request = null): DescribeUDiskSnapshotResponse
+    public function describeUDiskSnapshot(DescribeUDiskSnapshotRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
@@ -598,7 +617,7 @@ class UDiskClient extends Client
     /**
      * DescribeUDiskUpgradePrice - 获取UDisk升级价格信息
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/describe_udisk_upgrade_price
+     * See also: https://docs.ucloud.cn/api/udisk-api/describe_udisk_upgrade_price
      *
      * Arguments:
      *
@@ -609,7 +628,7 @@ class UDiskClient extends Client
      *     "Size" => (integer) 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘：范围[1~4000]；RSSD数据盘：范围[1~32000]；RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
      *     "SourceId" => (string) 升级目标UDisk ID
      *     "UDataArkMode" => (string) 【开启数据方舟入口已关闭】是否开启数据方舟。Yes：开启，No：不开启，默认值：No
-     *     "SnapshotService" => (string) 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
+     *     "SnapshotService" => (string) 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No。仅支持查询开启快照服务的价格。
      *     "DiskType" => (string) 【已废弃】UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），RSSDDataDisk(RSSD数据盘)，EfficiencyDataDisk（高效数据盘），SystemDisk（普通系统盘），SSDSystemDisk（SSD系统盘），RSSDSystemDisk(RSSD系统盘)，EfficiencySystemDisk（高效系统盘），默认值（DataDisk）
      *     "MachineType" => (string) 【已废弃】云主机机型（V2.0），枚举值["N", "C", "G", "O", "OM"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      * ]
@@ -621,9 +640,10 @@ class UDiskClient extends Client
      *     "OriginalPrice" => (integer) 用户折后价 (对应计费CustomPrice)
      * ]
      *
+     * @return DescribeUDiskUpgradePriceResponse
      * @throws UCloudException
      */
-    public function describeUDiskUpgradePrice(DescribeUDiskUpgradePriceRequest $request = null): DescribeUDiskUpgradePriceResponse
+    public function describeUDiskUpgradePrice(DescribeUDiskUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUDiskUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -632,7 +652,7 @@ class UDiskClient extends Client
     /**
      * DetachUDisk - 卸载某个已经挂载在指定UHost实例上的UDisk
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/detach_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/detach_udisk
      *
      * Arguments:
      *
@@ -653,9 +673,10 @@ class UDiskClient extends Client
      *     "HostId" => (string) 卸载的Host实例ID
      * ]
      *
+     * @return DetachUDiskResponse
      * @throws UCloudException
      */
-    public function detachUDisk(DetachUDiskRequest $request = null): DetachUDiskResponse
+    public function detachUDisk(DetachUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DetachUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -664,7 +685,7 @@ class UDiskClient extends Client
     /**
      * RecoverUDisk - 从回收站中恢复云硬盘
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/recover_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/recover_udisk
      *
      * Arguments:
      *
@@ -682,9 +703,10 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
+     * @return RecoverUDiskResponse
      * @throws UCloudException
      */
-    public function recoverUDisk(RecoverUDiskRequest $request = null): RecoverUDiskResponse
+    public function recoverUDisk(RecoverUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RecoverUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -693,7 +715,7 @@ class UDiskClient extends Client
     /**
      * RenameUDisk - 重命名UDisk
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/rename_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/rename_udisk
      *
      * Arguments:
      *
@@ -710,9 +732,10 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
+     * @return RenameUDiskResponse
      * @throws UCloudException
      */
-    public function renameUDisk(RenameUDiskRequest $request = null): RenameUDiskResponse
+    public function renameUDisk(RenameUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RenameUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -721,7 +744,7 @@ class UDiskClient extends Client
     /**
      * ResizeUDisk - 调整UDisk容量
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/resize_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/resize_udisk
      *
      * Arguments:
      *
@@ -740,9 +763,10 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ResizeUDiskResponse
      * @throws UCloudException
      */
-    public function resizeUDisk(ResizeUDiskRequest $request = null): ResizeUDiskResponse
+    public function resizeUDisk(ResizeUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ResizeUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -751,7 +775,7 @@ class UDiskClient extends Client
     /**
      * RestoreUDisk - 从备份恢复数据至UDisk
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/restore_udisk
+     * See also: https://docs.ucloud.cn/api/udisk-api/restore_udisk
      *
      * Arguments:
      *
@@ -769,9 +793,10 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
+     * @return RestoreUDiskResponse
      * @throws UCloudException
      */
-    public function restoreUDisk(RestoreUDiskRequest $request = null): RestoreUDiskResponse
+    public function restoreUDisk(RestoreUDiskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RestoreUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -780,7 +805,7 @@ class UDiskClient extends Client
     /**
      * SetUDiskUDataArkMode - 设置UDisk数据方舟的状态
      *
-     * See also: https://docs.ucloud.cn/api/UDisk-api/set_udisk_udataark_mode
+     * See also: https://docs.ucloud.cn/api/udisk-api/set_udisk_udataark_mode
      *
      * Arguments:
      *
@@ -798,9 +823,10 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
+     * @return SetUDiskUDataArkModeResponse
      * @throws UCloudException
      */
-    public function setUDiskUDataArkMode(SetUDiskUDataArkModeRequest $request = null): SetUDiskUDataArkModeResponse
+    public function setUDiskUDataArkMode(SetUDiskUDataArkModeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new SetUDiskUDataArkModeResponse($resp->toArray(), $resp->getRequestId());

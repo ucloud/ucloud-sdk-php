@@ -27,7 +27,7 @@ class GlobalSSHInfo extends Response
      *
      * @return string|null
      */
-    public function getInstanceId(): string
+    public function getInstanceId()
     {
         return $this->get("InstanceId");
     }
@@ -37,7 +37,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId)
+    public function setInstanceId($instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -47,7 +47,7 @@ class GlobalSSHInfo extends Response
      *
      * @return string|null
      */
-    public function getInstanceType(): string
+    public function getInstanceType()
     {
         return $this->get("InstanceType");
     }
@@ -57,7 +57,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType)
+    public function setInstanceType($instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -67,7 +67,7 @@ class GlobalSSHInfo extends Response
      *
      * @return string|null
      */
-    public function getAcceleratingDomain(): string
+    public function getAcceleratingDomain()
     {
         return $this->get("AcceleratingDomain");
     }
@@ -77,7 +77,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $acceleratingDomain
      */
-    public function setAcceleratingDomain(string $acceleratingDomain)
+    public function setAcceleratingDomain($acceleratingDomain)
     {
         $this->set("AcceleratingDomain", $acceleratingDomain);
     }
@@ -87,7 +87,7 @@ class GlobalSSHInfo extends Response
      *
      * @return string|null
      */
-    public function getArea(): string
+    public function getArea()
     {
         return $this->get("Area");
     }
@@ -97,7 +97,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $area
      */
-    public function setArea(string $area)
+    public function setArea($area)
     {
         $this->set("Area", $area);
     }
@@ -107,7 +107,7 @@ class GlobalSSHInfo extends Response
      *
      * @return string|null
      */
-    public function getTargetIP(): string
+    public function getTargetIP()
     {
         return $this->get("TargetIP");
     }
@@ -117,7 +117,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $targetIP
      */
-    public function setTargetIP(string $targetIP)
+    public function setTargetIP($targetIP)
     {
         $this->set("TargetIP", $targetIP);
     }
@@ -127,7 +127,7 @@ class GlobalSSHInfo extends Response
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -137,7 +137,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -147,7 +147,7 @@ class GlobalSSHInfo extends Response
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -157,7 +157,7 @@ class GlobalSSHInfo extends Response
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -167,7 +167,7 @@ class GlobalSSHInfo extends Response
      *
      * @return integer|null
      */
-    public function getGlobalSSHPort(): int
+    public function getGlobalSSHPort()
     {
         return $this->get("GlobalSSHPort");
     }
@@ -177,7 +177,7 @@ class GlobalSSHInfo extends Response
      *
      * @param int $globalSSHPort
      */
-    public function setGlobalSSHPort(int $globalSSHPort)
+    public function setGlobalSSHPort($globalSSHPort)
     {
         $this->set("GlobalSSHPort", $globalSSHPort);
     }
@@ -187,7 +187,7 @@ class GlobalSSHInfo extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -197,7 +197,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -207,7 +207,7 @@ class GlobalSSHInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -217,7 +217,7 @@ class GlobalSSHInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -227,7 +227,7 @@ class GlobalSSHInfo extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime(): int
+    public function getExpireTime()
     {
         return $this->get("ExpireTime");
     }
@@ -237,7 +237,7 @@ class GlobalSSHInfo extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime)
+    public function setExpireTime($expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -247,7 +247,7 @@ class GlobalSSHInfo extends Response
      *
      * @return boolean|null
      */
-    public function getExpire(): bool
+    public function getExpire()
     {
         return $this->get("Expire");
     }
@@ -257,7 +257,7 @@ class GlobalSSHInfo extends Response
      *
      * @param boolean $expire
      */
-    public function setExpire(bool $expire)
+    public function setExpire($expire)
     {
         $this->set("Expire", $expire);
     }
@@ -267,7 +267,7 @@ class GlobalSSHInfo extends Response
      *
      * @return integer|null
      */
-    public function getBandwidthPackage(): int
+    public function getBandwidthPackage()
     {
         return $this->get("BandwidthPackage");
     }
@@ -277,7 +277,7 @@ class GlobalSSHInfo extends Response
      *
      * @param int $bandwidthPackage
      */
-    public function setBandwidthPackage(int $bandwidthPackage)
+    public function setBandwidthPackage($bandwidthPackage)
     {
         $this->set("BandwidthPackage", $bandwidthPackage);
     }
@@ -287,7 +287,7 @@ class GlobalSSHInfo extends Response
      *
      * @return string|null
      */
-    public function getForwardRegion(): string
+    public function getForwardRegion()
     {
         return $this->get("ForwardRegion");
     }
@@ -297,7 +297,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $forwardRegion
      */
-    public function setForwardRegion(string $forwardRegion)
+    public function setForwardRegion($forwardRegion)
     {
         $this->set("ForwardRegion", $forwardRegion);
     }

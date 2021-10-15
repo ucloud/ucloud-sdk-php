@@ -27,7 +27,7 @@ class DescribeUDBInstanceBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupPath(): string
+    public function getBackupPath()
     {
         return $this->get("BackupPath");
     }
@@ -37,7 +37,7 @@ class DescribeUDBInstanceBackupURLResponse extends Response
      *
      * @param string $backupPath
      */
-    public function setBackupPath(string $backupPath)
+    public function setBackupPath($backupPath)
     {
         $this->set("BackupPath", $backupPath);
     }
@@ -47,7 +47,7 @@ class DescribeUDBInstanceBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getInnerBackupPath(): string
+    public function getInnerBackupPath()
     {
         return $this->get("InnerBackupPath");
     }
@@ -57,7 +57,7 @@ class DescribeUDBInstanceBackupURLResponse extends Response
      *
      * @param string $innerBackupPath
      */
-    public function setInnerBackupPath(string $innerBackupPath)
+    public function setInnerBackupPath($innerBackupPath)
     {
         $this->set("InnerBackupPath", $innerBackupPath);
     }

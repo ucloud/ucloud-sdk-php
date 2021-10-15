@@ -29,9 +29,12 @@ class GetUEcImageResponse extends Response
      *
      * @return ImageInfo[]|null
      */
-    public function getImageList(): array
+    public function getImageList()
     {
-        $items = $this->get("ImageList") ?? [];
+        $items = $this->get("ImageList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ImageInfo($item));
@@ -58,7 +61,7 @@ class GetUEcImageResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -68,7 +71,7 @@ class GetUEcImageResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

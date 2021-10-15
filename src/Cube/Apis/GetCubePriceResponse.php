@@ -27,7 +27,7 @@ class GetCubePriceResponse extends Response
      *
      * @return integer|null
      */
-    public function getPrice(): int
+    public function getPrice()
     {
         return $this->get("Price");
     }
@@ -37,7 +37,7 @@ class GetCubePriceResponse extends Response
      *
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->set("Price", $price);
     }
@@ -47,7 +47,7 @@ class GetCubePriceResponse extends Response
      *
      * @return integer|null
      */
-    public function getOriginalPrice(): int
+    public function getOriginalPrice()
     {
         return $this->get("OriginalPrice");
     }
@@ -57,7 +57,7 @@ class GetCubePriceResponse extends Response
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice)
+    public function setOriginalPrice($originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }

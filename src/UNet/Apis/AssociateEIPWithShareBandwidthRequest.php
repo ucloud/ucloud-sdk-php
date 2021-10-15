@@ -35,7 +35,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string[]|null
      */
-    public function getEIPIds(): array
+    public function getEIPIds()
     {
         return $this->get("EIPIds");
     }
@@ -95,7 +95,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string
+    public function getShareBandwidthId()
     {
         return $this->get("ShareBandwidthId");
     }
@@ -105,7 +105,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId)
+    public function setShareBandwidthId($shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
@@ -115,7 +115,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getIPVersion(): string
+    public function getIPVersion()
     {
         return $this->get("IPVersion");
     }
@@ -125,7 +125,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $ipVersion
      */
-    public function setIPVersion(string $ipVersion)
+    public function setIPVersion($ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }

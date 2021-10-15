@@ -28,9 +28,12 @@ class DescribeVIPResponse extends Response
      *
      * @return VIPDetailSet[]|null
      */
-    public function getVIPSet(): array
+    public function getVIPSet()
     {
-        $items = $this->get("VIPSet") ?? [];
+        $items = $this->get("VIPSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new VIPDetailSet($item));
@@ -57,7 +60,7 @@ class DescribeVIPResponse extends Response
      *
      * @return string[]|null
      */
-    public function getDataSet(): array
+    public function getDataSet()
     {
         return $this->get("DataSet");
     }
@@ -77,7 +80,7 @@ class DescribeVIPResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -87,7 +90,7 @@ class DescribeVIPResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

@@ -27,7 +27,7 @@ class ImportUHostKeyPairsResponse extends Response
      *
      * @return string|null
      */
-    public function getKeyPairName(): string
+    public function getKeyPairName()
     {
         return $this->get("KeyPairName");
     }
@@ -37,7 +37,7 @@ class ImportUHostKeyPairsResponse extends Response
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName(string $keyPairName)
+    public function setKeyPairName($keyPairName)
     {
         $this->set("KeyPairName", $keyPairName);
     }
@@ -47,7 +47,7 @@ class ImportUHostKeyPairsResponse extends Response
      *
      * @return string|null
      */
-    public function getKeyPairId(): string
+    public function getKeyPairId()
     {
         return $this->get("KeyPairId");
     }
@@ -57,7 +57,7 @@ class ImportUHostKeyPairsResponse extends Response
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId(string $keyPairId)
+    public function setKeyPairId($keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
@@ -67,7 +67,7 @@ class ImportUHostKeyPairsResponse extends Response
      *
      * @return string|null
      */
-    public function getKeyPairFingerPrint(): string
+    public function getKeyPairFingerPrint()
     {
         return $this->get("KeyPairFingerPrint");
     }
@@ -77,7 +77,7 @@ class ImportUHostKeyPairsResponse extends Response
      *
      * @param string $keyPairFingerPrint
      */
-    public function setKeyPairFingerPrint(string $keyPairFingerPrint)
+    public function setKeyPairFingerPrint($keyPairFingerPrint)
     {
         $this->set("KeyPairFingerPrint", $keyPairFingerPrint);
     }

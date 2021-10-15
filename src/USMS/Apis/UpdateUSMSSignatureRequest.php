@@ -37,7 +37,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -47,7 +47,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -57,7 +57,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getSigId(): string
+    public function getSigId()
     {
         return $this->get("SigId");
     }
@@ -67,7 +67,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param string $sigId
      */
-    public function setSigId(string $sigId)
+    public function setSigId($sigId)
     {
         $this->set("SigId", $sigId);
     }
@@ -77,7 +77,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getSigContent(): string
+    public function getSigContent()
     {
         return $this->get("SigContent");
     }
@@ -87,7 +87,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent)
+    public function setSigContent($sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
@@ -97,7 +97,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return integer|null
      */
-    public function getSigType(): int
+    public function getSigType()
     {
         return $this->get("SigType");
     }
@@ -107,7 +107,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param int $sigType
      */
-    public function setSigType(int $sigType)
+    public function setSigType($sigType)
     {
         $this->set("SigType", $sigType);
     }
@@ -117,7 +117,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return integer|null
      */
-    public function getSigPurpose(): int
+    public function getSigPurpose()
     {
         return $this->get("SigPurpose");
     }
@@ -127,7 +127,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param int $sigPurpose
      */
-    public function setSigPurpose(int $sigPurpose)
+    public function setSigPurpose($sigPurpose)
     {
         $this->set("SigPurpose", $sigPurpose);
     }
@@ -137,7 +137,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getFile(): string
+    public function getFile()
     {
         return $this->get("File");
     }
@@ -147,7 +147,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param string $file
      */
-    public function setFile(string $file)
+    public function setFile($file)
     {
         $this->set("File", $file);
     }
@@ -157,7 +157,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return integer|null
      */
-    public function getCertificateType(): int
+    public function getCertificateType()
     {
         return $this->get("CertificateType");
     }
@@ -167,7 +167,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param int $certificateType
      */
-    public function setCertificateType(int $certificateType)
+    public function setCertificateType($certificateType)
     {
         $this->set("CertificateType", $certificateType);
     }
@@ -177,7 +177,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getProxyFile(): string
+    public function getProxyFile()
     {
         return $this->get("ProxyFile");
     }
@@ -187,7 +187,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param string $proxyFile
      */
-    public function setProxyFile(string $proxyFile)
+    public function setProxyFile($proxyFile)
     {
         $this->set("ProxyFile", $proxyFile);
     }
@@ -197,7 +197,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getDocument(): string
+    public function getDocument()
     {
         return $this->get("Document");
     }
@@ -207,7 +207,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param string $document
      */
-    public function setDocument(string $document)
+    public function setDocument($document)
     {
         $this->set("Document", $document);
     }
@@ -217,7 +217,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getProxyDoc(): string
+    public function getProxyDoc()
     {
         return $this->get("ProxyDoc");
     }
@@ -227,7 +227,7 @@ class UpdateUSMSSignatureRequest extends Request
      *
      * @param string $proxyDoc
      */
-    public function setProxyDoc(string $proxyDoc)
+    public function setProxyDoc($proxyDoc)
     {
         $this->set("ProxyDoc", $proxyDoc);
     }

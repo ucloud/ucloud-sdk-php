@@ -9,7 +9,7 @@ class Response implements ResponseInterface
      *
      * @var array
      */
-    private array $data;
+    private $data;
 
     /**
      * Request UUID
@@ -28,9 +28,8 @@ class Response implements ResponseInterface
      * Set any field in first-level of data
      *
      * @param string $key field name
-     * @param mixed $value field value
      */
-    public function set(string $key, mixed $value)
+    public function set($key, $value)
     {
         $this->data[$key] = $value;
     }
@@ -41,24 +40,24 @@ class Response implements ResponseInterface
      * @param string $key field name
      * @return mixed
      */
-    public function get(string $key)
+    public function get($key)
     {
         return $this->data[$key];
     }
 
-    public function toArray(): array
+    public function toArray()
     {
         return $this->data;
     }
 
-    public function getRetCode(): int
+    public function getRetCode()
     {
-        return $this->data["RetCode"] ?? 0;
+        return isset($this->data["RetCode"]) ? $this->data["RetCode"] : 0;
     }
 
-    public function getMessage(): string
+    public function getMessage()
     {
-        return $this->data["Message"] ?? "";
+        return isset($this->data["Message"]) ? $this->data["Message"] : "";
     }
 
     public function getRequestId()

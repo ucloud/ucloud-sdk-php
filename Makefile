@@ -4,6 +4,11 @@ install:
 lint:
 	php vendor/bin/phpcs -n
 
+compatible:
+	php vendor/bin/phpcs --config-set installed_paths vendor/phpcompatibility/php-compatibility
+	php vendor/bin/phpcs --config-set testVersion 5.6
+	php vendor/bin/phpcs -p --standard=PHPCompatibility src
+
 fmt:
 	php vendor/bin/phpcbf
 

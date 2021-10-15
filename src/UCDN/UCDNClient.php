@@ -18,10 +18,16 @@ namespace UCloud\UCDN;
 
 use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
+use UCloud\UCDN\Apis\AddCertificateRequest;
+use UCloud\UCDN\Apis\AddCertificateResponse;
+use UCloud\UCDN\Apis\DeleteCertificateRequest;
+use UCloud\UCDN\Apis\DeleteCertificateResponse;
 use UCloud\UCDN\Apis\DescribeNewUcdnPrefetchCacheTaskRequest;
 use UCloud\UCDN\Apis\DescribeNewUcdnPrefetchCacheTaskResponse;
 use UCloud\UCDN\Apis\DescribeNewUcdnRefreshCacheTaskRequest;
 use UCloud\UCDN\Apis\DescribeNewUcdnRefreshCacheTaskResponse;
+use UCloud\UCDN\Apis\GetCertificateV2Request;
+use UCloud\UCDN\Apis\GetCertificateV2Response;
 use UCloud\UCDN\Apis\GetNewUcdnDomainBandwidthRequest;
 use UCloud\UCDN\Apis\GetNewUcdnDomainBandwidthResponse;
 use UCloud\UCDN\Apis\GetNewUcdnDomainHitRateRequest;
@@ -86,9 +92,64 @@ class UCDNClient extends Client
 {
 
     /**
+     * AddCertificate - 添加证书
+     *
+     * See also: https://docs.ucloud.cn/api/ucdn-api/add_certificate
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "CertName" => (string) 证书名称
+     *     "UserCert" => (string) 用户证书
+     *     "PrivateKey" => (string) 用户私钥
+     *     "CaCert" => (string) Ca证书，默认为空
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return AddCertificateResponse
+     * @throws UCloudException
+     */
+    public function addCertificate(AddCertificateRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new AddCertificateResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DeleteCertificate - 删除证书
+     *
+     * See also: https://docs.ucloud.cn/api/ucdn-api/delete_certificate
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "CertName" => (string) 证书名称
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DeleteCertificateResponse
+     * @throws UCloudException
+     */
+    public function deleteCertificate(DeleteCertificateRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DeleteCertificateResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DescribeNewUcdnPrefetchCacheTask - 获取预取任务状态
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/describe_new_ucdn_prefetch_cache_task
+     * See also: https://docs.ucloud.cn/api/ucdn-api/describe_new_ucdn_prefetch_cache_task
      *
      * Arguments:
      *
@@ -124,9 +185,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeNewUcdnPrefetchCacheTaskResponse
      * @throws UCloudException
      */
-    public function describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskRequest $request = null): DescribeNewUcdnPrefetchCacheTaskResponse
+    public function describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeNewUcdnPrefetchCacheTaskResponse($resp->toArray(), $resp->getRequestId());
@@ -135,7 +197,7 @@ class UCDNClient extends Client
     /**
      * DescribeNewUcdnRefreshCacheTask - 获取域名刷新任务状态
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/describe_new_ucdn_refresh_cache_task
+     * See also: https://docs.ucloud.cn/api/ucdn-api/describe_new_ucdn_refresh_cache_task
      *
      * Arguments:
      *
@@ -171,18 +233,60 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeNewUcdnRefreshCacheTaskResponse
      * @throws UCloudException
      */
-    public function describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskRequest $request = null): DescribeNewUcdnRefreshCacheTaskResponse
+    public function describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeNewUcdnRefreshCacheTaskResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
+     * GetCertificateV2 - 获取证书列表(新)
+     *
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_certificate_v2
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Offset" => (integer) 偏移，默认为0，非负整数
+     *     "Limit" => (integer) 长度，默认为全部，非负整数
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "TotalCount" => (integer) 证书数量
+     *     "CertList" => (array<object>) 证书信息列表[
+     *         [
+     *             "CertName" => (string) 证书名
+     *             "CommonName" => (string) 通用名
+     *             "DnsName" => (string) dns名称
+     *             "BeginTime" => (integer) 证书开始时间
+     *             "EndTime" => (integer) 证书获取时间
+     *             "DomainCount" => (integer) 已配置域名个数
+     *             "UserCert" => (string) 证书内容
+     *             "CaCert" => (string) ca证内容
+     *             "Domains" => (array<string>) 已配置的域名列表
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetCertificateV2Response
+     * @throws UCloudException
+     */
+    public function getCertificateV2(GetCertificateV2Request $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetCertificateV2Response($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * GetNewUcdnDomainBandwidth - 获取域名带宽数据
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_new_ucdn_domain_bandwidth
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_domain_bandwidth
      *
      * Arguments:
      *
@@ -207,9 +311,10 @@ class UCDNClient extends Client
      *     "Traffic" => (number) 从起始时间到结束时间内的所使用的CDN总流量，单位GB
      * ]
      *
+     * @return GetNewUcdnDomainBandwidthResponse
      * @throws UCloudException
      */
-    public function getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthRequest $request = null): GetNewUcdnDomainBandwidthResponse
+    public function getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetNewUcdnDomainBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -218,7 +323,7 @@ class UCDNClient extends Client
     /**
      * GetNewUcdnDomainHitRate - 获取域名命中率
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_new_ucdn_domain_hit_rate
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_domain_hit_rate
      *
      * Arguments:
      *
@@ -243,9 +348,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetNewUcdnDomainHitRateResponse
      * @throws UCloudException
      */
-    public function getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateRequest $request = null): GetNewUcdnDomainHitRateResponse
+    public function getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetNewUcdnDomainHitRateResponse($resp->toArray(), $resp->getRequestId());
@@ -254,7 +360,7 @@ class UCDNClient extends Client
     /**
      * GetNewUcdnDomainHttpCode - 获取域名状态码监控
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_new_ucdn_domain_http_code
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_domain_http_code
      *
      * Arguments:
      *
@@ -282,9 +388,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetNewUcdnDomainHttpCodeResponse
      * @throws UCloudException
      */
-    public function getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeRequest $request = null): GetNewUcdnDomainHttpCodeResponse
+    public function getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetNewUcdnDomainHttpCodeResponse($resp->toArray(), $resp->getRequestId());
@@ -293,7 +400,7 @@ class UCDNClient extends Client
     /**
      * GetNewUcdnDomainHttpCodeV2 - 获取域名详细状态码监控
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_new_ucdn_domain_http_code_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_domain_http_code_v2
      *
      * Arguments:
      *
@@ -373,9 +480,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetNewUcdnDomainHttpCodeV2Response
      * @throws UCloudException
      */
-    public function getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Request $request = null): GetNewUcdnDomainHttpCodeV2Response
+    public function getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetNewUcdnDomainHttpCodeV2Response($resp->toArray(), $resp->getRequestId());
@@ -384,7 +492,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomain95BandwidthV2 - 获取域名九五峰值带宽数据
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain95_bandwidth_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain95_bandwidth_v2
      *
      * Arguments:
      *
@@ -403,9 +511,10 @@ class UCDNClient extends Client
      *     "CdnBandwidth" => (number) 查询期间的CDN的95带宽值，单位Mbps
      * ]
      *
+     * @return GetUcdnDomain95BandwidthV2Response
      * @throws UCloudException
      */
-    public function getUcdnDomain95BandwidthV2(GetUcdnDomain95BandwidthV2Request $request = null): GetUcdnDomain95BandwidthV2Response
+    public function getUcdnDomain95BandwidthV2(GetUcdnDomain95BandwidthV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomain95BandwidthV2Response($resp->toArray(), $resp->getRequestId());
@@ -414,7 +523,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainBandwidthV2 - 获取域名带宽数据(新)
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_bandwidth_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_bandwidth_v2
      *
      * Arguments:
      *
@@ -441,9 +550,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainBandwidthV2Response
      * @throws UCloudException
      */
-    public function getUcdnDomainBandwidthV2(GetUcdnDomainBandwidthV2Request $request = null): GetUcdnDomainBandwidthV2Response
+    public function getUcdnDomainBandwidthV2(GetUcdnDomainBandwidthV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainBandwidthV2Response($resp->toArray(), $resp->getRequestId());
@@ -452,7 +562,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainConfig - 批量获取加速域名配置
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_config
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_config
      *
      * Arguments:
      *
@@ -543,9 +653,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainConfigResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainConfig(GetUcdnDomainConfigRequest $request = null): GetUcdnDomainConfigResponse
+    public function getUcdnDomainConfig(GetUcdnDomainConfigRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainConfigResponse($resp->toArray(), $resp->getRequestId());
@@ -554,7 +665,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainHitRate - 获取域名命中率
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_hit_rate
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_hit_rate
      *
      * Arguments:
      *
@@ -580,9 +691,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainHitRateResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainHitRate(GetUcdnDomainHitRateRequest $request = null): GetUcdnDomainHitRateResponse
+    public function getUcdnDomainHitRate(GetUcdnDomainHitRateRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainHitRateResponse($resp->toArray(), $resp->getRequestId());
@@ -591,7 +703,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainHttpCodeV2 - 获取域名状态码信息
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_http_code_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_http_code_v2
      *
      * Arguments:
      *
@@ -975,9 +1087,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainHttpCodeV2Response
      * @throws UCloudException
      */
-    public function getUcdnDomainHttpCodeV2(GetUcdnDomainHttpCodeV2Request $request = null): GetUcdnDomainHttpCodeV2Response
+    public function getUcdnDomainHttpCodeV2(GetUcdnDomainHttpCodeV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainHttpCodeV2Response($resp->toArray(), $resp->getRequestId());
@@ -986,7 +1099,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainInfoList - 获取域名基本信息
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_info_list
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_info_list
      *
      * Arguments:
      *
@@ -1008,9 +1121,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainInfoListResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainInfoList(GetUcdnDomainInfoListRequest $request = null): GetUcdnDomainInfoListResponse
+    public function getUcdnDomainInfoList(GetUcdnDomainInfoListRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainInfoListResponse($resp->toArray(), $resp->getRequestId());
@@ -1019,7 +1133,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainLog - 获取加速域名原始日志
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_log
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_log
      *
      * Arguments:
      *
@@ -1048,9 +1162,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainLogResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainLog(GetUcdnDomainLogRequest $request = null): GetUcdnDomainLogResponse
+    public function getUcdnDomainLog(GetUcdnDomainLogRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainLogResponse($resp->toArray(), $resp->getRequestId());
@@ -1059,7 +1174,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainOriginHttpCode - 获取域名源站状态码监控
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_origin_http_code
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_origin_http_code
      *
      * Arguments:
      *
@@ -1087,9 +1202,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainOriginHttpCodeResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainOriginHttpCode(GetUcdnDomainOriginHttpCodeRequest $request = null): GetUcdnDomainOriginHttpCodeResponse
+    public function getUcdnDomainOriginHttpCode(GetUcdnDomainOriginHttpCodeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainOriginHttpCodeResponse($resp->toArray(), $resp->getRequestId());
@@ -1098,7 +1214,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainOriginHttpCodeDetail - 获取域名源站详细状态码监控
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_origin_http_code_detail
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_origin_http_code_detail
      *
      * Arguments:
      *
@@ -1178,9 +1294,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainOriginHttpCodeDetailResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainOriginHttpCodeDetail(GetUcdnDomainOriginHttpCodeDetailRequest $request = null): GetUcdnDomainOriginHttpCodeDetailResponse
+    public function getUcdnDomainOriginHttpCodeDetail(GetUcdnDomainOriginHttpCodeDetailRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainOriginHttpCodeDetailResponse($resp->toArray(), $resp->getRequestId());
@@ -1189,7 +1306,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainOriginRequestNum - 获取域名回源请求数
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_origin_request_num
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_origin_request_num
      *
      * Arguments:
      *
@@ -1213,9 +1330,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainOriginRequestNumResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainOriginRequestNum(GetUcdnDomainOriginRequestNumRequest $request = null): GetUcdnDomainOriginRequestNumResponse
+    public function getUcdnDomainOriginRequestNum(GetUcdnDomainOriginRequestNumRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainOriginRequestNumResponse($resp->toArray(), $resp->getRequestId());
@@ -1224,7 +1342,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainPrefetchEnable - 获取域名预取开启状态
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_prefetch_enable
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_prefetch_enable
      *
      * Arguments:
      *
@@ -1239,9 +1357,10 @@ class UCDNClient extends Client
      *     "Enable" => (integer) 0表示该域名未开启预取，1表示该域名已开启预取
      * ]
      *
+     * @return GetUcdnDomainPrefetchEnableResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableRequest $request = null): GetUcdnDomainPrefetchEnableResponse
+    public function getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainPrefetchEnableResponse($resp->toArray(), $resp->getRequestId());
@@ -1250,7 +1369,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainRequestNumV2 - 获取域名请求数
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_request_num_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_request_num_v2
      *
      * Arguments:
      *
@@ -1275,9 +1394,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainRequestNumV2Response
      * @throws UCloudException
      */
-    public function getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Request $request = null): GetUcdnDomainRequestNumV2Response
+    public function getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainRequestNumV2Response($resp->toArray(), $resp->getRequestId());
@@ -1286,7 +1406,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainRequestNumV3 - 获取域名请求数
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_request_num_v3
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_request_num_v3
      *
      * Arguments:
      *
@@ -1311,9 +1431,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainRequestNumV3Response
      * @throws UCloudException
      */
-    public function getUcdnDomainRequestNumV3(GetUcdnDomainRequestNumV3Request $request = null): GetUcdnDomainRequestNumV3Response
+    public function getUcdnDomainRequestNumV3(GetUcdnDomainRequestNumV3Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainRequestNumV3Response($resp->toArray(), $resp->getRequestId());
@@ -1322,7 +1443,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnDomainTraffic - 获取加速域名流量使用信息
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_domain_traffic
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_traffic
      *
      * Arguments:
      *
@@ -1346,9 +1467,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnDomainTrafficResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainTraffic(GetUcdnDomainTrafficRequest $request = null): GetUcdnDomainTrafficResponse
+    public function getUcdnDomainTraffic(GetUcdnDomainTrafficRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainTrafficResponse($resp->toArray(), $resp->getRequestId());
@@ -1357,7 +1479,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnPassBandwidth - 获取回源带宽数据（cdn回客户源站部分）
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_pass_bandwidth
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_pass_bandwidth
      *
      * Arguments:
      *
@@ -1381,9 +1503,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnPassBandwidthResponse
      * @throws UCloudException
      */
-    public function getUcdnPassBandwidth(GetUcdnPassBandwidthRequest $request = null): GetUcdnPassBandwidthResponse
+    public function getUcdnPassBandwidth(GetUcdnPassBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnPassBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -1392,7 +1515,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnPassBandwidthV2 - 获取回源带宽数据（cdn回客户源站部分）
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_pass_bandwidth_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_pass_bandwidth_v2
      *
      * Arguments:
      *
@@ -1416,9 +1539,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnPassBandwidthV2Response
      * @throws UCloudException
      */
-    public function getUcdnPassBandwidthV2(GetUcdnPassBandwidthV2Request $request = null): GetUcdnPassBandwidthV2Response
+    public function getUcdnPassBandwidthV2(GetUcdnPassBandwidthV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnPassBandwidthV2Response($resp->toArray(), $resp->getRequestId());
@@ -1427,7 +1551,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnProIspBandwidthV2 - 按省份运营商获取域名带宽数据
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_pro_isp_bandwidth_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_pro_isp_bandwidth_v2
      *
      * Arguments:
      *
@@ -1458,9 +1582,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnProIspBandwidthV2Response
      * @throws UCloudException
      */
-    public function getUcdnProIspBandwidthV2(GetUcdnProIspBandwidthV2Request $request = null): GetUcdnProIspBandwidthV2Response
+    public function getUcdnProIspBandwidthV2(GetUcdnProIspBandwidthV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnProIspBandwidthV2Response($resp->toArray(), $resp->getRequestId());
@@ -1469,7 +1594,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnProIspRequestNumV2 - 按省份运营商获取域名请求数
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_pro_isp_request_num_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_pro_isp_request_num_v2
      *
      * Arguments:
      *
@@ -1499,9 +1624,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnProIspRequestNumV2Response
      * @throws UCloudException
      */
-    public function getUcdnProIspRequestNumV2(GetUcdnProIspRequestNumV2Request $request = null): GetUcdnProIspRequestNumV2Response
+    public function getUcdnProIspRequestNumV2(GetUcdnProIspRequestNumV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnProIspRequestNumV2Response($resp->toArray(), $resp->getRequestId());
@@ -1510,7 +1636,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnTraffic - 获取流量信息
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_traffic
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_traffic
      *
      * Arguments:
      *
@@ -1531,9 +1657,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnTrafficResponse
      * @throws UCloudException
      */
-    public function getUcdnTraffic(GetUcdnTrafficRequest $request = null): GetUcdnTrafficResponse
+    public function getUcdnTraffic(GetUcdnTrafficRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnTrafficResponse($resp->toArray(), $resp->getRequestId());
@@ -1542,7 +1669,7 @@ class UCDNClient extends Client
     /**
      * GetUcdnTrafficV2 - 获取流量信息
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/get_ucdn_traffic_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_traffic_v2
      *
      * Arguments:
      *
@@ -1563,9 +1690,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUcdnTrafficV2Response
      * @throws UCloudException
      */
-    public function getUcdnTrafficV2(GetUcdnTrafficV2Request $request = null): GetUcdnTrafficV2Response
+    public function getUcdnTrafficV2(GetUcdnTrafficV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUcdnTrafficV2Response($resp->toArray(), $resp->getRequestId());
@@ -1574,7 +1702,7 @@ class UCDNClient extends Client
     /**
      * PrefetchNewUcdnDomainCache - 提交预取任务
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/prefetch_new_ucdn_domain_cache
+     * See also: https://docs.ucloud.cn/api/ucdn-api/prefetch_new_ucdn_domain_cache
      *
      * Arguments:
      *
@@ -1589,9 +1717,10 @@ class UCDNClient extends Client
      *     "TaskId" => (string) 本次提交url对应的任务id
      * ]
      *
+     * @return PrefetchNewUcdnDomainCacheResponse
      * @throws UCloudException
      */
-    public function prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheRequest $request = null): PrefetchNewUcdnDomainCacheResponse
+    public function prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new PrefetchNewUcdnDomainCacheResponse($resp->toArray(), $resp->getRequestId());
@@ -1600,7 +1729,7 @@ class UCDNClient extends Client
     /**
      * QueryIpLocation - 查询IP信息
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/query_ip_location
+     * See also: https://docs.ucloud.cn/api/ucdn-api/query_ip_location
      *
      * Arguments:
      *
@@ -1622,9 +1751,10 @@ class UCDNClient extends Client
      *     ]
      * ]
      *
+     * @return QueryIpLocationResponse
      * @throws UCloudException
      */
-    public function queryIpLocation(QueryIpLocationRequest $request = null): QueryIpLocationResponse
+    public function queryIpLocation(QueryIpLocationRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new QueryIpLocationResponse($resp->toArray(), $resp->getRequestId());
@@ -1633,7 +1763,7 @@ class UCDNClient extends Client
     /**
      * RefreshNewUcdnDomainCache - 刷新缓存
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/refresh_new_ucdn_domain_cache
+     * See also: https://docs.ucloud.cn/api/ucdn-api/refresh_new_ucdn_domain_cache
      *
      * Arguments:
      *
@@ -1649,9 +1779,10 @@ class UCDNClient extends Client
      *     "TaskId" => (string) 本次提交url对应的任务id
      * ]
      *
+     * @return RefreshNewUcdnDomainCacheResponse
      * @throws UCloudException
      */
-    public function refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheRequest $request = null): RefreshNewUcdnDomainCacheResponse
+    public function refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RefreshNewUcdnDomainCacheResponse($resp->toArray(), $resp->getRequestId());
@@ -1660,7 +1791,7 @@ class UCDNClient extends Client
     /**
      * SwitchUcdnChargeType - 切换账号计费方式
      *
-     * See also: https://docs.ucloud.cn/api/UCDN-api/switch_ucdn_charge_type
+     * See also: https://docs.ucloud.cn/api/ucdn-api/switch_ucdn_charge_type
      *
      * Arguments:
      *
@@ -1674,9 +1805,10 @@ class UCDNClient extends Client
      * $outputs = [
      * ]
      *
+     * @return SwitchUcdnChargeTypeResponse
      * @throws UCloudException
      */
-    public function switchUcdnChargeType(SwitchUcdnChargeTypeRequest $request = null): SwitchUcdnChargeTypeResponse
+    public function switchUcdnChargeType(SwitchUcdnChargeTypeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new SwitchUcdnChargeTypeResponse($resp->toArray(), $resp->getRequestId());

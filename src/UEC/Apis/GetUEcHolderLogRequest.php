@@ -34,7 +34,7 @@ class GetUEcHolderLogRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class GetUEcHolderLogRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class GetUEcHolderLogRequest extends Request
      *
      * @return string|null
      */
-    public function getPackName(): string
+    public function getPackName()
     {
         return $this->get("PackName");
     }
@@ -64,7 +64,7 @@ class GetUEcHolderLogRequest extends Request
      *
      * @param string $packName
      */
-    public function setPackName(string $packName)
+    public function setPackName($packName)
     {
         $this->set("PackName", $packName);
     }
@@ -74,7 +74,7 @@ class GetUEcHolderLogRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -84,7 +84,7 @@ class GetUEcHolderLogRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }

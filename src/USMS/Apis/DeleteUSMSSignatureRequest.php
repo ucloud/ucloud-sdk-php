@@ -34,7 +34,7 @@ class DeleteUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class DeleteUSMSSignatureRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DeleteUSMSSignatureRequest extends Request
      *
      * @return string[]|null
      */
-    public function getSigIds(): array
+    public function getSigIds()
     {
         return $this->get("SigIds");
     }

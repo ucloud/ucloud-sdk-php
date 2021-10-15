@@ -34,7 +34,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return float|null
      */
-    public function getCpu(): float
+    public function getCpu()
     {
         return $this->get("Cpu");
     }
@@ -64,7 +64,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param float $cpu
      */
-    public function setCpu(float $cpu)
+    public function setCpu($cpu)
     {
         $this->set("Cpu", $cpu);
     }
@@ -74,7 +74,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemory(): int
+    public function getMemory()
     {
         return $this->get("Memory");
     }
@@ -84,7 +84,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param int $memory
      */
-    public function setMemory(int $memory)
+    public function setMemory($memory)
     {
         $this->set("Memory", $memory);
     }
@@ -94,7 +94,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIdcId(): array
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -114,7 +114,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return integer|null
      */
-    public function getType(): int
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -124,7 +124,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param int $type
      */
-    public function setType(int $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -134,7 +134,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return string|null
      */
-    public function getProductType(): string
+    public function getProductType()
     {
         return $this->get("ProductType");
     }
@@ -144,7 +144,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType(string $productType)
+    public function setProductType($productType)
     {
         $this->set("ProductType", $productType);
     }

@@ -34,7 +34,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getIdcId(): string
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -64,7 +64,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId)
+    public function setIdcId($idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -74,7 +74,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getCIDR(): string
+    public function getCIDR()
     {
         return $this->get("CIDR");
     }
@@ -84,7 +84,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $cidr
      */
-    public function setCIDR(string $cidr)
+    public function setCIDR($cidr)
     {
         $this->set("CIDR", $cidr);
     }
@@ -94,7 +94,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetName(): string
+    public function getSubnetName()
     {
         return $this->get("SubnetName");
     }
@@ -104,7 +104,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName)
+    public function setSubnetName($subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -114,7 +114,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getComment(): string
+    public function getComment()
     {
         return $this->get("Comment");
     }
@@ -124,7 +124,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $comment
      */
-    public function setComment(string $comment)
+    public function setComment($comment)
     {
         $this->set("Comment", $comment);
     }

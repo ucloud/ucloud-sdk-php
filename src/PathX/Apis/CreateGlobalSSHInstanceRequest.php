@@ -33,41 +33,41 @@ class CreateGlobalSSHInstanceRequest extends Request
     
 
     /**
-     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
 
     /**
-     * Area: 填写支持SSH访问IP的地区名称，如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”。Area和AreaCode两者必填一个
+     * Area: 填写支持SSH访问IP的地区名称，如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”，“首尔”。Area和AreaCode两者必填一个
      *
      * @return string|null
      */
-    public function getArea(): string
+    public function getArea()
     {
         return $this->get("Area");
     }
 
     /**
-     * Area: 填写支持SSH访问IP的地区名称，如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”。Area和AreaCode两者必填一个
+     * Area: 填写支持SSH访问IP的地区名称，如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”，“首尔”。Area和AreaCode两者必填一个
      *
      * @param string $area
      */
-    public function setArea(string $area)
+    public function setArea($area)
     {
         $this->set("Area", $area);
     }
@@ -77,7 +77,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getTargetIP(): string
+    public function getTargetIP()
     {
         return $this->get("TargetIP");
     }
@@ -87,7 +87,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $targetIP
      */
-    public function setTargetIP(string $targetIP)
+    public function setTargetIP($targetIP)
     {
         $this->set("TargetIP", $targetIP);
     }
@@ -97,7 +97,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -107,7 +107,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -117,7 +117,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getAreaCode(): string
+    public function getAreaCode()
     {
         return $this->get("AreaCode");
     }
@@ -127,7 +127,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $areaCode
      */
-    public function setAreaCode(string $areaCode)
+    public function setAreaCode($areaCode)
     {
         $this->set("AreaCode", $areaCode);
     }
@@ -137,7 +137,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -147,67 +147,67 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
 
     /**
-     * ChargeType: 支付方式，如按月、按年、按时
+     * ChargeType: 支付方式，如按月：Month、 按年：Year、按时：Dynamic
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
 
     /**
-     * ChargeType: 支付方式，如按月、按年、按时
+     * ChargeType: 支付方式，如按月：Month、 按年：Year、按时：Dynamic
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
 
     /**
-     * Quantity: 购买数量
+     * Quantity: 购买数量按月购买至月底请传0
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
 
     /**
-     * Quantity: 购买数量
+     * Quantity: 购买数量按月购买至月底请传0
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
 
     /**
-     * InstanceType: 枚举值：["Enterprise","Basic","Free"], 分别代表企业版，基础版，免费版
+     * InstanceType: 枚举值：["Ultimate","Enterprise","Basic","Primary"], 分别代表旗舰版，企业版，基础版，入门版
      *
      * @return string|null
      */
-    public function getInstanceType(): string
+    public function getInstanceType()
     {
         return $this->get("InstanceType");
     }
 
     /**
-     * InstanceType: 枚举值：["Enterprise","Basic","Free"], 分别代表企业版，基础版，免费版
+     * InstanceType: 枚举值：["Ultimate","Enterprise","Basic","Primary"], 分别代表旗舰版，企业版，基础版，入门版
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType)
+    public function setInstanceType($instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -217,7 +217,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidthPackage(): int
+    public function getBandwidthPackage()
     {
         return $this->get("BandwidthPackage");
     }
@@ -227,27 +227,27 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param int $bandwidthPackage
      */
-    public function setBandwidthPackage(int $bandwidthPackage)
+    public function setBandwidthPackage($bandwidthPackage)
     {
         $this->set("BandwidthPackage", $bandwidthPackage);
     }
 
     /**
-     * ForwardRegion: InstanceType等于Basic时可以在["cn-bj2","cn-sh2","cn-gd"]中选择1个作为转发机房，Free版本固定为cn-bj2,其他付费版默认配置三个转发机房
+     * ForwardRegion: InstanceType等于Basic时可以在["cn-bj2","cn-sh2","cn-gd"]中选择1个作为转发机房，其他付费版默认配置三个转发机房
      *
      * @return string|null
      */
-    public function getForwardRegion(): string
+    public function getForwardRegion()
     {
         return $this->get("ForwardRegion");
     }
 
     /**
-     * ForwardRegion: InstanceType等于Basic时可以在["cn-bj2","cn-sh2","cn-gd"]中选择1个作为转发机房，Free版本固定为cn-bj2,其他付费版默认配置三个转发机房
+     * ForwardRegion: InstanceType等于Basic时可以在["cn-bj2","cn-sh2","cn-gd"]中选择1个作为转发机房，其他付费版默认配置三个转发机房
      *
      * @param string $forwardRegion
      */
-    public function setForwardRegion(string $forwardRegion)
+    public function setForwardRegion($forwardRegion)
     {
         $this->set("ForwardRegion", $forwardRegion);
     }
@@ -257,7 +257,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -267,7 +267,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

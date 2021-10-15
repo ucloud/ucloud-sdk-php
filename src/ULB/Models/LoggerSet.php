@@ -27,7 +27,7 @@ class LoggerSet extends Response
      *
      * @return string|null
      */
-    public function getBucketName(): string
+    public function getBucketName()
     {
         return $this->get("BucketName");
     }
@@ -37,7 +37,7 @@ class LoggerSet extends Response
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName)
+    public function setBucketName($bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
@@ -47,7 +47,7 @@ class LoggerSet extends Response
      *
      * @return string|null
      */
-    public function getTokenID(): string
+    public function getTokenID()
     {
         return $this->get("TokenID");
     }
@@ -57,7 +57,7 @@ class LoggerSet extends Response
      *
      * @param string $tokenID
      */
-    public function setTokenID(string $tokenID)
+    public function setTokenID($tokenID)
     {
         $this->set("TokenID", $tokenID);
     }
@@ -67,7 +67,7 @@ class LoggerSet extends Response
      *
      * @return string|null
      */
-    public function getTokenName(): string
+    public function getTokenName()
     {
         return $this->get("TokenName");
     }
@@ -77,7 +77,7 @@ class LoggerSet extends Response
      *
      * @param string $tokenName
      */
-    public function setTokenName(string $tokenName)
+    public function setTokenName($tokenName)
     {
         $this->set("TokenName", $tokenName);
     }

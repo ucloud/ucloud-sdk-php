@@ -35,7 +35,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @return integer|null
      */
-    public function getBackupId(): int
+    public function getBackupId()
     {
         return $this->get("BackupId");
     }
@@ -105,7 +105,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @param int $backupId
      */
-    public function setBackupId(int $backupId)
+    public function setBackupId($backupId)
     {
         $this->set("BackupId", $backupId);
     }
@@ -115,7 +115,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupZone(): string
+    public function getBackupZone()
     {
         return $this->get("BackupZone");
     }
@@ -125,7 +125,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
      *
      * @param string $backupZone
      */
-    public function setBackupZone(string $backupZone)
+    public function setBackupZone($backupZone)
     {
         $this->set("BackupZone", $backupZone);
     }

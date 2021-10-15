@@ -33,7 +33,7 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
      *
      * @return string|null
      */
-    public function getDomainId(): string
+    public function getDomainId()
     {
         return $this->get("DomainId");
     }
@@ -63,7 +63,7 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
      *
      * @param string $domainId
      */
-    public function setDomainId(string $domainId)
+    public function setDomainId($domainId)
     {
         $this->set("DomainId", $domainId);
     }

@@ -27,7 +27,7 @@ class CheckRecoverUDBInstanceResponse extends Response
      *
      * @return integer|null
      */
-    public function getLastestTime(): int
+    public function getLastestTime()
     {
         return $this->get("LastestTime");
     }
@@ -37,7 +37,7 @@ class CheckRecoverUDBInstanceResponse extends Response
      *
      * @param int $lastestTime
      */
-    public function setLastestTime(int $lastestTime)
+    public function setLastestTime($lastestTime)
     {
         $this->set("LastestTime", $lastestTime);
     }

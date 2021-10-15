@@ -34,7 +34,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getNodeId(): string
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }
@@ -64,7 +64,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId)
+    public function setNodeId($nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -74,7 +74,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getNetLimit(): string
+    public function getNetLimit()
     {
         return $this->get("NetLimit");
     }
@@ -84,7 +84,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @param string $netLimit
      */
-    public function setNetLimit(string $netLimit)
+    public function setNetLimit($netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }

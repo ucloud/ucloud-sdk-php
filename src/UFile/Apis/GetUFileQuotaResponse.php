@@ -27,7 +27,7 @@ class GetUFileQuotaResponse extends Response
      *
      * @return float|null
      */
-    public function getLeftQuota(): float
+    public function getLeftQuota()
     {
         return $this->get("LeftQuota");
     }
@@ -37,7 +37,7 @@ class GetUFileQuotaResponse extends Response
      *
      * @param float $leftQuota
      */
-    public function setLeftQuota(float $leftQuota)
+    public function setLeftQuota($leftQuota)
     {
         $this->set("LeftQuota", $leftQuota);
     }

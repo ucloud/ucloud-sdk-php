@@ -34,7 +34,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId(): string
+    public function getULBId()
     {
         return $this->get("ULBId");
     }
@@ -84,7 +84,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId)
+    public function setULBId($ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -94,7 +94,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerName(): string
+    public function getVServerName()
     {
         return $this->get("VServerName");
     }
@@ -104,7 +104,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $vServerName
      */
-    public function setVServerName(string $vServerName)
+    public function setVServerName($vServerName)
     {
         $this->set("VServerName", $vServerName);
     }
@@ -114,7 +114,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getListenType(): string
+    public function getListenType()
     {
         return $this->get("ListenType");
     }
@@ -124,7 +124,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $listenType
      */
-    public function setListenType(string $listenType)
+    public function setListenType($listenType)
     {
         $this->set("ListenType", $listenType);
     }
@@ -134,7 +134,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getProtocol(): string
+    public function getProtocol()
     {
         return $this->get("Protocol");
     }
@@ -144,7 +144,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol)
+    public function setProtocol($protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -154,7 +154,7 @@ class CreateVServerRequest extends Request
      *
      * @return integer|null
      */
-    public function getFrontendPort(): int
+    public function getFrontendPort()
     {
         return $this->get("FrontendPort");
     }
@@ -164,7 +164,7 @@ class CreateVServerRequest extends Request
      *
      * @param int $frontendPort
      */
-    public function setFrontendPort(int $frontendPort)
+    public function setFrontendPort($frontendPort)
     {
         $this->set("FrontendPort", $frontendPort);
     }
@@ -174,7 +174,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getMethod(): string
+    public function getMethod()
     {
         return $this->get("Method");
     }
@@ -184,7 +184,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $method
      */
-    public function setMethod(string $method)
+    public function setMethod($method)
     {
         $this->set("Method", $method);
     }
@@ -194,7 +194,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getPersistenceType(): string
+    public function getPersistenceType()
     {
         return $this->get("PersistenceType");
     }
@@ -204,7 +204,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $persistenceType
      */
-    public function setPersistenceType(string $persistenceType)
+    public function setPersistenceType($persistenceType)
     {
         $this->set("PersistenceType", $persistenceType);
     }
@@ -214,7 +214,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getPersistenceInfo(): string
+    public function getPersistenceInfo()
     {
         return $this->get("PersistenceInfo");
     }
@@ -224,7 +224,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $persistenceInfo
      */
-    public function setPersistenceInfo(string $persistenceInfo)
+    public function setPersistenceInfo($persistenceInfo)
     {
         $this->set("PersistenceInfo", $persistenceInfo);
     }
@@ -234,7 +234,7 @@ class CreateVServerRequest extends Request
      *
      * @return integer|null
      */
-    public function getClientTimeout(): int
+    public function getClientTimeout()
     {
         return $this->get("ClientTimeout");
     }
@@ -244,7 +244,7 @@ class CreateVServerRequest extends Request
      *
      * @param int $clientTimeout
      */
-    public function setClientTimeout(int $clientTimeout)
+    public function setClientTimeout($clientTimeout)
     {
         $this->set("ClientTimeout", $clientTimeout);
     }
@@ -254,7 +254,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getMonitorType(): string
+    public function getMonitorType()
     {
         return $this->get("MonitorType");
     }
@@ -264,7 +264,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $monitorType
      */
-    public function setMonitorType(string $monitorType)
+    public function setMonitorType($monitorType)
     {
         $this->set("MonitorType", $monitorType);
     }
@@ -274,7 +274,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getDomain(): string
+    public function getDomain()
     {
         return $this->get("Domain");
     }
@@ -284,7 +284,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $domain
      */
-    public function setDomain(string $domain)
+    public function setDomain($domain)
     {
         $this->set("Domain", $domain);
     }
@@ -294,7 +294,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getPath(): string
+    public function getPath()
     {
         return $this->get("Path");
     }
@@ -304,7 +304,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $path
      */
-    public function setPath(string $path)
+    public function setPath($path)
     {
         $this->set("Path", $path);
     }
@@ -314,7 +314,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getRequestMsg(): string
+    public function getRequestMsg()
     {
         return $this->get("RequestMsg");
     }
@@ -324,7 +324,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $requestMsg
      */
-    public function setRequestMsg(string $requestMsg)
+    public function setRequestMsg($requestMsg)
     {
         $this->set("RequestMsg", $requestMsg);
     }
@@ -334,7 +334,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getResponseMsg(): string
+    public function getResponseMsg()
     {
         return $this->get("ResponseMsg");
     }
@@ -344,7 +344,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $responseMsg
      */
-    public function setResponseMsg(string $responseMsg)
+    public function setResponseMsg($responseMsg)
     {
         $this->set("ResponseMsg", $responseMsg);
     }

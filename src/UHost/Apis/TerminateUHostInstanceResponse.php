@@ -27,7 +27,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getInRecycle(): string
+    public function getInRecycle()
     {
         return $this->get("InRecycle");
     }
@@ -37,7 +37,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @param string $inRecycle
      */
-    public function setInRecycle(string $inRecycle)
+    public function setInRecycle($inRecycle)
     {
         $this->set("InRecycle", $inRecycle);
     }
@@ -47,7 +47,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getUHostId(): string
+    public function getUHostId()
     {
         return $this->get("UHostId");
     }
@@ -57,7 +57,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId)
+    public function setUHostId($uHostId)
     {
         $this->set("UHostId", $uHostId);
     }

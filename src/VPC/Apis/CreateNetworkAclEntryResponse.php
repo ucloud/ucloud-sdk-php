@@ -27,7 +27,7 @@ class CreateNetworkAclEntryResponse extends Response
      *
      * @return string|null
      */
-    public function getEntryId(): string
+    public function getEntryId()
     {
         return $this->get("EntryId");
     }
@@ -37,7 +37,7 @@ class CreateNetworkAclEntryResponse extends Response
      *
      * @param string $entryId
      */
-    public function setEntryId(string $entryId)
+    public function setEntryId($entryId)
     {
         $this->set("EntryId", $entryId);
     }

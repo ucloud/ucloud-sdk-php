@@ -34,7 +34,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -64,7 +64,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -74,9 +74,12 @@ class CreateUEcFirewallRequest extends Request
      *
      * @return CreateUEcFirewallParamRule[]|null
      */
-    public function getRule(): array
+    public function getRule()
     {
-        $items = $this->get("Rule") ?? [];
+        $items = $this->get("Rule");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUEcFirewallParamRule($item));
@@ -103,7 +106,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -113,7 +116,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }

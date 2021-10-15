@@ -27,7 +27,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getZoneId(): int
+    public function getZoneId()
     {
         return $this->get("ZoneId");
     }
@@ -37,7 +37,7 @@ class ImageInfo extends Response
      *
      * @param int $zoneId
      */
-    public function setZoneId(int $zoneId)
+    public function setZoneId($zoneId)
     {
         $this->set("ZoneId", $zoneId);
     }
@@ -47,7 +47,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -57,7 +57,7 @@ class ImageInfo extends Response
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -67,7 +67,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageName(): string
+    public function getImageName()
     {
         return $this->get("ImageName");
     }
@@ -77,7 +77,7 @@ class ImageInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName)
+    public function setImageName($imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -87,7 +87,7 @@ class ImageInfo extends Response
      *
      * @return boolean|null
      */
-    public function getNotSupportGPU(): bool
+    public function getNotSupportGPU()
     {
         return $this->get("NotSupportGPU");
     }
@@ -97,7 +97,7 @@ class ImageInfo extends Response
      *
      * @param boolean $notSupportGPU
      */
-    public function setNotSupportGPU(bool $notSupportGPU)
+    public function setNotSupportGPU($notSupportGPU)
     {
         $this->set("NotSupportGPU", $notSupportGPU);
     }

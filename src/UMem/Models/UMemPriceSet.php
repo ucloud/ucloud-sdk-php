@@ -27,7 +27,7 @@ class UMemPriceSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -37,7 +37,7 @@ class UMemPriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -47,7 +47,7 @@ class UMemPriceSet extends Response
      *
      * @return integer|null
      */
-    public function getPrice(): int
+    public function getPrice()
     {
         return $this->get("Price");
     }
@@ -57,7 +57,7 @@ class UMemPriceSet extends Response
      *
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->set("Price", $price);
     }
@@ -67,7 +67,7 @@ class UMemPriceSet extends Response
      *
      * @return integer|null
      */
-    public function getOriginalPrice(): int
+    public function getOriginalPrice()
     {
         return $this->get("OriginalPrice");
     }
@@ -77,7 +77,7 @@ class UMemPriceSet extends Response
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice(int $originalPrice)
+    public function setOriginalPrice($originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }

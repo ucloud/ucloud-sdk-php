@@ -38,7 +38,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -48,7 +48,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -58,7 +58,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -68,7 +68,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -78,7 +78,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -88,7 +88,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -98,7 +98,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getGroupName(): string
+    public function getGroupName()
     {
         return $this->get("GroupName");
     }
@@ -108,7 +108,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @param string $groupName
      */
-    public function setGroupName(string $groupName)
+    public function setGroupName($groupName)
     {
         $this->set("GroupName", $groupName);
     }
@@ -118,7 +118,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->get("Description");
     }
@@ -128,7 +128,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->set("Description", $description);
     }
@@ -138,7 +138,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getSrcGroupId(): int
+    public function getSrcGroupId()
     {
         return $this->get("SrcGroupId");
     }
@@ -148,7 +148,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @param int $srcGroupId
      */
-    public function setSrcGroupId(int $srcGroupId)
+    public function setSrcGroupId($srcGroupId)
     {
         $this->set("SrcGroupId", $srcGroupId);
     }
@@ -158,7 +158,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getDBTypeId(): string
+    public function getDBTypeId()
     {
         return $this->get("DBTypeId");
     }
@@ -168,7 +168,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId)
+    public function setDBTypeId($dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
@@ -178,7 +178,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool
+    public function getRegionFlag()
     {
         return $this->get("RegionFlag");
     }
@@ -188,7 +188,7 @@ class CreateUDBParamGroupRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag)
+    public function setRegionFlag($regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }

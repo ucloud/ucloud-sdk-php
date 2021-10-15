@@ -27,7 +27,7 @@ class PHostDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getSpace(): int
+    public function getSpace()
     {
         return $this->get("Space");
     }
@@ -37,7 +37,7 @@ class PHostDiskSet extends Response
      *
      * @param int $space
      */
-    public function setSpace(int $space)
+    public function setSpace($space)
     {
         $this->set("Space", $space);
     }
@@ -47,7 +47,7 @@ class PHostDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -57,7 +57,7 @@ class PHostDiskSet extends Response
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }
@@ -67,7 +67,7 @@ class PHostDiskSet extends Response
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -77,7 +77,7 @@ class PHostDiskSet extends Response
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -87,7 +87,7 @@ class PHostDiskSet extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -97,7 +97,7 @@ class PHostDiskSet extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -107,7 +107,7 @@ class PHostDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getIOCap(): int
+    public function getIOCap()
     {
         return $this->get("IOCap");
     }
@@ -117,7 +117,7 @@ class PHostDiskSet extends Response
      *
      * @param int $ioCap
      */
-    public function setIOCap(int $ioCap)
+    public function setIOCap($ioCap)
     {
         $this->set("IOCap", $ioCap);
     }

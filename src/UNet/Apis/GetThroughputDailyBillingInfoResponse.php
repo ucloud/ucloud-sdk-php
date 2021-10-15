@@ -28,9 +28,12 @@ class GetThroughputDailyBillingInfoResponse extends Response
      *
      * @return ThroughputDailyBillingInfo[]|null
      */
-    public function getStats(): array
+    public function getStats()
     {
-        $items = $this->get("Stats") ?? [];
+        $items = $this->get("Stats");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ThroughputDailyBillingInfo($item));
@@ -53,42 +56,42 @@ class GetThroughputDailyBillingInfoResponse extends Response
     }
 
     /**
-     * TotalOutMoney: 计费总金额
+     * TotalOut: 计费总流量
      *
      * @return integer|null
      */
-    public function getTotalOutMoney(): int
+    public function getTotalOut()
     {
-        return $this->get("TotalOutMoney");
+        return $this->get("TotalOut");
     }
 
     /**
-     * TotalOutMoney: 计费总金额
+     * TotalOut: 计费总流量
      *
-     * @param int $totalOutMoney
+     * @param int $totalOut
      */
-    public function setTotalOutMoney(int $totalOutMoney)
+    public function setTotalOut($totalOut)
     {
-        $this->set("TotalOutMoney", $totalOutMoney);
+        $this->set("TotalOut", $totalOut);
     }
 
     /**
-     * TotalOutSize: 计费总流量
+     * EIPId: 资源ID
      *
      * @return string|null
      */
-    public function getTotalOutSize(): string
+    public function getEIPId()
     {
-        return $this->get("TotalOutSize");
+        return $this->get("EIPId");
     }
 
     /**
-     * TotalOutSize: 计费总流量
+     * EIPId: 资源ID
      *
-     * @param string $totalOutSize
+     * @param string $eipId
      */
-    public function setTotalOutSize(string $totalOutSize)
+    public function setEIPId($eipId)
     {
-        $this->set("TotalOutSize", $totalOutSize);
+        $this->set("EIPId", $eipId);
     }
 }

@@ -27,7 +27,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @return string|null
      */
-    public function getDeploymentId(): string
+    public function getDeploymentId()
     {
         return $this->get("DeploymentId");
     }
@@ -37,7 +37,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @param string $deploymentId
      */
-    public function setDeploymentId(string $deploymentId)
+    public function setDeploymentId($deploymentId)
     {
         $this->set("DeploymentId", $deploymentId);
     }
@@ -47,7 +47,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @return string|null
      */
-    public function getDeployment(): string
+    public function getDeployment()
     {
         return $this->get("Deployment");
     }
@@ -57,7 +57,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @param string $deployment
      */
-    public function setDeployment(string $deployment)
+    public function setDeployment($deployment)
     {
         $this->set("Deployment", $deployment);
     }

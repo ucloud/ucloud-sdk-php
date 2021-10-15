@@ -33,7 +33,7 @@ class DescribePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribePHostRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class DescribePHostRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class DescribePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -83,7 +83,7 @@ class DescribePHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -93,7 +93,7 @@ class DescribePHostRequest extends Request
      *
      * @return string[]|null
      */
-    public function getPHostId(): array
+    public function getPHostId()
     {
         return $this->get("PHostId");
     }
@@ -113,7 +113,7 @@ class DescribePHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -123,7 +123,7 @@ class DescribePHostRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -133,7 +133,7 @@ class DescribePHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -143,7 +143,7 @@ class DescribePHostRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -153,7 +153,7 @@ class DescribePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskIdForAttachment(): string
+    public function getUDiskIdForAttachment()
     {
         return $this->get("UDiskIdForAttachment");
     }
@@ -163,7 +163,7 @@ class DescribePHostRequest extends Request
      *
      * @param string $uDiskIdForAttachment
      */
-    public function setUDiskIdForAttachment(string $uDiskIdForAttachment)
+    public function setUDiskIdForAttachment($uDiskIdForAttachment)
     {
         $this->set("UDiskIdForAttachment", $uDiskIdForAttachment);
     }
@@ -173,7 +173,7 @@ class DescribePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -183,7 +183,7 @@ class DescribePHostRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }

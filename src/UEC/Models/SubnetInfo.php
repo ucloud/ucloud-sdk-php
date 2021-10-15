@@ -27,7 +27,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -37,7 +37,7 @@ class SubnetInfo extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -47,7 +47,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetName(): string
+    public function getSubnetName()
     {
         return $this->get("SubnetName");
     }
@@ -57,7 +57,7 @@ class SubnetInfo extends Response
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName)
+    public function setSubnetName($subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -67,7 +67,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getIdcId(): string
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -77,7 +77,7 @@ class SubnetInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId)
+    public function setIdcId($idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -87,7 +87,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getCIDR(): string
+    public function getCIDR()
     {
         return $this->get("CIDR");
     }
@@ -97,7 +97,7 @@ class SubnetInfo extends Response
      *
      * @param string $cidr
      */
-    public function setCIDR(string $cidr)
+    public function setCIDR($cidr)
     {
         $this->set("CIDR", $cidr);
     }
@@ -107,7 +107,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -117,7 +117,7 @@ class SubnetInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -127,7 +127,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getComment(): string
+    public function getComment()
     {
         return $this->get("Comment");
     }
@@ -137,7 +137,7 @@ class SubnetInfo extends Response
      *
      * @param string $comment
      */
-    public function setComment(string $comment)
+    public function setComment($comment)
     {
         $this->set("Comment", $comment);
     }
@@ -147,7 +147,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getTotalIpCnt(): int
+    public function getTotalIpCnt()
     {
         return $this->get("TotalIpCnt");
     }
@@ -157,7 +157,7 @@ class SubnetInfo extends Response
      *
      * @param int $totalIpCnt
      */
-    public function setTotalIpCnt(int $totalIpCnt)
+    public function setTotalIpCnt($totalIpCnt)
     {
         $this->set("TotalIpCnt", $totalIpCnt);
     }
@@ -167,7 +167,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getAvailableIPCnt(): int
+    public function getAvailableIPCnt()
     {
         return $this->get("AvailableIPCnt");
     }
@@ -177,7 +177,7 @@ class SubnetInfo extends Response
      *
      * @param int $availableIPCnt
      */
-    public function setAvailableIPCnt(int $availableIPCnt)
+    public function setAvailableIPCnt($availableIPCnt)
     {
         $this->set("AvailableIPCnt", $availableIPCnt);
     }

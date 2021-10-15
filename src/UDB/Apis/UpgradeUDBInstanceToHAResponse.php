@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\UHost\Params;
+namespace UCloud\UDB\Apis;
 
-use UCloud\Core\Request\Request;
+use UCloud\Core\Response\Response;
 
-class CreateUHostInstanceParamVirtualGpu extends Request
+class UpgradeUDBInstanceToHAResponse extends Response
 {
     
 

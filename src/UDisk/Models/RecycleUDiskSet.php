@@ -27,7 +27,7 @@ class RecycleUDiskSet extends Response
      *
      * @return string|null
      */
-    public function getUDiskId(): string
+    public function getUDiskId()
     {
         return $this->get("UDiskId");
     }
@@ -37,7 +37,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId)
+    public function setUDiskId($uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -47,7 +47,7 @@ class RecycleUDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -57,7 +57,7 @@ class RecycleUDiskSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -67,7 +67,7 @@ class RecycleUDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getExpiredTime(): int
+    public function getExpiredTime()
     {
         return $this->get("ExpiredTime");
     }
@@ -77,7 +77,7 @@ class RecycleUDiskSet extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime(int $expiredTime)
+    public function setExpiredTime($expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
@@ -87,7 +87,7 @@ class RecycleUDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getCountdownTime(): int
+    public function getCountdownTime()
     {
         return $this->get("CountdownTime");
     }
@@ -97,7 +97,7 @@ class RecycleUDiskSet extends Response
      *
      * @param int $countdownTime
      */
-    public function setCountdownTime(int $countdownTime)
+    public function setCountdownTime($countdownTime)
     {
         $this->set("CountdownTime", $countdownTime);
     }
@@ -107,7 +107,7 @@ class RecycleUDiskSet extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -117,7 +117,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -127,7 +127,7 @@ class RecycleUDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -137,7 +137,7 @@ class RecycleUDiskSet extends Response
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -147,7 +147,7 @@ class RecycleUDiskSet extends Response
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -157,7 +157,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -167,7 +167,7 @@ class RecycleUDiskSet extends Response
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -177,7 +177,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }

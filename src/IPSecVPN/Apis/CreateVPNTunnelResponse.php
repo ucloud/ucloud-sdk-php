@@ -27,7 +27,7 @@ class CreateVPNTunnelResponse extends Response
      *
      * @return string|null
      */
-    public function getVPNTunnelId(): string
+    public function getVPNTunnelId()
     {
         return $this->get("VPNTunnelId");
     }
@@ -37,7 +37,7 @@ class CreateVPNTunnelResponse extends Response
      *
      * @param string $vpnTunnelId
      */
-    public function setVPNTunnelId(string $vpnTunnelId)
+    public function setVPNTunnelId($vpnTunnelId)
     {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }

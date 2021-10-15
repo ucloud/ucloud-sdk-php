@@ -30,9 +30,12 @@ class DescribeUPathResponse extends Response
      *
      * @return UPathInfo[]|null
      */
-    public function getUPathSet(): array
+    public function getUPathSet()
     {
-        $items = $this->get("UPathSet") ?? [];
+        $items = $this->get("UPathSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UPathInfo($item));

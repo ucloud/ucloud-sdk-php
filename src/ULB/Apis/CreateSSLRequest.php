@@ -35,7 +35,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLName(): string
+    public function getSSLName()
     {
         return $this->get("SSLName");
     }
@@ -85,7 +85,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslName
      */
-    public function setSSLName(string $sslName)
+    public function setSSLName($sslName)
     {
         $this->set("SSLName", $sslName);
     }
@@ -95,7 +95,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLType(): string
+    public function getSSLType()
     {
         return $this->get("SSLType");
     }
@@ -105,7 +105,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslType
      */
-    public function setSSLType(string $sslType)
+    public function setSSLType($sslType)
     {
         $this->set("SSLType", $sslType);
     }
@@ -115,7 +115,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLContent(): string
+    public function getSSLContent()
     {
         return $this->get("SSLContent");
     }
@@ -125,7 +125,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslContent
      */
-    public function setSSLContent(string $sslContent)
+    public function setSSLContent($sslContent)
     {
         $this->set("SSLContent", $sslContent);
     }
@@ -135,7 +135,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getUserCert(): string
+    public function getUserCert()
     {
         return $this->get("UserCert");
     }
@@ -145,7 +145,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $userCert
      */
-    public function setUserCert(string $userCert)
+    public function setUserCert($userCert)
     {
         $this->set("UserCert", $userCert);
     }
@@ -155,7 +155,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getPrivateKey(): string
+    public function getPrivateKey()
     {
         return $this->get("PrivateKey");
     }
@@ -165,7 +165,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $privateKey
      */
-    public function setPrivateKey(string $privateKey)
+    public function setPrivateKey($privateKey)
     {
         $this->set("PrivateKey", $privateKey);
     }
@@ -175,7 +175,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getCaCert(): string
+    public function getCaCert()
     {
         return $this->get("CaCert");
     }
@@ -185,7 +185,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $caCert
      */
-    public function setCaCert(string $caCert)
+    public function setCaCert($caCert)
     {
         $this->set("CaCert", $caCert);
     }

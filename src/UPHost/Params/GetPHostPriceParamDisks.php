@@ -27,7 +27,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getIsBoot(): string
+    public function getIsBoot()
     {
         return $this->get("IsBoot");
     }
@@ -37,7 +37,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot)
+    public function setIsBoot($isBoot)
     {
         $this->set("IsBoot", $isBoot);
     }
@@ -47,7 +47,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -57,7 +57,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -67,7 +67,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getSize(): string
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -77,7 +77,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @param string $size
      */
-    public function setSize(string $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }

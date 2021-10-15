@@ -39,7 +39,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -49,7 +49,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -59,7 +59,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getSigContent(): string
+    public function getSigContent()
     {
         return $this->get("SigContent");
     }
@@ -69,7 +69,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent)
+    public function setSigContent($sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
@@ -79,7 +79,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return integer|null
      */
-    public function getSigType(): int
+    public function getSigType()
     {
         return $this->get("SigType");
     }
@@ -89,7 +89,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param int $sigType
      */
-    public function setSigType(int $sigType)
+    public function setSigType($sigType)
     {
         $this->set("SigType", $sigType);
     }
@@ -99,7 +99,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return integer|null
      */
-    public function getSigPurpose(): int
+    public function getSigPurpose()
     {
         return $this->get("SigPurpose");
     }
@@ -109,7 +109,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param int $sigPurpose
      */
-    public function setSigPurpose(int $sigPurpose)
+    public function setSigPurpose($sigPurpose)
     {
         $this->set("SigPurpose", $sigPurpose);
     }
@@ -119,7 +119,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return integer|null
      */
-    public function getCertificateType(): int
+    public function getCertificateType()
     {
         return $this->get("CertificateType");
     }
@@ -129,7 +129,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param int $certificateType
      */
-    public function setCertificateType(int $certificateType)
+    public function setCertificateType($certificateType)
     {
         $this->set("CertificateType", $certificateType);
     }
@@ -139,7 +139,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->get("Description");
     }
@@ -149,7 +149,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->set("Description", $description);
     }
@@ -159,7 +159,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getFile(): string
+    public function getFile()
     {
         return $this->get("File");
     }
@@ -169,7 +169,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param string $file
      */
-    public function setFile(string $file)
+    public function setFile($file)
     {
         $this->set("File", $file);
     }
@@ -179,7 +179,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return boolean|null
      */
-    public function getInternational(): bool
+    public function getInternational()
     {
         return $this->get("International");
     }
@@ -189,7 +189,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param boolean $international
      */
-    public function setInternational(bool $international)
+    public function setInternational($international)
     {
         $this->set("International", $international);
     }
@@ -199,7 +199,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getProxyFile(): string
+    public function getProxyFile()
     {
         return $this->get("ProxyFile");
     }
@@ -209,7 +209,7 @@ class CreateUSMSSignatureRequest extends Request
      *
      * @param string $proxyFile
      */
-    public function setProxyFile(string $proxyFile)
+    public function setProxyFile($proxyFile)
     {
         $this->set("ProxyFile", $proxyFile);
     }

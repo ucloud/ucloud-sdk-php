@@ -27,7 +27,7 @@ class ListCubePodResponse extends Response
      *
      * @return string[]|null
      */
-    public function getPods(): array
+    public function getPods()
     {
         return $this->get("Pods");
     }
@@ -47,7 +47,7 @@ class ListCubePodResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -57,7 +57,7 @@ class ListCubePodResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

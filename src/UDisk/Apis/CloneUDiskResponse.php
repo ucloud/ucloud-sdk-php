@@ -27,7 +27,7 @@ class CloneUDiskResponse extends Response
      *
      * @return string[]|null
      */
-    public function getUDiskId(): array
+    public function getUDiskId()
     {
         return $this->get("UDiskId");
     }

@@ -29,9 +29,12 @@ class GetUEcIDCCutInfoResponse extends Response
      *
      * @return IDCCutInfo[]|null
      */
-    public function getIDCCutInfo(): array
+    public function getIDCCutInfo()
     {
-        $items = $this->get("IDCCutInfo") ?? [];
+        $items = $this->get("IDCCutInfo");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new IDCCutInfo($item));
@@ -58,7 +61,7 @@ class GetUEcIDCCutInfoResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -68,7 +71,7 @@ class GetUEcIDCCutInfoResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

@@ -27,7 +27,7 @@ class SpreadInfo extends Response
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class SpreadInfo extends Response
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class SpreadInfo extends Response
      *
      * @return integer|null
      */
-    public function getUHostCount(): int
+    public function getUHostCount()
     {
         return $this->get("UHostCount");
     }
@@ -57,7 +57,7 @@ class SpreadInfo extends Response
      *
      * @param int $uHostCount
      */
-    public function setUHostCount(int $uHostCount)
+    public function setUHostCount($uHostCount)
     {
         $this->set("UHostCount", $uHostCount);
     }

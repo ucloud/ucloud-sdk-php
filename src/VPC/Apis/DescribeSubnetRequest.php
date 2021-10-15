@@ -33,7 +33,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -63,7 +63,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return string[]|null
      */
-    public function getSubnetIds(): array
+    public function getSubnetIds()
     {
         return $this->get("SubnetIds");
     }
@@ -93,7 +93,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -103,7 +103,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -113,7 +113,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getRouteTableId(): string
+    public function getRouteTableId()
     {
         return $this->get("RouteTableId");
     }
@@ -123,7 +123,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId(string $routeTableId)
+    public function setRouteTableId($routeTableId)
     {
         $this->set("RouteTableId", $routeTableId);
     }
@@ -133,7 +133,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -143,7 +143,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -153,7 +153,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -163,7 +163,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -173,7 +173,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -183,7 +183,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -193,7 +193,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -203,7 +203,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -213,7 +213,7 @@ class DescribeSubnetRequest extends Request
      *
      * @return boolean|null
      */
-    public function getShowAvailableIPs(): bool
+    public function getShowAvailableIPs()
     {
         return $this->get("ShowAvailableIPs");
     }
@@ -223,7 +223,7 @@ class DescribeSubnetRequest extends Request
      *
      * @param boolean $showAvailableIPs
      */
-    public function setShowAvailableIPs(bool $showAvailableIPs)
+    public function setShowAvailableIPs($showAvailableIPs)
     {
         $this->set("ShowAvailableIPs", $showAvailableIPs);
     }

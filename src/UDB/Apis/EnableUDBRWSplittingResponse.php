@@ -27,7 +27,7 @@ class EnableUDBRWSplittingResponse extends Response
      *
      * @return string|null
      */
-    public function getMasterDBId(): string
+    public function getMasterDBId()
     {
         return $this->get("MasterDBId");
     }
@@ -37,7 +37,7 @@ class EnableUDBRWSplittingResponse extends Response
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId(string $masterDBId)
+    public function setMasterDBId($masterDBId)
     {
         $this->set("MasterDBId", $masterDBId);
     }
@@ -47,7 +47,7 @@ class EnableUDBRWSplittingResponse extends Response
      *
      * @return string|null
      */
-    public function getRWIp(): string
+    public function getRWIp()
     {
         return $this->get("RWIp");
     }
@@ -57,7 +57,7 @@ class EnableUDBRWSplittingResponse extends Response
      *
      * @param string $rwIp
      */
-    public function setRWIp(string $rwIp)
+    public function setRWIp($rwIp)
     {
         $this->set("RWIp", $rwIp);
     }

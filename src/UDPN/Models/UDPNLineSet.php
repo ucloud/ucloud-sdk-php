@@ -27,7 +27,7 @@ class UDPNLineSet extends Response
      *
      * @return string|null
      */
-    public function getLocalRegion(): string
+    public function getLocalRegion()
     {
         return $this->get("LocalRegion");
     }
@@ -37,7 +37,7 @@ class UDPNLineSet extends Response
      *
      * @param string $localRegion
      */
-    public function setLocalRegion(string $localRegion)
+    public function setLocalRegion($localRegion)
     {
         $this->set("LocalRegion", $localRegion);
     }
@@ -47,7 +47,7 @@ class UDPNLineSet extends Response
      *
      * @return string|null
      */
-    public function getRemoteRegion(): string
+    public function getRemoteRegion()
     {
         return $this->get("RemoteRegion");
     }
@@ -57,7 +57,7 @@ class UDPNLineSet extends Response
      *
      * @param string $remoteRegion
      */
-    public function setRemoteRegion(string $remoteRegion)
+    public function setRemoteRegion($remoteRegion)
     {
         $this->set("RemoteRegion", $remoteRegion);
     }
@@ -67,7 +67,7 @@ class UDPNLineSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidthUpperLimit(): int
+    public function getBandwidthUpperLimit()
     {
         return $this->get("BandwidthUpperLimit");
     }
@@ -77,7 +77,7 @@ class UDPNLineSet extends Response
      *
      * @param int $bandwidthUpperLimit
      */
-    public function setBandwidthUpperLimit(int $bandwidthUpperLimit)
+    public function setBandwidthUpperLimit($bandwidthUpperLimit)
     {
         $this->set("BandwidthUpperLimit", $bandwidthUpperLimit);
     }

@@ -17,7 +17,7 @@
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UHost\Models\KeyPair;
+use UCloud\UHost\Models\KeyPairDesc;
 
 class DescribeUHostKeyPairsResponse extends Response
 {
@@ -26,14 +26,17 @@ class DescribeUHostKeyPairsResponse extends Response
     /**
      * KeyPairs: 密钥对信息集合
      *
-     * @return KeyPair[]|null
+     * @return KeyPairDesc[]|null
      */
-    public function getKeyPairs(): array
+    public function getKeyPairs()
     {
-        $items = $this->get("KeyPairs") ?? [];
+        $items = $this->get("KeyPairs");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new KeyPair($item));
+            array_push($result, new KeyPairDesc($item));
         }
         return $result;
     }
@@ -41,7 +44,7 @@ class DescribeUHostKeyPairsResponse extends Response
     /**
      * KeyPairs: 密钥对信息集合
      *
-     * @param KeyPair[] $keyPairs
+     * @param KeyPairDesc[] $keyPairs
      */
     public function setKeyPairs(array $keyPairs)
     {
@@ -57,7 +60,7 @@ class DescribeUHostKeyPairsResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -67,7 +70,7 @@ class DescribeUHostKeyPairsResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

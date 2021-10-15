@@ -27,7 +27,7 @@ class GetUDPNPriceResponse extends Response
      *
      * @return integer|null
      */
-    public function getPurchaseValue(): int
+    public function getPurchaseValue()
     {
         return $this->get("PurchaseValue");
     }
@@ -37,7 +37,7 @@ class GetUDPNPriceResponse extends Response
      *
      * @param int $purchaseValue
      */
-    public function setPurchaseValue(int $purchaseValue)
+    public function setPurchaseValue($purchaseValue)
     {
         $this->set("PurchaseValue", $purchaseValue);
     }
@@ -47,7 +47,7 @@ class GetUDPNPriceResponse extends Response
      *
      * @return float|null
      */
-    public function getPrice(): float
+    public function getPrice()
     {
         return $this->get("Price");
     }
@@ -57,7 +57,7 @@ class GetUDPNPriceResponse extends Response
      *
      * @param float $price
      */
-    public function setPrice(float $price)
+    public function setPrice($price)
     {
         $this->set("Price", $price);
     }

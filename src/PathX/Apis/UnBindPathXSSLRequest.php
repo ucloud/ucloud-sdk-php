@@ -36,7 +36,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -46,7 +46,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -56,7 +56,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getUGAId(): string
+    public function getUGAId()
     {
         return $this->get("UGAId");
     }
@@ -66,7 +66,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId)
+    public function setUGAId($ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -76,7 +76,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLId(): string
+    public function getSSLId()
     {
         return $this->get("SSLId");
     }
@@ -86,7 +86,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId)
+    public function setSSLId($sslId)
     {
         $this->set("SSLId", $sslId);
     }
@@ -96,7 +96,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @return int[]|null
      */
-    public function getPort(): array
+    public function getPort()
     {
         return $this->get("Port");
     }

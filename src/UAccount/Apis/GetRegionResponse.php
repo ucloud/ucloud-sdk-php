@@ -28,9 +28,12 @@ class GetRegionResponse extends Response
      *
      * @return RegionInfo[]|null
      */
-    public function getRegions(): array
+    public function getRegions()
     {
-        $items = $this->get("Regions") ?? [];
+        $items = $this->get("Regions");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new RegionInfo($item));

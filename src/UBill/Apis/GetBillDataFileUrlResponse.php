@@ -27,7 +27,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @return string|null
      */
-    public function getFileUrl(): string
+    public function getFileUrl()
     {
         return $this->get("FileUrl");
     }
@@ -37,7 +37,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @param string $fileUrl
      */
-    public function setFileUrl(string $fileUrl)
+    public function setFileUrl($fileUrl)
     {
         $this->set("FileUrl", $fileUrl);
     }
@@ -47,7 +47,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @return string|null
      */
-    public function getIsValid(): string
+    public function getIsValid()
     {
         return $this->get("IsValid");
     }
@@ -57,7 +57,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @param string $isValid
      */
-    public function setIsValid(string $isValid)
+    public function setIsValid($isValid)
     {
         $this->set("IsValid", $isValid);
     }

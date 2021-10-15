@@ -34,7 +34,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getAclId(): string
+    public function getAclId()
     {
         return $this->get("AclId");
     }
@@ -84,7 +84,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId)
+    public function setAclId($aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -94,7 +94,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -104,7 +104,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -114,7 +114,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getLimit(): string
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -124,7 +124,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param string $limit
      */
-    public function setLimit(string $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }

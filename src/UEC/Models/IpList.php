@@ -27,7 +27,7 @@ class IpList extends Response
      *
      * @return string|null
      */
-    public function getIp(): string
+    public function getIp()
     {
         return $this->get("Ip");
     }
@@ -37,7 +37,7 @@ class IpList extends Response
      *
      * @param string $ip
      */
-    public function setIp(string $ip)
+    public function setIp($ip)
     {
         $this->set("Ip", $ip);
     }
@@ -47,7 +47,7 @@ class IpList extends Response
      *
      * @return string|null
      */
-    public function getIsp(): string
+    public function getIsp()
     {
         return $this->get("Isp");
     }
@@ -57,7 +57,7 @@ class IpList extends Response
      *
      * @param string $isp
      */
-    public function setIsp(string $isp)
+    public function setIsp($isp)
     {
         $this->set("Isp", $isp);
     }

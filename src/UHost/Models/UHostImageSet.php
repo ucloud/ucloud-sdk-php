@@ -27,7 +27,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class UHostImageSet extends Response
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -57,7 +57,7 @@ class UHostImageSet extends Response
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -67,7 +67,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getImageName(): string
+    public function getImageName()
     {
         return $this->get("ImageName");
     }
@@ -77,7 +77,7 @@ class UHostImageSet extends Response
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName)
+    public function setImageName($imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -87,7 +87,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getOsType(): string
+    public function getOsType()
     {
         return $this->get("OsType");
     }
@@ -97,7 +97,7 @@ class UHostImageSet extends Response
      *
      * @param string $osType
      */
-    public function setOsType(string $osType)
+    public function setOsType($osType)
     {
         $this->set("OsType", $osType);
     }
@@ -107,7 +107,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getOsName(): string
+    public function getOsName()
     {
         return $this->get("OsName");
     }
@@ -117,7 +117,7 @@ class UHostImageSet extends Response
      *
      * @param string $osName
      */
-    public function setOsName(string $osName)
+    public function setOsName($osName)
     {
         $this->set("OsName", $osName);
     }
@@ -127,7 +127,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getImageType(): string
+    public function getImageType()
     {
         return $this->get("ImageType");
     }
@@ -137,7 +137,7 @@ class UHostImageSet extends Response
      *
      * @param string $imageType
      */
-    public function setImageType(string $imageType)
+    public function setImageType($imageType)
     {
         $this->set("ImageType", $imageType);
     }
@@ -147,7 +147,7 @@ class UHostImageSet extends Response
      *
      * @return string[]|null
      */
-    public function getFeatures(): array
+    public function getFeatures()
     {
         return $this->get("Features");
     }
@@ -167,7 +167,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getFuncType(): string
+    public function getFuncType()
     {
         return $this->get("FuncType");
     }
@@ -177,7 +177,7 @@ class UHostImageSet extends Response
      *
      * @param string $funcType
      */
-    public function setFuncType(string $funcType)
+    public function setFuncType($funcType)
     {
         $this->set("FuncType", $funcType);
     }
@@ -187,7 +187,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getIntegratedSoftware(): string
+    public function getIntegratedSoftware()
     {
         return $this->get("IntegratedSoftware");
     }
@@ -197,7 +197,7 @@ class UHostImageSet extends Response
      *
      * @param string $integratedSoftware
      */
-    public function setIntegratedSoftware(string $integratedSoftware)
+    public function setIntegratedSoftware($integratedSoftware)
     {
         $this->set("IntegratedSoftware", $integratedSoftware);
     }
@@ -207,7 +207,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getVendor(): string
+    public function getVendor()
     {
         return $this->get("Vendor");
     }
@@ -217,7 +217,7 @@ class UHostImageSet extends Response
      *
      * @param string $vendor
      */
-    public function setVendor(string $vendor)
+    public function setVendor($vendor)
     {
         $this->set("Vendor", $vendor);
     }
@@ -227,7 +227,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getLinks(): string
+    public function getLinks()
     {
         return $this->get("Links");
     }
@@ -237,7 +237,7 @@ class UHostImageSet extends Response
      *
      * @param string $links
      */
-    public function setLinks(string $links)
+    public function setLinks($links)
     {
         $this->set("Links", $links);
     }
@@ -247,7 +247,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->get("State");
     }
@@ -257,7 +257,7 @@ class UHostImageSet extends Response
      *
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }
@@ -267,7 +267,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getImageDescription(): string
+    public function getImageDescription()
     {
         return $this->get("ImageDescription");
     }
@@ -277,7 +277,7 @@ class UHostImageSet extends Response
      *
      * @param string $imageDescription
      */
-    public function setImageDescription(string $imageDescription)
+    public function setImageDescription($imageDescription)
     {
         $this->set("ImageDescription", $imageDescription);
     }
@@ -287,7 +287,7 @@ class UHostImageSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -297,7 +297,7 @@ class UHostImageSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -307,7 +307,7 @@ class UHostImageSet extends Response
      *
      * @return integer|null
      */
-    public function getImageSize(): int
+    public function getImageSize()
     {
         return $this->get("ImageSize");
     }
@@ -317,7 +317,7 @@ class UHostImageSet extends Response
      *
      * @param int $imageSize
      */
-    public function setImageSize(int $imageSize)
+    public function setImageSize($imageSize)
     {
         $this->set("ImageSize", $imageSize);
     }
@@ -327,7 +327,7 @@ class UHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getMinimalCPU(): string
+    public function getMinimalCPU()
     {
         return $this->get("MinimalCPU");
     }
@@ -337,7 +337,7 @@ class UHostImageSet extends Response
      *
      * @param string $minimalCPU
      */
-    public function setMinimalCPU(string $minimalCPU)
+    public function setMinimalCPU($minimalCPU)
     {
         $this->set("MinimalCPU", $minimalCPU);
     }

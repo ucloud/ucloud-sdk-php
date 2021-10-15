@@ -27,7 +27,7 @@ class ValueSet extends Response
      *
      * @return float|null
      */
-    public function getValue(): float
+    public function getValue()
     {
         return $this->get("Value");
     }
@@ -37,7 +37,7 @@ class ValueSet extends Response
      *
      * @param float $value
      */
-    public function setValue(float $value)
+    public function setValue($value)
     {
         $this->set("Value", $value);
     }
@@ -47,7 +47,7 @@ class ValueSet extends Response
      *
      * @return integer|null
      */
-    public function getTimestamp(): int
+    public function getTimestamp()
     {
         return $this->get("Timestamp");
     }
@@ -57,7 +57,7 @@ class ValueSet extends Response
      *
      * @param int $timestamp
      */
-    public function setTimestamp(int $timestamp)
+    public function setTimestamp($timestamp)
     {
         $this->set("Timestamp", $timestamp);
     }

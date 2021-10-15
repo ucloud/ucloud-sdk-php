@@ -9,14 +9,14 @@ class Credential implements CredentialInterface
      *
      * @var string
      */
-    private string $publicKey;
+    private $publicKey;
 
     /**
      * Private key
      *
      * @var string
      */
-    private string $privateKey;
+    private $privateKey;
 
     /**
      * Credential constructor.
@@ -35,7 +35,7 @@ class Credential implements CredentialInterface
      * @param array $args arguments to generate signature
      * @return string the signature
      */
-    public function verifyAc(array $args): string
+    public function verifyAc(array $args)
     {
         $args['PublicKey'] = $this->getPublicKey();
         ksort($args);
@@ -54,7 +54,7 @@ class Credential implements CredentialInterface
      * @param array $args arguments to by attached
      * @return array array with signature and keys
      */
-    public function sign(array $args): array
+    public function sign(array $args)
     {
         $args['Signature'] = $this->verifyAc($args);
         $args['PublicKey'] = $this->getPublicKey();
@@ -66,7 +66,7 @@ class Credential implements CredentialInterface
      *
      * @return string
      */
-    public function getPublicKey(): string
+    public function getPublicKey()
     {
         return $this->publicKey;
     }
@@ -76,7 +76,7 @@ class Credential implements CredentialInterface
      *
      * @param string $publicKey Public key
      */
-    public function setPublicKey(string $publicKey): void
+    public function setPublicKey($publicKey)
     {
         $this->publicKey = $publicKey;
     }
@@ -86,7 +86,7 @@ class Credential implements CredentialInterface
      *
      * @return string
      */
-    public function getPrivateKey(): string
+    public function getPrivateKey()
     {
         return $this->privateKey;
     }
@@ -96,7 +96,7 @@ class Credential implements CredentialInterface
      *
      * @param string $privateKey Private key
      */
-    public function setPrivateKey(string $privateKey): void
+    public function setPrivateKey($privateKey)
     {
         $this->privateKey = $privateKey;
     }

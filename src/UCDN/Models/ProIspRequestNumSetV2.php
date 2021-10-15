@@ -27,7 +27,7 @@ class ProIspRequestNumSetV2 extends Response
      *
      * @return string|null
      */
-    public function getProvince(): string
+    public function getProvince()
     {
         return $this->get("Province");
     }
@@ -37,7 +37,7 @@ class ProIspRequestNumSetV2 extends Response
      *
      * @param string $province
      */
-    public function setProvince(string $province)
+    public function setProvince($province)
     {
         $this->set("Province", $province);
     }
@@ -47,9 +47,12 @@ class ProIspRequestNumSetV2 extends Response
      *
      * @return ProIspRequestListV2[]|null
      */
-    public function getRequestList(): array
+    public function getRequestList()
     {
-        $items = $this->get("RequestList") ?? [];
+        $items = $this->get("RequestList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ProIspRequestListV2($item));

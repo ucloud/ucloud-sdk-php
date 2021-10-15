@@ -31,7 +31,7 @@ class DescribePHostResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -41,7 +41,7 @@ class DescribePHostResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -51,9 +51,12 @@ class DescribePHostResponse extends Response
      *
      * @return PHostSet[]|null
      */
-    public function getPHostSet(): array
+    public function getPHostSet()
     {
-        $items = $this->get("PHostSet") ?? [];
+        $items = $this->get("PHostSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new PHostSet($item));

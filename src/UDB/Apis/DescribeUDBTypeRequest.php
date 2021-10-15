@@ -34,7 +34,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupZone(): string
+    public function getBackupZone()
     {
         return $this->get("BackupZone");
     }
@@ -84,7 +84,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @param string $backupZone
      */
-    public function setBackupZone(string $backupZone)
+    public function setBackupZone($backupZone)
     {
         $this->set("BackupZone", $backupZone);
     }
@@ -94,7 +94,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getDBClusterType(): string
+    public function getDBClusterType()
     {
         return $this->get("DBClusterType");
     }
@@ -104,7 +104,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @param string $dbClusterType
      */
-    public function setDBClusterType(string $dbClusterType)
+    public function setDBClusterType($dbClusterType)
     {
         $this->set("DBClusterType", $dbClusterType);
     }
@@ -114,7 +114,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceMode(): string
+    public function getInstanceMode()
     {
         return $this->get("InstanceMode");
     }
@@ -124,7 +124,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode(string $instanceMode)
+    public function setInstanceMode($instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
@@ -134,7 +134,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getDiskType(): string
+    public function getDiskType()
     {
         return $this->get("DiskType");
     }
@@ -144,7 +144,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @param string $diskType
      */
-    public function setDiskType(string $diskType)
+    public function setDiskType($diskType)
     {
         $this->set("DiskType", $diskType);
     }
@@ -154,7 +154,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getCompatibleWithDBType(): string
+    public function getCompatibleWithDBType()
     {
         return $this->get("CompatibleWithDBType");
     }
@@ -164,7 +164,7 @@ class DescribeUDBTypeRequest extends Request
      *
      * @param string $compatibleWithDBType
      */
-    public function setCompatibleWithDBType(string $compatibleWithDBType)
+    public function setCompatibleWithDBType($compatibleWithDBType)
     {
         $this->set("CompatibleWithDBType", $compatibleWithDBType);
     }

@@ -27,7 +27,7 @@ class AllocateBackendResponse extends Response
      *
      * @return string|null
      */
-    public function getBackendId(): string
+    public function getBackendId()
     {
         return $this->get("BackendId");
     }
@@ -37,7 +37,7 @@ class AllocateBackendResponse extends Response
      *
      * @param string $backendId
      */
-    public function setBackendId(string $backendId)
+    public function setBackendId($backendId)
     {
         $this->set("BackendId", $backendId);
     }

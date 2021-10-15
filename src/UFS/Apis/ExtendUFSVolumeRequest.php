@@ -35,7 +35,7 @@ class ExtendUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class ExtendUFSVolumeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class ExtendUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class ExtendUFSVolumeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class ExtendUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getVolumeId(): string
+    public function getVolumeId()
     {
         return $this->get("VolumeId");
     }
@@ -85,7 +85,7 @@ class ExtendUFSVolumeRequest extends Request
      *
      * @param string $volumeId
      */
-    public function setVolumeId(string $volumeId)
+    public function setVolumeId($volumeId)
     {
         $this->set("VolumeId", $volumeId);
     }
@@ -95,7 +95,7 @@ class ExtendUFSVolumeRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -105,7 +105,7 @@ class ExtendUFSVolumeRequest extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }

@@ -48,7 +48,7 @@ class UK8SClient extends Client
     /**
      * AddUK8SExistingUHost - 将预先创建好的云主机加入到UK8S集群，需要注意的是，该云主机依然会执行重装系统的操作。
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/add_uk8s_existing_uhost
+     * See also: https://docs.ucloud.cn/api/uk8s-api/add_uk8s_existing_uhost
      *
      * Arguments:
      *
@@ -73,9 +73,10 @@ class UK8SClient extends Client
      * $outputs = [
      * ]
      *
+     * @return AddUK8SExistingUHostResponse
      * @throws UCloudException
      */
-    public function addUK8SExistingUHost(AddUK8SExistingUHostRequest $request = null): AddUK8SExistingUHostResponse
+    public function addUK8SExistingUHost(AddUK8SExistingUHostRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AddUK8SExistingUHostResponse($resp->toArray(), $resp->getRequestId());
@@ -84,7 +85,7 @@ class UK8SClient extends Client
     /**
      * AddUK8SPHostNode - 为UK8S集群添加一台或多台物理云主机类型的节点。
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/add_uk8s_phost_node
+     * See also: https://docs.ucloud.cn/api/uk8s-api/add_uk8s_phost_node
      *
      * Arguments:
      *
@@ -113,9 +114,10 @@ class UK8SClient extends Client
      * $outputs = [
      * ]
      *
+     * @return AddUK8SPHostNodeResponse
      * @throws UCloudException
      */
-    public function addUK8SPHostNode(AddUK8SPHostNodeRequest $request = null): AddUK8SPHostNodeResponse
+    public function addUK8SPHostNode(AddUK8SPHostNodeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AddUK8SPHostNodeResponse($resp->toArray(), $resp->getRequestId());
@@ -124,7 +126,7 @@ class UK8SClient extends Client
     /**
      * AddUK8SUHostNode - 为UK8S集群添加一台Node节点，机型类型为云主机
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/add_uk8s_uhost_node
+     * See also: https://docs.ucloud.cn/api/uk8s-api/add_uk8s_uhost_node
      *
      * Arguments:
      *
@@ -162,9 +164,10 @@ class UK8SClient extends Client
      *     "NodeIds" => (array<string>) Node实例Id集合
      * ]
      *
+     * @return AddUK8SUHostNodeResponse
      * @throws UCloudException
      */
-    public function addUK8SUHostNode(AddUK8SUHostNodeRequest $request = null): AddUK8SUHostNodeResponse
+    public function addUK8SUHostNode(AddUK8SUHostNodeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AddUK8SUHostNodeResponse($resp->toArray(), $resp->getRequestId());
@@ -173,7 +176,7 @@ class UK8SClient extends Client
     /**
      * CreateUK8SClusterV2 - 创建UK8S集群
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/create_uk8s_cluster_v2
+     * See also: https://docs.ucloud.cn/api/uk8s-api/create_uk8s_cluster_v2
      *
      * Arguments:
      *
@@ -234,9 +237,10 @@ class UK8SClient extends Client
      *     "ClusterId" => (string) 集群ID
      * ]
      *
+     * @return CreateUK8SClusterV2Response
      * @throws UCloudException
      */
-    public function createUK8SClusterV2(CreateUK8SClusterV2Request $request = null): CreateUK8SClusterV2Response
+    public function createUK8SClusterV2(CreateUK8SClusterV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUK8SClusterV2Response($resp->toArray(), $resp->getRequestId());
@@ -245,7 +249,7 @@ class UK8SClient extends Client
     /**
      * DelUK8SCluster - 删除UK8S集群
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/del_uk8s_cluster
+     * See also: https://docs.ucloud.cn/api/uk8s-api/del_uk8s_cluster
      *
      * Arguments:
      *
@@ -261,9 +265,10 @@ class UK8SClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DelUK8SClusterResponse
      * @throws UCloudException
      */
-    public function delUK8SCluster(DelUK8SClusterRequest $request = null): DelUK8SClusterResponse
+    public function delUK8SCluster(DelUK8SClusterRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DelUK8SClusterResponse($resp->toArray(), $resp->getRequestId());
@@ -272,7 +277,7 @@ class UK8SClient extends Client
     /**
      * DelUK8SClusterNodeV2 - 删除集群中的Node节点，删除前务必先将其中的Pod驱逐。
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/del_uk8s_cluster_node_v2
+     * See also: https://docs.ucloud.cn/api/uk8s-api/del_uk8s_cluster_node_v2
      *
      * Arguments:
      *
@@ -289,9 +294,10 @@ class UK8SClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DelUK8SClusterNodeV2Response
      * @throws UCloudException
      */
-    public function delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request $request = null): DelUK8SClusterNodeV2Response
+    public function delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new DelUK8SClusterNodeV2Response($resp->toArray(), $resp->getRequestId());
@@ -300,7 +306,7 @@ class UK8SClient extends Client
     /**
      * DescribeUK8SImage - 获取UK8S支持的Node节点操作系统，可基于该操作系统制定自定义镜像
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/describe_uk8s_image
+     * See also: https://docs.ucloud.cn/api/uk8s-api/describe_uk8s_image
      *
      * Arguments:
      *
@@ -331,9 +337,10 @@ class UK8SClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUK8SImageResponse
      * @throws UCloudException
      */
-    public function describeUK8SImage(DescribeUK8SImageRequest $request = null): DescribeUK8SImageResponse
+    public function describeUK8SImage(DescribeUK8SImageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUK8SImageResponse($resp->toArray(), $resp->getRequestId());
@@ -342,7 +349,7 @@ class UK8SClient extends Client
     /**
      * DescribeUK8SNode - 用于获取 UK8S 节点详情
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/describe_uk8s_node
+     * See also: https://docs.ucloud.cn/api/uk8s-api/describe_uk8s_node
      *
      * Arguments:
      *
@@ -395,9 +402,10 @@ class UK8SClient extends Client
      *     "Taints" => (array<string>) 字符串数组，每一项是类似 "node-role.kubernetes.io/master:NoSchedule" 的污点
      * ]
      *
+     * @return DescribeUK8SNodeResponse
      * @throws UCloudException
      */
-    public function describeUK8SNode(DescribeUK8SNodeRequest $request = null): DescribeUK8SNodeResponse
+    public function describeUK8SNode(DescribeUK8SNodeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUK8SNodeResponse($resp->toArray(), $resp->getRequestId());
@@ -406,7 +414,7 @@ class UK8SClient extends Client
     /**
      * ListUK8SClusterNodeV2 - 获取UK8S集群节点信息
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/list_uk8s_cluster_node_v2
+     * See also: https://docs.ucloud.cn/api/uk8s-api/list_uk8s_cluster_node_v2
      *
      * Arguments:
      *
@@ -458,9 +466,10 @@ class UK8SClient extends Client
      *     "TotalCount" => (integer) 满足条件的节点数量，包括Master。
      * ]
      *
+     * @return ListUK8SClusterNodeV2Response
      * @throws UCloudException
      */
-    public function listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request $request = null): ListUK8SClusterNodeV2Response
+    public function listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new ListUK8SClusterNodeV2Response($resp->toArray(), $resp->getRequestId());
@@ -469,7 +478,7 @@ class UK8SClient extends Client
     /**
      * ListUK8SClusterV2 - 获取UK8S集群列表信息
      *
-     * See also: https://docs.ucloud.cn/api/UK8S-api/list_uk8s_cluster_v2
+     * See also: https://docs.ucloud.cn/api/uk8s-api/list_uk8s_cluster_v2
      *
      * Arguments:
      *
@@ -505,9 +514,10 @@ class UK8SClient extends Client
      *     ]
      * ]
      *
+     * @return ListUK8SClusterV2Response
      * @throws UCloudException
      */
-    public function listUK8SClusterV2(ListUK8SClusterV2Request $request = null): ListUK8SClusterV2Response
+    public function listUK8SClusterV2(ListUK8SClusterV2Request $request = null)
     {
         $resp = $this->invoke($request);
         return new ListUK8SClusterV2Response($resp->toArray(), $resp->getRequestId());

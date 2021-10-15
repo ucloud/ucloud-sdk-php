@@ -27,7 +27,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -37,7 +37,7 @@ class HolderList extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -47,7 +47,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getHolderName(): string
+    public function getHolderName()
     {
         return $this->get("HolderName");
     }
@@ -57,7 +57,7 @@ class HolderList extends Response
      *
      * @param string $holderName
      */
-    public function setHolderName(string $holderName)
+    public function setHolderName($holderName)
     {
         $this->set("HolderName", $holderName);
     }
@@ -67,7 +67,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -77,7 +77,7 @@ class HolderList extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -87,7 +87,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getInnerIp(): string
+    public function getInnerIp()
     {
         return $this->get("InnerIp");
     }
@@ -97,7 +97,7 @@ class HolderList extends Response
      *
      * @param string $innerIp
      */
-    public function setInnerIp(string $innerIp)
+    public function setInnerIp($innerIp)
     {
         $this->set("InnerIp", $innerIp);
     }
@@ -107,9 +107,12 @@ class HolderList extends Response
      *
      * @return IpList[]|null
      */
-    public function getIpList(): array
+    public function getIpList()
     {
-        $items = $this->get("IpList") ?? [];
+        $items = $this->get("IpList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new IpList($item));
@@ -136,7 +139,7 @@ class HolderList extends Response
      *
      * @return integer|null
      */
-    public function getState(): int
+    public function getState()
     {
         return $this->get("State");
     }
@@ -146,7 +149,7 @@ class HolderList extends Response
      *
      * @param int $state
      */
-    public function setState(int $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }
@@ -156,7 +159,7 @@ class HolderList extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -166,7 +169,7 @@ class HolderList extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -176,7 +179,7 @@ class HolderList extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime(): int
+    public function getExpireTime()
     {
         return $this->get("ExpireTime");
     }
@@ -186,7 +189,7 @@ class HolderList extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime)
+    public function setExpireTime($expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -196,7 +199,7 @@ class HolderList extends Response
      *
      * @return integer|null
      */
-    public function getType(): int
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -206,7 +209,7 @@ class HolderList extends Response
      *
      * @param int $type
      */
-    public function setType(int $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -216,7 +219,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getIdcId(): string
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -226,7 +229,7 @@ class HolderList extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId)
+    public function setIdcId($idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -236,7 +239,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getOcName(): string
+    public function getOcName()
     {
         return $this->get("OcName");
     }
@@ -246,7 +249,7 @@ class HolderList extends Response
      *
      * @param string $ocName
      */
-    public function setOcName(string $ocName)
+    public function setOcName($ocName)
     {
         $this->set("OcName", $ocName);
     }
@@ -256,7 +259,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getProvince(): string
+    public function getProvince()
     {
         return $this->get("Province");
     }
@@ -266,7 +269,7 @@ class HolderList extends Response
      *
      * @param string $province
      */
-    public function setProvince(string $province)
+    public function setProvince($province)
     {
         $this->set("Province", $province);
     }
@@ -276,7 +279,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getCity(): string
+    public function getCity()
     {
         return $this->get("City");
     }
@@ -286,7 +289,7 @@ class HolderList extends Response
      *
      * @param string $city
      */
-    public function setCity(string $city)
+    public function setCity($city)
     {
         $this->set("City", $city);
     }
@@ -296,7 +299,7 @@ class HolderList extends Response
      *
      * @return integer|null
      */
-    public function getRestartStrategy(): int
+    public function getRestartStrategy()
     {
         return $this->get("RestartStrategy");
     }
@@ -306,7 +309,7 @@ class HolderList extends Response
      *
      * @param int $restartStrategy
      */
-    public function setRestartStrategy(int $restartStrategy)
+    public function setRestartStrategy($restartStrategy)
     {
         $this->set("RestartStrategy", $restartStrategy);
     }
@@ -316,7 +319,7 @@ class HolderList extends Response
      *
      * @return integer|null
      */
-    public function getDockerCount(): int
+    public function getDockerCount()
     {
         return $this->get("DockerCount");
     }
@@ -326,7 +329,7 @@ class HolderList extends Response
      *
      * @param int $dockerCount
      */
-    public function setDockerCount(int $dockerCount)
+    public function setDockerCount($dockerCount)
     {
         $this->set("DockerCount", $dockerCount);
     }
@@ -336,9 +339,12 @@ class HolderList extends Response
      *
      * @return DockerInfo[]|null
      */
-    public function getDockerInfo(): array
+    public function getDockerInfo()
     {
-        $items = $this->get("DockerInfo") ?? [];
+        $items = $this->get("DockerInfo");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new DockerInfo($item));
@@ -361,21 +367,21 @@ class HolderList extends Response
     }
 
     /**
-     * ProductType: 机器类型（normal通用型，hf高性能型）
+     * ProductType: 机器类型（normal经济型，hf标准型）
      *
      * @return string|null
      */
-    public function getProductType(): string
+    public function getProductType()
     {
         return $this->get("ProductType");
     }
 
     /**
-     * ProductType: 机器类型（normal通用型，hf高性能型）
+     * ProductType: 机器类型（normal经济型，hf标准型）
      *
      * @param string $productType
      */
-    public function setProductType(string $productType)
+    public function setProductType($productType)
     {
         $this->set("ProductType", $productType);
     }
@@ -385,7 +391,7 @@ class HolderList extends Response
      *
      * @return integer|null
      */
-    public function getNetLimit(): int
+    public function getNetLimit()
     {
         return $this->get("NetLimit");
     }
@@ -395,7 +401,7 @@ class HolderList extends Response
      *
      * @param int $netLimit
      */
-    public function setNetLimit(int $netLimit)
+    public function setNetLimit($netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }
@@ -405,7 +411,7 @@ class HolderList extends Response
      *
      * @return string|null
      */
-    public function getFirewallId(): string
+    public function getFirewallId()
     {
         return $this->get("FirewallId");
     }
@@ -415,7 +421,7 @@ class HolderList extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId)
+    public function setFirewallId($firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
@@ -425,9 +431,12 @@ class HolderList extends Response
      *
      * @return StorVolumeInfo[]|null
      */
-    public function getStorVolumeInfo(): array
+    public function getStorVolumeInfo()
     {
-        $items = $this->get("StorVolumeInfo") ?? [];
+        $items = $this->get("StorVolumeInfo");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new StorVolumeInfo($item));
@@ -454,7 +463,7 @@ class HolderList extends Response
      *
      * @return integer|null
      */
-    public function getStorVolumeCount(): int
+    public function getStorVolumeCount()
     {
         return $this->get("StorVolumeCount");
     }
@@ -464,7 +473,7 @@ class HolderList extends Response
      *
      * @param int $storVolumeCount
      */
-    public function setStorVolumeCount(int $storVolumeCount)
+    public function setStorVolumeCount($storVolumeCount)
     {
         $this->set("StorVolumeCount", $storVolumeCount);
     }
@@ -474,9 +483,12 @@ class HolderList extends Response
      *
      * @return ImageList[]|null
      */
-    public function getImageList(): array
+    public function getImageList()
     {
-        $items = $this->get("ImageList") ?? [];
+        $items = $this->get("ImageList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ImageList($item));

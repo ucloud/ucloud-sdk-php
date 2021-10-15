@@ -29,9 +29,12 @@ class GetUcdnProIspRequestNumV2Response extends Response
      *
      * @return ProIspRequestNumSetV2[]|null
      */
-    public function getRequestNumSet(): array
+    public function getRequestNumSet()
     {
-        $items = $this->get("RequestNumSet") ?? [];
+        $items = $this->get("RequestNumSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ProIspRequestNumSetV2($item));

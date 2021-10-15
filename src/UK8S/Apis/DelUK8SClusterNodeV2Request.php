@@ -35,7 +35,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -65,7 +65,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -75,7 +75,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getClusterId(): string
+    public function getClusterId()
     {
         return $this->get("ClusterId");
     }
@@ -85,7 +85,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId(string $clusterId)
+    public function setClusterId($clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
@@ -95,7 +95,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getNodeId(): string
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }
@@ -105,7 +105,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId)
+    public function setNodeId($nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -115,7 +115,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseDataUDisk(): bool
+    public function getReleaseDataUDisk()
     {
         return $this->get("ReleaseDataUDisk");
     }
@@ -125,7 +125,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param boolean $releaseDataUDisk
      */
-    public function setReleaseDataUDisk(bool $releaseDataUDisk)
+    public function setReleaseDataUDisk($releaseDataUDisk)
     {
         $this->set("ReleaseDataUDisk", $releaseDataUDisk);
     }

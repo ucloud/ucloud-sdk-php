@@ -27,7 +27,7 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -37,7 +37,7 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -47,7 +47,7 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @return PHostCPUSet|null
      */
-    public function getCPU(): PHostCPUSet
+    public function getCPU()
     {
         return new PHostCPUSet($this->get("CPU"));
     }
@@ -57,7 +57,7 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @param PHostCPUSet $cpu
      */
-    public function setCPU(PHostCPUSet $cpu)
+    public function setCPU(array $cpu)
     {
         $this->set("CPU", $cpu->getAll());
     }
@@ -67,7 +67,7 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @return integer|null
      */
-    public function getMemory(): int
+    public function getMemory()
     {
         return $this->get("Memory");
     }
@@ -77,7 +77,7 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @param int $memory
      */
-    public function setMemory(int $memory)
+    public function setMemory($memory)
     {
         $this->set("Memory", $memory);
     }
@@ -87,7 +87,7 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @return PHostComponentSet|null
      */
-    public function getComponents(): PHostComponentSet
+    public function getComponents()
     {
         return new PHostComponentSet($this->get("Components"));
     }
@@ -97,7 +97,7 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @param PHostComponentSet $components
      */
-    public function setComponents(PHostComponentSet $components)
+    public function setComponents(array $components)
     {
         $this->set("Components", $components->getAll());
     }
@@ -107,9 +107,12 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @return PHostClusterSet[]|null
      */
-    public function getClusters(): array
+    public function getClusters()
     {
-        $items = $this->get("Clusters") ?? [];
+        $items = $this->get("Clusters");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new PHostClusterSet($item));
