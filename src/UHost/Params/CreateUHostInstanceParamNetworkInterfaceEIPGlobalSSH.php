@@ -27,7 +27,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request
      *
      * @return string|null
      */
-    public function getArea(): string
+    public function getArea()
     {
         return $this->get("Area");
     }
@@ -37,7 +37,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request
      *
      * @param string $area
      */
-    public function setArea(string $area)
+    public function setArea($area)
     {
         $this->set("Area", $area);
     }
@@ -47,7 +47,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -57,7 +57,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -67,7 +67,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request
      *
      * @return string|null
      */
-    public function getAreaCode(): string
+    public function getAreaCode()
     {
         return $this->get("AreaCode");
     }
@@ -77,7 +77,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH extends Request
      *
      * @param string $areaCode
      */
-    public function setAreaCode(string $areaCode)
+    public function setAreaCode($areaCode)
     {
         $this->set("AreaCode", $areaCode);
     }

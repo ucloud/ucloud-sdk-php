@@ -27,7 +27,7 @@ class EIPPayModeSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -37,7 +37,7 @@ class EIPPayModeSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -47,7 +47,7 @@ class EIPPayModeSet extends Response
      *
      * @return string|null
      */
-    public function getEIPPayMode(): string
+    public function getEIPPayMode()
     {
         return $this->get("EIPPayMode");
     }
@@ -57,7 +57,7 @@ class EIPPayModeSet extends Response
      *
      * @param string $eipPayMode
      */
-    public function setEIPPayMode(string $eipPayMode)
+    public function setEIPPayMode($eipPayMode)
     {
         $this->set("EIPPayMode", $eipPayMode);
     }

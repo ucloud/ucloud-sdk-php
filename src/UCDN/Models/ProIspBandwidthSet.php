@@ -27,7 +27,7 @@ class ProIspBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getProvince(): string
+    public function getProvince()
     {
         return $this->get("Province");
     }
@@ -37,7 +37,7 @@ class ProIspBandwidthSet extends Response
      *
      * @param string $province
      */
-    public function setProvince(string $province)
+    public function setProvince($province)
     {
         $this->set("Province", $province);
     }
@@ -47,9 +47,12 @@ class ProIspBandwidthSet extends Response
      *
      * @return ProIspBandwidthList[]|null
      */
-    public function getBandwidthTrafficList(): array
+    public function getBandwidthTrafficList()
     {
-        $items = $this->get("BandwidthTrafficList") ?? [];
+        $items = $this->get("BandwidthTrafficList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ProIspBandwidthList($item));

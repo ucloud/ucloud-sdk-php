@@ -36,7 +36,7 @@ class ReleaseBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class ReleaseBackendRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class ReleaseBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class ReleaseBackendRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class ReleaseBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId(): string
+    public function getULBId()
     {
         return $this->get("ULBId");
     }
@@ -86,7 +86,7 @@ class ReleaseBackendRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId)
+    public function setULBId($ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -96,7 +96,7 @@ class ReleaseBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getBackendId(): string
+    public function getBackendId()
     {
         return $this->get("BackendId");
     }
@@ -106,7 +106,7 @@ class ReleaseBackendRequest extends Request
      *
      * @param string $backendId
      */
-    public function setBackendId(string $backendId)
+    public function setBackendId($backendId)
     {
         $this->set("BackendId", $backendId);
     }

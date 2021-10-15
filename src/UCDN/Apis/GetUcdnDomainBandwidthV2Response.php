@@ -28,9 +28,12 @@ class GetUcdnDomainBandwidthV2Response extends Response
      *
      * @return BandwidthTrafficInfo[]|null
      */
-    public function getBandwidthTrafficList(): array
+    public function getBandwidthTrafficList()
     {
-        $items = $this->get("BandwidthTrafficList") ?? [];
+        $items = $this->get("BandwidthTrafficList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new BandwidthTrafficInfo($item));

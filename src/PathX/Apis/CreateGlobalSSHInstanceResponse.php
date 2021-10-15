@@ -27,7 +27,7 @@ class CreateGlobalSSHInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getInstanceId(): string
+    public function getInstanceId()
     {
         return $this->get("InstanceId");
     }
@@ -37,7 +37,7 @@ class CreateGlobalSSHInstanceResponse extends Response
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId)
+    public function setInstanceId($instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -47,7 +47,7 @@ class CreateGlobalSSHInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getAcceleratingDomain(): string
+    public function getAcceleratingDomain()
     {
         return $this->get("AcceleratingDomain");
     }
@@ -57,7 +57,7 @@ class CreateGlobalSSHInstanceResponse extends Response
      *
      * @param string $acceleratingDomain
      */
-    public function setAcceleratingDomain(string $acceleratingDomain)
+    public function setAcceleratingDomain($acceleratingDomain)
     {
         $this->set("AcceleratingDomain", $acceleratingDomain);
     }

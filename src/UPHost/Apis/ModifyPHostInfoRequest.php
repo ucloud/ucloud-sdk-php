@@ -34,7 +34,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getPHostId(): string
+    public function getPHostId()
     {
         return $this->get("PHostId");
     }
@@ -104,7 +104,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId)
+    public function setPHostId($pHostId)
     {
         $this->set("PHostId", $pHostId);
     }
@@ -114,7 +114,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -124,7 +124,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -134,7 +134,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -144,7 +144,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -154,7 +154,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -164,7 +164,7 @@ class ModifyPHostInfoRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }

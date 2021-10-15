@@ -27,7 +27,7 @@ class TaskInfo extends Response
      *
      * @return string|null
      */
-    public function getTaskId(): string
+    public function getTaskId()
     {
         return $this->get("TaskId");
     }
@@ -37,7 +37,7 @@ class TaskInfo extends Response
      *
      * @param string $taskId
      */
-    public function setTaskId(string $taskId)
+    public function setTaskId($taskId)
     {
         $this->set("TaskId", $taskId);
     }
@@ -47,9 +47,12 @@ class TaskInfo extends Response
      *
      * @return UrlProgressInfo[]|null
      */
-    public function getUrlLists(): array
+    public function getUrlLists()
     {
-        $items = $this->get("UrlLists") ?? [];
+        $items = $this->get("UrlLists");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UrlProgressInfo($item));
@@ -76,7 +79,7 @@ class TaskInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -86,7 +89,7 @@ class TaskInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -96,7 +99,7 @@ class TaskInfo extends Response
      *
      * @return string|null
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->get("Status");
     }
@@ -106,7 +109,7 @@ class TaskInfo extends Response
      *
      * @param string $status
      */
-    public function setStatus(string $status)
+    public function setStatus($status)
     {
         $this->set("Status", $status);
     }

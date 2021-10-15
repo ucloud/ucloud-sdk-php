@@ -35,7 +35,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplateId(): string
+    public function getTemplateId()
     {
         return $this->get("TemplateId");
     }
@@ -65,7 +65,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId)
+    public function setTemplateId($templateId)
     {
         $this->set("TemplateId", $templateId);
     }
@@ -75,7 +75,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplate(): string
+    public function getTemplate()
     {
         return $this->get("Template");
     }
@@ -85,7 +85,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $template
      */
-    public function setTemplate(string $template)
+    public function setTemplate($template)
     {
         $this->set("Template", $template);
     }
@@ -95,7 +95,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplateName(): string
+    public function getTemplateName()
     {
         return $this->get("TemplateName");
     }
@@ -105,7 +105,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $templateName
      */
-    public function setTemplateName(string $templateName)
+    public function setTemplateName($templateName)
     {
         $this->set("TemplateName", $templateName);
     }
@@ -115,7 +115,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -125,7 +125,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }

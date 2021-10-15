@@ -28,9 +28,12 @@ class QueryIpLocationResponse extends Response
      *
      * @return IpLocationInfo[]|null
      */
-    public function getData(): array
+    public function getData()
     {
-        $items = $this->get("Data") ?? [];
+        $items = $this->get("Data");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new IpLocationInfo($item));

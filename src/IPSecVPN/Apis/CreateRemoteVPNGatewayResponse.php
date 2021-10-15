@@ -27,7 +27,7 @@ class CreateRemoteVPNGatewayResponse extends Response
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayId(): string
+    public function getRemoteVPNGatewayId()
     {
         return $this->get("RemoteVPNGatewayId");
     }
@@ -37,7 +37,7 @@ class CreateRemoteVPNGatewayResponse extends Response
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
+    public function setRemoteVPNGatewayId($remoteVPNGatewayId)
     {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }

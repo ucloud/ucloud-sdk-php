@@ -27,7 +27,7 @@ class UHostTagSet extends Response
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -37,7 +37,7 @@ class UHostTagSet extends Response
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -47,7 +47,7 @@ class UHostTagSet extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -57,7 +57,7 @@ class UHostTagSet extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -67,7 +67,7 @@ class UHostTagSet extends Response
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -77,7 +77,7 @@ class UHostTagSet extends Response
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }

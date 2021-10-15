@@ -33,7 +33,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getIdcId(): string
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -43,7 +43,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId)
+    public function setIdcId($idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -53,7 +53,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return float|null
      */
-    public function getCpuCore(): float
+    public function getCpuCore()
     {
         return $this->get("CpuCore");
     }
@@ -63,7 +63,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param float $cpuCore
      */
-    public function setCpuCore(float $cpuCore)
+    public function setCpuCore($cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
@@ -73,7 +73,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemSize(): int
+    public function getMemSize()
     {
         return $this->get("MemSize");
     }
@@ -83,7 +83,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize(int $memSize)
+    public function setMemSize($memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -93,7 +93,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getChargeType(): int
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -103,7 +103,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $chargeType
      */
-    public function setChargeType(int $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -113,7 +113,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getChargeQuantity(): int
+    public function getChargeQuantity()
     {
         return $this->get("ChargeQuantity");
     }
@@ -123,7 +123,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity(int $chargeQuantity)
+    public function setChargeQuantity($chargeQuantity)
     {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
@@ -133,7 +133,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProductType(): string
+    public function getProductType()
     {
         return $this->get("ProductType");
     }
@@ -143,7 +143,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType(string $productType)
+    public function setProductType($productType)
     {
         $this->set("ProductType", $productType);
     }
@@ -153,7 +153,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getElasticIp(): string
+    public function getElasticIp()
     {
         return $this->get("ElasticIp");
     }
@@ -163,7 +163,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $elasticIp
      */
-    public function setElasticIp(string $elasticIp)
+    public function setElasticIp($elasticIp)
     {
         $this->set("ElasticIp", $elasticIp);
     }
@@ -173,7 +173,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -183,7 +183,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

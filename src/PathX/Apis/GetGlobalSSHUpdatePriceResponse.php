@@ -27,7 +27,7 @@ class GetGlobalSSHUpdatePriceResponse extends Response
      *
      * @return float|null
      */
-    public function getPrice(): float
+    public function getPrice()
     {
         return $this->get("Price");
     }
@@ -37,7 +37,7 @@ class GetGlobalSSHUpdatePriceResponse extends Response
      *
      * @param float $price
      */
-    public function setPrice(float $price)
+    public function setPrice($price)
     {
         $this->set("Price", $price);
     }

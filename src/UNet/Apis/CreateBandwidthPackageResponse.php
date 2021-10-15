@@ -27,7 +27,7 @@ class CreateBandwidthPackageResponse extends Response
      *
      * @return string|null
      */
-    public function getBandwidthPackageId(): string
+    public function getBandwidthPackageId()
     {
         return $this->get("BandwidthPackageId");
     }
@@ -37,7 +37,7 @@ class CreateBandwidthPackageResponse extends Response
      *
      * @param string $bandwidthPackageId
      */
-    public function setBandwidthPackageId(string $bandwidthPackageId)
+    public function setBandwidthPackageId($bandwidthPackageId)
     {
         $this->set("BandwidthPackageId", $bandwidthPackageId);
     }

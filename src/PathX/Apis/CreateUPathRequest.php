@@ -36,7 +36,7 @@ class CreateUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -46,7 +46,7 @@ class CreateUPathRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -56,7 +56,7 @@ class CreateUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -66,7 +66,7 @@ class CreateUPathRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -76,7 +76,7 @@ class CreateUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getLineId(): string
+    public function getLineId()
     {
         return $this->get("LineId");
     }
@@ -86,7 +86,7 @@ class CreateUPathRequest extends Request
      *
      * @param string $lineId
      */
-    public function setLineId(string $lineId)
+    public function setLineId($lineId)
     {
         $this->set("LineId", $lineId);
     }
@@ -96,7 +96,7 @@ class CreateUPathRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -106,7 +106,7 @@ class CreateUPathRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -116,7 +116,7 @@ class CreateUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -126,7 +126,7 @@ class CreateUPathRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -136,7 +136,7 @@ class CreateUPathRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -146,7 +146,7 @@ class CreateUPathRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -156,7 +156,7 @@ class CreateUPathRequest extends Request
      *
      * @return boolean|null
      */
-    public function getPostPaid(): bool
+    public function getPostPaid()
     {
         return $this->get("PostPaid");
     }
@@ -166,7 +166,7 @@ class CreateUPathRequest extends Request
      *
      * @param boolean $postPaid
      */
-    public function setPostPaid(bool $postPaid)
+    public function setPostPaid($postPaid)
     {
         $this->set("PostPaid", $postPaid);
     }
@@ -176,7 +176,7 @@ class CreateUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -186,7 +186,7 @@ class CreateUPathRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

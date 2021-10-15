@@ -27,7 +27,7 @@ class CreateUEcFirewallResponse extends Response
      *
      * @return string|null
      */
-    public function getFirewallId(): string
+    public function getFirewallId()
     {
         return $this->get("FirewallId");
     }
@@ -37,7 +37,7 @@ class CreateUEcFirewallResponse extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId)
+    public function setFirewallId($firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }

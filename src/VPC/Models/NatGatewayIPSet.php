@@ -27,7 +27,7 @@ class NatGatewayIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -37,7 +37,7 @@ class NatGatewayIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -47,7 +47,7 @@ class NatGatewayIPSet extends Response
      *
      * @return integer|null
      */
-    public function getWeight(): int
+    public function getWeight()
     {
         return $this->get("Weight");
     }
@@ -57,7 +57,7 @@ class NatGatewayIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight(int $weight)
+    public function setWeight($weight)
     {
         $this->set("Weight", $weight);
     }
@@ -67,7 +67,7 @@ class NatGatewayIPSet extends Response
      *
      * @return string|null
      */
-    public function getBandwidthType(): string
+    public function getBandwidthType()
     {
         return $this->get("BandwidthType");
     }
@@ -77,7 +77,7 @@ class NatGatewayIPSet extends Response
      *
      * @param string $bandwidthType
      */
-    public function setBandwidthType(string $bandwidthType)
+    public function setBandwidthType($bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
@@ -87,7 +87,7 @@ class NatGatewayIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -97,7 +97,7 @@ class NatGatewayIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -107,9 +107,12 @@ class NatGatewayIPSet extends Response
      *
      * @return NatGWIPResInfo[]|null
      */
-    public function getIPResInfo(): array
+    public function getIPResInfo()
     {
-        $items = $this->get("IPResInfo") ?? [];
+        $items = $this->get("IPResInfo");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NatGWIPResInfo($item));

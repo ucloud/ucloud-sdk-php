@@ -37,7 +37,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -87,7 +87,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getUDDBId(): string
+    public function getUDDBId()
     {
         return $this->get("UDDBId");
     }
@@ -107,7 +107,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @param string $uddbId
      */
-    public function setUDDBId(string $uddbId)
+    public function setUDDBId($uddbId)
     {
         $this->set("UDDBId", $uddbId);
     }
@@ -117,7 +117,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeMemory(): int
+    public function getDataNodeMemory()
     {
         return $this->get("DataNodeMemory");
     }
@@ -127,7 +127,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory(int $dataNodeMemory)
+    public function setDataNodeMemory($dataNodeMemory)
     {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
@@ -137,7 +137,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeDiskSpace(): int
+    public function getDataNodeDiskSpace()
     {
         return $this->get("DataNodeDiskSpace");
     }
@@ -147,7 +147,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
+    public function setDataNodeDiskSpace($dataNodeDiskSpace)
     {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
@@ -157,7 +157,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -167,7 +167,7 @@ class UpgradeUDDBDataNodeRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

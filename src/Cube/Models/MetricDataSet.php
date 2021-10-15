@@ -27,7 +27,7 @@ class MetricDataSet extends Response
      *
      * @return string|null
      */
-    public function getMetricName(): string
+    public function getMetricName()
     {
         return $this->get("MetricName");
     }
@@ -37,7 +37,7 @@ class MetricDataSet extends Response
      *
      * @param string $metricName
      */
-    public function setMetricName(string $metricName)
+    public function setMetricName($metricName)
     {
         $this->set("MetricName", $metricName);
     }
@@ -47,9 +47,12 @@ class MetricDataSet extends Response
      *
      * @return ValueSet[]|null
      */
-    public function getValues(): array
+    public function getValues()
     {
-        $items = $this->get("Values") ?? [];
+        $items = $this->get("Values");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ValueSet($item));

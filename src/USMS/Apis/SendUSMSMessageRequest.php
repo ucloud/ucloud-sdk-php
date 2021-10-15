@@ -36,7 +36,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -46,7 +46,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -56,7 +56,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string[]|null
      */
-    public function getPhoneNumbers(): array
+    public function getPhoneNumbers()
     {
         return $this->get("PhoneNumbers");
     }
@@ -76,7 +76,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getSigContent(): string
+    public function getSigContent()
     {
         return $this->get("SigContent");
     }
@@ -86,7 +86,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $sigContent
      */
-    public function setSigContent(string $sigContent)
+    public function setSigContent($sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
@@ -96,7 +96,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplateId(): string
+    public function getTemplateId()
     {
         return $this->get("TemplateId");
     }
@@ -106,23 +106,23 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId)
+    public function setTemplateId($templateId)
     {
         $this->set("TemplateId", $templateId);
     }
 
     /**
-     * TemplateParams: 模板可变参数，以数组的方式填写，举例，TempalteParams.0，TempalteParams.1，... 若模板中无可变参数，则该项可不填写；若模板中有可变参数，则该项为必填项，参数个数需与变量个数保持一致，否则无法发送；
+     * TemplateParams: 模板可变参数，以数组的方式填写，举例，TemplateParams.0，TemplateParams.1，... 若模板中无可变参数，则该项可不填写；若模板中有可变参数，则该项为必填项，参数个数需与变量个数保持一致，否则无法发送；
      *
      * @return string[]|null
      */
-    public function getTemplateParams(): array
+    public function getTemplateParams()
     {
         return $this->get("TemplateParams");
     }
 
     /**
-     * TemplateParams: 模板可变参数，以数组的方式填写，举例，TempalteParams.0，TempalteParams.1，... 若模板中无可变参数，则该项可不填写；若模板中有可变参数，则该项为必填项，参数个数需与变量个数保持一致，否则无法发送；
+     * TemplateParams: 模板可变参数，以数组的方式填写，举例，TemplateParams.0，TemplateParams.1，... 若模板中无可变参数，则该项可不填写；若模板中有可变参数，则该项为必填项，参数个数需与变量个数保持一致，否则无法发送；
      *
      * @param string[] $templateParams
      */
@@ -136,7 +136,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getExtendCode(): string
+    public function getExtendCode()
     {
         return $this->get("ExtendCode");
     }
@@ -146,7 +146,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $extendCode
      */
-    public function setExtendCode(string $extendCode)
+    public function setExtendCode($extendCode)
     {
         $this->set("ExtendCode", $extendCode);
     }
@@ -156,7 +156,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getUserId(): string
+    public function getUserId()
     {
         return $this->get("UserId");
     }
@@ -166,7 +166,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $userId
      */
-    public function setUserId(string $userId)
+    public function setUserId($userId)
     {
         $this->set("UserId", $userId);
     }

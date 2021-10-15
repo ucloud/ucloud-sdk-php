@@ -36,9 +36,12 @@ class GetUcdnDomainConfigResponse extends Response
      *
      * @return DomainConfigInfo[]|null
      */
-    public function getDomainList(): array
+    public function getDomainList()
     {
-        $items = $this->get("DomainList") ?? [];
+        $items = $this->get("DomainList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new DomainConfigInfo($item));

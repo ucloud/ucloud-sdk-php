@@ -35,7 +35,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -85,7 +85,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -95,7 +95,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -105,7 +105,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

@@ -30,9 +30,12 @@ class DescribeUDDBInstanceResponse extends Response
      *
      * @return DataSetUDDB[]|null
      */
-    public function getDataSet(): array
+    public function getDataSet()
     {
-        $items = $this->get("DataSet") ?? [];
+        $items = $this->get("DataSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new DataSetUDDB($item));

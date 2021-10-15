@@ -14,11 +14,35 @@ class Transport implements TransportInterface
 {
     const HEADER_REQUEST_ID = "X-UCLOUD-REQUEST-UUID";
 
-    private string $baseUrl;
-    private string $userAgent;
-    private Client $client;
+    /**
+     * baseUrl
+     *
+     * @var string
+     */
+    private $baseUrl;
 
-    public function __construct(string $baseUrl, string $userAgent, array $options = [])
+    /**
+     * baseUrl
+     *
+     * @var string
+     */
+    private $userAgent;
+
+    /**
+     * baseUrl
+     *
+     * @var Client
+     */
+    private $client;
+
+    /**
+     * Transport constructor.
+     *
+     * @param string $baseUrl
+     * @param string $userAgent
+     * @param array $options
+     */
+    public function __construct($baseUrl, $userAgent, array $options = [])
     {
         $this->baseUrl = $baseUrl;
         $this->userAgent = $userAgent;
@@ -32,7 +56,7 @@ class Transport implements TransportInterface
      * @return Response
      * @throws UCloudException
      */
-    public function invoke(Request $req): Response
+    public function invoke(Request $req)
     {
         // do http request
         try {
@@ -48,13 +72,14 @@ class Transport implements TransportInterface
                 UCloudException::EXC_TYPE_TRANSPORT,
                 $e->getMessage(),
                 -1,
-                $e,
+                $e
             );
         }
 
         // resolve http response
         $ids = $response->getHeader(self::HEADER_REQUEST_ID);
-        $requestId = array_pop($ids) ?? "";
+        $requestId = array_pop($ids);
+        $requestId = $requestId == null ? "" : $requestId;
         $resp = new Response(json_decode($response->getBody(), true), $requestId);
         if ($resp->getRetCode() != 0) {
             throw new UCloudException(
@@ -62,7 +87,7 @@ class Transport implements TransportInterface
                 $resp->getMessage(),
                 $resp->getRetCode(),
                 null,
-                $requestId,
+                $requestId
             );
         }
         return $resp;

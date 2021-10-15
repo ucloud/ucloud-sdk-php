@@ -29,9 +29,12 @@ class DescribePathXLineConfigResponse extends Response
      *
      * @return UGAALine[]|null
      */
-    public function getLineSet(): array
+    public function getLineSet()
     {
-        $items = $this->get("LineSet") ?? [];
+        $items = $this->get("LineSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UGAALine($item));

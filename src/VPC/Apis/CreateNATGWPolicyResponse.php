@@ -27,7 +27,7 @@ class CreateNATGWPolicyResponse extends Response
      *
      * @return string|null
      */
-    public function getPolicyId(): string
+    public function getPolicyId()
     {
         return $this->get("PolicyId");
     }
@@ -37,7 +37,7 @@ class CreateNATGWPolicyResponse extends Response
      *
      * @param string $policyId
      */
-    public function setPolicyId(string $policyId)
+    public function setPolicyId($policyId)
     {
         $this->set("PolicyId", $policyId);
     }

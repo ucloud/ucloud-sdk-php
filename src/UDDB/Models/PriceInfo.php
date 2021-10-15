@@ -27,7 +27,7 @@ class PriceInfo extends Response
      *
      * @return float|null
      */
-    public function getMiddlewarePrice(): float
+    public function getMiddlewarePrice()
     {
         return $this->get("MiddlewarePrice");
     }
@@ -37,7 +37,7 @@ class PriceInfo extends Response
      *
      * @param float $middlewarePrice
      */
-    public function setMiddlewarePrice(float $middlewarePrice)
+    public function setMiddlewarePrice($middlewarePrice)
     {
         $this->set("MiddlewarePrice", $middlewarePrice);
     }
@@ -47,7 +47,7 @@ class PriceInfo extends Response
      *
      * @return float|null
      */
-    public function getDataNodePrice(): float
+    public function getDataNodePrice()
     {
         return $this->get("DataNodePrice");
     }
@@ -57,7 +57,7 @@ class PriceInfo extends Response
      *
      * @param float $dataNodePrice
      */
-    public function setDataNodePrice(float $dataNodePrice)
+    public function setDataNodePrice($dataNodePrice)
     {
         $this->set("DataNodePrice", $dataNodePrice);
     }
@@ -67,7 +67,7 @@ class PriceInfo extends Response
      *
      * @return float|null
      */
-    public function getDataNodeSlavePrice(): float
+    public function getDataNodeSlavePrice()
     {
         return $this->get("DataNodeSlavePrice");
     }
@@ -77,7 +77,7 @@ class PriceInfo extends Response
      *
      * @param float $dataNodeSlavePrice
      */
-    public function setDataNodeSlavePrice(float $dataNodeSlavePrice)
+    public function setDataNodeSlavePrice($dataNodeSlavePrice)
     {
         $this->set("DataNodeSlavePrice", $dataNodeSlavePrice);
     }

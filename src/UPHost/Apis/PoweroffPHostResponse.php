@@ -27,7 +27,7 @@ class PoweroffPHostResponse extends Response
      *
      * @return string|null
      */
-    public function getPHostId(): string
+    public function getPHostId()
     {
         return $this->get("PHostId");
     }
@@ -37,7 +37,7 @@ class PoweroffPHostResponse extends Response
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId)
+    public function setPHostId($pHostId)
     {
         $this->set("PHostId", $pHostId);
     }

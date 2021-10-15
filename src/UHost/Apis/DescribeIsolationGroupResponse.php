@@ -29,9 +29,12 @@ class DescribeIsolationGroupResponse extends Response
      *
      * @return IsolationGroup[]|null
      */
-    public function getIsolationGroupSet(): array
+    public function getIsolationGroupSet()
     {
-        $items = $this->get("IsolationGroupSet") ?? [];
+        $items = $this->get("IsolationGroupSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new IsolationGroup($item));
@@ -58,7 +61,7 @@ class DescribeIsolationGroupResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -68,7 +71,7 @@ class DescribeIsolationGroupResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

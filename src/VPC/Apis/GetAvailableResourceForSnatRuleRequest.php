@@ -35,7 +35,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @return string|null
      */
-    public function getNATGWId(): string
+    public function getNATGWId()
     {
         return $this->get("NATGWId");
     }
@@ -85,7 +85,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId)
+    public function setNATGWId($natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -95,7 +95,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -105,7 +105,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -115,7 +115,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -125,7 +125,7 @@ class GetAvailableResourceForSnatRuleRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }

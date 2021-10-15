@@ -27,7 +27,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -37,7 +37,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -47,7 +47,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->get("Status");
     }
@@ -57,7 +57,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $status
      */
-    public function setStatus(string $status)
+    public function setStatus($status)
     {
         $this->set("Status", $status);
     }
@@ -67,7 +67,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getLastProbeTime(): string
+    public function getLastProbeTime()
     {
         return $this->get("LastProbeTime");
     }
@@ -77,7 +77,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $lastProbeTime
      */
-    public function setLastProbeTime(string $lastProbeTime)
+    public function setLastProbeTime($lastProbeTime)
     {
         $this->set("LastProbeTime", $lastProbeTime);
     }
@@ -87,7 +87,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getLastTransitionTime(): string
+    public function getLastTransitionTime()
     {
         return $this->get("LastTransitionTime");
     }
@@ -97,7 +97,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $lastTransitionTime
      */
-    public function setLastTransitionTime(string $lastTransitionTime)
+    public function setLastTransitionTime($lastTransitionTime)
     {
         $this->set("LastTransitionTime", $lastTransitionTime);
     }
@@ -107,7 +107,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getReason(): string
+    public function getReason()
     {
         return $this->get("Reason");
     }
@@ -117,7 +117,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $reason
      */
-    public function setReason(string $reason)
+    public function setReason($reason)
     {
         $this->set("Reason", $reason);
     }
@@ -127,7 +127,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getMessage(): string
+    public function getMessage()
     {
         return $this->get("Message");
     }
@@ -137,7 +137,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $message
      */
-    public function setMessage(string $message)
+    public function setMessage($message)
     {
         $this->set("Message", $message);
     }

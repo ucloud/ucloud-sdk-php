@@ -27,7 +27,7 @@ class AclEntryInfo extends Response
      *
      * @return string|null
      */
-    public function getEntryId(): string
+    public function getEntryId()
     {
         return $this->get("EntryId");
     }
@@ -37,7 +37,7 @@ class AclEntryInfo extends Response
      *
      * @param string $entryId
      */
-    public function setEntryId(string $entryId)
+    public function setEntryId($entryId)
     {
         $this->set("EntryId", $entryId);
     }
@@ -47,7 +47,7 @@ class AclEntryInfo extends Response
      *
      * @return string|null
      */
-    public function getPriority(): string
+    public function getPriority()
     {
         return $this->get("Priority");
     }
@@ -57,7 +57,7 @@ class AclEntryInfo extends Response
      *
      * @param string $priority
      */
-    public function setPriority(string $priority)
+    public function setPriority($priority)
     {
         $this->set("Priority", $priority);
     }
@@ -67,7 +67,7 @@ class AclEntryInfo extends Response
      *
      * @return string|null
      */
-    public function getDirection(): string
+    public function getDirection()
     {
         return $this->get("Direction");
     }
@@ -77,7 +77,7 @@ class AclEntryInfo extends Response
      *
      * @param string $direction
      */
-    public function setDirection(string $direction)
+    public function setDirection($direction)
     {
         $this->set("Direction", $direction);
     }
@@ -87,7 +87,7 @@ class AclEntryInfo extends Response
      *
      * @return string|null
      */
-    public function getIpProtocol(): string
+    public function getIpProtocol()
     {
         return $this->get("IpProtocol");
     }
@@ -97,7 +97,7 @@ class AclEntryInfo extends Response
      *
      * @param string $ipProtocol
      */
-    public function setIpProtocol(string $ipProtocol)
+    public function setIpProtocol($ipProtocol)
     {
         $this->set("IpProtocol", $ipProtocol);
     }
@@ -107,7 +107,7 @@ class AclEntryInfo extends Response
      *
      * @return string|null
      */
-    public function getCidrBlock(): string
+    public function getCidrBlock()
     {
         return $this->get("CidrBlock");
     }
@@ -117,7 +117,7 @@ class AclEntryInfo extends Response
      *
      * @param string $cidrBlock
      */
-    public function setCidrBlock(string $cidrBlock)
+    public function setCidrBlock($cidrBlock)
     {
         $this->set("CidrBlock", $cidrBlock);
     }
@@ -127,7 +127,7 @@ class AclEntryInfo extends Response
      *
      * @return string|null
      */
-    public function getPortRange(): string
+    public function getPortRange()
     {
         return $this->get("PortRange");
     }
@@ -137,7 +137,7 @@ class AclEntryInfo extends Response
      *
      * @param string $portRange
      */
-    public function setPortRange(string $portRange)
+    public function setPortRange($portRange)
     {
         $this->set("PortRange", $portRange);
     }
@@ -147,7 +147,7 @@ class AclEntryInfo extends Response
      *
      * @return string|null
      */
-    public function getEntryAction(): string
+    public function getEntryAction()
     {
         return $this->get("EntryAction");
     }
@@ -157,7 +157,7 @@ class AclEntryInfo extends Response
      *
      * @param string $entryAction
      */
-    public function setEntryAction(string $entryAction)
+    public function setEntryAction($entryAction)
     {
         $this->set("EntryAction", $entryAction);
     }
@@ -167,7 +167,7 @@ class AclEntryInfo extends Response
      *
      * @return integer|null
      */
-    public function getTargetType(): int
+    public function getTargetType()
     {
         return $this->get("TargetType");
     }
@@ -177,7 +177,7 @@ class AclEntryInfo extends Response
      *
      * @param int $targetType
      */
-    public function setTargetType(int $targetType)
+    public function setTargetType($targetType)
     {
         $this->set("TargetType", $targetType);
     }
@@ -187,7 +187,7 @@ class AclEntryInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -197,7 +197,7 @@ class AclEntryInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -207,7 +207,7 @@ class AclEntryInfo extends Response
      *
      * @return integer|null
      */
-    public function getUpdateTime(): int
+    public function getUpdateTime()
     {
         return $this->get("UpdateTime");
     }
@@ -217,7 +217,7 @@ class AclEntryInfo extends Response
      *
      * @param int $updateTime
      */
-    public function setUpdateTime(int $updateTime)
+    public function setUpdateTime($updateTime)
     {
         $this->set("UpdateTime", $updateTime);
     }
@@ -227,9 +227,12 @@ class AclEntryInfo extends Response
      *
      * @return TargetResourceInfo[]|null
      */
-    public function getTargetResourceList(): array
+    public function getTargetResourceList()
     {
-        $items = $this->get("TargetResourceList") ?? [];
+        $items = $this->get("TargetResourceList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new TargetResourceInfo($item));
@@ -256,7 +259,7 @@ class AclEntryInfo extends Response
      *
      * @return integer|null
      */
-    public function getTargetResourceCount(): int
+    public function getTargetResourceCount()
     {
         return $this->get("TargetResourceCount");
     }
@@ -266,7 +269,7 @@ class AclEntryInfo extends Response
      *
      * @param int $targetResourceCount
      */
-    public function setTargetResourceCount(int $targetResourceCount)
+    public function setTargetResourceCount($targetResourceCount)
     {
         $this->set("TargetResourceCount", $targetResourceCount);
     }

@@ -34,7 +34,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -64,7 +64,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -74,7 +74,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
      *
      * @return string[]|null
      */
-    public function getUrlList(): array
+    public function getUrlList()
     {
         return $this->get("UrlList");
     }

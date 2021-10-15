@@ -38,7 +38,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -48,7 +48,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -58,7 +58,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -68,7 +68,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -78,7 +78,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId(): string
+    public function getULBId()
     {
         return $this->get("ULBId");
     }
@@ -88,7 +88,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId)
+    public function setULBId($ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -98,7 +98,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerId(): string
+    public function getVServerId()
     {
         return $this->get("VServerId");
     }
@@ -108,7 +108,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId)
+    public function setVServerId($vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -118,7 +118,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceType(): string
+    public function getResourceType()
     {
         return $this->get("ResourceType");
     }
@@ -128,7 +128,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType)
+    public function setResourceType($resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -138,7 +138,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -148,7 +148,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -158,7 +158,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceIP(): string
+    public function getResourceIP()
     {
         return $this->get("ResourceIP");
     }
@@ -168,7 +168,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $resourceIP
      */
-    public function setResourceIP(string $resourceIP)
+    public function setResourceIP($resourceIP)
     {
         $this->set("ResourceIP", $resourceIP);
     }
@@ -178,7 +178,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -188,7 +188,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -198,7 +198,7 @@ class AllocateBackendRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -208,7 +208,7 @@ class AllocateBackendRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -218,7 +218,7 @@ class AllocateBackendRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -228,7 +228,7 @@ class AllocateBackendRequest extends Request
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -238,7 +238,7 @@ class AllocateBackendRequest extends Request
      *
      * @return integer|null
      */
-    public function getWeight(): int
+    public function getWeight()
     {
         return $this->get("Weight");
     }
@@ -248,7 +248,7 @@ class AllocateBackendRequest extends Request
      *
      * @param int $weight
      */
-    public function setWeight(int $weight)
+    public function setWeight($weight)
     {
         $this->set("Weight", $weight);
     }
@@ -258,7 +258,7 @@ class AllocateBackendRequest extends Request
      *
      * @return integer|null
      */
-    public function getEnabled(): int
+    public function getEnabled()
     {
         return $this->get("Enabled");
     }
@@ -268,7 +268,7 @@ class AllocateBackendRequest extends Request
      *
      * @param int $enabled
      */
-    public function setEnabled(int $enabled)
+    public function setEnabled($enabled)
     {
         $this->set("Enabled", $enabled);
     }
@@ -278,7 +278,7 @@ class AllocateBackendRequest extends Request
      *
      * @return integer|null
      */
-    public function getIsBackup(): int
+    public function getIsBackup()
     {
         return $this->get("IsBackup");
     }
@@ -288,7 +288,7 @@ class AllocateBackendRequest extends Request
      *
      * @param int $isBackup
      */
-    public function setIsBackup(int $isBackup)
+    public function setIsBackup($isBackup)
     {
         $this->set("IsBackup", $isBackup);
     }

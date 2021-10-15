@@ -27,7 +27,7 @@ class UDPNData extends Response
      *
      * @return string|null
      */
-    public function getUDPNId(): string
+    public function getUDPNId()
     {
         return $this->get("UDPNId");
     }
@@ -37,7 +37,7 @@ class UDPNData extends Response
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId)
+    public function setUDPNId($udpnId)
     {
         $this->set("UDPNId", $udpnId);
     }
@@ -47,7 +47,7 @@ class UDPNData extends Response
      *
      * @return string|null
      */
-    public function getPeer1(): string
+    public function getPeer1()
     {
         return $this->get("Peer1");
     }
@@ -57,7 +57,7 @@ class UDPNData extends Response
      *
      * @param string $peer1
      */
-    public function setPeer1(string $peer1)
+    public function setPeer1($peer1)
     {
         $this->set("Peer1", $peer1);
     }
@@ -67,7 +67,7 @@ class UDPNData extends Response
      *
      * @return string|null
      */
-    public function getPeer2(): string
+    public function getPeer2()
     {
         return $this->get("Peer2");
     }
@@ -77,7 +77,7 @@ class UDPNData extends Response
      *
      * @param string $peer2
      */
-    public function setPeer2(string $peer2)
+    public function setPeer2($peer2)
     {
         $this->set("Peer2", $peer2);
     }
@@ -87,7 +87,7 @@ class UDPNData extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -97,7 +97,7 @@ class UDPNData extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -107,7 +107,7 @@ class UDPNData extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -117,7 +117,7 @@ class UDPNData extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -127,7 +127,7 @@ class UDPNData extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -137,7 +137,7 @@ class UDPNData extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -147,7 +147,7 @@ class UDPNData extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime(): int
+    public function getExpireTime()
     {
         return $this->get("ExpireTime");
     }
@@ -157,7 +157,7 @@ class UDPNData extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime)
+    public function setExpireTime($expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }

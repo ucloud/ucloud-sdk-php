@@ -27,7 +27,7 @@ class NATGWSnatRule extends Response
      *
      * @return string|null
      */
-    public function getSnatIp(): string
+    public function getSnatIp()
     {
         return $this->get("SnatIp");
     }
@@ -37,7 +37,7 @@ class NATGWSnatRule extends Response
      *
      * @param string $snatIp
      */
-    public function setSnatIp(string $snatIp)
+    public function setSnatIp($snatIp)
     {
         $this->set("SnatIp", $snatIp);
     }
@@ -47,7 +47,7 @@ class NATGWSnatRule extends Response
      *
      * @return string|null
      */
-    public function getSourceIp(): string
+    public function getSourceIp()
     {
         return $this->get("SourceIp");
     }
@@ -57,7 +57,7 @@ class NATGWSnatRule extends Response
      *
      * @param string $sourceIp
      */
-    public function setSourceIp(string $sourceIp)
+    public function setSourceIp($sourceIp)
     {
         $this->set("SourceIp", $sourceIp);
     }
@@ -67,7 +67,7 @@ class NATGWSnatRule extends Response
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string
+    public function getSubnetworkId()
     {
         return $this->get("SubnetworkId");
     }
@@ -77,7 +77,7 @@ class NATGWSnatRule extends Response
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId)
+    public function setSubnetworkId($subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }
@@ -87,7 +87,7 @@ class NATGWSnatRule extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -97,7 +97,7 @@ class NATGWSnatRule extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }

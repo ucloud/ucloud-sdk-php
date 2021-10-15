@@ -34,7 +34,7 @@ class GetUDPNUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class GetUDPNUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class GetUDPNUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class GetUDPNUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class GetUDPNUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDPNId(): string
+    public function getUDPNId()
     {
         return $this->get("UDPNId");
     }
@@ -84,7 +84,7 @@ class GetUDPNUpgradePriceRequest extends Request
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId)
+    public function setUDPNId($udpnId)
     {
         $this->set("UDPNId", $udpnId);
     }
@@ -94,7 +94,7 @@ class GetUDPNUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -104,7 +104,7 @@ class GetUDPNUpgradePriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

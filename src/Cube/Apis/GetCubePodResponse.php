@@ -27,7 +27,7 @@ class GetCubePodResponse extends Response
      *
      * @return string|null
      */
-    public function getPod(): string
+    public function getPod()
     {
         return $this->get("Pod");
     }
@@ -37,7 +37,7 @@ class GetCubePodResponse extends Response
      *
      * @param string $pod
      */
-    public function setPod(string $pod)
+    public function setPod($pod)
     {
         $this->set("Pod", $pod);
     }

@@ -33,61 +33,61 @@ class DescribeUDBInstanceLogRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class DescribeUDBInstanceLogRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -107,7 +107,7 @@ class DescribeUDBInstanceLogRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -117,7 +117,7 @@ class DescribeUDBInstanceLogRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -127,7 +127,7 @@ class DescribeUDBInstanceLogRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -137,7 +137,7 @@ class DescribeUDBInstanceLogRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -147,27 +147,27 @@ class DescribeUDBInstanceLogRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }
 
     /**
-     * LogType: 查询日志的类型
+     * LogType: 查询日志的类型error：错误日志；slow：慢日志
      *
      * @return string|null
      */
-    public function getLogType(): string
+    public function getLogType()
     {
         return $this->get("LogType");
     }
 
     /**
-     * LogType: 查询日志的类型
+     * LogType: 查询日志的类型error：错误日志；slow：慢日志
      *
      * @param string $logType
      */
-    public function setLogType(string $logType)
+    public function setLogType($logType)
     {
         $this->set("LogType", $logType);
     }

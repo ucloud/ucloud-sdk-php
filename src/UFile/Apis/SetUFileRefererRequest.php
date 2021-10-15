@@ -34,7 +34,7 @@ class SetUFileRefererRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class SetUFileRefererRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class SetUFileRefererRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class SetUFileRefererRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class SetUFileRefererRequest extends Request
      *
      * @return string|null
      */
-    public function getBucketName(): string
+    public function getBucketName()
     {
         return $this->get("BucketName");
     }
@@ -84,7 +84,7 @@ class SetUFileRefererRequest extends Request
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName)
+    public function setBucketName($bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
@@ -94,7 +94,7 @@ class SetUFileRefererRequest extends Request
      *
      * @return string|null
      */
-    public function getRefererStatus(): string
+    public function getRefererStatus()
     {
         return $this->get("RefererStatus");
     }
@@ -104,7 +104,7 @@ class SetUFileRefererRequest extends Request
      *
      * @param string $refererStatus
      */
-    public function setRefererStatus(string $refererStatus)
+    public function setRefererStatus($refererStatus)
     {
         $this->set("RefererStatus", $refererStatus);
     }
@@ -114,7 +114,7 @@ class SetUFileRefererRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRefererAllowNull(): bool
+    public function getRefererAllowNull()
     {
         return $this->get("RefererAllowNull");
     }
@@ -124,7 +124,7 @@ class SetUFileRefererRequest extends Request
      *
      * @param boolean $refererAllowNull
      */
-    public function setRefererAllowNull(bool $refererAllowNull)
+    public function setRefererAllowNull($refererAllowNull)
     {
         $this->set("RefererAllowNull", $refererAllowNull);
     }
@@ -134,7 +134,7 @@ class SetUFileRefererRequest extends Request
      *
      * @return integer|null
      */
-    public function getRefererType(): int
+    public function getRefererType()
     {
         return $this->get("RefererType");
     }
@@ -144,7 +144,7 @@ class SetUFileRefererRequest extends Request
      *
      * @param int $refererType
      */
-    public function setRefererType(int $refererType)
+    public function setRefererType($refererType)
     {
         $this->set("RefererType", $refererType);
     }
@@ -154,7 +154,7 @@ class SetUFileRefererRequest extends Request
      *
      * @return string[]|null
      */
-    public function getReferers(): array
+    public function getReferers()
     {
         return $this->get("Referers");
     }

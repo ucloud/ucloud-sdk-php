@@ -27,7 +27,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @return string|null
      */
-    public function getSessionId(): string
+    public function getSessionId()
     {
         return $this->get("SessionId");
     }
@@ -37,7 +37,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @param string $sessionId
      */
-    public function setSessionId(string $sessionId)
+    public function setSessionId($sessionId)
     {
         $this->set("SessionId", $sessionId);
     }
@@ -47,7 +47,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @return string|null
      */
-    public function getLink(): string
+    public function getLink()
     {
         return $this->get("Link");
     }
@@ -57,7 +57,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @param string $link
      */
-    public function setLink(string $link)
+    public function setLink($link)
     {
         $this->set("Link", $link);
     }
@@ -67,7 +67,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @return integer|null
      */
-    public function getLinkPort(): int
+    public function getLinkPort()
     {
         return $this->get("LinkPort");
     }
@@ -77,7 +77,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @param int $linkPort
      */
-    public function setLinkPort(int $linkPort)
+    public function setLinkPort($linkPort)
     {
         $this->set("LinkPort", $linkPort);
     }

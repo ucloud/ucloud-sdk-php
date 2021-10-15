@@ -35,7 +35,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getMasterDBId(): string
+    public function getMasterDBId()
     {
         return $this->get("MasterDBId");
     }
@@ -85,7 +85,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId(string $masterDBId)
+    public function setMasterDBId($masterDBId)
     {
         $this->set("MasterDBId", $masterDBId);
     }
@@ -95,7 +95,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupZone(): string
+    public function getBackupZone()
     {
         return $this->get("BackupZone");
     }
@@ -105,7 +105,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @param string $backupZone
      */
-    public function setBackupZone(string $backupZone)
+    public function setBackupZone($backupZone)
     {
         $this->set("BackupZone", $backupZone);
     }

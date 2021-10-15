@@ -32,7 +32,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -42,7 +42,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -52,7 +52,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -62,7 +62,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -72,7 +72,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getTokenId(): string
+    public function getTokenId()
     {
         return $this->get("TokenId");
     }
@@ -82,7 +82,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $tokenId
      */
-    public function setTokenId(string $tokenId)
+    public function setTokenId($tokenId)
     {
         $this->set("TokenId", $tokenId);
     }
@@ -92,7 +92,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getTokenName(): string
+    public function getTokenName()
     {
         return $this->get("TokenName");
     }
@@ -102,7 +102,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $tokenName
      */
-    public function setTokenName(string $tokenName)
+    public function setTokenName($tokenName)
     {
         $this->set("TokenName", $tokenName);
     }
@@ -112,7 +112,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return integer|null
      */
-    public function getDisplay(): int
+    public function getDisplay()
     {
         return $this->get("Display");
     }
@@ -122,7 +122,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param int $display
      */
-    public function setDisplay(int $display)
+    public function setDisplay($display)
     {
         $this->set("Display", $display);
     }

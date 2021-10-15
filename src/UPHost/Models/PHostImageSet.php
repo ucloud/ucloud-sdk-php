@@ -27,7 +27,7 @@ class PHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -37,7 +37,7 @@ class PHostImageSet extends Response
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -47,7 +47,7 @@ class PHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getImageName(): string
+    public function getImageName()
     {
         return $this->get("ImageName");
     }
@@ -57,7 +57,7 @@ class PHostImageSet extends Response
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName)
+    public function setImageName($imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -67,7 +67,7 @@ class PHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getOsName(): string
+    public function getOsName()
     {
         return $this->get("OsName");
     }
@@ -77,7 +77,7 @@ class PHostImageSet extends Response
      *
      * @param string $osName
      */
-    public function setOsName(string $osName)
+    public function setOsName($osName)
     {
         $this->set("OsName", $osName);
     }
@@ -87,7 +87,7 @@ class PHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getOsType(): string
+    public function getOsType()
     {
         return $this->get("OsType");
     }
@@ -97,7 +97,7 @@ class PHostImageSet extends Response
      *
      * @param string $osType
      */
-    public function setOsType(string $osType)
+    public function setOsType($osType)
     {
         $this->set("OsType", $osType);
     }
@@ -107,7 +107,7 @@ class PHostImageSet extends Response
      *
      * @return string[]|null
      */
-    public function getSupport(): array
+    public function getSupport()
     {
         return $this->get("Support");
     }
@@ -127,7 +127,7 @@ class PHostImageSet extends Response
      *
      * @return string|null
      */
-    public function getVersion(): string
+    public function getVersion()
     {
         return $this->get("Version");
     }
@@ -137,7 +137,7 @@ class PHostImageSet extends Response
      *
      * @param string $version
      */
-    public function setVersion(string $version)
+    public function setVersion($version)
     {
         $this->set("Version", $version);
     }

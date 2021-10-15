@@ -33,7 +33,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -63,7 +63,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @return string|null
      */
-    public function getVolumeId(): string
+    public function getVolumeId()
     {
         return $this->get("VolumeId");
     }
@@ -83,7 +83,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @param string $volumeId
      */
-    public function setVolumeId(string $volumeId)
+    public function setVolumeId($volumeId)
     {
         $this->set("VolumeId", $volumeId);
     }
@@ -93,7 +93,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -103,7 +103,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -113,7 +113,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -123,7 +123,7 @@ class DescribeUFSVolume2Request extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }

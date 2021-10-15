@@ -27,7 +27,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @return string|null
      */
-    public function getVolumeName(): string
+    public function getVolumeName()
     {
         return $this->get("VolumeName");
     }
@@ -37,7 +37,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeName
      */
-    public function setVolumeName(string $volumeName)
+    public function setVolumeName($volumeName)
     {
         $this->set("VolumeName", $volumeName);
     }
@@ -47,7 +47,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @return string|null
      */
-    public function getVolumeId(): string
+    public function getVolumeId()
     {
         return $this->get("VolumeId");
     }
@@ -57,7 +57,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeId
      */
-    public function setVolumeId(string $volumeId)
+    public function setVolumeId($volumeId)
     {
         $this->set("VolumeId", $volumeId);
     }
@@ -67,7 +67,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @return string|null
      */
-    public function getVolumeStatus(): string
+    public function getVolumeStatus()
     {
         return $this->get("VolumeStatus");
     }
@@ -77,7 +77,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeStatus
      */
-    public function setVolumeStatus(string $volumeStatus)
+    public function setVolumeStatus($volumeStatus)
     {
         $this->set("VolumeStatus", $volumeStatus);
     }

@@ -27,7 +27,7 @@ class CreatePathXSSLResponse extends Response
      *
      * @return string|null
      */
-    public function getSSLId(): string
+    public function getSSLId()
     {
         return $this->get("SSLId");
     }
@@ -37,7 +37,7 @@ class CreatePathXSSLResponse extends Response
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId)
+    public function setSSLId($sslId)
     {
         $this->set("SSLId", $sslId);
     }

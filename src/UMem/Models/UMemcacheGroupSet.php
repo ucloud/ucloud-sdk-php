@@ -27,7 +27,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -37,7 +37,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -47,7 +47,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -57,7 +57,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -67,7 +67,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return string|null
      */
-    public function getConfigId(): string
+    public function getConfigId()
     {
         return $this->get("ConfigId");
     }
@@ -77,7 +77,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param string $configId
      */
-    public function setConfigId(string $configId)
+    public function setConfigId($configId)
     {
         $this->set("ConfigId", $configId);
     }
@@ -87,7 +87,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return string|null
      */
-    public function getVirtualIP(): string
+    public function getVirtualIP()
     {
         return $this->get("VirtualIP");
     }
@@ -97,7 +97,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP(string $virtualIP)
+    public function setVirtualIP($virtualIP)
     {
         $this->set("VirtualIP", $virtualIP);
     }
@@ -107,7 +107,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -117,7 +117,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -127,7 +127,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -137,7 +137,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -147,7 +147,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return integer|null
      */
-    public function getUsedSize(): int
+    public function getUsedSize()
     {
         return $this->get("UsedSize");
     }
@@ -157,7 +157,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param int $usedSize
      */
-    public function setUsedSize(int $usedSize)
+    public function setUsedSize($usedSize)
     {
         $this->set("UsedSize", $usedSize);
     }
@@ -167,7 +167,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return string|null
      */
-    public function getVersion(): string
+    public function getVersion()
     {
         return $this->get("Version");
     }
@@ -177,7 +177,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param string $version
      */
-    public function setVersion(string $version)
+    public function setVersion($version)
     {
         $this->set("Version", $version);
     }
@@ -187,7 +187,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return string|null
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->get("State");
     }
@@ -197,7 +197,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }
@@ -207,7 +207,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -217,7 +217,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -227,7 +227,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return integer|null
      */
-    public function getModifyTime(): int
+    public function getModifyTime()
     {
         return $this->get("ModifyTime");
     }
@@ -237,7 +237,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime(int $modifyTime)
+    public function setModifyTime($modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
@@ -247,7 +247,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime(): int
+    public function getExpireTime()
     {
         return $this->get("ExpireTime");
     }
@@ -257,7 +257,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime)
+    public function setExpireTime($expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -267,7 +267,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -277,7 +277,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -287,7 +287,7 @@ class UMemcacheGroupSet extends Response
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -297,7 +297,7 @@ class UMemcacheGroupSet extends Response
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }

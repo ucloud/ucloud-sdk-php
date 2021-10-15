@@ -27,7 +27,7 @@ class GetUEcVHostPriceResponse extends Response
      *
      * @return float|null
      */
-    public function getNodePrice(): float
+    public function getNodePrice()
     {
         return $this->get("NodePrice");
     }
@@ -37,7 +37,7 @@ class GetUEcVHostPriceResponse extends Response
      *
      * @param float $nodePrice
      */
-    public function setNodePrice(float $nodePrice)
+    public function setNodePrice($nodePrice)
     {
         $this->set("NodePrice", $nodePrice);
     }
@@ -47,7 +47,7 @@ class GetUEcVHostPriceResponse extends Response
      *
      * @return float|null
      */
-    public function getIpPrice(): float
+    public function getIpPrice()
     {
         return $this->get("IpPrice");
     }
@@ -57,7 +57,7 @@ class GetUEcVHostPriceResponse extends Response
      *
      * @param float $ipPrice
      */
-    public function setIpPrice(float $ipPrice)
+    public function setIpPrice($ipPrice)
     {
         $this->set("IpPrice", $ipPrice);
     }

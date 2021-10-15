@@ -36,7 +36,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -86,7 +86,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -96,7 +96,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -106,7 +106,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -116,7 +116,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getShareBandwidth(): int
+    public function getShareBandwidth()
     {
         return $this->get("ShareBandwidth");
     }
@@ -126,7 +126,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth(int $shareBandwidth)
+    public function setShareBandwidth($shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
@@ -136,7 +136,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -146,7 +146,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -156,7 +156,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getIPVersion(): string
+    public function getIPVersion()
     {
         return $this->get("IPVersion");
     }
@@ -166,7 +166,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $ipVersion
      */
-    public function setIPVersion(string $ipVersion)
+    public function setIPVersion($ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }

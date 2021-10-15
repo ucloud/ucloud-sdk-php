@@ -27,7 +27,7 @@ class GetUHostInstancePriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getIsBoot(): string
+    public function getIsBoot()
     {
         return $this->get("IsBoot");
     }
@@ -37,7 +37,7 @@ class GetUHostInstancePriceParamDisks extends Request
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot)
+    public function setIsBoot($isBoot)
     {
         $this->set("IsBoot", $isBoot);
     }
@@ -47,7 +47,7 @@ class GetUHostInstancePriceParamDisks extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -57,7 +57,7 @@ class GetUHostInstancePriceParamDisks extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -67,7 +67,7 @@ class GetUHostInstancePriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -77,7 +77,7 @@ class GetUHostInstancePriceParamDisks extends Request
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -87,7 +87,7 @@ class GetUHostInstancePriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getBackupType(): string
+    public function getBackupType()
     {
         return $this->get("BackupType");
     }
@@ -97,7 +97,7 @@ class GetUHostInstancePriceParamDisks extends Request
      *
      * @param string $backupType
      */
-    public function setBackupType(string $backupType)
+    public function setBackupType($backupType)
     {
         $this->set("BackupType", $backupType);
     }

@@ -35,7 +35,7 @@ class UGAUnBindUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class UGAUnBindUPathRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class UGAUnBindUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getUGAId(): string
+    public function getUGAId()
     {
         return $this->get("UGAId");
     }
@@ -65,7 +65,7 @@ class UGAUnBindUPathRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId)
+    public function setUGAId($ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -75,7 +75,7 @@ class UGAUnBindUPathRequest extends Request
      *
      * @return string|null
      */
-    public function getUPathId(): string
+    public function getUPathId()
     {
         return $this->get("UPathId");
     }
@@ -85,7 +85,7 @@ class UGAUnBindUPathRequest extends Request
      *
      * @param string $uPathId
      */
-    public function setUPathId(string $uPathId)
+    public function setUPathId($uPathId)
     {
         $this->set("UPathId", $uPathId);
     }

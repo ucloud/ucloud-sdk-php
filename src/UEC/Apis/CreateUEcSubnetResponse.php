@@ -27,7 +27,7 @@ class CreateUEcSubnetResponse extends Response
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -37,7 +37,7 @@ class CreateUEcSubnetResponse extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }

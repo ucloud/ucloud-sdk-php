@@ -27,7 +27,7 @@ class TrafficSet extends Response
      *
      * @return string|null
      */
-    public function getAreacode(): string
+    public function getAreacode()
     {
         return $this->get("Areacode");
     }
@@ -37,7 +37,7 @@ class TrafficSet extends Response
      *
      * @param string $areacode
      */
-    public function setAreacode(string $areacode)
+    public function setAreacode($areacode)
     {
         $this->set("Areacode", $areacode);
     }
@@ -47,7 +47,7 @@ class TrafficSet extends Response
      *
      * @return float|null
      */
-    public function getTrafficTotal(): float
+    public function getTrafficTotal()
     {
         return $this->get("TrafficTotal");
     }
@@ -57,7 +57,7 @@ class TrafficSet extends Response
      *
      * @param float $trafficTotal
      */
-    public function setTrafficTotal(float $trafficTotal)
+    public function setTrafficTotal($trafficTotal)
     {
         $this->set("TrafficTotal", $trafficTotal);
     }
@@ -67,7 +67,7 @@ class TrafficSet extends Response
      *
      * @return float|null
      */
-    public function getTrafficLeft(): float
+    public function getTrafficLeft()
     {
         return $this->get("TrafficLeft");
     }
@@ -77,7 +77,7 @@ class TrafficSet extends Response
      *
      * @param float $trafficLeft
      */
-    public function setTrafficLeft(float $trafficLeft)
+    public function setTrafficLeft($trafficLeft)
     {
         $this->set("TrafficLeft", $trafficLeft);
     }
@@ -87,7 +87,7 @@ class TrafficSet extends Response
      *
      * @return float|null
      */
-    public function getTrafficUsed(): float
+    public function getTrafficUsed()
     {
         return $this->get("TrafficUsed");
     }
@@ -97,7 +97,7 @@ class TrafficSet extends Response
      *
      * @param float $trafficUsed
      */
-    public function setTrafficUsed(float $trafficUsed)
+    public function setTrafficUsed($trafficUsed)
     {
         $this->set("TrafficUsed", $trafficUsed);
     }

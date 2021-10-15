@@ -27,7 +27,7 @@ class BandwidthInfoDetail extends Response
      *
      * @return integer|null
      */
-    public function getTime(): int
+    public function getTime()
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class BandwidthInfoDetail extends Response
      *
      * @param int $time
      */
-    public function setTime(int $time)
+    public function setTime($time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class BandwidthInfoDetail extends Response
      *
      * @return float|null
      */
-    public function getBandwidth(): float
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -57,7 +57,7 @@ class BandwidthInfoDetail extends Response
      *
      * @param float $bandwidth
      */
-    public function setBandwidth(float $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

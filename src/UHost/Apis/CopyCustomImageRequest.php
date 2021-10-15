@@ -35,7 +35,7 @@ class CopyCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CopyCustomImageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CopyCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class CopyCustomImageRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class CopyCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class CopyCustomImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class CopyCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getSourceImageId(): string
+    public function getSourceImageId()
     {
         return $this->get("SourceImageId");
     }
@@ -105,7 +105,7 @@ class CopyCustomImageRequest extends Request
      *
      * @param string $sourceImageId
      */
-    public function setSourceImageId(string $sourceImageId)
+    public function setSourceImageId($sourceImageId)
     {
         $this->set("SourceImageId", $sourceImageId);
     }
@@ -115,7 +115,7 @@ class CopyCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getTargetProjectId(): string
+    public function getTargetProjectId()
     {
         return $this->get("TargetProjectId");
     }
@@ -125,7 +125,7 @@ class CopyCustomImageRequest extends Request
      *
      * @param string $targetProjectId
      */
-    public function setTargetProjectId(string $targetProjectId)
+    public function setTargetProjectId($targetProjectId)
     {
         $this->set("TargetProjectId", $targetProjectId);
     }
@@ -135,7 +135,7 @@ class CopyCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getTargetRegion(): string
+    public function getTargetRegion()
     {
         return $this->get("TargetRegion");
     }
@@ -145,7 +145,7 @@ class CopyCustomImageRequest extends Request
      *
      * @param string $targetRegion
      */
-    public function setTargetRegion(string $targetRegion)
+    public function setTargetRegion($targetRegion)
     {
         $this->set("TargetRegion", $targetRegion);
     }
@@ -155,7 +155,7 @@ class CopyCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getTargetImageName(): string
+    public function getTargetImageName()
     {
         return $this->get("TargetImageName");
     }
@@ -165,7 +165,7 @@ class CopyCustomImageRequest extends Request
      *
      * @param string $targetImageName
      */
-    public function setTargetImageName(string $targetImageName)
+    public function setTargetImageName($targetImageName)
     {
         $this->set("TargetImageName", $targetImageName);
     }
@@ -175,7 +175,7 @@ class CopyCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getTargetImageDescription(): string
+    public function getTargetImageDescription()
     {
         return $this->get("TargetImageDescription");
     }
@@ -185,7 +185,7 @@ class CopyCustomImageRequest extends Request
      *
      * @param string $targetImageDescription
      */
-    public function setTargetImageDescription(string $targetImageDescription)
+    public function setTargetImageDescription($targetImageDescription)
     {
         $this->set("TargetImageDescription", $targetImageDescription);
     }

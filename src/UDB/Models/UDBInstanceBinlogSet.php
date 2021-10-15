@@ -27,7 +27,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -57,7 +57,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -67,7 +67,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -77,7 +77,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -87,7 +87,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -97,7 +97,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }

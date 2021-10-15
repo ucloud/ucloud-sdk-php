@@ -27,7 +27,7 @@ class NatGWIPResInfo extends Response
      *
      * @return string|null
      */
-    public function getOperatorName(): string
+    public function getOperatorName()
     {
         return $this->get("OperatorName");
     }
@@ -37,7 +37,7 @@ class NatGWIPResInfo extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName)
+    public function setOperatorName($operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
@@ -47,7 +47,7 @@ class NatGWIPResInfo extends Response
      *
      * @return string|null
      */
-    public function getEIP(): string
+    public function getEIP()
     {
         return $this->get("EIP");
     }
@@ -57,7 +57,7 @@ class NatGWIPResInfo extends Response
      *
      * @param string $eip
      */
-    public function setEIP(string $eip)
+    public function setEIP($eip)
     {
         $this->set("EIP", $eip);
     }

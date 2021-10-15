@@ -33,7 +33,7 @@ class PoweroffUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class PoweroffUEcVHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class PoweroffUEcVHostRequest extends Request
      *
      * @return string[]|null
      */
-    public function getNodeId(): array
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }

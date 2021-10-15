@@ -27,7 +27,7 @@ class HitRateInfoV2 extends Response
      *
      * @return integer|null
      */
-    public function getTime(): int
+    public function getTime()
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class HitRateInfoV2 extends Response
      *
      * @param int $time
      */
-    public function setTime(int $time)
+    public function setTime($time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class HitRateInfoV2 extends Response
      *
      * @return float|null
      */
-    public function getFlowHitRate(): float
+    public function getFlowHitRate()
     {
         return $this->get("FlowHitRate");
     }
@@ -57,7 +57,7 @@ class HitRateInfoV2 extends Response
      *
      * @param float $flowHitRate
      */
-    public function setFlowHitRate(float $flowHitRate)
+    public function setFlowHitRate($flowHitRate)
     {
         $this->set("FlowHitRate", $flowHitRate);
     }
@@ -67,7 +67,7 @@ class HitRateInfoV2 extends Response
      *
      * @return float|null
      */
-    public function getRequestHitRate(): float
+    public function getRequestHitRate()
     {
         return $this->get("RequestHitRate");
     }
@@ -77,7 +77,7 @@ class HitRateInfoV2 extends Response
      *
      * @param float $requestHitRate
      */
-    public function setRequestHitRate(float $requestHitRate)
+    public function setRequestHitRate($requestHitRate)
     {
         $this->set("RequestHitRate", $requestHitRate);
     }

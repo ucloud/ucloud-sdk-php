@@ -35,7 +35,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -105,7 +105,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -115,7 +115,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -125,7 +125,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -135,7 +135,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getType(): int
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -145,7 +145,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param int $type
      */
-    public function setType(int $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -155,7 +155,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return int[]|null
      */
-    public function getTypes(): array
+    public function getTypes()
     {
         return $this->get("Types");
     }
@@ -175,7 +175,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -185,7 +185,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -195,7 +195,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -205,7 +205,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -215,7 +215,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -225,7 +225,7 @@ class DescribeUDBLogPackageRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }

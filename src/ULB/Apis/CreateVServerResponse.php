@@ -27,7 +27,7 @@ class CreateVServerResponse extends Response
      *
      * @return string|null
      */
-    public function getVServerId(): string
+    public function getVServerId()
     {
         return $this->get("VServerId");
     }
@@ -37,7 +37,7 @@ class CreateVServerResponse extends Response
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId)
+    public function setVServerId($vServerId)
     {
         $this->set("VServerId", $vServerId);
     }

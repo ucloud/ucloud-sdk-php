@@ -27,7 +27,7 @@ class UDBTypeSet extends Response
      *
      * @return string|null
      */
-    public function getDBTypeId(): string
+    public function getDBTypeId()
     {
         return $this->get("DBTypeId");
     }
@@ -37,7 +37,7 @@ class UDBTypeSet extends Response
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId)
+    public function setDBTypeId($dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }

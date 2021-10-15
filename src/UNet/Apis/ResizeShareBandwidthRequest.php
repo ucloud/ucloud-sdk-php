@@ -35,7 +35,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getShareBandwidth(): int
+    public function getShareBandwidth()
     {
         return $this->get("ShareBandwidth");
     }
@@ -85,7 +85,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth(int $shareBandwidth)
+    public function setShareBandwidth($shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
@@ -95,7 +95,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string
+    public function getShareBandwidthId()
     {
         return $this->get("ShareBandwidthId");
     }
@@ -105,7 +105,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId)
+    public function setShareBandwidthId($shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }

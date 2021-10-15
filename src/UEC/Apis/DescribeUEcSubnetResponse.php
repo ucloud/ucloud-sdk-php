@@ -28,9 +28,12 @@ class DescribeUEcSubnetResponse extends Response
      *
      * @return SubnetInfo[]|null
      */
-    public function getSubnetList(): array
+    public function getSubnetList()
     {
-        $items = $this->get("SubnetList") ?? [];
+        $items = $this->get("SubnetList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new SubnetInfo($item));

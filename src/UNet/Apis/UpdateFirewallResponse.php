@@ -27,7 +27,7 @@ class UpdateFirewallResponse extends Response
      *
      * @return string|null
      */
-    public function getFWId(): string
+    public function getFWId()
     {
         return $this->get("FWId");
     }
@@ -37,7 +37,7 @@ class UpdateFirewallResponse extends Response
      *
      * @param string $fwId
      */
-    public function setFWId(string $fwId)
+    public function setFWId($fwId)
     {
         $this->set("FWId", $fwId);
     }

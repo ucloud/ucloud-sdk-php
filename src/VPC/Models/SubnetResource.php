@@ -27,7 +27,7 @@ class SubnetResource extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class SubnetResource extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class SubnetResource extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -57,7 +57,7 @@ class SubnetResource extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -67,7 +67,7 @@ class SubnetResource extends Response
      *
      * @return string|null
      */
-    public function getResourceType(): string
+    public function getResourceType()
     {
         return $this->get("ResourceType");
     }
@@ -77,7 +77,7 @@ class SubnetResource extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType)
+    public function setResourceType($resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -87,7 +87,7 @@ class SubnetResource extends Response
      *
      * @return string|null
      */
-    public function getIP(): string
+    public function getIP()
     {
         return $this->get("IP");
     }
@@ -97,7 +97,7 @@ class SubnetResource extends Response
      *
      * @param string $ip
      */
-    public function setIP(string $ip)
+    public function setIP($ip)
     {
         $this->set("IP", $ip);
     }

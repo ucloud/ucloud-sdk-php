@@ -28,9 +28,12 @@ class AllocateVIPResponse extends Response
      *
      * @return VIPSet[]|null
      */
-    public function getVIPSet(): array
+    public function getVIPSet()
     {
-        $items = $this->get("VIPSet") ?? [];
+        $items = $this->get("VIPSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new VIPSet($item));
@@ -57,7 +60,7 @@ class AllocateVIPResponse extends Response
      *
      * @return string[]|null
      */
-    public function getDataSet(): array
+    public function getDataSet()
     {
         return $this->get("DataSet");
     }

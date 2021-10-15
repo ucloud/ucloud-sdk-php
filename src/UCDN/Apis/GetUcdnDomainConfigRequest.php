@@ -32,7 +32,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -62,7 +62,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -72,7 +72,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -82,7 +82,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -92,7 +92,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @return string[]|null
      */
-    public function getDomainId(): array
+    public function getDomainId()
     {
         return $this->get("DomainId");
     }
@@ -112,7 +112,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @return string|null
      */
-    public function getChannelType(): string
+    public function getChannelType()
     {
         return $this->get("ChannelType");
     }
@@ -122,7 +122,7 @@ class GetUcdnDomainConfigRequest extends Request
      *
      * @param string $channelType
      */
-    public function setChannelType(string $channelType)
+    public function setChannelType($channelType)
     {
         $this->set("ChannelType", $channelType);
     }

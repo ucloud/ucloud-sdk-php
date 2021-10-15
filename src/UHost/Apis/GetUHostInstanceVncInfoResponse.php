@@ -27,7 +27,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @return string|null
      */
-    public function getUHostId(): string
+    public function getUHostId()
     {
         return $this->get("UHostId");
     }
@@ -37,7 +37,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId)
+    public function setUHostId($uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -47,7 +47,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @return string|null
      */
-    public function getVncIP(): string
+    public function getVncIP()
     {
         return $this->get("VncIP");
     }
@@ -57,7 +57,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @param string $vncIP
      */
-    public function setVncIP(string $vncIP)
+    public function setVncIP($vncIP)
     {
         $this->set("VncIP", $vncIP);
     }
@@ -67,7 +67,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @return integer|null
      */
-    public function getVncPort(): int
+    public function getVncPort()
     {
         return $this->get("VncPort");
     }
@@ -77,7 +77,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @param int $vncPort
      */
-    public function setVncPort(int $vncPort)
+    public function setVncPort($vncPort)
     {
         $this->set("VncPort", $vncPort);
     }
@@ -87,7 +87,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @return string|null
      */
-    public function getVncPassword(): string
+    public function getVncPassword()
     {
         return $this->get("VncPassword");
     }
@@ -97,7 +97,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @param string $vncPassword
      */
-    public function setVncPassword(string $vncPassword)
+    public function setVncPassword($vncPassword)
     {
         $this->set("VncPassword", $vncPassword);
     }

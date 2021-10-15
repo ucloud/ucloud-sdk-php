@@ -27,7 +27,7 @@ class CreateURedisBackupResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupId(): string
+    public function getBackupId()
     {
         return $this->get("BackupId");
     }
@@ -37,7 +37,7 @@ class CreateURedisBackupResponse extends Response
      *
      * @param string $backupId
      */
-    public function setBackupId(string $backupId)
+    public function setBackupId($backupId)
     {
         $this->set("BackupId", $backupId);
     }

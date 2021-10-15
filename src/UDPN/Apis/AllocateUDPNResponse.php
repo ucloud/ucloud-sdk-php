@@ -27,7 +27,7 @@ class AllocateUDPNResponse extends Response
      *
      * @return string|null
      */
-    public function getUDPNId(): string
+    public function getUDPNId()
     {
         return $this->get("UDPNId");
     }
@@ -37,7 +37,7 @@ class AllocateUDPNResponse extends Response
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId)
+    public function setUDPNId($udpnId)
     {
         $this->set("UDPNId", $udpnId);
     }

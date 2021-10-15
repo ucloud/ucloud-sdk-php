@@ -43,7 +43,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -53,7 +53,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -63,7 +63,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -73,7 +73,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -83,7 +83,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -93,7 +93,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -103,7 +103,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getDBTypeId(): string
+    public function getDBTypeId()
     {
         return $this->get("DBTypeId");
     }
@@ -113,7 +113,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId(string $dbTypeId)
+    public function setDBTypeId($dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
@@ -123,7 +123,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -133,7 +133,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -143,7 +143,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getAdminPassword(): string
+    public function getAdminPassword()
     {
         return $this->get("AdminPassword");
     }
@@ -153,7 +153,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $adminPassword
      */
-    public function setAdminPassword(string $adminPassword)
+    public function setAdminPassword($adminPassword)
     {
         $this->set("AdminPassword", $adminPassword);
     }
@@ -163,7 +163,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRouterVersion(): string
+    public function getRouterVersion()
     {
         return $this->get("RouterVersion");
     }
@@ -173,7 +173,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $routerVersion
      */
-    public function setRouterVersion(string $routerVersion)
+    public function setRouterVersion($routerVersion)
     {
         $this->set("RouterVersion", $routerVersion);
     }
@@ -183,7 +183,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getRouterNodeNum(): int
+    public function getRouterNodeNum()
     {
         return $this->get("RouterNodeNum");
     }
@@ -193,7 +193,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param int $routerNodeNum
      */
-    public function setRouterNodeNum(int $routerNodeNum)
+    public function setRouterNodeNum($routerNodeNum)
     {
         $this->set("RouterNodeNum", $routerNodeNum);
     }
@@ -203,7 +203,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeCount(): int
+    public function getDataNodeCount()
     {
         return $this->get("DataNodeCount");
     }
@@ -213,7 +213,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param int $dataNodeCount
      */
-    public function setDataNodeCount(int $dataNodeCount)
+    public function setDataNodeCount($dataNodeCount)
     {
         $this->set("DataNodeCount", $dataNodeCount);
     }
@@ -223,7 +223,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeMemory(): int
+    public function getDataNodeMemory()
     {
         return $this->get("DataNodeMemory");
     }
@@ -233,7 +233,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory(int $dataNodeMemory)
+    public function setDataNodeMemory($dataNodeMemory)
     {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
@@ -243,7 +243,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeDiskSpace(): int
+    public function getDataNodeDiskSpace()
     {
         return $this->get("DataNodeDiskSpace");
     }
@@ -253,7 +253,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
+    public function setDataNodeDiskSpace($dataNodeDiskSpace)
     {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
@@ -263,7 +263,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceMode(): string
+    public function getInstanceMode()
     {
         return $this->get("InstanceMode");
     }
@@ -273,7 +273,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode(string $instanceMode)
+    public function setInstanceMode($instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
@@ -283,7 +283,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType(): string
+    public function getInstanceType()
     {
         return $this->get("InstanceType");
     }
@@ -293,7 +293,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType)
+    public function setInstanceType($instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -303,7 +303,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -313,7 +313,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -323,7 +323,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -333,7 +333,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -343,7 +343,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getAdminUser(): string
+    public function getAdminUser()
     {
         return $this->get("AdminUser");
     }
@@ -353,7 +353,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $adminUser
      */
-    public function setAdminUser(string $adminUser)
+    public function setAdminUser($adminUser)
     {
         $this->set("AdminUser", $adminUser);
     }
@@ -363,7 +363,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -373,7 +373,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -383,7 +383,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeSlaveCount(): int
+    public function getDataNodeSlaveCount()
     {
         return $this->get("DataNodeSlaveCount");
     }
@@ -393,7 +393,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param int $dataNodeSlaveCount
      */
-    public function setDataNodeSlaveCount(int $dataNodeSlaveCount)
+    public function setDataNodeSlaveCount($dataNodeSlaveCount)
     {
         $this->set("DataNodeSlaveCount", $dataNodeSlaveCount);
     }
@@ -403,7 +403,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -413,7 +413,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -423,7 +423,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -433,7 +433,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -443,7 +443,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -453,7 +453,7 @@ class CreateUDDBInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

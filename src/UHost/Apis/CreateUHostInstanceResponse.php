@@ -27,7 +27,7 @@ class CreateUHostInstanceResponse extends Response
      *
      * @return string[]|null
      */
-    public function getUHostIds(): array
+    public function getUHostIds()
     {
         return $this->get("UHostIds");
     }
@@ -47,7 +47,7 @@ class CreateUHostInstanceResponse extends Response
      *
      * @return string[]|null
      */
-    public function getIPs(): array
+    public function getIPs()
     {
         return $this->get("IPs");
     }

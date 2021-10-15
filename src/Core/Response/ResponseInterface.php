@@ -9,5 +9,5 @@ interface ResponseInterface
      *
      * @return array
      */
-    public function toArray(): array;
+    public function toArray();
 }

@@ -27,7 +27,7 @@ class CreateUEcHolderParamImage extends Request
      *
      * @return string|null
      */
-    public function getMessage(): string
+    public function getMessage()
     {
         return $this->get("Message");
     }
@@ -37,7 +37,7 @@ class CreateUEcHolderParamImage extends Request
      *
      * @param string $message
      */
-    public function setMessage(string $message)
+    public function setMessage($message)
     {
         $this->set("Message", $message);
     }
@@ -47,7 +47,7 @@ class CreateUEcHolderParamImage extends Request
      *
      * @return string|null
      */
-    public function getStoreAddress(): string
+    public function getStoreAddress()
     {
         return $this->get("StoreAddress");
     }
@@ -57,7 +57,7 @@ class CreateUEcHolderParamImage extends Request
      *
      * @param string $storeAddress
      */
-    public function setStoreAddress(string $storeAddress)
+    public function setStoreAddress($storeAddress)
     {
         $this->set("StoreAddress", $storeAddress);
     }

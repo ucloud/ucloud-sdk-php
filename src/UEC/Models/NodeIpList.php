@@ -27,7 +27,7 @@ class NodeIpList extends Response
      *
      * @return string|null
      */
-    public function getIp(): string
+    public function getIp()
     {
         return $this->get("Ip");
     }
@@ -37,7 +37,7 @@ class NodeIpList extends Response
      *
      * @param string $ip
      */
-    public function setIp(string $ip)
+    public function setIp($ip)
     {
         $this->set("Ip", $ip);
     }
@@ -47,7 +47,7 @@ class NodeIpList extends Response
      *
      * @return string|null
      */
-    public function getIsp(): string
+    public function getIsp()
     {
         return $this->get("Isp");
     }
@@ -57,7 +57,7 @@ class NodeIpList extends Response
      *
      * @param string $isp
      */
-    public function setIsp(string $isp)
+    public function setIsp($isp)
     {
         $this->set("Isp", $isp);
     }
@@ -67,7 +67,7 @@ class NodeIpList extends Response
      *
      * @return string|null
      */
-    public function getIspName(): string
+    public function getIspName()
     {
         return $this->get("IspName");
     }
@@ -77,7 +77,7 @@ class NodeIpList extends Response
      *
      * @param string $ispName
      */
-    public function setIspName(string $ispName)
+    public function setIspName($ispName)
     {
         $this->set("IspName", $ispName);
     }

@@ -27,7 +27,7 @@ class VPCNetworkInfo extends Response
      *
      * @return string|null
      */
-    public function getNetwork(): string
+    public function getNetwork()
     {
         return $this->get("Network");
     }
@@ -37,7 +37,7 @@ class VPCNetworkInfo extends Response
      *
      * @param string $network
      */
-    public function setNetwork(string $network)
+    public function setNetwork($network)
     {
         $this->set("Network", $network);
     }
@@ -47,7 +47,7 @@ class VPCNetworkInfo extends Response
      *
      * @return integer|null
      */
-    public function getSubnetCount(): int
+    public function getSubnetCount()
     {
         return $this->get("SubnetCount");
     }
@@ -57,7 +57,7 @@ class VPCNetworkInfo extends Response
      *
      * @param int $subnetCount
      */
-    public function setSubnetCount(int $subnetCount)
+    public function setSubnetCount($subnetCount)
     {
         $this->set("SubnetCount", $subnetCount);
     }

@@ -39,7 +39,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -49,7 +49,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -59,7 +59,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -69,7 +69,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -79,7 +79,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -89,7 +89,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -99,7 +99,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getCount(): string
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -109,7 +109,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $count
      */
-    public function setCount(string $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }
@@ -119,7 +119,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getCpu(): string
+    public function getCpu()
     {
         return $this->get("Cpu");
     }
@@ -129,7 +129,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $cpu
      */
-    public function setCpu(string $cpu)
+    public function setCpu($cpu)
     {
         $this->set("Cpu", $cpu);
     }
@@ -139,7 +139,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getMem(): string
+    public function getMem()
     {
         return $this->get("Mem");
     }
@@ -149,7 +149,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $mem
      */
-    public function setMem(string $mem)
+    public function setMem($mem)
     {
         $this->set("Mem", $mem);
     }
@@ -159,7 +159,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -169,7 +169,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -179,7 +179,7 @@ class GetCubePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -189,7 +189,7 @@ class GetCubePriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }

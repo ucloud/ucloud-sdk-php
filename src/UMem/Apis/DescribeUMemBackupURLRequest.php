@@ -36,7 +36,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getSpaceId(): string
+    public function getSpaceId()
     {
         return $this->get("SpaceId");
     }
@@ -106,7 +106,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId)
+    public function setSpaceId($spaceId)
     {
         $this->set("SpaceId", $spaceId);
     }
@@ -116,7 +116,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupId(): string
+    public function getBackupId()
     {
         return $this->get("BackupId");
     }
@@ -126,7 +126,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @param string $backupId
      */
-    public function setBackupId(string $backupId)
+    public function setBackupId($backupId)
     {
         $this->set("BackupId", $backupId);
     }
@@ -136,7 +136,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getBlockId(): string
+    public function getBlockId()
     {
         return $this->get("BlockId");
     }
@@ -146,7 +146,7 @@ class DescribeUMemBackupURLRequest extends Request
      *
      * @param string $blockId
      */
-    public function setBlockId(string $blockId)
+    public function setBlockId($blockId)
     {
         $this->set("BlockId", $blockId);
     }

@@ -34,7 +34,7 @@ class DeleteGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class DeleteGlobalSSHInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DeleteGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceId(): string
+    public function getInstanceId()
     {
         return $this->get("InstanceId");
     }
@@ -64,7 +64,7 @@ class DeleteGlobalSSHInstanceRequest extends Request
      *
      * @param string $instanceId
      */
-    public function setInstanceId(string $instanceId)
+    public function setInstanceId($instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }

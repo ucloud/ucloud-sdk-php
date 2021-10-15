@@ -33,7 +33,7 @@ class DeleteUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class DeleteUEcCustomImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class DeleteUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -63,7 +63,7 @@ class DeleteUEcCustomImageRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -73,7 +73,7 @@ class DeleteUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getIdcId(): string
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -83,7 +83,7 @@ class DeleteUEcCustomImageRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId)
+    public function setIdcId($idcId)
     {
         $this->set("IdcId", $idcId);
     }

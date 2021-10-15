@@ -27,7 +27,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getListenType(): string
+    public function getListenType()
     {
         return $this->get("ListenType");
     }
@@ -37,7 +37,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $listenType
      */
-    public function setListenType(string $listenType)
+    public function setListenType($listenType)
     {
         $this->set("ListenType", $listenType);
     }
@@ -47,7 +47,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getIPVersion(): string
+    public function getIPVersion()
     {
         return $this->get("IPVersion");
     }
@@ -57,7 +57,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $ipVersion
      */
-    public function setIPVersion(string $ipVersion)
+    public function setIPVersion($ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }
@@ -67,7 +67,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getULBId(): string
+    public function getULBId()
     {
         return $this->get("ULBId");
     }
@@ -77,7 +77,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId)
+    public function setULBId($ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -87,7 +87,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -97,7 +97,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -107,7 +107,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -117,7 +117,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -127,7 +127,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -137,7 +137,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -147,7 +147,7 @@ class ULBSimpleSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -157,7 +157,7 @@ class ULBSimpleSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -167,7 +167,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -177,7 +177,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -187,7 +187,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -197,7 +197,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -207,7 +207,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getBusinessId(): string
+    public function getBusinessId()
     {
         return $this->get("BusinessId");
     }
@@ -217,7 +217,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $businessId
      */
-    public function setBusinessId(string $businessId)
+    public function setBusinessId($businessId)
     {
         $this->set("BusinessId", $businessId);
     }
@@ -227,7 +227,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getPrivateIP(): string
+    public function getPrivateIP()
     {
         return $this->get("PrivateIP");
     }
@@ -237,7 +237,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $privateIP
      */
-    public function setPrivateIP(string $privateIP)
+    public function setPrivateIP($privateIP)
     {
         $this->set("PrivateIP", $privateIP);
     }
@@ -247,7 +247,7 @@ class ULBSimpleSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidthType(): int
+    public function getBandwidthType()
     {
         return $this->get("BandwidthType");
     }
@@ -257,7 +257,7 @@ class ULBSimpleSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType(int $bandwidthType)
+    public function setBandwidthType($bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
@@ -267,7 +267,7 @@ class ULBSimpleSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -277,7 +277,7 @@ class ULBSimpleSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -287,9 +287,12 @@ class ULBSimpleSet extends Response
      *
      * @return ULBIPSet[]|null
      */
-    public function getIPSet(): array
+    public function getIPSet()
     {
-        $items = $this->get("IPSet") ?? [];
+        $items = $this->get("IPSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ULBIPSet($item));
@@ -316,7 +319,7 @@ class ULBSimpleSet extends Response
      *
      * @return integer|null
      */
-    public function getVServerCount(): int
+    public function getVServerCount()
     {
         return $this->get("VServerCount");
     }
@@ -326,7 +329,7 @@ class ULBSimpleSet extends Response
      *
      * @param int $vServerCount
      */
-    public function setVServerCount(int $vServerCount)
+    public function setVServerCount($vServerCount)
     {
         $this->set("VServerCount", $vServerCount);
     }
@@ -336,7 +339,7 @@ class ULBSimpleSet extends Response
      *
      * @return string|null
      */
-    public function getULBType(): string
+    public function getULBType()
     {
         return $this->get("ULBType");
     }
@@ -346,7 +349,7 @@ class ULBSimpleSet extends Response
      *
      * @param string $ulbType
      */
-    public function setULBType(string $ulbType)
+    public function setULBType($ulbType)
     {
         $this->set("ULBType", $ulbType);
     }
@@ -356,9 +359,12 @@ class ULBSimpleSet extends Response
      *
      * @return FirewallSet[]|null
      */
-    public function getFirewallSet(): array
+    public function getFirewallSet()
     {
-        $items = $this->get("FirewallSet") ?? [];
+        $items = $this->get("FirewallSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new FirewallSet($item));
@@ -385,7 +391,7 @@ class ULBSimpleSet extends Response
      *
      * @return integer|null
      */
-    public function getEnableLog(): int
+    public function getEnableLog()
     {
         return $this->get("EnableLog");
     }
@@ -395,7 +401,7 @@ class ULBSimpleSet extends Response
      *
      * @param int $enableLog
      */
-    public function setEnableLog(int $enableLog)
+    public function setEnableLog($enableLog)
     {
         $this->set("EnableLog", $enableLog);
     }
@@ -405,7 +411,7 @@ class ULBSimpleSet extends Response
      *
      * @return LoggerSet|null
      */
-    public function getLogSet(): LoggerSet
+    public function getLogSet()
     {
         return new LoggerSet($this->get("LogSet"));
     }
@@ -415,7 +421,7 @@ class ULBSimpleSet extends Response
      *
      * @param LoggerSet $logSet
      */
-    public function setLogSet(LoggerSet $logSet)
+    public function setLogSet(array $logSet)
     {
         $this->set("LogSet", $logSet->getAll());
     }

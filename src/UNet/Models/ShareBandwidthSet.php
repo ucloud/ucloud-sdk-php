@@ -27,7 +27,7 @@ class ShareBandwidthSet extends Response
      *
      * @return integer|null
      */
-    public function getShareBandwidth(): int
+    public function getShareBandwidth()
     {
         return $this->get("ShareBandwidth");
     }
@@ -37,7 +37,7 @@ class ShareBandwidthSet extends Response
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth(int $shareBandwidth)
+    public function setShareBandwidth($shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
@@ -47,7 +47,7 @@ class ShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getShareBandwidthName(): string
+    public function getShareBandwidthName()
     {
         return $this->get("ShareBandwidthName");
     }
@@ -57,7 +57,7 @@ class ShareBandwidthSet extends Response
      *
      * @param string $shareBandwidthName
      */
-    public function setShareBandwidthName(string $shareBandwidthName)
+    public function setShareBandwidthName($shareBandwidthName)
     {
         $this->set("ShareBandwidthName", $shareBandwidthName);
     }
@@ -67,7 +67,7 @@ class ShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string
+    public function getShareBandwidthId()
     {
         return $this->get("ShareBandwidthId");
     }
@@ -77,7 +77,7 @@ class ShareBandwidthSet extends Response
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId)
+    public function setShareBandwidthId($shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }

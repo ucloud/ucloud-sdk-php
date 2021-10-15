@@ -27,7 +27,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return float|null
      */
-    public function getCpuCore(): float
+    public function getCpuCore()
     {
         return $this->get("CpuCore");
     }
@@ -57,7 +57,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param float $cpuCore
      */
-    public function setCpuCore(float $cpuCore)
+    public function setCpuCore($cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
@@ -67,7 +67,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return integer|null
      */
-    public function getMemSize(): int
+    public function getMemSize()
     {
         return $this->get("MemSize");
     }
@@ -77,7 +77,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize(int $memSize)
+    public function setMemSize($memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -87,7 +87,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return string|null
      */
-    public function getImageName(): string
+    public function getImageName()
     {
         return $this->get("ImageName");
     }
@@ -97,7 +97,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName)
+    public function setImageName($imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -107,7 +107,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return string|null
      */
-    public function getWorkDir(): string
+    public function getWorkDir()
     {
         return $this->get("WorkDir");
     }
@@ -117,7 +117,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param string $workDir
      */
-    public function setWorkDir(string $workDir)
+    public function setWorkDir($workDir)
     {
         $this->set("WorkDir", $workDir);
     }
@@ -127,7 +127,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return string|null
      */
-    public function getCmd(): string
+    public function getCmd()
     {
         return $this->get("Cmd");
     }
@@ -137,7 +137,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param string $cmd
      */
-    public function setCmd(string $cmd)
+    public function setCmd($cmd)
     {
         $this->set("Cmd", $cmd);
     }
@@ -147,7 +147,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return string|null
      */
-    public function getArgs(): string
+    public function getArgs()
     {
         return $this->get("Args");
     }
@@ -157,7 +157,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param string $args
      */
-    public function setArgs(string $args)
+    public function setArgs($args)
     {
         $this->set("Args", $args);
     }
@@ -167,7 +167,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return string|null
      */
-    public function getEnvironment(): string
+    public function getEnvironment()
     {
         return $this->get("Environment");
     }
@@ -177,7 +177,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param string $environment
      */
-    public function setEnvironment(string $environment)
+    public function setEnvironment($environment)
     {
         $this->set("Environment", $environment);
     }
@@ -187,7 +187,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @return string|null
      */
-    public function getConfigDict(): string
+    public function getConfigDict()
     {
         return $this->get("ConfigDict");
     }
@@ -197,7 +197,7 @@ class CreateUEcHolderParamPack extends Request
      *
      * @param string $configDict
      */
-    public function setConfigDict(string $configDict)
+    public function setConfigDict($configDict)
     {
         $this->set("ConfigDict", $configDict);
     }

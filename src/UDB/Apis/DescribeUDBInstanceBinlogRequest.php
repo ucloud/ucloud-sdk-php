@@ -36,7 +36,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -106,7 +106,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -116,7 +116,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -126,7 +126,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -136,7 +136,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -146,7 +146,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }

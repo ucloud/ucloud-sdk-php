@@ -34,7 +34,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getUDPNId(): string
+    public function getUDPNId()
     {
         return $this->get("UDPNId");
     }
@@ -64,7 +64,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @param string $udpnId
      */
-    public function setUDPNId(string $udpnId)
+    public function setUDPNId($udpnId)
     {
         $this->set("UDPNId", $udpnId);
     }
@@ -74,7 +74,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -84,7 +84,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -94,7 +94,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -104,7 +104,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

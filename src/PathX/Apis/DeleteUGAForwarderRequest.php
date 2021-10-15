@@ -30,21 +30,21 @@ class DeleteUGAForwarderRequest extends Request
     
 
     /**
-     * ProjectId: 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return string|null
      */
-    public function getUGAId(): string
+    public function getUGAId()
     {
         return $this->get("UGAId");
     }
@@ -64,7 +64,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId)
+    public function setUGAId($ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -74,7 +74,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPHTTP(): array
+    public function getHTTPHTTP()
     {
         return $this->get("HTTPHTTP");
     }
@@ -94,7 +94,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTP(): array
+    public function getHTTPSHTTP()
     {
         return $this->get("HTTPSHTTP");
     }
@@ -114,7 +114,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPS(): array
+    public function getHTTPSHTTPS()
     {
         return $this->get("HTTPSHTTPS");
     }
@@ -130,11 +130,71 @@ class DeleteUGAForwarderRequest extends Request
     }
 
     /**
+     * WSSWSS: WebSocketS接入WebSocketS回源， 接入端口。禁用65123端口
+     *
+     * @return int[]|null
+     */
+    public function getWSSWSS()
+    {
+        return $this->get("WSSWSS");
+    }
+
+    /**
+     * WSSWSS: WebSocketS接入WebSocketS回源， 接入端口。禁用65123端口
+     *
+     * @param int[] $wsswss
+     */
+    public function setWSSWSS(array $wsswss)
+    {
+        $this->set("WSSWSS", $wsswss);
+    }
+
+    /**
+     * WSWS: WebSocket接入WebSocket回源， 接入端口。禁用65123端口
+     *
+     * @return int[]|null
+     */
+    public function getWSWS()
+    {
+        return $this->get("WSWS");
+    }
+
+    /**
+     * WSWS: WebSocket接入WebSocket回源， 接入端口。禁用65123端口
+     *
+     * @param int[] $wsws
+     */
+    public function setWSWS(array $wsws)
+    {
+        $this->set("WSWS", $wsws);
+    }
+
+    /**
+     * WSSWS: WebSocketS接入WebSocket回源， 接入端口。禁用65123端口。
+     *
+     * @return int[]|null
+     */
+    public function getWSSWS()
+    {
+        return $this->get("WSSWS");
+    }
+
+    /**
+     * WSSWS: WebSocketS接入WebSocket回源， 接入端口。禁用65123端口。
+     *
+     * @param int[] $wssws
+     */
+    public function setWSSWS(array $wssws)
+    {
+        $this->set("WSSWS", $wssws);
+    }
+
+    /**
      * TCP: TCP接入端口
      *
      * @return int[]|null
      */
-    public function getTCP(): array
+    public function getTCP()
     {
         return $this->get("TCP");
     }
@@ -154,7 +214,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getUDP(): array
+    public function getUDP()
     {
         return $this->get("UDP");
     }

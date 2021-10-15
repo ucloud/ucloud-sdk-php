@@ -35,7 +35,7 @@ class GetUFileReportRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class GetUFileReportRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class GetUFileReportRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class GetUFileReportRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class GetUFileReportRequest extends Request
      *
      * @return integer|null
      */
-    public function getStartTime(): int
+    public function getStartTime()
     {
         return $this->get("StartTime");
     }
@@ -85,7 +85,7 @@ class GetUFileReportRequest extends Request
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime)
+    public function setStartTime($startTime)
     {
         $this->set("StartTime", $startTime);
     }
@@ -95,7 +95,7 @@ class GetUFileReportRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -105,7 +105,7 @@ class GetUFileReportRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }

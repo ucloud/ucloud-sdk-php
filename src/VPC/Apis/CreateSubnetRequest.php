@@ -35,7 +35,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -85,7 +85,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -95,7 +95,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnet(): string
+    public function getSubnet()
     {
         return $this->get("Subnet");
     }
@@ -105,7 +105,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $subnet
      */
-    public function setSubnet(string $subnet)
+    public function setSubnet($subnet)
     {
         $this->set("Subnet", $subnet);
     }
@@ -115,7 +115,7 @@ class CreateSubnetRequest extends Request
      *
      * @return integer|null
      */
-    public function getNetmask(): int
+    public function getNetmask()
     {
         return $this->get("Netmask");
     }
@@ -125,7 +125,7 @@ class CreateSubnetRequest extends Request
      *
      * @param int $netmask
      */
-    public function setNetmask(int $netmask)
+    public function setNetmask($netmask)
     {
         $this->set("Netmask", $netmask);
     }
@@ -135,7 +135,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetName(): string
+    public function getSubnetName()
     {
         return $this->get("SubnetName");
     }
@@ -145,7 +145,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $subnetName
      */
-    public function setSubnetName(string $subnetName)
+    public function setSubnetName($subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -155,7 +155,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -165,7 +165,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -175,7 +175,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -185,7 +185,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }

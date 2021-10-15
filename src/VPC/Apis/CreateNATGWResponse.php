@@ -27,7 +27,7 @@ class CreateNATGWResponse extends Response
      *
      * @return string|null
      */
-    public function getNATGWId(): string
+    public function getNATGWId()
     {
         return $this->get("NATGWId");
     }
@@ -37,7 +37,7 @@ class CreateNATGWResponse extends Response
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId)
+    public function setNATGWId($natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }

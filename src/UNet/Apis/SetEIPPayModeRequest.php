@@ -36,7 +36,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -86,7 +86,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -96,7 +96,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @return string|null
      */
-    public function getPayMode(): string
+    public function getPayMode()
     {
         return $this->get("PayMode");
     }
@@ -106,7 +106,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode)
+    public function setPayMode($payMode)
     {
         $this->set("PayMode", $payMode);
     }
@@ -116,7 +116,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -126,7 +126,7 @@ class SetEIPPayModeRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

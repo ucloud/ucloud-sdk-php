@@ -27,7 +27,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -37,7 +37,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -47,7 +47,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceName(): string
+    public function getResourceName()
     {
         return $this->get("ResourceName");
     }
@@ -57,7 +57,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $resourceName
      */
-    public function setResourceName(string $resourceName)
+    public function setResourceName($resourceName)
     {
         $this->set("ResourceName", $resourceName);
     }
@@ -67,7 +67,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getPrivateIP(): string
+    public function getPrivateIP()
     {
         return $this->get("PrivateIP");
     }
@@ -77,7 +77,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $privateIP
      */
-    public function setPrivateIP(string $privateIP)
+    public function setPrivateIP($privateIP)
     {
         $this->set("PrivateIP", $privateIP);
     }
@@ -87,7 +87,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceType(): string
+    public function getResourceType()
     {
         return $this->get("ResourceType");
     }
@@ -97,7 +97,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType)
+    public function setResourceType($resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -107,7 +107,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceName(): string
+    public function getSubResourceName()
     {
         return $this->get("SubResourceName");
     }
@@ -117,7 +117,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $subResourceName
      */
-    public function setSubResourceName(string $subResourceName)
+    public function setSubResourceName($subResourceName)
     {
         $this->set("SubResourceName", $subResourceName);
     }
@@ -127,7 +127,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -137,7 +137,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -147,7 +147,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string
+    public function getSubnetworkId()
     {
         return $this->get("SubnetworkId");
     }
@@ -157,7 +157,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId)
+    public function setSubnetworkId($subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }
@@ -167,7 +167,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceId(): string
+    public function getSubResourceId()
     {
         return $this->get("SubResourceId");
     }
@@ -177,7 +177,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $subResourceId
      */
-    public function setSubResourceId(string $subResourceId)
+    public function setSubResourceId($subResourceId)
     {
         $this->set("SubResourceId", $subResourceId);
     }
@@ -187,7 +187,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceType(): string
+    public function getSubResourceType()
     {
         return $this->get("SubResourceType");
     }
@@ -197,7 +197,7 @@ class GetAvailableResourceForWhiteListDataSet extends Response
      *
      * @param string $subResourceType
      */
-    public function setSubResourceType(string $subResourceType)
+    public function setSubResourceType($subResourceType)
     {
         $this->set("SubResourceType", $subResourceType);
     }

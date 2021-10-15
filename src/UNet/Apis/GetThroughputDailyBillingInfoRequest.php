@@ -36,7 +36,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -86,7 +86,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -96,7 +96,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @return integer|null
      */
-    public function getStartTime(): int
+    public function getStartTime()
     {
         return $this->get("StartTime");
     }
@@ -106,7 +106,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime)
+    public function setStartTime($startTime)
     {
         $this->set("StartTime", $startTime);
     }
@@ -116,7 +116,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -126,7 +126,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }

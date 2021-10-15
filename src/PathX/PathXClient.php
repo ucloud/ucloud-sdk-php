@@ -72,6 +72,8 @@ use UCloud\PathX\Apis\UGAUnBindUPathRequest;
 use UCloud\PathX\Apis\UGAUnBindUPathResponse;
 use UCloud\PathX\Apis\UnBindPathXSSLRequest;
 use UCloud\PathX\Apis\UnBindPathXSSLResponse;
+use UCloud\PathX\Apis\UpdatePathXWhitelistRequest;
+use UCloud\PathX\Apis\UpdatePathXWhitelistResponse;
 
 /**
  * This client is used to call actions of **PathX** service
@@ -82,7 +84,7 @@ class PathXClient extends Client
     /**
      * BindPathXSSL - 绑定PathX SSL证书
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/bind_path_xssl
+     * See also: https://docs.ucloud.cn/api/pathx-api/bind_path_xssl
      *
      * Arguments:
      *
@@ -98,9 +100,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return BindPathXSSLResponse
      * @throws UCloudException
      */
-    public function bindPathXSSL(BindPathXSSLRequest $request = null): BindPathXSSLResponse
+    public function bindPathXSSL(BindPathXSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new BindPathXSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -109,22 +112,22 @@ class PathXClient extends Client
     /**
      * CreateGlobalSSHInstance - 创建GlobalSSH实例
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/create_global_ssh_instance
+     * See also: https://docs.ucloud.cn/api/pathx-api/create_global_ssh_instance
      *
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "Area" => (string) 填写支持SSH访问IP的地区名称，如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”。Area和AreaCode两者必填一个
+     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Area" => (string) 填写支持SSH访问IP的地区名称，如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”，“首尔”。Area和AreaCode两者必填一个
      *     "TargetIP" => (string) 被SSH访问的源站IP，仅支持IPv4地址。
      *     "Port" => (integer) 源站服务器监听的SSH端口，可取范围[1-65535]，不能使用80，443,  65123端口。如果InstanceType=Free，取值范围缩小为[22,3389],linux系统选择22，windows系统自动选3389。
      *     "AreaCode" => (string) AreaCode, 区域航空港国际通用代码。Area和AreaCode两者必填一个
      *     "Remark" => (string) 备注信息
-     *     "ChargeType" => (string) 支付方式，如按月、按年、按时
-     *     "Quantity" => (integer) 购买数量
-     *     "InstanceType" => (string) 枚举值：["Enterprise","Basic","Free"], 分别代表企业版，基础版，免费版
+     *     "ChargeType" => (string) 支付方式，如按月：Month、 按年：Year、按时：Dynamic
+     *     "Quantity" => (integer) 购买数量按月购买至月底请传0
+     *     "InstanceType" => (string) 枚举值：["Ultimate","Enterprise","Basic","Primary"], 分别代表旗舰版，企业版，基础版，入门版
      *     "BandwidthPackage" => (integer) Ultimate版本带宽包大小,枚举值：[0,20,40]。单位MB
-     *     "ForwardRegion" => (string) InstanceType等于Basic时可以在["cn-bj2","cn-sh2","cn-gd"]中选择1个作为转发机房，Free版本固定为cn-bj2,其他付费版默认配置三个转发机房
+     *     "ForwardRegion" => (string) InstanceType等于Basic时可以在["cn-bj2","cn-sh2","cn-gd"]中选择1个作为转发机房，其他付费版默认配置三个转发机房
      *     "CouponId" => (string) 使用代金券可冲抵部分费用
      * ]
      *
@@ -135,9 +138,10 @@ class PathXClient extends Client
      *     "AcceleratingDomain" => (string) 加速域名，访问该域名可就近接入
      * ]
      *
+     * @return CreateGlobalSSHInstanceResponse
      * @throws UCloudException
      */
-    public function createGlobalSSHInstance(CreateGlobalSSHInstanceRequest $request = null): CreateGlobalSSHInstanceResponse
+    public function createGlobalSSHInstance(CreateGlobalSSHInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -146,7 +150,7 @@ class PathXClient extends Client
     /**
      * CreatePathXSSL - 创建SSL证书，可以把整个 Pem 证书内容传到SSLContent，或者把证书、私钥、CA证书分别传过来
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/create_path_xssl
+     * See also: https://docs.ucloud.cn/api/pathx-api/create_path_xssl
      *
      * Arguments:
      *
@@ -166,9 +170,10 @@ class PathXClient extends Client
      *     "SSLId" => (string) SSL证书的Id
      * ]
      *
+     * @return CreatePathXSSLResponse
      * @throws UCloudException
      */
-    public function createPathXSSL(CreatePathXSSLRequest $request = null): CreatePathXSSLResponse
+    public function createPathXSSL(CreatePathXSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreatePathXSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -177,12 +182,12 @@ class PathXClient extends Client
     /**
      * CreateUGAForwarder - 创建加速实例转发器，支持HTTPS接入HTTPS回源、HTTPS接入HTTP回源、HTTP接入HTTP回源、TCP接入TCP回源、UDP接入UDP回源、 支持WSS接入WSS回源、WSS接入WS回源、WS接入WS回源
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/create_uga_forwarder
+     * See also: https://docs.ucloud.cn/api/pathx-api/create_uga_forwarder
      *
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "ProjectId" => (string) 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "UGAId" => (string) 加速配置实例ID
      *     "HTTPHTTP" => (array<integer>) HTTP接入HTTP回源转发，接入端口。禁用65123端口
      *     "HTTPHTTPRS" => (array<integer>) HTTP接入HTTP回源转发，源站监听端口
@@ -190,10 +195,16 @@ class PathXClient extends Client
      *     "HTTPSHTTPRS" => (array<integer>) HTTPS接入HTTP回源转发，回源端口
      *     "HTTPSHTTPS" => (array<integer>) HTTPS接入HTTPS回源转发，接入端口。禁用65123端口
      *     "HTTPSHTTPSRS" => (array<integer>) HTTPS接入HTTPS回源转发，源站监听端口
-     *     "TCP" => (array<integer>) TCP接入端口
+     *     "TCP" => (array<integer>) TCP接入端口，禁用65123端口
      *     "TCPRS" => (array<integer>) TCP回源端口
-     *     "UDP" => (array<integer>) UDP接入端口
+     *     "UDP" => (array<integer>) UDP接入端口，禁用65123端口
      *     "UDPRS" => (array<integer>) UDP回源端口
+     *     "WSWS" => (array<integer>) WebSocket接入WebSocket回源转发，接入端口。禁用65123。
+     *     "WSWSRS" => (array<integer>) WebSocket接入WebSocket回源转发，源站监听端口
+     *     "WSSWSS" => (array<integer>) WebSocketS接入WebSocketS回源转发，接入端口。禁用65123。
+     *     "WSSWSSRS" => (array<integer>) WebSocketS接入WebSocketS回源转发，源站监听端口。
+     *     "WSSWS" => (array<integer>) WebSocketS接入WebSocket回源转发，接入端口。禁用65123。
+     *     "WSSWSRS" => (array<integer>) WebSocketS接入WebSocket回源转发，源站监听端口。
      * ]
      *
      * Outputs:
@@ -201,9 +212,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return CreateUGAForwarderResponse
      * @throws UCloudException
      */
-    public function createUGAForwarder(CreateUGAForwarderRequest $request = null): CreateUGAForwarderResponse
+    public function createUGAForwarder(CreateUGAForwarderRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUGAForwarderResponse($resp->toArray(), $resp->getRequestId());
@@ -212,7 +224,7 @@ class PathXClient extends Client
     /**
      * CreateUGAInstance - 创建全球加速配置项
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/create_uga_instance
+     * See also: https://docs.ucloud.cn/api/pathx-api/create_uga_instance
      *
      * Arguments:
      *
@@ -232,9 +244,10 @@ class PathXClient extends Client
      *     "CName" => (string) 加速域名 用户可把业务域名CName到此域名上。注意：未绑定线路情况时 加速域名解析不出IP。
      * ]
      *
+     * @return CreateUGAInstanceResponse
      * @throws UCloudException
      */
-    public function createUGAInstance(CreateUGAInstanceRequest $request = null): CreateUGAInstanceResponse
+    public function createUGAInstance(CreateUGAInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -243,7 +256,7 @@ class PathXClient extends Client
     /**
      * CreateUPath - 创建UPath
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/create_upath
+     * See also: https://docs.ucloud.cn/api/pathx-api/create_upath
      *
      * Arguments:
      *
@@ -264,9 +277,10 @@ class PathXClient extends Client
      *     "UPathId" => (string) 加速线路实例Id
      * ]
      *
+     * @return CreateUPathResponse
      * @throws UCloudException
      */
-    public function createUPath(CreateUPathRequest $request = null): CreateUPathResponse
+    public function createUPath(CreateUPathRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -275,7 +289,7 @@ class PathXClient extends Client
     /**
      * DeleteGlobalSSHInstance - 删除GlobalSSH实例
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/delete_global_ssh_instance
+     * See also: https://docs.ucloud.cn/api/pathx-api/delete_global_ssh_instance
      *
      * Arguments:
      *
@@ -289,9 +303,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteGlobalSSHInstanceResponse
      * @throws UCloudException
      */
-    public function deleteGlobalSSHInstance(DeleteGlobalSSHInstanceRequest $request = null): DeleteGlobalSSHInstanceResponse
+    public function deleteGlobalSSHInstance(DeleteGlobalSSHInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -300,7 +315,7 @@ class PathXClient extends Client
     /**
      * DeletePathXSSL - 删除PathX SSL证书
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/delete_path_xssl
+     * See also: https://docs.ucloud.cn/api/pathx-api/delete_path_xssl
      *
      * Arguments:
      *
@@ -314,9 +329,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeletePathXSSLResponse
      * @throws UCloudException
      */
-    public function deletePathXSSL(DeletePathXSSLRequest $request = null): DeletePathXSSLResponse
+    public function deletePathXSSL(DeletePathXSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeletePathXSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -325,16 +341,19 @@ class PathXClient extends Client
     /**
      * DeleteUGAForwarder - 删除加速实例转发器 按接入端口删除
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/delete_uga_forwarder
+     * See also: https://docs.ucloud.cn/api/pathx-api/delete_uga_forwarder
      *
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "ProjectId" => (string) 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "UGAId" => (string) 加速配置实例ID
      *     "HTTPHTTP" => (array<integer>) HTTP接入HTTP回源，接入端口。禁用65123端口
      *     "HTTPSHTTP" => (array<integer>) HTTPS接入HTTP回源， 接入端口。禁用65123端口
      *     "HTTPSHTTPS" => (array<integer>) HTTPS接入HTTPS回源， 接入端口。禁用65123端口
+     *     "WSSWSS" => (array<integer>) WebSocketS接入WebSocketS回源， 接入端口。禁用65123端口
+     *     "WSWS" => (array<integer>) WebSocket接入WebSocket回源， 接入端口。禁用65123端口
+     *     "WSSWS" => (array<integer>) WebSocketS接入WebSocket回源， 接入端口。禁用65123端口。
      *     "TCP" => (array<integer>) TCP接入端口
      *     "UDP" => (array<integer>) UDP接入端口
      * ]
@@ -344,9 +363,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUGAForwarderResponse
      * @throws UCloudException
      */
-    public function deleteUGAForwarder(DeleteUGAForwarderRequest $request = null): DeleteUGAForwarderResponse
+    public function deleteUGAForwarder(DeleteUGAForwarderRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUGAForwarderResponse($resp->toArray(), $resp->getRequestId());
@@ -355,7 +375,7 @@ class PathXClient extends Client
     /**
      * DeleteUGAInstance - 删除全球加速服务加速配置
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/delete_uga_instance
+     * See also: https://docs.ucloud.cn/api/pathx-api/delete_uga_instance
      *
      * Arguments:
      *
@@ -369,9 +389,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUGAInstanceResponse
      * @throws UCloudException
      */
-    public function deleteUGAInstance(DeleteUGAInstanceRequest $request = null): DeleteUGAInstanceResponse
+    public function deleteUGAInstance(DeleteUGAInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -380,7 +401,7 @@ class PathXClient extends Client
     /**
      * DeleteUPath - 删除UPath
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/delete_upath
+     * See also: https://docs.ucloud.cn/api/pathx-api/delete_upath
      *
      * Arguments:
      *
@@ -394,9 +415,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUPathResponse
      * @throws UCloudException
      */
-    public function deleteUPath(DeleteUPathRequest $request = null): DeleteUPathResponse
+    public function deleteUPath(DeleteUPathRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -405,7 +427,7 @@ class PathXClient extends Client
     /**
      * DescribeGlobalSSHInstance - 获取GlobalSSH实例列表（传实例ID获取单个实例信息，不传获取项目下全部实例）
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/describe_global_ssh_instance
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_global_ssh_instance
      *
      * Arguments:
      *
@@ -437,9 +459,10 @@ class PathXClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeGlobalSSHInstanceResponse
      * @throws UCloudException
      */
-    public function describeGlobalSSHInstance(DescribeGlobalSSHInstanceRequest $request = null): DescribeGlobalSSHInstanceResponse
+    public function describeGlobalSSHInstance(DescribeGlobalSSHInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -448,7 +471,7 @@ class PathXClient extends Client
     /**
      * DescribePathXLineConfig - 获取全球加速线路信息
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/describe_path_x_line_config
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_path_x_line_config
      *
      * Arguments:
      *
@@ -480,9 +503,10 @@ class PathXClient extends Client
      *     ]
      * ]
      *
+     * @return DescribePathXLineConfigResponse
      * @throws UCloudException
      */
-    public function describePathXLineConfig(DescribePathXLineConfigRequest $request = null): DescribePathXLineConfigResponse
+    public function describePathXLineConfig(DescribePathXLineConfigRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribePathXLineConfigResponse($resp->toArray(), $resp->getRequestId());
@@ -491,7 +515,7 @@ class PathXClient extends Client
     /**
      * DescribePathXSSL - 获取SSL证书信息,支持分页，支持按证书名称 证书域名模糊搜索
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/describe_path_xssl
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_path_xssl
      *
      * Arguments:
      *
@@ -527,9 +551,10 @@ class PathXClient extends Client
      *     "TotalCount" => (integer) 符合条件的证书总数
      * ]
      *
+     * @return DescribePathXSSLResponse
      * @throws UCloudException
      */
-    public function describePathXSSL(DescribePathXSSLRequest $request = null): DescribePathXSSLResponse
+    public function describePathXSSL(DescribePathXSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribePathXSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -538,7 +563,7 @@ class PathXClient extends Client
     /**
      * DescribeUGAInstance - 获取全球加速服务加速配置信息，指定实例ID返回单个实例。未指定实例ID时 指定分页参数 则按创建时间降序 返回记录
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/describe_uga_instance
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_uga_instance
      *
      * Arguments:
      *
@@ -605,9 +630,10 @@ class PathXClient extends Client
      *     "TotalCount" => (integer) 符合条件的总数
      * ]
      *
+     * @return DescribeUGAInstanceResponse
      * @throws UCloudException
      */
-    public function describeUGAInstance(DescribeUGAInstanceRequest $request = null): DescribeUGAInstanceResponse
+    public function describeUGAInstance(DescribeUGAInstanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -616,7 +642,7 @@ class PathXClient extends Client
     /**
      * DescribeUPath - 获取加速线路信息
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/describe_upath
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_upath
      *
      * Arguments:
      *
@@ -657,9 +683,10 @@ class PathXClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUPathResponse
      * @throws UCloudException
      */
-    public function describeUPath(DescribeUPathRequest $request = null): DescribeUPathResponse
+    public function describeUPath(DescribeUPathRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -668,7 +695,7 @@ class PathXClient extends Client
     /**
      * DescribeUPathTemplate - 查询UPath的监控模板
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/describe_upath_template
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_upath_template
      *
      * Arguments:
      *
@@ -695,9 +722,10 @@ class PathXClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUPathTemplateResponse
      * @throws UCloudException
      */
-    public function describeUPathTemplate(DescribeUPathTemplateRequest $request = null): DescribeUPathTemplateResponse
+    public function describeUPathTemplate(DescribeUPathTemplateRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUPathTemplateResponse($resp->toArray(), $resp->getRequestId());
@@ -706,7 +734,7 @@ class PathXClient extends Client
     /**
      * GetGlobalSSHPrice - 获取GlobalSSH价格
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/get_global_ssh_price
+     * See also: https://docs.ucloud.cn/api/pathx-api/get_global_ssh_price
      *
      * Arguments:
      *
@@ -723,9 +751,10 @@ class PathXClient extends Client
      *     "Price" => (number) 价格,返回单位为元
      * ]
      *
+     * @return GetGlobalSSHPriceResponse
      * @throws UCloudException
      */
-    public function getGlobalSSHPrice(GetGlobalSSHPriceRequest $request = null): GetGlobalSSHPriceResponse
+    public function getGlobalSSHPrice(GetGlobalSSHPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetGlobalSSHPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -734,7 +763,7 @@ class PathXClient extends Client
     /**
      * GetGlobalSSHUpdatePrice - 获取GlobalSSH升级价格
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/get_global_ssh_update_price
+     * See also: https://docs.ucloud.cn/api/pathx-api/get_global_ssh_update_price
      *
      * Arguments:
      *
@@ -752,9 +781,10 @@ class PathXClient extends Client
      *     "Price" => (number) 价格,返回单位为元。正数表示付费升级，负数表示降级退费。
      * ]
      *
+     * @return GetGlobalSSHUpdatePriceResponse
      * @throws UCloudException
      */
-    public function getGlobalSSHUpdatePrice(GetGlobalSSHUpdatePriceRequest $request = null): GetGlobalSSHUpdatePriceResponse
+    public function getGlobalSSHUpdatePrice(GetGlobalSSHUpdatePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetGlobalSSHUpdatePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -763,7 +793,7 @@ class PathXClient extends Client
     /**
      * GetPathXMetric - 获取全球加速监控信息
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/get_path_x_metric
+     * See also: https://docs.ucloud.cn/api/pathx-api/get_path_x_metric
      *
      * Arguments:
      *
@@ -808,9 +838,10 @@ class PathXClient extends Client
      *     ]
      * ]
      *
+     * @return GetPathXMetricResponse
      * @throws UCloudException
      */
-    public function getPathXMetric(GetPathXMetricRequest $request = null): GetPathXMetricResponse
+    public function getPathXMetric(GetPathXMetricRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetPathXMetricResponse($resp->toArray(), $resp->getRequestId());
@@ -819,7 +850,7 @@ class PathXClient extends Client
     /**
      * ModifyGlobalSSHPort - 修改GlobalSSH端口
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/modify_global_ssh_port
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_global_ssh_port
      *
      * Arguments:
      *
@@ -834,9 +865,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyGlobalSSHPortResponse
      * @throws UCloudException
      */
-    public function modifyGlobalSSHPort(ModifyGlobalSSHPortRequest $request = null): ModifyGlobalSSHPortResponse
+    public function modifyGlobalSSHPort(ModifyGlobalSSHPortRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyGlobalSSHPortResponse($resp->toArray(), $resp->getRequestId());
@@ -845,7 +877,7 @@ class PathXClient extends Client
     /**
      * ModifyGlobalSSHType - 修改GlobalSSH实例类型，仅支持低版本升级到高版本，不支持高版本降级到低版本
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/modify_global_ssh_type
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_global_ssh_type
      *
      * Arguments:
      *
@@ -863,9 +895,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyGlobalSSHTypeResponse
      * @throws UCloudException
      */
-    public function modifyGlobalSSHType(ModifyGlobalSSHTypeRequest $request = null): ModifyGlobalSSHTypeResponse
+    public function modifyGlobalSSHType(ModifyGlobalSSHTypeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyGlobalSSHTypeResponse($resp->toArray(), $resp->getRequestId());
@@ -874,7 +907,7 @@ class PathXClient extends Client
     /**
      * ModifyUPathBandwidth - 修改加速线路带宽
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/modify_upath_bandwidth
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_upath_bandwidth
      *
      * Arguments:
      *
@@ -889,9 +922,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyUPathBandwidthResponse
      * @throws UCloudException
      */
-    public function modifyUPathBandwidth(ModifyUPathBandwidthRequest $request = null): ModifyUPathBandwidthResponse
+    public function modifyUPathBandwidth(ModifyUPathBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUPathBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -900,7 +934,7 @@ class PathXClient extends Client
     /**
      * ModifyUPathTemplate - 修改UPath监控告警项
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/modify_upath_template
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_upath_template
      *
      * Arguments:
      *
@@ -921,9 +955,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyUPathTemplateResponse
      * @throws UCloudException
      */
-    public function modifyUPathTemplate(ModifyUPathTemplateRequest $request = null): ModifyUPathTemplateResponse
+    public function modifyUPathTemplate(ModifyUPathTemplateRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUPathTemplateResponse($resp->toArray(), $resp->getRequestId());
@@ -932,7 +967,7 @@ class PathXClient extends Client
     /**
      * UGABindUPath - UGA绑定UPath
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/uga_bind_upath
+     * See also: https://docs.ucloud.cn/api/pathx-api/uga_bind_upath
      *
      * Arguments:
      *
@@ -948,9 +983,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UGABindUPathResponse
      * @throws UCloudException
      */
-    public function ugaBindUPath(UGABindUPathRequest $request = null): UGABindUPathResponse
+    public function ugaBindUPath(UGABindUPathRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UGABindUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -959,7 +995,7 @@ class PathXClient extends Client
     /**
      * UGAUnBindUPath - UGA与UPath解绑
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/uga_un_bind_upath
+     * See also: https://docs.ucloud.cn/api/pathx-api/uga_un_bind_upath
      *
      * Arguments:
      *
@@ -974,9 +1010,10 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UGAUnBindUPathResponse
      * @throws UCloudException
      */
-    public function ugaUnBindUPath(UGAUnBindUPathRequest $request = null): UGAUnBindUPathResponse
+    public function ugaUnBindUPath(UGAUnBindUPathRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UGAUnBindUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -985,7 +1022,7 @@ class PathXClient extends Client
     /**
      * UnBindPathXSSL - 解绑PathX SSL 证书
      *
-     * See also: https://docs.ucloud.cn/api/PathX-api/un_bind_path_xssl
+     * See also: https://docs.ucloud.cn/api/pathx-api/un_bind_path_xssl
      *
      * Arguments:
      *
@@ -1001,11 +1038,39 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UnBindPathXSSLResponse
      * @throws UCloudException
      */
-    public function unBindPathXSSL(UnBindPathXSSLRequest $request = null): UnBindPathXSSLResponse
+    public function unBindPathXSSL(UnBindPathXSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UnBindPathXSSLResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdatePathXWhitelist - 更新入口白名单,仅限GlobalSSH 实例使用。其他uga-实例不生效
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/update_path_x_whitelist
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) GlobalSSH实例ID，资源唯一标识
+     *     "Whitelist" => (array<string>) 白名单规则,例如 "Whitelist.0": "192.168.1.1/24|tcp|22"，"Whitelist.1": "192.168.1.2|tcp|8080:8090"，第一个参数为ip或ip段，第二个参数代表协议（tcp/udp），第三个参数代表端口号或端口范围（使用 ':' 隔开）；可以添加多条规则（递增Whitelist.n字段内的n值）；此接口需要列出全部规则，例如不填则为清空白名单规则，如若需要增量添加，使用InsertPathXWhitelist接口,globalssh 没有端口范围：端口设置成加速端口，协议设置成tcp:ip|tcp|加速端口
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return UpdatePathXWhitelistResponse
+     * @throws UCloudException
+     */
+    public function updatePathXWhitelist(UpdatePathXWhitelistRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdatePathXWhitelistResponse($resp->toArray(), $resp->getRequestId());
     }
 }

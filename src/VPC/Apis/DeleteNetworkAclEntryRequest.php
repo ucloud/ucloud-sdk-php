@@ -35,7 +35,7 @@ class DeleteNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DeleteNetworkAclEntryRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DeleteNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class DeleteNetworkAclEntryRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class DeleteNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getAclId(): string
+    public function getAclId()
     {
         return $this->get("AclId");
     }
@@ -85,7 +85,7 @@ class DeleteNetworkAclEntryRequest extends Request
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId)
+    public function setAclId($aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -95,7 +95,7 @@ class DeleteNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getEntryId(): string
+    public function getEntryId()
     {
         return $this->get("EntryId");
     }
@@ -105,7 +105,7 @@ class DeleteNetworkAclEntryRequest extends Request
      *
      * @param string $entryId
      */
-    public function setEntryId(string $entryId)
+    public function setEntryId($entryId)
     {
         $this->set("EntryId", $entryId);
     }

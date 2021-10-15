@@ -27,7 +27,7 @@ class GetUcdnDomainPrefetchEnableResponse extends Response
      *
      * @return integer|null
      */
-    public function getEnable(): int
+    public function getEnable()
     {
         return $this->get("Enable");
     }
@@ -37,7 +37,7 @@ class GetUcdnDomainPrefetchEnableResponse extends Response
      *
      * @param int $enable
      */
-    public function setEnable(int $enable)
+    public function setEnable($enable)
     {
         $this->set("Enable", $enable);
     }

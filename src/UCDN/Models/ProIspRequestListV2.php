@@ -27,7 +27,7 @@ class ProIspRequestListV2 extends Response
      *
      * @return integer|null
      */
-    public function getTime(): int
+    public function getTime()
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class ProIspRequestListV2 extends Response
      *
      * @param int $time
      */
-    public function setTime(int $time)
+    public function setTime($time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class ProIspRequestListV2 extends Response
      *
      * @return float|null
      */
-    public function getCdnRequest(): float
+    public function getCdnRequest()
     {
         return $this->get("CdnRequest");
     }
@@ -57,7 +57,7 @@ class ProIspRequestListV2 extends Response
      *
      * @param float $cdnRequest
      */
-    public function setCdnRequest(float $cdnRequest)
+    public function setCdnRequest($cdnRequest)
     {
         $this->set("CdnRequest", $cdnRequest);
     }

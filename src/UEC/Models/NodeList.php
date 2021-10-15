@@ -27,7 +27,7 @@ class NodeList extends Response
      *
      * @return string|null
      */
-    public function getNodeId(): string
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }
@@ -37,7 +37,7 @@ class NodeList extends Response
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId)
+    public function setNodeId($nodeId)
     {
         $this->set("NodeId", $nodeId);
     }

@@ -27,7 +27,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getTime(): int
+    public function getTime()
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $time
      */
-    public function setTime(int $time)
+    public function setTime($time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getTotal(): int
+    public function getTotal()
     {
         return $this->get("Total");
     }
@@ -57,7 +57,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $total
      */
-    public function setTotal(int $total)
+    public function setTotal($total)
     {
         $this->set("Total", $total);
     }
@@ -67,7 +67,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp100(): int
+    public function getHttp100()
     {
         return $this->get("Http100");
     }
@@ -77,7 +77,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http100
      */
-    public function setHttp100(int $http100)
+    public function setHttp100($http100)
     {
         $this->set("Http100", $http100);
     }
@@ -87,7 +87,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp101(): int
+    public function getHttp101()
     {
         return $this->get("Http101");
     }
@@ -97,7 +97,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http101
      */
-    public function setHttp101(int $http101)
+    public function setHttp101($http101)
     {
         $this->set("Http101", $http101);
     }
@@ -107,7 +107,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp102(): int
+    public function getHttp102()
     {
         return $this->get("Http102");
     }
@@ -117,7 +117,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http102
      */
-    public function setHttp102(int $http102)
+    public function setHttp102($http102)
     {
         $this->set("Http102", $http102);
     }
@@ -127,7 +127,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp200(): int
+    public function getHttp200()
     {
         return $this->get("Http200");
     }
@@ -137,7 +137,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http200
      */
-    public function setHttp200(int $http200)
+    public function setHttp200($http200)
     {
         $this->set("Http200", $http200);
     }
@@ -147,7 +147,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp201(): int
+    public function getHttp201()
     {
         return $this->get("Http201");
     }
@@ -157,7 +157,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http201
      */
-    public function setHttp201(int $http201)
+    public function setHttp201($http201)
     {
         $this->set("Http201", $http201);
     }
@@ -167,7 +167,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp202(): int
+    public function getHttp202()
     {
         return $this->get("Http202");
     }
@@ -177,7 +177,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http202
      */
-    public function setHttp202(int $http202)
+    public function setHttp202($http202)
     {
         $this->set("Http202", $http202);
     }
@@ -187,7 +187,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp203(): int
+    public function getHttp203()
     {
         return $this->get("Http203");
     }
@@ -197,7 +197,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http203
      */
-    public function setHttp203(int $http203)
+    public function setHttp203($http203)
     {
         $this->set("Http203", $http203);
     }
@@ -207,7 +207,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp204(): int
+    public function getHttp204()
     {
         return $this->get("Http204");
     }
@@ -217,7 +217,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http204
      */
-    public function setHttp204(int $http204)
+    public function setHttp204($http204)
     {
         $this->set("Http204", $http204);
     }
@@ -227,7 +227,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp205(): int
+    public function getHttp205()
     {
         return $this->get("Http205");
     }
@@ -237,7 +237,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http205
      */
-    public function setHttp205(int $http205)
+    public function setHttp205($http205)
     {
         $this->set("Http205", $http205);
     }
@@ -247,7 +247,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp206(): int
+    public function getHttp206()
     {
         return $this->get("Http206");
     }
@@ -257,7 +257,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http206
      */
-    public function setHttp206(int $http206)
+    public function setHttp206($http206)
     {
         $this->set("Http206", $http206);
     }
@@ -267,7 +267,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp207(): int
+    public function getHttp207()
     {
         return $this->get("Http207");
     }
@@ -277,7 +277,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http207
      */
-    public function setHttp207(int $http207)
+    public function setHttp207($http207)
     {
         $this->set("Http207", $http207);
     }
@@ -287,7 +287,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp300(): int
+    public function getHttp300()
     {
         return $this->get("Http300");
     }
@@ -297,7 +297,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http300
      */
-    public function setHttp300(int $http300)
+    public function setHttp300($http300)
     {
         $this->set("Http300", $http300);
     }
@@ -307,7 +307,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp301(): int
+    public function getHttp301()
     {
         return $this->get("Http301");
     }
@@ -317,7 +317,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http301
      */
-    public function setHttp301(int $http301)
+    public function setHttp301($http301)
     {
         $this->set("Http301", $http301);
     }
@@ -327,7 +327,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp302(): int
+    public function getHttp302()
     {
         return $this->get("Http302");
     }
@@ -337,7 +337,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http302
      */
-    public function setHttp302(int $http302)
+    public function setHttp302($http302)
     {
         $this->set("Http302", $http302);
     }
@@ -347,7 +347,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp303(): int
+    public function getHttp303()
     {
         return $this->get("Http303");
     }
@@ -357,7 +357,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http303
      */
-    public function setHttp303(int $http303)
+    public function setHttp303($http303)
     {
         $this->set("Http303", $http303);
     }
@@ -367,7 +367,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp304(): int
+    public function getHttp304()
     {
         return $this->get("Http304");
     }
@@ -377,7 +377,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http304
      */
-    public function setHttp304(int $http304)
+    public function setHttp304($http304)
     {
         $this->set("Http304", $http304);
     }
@@ -387,7 +387,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp305(): int
+    public function getHttp305()
     {
         return $this->get("Http305");
     }
@@ -397,7 +397,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http305
      */
-    public function setHttp305(int $http305)
+    public function setHttp305($http305)
     {
         $this->set("Http305", $http305);
     }
@@ -407,7 +407,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp306(): int
+    public function getHttp306()
     {
         return $this->get("Http306");
     }
@@ -417,7 +417,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http306
      */
-    public function setHttp306(int $http306)
+    public function setHttp306($http306)
     {
         $this->set("Http306", $http306);
     }
@@ -427,7 +427,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp307(): int
+    public function getHttp307()
     {
         return $this->get("Http307");
     }
@@ -437,7 +437,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http307
      */
-    public function setHttp307(int $http307)
+    public function setHttp307($http307)
     {
         $this->set("Http307", $http307);
     }
@@ -447,7 +447,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp400(): int
+    public function getHttp400()
     {
         return $this->get("Http400");
     }
@@ -457,7 +457,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http400
      */
-    public function setHttp400(int $http400)
+    public function setHttp400($http400)
     {
         $this->set("Http400", $http400);
     }
@@ -467,7 +467,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp401(): int
+    public function getHttp401()
     {
         return $this->get("Http401");
     }
@@ -477,7 +477,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http401
      */
-    public function setHttp401(int $http401)
+    public function setHttp401($http401)
     {
         $this->set("Http401", $http401);
     }
@@ -487,7 +487,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp402(): int
+    public function getHttp402()
     {
         return $this->get("Http402");
     }
@@ -497,7 +497,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http402
      */
-    public function setHttp402(int $http402)
+    public function setHttp402($http402)
     {
         $this->set("Http402", $http402);
     }
@@ -507,7 +507,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp403(): int
+    public function getHttp403()
     {
         return $this->get("Http403");
     }
@@ -517,7 +517,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http403
      */
-    public function setHttp403(int $http403)
+    public function setHttp403($http403)
     {
         $this->set("Http403", $http403);
     }
@@ -527,7 +527,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp404(): int
+    public function getHttp404()
     {
         return $this->get("Http404");
     }
@@ -537,7 +537,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http404
      */
-    public function setHttp404(int $http404)
+    public function setHttp404($http404)
     {
         $this->set("Http404", $http404);
     }
@@ -547,7 +547,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp405(): int
+    public function getHttp405()
     {
         return $this->get("Http405");
     }
@@ -557,7 +557,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http405
      */
-    public function setHttp405(int $http405)
+    public function setHttp405($http405)
     {
         $this->set("Http405", $http405);
     }
@@ -567,7 +567,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp406(): int
+    public function getHttp406()
     {
         return $this->get("Http406");
     }
@@ -577,7 +577,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http406
      */
-    public function setHttp406(int $http406)
+    public function setHttp406($http406)
     {
         $this->set("Http406", $http406);
     }
@@ -587,7 +587,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp407(): int
+    public function getHttp407()
     {
         return $this->get("Http407");
     }
@@ -597,7 +597,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http407
      */
-    public function setHttp407(int $http407)
+    public function setHttp407($http407)
     {
         $this->set("Http407", $http407);
     }
@@ -607,7 +607,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp408(): int
+    public function getHttp408()
     {
         return $this->get("Http408");
     }
@@ -617,7 +617,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http408
      */
-    public function setHttp408(int $http408)
+    public function setHttp408($http408)
     {
         $this->set("Http408", $http408);
     }
@@ -627,7 +627,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp409(): int
+    public function getHttp409()
     {
         return $this->get("Http409");
     }
@@ -637,7 +637,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http409
      */
-    public function setHttp409(int $http409)
+    public function setHttp409($http409)
     {
         $this->set("Http409", $http409);
     }
@@ -647,7 +647,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp410(): int
+    public function getHttp410()
     {
         return $this->get("Http410");
     }
@@ -657,7 +657,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http410
      */
-    public function setHttp410(int $http410)
+    public function setHttp410($http410)
     {
         $this->set("Http410", $http410);
     }
@@ -667,7 +667,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp411(): int
+    public function getHttp411()
     {
         return $this->get("Http411");
     }
@@ -677,7 +677,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http411
      */
-    public function setHttp411(int $http411)
+    public function setHttp411($http411)
     {
         $this->set("Http411", $http411);
     }
@@ -687,7 +687,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp412(): int
+    public function getHttp412()
     {
         return $this->get("Http412");
     }
@@ -697,7 +697,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http412
      */
-    public function setHttp412(int $http412)
+    public function setHttp412($http412)
     {
         $this->set("Http412", $http412);
     }
@@ -707,7 +707,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp413(): int
+    public function getHttp413()
     {
         return $this->get("Http413");
     }
@@ -717,7 +717,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http413
      */
-    public function setHttp413(int $http413)
+    public function setHttp413($http413)
     {
         $this->set("Http413", $http413);
     }
@@ -727,7 +727,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp414(): int
+    public function getHttp414()
     {
         return $this->get("Http414");
     }
@@ -737,7 +737,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http414
      */
-    public function setHttp414(int $http414)
+    public function setHttp414($http414)
     {
         $this->set("Http414", $http414);
     }
@@ -747,7 +747,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp415(): int
+    public function getHttp415()
     {
         return $this->get("Http415");
     }
@@ -757,7 +757,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http415
      */
-    public function setHttp415(int $http415)
+    public function setHttp415($http415)
     {
         $this->set("Http415", $http415);
     }
@@ -767,7 +767,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp416(): int
+    public function getHttp416()
     {
         return $this->get("Http416");
     }
@@ -777,7 +777,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http416
      */
-    public function setHttp416(int $http416)
+    public function setHttp416($http416)
     {
         $this->set("Http416", $http416);
     }
@@ -787,7 +787,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp417(): int
+    public function getHttp417()
     {
         return $this->get("Http417");
     }
@@ -797,7 +797,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http417
      */
-    public function setHttp417(int $http417)
+    public function setHttp417($http417)
     {
         $this->set("Http417", $http417);
     }
@@ -807,7 +807,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp418(): int
+    public function getHttp418()
     {
         return $this->get("Http418");
     }
@@ -817,7 +817,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http418
      */
-    public function setHttp418(int $http418)
+    public function setHttp418($http418)
     {
         $this->set("Http418", $http418);
     }
@@ -827,7 +827,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp421(): int
+    public function getHttp421()
     {
         return $this->get("Http421");
     }
@@ -837,7 +837,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http421
      */
-    public function setHttp421(int $http421)
+    public function setHttp421($http421)
     {
         $this->set("Http421", $http421);
     }
@@ -847,7 +847,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp422(): int
+    public function getHttp422()
     {
         return $this->get("Http422");
     }
@@ -857,7 +857,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http422
      */
-    public function setHttp422(int $http422)
+    public function setHttp422($http422)
     {
         $this->set("Http422", $http422);
     }
@@ -867,7 +867,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp423(): int
+    public function getHttp423()
     {
         return $this->get("Http423");
     }
@@ -877,7 +877,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http423
      */
-    public function setHttp423(int $http423)
+    public function setHttp423($http423)
     {
         $this->set("Http423", $http423);
     }
@@ -887,7 +887,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp424(): int
+    public function getHttp424()
     {
         return $this->get("Http424");
     }
@@ -897,7 +897,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http424
      */
-    public function setHttp424(int $http424)
+    public function setHttp424($http424)
     {
         $this->set("Http424", $http424);
     }
@@ -907,7 +907,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp425(): int
+    public function getHttp425()
     {
         return $this->get("Http425");
     }
@@ -917,7 +917,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http425
      */
-    public function setHttp425(int $http425)
+    public function setHttp425($http425)
     {
         $this->set("Http425", $http425);
     }
@@ -927,7 +927,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp426(): int
+    public function getHttp426()
     {
         return $this->get("Http426");
     }
@@ -937,7 +937,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http426
      */
-    public function setHttp426(int $http426)
+    public function setHttp426($http426)
     {
         $this->set("Http426", $http426);
     }
@@ -947,7 +947,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp449(): int
+    public function getHttp449()
     {
         return $this->get("Http449");
     }
@@ -957,7 +957,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http449
      */
-    public function setHttp449(int $http449)
+    public function setHttp449($http449)
     {
         $this->set("Http449", $http449);
     }
@@ -967,7 +967,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp451(): int
+    public function getHttp451()
     {
         return $this->get("Http451");
     }
@@ -977,7 +977,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http451
      */
-    public function setHttp451(int $http451)
+    public function setHttp451($http451)
     {
         $this->set("Http451", $http451);
     }
@@ -987,7 +987,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp500(): int
+    public function getHttp500()
     {
         return $this->get("Http500");
     }
@@ -997,7 +997,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http500
      */
-    public function setHttp500(int $http500)
+    public function setHttp500($http500)
     {
         $this->set("Http500", $http500);
     }
@@ -1007,7 +1007,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp501(): int
+    public function getHttp501()
     {
         return $this->get("Http501");
     }
@@ -1017,7 +1017,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http501
      */
-    public function setHttp501(int $http501)
+    public function setHttp501($http501)
     {
         $this->set("Http501", $http501);
     }
@@ -1027,7 +1027,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp502(): int
+    public function getHttp502()
     {
         return $this->get("Http502");
     }
@@ -1037,7 +1037,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http502
      */
-    public function setHttp502(int $http502)
+    public function setHttp502($http502)
     {
         $this->set("Http502", $http502);
     }
@@ -1047,7 +1047,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp503(): int
+    public function getHttp503()
     {
         return $this->get("Http503");
     }
@@ -1057,7 +1057,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http503
      */
-    public function setHttp503(int $http503)
+    public function setHttp503($http503)
     {
         $this->set("Http503", $http503);
     }
@@ -1067,7 +1067,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp504(): int
+    public function getHttp504()
     {
         return $this->get("Http504");
     }
@@ -1077,7 +1077,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http504
      */
-    public function setHttp504(int $http504)
+    public function setHttp504($http504)
     {
         $this->set("Http504", $http504);
     }
@@ -1087,7 +1087,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp505(): int
+    public function getHttp505()
     {
         return $this->get("Http505");
     }
@@ -1097,7 +1097,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http505
      */
-    public function setHttp505(int $http505)
+    public function setHttp505($http505)
     {
         $this->set("Http505", $http505);
     }
@@ -1107,7 +1107,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp506(): int
+    public function getHttp506()
     {
         return $this->get("Http506");
     }
@@ -1117,7 +1117,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http506
      */
-    public function setHttp506(int $http506)
+    public function setHttp506($http506)
     {
         $this->set("Http506", $http506);
     }
@@ -1127,7 +1127,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp507(): int
+    public function getHttp507()
     {
         return $this->get("Http507");
     }
@@ -1137,7 +1137,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http507
      */
-    public function setHttp507(int $http507)
+    public function setHttp507($http507)
     {
         $this->set("Http507", $http507);
     }
@@ -1147,7 +1147,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp509(): int
+    public function getHttp509()
     {
         return $this->get("Http509");
     }
@@ -1157,7 +1157,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http509
      */
-    public function setHttp509(int $http509)
+    public function setHttp509($http509)
     {
         $this->set("Http509", $http509);
     }
@@ -1167,7 +1167,7 @@ class HttpCodeV2Detail extends Response
      *
      * @return integer|null
      */
-    public function getHttp510(): int
+    public function getHttp510()
     {
         return $this->get("Http510");
     }
@@ -1177,7 +1177,7 @@ class HttpCodeV2Detail extends Response
      *
      * @param int $http510
      */
-    public function setHttp510(int $http510)
+    public function setHttp510($http510)
     {
         $this->set("Http510", $http510);
     }

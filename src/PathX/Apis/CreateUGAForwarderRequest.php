@@ -30,21 +30,21 @@ class CreateUGAForwarderRequest extends Request
     
 
     /**
-     * ProjectId: 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return string|null
      */
-    public function getUGAId(): string
+    public function getUGAId()
     {
         return $this->get("UGAId");
     }
@@ -64,7 +64,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId)
+    public function setUGAId($ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -74,7 +74,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPHTTP(): array
+    public function getHTTPHTTP()
     {
         return $this->get("HTTPHTTP");
     }
@@ -94,7 +94,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPHTTPRS(): array
+    public function getHTTPHTTPRS()
     {
         return $this->get("HTTPHTTPRS");
     }
@@ -114,7 +114,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTP(): array
+    public function getHTTPSHTTP()
     {
         return $this->get("HTTPSHTTP");
     }
@@ -134,7 +134,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPRS(): array
+    public function getHTTPSHTTPRS()
     {
         return $this->get("HTTPSHTTPRS");
     }
@@ -154,7 +154,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPS(): array
+    public function getHTTPSHTTPS()
     {
         return $this->get("HTTPSHTTPS");
     }
@@ -174,7 +174,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPSRS(): array
+    public function getHTTPSHTTPSRS()
     {
         return $this->get("HTTPSHTTPSRS");
     }
@@ -190,17 +190,17 @@ class CreateUGAForwarderRequest extends Request
     }
 
     /**
-     * TCP: TCP接入端口
+     * TCP: TCP接入端口，禁用65123端口
      *
      * @return int[]|null
      */
-    public function getTCP(): array
+    public function getTCP()
     {
         return $this->get("TCP");
     }
 
     /**
-     * TCP: TCP接入端口
+     * TCP: TCP接入端口，禁用65123端口
      *
      * @param int[] $tcp
      */
@@ -214,7 +214,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getTCPRS(): array
+    public function getTCPRS()
     {
         return $this->get("TCPRS");
     }
@@ -230,17 +230,17 @@ class CreateUGAForwarderRequest extends Request
     }
 
     /**
-     * UDP: UDP接入端口
+     * UDP: UDP接入端口，禁用65123端口
      *
      * @return int[]|null
      */
-    public function getUDP(): array
+    public function getUDP()
     {
         return $this->get("UDP");
     }
 
     /**
-     * UDP: UDP接入端口
+     * UDP: UDP接入端口，禁用65123端口
      *
      * @param int[] $udp
      */
@@ -254,7 +254,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getUDPRS(): array
+    public function getUDPRS()
     {
         return $this->get("UDPRS");
     }
@@ -267,5 +267,125 @@ class CreateUGAForwarderRequest extends Request
     public function setUDPRS(array $udprs)
     {
         $this->set("UDPRS", $udprs);
+    }
+
+    /**
+     * WSWS: WebSocket接入WebSocket回源转发，接入端口。禁用65123。
+     *
+     * @return int[]|null
+     */
+    public function getWSWS()
+    {
+        return $this->get("WSWS");
+    }
+
+    /**
+     * WSWS: WebSocket接入WebSocket回源转发，接入端口。禁用65123。
+     *
+     * @param int[] $wsws
+     */
+    public function setWSWS(array $wsws)
+    {
+        $this->set("WSWS", $wsws);
+    }
+
+    /**
+     * WSWSRS: WebSocket接入WebSocket回源转发，源站监听端口
+     *
+     * @return int[]|null
+     */
+    public function getWSWSRS()
+    {
+        return $this->get("WSWSRS");
+    }
+
+    /**
+     * WSWSRS: WebSocket接入WebSocket回源转发，源站监听端口
+     *
+     * @param int[] $wswsrs
+     */
+    public function setWSWSRS(array $wswsrs)
+    {
+        $this->set("WSWSRS", $wswsrs);
+    }
+
+    /**
+     * WSSWSS: WebSocketS接入WebSocketS回源转发，接入端口。禁用65123。
+     *
+     * @return int[]|null
+     */
+    public function getWSSWSS()
+    {
+        return $this->get("WSSWSS");
+    }
+
+    /**
+     * WSSWSS: WebSocketS接入WebSocketS回源转发，接入端口。禁用65123。
+     *
+     * @param int[] $wsswss
+     */
+    public function setWSSWSS(array $wsswss)
+    {
+        $this->set("WSSWSS", $wsswss);
+    }
+
+    /**
+     * WSSWSSRS: WebSocketS接入WebSocketS回源转发，源站监听端口。
+     *
+     * @return int[]|null
+     */
+    public function getWSSWSSRS()
+    {
+        return $this->get("WSSWSSRS");
+    }
+
+    /**
+     * WSSWSSRS: WebSocketS接入WebSocketS回源转发，源站监听端口。
+     *
+     * @param int[] $wsswssrs
+     */
+    public function setWSSWSSRS(array $wsswssrs)
+    {
+        $this->set("WSSWSSRS", $wsswssrs);
+    }
+
+    /**
+     * WSSWS: WebSocketS接入WebSocket回源转发，接入端口。禁用65123。
+     *
+     * @return int[]|null
+     */
+    public function getWSSWS()
+    {
+        return $this->get("WSSWS");
+    }
+
+    /**
+     * WSSWS: WebSocketS接入WebSocket回源转发，接入端口。禁用65123。
+     *
+     * @param int[] $wssws
+     */
+    public function setWSSWS(array $wssws)
+    {
+        $this->set("WSSWS", $wssws);
+    }
+
+    /**
+     * WSSWSRS: WebSocketS接入WebSocket回源转发，源站监听端口。
+     *
+     * @return int[]|null
+     */
+    public function getWSSWSRS()
+    {
+        return $this->get("WSSWSRS");
+    }
+
+    /**
+     * WSSWSRS: WebSocketS接入WebSocket回源转发，源站监听端口。
+     *
+     * @param int[] $wsswsrs
+     */
+    public function setWSSWSRS(array $wsswsrs)
+    {
+        $this->set("WSSWSRS", $wsswsrs);
     }
 }

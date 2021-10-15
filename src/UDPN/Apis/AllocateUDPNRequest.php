@@ -35,7 +35,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getPeer1(): string
+    public function getPeer1()
     {
         return $this->get("Peer1");
     }
@@ -85,7 +85,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param string $peer1
      */
-    public function setPeer1(string $peer1)
+    public function setPeer1($peer1)
     {
         $this->set("Peer1", $peer1);
     }
@@ -95,7 +95,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getPeer2(): string
+    public function getPeer2()
     {
         return $this->get("Peer2");
     }
@@ -105,7 +105,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param string $peer2
      */
-    public function setPeer2(string $peer2)
+    public function setPeer2($peer2)
     {
         $this->set("Peer2", $peer2);
     }
@@ -115,7 +115,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth(): int
+    public function getBandwidth()
     {
         return $this->get("Bandwidth");
     }
@@ -125,7 +125,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth(int $bandwidth)
+    public function setBandwidth($bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -135,7 +135,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -145,7 +145,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -155,7 +155,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -165,7 +165,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -175,7 +175,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getPayMode(): string
+    public function getPayMode()
     {
         return $this->get("PayMode");
     }
@@ -185,7 +185,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode)
+    public function setPayMode($payMode)
     {
         $this->set("PayMode", $payMode);
     }
@@ -195,7 +195,7 @@ class AllocateUDPNRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -205,7 +205,7 @@ class AllocateUDPNRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

@@ -29,7 +29,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @return string|null
      */
-    public function getSessionNo(): string
+    public function getSessionNo()
     {
         return $this->get("SessionNo");
     }
@@ -39,7 +39,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param string $sessionNo
      */
-    public function setSessionNo(string $sessionNo)
+    public function setSessionNo($sessionNo)
     {
         $this->set("SessionNo", $sessionNo);
     }
@@ -49,7 +49,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @return string|null
      */
-    public function getReqUuid(): string
+    public function getReqUuid()
     {
         return $this->get("ReqUuid");
     }
@@ -59,7 +59,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param string $reqUuid
      */
-    public function setReqUuid(string $reqUuid)
+    public function setReqUuid($reqUuid)
     {
         $this->set("ReqUuid", $reqUuid);
     }
@@ -69,7 +69,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @return integer|null
      */
-    public function getSuccessCount(): int
+    public function getSuccessCount()
     {
         return $this->get("SuccessCount");
     }
@@ -79,7 +79,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param int $successCount
      */
-    public function setSuccessCount(int $successCount)
+    public function setSuccessCount($successCount)
     {
         $this->set("SuccessCount", $successCount);
     }
@@ -89,9 +89,12 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @return BatchInfo[]|null
      */
-    public function getFailContent(): array
+    public function getFailContent()
     {
-        $items = $this->get("FailContent") ?? [];
+        $items = $this->get("FailContent");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new BatchInfo($item));

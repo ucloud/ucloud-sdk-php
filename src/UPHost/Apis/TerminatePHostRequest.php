@@ -35,7 +35,7 @@ class TerminatePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class TerminatePHostRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class TerminatePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class TerminatePHostRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class TerminatePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class TerminatePHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class TerminatePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getPHostId(): string
+    public function getPHostId()
     {
         return $this->get("PHostId");
     }
@@ -105,7 +105,7 @@ class TerminatePHostRequest extends Request
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId)
+    public function setPHostId($pHostId)
     {
         $this->set("PHostId", $pHostId);
     }
@@ -115,7 +115,7 @@ class TerminatePHostRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseEIP(): bool
+    public function getReleaseEIP()
     {
         return $this->get("ReleaseEIP");
     }
@@ -125,7 +125,7 @@ class TerminatePHostRequest extends Request
      *
      * @param boolean $releaseEIP
      */
-    public function setReleaseEIP(bool $releaseEIP)
+    public function setReleaseEIP($releaseEIP)
     {
         $this->set("ReleaseEIP", $releaseEIP);
     }
@@ -135,7 +135,7 @@ class TerminatePHostRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseUDisk(): bool
+    public function getReleaseUDisk()
     {
         return $this->get("ReleaseUDisk");
     }
@@ -145,7 +145,7 @@ class TerminatePHostRequest extends Request
      *
      * @param boolean $releaseUDisk
      */
-    public function setReleaseUDisk(bool $releaseUDisk)
+    public function setReleaseUDisk($releaseUDisk)
     {
         $this->set("ReleaseUDisk", $releaseUDisk);
     }

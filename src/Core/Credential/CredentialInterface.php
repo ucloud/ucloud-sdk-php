@@ -10,7 +10,7 @@ interface CredentialInterface
      * @param array $args Arguments
      * @return string Signature
      */
-    public function verifyAc(array $args): string;
+    public function verifyAc(array $args);
 
     /**
      * Add additional fields to arguments
@@ -23,5 +23,5 @@ interface CredentialInterface
      * @param array $args Arguments
      * @return array Arguments with signature and keys
      */
-    public function sign(array $args): array;
+    public function sign(array $args);
 }

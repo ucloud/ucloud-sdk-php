@@ -33,7 +33,7 @@ class GetGlobalSSHPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class GetGlobalSSHPriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class GetGlobalSSHPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -63,7 +63,7 @@ class GetGlobalSSHPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -73,7 +73,7 @@ class GetGlobalSSHPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -83,7 +83,7 @@ class GetGlobalSSHPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -93,7 +93,7 @@ class GetGlobalSSHPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType(): string
+    public function getInstanceType()
     {
         return $this->get("InstanceType");
     }
@@ -103,7 +103,7 @@ class GetGlobalSSHPriceRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType(string $instanceType)
+    public function setInstanceType($instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }

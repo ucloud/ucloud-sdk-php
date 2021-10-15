@@ -32,7 +32,7 @@ class DescribeUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class DescribeUEcVHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class DescribeUEcVHostRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIdcId(): array
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -72,7 +72,7 @@ class DescribeUEcVHostRequest extends Request
      *
      * @return string[]|null
      */
-    public function getNodeId(): array
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }
@@ -92,7 +92,7 @@ class DescribeUEcVHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -102,7 +102,7 @@ class DescribeUEcVHostRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -112,7 +112,7 @@ class DescribeUEcVHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -122,7 +122,7 @@ class DescribeUEcVHostRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }

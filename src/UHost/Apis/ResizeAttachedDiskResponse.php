@@ -27,7 +27,7 @@ class ResizeAttachedDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getDiskId(): string
+    public function getDiskId()
     {
         return $this->get("DiskId");
     }
@@ -37,7 +37,7 @@ class ResizeAttachedDiskResponse extends Response
      *
      * @param string $diskId
      */
-    public function setDiskId(string $diskId)
+    public function setDiskId($diskId)
     {
         $this->set("DiskId", $diskId);
     }
@@ -47,7 +47,7 @@ class ResizeAttachedDiskResponse extends Response
      *
      * @return boolean|null
      */
-    public function getNeedRestart(): bool
+    public function getNeedRestart()
     {
         return $this->get("NeedRestart");
     }
@@ -57,7 +57,7 @@ class ResizeAttachedDiskResponse extends Response
      *
      * @param boolean $needRestart
      */
-    public function setNeedRestart(bool $needRestart)
+    public function setNeedRestart($needRestart)
     {
         $this->set("NeedRestart", $needRestart);
     }

@@ -34,7 +34,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @return integer|null
      */
-    public function getBillPeriod(): int
+    public function getBillPeriod()
     {
         return $this->get("BillPeriod");
     }
@@ -44,7 +44,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @param int $billPeriod
      */
-    public function setBillPeriod(int $billPeriod)
+    public function setBillPeriod($billPeriod)
     {
         $this->set("BillPeriod", $billPeriod);
     }
@@ -54,7 +54,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @return integer|null
      */
-    public function getBillType(): int
+    public function getBillType()
     {
         return $this->get("BillType");
     }
@@ -64,7 +64,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @param int $billType
      */
-    public function setBillType(int $billType)
+    public function setBillType($billType)
     {
         $this->set("BillType", $billType);
     }
@@ -74,7 +74,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @return integer|null
      */
-    public function getPaidType(): int
+    public function getPaidType()
     {
         return $this->get("PaidType");
     }
@@ -84,7 +84,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @param int $paidType
      */
-    public function setPaidType(int $paidType)
+    public function setPaidType($paidType)
     {
         $this->set("PaidType", $paidType);
     }
@@ -94,7 +94,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @return string|null
      */
-    public function getRequireVersion(): string
+    public function getRequireVersion()
     {
         return $this->get("RequireVersion");
     }
@@ -104,7 +104,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @param string $requireVersion
      */
-    public function setRequireVersion(string $requireVersion)
+    public function setRequireVersion($requireVersion)
     {
         $this->set("RequireVersion", $requireVersion);
     }

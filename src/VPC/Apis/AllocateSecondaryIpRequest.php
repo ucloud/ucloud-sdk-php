@@ -37,7 +37,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -87,7 +87,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getMac(): string
+    public function getMac()
     {
         return $this->get("Mac");
     }
@@ -107,7 +107,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $mac
      */
-    public function setMac(string $mac)
+    public function setMac($mac)
     {
         $this->set("Mac", $mac);
     }
@@ -117,7 +117,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getObjectId(): string
+    public function getObjectId()
     {
         return $this->get("ObjectId");
     }
@@ -127,7 +127,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $objectId
      */
-    public function setObjectId(string $objectId)
+    public function setObjectId($objectId)
     {
         $this->set("ObjectId", $objectId);
     }
@@ -137,7 +137,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId(): string
+    public function getSubnetId()
     {
         return $this->get("SubnetId");
     }
@@ -147,7 +147,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId(string $subnetId)
+    public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -157,7 +157,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -167,7 +167,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -177,7 +177,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getIp(): string
+    public function getIp()
     {
         return $this->get("Ip");
     }
@@ -187,7 +187,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $ip
      */
-    public function setIp(string $ip)
+    public function setIp($ip)
     {
         $this->set("Ip", $ip);
     }

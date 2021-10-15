@@ -27,7 +27,7 @@ class DataNodeInfo extends Response
      *
      * @return string|null
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->get("Id");
     }
@@ -37,7 +37,7 @@ class DataNodeInfo extends Response
      *
      * @param string $id
      */
-    public function setId(string $id)
+    public function setId($id)
     {
         $this->set("Id", $id);
     }
@@ -47,7 +47,7 @@ class DataNodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getMemory(): int
+    public function getMemory()
     {
         return $this->get("Memory");
     }
@@ -57,7 +57,7 @@ class DataNodeInfo extends Response
      *
      * @param int $memory
      */
-    public function setMemory(int $memory)
+    public function setMemory($memory)
     {
         $this->set("Memory", $memory);
     }
@@ -67,7 +67,7 @@ class DataNodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getDiskSpace(): int
+    public function getDiskSpace()
     {
         return $this->get("DiskSpace");
     }
@@ -77,7 +77,7 @@ class DataNodeInfo extends Response
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace)
+    public function setDiskSpace($diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -87,7 +87,7 @@ class DataNodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getSlaveCount(): int
+    public function getSlaveCount()
     {
         return $this->get("SlaveCount");
     }
@@ -97,7 +97,7 @@ class DataNodeInfo extends Response
      *
      * @param int $slaveCount
      */
-    public function setSlaveCount(int $slaveCount)
+    public function setSlaveCount($slaveCount)
     {
         $this->set("SlaveCount", $slaveCount);
     }
@@ -107,7 +107,7 @@ class DataNodeInfo extends Response
      *
      * @return string|null
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->get("State");
     }
@@ -117,7 +117,7 @@ class DataNodeInfo extends Response
      *
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }
@@ -127,9 +127,12 @@ class DataNodeInfo extends Response
      *
      * @return SlaveInfo[]|null
      */
-    public function getSlaveInfos(): array
+    public function getSlaveInfos()
     {
-        $items = $this->get("SlaveInfos") ?? [];
+        $items = $this->get("SlaveInfos");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new SlaveInfo($item));
@@ -156,7 +159,7 @@ class DataNodeInfo extends Response
      *
      * @return string|null
      */
-    public function getLastTransTaskId(): string
+    public function getLastTransTaskId()
     {
         return $this->get("LastTransTaskId");
     }
@@ -166,7 +169,7 @@ class DataNodeInfo extends Response
      *
      * @param string $lastTransTaskId
      */
-    public function setLastTransTaskId(string $lastTransTaskId)
+    public function setLastTransTaskId($lastTransTaskId)
     {
         $this->set("LastTransTaskId", $lastTransTaskId);
     }
@@ -176,7 +179,7 @@ class DataNodeInfo extends Response
      *
      * @return string|null
      */
-    public function getCreateTime(): string
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -186,7 +189,7 @@ class DataNodeInfo extends Response
      *
      * @param string $createTime
      */
-    public function setCreateTime(string $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }

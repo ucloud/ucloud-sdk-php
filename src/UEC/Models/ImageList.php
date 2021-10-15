@@ -27,7 +27,7 @@ class ImageList extends Response
      *
      * @return string|null
      */
-    public function getStoreAddr(): string
+    public function getStoreAddr()
     {
         return $this->get("StoreAddr");
     }
@@ -37,7 +37,7 @@ class ImageList extends Response
      *
      * @param string $storeAddr
      */
-    public function setStoreAddr(string $storeAddr)
+    public function setStoreAddr($storeAddr)
     {
         $this->set("StoreAddr", $storeAddr);
     }
@@ -47,7 +47,7 @@ class ImageList extends Response
      *
      * @return string|null
      */
-    public function getUserName(): string
+    public function getUserName()
     {
         return $this->get("UserName");
     }
@@ -57,7 +57,7 @@ class ImageList extends Response
      *
      * @param string $userName
      */
-    public function setUserName(string $userName)
+    public function setUserName($userName)
     {
         $this->set("UserName", $userName);
     }
@@ -67,7 +67,7 @@ class ImageList extends Response
      *
      * @return string|null
      */
-    public function getImageKey(): string
+    public function getImageKey()
     {
         return $this->get("ImageKey");
     }
@@ -77,7 +77,7 @@ class ImageList extends Response
      *
      * @param string $imageKey
      */
-    public function setImageKey(string $imageKey)
+    public function setImageKey($imageKey)
     {
         $this->set("ImageKey", $imageKey);
     }

@@ -27,7 +27,7 @@ class OutPublicIpInfo extends Response
      *
      * @return string|null
      */
-    public function getIP(): string
+    public function getIP()
     {
         return $this->get("IP");
     }
@@ -37,7 +37,7 @@ class OutPublicIpInfo extends Response
      *
      * @param string $ip
      */
-    public function setIP(string $ip)
+    public function setIP($ip)
     {
         $this->set("IP", $ip);
     }
@@ -47,7 +47,7 @@ class OutPublicIpInfo extends Response
      *
      * @return string|null
      */
-    public function getArea(): string
+    public function getArea()
     {
         return $this->get("Area");
     }
@@ -57,7 +57,7 @@ class OutPublicIpInfo extends Response
      *
      * @param string $area
      */
-    public function setArea(string $area)
+    public function setArea($area)
     {
         $this->set("Area", $area);
     }

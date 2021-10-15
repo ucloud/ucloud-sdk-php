@@ -31,9 +31,12 @@ class DescribeNetworkAclResponse extends Response
      *
      * @return AclInfo[]|null
      */
-    public function getAclList(): array
+    public function getAclList()
     {
-        $items = $this->get("AclList") ?? [];
+        $items = $this->get("AclList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AclInfo($item));

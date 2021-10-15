@@ -29,9 +29,12 @@ class DescribeNetworkAclEntryResponse extends Response
      *
      * @return AclEntryInfo[]|null
      */
-    public function getEntryList(): array
+    public function getEntryList()
     {
-        $items = $this->get("EntryList") ?? [];
+        $items = $this->get("EntryList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AclEntryInfo($item));

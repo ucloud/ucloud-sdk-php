@@ -37,7 +37,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -67,7 +67,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -77,7 +77,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getVPNGatewayName(): string
+    public function getVPNGatewayName()
     {
         return $this->get("VPNGatewayName");
     }
@@ -87,7 +87,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $vpnGatewayName
      */
-    public function setVPNGatewayName(string $vpnGatewayName)
+    public function setVPNGatewayName($vpnGatewayName)
     {
         $this->set("VPNGatewayName", $vpnGatewayName);
     }
@@ -97,7 +97,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -107,7 +107,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -117,7 +117,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getGrade(): string
+    public function getGrade()
     {
         return $this->get("Grade");
     }
@@ -127,7 +127,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $grade
      */
-    public function setGrade(string $grade)
+    public function setGrade($grade)
     {
         $this->set("Grade", $grade);
     }
@@ -137,7 +137,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -147,7 +147,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -157,7 +157,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -167,7 +167,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -177,7 +177,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -187,7 +187,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -197,7 +197,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -207,7 +207,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -217,7 +217,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getBusinessId(): string
+    public function getBusinessId()
     {
         return $this->get("BusinessId");
     }
@@ -227,7 +227,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $businessId
      */
-    public function setBusinessId(string $businessId)
+    public function setBusinessId($businessId)
     {
         $this->set("BusinessId", $businessId);
     }
@@ -237,7 +237,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -247,7 +247,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -257,7 +257,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -267,7 +267,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

@@ -34,7 +34,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -104,7 +104,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -114,7 +114,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDBCId(): string
+    public function getUDBCId()
     {
         return $this->get("UDBCId");
     }
@@ -124,7 +124,7 @@ class DeleteUDBInstanceRequest extends Request
      *
      * @param string $udbcId
      */
-    public function setUDBCId(string $udbcId)
+    public function setUDBCId($udbcId)
     {
         $this->set("UDBCId", $udbcId);
     }

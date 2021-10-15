@@ -36,7 +36,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -106,7 +106,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -116,7 +116,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -126,7 +126,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }
@@ -136,7 +136,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProtocol(): string
+    public function getProtocol()
     {
         return $this->get("Protocol");
     }
@@ -146,7 +146,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol)
+    public function setProtocol($protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -156,7 +156,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool
+    public function getRegionFlag()
     {
         return $this->get("RegionFlag");
     }
@@ -166,7 +166,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag)
+    public function setRegionFlag($regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }
@@ -176,7 +176,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -186,7 +186,7 @@ class CheckURedisAllowanceRequest extends Request
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }

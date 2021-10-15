@@ -27,7 +27,7 @@ class TargetResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetworkId(): string
+    public function getSubnetworkId()
     {
         return $this->get("SubnetworkId");
     }
@@ -37,7 +37,7 @@ class TargetResourceInfo extends Response
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId(string $subnetworkId)
+    public function setSubnetworkId($subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }
@@ -47,7 +47,7 @@ class TargetResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getResourceName(): string
+    public function getResourceName()
     {
         return $this->get("ResourceName");
     }
@@ -57,7 +57,7 @@ class TargetResourceInfo extends Response
      *
      * @param string $resourceName
      */
-    public function setResourceName(string $resourceName)
+    public function setResourceName($resourceName)
     {
         $this->set("ResourceName", $resourceName);
     }
@@ -67,7 +67,7 @@ class TargetResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -77,7 +77,7 @@ class TargetResourceInfo extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -87,7 +87,7 @@ class TargetResourceInfo extends Response
      *
      * @return integer|null
      */
-    public function getResourceType(): int
+    public function getResourceType()
     {
         return $this->get("ResourceType");
     }
@@ -97,7 +97,7 @@ class TargetResourceInfo extends Response
      *
      * @param int $resourceType
      */
-    public function setResourceType(int $resourceType)
+    public function setResourceType($resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -107,7 +107,7 @@ class TargetResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getSubResourceName(): string
+    public function getSubResourceName()
     {
         return $this->get("SubResourceName");
     }
@@ -117,7 +117,7 @@ class TargetResourceInfo extends Response
      *
      * @param string $subResourceName
      */
-    public function setSubResourceName(string $subResourceName)
+    public function setSubResourceName($subResourceName)
     {
         $this->set("SubResourceName", $subResourceName);
     }
@@ -127,7 +127,7 @@ class TargetResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getSubResourceId(): string
+    public function getSubResourceId()
     {
         return $this->get("SubResourceId");
     }
@@ -137,7 +137,7 @@ class TargetResourceInfo extends Response
      *
      * @param string $subResourceId
      */
-    public function setSubResourceId(string $subResourceId)
+    public function setSubResourceId($subResourceId)
     {
         $this->set("SubResourceId", $subResourceId);
     }
@@ -147,7 +147,7 @@ class TargetResourceInfo extends Response
      *
      * @return integer|null
      */
-    public function getSubResourceType(): int
+    public function getSubResourceType()
     {
         return $this->get("SubResourceType");
     }
@@ -157,7 +157,7 @@ class TargetResourceInfo extends Response
      *
      * @param int $subResourceType
      */
-    public function setSubResourceType(int $subResourceType)
+    public function setSubResourceType($subResourceType)
     {
         $this->set("SubResourceType", $subResourceType);
     }
@@ -167,7 +167,7 @@ class TargetResourceInfo extends Response
      *
      * @return string|null
      */
-    public function getPrivateIp(): string
+    public function getPrivateIp()
     {
         return $this->get("PrivateIp");
     }
@@ -177,7 +177,7 @@ class TargetResourceInfo extends Response
      *
      * @param string $privateIp
      */
-    public function setPrivateIp(string $privateIp)
+    public function setPrivateIp($privateIp)
     {
         $this->set("PrivateIp", $privateIp);
     }

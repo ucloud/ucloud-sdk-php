@@ -35,7 +35,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @return integer|null
      */
-    public function getType(): int
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -65,7 +65,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @param int $type
      */
-    public function setType(int $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -75,7 +75,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -85,7 +85,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -95,7 +95,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -105,7 +105,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -115,7 +115,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @return string[]|null
      */
-    public function getDomainId(): array
+    public function getDomainId()
     {
         return $this->get("DomainId");
     }
@@ -135,7 +135,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @return string|null
      */
-    public function getAreacode(): string
+    public function getAreacode()
     {
         return $this->get("Areacode");
     }
@@ -145,7 +145,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
      *
      * @param string $areacode
      */
-    public function setAreacode(string $areacode)
+    public function setAreacode($areacode)
     {
         $this->set("Areacode", $areacode);
     }

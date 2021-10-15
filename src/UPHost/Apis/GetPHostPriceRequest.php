@@ -37,7 +37,7 @@ class GetPHostPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class GetPHostPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class GetPHostPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class GetPHostPriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class GetPHostPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -87,7 +87,7 @@ class GetPHostPriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class GetPHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -107,7 +107,7 @@ class GetPHostPriceRequest extends Request
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }
@@ -117,7 +117,7 @@ class GetPHostPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -127,7 +127,7 @@ class GetPHostPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -137,7 +137,7 @@ class GetPHostPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -147,7 +147,7 @@ class GetPHostPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -157,7 +157,7 @@ class GetPHostPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getCluster(): string
+    public function getCluster()
     {
         return $this->get("Cluster");
     }
@@ -167,7 +167,7 @@ class GetPHostPriceRequest extends Request
      *
      * @param string $cluster
      */
-    public function setCluster(string $cluster)
+    public function setCluster($cluster)
     {
         $this->set("Cluster", $cluster);
     }
@@ -177,7 +177,7 @@ class GetPHostPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -187,7 +187,7 @@ class GetPHostPriceRequest extends Request
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -197,9 +197,12 @@ class GetPHostPriceRequest extends Request
      *
      * @return GetPHostPriceParamDisks[]|null
      */
-    public function getDisks(): array
+    public function getDisks()
     {
-        $items = $this->get("Disks") ?? [];
+        $items = $this->get("Disks");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new GetPHostPriceParamDisks($item));

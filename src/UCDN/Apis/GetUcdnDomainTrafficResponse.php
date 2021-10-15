@@ -28,9 +28,12 @@ class GetUcdnDomainTrafficResponse extends Response
      *
      * @return UcdnDomainTrafficSet[]|null
      */
-    public function getTrafficSet(): array
+    public function getTrafficSet()
     {
-        $items = $this->get("TrafficSet") ?? [];
+        $items = $this->get("TrafficSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UcdnDomainTrafficSet($item));

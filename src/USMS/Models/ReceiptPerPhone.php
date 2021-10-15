@@ -27,7 +27,7 @@ class ReceiptPerPhone extends Response
      *
      * @return string|null
      */
-    public function getPhone(): string
+    public function getPhone()
     {
         return $this->get("Phone");
     }
@@ -37,7 +37,7 @@ class ReceiptPerPhone extends Response
      *
      * @param string $phone
      */
-    public function setPhone(string $phone)
+    public function setPhone($phone)
     {
         $this->set("Phone", $phone);
     }
@@ -47,7 +47,7 @@ class ReceiptPerPhone extends Response
      *
      * @return integer|null
      */
-    public function getCostCount(): int
+    public function getCostCount()
     {
         return $this->get("CostCount");
     }
@@ -57,7 +57,7 @@ class ReceiptPerPhone extends Response
      *
      * @param int $costCount
      */
-    public function setCostCount(int $costCount)
+    public function setCostCount($costCount)
     {
         $this->set("CostCount", $costCount);
     }
@@ -67,7 +67,7 @@ class ReceiptPerPhone extends Response
      *
      * @return string|null
      */
-    public function getReceiptResult(): string
+    public function getReceiptResult()
     {
         return $this->get("ReceiptResult");
     }
@@ -77,7 +77,7 @@ class ReceiptPerPhone extends Response
      *
      * @param string $receiptResult
      */
-    public function setReceiptResult(string $receiptResult)
+    public function setReceiptResult($receiptResult)
     {
         $this->set("ReceiptResult", $receiptResult);
     }
@@ -87,7 +87,7 @@ class ReceiptPerPhone extends Response
      *
      * @return string|null
      */
-    public function getReceiptCode(): string
+    public function getReceiptCode()
     {
         return $this->get("ReceiptCode");
     }
@@ -97,7 +97,7 @@ class ReceiptPerPhone extends Response
      *
      * @param string $receiptCode
      */
-    public function setReceiptCode(string $receiptCode)
+    public function setReceiptCode($receiptCode)
     {
         $this->set("ReceiptCode", $receiptCode);
     }
@@ -107,7 +107,7 @@ class ReceiptPerPhone extends Response
      *
      * @return string|null
      */
-    public function getReceiptDesc(): string
+    public function getReceiptDesc()
     {
         return $this->get("ReceiptDesc");
     }
@@ -117,7 +117,7 @@ class ReceiptPerPhone extends Response
      *
      * @param string $receiptDesc
      */
-    public function setReceiptDesc(string $receiptDesc)
+    public function setReceiptDesc($receiptDesc)
     {
         $this->set("ReceiptDesc", $receiptDesc);
     }
@@ -127,7 +127,7 @@ class ReceiptPerPhone extends Response
      *
      * @return integer|null
      */
-    public function getReceiptTime(): int
+    public function getReceiptTime()
     {
         return $this->get("ReceiptTime");
     }
@@ -137,7 +137,7 @@ class ReceiptPerPhone extends Response
      *
      * @param int $receiptTime
      */
-    public function setReceiptTime(int $receiptTime)
+    public function setReceiptTime($receiptTime)
     {
         $this->set("ReceiptTime", $receiptTime);
     }
@@ -147,7 +147,7 @@ class ReceiptPerPhone extends Response
      *
      * @return string|null
      */
-    public function getUserId(): string
+    public function getUserId()
     {
         return $this->get("UserId");
     }
@@ -157,7 +157,7 @@ class ReceiptPerPhone extends Response
      *
      * @param string $userId
      */
-    public function setUserId(string $userId)
+    public function setUserId($userId)
     {
         $this->set("UserId", $userId);
     }

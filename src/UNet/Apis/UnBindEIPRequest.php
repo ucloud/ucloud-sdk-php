@@ -36,7 +36,7 @@ class UnBindEIPRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class UnBindEIPRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class UnBindEIPRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class UnBindEIPRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class UnBindEIPRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -86,7 +86,7 @@ class UnBindEIPRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -96,7 +96,7 @@ class UnBindEIPRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceType(): string
+    public function getResourceType()
     {
         return $this->get("ResourceType");
     }
@@ -106,7 +106,7 @@ class UnBindEIPRequest extends Request
      *
      * @param string $resourceType
      */
-    public function setResourceType(string $resourceType)
+    public function setResourceType($resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -116,7 +116,7 @@ class UnBindEIPRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -126,7 +126,7 @@ class UnBindEIPRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }

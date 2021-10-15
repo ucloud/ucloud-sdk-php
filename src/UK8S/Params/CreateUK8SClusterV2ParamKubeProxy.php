@@ -27,7 +27,7 @@ class CreateUK8SClusterV2ParamKubeProxy extends Request
      *
      * @return string|null
      */
-    public function getMode(): string
+    public function getMode()
     {
         return $this->get("Mode");
     }
@@ -37,7 +37,7 @@ class CreateUK8SClusterV2ParamKubeProxy extends Request
      *
      * @param string $mode
      */
-    public function setMode(string $mode)
+    public function setMode($mode)
     {
         $this->set("Mode", $mode);
     }

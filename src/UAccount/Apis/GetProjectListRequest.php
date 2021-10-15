@@ -32,7 +32,7 @@ class GetProjectListRequest extends Request
      *
      * @return string|null
      */
-    public function getIsFinance(): string
+    public function getIsFinance()
     {
         return $this->get("IsFinance");
     }
@@ -42,7 +42,7 @@ class GetProjectListRequest extends Request
      *
      * @param string $isFinance
      */
-    public function setIsFinance(string $isFinance)
+    public function setIsFinance($isFinance)
     {
         $this->set("IsFinance", $isFinance);
     }

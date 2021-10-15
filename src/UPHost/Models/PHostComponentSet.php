@@ -27,7 +27,7 @@ class PHostComponentSet extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class PHostComponentSet extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class PHostComponentSet extends Response
      *
      * @return integer|null
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -57,7 +57,7 @@ class PHostComponentSet extends Response
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }

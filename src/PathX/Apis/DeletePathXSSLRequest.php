@@ -34,7 +34,7 @@ class DeletePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class DeletePathXSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DeletePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLId(): string
+    public function getSSLId()
     {
         return $this->get("SSLId");
     }
@@ -64,7 +64,7 @@ class DeletePathXSSLRequest extends Request
      *
      * @param string $sslId
      */
-    public function setSSLId(string $sslId)
+    public function setSSLId($sslId)
     {
         $this->set("SSLId", $sslId);
     }

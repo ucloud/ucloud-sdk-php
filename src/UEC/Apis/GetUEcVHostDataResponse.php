@@ -38,7 +38,7 @@ class GetUEcVHostDataResponse extends Response
      *
      * @return DataSet|null
      */
-    public function getDataSets(): DataSet
+    public function getDataSets()
     {
         return new DataSet($this->get("DataSets"));
     }
@@ -48,7 +48,7 @@ class GetUEcVHostDataResponse extends Response
      *
      * @param DataSet $dataSets
      */
-    public function setDataSets(DataSet $dataSets)
+    public function setDataSets(array $dataSets)
     {
         $this->set("DataSets", $dataSets->getAll());
     }

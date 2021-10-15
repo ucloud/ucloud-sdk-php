@@ -28,9 +28,12 @@ class GetEIPPayModeResponse extends Response
      *
      * @return EIPPayModeSet[]|null
      */
-    public function getEIPPayMode(): array
+    public function getEIPPayMode()
     {
-        $items = $this->get("EIPPayMode") ?? [];
+        $items = $this->get("EIPPayMode");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EIPPayModeSet($item));

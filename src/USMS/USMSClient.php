@@ -50,7 +50,7 @@ class USMSClient extends Client
     /**
      * CreateUSMSSignature - 调用接口CreateUSMSSignature申请短信签名
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/create_usms_signature
+     * See also: https://docs.ucloud.cn/api/usms-api/create_usms_signature
      *
      * Arguments:
      *
@@ -72,9 +72,10 @@ class USMSClient extends Client
      *     "SigId" => (string) 短信签名ID（短信签名申请时的工单ID）
      * ]
      *
+     * @return CreateUSMSSignatureResponse
      * @throws UCloudException
      */
-    public function createUSMSSignature(CreateUSMSSignatureRequest $request = null): CreateUSMSSignatureResponse
+    public function createUSMSSignature(CreateUSMSSignatureRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
@@ -83,7 +84,7 @@ class USMSClient extends Client
     /**
      * CreateUSMSTemplate - 调用接口CreateUSMSTemplate申请短信模板
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/create_usms_template
+     * See also: https://docs.ucloud.cn/api/usms-api/create_usms_template
      *
      * Arguments:
      *
@@ -94,6 +95,7 @@ class USMSClient extends Client
      *     "Template" => (string) 短信模板内容，说明如下：字数不超过500，每个中文、符号、英文、数组等都计为一个字；模板中的变量填写格式：{N}，其中N为大于1的整数，有多个参数时，建议N从1开始顺次，例如：{1}、{2}等；短信模板禁止仅包括变量的情况；
      *     "International" => (boolean) 标记是否为国际短信。true:国际短信，false:国内短信，若不传值则默认该值为false
      *     "Remark" => (string) 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。
+     *     "UnsubscribeInfo" => (string) 当Purpose为3时，也即会员推广类短信模板，该项必填。枚举值：TD退订、回T退订、回N退订、回TD退订、退订回T、退订回D、退订回TD、退订回复T、退订回复D、退订回复N、退订回复TD、拒收回T
      * ]
      *
      * Outputs:
@@ -102,9 +104,10 @@ class USMSClient extends Client
      *     "TemplateId" => (string) 短信模板ID（短信模板申请时的工单ID）
      * ]
      *
+     * @return CreateUSMSTemplateResponse
      * @throws UCloudException
      */
-    public function createUSMSTemplate(CreateUSMSTemplateRequest $request = null): CreateUSMSTemplateResponse
+    public function createUSMSTemplate(CreateUSMSTemplateRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());
@@ -113,7 +116,7 @@ class USMSClient extends Client
     /**
      * DeleteUSMSSignature - 调用接口DeleteUSMSSignature删除短信签名
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/delete_usms_signature
+     * See also: https://docs.ucloud.cn/api/usms-api/delete_usms_signature
      *
      * Arguments:
      *
@@ -127,9 +130,10 @@ class USMSClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUSMSSignatureResponse
      * @throws UCloudException
      */
-    public function deleteUSMSSignature(DeleteUSMSSignatureRequest $request = null): DeleteUSMSSignatureResponse
+    public function deleteUSMSSignature(DeleteUSMSSignatureRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
@@ -138,7 +142,7 @@ class USMSClient extends Client
     /**
      * DeleteUSMSTemplate - 调用接口DeleteUSMSTemplate删除短信模板
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/delete_usms_template
+     * See also: https://docs.ucloud.cn/api/usms-api/delete_usms_template
      *
      * Arguments:
      *
@@ -152,9 +156,10 @@ class USMSClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteUSMSTemplateResponse
      * @throws UCloudException
      */
-    public function deleteUSMSTemplate(DeleteUSMSTemplateRequest $request = null): DeleteUSMSTemplateResponse
+    public function deleteUSMSTemplate(DeleteUSMSTemplateRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());
@@ -163,7 +168,7 @@ class USMSClient extends Client
     /**
      * GetUSMSSendReceipt - 调用接口GetUSMSSendReceipt短信发送状态信息
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/get_usms_send_receipt
+     * See also: https://docs.ucloud.cn/api/usms-api/get_usms_send_receipt
      *
      * Arguments:
      *
@@ -171,7 +176,7 @@ class USMSClient extends Client
      *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "SessionNoSet" => (array<string>) 发送短信时返回的SessionNo集合，SessionNoSet.0,SessionNoSet.1....格式
+     *     "SessionNoSet" => (array<string>) 发送短信时返回的SessionNo集合，SessionNoSet.0,SessionNoSet.1....格式，单次调用集合数需控制在100个以内
      * ]
      *
      * Outputs:
@@ -195,9 +200,10 @@ class USMSClient extends Client
      *     ]
      * ]
      *
+     * @return GetUSMSSendReceiptResponse
      * @throws UCloudException
      */
-    public function getUSMSSendReceipt(GetUSMSSendReceiptRequest $request = null): GetUSMSSendReceiptResponse
+    public function getUSMSSendReceipt(GetUSMSSendReceiptRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUSMSSendReceiptResponse($resp->toArray(), $resp->getRequestId());
@@ -206,7 +212,7 @@ class USMSClient extends Client
     /**
      * QueryUSMSSignature - 调用接口QueryUSMSSignature查询短信签名申请状态
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/query_usms_signature
+     * See also: https://docs.ucloud.cn/api/usms-api/query_usms_signature
      *
      * Arguments:
      *
@@ -227,9 +233,10 @@ class USMSClient extends Client
      *     ]
      * ]
      *
+     * @return QueryUSMSSignatureResponse
      * @throws UCloudException
      */
-    public function queryUSMSSignature(QueryUSMSSignatureRequest $request = null): QueryUSMSSignatureResponse
+    public function queryUSMSSignature(QueryUSMSSignatureRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new QueryUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
@@ -238,7 +245,7 @@ class USMSClient extends Client
     /**
      * QueryUSMSTemplate - 调用接口QueryUSMSTemplate查询短信模板申请状态
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/query_usms_template
+     * See also: https://docs.ucloud.cn/api/usms-api/query_usms_template
      *
      * Arguments:
      *
@@ -263,9 +270,10 @@ class USMSClient extends Client
      *     ]
      * ]
      *
+     * @return QueryUSMSTemplateResponse
      * @throws UCloudException
      */
-    public function queryUSMSTemplate(QueryUSMSTemplateRequest $request = null): QueryUSMSTemplateResponse
+    public function queryUSMSTemplate(QueryUSMSTemplateRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new QueryUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());
@@ -274,7 +282,7 @@ class USMSClient extends Client
     /**
      * SendBatchUSMSMessage - 调用SendBatchUSMSMessage接口批量发送短信
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/send_batch_usms_message
+     * See also: https://docs.ucloud.cn/api/usms-api/send_batch_usms_message
      *
      * Arguments:
      *
@@ -307,9 +315,10 @@ class USMSClient extends Client
      *     ]
      * ]
      *
+     * @return SendBatchUSMSMessageResponse
      * @throws UCloudException
      */
-    public function sendBatchUSMSMessage(SendBatchUSMSMessageRequest $request = null): SendBatchUSMSMessageResponse
+    public function sendBatchUSMSMessage(SendBatchUSMSMessageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new SendBatchUSMSMessageResponse($resp->toArray(), $resp->getRequestId());
@@ -318,7 +327,7 @@ class USMSClient extends Client
     /**
      * SendUSMSMessage - 调用接口SendUSMSMessage发送短信
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/send_usms_message
+     * See also: https://docs.ucloud.cn/api/usms-api/send_usms_message
      *
      * Arguments:
      *
@@ -327,7 +336,7 @@ class USMSClient extends Client
      *     "PhoneNumbers" => (array<string>) 电话号码数组，电话号码格式为(60)1xxxxxxxx，()中为国际长途区号(如中国为86或0086，两种格式都支持)，后面为电话号码.若不传入国际区号，如1851623xxxx，则默认为国内手机号
      *     "SigContent" => (string) 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
      *     "TemplateId" => (string) 模板ID（也即短信模板申请时的工单ID），请到[USMS控制台](https://console.ucloud.cn/usms)的模板管理页面查看；使用的短信模板必须是已申请并通过审核；
-     *     "TemplateParams" => (array<string>) 模板可变参数，以数组的方式填写，举例，TempalteParams.0，TempalteParams.1，... 若模板中无可变参数，则该项可不填写；若模板中有可变参数，则该项为必填项，参数个数需与变量个数保持一致，否则无法发送；
+     *     "TemplateParams" => (array<string>) 模板可变参数，以数组的方式填写，举例，TemplateParams.0，TemplateParams.1，... 若模板中无可变参数，则该项可不填写；若模板中有可变参数，则该项为必填项，参数个数需与变量个数保持一致，否则无法发送；
      *     "ExtendCode" => (string) 短信扩展码，格式为阿拉伯数字串，默认不开通，如需开通请联系 UCloud技术支持
      *     "UserId" => (string) 自定义的业务标识ID，字符串（ 长度不能超过32 位），不支持 单引号、表情包符号等特殊字符
      * ]
@@ -339,9 +348,10 @@ class USMSClient extends Client
      *     "UserId" => (string) 本次提交的自定义业务标识ID，仅当发送时传入有效的UserId，才返回该字段。
      * ]
      *
+     * @return SendUSMSMessageResponse
      * @throws UCloudException
      */
-    public function sendUSMSMessage(SendUSMSMessageRequest $request = null): SendUSMSMessageResponse
+    public function sendUSMSMessage(SendUSMSMessageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new SendUSMSMessageResponse($resp->toArray(), $resp->getRequestId());
@@ -350,7 +360,7 @@ class USMSClient extends Client
     /**
      * UpdateUSMSSignature - 调用接口UpdateUSMSSignature修改未通过审核的短信签名，并重新提交审核
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/update_usms_signature
+     * See also: https://docs.ucloud.cn/api/usms-api/update_usms_signature
      *
      * Arguments:
      *
@@ -372,9 +382,10 @@ class USMSClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateUSMSSignatureResponse
      * @throws UCloudException
      */
-    public function updateUSMSSignature(UpdateUSMSSignatureRequest $request = null): UpdateUSMSSignatureResponse
+    public function updateUSMSSignature(UpdateUSMSSignatureRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
@@ -383,7 +394,7 @@ class USMSClient extends Client
     /**
      * UpdateUSMSTemplate - 调用接口UpdateUSMSTemplate修改未通过审核的短信模板，并重新提交审核
      *
-     * See also: https://docs.ucloud.cn/api/USMS-api/update_usms_template
+     * See also: https://docs.ucloud.cn/api/usms-api/update_usms_template
      *
      * Arguments:
      *
@@ -400,9 +411,10 @@ class USMSClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateUSMSTemplateResponse
      * @throws UCloudException
      */
-    public function updateUSMSTemplate(UpdateUSMSTemplateRequest $request = null): UpdateUSMSTemplateResponse
+    public function updateUSMSTemplate(UpdateUSMSTemplateRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());

@@ -28,9 +28,12 @@ class GetNewUcdnDomainHttpCodeResponse extends Response
      *
      * @return HttpCodeInfo[]|null
      */
-    public function getHttpCodeDetail(): array
+    public function getHttpCodeDetail()
     {
-        $items = $this->get("HttpCodeDetail") ?? [];
+        $items = $this->get("HttpCodeDetail");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new HttpCodeInfo($item));

@@ -36,7 +36,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -106,7 +106,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @param string $groupId
      */
-    public function setGroupId(string $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -116,7 +116,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getTransformType(): string
+    public function getTransformType()
     {
         return $this->get("TransformType");
     }
@@ -126,7 +126,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @param string $transformType
      */
-    public function setTransformType(string $transformType)
+    public function setTransformType($transformType)
     {
         $this->set("TransformType", $transformType);
     }
@@ -136,7 +136,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getSlaveZone(): string
+    public function getSlaveZone()
     {
         return $this->get("SlaveZone");
     }
@@ -146,7 +146,7 @@ class ISolationURedisGroupRequest extends Request
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone(string $slaveZone)
+    public function setSlaveZone($slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
     }

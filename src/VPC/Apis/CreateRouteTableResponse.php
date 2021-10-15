@@ -27,7 +27,7 @@ class CreateRouteTableResponse extends Response
      *
      * @return string|null
      */
-    public function getRouteTableId(): string
+    public function getRouteTableId()
     {
         return $this->get("RouteTableId");
     }
@@ -37,7 +37,7 @@ class CreateRouteTableResponse extends Response
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId(string $routeTableId)
+    public function setRouteTableId($routeTableId)
     {
         $this->set("RouteTableId", $routeTableId);
     }

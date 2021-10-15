@@ -35,7 +35,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -85,7 +85,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -95,7 +95,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @return integer|null
      */
-    public function getBackupId(): int
+    public function getBackupId()
     {
         return $this->get("BackupId");
     }
@@ -105,7 +105,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @param int $backupId
      */
-    public function setBackupId(int $backupId)
+    public function setBackupId($backupId)
     {
         $this->set("BackupId", $backupId);
     }

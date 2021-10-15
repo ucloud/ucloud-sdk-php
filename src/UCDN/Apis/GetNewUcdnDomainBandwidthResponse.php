@@ -28,9 +28,12 @@ class GetNewUcdnDomainBandwidthResponse extends Response
      *
      * @return BandwidthInfo[]|null
      */
-    public function getBandwidthList(): array
+    public function getBandwidthList()
     {
-        $items = $this->get("BandwidthList") ?? [];
+        $items = $this->get("BandwidthList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new BandwidthInfo($item));
@@ -57,7 +60,7 @@ class GetNewUcdnDomainBandwidthResponse extends Response
      *
      * @return float|null
      */
-    public function getTraffic(): float
+    public function getTraffic()
     {
         return $this->get("Traffic");
     }
@@ -67,7 +70,7 @@ class GetNewUcdnDomainBandwidthResponse extends Response
      *
      * @param float $traffic
      */
-    public function setTraffic(float $traffic)
+    public function setTraffic($traffic)
     {
         $this->set("Traffic", $traffic);
     }

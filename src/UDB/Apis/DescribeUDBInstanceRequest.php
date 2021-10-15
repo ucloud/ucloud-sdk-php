@@ -33,7 +33,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -83,7 +83,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -93,7 +93,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getClassType(): string
+    public function getClassType()
     {
         return $this->get("ClassType");
     }
@@ -103,7 +103,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $classType
      */
-    public function setClassType(string $classType)
+    public function setClassType($classType)
     {
         $this->set("ClassType", $classType);
     }
@@ -113,7 +113,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -123,7 +123,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -133,7 +133,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -143,7 +143,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -153,7 +153,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -163,7 +163,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -173,7 +173,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getIsInUDBC(): bool
+    public function getIsInUDBC()
     {
         return $this->get("IsInUDBC");
     }
@@ -183,7 +183,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param boolean $isInUDBC
      */
-    public function setIsInUDBC(bool $isInUDBC)
+    public function setIsInUDBC($isInUDBC)
     {
         $this->set("IsInUDBC", $isInUDBC);
     }
@@ -193,7 +193,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDBCId(): string
+    public function getUDBCId()
     {
         return $this->get("UDBCId");
     }
@@ -203,7 +203,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $udbcId
      */
-    public function setUDBCId(string $udbcId)
+    public function setUDBCId($udbcId)
     {
         $this->set("UDBCId", $udbcId);
     }
@@ -213,7 +213,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getIncludeSlaves(): bool
+    public function getIncludeSlaves()
     {
         return $this->get("IncludeSlaves");
     }
@@ -223,7 +223,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param boolean $includeSlaves
      */
-    public function setIncludeSlaves(bool $includeSlaves)
+    public function setIncludeSlaves($includeSlaves)
     {
         $this->set("IncludeSlaves", $includeSlaves);
     }

@@ -27,7 +27,7 @@ class KeyPair extends Response
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -37,7 +37,7 @@ class KeyPair extends Response
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -47,7 +47,7 @@ class KeyPair extends Response
      *
      * @return string|null
      */
-    public function getKeyPairId(): string
+    public function getKeyPairId()
     {
         return $this->get("KeyPairId");
     }
@@ -57,7 +57,7 @@ class KeyPair extends Response
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId(string $keyPairId)
+    public function setKeyPairId($keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
@@ -67,7 +67,7 @@ class KeyPair extends Response
      *
      * @return string|null
      */
-    public function getKeyPairName(): string
+    public function getKeyPairName()
     {
         return $this->get("KeyPairName");
     }
@@ -77,7 +77,7 @@ class KeyPair extends Response
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName(string $keyPairName)
+    public function setKeyPairName($keyPairName)
     {
         $this->set("KeyPairName", $keyPairName);
     }
@@ -87,7 +87,7 @@ class KeyPair extends Response
      *
      * @return string|null
      */
-    public function getKeyPairFingerPrint(): string
+    public function getKeyPairFingerPrint()
     {
         return $this->get("KeyPairFingerPrint");
     }
@@ -97,7 +97,7 @@ class KeyPair extends Response
      *
      * @param string $keyPairFingerPrint
      */
-    public function setKeyPairFingerPrint(string $keyPairFingerPrint)
+    public function setKeyPairFingerPrint($keyPairFingerPrint)
     {
         $this->set("KeyPairFingerPrint", $keyPairFingerPrint);
     }
@@ -107,7 +107,7 @@ class KeyPair extends Response
      *
      * @return string|null
      */
-    public function getPrivateKeyBody(): string
+    public function getPrivateKeyBody()
     {
         return $this->get("PrivateKeyBody");
     }
@@ -117,7 +117,7 @@ class KeyPair extends Response
      *
      * @param string $privateKeyBody
      */
-    public function setPrivateKeyBody(string $privateKeyBody)
+    public function setPrivateKeyBody($privateKeyBody)
     {
         $this->set("PrivateKeyBody", $privateKeyBody);
     }
@@ -127,7 +127,7 @@ class KeyPair extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -137,7 +137,7 @@ class KeyPair extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }

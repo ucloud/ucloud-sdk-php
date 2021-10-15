@@ -27,7 +27,7 @@ class CreateUSMSSignatureResponse extends Response
      *
      * @return string|null
      */
-    public function getSigId(): string
+    public function getSigId()
     {
         return $this->get("SigId");
     }
@@ -37,7 +37,7 @@ class CreateUSMSSignatureResponse extends Response
      *
      * @param string $sigId
      */
-    public function setSigId(string $sigId)
+    public function setSigId($sigId)
     {
         $this->set("SigId", $sigId);
     }

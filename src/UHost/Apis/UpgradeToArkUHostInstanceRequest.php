@@ -35,7 +35,7 @@ class UpgradeToArkUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class UpgradeToArkUHostInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class UpgradeToArkUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class UpgradeToArkUHostInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class UpgradeToArkUHostInstanceRequest extends Request
      *
      * @return string[]|null
      */
-    public function getUHostIds(): array
+    public function getUHostIds()
     {
         return $this->get("UHostIds");
     }
@@ -95,7 +95,7 @@ class UpgradeToArkUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -105,7 +105,7 @@ class UpgradeToArkUHostInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

@@ -48,6 +48,8 @@ use UCloud\UNet\Apis\DescribeShareBandwidthRequest;
 use UCloud\UNet\Apis\DescribeShareBandwidthResponse;
 use UCloud\UNet\Apis\DisassociateEIPWithShareBandwidthRequest;
 use UCloud\UNet\Apis\DisassociateEIPWithShareBandwidthResponse;
+use UCloud\UNet\Apis\DisassociateFirewallRequest;
+use UCloud\UNet\Apis\DisassociateFirewallResponse;
 use UCloud\UNet\Apis\GetEIPPayModeRequest;
 use UCloud\UNet\Apis\GetEIPPayModeResponse;
 use UCloud\UNet\Apis\GetEIPPriceRequest;
@@ -88,7 +90,7 @@ class UNetClient extends Client
     /**
      * AllocateEIP - 根据提供信息, 申请弹性IP
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/allocate_eip
+     * See also: https://docs.ucloud.cn/api/unet-api/allocate_eip
      *
      * Arguments:
      *
@@ -123,9 +125,10 @@ class UNetClient extends Client
      *     ]
      * ]
      *
+     * @return AllocateEIPResponse
      * @throws UCloudException
      */
-    public function allocateEIP(AllocateEIPRequest $request = null): AllocateEIPResponse
+    public function allocateEIP(AllocateEIPRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AllocateEIPResponse($resp->toArray(), $resp->getRequestId());
@@ -134,7 +137,7 @@ class UNetClient extends Client
     /**
      * AllocateShareBandwidth - 开通共享带宽
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/allocate_share_bandwidth
+     * See also: https://docs.ucloud.cn/api/unet-api/allocate_share_bandwidth
      *
      * Arguments:
      *
@@ -154,9 +157,10 @@ class UNetClient extends Client
      *     "ShareBandwidthId" => (string) 共享带宽资源Id
      * ]
      *
+     * @return AllocateShareBandwidthResponse
      * @throws UCloudException
      */
-    public function allocateShareBandwidth(AllocateShareBandwidthRequest $request = null): AllocateShareBandwidthResponse
+    public function allocateShareBandwidth(AllocateShareBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AllocateShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -165,7 +169,7 @@ class UNetClient extends Client
     /**
      * AssociateEIPWithShareBandwidth - 将EIP加入共享带宽
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/associate_eip_with_share_bandwidth
+     * See also: https://docs.ucloud.cn/api/unet-api/associate_eip_with_share_bandwidth
      *
      * Arguments:
      *
@@ -182,9 +186,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return AssociateEIPWithShareBandwidthResponse
      * @throws UCloudException
      */
-    public function associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthRequest $request = null): AssociateEIPWithShareBandwidthResponse
+    public function associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AssociateEIPWithShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -193,7 +198,7 @@ class UNetClient extends Client
     /**
      * BindEIP - 将尚未使用的弹性IP绑定到指定的资源
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/bind_eip
+     * See also: https://docs.ucloud.cn/api/unet-api/bind_eip
      *
      * Arguments:
      *
@@ -210,9 +215,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return BindEIPResponse
      * @throws UCloudException
      */
-    public function bindEIP(BindEIPRequest $request = null): BindEIPResponse
+    public function bindEIP(BindEIPRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new BindEIPResponse($resp->toArray(), $resp->getRequestId());
@@ -221,7 +227,7 @@ class UNetClient extends Client
     /**
      * CreateBandwidthPackage - 为非共享带宽模式下, 已绑定资源实例的带宽计费弹性IP附加临时带宽包
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/create_bandwidth_package
+     * See also: https://docs.ucloud.cn/api/unet-api/create_bandwidth_package
      *
      * Arguments:
      *
@@ -240,9 +246,10 @@ class UNetClient extends Client
      *     "BandwidthPackageId" => (string) 所创建带宽包的资源ID
      * ]
      *
+     * @return CreateBandwidthPackageResponse
      * @throws UCloudException
      */
-    public function createBandwidthPackage(CreateBandwidthPackageRequest $request = null): CreateBandwidthPackageResponse
+    public function createBandwidthPackage(CreateBandwidthPackageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateBandwidthPackageResponse($resp->toArray(), $resp->getRequestId());
@@ -251,7 +258,7 @@ class UNetClient extends Client
     /**
      * CreateFirewall - 创建防火墙
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/create_firewall
+     * See also: https://docs.ucloud.cn/api/unet-api/create_firewall
      *
      * Arguments:
      *
@@ -270,9 +277,10 @@ class UNetClient extends Client
      *     "FWId" => (string) 防火墙ID
      * ]
      *
+     * @return CreateFirewallResponse
      * @throws UCloudException
      */
-    public function createFirewall(CreateFirewallRequest $request = null): CreateFirewallResponse
+    public function createFirewall(CreateFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -281,7 +289,7 @@ class UNetClient extends Client
     /**
      * DeleteBandwidthPackage - 删除弹性IP上已附加带宽包
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/delete_bandwidth_package
+     * See also: https://docs.ucloud.cn/api/unet-api/delete_bandwidth_package
      *
      * Arguments:
      *
@@ -296,9 +304,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteBandwidthPackageResponse
      * @throws UCloudException
      */
-    public function deleteBandwidthPackage(DeleteBandwidthPackageRequest $request = null): DeleteBandwidthPackageResponse
+    public function deleteBandwidthPackage(DeleteBandwidthPackageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteBandwidthPackageResponse($resp->toArray(), $resp->getRequestId());
@@ -307,7 +316,7 @@ class UNetClient extends Client
     /**
      * DeleteFirewall - 删除防火墙
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/delete_firewall
+     * See also: https://docs.ucloud.cn/api/unet-api/delete_firewall
      *
      * Arguments:
      *
@@ -322,9 +331,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteFirewallResponse
      * @throws UCloudException
      */
-    public function deleteFirewall(DeleteFirewallRequest $request = null): DeleteFirewallResponse
+    public function deleteFirewall(DeleteFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -333,7 +343,7 @@ class UNetClient extends Client
     /**
      * DescribeBandwidthPackage - 获取某地域下的带宽包信息
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/describe_bandwidth_package
+     * See also: https://docs.ucloud.cn/api/unet-api/describe_bandwidth_package
      *
      * Arguments:
      *
@@ -366,9 +376,10 @@ class UNetClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeBandwidthPackageResponse
      * @throws UCloudException
      */
-    public function describeBandwidthPackage(DescribeBandwidthPackageRequest $request = null): DescribeBandwidthPackageResponse
+    public function describeBandwidthPackage(DescribeBandwidthPackageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeBandwidthPackageResponse($resp->toArray(), $resp->getRequestId());
@@ -377,7 +388,7 @@ class UNetClient extends Client
     /**
      * DescribeBandwidthUsage - 获取带宽用量信息
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/describe_bandwidth_usage
+     * See also: https://docs.ucloud.cn/api/unet-api/describe_bandwidth_usage
      *
      * Arguments:
      *
@@ -401,9 +412,10 @@ class UNetClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeBandwidthUsageResponse
      * @throws UCloudException
      */
-    public function describeBandwidthUsage(DescribeBandwidthUsageRequest $request = null): DescribeBandwidthUsageResponse
+    public function describeBandwidthUsage(DescribeBandwidthUsageRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeBandwidthUsageResponse($resp->toArray(), $resp->getRequestId());
@@ -412,7 +424,7 @@ class UNetClient extends Client
     /**
      * DescribeEIP - 获取弹性IP信息
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/describe_eip
+     * See also: https://docs.ucloud.cn/api/unet-api/describe_eip
      *
      * Arguments:
      *
@@ -470,9 +482,10 @@ class UNetClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeEIPResponse
      * @throws UCloudException
      */
-    public function describeEIP(DescribeEIPRequest $request = null): DescribeEIPResponse
+    public function describeEIP(DescribeEIPRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeEIPResponse($resp->toArray(), $resp->getRequestId());
@@ -481,7 +494,7 @@ class UNetClient extends Client
     /**
      * DescribeFirewall - 获取防火墙组信息
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/describe_firewall
+     * See also: https://docs.ucloud.cn/api/unet-api/describe_firewall
      *
      * Arguments:
      *
@@ -523,9 +536,10 @@ class UNetClient extends Client
      *     "TotalCount" => (integer) 防火墙资源数量
      * ]
      *
+     * @return DescribeFirewallResponse
      * @throws UCloudException
      */
-    public function describeFirewall(DescribeFirewallRequest $request = null): DescribeFirewallResponse
+    public function describeFirewall(DescribeFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -534,7 +548,7 @@ class UNetClient extends Client
     /**
      * DescribeFirewallResource - 获取防火墙组所绑定资源的外网IP
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/describe_firewall_resource
+     * See also: https://docs.ucloud.cn/api/unet-api/describe_firewall_resource
      *
      * Arguments:
      *
@@ -564,9 +578,10 @@ class UNetClient extends Client
      *     "TotalCount" => (integer) 绑定资源总数
      * ]
      *
+     * @return DescribeFirewallResourceResponse
      * @throws UCloudException
      */
-    public function describeFirewallResource(DescribeFirewallResourceRequest $request = null): DescribeFirewallResourceResponse
+    public function describeFirewallResource(DescribeFirewallResourceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeFirewallResourceResponse($resp->toArray(), $resp->getRequestId());
@@ -575,7 +590,7 @@ class UNetClient extends Client
     /**
      * DescribeShareBandwidth - 获取共享带宽信息
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/describe_share_bandwidth
+     * See also: https://docs.ucloud.cn/api/unet-api/describe_share_bandwidth
      *
      * Arguments:
      *
@@ -614,9 +629,10 @@ class UNetClient extends Client
      *     "TotalCount" => (integer) 符合条件的共享带宽总数，大于等于返回DataSet长度
      * ]
      *
+     * @return DescribeShareBandwidthResponse
      * @throws UCloudException
      */
-    public function describeShareBandwidth(DescribeShareBandwidthRequest $request = null): DescribeShareBandwidthResponse
+    public function describeShareBandwidth(DescribeShareBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -625,7 +641,7 @@ class UNetClient extends Client
     /**
      * DisassociateEIPWithShareBandwidth - 将EIP移出共享带宽
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/disassociate_eip_with_share_bandwidth
+     * See also: https://docs.ucloud.cn/api/unet-api/disassociate_eip_with_share_bandwidth
      *
      * Arguments:
      *
@@ -644,18 +660,48 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DisassociateEIPWithShareBandwidthResponse
      * @throws UCloudException
      */
-    public function disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthRequest $request = null): DisassociateEIPWithShareBandwidthResponse
+    public function disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DisassociateEIPWithShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
+     * DisassociateFirewall - 解绑资源上的防火墙
+     *
+     * See also: https://docs.ucloud.cn/api/unet-api/disassociate_firewall
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "FWId" => (string) 防火墙ID
+     *     "ResourceId" => (string) 需要解绑的资源ID
+     *     "ResourceType" => (string) 资源类型：ULB 表示负载均衡
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DisassociateFirewallResponse
+     * @throws UCloudException
+     */
+    public function disassociateFirewall(DisassociateFirewallRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DisassociateFirewallResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * GetEIPPayMode - 获取弹性IP计费模式
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/get_eip_pay_mode
+     * See also: https://docs.ucloud.cn/api/unet-api/get_eip_pay_mode
      *
      * Arguments:
      *
@@ -676,9 +722,10 @@ class UNetClient extends Client
      *     ]
      * ]
      *
+     * @return GetEIPPayModeResponse
      * @throws UCloudException
      */
-    public function getEIPPayMode(GetEIPPayModeRequest $request = null): GetEIPPayModeResponse
+    public function getEIPPayMode(GetEIPPayModeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetEIPPayModeResponse($resp->toArray(), $resp->getRequestId());
@@ -687,7 +734,7 @@ class UNetClient extends Client
     /**
      * GetEIPPrice - 获取弹性IP价格
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/get_eip_price
+     * See also: https://docs.ucloud.cn/api/unet-api/get_eip_price
      *
      * Arguments:
      *
@@ -714,9 +761,10 @@ class UNetClient extends Client
      *     ]
      * ]
      *
+     * @return GetEIPPriceResponse
      * @throws UCloudException
      */
-    public function getEIPPrice(GetEIPPriceRequest $request = null): GetEIPPriceResponse
+    public function getEIPPrice(GetEIPPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetEIPPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -725,7 +773,7 @@ class UNetClient extends Client
     /**
      * GetEIPUpgradePrice - 获取弹性IP带宽改动价格
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/get_eip_upgrade_price
+     * See also: https://docs.ucloud.cn/api/unet-api/get_eip_upgrade_price
      *
      * Arguments:
      *
@@ -742,9 +790,10 @@ class UNetClient extends Client
      *     "Price" => (number) 调整带宽后的EIP价格, 单位为"元", 如需退费此处为负值
      * ]
      *
+     * @return GetEIPUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getEIPUpgradePrice(GetEIPUpgradePriceRequest $request = null): GetEIPUpgradePriceResponse
+    public function getEIPUpgradePrice(GetEIPUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetEIPUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -753,7 +802,7 @@ class UNetClient extends Client
     /**
      * GetThroughputDailyBillingInfo - 获取流量计费EIP每日流量计费信息
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/get_throughput_daily_billing_info
+     * See also: https://docs.ucloud.cn/api/unet-api/get_throughput_daily_billing_info
      *
      * Arguments:
      *
@@ -772,18 +821,18 @@ class UNetClient extends Client
      *         [
      *             "StartTime" => (integer) 计费开始时间
      *             "EndTime" => (integer) 计费结束时间
-     *             "QuantityOutSize" => (integer) 计费流量，单位“GB”
-     *             "QuantityOutMoney" => (integer) 计费金额，单位“元”
+     *             "QuantityOut" => (integer) 计费流量，单位“GB”
      *             "BillingState" => (string) 是否已计费，“Yes”或者“No”
      *         ]
      *     ]
-     *     "TotalOutMoney" => (integer) 计费总金额
-     *     "TotalOutSize" => (string) 计费总流量
+     *     "TotalOut" => (integer) 计费总流量
+     *     "EIPId" => (string) 资源ID
      * ]
      *
+     * @return GetThroughputDailyBillingInfoResponse
      * @throws UCloudException
      */
-    public function getThroughputDailyBillingInfo(GetThroughputDailyBillingInfoRequest $request = null): GetThroughputDailyBillingInfoResponse
+    public function getThroughputDailyBillingInfo(GetThroughputDailyBillingInfoRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetThroughputDailyBillingInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -792,7 +841,7 @@ class UNetClient extends Client
     /**
      * GrantFirewall - 将防火墙应用到资源上
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/grant_firewall
+     * See also: https://docs.ucloud.cn/api/unet-api/grant_firewall
      *
      * Arguments:
      *
@@ -809,9 +858,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return GrantFirewallResponse
      * @throws UCloudException
      */
-    public function grantFirewall(GrantFirewallRequest $request = null): GrantFirewallResponse
+    public function grantFirewall(GrantFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GrantFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -820,7 +870,7 @@ class UNetClient extends Client
     /**
      * ModifyEIPBandwidth - 调整弹性IP的外网带宽
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/modify_eip_bandwidth
+     * See also: https://docs.ucloud.cn/api/unet-api/modify_eip_bandwidth
      *
      * Arguments:
      *
@@ -836,9 +886,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyEIPBandwidthResponse
      * @throws UCloudException
      */
-    public function modifyEIPBandwidth(ModifyEIPBandwidthRequest $request = null): ModifyEIPBandwidthResponse
+    public function modifyEIPBandwidth(ModifyEIPBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyEIPBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -847,7 +898,7 @@ class UNetClient extends Client
     /**
      * ModifyEIPWeight - 修改弹性IP的外网出口权重
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/modify_eip_weight
+     * See also: https://docs.ucloud.cn/api/unet-api/modify_eip_weight
      *
      * Arguments:
      *
@@ -863,9 +914,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyEIPWeightResponse
      * @throws UCloudException
      */
-    public function modifyEIPWeight(ModifyEIPWeightRequest $request = null): ModifyEIPWeightResponse
+    public function modifyEIPWeight(ModifyEIPWeightRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyEIPWeightResponse($resp->toArray(), $resp->getRequestId());
@@ -874,7 +926,7 @@ class UNetClient extends Client
     /**
      * ReleaseEIP - 释放弹性IP资源, 所释放弹性IP必须为非绑定状态.
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/release_eip
+     * See also: https://docs.ucloud.cn/api/unet-api/release_eip
      *
      * Arguments:
      *
@@ -889,9 +941,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ReleaseEIPResponse
      * @throws UCloudException
      */
-    public function releaseEIP(ReleaseEIPRequest $request = null): ReleaseEIPResponse
+    public function releaseEIP(ReleaseEIPRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ReleaseEIPResponse($resp->toArray(), $resp->getRequestId());
@@ -900,7 +953,7 @@ class UNetClient extends Client
     /**
      * ReleaseShareBandwidth - 关闭共享带宽
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/release_share_bandwidth
+     * See also: https://docs.ucloud.cn/api/unet-api/release_share_bandwidth
      *
      * Arguments:
      *
@@ -917,9 +970,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ReleaseShareBandwidthResponse
      * @throws UCloudException
      */
-    public function releaseShareBandwidth(ReleaseShareBandwidthRequest $request = null): ReleaseShareBandwidthResponse
+    public function releaseShareBandwidth(ReleaseShareBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ReleaseShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -928,7 +982,7 @@ class UNetClient extends Client
     /**
      * ResizeShareBandwidth - 调整共享带宽的带宽值
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/resize_share_bandwidth
+     * See also: https://docs.ucloud.cn/api/unet-api/resize_share_bandwidth
      *
      * Arguments:
      *
@@ -944,9 +998,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ResizeShareBandwidthResponse
      * @throws UCloudException
      */
-    public function resizeShareBandwidth(ResizeShareBandwidthRequest $request = null): ResizeShareBandwidthResponse
+    public function resizeShareBandwidth(ResizeShareBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ResizeShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -955,7 +1010,7 @@ class UNetClient extends Client
     /**
      * SetEIPPayMode - 设置弹性IP计费模式, 切换时会涉及付费/退费.
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/set_eip_pay_mode
+     * See also: https://docs.ucloud.cn/api/unet-api/set_eip_pay_mode
      *
      * Arguments:
      *
@@ -972,9 +1027,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return SetEIPPayModeResponse
      * @throws UCloudException
      */
-    public function setEIPPayMode(SetEIPPayModeRequest $request = null): SetEIPPayModeResponse
+    public function setEIPPayMode(SetEIPPayModeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new SetEIPPayModeResponse($resp->toArray(), $resp->getRequestId());
@@ -983,7 +1039,7 @@ class UNetClient extends Client
     /**
      * UnBindEIP - 将弹性IP从资源上解绑
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/un_bind_eip
+     * See also: https://docs.ucloud.cn/api/unet-api/un_bind_eip
      *
      * Arguments:
      *
@@ -1000,9 +1056,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UnBindEIPResponse
      * @throws UCloudException
      */
-    public function unBindEIP(UnBindEIPRequest $request = null): UnBindEIPResponse
+    public function unBindEIP(UnBindEIPRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UnBindEIPResponse($resp->toArray(), $resp->getRequestId());
@@ -1011,7 +1068,7 @@ class UNetClient extends Client
     /**
      * UpdateEIPAttribute - 更新弹性IP名称，业务组，备注等属性字段
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/update_eip_attribute
+     * See also: https://docs.ucloud.cn/api/unet-api/update_eip_attribute
      *
      * Arguments:
      *
@@ -1029,9 +1086,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateEIPAttributeResponse
      * @throws UCloudException
      */
-    public function updateEIPAttribute(UpdateEIPAttributeRequest $request = null): UpdateEIPAttributeResponse
+    public function updateEIPAttribute(UpdateEIPAttributeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateEIPAttributeResponse($resp->toArray(), $resp->getRequestId());
@@ -1040,7 +1098,7 @@ class UNetClient extends Client
     /**
      * UpdateFirewall - 更新防火墙规则
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/update_firewall
+     * See also: https://docs.ucloud.cn/api/unet-api/update_firewall
      *
      * Arguments:
      *
@@ -1057,9 +1115,10 @@ class UNetClient extends Client
      *     "FWId" => (string) 防火墙id
      * ]
      *
+     * @return UpdateFirewallResponse
      * @throws UCloudException
      */
-    public function updateFirewall(UpdateFirewallRequest $request = null): UpdateFirewallResponse
+    public function updateFirewall(UpdateFirewallRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -1068,7 +1127,7 @@ class UNetClient extends Client
     /**
      * UpdateFirewallAttribute - 更新防火墙规则
      *
-     * See also: https://docs.ucloud.cn/api/UNet-api/update_firewall_attribute
+     * See also: https://docs.ucloud.cn/api/unet-api/update_firewall_attribute
      *
      * Arguments:
      *
@@ -1086,9 +1145,10 @@ class UNetClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateFirewallAttributeResponse
      * @throws UCloudException
      */
-    public function updateFirewallAttribute(UpdateFirewallAttributeRequest $request = null): UpdateFirewallAttributeResponse
+    public function updateFirewallAttribute(UpdateFirewallAttributeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateFirewallAttributeResponse($resp->toArray(), $resp->getRequestId());

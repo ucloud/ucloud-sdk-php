@@ -9,7 +9,7 @@ use UCloud\Core\Request\Request;
 
 class CredentialMiddleware extends Middleware
 {
-    public function handleRequest(Context $ctx): Request
+    public function handleRequest(Context $ctx)
     {
         $req = $ctx->getRequest();
         $cred = $ctx->getCredential();

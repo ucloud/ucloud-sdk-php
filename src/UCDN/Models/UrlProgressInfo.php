@@ -27,7 +27,7 @@ class UrlProgressInfo extends Response
      *
      * @return string|null
      */
-    public function getUrl(): string
+    public function getUrl()
     {
         return $this->get("Url");
     }
@@ -37,7 +37,7 @@ class UrlProgressInfo extends Response
      *
      * @param string $url
      */
-    public function setUrl(string $url)
+    public function setUrl($url)
     {
         $this->set("Url", $url);
     }
@@ -47,7 +47,7 @@ class UrlProgressInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -57,7 +57,7 @@ class UrlProgressInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -67,7 +67,7 @@ class UrlProgressInfo extends Response
      *
      * @return integer|null
      */
-    public function getFinishTime(): int
+    public function getFinishTime()
     {
         return $this->get("FinishTime");
     }
@@ -77,7 +77,7 @@ class UrlProgressInfo extends Response
      *
      * @param int $finishTime
      */
-    public function setFinishTime(int $finishTime)
+    public function setFinishTime($finishTime)
     {
         $this->set("FinishTime", $finishTime);
     }
@@ -87,7 +87,7 @@ class UrlProgressInfo extends Response
      *
      * @return string|null
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->get("Status");
     }
@@ -97,7 +97,7 @@ class UrlProgressInfo extends Response
      *
      * @param string $status
      */
-    public function setStatus(string $status)
+    public function setStatus($status)
     {
         $this->set("Status", $status);
     }
@@ -107,7 +107,7 @@ class UrlProgressInfo extends Response
      *
      * @return integer|null
      */
-    public function getProgress(): int
+    public function getProgress()
     {
         return $this->get("Progress");
     }
@@ -117,7 +117,7 @@ class UrlProgressInfo extends Response
      *
      * @param int $progress
      */
-    public function setProgress(int $progress)
+    public function setProgress($progress)
     {
         $this->set("Progress", $progress);
     }

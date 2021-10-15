@@ -34,7 +34,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getGroupId(): int
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -84,7 +84,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -94,7 +94,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool
+    public function getRegionFlag()
     {
         return $this->get("RegionFlag");
     }
@@ -104,7 +104,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag)
+    public function setRegionFlag($regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }

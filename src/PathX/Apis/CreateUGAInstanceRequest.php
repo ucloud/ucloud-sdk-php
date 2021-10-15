@@ -34,7 +34,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -64,7 +64,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -74,7 +74,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getIPList(): string
+    public function getIPList()
     {
         return $this->get("IPList");
     }
@@ -84,7 +84,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @param string $ipList
      */
-    public function setIPList(string $ipList)
+    public function setIPList($ipList)
     {
         $this->set("IPList", $ipList);
     }
@@ -94,7 +94,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getDomain(): string
+    public function getDomain()
     {
         return $this->get("Domain");
     }
@@ -104,7 +104,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @param string $domain
      */
-    public function setDomain(string $domain)
+    public function setDomain($domain)
     {
         $this->set("Domain", $domain);
     }
@@ -114,7 +114,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string[]|null
      */
-    public function getTCP(): array
+    public function getTCP()
     {
         return $this->get("TCP");
     }
@@ -134,7 +134,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string[]|null
      */
-    public function getUDP(): array
+    public function getUDP()
     {
         return $this->get("UDP");
     }

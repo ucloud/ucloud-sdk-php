@@ -32,7 +32,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @return string|null
      */
-    public function getIspName(): string
+    public function getIspName()
     {
         return $this->get("IspName");
     }
@@ -42,7 +42,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $ispName
      */
-    public function setIspName(string $ispName)
+    public function setIspName($ispName)
     {
         $this->set("IspName", $ispName);
     }
@@ -52,7 +52,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @return string|null
      */
-    public function getProvince(): string
+    public function getProvince()
     {
         return $this->get("Province");
     }
@@ -62,7 +62,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $province
      */
-    public function setProvince(string $province)
+    public function setProvince($province)
     {
         $this->set("Province", $province);
     }
@@ -72,7 +72,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @return string|null
      */
-    public function getCity(): string
+    public function getCity()
     {
         return $this->get("City");
     }
@@ -82,7 +82,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $city
      */
-    public function setCity(string $city)
+    public function setCity($city)
     {
         $this->set("City", $city);
     }

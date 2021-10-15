@@ -27,7 +27,7 @@ class LineDetail extends Response
      *
      * @return string|null
      */
-    public function getLineFrom(): string
+    public function getLineFrom()
     {
         return $this->get("LineFrom");
     }
@@ -37,7 +37,7 @@ class LineDetail extends Response
      *
      * @param string $lineFrom
      */
-    public function setLineFrom(string $lineFrom)
+    public function setLineFrom($lineFrom)
     {
         $this->set("LineFrom", $lineFrom);
     }
@@ -47,7 +47,7 @@ class LineDetail extends Response
      *
      * @return string|null
      */
-    public function getLineTo(): string
+    public function getLineTo()
     {
         return $this->get("LineTo");
     }
@@ -57,7 +57,7 @@ class LineDetail extends Response
      *
      * @param string $lineTo
      */
-    public function setLineTo(string $lineTo)
+    public function setLineTo($lineTo)
     {
         $this->set("LineTo", $lineTo);
     }
@@ -67,7 +67,7 @@ class LineDetail extends Response
      *
      * @return string|null
      */
-    public function getLineId(): string
+    public function getLineId()
     {
         return $this->get("LineId");
     }
@@ -77,7 +77,7 @@ class LineDetail extends Response
      *
      * @param string $lineId
      */
-    public function setLineId(string $lineId)
+    public function setLineId($lineId)
     {
         $this->set("LineId", $lineId);
     }
@@ -87,7 +87,7 @@ class LineDetail extends Response
      *
      * @return string|null
      */
-    public function getLineFromName(): string
+    public function getLineFromName()
     {
         return $this->get("LineFromName");
     }
@@ -97,7 +97,7 @@ class LineDetail extends Response
      *
      * @param string $lineFromName
      */
-    public function setLineFromName(string $lineFromName)
+    public function setLineFromName($lineFromName)
     {
         $this->set("LineFromName", $lineFromName);
     }
@@ -107,7 +107,7 @@ class LineDetail extends Response
      *
      * @return string|null
      */
-    public function getLineToName(): string
+    public function getLineToName()
     {
         return $this->get("LineToName");
     }
@@ -117,7 +117,7 @@ class LineDetail extends Response
      *
      * @param string $lineToName
      */
-    public function setLineToName(string $lineToName)
+    public function setLineToName($lineToName)
     {
         $this->set("LineToName", $lineToName);
     }

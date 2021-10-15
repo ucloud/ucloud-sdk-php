@@ -27,7 +27,7 @@ class CreateMongoDBReplicaSetResponse extends Response
      *
      * @return string[]|null
      */
-    public function getDBIds(): array
+    public function getDBIds()
     {
         return $this->get("DBIds");
     }

@@ -35,7 +35,7 @@ class CreateCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateCustomImageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class CreateCustomImageRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class CreateCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class CreateCustomImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class CreateCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getUHostId(): string
+    public function getUHostId()
     {
         return $this->get("UHostId");
     }
@@ -105,7 +105,7 @@ class CreateCustomImageRequest extends Request
      *
      * @param string $uHostId
      */
-    public function setUHostId(string $uHostId)
+    public function setUHostId($uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -115,7 +115,7 @@ class CreateCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageName(): string
+    public function getImageName()
     {
         return $this->get("ImageName");
     }
@@ -125,7 +125,7 @@ class CreateCustomImageRequest extends Request
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName)
+    public function setImageName($imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -135,7 +135,7 @@ class CreateCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageDescription(): string
+    public function getImageDescription()
     {
         return $this->get("ImageDescription");
     }
@@ -145,7 +145,7 @@ class CreateCustomImageRequest extends Request
      *
      * @param string $imageDescription
      */
-    public function setImageDescription(string $imageDescription)
+    public function setImageDescription($imageDescription)
     {
         $this->set("ImageDescription", $imageDescription);
     }

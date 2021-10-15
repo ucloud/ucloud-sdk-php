@@ -32,9 +32,12 @@ class DescribePHostMachineTypeResponse extends Response
      *
      * @return PHostMachineTypeSet[]|null
      */
-    public function getMachineTypes(): array
+    public function getMachineTypes()
     {
-        $items = $this->get("MachineTypes") ?? [];
+        $items = $this->get("MachineTypes");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new PHostMachineTypeSet($item));

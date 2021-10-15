@@ -34,7 +34,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getKeyPairName(): string
+    public function getKeyPairName()
     {
         return $this->get("KeyPairName");
     }
@@ -104,7 +104,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName(string $keyPairName)
+    public function setKeyPairName($keyPairName)
     {
         $this->set("KeyPairName", $keyPairName);
     }
@@ -114,7 +114,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getPublicKeyBody(): string
+    public function getPublicKeyBody()
     {
         return $this->get("PublicKeyBody");
     }
@@ -124,7 +124,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $publicKeyBody
      */
-    public function setPublicKeyBody(string $publicKeyBody)
+    public function setPublicKeyBody($publicKeyBody)
     {
         $this->set("PublicKeyBody", $publicKeyBody);
     }

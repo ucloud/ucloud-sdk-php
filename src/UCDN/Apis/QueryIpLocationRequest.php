@@ -33,7 +33,7 @@ class QueryIpLocationRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIp(): array
+    public function getIp()
     {
         return $this->get("Ip");
     }

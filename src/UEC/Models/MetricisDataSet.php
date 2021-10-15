@@ -27,9 +27,12 @@ class MetricisDataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getCPUUtilization(): array
+    public function getCPUUtilization()
     {
-        $items = $this->get("CPUUtilization") ?? [];
+        $items = $this->get("CPUUtilization");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -56,9 +59,12 @@ class MetricisDataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getMemUtilization(): array
+    public function getMemUtilization()
     {
-        $items = $this->get("MemUtilization") ?? [];
+        $items = $this->get("MemUtilization");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -85,9 +91,12 @@ class MetricisDataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getNetPacketOut(): array
+    public function getNetPacketOut()
     {
-        $items = $this->get("NetPacketOut") ?? [];
+        $items = $this->get("NetPacketOut");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -114,9 +123,12 @@ class MetricisDataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getNetPacketIn(): array
+    public function getNetPacketIn()
     {
-        $items = $this->get("NetPacketIn") ?? [];
+        $items = $this->get("NetPacketIn");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -143,9 +155,12 @@ class MetricisDataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getNICOut(): array
+    public function getNICOut()
     {
-        $items = $this->get("NICOut") ?? [];
+        $items = $this->get("NICOut");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -172,9 +187,12 @@ class MetricisDataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getNICIn(): array
+    public function getNICIn()
     {
-        $items = $this->get("NICIn") ?? [];
+        $items = $this->get("NICIn");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));

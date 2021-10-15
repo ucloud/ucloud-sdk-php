@@ -27,7 +27,7 @@ class DeployImageInfo extends Response
      *
      * @return string|null
      */
-    public function getIdcId(): string
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -37,7 +37,7 @@ class DeployImageInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId(string $idcId)
+    public function setIdcId($idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -47,7 +47,7 @@ class DeployImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getState(): int
+    public function getState()
     {
         return $this->get("State");
     }
@@ -57,7 +57,7 @@ class DeployImageInfo extends Response
      *
      * @param int $state
      */
-    public function setState(int $state)
+    public function setState($state)
     {
         $this->set("State", $state);
     }

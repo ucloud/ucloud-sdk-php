@@ -33,7 +33,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -63,7 +63,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -83,7 +83,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -93,7 +93,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @return string|null
      */
-    public function getRouteTableId(): string
+    public function getRouteTableId()
     {
         return $this->get("RouteTableId");
     }
@@ -103,7 +103,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId(string $routeTableId)
+    public function setRouteTableId($routeTableId)
     {
         $this->set("RouteTableId", $routeTableId);
     }
@@ -113,7 +113,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffSet(): int
+    public function getOffSet()
     {
         return $this->get("OffSet");
     }
@@ -123,7 +123,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @param int $offSet
      */
-    public function setOffSet(int $offSet)
+    public function setOffSet($offSet)
     {
         $this->set("OffSet", $offSet);
     }
@@ -133,7 +133,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -143,7 +143,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -153,7 +153,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @return string|null
      */
-    public function getBusinessId(): string
+    public function getBusinessId()
     {
         return $this->get("BusinessId");
     }
@@ -163,7 +163,7 @@ class DescribeRouteTableRequest extends Request
      *
      * @param string $businessId
      */
-    public function setBusinessId(string $businessId)
+    public function setBusinessId($businessId)
     {
         $this->set("BusinessId", $businessId);
     }

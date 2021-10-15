@@ -29,9 +29,12 @@ class GetUcdnProIspBandwidthV2Response extends Response
      *
      * @return ProIspBandwidthSet[]|null
      */
-    public function getBandwidthSet(): array
+    public function getBandwidthSet()
     {
-        $items = $this->get("BandwidthSet") ?? [];
+        $items = $this->get("BandwidthSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ProIspBandwidthSet($item));

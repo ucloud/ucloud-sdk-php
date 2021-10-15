@@ -36,7 +36,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getPHostId(): string
+    public function getPHostId()
     {
         return $this->get("PHostId");
     }
@@ -106,7 +106,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $pHostId
      */
-    public function setPHostId(string $pHostId)
+    public function setPHostId($pHostId)
     {
         $this->set("PHostId", $pHostId);
     }
@@ -116,7 +116,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSpace(): int
+    public function getDiskSpace()
     {
         return $this->get("DiskSpace");
     }
@@ -126,7 +126,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace(int $diskSpace)
+    public function setDiskSpace($diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -136,7 +136,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskId(): string
+    public function getUDiskId()
     {
         return $this->get("UDiskId");
     }
@@ -146,7 +146,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId)
+    public function setUDiskId($uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -156,7 +156,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReinstallTag(): bool
+    public function getReinstallTag()
     {
         return $this->get("ReinstallTag");
     }
@@ -166,7 +166,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param boolean $reinstallTag
      */
-    public function setReinstallTag(bool $reinstallTag)
+    public function setReinstallTag($reinstallTag)
     {
         $this->set("ReinstallTag", $reinstallTag);
     }

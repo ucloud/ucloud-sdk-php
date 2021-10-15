@@ -27,9 +27,12 @@ class MetricPeriod extends Response
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkOut(): array
+    public function getNetworkOut()
     {
-        $items = $this->get("NetworkOut") ?? [];
+        $items = $this->get("NetworkOut");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MatricPoint($item));
@@ -56,9 +59,12 @@ class MetricPeriod extends Response
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkIn(): array
+    public function getNetworkIn()
     {
-        $items = $this->get("NetworkIn") ?? [];
+        $items = $this->get("NetworkIn");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MatricPoint($item));
@@ -85,9 +91,12 @@ class MetricPeriod extends Response
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkOutUsage(): array
+    public function getNetworkOutUsage()
     {
-        $items = $this->get("NetworkOutUsage") ?? [];
+        $items = $this->get("NetworkOutUsage");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MatricPoint($item));
@@ -114,9 +123,12 @@ class MetricPeriod extends Response
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkInUsage(): array
+    public function getNetworkInUsage()
     {
-        $items = $this->get("NetworkInUsage") ?? [];
+        $items = $this->get("NetworkInUsage");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MatricPoint($item));

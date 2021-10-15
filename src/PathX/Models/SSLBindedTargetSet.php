@@ -27,7 +27,7 @@ class SSLBindedTargetSet extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -37,7 +37,7 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -47,7 +47,7 @@ class SSLBindedTargetSet extends Response
      *
      * @return string|null
      */
-    public function getResourceName(): string
+    public function getResourceName()
     {
         return $this->get("ResourceName");
     }
@@ -57,7 +57,7 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $resourceName
      */
-    public function setResourceName(string $resourceName)
+    public function setResourceName($resourceName)
     {
         $this->set("ResourceName", $resourceName);
     }

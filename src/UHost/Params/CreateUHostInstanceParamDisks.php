@@ -27,7 +27,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getIsBoot(): string
+    public function getIsBoot()
     {
         return $this->get("IsBoot");
     }
@@ -37,7 +37,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $isBoot
      */
-    public function setIsBoot(string $isBoot)
+    public function setIsBoot($isBoot)
     {
         $this->set("IsBoot", $isBoot);
     }
@@ -47,7 +47,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -57,7 +57,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -67,7 +67,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -77,7 +77,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -87,7 +87,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getBackupType(): string
+    public function getBackupType()
     {
         return $this->get("BackupType");
     }
@@ -97,7 +97,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $backupType
      */
-    public function setBackupType(string $backupType)
+    public function setBackupType($backupType)
     {
         $this->set("BackupType", $backupType);
     }
@@ -107,7 +107,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return boolean|null
      */
-    public function getEncrypted(): bool
+    public function getEncrypted()
     {
         return $this->get("Encrypted");
     }
@@ -117,7 +117,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param boolean $encrypted
      */
-    public function setEncrypted(bool $encrypted)
+    public function setEncrypted($encrypted)
     {
         $this->set("Encrypted", $encrypted);
     }
@@ -127,7 +127,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getKmsKeyId(): string
+    public function getKmsKeyId()
     {
         return $this->get("KmsKeyId");
     }
@@ -137,7 +137,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $kmsKeyId
      */
-    public function setKmsKeyId(string $kmsKeyId)
+    public function setKmsKeyId($kmsKeyId)
     {
         $this->set("KmsKeyId", $kmsKeyId);
     }
@@ -147,7 +147,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -157,7 +157,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

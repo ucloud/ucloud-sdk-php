@@ -27,7 +27,7 @@ class CreateUDiskSnapshotResponse extends Response
      *
      * @return string[]|null
      */
-    public function getSnapshotId(): array
+    public function getSnapshotId()
     {
         return $this->get("SnapshotId");
     }

@@ -68,7 +68,7 @@ class ULBClient extends Client
     /**
      * AllocateBackend - 添加ULB后端资源实例
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/allocate_backend
+     * See also: https://docs.ucloud.cn/api/ulb-api/allocate_backend
      *
      * Arguments:
      *
@@ -94,9 +94,10 @@ class ULBClient extends Client
      *     "BackendId" => (string) 所添加的后端资源在ULB中的对象ID，（为ULB系统中使用，与资源自身ID无关），可用于 UpdateBackendAttribute/UpdateBackendAttributeBatch/ReleaseBackend
      * ]
      *
+     * @return AllocateBackendResponse
      * @throws UCloudException
      */
-    public function allocateBackend(AllocateBackendRequest $request = null): AllocateBackendResponse
+    public function allocateBackend(AllocateBackendRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AllocateBackendResponse($resp->toArray(), $resp->getRequestId());
@@ -105,7 +106,7 @@ class ULBClient extends Client
     /**
      * BindSSL - 将SSL证书绑定到VServer
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/bind_ssl
+     * See also: https://docs.ucloud.cn/api/ulb-api/bind_ssl
      *
      * Arguments:
      *
@@ -122,9 +123,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return BindSSLResponse
      * @throws UCloudException
      */
-    public function bindSSL(BindSSLRequest $request = null): BindSSLResponse
+    public function bindSSL(BindSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new BindSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -133,7 +135,7 @@ class ULBClient extends Client
     /**
      * CreatePolicy - 创建VServer内容转发策略
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/create_policy
+     * See also: https://docs.ucloud.cn/api/ulb-api/create_policy
      *
      * Arguments:
      *
@@ -154,9 +156,10 @@ class ULBClient extends Client
      *     "PolicyId" => (string) 内容转发策略ID
      * ]
      *
+     * @return CreatePolicyResponse
      * @throws UCloudException
      */
-    public function createPolicy(CreatePolicyRequest $request = null): CreatePolicyResponse
+    public function createPolicy(CreatePolicyRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreatePolicyResponse($resp->toArray(), $resp->getRequestId());
@@ -165,7 +168,7 @@ class ULBClient extends Client
     /**
      * CreateSSL - 创建SSL证书，可以把整个 Pem 证书内容传过来，或者把证书、私钥、CA证书分别传过来
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/create_ssl
+     * See also: https://docs.ucloud.cn/api/ulb-api/create_ssl
      *
      * Arguments:
      *
@@ -186,9 +189,10 @@ class ULBClient extends Client
      *     "SSLId" => (string) SSL证书的Id
      * ]
      *
+     * @return CreateSSLResponse
      * @throws UCloudException
      */
-    public function createSSL(CreateSSLRequest $request = null): CreateSSLResponse
+    public function createSSL(CreateSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -197,13 +201,13 @@ class ULBClient extends Client
     /**
      * CreateULB - 创建负载均衡实例，可以选择内网或者外网
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/create_ulb
+     * See also: https://docs.ucloud.cn/api/ulb-api/create_ulb
      *
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "ULBName" => (string) 负载均衡的名字，默认值为“ULB”
      *     "Tag" => (string) 业务组
      *     "Remark" => (string) 备注
@@ -211,10 +215,10 @@ class ULBClient extends Client
      *     "InnerMode" => (string) 创建的ULB是否为内网模式
      *     "ChargeType" => (string) 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按时付费
      *     "VPCId" => (string) ULB所在的VPC的ID, 如果不传则使用默认的VPC
-     *     "SubnetId" => (string) 内网ULB 所属的子网ID，如果不传则使用默认的子网
+     *     "SubnetId" => (string) ULB 所属的子网ID，如果不传则随机选择一个。
      *     "BusinessId" => (string) ULB 所属的业务组ID，如果不传则使用默认的业务组
      *     "FirewallId" => (string) 防火墙ID，如果不传，则默认不绑定防火墙
-     *     "ListenType" => (string) ULB 监听器类型，枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。默认为RequestProxy
+     *     "ListenType" => (string) ULB 监听器类型，外网ULB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。
      * ]
      *
      * Outputs:
@@ -224,9 +228,10 @@ class ULBClient extends Client
      *     "IPv6AddressId" => (string) IPv6地址Id
      * ]
      *
+     * @return CreateULBResponse
      * @throws UCloudException
      */
-    public function createULB(CreateULBRequest $request = null): CreateULBResponse
+    public function createULB(CreateULBRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateULBResponse($resp->toArray(), $resp->getRequestId());
@@ -235,7 +240,7 @@ class ULBClient extends Client
     /**
      * CreateVServer - 创建VServer实例，定义监听的协议和端口以及负载均衡算法
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/create_vserver
+     * See also: https://docs.ucloud.cn/api/ulb-api/create_vserver
      *
      * Arguments:
      *
@@ -264,9 +269,10 @@ class ULBClient extends Client
      *     "VServerId" => (string) VServer实例的Id
      * ]
      *
+     * @return CreateVServerResponse
      * @throws UCloudException
      */
-    public function createVServer(CreateVServerRequest $request = null): CreateVServerResponse
+    public function createVServer(CreateVServerRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new CreateVServerResponse($resp->toArray(), $resp->getRequestId());
@@ -275,7 +281,7 @@ class ULBClient extends Client
     /**
      * DeletePolicy - 删除内容转发策略
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/delete_policy
+     * See also: https://docs.ucloud.cn/api/ulb-api/delete_policy
      *
      * Arguments:
      *
@@ -291,9 +297,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeletePolicyResponse
      * @throws UCloudException
      */
-    public function deletePolicy(DeletePolicyRequest $request = null): DeletePolicyResponse
+    public function deletePolicy(DeletePolicyRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeletePolicyResponse($resp->toArray(), $resp->getRequestId());
@@ -302,7 +309,7 @@ class ULBClient extends Client
     /**
      * DeleteSSL - 删除SSL证书
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/delete_ssl
+     * See also: https://docs.ucloud.cn/api/ulb-api/delete_ssl
      *
      * Arguments:
      *
@@ -317,9 +324,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteSSLResponse
      * @throws UCloudException
      */
-    public function deleteSSL(DeleteSSLRequest $request = null): DeleteSSLResponse
+    public function deleteSSL(DeleteSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -328,7 +336,7 @@ class ULBClient extends Client
     /**
      * DeleteULB - 删除负载均衡实例
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/delete_ulb
+     * See also: https://docs.ucloud.cn/api/ulb-api/delete_ulb
      *
      * Arguments:
      *
@@ -344,9 +352,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteULBResponse
      * @throws UCloudException
      */
-    public function deleteULB(DeleteULBRequest $request = null): DeleteULBResponse
+    public function deleteULB(DeleteULBRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteULBResponse($resp->toArray(), $resp->getRequestId());
@@ -355,7 +364,7 @@ class ULBClient extends Client
     /**
      * DeleteVServer - 删除VServer实例
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/delete_vserver
+     * See also: https://docs.ucloud.cn/api/ulb-api/delete_vserver
      *
      * Arguments:
      *
@@ -371,9 +380,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return DeleteVServerResponse
      * @throws UCloudException
      */
-    public function deleteVServer(DeleteVServerRequest $request = null): DeleteVServerResponse
+    public function deleteVServer(DeleteVServerRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DeleteVServerResponse($resp->toArray(), $resp->getRequestId());
@@ -382,7 +392,7 @@ class ULBClient extends Client
     /**
      * DescribeSSL - 获取SSL证书信息
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/describe_ssl
+     * See also: https://docs.ucloud.cn/api/ulb-api/describe_ssl
      *
      * Arguments:
      *
@@ -418,9 +428,10 @@ class ULBClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeSSLResponse
      * @throws UCloudException
      */
-    public function describeSSL(DescribeSSLRequest $request = null): DescribeSSLResponse
+    public function describeSSL(DescribeSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -429,7 +440,7 @@ class ULBClient extends Client
     /**
      * DescribeULB - 获取ULB详细信息
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/describe_ulb
+     * See also: https://docs.ucloud.cn/api/ulb-api/describe_ulb
      *
      * Arguments:
      *
@@ -567,9 +578,10 @@ class ULBClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeULBResponse
      * @throws UCloudException
      */
-    public function describeULB(DescribeULBRequest $request = null): DescribeULBResponse
+    public function describeULB(DescribeULBRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeULBResponse($resp->toArray(), $resp->getRequestId());
@@ -578,7 +590,7 @@ class ULBClient extends Client
     /**
      * DescribeULBSimple - 获取ULB信息
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/describe_ulb_simple
+     * See also: https://docs.ucloud.cn/api/ulb-api/describe_ulb_simple
      *
      * Arguments:
      *
@@ -639,9 +651,10 @@ class ULBClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeULBSimpleResponse
      * @throws UCloudException
      */
-    public function describeULBSimple(DescribeULBSimpleRequest $request = null): DescribeULBSimpleResponse
+    public function describeULBSimple(DescribeULBSimpleRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeULBSimpleResponse($resp->toArray(), $resp->getRequestId());
@@ -650,7 +663,7 @@ class ULBClient extends Client
     /**
      * DescribeVServer - 获取ULB下的VServer的详细信息
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/describe_vserver
+     * See also: https://docs.ucloud.cn/api/ulb-api/describe_vserver
      *
      * Arguments:
      *
@@ -747,9 +760,10 @@ class ULBClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeVServerResponse
      * @throws UCloudException
      */
-    public function describeVServer(DescribeVServerRequest $request = null): DescribeVServerResponse
+    public function describeVServer(DescribeVServerRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeVServerResponse($resp->toArray(), $resp->getRequestId());
@@ -758,7 +772,7 @@ class ULBClient extends Client
     /**
      * ReleaseBackend - 从VServer释放后端资源实例
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/release_backend
+     * See also: https://docs.ucloud.cn/api/ulb-api/release_backend
      *
      * Arguments:
      *
@@ -774,9 +788,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ReleaseBackendResponse
      * @throws UCloudException
      */
-    public function releaseBackend(ReleaseBackendRequest $request = null): ReleaseBackendResponse
+    public function releaseBackend(ReleaseBackendRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ReleaseBackendResponse($resp->toArray(), $resp->getRequestId());
@@ -785,7 +800,7 @@ class ULBClient extends Client
     /**
      * UnbindSSL - 从VServer解绑SSL证书
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/unbind_ssl
+     * See also: https://docs.ucloud.cn/api/ulb-api/unbind_ssl
      *
      * Arguments:
      *
@@ -802,9 +817,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UnbindSSLResponse
      * @throws UCloudException
      */
-    public function unbindSSL(UnbindSSLRequest $request = null): UnbindSSLResponse
+    public function unbindSSL(UnbindSSLRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UnbindSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -813,7 +829,7 @@ class ULBClient extends Client
     /**
      * UpdateBackendAttribute - 更新ULB后端资源实例(服务节点)属性
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/update_backend_attribute
+     * See also: https://docs.ucloud.cn/api/ulb-api/update_backend_attribute
      *
      * Arguments:
      *
@@ -833,9 +849,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateBackendAttributeResponse
      * @throws UCloudException
      */
-    public function updateBackendAttribute(UpdateBackendAttributeRequest $request = null): UpdateBackendAttributeResponse
+    public function updateBackendAttribute(UpdateBackendAttributeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateBackendAttributeResponse($resp->toArray(), $resp->getRequestId());
@@ -844,7 +861,7 @@ class ULBClient extends Client
     /**
      * UpdatePolicy - 更新内容转发规则，包括转发规则后的服务节点
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/update_policy
+     * See also: https://docs.ucloud.cn/api/ulb-api/update_policy
      *
      * Arguments:
      *
@@ -864,9 +881,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdatePolicyResponse
      * @throws UCloudException
      */
-    public function updatePolicy(UpdatePolicyRequest $request = null): UpdatePolicyResponse
+    public function updatePolicy(UpdatePolicyRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdatePolicyResponse($resp->toArray(), $resp->getRequestId());
@@ -875,7 +893,7 @@ class ULBClient extends Client
     /**
      * UpdateULBAttribute - 更新ULB名字业务组备注等属性字段
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/update_ulb_attribute
+     * See also: https://docs.ucloud.cn/api/ulb-api/update_ulb_attribute
      *
      * Arguments:
      *
@@ -893,9 +911,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateULBAttributeResponse
      * @throws UCloudException
      */
-    public function updateULBAttribute(UpdateULBAttributeRequest $request = null): UpdateULBAttributeResponse
+    public function updateULBAttribute(UpdateULBAttributeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateULBAttributeResponse($resp->toArray(), $resp->getRequestId());
@@ -904,7 +923,7 @@ class ULBClient extends Client
     /**
      * UpdateVServerAttribute - 更新VServer实例属性
      *
-     * See also: https://docs.ucloud.cn/api/ULB-api/update_vserver_attribute
+     * See also: https://docs.ucloud.cn/api/ulb-api/update_vserver_attribute
      *
      * Arguments:
      *
@@ -930,9 +949,10 @@ class ULBClient extends Client
      * $outputs = [
      * ]
      *
+     * @return UpdateVServerAttributeResponse
      * @throws UCloudException
      */
-    public function updateVServerAttribute(UpdateVServerAttributeRequest $request = null): UpdateVServerAttributeResponse
+    public function updateVServerAttribute(UpdateVServerAttributeRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new UpdateVServerAttributeResponse($resp->toArray(), $resp->getRequestId());

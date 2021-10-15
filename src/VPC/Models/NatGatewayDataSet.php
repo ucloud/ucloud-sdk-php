@@ -27,7 +27,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getNATGWId(): string
+    public function getNATGWId()
     {
         return $this->get("NATGWId");
     }
@@ -37,7 +37,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $natgwId
      */
-    public function setNATGWId(string $natgwId)
+    public function setNATGWId($natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -47,7 +47,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getNATGWName(): string
+    public function getNATGWName()
     {
         return $this->get("NATGWName");
     }
@@ -57,7 +57,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $natgwName
      */
-    public function setNATGWName(string $natgwName)
+    public function setNATGWName($natgwName)
     {
         $this->set("NATGWName", $natgwName);
     }
@@ -67,7 +67,7 @@ class NatGatewayDataSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -77,7 +77,7 @@ class NatGatewayDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -87,7 +87,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -97,7 +97,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -107,7 +107,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -117,7 +117,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -127,7 +127,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getFirewallId(): string
+    public function getFirewallId()
     {
         return $this->get("FirewallId");
     }
@@ -137,7 +137,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId)
+    public function setFirewallId($firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
@@ -147,7 +147,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId(): string
+    public function getVPCId()
     {
         return $this->get("VPCId");
     }
@@ -157,7 +157,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId(string $vpcId)
+    public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -167,9 +167,12 @@ class NatGatewayDataSet extends Response
      *
      * @return NatGatewaySubnetSet[]|null
      */
-    public function getSubnetSet(): array
+    public function getSubnetSet()
     {
-        $items = $this->get("SubnetSet") ?? [];
+        $items = $this->get("SubnetSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NatGatewaySubnetSet($item));
@@ -196,9 +199,12 @@ class NatGatewayDataSet extends Response
      *
      * @return NatGatewayIPSet[]|null
      */
-    public function getIPSet(): array
+    public function getIPSet()
     {
-        $items = $this->get("IPSet") ?? [];
+        $items = $this->get("IPSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NatGatewayIPSet($item));
@@ -225,7 +231,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string[]|null
      */
-    public function getPolicyId(): array
+    public function getPolicyId()
     {
         return $this->get("PolicyId");
     }

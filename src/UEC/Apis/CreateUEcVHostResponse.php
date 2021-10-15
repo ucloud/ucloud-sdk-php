@@ -28,9 +28,12 @@ class CreateUEcVHostResponse extends Response
      *
      * @return NodeList[]|null
      */
-    public function getNodeList(): array
+    public function getNodeList()
     {
-        $items = $this->get("NodeList") ?? [];
+        $items = $this->get("NodeList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NodeList($item));

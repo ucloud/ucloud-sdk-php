@@ -27,7 +27,7 @@ class ExtractUDBParamGroupResponse extends Response
      *
      * @return string|null
      */
-    public function getContent(): string
+    public function getContent()
     {
         return $this->get("Content");
     }
@@ -37,7 +37,7 @@ class ExtractUDBParamGroupResponse extends Response
      *
      * @param string $content
      */
-    public function setContent(string $content)
+    public function setContent($content)
     {
         $this->set("Content", $content);
     }

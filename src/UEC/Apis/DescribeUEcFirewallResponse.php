@@ -29,9 +29,12 @@ class DescribeUEcFirewallResponse extends Response
      *
      * @return FirewallInfo[]|null
      */
-    public function getFirewallSet(): array
+    public function getFirewallSet()
     {
-        $items = $this->get("FirewallSet") ?? [];
+        $items = $this->get("FirewallSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new FirewallInfo($item));
@@ -58,7 +61,7 @@ class DescribeUEcFirewallResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -68,7 +71,7 @@ class DescribeUEcFirewallResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

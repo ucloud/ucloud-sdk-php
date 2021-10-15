@@ -34,7 +34,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLName(): string
+    public function getSSLName()
     {
         return $this->get("SSLName");
     }
@@ -64,7 +64,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @param string $sslName
      */
-    public function setSSLName(string $sslName)
+    public function setSSLName($sslName)
     {
         $this->set("SSLName", $sslName);
     }
@@ -74,7 +74,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLType(): string
+    public function getSSLType()
     {
         return $this->get("SSLType");
     }
@@ -84,7 +84,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @param string $sslType
      */
-    public function setSSLType(string $sslType)
+    public function setSSLType($sslType)
     {
         $this->set("SSLType", $sslType);
     }
@@ -94,7 +94,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLContent(): string
+    public function getSSLContent()
     {
         return $this->get("SSLContent");
     }
@@ -104,7 +104,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @param string $sslContent
      */
-    public function setSSLContent(string $sslContent)
+    public function setSSLContent($sslContent)
     {
         $this->set("SSLContent", $sslContent);
     }
@@ -114,7 +114,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getUserCert(): string
+    public function getUserCert()
     {
         return $this->get("UserCert");
     }
@@ -124,7 +124,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @param string $userCert
      */
-    public function setUserCert(string $userCert)
+    public function setUserCert($userCert)
     {
         $this->set("UserCert", $userCert);
     }
@@ -134,7 +134,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getPrivateKey(): string
+    public function getPrivateKey()
     {
         return $this->get("PrivateKey");
     }
@@ -144,7 +144,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @param string $privateKey
      */
-    public function setPrivateKey(string $privateKey)
+    public function setPrivateKey($privateKey)
     {
         $this->set("PrivateKey", $privateKey);
     }
@@ -154,7 +154,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getCACert(): string
+    public function getCACert()
     {
         return $this->get("CACert");
     }
@@ -164,7 +164,7 @@ class CreatePathXSSLRequest extends Request
      *
      * @param string $caCert
      */
-    public function setCACert(string $caCert)
+    public function setCACert($caCert)
     {
         $this->set("CACert", $caCert);
     }

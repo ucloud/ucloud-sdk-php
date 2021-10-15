@@ -36,7 +36,7 @@ class GetVPNGatewayUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class GetVPNGatewayUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class GetVPNGatewayUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class GetVPNGatewayUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class GetVPNGatewayUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getVPNGatewayId(): string
+    public function getVPNGatewayId()
     {
         return $this->get("VPNGatewayId");
     }
@@ -86,7 +86,7 @@ class GetVPNGatewayUpgradePriceRequest extends Request
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId(string $vpnGatewayId)
+    public function setVPNGatewayId($vpnGatewayId)
     {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
@@ -96,7 +96,7 @@ class GetVPNGatewayUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getGrade(): string
+    public function getGrade()
     {
         return $this->get("Grade");
     }
@@ -106,7 +106,7 @@ class GetVPNGatewayUpgradePriceRequest extends Request
      *
      * @param string $grade
      */
-    public function setGrade(string $grade)
+    public function setGrade($grade)
     {
         $this->set("Grade", $grade);
     }

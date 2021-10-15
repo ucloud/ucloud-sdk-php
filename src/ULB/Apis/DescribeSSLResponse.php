@@ -29,7 +29,7 @@ class DescribeSSLResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -39,7 +39,7 @@ class DescribeSSLResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -49,9 +49,12 @@ class DescribeSSLResponse extends Response
      *
      * @return ULBSSLSet[]|null
      */
-    public function getDataSet(): array
+    public function getDataSet()
     {
-        $items = $this->get("DataSet") ?? [];
+        $items = $this->get("DataSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ULBSSLSet($item));

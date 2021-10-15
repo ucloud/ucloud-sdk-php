@@ -14,31 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\UAccount\Apis;
+namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class CreateProjectResponse extends Response
+class DeleteCertificateResponse extends Response
 {
     
 
-    /**
-     * ProjectId: 所创建项目的Id
-     *
-     * @return string|null
-     */
-    public function getProjectId(): string
-    {
-        return $this->get("ProjectId");
-    }
 
-    /**
-     * ProjectId: 所创建项目的Id
-     *
-     * @param string $projectId
-     */
-    public function setProjectId(string $projectId)
-    {
-        $this->set("ProjectId", $projectId);
-    }
 }

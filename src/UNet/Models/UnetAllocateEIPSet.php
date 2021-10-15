@@ -27,7 +27,7 @@ class UnetAllocateEIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -37,7 +37,7 @@ class UnetAllocateEIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -47,9 +47,12 @@ class UnetAllocateEIPSet extends Response
      *
      * @return UnetEIPAddrSet[]|null
      */
-    public function getEIPAddr(): array
+    public function getEIPAddr()
     {
-        $items = $this->get("EIPAddr") ?? [];
+        $items = $this->get("EIPAddr");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UnetEIPAddrSet($item));

@@ -35,7 +35,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string
+    public function getShareBandwidthId()
     {
         return $this->get("ShareBandwidthId");
     }
@@ -85,7 +85,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId)
+    public function setShareBandwidthId($shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
@@ -95,7 +95,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getEIPBandwidth(): int
+    public function getEIPBandwidth()
     {
         return $this->get("EIPBandwidth");
     }
@@ -105,7 +105,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param int $eipBandwidth
      */
-    public function setEIPBandwidth(int $eipBandwidth)
+    public function setEIPBandwidth($eipBandwidth)
     {
         $this->set("EIPBandwidth", $eipBandwidth);
     }
@@ -115,7 +115,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getPayMode(): string
+    public function getPayMode()
     {
         return $this->get("PayMode");
     }
@@ -125,7 +125,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode(string $payMode)
+    public function setPayMode($payMode)
     {
         $this->set("PayMode", $payMode);
     }

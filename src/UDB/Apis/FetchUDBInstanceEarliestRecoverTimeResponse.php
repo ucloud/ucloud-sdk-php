@@ -27,7 +27,7 @@ class FetchUDBInstanceEarliestRecoverTimeResponse extends Response
      *
      * @return integer|null
      */
-    public function getEarliestTime(): int
+    public function getEarliestTime()
     {
         return $this->get("EarliestTime");
     }
@@ -37,7 +37,7 @@ class FetchUDBInstanceEarliestRecoverTimeResponse extends Response
      *
      * @param int $earliestTime
      */
-    public function setEarliestTime(int $earliestTime)
+    public function setEarliestTime($earliestTime)
     {
         $this->set("EarliestTime", $earliestTime);
     }

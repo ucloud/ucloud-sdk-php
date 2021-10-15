@@ -27,7 +27,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getTemplateId(): string
+    public function getTemplateId()
     {
         return $this->get("TemplateId");
     }
@@ -37,7 +37,7 @@ class OutTemplate extends Response
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId)
+    public function setTemplateId($templateId)
     {
         $this->set("TemplateId", $templateId);
     }
@@ -47,7 +47,7 @@ class OutTemplate extends Response
      *
      * @return integer|null
      */
-    public function getPurpose(): int
+    public function getPurpose()
     {
         return $this->get("Purpose");
     }
@@ -57,7 +57,7 @@ class OutTemplate extends Response
      *
      * @param int $purpose
      */
-    public function setPurpose(int $purpose)
+    public function setPurpose($purpose)
     {
         $this->set("Purpose", $purpose);
     }
@@ -67,7 +67,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getTemplateName(): string
+    public function getTemplateName()
     {
         return $this->get("TemplateName");
     }
@@ -77,7 +77,7 @@ class OutTemplate extends Response
      *
      * @param string $templateName
      */
-    public function setTemplateName(string $templateName)
+    public function setTemplateName($templateName)
     {
         $this->set("TemplateName", $templateName);
     }
@@ -87,7 +87,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getTemplate(): string
+    public function getTemplate()
     {
         return $this->get("Template");
     }
@@ -97,7 +97,7 @@ class OutTemplate extends Response
      *
      * @param string $template
      */
-    public function setTemplate(string $template)
+    public function setTemplate($template)
     {
         $this->set("Template", $template);
     }
@@ -107,7 +107,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getUnsubscribeInfo(): string
+    public function getUnsubscribeInfo()
     {
         return $this->get("UnsubscribeInfo");
     }
@@ -117,7 +117,7 @@ class OutTemplate extends Response
      *
      * @param string $unsubscribeInfo
      */
-    public function setUnsubscribeInfo(string $unsubscribeInfo)
+    public function setUnsubscribeInfo($unsubscribeInfo)
     {
         $this->set("UnsubscribeInfo", $unsubscribeInfo);
     }
@@ -127,7 +127,7 @@ class OutTemplate extends Response
      *
      * @return integer|null
      */
-    public function getStatus(): int
+    public function getStatus()
     {
         return $this->get("Status");
     }
@@ -137,7 +137,7 @@ class OutTemplate extends Response
      *
      * @param int $status
      */
-    public function setStatus(int $status)
+    public function setStatus($status)
     {
         $this->set("Status", $status);
     }
@@ -147,7 +147,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -157,7 +157,7 @@ class OutTemplate extends Response
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -167,7 +167,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getErrDesc(): string
+    public function getErrDesc()
     {
         return $this->get("ErrDesc");
     }
@@ -177,7 +177,7 @@ class OutTemplate extends Response
      *
      * @param string $errDesc
      */
-    public function setErrDesc(string $errDesc)
+    public function setErrDesc($errDesc)
     {
         $this->set("ErrDesc", $errDesc);
     }
@@ -187,7 +187,7 @@ class OutTemplate extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -197,7 +197,7 @@ class OutTemplate extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }

@@ -27,7 +27,7 @@ class UpdateCubeDeploymentResponse extends Response
      *
      * @return string|null
      */
-    public function getDeployment(): string
+    public function getDeployment()
     {
         return $this->get("Deployment");
     }
@@ -37,7 +37,7 @@ class UpdateCubeDeploymentResponse extends Response
      *
      * @param string $deployment
      */
-    public function setDeployment(string $deployment)
+    public function setDeployment($deployment)
     {
         $this->set("Deployment", $deployment);
     }

@@ -14,37 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\UAccount\Apis;
+namespace UCloud\UHost\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateProjectRequest extends Request
+class CreateUHostInstanceParamFeatures extends Request
 {
-    public function __construct()
-    {
-        parent::__construct(["Action" => "CreateProject"]);
-        $this->markRequired("ProjectName");
-    }
-
     
 
     /**
-     * ProjectName: 项目名称，不得与现有项目重名
+     * UNI: 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。
      *
-     * @return string|null
+     * @return boolean|null
      */
-    public function getProjectName(): string
+    public function getUNI()
     {
-        return $this->get("ProjectName");
+        return $this->get("UNI");
     }
 
     /**
-     * ProjectName: 项目名称，不得与现有项目重名
+     * UNI: 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。
      *
-     * @param string $projectName
+     * @param boolean $uni
      */
-    public function setProjectName(string $projectName)
+    public function setUNI($uni)
     {
-        $this->set("ProjectName", $projectName);
+        $this->set("UNI", $uni);
     }
 }

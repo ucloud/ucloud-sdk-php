@@ -35,7 +35,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getSpaceId(): string
+    public function getSpaceId()
     {
         return $this->get("SpaceId");
     }
@@ -105,7 +105,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId)
+    public function setSpaceId($spaceId)
     {
         $this->set("SpaceId", $spaceId);
     }
@@ -115,7 +115,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -125,7 +125,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -135,7 +135,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -145,7 +145,7 @@ class ResizeUMemSpaceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

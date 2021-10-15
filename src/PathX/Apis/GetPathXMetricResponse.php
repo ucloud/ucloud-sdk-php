@@ -32,7 +32,7 @@ class GetPathXMetricResponse extends Response
      *
      * @return MetricPeriod|null
      */
-    public function getDataSet(): MetricPeriod
+    public function getDataSet()
     {
         return new MetricPeriod($this->get("DataSet"));
     }
@@ -42,7 +42,7 @@ class GetPathXMetricResponse extends Response
      *
      * @param MetricPeriod $dataSet
      */
-    public function setDataSet(MetricPeriod $dataSet)
+    public function setDataSet(array $dataSet)
     {
         $this->set("DataSet", $dataSet->getAll());
     }

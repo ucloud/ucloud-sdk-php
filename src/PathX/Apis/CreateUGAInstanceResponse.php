@@ -27,7 +27,7 @@ class CreateUGAInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getUGAId(): string
+    public function getUGAId()
     {
         return $this->get("UGAId");
     }
@@ -37,7 +37,7 @@ class CreateUGAInstanceResponse extends Response
      *
      * @param string $ugaId
      */
-    public function setUGAId(string $ugaId)
+    public function setUGAId($ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -47,7 +47,7 @@ class CreateUGAInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getCName(): string
+    public function getCName()
     {
         return $this->get("CName");
     }
@@ -57,7 +57,7 @@ class CreateUGAInstanceResponse extends Response
      *
      * @param string $cName
      */
-    public function setCName(string $cName)
+    public function setCName($cName)
     {
         $this->set("CName", $cName);
     }

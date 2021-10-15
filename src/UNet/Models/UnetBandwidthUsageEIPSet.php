@@ -27,7 +27,7 @@ class UnetBandwidthUsageEIPSet extends Response
      *
      * @return float|null
      */
-    public function getCurBandwidth(): float
+    public function getCurBandwidth()
     {
         return $this->get("CurBandwidth");
     }
@@ -37,7 +37,7 @@ class UnetBandwidthUsageEIPSet extends Response
      *
      * @param float $curBandwidth
      */
-    public function setCurBandwidth(float $curBandwidth)
+    public function setCurBandwidth($curBandwidth)
     {
         $this->set("CurBandwidth", $curBandwidth);
     }
@@ -47,7 +47,7 @@ class UnetBandwidthUsageEIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId(): string
+    public function getEIPId()
     {
         return $this->get("EIPId");
     }
@@ -57,7 +57,7 @@ class UnetBandwidthUsageEIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId(string $eipId)
+    public function setEIPId($eipId)
     {
         $this->set("EIPId", $eipId);
     }

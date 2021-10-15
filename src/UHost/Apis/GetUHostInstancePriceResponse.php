@@ -28,9 +28,12 @@ class GetUHostInstancePriceResponse extends Response
      *
      * @return UHostPriceSet[]|null
      */
-    public function getPriceSet(): array
+    public function getPriceSet()
     {
-        $items = $this->get("PriceSet") ?? [];
+        $items = $this->get("PriceSet");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UHostPriceSet($item));

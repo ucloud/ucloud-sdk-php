@@ -35,7 +35,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -105,7 +105,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -115,7 +115,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @return string|null
      */
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->get("Password");
     }
@@ -125,7 +125,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword(string $password)
+    public function setPassword($password)
     {
         $this->set("Password", $password);
     }
@@ -135,7 +135,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @return string|null
      */
-    public function getAccountName(): string
+    public function getAccountName()
     {
         return $this->get("AccountName");
     }
@@ -145,7 +145,7 @@ class ModifyUDBInstancePasswordRequest extends Request
      *
      * @param string $accountName
      */
-    public function setAccountName(string $accountName)
+    public function setAccountName($accountName)
     {
         $this->set("AccountName", $accountName);
     }

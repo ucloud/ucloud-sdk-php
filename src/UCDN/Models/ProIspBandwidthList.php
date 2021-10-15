@@ -27,7 +27,7 @@ class ProIspBandwidthList extends Response
      *
      * @return integer|null
      */
-    public function getTime(): int
+    public function getTime()
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class ProIspBandwidthList extends Response
      *
      * @param int $time
      */
-    public function setTime(int $time)
+    public function setTime($time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class ProIspBandwidthList extends Response
      *
      * @return float|null
      */
-    public function getCdnBandwidth(): float
+    public function getCdnBandwidth()
     {
         return $this->get("CdnBandwidth");
     }
@@ -57,7 +57,7 @@ class ProIspBandwidthList extends Response
      *
      * @param float $cdnBandwidth
      */
-    public function setCdnBandwidth(float $cdnBandwidth)
+    public function setCdnBandwidth($cdnBandwidth)
     {
         $this->set("CdnBandwidth", $cdnBandwidth);
     }
@@ -67,7 +67,7 @@ class ProIspBandwidthList extends Response
      *
      * @return float|null
      */
-    public function getTraffic(): float
+    public function getTraffic()
     {
         return $this->get("Traffic");
     }
@@ -77,7 +77,7 @@ class ProIspBandwidthList extends Response
      *
      * @param float $traffic
      */
-    public function setTraffic(float $traffic)
+    public function setTraffic($traffic)
     {
         $this->set("Traffic", $traffic);
     }

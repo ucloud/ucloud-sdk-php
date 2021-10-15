@@ -42,7 +42,7 @@ class UDPNClient extends Client
     /**
      * AllocateUDPN - 分配一条 UDPN 专线
      *
-     * See also: https://docs.ucloud.cn/api/UDPN-api/allocate_udpn
+     * See also: https://docs.ucloud.cn/api/udpn-api/allocate_udpn
      *
      * Arguments:
      *
@@ -64,9 +64,10 @@ class UDPNClient extends Client
      *     "UDPNId" => (string) 资源名称
      * ]
      *
+     * @return AllocateUDPNResponse
      * @throws UCloudException
      */
-    public function allocateUDPN(AllocateUDPNRequest $request = null): AllocateUDPNResponse
+    public function allocateUDPN(AllocateUDPNRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AllocateUDPNResponse($resp->toArray(), $resp->getRequestId());
@@ -75,7 +76,7 @@ class UDPNClient extends Client
     /**
      * DescribeUDPN - 描述 UDPN
      *
-     * See also: https://docs.ucloud.cn/api/UDPN-api/describe_udpn
+     * See also: https://docs.ucloud.cn/api/udpn-api/describe_udpn
      *
      * Arguments:
      *
@@ -104,9 +105,10 @@ class UDPNClient extends Client
      *     ]
      * ]
      *
+     * @return DescribeUDPNResponse
      * @throws UCloudException
      */
-    public function describeUDPN(DescribeUDPNRequest $request = null): DescribeUDPNResponse
+    public function describeUDPN(DescribeUDPNRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new DescribeUDPNResponse($resp->toArray(), $resp->getRequestId());
@@ -115,7 +117,7 @@ class UDPNClient extends Client
     /**
      * GetUDPNLineList - 获取当前支持的专线线路列表
      *
-     * See also: https://docs.ucloud.cn/api/UDPN-api/get_udpn_line_list
+     * See also: https://docs.ucloud.cn/api/udpn-api/get_udpn_line_list
      *
      * Arguments:
      *
@@ -137,9 +139,10 @@ class UDPNClient extends Client
      *     ]
      * ]
      *
+     * @return GetUDPNLineListResponse
      * @throws UCloudException
      */
-    public function getUDPNLineList(GetUDPNLineListRequest $request = null): GetUDPNLineListResponse
+    public function getUDPNLineList(GetUDPNLineListRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUDPNLineListResponse($resp->toArray(), $resp->getRequestId());
@@ -148,7 +151,7 @@ class UDPNClient extends Client
     /**
      * GetUDPNPrice - 获取 UDPN 价格
      *
-     * See also: https://docs.ucloud.cn/api/UDPN-api/get_udpn_price
+     * See also: https://docs.ucloud.cn/api/udpn-api/get_udpn_price
      *
      * Arguments:
      *
@@ -169,9 +172,10 @@ class UDPNClient extends Client
      *     "Price" => (number) 专线价格
      * ]
      *
+     * @return GetUDPNPriceResponse
      * @throws UCloudException
      */
-    public function getUDPNPrice(GetUDPNPriceRequest $request = null): GetUDPNPriceResponse
+    public function getUDPNPrice(GetUDPNPriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUDPNPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -180,7 +184,7 @@ class UDPNClient extends Client
     /**
      * GetUDPNUpgradePrice - 获取专线升级价格
      *
-     * See also: https://docs.ucloud.cn/api/UDPN-api/get_udpn_upgrade_price
+     * See also: https://docs.ucloud.cn/api/udpn-api/get_udpn_upgrade_price
      *
      * Arguments:
      *
@@ -197,9 +201,10 @@ class UDPNClient extends Client
      *     "Price" => (number) 升级后的价格
      * ]
      *
+     * @return GetUDPNUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getUDPNUpgradePrice(GetUDPNUpgradePriceRequest $request = null): GetUDPNUpgradePriceResponse
+    public function getUDPNUpgradePrice(GetUDPNUpgradePriceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetUDPNUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -208,7 +213,7 @@ class UDPNClient extends Client
     /**
      * ModifyUDPNBandwidth - 修改带宽值
      *
-     * See also: https://docs.ucloud.cn/api/UDPN-api/modify_udpn_bandwidth
+     * See also: https://docs.ucloud.cn/api/udpn-api/modify_udpn_bandwidth
      *
      * Arguments:
      *
@@ -224,9 +229,10 @@ class UDPNClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ModifyUDPNBandwidthResponse
      * @throws UCloudException
      */
-    public function modifyUDPNBandwidth(ModifyUDPNBandwidthRequest $request = null): ModifyUDPNBandwidthResponse
+    public function modifyUDPNBandwidth(ModifyUDPNBandwidthRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ModifyUDPNBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -235,7 +241,7 @@ class UDPNClient extends Client
     /**
      * ReleaseUDPN - 释放 UDPN
      *
-     * See also: https://docs.ucloud.cn/api/UDPN-api/release_udpn
+     * See also: https://docs.ucloud.cn/api/udpn-api/release_udpn
      *
      * Arguments:
      *
@@ -250,9 +256,10 @@ class UDPNClient extends Client
      * $outputs = [
      * ]
      *
+     * @return ReleaseUDPNResponse
      * @throws UCloudException
      */
-    public function releaseUDPN(ReleaseUDPNRequest $request = null): ReleaseUDPNResponse
+    public function releaseUDPN(ReleaseUDPNRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new ReleaseUDPNResponse($resp->toArray(), $resp->getRequestId());

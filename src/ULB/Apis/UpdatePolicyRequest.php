@@ -37,7 +37,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -67,7 +67,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -77,7 +77,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId(): string
+    public function getULBId()
     {
         return $this->get("ULBId");
     }
@@ -87,7 +87,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId)
+    public function setULBId($ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -97,7 +97,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerId(): string
+    public function getVServerId()
     {
         return $this->get("VServerId");
     }
@@ -107,7 +107,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $vServerId
      */
-    public function setVServerId(string $vServerId)
+    public function setVServerId($vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -117,7 +117,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getMatch(): string
+    public function getMatch()
     {
         return $this->get("Match");
     }
@@ -127,7 +127,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $match
      */
-    public function setMatch(string $match)
+    public function setMatch($match)
     {
         $this->set("Match", $match);
     }
@@ -137,7 +137,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getPolicyId(): string
+    public function getPolicyId()
     {
         return $this->get("PolicyId");
     }
@@ -147,7 +147,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $policyId
      */
-    public function setPolicyId(string $policyId)
+    public function setPolicyId($policyId)
     {
         $this->set("PolicyId", $policyId);
     }
@@ -157,7 +157,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string[]|null
      */
-    public function getBackendId(): array
+    public function getBackendId()
     {
         return $this->get("BackendId");
     }
@@ -177,7 +177,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -187,7 +187,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }

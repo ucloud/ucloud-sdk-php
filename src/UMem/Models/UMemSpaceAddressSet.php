@@ -27,7 +27,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @return string|null
      */
-    public function getIP(): string
+    public function getIP()
     {
         return $this->get("IP");
     }
@@ -37,7 +37,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @param string $ip
      */
-    public function setIP(string $ip)
+    public function setIP($ip)
     {
         $this->set("IP", $ip);
     }
@@ -47,7 +47,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -57,7 +57,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }

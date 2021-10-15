@@ -34,7 +34,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @return string|null
      */
-    public function getSnapshotId(): string
+    public function getSnapshotId()
     {
         return $this->get("SnapshotId");
     }
@@ -104,7 +104,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $snapshotId
      */
-    public function setSnapshotId(string $snapshotId)
+    public function setSnapshotId($snapshotId)
     {
         $this->set("SnapshotId", $snapshotId);
     }
@@ -114,7 +114,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskId(): string
+    public function getUDiskId()
     {
         return $this->get("UDiskId");
     }
@@ -124,7 +124,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId(string $uDiskId)
+    public function setUDiskId($uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }

@@ -18,7 +18,7 @@ class DefaultsMiddleware extends Middleware
      *
      * @throws Exception\UCloudException
      */
-    public function handleRequest(Context $ctx): Request
+    public function handleRequest(Context $ctx)
     {
         $req = $ctx->getRequest();
         $cfg = $ctx->getConfig();

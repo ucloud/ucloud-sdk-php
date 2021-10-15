@@ -35,7 +35,7 @@ class UpdateFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class UpdateFirewallRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class UpdateFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class UpdateFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class UpdateFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getFWId(): string
+    public function getFWId()
     {
         return $this->get("FWId");
     }
@@ -85,7 +85,7 @@ class UpdateFirewallRequest extends Request
      *
      * @param string $fwId
      */
-    public function setFWId(string $fwId)
+    public function setFWId($fwId)
     {
         $this->set("FWId", $fwId);
     }
@@ -95,7 +95,7 @@ class UpdateFirewallRequest extends Request
      *
      * @return string[]|null
      */
-    public function getRule(): array
+    public function getRule()
     {
         return $this->get("Rule");
     }

@@ -33,7 +33,7 @@ class DescribeUEcFirewallResourceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class DescribeUEcFirewallResourceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class DescribeUEcFirewallResourceRequest extends Request
      *
      * @return string|null
      */
-    public function getFirewallId(): string
+    public function getFirewallId()
     {
         return $this->get("FirewallId");
     }
@@ -63,7 +63,7 @@ class DescribeUEcFirewallResourceRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId)
+    public function setFirewallId($firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }

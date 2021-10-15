@@ -27,7 +27,7 @@ class ResourceSet extends Response
      *
      * @return string|null
      */
-    public function getNodeId(): string
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }
@@ -37,7 +37,7 @@ class ResourceSet extends Response
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId)
+    public function setNodeId($nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -47,7 +47,7 @@ class ResourceSet extends Response
      *
      * @return string[]|null
      */
-    public function getOuterIps(): array
+    public function getOuterIps()
     {
         return $this->get("OuterIps");
     }

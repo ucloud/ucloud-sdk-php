@@ -33,7 +33,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getNodeId(): string
+    public function getNodeId()
     {
         return $this->get("NodeId");
     }
@@ -63,7 +63,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId(string $nodeId)
+    public function setNodeId($nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -73,7 +73,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCpuCore(): int
+    public function getCpuCore()
     {
         return $this->get("CpuCore");
     }
@@ -83,7 +83,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $cpuCore
      */
-    public function setCpuCore(int $cpuCore)
+    public function setCpuCore($cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
@@ -93,7 +93,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemSize(): int
+    public function getMemSize()
     {
         return $this->get("MemSize");
     }
@@ -103,7 +103,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize(int $memSize)
+    public function setMemSize($memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -113,7 +113,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSysDiskSize(): int
+    public function getSysDiskSize()
     {
         return $this->get("SysDiskSize");
     }
@@ -123,7 +123,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize(int $sysDiskSize)
+    public function setSysDiskSize($sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
@@ -133,7 +133,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSize(): int
+    public function getDiskSize()
     {
         return $this->get("DiskSize");
     }
@@ -143,7 +143,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $diskSize
      */
-    public function setDiskSize(int $diskSize)
+    public function setDiskSize($diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }
@@ -153,7 +153,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getNetLimit(): int
+    public function getNetLimit()
     {
         return $this->get("NetLimit");
     }
@@ -163,7 +163,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $netLimit
      */
-    public function setNetLimit(int $netLimit)
+    public function setNetLimit($netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }

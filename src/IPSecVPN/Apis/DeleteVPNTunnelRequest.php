@@ -35,7 +35,7 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @return string|null
      */
-    public function getVPNTunnelId(): string
+    public function getVPNTunnelId()
     {
         return $this->get("VPNTunnelId");
     }
@@ -85,7 +85,7 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @param string $vpnTunnelId
      */
-    public function setVPNTunnelId(string $vpnTunnelId)
+    public function setVPNTunnelId($vpnTunnelId)
     {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }

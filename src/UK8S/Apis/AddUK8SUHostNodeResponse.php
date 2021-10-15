@@ -27,7 +27,7 @@ class AddUK8SUHostNodeResponse extends Response
      *
      * @return string[]|null
      */
-    public function getNodeIds(): array
+    public function getNodeIds()
     {
         return $this->get("NodeIds");
     }

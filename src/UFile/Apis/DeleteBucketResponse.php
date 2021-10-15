@@ -27,7 +27,7 @@ class DeleteBucketResponse extends Response
      *
      * @return string|null
      */
-    public function getBucketName(): string
+    public function getBucketName()
     {
         return $this->get("BucketName");
     }
@@ -37,7 +37,7 @@ class DeleteBucketResponse extends Response
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName)
+    public function setBucketName($bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
@@ -47,7 +47,7 @@ class DeleteBucketResponse extends Response
      *
      * @return string|null
      */
-    public function getBucketId(): string
+    public function getBucketId()
     {
         return $this->get("BucketId");
     }
@@ -57,7 +57,7 @@ class DeleteBucketResponse extends Response
      *
      * @param string $bucketId
      */
-    public function setBucketId(string $bucketId)
+    public function setBucketId($bucketId)
     {
         $this->set("BucketId", $bucketId);
     }

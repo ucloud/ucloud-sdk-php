@@ -27,7 +27,7 @@ class CacheKeyInfo extends Response
      *
      * @return boolean|null
      */
-    public function getIgnore(): bool
+    public function getIgnore()
     {
         return $this->get("Ignore");
     }
@@ -37,7 +37,7 @@ class CacheKeyInfo extends Response
      *
      * @param boolean $ignore
      */
-    public function setIgnore(bool $ignore)
+    public function setIgnore($ignore)
     {
         $this->set("Ignore", $ignore);
     }
@@ -47,7 +47,7 @@ class CacheKeyInfo extends Response
      *
      * @return string|null
      */
-    public function getPathPattern(): string
+    public function getPathPattern()
     {
         return $this->get("PathPattern");
     }
@@ -57,7 +57,7 @@ class CacheKeyInfo extends Response
      *
      * @param string $pathPattern
      */
-    public function setPathPattern(string $pathPattern)
+    public function setPathPattern($pathPattern)
     {
         $this->set("PathPattern", $pathPattern);
     }
@@ -67,7 +67,7 @@ class CacheKeyInfo extends Response
      *
      * @return string|null
      */
-    public function getQueryString(): string
+    public function getQueryString()
     {
         return $this->get("QueryString");
     }
@@ -77,7 +77,7 @@ class CacheKeyInfo extends Response
      *
      * @param string $queryString
      */
-    public function setQueryString(string $queryString)
+    public function setQueryString($queryString)
     {
         $this->set("QueryString", $queryString);
     }

@@ -35,7 +35,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getGrade(): string
+    public function getGrade()
     {
         return $this->get("Grade");
     }
@@ -85,7 +85,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param string $grade
      */
-    public function setGrade(string $grade)
+    public function setGrade($grade)
     {
         $this->set("Grade", $grade);
     }
@@ -95,7 +95,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -105,7 +105,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -115,7 +115,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -125,7 +125,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }

@@ -29,9 +29,12 @@ class DescribeRouteTableResponse extends Response
      *
      * @return RouteTableInfo[]|null
      */
-    public function getRouteTables(): array
+    public function getRouteTables()
     {
-        $items = $this->get("RouteTables") ?? [];
+        $items = $this->get("RouteTables");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new RouteTableInfo($item));
@@ -58,7 +61,7 @@ class DescribeRouteTableResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -68,7 +71,7 @@ class DescribeRouteTableResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

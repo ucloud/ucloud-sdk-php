@@ -34,7 +34,7 @@ class DeleteCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DeleteCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class DeleteCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class DeleteCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getUid(): string
+    public function getUid()
     {
         return $this->get("Uid");
     }
@@ -104,7 +104,7 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $uid
      */
-    public function setUid(string $uid)
+    public function setUid($uid)
     {
         $this->set("Uid", $uid);
     }
@@ -114,7 +114,7 @@ class DeleteCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getCubeId(): string
+    public function getCubeId()
     {
         return $this->get("CubeId");
     }
@@ -124,7 +124,7 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $cubeId
      */
-    public function setCubeId(string $cubeId)
+    public function setCubeId($cubeId)
     {
         $this->set("CubeId", $cubeId);
     }
@@ -134,7 +134,7 @@ class DeleteCubePodRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseEIP(): bool
+    public function getReleaseEIP()
     {
         return $this->get("ReleaseEIP");
     }
@@ -144,7 +144,7 @@ class DeleteCubePodRequest extends Request
      *
      * @param boolean $releaseEIP
      */
-    public function setReleaseEIP(bool $releaseEIP)
+    public function setReleaseEIP($releaseEIP)
     {
         $this->set("ReleaseEIP", $releaseEIP);
     }

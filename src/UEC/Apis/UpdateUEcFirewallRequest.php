@@ -34,7 +34,7 @@ class UpdateUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class UpdateUEcFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class UpdateUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getFirewallId(): string
+    public function getFirewallId()
     {
         return $this->get("FirewallId");
     }
@@ -64,7 +64,7 @@ class UpdateUEcFirewallRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId(string $firewallId)
+    public function setFirewallId($firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
@@ -74,9 +74,12 @@ class UpdateUEcFirewallRequest extends Request
      *
      * @return UpdateUEcFirewallParamRule[]|null
      */
-    public function getRule(): array
+    public function getRule()
     {
-        $items = $this->get("Rule") ?? [];
+        $items = $this->get("Rule");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UpdateUEcFirewallParamRule($item));

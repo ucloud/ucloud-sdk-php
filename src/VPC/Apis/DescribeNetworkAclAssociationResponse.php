@@ -28,9 +28,12 @@ class DescribeNetworkAclAssociationResponse extends Response
      *
      * @return AssociationInfo[]|null
      */
-    public function getAssociationList(): array
+    public function getAssociationList()
     {
-        $items = $this->get("AssociationList") ?? [];
+        $items = $this->get("AssociationList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AssociationInfo($item));

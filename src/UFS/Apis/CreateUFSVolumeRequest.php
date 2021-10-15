@@ -36,7 +36,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize(): int
+    public function getSize()
     {
         return $this->get("Size");
     }
@@ -86,7 +86,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param int $size
      */
-    public function setSize(int $size)
+    public function setSize($size)
     {
         $this->set("Size", $size);
     }
@@ -96,7 +96,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getStorageType(): string
+    public function getStorageType()
     {
         return $this->get("StorageType");
     }
@@ -106,7 +106,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $storageType
      */
-    public function setStorageType(string $storageType)
+    public function setStorageType($storageType)
     {
         $this->set("StorageType", $storageType);
     }
@@ -116,7 +116,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getProtocolType(): string
+    public function getProtocolType()
     {
         return $this->get("ProtocolType");
     }
@@ -126,7 +126,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $protocolType
      */
-    public function setProtocolType(string $protocolType)
+    public function setProtocolType($protocolType)
     {
         $this->set("ProtocolType", $protocolType);
     }
@@ -136,7 +136,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getVolumeName(): string
+    public function getVolumeName()
     {
         return $this->get("VolumeName");
     }
@@ -146,7 +146,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $volumeName
      */
-    public function setVolumeName(string $volumeName)
+    public function setVolumeName($volumeName)
     {
         $this->set("VolumeName", $volumeName);
     }
@@ -156,7 +156,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark(): string
+    public function getRemark()
     {
         return $this->get("Remark");
     }
@@ -166,7 +166,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark(string $remark)
+    public function setRemark($remark)
     {
         $this->set("Remark", $remark);
     }
@@ -176,7 +176,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -186,7 +186,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -196,7 +196,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType(): string
+    public function getChargeType()
     {
         return $this->get("ChargeType");
     }
@@ -206,7 +206,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType(string $chargeType)
+    public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -216,7 +216,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->get("Quantity");
     }
@@ -226,7 +226,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -236,7 +236,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId(): string
+    public function getCouponId()
     {
         return $this->get("CouponId");
     }
@@ -246,7 +246,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId(string $couponId)
+    public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
     }

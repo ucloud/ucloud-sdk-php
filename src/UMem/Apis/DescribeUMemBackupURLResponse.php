@@ -27,7 +27,7 @@ class DescribeUMemBackupURLResponse extends Response
      *
      * @return string[]|null
      */
-    public function getBackupURL(): array
+    public function getBackupURL()
     {
         return $this->get("BackupURL");
     }

@@ -27,7 +27,7 @@ class SwitchUDBInstanceToHAResponse extends Response
      *
      * @return string|null
      */
-    public function getDBId(): string
+    public function getDBId()
     {
         return $this->get("DBId");
     }
@@ -37,7 +37,7 @@ class SwitchUDBInstanceToHAResponse extends Response
      *
      * @param string $dbId
      */
-    public function setDBId(string $dbId)
+    public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
     }

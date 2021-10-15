@@ -28,9 +28,12 @@ class GetUcdnDomainOriginRequestNumResponse extends Response
      *
      * @return RequestInfoV2[]|null
      */
-    public function getRequestList(): array
+    public function getRequestList()
     {
-        $items = $this->get("RequestList") ?? [];
+        $items = $this->get("RequestList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new RequestInfoV2($item));

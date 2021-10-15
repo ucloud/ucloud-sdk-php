@@ -36,7 +36,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId(): string
+    public function getULBId()
     {
         return $this->get("ULBId");
     }
@@ -86,7 +86,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId(string $ulbId)
+    public function setULBId($ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -96,7 +96,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getBackendId(): string
+    public function getBackendId()
     {
         return $this->get("BackendId");
     }
@@ -106,7 +106,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param string $backendId
      */
-    public function setBackendId(string $backendId)
+    public function setBackendId($backendId)
     {
         $this->set("BackendId", $backendId);
     }
@@ -116,7 +116,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort(): int
+    public function getPort()
     {
         return $this->get("Port");
     }
@@ -126,7 +126,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param int $port
      */
-    public function setPort(int $port)
+    public function setPort($port)
     {
         $this->set("Port", $port);
     }
@@ -136,7 +136,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @return integer|null
      */
-    public function getWeight(): int
+    public function getWeight()
     {
         return $this->get("Weight");
     }
@@ -146,7 +146,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param int $weight
      */
-    public function setWeight(int $weight)
+    public function setWeight($weight)
     {
         $this->set("Weight", $weight);
     }
@@ -156,7 +156,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @return integer|null
      */
-    public function getEnabled(): int
+    public function getEnabled()
     {
         return $this->get("Enabled");
     }
@@ -166,7 +166,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param int $enabled
      */
-    public function setEnabled(int $enabled)
+    public function setEnabled($enabled)
     {
         $this->set("Enabled", $enabled);
     }
@@ -176,7 +176,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @return integer|null
      */
-    public function getIsBackup(): int
+    public function getIsBackup()
     {
         return $this->get("IsBackup");
     }
@@ -186,7 +186,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param int $isBackup
      */
-    public function setIsBackup(int $isBackup)
+    public function setIsBackup($isBackup)
     {
         $this->set("IsBackup", $isBackup);
     }

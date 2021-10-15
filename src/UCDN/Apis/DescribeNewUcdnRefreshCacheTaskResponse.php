@@ -29,7 +29,7 @@ class DescribeNewUcdnRefreshCacheTaskResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount(): int
+    public function getTotalCount()
     {
         return $this->get("TotalCount");
     }
@@ -39,7 +39,7 @@ class DescribeNewUcdnRefreshCacheTaskResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount(int $totalCount)
+    public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -49,9 +49,12 @@ class DescribeNewUcdnRefreshCacheTaskResponse extends Response
      *
      * @return TaskInfo[]|null
      */
-    public function getTaskList(): array
+    public function getTaskList()
     {
-        $items = $this->get("TaskList") ?? [];
+        $items = $this->get("TaskList");
+        if ($items == null) {
+            return [];
+        }
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new TaskInfo($item));

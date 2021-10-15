@@ -7,5 +7,5 @@ use UCloud\Core\Response\Response;
 
 interface ClientInterface
 {
-    public function invoke(Request $req): Response;
+    public function invoke(Request $req);
 }

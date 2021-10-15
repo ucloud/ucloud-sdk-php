@@ -27,7 +27,7 @@ class UMemBlockInfo extends Response
      *
      * @return string|null
      */
-    public function getBlockId(): string
+    public function getBlockId()
     {
         return $this->get("BlockId");
     }
@@ -37,7 +37,7 @@ class UMemBlockInfo extends Response
      *
      * @param string $blockId
      */
-    public function setBlockId(string $blockId)
+    public function setBlockId($blockId)
     {
         $this->set("BlockId", $blockId);
     }
@@ -47,7 +47,7 @@ class UMemBlockInfo extends Response
      *
      * @return string|null
      */
-    public function getBlockVip(): string
+    public function getBlockVip()
     {
         return $this->get("BlockVip");
     }
@@ -57,7 +57,7 @@ class UMemBlockInfo extends Response
      *
      * @param string $blockVip
      */
-    public function setBlockVip(string $blockVip)
+    public function setBlockVip($blockVip)
     {
         $this->set("BlockVip", $blockVip);
     }
@@ -67,7 +67,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockPort(): int
+    public function getBlockPort()
     {
         return $this->get("BlockPort");
     }
@@ -77,7 +77,7 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockPort
      */
-    public function setBlockPort(int $blockPort)
+    public function setBlockPort($blockPort)
     {
         $this->set("BlockPort", $blockPort);
     }
@@ -87,7 +87,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockSize(): int
+    public function getBlockSize()
     {
         return $this->get("BlockSize");
     }
@@ -97,7 +97,7 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockSize
      */
-    public function setBlockSize(int $blockSize)
+    public function setBlockSize($blockSize)
     {
         $this->set("BlockSize", $blockSize);
     }
@@ -107,7 +107,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockUsedSize(): int
+    public function getBlockUsedSize()
     {
         return $this->get("BlockUsedSize");
     }
@@ -117,7 +117,7 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockUsedSize
      */
-    public function setBlockUsedSize(int $blockUsedSize)
+    public function setBlockUsedSize($blockUsedSize)
     {
         $this->set("BlockUsedSize", $blockUsedSize);
     }
@@ -127,7 +127,7 @@ class UMemBlockInfo extends Response
      *
      * @return string|null
      */
-    public function getBlockState(): string
+    public function getBlockState()
     {
         return $this->get("BlockState");
     }
@@ -137,7 +137,7 @@ class UMemBlockInfo extends Response
      *
      * @param string $blockState
      */
-    public function setBlockState(string $blockState)
+    public function setBlockState($blockState)
     {
         $this->set("BlockState", $blockState);
     }
@@ -147,7 +147,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockSlotBegin(): int
+    public function getBlockSlotBegin()
     {
         return $this->get("BlockSlotBegin");
     }
@@ -157,7 +157,7 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockSlotBegin
      */
-    public function setBlockSlotBegin(int $blockSlotBegin)
+    public function setBlockSlotBegin($blockSlotBegin)
     {
         $this->set("BlockSlotBegin", $blockSlotBegin);
     }
@@ -167,7 +167,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockSlotEnd(): int
+    public function getBlockSlotEnd()
     {
         return $this->get("BlockSlotEnd");
     }
@@ -177,7 +177,7 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockSlotEnd
      */
-    public function setBlockSlotEnd(int $blockSlotEnd)
+    public function setBlockSlotEnd($blockSlotEnd)
     {
         $this->set("BlockSlotEnd", $blockSlotEnd);
     }

@@ -34,7 +34,7 @@ class GetUEcHolderMetricsResponse extends Response
      *
      * @return MetricisDataSet|null
      */
-    public function getDataSets(): MetricisDataSet
+    public function getDataSets()
     {
         return new MetricisDataSet($this->get("DataSets"));
     }
@@ -44,7 +44,7 @@ class GetUEcHolderMetricsResponse extends Response
      *
      * @param MetricisDataSet $dataSets
      */
-    public function setDataSets(MetricisDataSet $dataSets)
+    public function setDataSets(array $dataSets)
     {
         $this->set("DataSets", $dataSets->getAll());
     }

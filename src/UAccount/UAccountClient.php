@@ -20,8 +20,6 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\UAccount\Apis\AddMemberToProjectRequest;
 use UCloud\UAccount\Apis\AddMemberToProjectResponse;
-use UCloud\UAccount\Apis\CreateProjectRequest;
-use UCloud\UAccount\Apis\CreateProjectResponse;
 use UCloud\UAccount\Apis\FreezeMemberRequest;
 use UCloud\UAccount\Apis\FreezeMemberResponse;
 use UCloud\UAccount\Apis\GetNetworkMaskRequest;
@@ -46,7 +44,7 @@ class UAccountClient extends Client
     /**
      * AddMemberToProject - 添加成员到项目
      *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/add_member_to_project
+     * See also: https://docs.ucloud.cn/api/uaccount-api/add_member_to_project
      *
      * Arguments:
      *
@@ -61,43 +59,19 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
+     * @return AddMemberToProjectResponse
      * @throws UCloudException
      */
-    public function addMemberToProject(AddMemberToProjectRequest $request = null): AddMemberToProjectResponse
+    public function addMemberToProject(AddMemberToProjectRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new AddMemberToProjectResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
-     * CreateProject - 创建项目
-     *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/create_project
-     *
-     * Arguments:
-     *
-     * $args = [
-     *     "ProjectName" => (string) 项目名称，不得与现有项目重名
-     * ]
-     *
-     * Outputs:
-     *
-     * $outputs = [
-     *     "ProjectId" => (string) 所创建项目的Id
-     * ]
-     *
-     * @throws UCloudException
-     */
-    public function createProject(CreateProjectRequest $request = null): CreateProjectResponse
-    {
-        $resp = $this->invoke($request);
-        return new CreateProjectResponse($resp->toArray(), $resp->getRequestId());
-    }
-
-    /**
      * FreezeMember - 冻结成员
      *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/freeze_member
+     * See also: https://docs.ucloud.cn/api/uaccount-api/freeze_member
      *
      * Arguments:
      *
@@ -110,9 +84,10 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
+     * @return FreezeMemberResponse
      * @throws UCloudException
      */
-    public function freezeMember(FreezeMemberRequest $request = null): FreezeMemberResponse
+    public function freezeMember(FreezeMemberRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new FreezeMemberResponse($resp->toArray(), $resp->getRequestId());
@@ -121,7 +96,7 @@ class UAccountClient extends Client
     /**
      * GetNetworkMask - 查询登录与API调用的网络掩码
      *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/get_network_mask
+     * See also: https://docs.ucloud.cn/api/uaccount-api/get_network_mask
      *
      * Arguments:
      *
@@ -137,9 +112,10 @@ class UAccountClient extends Client
      *     ]
      * ]
      *
+     * @return GetNetworkMaskResponse
      * @throws UCloudException
      */
-    public function getNetworkMask(GetNetworkMaskRequest $request = null): GetNetworkMaskResponse
+    public function getNetworkMask(GetNetworkMaskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetNetworkMaskResponse($resp->toArray(), $resp->getRequestId());
@@ -148,7 +124,7 @@ class UAccountClient extends Client
     /**
      * GetProjectList - 获取项目列表
      *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/get_project_list
+     * See also: https://docs.ucloud.cn/api/uaccount-api/get_project_list
      *
      * Arguments:
      *
@@ -174,9 +150,10 @@ class UAccountClient extends Client
      *     ]
      * ]
      *
+     * @return GetProjectListResponse
      * @throws UCloudException
      */
-    public function getProjectList(GetProjectListRequest $request = null): GetProjectListResponse
+    public function getProjectList(GetProjectListRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetProjectListResponse($resp->toArray(), $resp->getRequestId());
@@ -185,7 +162,7 @@ class UAccountClient extends Client
     /**
      * GetRegion - 获取用户在各数据中心的权限等信息
      *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/get_region
+     * See also: https://docs.ucloud.cn/api/uaccount-api/get_region
      *
      * Arguments:
      *
@@ -207,9 +184,10 @@ class UAccountClient extends Client
      *     ]
      * ]
      *
+     * @return GetRegionResponse
      * @throws UCloudException
      */
-    public function getRegion(GetRegionRequest $request = null): GetRegionResponse
+    public function getRegion(GetRegionRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetRegionResponse($resp->toArray(), $resp->getRequestId());
@@ -218,7 +196,7 @@ class UAccountClient extends Client
     /**
      * InviteSubaccount - 邀请子帐号成员
      *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/invite_subaccount
+     * See also: https://docs.ucloud.cn/api/uaccount-api/invite_subaccount
      *
      * Arguments:
      *
@@ -234,9 +212,10 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
+     * @return InviteSubaccountResponse
      * @throws UCloudException
      */
-    public function inviteSubaccount(InviteSubaccountRequest $request = null): InviteSubaccountResponse
+    public function inviteSubaccount(InviteSubaccountRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new InviteSubaccountResponse($resp->toArray(), $resp->getRequestId());
@@ -245,7 +224,7 @@ class UAccountClient extends Client
     /**
      * RemoveMemberFromProject - 从项目中移除成员
      *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/remove_member_from_project
+     * See also: https://docs.ucloud.cn/api/uaccount-api/remove_member_from_project
      *
      * Arguments:
      *
@@ -259,9 +238,10 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
+     * @return RemoveMemberFromProjectResponse
      * @throws UCloudException
      */
-    public function removeMemberFromProject(RemoveMemberFromProjectRequest $request = null): RemoveMemberFromProjectResponse
+    public function removeMemberFromProject(RemoveMemberFromProjectRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new RemoveMemberFromProjectResponse($resp->toArray(), $resp->getRequestId());
@@ -270,7 +250,7 @@ class UAccountClient extends Client
     /**
      * SetNetworkMask - 设置登录与API调用的网络掩码
      *
-     * See also: https://docs.ucloud.cn/api/UAccount-api/set_network_mask
+     * See also: https://docs.ucloud.cn/api/uaccount-api/set_network_mask
      *
      * Arguments:
      *
@@ -285,9 +265,10 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
+     * @return SetNetworkMaskResponse
      * @throws UCloudException
      */
-    public function setNetworkMask(SetNetworkMaskRequest $request = null): SetNetworkMaskResponse
+    public function setNetworkMask(SetNetworkMaskRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new SetNetworkMaskResponse($resp->toArray(), $resp->getRequestId());

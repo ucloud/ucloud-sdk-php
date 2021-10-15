@@ -33,7 +33,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -63,7 +63,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getTokenName(): string
+    public function getTokenName()
     {
         return $this->get("TokenName");
     }
@@ -83,7 +83,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @param string $tokenName
      */
-    public function setTokenName(string $tokenName)
+    public function setTokenName($tokenName)
     {
         $this->set("TokenName", $tokenName);
     }
@@ -93,7 +93,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @return string[]|null
      */
-    public function getAllowedOps(): array
+    public function getAllowedOps()
     {
         return $this->get("AllowedOps");
     }
@@ -113,7 +113,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @return string[]|null
      */
-    public function getAllowedPrefixes(): array
+    public function getAllowedPrefixes()
     {
         return $this->get("AllowedPrefixes");
     }
@@ -133,7 +133,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @return string[]|null
      */
-    public function getAllowedBuckets(): array
+    public function getAllowedBuckets()
     {
         return $this->get("AllowedBuckets");
     }
@@ -153,7 +153,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @return integer|null
      */
-    public function getExpireTime(): int
+    public function getExpireTime()
     {
         return $this->get("ExpireTime");
     }
@@ -163,7 +163,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @param int $expireTime
      */
-    public function setExpireTime(int $expireTime)
+    public function setExpireTime($expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }

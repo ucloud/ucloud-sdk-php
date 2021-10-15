@@ -28,7 +28,7 @@ class CreateNetworkAclAssociationResponse extends Response
      *
      * @return string|null
      */
-    public function getAssociationId(): string
+    public function getAssociationId()
     {
         return $this->get("AssociationId");
     }
@@ -38,7 +38,7 @@ class CreateNetworkAclAssociationResponse extends Response
      *
      * @param string $associationId
      */
-    public function setAssociationId(string $associationId)
+    public function setAssociationId($associationId)
     {
         $this->set("AssociationId", $associationId);
     }
@@ -48,7 +48,7 @@ class CreateNetworkAclAssociationResponse extends Response
      *
      * @return AssociationInfo|null
      */
-    public function getPrevAssociation(): AssociationInfo
+    public function getPrevAssociation()
     {
         return new AssociationInfo($this->get("PrevAssociation"));
     }
@@ -58,7 +58,7 @@ class CreateNetworkAclAssociationResponse extends Response
      *
      * @param AssociationInfo $prevAssociation
      */
-    public function setPrevAssociation(AssociationInfo $prevAssociation)
+    public function setPrevAssociation(array $prevAssociation)
     {
         $this->set("PrevAssociation", $prevAssociation->getAll());
     }

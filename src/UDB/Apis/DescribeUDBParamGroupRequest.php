@@ -33,7 +33,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -83,7 +83,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -93,7 +93,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -103,7 +103,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -113,7 +113,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -123,7 +123,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -133,7 +133,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getGroupId(): int
+    public function getGroupId()
     {
         return $this->get("GroupId");
     }
@@ -143,7 +143,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param int $groupId
      */
-    public function setGroupId(int $groupId)
+    public function setGroupId($groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -153,7 +153,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return boolean|null
      */
-    public function getIsInUDBC(): bool
+    public function getIsInUDBC()
     {
         return $this->get("IsInUDBC");
     }
@@ -163,7 +163,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param boolean $isInUDBC
      */
-    public function setIsInUDBC(bool $isInUDBC)
+    public function setIsInUDBC($isInUDBC)
     {
         $this->set("IsInUDBC", $isInUDBC);
     }
@@ -173,7 +173,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag(): bool
+    public function getRegionFlag()
     {
         return $this->get("RegionFlag");
     }
@@ -183,7 +183,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag(bool $regionFlag)
+    public function setRegionFlag($regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }
@@ -193,7 +193,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getClassType(): string
+    public function getClassType()
     {
         return $this->get("ClassType");
     }
@@ -203,7 +203,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param string $classType
      */
-    public function setClassType(string $classType)
+    public function setClassType($classType)
     {
         $this->set("ClassType", $classType);
     }

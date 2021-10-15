@@ -33,7 +33,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone(): string
+    public function getZone()
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone(string $zone)
+    public function setZone($zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -83,7 +83,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -93,7 +93,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -103,7 +103,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -113,7 +113,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -123,7 +123,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }
@@ -133,7 +133,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getSpaceId(): string
+    public function getSpaceId()
     {
         return $this->get("SpaceId");
     }
@@ -143,7 +143,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @param string $spaceId
      */
-    public function setSpaceId(string $spaceId)
+    public function setSpaceId($spaceId)
     {
         $this->set("SpaceId", $spaceId);
     }
@@ -153,7 +153,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @return string|null
      */
-    public function getProtocol(): string
+    public function getProtocol()
     {
         return $this->get("Protocol");
     }
@@ -163,7 +163,7 @@ class DescribeUMemSpaceRequest extends Request
      *
      * @param string $protocol
      */
-    public function setProtocol(string $protocol)
+    public function setProtocol($protocol)
     {
         $this->set("Protocol", $protocol);
     }

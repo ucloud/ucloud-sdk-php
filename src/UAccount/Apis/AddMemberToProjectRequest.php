@@ -34,7 +34,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @return string|null
      */
-    public function getMemberEmail(): string
+    public function getMemberEmail()
     {
         return $this->get("MemberEmail");
     }
@@ -64,7 +64,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @param string $memberEmail
      */
-    public function setMemberEmail(string $memberEmail)
+    public function setMemberEmail($memberEmail)
     {
         $this->set("MemberEmail", $memberEmail);
     }
@@ -74,7 +74,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @return string|null
      */
-    public function getCharacterId(): string
+    public function getCharacterId()
     {
         return $this->get("CharacterId");
     }
@@ -84,7 +84,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @param string $characterId
      */
-    public function setCharacterId(string $characterId)
+    public function setCharacterId($characterId)
     {
         $this->set("CharacterId", $characterId);
     }

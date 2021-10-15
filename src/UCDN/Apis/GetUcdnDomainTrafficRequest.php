@@ -32,7 +32,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @return string|null
      */
-    public function getAccountType(): string
+    public function getAccountType()
     {
         return $this->get("AccountType");
     }
@@ -62,7 +62,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @param string $accountType
      */
-    public function setAccountType(string $accountType)
+    public function setAccountType($accountType)
     {
         $this->set("AccountType", $accountType);
     }
@@ -72,7 +72,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @return string[]|null
      */
-    public function getDomainId(): array
+    public function getDomainId()
     {
         return $this->get("DomainId");
     }
@@ -92,7 +92,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @return string|null
      */
-    public function getAreacode(): string
+    public function getAreacode()
     {
         return $this->get("Areacode");
     }
@@ -102,7 +102,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @param string $areacode
      */
-    public function setAreacode(string $areacode)
+    public function setAreacode($areacode)
     {
         $this->set("Areacode", $areacode);
     }
@@ -112,7 +112,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -122,7 +122,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -132,7 +132,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -142,7 +142,7 @@ class GetUcdnDomainTrafficRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }

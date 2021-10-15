@@ -27,7 +27,7 @@ class CreateUEcHolderParamStorage extends Request
      *
      * @return string|null
      */
-    public function getPath(): string
+    public function getPath()
     {
         return $this->get("Path");
     }
@@ -37,7 +37,7 @@ class CreateUEcHolderParamStorage extends Request
      *
      * @param string $path
      */
-    public function setPath(string $path)
+    public function setPath($path)
     {
         $this->set("Path", $path);
     }
@@ -47,7 +47,7 @@ class CreateUEcHolderParamStorage extends Request
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -57,7 +57,7 @@ class CreateUEcHolderParamStorage extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }

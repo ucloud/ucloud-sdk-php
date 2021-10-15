@@ -32,7 +32,7 @@ class UBillClient extends Client
     /**
      * GetBalance - 获取账户余额
      *
-     * See also: https://docs.ucloud.cn/api/UBill-api/get_balance
+     * See also: https://docs.ucloud.cn/api/ubill-api/get_balance
      *
      * Arguments:
      *
@@ -51,9 +51,10 @@ class UBillClient extends Client
      *     ]
      * ]
      *
+     * @return GetBalanceResponse
      * @throws UCloudException
      */
-    public function getBalance(GetBalanceRequest $request = null): GetBalanceResponse
+    public function getBalance(GetBalanceRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetBalanceResponse($resp->toArray(), $resp->getRequestId());
@@ -62,7 +63,7 @@ class UBillClient extends Client
     /**
      * GetBillDataFileUrl - 生成账单数据文件下载的 url
      *
-     * See also: https://docs.ucloud.cn/api/UBill-api/get_bill_data_file_url
+     * See also: https://docs.ucloud.cn/api/ubill-api/get_bill_data_file_url
      *
      * Arguments:
      *
@@ -80,9 +81,10 @@ class UBillClient extends Client
      *     "IsValid" => (string) 生成的 URL是否有效，即有对应数据文件
      * ]
      *
+     * @return GetBillDataFileUrlResponse
      * @throws UCloudException
      */
-    public function getBillDataFileUrl(GetBillDataFileUrlRequest $request = null): GetBillDataFileUrlResponse
+    public function getBillDataFileUrl(GetBillDataFileUrlRequest $request = null)
     {
         $resp = $this->invoke($request);
         return new GetBillDataFileUrlResponse($resp->toArray(), $resp->getRequestId());

@@ -34,7 +34,7 @@ class ListUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class ListUK8SClusterNodeV2Request extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class ListUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class ListUK8SClusterNodeV2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class ListUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getClusterId(): string
+    public function getClusterId()
     {
         return $this->get("ClusterId");
     }
@@ -84,7 +84,7 @@ class ListUK8SClusterNodeV2Request extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId(string $clusterId)
+    public function setClusterId($clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }

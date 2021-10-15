@@ -27,7 +27,7 @@ class CreatePHostResponse extends Response
      *
      * @return string[]|null
      */
-    public function getPHostId(): array
+    public function getPHostId()
     {
         return $this->get("PHostId");
     }

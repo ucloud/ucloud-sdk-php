@@ -32,7 +32,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIdcId(): array
+    public function getIdcId()
     {
         return $this->get("IdcId");
     }
@@ -72,7 +72,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -82,7 +82,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -92,7 +92,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageName(): string
+    public function getImageName()
     {
         return $this->get("ImageName");
     }
@@ -102,7 +102,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName)
+    public function setImageName($imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -112,7 +112,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getUFileUrl(): string
+    public function getUFileUrl()
     {
         return $this->get("UFileUrl");
     }
@@ -122,7 +122,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $uFileUrl
      */
-    public function setUFileUrl(string $uFileUrl)
+    public function setUFileUrl($uFileUrl)
     {
         $this->set("UFileUrl", $uFileUrl);
     }
@@ -132,7 +132,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getOsType(): string
+    public function getOsType()
     {
         return $this->get("OsType");
     }
@@ -142,7 +142,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $osType
      */
-    public function setOsType(string $osType)
+    public function setOsType($osType)
     {
         $this->set("OsType", $osType);
     }
@@ -152,7 +152,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getFormat(): string
+    public function getFormat()
     {
         return $this->get("Format");
     }
@@ -162,7 +162,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $format
      */
-    public function setFormat(string $format)
+    public function setFormat($format)
     {
         $this->set("Format", $format);
     }
@@ -172,7 +172,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageDesc(): string
+    public function getImageDesc()
     {
         return $this->get("ImageDesc");
     }
@@ -182,7 +182,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $imageDesc
      */
-    public function setImageDesc(string $imageDesc)
+    public function setImageDesc($imageDesc)
     {
         $this->set("ImageDesc", $imageDesc);
     }

@@ -32,7 +32,7 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @return integer|null
      */
-    public function getPageSize(): int
+    public function getPageSize()
     {
         return $this->get("PageSize");
     }
@@ -62,7 +62,7 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @param int $pageSize
      */
-    public function setPageSize(int $pageSize)
+    public function setPageSize($pageSize)
     {
         $this->set("PageSize", $pageSize);
     }
@@ -72,7 +72,7 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @return integer|null
      */
-    public function getPageIndex(): int
+    public function getPageIndex()
     {
         return $this->get("PageIndex");
     }
@@ -82,7 +82,7 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @param int $pageIndex
      */
-    public function setPageIndex(int $pageIndex)
+    public function setPageIndex($pageIndex)
     {
         $this->set("PageIndex", $pageIndex);
     }

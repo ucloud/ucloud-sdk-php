@@ -27,7 +27,7 @@ class AllocateShareBandwidthResponse extends Response
      *
      * @return string|null
      */
-    public function getShareBandwidthId(): string
+    public function getShareBandwidthId()
     {
         return $this->get("ShareBandwidthId");
     }
@@ -37,7 +37,7 @@ class AllocateShareBandwidthResponse extends Response
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId(string $shareBandwidthId)
+    public function setShareBandwidthId($shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }

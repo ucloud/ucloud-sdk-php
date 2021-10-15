@@ -36,7 +36,7 @@ class InviteSubaccountRequest extends Request
      *
      * @return string|null
      */
-    public function getUserEmail(): string
+    public function getUserEmail()
     {
         return $this->get("UserEmail");
     }
@@ -46,7 +46,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userEmail
      */
-    public function setUserEmail(string $userEmail)
+    public function setUserEmail($userEmail)
     {
         $this->set("UserEmail", $userEmail);
     }
@@ -56,7 +56,7 @@ class InviteSubaccountRequest extends Request
      *
      * @return string|null
      */
-    public function getUserPhone(): string
+    public function getUserPhone()
     {
         return $this->get("UserPhone");
     }
@@ -66,7 +66,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userPhone
      */
-    public function setUserPhone(string $userPhone)
+    public function setUserPhone($userPhone)
     {
         $this->set("UserPhone", $userPhone);
     }
@@ -76,7 +76,7 @@ class InviteSubaccountRequest extends Request
      *
      * @return string|null
      */
-    public function getUserName(): string
+    public function getUserName()
     {
         return $this->get("UserName");
     }
@@ -86,7 +86,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userName
      */
-    public function setUserName(string $userName)
+    public function setUserName($userName)
     {
         $this->set("UserName", $userName);
     }
@@ -96,7 +96,7 @@ class InviteSubaccountRequest extends Request
      *
      * @return string|null
      */
-    public function getIsFinance(): string
+    public function getIsFinance()
     {
         return $this->get("IsFinance");
     }
@@ -106,7 +106,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $isFinance
      */
-    public function setIsFinance(string $isFinance)
+    public function setIsFinance($isFinance)
     {
         $this->set("IsFinance", $isFinance);
     }

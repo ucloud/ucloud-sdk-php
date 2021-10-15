@@ -27,7 +27,7 @@ class UpgradeToArkUHostInstanceResponse extends Response
      *
      * @return string[]|null
      */
-    public function getUHostSet(): array
+    public function getUHostSet()
     {
         return $this->get("UHostSet");
     }

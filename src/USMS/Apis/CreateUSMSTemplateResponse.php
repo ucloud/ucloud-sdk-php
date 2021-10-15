@@ -27,7 +27,7 @@ class CreateUSMSTemplateResponse extends Response
      *
      * @return string|null
      */
-    public function getTemplateId(): string
+    public function getTemplateId()
     {
         return $this->get("TemplateId");
     }
@@ -37,7 +37,7 @@ class CreateUSMSTemplateResponse extends Response
      *
      * @param string $templateId
      */
-    public function setTemplateId(string $templateId)
+    public function setTemplateId($templateId)
     {
         $this->set("TemplateId", $templateId);
     }

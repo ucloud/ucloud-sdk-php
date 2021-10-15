@@ -27,7 +27,7 @@ class CfgDictList extends Response
      *
      * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class CfgDictList extends Response
      *
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class CfgDictList extends Response
      *
      * @return string|null
      */
-    public function getMountPath(): string
+    public function getMountPath()
     {
         return $this->get("MountPath");
     }
@@ -57,7 +57,7 @@ class CfgDictList extends Response
      *
      * @param string $mountPath
      */
-    public function setMountPath(string $mountPath)
+    public function setMountPath($mountPath)
     {
         $this->set("MountPath", $mountPath);
     }
@@ -67,7 +67,7 @@ class CfgDictList extends Response
      *
      * @return string|null
      */
-    public function getResourceId(): string
+    public function getResourceId()
     {
         return $this->get("ResourceId");
     }
@@ -77,7 +77,7 @@ class CfgDictList extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId(string $resourceId)
+    public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }

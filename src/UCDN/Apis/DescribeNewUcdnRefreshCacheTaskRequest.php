@@ -32,7 +32,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @return string[]|null
      */
-    public function getTaskId(): array
+    public function getTaskId()
     {
         return $this->get("TaskId");
     }
@@ -72,7 +72,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime(): int
+    public function getBeginTime()
     {
         return $this->get("BeginTime");
     }
@@ -82,7 +82,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime(int $beginTime)
+    public function setBeginTime($beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -92,7 +92,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime(): int
+    public function getEndTime()
     {
         return $this->get("EndTime");
     }
@@ -102,7 +102,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime(int $endTime)
+    public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -112,7 +112,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @return string|null
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->get("Status");
     }
@@ -122,7 +122,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @param string $status
      */
-    public function setStatus(string $status)
+    public function setStatus($status)
     {
         $this->set("Status", $status);
     }
@@ -132,7 +132,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset(): int
+    public function getOffset()
     {
         return $this->get("Offset");
     }
@@ -142,7 +142,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset(int $offset)
+    public function setOffset($offset)
     {
         $this->set("Offset", $offset);
     }
@@ -152,7 +152,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit(): int
+    public function getLimit()
     {
         return $this->get("Limit");
     }
@@ -162,7 +162,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit(int $limit)
+    public function setLimit($limit)
     {
         $this->set("Limit", $limit);
     }

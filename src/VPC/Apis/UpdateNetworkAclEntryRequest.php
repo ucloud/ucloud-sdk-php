@@ -41,7 +41,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -51,7 +51,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -61,7 +61,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -71,7 +71,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -81,7 +81,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getAclId(): string
+    public function getAclId()
     {
         return $this->get("AclId");
     }
@@ -91,7 +91,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $aclId
      */
-    public function setAclId(string $aclId)
+    public function setAclId($aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -101,7 +101,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getEntryId(): string
+    public function getEntryId()
     {
         return $this->get("EntryId");
     }
@@ -111,7 +111,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $entryId
      */
-    public function setEntryId(string $entryId)
+    public function setEntryId($entryId)
     {
         $this->set("EntryId", $entryId);
     }
@@ -121,7 +121,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return integer|null
      */
-    public function getPriority(): int
+    public function getPriority()
     {
         return $this->get("Priority");
     }
@@ -131,7 +131,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param int $priority
      */
-    public function setPriority(int $priority)
+    public function setPriority($priority)
     {
         $this->set("Priority", $priority);
     }
@@ -141,7 +141,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getDirection(): string
+    public function getDirection()
     {
         return $this->get("Direction");
     }
@@ -151,7 +151,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $direction
      */
-    public function setDirection(string $direction)
+    public function setDirection($direction)
     {
         $this->set("Direction", $direction);
     }
@@ -161,7 +161,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getIpProtocol(): string
+    public function getIpProtocol()
     {
         return $this->get("IpProtocol");
     }
@@ -171,7 +171,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $ipProtocol
      */
-    public function setIpProtocol(string $ipProtocol)
+    public function setIpProtocol($ipProtocol)
     {
         $this->set("IpProtocol", $ipProtocol);
     }
@@ -181,7 +181,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getCidrBlock(): string
+    public function getCidrBlock()
     {
         return $this->get("CidrBlock");
     }
@@ -191,7 +191,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $cidrBlock
      */
-    public function setCidrBlock(string $cidrBlock)
+    public function setCidrBlock($cidrBlock)
     {
         $this->set("CidrBlock", $cidrBlock);
     }
@@ -201,7 +201,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getPortRange(): string
+    public function getPortRange()
     {
         return $this->get("PortRange");
     }
@@ -211,7 +211,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $portRange
      */
-    public function setPortRange(string $portRange)
+    public function setPortRange($portRange)
     {
         $this->set("PortRange", $portRange);
     }
@@ -221,7 +221,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getEntryAction(): string
+    public function getEntryAction()
     {
         return $this->get("EntryAction");
     }
@@ -231,7 +231,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $entryAction
      */
-    public function setEntryAction(string $entryAction)
+    public function setEntryAction($entryAction)
     {
         $this->set("EntryAction", $entryAction);
     }
@@ -241,7 +241,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->get("Description");
     }
@@ -251,7 +251,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->set("Description", $description);
     }
@@ -261,7 +261,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return integer|null
      */
-    public function getTargetType(): int
+    public function getTargetType()
     {
         return $this->get("TargetType");
     }
@@ -271,7 +271,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @param int $targetType
      */
-    public function setTargetType(int $targetType)
+    public function setTargetType($targetType)
     {
         $this->set("TargetType", $targetType);
     }
@@ -281,7 +281,7 @@ class UpdateNetworkAclEntryRequest extends Request
      *
      * @return string[]|null
      */
-    public function getTargetResourceIds(): array
+    public function getTargetResourceIds()
     {
         return $this->get("TargetResourceIds");
     }

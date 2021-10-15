@@ -27,7 +27,7 @@ class UFileDomainSet extends Response
      *
      * @return string[]|null
      */
-    public function getSrc(): array
+    public function getSrc()
     {
         return $this->get("Src");
     }
@@ -47,7 +47,7 @@ class UFileDomainSet extends Response
      *
      * @return string[]|null
      */
-    public function getCdn(): array
+    public function getCdn()
     {
         return $this->get("Cdn");
     }
@@ -67,7 +67,7 @@ class UFileDomainSet extends Response
      *
      * @return string[]|null
      */
-    public function getCustomSrc(): array
+    public function getCustomSrc()
     {
         return $this->get("CustomSrc");
     }
@@ -87,7 +87,7 @@ class UFileDomainSet extends Response
      *
      * @return string[]|null
      */
-    public function getCustomCdn(): array
+    public function getCustomCdn()
     {
         return $this->get("CustomCdn");
     }

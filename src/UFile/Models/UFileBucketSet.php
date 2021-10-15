@@ -27,7 +27,7 @@ class UFileBucketSet extends Response
      *
      * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->get("Region");
     }
@@ -37,7 +37,7 @@ class UFileBucketSet extends Response
      *
      * @param string $region
      */
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->set("Region", $region);
     }
@@ -47,7 +47,7 @@ class UFileBucketSet extends Response
      *
      * @return string|null
      */
-    public function getBucketName(): string
+    public function getBucketName()
     {
         return $this->get("BucketName");
     }
@@ -57,7 +57,7 @@ class UFileBucketSet extends Response
      *
      * @param string $bucketName
      */
-    public function setBucketName(string $bucketName)
+    public function setBucketName($bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
@@ -67,7 +67,7 @@ class UFileBucketSet extends Response
      *
      * @return string|null
      */
-    public function getBucketId(): string
+    public function getBucketId()
     {
         return $this->get("BucketId");
     }
@@ -77,7 +77,7 @@ class UFileBucketSet extends Response
      *
      * @param string $bucketId
      */
-    public function setBucketId(string $bucketId)
+    public function setBucketId($bucketId)
     {
         $this->set("BucketId", $bucketId);
     }
@@ -87,7 +87,7 @@ class UFileBucketSet extends Response
      *
      * @return UFileDomainSet|null
      */
-    public function getDomain(): UFileDomainSet
+    public function getDomain()
     {
         return new UFileDomainSet($this->get("Domain"));
     }
@@ -97,7 +97,7 @@ class UFileBucketSet extends Response
      *
      * @param UFileDomainSet $domain
      */
-    public function setDomain(UFileDomainSet $domain)
+    public function setDomain(array $domain)
     {
         $this->set("Domain", $domain->getAll());
     }
@@ -107,7 +107,7 @@ class UFileBucketSet extends Response
      *
      * @return string[]|null
      */
-    public function getCdnDomainId(): array
+    public function getCdnDomainId()
     {
         return $this->get("CdnDomainId");
     }
@@ -127,7 +127,7 @@ class UFileBucketSet extends Response
      *
      * @return string|null
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->get("Type");
     }
@@ -137,7 +137,7 @@ class UFileBucketSet extends Response
      *
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->set("Type", $type);
     }
@@ -147,7 +147,7 @@ class UFileBucketSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime(): int
+    public function getCreateTime()
     {
         return $this->get("CreateTime");
     }
@@ -157,7 +157,7 @@ class UFileBucketSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime(int $createTime)
+    public function setCreateTime($createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -167,7 +167,7 @@ class UFileBucketSet extends Response
      *
      * @return integer|null
      */
-    public function getModifyTime(): int
+    public function getModifyTime()
     {
         return $this->get("ModifyTime");
     }
@@ -177,7 +177,7 @@ class UFileBucketSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime(int $modifyTime)
+    public function setModifyTime($modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
@@ -187,7 +187,7 @@ class UFileBucketSet extends Response
      *
      * @return string|null
      */
-    public function getBiz(): string
+    public function getBiz()
     {
         return $this->get("Biz");
     }
@@ -197,7 +197,7 @@ class UFileBucketSet extends Response
      *
      * @param string $biz
      */
-    public function setBiz(string $biz)
+    public function setBiz($biz)
     {
         $this->set("Biz", $biz);
     }
@@ -207,7 +207,7 @@ class UFileBucketSet extends Response
      *
      * @return string|null
      */
-    public function getTag(): string
+    public function getTag()
     {
         return $this->get("Tag");
     }
@@ -217,7 +217,7 @@ class UFileBucketSet extends Response
      *
      * @param string $tag
      */
-    public function setTag(string $tag)
+    public function setTag($tag)
     {
         $this->set("Tag", $tag);
     }
@@ -227,7 +227,7 @@ class UFileBucketSet extends Response
      *
      * @return integer|null
      */
-    public function getHasUserDomain(): int
+    public function getHasUserDomain()
     {
         return $this->get("HasUserDomain");
     }
@@ -237,7 +237,7 @@ class UFileBucketSet extends Response
      *
      * @param int $hasUserDomain
      */
-    public function setHasUserDomain(int $hasUserDomain)
+    public function setHasUserDomain($hasUserDomain)
     {
         $this->set("HasUserDomain", $hasUserDomain);
     }

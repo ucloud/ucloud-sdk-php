@@ -27,7 +27,7 @@ class MatricPoint extends Response
      *
      * @return integer|null
      */
-    public function getTimestamp(): int
+    public function getTimestamp()
     {
         return $this->get("Timestamp");
     }
@@ -37,7 +37,7 @@ class MatricPoint extends Response
      *
      * @param int $timestamp
      */
-    public function setTimestamp(int $timestamp)
+    public function setTimestamp($timestamp)
     {
         $this->set("Timestamp", $timestamp);
     }
@@ -47,7 +47,7 @@ class MatricPoint extends Response
      *
      * @return integer|null
      */
-    public function getValue(): int
+    public function getValue()
     {
         return $this->get("Value");
     }
@@ -57,7 +57,7 @@ class MatricPoint extends Response
      *
      * @param int $value
      */
-    public function setValue(int $value)
+    public function setValue($value)
     {
         $this->set("Value", $value);
     }

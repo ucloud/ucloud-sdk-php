@@ -27,7 +27,7 @@ class URedisSlowlogSet extends Response
      *
      * @return integer|null
      */
-    public function getStartTime(): int
+    public function getStartTime()
     {
         return $this->get("StartTime");
     }
@@ -37,7 +37,7 @@ class URedisSlowlogSet extends Response
      *
      * @param int $startTime
      */
-    public function setStartTime(int $startTime)
+    public function setStartTime($startTime)
     {
         $this->set("StartTime", $startTime);
     }
@@ -47,7 +47,7 @@ class URedisSlowlogSet extends Response
      *
      * @return integer|null
      */
-    public function getSpendTime(): int
+    public function getSpendTime()
     {
         return $this->get("SpendTime");
     }
@@ -57,7 +57,7 @@ class URedisSlowlogSet extends Response
      *
      * @param int $spendTime
      */
-    public function setSpendTime(int $spendTime)
+    public function setSpendTime($spendTime)
     {
         $this->set("SpendTime", $spendTime);
     }
@@ -67,7 +67,7 @@ class URedisSlowlogSet extends Response
      *
      * @return string|null
      */
-    public function getCommand(): string
+    public function getCommand()
     {
         return $this->get("Command");
     }
@@ -77,7 +77,7 @@ class URedisSlowlogSet extends Response
      *
      * @param string $command
      */
-    public function setCommand(string $command)
+    public function setCommand($command)
     {
         $this->set("Command", $command);
     }

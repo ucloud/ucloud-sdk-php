@@ -27,7 +27,7 @@ class PHostCPUSet extends Response
      *
      * @return string|null
      */
-    public function getModel(): string
+    public function getModel()
     {
         return $this->get("Model");
     }
@@ -37,7 +37,7 @@ class PHostCPUSet extends Response
      *
      * @param string $model
      */
-    public function setModel(string $model)
+    public function setModel($model)
     {
         $this->set("Model", $model);
     }
@@ -47,7 +47,7 @@ class PHostCPUSet extends Response
      *
      * @return float|null
      */
-    public function getFrequence(): float
+    public function getFrequence()
     {
         return $this->get("Frequence");
     }
@@ -57,7 +57,7 @@ class PHostCPUSet extends Response
      *
      * @param float $frequence
      */
-    public function setFrequence(float $frequence)
+    public function setFrequence($frequence)
     {
         $this->set("Frequence", $frequence);
     }
@@ -67,7 +67,7 @@ class PHostCPUSet extends Response
      *
      * @return integer|null
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->get("Count");
     }
@@ -77,7 +77,7 @@ class PHostCPUSet extends Response
      *
      * @param int $count
      */
-    public function setCount(int $count)
+    public function setCount($count)
     {
         $this->set("Count", $count);
     }
@@ -87,7 +87,7 @@ class PHostCPUSet extends Response
      *
      * @return integer|null
      */
-    public function getCoreCount(): int
+    public function getCoreCount()
     {
         return $this->get("CoreCount");
     }
@@ -97,7 +97,7 @@ class PHostCPUSet extends Response
      *
      * @param int $coreCount
      */
-    public function setCoreCount(int $coreCount)
+    public function setCoreCount($coreCount)
     {
         $this->set("CoreCount", $coreCount);
     }

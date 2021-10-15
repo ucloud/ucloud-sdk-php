@@ -27,7 +27,7 @@ class CreateVPNGatewayResponse extends Response
      *
      * @return string|null
      */
-    public function getVPNGatewayId(): string
+    public function getVPNGatewayId()
     {
         return $this->get("VPNGatewayId");
     }
@@ -37,7 +37,7 @@ class CreateVPNGatewayResponse extends Response
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId(string $vpnGatewayId)
+    public function setVPNGatewayId($vpnGatewayId)
     {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }

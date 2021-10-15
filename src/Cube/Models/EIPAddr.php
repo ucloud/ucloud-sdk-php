@@ -27,7 +27,7 @@ class EIPAddr extends Response
      *
      * @return string|null
      */
-    public function getIP(): string
+    public function getIP()
     {
         return $this->get("IP");
     }
@@ -37,7 +37,7 @@ class EIPAddr extends Response
      *
      * @param string $ip
      */
-    public function setIP(string $ip)
+    public function setIP($ip)
     {
         $this->set("IP", $ip);
     }
@@ -47,7 +47,7 @@ class EIPAddr extends Response
      *
      * @return string|null
      */
-    public function getOperatorName(): string
+    public function getOperatorName()
     {
         return $this->get("OperatorName");
     }
@@ -57,7 +57,7 @@ class EIPAddr extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName(string $operatorName)
+    public function setOperatorName($operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }

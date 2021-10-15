@@ -34,7 +34,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId(): string
+    public function getProjectId()
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId(string $projectId)
+    public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->get("ImageId");
     }
@@ -64,7 +64,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId(string $imageId)
+    public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -74,7 +74,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @return string|null
      */
-    public function getImageName(): string
+    public function getImageName()
     {
         return $this->get("ImageName");
     }
@@ -84,7 +84,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @param string $imageName
      */
-    public function setImageName(string $imageName)
+    public function setImageName($imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -94,7 +94,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @return string|null
      */
-    public function getImageDesc(): string
+    public function getImageDesc()
     {
         return $this->get("ImageDesc");
     }
@@ -104,7 +104,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @param string $imageDesc
      */
-    public function setImageDesc(string $imageDesc)
+    public function setImageDesc($imageDesc)
     {
         $this->set("ImageDesc", $imageDesc);
     }
