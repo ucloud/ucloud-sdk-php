@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PHostTagSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -37,7 +37,7 @@ class PHostTagSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -47,7 +47,7 @@ class PHostTagSet extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount()
+    public function getTotalCount(): int
     {
         return $this->get("TotalCount");
     }
@@ -57,7 +57,7 @@ class PHostTagSet extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getIdcId()
+    public function getIdcId(): string
     {
         return $this->get("IdcId");
     }
@@ -64,7 +64,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -74,7 +74,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getCIDR()
+    public function getCIDR(): string
     {
         return $this->get("CIDR");
     }
@@ -84,7 +84,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $cidr
      */
-    public function setCIDR($cidr)
+    public function setCIDR(string $cidr)
     {
         $this->set("CIDR", $cidr);
     }
@@ -94,7 +94,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetName()
+    public function getSubnetName(): string
     {
         return $this->get("SubnetName");
     }
@@ -104,7 +104,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $subnetName
      */
-    public function setSubnetName($subnetName)
+    public function setSubnetName(string $subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -114,7 +114,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getComment()
+    public function getComment(): string
     {
         return $this->get("Comment");
     }
@@ -124,7 +124,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $comment
      */
-    public function setComment($comment)
+    public function setComment(string $comment)
     {
         $this->set("Comment", $comment);
     }

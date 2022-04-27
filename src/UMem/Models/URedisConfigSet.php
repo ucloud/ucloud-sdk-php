@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class URedisConfigSet extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class URedisConfigSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class URedisConfigSet extends Response
      *
      * @return string|null
      */
-    public function getConfigId()
+    public function getConfigId(): string
     {
         return $this->get("ConfigId");
     }
@@ -57,7 +57,7 @@ class URedisConfigSet extends Response
      *
      * @param string $configId
      */
-    public function setConfigId($configId)
+    public function setConfigId(string $configId)
     {
         $this->set("ConfigId", $configId);
     }
@@ -67,7 +67,7 @@ class URedisConfigSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -77,7 +77,7 @@ class URedisConfigSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -87,7 +87,7 @@ class URedisConfigSet extends Response
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->get("Description");
     }
@@ -97,7 +97,7 @@ class URedisConfigSet extends Response
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
@@ -107,7 +107,7 @@ class URedisConfigSet extends Response
      *
      * @return string|null
      */
-    public function getVersion()
+    public function getVersion(): string
     {
         return $this->get("Version");
     }
@@ -117,7 +117,7 @@ class URedisConfigSet extends Response
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
@@ -127,7 +127,7 @@ class URedisConfigSet extends Response
      *
      * @return string|null
      */
-    public function getIsModify()
+    public function getIsModify(): string
     {
         return $this->get("IsModify");
     }
@@ -137,7 +137,7 @@ class URedisConfigSet extends Response
      *
      * @param string $isModify
      */
-    public function setIsModify($isModify)
+    public function setIsModify(string $isModify)
     {
         $this->set("IsModify", $isModify);
     }
@@ -147,7 +147,7 @@ class URedisConfigSet extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -157,7 +157,7 @@ class URedisConfigSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
@@ -167,7 +167,7 @@ class URedisConfigSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -177,7 +177,7 @@ class URedisConfigSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -187,7 +187,7 @@ class URedisConfigSet extends Response
      *
      * @return integer|null
      */
-    public function getModifyTime()
+    public function getModifyTime(): int
     {
         return $this->get("ModifyTime");
     }
@@ -197,7 +197,7 @@ class URedisConfigSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime($modifyTime)
+    public function setModifyTime(int $modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
@@ -207,7 +207,7 @@ class URedisConfigSet extends Response
      *
      * @return boolean|null
      */
-    public function getRegionFlag()
+    public function getRegionFlag(): bool
     {
         return $this->get("RegionFlag");
     }
@@ -217,7 +217,7 @@ class URedisConfigSet extends Response
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }

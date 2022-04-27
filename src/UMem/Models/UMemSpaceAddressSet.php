@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @return string|null
      */
-    public function getIP()
+    public function getIP(): string
     {
         return $this->get("IP");
     }
@@ -37,7 +37,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }
@@ -47,7 +47,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @return integer|null
      */
-    public function getPort()
+    public function getPort(): int
     {
         return $this->get("Port");
     }
@@ -57,7 +57,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }

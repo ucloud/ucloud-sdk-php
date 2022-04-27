@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class FailPhoneDetail extends Response
      *
      * @return string[]|null
      */
-    public function getTemplateParams()
+    public function getTemplateParams(): array
     {
         return $this->get("TemplateParams");
     }
@@ -47,7 +47,7 @@ class FailPhoneDetail extends Response
      *
      * @return string|null
      */
-    public function getPhone()
+    public function getPhone(): string
     {
         return $this->get("Phone");
     }
@@ -57,7 +57,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $phone
      */
-    public function setPhone($phone)
+    public function setPhone(string $phone)
     {
         $this->set("Phone", $phone);
     }
@@ -67,7 +67,7 @@ class FailPhoneDetail extends Response
      *
      * @return string|null
      */
-    public function getExtendCode()
+    public function getExtendCode(): string
     {
         return $this->get("ExtendCode");
     }
@@ -77,7 +77,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $extendCode
      */
-    public function setExtendCode($extendCode)
+    public function setExtendCode(string $extendCode)
     {
         $this->set("ExtendCode", $extendCode);
     }
@@ -87,7 +87,7 @@ class FailPhoneDetail extends Response
      *
      * @return string|null
      */
-    public function getUserId()
+    public function getUserId(): string
     {
         return $this->get("UserId");
     }
@@ -97,7 +97,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $userId
      */
-    public function setUserId($userId)
+    public function setUserId(string $userId)
     {
         $this->set("UserId", $userId);
     }
@@ -107,7 +107,7 @@ class FailPhoneDetail extends Response
      *
      * @return string|null
      */
-    public function getFailureDetails()
+    public function getFailureDetails(): string
     {
         return $this->get("FailureDetails");
     }
@@ -117,7 +117,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $failureDetails
      */
-    public function setFailureDetails($failureDetails)
+    public function setFailureDetails(string $failureDetails)
     {
         $this->set("FailureDetails", $failureDetails);
     }

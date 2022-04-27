@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UnetEIPResourceSet extends Response
      *
      * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): string
     {
         return $this->get("ResourceType");
     }
@@ -37,7 +37,7 @@ class UnetEIPResourceSet extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -47,7 +47,7 @@ class UnetEIPResourceSet extends Response
      *
      * @return string|null
      */
-    public function getResourceName()
+    public function getResourceName(): string
     {
         return $this->get("ResourceName");
     }
@@ -57,7 +57,7 @@ class UnetEIPResourceSet extends Response
      *
      * @param string $resourceName
      */
-    public function setResourceName($resourceName)
+    public function setResourceName(string $resourceName)
     {
         $this->set("ResourceName", $resourceName);
     }
@@ -67,7 +67,7 @@ class UnetEIPResourceSet extends Response
      *
      * @return string|null
      */
-    public function getResourceID()
+    public function getResourceID(): string
     {
         return $this->get("ResourceID");
     }
@@ -77,7 +77,7 @@ class UnetEIPResourceSet extends Response
      *
      * @param string $resourceID
      */
-    public function setResourceID($resourceID)
+    public function setResourceID(string $resourceID)
     {
         $this->set("ResourceID", $resourceID);
     }
@@ -87,7 +87,7 @@ class UnetEIPResourceSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceType()
+    public function getSubResourceType(): string
     {
         return $this->get("SubResourceType");
     }
@@ -97,7 +97,7 @@ class UnetEIPResourceSet extends Response
      *
      * @param string $subResourceType
      */
-    public function setSubResourceType($subResourceType)
+    public function setSubResourceType(string $subResourceType)
     {
         $this->set("SubResourceType", $subResourceType);
     }
@@ -107,7 +107,7 @@ class UnetEIPResourceSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceName()
+    public function getSubResourceName(): string
     {
         return $this->get("SubResourceName");
     }
@@ -117,7 +117,7 @@ class UnetEIPResourceSet extends Response
      *
      * @param string $subResourceName
      */
-    public function setSubResourceName($subResourceName)
+    public function setSubResourceName(string $subResourceName)
     {
         $this->set("SubResourceName", $subResourceName);
     }
@@ -127,7 +127,7 @@ class UnetEIPResourceSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceId()
+    public function getSubResourceId(): string
     {
         return $this->get("SubResourceId");
     }
@@ -137,7 +137,7 @@ class UnetEIPResourceSet extends Response
      *
      * @param string $subResourceId
      */
-    public function setSubResourceId($subResourceId)
+    public function setSubResourceId(string $subResourceId)
     {
         $this->set("SubResourceId", $subResourceId);
     }
@@ -147,7 +147,7 @@ class UnetEIPResourceSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -157,7 +157,7 @@ class UnetEIPResourceSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UDBParamGroupSet extends Response
      *
      * @return integer|null
      */
-    public function getGroupId()
+    public function getGroupId(): int
     {
         return $this->get("GroupId");
     }
@@ -37,7 +37,7 @@ class UDBParamGroupSet extends Response
      *
      * @param int $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(int $groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -47,7 +47,7 @@ class UDBParamGroupSet extends Response
      *
      * @return string|null
      */
-    public function getGroupName()
+    public function getGroupName(): string
     {
         return $this->get("GroupName");
     }
@@ -57,7 +57,7 @@ class UDBParamGroupSet extends Response
      *
      * @param string $groupName
      */
-    public function setGroupName($groupName)
+    public function setGroupName(string $groupName)
     {
         $this->set("GroupName", $groupName);
     }
@@ -67,7 +67,7 @@ class UDBParamGroupSet extends Response
      *
      * @return string|null
      */
-    public function getDBTypeId()
+    public function getDBTypeId(): string
     {
         return $this->get("DBTypeId");
     }
@@ -77,7 +77,7 @@ class UDBParamGroupSet extends Response
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
@@ -87,7 +87,7 @@ class UDBParamGroupSet extends Response
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->get("Description");
     }
@@ -97,7 +97,7 @@ class UDBParamGroupSet extends Response
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
@@ -107,7 +107,7 @@ class UDBParamGroupSet extends Response
      *
      * @return boolean|null
      */
-    public function getModifiable()
+    public function getModifiable(): bool
     {
         return $this->get("Modifiable");
     }
@@ -117,7 +117,7 @@ class UDBParamGroupSet extends Response
      *
      * @param boolean $modifiable
      */
-    public function setModifiable($modifiable)
+    public function setModifiable(bool $modifiable)
     {
         $this->set("Modifiable", $modifiable);
     }
@@ -127,12 +127,9 @@ class UDBParamGroupSet extends Response
      *
      * @return UDBParamMemberSet[]|null
      */
-    public function getParamMember()
+    public function getParamMember(): array
     {
-        $items = $this->get("ParamMember");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("ParamMember") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UDBParamMemberSet($item));

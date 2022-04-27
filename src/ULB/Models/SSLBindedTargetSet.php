@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class SSLBindedTargetSet extends Response
      *
      * @return string|null
      */
-    public function getVServerId()
+    public function getVServerId(): string
     {
         return $this->get("VServerId");
     }
@@ -37,7 +37,7 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -47,7 +47,7 @@ class SSLBindedTargetSet extends Response
      *
      * @return string|null
      */
-    public function getVServerName()
+    public function getVServerName(): string
     {
         return $this->get("VServerName");
     }
@@ -57,7 +57,7 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $vServerName
      */
-    public function setVServerName($vServerName)
+    public function setVServerName(string $vServerName)
     {
         $this->set("VServerName", $vServerName);
     }
@@ -67,7 +67,7 @@ class SSLBindedTargetSet extends Response
      *
      * @return string|null
      */
-    public function getULBId()
+    public function getULBId(): string
     {
         return $this->get("ULBId");
     }
@@ -77,7 +77,7 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -87,7 +87,7 @@ class SSLBindedTargetSet extends Response
      *
      * @return string|null
      */
-    public function getULBName()
+    public function getULBName(): string
     {
         return $this->get("ULBName");
     }
@@ -97,7 +97,7 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $ulbName
      */
-    public function setULBName($ulbName)
+    public function setULBName(string $ulbName)
     {
         $this->set("ULBName", $ulbName);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetUDPNPriceResponse extends Response
      *
      * @return integer|null
      */
-    public function getPurchaseValue()
+    public function getPurchaseValue(): int
     {
         return $this->get("PurchaseValue");
     }
@@ -37,7 +37,7 @@ class GetUDPNPriceResponse extends Response
      *
      * @param int $purchaseValue
      */
-    public function setPurchaseValue($purchaseValue)
+    public function setPurchaseValue(int $purchaseValue)
     {
         $this->set("PurchaseValue", $purchaseValue);
     }
@@ -47,7 +47,7 @@ class GetUDPNPriceResponse extends Response
      *
      * @return float|null
      */
-    public function getPrice()
+    public function getPrice(): float
     {
         return $this->get("Price");
     }
@@ -57,7 +57,7 @@ class GetUDPNPriceResponse extends Response
      *
      * @param float $price
      */
-    public function setPrice($price)
+    public function setPrice(float $price)
     {
         $this->set("Price", $price);
     }

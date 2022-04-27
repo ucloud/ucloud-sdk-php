@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLName()
+    public function getSSLName(): string
     {
         return $this->get("SSLName");
     }
@@ -85,7 +85,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslName
      */
-    public function setSSLName($sslName)
+    public function setSSLName(string $sslName)
     {
         $this->set("SSLName", $sslName);
     }
@@ -95,7 +95,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLType()
+    public function getSSLType(): string
     {
         return $this->get("SSLType");
     }
@@ -105,7 +105,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslType
      */
-    public function setSSLType($sslType)
+    public function setSSLType(string $sslType)
     {
         $this->set("SSLType", $sslType);
     }
@@ -115,7 +115,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLContent()
+    public function getSSLContent(): string
     {
         return $this->get("SSLContent");
     }
@@ -125,7 +125,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslContent
      */
-    public function setSSLContent($sslContent)
+    public function setSSLContent(string $sslContent)
     {
         $this->set("SSLContent", $sslContent);
     }
@@ -135,7 +135,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getUserCert()
+    public function getUserCert(): string
     {
         return $this->get("UserCert");
     }
@@ -145,7 +145,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $userCert
      */
-    public function setUserCert($userCert)
+    public function setUserCert(string $userCert)
     {
         $this->set("UserCert", $userCert);
     }
@@ -155,7 +155,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getPrivateKey()
+    public function getPrivateKey(): string
     {
         return $this->get("PrivateKey");
     }
@@ -165,7 +165,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $privateKey
      */
-    public function setPrivateKey($privateKey)
+    public function setPrivateKey(string $privateKey)
     {
         $this->set("PrivateKey", $privateKey);
     }
@@ -175,7 +175,7 @@ class CreateSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getCaCert()
+    public function getCaCert(): string
     {
         return $this->get("CaCert");
     }
@@ -185,7 +185,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $caCert
      */
-    public function setCaCert($caCert)
+    public function setCaCert(string $caCert)
     {
         $this->set("CaCert", $caCert);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ProIspRequestNumSetV2 extends Response
      *
      * @return string|null
      */
-    public function getProvince()
+    public function getProvince(): string
     {
         return $this->get("Province");
     }
@@ -37,7 +37,7 @@ class ProIspRequestNumSetV2 extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
@@ -47,12 +47,9 @@ class ProIspRequestNumSetV2 extends Response
      *
      * @return ProIspRequestListV2[]|null
      */
-    public function getRequestList()
+    public function getRequestList(): array
     {
-        $items = $this->get("RequestList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("RequestList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ProIspRequestListV2($item));

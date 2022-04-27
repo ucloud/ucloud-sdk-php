@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSpace()
+    public function getDiskSpace(): int
     {
         return $this->get("DiskSpace");
     }
@@ -106,7 +106,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -116,7 +116,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getDiskId()
+    public function getDiskId(): string
     {
         return $this->get("DiskId");
     }
@@ -126,7 +126,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @param string $diskId
      */
-    public function setDiskId($diskId)
+    public function setDiskId(string $diskId)
     {
         $this->set("DiskId", $diskId);
     }
@@ -136,7 +136,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getUHostId()
+    public function getUHostId(): string
     {
         return $this->get("UHostId");
     }
@@ -146,7 +146,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -156,7 +156,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupMode()
+    public function getBackupMode(): string
     {
         return $this->get("BackupMode");
     }
@@ -166,7 +166,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
      *
      * @param string $backupMode
      */
-    public function setBackupMode($backupMode)
+    public function setBackupMode(string $backupMode)
     {
         $this->set("BackupMode", $backupMode);
     }

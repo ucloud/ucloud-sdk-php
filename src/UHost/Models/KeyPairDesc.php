@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class KeyPairDesc extends Response
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -37,7 +37,7 @@ class KeyPairDesc extends Response
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -47,7 +47,7 @@ class KeyPairDesc extends Response
      *
      * @return string|null
      */
-    public function getKeyPairId()
+    public function getKeyPairId(): string
     {
         return $this->get("KeyPairId");
     }
@@ -57,7 +57,7 @@ class KeyPairDesc extends Response
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId($keyPairId)
+    public function setKeyPairId(string $keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
@@ -67,7 +67,7 @@ class KeyPairDesc extends Response
      *
      * @return string|null
      */
-    public function getKeyPairName()
+    public function getKeyPairName(): string
     {
         return $this->get("KeyPairName");
     }
@@ -77,7 +77,7 @@ class KeyPairDesc extends Response
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName($keyPairName)
+    public function setKeyPairName(string $keyPairName)
     {
         $this->set("KeyPairName", $keyPairName);
     }
@@ -87,7 +87,7 @@ class KeyPairDesc extends Response
      *
      * @return string|null
      */
-    public function getKeyPairFingerPrint()
+    public function getKeyPairFingerPrint(): string
     {
         return $this->get("KeyPairFingerPrint");
     }
@@ -97,7 +97,7 @@ class KeyPairDesc extends Response
      *
      * @param string $keyPairFingerPrint
      */
-    public function setKeyPairFingerPrint($keyPairFingerPrint)
+    public function setKeyPairFingerPrint(string $keyPairFingerPrint)
     {
         $this->set("KeyPairFingerPrint", $keyPairFingerPrint);
     }
@@ -107,7 +107,7 @@ class KeyPairDesc extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -117,7 +117,7 @@ class KeyPairDesc extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }

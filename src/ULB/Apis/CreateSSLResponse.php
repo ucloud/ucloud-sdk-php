@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateSSLResponse extends Response
      *
      * @return string|null
      */
-    public function getSSLId()
+    public function getSSLId(): string
     {
         return $this->get("SSLId");
     }
@@ -37,7 +37,7 @@ class CreateSSLResponse extends Response
      *
      * @param string $sslId
      */
-    public function setSSLId($sslId)
+    public function setSSLId(string $sslId)
     {
         $this->set("SSLId", $sslId);
     }

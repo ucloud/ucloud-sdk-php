@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -42,7 +42,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -52,7 +52,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -62,7 +62,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -72,7 +72,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getTokenId()
+    public function getTokenId(): string
     {
         return $this->get("TokenId");
     }
@@ -82,7 +82,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $tokenId
      */
-    public function setTokenId($tokenId)
+    public function setTokenId(string $tokenId)
     {
         $this->set("TokenId", $tokenId);
     }
@@ -92,7 +92,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return string|null
      */
-    public function getTokenName()
+    public function getTokenName(): string
     {
         return $this->get("TokenName");
     }
@@ -102,7 +102,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $tokenName
      */
-    public function setTokenName($tokenName)
+    public function setTokenName(string $tokenName)
     {
         $this->set("TokenName", $tokenName);
     }
@@ -112,7 +112,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @return integer|null
      */
-    public function getDisplay()
+    public function getDisplay(): int
     {
         return $this->get("Display");
     }
@@ -122,7 +122,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param int $display
      */
-    public function setDisplay($display)
+    public function setDisplay(int $display)
     {
         $this->set("Display", $display);
     }

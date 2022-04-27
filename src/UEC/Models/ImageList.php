@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ImageList extends Response
      *
      * @return string|null
      */
-    public function getStoreAddr()
+    public function getStoreAddr(): string
     {
         return $this->get("StoreAddr");
     }
@@ -37,7 +37,7 @@ class ImageList extends Response
      *
      * @param string $storeAddr
      */
-    public function setStoreAddr($storeAddr)
+    public function setStoreAddr(string $storeAddr)
     {
         $this->set("StoreAddr", $storeAddr);
     }
@@ -47,7 +47,7 @@ class ImageList extends Response
      *
      * @return string|null
      */
-    public function getUserName()
+    public function getUserName(): string
     {
         return $this->get("UserName");
     }
@@ -57,7 +57,7 @@ class ImageList extends Response
      *
      * @param string $userName
      */
-    public function setUserName($userName)
+    public function setUserName(string $userName)
     {
         $this->set("UserName", $userName);
     }
@@ -67,7 +67,7 @@ class ImageList extends Response
      *
      * @return string|null
      */
-    public function getImageKey()
+    public function getImageKey(): string
     {
         return $this->get("ImageKey");
     }
@@ -77,7 +77,7 @@ class ImageList extends Response
      *
      * @param string $imageKey
      */
-    public function setImageKey($imageKey)
+    public function setImageKey(string $imageKey)
     {
         $this->set("ImageKey", $imageKey);
     }

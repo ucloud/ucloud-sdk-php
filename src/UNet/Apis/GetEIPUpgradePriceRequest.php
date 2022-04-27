@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -85,7 +85,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -95,7 +95,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -105,7 +105,7 @@ class GetEIPUpgradePriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

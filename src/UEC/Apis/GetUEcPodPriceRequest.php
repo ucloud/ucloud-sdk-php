@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getIdcId()
+    public function getIdcId(): string
     {
         return $this->get("IdcId");
     }
@@ -43,7 +43,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -53,7 +53,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return float|null
      */
-    public function getCpuCore()
+    public function getCpuCore(): float
     {
         return $this->get("CpuCore");
     }
@@ -63,7 +63,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param float $cpuCore
      */
-    public function setCpuCore($cpuCore)
+    public function setCpuCore(float $cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
@@ -73,7 +73,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemSize()
+    public function getMemSize(): int
     {
         return $this->get("MemSize");
     }
@@ -83,7 +83,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -93,7 +93,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getChargeType()
+    public function getChargeType(): int
     {
         return $this->get("ChargeType");
     }
@@ -103,7 +103,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(int $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -113,7 +113,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getChargeQuantity()
+    public function getChargeQuantity(): int
     {
         return $this->get("ChargeQuantity");
     }
@@ -123,7 +123,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity($chargeQuantity)
+    public function setChargeQuantity(int $chargeQuantity)
     {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
@@ -133,7 +133,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProductType()
+    public function getProductType(): string
     {
         return $this->get("ProductType");
     }
@@ -143,7 +143,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }
@@ -153,7 +153,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getElasticIp()
+    public function getElasticIp(): string
     {
         return $this->get("ElasticIp");
     }
@@ -163,7 +163,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $elasticIp
      */
-    public function setElasticIp($elasticIp)
+    public function setElasticIp(string $elasticIp)
     {
         $this->set("ElasticIp", $elasticIp);
     }
@@ -173,7 +173,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -183,7 +183,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getUDPNId()
+    public function getUDPNId(): string
     {
         return $this->get("UDPNId");
     }
@@ -64,7 +64,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @param string $udpnId
      */
-    public function setUDPNId($udpnId)
+    public function setUDPNId(string $udpnId)
     {
         $this->set("UDPNId", $udpnId);
     }
@@ -74,7 +74,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -84,7 +84,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -94,7 +94,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -104,7 +104,7 @@ class ModifyUDPNBandwidthRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

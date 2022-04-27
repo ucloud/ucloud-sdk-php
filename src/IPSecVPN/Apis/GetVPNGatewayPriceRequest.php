@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getGrade()
+    public function getGrade(): string
     {
         return $this->get("Grade");
     }
@@ -85,7 +85,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param string $grade
      */
-    public function setGrade($grade)
+    public function setGrade(string $grade)
     {
         $this->set("Grade", $grade);
     }
@@ -95,7 +95,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -105,7 +105,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -115,7 +115,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -125,7 +125,7 @@ class GetVPNGatewayPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }

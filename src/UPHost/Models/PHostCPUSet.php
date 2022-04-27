@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PHostCPUSet extends Response
      *
      * @return string|null
      */
-    public function getModel()
+    public function getModel(): string
     {
         return $this->get("Model");
     }
@@ -37,7 +37,7 @@ class PHostCPUSet extends Response
      *
      * @param string $model
      */
-    public function setModel($model)
+    public function setModel(string $model)
     {
         $this->set("Model", $model);
     }
@@ -47,7 +47,7 @@ class PHostCPUSet extends Response
      *
      * @return float|null
      */
-    public function getFrequence()
+    public function getFrequence(): float
     {
         return $this->get("Frequence");
     }
@@ -57,7 +57,7 @@ class PHostCPUSet extends Response
      *
      * @param float $frequence
      */
-    public function setFrequence($frequence)
+    public function setFrequence(float $frequence)
     {
         $this->set("Frequence", $frequence);
     }
@@ -67,7 +67,7 @@ class PHostCPUSet extends Response
      *
      * @return integer|null
      */
-    public function getCount()
+    public function getCount(): int
     {
         return $this->get("Count");
     }
@@ -77,7 +77,7 @@ class PHostCPUSet extends Response
      *
      * @param int $count
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->set("Count", $count);
     }
@@ -87,7 +87,7 @@ class PHostCPUSet extends Response
      *
      * @return integer|null
      */
-    public function getCoreCount()
+    public function getCoreCount(): int
     {
         return $this->get("CoreCount");
     }
@@ -97,7 +97,7 @@ class PHostCPUSet extends Response
      *
      * @param int $coreCount
      */
-    public function setCoreCount($coreCount)
+    public function setCoreCount(int $coreCount)
     {
         $this->set("CoreCount", $coreCount);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @return integer|null
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->get("Type");
     }
@@ -62,7 +62,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
@@ -72,7 +72,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @return string[]|null
      */
-    public function getDomainId()
+    public function getDomainId(): array
     {
         return $this->get("DomainId");
     }
@@ -92,7 +92,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @return string|null
      */
-    public function getAreacode()
+    public function getAreacode(): string
     {
         return $this->get("Areacode");
     }
@@ -102,7 +102,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param string $areacode
      */
-    public function setAreacode($areacode)
+    public function setAreacode(string $areacode)
     {
         $this->set("Areacode", $areacode);
     }
@@ -112,7 +112,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime()
+    public function getBeginTime(): int
     {
         return $this->get("BeginTime");
     }
@@ -122,7 +122,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -132,7 +132,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -142,7 +142,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }

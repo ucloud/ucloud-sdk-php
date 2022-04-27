@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class UpdateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class UpdateVPNGatewayRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class UpdateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class UpdateVPNGatewayRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class UpdateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getVPNGatewayId()
+    public function getVPNGatewayId(): string
     {
         return $this->get("VPNGatewayId");
     }
@@ -86,7 +86,7 @@ class UpdateVPNGatewayRequest extends Request
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId($vpnGatewayId)
+    public function setVPNGatewayId(string $vpnGatewayId)
     {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
@@ -96,7 +96,7 @@ class UpdateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getGrade()
+    public function getGrade(): string
     {
         return $this->get("Grade");
     }
@@ -106,7 +106,7 @@ class UpdateVPNGatewayRequest extends Request
      *
      * @param string $grade
      */
-    public function setGrade($grade)
+    public function setGrade(string $grade)
     {
         $this->set("Grade", $grade);
     }

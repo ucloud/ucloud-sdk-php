@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @return integer|null
      */
-    public function getStartTime()
+    public function getStartTime(): int
     {
         return $this->get("StartTime");
     }
@@ -37,7 +37,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @param int $startTime
      */
-    public function setStartTime($startTime)
+    public function setStartTime(int $startTime)
     {
         $this->set("StartTime", $startTime);
     }
@@ -47,7 +47,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -57,7 +57,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -67,7 +67,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @return integer|null
      */
-    public function getQuantityOut()
+    public function getQuantityOut(): int
     {
         return $this->get("QuantityOut");
     }
@@ -77,7 +77,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @param int $quantityOut
      */
-    public function setQuantityOut($quantityOut)
+    public function setQuantityOut(int $quantityOut)
     {
         $this->set("QuantityOut", $quantityOut);
     }
@@ -87,7 +87,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @return string|null
      */
-    public function getBillingState()
+    public function getBillingState(): string
     {
         return $this->get("BillingState");
     }
@@ -97,7 +97,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @param string $billingState
      */
-    public function setBillingState($billingState)
+    public function setBillingState(string $billingState)
     {
         $this->set("BillingState", $billingState);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UDBInstancePriceSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -37,7 +37,7 @@ class UDBInstancePriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -47,7 +47,7 @@ class UDBInstancePriceSet extends Response
      *
      * @return integer|null
      */
-    public function getPrice()
+    public function getPrice(): int
     {
         return $this->get("Price");
     }
@@ -57,7 +57,7 @@ class UDBInstancePriceSet extends Response
      *
      * @param int $price
      */
-    public function setPrice($price)
+    public function setPrice(int $price)
     {
         $this->set("Price", $price);
     }

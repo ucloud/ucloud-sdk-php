@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class AllocateBackendResponse extends Response
      *
      * @return string|null
      */
-    public function getBackendId()
+    public function getBackendId(): string
     {
         return $this->get("BackendId");
     }
@@ -37,7 +37,7 @@ class AllocateBackendResponse extends Response
      *
      * @param string $backendId
      */
-    public function setBackendId($backendId)
+    public function setBackendId(string $backendId)
     {
         $this->set("BackendId", $backendId);
     }

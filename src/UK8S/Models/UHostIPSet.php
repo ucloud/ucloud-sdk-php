@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -37,7 +37,7 @@ class UHostIPSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -47,7 +47,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getIPId()
+    public function getIPId(): string
     {
         return $this->get("IPId");
     }
@@ -57,7 +57,7 @@ class UHostIPSet extends Response
      *
      * @param string $ipId
      */
-    public function setIPId($ipId)
+    public function setIPId(string $ipId)
     {
         $this->set("IPId", $ipId);
     }
@@ -67,7 +67,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getIP()
+    public function getIP(): string
     {
         return $this->get("IP");
     }
@@ -77,7 +77,7 @@ class UHostIPSet extends Response
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }
@@ -87,7 +87,7 @@ class UHostIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -97,7 +97,7 @@ class UHostIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -107,7 +107,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -117,7 +117,7 @@ class UHostIPSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -127,7 +127,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -137,7 +137,7 @@ class UHostIPSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -147,7 +147,7 @@ class UHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getMac()
+    public function getMac(): string
     {
         return $this->get("Mac");
     }
@@ -157,7 +157,7 @@ class UHostIPSet extends Response
      *
      * @param string $mac
      */
-    public function setMac($mac)
+    public function setMac(string $mac)
     {
         $this->set("Mac", $mac);
     }

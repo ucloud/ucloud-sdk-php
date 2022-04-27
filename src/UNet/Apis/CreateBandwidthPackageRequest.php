@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -66,7 +66,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -76,7 +76,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -86,7 +86,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -96,7 +96,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getTimeRange()
+    public function getTimeRange(): int
     {
         return $this->get("TimeRange");
     }
@@ -106,7 +106,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $timeRange
      */
-    public function setTimeRange($timeRange)
+    public function setTimeRange(int $timeRange)
     {
         $this->set("TimeRange", $timeRange);
     }
@@ -116,7 +116,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return integer|null
      */
-    public function getEnableTime()
+    public function getEnableTime(): int
     {
         return $this->get("EnableTime");
     }
@@ -126,7 +126,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $enableTime
      */
-    public function setEnableTime($enableTime)
+    public function setEnableTime(int $enableTime)
     {
         $this->set("EnableTime", $enableTime);
     }
@@ -136,7 +136,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -146,7 +146,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

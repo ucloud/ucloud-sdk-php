@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class AddCertificateRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class AddCertificateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class AddCertificateRequest extends Request
      *
      * @return string|null
      */
-    public function getCertName()
+    public function getCertName(): string
     {
         return $this->get("CertName");
     }
@@ -65,7 +65,7 @@ class AddCertificateRequest extends Request
      *
      * @param string $certName
      */
-    public function setCertName($certName)
+    public function setCertName(string $certName)
     {
         $this->set("CertName", $certName);
     }
@@ -75,7 +75,7 @@ class AddCertificateRequest extends Request
      *
      * @return string|null
      */
-    public function getUserCert()
+    public function getUserCert(): string
     {
         return $this->get("UserCert");
     }
@@ -85,7 +85,7 @@ class AddCertificateRequest extends Request
      *
      * @param string $userCert
      */
-    public function setUserCert($userCert)
+    public function setUserCert(string $userCert)
     {
         $this->set("UserCert", $userCert);
     }
@@ -95,7 +95,7 @@ class AddCertificateRequest extends Request
      *
      * @return string|null
      */
-    public function getPrivateKey()
+    public function getPrivateKey(): string
     {
         return $this->get("PrivateKey");
     }
@@ -105,7 +105,7 @@ class AddCertificateRequest extends Request
      *
      * @param string $privateKey
      */
-    public function setPrivateKey($privateKey)
+    public function setPrivateKey(string $privateKey)
     {
         $this->set("PrivateKey", $privateKey);
     }
@@ -115,7 +115,7 @@ class AddCertificateRequest extends Request
      *
      * @return string|null
      */
-    public function getCaCert()
+    public function getCaCert(): string
     {
         return $this->get("CaCert");
     }
@@ -125,7 +125,7 @@ class AddCertificateRequest extends Request
      *
      * @param string $caCert
      */
-    public function setCaCert($caCert)
+    public function setCaCert(string $caCert)
     {
         $this->set("CaCert", $caCert);
     }

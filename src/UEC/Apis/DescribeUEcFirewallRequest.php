@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getFirewallId()
+    public function getFirewallId(): string
     {
         return $this->get("FirewallId");
     }
@@ -62,7 +62,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
@@ -72,7 +72,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceId()
+    public function getResourceId(): string
     {
         return $this->get("ResourceId");
     }
@@ -82,7 +82,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -92,7 +92,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->get("Limit");
     }
@@ -102,7 +102,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
@@ -112,7 +112,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -122,7 +122,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }

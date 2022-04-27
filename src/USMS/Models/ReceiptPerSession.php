@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ReceiptPerSession extends Response
      *
      * @return string|null
      */
-    public function getSessionNo()
+    public function getSessionNo(): string
     {
         return $this->get("SessionNo");
     }
@@ -37,7 +37,7 @@ class ReceiptPerSession extends Response
      *
      * @param string $sessionNo
      */
-    public function setSessionNo($sessionNo)
+    public function setSessionNo(string $sessionNo)
     {
         $this->set("SessionNo", $sessionNo);
     }
@@ -47,12 +47,9 @@ class ReceiptPerSession extends Response
      *
      * @return ReceiptPerPhone[]|null
      */
-    public function getReceiptSet()
+    public function getReceiptSet(): array
     {
-        $items = $this->get("ReceiptSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("ReceiptSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ReceiptPerPhone($item));

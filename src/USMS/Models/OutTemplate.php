@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getTemplateId()
+    public function getTemplateId(): string
     {
         return $this->get("TemplateId");
     }
@@ -37,7 +37,7 @@ class OutTemplate extends Response
      *
      * @param string $templateId
      */
-    public function setTemplateId($templateId)
+    public function setTemplateId(string $templateId)
     {
         $this->set("TemplateId", $templateId);
     }
@@ -47,7 +47,7 @@ class OutTemplate extends Response
      *
      * @return integer|null
      */
-    public function getPurpose()
+    public function getPurpose(): int
     {
         return $this->get("Purpose");
     }
@@ -57,7 +57,7 @@ class OutTemplate extends Response
      *
      * @param int $purpose
      */
-    public function setPurpose($purpose)
+    public function setPurpose(int $purpose)
     {
         $this->set("Purpose", $purpose);
     }
@@ -67,7 +67,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getTemplateName()
+    public function getTemplateName(): string
     {
         return $this->get("TemplateName");
     }
@@ -77,7 +77,7 @@ class OutTemplate extends Response
      *
      * @param string $templateName
      */
-    public function setTemplateName($templateName)
+    public function setTemplateName(string $templateName)
     {
         $this->set("TemplateName", $templateName);
     }
@@ -87,7 +87,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getTemplate()
+    public function getTemplate(): string
     {
         return $this->get("Template");
     }
@@ -97,7 +97,7 @@ class OutTemplate extends Response
      *
      * @param string $template
      */
-    public function setTemplate($template)
+    public function setTemplate(string $template)
     {
         $this->set("Template", $template);
     }
@@ -107,7 +107,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getUnsubscribeInfo()
+    public function getUnsubscribeInfo(): string
     {
         return $this->get("UnsubscribeInfo");
     }
@@ -117,7 +117,7 @@ class OutTemplate extends Response
      *
      * @param string $unsubscribeInfo
      */
-    public function setUnsubscribeInfo($unsubscribeInfo)
+    public function setUnsubscribeInfo(string $unsubscribeInfo)
     {
         $this->set("UnsubscribeInfo", $unsubscribeInfo);
     }
@@ -127,7 +127,7 @@ class OutTemplate extends Response
      *
      * @return integer|null
      */
-    public function getStatus()
+    public function getStatus(): int
     {
         return $this->get("Status");
     }
@@ -137,7 +137,7 @@ class OutTemplate extends Response
      *
      * @param int $status
      */
-    public function setStatus($status)
+    public function setStatus(int $status)
     {
         $this->set("Status", $status);
     }
@@ -147,7 +147,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -157,7 +157,7 @@ class OutTemplate extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -167,7 +167,7 @@ class OutTemplate extends Response
      *
      * @return string|null
      */
-    public function getErrDesc()
+    public function getErrDesc(): string
     {
         return $this->get("ErrDesc");
     }
@@ -177,7 +177,7 @@ class OutTemplate extends Response
      *
      * @param string $errDesc
      */
-    public function setErrDesc($errDesc)
+    public function setErrDesc(string $errDesc)
     {
         $this->set("ErrDesc", $errDesc);
     }
@@ -187,7 +187,7 @@ class OutTemplate extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -197,8 +197,28 @@ class OutTemplate extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @return string|null
+     */
+    public function getInstruction(): string
+    {
+        return $this->get("Instruction");
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @param string $instruction
+     */
+    public function setInstruction(string $instruction)
+    {
+        $this->set("Instruction", $instruction);
     }
 }

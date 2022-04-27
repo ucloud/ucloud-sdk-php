@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UFileDataSet extends Response
      *
      * @return string|null
      */
-    public function getTokenID()
+    public function getTokenID(): string
     {
         return $this->get("TokenID");
     }
@@ -37,7 +37,7 @@ class UFileDataSet extends Response
      *
      * @param string $tokenID
      */
-    public function setTokenID($tokenID)
+    public function setTokenID(string $tokenID)
     {
         $this->set("TokenID", $tokenID);
     }
@@ -47,7 +47,7 @@ class UFileDataSet extends Response
      *
      * @return string|null
      */
-    public function getBucket()
+    public function getBucket(): string
     {
         return $this->get("Bucket");
     }
@@ -57,7 +57,7 @@ class UFileDataSet extends Response
      *
      * @param string $bucket
      */
-    public function setBucket($bucket)
+    public function setBucket(string $bucket)
     {
         $this->set("Bucket", $bucket);
     }

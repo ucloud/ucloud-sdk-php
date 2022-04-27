@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class CreateULBRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -63,7 +63,7 @@ class CreateULBRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getULBName()
+    public function getULBName(): string
     {
         return $this->get("ULBName");
     }
@@ -83,7 +83,7 @@ class CreateULBRequest extends Request
      *
      * @param string $ulbName
      */
-    public function setULBName($ulbName)
+    public function setULBName(string $ulbName)
     {
         $this->set("ULBName", $ulbName);
     }
@@ -93,7 +93,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -103,7 +103,7 @@ class CreateULBRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -113,7 +113,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -123,7 +123,7 @@ class CreateULBRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -133,7 +133,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getOuterMode()
+    public function getOuterMode(): string
     {
         return $this->get("OuterMode");
     }
@@ -143,7 +143,7 @@ class CreateULBRequest extends Request
      *
      * @param string $outerMode
      */
-    public function setOuterMode($outerMode)
+    public function setOuterMode(string $outerMode)
     {
         $this->set("OuterMode", $outerMode);
     }
@@ -153,7 +153,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getInnerMode()
+    public function getInnerMode(): string
     {
         return $this->get("InnerMode");
     }
@@ -163,7 +163,7 @@ class CreateULBRequest extends Request
      *
      * @param string $innerMode
      */
-    public function setInnerMode($innerMode)
+    public function setInnerMode(string $innerMode)
     {
         $this->set("InnerMode", $innerMode);
     }
@@ -173,7 +173,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -183,7 +183,7 @@ class CreateULBRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -193,7 +193,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -203,7 +203,7 @@ class CreateULBRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -213,7 +213,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -223,7 +223,7 @@ class CreateULBRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -233,7 +233,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getBusinessId()
+    public function getBusinessId(): string
     {
         return $this->get("BusinessId");
     }
@@ -243,7 +243,7 @@ class CreateULBRequest extends Request
      *
      * @param string $businessId
      */
-    public function setBusinessId($businessId)
+    public function setBusinessId(string $businessId)
     {
         $this->set("BusinessId", $businessId);
     }
@@ -253,7 +253,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getFirewallId()
+    public function getFirewallId(): string
     {
         return $this->get("FirewallId");
     }
@@ -263,7 +263,7 @@ class CreateULBRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
@@ -273,7 +273,7 @@ class CreateULBRequest extends Request
      *
      * @return string|null
      */
-    public function getListenType()
+    public function getListenType(): string
     {
         return $this->get("ListenType");
     }
@@ -283,7 +283,7 @@ class CreateULBRequest extends Request
      *
      * @param string $listenType
      */
-    public function setListenType($listenType)
+    public function setListenType(string $listenType)
     {
         $this->set("ListenType", $listenType);
     }

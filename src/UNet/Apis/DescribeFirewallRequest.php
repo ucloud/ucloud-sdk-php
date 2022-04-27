@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class DescribeFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeFirewallRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -63,7 +63,7 @@ class DescribeFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class DescribeFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getFWId()
+    public function getFWId(): string
     {
         return $this->get("FWId");
     }
@@ -83,7 +83,7 @@ class DescribeFirewallRequest extends Request
      *
      * @param string $fwId
      */
-    public function setFWId($fwId)
+    public function setFWId(string $fwId)
     {
         $this->set("FWId", $fwId);
     }
@@ -93,7 +93,7 @@ class DescribeFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): string
     {
         return $this->get("ResourceType");
     }
@@ -103,7 +103,7 @@ class DescribeFirewallRequest extends Request
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -113,7 +113,7 @@ class DescribeFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceId()
+    public function getResourceId(): string
     {
         return $this->get("ResourceId");
     }
@@ -123,7 +123,7 @@ class DescribeFirewallRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -133,7 +133,7 @@ class DescribeFirewallRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->get("Limit");
     }
@@ -143,7 +143,7 @@ class DescribeFirewallRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
@@ -153,7 +153,7 @@ class DescribeFirewallRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -163,7 +163,7 @@ class DescribeFirewallRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }

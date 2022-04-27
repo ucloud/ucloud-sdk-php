@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class EnvList extends Response
      *
      * @return string|null
      */
-    public function getKey()
+    public function getKey(): string
     {
         return $this->get("Key");
     }
@@ -37,7 +37,7 @@ class EnvList extends Response
      *
      * @param string $key
      */
-    public function setKey($key)
+    public function setKey(string $key)
     {
         $this->set("Key", $key);
     }
@@ -47,7 +47,7 @@ class EnvList extends Response
      *
      * @return string|null
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->get("Value");
     }
@@ -57,7 +57,7 @@ class EnvList extends Response
      *
      * @param string $value
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->set("Value", $value);
     }

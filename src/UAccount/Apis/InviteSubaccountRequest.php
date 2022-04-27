@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class InviteSubaccountRequest extends Request
      *
      * @return string|null
      */
-    public function getUserEmail()
+    public function getUserEmail(): string
     {
         return $this->get("UserEmail");
     }
@@ -46,7 +46,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userEmail
      */
-    public function setUserEmail($userEmail)
+    public function setUserEmail(string $userEmail)
     {
         $this->set("UserEmail", $userEmail);
     }
@@ -56,7 +56,7 @@ class InviteSubaccountRequest extends Request
      *
      * @return string|null
      */
-    public function getUserPhone()
+    public function getUserPhone(): string
     {
         return $this->get("UserPhone");
     }
@@ -66,7 +66,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userPhone
      */
-    public function setUserPhone($userPhone)
+    public function setUserPhone(string $userPhone)
     {
         $this->set("UserPhone", $userPhone);
     }
@@ -76,7 +76,7 @@ class InviteSubaccountRequest extends Request
      *
      * @return string|null
      */
-    public function getUserName()
+    public function getUserName(): string
     {
         return $this->get("UserName");
     }
@@ -86,7 +86,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userName
      */
-    public function setUserName($userName)
+    public function setUserName(string $userName)
     {
         $this->set("UserName", $userName);
     }
@@ -96,7 +96,7 @@ class InviteSubaccountRequest extends Request
      *
      * @return string|null
      */
-    public function getIsFinance()
+    public function getIsFinance(): string
     {
         return $this->get("IsFinance");
     }
@@ -106,7 +106,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $isFinance
      */
-    public function setIsFinance($isFinance)
+    public function setIsFinance(string $isFinance)
     {
         $this->set("IsFinance", $isFinance);
     }

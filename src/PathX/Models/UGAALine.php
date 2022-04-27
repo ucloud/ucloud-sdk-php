@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UGAALine extends Response
      *
      * @return string|null
      */
-    public function getLineFrom()
+    public function getLineFrom(): string
     {
         return $this->get("LineFrom");
     }
@@ -37,7 +37,7 @@ class UGAALine extends Response
      *
      * @param string $lineFrom
      */
-    public function setLineFrom($lineFrom)
+    public function setLineFrom(string $lineFrom)
     {
         $this->set("LineFrom", $lineFrom);
     }
@@ -47,7 +47,7 @@ class UGAALine extends Response
      *
      * @return string|null
      */
-    public function getLineTo()
+    public function getLineTo(): string
     {
         return $this->get("LineTo");
     }
@@ -57,7 +57,7 @@ class UGAALine extends Response
      *
      * @param string $lineTo
      */
-    public function setLineTo($lineTo)
+    public function setLineTo(string $lineTo)
     {
         $this->set("LineTo", $lineTo);
     }
@@ -67,7 +67,7 @@ class UGAALine extends Response
      *
      * @return string|null
      */
-    public function getLineFromName()
+    public function getLineFromName(): string
     {
         return $this->get("LineFromName");
     }
@@ -77,7 +77,7 @@ class UGAALine extends Response
      *
      * @param string $lineFromName
      */
-    public function setLineFromName($lineFromName)
+    public function setLineFromName(string $lineFromName)
     {
         $this->set("LineFromName", $lineFromName);
     }
@@ -87,7 +87,7 @@ class UGAALine extends Response
      *
      * @return string|null
      */
-    public function getLineToName()
+    public function getLineToName(): string
     {
         return $this->get("LineToName");
     }
@@ -97,7 +97,7 @@ class UGAALine extends Response
      *
      * @param string $lineToName
      */
-    public function setLineToName($lineToName)
+    public function setLineToName(string $lineToName)
     {
         $this->set("LineToName", $lineToName);
     }
@@ -107,7 +107,7 @@ class UGAALine extends Response
      *
      * @return integer|null
      */
-    public function getMaxBandwidth()
+    public function getMaxBandwidth(): int
     {
         return $this->get("MaxBandwidth");
     }
@@ -117,7 +117,7 @@ class UGAALine extends Response
      *
      * @param int $maxBandwidth
      */
-    public function setMaxBandwidth($maxBandwidth)
+    public function setMaxBandwidth(int $maxBandwidth)
     {
         $this->set("MaxBandwidth", $maxBandwidth);
     }
@@ -127,7 +127,7 @@ class UGAALine extends Response
      *
      * @return string|null
      */
-    public function getLineId()
+    public function getLineId(): string
     {
         return $this->get("LineId");
     }
@@ -137,7 +137,7 @@ class UGAALine extends Response
      *
      * @param string $lineId
      */
-    public function setLineId($lineId)
+    public function setLineId(string $lineId)
     {
         $this->set("LineId", $lineId);
     }
@@ -147,12 +147,9 @@ class UGAALine extends Response
      *
      * @return LineDetail[]|null
      */
-    public function getLineDetail()
+    public function getLineDetail(): array
     {
-        $items = $this->get("LineDetail");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("LineDetail") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new LineDetail($item));

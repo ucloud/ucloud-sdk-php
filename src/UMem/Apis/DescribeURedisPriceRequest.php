@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -105,7 +105,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -115,7 +115,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -125,7 +125,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -135,7 +135,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -145,7 +145,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -155,7 +155,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag()
+    public function getRegionFlag(): bool
     {
         return $this->get("RegionFlag");
     }
@@ -165,7 +165,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }
@@ -175,7 +175,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProductType()
+    public function getProductType(): string
     {
         return $this->get("ProductType");
     }
@@ -185,7 +185,7 @@ class DescribeURedisPriceRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }

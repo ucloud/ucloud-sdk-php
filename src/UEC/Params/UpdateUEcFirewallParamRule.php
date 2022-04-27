@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @return string|null
      */
-    public function getProtocolType()
+    public function getProtocolType(): string
     {
         return $this->get("ProtocolType");
     }
@@ -37,7 +37,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @param string $protocolType
      */
-    public function setProtocolType($protocolType)
+    public function setProtocolType(string $protocolType)
     {
         $this->set("ProtocolType", $protocolType);
     }
@@ -47,7 +47,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @return string|null
      */
-    public function getPort()
+    public function getPort(): string
     {
         return $this->get("Port");
     }
@@ -57,7 +57,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @param string $port
      */
-    public function setPort($port)
+    public function setPort(string $port)
     {
         $this->set("Port", $port);
     }
@@ -67,7 +67,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @return string|null
      */
-    public function getSrcIp()
+    public function getSrcIp(): string
     {
         return $this->get("SrcIp");
     }
@@ -77,7 +77,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @param string $srcIp
      */
-    public function setSrcIp($srcIp)
+    public function setSrcIp(string $srcIp)
     {
         $this->set("SrcIp", $srcIp);
     }
@@ -87,7 +87,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @return string|null
      */
-    public function getAction()
+    public function getAction(): string
     {
         return $this->get("Action");
     }
@@ -97,7 +97,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @param string $action
      */
-    public function setAction($action)
+    public function setAction(string $action)
     {
         $this->set("Action", $action);
     }
@@ -107,7 +107,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @return string|null
      */
-    public function getPriority()
+    public function getPriority(): string
     {
         return $this->get("Priority");
     }
@@ -117,7 +117,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @param string $priority
      */
-    public function setPriority($priority)
+    public function setPriority(string $priority)
     {
         $this->set("Priority", $priority);
     }
@@ -127,7 +127,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -137,7 +137,7 @@ class UpdateUEcFirewallParamRule extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

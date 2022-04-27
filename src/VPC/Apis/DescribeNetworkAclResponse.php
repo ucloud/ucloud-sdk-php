@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,12 +31,9 @@ class DescribeNetworkAclResponse extends Response
      *
      * @return AclInfo[]|null
      */
-    public function getAclList()
+    public function getAclList(): array
     {
-        $items = $this->get("AclList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("AclList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AclInfo($item));

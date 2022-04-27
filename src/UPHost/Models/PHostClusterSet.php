@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PHostClusterSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class PHostClusterSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class PHostClusterSet extends Response
      *
      * @return string|null
      */
-    public function getStockStatus()
+    public function getStockStatus(): string
     {
         return $this->get("StockStatus");
     }
@@ -57,7 +57,7 @@ class PHostClusterSet extends Response
      *
      * @param string $stockStatus
      */
-    public function setStockStatus($stockStatus)
+    public function setStockStatus(string $stockStatus)
     {
         $this->set("StockStatus", $stockStatus);
     }

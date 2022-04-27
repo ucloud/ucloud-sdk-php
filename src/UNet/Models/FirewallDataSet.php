@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getFWId()
+    public function getFWId(): string
     {
         return $this->get("FWId");
     }
@@ -37,7 +37,7 @@ class FirewallDataSet extends Response
      *
      * @param string $fwId
      */
-    public function setFWId($fwId)
+    public function setFWId(string $fwId)
     {
         $this->set("FWId", $fwId);
     }
@@ -47,7 +47,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getGroupId()
+    public function getGroupId(): string
     {
         return $this->get("GroupId");
     }
@@ -57,7 +57,7 @@ class FirewallDataSet extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(string $groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -67,7 +67,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -77,7 +77,7 @@ class FirewallDataSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -87,7 +87,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -97,7 +97,7 @@ class FirewallDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -107,7 +107,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -117,7 +117,7 @@ class FirewallDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -127,7 +127,7 @@ class FirewallDataSet extends Response
      *
      * @return integer|null
      */
-    public function getResourceCount()
+    public function getResourceCount(): int
     {
         return $this->get("ResourceCount");
     }
@@ -137,7 +137,7 @@ class FirewallDataSet extends Response
      *
      * @param int $resourceCount
      */
-    public function setResourceCount($resourceCount)
+    public function setResourceCount(int $resourceCount)
     {
         $this->set("ResourceCount", $resourceCount);
     }
@@ -147,7 +147,7 @@ class FirewallDataSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -157,7 +157,7 @@ class FirewallDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -167,7 +167,7 @@ class FirewallDataSet extends Response
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -177,7 +177,7 @@ class FirewallDataSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -187,12 +187,9 @@ class FirewallDataSet extends Response
      *
      * @return FirewallRuleSet[]|null
      */
-    public function getRule()
+    public function getRule(): array
     {
-        $items = $this->get("Rule");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Rule") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new FirewallRuleSet($item));

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetUEcHolderLogResponse extends Response
      *
      * @return string|null
      */
-    public function getData()
+    public function getData(): string
     {
         return $this->get("Data");
     }
@@ -37,7 +37,7 @@ class GetUEcHolderLogResponse extends Response
      *
      * @param string $data
      */
-    public function setData($data)
+    public function setData(string $data)
     {
         $this->set("Data", $data);
     }

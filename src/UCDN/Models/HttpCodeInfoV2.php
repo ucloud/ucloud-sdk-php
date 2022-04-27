@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @return integer|null
      */
-    public function getTime()
+    public function getTime(): int
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @return HttpCodeV2Detail|null
      */
-    public function getHttp1XX()
+    public function getHttp1XX(): HttpCodeV2Detail
     {
         return new HttpCodeV2Detail($this->get("Http1XX"));
     }
@@ -57,7 +57,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @param HttpCodeV2Detail $http1XX
      */
-    public function setHttp1XX(array $http1XX)
+    public function setHttp1XX(HttpCodeV2Detail $http1XX)
     {
         $this->set("Http1XX", $http1XX->getAll());
     }
@@ -67,7 +67,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @return HttpCodeV2Detail|null
      */
-    public function getHttp2XX()
+    public function getHttp2XX(): HttpCodeV2Detail
     {
         return new HttpCodeV2Detail($this->get("Http2XX"));
     }
@@ -77,7 +77,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @param HttpCodeV2Detail $http2XX
      */
-    public function setHttp2XX(array $http2XX)
+    public function setHttp2XX(HttpCodeV2Detail $http2XX)
     {
         $this->set("Http2XX", $http2XX->getAll());
     }
@@ -87,7 +87,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @return HttpCodeV2Detail|null
      */
-    public function getHttp3XX()
+    public function getHttp3XX(): HttpCodeV2Detail
     {
         return new HttpCodeV2Detail($this->get("Http3XX"));
     }
@@ -97,7 +97,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @param HttpCodeV2Detail $http3XX
      */
-    public function setHttp3XX(array $http3XX)
+    public function setHttp3XX(HttpCodeV2Detail $http3XX)
     {
         $this->set("Http3XX", $http3XX->getAll());
     }
@@ -107,7 +107,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @return HttpCodeV2Detail|null
      */
-    public function getHttp4XX()
+    public function getHttp4XX(): HttpCodeV2Detail
     {
         return new HttpCodeV2Detail($this->get("Http4XX"));
     }
@@ -117,7 +117,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @param HttpCodeV2Detail $http4XX
      */
-    public function setHttp4XX(array $http4XX)
+    public function setHttp4XX(HttpCodeV2Detail $http4XX)
     {
         $this->set("Http4XX", $http4XX->getAll());
     }
@@ -127,7 +127,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @return HttpCodeV2Detail|null
      */
-    public function getHttp5XX()
+    public function getHttp5XX(): HttpCodeV2Detail
     {
         return new HttpCodeV2Detail($this->get("Http5XX"));
     }
@@ -137,7 +137,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @param HttpCodeV2Detail $http5XX
      */
-    public function setHttp5XX(array $http5XX)
+    public function setHttp5XX(HttpCodeV2Detail $http5XX)
     {
         $this->set("Http5XX", $http5XX->getAll());
     }
@@ -147,7 +147,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @return HttpCodeV2Detail|null
      */
-    public function getHttp6XX()
+    public function getHttp6XX(): HttpCodeV2Detail
     {
         return new HttpCodeV2Detail($this->get("Http6XX"));
     }
@@ -157,7 +157,7 @@ class HttpCodeInfoV2 extends Response
      *
      * @param HttpCodeV2Detail $http6XX
      */
-    public function setHttp6XX(array $http6XX)
+    public function setHttp6XX(HttpCodeV2Detail $http6XX)
     {
         $this->set("Http6XX", $http6XX->getAll());
     }

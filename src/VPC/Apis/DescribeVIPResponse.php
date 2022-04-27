@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,9 @@ class DescribeVIPResponse extends Response
      *
      * @return VIPDetailSet[]|null
      */
-    public function getVIPSet()
+    public function getVIPSet(): array
     {
-        $items = $this->get("VIPSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("VIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new VIPDetailSet($item));
@@ -60,7 +57,7 @@ class DescribeVIPResponse extends Response
      *
      * @return string[]|null
      */
-    public function getDataSet()
+    public function getDataSet(): array
     {
         return $this->get("DataSet");
     }
@@ -80,7 +77,7 @@ class DescribeVIPResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount()
+    public function getTotalCount(): int
     {
         return $this->get("TotalCount");
     }
@@ -90,7 +87,7 @@ class DescribeVIPResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

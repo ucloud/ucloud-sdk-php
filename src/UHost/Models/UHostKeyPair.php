@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UHostKeyPair extends Response
      *
      * @return string|null
      */
-    public function getKeyPairId()
+    public function getKeyPairId(): string
     {
         return $this->get("KeyPairId");
     }
@@ -37,7 +37,7 @@ class UHostKeyPair extends Response
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId($keyPairId)
+    public function setKeyPairId(string $keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
@@ -47,7 +47,7 @@ class UHostKeyPair extends Response
      *
      * @return string|null
      */
-    public function getKeyPairState()
+    public function getKeyPairState(): string
     {
         return $this->get("KeyPairState");
     }
@@ -57,7 +57,7 @@ class UHostKeyPair extends Response
      *
      * @param string $keyPairState
      */
-    public function setKeyPairState($keyPairState)
+    public function setKeyPairState(string $keyPairState)
     {
         $this->set("KeyPairState", $keyPairState);
     }

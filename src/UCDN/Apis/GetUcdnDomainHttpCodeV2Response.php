@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,12 +34,9 @@ class GetUcdnDomainHttpCodeV2Response extends Response
      *
      * @return HttpCodeInfoV2[]|null
      */
-    public function getHttpCodeDetail()
+    public function getHttpCodeDetail(): array
     {
-        $items = $this->get("HttpCodeDetail");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("HttpCodeDetail") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new HttpCodeInfoV2($item));

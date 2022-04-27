@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateGlobalSSHInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getInstanceId()
+    public function getInstanceId(): string
     {
         return $this->get("InstanceId");
     }
@@ -37,7 +37,7 @@ class CreateGlobalSSHInstanceResponse extends Response
      *
      * @param string $instanceId
      */
-    public function setInstanceId($instanceId)
+    public function setInstanceId(string $instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -47,7 +47,7 @@ class CreateGlobalSSHInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getAcceleratingDomain()
+    public function getAcceleratingDomain(): string
     {
         return $this->get("AcceleratingDomain");
     }
@@ -57,7 +57,7 @@ class CreateGlobalSSHInstanceResponse extends Response
      *
      * @param string $acceleratingDomain
      */
-    public function setAcceleratingDomain($acceleratingDomain)
+    public function setAcceleratingDomain(string $acceleratingDomain)
     {
         $this->set("AcceleratingDomain", $acceleratingDomain);
     }

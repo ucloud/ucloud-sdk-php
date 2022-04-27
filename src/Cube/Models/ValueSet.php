@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ValueSet extends Response
      *
      * @return float|null
      */
-    public function getValue()
+    public function getValue(): float
     {
         return $this->get("Value");
     }
@@ -37,7 +37,7 @@ class ValueSet extends Response
      *
      * @param float $value
      */
-    public function setValue($value)
+    public function setValue(float $value)
     {
         $this->set("Value", $value);
     }
@@ -47,7 +47,7 @@ class ValueSet extends Response
      *
      * @return integer|null
      */
-    public function getTimestamp()
+    public function getTimestamp(): int
     {
         return $this->get("Timestamp");
     }
@@ -57,7 +57,7 @@ class ValueSet extends Response
      *
      * @param int $timestamp
      */
-    public function setTimestamp($timestamp)
+    public function setTimestamp(int $timestamp)
     {
         $this->set("Timestamp", $timestamp);
     }

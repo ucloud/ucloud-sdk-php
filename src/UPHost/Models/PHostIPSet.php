@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getOperatorName()
+    public function getOperatorName(): string
     {
         return $this->get("OperatorName");
     }
@@ -37,7 +37,7 @@ class PHostIPSet extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
@@ -47,7 +47,7 @@ class PHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getIPId()
+    public function getIPId(): string
     {
         return $this->get("IPId");
     }
@@ -57,7 +57,7 @@ class PHostIPSet extends Response
      *
      * @param string $ipId
      */
-    public function setIPId($ipId)
+    public function setIPId(string $ipId)
     {
         $this->set("IPId", $ipId);
     }
@@ -67,7 +67,7 @@ class PHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getIPAddr()
+    public function getIPAddr(): string
     {
         return $this->get("IPAddr");
     }
@@ -77,7 +77,7 @@ class PHostIPSet extends Response
      *
      * @param string $ipAddr
      */
-    public function setIPAddr($ipAddr)
+    public function setIPAddr(string $ipAddr)
     {
         $this->set("IPAddr", $ipAddr);
     }
@@ -87,7 +87,7 @@ class PHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getMACAddr()
+    public function getMACAddr(): string
     {
         return $this->get("MACAddr");
     }
@@ -97,7 +97,7 @@ class PHostIPSet extends Response
      *
      * @param string $macAddr
      */
-    public function setMACAddr($macAddr)
+    public function setMACAddr(string $macAddr)
     {
         $this->set("MACAddr", $macAddr);
     }
@@ -107,7 +107,7 @@ class PHostIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -117,7 +117,7 @@ class PHostIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -127,7 +127,7 @@ class PHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -137,7 +137,7 @@ class PHostIPSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -147,7 +147,7 @@ class PHostIPSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -157,7 +157,7 @@ class PHostIPSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }

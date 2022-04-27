@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ResourceSet extends Response
      *
      * @return integer|null
      */
-    public function getZone()
+    public function getZone(): int
     {
         return $this->get("Zone");
     }
@@ -37,9 +37,69 @@ class ResourceSet extends Response
      *
      * @param int $zone
      */
-    public function setZone($zone)
+    public function setZone(int $zone)
     {
         $this->set("Zone", $zone);
+    }
+
+    /**
+     * SubResourceName: 资源绑定的虚拟网卡的名称
+     *
+     * @return string|null
+     */
+    public function getSubResourceName(): string
+    {
+        return $this->get("SubResourceName");
+    }
+
+    /**
+     * SubResourceName: 资源绑定的虚拟网卡的名称
+     *
+     * @param string $subResourceName
+     */
+    public function setSubResourceName(string $subResourceName)
+    {
+        $this->set("SubResourceName", $subResourceName);
+    }
+
+    /**
+     * SubResourceId: 资源绑定的虚拟网卡的ID
+     *
+     * @return string|null
+     */
+    public function getSubResourceId(): string
+    {
+        return $this->get("SubResourceId");
+    }
+
+    /**
+     * SubResourceId: 资源绑定的虚拟网卡的ID
+     *
+     * @param string $subResourceId
+     */
+    public function setSubResourceId(string $subResourceId)
+    {
+        $this->set("SubResourceId", $subResourceId);
+    }
+
+    /**
+     * SubResourceType: 资源绑定的虚拟网卡的类型，“uni”，虚拟网卡。
+     *
+     * @return string|null
+     */
+    public function getSubResourceType(): string
+    {
+        return $this->get("SubResourceType");
+    }
+
+    /**
+     * SubResourceType: 资源绑定的虚拟网卡的类型，“uni”，虚拟网卡。
+     *
+     * @param string $subResourceType
+     */
+    public function setSubResourceType(string $subResourceType)
+    {
+        $this->set("SubResourceType", $subResourceType);
     }
 
     /**
@@ -47,7 +107,7 @@ class ResourceSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -57,7 +117,7 @@ class ResourceSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -67,7 +127,7 @@ class ResourceSet extends Response
      *
      * @return string|null
      */
-    public function getPrivateIP()
+    public function getPrivateIP(): string
     {
         return $this->get("PrivateIP");
     }
@@ -77,7 +137,7 @@ class ResourceSet extends Response
      *
      * @param string $privateIP
      */
-    public function setPrivateIP($privateIP)
+    public function setPrivateIP(string $privateIP)
     {
         $this->set("PrivateIP", $privateIP);
     }
@@ -87,7 +147,7 @@ class ResourceSet extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -97,7 +157,7 @@ class ResourceSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -107,7 +167,7 @@ class ResourceSet extends Response
      *
      * @return string|null
      */
-    public function getResourceID()
+    public function getResourceID(): string
     {
         return $this->get("ResourceID");
     }
@@ -117,27 +177,27 @@ class ResourceSet extends Response
      *
      * @param string $resourceID
      */
-    public function setResourceID($resourceID)
+    public function setResourceID(string $resourceID)
     {
         $this->set("ResourceID", $resourceID);
     }
 
     /**
-     * ResourceType: 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计.
+     * ResourceType: 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计，“uni”，虚拟网卡。
      *
      * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): string
     {
         return $this->get("ResourceType");
     }
 
     /**
-     * ResourceType: 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计.
+     * ResourceType: 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计，“uni”，虚拟网卡。
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -147,7 +207,7 @@ class ResourceSet extends Response
      *
      * @return integer|null
      */
-    public function getStatus()
+    public function getStatus(): int
     {
         return $this->get("Status");
     }
@@ -157,7 +217,7 @@ class ResourceSet extends Response
      *
      * @param int $status
      */
-    public function setStatus($status)
+    public function setStatus(int $status)
     {
         $this->set("Status", $status);
     }
@@ -167,7 +227,7 @@ class ResourceSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -177,7 +237,7 @@ class ResourceSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }

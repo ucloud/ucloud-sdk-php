@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CheckRecoverUDBInstanceResponse extends Response
      *
      * @return integer|null
      */
-    public function getLastestTime()
+    public function getLastestTime(): int
     {
         return $this->get("LastestTime");
     }
@@ -37,7 +37,7 @@ class CheckRecoverUDBInstanceResponse extends Response
      *
      * @param int $lastestTime
      */
-    public function setLastestTime($lastestTime)
+    public function setLastestTime(int $lastestTime)
     {
         $this->set("LastestTime", $lastestTime);
     }

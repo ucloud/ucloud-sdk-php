@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class DescribeULBRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeULBRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeULBRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -63,7 +63,7 @@ class DescribeULBRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -73,7 +73,7 @@ class DescribeULBRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -83,7 +83,7 @@ class DescribeULBRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
@@ -93,7 +93,7 @@ class DescribeULBRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->get("Limit");
     }
@@ -103,7 +103,7 @@ class DescribeULBRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
@@ -113,7 +113,7 @@ class DescribeULBRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId()
+    public function getULBId(): string
     {
         return $this->get("ULBId");
     }
@@ -123,7 +123,7 @@ class DescribeULBRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -133,7 +133,7 @@ class DescribeULBRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -143,7 +143,7 @@ class DescribeULBRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -153,7 +153,7 @@ class DescribeULBRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -163,7 +163,7 @@ class DescribeULBRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -173,7 +173,7 @@ class DescribeULBRequest extends Request
      *
      * @return string|null
      */
-    public function getBusinessId()
+    public function getBusinessId(): string
     {
         return $this->get("BusinessId");
     }
@@ -183,7 +183,7 @@ class DescribeULBRequest extends Request
      *
      * @param string $businessId
      */
-    public function setBusinessId($businessId)
+    public function setBusinessId(string $businessId)
     {
         $this->set("BusinessId", $businessId);
     }

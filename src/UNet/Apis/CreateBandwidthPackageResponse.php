@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateBandwidthPackageResponse extends Response
      *
      * @return string|null
      */
-    public function getBandwidthPackageId()
+    public function getBandwidthPackageId(): string
     {
         return $this->get("BandwidthPackageId");
     }
@@ -37,7 +37,7 @@ class CreateBandwidthPackageResponse extends Response
      *
      * @param string $bandwidthPackageId
      */
-    public function setBandwidthPackageId($bandwidthPackageId)
+    public function setBandwidthPackageId(string $bandwidthPackageId)
     {
         $this->set("BandwidthPackageId", $bandwidthPackageId);
     }

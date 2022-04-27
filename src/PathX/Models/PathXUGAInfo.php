@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PathXUGAInfo extends Response
      *
      * @return string|null
      */
-    public function getUGAId()
+    public function getUGAId(): string
     {
         return $this->get("UGAId");
     }
@@ -37,7 +37,7 @@ class PathXUGAInfo extends Response
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -47,7 +47,7 @@ class PathXUGAInfo extends Response
      *
      * @return string[]|null
      */
-    public function getIPList()
+    public function getIPList(): array
     {
         return $this->get("IPList");
     }
@@ -67,7 +67,7 @@ class PathXUGAInfo extends Response
      *
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->get("Domain");
     }
@@ -77,7 +77,7 @@ class PathXUGAInfo extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }

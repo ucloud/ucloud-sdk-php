@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateRemoteVPNGatewayResponse extends Response
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayId()
+    public function getRemoteVPNGatewayId(): string
     {
         return $this->get("RemoteVPNGatewayId");
     }
@@ -37,7 +37,7 @@ class CreateRemoteVPNGatewayResponse extends Response
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId($remoteVPNGatewayId)
+    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
     {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @return string|null
      */
-    public function getDBId()
+    public function getDBId(): string
     {
         return $this->get("DBId");
     }
@@ -84,7 +84,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -94,7 +94,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -104,7 +104,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -114,7 +114,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @return string|null
      */
-    public function getQuantity()
+    public function getQuantity(): string
     {
         return $this->get("Quantity");
     }
@@ -124,7 +124,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @param string $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(string $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -134,7 +134,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -144,7 +144,7 @@ class SwitchUDBInstanceToHARequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }

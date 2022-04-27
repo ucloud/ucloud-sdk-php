@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class DescribeUDDBInstancePriceResponse extends Response
      *
      * @return PriceDetailInfo|null
      */
-    public function getPriceInfo()
+    public function getPriceInfo(): PriceDetailInfo
     {
         return new PriceDetailInfo($this->get("PriceInfo"));
     }
@@ -38,7 +38,7 @@ class DescribeUDDBInstancePriceResponse extends Response
      *
      * @param PriceDetailInfo $priceInfo
      */
-    public function setPriceInfo(array $priceInfo)
+    public function setPriceInfo(PriceDetailInfo $priceInfo)
     {
         $this->set("PriceInfo", $priceInfo->getAll());
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -85,7 +85,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -95,7 +95,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @return string|null
      */
-    public function getDstVPCId()
+    public function getDstVPCId(): string
     {
         return $this->get("DstVPCId");
     }
@@ -105,7 +105,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @param string $dstVPCId
      */
-    public function setDstVPCId($dstVPCId)
+    public function setDstVPCId(string $dstVPCId)
     {
         $this->set("DstVPCId", $dstVPCId);
     }
@@ -115,7 +115,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @return string|null
      */
-    public function getDstRegion()
+    public function getDstRegion(): string
     {
         return $this->get("DstRegion");
     }
@@ -125,7 +125,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @param string $dstRegion
      */
-    public function setDstRegion($dstRegion)
+    public function setDstRegion(string $dstRegion)
     {
         $this->set("DstRegion", $dstRegion);
     }
@@ -135,7 +135,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @return string|null
      */
-    public function getDstProjectId()
+    public function getDstProjectId(): string
     {
         return $this->get("DstProjectId");
     }
@@ -145,7 +145,7 @@ class CreateVPCIntercomRequest extends Request
      *
      * @param string $dstProjectId
      */
-    public function setDstProjectId($dstProjectId)
+    public function setDstProjectId(string $dstProjectId)
     {
         $this->set("DstProjectId", $dstProjectId);
     }

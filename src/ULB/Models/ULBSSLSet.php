@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ULBSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSSLId()
+    public function getSSLId(): string
     {
         return $this->get("SSLId");
     }
@@ -37,7 +37,7 @@ class ULBSSLSet extends Response
      *
      * @param string $sslId
      */
-    public function setSSLId($sslId)
+    public function setSSLId(string $sslId)
     {
         $this->set("SSLId", $sslId);
     }
@@ -47,7 +47,7 @@ class ULBSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSSLName()
+    public function getSSLName(): string
     {
         return $this->get("SSLName");
     }
@@ -57,7 +57,7 @@ class ULBSSLSet extends Response
      *
      * @param string $sslName
      */
-    public function setSSLName($sslName)
+    public function setSSLName(string $sslName)
     {
         $this->set("SSLName", $sslName);
     }
@@ -67,7 +67,7 @@ class ULBSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSSLType()
+    public function getSSLType(): string
     {
         return $this->get("SSLType");
     }
@@ -77,7 +77,7 @@ class ULBSSLSet extends Response
      *
      * @param string $sslType
      */
-    public function setSSLType($sslType)
+    public function setSSLType(string $sslType)
     {
         $this->set("SSLType", $sslType);
     }
@@ -87,7 +87,7 @@ class ULBSSLSet extends Response
      *
      * @return string|null
      */
-    public function getSSLContent()
+    public function getSSLContent(): string
     {
         return $this->get("SSLContent");
     }
@@ -97,7 +97,7 @@ class ULBSSLSet extends Response
      *
      * @param string $sslContent
      */
-    public function setSSLContent($sslContent)
+    public function setSSLContent(string $sslContent)
     {
         $this->set("SSLContent", $sslContent);
     }
@@ -107,7 +107,7 @@ class ULBSSLSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -117,7 +117,7 @@ class ULBSSLSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -127,7 +127,7 @@ class ULBSSLSet extends Response
      *
      * @return string|null
      */
-    public function getHashValue()
+    public function getHashValue(): string
     {
         return $this->get("HashValue");
     }
@@ -137,7 +137,7 @@ class ULBSSLSet extends Response
      *
      * @param string $hashValue
      */
-    public function setHashValue($hashValue)
+    public function setHashValue(string $hashValue)
     {
         $this->set("HashValue", $hashValue);
     }
@@ -147,12 +147,9 @@ class ULBSSLSet extends Response
      *
      * @return SSLBindedTargetSet[]|null
      */
-    public function getBindedTargetSet()
+    public function getBindedTargetSet(): array
     {
-        $items = $this->get("BindedTargetSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("BindedTargetSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new SSLBindedTargetSet($item));

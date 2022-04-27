@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class GetProjectListRequest extends Request
      *
      * @return string|null
      */
-    public function getIsFinance()
+    public function getIsFinance(): string
     {
         return $this->get("IsFinance");
     }
@@ -42,7 +42,7 @@ class GetProjectListRequest extends Request
      *
      * @param string $isFinance
      */
-    public function setIsFinance($isFinance)
+    public function setIsFinance(string $isFinance)
     {
         $this->set("IsFinance", $isFinance);
     }

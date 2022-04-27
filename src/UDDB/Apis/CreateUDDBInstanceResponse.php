@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUDDBInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getUDDBId()
+    public function getUDDBId(): string
     {
         return $this->get("UDDBId");
     }
@@ -37,7 +37,7 @@ class CreateUDDBInstanceResponse extends Response
      *
      * @param string $uddbId
      */
-    public function setUDDBId($uddbId)
+    public function setUDDBId(string $uddbId)
     {
         $this->set("UDDBId", $uddbId);
     }

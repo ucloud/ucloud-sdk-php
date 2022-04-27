@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class DeleteNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DeleteNetworkAclAssociationRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DeleteNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class DeleteNetworkAclAssociationRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class DeleteNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getAclId()
+    public function getAclId(): string
     {
         return $this->get("AclId");
     }
@@ -85,7 +85,7 @@ class DeleteNetworkAclAssociationRequest extends Request
      *
      * @param string $aclId
      */
-    public function setAclId($aclId)
+    public function setAclId(string $aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -95,7 +95,7 @@ class DeleteNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetworkId()
+    public function getSubnetworkId(): string
     {
         return $this->get("SubnetworkId");
     }
@@ -105,7 +105,7 @@ class DeleteNetworkAclAssociationRequest extends Request
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId($subnetworkId)
+    public function setSubnetworkId(string $subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }

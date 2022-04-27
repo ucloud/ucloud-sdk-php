@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetworkId()
+    public function getSubnetworkId(): string
     {
         return $this->get("SubnetworkId");
     }
@@ -37,7 +37,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId($subnetworkId)
+    public function setSubnetworkId(string $subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }
@@ -47,7 +47,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @return string|null
      */
-    public function getSubnet()
+    public function getSubnet(): string
     {
         return $this->get("Subnet");
     }
@@ -57,7 +57,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @param string $subnet
      */
-    public function setSubnet($subnet)
+    public function setSubnet(string $subnet)
     {
         $this->set("Subnet", $subnet);
     }
@@ -67,7 +67,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetName()
+    public function getSubnetName(): string
     {
         return $this->get("SubnetName");
     }
@@ -77,7 +77,7 @@ class NatGatewaySubnetSet extends Response
      *
      * @param string $subnetName
      */
-    public function setSubnetName($subnetName)
+    public function setSubnetName(string $subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }

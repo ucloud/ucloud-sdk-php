@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UploadUDBParamGroupResponse extends Response
      *
      * @return integer|null
      */
-    public function getGroupId()
+    public function getGroupId(): int
     {
         return $this->get("GroupId");
     }
@@ -37,7 +37,7 @@ class UploadUDBParamGroupResponse extends Response
      *
      * @param int $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(int $groupId)
     {
         $this->set("GroupId", $groupId);
     }

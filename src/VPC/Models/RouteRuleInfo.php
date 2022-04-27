@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class RouteRuleInfo extends Response
      *
      * @return integer|null
      */
-    public function getAccountId()
+    public function getAccountId(): int
     {
         return $this->get("AccountId");
     }
@@ -37,7 +37,7 @@ class RouteRuleInfo extends Response
      *
      * @param int $accountId
      */
-    public function setAccountId($accountId)
+    public function setAccountId(int $accountId)
     {
         $this->set("AccountId", $accountId);
     }
@@ -47,7 +47,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getDstAddr()
+    public function getDstAddr(): string
     {
         return $this->get("DstAddr");
     }
@@ -57,7 +57,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $dstAddr
      */
-    public function setDstAddr($dstAddr)
+    public function setDstAddr(string $dstAddr)
     {
         $this->set("DstAddr", $dstAddr);
     }
@@ -67,7 +67,7 @@ class RouteRuleInfo extends Response
      *
      * @return integer|null
      */
-    public function getDstPort()
+    public function getDstPort(): int
     {
         return $this->get("DstPort");
     }
@@ -77,7 +77,7 @@ class RouteRuleInfo extends Response
      *
      * @param int $dstPort
      */
-    public function setDstPort($dstPort)
+    public function setDstPort(int $dstPort)
     {
         $this->set("DstPort", $dstPort);
     }
@@ -87,7 +87,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getNexthopId()
+    public function getNexthopId(): string
     {
         return $this->get("NexthopId");
     }
@@ -97,7 +97,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $nexthopId
      */
-    public function setNexthopId($nexthopId)
+    public function setNexthopId(string $nexthopId)
     {
         $this->set("NexthopId", $nexthopId);
     }
@@ -107,7 +107,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getNexthopType()
+    public function getNexthopType(): string
     {
         return $this->get("NexthopType");
     }
@@ -117,7 +117,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $nexthopType
      */
-    public function setNexthopType($nexthopType)
+    public function setNexthopType(string $nexthopType)
     {
         $this->set("NexthopType", $nexthopType);
     }
@@ -127,7 +127,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getOriginAddr()
+    public function getOriginAddr(): string
     {
         return $this->get("OriginAddr");
     }
@@ -137,7 +137,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $originAddr
      */
-    public function setOriginAddr($originAddr)
+    public function setOriginAddr(string $originAddr)
     {
         $this->set("OriginAddr", $originAddr);
     }
@@ -147,7 +147,7 @@ class RouteRuleInfo extends Response
      *
      * @return integer|null
      */
-    public function getPriority()
+    public function getPriority(): int
     {
         return $this->get("Priority");
     }
@@ -157,7 +157,7 @@ class RouteRuleInfo extends Response
      *
      * @param int $priority
      */
-    public function setPriority($priority)
+    public function setPriority(int $priority)
     {
         $this->set("Priority", $priority);
     }
@@ -167,7 +167,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -177,7 +177,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -187,7 +187,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getRouteRuleId()
+    public function getRouteRuleId(): string
     {
         return $this->get("RouteRuleId");
     }
@@ -197,7 +197,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $routeRuleId
      */
-    public function setRouteRuleId($routeRuleId)
+    public function setRouteRuleId(string $routeRuleId)
     {
         $this->set("RouteRuleId", $routeRuleId);
     }
@@ -207,7 +207,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getRouteTableId()
+    public function getRouteTableId(): string
     {
         return $this->get("RouteTableId");
     }
@@ -217,7 +217,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId($routeTableId)
+    public function setRouteTableId(string $routeTableId)
     {
         $this->set("RouteTableId", $routeTableId);
     }
@@ -227,7 +227,7 @@ class RouteRuleInfo extends Response
      *
      * @return integer|null
      */
-    public function getRuleType()
+    public function getRuleType(): int
     {
         return $this->get("RuleType");
     }
@@ -237,7 +237,7 @@ class RouteRuleInfo extends Response
      *
      * @param int $ruleType
      */
-    public function setRuleType($ruleType)
+    public function setRuleType(int $ruleType)
     {
         $this->set("RuleType", $ruleType);
     }
@@ -247,7 +247,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getSrcAddr()
+    public function getSrcAddr(): string
     {
         return $this->get("SrcAddr");
     }
@@ -257,7 +257,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $srcAddr
      */
-    public function setSrcAddr($srcAddr)
+    public function setSrcAddr(string $srcAddr)
     {
         $this->set("SrcAddr", $srcAddr);
     }
@@ -267,7 +267,7 @@ class RouteRuleInfo extends Response
      *
      * @return integer|null
      */
-    public function getSrcPort()
+    public function getSrcPort(): int
     {
         return $this->get("SrcPort");
     }
@@ -277,7 +277,7 @@ class RouteRuleInfo extends Response
      *
      * @param int $srcPort
      */
-    public function setSrcPort($srcPort)
+    public function setSrcPort(int $srcPort)
     {
         $this->set("SrcPort", $srcPort);
     }
@@ -287,7 +287,7 @@ class RouteRuleInfo extends Response
      *
      * @return string|null
      */
-    public function getVNetId()
+    public function getVNetId(): string
     {
         return $this->get("VNetId");
     }
@@ -297,7 +297,7 @@ class RouteRuleInfo extends Response
      *
      * @param string $vNetId
      */
-    public function setVNetId($vNetId)
+    public function setVNetId(string $vNetId)
     {
         $this->set("VNetId", $vNetId);
     }

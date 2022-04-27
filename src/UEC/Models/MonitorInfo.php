@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class MonitorInfo extends Response
      *
      * @return integer|null
      */
-    public function getTimeStamp()
+    public function getTimeStamp(): int
     {
         return $this->get("TimeStamp");
     }
@@ -37,7 +37,7 @@ class MonitorInfo extends Response
      *
      * @param int $timeStamp
      */
-    public function setTimeStamp($timeStamp)
+    public function setTimeStamp(int $timeStamp)
     {
         $this->set("TimeStamp", $timeStamp);
     }
@@ -47,7 +47,7 @@ class MonitorInfo extends Response
      *
      * @return integer|null
      */
-    public function getValue()
+    public function getValue(): int
     {
         return $this->get("Value");
     }
@@ -57,7 +57,7 @@ class MonitorInfo extends Response
      *
      * @param int $value
      */
-    public function setValue($value)
+    public function setValue(int $value)
     {
         $this->set("Value", $value);
     }

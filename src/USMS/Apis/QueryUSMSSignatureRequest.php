@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getSigId()
+    public function getSigId(): string
     {
         return $this->get("SigId");
     }
@@ -62,7 +62,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $sigId
      */
-    public function setSigId($sigId)
+    public function setSigId(string $sigId)
     {
         $this->set("SigId", $sigId);
     }
@@ -72,7 +72,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @return string|null
      */
-    public function getSigContent()
+    public function getSigContent(): string
     {
         return $this->get("SigContent");
     }
@@ -82,7 +82,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $sigContent
      */
-    public function setSigContent($sigContent)
+    public function setSigContent(string $sigContent)
     {
         $this->set("SigContent", $sigContent);
     }

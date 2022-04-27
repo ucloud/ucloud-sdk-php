@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUK8SClusterV2Response extends Response
      *
      * @return string|null
      */
-    public function getClusterId()
+    public function getClusterId(): string
     {
         return $this->get("ClusterId");
     }
@@ -37,7 +37,7 @@ class CreateUK8SClusterV2Response extends Response
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }

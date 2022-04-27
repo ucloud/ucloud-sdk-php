@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -87,7 +87,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @return string|null
      */
-    public function getUDDBId()
+    public function getUDDBId(): string
     {
         return $this->get("UDDBId");
     }
@@ -107,7 +107,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @param string $uddbId
      */
-    public function setUDDBId($uddbId)
+    public function setUDDBId(string $uddbId)
     {
         $this->set("UDDBId", $uddbId);
     }
@@ -117,7 +117,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @return string|null
      */
-    public function getNewName()
+    public function getNewName(): string
     {
         return $this->get("NewName");
     }
@@ -127,7 +127,7 @@ class ChangeUDDBInstanceNameRequest extends Request
      *
      * @param string $newName
      */
-    public function setNewName($newName)
+    public function setNewName(string $newName)
     {
         $this->set("NewName", $newName);
     }

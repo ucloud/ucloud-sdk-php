@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getMonitorType()
+    public function getMonitorType(): string
     {
         return $this->get("MonitorType");
     }
@@ -37,9 +37,29 @@ class ULBVServerSet extends Response
      *
      * @param string $monitorType
      */
-    public function setMonitorType($monitorType)
+    public function setMonitorType(string $monitorType)
     {
         $this->set("MonitorType", $monitorType);
+    }
+
+    /**
+     * ULBId: 负载均衡实例的Id
+     *
+     * @return string|null
+     */
+    public function getULBId(): string
+    {
+        return $this->get("ULBId");
+    }
+
+    /**
+     * ULBId: 负载均衡实例的Id
+     *
+     * @param string $ulbId
+     */
+    public function setULBId(string $ulbId)
+    {
+        $this->set("ULBId", $ulbId);
     }
 
     /**
@@ -47,7 +67,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->get("Domain");
     }
@@ -57,7 +77,7 @@ class ULBVServerSet extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
@@ -67,7 +87,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getPath()
+    public function getPath(): string
     {
         return $this->get("Path");
     }
@@ -77,7 +97,7 @@ class ULBVServerSet extends Response
      *
      * @param string $path
      */
-    public function setPath($path)
+    public function setPath(string $path)
     {
         $this->set("Path", $path);
     }
@@ -87,7 +107,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getRequestMsg()
+    public function getRequestMsg(): string
     {
         return $this->get("RequestMsg");
     }
@@ -97,7 +117,7 @@ class ULBVServerSet extends Response
      *
      * @param string $requestMsg
      */
-    public function setRequestMsg($requestMsg)
+    public function setRequestMsg(string $requestMsg)
     {
         $this->set("RequestMsg", $requestMsg);
     }
@@ -107,7 +127,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getResponseMsg()
+    public function getResponseMsg(): string
     {
         return $this->get("ResponseMsg");
     }
@@ -117,7 +137,7 @@ class ULBVServerSet extends Response
      *
      * @param string $responseMsg
      */
-    public function setResponseMsg($responseMsg)
+    public function setResponseMsg(string $responseMsg)
     {
         $this->set("ResponseMsg", $responseMsg);
     }
@@ -127,7 +147,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getVServerId()
+    public function getVServerId(): string
     {
         return $this->get("VServerId");
     }
@@ -137,7 +157,7 @@ class ULBVServerSet extends Response
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -147,7 +167,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getVServerName()
+    public function getVServerName(): string
     {
         return $this->get("VServerName");
     }
@@ -157,7 +177,7 @@ class ULBVServerSet extends Response
      *
      * @param string $vServerName
      */
-    public function setVServerName($vServerName)
+    public function setVServerName(string $vServerName)
     {
         $this->set("VServerName", $vServerName);
     }
@@ -167,7 +187,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getProtocol()
+    public function getProtocol(): string
     {
         return $this->get("Protocol");
     }
@@ -177,7 +197,7 @@ class ULBVServerSet extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -187,7 +207,7 @@ class ULBVServerSet extends Response
      *
      * @return integer|null
      */
-    public function getFrontendPort()
+    public function getFrontendPort(): int
     {
         return $this->get("FrontendPort");
     }
@@ -197,7 +217,7 @@ class ULBVServerSet extends Response
      *
      * @param int $frontendPort
      */
-    public function setFrontendPort($frontendPort)
+    public function setFrontendPort(int $frontendPort)
     {
         $this->set("FrontendPort", $frontendPort);
     }
@@ -207,7 +227,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getMethod()
+    public function getMethod(): string
     {
         return $this->get("Method");
     }
@@ -217,7 +237,7 @@ class ULBVServerSet extends Response
      *
      * @param string $method
      */
-    public function setMethod($method)
+    public function setMethod(string $method)
     {
         $this->set("Method", $method);
     }
@@ -227,7 +247,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getPersistenceType()
+    public function getPersistenceType(): string
     {
         return $this->get("PersistenceType");
     }
@@ -237,7 +257,7 @@ class ULBVServerSet extends Response
      *
      * @param string $persistenceType
      */
-    public function setPersistenceType($persistenceType)
+    public function setPersistenceType(string $persistenceType)
     {
         $this->set("PersistenceType", $persistenceType);
     }
@@ -247,7 +267,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getPersistenceInfo()
+    public function getPersistenceInfo(): string
     {
         return $this->get("PersistenceInfo");
     }
@@ -257,7 +277,7 @@ class ULBVServerSet extends Response
      *
      * @param string $persistenceInfo
      */
-    public function setPersistenceInfo($persistenceInfo)
+    public function setPersistenceInfo(string $persistenceInfo)
     {
         $this->set("PersistenceInfo", $persistenceInfo);
     }
@@ -267,7 +287,7 @@ class ULBVServerSet extends Response
      *
      * @return integer|null
      */
-    public function getClientTimeout()
+    public function getClientTimeout(): int
     {
         return $this->get("ClientTimeout");
     }
@@ -277,7 +297,7 @@ class ULBVServerSet extends Response
      *
      * @param int $clientTimeout
      */
-    public function setClientTimeout($clientTimeout)
+    public function setClientTimeout(int $clientTimeout)
     {
         $this->set("ClientTimeout", $clientTimeout);
     }
@@ -287,7 +307,7 @@ class ULBVServerSet extends Response
      *
      * @return integer|null
      */
-    public function getStatus()
+    public function getStatus(): int
     {
         return $this->get("Status");
     }
@@ -297,7 +317,7 @@ class ULBVServerSet extends Response
      *
      * @param int $status
      */
-    public function setStatus($status)
+    public function setStatus(int $status)
     {
         $this->set("Status", $status);
     }
@@ -307,12 +327,9 @@ class ULBVServerSet extends Response
      *
      * @return ULBSSLSet[]|null
      */
-    public function getSSLSet()
+    public function getSSLSet(): array
     {
-        $items = $this->get("SSLSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("SSLSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ULBSSLSet($item));
@@ -339,12 +356,9 @@ class ULBVServerSet extends Response
      *
      * @return ULBBackendSet[]|null
      */
-    public function getBackendSet()
+    public function getBackendSet(): array
     {
-        $items = $this->get("BackendSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("BackendSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ULBBackendSet($item));
@@ -371,7 +385,7 @@ class ULBVServerSet extends Response
      *
      * @return string|null
      */
-    public function getListenType()
+    public function getListenType(): string
     {
         return $this->get("ListenType");
     }
@@ -381,7 +395,7 @@ class ULBVServerSet extends Response
      *
      * @param string $listenType
      */
-    public function setListenType($listenType)
+    public function setListenType(string $listenType)
     {
         $this->set("ListenType", $listenType);
     }
@@ -391,12 +405,9 @@ class ULBVServerSet extends Response
      *
      * @return ULBPolicySet[]|null
      */
-    public function getPolicySet()
+    public function getPolicySet(): array
     {
-        $items = $this->get("PolicySet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("PolicySet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ULBPolicySet($item));

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getZoneId()
+    public function getZoneId(): int
     {
         return $this->get("ZoneId");
     }
@@ -37,7 +37,7 @@ class ImageInfo extends Response
      *
      * @param int $zoneId
      */
-    public function setZoneId($zoneId)
+    public function setZoneId(int $zoneId)
     {
         $this->set("ZoneId", $zoneId);
     }
@@ -47,7 +47,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -57,7 +57,7 @@ class ImageInfo extends Response
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -67,7 +67,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageName()
+    public function getImageName(): string
     {
         return $this->get("ImageName");
     }
@@ -77,7 +77,7 @@ class ImageInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -87,7 +87,7 @@ class ImageInfo extends Response
      *
      * @return boolean|null
      */
-    public function getNotSupportGPU()
+    public function getNotSupportGPU(): bool
     {
         return $this->get("NotSupportGPU");
     }
@@ -97,7 +97,7 @@ class ImageInfo extends Response
      *
      * @param boolean $notSupportGPU
      */
-    public function setNotSupportGPU($notSupportGPU)
+    public function setNotSupportGPU(bool $notSupportGPU)
     {
         $this->set("NotSupportGPU", $notSupportGPU);
     }

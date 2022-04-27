@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DomainBaseInfo extends Response
      *
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->get("Domain");
     }
@@ -37,7 +37,7 @@ class DomainBaseInfo extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
@@ -47,7 +47,7 @@ class DomainBaseInfo extends Response
      *
      * @return string|null
      */
-    public function getDomainId()
+    public function getDomainId(): string
     {
         return $this->get("DomainId");
     }
@@ -57,7 +57,7 @@ class DomainBaseInfo extends Response
      *
      * @param string $domainId
      */
-    public function setDomainId($domainId)
+    public function setDomainId(string $domainId)
     {
         $this->set("DomainId", $domainId);
     }

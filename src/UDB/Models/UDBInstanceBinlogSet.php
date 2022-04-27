@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -57,7 +57,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -67,7 +67,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @return integer|null
      */
-    public function getBeginTime()
+    public function getBeginTime(): int
     {
         return $this->get("BeginTime");
     }
@@ -77,7 +77,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -87,7 +87,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -97,7 +97,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }

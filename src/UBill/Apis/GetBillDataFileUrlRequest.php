@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,38 +23,18 @@ class GetBillDataFileUrlRequest extends Request
     public function __construct()
     {
         parent::__construct(["Action" => "GetBillDataFileUrl"]);
-        $this->markRequired("BillPeriod");
         $this->markRequired("BillType");
+        $this->markRequired("BillingCycle");
     }
 
     
-
-    /**
-     * BillPeriod: 账期（时间戳格式）
-     *
-     * @return integer|null
-     */
-    public function getBillPeriod()
-    {
-        return $this->get("BillPeriod");
-    }
-
-    /**
-     * BillPeriod: 账期（时间戳格式）
-     *
-     * @param int $billPeriod
-     */
-    public function setBillPeriod($billPeriod)
-    {
-        $this->set("BillPeriod", $billPeriod);
-    }
 
     /**
      * BillType: 账单类型，传 0 时获取账单总览报表，传 1 获取账单明细报表
      *
      * @return integer|null
      */
-    public function getBillType()
+    public function getBillType(): int
     {
         return $this->get("BillType");
     }
@@ -64,9 +44,49 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @param int $billType
      */
-    public function setBillType($billType)
+    public function setBillType(int $billType)
     {
         $this->set("BillType", $billType);
+    }
+
+    /**
+     * BillingCycle: 账期(字符串格式，YYYY-MM，例如2021-08).   若BillingCycle 和 BillPeriod同时存在，BillingCycle 优先
+     *
+     * @return string|null
+     */
+    public function getBillingCycle(): string
+    {
+        return $this->get("BillingCycle");
+    }
+
+    /**
+     * BillingCycle: 账期(字符串格式，YYYY-MM，例如2021-08).   若BillingCycle 和 BillPeriod同时存在，BillingCycle 优先
+     *
+     * @param string $billingCycle
+     */
+    public function setBillingCycle(string $billingCycle)
+    {
+        $this->set("BillingCycle", $billingCycle);
+    }
+
+    /**
+     * BillPeriod: 此字段不推荐使用，建议使用BillingCycle.   若BillingCycle 和 BillPeriod同时存在，BillingCycle 优先
+     *
+     * @return integer|null
+     */
+    public function getBillPeriod(): int
+    {
+        return $this->get("BillPeriod");
+    }
+
+    /**
+     * BillPeriod: 此字段不推荐使用，建议使用BillingCycle.   若BillingCycle 和 BillPeriod同时存在，BillingCycle 优先
+     *
+     * @param int $billPeriod
+     */
+    public function setBillPeriod(int $billPeriod)
+    {
+        $this->set("BillPeriod", $billPeriod);
     }
 
     /**
@@ -74,7 +94,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @return integer|null
      */
-    public function getPaidType()
+    public function getPaidType(): int
     {
         return $this->get("PaidType");
     }
@@ -84,7 +104,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @param int $paidType
      */
-    public function setPaidType($paidType)
+    public function setPaidType(int $paidType)
     {
         $this->set("PaidType", $paidType);
     }
@@ -94,7 +114,7 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @return string|null
      */
-    public function getRequireVersion()
+    public function getRequireVersion(): string
     {
         return $this->get("RequireVersion");
     }
@@ -104,8 +124,28 @@ class GetBillDataFileUrlRequest extends Request
      *
      * @param string $requireVersion
      */
-    public function setRequireVersion($requireVersion)
+    public function setRequireVersion(string $requireVersion)
     {
         $this->set("RequireVersion", $requireVersion);
+    }
+
+    /**
+     * Version: 文件版本，若为"v1"表示获取带有子用户信息的账单，可以为空
+     *
+     * @return string|null
+     */
+    public function getVersion(): string
+    {
+        return $this->get("Version");
+    }
+
+    /**
+     * Version: 文件版本，若为"v1"表示获取带有子用户信息的账单，可以为空
+     *
+     * @param string $version
+     */
+    public function setVersion(string $version)
+    {
+        $this->set("Version", $version);
     }
 }

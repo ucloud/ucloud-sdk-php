@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PHostDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getSpace()
+    public function getSpace(): int
     {
         return $this->get("Space");
     }
@@ -37,7 +37,7 @@ class PHostDiskSet extends Response
      *
      * @param int $space
      */
-    public function setSpace($space)
+    public function setSpace(int $space)
     {
         $this->set("Space", $space);
     }
@@ -47,7 +47,7 @@ class PHostDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getCount()
+    public function getCount(): int
     {
         return $this->get("Count");
     }
@@ -57,7 +57,7 @@ class PHostDiskSet extends Response
      *
      * @param int $count
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->set("Count", $count);
     }
@@ -67,7 +67,7 @@ class PHostDiskSet extends Response
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -77,7 +77,7 @@ class PHostDiskSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -87,7 +87,7 @@ class PHostDiskSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -97,7 +97,7 @@ class PHostDiskSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -107,7 +107,7 @@ class PHostDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getIOCap()
+    public function getIOCap(): int
     {
         return $this->get("IOCap");
     }
@@ -117,7 +117,7 @@ class PHostDiskSet extends Response
      *
      * @param int $ioCap
      */
-    public function setIOCap($ioCap)
+    public function setIOCap(int $ioCap)
     {
         $this->set("IOCap", $ioCap);
     }

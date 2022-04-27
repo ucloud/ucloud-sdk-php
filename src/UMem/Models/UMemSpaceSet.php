@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -57,7 +57,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -67,7 +67,7 @@ class UMemSpaceSet extends Response
      *
      * @return integer|null
      */
-    public function getRewriteTime()
+    public function getRewriteTime(): int
     {
         return $this->get("RewriteTime");
     }
@@ -77,7 +77,7 @@ class UMemSpaceSet extends Response
      *
      * @param int $rewriteTime
      */
-    public function setRewriteTime($rewriteTime)
+    public function setRewriteTime(int $rewriteTime)
     {
         $this->set("RewriteTime", $rewriteTime);
     }
@@ -87,7 +87,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getSpaceId()
+    public function getSpaceId(): string
     {
         return $this->get("SpaceId");
     }
@@ -97,7 +97,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $spaceId
      */
-    public function setSpaceId($spaceId)
+    public function setSpaceId(string $spaceId)
     {
         $this->set("SpaceId", $spaceId);
     }
@@ -107,7 +107,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -117,7 +117,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -127,7 +127,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -137,7 +137,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -147,7 +147,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -157,7 +157,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -167,7 +167,7 @@ class UMemSpaceSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -177,7 +177,7 @@ class UMemSpaceSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -187,7 +187,7 @@ class UMemSpaceSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime()
+    public function getExpireTime(): int
     {
         return $this->get("ExpireTime");
     }
@@ -197,7 +197,7 @@ class UMemSpaceSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -207,7 +207,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -217,7 +217,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -227,7 +227,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getProtocol()
+    public function getProtocol(): string
     {
         return $this->get("Protocol");
     }
@@ -237,7 +237,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -247,7 +247,7 @@ class UMemSpaceSet extends Response
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -257,7 +257,7 @@ class UMemSpaceSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -267,7 +267,7 @@ class UMemSpaceSet extends Response
      *
      * @return integer|null
      */
-    public function getUsedSize()
+    public function getUsedSize(): int
     {
         return $this->get("UsedSize");
     }
@@ -277,7 +277,7 @@ class UMemSpaceSet extends Response
      *
      * @param int $usedSize
      */
-    public function setUsedSize($usedSize)
+    public function setUsedSize(int $usedSize)
     {
         $this->set("UsedSize", $usedSize);
     }
@@ -287,7 +287,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -297,7 +297,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
@@ -307,7 +307,7 @@ class UMemSpaceSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -317,7 +317,7 @@ class UMemSpaceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -327,12 +327,9 @@ class UMemSpaceSet extends Response
      *
      * @return UMemSpaceAddressSet[]|null
      */
-    public function getAddress()
+    public function getAddress(): array
     {
-        $items = $this->get("Address");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Address") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UMemSpaceAddressSet($item));

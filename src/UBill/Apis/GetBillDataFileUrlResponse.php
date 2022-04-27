@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @return string|null
      */
-    public function getFileUrl()
+    public function getFileUrl(): string
     {
         return $this->get("FileUrl");
     }
@@ -37,7 +37,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @param string $fileUrl
      */
-    public function setFileUrl($fileUrl)
+    public function setFileUrl(string $fileUrl)
     {
         $this->set("FileUrl", $fileUrl);
     }
@@ -47,7 +47,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @return string|null
      */
-    public function getIsValid()
+    public function getIsValid(): string
     {
         return $this->get("IsValid");
     }
@@ -57,7 +57,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @param string $isValid
      */
-    public function setIsValid($isValid)
+    public function setIsValid(string $isValid)
     {
         $this->set("IsValid", $isValid);
     }

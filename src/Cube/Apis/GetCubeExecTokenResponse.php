@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetCubeExecTokenResponse extends Response
      *
      * @return string|null
      */
-    public function getToken()
+    public function getToken(): string
     {
         return $this->get("Token");
     }
@@ -37,7 +37,7 @@ class GetCubeExecTokenResponse extends Response
      *
      * @param string $token
      */
-    public function setToken($token)
+    public function setToken(string $token)
     {
         $this->set("Token", $token);
     }
@@ -47,7 +47,7 @@ class GetCubeExecTokenResponse extends Response
      *
      * @return string|null
      */
-    public function getTerminalUrl()
+    public function getTerminalUrl(): string
     {
         return $this->get("TerminalUrl");
     }
@@ -57,7 +57,7 @@ class GetCubeExecTokenResponse extends Response
      *
      * @param string $terminalUrl
      */
-    public function setTerminalUrl($terminalUrl)
+    public function setTerminalUrl(string $terminalUrl)
     {
         $this->set("TerminalUrl", $terminalUrl);
     }

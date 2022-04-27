@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -37,7 +37,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -47,7 +47,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @return string|null
      */
-    public function getPayMode()
+    public function getPayMode(): string
     {
         return $this->get("PayMode");
     }
@@ -57,7 +57,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }
@@ -67,7 +67,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @return string|null
      */
-    public function getShareBandwidthId()
+    public function getShareBandwidthId(): string
     {
         return $this->get("ShareBandwidthId");
     }
@@ -77,29 +77,9 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
-    }
-
-    /**
-     * GlobalSSH:
-     *
-     * @return CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH|null
-     */
-    public function getGlobalSSH()
-    {
-        return new CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH($this->get("GlobalSSH"));
-    }
-
-    /**
-     * GlobalSSH:
-     *
-     * @param CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH $globalSSH
-     */
-    public function setGlobalSSH(array $globalSSH)
-    {
-        $this->set("GlobalSSH", $globalSSH->getAll());
     }
 
     /**
@@ -107,7 +87,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @return string|null
      */
-    public function getOperatorName()
+    public function getOperatorName(): string
     {
         return $this->get("OperatorName");
     }
@@ -117,7 +97,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
@@ -127,7 +107,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -137,7 +117,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

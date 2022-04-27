@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class AlarmRuler extends Response
      *
      * @return string|null
      */
-    public function getAlarmStrategy()
+    public function getAlarmStrategy(): string
     {
         return $this->get("AlarmStrategy");
     }
@@ -37,7 +37,7 @@ class AlarmRuler extends Response
      *
      * @param string $alarmStrategy
      */
-    public function setAlarmStrategy($alarmStrategy)
+    public function setAlarmStrategy(string $alarmStrategy)
     {
         $this->set("AlarmStrategy", $alarmStrategy);
     }
@@ -47,7 +47,7 @@ class AlarmRuler extends Response
      *
      * @return integer|null
      */
-    public function getAlarmFrequency()
+    public function getAlarmFrequency(): int
     {
         return $this->get("AlarmFrequency");
     }
@@ -57,7 +57,7 @@ class AlarmRuler extends Response
      *
      * @param int $alarmFrequency
      */
-    public function setAlarmFrequency($alarmFrequency)
+    public function setAlarmFrequency(int $alarmFrequency)
     {
         $this->set("AlarmFrequency", $alarmFrequency);
     }
@@ -67,7 +67,7 @@ class AlarmRuler extends Response
      *
      * @return string|null
      */
-    public function getCompare()
+    public function getCompare(): string
     {
         return $this->get("Compare");
     }
@@ -77,7 +77,7 @@ class AlarmRuler extends Response
      *
      * @param string $compare
      */
-    public function setCompare($compare)
+    public function setCompare(string $compare)
     {
         $this->set("Compare", $compare);
     }
@@ -87,7 +87,7 @@ class AlarmRuler extends Response
      *
      * @return integer|null
      */
-    public function getContactGroupId()
+    public function getContactGroupId(): int
     {
         return $this->get("ContactGroupId");
     }
@@ -97,7 +97,7 @@ class AlarmRuler extends Response
      *
      * @param int $contactGroupId
      */
-    public function setContactGroupId($contactGroupId)
+    public function setContactGroupId(int $contactGroupId)
     {
         $this->set("ContactGroupId", $contactGroupId);
     }
@@ -107,7 +107,7 @@ class AlarmRuler extends Response
      *
      * @return string|null
      */
-    public function getMetricName()
+    public function getMetricName(): string
     {
         return $this->get("MetricName");
     }
@@ -117,7 +117,7 @@ class AlarmRuler extends Response
      *
      * @param string $metricName
      */
-    public function setMetricName($metricName)
+    public function setMetricName(string $metricName)
     {
         $this->set("MetricName", $metricName);
     }
@@ -127,7 +127,7 @@ class AlarmRuler extends Response
      *
      * @return integer|null
      */
-    public function getThreshold()
+    public function getThreshold(): int
     {
         return $this->get("Threshold");
     }
@@ -137,7 +137,7 @@ class AlarmRuler extends Response
      *
      * @param int $threshold
      */
-    public function setThreshold($threshold)
+    public function setThreshold(int $threshold)
     {
         $this->set("Threshold", $threshold);
     }
@@ -147,7 +147,7 @@ class AlarmRuler extends Response
      *
      * @return integer|null
      */
-    public function getTriggerCount()
+    public function getTriggerCount(): int
     {
         return $this->get("TriggerCount");
     }
@@ -157,7 +157,7 @@ class AlarmRuler extends Response
      *
      * @param int $triggerCount
      */
-    public function setTriggerCount($triggerCount)
+    public function setTriggerCount(int $triggerCount)
     {
         $this->set("TriggerCount", $triggerCount);
     }
@@ -167,7 +167,7 @@ class AlarmRuler extends Response
      *
      * @return integer|null
      */
-    public function getAlarmTemplateRuleId()
+    public function getAlarmTemplateRuleId(): int
     {
         return $this->get("AlarmTemplateRuleId");
     }
@@ -177,7 +177,7 @@ class AlarmRuler extends Response
      *
      * @param int $alarmTemplateRuleId
      */
-    public function setAlarmTemplateRuleId($alarmTemplateRuleId)
+    public function setAlarmTemplateRuleId(int $alarmTemplateRuleId)
     {
         $this->set("AlarmTemplateRuleId", $alarmTemplateRuleId);
     }
@@ -187,7 +187,7 @@ class AlarmRuler extends Response
      *
      * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): string
     {
         return $this->get("ResourceType");
     }
@@ -197,7 +197,7 @@ class AlarmRuler extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }

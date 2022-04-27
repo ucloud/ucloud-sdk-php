@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,10 +69,9 @@ class UDDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ChangeUDDBInstanceNameResponse
      * @throws UCloudException
      */
-    public function changeUDDBInstanceName(ChangeUDDBInstanceNameRequest $request = null)
+    public function changeUDDBInstanceName(ChangeUDDBInstanceNameRequest $request = null): ChangeUDDBInstanceNameResponse
     {
         $resp = $this->invoke($request);
         return new ChangeUDDBInstanceNameResponse($resp->toArray(), $resp->getRequestId());
@@ -104,10 +103,9 @@ Running: 系统正常运行中
      * $outputs = [
      * ]
      *
-     * @return ChangeUDDBSlaveCountResponse
      * @throws UCloudException
      */
-    public function changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest $request = null)
+    public function changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest $request = null): ChangeUDDBSlaveCountResponse
     {
         $resp = $this->invoke($request);
         return new ChangeUDDBSlaveCountResponse($resp->toArray(), $resp->getRequestId());
@@ -150,10 +148,9 @@ Running: 系统正常运行中
      *     "UDDBId" => (string) UDDB实例ID
      * ]
      *
-     * @return CreateUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function createUDDBInstance(CreateUDDBInstanceRequest $request = null)
+    public function createUDDBInstance(CreateUDDBInstanceRequest $request = null): CreateUDDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -182,10 +179,9 @@ Shutoff: 已关闭
      * $outputs = [
      * ]
      *
-     * @return DeleteUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function deleteUDDBInstance(DeleteUDDBInstanceRequest $request = null)
+    public function deleteUDDBInstance(DeleteUDDBInstanceRequest $request = null): DeleteUDDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -252,10 +248,9 @@ Shutoff: 已关闭
      *     ]
      * ]
      *
-     * @return DescribeUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function describeUDDBInstance(DescribeUDDBInstanceRequest $request = null)
+    public function describeUDDBInstance(DescribeUDDBInstanceRequest $request = null): DescribeUDDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -294,10 +289,9 @@ Shutoff: 已关闭
      *     ]
      * ]
      *
-     * @return DescribeUDDBInstancePriceResponse
      * @throws UCloudException
      */
-    public function describeUDDBInstancePrice(DescribeUDDBInstancePriceRequest $request = null)
+    public function describeUDDBInstancePrice(DescribeUDDBInstancePriceRequest $request = null): DescribeUDDBInstancePriceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstancePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -335,10 +329,9 @@ Shutoff: 已关闭
      *     ]
      * ]
      *
-     * @return DescribeUDDBInstanceUpgradePriceResponse
      * @throws UCloudException
      */
-    public function describeUDDBInstanceUpgradePrice(DescribeUDDBInstanceUpgradePriceRequest $request = null)
+    public function describeUDDBInstanceUpgradePrice(DescribeUDDBInstanceUpgradePriceRequest $request = null): DescribeUDDBInstanceUpgradePriceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDDBInstanceUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -369,10 +362,9 @@ Abnormal: 异常运行中
      * $outputs = [
      * ]
      *
-     * @return RestartUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function restartUDDBInstance(RestartUDDBInstanceRequest $request = null)
+    public function restartUDDBInstance(RestartUDDBInstanceRequest $request = null): RestartUDDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new RestartUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -402,10 +394,9 @@ Shutoff: 已关闭
      * $outputs = [
      * ]
      *
-     * @return StartUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function startUDDBInstance(StartUDDBInstanceRequest $request = null)
+    public function startUDDBInstance(StartUDDBInstanceRequest $request = null): StartUDDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new StartUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -436,10 +427,9 @@ Abnormal: 异常运行中
      * $outputs = [
      * ]
      *
-     * @return StopUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function stopUDDBInstance(StopUDDBInstanceRequest $request = null)
+    public function stopUDDBInstance(StopUDDBInstanceRequest $request = null): StopUDDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new StopUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -476,10 +466,9 @@ Shutoff: 已关闭
      * $outputs = [
      * ]
      *
-     * @return UpgradeUDDBDataNodeResponse
      * @throws UCloudException
      */
-    public function upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest $request = null)
+    public function upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest $request = null): UpgradeUDDBDataNodeResponse
     {
         $resp = $this->invoke($request);
         return new UpgradeUDDBDataNodeResponse($resp->toArray(), $resp->getRequestId());
@@ -514,10 +503,9 @@ Running: 系统正常运行中
      * $outputs = [
      * ]
      *
-     * @return UpgradeUDDBInstanceResponse
      * @throws UCloudException
      */
-    public function upgradeUDDBInstance(UpgradeUDDBInstanceRequest $request = null)
+    public function upgradeUDDBInstance(UpgradeUDDBInstanceRequest $request = null): UpgradeUDDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new UpgradeUDDBInstanceResponse($resp->toArray(), $resp->getRequestId());

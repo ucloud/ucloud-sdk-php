@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class MatricPoint extends Response
      *
      * @return integer|null
      */
-    public function getTimestamp()
+    public function getTimestamp(): int
     {
         return $this->get("Timestamp");
     }
@@ -37,7 +37,7 @@ class MatricPoint extends Response
      *
      * @param int $timestamp
      */
-    public function setTimestamp($timestamp)
+    public function setTimestamp(int $timestamp)
     {
         $this->set("Timestamp", $timestamp);
     }
@@ -47,7 +47,7 @@ class MatricPoint extends Response
      *
      * @return integer|null
      */
-    public function getValue()
+    public function getValue(): int
     {
         return $this->get("Value");
     }
@@ -57,7 +57,7 @@ class MatricPoint extends Response
      *
      * @param int $value
      */
-    public function setValue($value)
+    public function setValue(int $value)
     {
         $this->set("Value", $value);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag()
+    public function getRegionFlag(): bool
     {
         return $this->get("RegionFlag");
     }
@@ -105,7 +105,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }
@@ -115,7 +115,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @return string|null
      */
-    public function getVersion()
+    public function getVersion(): string
     {
         return $this->get("Version");
     }
@@ -125,7 +125,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
@@ -135,7 +135,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @return string|null
      */
-    public function getConfigId()
+    public function getConfigId(): string
     {
         return $this->get("ConfigId");
     }
@@ -145,7 +145,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $configId
      */
-    public function setConfigId($configId)
+    public function setConfigId(string $configId)
     {
         $this->set("ConfigId", $configId);
     }
@@ -155,7 +155,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -165,7 +165,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
@@ -175,7 +175,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->get("Limit");
     }
@@ -185,7 +185,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }

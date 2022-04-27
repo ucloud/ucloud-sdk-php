@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateURedisBackupResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupId()
+    public function getBackupId(): string
     {
         return $this->get("BackupId");
     }
@@ -37,7 +37,7 @@ class CreateURedisBackupResponse extends Response
      *
      * @param string $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(string $backupId)
     {
         $this->set("BackupId", $backupId);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class EIPSetData extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -37,7 +37,7 @@ class EIPSetData extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -47,12 +47,9 @@ class EIPSetData extends Response
      *
      * @return EIPAddrSet[]|null
      */
-    public function getEIPAddr()
+    public function getEIPAddr(): array
     {
-        $items = $this->get("EIPAddr");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EIPAddr") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EIPAddrSet($item));
@@ -79,7 +76,7 @@ class EIPSetData extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -89,7 +86,7 @@ class EIPSetData extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUGAInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getUGAId()
+    public function getUGAId(): string
     {
         return $this->get("UGAId");
     }
@@ -37,7 +37,7 @@ class CreateUGAInstanceResponse extends Response
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -47,7 +47,7 @@ class CreateUGAInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getCName()
+    public function getCName(): string
     {
         return $this->get("CName");
     }
@@ -57,7 +57,7 @@ class CreateUGAInstanceResponse extends Response
      *
      * @param string $cName
      */
-    public function setCName($cName)
+    public function setCName(string $cName)
     {
         $this->set("CName", $cName);
     }

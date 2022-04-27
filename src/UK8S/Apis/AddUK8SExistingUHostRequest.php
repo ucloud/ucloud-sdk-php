@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->get("Password");
     }
@@ -106,7 +106,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
@@ -116,7 +116,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getClusterId()
+    public function getClusterId(): string
     {
         return $this->get("ClusterId");
     }
@@ -126,7 +126,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
@@ -136,7 +136,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getUHostId()
+    public function getUHostId(): string
     {
         return $this->get("UHostId");
     }
@@ -146,7 +146,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -156,7 +156,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getMaxPods()
+    public function getMaxPods(): int
     {
         return $this->get("MaxPods");
     }
@@ -166,7 +166,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param int $maxPods
      */
-    public function setMaxPods($maxPods)
+    public function setMaxPods(int $maxPods)
     {
         $this->set("MaxPods", $maxPods);
     }
@@ -176,7 +176,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getLabels()
+    public function getLabels(): string
     {
         return $this->get("Labels");
     }
@@ -186,7 +186,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $labels
      */
-    public function setLabels($labels)
+    public function setLabels(string $labels)
     {
         $this->set("Labels", $labels);
     }
@@ -196,7 +196,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -206,7 +206,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -216,7 +216,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -226,7 +226,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -236,7 +236,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return boolean|null
      */
-    public function getDisableSchedule()
+    public function getDisableSchedule(): bool
     {
         return $this->get("DisableSchedule");
     }
@@ -246,7 +246,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param boolean $disableSchedule
      */
-    public function setDisableSchedule($disableSchedule)
+    public function setDisableSchedule(bool $disableSchedule)
     {
         $this->set("DisableSchedule", $disableSchedule);
     }
@@ -256,7 +256,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getUserData()
+    public function getUserData(): string
     {
         return $this->get("UserData");
     }
@@ -266,7 +266,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $userData
      */
-    public function setUserData($userData)
+    public function setUserData(string $userData)
     {
         $this->set("UserData", $userData);
     }
@@ -276,7 +276,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @return string|null
      */
-    public function getInitScript()
+    public function getInitScript(): string
     {
         return $this->get("InitScript");
     }
@@ -286,7 +286,7 @@ class AddUK8SExistingUHostRequest extends Request
      *
      * @param string $initScript
      */
-    public function setInitScript($initScript)
+    public function setInitScript(string $initScript)
     {
         $this->set("InitScript", $initScript);
     }

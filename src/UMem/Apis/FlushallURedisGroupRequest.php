@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getGroupId()
+    public function getGroupId(): string
     {
         return $this->get("GroupId");
     }
@@ -106,7 +106,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param string $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(string $groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -116,7 +116,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getFlushType()
+    public function getFlushType(): string
     {
         return $this->get("FlushType");
     }
@@ -126,7 +126,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param string $flushType
      */
-    public function setFlushType($flushType)
+    public function setFlushType(string $flushType)
     {
         $this->set("FlushType", $flushType);
     }
@@ -136,7 +136,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getDbNum()
+    public function getDbNum(): int
     {
         return $this->get("DbNum");
     }
@@ -146,7 +146,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param int $dbNum
      */
-    public function setDbNum($dbNum)
+    public function setDbNum(int $dbNum)
     {
         $this->set("DbNum", $dbNum);
     }
@@ -156,7 +156,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getTopOrganizationId()
+    public function getTopOrganizationId(): int
     {
         return $this->get("TopOrganizationId");
     }
@@ -166,7 +166,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param int $topOrganizationId
      */
-    public function setTopOrganizationId($topOrganizationId)
+    public function setTopOrganizationId(int $topOrganizationId)
     {
         $this->set("TopOrganizationId", $topOrganizationId);
     }
@@ -176,7 +176,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getOrganizationId()
+    public function getOrganizationId(): int
     {
         return $this->get("OrganizationId");
     }
@@ -186,7 +186,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param int $organizationId
      */
-    public function setOrganizationId($organizationId)
+    public function setOrganizationId(int $organizationId)
     {
         $this->set("OrganizationId", $organizationId);
     }
@@ -196,7 +196,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getSlaveZone()
+    public function getSlaveZone(): string
     {
         return $this->get("SlaveZone");
     }
@@ -206,7 +206,7 @@ class FlushallURedisGroupRequest extends Request
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone($slaveZone)
+    public function setSlaveZone(string $slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
     }

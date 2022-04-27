@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getStorage()
+    public function getStorage(): float
     {
         return $this->get("Storage");
     }
@@ -37,7 +37,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $storage
      */
-    public function setStorage($storage)
+    public function setStorage(float $storage)
     {
         $this->set("Storage", $storage);
     }
@@ -47,7 +47,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getIaStorage()
+    public function getIaStorage(): float
     {
         return $this->get("IaStorage");
     }
@@ -57,7 +57,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $iaStorage
      */
-    public function setIaStorage($iaStorage)
+    public function setIaStorage(float $iaStorage)
     {
         $this->set("IaStorage", $iaStorage);
     }
@@ -67,7 +67,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getAcStorage()
+    public function getAcStorage(): float
     {
         return $this->get("AcStorage");
     }
@@ -77,7 +77,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $acStorage
      */
-    public function setAcStorage($acStorage)
+    public function setAcStorage(float $acStorage)
     {
         $this->set("AcStorage", $acStorage);
     }
@@ -87,7 +87,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getIaGetSize()
+    public function getIaGetSize(): float
     {
         return $this->get("IaGetSize");
     }
@@ -97,7 +97,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $iaGetSize
      */
-    public function setIaGetSize($iaGetSize)
+    public function setIaGetSize(float $iaGetSize)
     {
         $this->set("IaGetSize", $iaGetSize);
     }
@@ -107,7 +107,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getAcRestore()
+    public function getAcRestore(): float
     {
         return $this->get("AcRestore");
     }
@@ -117,7 +117,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $acRestore
      */
-    public function setAcRestore($acRestore)
+    public function setAcRestore(float $acRestore)
     {
         $this->set("AcRestore", $acRestore);
     }
@@ -127,7 +127,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getBusyFlow()
+    public function getBusyFlow(): float
     {
         return $this->get("BusyFlow");
     }
@@ -137,7 +137,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $busyFlow
      */
-    public function setBusyFlow($busyFlow)
+    public function setBusyFlow(float $busyFlow)
     {
         $this->set("BusyFlow", $busyFlow);
     }
@@ -147,7 +147,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getIdleFlow()
+    public function getIdleFlow(): float
     {
         return $this->get("IdleFlow");
     }
@@ -157,7 +157,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $idleFlow
      */
-    public function setIdleFlow($idleFlow)
+    public function setIdleFlow(float $idleFlow)
     {
         $this->set("IdleFlow", $idleFlow);
     }
@@ -167,7 +167,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getCdnFlow()
+    public function getCdnFlow(): float
     {
         return $this->get("CdnFlow");
     }
@@ -177,7 +177,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $cdnFlow
      */
-    public function setCdnFlow($cdnFlow)
+    public function setCdnFlow(float $cdnFlow)
     {
         $this->set("CdnFlow", $cdnFlow);
     }
@@ -187,7 +187,7 @@ class UFileDailyReportItem extends Response
      *
      * @return float|null
      */
-    public function getFlow()
+    public function getFlow(): float
     {
         return $this->get("Flow");
     }
@@ -197,7 +197,7 @@ class UFileDailyReportItem extends Response
      *
      * @param float $flow
      */
-    public function setFlow($flow)
+    public function setFlow(float $flow)
     {
         $this->set("Flow", $flow);
     }
@@ -207,7 +207,7 @@ class UFileDailyReportItem extends Response
      *
      * @return integer|null
      */
-    public function getDate()
+    public function getDate(): int
     {
         return $this->get("Date");
     }
@@ -217,27 +217,27 @@ class UFileDailyReportItem extends Response
      *
      * @param int $date
      */
-    public function setDate($date)
+    public function setDate(int $date)
     {
         $this->set("Date", $date);
     }
 
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @return float|null
      */
-    public function getApiTimes()
+    public function getApiTimes(): float
     {
         return $this->get("ApiTimes");
     }
 
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @param float $apiTimes
      */
-    public function setApiTimes($apiTimes)
+    public function setApiTimes(float $apiTimes)
     {
         $this->set("ApiTimes", $apiTimes);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getGroupId()
+    public function getGroupId(): int
     {
         return $this->get("GroupId");
     }
@@ -84,7 +84,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @param int $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(int $groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -94,7 +94,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag()
+    public function getRegionFlag(): bool
     {
         return $this->get("RegionFlag");
     }
@@ -104,7 +104,7 @@ class ExtractUDBParamGroupRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }

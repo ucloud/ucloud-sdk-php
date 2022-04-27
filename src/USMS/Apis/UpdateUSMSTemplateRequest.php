@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,21 +31,21 @@ class UpdateUSMSTemplateRequest extends Request
     
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplateId()
+    public function getTemplateId(): string
     {
         return $this->get("TemplateId");
     }
@@ -65,7 +65,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $templateId
      */
-    public function setTemplateId($templateId)
+    public function setTemplateId(string $templateId)
     {
         $this->set("TemplateId", $templateId);
     }
@@ -75,7 +75,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplate()
+    public function getTemplate(): string
     {
         return $this->get("Template");
     }
@@ -85,7 +85,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $template
      */
-    public function setTemplate($template)
+    public function setTemplate(string $template)
     {
         $this->set("Template", $template);
     }
@@ -95,7 +95,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplateName()
+    public function getTemplateName(): string
     {
         return $this->get("TemplateName");
     }
@@ -105,7 +105,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $templateName
      */
-    public function setTemplateName($templateName)
+    public function setTemplateName(string $templateName)
     {
         $this->set("TemplateName", $templateName);
     }
@@ -115,7 +115,7 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -125,8 +125,28 @@ class UpdateUSMSTemplateRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @return string|null
+     */
+    public function getInstruction(): string
+    {
+        return $this->get("Instruction");
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @param string $instruction
+     */
+    public function setInstruction(string $instruction)
+    {
+        $this->set("Instruction", $instruction);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class VPCNetworkInfo extends Response
      *
      * @return string|null
      */
-    public function getNetwork()
+    public function getNetwork(): string
     {
         return $this->get("Network");
     }
@@ -37,7 +37,7 @@ class VPCNetworkInfo extends Response
      *
      * @param string $network
      */
-    public function setNetwork($network)
+    public function setNetwork(string $network)
     {
         $this->set("Network", $network);
     }
@@ -47,7 +47,7 @@ class VPCNetworkInfo extends Response
      *
      * @return integer|null
      */
-    public function getSubnetCount()
+    public function getSubnetCount(): int
     {
         return $this->get("SubnetCount");
     }
@@ -57,7 +57,7 @@ class VPCNetworkInfo extends Response
      *
      * @param int $subnetCount
      */
-    public function setSubnetCount($subnetCount)
+    public function setSubnetCount(int $subnetCount)
     {
         $this->set("SubnetCount", $subnetCount);
     }

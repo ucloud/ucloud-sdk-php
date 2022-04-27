@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,10 +91,9 @@ class UDiskClient extends Client
      *     "HostId" => (string) 挂载的Host实例ID
      * ]
      *
-     * @return AttachUDiskResponse
      * @throws UCloudException
      */
-    public function attachUDisk(AttachUDiskRequest $request = null)
+    public function attachUDisk(AttachUDiskRequest $request = null): AttachUDiskResponse
     {
         $resp = $this->invoke($request);
         return new AttachUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -119,7 +118,7 @@ class UDiskClient extends Client
      *     "Comment" => (string) Disk注释
      *     "ChargeType" => (string) Year , Month, Dynamic，Postpay，Trial 默认: Month
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]
@@ -130,10 +129,9 @@ class UDiskClient extends Client
      *     "UDiskId" => (array<string>) 创建UDisk Id
      * ]
      *
-     * @return CloneUDiskResponse
      * @throws UCloudException
      */
-    public function cloneUDisk(CloneUDiskRequest $request = null)
+    public function cloneUDisk(CloneUDiskRequest $request = null): CloneUDiskResponse
     {
         $resp = $this->invoke($request);
         return new CloneUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -159,7 +157,7 @@ class UDiskClient extends Client
      *     "UDataArkMode" => (string) 【开启数据方舟入口已关闭】是否开启数据方舟。Yes：开启，No：不开启，默认值：No
      *     "SnapshotService" => (string) 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]
@@ -170,10 +168,9 @@ class UDiskClient extends Client
      *     "UDiskId" => (array<string>) 创建UDisk Id
      * ]
      *
-     * @return CloneUDiskSnapshotResponse
      * @throws UCloudException
      */
-    public function cloneUDiskSnapshot(CloneUDiskSnapshotRequest $request = null)
+    public function cloneUDiskSnapshot(CloneUDiskSnapshotRequest $request = null): CloneUDiskSnapshotResponse
     {
         $resp = $this->invoke($request);
         return new CloneUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
@@ -200,7 +197,7 @@ class UDiskClient extends Client
      *     "SnapshotService" => (string) 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
      *     "Size" => (integer) 购买UDisk大小,单位:GB,范围[1~8000]。(UDisk大小设定对本地盘备份有效，对云盘备份无效)
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]
@@ -211,10 +208,9 @@ class UDiskClient extends Client
      *     "UDiskId" => (array<string>) 创建UDisk Id
      * ]
      *
-     * @return CloneUDiskUDataArkResponse
      * @throws UCloudException
      */
-    public function cloneUDiskUDataArk(CloneUDiskUDataArkRequest $request = null)
+    public function cloneUDiskUDataArk(CloneUDiskUDataArkRequest $request = null): CloneUDiskUDataArkResponse
     {
         $resp = $this->invoke($request);
         return new CloneUDiskUDataArkResponse($resp->toArray(), $resp->getRequestId());
@@ -256,10 +252,9 @@ class UDiskClient extends Client
      *     "DeviceName" => (string) 挂载设备名称
      * ]
      *
-     * @return CreateAttachUDiskResponse
      * @throws UCloudException
      */
-    public function createAttachUDisk(CreateAttachUDiskRequest $request = null)
+    public function createAttachUDisk(CreateAttachUDiskRequest $request = null): CreateAttachUDiskResponse
     {
         $resp = $this->invoke($request);
         return new CreateAttachUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -296,10 +291,9 @@ class UDiskClient extends Client
      *     "UDiskId" => (array<string>) UDisk实例Id
      * ]
      *
-     * @return CreateUDiskResponse
      * @throws UCloudException
      */
-    public function createUDisk(CreateUDiskRequest $request = null)
+    public function createUDisk(CreateUDiskRequest $request = null): CreateUDiskResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -329,10 +323,9 @@ class UDiskClient extends Client
      *     "SnapshotId" => (array<string>) 快照Id
      * ]
      *
-     * @return CreateUDiskSnapshotResponse
      * @throws UCloudException
      */
-    public function createUDiskSnapshot(CreateUDiskSnapshotRequest $request = null)
+    public function createUDiskSnapshot(CreateUDiskSnapshotRequest $request = null): CreateUDiskSnapshotResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
@@ -357,10 +350,9 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUDiskResponse
      * @throws UCloudException
      */
-    public function deleteUDisk(DeleteUDiskRequest $request = null)
+    public function deleteUDisk(DeleteUDiskRequest $request = null): DeleteUDiskResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -386,10 +378,9 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUDiskSnapshotResponse
      * @throws UCloudException
      */
-    public function deleteUDiskSnapshot(DeleteUDiskSnapshotRequest $request = null)
+    public function deleteUDiskSnapshot(DeleteUDiskSnapshotRequest $request = null): DeleteUDiskSnapshotResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
@@ -428,10 +419,9 @@ class UDiskClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeRecycleUDiskResponse
      * @throws UCloudException
      */
-    public function describeRecycleUDisk(DescribeRecycleUDiskRequest $request = null)
+    public function describeRecycleUDisk(DescribeRecycleUDiskRequest $request = null): DescribeRecycleUDiskResponse
     {
         $resp = $this->invoke($request);
         return new DescribeRecycleUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -506,10 +496,9 @@ class UDiskClient extends Client
      *     "TotalCount" => (integer) 根据过滤条件得到的总数
      * ]
      *
-     * @return DescribeUDiskResponse
      * @throws UCloudException
      */
-    public function describeUDisk(DescribeUDiskRequest $request = null)
+    public function describeUDisk(DescribeUDiskRequest $request = null): DescribeUDiskResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -550,10 +539,9 @@ class UDiskClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUDiskPriceResponse
      * @throws UCloudException
      */
-    public function describeUDiskPrice(DescribeUDiskPriceRequest $request = null)
+    public function describeUDiskPrice(DescribeUDiskPriceRequest $request = null): DescribeUDiskPriceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDiskPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -605,10 +593,9 @@ class UDiskClient extends Client
      *     "TotalCount" => (integer) 根据过滤条件得到的总数
      * ]
      *
-     * @return DescribeUDiskSnapshotResponse
      * @throws UCloudException
      */
-    public function describeUDiskSnapshot(DescribeUDiskSnapshotRequest $request = null)
+    public function describeUDiskSnapshot(DescribeUDiskSnapshotRequest $request = null): DescribeUDiskSnapshotResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDiskSnapshotResponse($resp->toArray(), $resp->getRequestId());
@@ -640,10 +627,9 @@ class UDiskClient extends Client
      *     "OriginalPrice" => (integer) 用户折后价 (对应计费CustomPrice)
      * ]
      *
-     * @return DescribeUDiskUpgradePriceResponse
      * @throws UCloudException
      */
-    public function describeUDiskUpgradePrice(DescribeUDiskUpgradePriceRequest $request = null)
+    public function describeUDiskUpgradePrice(DescribeUDiskUpgradePriceRequest $request = null): DescribeUDiskUpgradePriceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDiskUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -673,10 +659,9 @@ class UDiskClient extends Client
      *     "HostId" => (string) 卸载的Host实例ID
      * ]
      *
-     * @return DetachUDiskResponse
      * @throws UCloudException
      */
-    public function detachUDisk(DetachUDiskRequest $request = null)
+    public function detachUDisk(DetachUDiskRequest $request = null): DetachUDiskResponse
     {
         $resp = $this->invoke($request);
         return new DetachUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -703,10 +688,9 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
-     * @return RecoverUDiskResponse
      * @throws UCloudException
      */
-    public function recoverUDisk(RecoverUDiskRequest $request = null)
+    public function recoverUDisk(RecoverUDiskRequest $request = null): RecoverUDiskResponse
     {
         $resp = $this->invoke($request);
         return new RecoverUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -732,10 +716,9 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
-     * @return RenameUDiskResponse
      * @throws UCloudException
      */
-    public function renameUDisk(RenameUDiskRequest $request = null)
+    public function renameUDisk(RenameUDiskRequest $request = null): RenameUDiskResponse
     {
         $resp = $this->invoke($request);
         return new RenameUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -763,10 +746,9 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ResizeUDiskResponse
      * @throws UCloudException
      */
-    public function resizeUDisk(ResizeUDiskRequest $request = null)
+    public function resizeUDisk(ResizeUDiskRequest $request = null): ResizeUDiskResponse
     {
         $resp = $this->invoke($request);
         return new ResizeUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -793,10 +775,9 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
-     * @return RestoreUDiskResponse
      * @throws UCloudException
      */
-    public function restoreUDisk(RestoreUDiskRequest $request = null)
+    public function restoreUDisk(RestoreUDiskRequest $request = null): RestoreUDiskResponse
     {
         $resp = $this->invoke($request);
         return new RestoreUDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -823,10 +804,9 @@ class UDiskClient extends Client
      * $outputs = [
      * ]
      *
-     * @return SetUDiskUDataArkModeResponse
      * @throws UCloudException
      */
-    public function setUDiskUDataArkMode(SetUDiskUDataArkModeRequest $request = null)
+    public function setUDiskUDataArkMode(SetUDiskUDataArkModeRequest $request = null): SetUDiskUDataArkModeResponse
     {
         $resp = $this->invoke($request);
         return new SetUDiskUDataArkModeResponse($resp->toArray(), $resp->getRequestId());

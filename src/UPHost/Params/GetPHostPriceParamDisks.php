@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getIsBoot()
+    public function getIsBoot(): string
     {
         return $this->get("IsBoot");
     }
@@ -37,7 +37,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @param string $isBoot
      */
-    public function setIsBoot($isBoot)
+    public function setIsBoot(string $isBoot)
     {
         $this->set("IsBoot", $isBoot);
     }
@@ -47,7 +47,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -57,7 +57,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -67,7 +67,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getSize()
+    public function getSize(): string
     {
         return $this->get("Size");
     }
@@ -77,7 +77,7 @@ class GetPHostPriceParamDisks extends Request
      *
      * @param string $size
      */
-    public function setSize($size)
+    public function setSize(string $size)
     {
         $this->set("Size", $size);
     }

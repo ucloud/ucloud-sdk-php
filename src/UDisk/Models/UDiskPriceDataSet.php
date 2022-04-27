@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UDiskPriceDataSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -37,7 +37,7 @@ class UDiskPriceDataSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -47,7 +47,7 @@ class UDiskPriceDataSet extends Response
      *
      * @return integer|null
      */
-    public function getPrice()
+    public function getPrice(): int
     {
         return $this->get("Price");
     }
@@ -57,7 +57,7 @@ class UDiskPriceDataSet extends Response
      *
      * @param int $price
      */
-    public function setPrice($price)
+    public function setPrice(int $price)
     {
         $this->set("Price", $price);
     }
@@ -67,7 +67,7 @@ class UDiskPriceDataSet extends Response
      *
      * @return string|null
      */
-    public function getChargeName()
+    public function getChargeName(): string
     {
         return $this->get("ChargeName");
     }
@@ -77,7 +77,7 @@ class UDiskPriceDataSet extends Response
      *
      * @param string $chargeName
      */
-    public function setChargeName($chargeName)
+    public function setChargeName(string $chargeName)
     {
         $this->set("ChargeName", $chargeName);
     }
@@ -87,7 +87,7 @@ class UDiskPriceDataSet extends Response
      *
      * @return integer|null
      */
-    public function getOriginalPrice()
+    public function getOriginalPrice(): int
     {
         return $this->get("OriginalPrice");
     }
@@ -97,7 +97,7 @@ class UDiskPriceDataSet extends Response
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice($originalPrice)
+    public function setOriginalPrice(int $originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }
@@ -107,7 +107,7 @@ class UDiskPriceDataSet extends Response
      *
      * @return integer|null
      */
-    public function getListPrice()
+    public function getListPrice(): int
     {
         return $this->get("ListPrice");
     }
@@ -117,7 +117,7 @@ class UDiskPriceDataSet extends Response
      *
      * @param int $listPrice
      */
-    public function setListPrice($listPrice)
+    public function setListPrice(int $listPrice)
     {
         $this->set("ListPrice", $listPrice);
     }

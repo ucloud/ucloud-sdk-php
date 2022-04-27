@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getNodeId()
+    public function getNodeId(): string
     {
         return $this->get("NodeId");
     }
@@ -64,7 +64,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -74,7 +74,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getNetLimit()
+    public function getNetLimit(): string
     {
         return $this->get("NetLimit");
     }
@@ -84,7 +84,7 @@ class ModifyUEcBandwidthRequest extends Request
      *
      * @param string $netLimit
      */
-    public function setNetLimit($netLimit)
+    public function setNetLimit(string $netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }

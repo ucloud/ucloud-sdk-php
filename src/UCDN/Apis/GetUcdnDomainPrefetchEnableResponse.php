@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetUcdnDomainPrefetchEnableResponse extends Response
      *
      * @return integer|null
      */
-    public function getEnable()
+    public function getEnable(): int
     {
         return $this->get("Enable");
     }
@@ -37,7 +37,7 @@ class GetUcdnDomainPrefetchEnableResponse extends Response
      *
      * @param int $enable
      */
-    public function setEnable($enable)
+    public function setEnable(int $enable)
     {
         $this->set("Enable", $enable);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class UpdatePathXWhitelistRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class UpdatePathXWhitelistRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class UpdatePathXWhitelistRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceId()
+    public function getInstanceId(): string
     {
         return $this->get("InstanceId");
     }
@@ -64,7 +64,7 @@ class UpdatePathXWhitelistRequest extends Request
      *
      * @param string $instanceId
      */
-    public function setInstanceId($instanceId)
+    public function setInstanceId(string $instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -74,7 +74,7 @@ class UpdatePathXWhitelistRequest extends Request
      *
      * @return string[]|null
      */
-    public function getWhitelist()
+    public function getWhitelist(): array
     {
         return $this->get("Whitelist");
     }

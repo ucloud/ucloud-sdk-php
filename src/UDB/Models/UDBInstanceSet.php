@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getClusterRole()
+    public function getClusterRole(): string
     {
         return $this->get("ClusterRole");
     }
@@ -57,7 +57,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $clusterRole
      */
-    public function setClusterRole($clusterRole)
+    public function setClusterRole(string $clusterRole)
     {
         $this->set("ClusterRole", $clusterRole);
     }
@@ -67,7 +67,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getDBId()
+    public function getDBId(): string
     {
         return $this->get("DBId");
     }
@@ -77,7 +77,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -87,7 +87,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -97,7 +97,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -107,7 +107,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getDBTypeId()
+    public function getDBTypeId(): string
     {
         return $this->get("DBTypeId");
     }
@@ -117,7 +117,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
@@ -127,7 +127,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getParamGroupId()
+    public function getParamGroupId(): int
     {
         return $this->get("ParamGroupId");
     }
@@ -137,7 +137,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId($paramGroupId)
+    public function setParamGroupId(int $paramGroupId)
     {
         $this->set("ParamGroupId", $paramGroupId);
     }
@@ -147,7 +147,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getAdminUser()
+    public function getAdminUser(): string
     {
         return $this->get("AdminUser");
     }
@@ -157,7 +157,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $adminUser
      */
-    public function setAdminUser($adminUser)
+    public function setAdminUser(string $adminUser)
     {
         $this->set("AdminUser", $adminUser);
     }
@@ -167,7 +167,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getVirtualIP()
+    public function getVirtualIP(): string
     {
         return $this->get("VirtualIP");
     }
@@ -177,7 +177,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP($virtualIP)
+    public function setVirtualIP(string $virtualIP)
     {
         $this->set("VirtualIP", $virtualIP);
     }
@@ -187,7 +187,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getVirtualIPMac()
+    public function getVirtualIPMac(): string
     {
         return $this->get("VirtualIPMac");
     }
@@ -197,7 +197,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $virtualIPMac
      */
-    public function setVirtualIPMac($virtualIPMac)
+    public function setVirtualIPMac(string $virtualIPMac)
     {
         $this->set("VirtualIPMac", $virtualIPMac);
     }
@@ -207,7 +207,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -217,7 +217,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -227,7 +227,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -237,7 +237,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -247,7 +247,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getInstanceType()
+    public function getInstanceType(): string
     {
         return $this->get("InstanceType");
     }
@@ -257,7 +257,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -267,7 +267,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getInstanceTypeId()
+    public function getInstanceTypeId(): int
     {
         return $this->get("InstanceTypeId");
     }
@@ -277,7 +277,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $instanceTypeId
      */
-    public function setInstanceTypeId($instanceTypeId)
+    public function setInstanceTypeId(int $instanceTypeId)
     {
         $this->set("InstanceTypeId", $instanceTypeId);
     }
@@ -287,7 +287,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -297,7 +297,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -307,7 +307,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getPort()
+    public function getPort(): int
     {
         return $this->get("Port");
     }
@@ -317,7 +317,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
@@ -327,7 +327,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getSrcDBId()
+    public function getSrcDBId(): string
     {
         return $this->get("SrcDBId");
     }
@@ -337,7 +337,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $srcDBId
      */
-    public function setSrcDBId($srcDBId)
+    public function setSrcDBId(string $srcDBId)
     {
         $this->set("SrcDBId", $srcDBId);
     }
@@ -347,7 +347,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupCount()
+    public function getBackupCount(): int
     {
         return $this->get("BackupCount");
     }
@@ -357,7 +357,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $backupCount
      */
-    public function setBackupCount($backupCount)
+    public function setBackupCount(int $backupCount)
     {
         $this->set("BackupCount", $backupCount);
     }
@@ -367,7 +367,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupBeginTime()
+    public function getBackupBeginTime(): int
     {
         return $this->get("BackupBeginTime");
     }
@@ -377,7 +377,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $backupBeginTime
      */
-    public function setBackupBeginTime($backupBeginTime)
+    public function setBackupBeginTime(int $backupBeginTime)
     {
         $this->set("BackupBeginTime", $backupBeginTime);
     }
@@ -387,7 +387,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupDuration()
+    public function getBackupDuration(): int
     {
         return $this->get("BackupDuration");
     }
@@ -397,7 +397,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $backupDuration
      */
-    public function setBackupDuration($backupDuration)
+    public function setBackupDuration(int $backupDuration)
     {
         $this->set("BackupDuration", $backupDuration);
     }
@@ -407,7 +407,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getBackupBlacklist()
+    public function getBackupBlacklist(): string
     {
         return $this->get("BackupBlacklist");
     }
@@ -417,7 +417,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $backupBlacklist
      */
-    public function setBackupBlacklist($backupBlacklist)
+    public function setBackupBlacklist(string $backupBlacklist)
     {
         $this->set("BackupBlacklist", $backupBlacklist);
     }
@@ -427,7 +427,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -437,7 +437,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
@@ -447,7 +447,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -457,7 +457,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -467,7 +467,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getModifyTime()
+    public function getModifyTime(): int
     {
         return $this->get("ModifyTime");
     }
@@ -477,7 +477,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime($modifyTime)
+    public function setModifyTime(int $modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
@@ -487,7 +487,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getExpiredTime()
+    public function getExpiredTime(): int
     {
         return $this->get("ExpiredTime");
     }
@@ -497,7 +497,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
@@ -507,7 +507,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -517,7 +517,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -527,7 +527,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getMemoryLimit()
+    public function getMemoryLimit(): int
     {
         return $this->get("MemoryLimit");
     }
@@ -537,7 +537,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
@@ -547,7 +547,7 @@ class UDBInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getDiskSpace()
+    public function getDiskSpace(): int
     {
         return $this->get("DiskSpace");
     }
@@ -557,7 +557,7 @@ class UDBInstanceSet extends Response
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -567,7 +567,7 @@ class UDBInstanceSet extends Response
      *
      * @return boolean|null
      */
-    public function getUseSSD()
+    public function getUseSSD(): bool
     {
         return $this->get("UseSSD");
     }
@@ -577,7 +577,7 @@ class UDBInstanceSet extends Response
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
@@ -587,7 +587,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getSSDType()
+    public function getSSDType(): string
     {
         return $this->get("SSDType");
     }
@@ -597,7 +597,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }
@@ -607,7 +607,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getRole()
+    public function getRole(): string
     {
         return $this->get("Role");
     }
@@ -617,7 +617,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $role
      */
-    public function setRole($role)
+    public function setRole(string $role)
     {
         $this->set("Role", $role);
     }
@@ -627,7 +627,7 @@ class UDBInstanceSet extends Response
      *
      * @return float|null
      */
-    public function getDiskUsedSize()
+    public function getDiskUsedSize(): float
     {
         return $this->get("DiskUsedSize");
     }
@@ -637,7 +637,7 @@ class UDBInstanceSet extends Response
      *
      * @param float $diskUsedSize
      */
-    public function setDiskUsedSize($diskUsedSize)
+    public function setDiskUsedSize(float $diskUsedSize)
     {
         $this->set("DiskUsedSize", $diskUsedSize);
     }
@@ -647,7 +647,7 @@ class UDBInstanceSet extends Response
      *
      * @return float|null
      */
-    public function getDataFileSize()
+    public function getDataFileSize(): float
     {
         return $this->get("DataFileSize");
     }
@@ -657,7 +657,7 @@ class UDBInstanceSet extends Response
      *
      * @param float $dataFileSize
      */
-    public function setDataFileSize($dataFileSize)
+    public function setDataFileSize(float $dataFileSize)
     {
         $this->set("DataFileSize", $dataFileSize);
     }
@@ -667,7 +667,7 @@ class UDBInstanceSet extends Response
      *
      * @return float|null
      */
-    public function getSystemFileSize()
+    public function getSystemFileSize(): float
     {
         return $this->get("SystemFileSize");
     }
@@ -677,7 +677,7 @@ class UDBInstanceSet extends Response
      *
      * @param float $systemFileSize
      */
-    public function setSystemFileSize($systemFileSize)
+    public function setSystemFileSize(float $systemFileSize)
     {
         $this->set("SystemFileSize", $systemFileSize);
     }
@@ -687,7 +687,7 @@ class UDBInstanceSet extends Response
      *
      * @return float|null
      */
-    public function getLogFileSize()
+    public function getLogFileSize(): float
     {
         return $this->get("LogFileSize");
     }
@@ -697,7 +697,7 @@ class UDBInstanceSet extends Response
      *
      * @param float $logFileSize
      */
-    public function setLogFileSize($logFileSize)
+    public function setLogFileSize(float $logFileSize)
     {
         $this->set("LogFileSize", $logFileSize);
     }
@@ -707,7 +707,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getBackupDate()
+    public function getBackupDate(): string
     {
         return $this->get("BackupDate");
     }
@@ -717,7 +717,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $backupDate
      */
-    public function setBackupDate($backupDate)
+    public function setBackupDate(string $backupDate)
     {
         $this->set("BackupDate", $backupDate);
     }
@@ -727,7 +727,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getInstanceMode()
+    public function getInstanceMode(): string
     {
         return $this->get("InstanceMode");
     }
@@ -737,7 +737,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
@@ -747,12 +747,9 @@ class UDBInstanceSet extends Response
      *
      * @return UDBSlaveInstanceSet[]|null
      */
-    public function getDataSet()
+    public function getDataSet(): array
     {
-        $items = $this->get("DataSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UDBSlaveInstanceSet($item));
@@ -779,7 +776,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getBackupZone()
+    public function getBackupZone(): string
     {
         return $this->get("BackupZone");
     }
@@ -789,7 +786,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $backupZone
      */
-    public function setBackupZone($backupZone)
+    public function setBackupZone(string $backupZone)
     {
         $this->set("BackupZone", $backupZone);
     }
@@ -799,7 +796,7 @@ class UDBInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getIPv6Address()
+    public function getIPv6Address(): string
     {
         return $this->get("IPv6Address");
     }
@@ -809,7 +806,7 @@ class UDBInstanceSet extends Response
      *
      * @param string $iPv6Address
      */
-    public function setIPv6Address($iPv6Address)
+    public function setIPv6Address(string $iPv6Address)
     {
         $this->set("IPv6Address", $iPv6Address);
     }
@@ -819,7 +816,7 @@ class UDBInstanceSet extends Response
      *
      * @return UFileDataSet|null
      */
-    public function getUserUFileData()
+    public function getUserUFileData(): UFileDataSet
     {
         return new UFileDataSet($this->get("UserUFileData"));
     }
@@ -829,7 +826,7 @@ class UDBInstanceSet extends Response
      *
      * @param UFileDataSet $userUFileData
      */
-    public function setUserUFileData(array $userUFileData)
+    public function setUserUFileData(UFileDataSet $userUFileData)
     {
         $this->set("UserUFileData", $userUFileData->getAll());
     }

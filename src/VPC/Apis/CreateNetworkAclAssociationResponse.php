@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class CreateNetworkAclAssociationResponse extends Response
      *
      * @return string|null
      */
-    public function getAssociationId()
+    public function getAssociationId(): string
     {
         return $this->get("AssociationId");
     }
@@ -38,7 +38,7 @@ class CreateNetworkAclAssociationResponse extends Response
      *
      * @param string $associationId
      */
-    public function setAssociationId($associationId)
+    public function setAssociationId(string $associationId)
     {
         $this->set("AssociationId", $associationId);
     }
@@ -48,7 +48,7 @@ class CreateNetworkAclAssociationResponse extends Response
      *
      * @return AssociationInfo|null
      */
-    public function getPrevAssociation()
+    public function getPrevAssociation(): AssociationInfo
     {
         return new AssociationInfo($this->get("PrevAssociation"));
     }
@@ -58,7 +58,7 @@ class CreateNetworkAclAssociationResponse extends Response
      *
      * @param AssociationInfo $prevAssociation
      */
-    public function setPrevAssociation(array $prevAssociation)
+    public function setPrevAssociation(AssociationInfo $prevAssociation)
     {
         $this->set("PrevAssociation", $prevAssociation->getAll());
     }

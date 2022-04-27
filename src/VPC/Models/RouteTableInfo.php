@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getRouteTableId()
+    public function getRouteTableId(): string
     {
         return $this->get("RouteTableId");
     }
@@ -37,7 +37,7 @@ class RouteTableInfo extends Response
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId($routeTableId)
+    public function setRouteTableId(string $routeTableId)
     {
         $this->set("RouteTableId", $routeTableId);
     }
@@ -47,7 +47,7 @@ class RouteTableInfo extends Response
      *
      * @return integer|null
      */
-    public function getRouteTableType()
+    public function getRouteTableType(): int
     {
         return $this->get("RouteTableType");
     }
@@ -57,7 +57,7 @@ class RouteTableInfo extends Response
      *
      * @param int $routeTableType
      */
-    public function setRouteTableType($routeTableType)
+    public function setRouteTableType(int $routeTableType)
     {
         $this->set("RouteTableType", $routeTableType);
     }
@@ -67,7 +67,7 @@ class RouteTableInfo extends Response
      *
      * @return integer|null
      */
-    public function getSubnetCount()
+    public function getSubnetCount(): int
     {
         return $this->get("SubnetCount");
     }
@@ -77,7 +77,7 @@ class RouteTableInfo extends Response
      *
      * @param int $subnetCount
      */
-    public function setSubnetCount($subnetCount)
+    public function setSubnetCount(int $subnetCount)
     {
         $this->set("SubnetCount", $subnetCount);
     }
@@ -87,7 +87,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -97,7 +97,7 @@ class RouteTableInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -107,7 +107,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCName()
+    public function getVPCName(): string
     {
         return $this->get("VPCName");
     }
@@ -117,7 +117,7 @@ class RouteTableInfo extends Response
      *
      * @param string $vpcName
      */
-    public function setVPCName($vpcName)
+    public function setVPCName(string $vpcName)
     {
         $this->set("VPCName", $vpcName);
     }
@@ -127,7 +127,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -137,7 +137,7 @@ class RouteTableInfo extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -147,7 +147,7 @@ class RouteTableInfo extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -157,7 +157,7 @@ class RouteTableInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -167,7 +167,7 @@ class RouteTableInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -177,7 +177,7 @@ class RouteTableInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -187,12 +187,9 @@ class RouteTableInfo extends Response
      *
      * @return RouteRuleInfo[]|null
      */
-    public function getRouteRules()
+    public function getRouteRules(): array
     {
-        $items = $this->get("RouteRules");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("RouteRules") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new RouteRuleInfo($item));

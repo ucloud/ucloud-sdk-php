@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class RecycleUDiskSet extends Response
      *
      * @return string|null
      */
-    public function getUDiskId()
+    public function getUDiskId(): string
     {
         return $this->get("UDiskId");
     }
@@ -37,7 +37,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -47,7 +47,7 @@ class RecycleUDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -57,7 +57,7 @@ class RecycleUDiskSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -67,7 +67,7 @@ class RecycleUDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getExpiredTime()
+    public function getExpiredTime(): int
     {
         return $this->get("ExpiredTime");
     }
@@ -77,7 +77,7 @@ class RecycleUDiskSet extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
@@ -87,7 +87,7 @@ class RecycleUDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getCountdownTime()
+    public function getCountdownTime(): int
     {
         return $this->get("CountdownTime");
     }
@@ -97,7 +97,7 @@ class RecycleUDiskSet extends Response
      *
      * @param int $countdownTime
      */
-    public function setCountdownTime($countdownTime)
+    public function setCountdownTime(int $countdownTime)
     {
         $this->set("CountdownTime", $countdownTime);
     }
@@ -107,7 +107,7 @@ class RecycleUDiskSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -117,7 +117,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -127,7 +127,7 @@ class RecycleUDiskSet extends Response
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -137,7 +137,7 @@ class RecycleUDiskSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -147,7 +147,7 @@ class RecycleUDiskSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -157,7 +157,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -167,7 +167,7 @@ class RecycleUDiskSet extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -177,7 +177,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }

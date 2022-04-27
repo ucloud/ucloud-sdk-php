@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class GetNetworkMaskResponse extends Response
      *
      * @return NetworkMask|null
      */
-    public function getData()
+    public function getData(): NetworkMask
     {
         return new NetworkMask($this->get("Data"));
     }
@@ -38,7 +38,7 @@ class GetNetworkMaskResponse extends Response
      *
      * @param NetworkMask $data
      */
-    public function setData(array $data)
+    public function setData(NetworkMask $data)
     {
         $this->set("Data", $data->getAll());
     }

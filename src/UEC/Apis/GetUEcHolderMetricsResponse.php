@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class GetUEcHolderMetricsResponse extends Response
      *
      * @return MetricisDataSet|null
      */
-    public function getDataSets()
+    public function getDataSets(): MetricisDataSet
     {
         return new MetricisDataSet($this->get("DataSets"));
     }
@@ -44,7 +44,7 @@ class GetUEcHolderMetricsResponse extends Response
      *
      * @param MetricisDataSet $dataSets
      */
-    public function setDataSets(array $dataSets)
+    public function setDataSets(MetricisDataSet $dataSets)
     {
         $this->set("DataSets", $dataSets->getAll());
     }

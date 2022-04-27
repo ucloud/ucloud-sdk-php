@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getNATGWId()
+    public function getNATGWId(): string
     {
         return $this->get("NATGWId");
     }
@@ -37,7 +37,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $natgwId
      */
-    public function setNATGWId($natgwId)
+    public function setNATGWId(string $natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -47,7 +47,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getPolicyId()
+    public function getPolicyId(): string
     {
         return $this->get("PolicyId");
     }
@@ -57,7 +57,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $policyId
      */
-    public function setPolicyId($policyId)
+    public function setPolicyId(string $policyId)
     {
         $this->set("PolicyId", $policyId);
     }
@@ -67,7 +67,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getProtocol()
+    public function getProtocol(): string
     {
         return $this->get("Protocol");
     }
@@ -77,7 +77,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -87,7 +87,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getSrcEIP()
+    public function getSrcEIP(): string
     {
         return $this->get("SrcEIP");
     }
@@ -97,7 +97,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $srcEIP
      */
-    public function setSrcEIP($srcEIP)
+    public function setSrcEIP(string $srcEIP)
     {
         $this->set("SrcEIP", $srcEIP);
     }
@@ -107,7 +107,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getSrcEIPId()
+    public function getSrcEIPId(): string
     {
         return $this->get("SrcEIPId");
     }
@@ -117,7 +117,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $srcEIPId
      */
-    public function setSrcEIPId($srcEIPId)
+    public function setSrcEIPId(string $srcEIPId)
     {
         $this->set("SrcEIPId", $srcEIPId);
     }
@@ -127,7 +127,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getSrcPort()
+    public function getSrcPort(): string
     {
         return $this->get("SrcPort");
     }
@@ -137,7 +137,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $srcPort
      */
-    public function setSrcPort($srcPort)
+    public function setSrcPort(string $srcPort)
     {
         $this->set("SrcPort", $srcPort);
     }
@@ -147,7 +147,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getDstIP()
+    public function getDstIP(): string
     {
         return $this->get("DstIP");
     }
@@ -157,7 +157,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $dstIP
      */
-    public function setDstIP($dstIP)
+    public function setDstIP(string $dstIP)
     {
         $this->set("DstIP", $dstIP);
     }
@@ -167,7 +167,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getDstPort()
+    public function getDstPort(): string
     {
         return $this->get("DstPort");
     }
@@ -177,7 +177,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $dstPort
      */
-    public function setDstPort($dstPort)
+    public function setDstPort(string $dstPort)
     {
         $this->set("DstPort", $dstPort);
     }
@@ -187,7 +187,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getPolicyName()
+    public function getPolicyName(): string
     {
         return $this->get("PolicyName");
     }
@@ -197,7 +197,7 @@ class NATGWPolicyDataSet extends Response
      *
      * @param string $policyName
      */
-    public function setPolicyName($policyName)
+    public function setPolicyName(string $policyName)
     {
         $this->set("PolicyName", $policyName);
     }

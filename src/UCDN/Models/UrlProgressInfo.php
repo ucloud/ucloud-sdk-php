@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UrlProgressInfo extends Response
      *
      * @return string|null
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->get("Url");
     }
@@ -37,7 +37,7 @@ class UrlProgressInfo extends Response
      *
      * @param string $url
      */
-    public function setUrl($url)
+    public function setUrl(string $url)
     {
         $this->set("Url", $url);
     }
@@ -47,7 +47,7 @@ class UrlProgressInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -57,7 +57,7 @@ class UrlProgressInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -67,7 +67,7 @@ class UrlProgressInfo extends Response
      *
      * @return integer|null
      */
-    public function getFinishTime()
+    public function getFinishTime(): int
     {
         return $this->get("FinishTime");
     }
@@ -77,7 +77,7 @@ class UrlProgressInfo extends Response
      *
      * @param int $finishTime
      */
-    public function setFinishTime($finishTime)
+    public function setFinishTime(int $finishTime)
     {
         $this->set("FinishTime", $finishTime);
     }
@@ -87,7 +87,7 @@ class UrlProgressInfo extends Response
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->get("Status");
     }
@@ -97,7 +97,7 @@ class UrlProgressInfo extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
@@ -107,7 +107,7 @@ class UrlProgressInfo extends Response
      *
      * @return integer|null
      */
-    public function getProgress()
+    public function getProgress(): int
     {
         return $this->get("Progress");
     }
@@ -117,7 +117,7 @@ class UrlProgressInfo extends Response
      *
      * @param int $progress
      */
-    public function setProgress($progress)
+    public function setProgress(int $progress)
     {
         $this->set("Progress", $progress);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class CheckUDBInstanceToHAAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class CheckUDBInstanceToHAAllowanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class CheckUDBInstanceToHAAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class CheckUDBInstanceToHAAllowanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class CheckUDBInstanceToHAAllowanceRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId()
+    public function getDBId(): string
     {
         return $this->get("DBId");
     }
@@ -84,7 +84,7 @@ class CheckUDBInstanceToHAAllowanceRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }

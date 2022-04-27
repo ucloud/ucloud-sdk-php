@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,9 @@ class GetUSMSSendReceiptResponse extends Response
      *
      * @return ReceiptPerSession[]|null
      */
-    public function getData()
+    public function getData(): array
     {
-        $items = $this->get("Data");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Data") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ReceiptPerSession($item));

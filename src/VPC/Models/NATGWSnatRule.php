@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NATGWSnatRule extends Response
      *
      * @return string|null
      */
-    public function getSnatIp()
+    public function getSnatIp(): string
     {
         return $this->get("SnatIp");
     }
@@ -37,7 +37,7 @@ class NATGWSnatRule extends Response
      *
      * @param string $snatIp
      */
-    public function setSnatIp($snatIp)
+    public function setSnatIp(string $snatIp)
     {
         $this->set("SnatIp", $snatIp);
     }
@@ -47,7 +47,7 @@ class NATGWSnatRule extends Response
      *
      * @return string|null
      */
-    public function getSourceIp()
+    public function getSourceIp(): string
     {
         return $this->get("SourceIp");
     }
@@ -57,7 +57,7 @@ class NATGWSnatRule extends Response
      *
      * @param string $sourceIp
      */
-    public function setSourceIp($sourceIp)
+    public function setSourceIp(string $sourceIp)
     {
         $this->set("SourceIp", $sourceIp);
     }
@@ -67,7 +67,7 @@ class NATGWSnatRule extends Response
      *
      * @return string|null
      */
-    public function getSubnetworkId()
+    public function getSubnetworkId(): string
     {
         return $this->get("SubnetworkId");
     }
@@ -77,7 +77,7 @@ class NATGWSnatRule extends Response
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId($subnetworkId)
+    public function setSubnetworkId(string $subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }
@@ -87,7 +87,7 @@ class NATGWSnatRule extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -97,7 +97,7 @@ class NATGWSnatRule extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }

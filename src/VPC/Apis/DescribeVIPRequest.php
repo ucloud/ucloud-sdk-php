@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class DescribeVIPRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DescribeVIPRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DescribeVIPRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class DescribeVIPRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class DescribeVIPRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class DescribeVIPRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class DescribeVIPRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -104,7 +104,7 @@ class DescribeVIPRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -114,7 +114,7 @@ class DescribeVIPRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -124,7 +124,7 @@ class DescribeVIPRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -134,7 +134,7 @@ class DescribeVIPRequest extends Request
      *
      * @return string|null
      */
-    public function getVIPId()
+    public function getVIPId(): string
     {
         return $this->get("VIPId");
     }
@@ -144,7 +144,7 @@ class DescribeVIPRequest extends Request
      *
      * @param string $vipId
      */
-    public function setVIPId($vipId)
+    public function setVIPId(string $vipId)
     {
         $this->set("VIPId", $vipId);
     }
@@ -154,7 +154,7 @@ class DescribeVIPRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -164,7 +164,7 @@ class DescribeVIPRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -174,7 +174,7 @@ class DescribeVIPRequest extends Request
      *
      * @return string|null
      */
-    public function getBusinessId()
+    public function getBusinessId(): string
     {
         return $this->get("BusinessId");
     }
@@ -184,7 +184,7 @@ class DescribeVIPRequest extends Request
      *
      * @param string $businessId
      */
-    public function setBusinessId($businessId)
+    public function setBusinessId(string $businessId)
     {
         $this->set("BusinessId", $businessId);
     }

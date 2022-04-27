@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -46,7 +46,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -56,7 +56,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getUGAId()
+    public function getUGAId(): string
     {
         return $this->get("UGAId");
     }
@@ -66,7 +66,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -76,7 +76,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLId()
+    public function getSSLId(): string
     {
         return $this->get("SSLId");
     }
@@ -86,7 +86,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $sslId
      */
-    public function setSSLId($sslId)
+    public function setSSLId(string $sslId)
     {
         $this->set("SSLId", $sslId);
     }
@@ -96,7 +96,7 @@ class UnBindPathXSSLRequest extends Request
      *
      * @return int[]|null
      */
-    public function getPort()
+    public function getPort(): array
     {
         return $this->get("Port");
     }

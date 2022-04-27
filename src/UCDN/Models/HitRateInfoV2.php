@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class HitRateInfoV2 extends Response
      *
      * @return integer|null
      */
-    public function getTime()
+    public function getTime(): int
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class HitRateInfoV2 extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class HitRateInfoV2 extends Response
      *
      * @return float|null
      */
-    public function getFlowHitRate()
+    public function getFlowHitRate(): float
     {
         return $this->get("FlowHitRate");
     }
@@ -57,7 +57,7 @@ class HitRateInfoV2 extends Response
      *
      * @param float $flowHitRate
      */
-    public function setFlowHitRate($flowHitRate)
+    public function setFlowHitRate(float $flowHitRate)
     {
         $this->set("FlowHitRate", $flowHitRate);
     }
@@ -67,7 +67,7 @@ class HitRateInfoV2 extends Response
      *
      * @return float|null
      */
-    public function getRequestHitRate()
+    public function getRequestHitRate(): float
     {
         return $this->get("RequestHitRate");
     }
@@ -77,7 +77,7 @@ class HitRateInfoV2 extends Response
      *
      * @param float $requestHitRate
      */
-    public function setRequestHitRate($requestHitRate)
+    public function setRequestHitRate(float $requestHitRate)
     {
         $this->set("RequestHitRate", $requestHitRate);
     }

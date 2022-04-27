@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class AllocateUDPNResponse extends Response
      *
      * @return string|null
      */
-    public function getUDPNId()
+    public function getUDPNId(): string
     {
         return $this->get("UDPNId");
     }
@@ -37,7 +37,7 @@ class AllocateUDPNResponse extends Response
      *
      * @param string $udpnId
      */
-    public function setUDPNId($udpnId)
+    public function setUDPNId(string $udpnId)
     {
         $this->set("UDPNId", $udpnId);
     }

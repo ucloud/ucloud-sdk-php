@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getInRecycle()
+    public function getInRecycle(): string
     {
         return $this->get("InRecycle");
     }
@@ -37,7 +37,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @param string $inRecycle
      */
-    public function setInRecycle($inRecycle)
+    public function setInRecycle(string $inRecycle)
     {
         $this->set("InRecycle", $inRecycle);
     }
@@ -47,7 +47,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @return string|null
      */
-    public function getUHostId()
+    public function getUHostId(): string
     {
         return $this->get("UHostId");
     }
@@ -57,7 +57,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }

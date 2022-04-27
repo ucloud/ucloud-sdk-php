@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ReferConf extends Response
      *
      * @return integer|null
      */
-    public function getReferType()
+    public function getReferType(): int
     {
         return $this->get("ReferType");
     }
@@ -37,7 +37,7 @@ class ReferConf extends Response
      *
      * @param int $referType
      */
-    public function setReferType($referType)
+    public function setReferType(int $referType)
     {
         $this->set("ReferType", $referType);
     }
@@ -47,7 +47,7 @@ class ReferConf extends Response
      *
      * @return integer|null
      */
-    public function getNullRefer()
+    public function getNullRefer(): int
     {
         return $this->get("NullRefer");
     }
@@ -57,7 +57,7 @@ class ReferConf extends Response
      *
      * @param int $nullRefer
      */
-    public function setNullRefer($nullRefer)
+    public function setNullRefer(int $nullRefer)
     {
         $this->set("NullRefer", $nullRefer);
     }
@@ -67,7 +67,7 @@ class ReferConf extends Response
      *
      * @return string[]|null
      */
-    public function getReferList()
+    public function getReferList(): array
     {
         return $this->get("ReferList");
     }

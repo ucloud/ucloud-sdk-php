@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class AttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class AttachUDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class AttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class AttachUDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class AttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class AttachUDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class AttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskId()
+    public function getUDiskId(): string
     {
         return $this->get("UDiskId");
     }
@@ -104,7 +104,7 @@ class AttachUDiskRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -114,7 +114,7 @@ class AttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUHostId()
+    public function getUHostId(): string
     {
         return $this->get("UHostId");
     }
@@ -124,7 +124,7 @@ class AttachUDiskRequest extends Request
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -134,7 +134,7 @@ class AttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getMultiAttach()
+    public function getMultiAttach(): string
     {
         return $this->get("MultiAttach");
     }
@@ -144,7 +144,7 @@ class AttachUDiskRequest extends Request
      *
      * @param string $multiAttach
      */
-    public function setMultiAttach($multiAttach)
+    public function setMultiAttach(string $multiAttach)
     {
         $this->set("MultiAttach", $multiAttach);
     }
@@ -154,7 +154,7 @@ class AttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getHostId()
+    public function getHostId(): string
     {
         return $this->get("HostId");
     }
@@ -164,7 +164,7 @@ class AttachUDiskRequest extends Request
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }

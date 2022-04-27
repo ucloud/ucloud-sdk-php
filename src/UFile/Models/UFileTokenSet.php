@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UFileTokenSet extends Response
      *
      * @return string|null
      */
-    public function getTokenId()
+    public function getTokenId(): string
     {
         return $this->get("TokenId");
     }
@@ -37,7 +37,7 @@ class UFileTokenSet extends Response
      *
      * @param string $tokenId
      */
-    public function setTokenId($tokenId)
+    public function setTokenId(string $tokenId)
     {
         $this->set("TokenId", $tokenId);
     }
@@ -47,7 +47,7 @@ class UFileTokenSet extends Response
      *
      * @return string|null
      */
-    public function getTokenName()
+    public function getTokenName(): string
     {
         return $this->get("TokenName");
     }
@@ -57,7 +57,7 @@ class UFileTokenSet extends Response
      *
      * @param string $tokenName
      */
-    public function setTokenName($tokenName)
+    public function setTokenName(string $tokenName)
     {
         $this->set("TokenName", $tokenName);
     }
@@ -67,7 +67,7 @@ class UFileTokenSet extends Response
      *
      * @return string|null
      */
-    public function getPublicKey()
+    public function getPublicKey(): string
     {
         return $this->get("PublicKey");
     }
@@ -77,7 +77,7 @@ class UFileTokenSet extends Response
      *
      * @param string $publicKey
      */
-    public function setPublicKey($publicKey)
+    public function setPublicKey(string $publicKey)
     {
         $this->set("PublicKey", $publicKey);
     }
@@ -87,7 +87,7 @@ class UFileTokenSet extends Response
      *
      * @return string|null
      */
-    public function getPrivateKey()
+    public function getPrivateKey(): string
     {
         return $this->get("PrivateKey");
     }
@@ -97,7 +97,7 @@ class UFileTokenSet extends Response
      *
      * @param string $privateKey
      */
-    public function setPrivateKey($privateKey)
+    public function setPrivateKey(string $privateKey)
     {
         $this->set("PrivateKey", $privateKey);
     }
@@ -107,7 +107,7 @@ class UFileTokenSet extends Response
      *
      * @return string[]|null
      */
-    public function getAllowedOps()
+    public function getAllowedOps(): array
     {
         return $this->get("AllowedOps");
     }
@@ -127,7 +127,7 @@ class UFileTokenSet extends Response
      *
      * @return string[]|null
      */
-    public function getAllowedPrefixes()
+    public function getAllowedPrefixes(): array
     {
         return $this->get("AllowedPrefixes");
     }
@@ -147,7 +147,7 @@ class UFileTokenSet extends Response
      *
      * @return string[]|null
      */
-    public function getAllowedBuckets()
+    public function getAllowedBuckets(): array
     {
         return $this->get("AllowedBuckets");
     }
@@ -167,7 +167,7 @@ class UFileTokenSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime()
+    public function getExpireTime(): int
     {
         return $this->get("ExpireTime");
     }
@@ -177,7 +177,7 @@ class UFileTokenSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -187,7 +187,7 @@ class UFileTokenSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -197,7 +197,7 @@ class UFileTokenSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -207,7 +207,7 @@ class UFileTokenSet extends Response
      *
      * @return integer|null
      */
-    public function getModifyTime()
+    public function getModifyTime(): int
     {
         return $this->get("ModifyTime");
     }
@@ -217,7 +217,7 @@ class UFileTokenSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime($modifyTime)
+    public function setModifyTime(int $modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
@@ -227,7 +227,7 @@ class UFileTokenSet extends Response
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -237,7 +237,7 @@ class UFileTokenSet extends Response
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId()
+    public function getULBId(): string
     {
         return $this->get("ULBId");
     }
@@ -86,7 +86,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -96,7 +96,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerId()
+    public function getVServerId(): string
     {
         return $this->get("VServerId");
     }
@@ -106,7 +106,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -116,7 +116,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerName()
+    public function getVServerName(): string
     {
         return $this->get("VServerName");
     }
@@ -126,7 +126,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $vServerName
      */
-    public function setVServerName($vServerName)
+    public function setVServerName(string $vServerName)
     {
         $this->set("VServerName", $vServerName);
     }
@@ -136,7 +136,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getMethod()
+    public function getMethod(): string
     {
         return $this->get("Method");
     }
@@ -146,7 +146,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $method
      */
-    public function setMethod($method)
+    public function setMethod(string $method)
     {
         $this->set("Method", $method);
     }
@@ -156,7 +156,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getPersistenceType()
+    public function getPersistenceType(): string
     {
         return $this->get("PersistenceType");
     }
@@ -166,7 +166,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $persistenceType
      */
-    public function setPersistenceType($persistenceType)
+    public function setPersistenceType(string $persistenceType)
     {
         $this->set("PersistenceType", $persistenceType);
     }
@@ -176,7 +176,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getPersistenceInfo()
+    public function getPersistenceInfo(): string
     {
         return $this->get("PersistenceInfo");
     }
@@ -186,7 +186,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $persistenceInfo
      */
-    public function setPersistenceInfo($persistenceInfo)
+    public function setPersistenceInfo(string $persistenceInfo)
     {
         $this->set("PersistenceInfo", $persistenceInfo);
     }
@@ -196,7 +196,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return integer|null
      */
-    public function getClientTimeout()
+    public function getClientTimeout(): int
     {
         return $this->get("ClientTimeout");
     }
@@ -206,7 +206,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param int $clientTimeout
      */
-    public function setClientTimeout($clientTimeout)
+    public function setClientTimeout(int $clientTimeout)
     {
         $this->set("ClientTimeout", $clientTimeout);
     }
@@ -216,7 +216,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getMonitorType()
+    public function getMonitorType(): string
     {
         return $this->get("MonitorType");
     }
@@ -226,7 +226,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $monitorType
      */
-    public function setMonitorType($monitorType)
+    public function setMonitorType(string $monitorType)
     {
         $this->set("MonitorType", $monitorType);
     }
@@ -236,7 +236,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->get("Domain");
     }
@@ -246,7 +246,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
@@ -256,7 +256,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getPath()
+    public function getPath(): string
     {
         return $this->get("Path");
     }
@@ -266,7 +266,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $path
      */
-    public function setPath($path)
+    public function setPath(string $path)
     {
         $this->set("Path", $path);
     }
@@ -276,7 +276,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getRequestMsg()
+    public function getRequestMsg(): string
     {
         return $this->get("RequestMsg");
     }
@@ -286,7 +286,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $requestMsg
      */
-    public function setRequestMsg($requestMsg)
+    public function setRequestMsg(string $requestMsg)
     {
         $this->set("RequestMsg", $requestMsg);
     }
@@ -296,7 +296,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getResponseMsg()
+    public function getResponseMsg(): string
     {
         return $this->get("ResponseMsg");
     }
@@ -306,7 +306,7 @@ class UpdateVServerAttributeRequest extends Request
      *
      * @param string $responseMsg
      */
-    public function setResponseMsg($responseMsg)
+    public function setResponseMsg(string $responseMsg)
     {
         $this->set("ResponseMsg", $responseMsg);
     }

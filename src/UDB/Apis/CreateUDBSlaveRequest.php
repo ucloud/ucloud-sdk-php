@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getSrcId()
+    public function getSrcId(): string
     {
         return $this->get("SrcId");
     }
@@ -105,7 +105,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $srcId
      */
-    public function setSrcId($srcId)
+    public function setSrcId(string $srcId)
     {
         $this->set("SrcId", $srcId);
     }
@@ -115,7 +115,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -125,7 +125,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -135,7 +135,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort()
+    public function getPort(): int
     {
         return $this->get("Port");
     }
@@ -145,7 +145,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
@@ -155,7 +155,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return boolean|null
      */
-    public function getUseSSD()
+    public function getUseSSD(): bool
     {
         return $this->get("UseSSD");
     }
@@ -165,7 +165,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
@@ -175,7 +175,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getSSDType()
+    public function getSSDType(): string
     {
         return $this->get("SSDType");
     }
@@ -185,7 +185,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }
@@ -195,7 +195,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return boolean|null
      */
-    public function getIsLock()
+    public function getIsLock(): bool
     {
         return $this->get("IsLock");
     }
@@ -205,7 +205,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param boolean $isLock
      */
-    public function setIsLock($isLock)
+    public function setIsLock(bool $isLock)
     {
         $this->set("IsLock", $isLock);
     }
@@ -215,7 +215,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceMode()
+    public function getInstanceMode(): string
     {
         return $this->get("InstanceMode");
     }
@@ -225,7 +225,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
@@ -235,7 +235,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemoryLimit()
+    public function getMemoryLimit(): int
     {
         return $this->get("MemoryLimit");
     }
@@ -245,7 +245,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
@@ -255,7 +255,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSpace()
+    public function getDiskSpace(): int
     {
         return $this->get("DiskSpace");
     }
@@ -265,7 +265,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -275,7 +275,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType()
+    public function getInstanceType(): string
     {
         return $this->get("InstanceType");
     }
@@ -285,7 +285,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -295,7 +295,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -305,7 +305,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -315,7 +315,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -325,7 +325,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -335,7 +335,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -345,7 +345,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -355,7 +355,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -365,7 +365,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -375,7 +375,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return integer|null
      */
-    public function getParamGroupId()
+    public function getParamGroupId(): int
     {
         return $this->get("ParamGroupId");
     }
@@ -385,7 +385,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId($paramGroupId)
+    public function setParamGroupId(int $paramGroupId)
     {
         $this->set("ParamGroupId", $paramGroupId);
     }
@@ -395,7 +395,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -405,7 +405,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @return string|null
      */
-    public function getBandwidthPackageId()
+    public function getBandwidthPackageId(): string
     {
         return $this->get("BandwidthPackageId");
     }
@@ -37,7 +37,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @param string $bandwidthPackageId
      */
-    public function setBandwidthPackageId($bandwidthPackageId)
+    public function setBandwidthPackageId(string $bandwidthPackageId)
     {
         $this->set("BandwidthPackageId", $bandwidthPackageId);
     }
@@ -47,7 +47,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @return integer|null
      */
-    public function getEnableTime()
+    public function getEnableTime(): int
     {
         return $this->get("EnableTime");
     }
@@ -57,7 +57,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @param int $enableTime
      */
-    public function setEnableTime($enableTime)
+    public function setEnableTime(int $enableTime)
     {
         $this->set("EnableTime", $enableTime);
     }
@@ -67,7 +67,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @return integer|null
      */
-    public function getDisableTime()
+    public function getDisableTime(): int
     {
         return $this->get("DisableTime");
     }
@@ -77,7 +77,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @param int $disableTime
      */
-    public function setDisableTime($disableTime)
+    public function setDisableTime(int $disableTime)
     {
         $this->set("DisableTime", $disableTime);
     }
@@ -87,7 +87,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -97,7 +97,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -107,7 +107,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -117,7 +117,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -127,7 +127,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -137,7 +137,7 @@ class UnetBandwidthPackageSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -147,12 +147,9 @@ class UnetBandwidthPackageSet extends Response
      *
      * @return EIPAddrSet[]|null
      */
-    public function getEIPAddr()
+    public function getEIPAddr(): array
     {
-        $items = $this->get("EIPAddr");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EIPAddr") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EIPAddrSet($item));

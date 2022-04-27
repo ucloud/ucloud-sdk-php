@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UFileDomainSet extends Response
      *
      * @return string[]|null
      */
-    public function getSrc()
+    public function getSrc(): array
     {
         return $this->get("Src");
     }
@@ -47,7 +47,7 @@ class UFileDomainSet extends Response
      *
      * @return string[]|null
      */
-    public function getCdn()
+    public function getCdn(): array
     {
         return $this->get("Cdn");
     }
@@ -67,7 +67,7 @@ class UFileDomainSet extends Response
      *
      * @return string[]|null
      */
-    public function getCustomSrc()
+    public function getCustomSrc(): array
     {
         return $this->get("CustomSrc");
     }
@@ -87,7 +87,7 @@ class UFileDomainSet extends Response
      *
      * @return string[]|null
      */
-    public function getCustomCdn()
+    public function getCustomCdn(): array
     {
         return $this->get("CustomCdn");
     }

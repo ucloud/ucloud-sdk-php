@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class SubnetInfo extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getIPv6Network()
+    public function getIPv6Network(): string
     {
         return $this->get("IPv6Network");
     }
@@ -57,7 +57,7 @@ class SubnetInfo extends Response
      *
      * @param string $iPv6Network
      */
-    public function setIPv6Network($iPv6Network)
+    public function setIPv6Network(string $iPv6Network)
     {
         $this->set("IPv6Network", $iPv6Network);
     }
@@ -67,7 +67,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -77,7 +77,7 @@ class SubnetInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -87,7 +87,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCName()
+    public function getVPCName(): string
     {
         return $this->get("VPCName");
     }
@@ -97,7 +97,7 @@ class SubnetInfo extends Response
      *
      * @param string $vpcName
      */
-    public function setVPCName($vpcName)
+    public function setVPCName(string $vpcName)
     {
         $this->set("VPCName", $vpcName);
     }
@@ -107,7 +107,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -117,7 +117,7 @@ class SubnetInfo extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -127,7 +127,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetName()
+    public function getSubnetName(): string
     {
         return $this->get("SubnetName");
     }
@@ -137,7 +137,7 @@ class SubnetInfo extends Response
      *
      * @param string $subnetName
      */
-    public function setSubnetName($subnetName)
+    public function setSubnetName(string $subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -147,7 +147,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -157,7 +157,7 @@ class SubnetInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -167,7 +167,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -177,7 +177,7 @@ class SubnetInfo extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -187,7 +187,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getSubnetType()
+    public function getSubnetType(): int
     {
         return $this->get("SubnetType");
     }
@@ -197,7 +197,7 @@ class SubnetInfo extends Response
      *
      * @param int $subnetType
      */
-    public function setSubnetType($subnetType)
+    public function setSubnetType(int $subnetType)
     {
         $this->set("SubnetType", $subnetType);
     }
@@ -207,7 +207,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnet()
+    public function getSubnet(): string
     {
         return $this->get("Subnet");
     }
@@ -217,7 +217,7 @@ class SubnetInfo extends Response
      *
      * @param string $subnet
      */
-    public function setSubnet($subnet)
+    public function setSubnet(string $subnet)
     {
         $this->set("Subnet", $subnet);
     }
@@ -227,7 +227,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getNetmask()
+    public function getNetmask(): string
     {
         return $this->get("Netmask");
     }
@@ -237,7 +237,7 @@ class SubnetInfo extends Response
      *
      * @param string $netmask
      */
-    public function setNetmask($netmask)
+    public function setNetmask(string $netmask)
     {
         $this->set("Netmask", $netmask);
     }
@@ -247,7 +247,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getGateway()
+    public function getGateway(): string
     {
         return $this->get("Gateway");
     }
@@ -257,7 +257,7 @@ class SubnetInfo extends Response
      *
      * @param string $gateway
      */
-    public function setGateway($gateway)
+    public function setGateway(string $gateway)
     {
         $this->set("Gateway", $gateway);
     }
@@ -267,7 +267,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -277,7 +277,7 @@ class SubnetInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -287,7 +287,7 @@ class SubnetInfo extends Response
      *
      * @return boolean|null
      */
-    public function getHasNATGW()
+    public function getHasNATGW(): bool
     {
         return $this->get("HasNATGW");
     }
@@ -297,7 +297,7 @@ class SubnetInfo extends Response
      *
      * @param boolean $hasNATGW
      */
-    public function setHasNATGW($hasNATGW)
+    public function setHasNATGW(bool $hasNATGW)
     {
         $this->set("HasNATGW", $hasNATGW);
     }
@@ -307,7 +307,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getRouteTableId()
+    public function getRouteTableId(): string
     {
         return $this->get("RouteTableId");
     }
@@ -317,7 +317,7 @@ class SubnetInfo extends Response
      *
      * @param string $routeTableId
      */
-    public function setRouteTableId($routeTableId)
+    public function setRouteTableId(string $routeTableId)
     {
         $this->set("RouteTableId", $routeTableId);
     }
@@ -327,7 +327,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getAvailableIPs()
+    public function getAvailableIPs(): int
     {
         return $this->get("AvailableIPs");
     }
@@ -337,7 +337,7 @@ class SubnetInfo extends Response
      *
      * @param int $availableIPs
      */
-    public function setAvailableIPs($availableIPs)
+    public function setAvailableIPs(int $availableIPs)
     {
         $this->set("AvailableIPs", $availableIPs);
     }

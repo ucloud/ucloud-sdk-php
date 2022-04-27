@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,27 +44,27 @@ class RefreshNewUcdnDomainCacheRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
 
     /**
-     * Type: 刷新类型，file代表文件刷新，dir 代表路径刷新
+     * Type: 刷新类型，file代表文件刷新，dir 代表路径刷新，m3u8带表m3u8刷新
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
 
     /**
-     * Type: 刷新类型，file代表文件刷新，dir 代表路径刷新
+     * Type: 刷新类型，file代表文件刷新，dir 代表路径刷新，m3u8带表m3u8刷新
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -74,7 +74,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
      *
      * @return string[]|null
      */
-    public function getUrlList()
+    public function getUrlList(): array
     {
         return $this->get("UrlList");
     }

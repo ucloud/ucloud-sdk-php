@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CacheAllConfig extends Response
      *
      * @return string|null
      */
-    public function getCacheHost()
+    public function getCacheHost(): string
     {
         return $this->get("CacheHost");
     }
@@ -37,7 +37,7 @@ class CacheAllConfig extends Response
      *
      * @param string $cacheHost
      */
-    public function setCacheHost($cacheHost)
+    public function setCacheHost(string $cacheHost)
     {
         $this->set("CacheHost", $cacheHost);
     }
@@ -47,12 +47,9 @@ class CacheAllConfig extends Response
      *
      * @return CacheConf[]|null
      */
-    public function getCacheList()
+    public function getCacheList(): array
     {
-        $items = $this->get("CacheList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("CacheList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CacheConf($item));
@@ -79,12 +76,9 @@ class CacheAllConfig extends Response
      *
      * @return CacheConf[]|null
      */
-    public function getHttpCodeCacheList()
+    public function getHttpCodeCacheList(): array
     {
-        $items = $this->get("HttpCodeCacheList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("HttpCodeCacheList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CacheConf($item));
@@ -111,12 +105,9 @@ class CacheAllConfig extends Response
      *
      * @return CacheKeyInfo[]|null
      */
-    public function getCacheKeyList()
+    public function getCacheKeyList(): array
     {
-        $items = $this->get("CacheKeyList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("CacheKeyList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CacheKeyInfo($item));

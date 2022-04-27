@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKEAuthenticationAlgorithm()
+    public function getIKEAuthenticationAlgorithm(): string
     {
         return $this->get("IKEAuthenticationAlgorithm");
     }
@@ -37,7 +37,7 @@ class IKEData extends Response
      *
      * @param string $ikeAuthenticationAlgorithm
      */
-    public function setIKEAuthenticationAlgorithm($ikeAuthenticationAlgorithm)
+    public function setIKEAuthenticationAlgorithm(string $ikeAuthenticationAlgorithm)
     {
         $this->set("IKEAuthenticationAlgorithm", $ikeAuthenticationAlgorithm);
     }
@@ -47,7 +47,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKEDhGroup()
+    public function getIKEDhGroup(): string
     {
         return $this->get("IKEDhGroup");
     }
@@ -57,7 +57,7 @@ class IKEData extends Response
      *
      * @param string $ikeDhGroup
      */
-    public function setIKEDhGroup($ikeDhGroup)
+    public function setIKEDhGroup(string $ikeDhGroup)
     {
         $this->set("IKEDhGroup", $ikeDhGroup);
     }
@@ -67,7 +67,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKEEncryptionAlgorithm()
+    public function getIKEEncryptionAlgorithm(): string
     {
         return $this->get("IKEEncryptionAlgorithm");
     }
@@ -77,7 +77,7 @@ class IKEData extends Response
      *
      * @param string $ikeEncryptionAlgorithm
      */
-    public function setIKEEncryptionAlgorithm($ikeEncryptionAlgorithm)
+    public function setIKEEncryptionAlgorithm(string $ikeEncryptionAlgorithm)
     {
         $this->set("IKEEncryptionAlgorithm", $ikeEncryptionAlgorithm);
     }
@@ -87,7 +87,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKEExchangeMode()
+    public function getIKEExchangeMode(): string
     {
         return $this->get("IKEExchangeMode");
     }
@@ -97,7 +97,7 @@ class IKEData extends Response
      *
      * @param string $ikeExchangeMode
      */
-    public function setIKEExchangeMode($ikeExchangeMode)
+    public function setIKEExchangeMode(string $ikeExchangeMode)
     {
         $this->set("IKEExchangeMode", $ikeExchangeMode);
     }
@@ -107,7 +107,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKELocalId()
+    public function getIKELocalId(): string
     {
         return $this->get("IKELocalId");
     }
@@ -117,7 +117,7 @@ class IKEData extends Response
      *
      * @param string $ikeLocalId
      */
-    public function setIKELocalId($ikeLocalId)
+    public function setIKELocalId(string $ikeLocalId)
     {
         $this->set("IKELocalId", $ikeLocalId);
     }
@@ -127,7 +127,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKEPreSharedKey()
+    public function getIKEPreSharedKey(): string
     {
         return $this->get("IKEPreSharedKey");
     }
@@ -137,7 +137,7 @@ class IKEData extends Response
      *
      * @param string $ikePreSharedKey
      */
-    public function setIKEPreSharedKey($ikePreSharedKey)
+    public function setIKEPreSharedKey(string $ikePreSharedKey)
     {
         $this->set("IKEPreSharedKey", $ikePreSharedKey);
     }
@@ -147,7 +147,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKERemoteId()
+    public function getIKERemoteId(): string
     {
         return $this->get("IKERemoteId");
     }
@@ -157,7 +157,7 @@ class IKEData extends Response
      *
      * @param string $ikeRemoteId
      */
-    public function setIKERemoteId($ikeRemoteId)
+    public function setIKERemoteId(string $ikeRemoteId)
     {
         $this->set("IKERemoteId", $ikeRemoteId);
     }
@@ -167,7 +167,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKESALifetime()
+    public function getIKESALifetime(): string
     {
         return $this->get("IKESALifetime");
     }
@@ -177,7 +177,7 @@ class IKEData extends Response
      *
      * @param string $ikesaLifetime
      */
-    public function setIKESALifetime($ikesaLifetime)
+    public function setIKESALifetime(string $ikesaLifetime)
     {
         $this->set("IKESALifetime", $ikesaLifetime);
     }
@@ -187,7 +187,7 @@ class IKEData extends Response
      *
      * @return string|null
      */
-    public function getIKEVersion()
+    public function getIKEVersion(): string
     {
         return $this->get("IKEVersion");
     }
@@ -197,7 +197,7 @@ class IKEData extends Response
      *
      * @param string $ikeVersion
      */
-    public function setIKEVersion($ikeVersion)
+    public function setIKEVersion(string $ikeVersion)
     {
         $this->set("IKEVersion", $ikeVersion);
     }

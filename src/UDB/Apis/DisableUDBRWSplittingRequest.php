@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class DisableUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DisableUDBRWSplittingRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DisableUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class DisableUDBRWSplittingRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class DisableUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getMasterDBId()
+    public function getMasterDBId(): string
     {
         return $this->get("MasterDBId");
     }
@@ -85,7 +85,7 @@ class DisableUDBRWSplittingRequest extends Request
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId($masterDBId)
+    public function setMasterDBId(string $masterDBId)
     {
         $this->set("MasterDBId", $masterDBId);
     }

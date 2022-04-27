@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -46,7 +46,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -56,7 +56,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string[]|null
      */
-    public function getPhoneNumbers()
+    public function getPhoneNumbers(): array
     {
         return $this->get("PhoneNumbers");
     }
@@ -76,7 +76,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getSigContent()
+    public function getSigContent(): string
     {
         return $this->get("SigContent");
     }
@@ -86,7 +86,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $sigContent
      */
-    public function setSigContent($sigContent)
+    public function setSigContent(string $sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
@@ -96,7 +96,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplateId()
+    public function getTemplateId(): string
     {
         return $this->get("TemplateId");
     }
@@ -106,7 +106,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $templateId
      */
-    public function setTemplateId($templateId)
+    public function setTemplateId(string $templateId)
     {
         $this->set("TemplateId", $templateId);
     }
@@ -116,7 +116,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string[]|null
      */
-    public function getTemplateParams()
+    public function getTemplateParams(): array
     {
         return $this->get("TemplateParams");
     }
@@ -136,7 +136,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getExtendCode()
+    public function getExtendCode(): string
     {
         return $this->get("ExtendCode");
     }
@@ -146,7 +146,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $extendCode
      */
-    public function setExtendCode($extendCode)
+    public function setExtendCode(string $extendCode)
     {
         $this->set("ExtendCode", $extendCode);
     }
@@ -156,7 +156,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @return string|null
      */
-    public function getUserId()
+    public function getUserId(): string
     {
         return $this->get("UserId");
     }
@@ -166,7 +166,7 @@ class SendUSMSMessageRequest extends Request
      *
      * @param string $userId
      */
-    public function setUserId($userId)
+    public function setUserId(string $userId)
     {
         $this->set("UserId", $userId);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,9 @@ class DescribePathXLineConfigResponse extends Response
      *
      * @return UGAALine[]|null
      */
-    public function getLineSet()
+    public function getLineSet(): array
     {
-        $items = $this->get("LineSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("LineSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UGAALine($item));

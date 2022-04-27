@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getIPVersion()
+    public function getIPVersion(): string
     {
         return $this->get("IPVersion");
     }
@@ -37,7 +37,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $ipVersion
      */
-    public function setIPVersion($ipVersion)
+    public function setIPVersion(string $ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }
@@ -47,7 +47,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return integer|null
      */
-    public function getShareBandwidth()
+    public function getShareBandwidth(): int
     {
         return $this->get("ShareBandwidth");
     }
@@ -57,7 +57,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth($shareBandwidth)
+    public function setShareBandwidth(int $shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
@@ -67,7 +67,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getShareBandwidthId()
+    public function getShareBandwidthId(): string
     {
         return $this->get("ShareBandwidthId");
     }
@@ -77,7 +77,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
@@ -87,7 +87,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -97,7 +97,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -107,7 +107,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -117,7 +117,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -127,7 +127,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime()
+    public function getExpireTime(): int
     {
         return $this->get("ExpireTime");
     }
@@ -137,7 +137,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -147,12 +147,9 @@ class UnetShareBandwidthSet extends Response
      *
      * @return EIPSetData[]|null
      */
-    public function getEIPSet()
+    public function getEIPSet(): array
     {
-        $items = $this->get("EIPSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EIPSetData($item));
@@ -179,7 +176,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -189,7 +186,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }

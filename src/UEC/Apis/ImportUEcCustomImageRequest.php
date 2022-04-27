@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -42,7 +42,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -52,7 +52,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIdcId()
+    public function getIdcId(): array
     {
         return $this->get("IdcId");
     }
@@ -72,7 +72,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -82,7 +82,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -92,7 +92,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageName()
+    public function getImageName(): string
     {
         return $this->get("ImageName");
     }
@@ -102,7 +102,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -112,7 +112,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getUFileUrl()
+    public function getUFileUrl(): string
     {
         return $this->get("UFileUrl");
     }
@@ -122,7 +122,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $uFileUrl
      */
-    public function setUFileUrl($uFileUrl)
+    public function setUFileUrl(string $uFileUrl)
     {
         $this->set("UFileUrl", $uFileUrl);
     }
@@ -132,7 +132,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getOsType()
+    public function getOsType(): string
     {
         return $this->get("OsType");
     }
@@ -142,7 +142,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
@@ -152,7 +152,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getFormat()
+    public function getFormat(): string
     {
         return $this->get("Format");
     }
@@ -162,7 +162,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $format
      */
-    public function setFormat($format)
+    public function setFormat(string $format)
     {
         $this->set("Format", $format);
     }
@@ -172,7 +172,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageDesc()
+    public function getImageDesc(): string
     {
         return $this->get("ImageDesc");
     }
@@ -182,7 +182,7 @@ class ImportUEcCustomImageRequest extends Request
      *
      * @param string $imageDesc
      */
-    public function setImageDesc($imageDesc)
+    public function setImageDesc(string $imageDesc)
     {
         $this->set("ImageDesc", $imageDesc);
     }

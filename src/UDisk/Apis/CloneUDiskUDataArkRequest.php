@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -87,7 +87,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -107,7 +107,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -117,7 +117,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskId()
+    public function getUDiskId(): string
     {
         return $this->get("UDiskId");
     }
@@ -127,7 +127,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -137,7 +137,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return integer|null
      */
-    public function getSnapshotTime()
+    public function getSnapshotTime(): int
     {
         return $this->get("SnapshotTime");
     }
@@ -147,7 +147,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param int $snapshotTime
      */
-    public function setSnapshotTime($snapshotTime)
+    public function setSnapshotTime(int $snapshotTime)
     {
         $this->set("SnapshotTime", $snapshotTime);
     }
@@ -157,7 +157,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getComment()
+    public function getComment(): string
     {
         return $this->get("Comment");
     }
@@ -167,7 +167,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $comment
      */
-    public function setComment($comment)
+    public function setComment(string $comment)
     {
         $this->set("Comment", $comment);
     }
@@ -177,7 +177,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -187,7 +187,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -197,7 +197,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -207,7 +207,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -217,7 +217,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getUDataArkMode()
+    public function getUDataArkMode(): string
     {
         return $this->get("UDataArkMode");
     }
@@ -227,7 +227,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode($uDataArkMode)
+    public function setUDataArkMode(string $uDataArkMode)
     {
         $this->set("UDataArkMode", $uDataArkMode);
     }
@@ -237,7 +237,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getSnapshotService()
+    public function getSnapshotService(): string
     {
         return $this->get("SnapshotService");
     }
@@ -247,7 +247,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $snapshotService
      */
-    public function setSnapshotService($snapshotService)
+    public function setSnapshotService(string $snapshotService)
     {
         $this->set("SnapshotService", $snapshotService);
     }
@@ -257,7 +257,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -267,7 +267,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -277,7 +277,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -287,27 +287,27 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
 
     /**
-     * RdmaClusterId: 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     * RdmaClusterId: RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *
      * @return string|null
      */
-    public function getRdmaClusterId()
+    public function getRdmaClusterId(): string
     {
         return $this->get("RdmaClusterId");
     }
 
     /**
-     * RdmaClusterId: 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     * RdmaClusterId: RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *
      * @param string $rdmaClusterId
      */
-    public function setRdmaClusterId($rdmaClusterId)
+    public function setRdmaClusterId(string $rdmaClusterId)
     {
         $this->set("RdmaClusterId", $rdmaClusterId);
     }
@@ -317,7 +317,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getHostId()
+    public function getHostId(): string
     {
         return $this->get("HostId");
     }
@@ -327,7 +327,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }
@@ -337,7 +337,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -347,7 +347,7 @@ class CloneUDiskUDataArkRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

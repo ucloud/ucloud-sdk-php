@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,20 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\UFile\Apis\CreateBucketRequest;
 use UCloud\UFile\Apis\CreateBucketResponse;
+use UCloud\UFile\Apis\CreateUFileLifeCycleRequest;
+use UCloud\UFile\Apis\CreateUFileLifeCycleResponse;
 use UCloud\UFile\Apis\CreateUFileTokenRequest;
 use UCloud\UFile\Apis\CreateUFileTokenResponse;
 use UCloud\UFile\Apis\DeleteBucketRequest;
 use UCloud\UFile\Apis\DeleteBucketResponse;
+use UCloud\UFile\Apis\DeleteUFileLifeCycleRequest;
+use UCloud\UFile\Apis\DeleteUFileLifeCycleResponse;
 use UCloud\UFile\Apis\DeleteUFileTokenRequest;
 use UCloud\UFile\Apis\DeleteUFileTokenResponse;
 use UCloud\UFile\Apis\DescribeBucketRequest;
 use UCloud\UFile\Apis\DescribeBucketResponse;
+use UCloud\UFile\Apis\DescribeUFileLifeCycleRequest;
+use UCloud\UFile\Apis\DescribeUFileLifeCycleResponse;
 use UCloud\UFile\Apis\DescribeUFileTokenRequest;
 use UCloud\UFile\Apis\DescribeUFileTokenResponse;
 use UCloud\UFile\Apis\GetUFileDailyReportRequest;
@@ -44,6 +50,8 @@ use UCloud\UFile\Apis\SetUFileRefererRequest;
 use UCloud\UFile\Apis\SetUFileRefererResponse;
 use UCloud\UFile\Apis\UpdateBucketRequest;
 use UCloud\UFile\Apis\UpdateBucketResponse;
+use UCloud\UFile\Apis\UpdateUFileLifeCycleRequest;
+use UCloud\UFile\Apis\UpdateUFileLifeCycleResponse;
 use UCloud\UFile\Apis\UpdateUFileTokenRequest;
 use UCloud\UFile\Apis\UpdateUFileTokenResponse;
 
@@ -74,13 +82,45 @@ class UFileClient extends Client
      *     "BucketId" => (string) 已创建Bucket的ID
      * ]
      *
-     * @return CreateBucketResponse
      * @throws UCloudException
      */
-    public function createBucket(CreateBucketRequest $request = null)
+    public function createBucket(CreateBucketRequest $request = null): CreateBucketResponse
     {
         $resp = $this->invoke($request);
         return new CreateBucketResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * CreateUFileLifeCycle - 创建生命周期管理
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/create_ufile_life_cycle
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "LifeCycleName" => (string) 生命周期名称
+     *     "Prefix" => (string) 生命周期所适用的前缀；*为整个存储空间文件；一条规则只支持一个文件前缀；
+     *     "Status" => (string) Enabled -- 启用，Disabled -- 不启用
+     *     "BucketName" => (string) 存储空间名称
+     *     "Days" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动删除；参数范围：[7,36500]，0代表不启用
+     *     "ArchivalDays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后，自动变为归档存储类型；参数范围：[7,36500]，0代表不启用
+     *     "IADays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后，自动变为低频存储类型；参数范围：[7,36500]，0代表不启用
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "LifeCycleId" => (string) 生命周期Id
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function createUFileLifeCycle(CreateUFileLifeCycleRequest $request = null): CreateUFileLifeCycleResponse
+    {
+        $resp = $this->invoke($request);
+        return new CreateUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -106,10 +146,9 @@ class UFileClient extends Client
      *     "TokenId" => (string) 创建令牌的token_id
      * ]
      *
-     * @return CreateUFileTokenResponse
      * @throws UCloudException
      */
-    public function createUFileToken(CreateUFileTokenRequest $request = null)
+    public function createUFileToken(CreateUFileTokenRequest $request = null): CreateUFileTokenResponse
     {
         $resp = $this->invoke($request);
         return new CreateUFileTokenResponse($resp->toArray(), $resp->getRequestId());
@@ -134,13 +173,39 @@ class UFileClient extends Client
      *     "BucketId" => (string) Bucket的ID
      * ]
      *
-     * @return DeleteBucketResponse
      * @throws UCloudException
      */
-    public function deleteBucket(DeleteBucketRequest $request = null)
+    public function deleteBucket(DeleteBucketRequest $request = null): DeleteBucketResponse
     {
         $resp = $this->invoke($request);
         return new DeleteBucketResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DeleteUFileLifeCycle - 删除生命周期管理
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/delete_ufile_life_cycle
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "LifeCycleId" => (string) 生命周期Id
+     *     "BucketName" => (string) 存储空间名称
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function deleteUFileLifeCycle(DeleteUFileLifeCycleRequest $request = null): DeleteUFileLifeCycleResponse
+    {
+        $resp = $this->invoke($request);
+        return new DeleteUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -161,10 +226,9 @@ class UFileClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUFileTokenResponse
      * @throws UCloudException
      */
-    public function deleteUFileToken(DeleteUFileTokenRequest $request = null)
+    public function deleteUFileToken(DeleteUFileTokenRequest $request = null): DeleteUFileTokenResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUFileTokenResponse($resp->toArray(), $resp->getRequestId());
@@ -210,13 +274,51 @@ class UFileClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeBucketResponse
      * @throws UCloudException
      */
-    public function describeBucket(DescribeBucketRequest $request = null)
+    public function describeBucket(DescribeBucketRequest $request = null): DescribeBucketResponse
     {
         $resp = $this->invoke($request);
         return new DescribeBucketResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUFileLifeCycle - 获取生命周期信息
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/describe_ufile_life_cycle
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "BucketName" => (string) 存储空间名称
+     *     "LifeCycleId" => (string) 生命周期Id；不传递此参数拉取存储空间下面的所有生命周期信息
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DateSet" => (array<object>) 生命周期信息[
+     *         [
+     *             "LifeCycleId" => (string) 生命周期Id
+     *             "LifeCycleName" => (string) 生命周期名称
+     *             "Prefix" => (string) 生命周期所适用的前缀；*为整个存储空间文件；
+     *             "Days" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动删除，0代表不启用；
+     *             "Status" => (string) Enabled -- 启用，Disabled -- 不启用
+     *             "BucketName" => (string) 存储空间名称
+     *             "ArchivalDays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为归档存储类型，0代表不启用；
+     *             "IADays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为低频存储类型，0代表不启用；
+     *         ]
+     *     ]
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function describeUFileLifeCycle(DescribeUFileLifeCycleRequest $request = null): DescribeUFileLifeCycleResponse
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -254,10 +356,9 @@ class UFileClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUFileTokenResponse
      * @throws UCloudException
      */
-    public function describeUFileToken(DescribeUFileTokenRequest $request = null)
+    public function describeUFileToken(DescribeUFileTokenRequest $request = null): DescribeUFileTokenResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUFileTokenResponse($resp->toArray(), $resp->getRequestId());
@@ -289,7 +390,7 @@ class UFileClient extends Client
      *                     "IdleFlow" => (number) 闲时流量；单位byte；海外无此字段
      *                     "BusyFlow" => (number) 忙时流量；单位byte；海外无此字段
      *                     "CdnFlow" => (number) cdn回源流量;单位byte
-     *                     "ApiTimes" => (number) API请求次数（次）
+     *                     "ApiTimes" => (number) API请求次数（万次）
      *                 ]
      *             ]
      *             "Daily" => (array<object>) 日消费情况[
@@ -304,17 +405,16 @@ class UFileClient extends Client
      *                     "CdnFlow" => (number) cdn回源流量;单位byte
      *                     "Flow" => (number) 下载流量：单位byte；国内无此字段
      *                     "Date" => (integer) 配额消费时间，unix时间戳（单位s），精确到日期
-     *                     "ApiTimes" => (number) API请求次数（次）
+     *                     "ApiTimes" => (number) API请求次数（万次）
      *                 ]
      *             ]
      *         ]
      *     ]
      * ]
      *
-     * @return GetUFileDailyReportResponse
      * @throws UCloudException
      */
-    public function getUFileDailyReport(GetUFileDailyReportRequest $request = null)
+    public function getUFileDailyReport(GetUFileDailyReportRequest $request = null): GetUFileDailyReportResponse
     {
         $resp = $this->invoke($request);
         return new GetUFileDailyReportResponse($resp->toArray(), $resp->getRequestId());
@@ -338,10 +438,9 @@ class UFileClient extends Client
      *     "LeftQuota" => (number) 剩余的配额数值
      * ]
      *
-     * @return GetUFileQuotaResponse
      * @throws UCloudException
      */
-    public function getUFileQuota(GetUFileQuotaRequest $request = null)
+    public function getUFileQuota(GetUFileQuotaRequest $request = null): GetUFileQuotaResponse
     {
         $resp = $this->invoke($request);
         return new GetUFileQuotaResponse($resp->toArray(), $resp->getRequestId());
@@ -380,10 +479,9 @@ class UFileClient extends Client
      *     ]
      * ]
      *
-     * @return GetUFileQuotaInfoResponse
      * @throws UCloudException
      */
-    public function getUFileQuotaInfo(GetUFileQuotaInfoRequest $request = null)
+    public function getUFileQuotaInfo(GetUFileQuotaInfoRequest $request = null): GetUFileQuotaInfoResponse
     {
         $resp = $this->invoke($request);
         return new GetUFileQuotaInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -409,10 +507,9 @@ class UFileClient extends Client
      *     "Price" => (number) 待支付价格，单位：分
      * ]
      *
-     * @return GetUFileQuotaPriceResponse
      * @throws UCloudException
      */
-    public function getUFileQuotaPrice(GetUFileQuotaPriceRequest $request = null)
+    public function getUFileQuotaPrice(GetUFileQuotaPriceRequest $request = null): GetUFileQuotaPriceResponse
     {
         $resp = $this->invoke($request);
         return new GetUFileQuotaPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -445,10 +542,9 @@ class UFileClient extends Client
      *     ]
      * ]
      *
-     * @return GetUFileReportResponse
      * @throws UCloudException
      */
-    public function getUFileReport(GetUFileReportRequest $request = null)
+    public function getUFileReport(GetUFileReportRequest $request = null): GetUFileReportResponse
     {
         $resp = $this->invoke($request);
         return new GetUFileReportResponse($resp->toArray(), $resp->getRequestId());
@@ -476,10 +572,9 @@ class UFileClient extends Client
      * $outputs = [
      * ]
      *
-     * @return SetUFileRefererResponse
      * @throws UCloudException
      */
-    public function setUFileReferer(SetUFileRefererRequest $request = null)
+    public function setUFileReferer(SetUFileRefererRequest $request = null): SetUFileRefererResponse
     {
         $resp = $this->invoke($request);
         return new SetUFileRefererResponse($resp->toArray(), $resp->getRequestId());
@@ -505,13 +600,45 @@ class UFileClient extends Client
      *     "BucketId" => (string) Bucket的ID
      * ]
      *
-     * @return UpdateBucketResponse
      * @throws UCloudException
      */
-    public function updateBucket(UpdateBucketRequest $request = null)
+    public function updateBucket(UpdateBucketRequest $request = null): UpdateBucketResponse
     {
         $resp = $this->invoke($request);
         return new UpdateBucketResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateUFileLifeCycle - 更新生命周期管理
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/update_ufile_life_cycle
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "LifeCycleId" => (string) 生命周期Id
+     *     "LifeCycleName" => (string) 生命周期名称
+     *     "Prefix" => (string) 生命周期所适用的前缀；*为整个存储空间文件；一条规则只支持一个文件前缀；
+     *     "Status" => (string) Enabled -- 启用，Disabled -- 不启用
+     *     "BucketName" => (string) 存储空间名称
+     *     "Days" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *     "ArchivalDays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为归档存储类型；范围： [7,36500]，0代表不启用
+     *     "IADays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为低频存储类型；范围： [7,36500]，0代表不启用
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function updateUFileLifeCycle(UpdateUFileLifeCycleRequest $request = null): UpdateUFileLifeCycleResponse
+    {
+        $resp = $this->invoke($request);
+        return new UpdateUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -537,10 +664,9 @@ class UFileClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpdateUFileTokenResponse
      * @throws UCloudException
      */
-    public function updateUFileToken(UpdateUFileTokenRequest $request = null)
+    public function updateUFileToken(UpdateUFileTokenRequest $request = null): UpdateUFileTokenResponse
     {
         $resp = $this->invoke($request);
         return new UpdateUFileTokenResponse($resp->toArray(), $resp->getRequestId());

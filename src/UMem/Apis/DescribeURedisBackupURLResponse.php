@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupURL()
+    public function getBackupURL(): string
     {
         return $this->get("BackupURL");
     }
@@ -37,7 +37,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @param string $backupURL
      */
-    public function setBackupURL($backupURL)
+    public function setBackupURL(string $backupURL)
     {
         $this->set("BackupURL", $backupURL);
     }
@@ -47,7 +47,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupPath()
+    public function getBackupPath(): string
     {
         return $this->get("BackupPath");
     }
@@ -57,7 +57,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @param string $backupPath
      */
-    public function setBackupPath($backupPath)
+    public function setBackupPath(string $backupPath)
     {
         $this->set("BackupPath", $backupPath);
     }

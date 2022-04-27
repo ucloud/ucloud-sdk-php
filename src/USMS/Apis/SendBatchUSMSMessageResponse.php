@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @return string|null
      */
-    public function getSessionNo()
+    public function getSessionNo(): string
     {
         return $this->get("SessionNo");
     }
@@ -39,7 +39,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param string $sessionNo
      */
-    public function setSessionNo($sessionNo)
+    public function setSessionNo(string $sessionNo)
     {
         $this->set("SessionNo", $sessionNo);
     }
@@ -49,7 +49,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @return string|null
      */
-    public function getReqUuid()
+    public function getReqUuid(): string
     {
         return $this->get("ReqUuid");
     }
@@ -59,7 +59,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param string $reqUuid
      */
-    public function setReqUuid($reqUuid)
+    public function setReqUuid(string $reqUuid)
     {
         $this->set("ReqUuid", $reqUuid);
     }
@@ -69,7 +69,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @return integer|null
      */
-    public function getSuccessCount()
+    public function getSuccessCount(): int
     {
         return $this->get("SuccessCount");
     }
@@ -79,7 +79,7 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param int $successCount
      */
-    public function setSuccessCount($successCount)
+    public function setSuccessCount(int $successCount)
     {
         $this->set("SuccessCount", $successCount);
     }
@@ -89,12 +89,9 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @return BatchInfo[]|null
      */
-    public function getFailContent()
+    public function getFailContent(): array
     {
-        $items = $this->get("FailContent");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("FailContent") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new BatchInfo($item));

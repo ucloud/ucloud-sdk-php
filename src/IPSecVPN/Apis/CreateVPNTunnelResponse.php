@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateVPNTunnelResponse extends Response
      *
      * @return string|null
      */
-    public function getVPNTunnelId()
+    public function getVPNTunnelId(): string
     {
         return $this->get("VPNTunnelId");
     }
@@ -37,7 +37,7 @@ class CreateVPNTunnelResponse extends Response
      *
      * @param string $vpnTunnelId
      */
-    public function setVPNTunnelId($vpnTunnelId)
+    public function setVPNTunnelId(string $vpnTunnelId)
     {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }

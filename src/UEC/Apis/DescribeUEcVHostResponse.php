@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ class DescribeUEcVHostResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount()
+    public function getTotalCount(): int
     {
         return $this->get("TotalCount");
     }
@@ -39,7 +39,7 @@ class DescribeUEcVHostResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -49,12 +49,9 @@ class DescribeUEcVHostResponse extends Response
      *
      * @return NodeInfo[]|null
      */
-    public function getNodeList()
+    public function getNodeList(): array
     {
-        $items = $this->get("NodeList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NodeList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NodeInfo($item));

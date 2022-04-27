@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ULBIPSet extends Response
      *
      * @return string|null
      */
-    public function getOperatorName()
+    public function getOperatorName(): string
     {
         return $this->get("OperatorName");
     }
@@ -37,7 +37,7 @@ class ULBIPSet extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
@@ -47,7 +47,7 @@ class ULBIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIP()
+    public function getEIP(): string
     {
         return $this->get("EIP");
     }
@@ -57,7 +57,7 @@ class ULBIPSet extends Response
      *
      * @param string $eip
      */
-    public function setEIP($eip)
+    public function setEIP(string $eip)
     {
         $this->set("EIP", $eip);
     }
@@ -67,7 +67,7 @@ class ULBIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -77,7 +77,7 @@ class ULBIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -87,7 +87,7 @@ class ULBIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidthType()
+    public function getBandwidthType(): int
     {
         return $this->get("BandwidthType");
     }
@@ -97,7 +97,7 @@ class ULBIPSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType($bandwidthType)
+    public function setBandwidthType(int $bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
@@ -107,7 +107,7 @@ class ULBIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -117,7 +117,7 @@ class ULBIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

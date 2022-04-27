@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return integer|null
      */
-    public function getGroupId()
+    public function getGroupId(): int
     {
         return $this->get("GroupId");
     }
@@ -105,7 +105,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param int $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(int $groupId)
     {
         $this->set("GroupId", $groupId);
     }
@@ -115,7 +115,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getKey()
+    public function getKey(): string
     {
         return $this->get("Key");
     }
@@ -125,7 +125,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $key
      */
-    public function setKey($key)
+    public function setKey(string $key)
     {
         $this->set("Key", $key);
     }
@@ -135,7 +135,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->get("Value");
     }
@@ -145,7 +145,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $value
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->set("Value", $value);
     }
@@ -155,7 +155,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -165,7 +165,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -175,7 +175,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->get("Description");
     }
@@ -185,7 +185,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
@@ -195,7 +195,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag()
+    public function getRegionFlag(): bool
     {
         return $this->get("RegionFlag");
     }
@@ -205,7 +205,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }

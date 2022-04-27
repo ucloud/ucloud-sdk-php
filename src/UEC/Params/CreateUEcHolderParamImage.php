@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUEcHolderParamImage extends Request
      *
      * @return string|null
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->get("Message");
     }
@@ -37,7 +37,7 @@ class CreateUEcHolderParamImage extends Request
      *
      * @param string $message
      */
-    public function setMessage($message)
+    public function setMessage(string $message)
     {
         $this->set("Message", $message);
     }
@@ -47,7 +47,7 @@ class CreateUEcHolderParamImage extends Request
      *
      * @return string|null
      */
-    public function getStoreAddress()
+    public function getStoreAddress(): string
     {
         return $this->get("StoreAddress");
     }
@@ -57,7 +57,7 @@ class CreateUEcHolderParamImage extends Request
      *
      * @param string $storeAddress
      */
-    public function setStoreAddress($storeAddress)
+    public function setStoreAddress(string $storeAddress)
     {
         $this->set("StoreAddress", $storeAddress);
     }

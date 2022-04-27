@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,41 +23,41 @@ class OutPublicIpInfo extends Response
     
 
     /**
-     * IP:  线路出口EIP
+     * IP:  线路回源节点EIP
      *
      * @return string|null
      */
-    public function getIP()
+    public function getIP(): string
     {
         return $this->get("IP");
     }
 
     /**
-     * IP:  线路出口EIP
+     * IP:  线路回源节点EIP
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }
 
     /**
-     * Area: 线路出口机房代号
+     * Area: 线路回源节点机房代号
      *
      * @return string|null
      */
-    public function getArea()
+    public function getArea(): string
     {
         return $this->get("Area");
     }
 
     /**
-     * Area: 线路出口机房代号
+     * Area: 线路回源节点机房代号
      *
      * @param string $area
      */
-    public function setArea($area)
+    public function setArea(string $area)
     {
         $this->set("Area", $area);
     }

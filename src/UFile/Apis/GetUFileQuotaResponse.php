@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetUFileQuotaResponse extends Response
      *
      * @return float|null
      */
-    public function getLeftQuota()
+    public function getLeftQuota(): float
     {
         return $this->get("LeftQuota");
     }
@@ -37,7 +37,7 @@ class GetUFileQuotaResponse extends Response
      *
      * @param float $leftQuota
      */
-    public function setLeftQuota($leftQuota)
+    public function setLeftQuota(float $leftQuota)
     {
         $this->set("LeftQuota", $leftQuota);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ShareBandwidthSet extends Response
      *
      * @return integer|null
      */
-    public function getShareBandwidth()
+    public function getShareBandwidth(): int
     {
         return $this->get("ShareBandwidth");
     }
@@ -37,7 +37,7 @@ class ShareBandwidthSet extends Response
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth($shareBandwidth)
+    public function setShareBandwidth(int $shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
@@ -47,7 +47,7 @@ class ShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getShareBandwidthName()
+    public function getShareBandwidthName(): string
     {
         return $this->get("ShareBandwidthName");
     }
@@ -57,7 +57,7 @@ class ShareBandwidthSet extends Response
      *
      * @param string $shareBandwidthName
      */
-    public function setShareBandwidthName($shareBandwidthName)
+    public function setShareBandwidthName(string $shareBandwidthName)
     {
         $this->set("ShareBandwidthName", $shareBandwidthName);
     }
@@ -67,7 +67,7 @@ class ShareBandwidthSet extends Response
      *
      * @return string|null
      */
-    public function getShareBandwidthId()
+    public function getShareBandwidthId(): string
     {
         return $this->get("ShareBandwidthId");
     }
@@ -77,7 +77,7 @@ class ShareBandwidthSet extends Response
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }

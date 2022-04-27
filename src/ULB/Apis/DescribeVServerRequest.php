@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ class DescribeVServerRequest extends Request
         parent::__construct(["Action" => "DescribeVServer"]);
         $this->markRequired("Region");
         $this->markRequired("ProjectId");
-        $this->markRequired("ULBId");
     }
 
     
@@ -35,7 +34,7 @@ class DescribeVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +44,7 @@ class DescribeVServerRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +54,7 @@ class DescribeVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +64,7 @@ class DescribeVServerRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +74,7 @@ class DescribeVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId()
+    public function getULBId(): string
     {
         return $this->get("ULBId");
     }
@@ -85,7 +84,7 @@ class DescribeVServerRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -95,7 +94,7 @@ class DescribeVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerId()
+    public function getVServerId(): string
     {
         return $this->get("VServerId");
     }
@@ -105,7 +104,7 @@ class DescribeVServerRequest extends Request
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -115,7 +114,7 @@ class DescribeVServerRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->get("Limit");
     }
@@ -125,7 +124,7 @@ class DescribeVServerRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
@@ -135,7 +134,7 @@ class DescribeVServerRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -145,7 +144,7 @@ class DescribeVServerRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -67,7 +67,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -77,7 +77,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getIp()
+    public function getIp(): string
     {
         return $this->get("Ip");
     }
@@ -87,7 +87,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $ip
      */
-    public function setIp($ip)
+    public function setIp(string $ip)
     {
         $this->set("Ip", $ip);
     }
@@ -97,7 +97,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getOldMac()
+    public function getOldMac(): string
     {
         return $this->get("OldMac");
     }
@@ -107,7 +107,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $oldMac
      */
-    public function setOldMac($oldMac)
+    public function setOldMac(string $oldMac)
     {
         $this->set("OldMac", $oldMac);
     }
@@ -117,7 +117,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getNewMac()
+    public function getNewMac(): string
     {
         return $this->get("NewMac");
     }
@@ -127,7 +127,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $newMac
      */
-    public function setNewMac($newMac)
+    public function setNewMac(string $newMac)
     {
         $this->set("NewMac", $newMac);
     }
@@ -137,7 +137,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -147,7 +147,7 @@ class MoveSecondaryIPMacRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }

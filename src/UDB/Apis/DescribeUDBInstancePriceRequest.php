@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemoryLimit()
+    public function getMemoryLimit(): int
     {
         return $this->get("MemoryLimit");
     }
@@ -87,7 +87,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
@@ -97,7 +97,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSpace()
+    public function getDiskSpace(): int
     {
         return $this->get("DiskSpace");
     }
@@ -107,7 +107,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -117,7 +117,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getDBTypeId()
+    public function getDBTypeId(): string
     {
         return $this->get("DBTypeId");
     }
@@ -127,7 +127,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
@@ -137,7 +137,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCount()
+    public function getCount(): int
     {
         return $this->get("Count");
     }
@@ -147,7 +147,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param int $count
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->set("Count", $count);
     }
@@ -157,7 +157,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -167,7 +167,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -177,7 +177,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -187,7 +187,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -197,7 +197,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getUseSSD()
+    public function getUseSSD(): string
     {
         return $this->get("UseSSD");
     }
@@ -207,7 +207,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param string $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(string $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
@@ -217,7 +217,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getSSDType()
+    public function getSSDType(): string
     {
         return $this->get("SSDType");
     }
@@ -227,7 +227,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }
@@ -237,7 +237,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceMode()
+    public function getInstanceMode(): string
     {
         return $this->get("InstanceMode");
     }
@@ -247,7 +247,7 @@ class DescribeUDBInstancePriceRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }

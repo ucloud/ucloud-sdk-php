@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return string|null
      */
-    public function getUGAId()
+    public function getUGAId(): string
     {
         return $this->get("UGAId");
     }
@@ -64,7 +64,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -74,7 +74,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPHTTP()
+    public function getHTTPHTTP(): array
     {
         return $this->get("HTTPHTTP");
     }
@@ -94,7 +94,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTP()
+    public function getHTTPSHTTP(): array
     {
         return $this->get("HTTPSHTTP");
     }
@@ -114,7 +114,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPS()
+    public function getHTTPSHTTPS(): array
     {
         return $this->get("HTTPSHTTPS");
     }
@@ -134,7 +134,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSSWSS()
+    public function getWSSWSS(): array
     {
         return $this->get("WSSWSS");
     }
@@ -154,7 +154,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSWS()
+    public function getWSWS(): array
     {
         return $this->get("WSWS");
     }
@@ -174,7 +174,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSSWS()
+    public function getWSSWS(): array
     {
         return $this->get("WSSWS");
     }
@@ -194,7 +194,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getTCP()
+    public function getTCP(): array
     {
         return $this->get("TCP");
     }
@@ -214,7 +214,7 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getUDP()
+    public function getUDP(): array
     {
         return $this->get("UDP");
     }

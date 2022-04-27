@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PHostMachineTypeSet extends Response
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -37,7 +37,7 @@ class PHostMachineTypeSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -47,7 +47,7 @@ class PHostMachineTypeSet extends Response
      *
      * @return PHostCPUSet|null
      */
-    public function getCPU()
+    public function getCPU(): PHostCPUSet
     {
         return new PHostCPUSet($this->get("CPU"));
     }
@@ -57,7 +57,7 @@ class PHostMachineTypeSet extends Response
      *
      * @param PHostCPUSet $cpu
      */
-    public function setCPU(array $cpu)
+    public function setCPU(PHostCPUSet $cpu)
     {
         $this->set("CPU", $cpu->getAll());
     }
@@ -67,7 +67,7 @@ class PHostMachineTypeSet extends Response
      *
      * @return integer|null
      */
-    public function getMemory()
+    public function getMemory(): int
     {
         return $this->get("Memory");
     }
@@ -77,7 +77,7 @@ class PHostMachineTypeSet extends Response
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
@@ -87,12 +87,9 @@ class PHostMachineTypeSet extends Response
      *
      * @return PHostDiskSet[]|null
      */
-    public function getDisks()
+    public function getDisks(): array
     {
-        $items = $this->get("Disks");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Disks") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new PHostDiskSet($item));
@@ -119,7 +116,7 @@ class PHostMachineTypeSet extends Response
      *
      * @return PHostComponentSet|null
      */
-    public function getComponents()
+    public function getComponents(): PHostComponentSet
     {
         return new PHostComponentSet($this->get("Components"));
     }
@@ -129,7 +126,7 @@ class PHostMachineTypeSet extends Response
      *
      * @param PHostComponentSet $components
      */
-    public function setComponents(array $components)
+    public function setComponents(PHostComponentSet $components)
     {
         $this->set("Components", $components->getAll());
     }
@@ -139,12 +136,9 @@ class PHostMachineTypeSet extends Response
      *
      * @return PHostClusterSet[]|null
      */
-    public function getClusters()
+    public function getClusters(): array
     {
-        $items = $this->get("Clusters");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Clusters") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new PHostClusterSet($item));
@@ -171,7 +165,7 @@ class PHostMachineTypeSet extends Response
      *
      * @return string|null
      */
-    public function getRaidSupported()
+    public function getRaidSupported(): string
     {
         return $this->get("RaidSupported");
     }
@@ -181,7 +175,7 @@ class PHostMachineTypeSet extends Response
      *
      * @param string $raidSupported
      */
-    public function setRaidSupported($raidSupported)
+    public function setRaidSupported(string $raidSupported)
     {
         $this->set("RaidSupported", $raidSupported);
     }

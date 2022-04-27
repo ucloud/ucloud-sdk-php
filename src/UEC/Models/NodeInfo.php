@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getNodeName()
+    public function getNodeName(): string
     {
         return $this->get("NodeName");
     }
@@ -37,7 +37,7 @@ class NodeInfo extends Response
      *
      * @param string $nodeName
      */
-    public function setNodeName($nodeName)
+    public function setNodeName(string $nodeName)
     {
         $this->set("NodeName", $nodeName);
     }
@@ -47,7 +47,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getNodeId()
+    public function getNodeId(): string
     {
         return $this->get("NodeId");
     }
@@ -57,7 +57,7 @@ class NodeInfo extends Response
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -67,7 +67,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getCoreNum()
+    public function getCoreNum(): int
     {
         return $this->get("CoreNum");
     }
@@ -77,7 +77,7 @@ class NodeInfo extends Response
      *
      * @param int $coreNum
      */
-    public function setCoreNum($coreNum)
+    public function setCoreNum(int $coreNum)
     {
         $this->set("CoreNum", $coreNum);
     }
@@ -87,7 +87,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getMemSize()
+    public function getMemSize(): int
     {
         return $this->get("MemSize");
     }
@@ -97,7 +97,7 @@ class NodeInfo extends Response
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -107,7 +107,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getSysDiskSize()
+    public function getSysDiskSize(): int
     {
         return $this->get("SysDiskSize");
     }
@@ -117,7 +117,7 @@ class NodeInfo extends Response
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize($sysDiskSize)
+    public function setSysDiskSize(int $sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
@@ -127,7 +127,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getDiskSize()
+    public function getDiskSize(): int
     {
         return $this->get("DiskSize");
     }
@@ -137,7 +137,7 @@ class NodeInfo extends Response
      *
      * @param int $diskSize
      */
-    public function setDiskSize($diskSize)
+    public function setDiskSize(int $diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }
@@ -147,7 +147,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getState()
+    public function getState(): int
     {
         return $this->get("State");
     }
@@ -157,7 +157,7 @@ class NodeInfo extends Response
      *
      * @param int $state
      */
-    public function setState($state)
+    public function setState(int $state)
     {
         $this->set("State", $state);
     }
@@ -167,7 +167,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getNetLimit()
+    public function getNetLimit(): int
     {
         return $this->get("NetLimit");
     }
@@ -177,7 +177,7 @@ class NodeInfo extends Response
      *
      * @param int $netLimit
      */
-    public function setNetLimit($netLimit)
+    public function setNetLimit(int $netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }
@@ -187,7 +187,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getIdcId()
+    public function getIdcId(): string
     {
         return $this->get("IdcId");
     }
@@ -197,7 +197,7 @@ class NodeInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -207,7 +207,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getOcName()
+    public function getOcName(): string
     {
         return $this->get("OcName");
     }
@@ -217,7 +217,7 @@ class NodeInfo extends Response
      *
      * @param string $ocName
      */
-    public function setOcName($ocName)
+    public function setOcName(string $ocName)
     {
         $this->set("OcName", $ocName);
     }
@@ -227,7 +227,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getProvince()
+    public function getProvince(): string
     {
         return $this->get("Province");
     }
@@ -237,7 +237,7 @@ class NodeInfo extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
@@ -247,7 +247,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->get("City");
     }
@@ -257,7 +257,7 @@ class NodeInfo extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
@@ -267,7 +267,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->get("Type");
     }
@@ -277,7 +277,7 @@ class NodeInfo extends Response
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
@@ -287,7 +287,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getChargeType()
+    public function getChargeType(): int
     {
         return $this->get("ChargeType");
     }
@@ -297,7 +297,7 @@ class NodeInfo extends Response
      *
      * @param int $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(int $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -307,7 +307,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -317,7 +317,7 @@ class NodeInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -327,7 +327,7 @@ class NodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getExpiredTime()
+    public function getExpiredTime(): int
     {
         return $this->get("ExpiredTime");
     }
@@ -337,7 +337,7 @@ class NodeInfo extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
@@ -347,7 +347,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getImageName()
+    public function getImageName(): string
     {
         return $this->get("ImageName");
     }
@@ -357,7 +357,7 @@ class NodeInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -367,12 +367,9 @@ class NodeInfo extends Response
      *
      * @return NodeIpList[]|null
      */
-    public function getNodeIpList()
+    public function getNodeIpList(): array
     {
-        $items = $this->get("NodeIpList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NodeIpList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NodeIpList($item));
@@ -399,7 +396,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getFirewallId()
+    public function getFirewallId(): string
     {
         return $this->get("FirewallId");
     }
@@ -409,7 +406,7 @@ class NodeInfo extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
@@ -419,7 +416,7 @@ class NodeInfo extends Response
      *
      * @return string|null
      */
-    public function getProductType()
+    public function getProductType(): string
     {
         return $this->get("ProductType");
     }
@@ -429,8 +426,28 @@ class NodeInfo extends Response
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
+    }
+
+    /**
+     * InnerIps: 内网ip列表
+     *
+     * @return string[]|null
+     */
+    public function getInnerIps(): array
+    {
+        return $this->get("InnerIps");
+    }
+
+    /**
+     * InnerIps: 内网ip列表
+     *
+     * @param string[] $innerIps
+     */
+    public function setInnerIps(array $innerIps)
+    {
+        $this->set("InnerIps", $innerIps);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -63,7 +63,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -73,7 +73,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetName()
+    public function getSubnetName(): string
     {
         return $this->get("SubnetName");
     }
@@ -83,7 +83,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @param string $subnetName
      */
-    public function setSubnetName($subnetName)
+    public function setSubnetName(string $subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -93,7 +93,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getComment()
+    public function getComment(): string
     {
         return $this->get("Comment");
     }
@@ -103,7 +103,7 @@ class UpdateUEcSubnetRequest extends Request
      *
      * @param string $comment
      */
-    public function setComment($comment)
+    public function setComment(string $comment)
     {
         $this->set("Comment", $comment);
     }

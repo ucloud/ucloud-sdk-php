@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,10 +59,9 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
-     * @return AddMemberToProjectResponse
      * @throws UCloudException
      */
-    public function addMemberToProject(AddMemberToProjectRequest $request = null)
+    public function addMemberToProject(AddMemberToProjectRequest $request = null): AddMemberToProjectResponse
     {
         $resp = $this->invoke($request);
         return new AddMemberToProjectResponse($resp->toArray(), $resp->getRequestId());
@@ -84,10 +83,9 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
-     * @return FreezeMemberResponse
      * @throws UCloudException
      */
-    public function freezeMember(FreezeMemberRequest $request = null)
+    public function freezeMember(FreezeMemberRequest $request = null): FreezeMemberResponse
     {
         $resp = $this->invoke($request);
         return new FreezeMemberResponse($resp->toArray(), $resp->getRequestId());
@@ -112,10 +110,9 @@ class UAccountClient extends Client
      *     ]
      * ]
      *
-     * @return GetNetworkMaskResponse
      * @throws UCloudException
      */
-    public function getNetworkMask(GetNetworkMaskRequest $request = null)
+    public function getNetworkMask(GetNetworkMaskRequest $request = null): GetNetworkMaskResponse
     {
         $resp = $this->invoke($request);
         return new GetNetworkMaskResponse($resp->toArray(), $resp->getRequestId());
@@ -150,10 +147,9 @@ class UAccountClient extends Client
      *     ]
      * ]
      *
-     * @return GetProjectListResponse
      * @throws UCloudException
      */
-    public function getProjectList(GetProjectListRequest $request = null)
+    public function getProjectList(GetProjectListRequest $request = null): GetProjectListResponse
     {
         $resp = $this->invoke($request);
         return new GetProjectListResponse($resp->toArray(), $resp->getRequestId());
@@ -184,10 +180,9 @@ class UAccountClient extends Client
      *     ]
      * ]
      *
-     * @return GetRegionResponse
      * @throws UCloudException
      */
-    public function getRegion(GetRegionRequest $request = null)
+    public function getRegion(GetRegionRequest $request = null): GetRegionResponse
     {
         $resp = $this->invoke($request);
         return new GetRegionResponse($resp->toArray(), $resp->getRequestId());
@@ -212,10 +207,9 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
-     * @return InviteSubaccountResponse
      * @throws UCloudException
      */
-    public function inviteSubaccount(InviteSubaccountRequest $request = null)
+    public function inviteSubaccount(InviteSubaccountRequest $request = null): InviteSubaccountResponse
     {
         $resp = $this->invoke($request);
         return new InviteSubaccountResponse($resp->toArray(), $resp->getRequestId());
@@ -238,10 +232,9 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
-     * @return RemoveMemberFromProjectResponse
      * @throws UCloudException
      */
-    public function removeMemberFromProject(RemoveMemberFromProjectRequest $request = null)
+    public function removeMemberFromProject(RemoveMemberFromProjectRequest $request = null): RemoveMemberFromProjectResponse
     {
         $resp = $this->invoke($request);
         return new RemoveMemberFromProjectResponse($resp->toArray(), $resp->getRequestId());
@@ -265,10 +258,9 @@ class UAccountClient extends Client
      * $outputs = [
      * ]
      *
-     * @return SetNetworkMaskResponse
      * @throws UCloudException
      */
-    public function setNetworkMask(SetNetworkMaskRequest $request = null)
+    public function setNetworkMask(SetNetworkMaskRequest $request = null): SetNetworkMaskResponse
     {
         $resp = $this->invoke($request);
         return new SetNetworkMaskResponse($resp->toArray(), $resp->getRequestId());

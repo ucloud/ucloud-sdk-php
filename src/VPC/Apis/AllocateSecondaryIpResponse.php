@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class AllocateSecondaryIpResponse extends Response
      *
      * @return IpInfo|null
      */
-    public function getIpInfo()
+    public function getIpInfo(): IpInfo
     {
         return new IpInfo($this->get("IpInfo"));
     }
@@ -38,7 +38,7 @@ class AllocateSecondaryIpResponse extends Response
      *
      * @param IpInfo $ipInfo
      */
-    public function setIpInfo(array $ipInfo)
+    public function setIpInfo(IpInfo $ipInfo)
     {
         $this->set("IpInfo", $ipInfo->getAll());
     }

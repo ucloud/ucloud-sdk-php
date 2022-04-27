@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return string|null
      */
-    public function getVolumeName()
+    public function getVolumeName(): string
     {
         return $this->get("VolumeName");
     }
@@ -37,7 +37,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $volumeName
      */
-    public function setVolumeName($volumeName)
+    public function setVolumeName(string $volumeName)
     {
         $this->set("VolumeName", $volumeName);
     }
@@ -47,7 +47,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return string|null
      */
-    public function getVolumeId()
+    public function getVolumeId(): string
     {
         return $this->get("VolumeId");
     }
@@ -57,7 +57,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $volumeId
      */
-    public function setVolumeId($volumeId)
+    public function setVolumeId(string $volumeId)
     {
         $this->set("VolumeId", $volumeId);
     }
@@ -67,7 +67,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return integer|null
      */
-    public function getTotalMountPointNum()
+    public function getTotalMountPointNum(): int
     {
         return $this->get("TotalMountPointNum");
     }
@@ -77,7 +77,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $totalMountPointNum
      */
-    public function setTotalMountPointNum($totalMountPointNum)
+    public function setTotalMountPointNum(int $totalMountPointNum)
     {
         $this->set("TotalMountPointNum", $totalMountPointNum);
     }
@@ -87,7 +87,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return integer|null
      */
-    public function getMaxMountPointNum()
+    public function getMaxMountPointNum(): int
     {
         return $this->get("MaxMountPointNum");
     }
@@ -97,7 +97,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $maxMountPointNum
      */
-    public function setMaxMountPointNum($maxMountPointNum)
+    public function setMaxMountPointNum(int $maxMountPointNum)
     {
         $this->set("MaxMountPointNum", $maxMountPointNum);
     }
@@ -107,7 +107,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return string|null
      */
-    public function getStorageType()
+    public function getStorageType(): string
     {
         return $this->get("StorageType");
     }
@@ -117,7 +117,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $storageType
      */
-    public function setStorageType($storageType)
+    public function setStorageType(string $storageType)
     {
         $this->set("StorageType", $storageType);
     }
@@ -127,7 +127,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return string|null
      */
-    public function getProtocolType()
+    public function getProtocolType(): string
     {
         return $this->get("ProtocolType");
     }
@@ -137,7 +137,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $protocolType
      */
-    public function setProtocolType($protocolType)
+    public function setProtocolType(string $protocolType)
     {
         $this->set("ProtocolType", $protocolType);
     }
@@ -147,7 +147,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -157,7 +157,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -167,7 +167,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -177,7 +177,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -187,7 +187,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -197,7 +197,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -207,7 +207,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return integer|null
      */
-    public function getExpiredTime()
+    public function getExpiredTime(): int
     {
         return $this->get("ExpiredTime");
     }
@@ -217,7 +217,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
@@ -227,7 +227,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -237,7 +237,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -247,7 +247,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return integer|null
      */
-    public function getUsedSize()
+    public function getUsedSize(): int
     {
         return $this->get("UsedSize");
     }
@@ -257,7 +257,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $usedSize
      */
-    public function setUsedSize($usedSize)
+    public function setUsedSize(int $usedSize)
     {
         $this->set("UsedSize", $usedSize);
     }
@@ -267,7 +267,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @return string|null
      */
-    public function getIsExpired()
+    public function getIsExpired(): string
     {
         return $this->get("IsExpired");
     }
@@ -277,7 +277,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $isExpired
      */
-    public function setIsExpired($isExpired)
+    public function setIsExpired(string $isExpired)
     {
         $this->set("IsExpired", $isExpired);
     }

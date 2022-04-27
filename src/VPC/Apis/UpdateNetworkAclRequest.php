@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getAclName()
+    public function getAclName(): string
     {
         return $this->get("AclName");
     }
@@ -86,7 +86,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @param string $aclName
      */
-    public function setAclName($aclName)
+    public function setAclName(string $aclName)
     {
         $this->set("AclName", $aclName);
     }
@@ -96,7 +96,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getAclId()
+    public function getAclId(): string
     {
         return $this->get("AclId");
     }
@@ -106,7 +106,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @param string $aclId
      */
-    public function setAclId($aclId)
+    public function setAclId(string $aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -116,7 +116,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->get("Description");
     }
@@ -126,7 +126,7 @@ class UpdateNetworkAclRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }

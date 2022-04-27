@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ class DescribeEIPResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount()
+    public function getTotalCount(): int
     {
         return $this->get("TotalCount");
     }
@@ -41,7 +41,7 @@ class DescribeEIPResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -51,7 +51,7 @@ class DescribeEIPResponse extends Response
      *
      * @return integer|null
      */
-    public function getUnbindCount()
+    public function getUnbindCount(): int
     {
         return $this->get("UnbindCount");
     }
@@ -61,7 +61,7 @@ class DescribeEIPResponse extends Response
      *
      * @param int $unbindCount
      */
-    public function setUnbindCount($unbindCount)
+    public function setUnbindCount(int $unbindCount)
     {
         $this->set("UnbindCount", $unbindCount);
     }
@@ -71,7 +71,7 @@ class DescribeEIPResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalBandwidth()
+    public function getTotalBandwidth(): int
     {
         return $this->get("TotalBandwidth");
     }
@@ -81,7 +81,7 @@ class DescribeEIPResponse extends Response
      *
      * @param int $totalBandwidth
      */
-    public function setTotalBandwidth($totalBandwidth)
+    public function setTotalBandwidth(int $totalBandwidth)
     {
         $this->set("TotalBandwidth", $totalBandwidth);
     }
@@ -91,12 +91,9 @@ class DescribeEIPResponse extends Response
      *
      * @return UnetEIPSet[]|null
      */
-    public function getEIPSet()
+    public function getEIPSet(): array
     {
-        $items = $this->get("EIPSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UnetEIPSet($item));

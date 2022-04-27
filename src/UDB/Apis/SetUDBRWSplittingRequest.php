@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getMasterDBId()
+    public function getMasterDBId(): string
     {
         return $this->get("MasterDBId");
     }
@@ -87,7 +87,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId($masterDBId)
+    public function setMasterDBId(string $masterDBId)
     {
         $this->set("MasterDBId", $masterDBId);
     }
@@ -97,7 +97,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @return string|null
      */
-    public function getReadModel()
+    public function getReadModel(): string
     {
         return $this->get("ReadModel");
     }
@@ -107,7 +107,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param string $readModel
      */
-    public function setReadModel($readModel)
+    public function setReadModel(string $readModel)
     {
         $this->set("ReadModel", $readModel);
     }
@@ -117,7 +117,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @return string[]|null
      */
-    public function getDBIds()
+    public function getDBIds(): array
     {
         return $this->get("DBIds");
     }
@@ -137,7 +137,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @return string[]|null
      */
-    public function getReadPercents()
+    public function getReadPercents(): array
     {
         return $this->get("ReadPercents");
     }
@@ -157,7 +157,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @return integer|null
      */
-    public function getDelayThreshold()
+    public function getDelayThreshold(): int
     {
         return $this->get("DelayThreshold");
     }
@@ -167,7 +167,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param int $delayThreshold
      */
-    public function setDelayThreshold($delayThreshold)
+    public function setDelayThreshold(int $delayThreshold)
     {
         $this->set("DelayThreshold", $delayThreshold);
     }

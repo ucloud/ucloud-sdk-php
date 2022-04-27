@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -37,7 +37,7 @@ class ImageInfo extends Response
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -47,7 +47,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageName()
+    public function getImageName(): string
     {
         return $this->get("ImageName");
     }
@@ -57,7 +57,7 @@ class ImageInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -67,7 +67,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getImageType()
+    public function getImageType(): int
     {
         return $this->get("ImageType");
     }
@@ -77,7 +77,7 @@ class ImageInfo extends Response
      *
      * @param int $imageType
      */
-    public function setImageType($imageType)
+    public function setImageType(int $imageType)
     {
         $this->set("ImageType", $imageType);
     }
@@ -87,7 +87,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getOcType()
+    public function getOcType(): string
     {
         return $this->get("OcType");
     }
@@ -97,7 +97,7 @@ class ImageInfo extends Response
      *
      * @param string $ocType
      */
-    public function setOcType($ocType)
+    public function setOcType(string $ocType)
     {
         $this->set("OcType", $ocType);
     }
@@ -107,7 +107,7 @@ class ImageInfo extends Response
      *
      * @return string|null
      */
-    public function getImageDesc()
+    public function getImageDesc(): string
     {
         return $this->get("ImageDesc");
     }
@@ -117,7 +117,7 @@ class ImageInfo extends Response
      *
      * @param string $imageDesc
      */
-    public function setImageDesc($imageDesc)
+    public function setImageDesc(string $imageDesc)
     {
         $this->set("ImageDesc", $imageDesc);
     }
@@ -127,7 +127,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getState()
+    public function getState(): int
     {
         return $this->get("State");
     }
@@ -137,7 +137,7 @@ class ImageInfo extends Response
      *
      * @param int $state
      */
-    public function setState($state)
+    public function setState(int $state)
     {
         $this->set("State", $state);
     }
@@ -147,7 +147,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getImageSize()
+    public function getImageSize(): int
     {
         return $this->get("ImageSize");
     }
@@ -157,7 +157,7 @@ class ImageInfo extends Response
      *
      * @param int $imageSize
      */
-    public function setImageSize($imageSize)
+    public function setImageSize(int $imageSize)
     {
         $this->set("ImageSize", $imageSize);
     }
@@ -167,7 +167,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -177,7 +177,7 @@ class ImageInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -187,12 +187,9 @@ class ImageInfo extends Response
      *
      * @return DeployImageInfo[]|null
      */
-    public function getDeployInfoList()
+    public function getDeployInfoList(): array
     {
-        $items = $this->get("DeployInfoList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("DeployInfoList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new DeployImageInfo($item));
@@ -219,7 +216,7 @@ class ImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getGpu()
+    public function getGpu(): int
     {
         return $this->get("Gpu");
     }
@@ -229,7 +226,7 @@ class ImageInfo extends Response
      *
      * @param int $gpu
      */
-    public function setGpu($gpu)
+    public function setGpu(int $gpu)
     {
         $this->set("Gpu", $gpu);
     }

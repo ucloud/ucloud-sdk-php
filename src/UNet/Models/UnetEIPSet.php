@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UnetEIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -37,7 +37,7 @@ class UnetEIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -47,7 +47,7 @@ class UnetEIPSet extends Response
      *
      * @return integer|null
      */
-    public function getWeight()
+    public function getWeight(): int
     {
         return $this->get("Weight");
     }
@@ -57,7 +57,7 @@ class UnetEIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->set("Weight", $weight);
     }
@@ -67,7 +67,7 @@ class UnetEIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidthType()
+    public function getBandwidthType(): int
     {
         return $this->get("BandwidthType");
     }
@@ -77,7 +77,7 @@ class UnetEIPSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType($bandwidthType)
+    public function setBandwidthType(int $bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
@@ -87,7 +87,7 @@ class UnetEIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -97,7 +97,7 @@ class UnetEIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -107,7 +107,7 @@ class UnetEIPSet extends Response
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->get("Status");
     }
@@ -117,7 +117,7 @@ class UnetEIPSet extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
@@ -127,7 +127,7 @@ class UnetEIPSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -137,7 +137,7 @@ class UnetEIPSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -147,7 +147,7 @@ class UnetEIPSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -157,7 +157,7 @@ class UnetEIPSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -167,7 +167,7 @@ class UnetEIPSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime()
+    public function getExpireTime(): int
     {
         return $this->get("ExpireTime");
     }
@@ -177,7 +177,7 @@ class UnetEIPSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -187,7 +187,7 @@ class UnetEIPSet extends Response
      *
      * @return UnetEIPResourceSet|null
      */
-    public function getResource()
+    public function getResource(): UnetEIPResourceSet
     {
         return new UnetEIPResourceSet($this->get("Resource"));
     }
@@ -197,7 +197,7 @@ class UnetEIPSet extends Response
      *
      * @param UnetEIPResourceSet $resource
      */
-    public function setResource(array $resource)
+    public function setResource(UnetEIPResourceSet $resource)
     {
         $this->set("Resource", $resource->getAll());
     }
@@ -207,12 +207,9 @@ class UnetEIPSet extends Response
      *
      * @return UnetEIPAddrSet[]|null
      */
-    public function getEIPAddr()
+    public function getEIPAddr(): array
     {
-        $items = $this->get("EIPAddr");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EIPAddr") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UnetEIPAddrSet($item));
@@ -239,7 +236,7 @@ class UnetEIPSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -249,7 +246,7 @@ class UnetEIPSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -259,7 +256,7 @@ class UnetEIPSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -269,7 +266,7 @@ class UnetEIPSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -279,7 +276,7 @@ class UnetEIPSet extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -289,7 +286,7 @@ class UnetEIPSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -299,7 +296,7 @@ class UnetEIPSet extends Response
      *
      * @return string|null
      */
-    public function getPayMode()
+    public function getPayMode(): string
     {
         return $this->get("PayMode");
     }
@@ -309,7 +306,7 @@ class UnetEIPSet extends Response
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }
@@ -319,7 +316,7 @@ class UnetEIPSet extends Response
      *
      * @return ShareBandwidthSet|null
      */
-    public function getShareBandwidthSet()
+    public function getShareBandwidthSet(): ShareBandwidthSet
     {
         return new ShareBandwidthSet($this->get("ShareBandwidthSet"));
     }
@@ -329,7 +326,7 @@ class UnetEIPSet extends Response
      *
      * @param ShareBandwidthSet $shareBandwidthSet
      */
-    public function setShareBandwidthSet(array $shareBandwidthSet)
+    public function setShareBandwidthSet(ShareBandwidthSet $shareBandwidthSet)
     {
         $this->set("ShareBandwidthSet", $shareBandwidthSet->getAll());
     }
@@ -339,7 +336,7 @@ class UnetEIPSet extends Response
      *
      * @return boolean|null
      */
-    public function getExpire()
+    public function getExpire(): bool
     {
         return $this->get("Expire");
     }
@@ -349,7 +346,7 @@ class UnetEIPSet extends Response
      *
      * @param boolean $expire
      */
-    public function setExpire($expire)
+    public function setExpire(bool $expire)
     {
         $this->set("Expire", $expire);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class AdvancedConf extends Response
      *
      * @return string[]|null
      */
-    public function getHttpClientHeader()
+    public function getHttpClientHeader(): array
     {
         return $this->get("HttpClientHeader");
     }
@@ -47,7 +47,7 @@ class AdvancedConf extends Response
      *
      * @return string[]|null
      */
-    public function getHttpOriginHeader()
+    public function getHttpOriginHeader(): array
     {
         return $this->get("HttpOriginHeader");
     }
@@ -67,7 +67,7 @@ class AdvancedConf extends Response
      *
      * @return boolean|null
      */
-    public function getHttp2Https()
+    public function getHttp2Https(): bool
     {
         return $this->get("Http2Https");
     }
@@ -77,7 +77,7 @@ class AdvancedConf extends Response
      *
      * @param boolean $http2Https
      */
-    public function setHttp2Https($http2Https)
+    public function setHttp2Https(bool $http2Https)
     {
         $this->set("Http2Https", $http2Https);
     }

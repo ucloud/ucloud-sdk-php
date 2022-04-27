@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getFWId()
+    public function getFWId(): string
     {
         return $this->get("FWId");
     }
@@ -84,7 +84,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $fwId
      */
-    public function setFWId($fwId)
+    public function setFWId(string $fwId)
     {
         $this->set("FWId", $fwId);
     }
@@ -94,7 +94,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -104,7 +104,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -114,7 +114,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -124,7 +124,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -134,7 +134,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -144,7 +144,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

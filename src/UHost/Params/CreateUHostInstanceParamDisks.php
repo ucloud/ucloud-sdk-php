@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getIsBoot()
+    public function getIsBoot(): string
     {
         return $this->get("IsBoot");
     }
@@ -37,7 +37,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $isBoot
      */
-    public function setIsBoot($isBoot)
+    public function setIsBoot(string $isBoot)
     {
         $this->set("IsBoot", $isBoot);
     }
@@ -47,7 +47,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -57,7 +57,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -67,7 +67,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -77,27 +77,27 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
 
     /**
-     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT（SNAPSHOT模式目前仅在上海C支持），快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
      *
      * @return string|null
      */
-    public function getBackupType()
+    public function getBackupType(): string
     {
         return $this->get("BackupType");
     }
 
     /**
-     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT（SNAPSHOT模式目前仅在上海C支持），快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
      *
      * @param string $backupType
      */
-    public function setBackupType($backupType)
+    public function setBackupType(string $backupType)
     {
         $this->set("BackupType", $backupType);
     }
@@ -107,7 +107,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return boolean|null
      */
-    public function getEncrypted()
+    public function getEncrypted(): bool
     {
         return $this->get("Encrypted");
     }
@@ -117,7 +117,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param boolean $encrypted
      */
-    public function setEncrypted($encrypted)
+    public function setEncrypted(bool $encrypted)
     {
         $this->set("Encrypted", $encrypted);
     }
@@ -127,7 +127,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getKmsKeyId()
+    public function getKmsKeyId(): string
     {
         return $this->get("KmsKeyId");
     }
@@ -137,7 +137,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $kmsKeyId
      */
-    public function setKmsKeyId($kmsKeyId)
+    public function setKmsKeyId(string $kmsKeyId)
     {
         $this->set("KmsKeyId", $kmsKeyId);
     }
@@ -147,7 +147,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -157,7 +157,7 @@ class CreateUHostInstanceParamDisks extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

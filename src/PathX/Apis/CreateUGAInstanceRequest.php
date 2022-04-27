@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -64,7 +64,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -74,7 +74,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getIPList()
+    public function getIPList(): string
     {
         return $this->get("IPList");
     }
@@ -84,7 +84,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @param string $ipList
      */
-    public function setIPList($ipList)
+    public function setIPList(string $ipList)
     {
         $this->set("IPList", $ipList);
     }
@@ -94,7 +94,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->get("Domain");
     }
@@ -104,7 +104,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
@@ -114,7 +114,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string[]|null
      */
-    public function getTCP()
+    public function getTCP(): array
     {
         return $this->get("TCP");
     }
@@ -134,7 +134,7 @@ class CreateUGAInstanceRequest extends Request
      *
      * @return string[]|null
      */
-    public function getUDP()
+    public function getUDP(): array
     {
         return $this->get("UDP");
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUK8SClusterV2ParamKubeProxy extends Request
      *
      * @return string|null
      */
-    public function getMode()
+    public function getMode(): string
     {
         return $this->get("Mode");
     }
@@ -37,7 +37,7 @@ class CreateUK8SClusterV2ParamKubeProxy extends Request
      *
      * @param string $mode
      */
-    public function setMode($mode)
+    public function setMode(string $mode)
     {
         $this->set("Mode", $mode);
     }

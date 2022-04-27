@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class GetBalanceResponse extends Response
      *
      * @return AccountInfo|null
      */
-    public function getAccountInfo()
+    public function getAccountInfo(): AccountInfo
     {
         return new AccountInfo($this->get("AccountInfo"));
     }
@@ -38,7 +38,7 @@ class GetBalanceResponse extends Response
      *
      * @param AccountInfo $accountInfo
      */
-    public function setAccountInfo(array $accountInfo)
+    public function setAccountInfo(AccountInfo $accountInfo)
     {
         $this->set("AccountInfo", $accountInfo->getAll());
     }

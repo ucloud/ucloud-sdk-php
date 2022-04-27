@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DescribeUDBBackupBlacklistResponse extends Response
      *
      * @return string|null
      */
-    public function getBlacklist()
+    public function getBlacklist(): string
     {
         return $this->get("Blacklist");
     }
@@ -37,7 +37,7 @@ class DescribeUDBBackupBlacklistResponse extends Response
      *
      * @param string $blacklist
      */
-    public function setBlacklist($blacklist)
+    public function setBlacklist(string $blacklist)
     {
         $this->set("Blacklist", $blacklist);
     }

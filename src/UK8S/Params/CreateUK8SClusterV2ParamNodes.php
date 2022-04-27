@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return string|null
      */
-    public function getMachineType()
+    public function getMachineType(): string
     {
         return $this->get("MachineType");
     }
@@ -57,7 +57,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
@@ -67,7 +67,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return integer|null
      */
-    public function getCPU()
+    public function getCPU(): int
     {
         return $this->get("CPU");
     }
@@ -77,7 +77,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
@@ -87,7 +87,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return integer|null
      */
-    public function getMem()
+    public function getMem(): int
     {
         return $this->get("Mem");
     }
@@ -97,7 +97,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param int $mem
      */
-    public function setMem($mem)
+    public function setMem(int $mem)
     {
         $this->set("Mem", $mem);
     }
@@ -107,7 +107,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return integer|null
      */
-    public function getCount()
+    public function getCount(): int
     {
         return $this->get("Count");
     }
@@ -117,7 +117,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param int $count
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->set("Count", $count);
     }
@@ -127,7 +127,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return string|null
      */
-    public function getIsolationGroup()
+    public function getIsolationGroup(): string
     {
         return $this->get("IsolationGroup");
     }
@@ -137,7 +137,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup($isolationGroup)
+    public function setIsolationGroup(string $isolationGroup)
     {
         $this->set("IsolationGroup", $isolationGroup);
     }
@@ -147,7 +147,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return integer|null
      */
-    public function getMaxPods()
+    public function getMaxPods(): int
     {
         return $this->get("MaxPods");
     }
@@ -157,7 +157,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param int $maxPods
      */
-    public function setMaxPods($maxPods)
+    public function setMaxPods(int $maxPods)
     {
         $this->set("MaxPods", $maxPods);
     }
@@ -167,7 +167,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return string|null
      */
-    public function getLabels()
+    public function getLabels(): string
     {
         return $this->get("Labels");
     }
@@ -177,7 +177,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param string $labels
      */
-    public function setLabels($labels)
+    public function setLabels(string $labels)
     {
         $this->set("Labels", $labels);
     }
@@ -187,7 +187,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return string|null
      */
-    public function getBootDiskType()
+    public function getBootDiskType(): string
     {
         return $this->get("BootDiskType");
     }
@@ -197,7 +197,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param string $bootDiskType
      */
-    public function setBootDiskType($bootDiskType)
+    public function setBootDiskType(string $bootDiskType)
     {
         $this->set("BootDiskType", $bootDiskType);
     }
@@ -207,7 +207,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return string|null
      */
-    public function getDataDiskType()
+    public function getDataDiskType(): string
     {
         return $this->get("DataDiskType");
     }
@@ -217,7 +217,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param string $dataDiskType
      */
-    public function setDataDiskType($dataDiskType)
+    public function setDataDiskType(string $dataDiskType)
     {
         $this->set("DataDiskType", $dataDiskType);
     }
@@ -227,7 +227,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return string|null
      */
-    public function getMinmalCpuPlatform()
+    public function getMinmalCpuPlatform(): string
     {
         return $this->get("MinmalCpuPlatform");
     }
@@ -237,7 +237,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param string $minmalCpuPlatform
      */
-    public function setMinmalCpuPlatform($minmalCpuPlatform)
+    public function setMinmalCpuPlatform(string $minmalCpuPlatform)
     {
         $this->set("MinmalCpuPlatform", $minmalCpuPlatform);
     }
@@ -247,7 +247,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return string|null
      */
-    public function getGpuType()
+    public function getGpuType(): string
     {
         return $this->get("GpuType");
     }
@@ -257,7 +257,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param string $gpuType
      */
-    public function setGpuType($gpuType)
+    public function setGpuType(string $gpuType)
     {
         $this->set("GpuType", $gpuType);
     }
@@ -267,7 +267,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return integer|null
      */
-    public function getGPU()
+    public function getGPU(): int
     {
         return $this->get("GPU");
     }
@@ -277,7 +277,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }
@@ -287,7 +287,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @return integer|null
      */
-    public function getDataDiskSize()
+    public function getDataDiskSize(): int
     {
         return $this->get("DataDiskSize");
     }
@@ -297,7 +297,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
      *
      * @param int $dataDiskSize
      */
-    public function setDataDiskSize($dataDiskSize)
+    public function setDataDiskSize(int $dataDiskSize)
     {
         $this->set("DataDiskSize", $dataDiskSize);
     }

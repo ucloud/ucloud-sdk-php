@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class FetchUDBInstanceEarliestRecoverTimeResponse extends Response
      *
      * @return integer|null
      */
-    public function getEarliestTime()
+    public function getEarliestTime(): int
     {
         return $this->get("EarliestTime");
     }
@@ -37,7 +37,7 @@ class FetchUDBInstanceEarliestRecoverTimeResponse extends Response
      *
      * @param int $earliestTime
      */
-    public function setEarliestTime($earliestTime)
+    public function setEarliestTime(int $earliestTime)
     {
         $this->set("EarliestTime", $earliestTime);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreatePolicyResponse extends Response
      *
      * @return string|null
      */
-    public function getPolicyId()
+    public function getPolicyId(): string
     {
         return $this->get("PolicyId");
     }
@@ -37,7 +37,7 @@ class CreatePolicyResponse extends Response
      *
      * @param string $policyId
      */
-    public function setPolicyId($policyId)
+    public function setPolicyId(string $policyId)
     {
         $this->set("PolicyId", $policyId);
     }

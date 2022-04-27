@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,12 +30,9 @@ class ListUK8SClusterNodeV2Response extends Response
      *
      * @return NodeInfoV2[]|null
      */
-    public function getNodeSet()
+    public function getNodeSet(): array
     {
-        $items = $this->get("NodeSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NodeSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NodeInfoV2($item));
@@ -62,7 +59,7 @@ class ListUK8SClusterNodeV2Response extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount()
+    public function getTotalCount(): int
     {
         return $this->get("TotalCount");
     }
@@ -72,7 +69,7 @@ class ListUK8SClusterNodeV2Response extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,12 +27,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getCPUUtilization()
+    public function getCPUUtilization(): array
     {
-        $items = $this->get("CPUUtilization");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("CPUUtilization") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -59,12 +56,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getMemUtilization()
+    public function getMemUtilization(): array
     {
-        $items = $this->get("MemUtilization");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("MemUtilization") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -91,12 +85,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getNICOut()
+    public function getNICOut(): array
     {
-        $items = $this->get("NICOut");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NICOut") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -123,12 +114,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getNICIn()
+    public function getNICIn(): array
     {
-        $items = $this->get("NICIn");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NICIn") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -155,12 +143,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getNetPacketOut()
+    public function getNetPacketOut(): array
     {
-        $items = $this->get("NetPacketOut");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NetPacketOut") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -187,12 +172,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getNetPacketIn()
+    public function getNetPacketIn(): array
     {
-        $items = $this->get("NetPacketIn");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NetPacketIn") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -219,12 +201,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getIORead()
+    public function getIORead(): array
     {
-        $items = $this->get("IORead");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("IORead") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -251,12 +230,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getIOWrite()
+    public function getIOWrite(): array
     {
-        $items = $this->get("IOWrite");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("IOWrite") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -283,12 +259,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getDiskReadOps()
+    public function getDiskReadOps(): array
     {
-        $items = $this->get("DiskReadOps");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("DiskReadOps") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));
@@ -315,12 +288,9 @@ class DataSet extends Response
      *
      * @return MonitorInfo[]|null
      */
-    public function getDiskWriteOps()
+    public function getDiskWriteOps(): array
     {
-        $items = $this->get("DiskWriteOps");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("DiskWriteOps") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MonitorInfo($item));

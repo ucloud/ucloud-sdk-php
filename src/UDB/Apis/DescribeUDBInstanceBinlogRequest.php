@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId()
+    public function getDBId(): string
     {
         return $this->get("DBId");
     }
@@ -106,7 +106,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -116,7 +116,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime()
+    public function getBeginTime(): int
     {
         return $this->get("BeginTime");
     }
@@ -126,7 +126,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -136,7 +136,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -146,7 +146,7 @@ class DescribeUDBInstanceBinlogRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }

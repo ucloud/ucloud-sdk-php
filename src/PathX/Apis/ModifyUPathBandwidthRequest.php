@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getUPathId()
+    public function getUPathId(): string
     {
         return $this->get("UPathId");
     }
@@ -65,7 +65,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @param string $uPathId
      */
-    public function setUPathId($uPathId)
+    public function setUPathId(string $uPathId)
     {
         $this->set("UPathId", $uPathId);
     }
@@ -75,7 +75,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -85,7 +85,7 @@ class ModifyUPathBandwidthRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

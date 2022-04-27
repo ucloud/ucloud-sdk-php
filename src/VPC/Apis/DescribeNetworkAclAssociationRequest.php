@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getAclId()
+    public function getAclId(): string
     {
         return $this->get("AclId");
     }
@@ -84,7 +84,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param string $aclId
      */
-    public function setAclId($aclId)
+    public function setAclId(string $aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -94,7 +94,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -104,7 +104,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
@@ -114,7 +114,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @return string|null
      */
-    public function getLimit()
+    public function getLimit(): string
     {
         return $this->get("Limit");
     }
@@ -124,7 +124,7 @@ class DescribeNetworkAclAssociationRequest extends Request
      *
      * @param string $limit
      */
-    public function setLimit($limit)
+    public function setLimit(string $limit)
     {
         $this->set("Limit", $limit);
     }

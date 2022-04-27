@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class TrafficSet extends Response
      *
      * @return string|null
      */
-    public function getAreacode()
+    public function getAreacode(): string
     {
         return $this->get("Areacode");
     }
@@ -37,7 +37,7 @@ class TrafficSet extends Response
      *
      * @param string $areacode
      */
-    public function setAreacode($areacode)
+    public function setAreacode(string $areacode)
     {
         $this->set("Areacode", $areacode);
     }
@@ -47,7 +47,7 @@ class TrafficSet extends Response
      *
      * @return float|null
      */
-    public function getTrafficTotal()
+    public function getTrafficTotal(): float
     {
         return $this->get("TrafficTotal");
     }
@@ -57,7 +57,7 @@ class TrafficSet extends Response
      *
      * @param float $trafficTotal
      */
-    public function setTrafficTotal($trafficTotal)
+    public function setTrafficTotal(float $trafficTotal)
     {
         $this->set("TrafficTotal", $trafficTotal);
     }
@@ -67,7 +67,7 @@ class TrafficSet extends Response
      *
      * @return float|null
      */
-    public function getTrafficLeft()
+    public function getTrafficLeft(): float
     {
         return $this->get("TrafficLeft");
     }
@@ -77,7 +77,7 @@ class TrafficSet extends Response
      *
      * @param float $trafficLeft
      */
-    public function setTrafficLeft($trafficLeft)
+    public function setTrafficLeft(float $trafficLeft)
     {
         $this->set("TrafficLeft", $trafficLeft);
     }
@@ -87,7 +87,7 @@ class TrafficSet extends Response
      *
      * @return float|null
      */
-    public function getTrafficUsed()
+    public function getTrafficUsed(): float
     {
         return $this->get("TrafficUsed");
     }
@@ -97,7 +97,7 @@ class TrafficSet extends Response
      *
      * @param float $trafficUsed
      */
-    public function setTrafficUsed($trafficUsed)
+    public function setTrafficUsed(float $trafficUsed)
     {
         $this->set("TrafficUsed", $trafficUsed);
     }

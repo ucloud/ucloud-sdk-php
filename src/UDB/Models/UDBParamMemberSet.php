@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UDBParamMemberSet extends Response
      *
      * @return string|null
      */
-    public function getKey()
+    public function getKey(): string
     {
         return $this->get("Key");
     }
@@ -37,7 +37,7 @@ class UDBParamMemberSet extends Response
      *
      * @param string $key
      */
-    public function setKey($key)
+    public function setKey(string $key)
     {
         $this->set("Key", $key);
     }
@@ -47,7 +47,7 @@ class UDBParamMemberSet extends Response
      *
      * @return string|null
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->get("Value");
     }
@@ -57,7 +57,7 @@ class UDBParamMemberSet extends Response
      *
      * @param string $value
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->set("Value", $value);
     }
@@ -67,7 +67,7 @@ class UDBParamMemberSet extends Response
      *
      * @return integer|null
      */
-    public function getValueType()
+    public function getValueType(): int
     {
         return $this->get("ValueType");
     }
@@ -77,7 +77,7 @@ class UDBParamMemberSet extends Response
      *
      * @param int $valueType
      */
-    public function setValueType($valueType)
+    public function setValueType(int $valueType)
     {
         $this->set("ValueType", $valueType);
     }
@@ -87,7 +87,7 @@ class UDBParamMemberSet extends Response
      *
      * @return string|null
      */
-    public function getAllowedVal()
+    public function getAllowedVal(): string
     {
         return $this->get("AllowedVal");
     }
@@ -97,7 +97,7 @@ class UDBParamMemberSet extends Response
      *
      * @param string $allowedVal
      */
-    public function setAllowedVal($allowedVal)
+    public function setAllowedVal(string $allowedVal)
     {
         $this->set("AllowedVal", $allowedVal);
     }
@@ -107,7 +107,7 @@ class UDBParamMemberSet extends Response
      *
      * @return integer|null
      */
-    public function getApplyType()
+    public function getApplyType(): int
     {
         return $this->get("ApplyType");
     }
@@ -117,7 +117,7 @@ class UDBParamMemberSet extends Response
      *
      * @param int $applyType
      */
-    public function setApplyType($applyType)
+    public function setApplyType(int $applyType)
     {
         $this->set("ApplyType", $applyType);
     }
@@ -127,7 +127,7 @@ class UDBParamMemberSet extends Response
      *
      * @return boolean|null
      */
-    public function getModifiable()
+    public function getModifiable(): bool
     {
         return $this->get("Modifiable");
     }
@@ -137,7 +137,7 @@ class UDBParamMemberSet extends Response
      *
      * @param boolean $modifiable
      */
-    public function setModifiable($modifiable)
+    public function setModifiable(bool $modifiable)
     {
         $this->set("Modifiable", $modifiable);
     }
@@ -147,7 +147,7 @@ class UDBParamMemberSet extends Response
      *
      * @return integer|null
      */
-    public function getFormatType()
+    public function getFormatType(): int
     {
         return $this->get("FormatType");
     }
@@ -157,7 +157,7 @@ class UDBParamMemberSet extends Response
      *
      * @param int $formatType
      */
-    public function setFormatType($formatType)
+    public function setFormatType(int $formatType)
     {
         $this->set("FormatType", $formatType);
     }

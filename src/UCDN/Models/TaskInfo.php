@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class TaskInfo extends Response
      *
      * @return string|null
      */
-    public function getTaskId()
+    public function getTaskId(): string
     {
         return $this->get("TaskId");
     }
@@ -37,7 +37,7 @@ class TaskInfo extends Response
      *
      * @param string $taskId
      */
-    public function setTaskId($taskId)
+    public function setTaskId(string $taskId)
     {
         $this->set("TaskId", $taskId);
     }
@@ -47,12 +47,9 @@ class TaskInfo extends Response
      *
      * @return UrlProgressInfo[]|null
      */
-    public function getUrlLists()
+    public function getUrlLists(): array
     {
-        $items = $this->get("UrlLists");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("UrlLists") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UrlProgressInfo($item));
@@ -79,7 +76,7 @@ class TaskInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -89,7 +86,7 @@ class TaskInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -99,7 +96,7 @@ class TaskInfo extends Response
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->get("Status");
     }
@@ -109,7 +106,7 @@ class TaskInfo extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }

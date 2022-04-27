@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -67,7 +67,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -77,7 +77,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId()
+    public function getULBId(): string
     {
         return $this->get("ULBId");
     }
@@ -87,7 +87,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -97,7 +97,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerId()
+    public function getVServerId(): string
     {
         return $this->get("VServerId");
     }
@@ -107,7 +107,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -117,7 +117,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getMatch()
+    public function getMatch(): string
     {
         return $this->get("Match");
     }
@@ -127,7 +127,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $match
      */
-    public function setMatch($match)
+    public function setMatch(string $match)
     {
         $this->set("Match", $match);
     }
@@ -137,7 +137,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getPolicyId()
+    public function getPolicyId(): string
     {
         return $this->get("PolicyId");
     }
@@ -147,7 +147,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $policyId
      */
-    public function setPolicyId($policyId)
+    public function setPolicyId(string $policyId)
     {
         $this->set("PolicyId", $policyId);
     }
@@ -157,7 +157,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string[]|null
      */
-    public function getBackendId()
+    public function getBackendId(): array
     {
         return $this->get("BackendId");
     }
@@ -177,7 +177,7 @@ class UpdatePolicyRequest extends Request
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -187,7 +187,7 @@ class UpdatePolicyRequest extends Request
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }

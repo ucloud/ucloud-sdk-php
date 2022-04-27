@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime()
+    public function getBeginTime(): int
     {
         return $this->get("BeginTime");
     }
@@ -64,7 +64,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -74,7 +74,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -84,7 +84,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -94,7 +94,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @return string[]|null
      */
-    public function getDomainId()
+    public function getDomainId(): array
     {
         return $this->get("DomainId");
     }
@@ -114,7 +114,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @return string[]|null
      */
-    public function getProvince()
+    public function getProvince(): array
     {
         return $this->get("Province");
     }
@@ -134,7 +134,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @return string|null
      */
-    public function getIsp()
+    public function getIsp(): string
     {
         return $this->get("Isp");
     }
@@ -144,7 +144,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @param string $isp
      */
-    public function setIsp($isp)
+    public function setIsp(string $isp)
     {
         $this->set("Isp", $isp);
     }
@@ -154,7 +154,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @return integer|null
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->get("Type");
     }
@@ -164,7 +164,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }

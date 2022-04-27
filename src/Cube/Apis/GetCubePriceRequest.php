@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -49,7 +49,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -59,7 +59,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -69,7 +69,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -79,7 +79,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -89,7 +89,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -99,7 +99,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getCount()
+    public function getCount(): string
     {
         return $this->get("Count");
     }
@@ -109,7 +109,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $count
      */
-    public function setCount($count)
+    public function setCount(string $count)
     {
         $this->set("Count", $count);
     }
@@ -119,7 +119,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getCpu()
+    public function getCpu(): string
     {
         return $this->get("Cpu");
     }
@@ -129,7 +129,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $cpu
      */
-    public function setCpu($cpu)
+    public function setCpu(string $cpu)
     {
         $this->set("Cpu", $cpu);
     }
@@ -139,7 +139,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getMem()
+    public function getMem(): string
     {
         return $this->get("Mem");
     }
@@ -149,7 +149,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $mem
      */
-    public function setMem($mem)
+    public function setMem(string $mem)
     {
         $this->set("Mem", $mem);
     }
@@ -159,7 +159,7 @@ class GetCubePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -169,7 +169,7 @@ class GetCubePriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -179,7 +179,7 @@ class GetCubePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -189,7 +189,7 @@ class GetCubePriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }

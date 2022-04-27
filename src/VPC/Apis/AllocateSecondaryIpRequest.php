@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -67,7 +67,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -77,7 +77,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -87,7 +87,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -97,7 +97,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getMac()
+    public function getMac(): string
     {
         return $this->get("Mac");
     }
@@ -107,7 +107,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $mac
      */
-    public function setMac($mac)
+    public function setMac(string $mac)
     {
         $this->set("Mac", $mac);
     }
@@ -117,7 +117,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getObjectId()
+    public function getObjectId(): string
     {
         return $this->get("ObjectId");
     }
@@ -127,7 +127,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $objectId
      */
-    public function setObjectId($objectId)
+    public function setObjectId(string $objectId)
     {
         $this->set("ObjectId", $objectId);
     }
@@ -137,7 +137,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -147,7 +147,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -157,7 +157,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -167,7 +167,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -177,7 +177,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getIp()
+    public function getIp(): string
     {
         return $this->get("Ip");
     }
@@ -187,7 +187,7 @@ class AllocateSecondaryIpRequest extends Request
      *
      * @param string $ip
      */
-    public function setIp($ip)
+    public function setIp(string $ip)
     {
         $this->set("Ip", $ip);
     }

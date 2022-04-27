@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ResourceSet extends Response
      *
      * @return string|null
      */
-    public function getNodeId()
+    public function getNodeId(): string
     {
         return $this->get("NodeId");
     }
@@ -37,7 +37,7 @@ class ResourceSet extends Response
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -47,7 +47,7 @@ class ResourceSet extends Response
      *
      * @return string[]|null
      */
-    public function getOuterIps()
+    public function getOuterIps(): array
     {
         return $this->get("OuterIps");
     }

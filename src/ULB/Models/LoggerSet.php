@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class LoggerSet extends Response
      *
      * @return string|null
      */
-    public function getBucketName()
+    public function getBucketName(): string
     {
         return $this->get("BucketName");
     }
@@ -37,7 +37,7 @@ class LoggerSet extends Response
      *
      * @param string $bucketName
      */
-    public function setBucketName($bucketName)
+    public function setBucketName(string $bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
@@ -47,7 +47,7 @@ class LoggerSet extends Response
      *
      * @return string|null
      */
-    public function getTokenID()
+    public function getTokenID(): string
     {
         return $this->get("TokenID");
     }
@@ -57,7 +57,7 @@ class LoggerSet extends Response
      *
      * @param string $tokenID
      */
-    public function setTokenID($tokenID)
+    public function setTokenID(string $tokenID)
     {
         $this->set("TokenID", $tokenID);
     }
@@ -67,7 +67,7 @@ class LoggerSet extends Response
      *
      * @return string|null
      */
-    public function getTokenName()
+    public function getTokenName(): string
     {
         return $this->get("TokenName");
     }
@@ -77,7 +77,7 @@ class LoggerSet extends Response
      *
      * @param string $tokenName
      */
-    public function setTokenName($tokenName)
+    public function setTokenName(string $tokenName)
     {
         $this->set("TokenName", $tokenName);
     }

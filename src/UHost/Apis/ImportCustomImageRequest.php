@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -49,7 +49,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -59,7 +59,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -69,7 +69,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -79,7 +79,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageName()
+    public function getImageName(): string
     {
         return $this->get("ImageName");
     }
@@ -89,7 +89,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -99,7 +99,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getUFileUrl()
+    public function getUFileUrl(): string
     {
         return $this->get("UFileUrl");
     }
@@ -109,7 +109,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param string $uFileUrl
      */
-    public function setUFileUrl($uFileUrl)
+    public function setUFileUrl(string $uFileUrl)
     {
         $this->set("UFileUrl", $uFileUrl);
     }
@@ -119,7 +119,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getOsType()
+    public function getOsType(): string
     {
         return $this->get("OsType");
     }
@@ -129,7 +129,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
@@ -139,7 +139,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getOsName()
+    public function getOsName(): string
     {
         return $this->get("OsName");
     }
@@ -149,7 +149,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param string $osName
      */
-    public function setOsName($osName)
+    public function setOsName(string $osName)
     {
         $this->set("OsName", $osName);
     }
@@ -159,7 +159,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getFormat()
+    public function getFormat(): string
     {
         return $this->get("Format");
     }
@@ -169,7 +169,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param string $format
      */
-    public function setFormat($format)
+    public function setFormat(string $format)
     {
         $this->set("Format", $format);
     }
@@ -179,7 +179,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return boolean|null
      */
-    public function getAuth()
+    public function getAuth(): bool
     {
         return $this->get("Auth");
     }
@@ -189,7 +189,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param boolean $auth
      */
-    public function setAuth($auth)
+    public function setAuth(bool $auth)
     {
         $this->set("Auth", $auth);
     }
@@ -199,7 +199,7 @@ class ImportCustomImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageDescription()
+    public function getImageDescription(): string
     {
         return $this->get("ImageDescription");
     }
@@ -209,7 +209,7 @@ class ImportCustomImageRequest extends Request
      *
      * @param string $imageDescription
      */
-    public function setImageDescription($imageDescription)
+    public function setImageDescription(string $imageDescription)
     {
         $this->set("ImageDescription", $imageDescription);
     }

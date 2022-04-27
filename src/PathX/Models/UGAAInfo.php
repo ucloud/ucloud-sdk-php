@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UGAAInfo extends Response
      *
      * @return string|null
      */
-    public function getUGAId()
+    public function getUGAId(): string
     {
         return $this->get("UGAId");
     }
@@ -37,7 +37,7 @@ class UGAAInfo extends Response
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -47,7 +47,7 @@ class UGAAInfo extends Response
      *
      * @return string|null
      */
-    public function getCName()
+    public function getCName(): string
     {
         return $this->get("CName");
     }
@@ -57,7 +57,7 @@ class UGAAInfo extends Response
      *
      * @param string $cName
      */
-    public function setCName($cName)
+    public function setCName(string $cName)
     {
         $this->set("CName", $cName);
     }
@@ -67,7 +67,7 @@ class UGAAInfo extends Response
      *
      * @return string|null
      */
-    public function getUGAName()
+    public function getUGAName(): string
     {
         return $this->get("UGAName");
     }
@@ -77,7 +77,7 @@ class UGAAInfo extends Response
      *
      * @param string $ugaName
      */
-    public function setUGAName($ugaName)
+    public function setUGAName(string $ugaName)
     {
         $this->set("UGAName", $ugaName);
     }
@@ -87,7 +87,7 @@ class UGAAInfo extends Response
      *
      * @return string[]|null
      */
-    public function getIPList()
+    public function getIPList(): array
     {
         return $this->get("IPList");
     }
@@ -107,7 +107,7 @@ class UGAAInfo extends Response
      *
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->get("Domain");
     }
@@ -117,7 +117,7 @@ class UGAAInfo extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
@@ -127,7 +127,7 @@ class UGAAInfo extends Response
      *
      * @return string|null
      */
-    public function getLocation()
+    public function getLocation(): string
     {
         return $this->get("Location");
     }
@@ -137,7 +137,7 @@ class UGAAInfo extends Response
      *
      * @param string $location
      */
-    public function setLocation($location)
+    public function setLocation(string $location)
     {
         $this->set("Location", $location);
     }
@@ -147,12 +147,9 @@ class UGAAInfo extends Response
      *
      * @return UPathSet[]|null
      */
-    public function getUPathSet()
+    public function getUPathSet(): array
     {
-        $items = $this->get("UPathSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("UPathSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UPathSet($item));
@@ -179,12 +176,9 @@ class UGAAInfo extends Response
      *
      * @return UGAATask[]|null
      */
-    public function getTaskSet()
+    public function getTaskSet(): array
     {
-        $items = $this->get("TaskSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("TaskSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UGAATask($item));
@@ -211,12 +205,9 @@ class UGAAInfo extends Response
      *
      * @return UGAL4Forwarder[]|null
      */
-    public function getL4ForwarderSet()
+    public function getL4ForwarderSet(): array
     {
-        $items = $this->get("L4ForwarderSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("L4ForwarderSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UGAL4Forwarder($item));
@@ -243,12 +234,9 @@ class UGAAInfo extends Response
      *
      * @return UGAL7Forwarder[]|null
      */
-    public function getL7ForwarderSet()
+    public function getL7ForwarderSet(): array
     {
-        $items = $this->get("L7ForwarderSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("L7ForwarderSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UGAL7Forwarder($item));
@@ -275,12 +263,9 @@ class UGAAInfo extends Response
      *
      * @return OutPublicIpInfo[]|null
      */
-    public function getOutPublicIpList()
+    public function getOutPublicIpList(): array
     {
-        $items = $this->get("OutPublicIpList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("OutPublicIpList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new OutPublicIpInfo($item));

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getUPathName()
+    public function getUPathName(): string
     {
         return $this->get("UPathName");
     }
@@ -37,7 +37,7 @@ class UPathSet extends Response
      *
      * @param string $uPathName
      */
-    public function setUPathName($uPathName)
+    public function setUPathName(string $uPathName)
     {
         $this->set("UPathName", $uPathName);
     }
@@ -47,7 +47,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getUPathId()
+    public function getUPathId(): string
     {
         return $this->get("UPathId");
     }
@@ -57,7 +57,7 @@ class UPathSet extends Response
      *
      * @param string $uPathId
      */
-    public function setUPathId($uPathId)
+    public function setUPathId(string $uPathId)
     {
         $this->set("UPathId", $uPathId);
     }
@@ -67,7 +67,7 @@ class UPathSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -77,7 +77,7 @@ class UPathSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -87,7 +87,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineId()
+    public function getLineId(): string
     {
         return $this->get("LineId");
     }
@@ -97,7 +97,7 @@ class UPathSet extends Response
      *
      * @param string $lineId
      */
-    public function setLineId($lineId)
+    public function setLineId(string $lineId)
     {
         $this->set("LineId", $lineId);
     }
@@ -107,7 +107,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineFromName()
+    public function getLineFromName(): string
     {
         return $this->get("LineFromName");
     }
@@ -117,7 +117,7 @@ class UPathSet extends Response
      *
      * @param string $lineFromName
      */
-    public function setLineFromName($lineFromName)
+    public function setLineFromName(string $lineFromName)
     {
         $this->set("LineFromName", $lineFromName);
     }
@@ -127,7 +127,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineToName()
+    public function getLineToName(): string
     {
         return $this->get("LineToName");
     }
@@ -137,7 +137,7 @@ class UPathSet extends Response
      *
      * @param string $lineToName
      */
-    public function setLineToName($lineToName)
+    public function setLineToName(string $lineToName)
     {
         $this->set("LineToName", $lineToName);
     }
@@ -147,7 +147,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineFrom()
+    public function getLineFrom(): string
     {
         return $this->get("LineFrom");
     }
@@ -157,7 +157,7 @@ class UPathSet extends Response
      *
      * @param string $lineFrom
      */
-    public function setLineFrom($lineFrom)
+    public function setLineFrom(string $lineFrom)
     {
         $this->set("LineFrom", $lineFrom);
     }
@@ -167,7 +167,7 @@ class UPathSet extends Response
      *
      * @return string|null
      */
-    public function getLineTo()
+    public function getLineTo(): string
     {
         return $this->get("LineTo");
     }
@@ -177,7 +177,7 @@ class UPathSet extends Response
      *
      * @param string $lineTo
      */
-    public function setLineTo($lineTo)
+    public function setLineTo(string $lineTo)
     {
         $this->set("LineTo", $lineTo);
     }

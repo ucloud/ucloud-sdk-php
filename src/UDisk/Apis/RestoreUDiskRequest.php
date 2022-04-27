@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class RestoreUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class RestoreUDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class RestoreUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class RestoreUDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class RestoreUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class RestoreUDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class RestoreUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskId()
+    public function getUDiskId(): string
     {
         return $this->get("UDiskId");
     }
@@ -105,7 +105,7 @@ class RestoreUDiskRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -115,7 +115,7 @@ class RestoreUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getSnapshotId()
+    public function getSnapshotId(): string
     {
         return $this->get("SnapshotId");
     }
@@ -125,7 +125,7 @@ class RestoreUDiskRequest extends Request
      *
      * @param string $snapshotId
      */
-    public function setSnapshotId($snapshotId)
+    public function setSnapshotId(string $snapshotId)
     {
         $this->set("SnapshotId", $snapshotId);
     }
@@ -135,7 +135,7 @@ class RestoreUDiskRequest extends Request
      *
      * @return integer|null
      */
-    public function getSnapshotTime()
+    public function getSnapshotTime(): int
     {
         return $this->get("SnapshotTime");
     }
@@ -145,7 +145,7 @@ class RestoreUDiskRequest extends Request
      *
      * @param int $snapshotTime
      */
-    public function setSnapshotTime($snapshotTime)
+    public function setSnapshotTime(int $snapshotTime)
     {
         $this->set("SnapshotTime", $snapshotTime);
     }

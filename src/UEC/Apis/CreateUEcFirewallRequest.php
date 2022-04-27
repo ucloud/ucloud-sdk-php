@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -64,7 +64,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -74,12 +74,9 @@ class CreateUEcFirewallRequest extends Request
      *
      * @return CreateUEcFirewallParamRule[]|null
      */
-    public function getRule()
+    public function getRule(): array
     {
-        $items = $this->get("Rule");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Rule") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUEcFirewallParamRule($item));
@@ -106,7 +103,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -116,7 +113,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

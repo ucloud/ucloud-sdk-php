@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CacheKeyInfo extends Response
      *
      * @return boolean|null
      */
-    public function getIgnore()
+    public function getIgnore(): bool
     {
         return $this->get("Ignore");
     }
@@ -37,7 +37,7 @@ class CacheKeyInfo extends Response
      *
      * @param boolean $ignore
      */
-    public function setIgnore($ignore)
+    public function setIgnore(bool $ignore)
     {
         $this->set("Ignore", $ignore);
     }
@@ -47,7 +47,7 @@ class CacheKeyInfo extends Response
      *
      * @return string|null
      */
-    public function getPathPattern()
+    public function getPathPattern(): string
     {
         return $this->get("PathPattern");
     }
@@ -57,7 +57,7 @@ class CacheKeyInfo extends Response
      *
      * @param string $pathPattern
      */
-    public function setPathPattern($pathPattern)
+    public function setPathPattern(string $pathPattern)
     {
         $this->set("PathPattern", $pathPattern);
     }
@@ -67,7 +67,7 @@ class CacheKeyInfo extends Response
      *
      * @return string|null
      */
-    public function getQueryString()
+    public function getQueryString(): string
     {
         return $this->get("QueryString");
     }
@@ -77,7 +77,7 @@ class CacheKeyInfo extends Response
      *
      * @param string $queryString
      */
-    public function setQueryString($queryString)
+    public function setQueryString(string $queryString)
     {
         $this->set("QueryString", $queryString);
     }

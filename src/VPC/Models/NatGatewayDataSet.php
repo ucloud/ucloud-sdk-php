@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getNATGWId()
+    public function getNATGWId(): string
     {
         return $this->get("NATGWId");
     }
@@ -37,7 +37,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $natgwId
      */
-    public function setNATGWId($natgwId)
+    public function setNATGWId(string $natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -47,7 +47,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getNATGWName()
+    public function getNATGWName(): string
     {
         return $this->get("NATGWName");
     }
@@ -57,29 +57,9 @@ class NatGatewayDataSet extends Response
      *
      * @param string $natgwName
      */
-    public function setNATGWName($natgwName)
+    public function setNATGWName(string $natgwName)
     {
         $this->set("NATGWName", $natgwName);
-    }
-
-    /**
-     * CreateTime: natgw创建时间
-     *
-     * @return integer|null
-     */
-    public function getCreateTime()
-    {
-        return $this->get("CreateTime");
-    }
-
-    /**
-     * CreateTime: natgw创建时间
-     *
-     * @param int $createTime
-     */
-    public function setCreateTime($createTime)
-    {
-        $this->set("CreateTime", $createTime);
     }
 
     /**
@@ -87,7 +67,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -97,7 +77,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -107,7 +87,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -117,9 +97,29 @@ class NatGatewayDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
+    }
+
+    /**
+     * CreateTime: natgw创建时间
+     *
+     * @return integer|null
+     */
+    public function getCreateTime(): int
+    {
+        return $this->get("CreateTime");
+    }
+
+    /**
+     * CreateTime: natgw创建时间
+     *
+     * @param int $createTime
+     */
+    public function setCreateTime(int $createTime)
+    {
+        $this->set("CreateTime", $createTime);
     }
 
     /**
@@ -127,7 +127,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getFirewallId()
+    public function getFirewallId(): string
     {
         return $this->get("FirewallId");
     }
@@ -137,7 +137,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
@@ -147,7 +147,7 @@ class NatGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -157,7 +157,7 @@ class NatGatewayDataSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -167,12 +167,9 @@ class NatGatewayDataSet extends Response
      *
      * @return NatGatewaySubnetSet[]|null
      */
-    public function getSubnetSet()
+    public function getSubnetSet(): array
     {
-        $items = $this->get("SubnetSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("SubnetSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NatGatewaySubnetSet($item));
@@ -199,12 +196,9 @@ class NatGatewayDataSet extends Response
      *
      * @return NatGatewayIPSet[]|null
      */
-    public function getIPSet()
+    public function getIPSet(): array
     {
-        $items = $this->get("IPSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("IPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NatGatewayIPSet($item));
@@ -227,11 +221,51 @@ class NatGatewayDataSet extends Response
     }
 
     /**
+     * VPCName: VPC名称
+     *
+     * @return string|null
+     */
+    public function getVPCName(): string
+    {
+        return $this->get("VPCName");
+    }
+
+    /**
+     * VPCName: VPC名称
+     *
+     * @param string $vpcName
+     */
+    public function setVPCName(string $vpcName)
+    {
+        $this->set("VPCName", $vpcName);
+    }
+
+    /**
+     * IsSnatpoolEnabled: 枚举值，“enable”，默认出口规则使用了负载均衡；“disable”，默认出口规则未使用负载均衡。
+     *
+     * @return string|null
+     */
+    public function getIsSnatpoolEnabled(): string
+    {
+        return $this->get("IsSnatpoolEnabled");
+    }
+
+    /**
+     * IsSnatpoolEnabled: 枚举值，“enable”，默认出口规则使用了负载均衡；“disable”，默认出口规则未使用负载均衡。
+     *
+     * @param string $isSnatpoolEnabled
+     */
+    public function setIsSnatpoolEnabled(string $isSnatpoolEnabled)
+    {
+        $this->set("IsSnatpoolEnabled", $isSnatpoolEnabled);
+    }
+
+    /**
      * PolicyId: 转发策略Id
      *
      * @return string[]|null
      */
-    public function getPolicyId()
+    public function getPolicyId(): array
     {
         return $this->get("PolicyId");
     }

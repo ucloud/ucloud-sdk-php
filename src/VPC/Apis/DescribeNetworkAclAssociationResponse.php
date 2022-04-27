@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,9 @@ class DescribeNetworkAclAssociationResponse extends Response
      *
      * @return AssociationInfo[]|null
      */
-    public function getAssociationList()
+    public function getAssociationList(): array
     {
-        $items = $this->get("AssociationList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("AssociationList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AssociationInfo($item));

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class RenewCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class RenewCubePodRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class RenewCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class RenewCubePodRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class RenewCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class RenewCubePodRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class RenewCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getCubeId()
+    public function getCubeId(): string
     {
         return $this->get("CubeId");
     }
@@ -106,7 +106,7 @@ class RenewCubePodRequest extends Request
      *
      * @param string $cubeId
      */
-    public function setCubeId($cubeId)
+    public function setCubeId(string $cubeId)
     {
         $this->set("CubeId", $cubeId);
     }
@@ -116,7 +116,7 @@ class RenewCubePodRequest extends Request
      *
      * @return string|null
      */
-    public function getPod()
+    public function getPod(): string
     {
         return $this->get("Pod");
     }
@@ -126,7 +126,7 @@ class RenewCubePodRequest extends Request
      *
      * @param string $pod
      */
-    public function setPod($pod)
+    public function setPod(string $pod)
     {
         $this->set("Pod", $pod);
     }

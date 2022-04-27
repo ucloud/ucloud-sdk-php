@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class IdcInfo extends Response
      *
      * @return string|null
      */
-    public function getIdcId()
+    public function getIdcId(): string
     {
         return $this->get("IdcId");
     }
@@ -37,7 +37,7 @@ class IdcInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -47,7 +47,7 @@ class IdcInfo extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -57,7 +57,7 @@ class IdcInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -67,7 +67,7 @@ class IdcInfo extends Response
      *
      * @return string|null
      */
-    public function getIsp()
+    public function getIsp(): string
     {
         return $this->get("Isp");
     }
@@ -77,7 +77,7 @@ class IdcInfo extends Response
      *
      * @param string $isp
      */
-    public function setIsp($isp)
+    public function setIsp(string $isp)
     {
         $this->set("Isp", $isp);
     }
@@ -87,7 +87,7 @@ class IdcInfo extends Response
      *
      * @return string|null
      */
-    public function getProvince()
+    public function getProvince(): string
     {
         return $this->get("Province");
     }
@@ -97,7 +97,7 @@ class IdcInfo extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
@@ -107,7 +107,7 @@ class IdcInfo extends Response
      *
      * @return string|null
      */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->get("City");
     }
@@ -117,7 +117,7 @@ class IdcInfo extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
@@ -127,7 +127,7 @@ class IdcInfo extends Response
      *
      * @return integer|null
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->get("Type");
     }
@@ -137,7 +137,7 @@ class IdcInfo extends Response
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
@@ -147,7 +147,7 @@ class IdcInfo extends Response
      *
      * @return integer|null
      */
-    public function getMaxNodeCnt()
+    public function getMaxNodeCnt(): int
     {
         return $this->get("MaxNodeCnt");
     }
@@ -157,7 +157,7 @@ class IdcInfo extends Response
      *
      * @param int $maxNodeCnt
      */
-    public function setMaxNodeCnt($maxNodeCnt)
+    public function setMaxNodeCnt(int $maxNodeCnt)
     {
         $this->set("MaxNodeCnt", $maxNodeCnt);
     }

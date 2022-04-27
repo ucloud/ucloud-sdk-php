@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,9 @@ class GetThroughputDailyBillingInfoResponse extends Response
      *
      * @return ThroughputDailyBillingInfo[]|null
      */
-    public function getStats()
+    public function getStats(): array
     {
-        $items = $this->get("Stats");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Stats") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ThroughputDailyBillingInfo($item));
@@ -60,7 +57,7 @@ class GetThroughputDailyBillingInfoResponse extends Response
      *
      * @return integer|null
      */
-    public function getTotalOut()
+    public function getTotalOut(): int
     {
         return $this->get("TotalOut");
     }
@@ -70,7 +67,7 @@ class GetThroughputDailyBillingInfoResponse extends Response
      *
      * @param int $totalOut
      */
-    public function setTotalOut($totalOut)
+    public function setTotalOut(int $totalOut)
     {
         $this->set("TotalOut", $totalOut);
     }
@@ -80,7 +77,7 @@ class GetThroughputDailyBillingInfoResponse extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -90,7 +87,7 @@ class GetThroughputDailyBillingInfoResponse extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }

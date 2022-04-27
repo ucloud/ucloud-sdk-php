@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @return string|null
      */
-    public function getSessionId()
+    public function getSessionId(): string
     {
         return $this->get("SessionId");
     }
@@ -37,7 +37,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @param string $sessionId
      */
-    public function setSessionId($sessionId)
+    public function setSessionId(string $sessionId)
     {
         $this->set("SessionId", $sessionId);
     }
@@ -47,7 +47,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @return string|null
      */
-    public function getLink()
+    public function getLink(): string
     {
         return $this->get("Link");
     }
@@ -57,7 +57,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @param string $link
      */
-    public function setLink($link)
+    public function setLink(string $link)
     {
         $this->set("Link", $link);
     }
@@ -67,7 +67,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @return integer|null
      */
-    public function getLinkPort()
+    public function getLinkPort(): int
     {
         return $this->get("LinkPort");
     }
@@ -77,7 +77,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @param int $linkPort
      */
-    public function setLinkPort($linkPort)
+    public function setLinkPort(int $linkPort)
     {
         $this->set("LinkPort", $linkPort);
     }

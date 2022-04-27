@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceId()
+    public function getInstanceId(): string
     {
         return $this->get("InstanceId");
     }
@@ -65,7 +65,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @param string $instanceId
      */
-    public function setInstanceId($instanceId)
+    public function setInstanceId(string $instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -75,7 +75,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort()
+    public function getPort(): int
     {
         return $this->get("Port");
     }
@@ -85,7 +85,7 @@ class ModifyGlobalSSHPortRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }

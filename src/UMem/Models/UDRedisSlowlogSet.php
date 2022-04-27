@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UDRedisSlowlogSet extends Response
      *
      * @return integer|null
      */
-    public function getStartTime()
+    public function getStartTime(): int
     {
         return $this->get("StartTime");
     }
@@ -37,7 +37,7 @@ class UDRedisSlowlogSet extends Response
      *
      * @param int $startTime
      */
-    public function setStartTime($startTime)
+    public function setStartTime(int $startTime)
     {
         $this->set("StartTime", $startTime);
     }
@@ -47,7 +47,7 @@ class UDRedisSlowlogSet extends Response
      *
      * @return integer|null
      */
-    public function getSpendTime()
+    public function getSpendTime(): int
     {
         return $this->get("SpendTime");
     }
@@ -57,7 +57,7 @@ class UDRedisSlowlogSet extends Response
      *
      * @param int $spendTime
      */
-    public function setSpendTime($spendTime)
+    public function setSpendTime(int $spendTime)
     {
         $this->set("SpendTime", $spendTime);
     }
@@ -67,7 +67,7 @@ class UDRedisSlowlogSet extends Response
      *
      * @return string|null
      */
-    public function getCommand()
+    public function getCommand(): string
     {
         return $this->get("Command");
     }
@@ -77,7 +77,7 @@ class UDRedisSlowlogSet extends Response
      *
      * @param string $command
      */
-    public function setCommand($command)
+    public function setCommand(string $command)
     {
         $this->set("Command", $command);
     }
@@ -87,7 +87,7 @@ class UDRedisSlowlogSet extends Response
      *
      * @return string|null
      */
-    public function getBlockId()
+    public function getBlockId(): string
     {
         return $this->get("BlockId");
     }
@@ -97,7 +97,7 @@ class UDRedisSlowlogSet extends Response
      *
      * @param string $blockId
      */
-    public function setBlockId($blockId)
+    public function setBlockId(string $blockId)
     {
         $this->set("BlockId", $blockId);
     }

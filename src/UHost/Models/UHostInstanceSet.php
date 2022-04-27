@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class UHostInstanceSet extends Response
      *
      * @return boolean|null
      */
-    public function getIPv6Feature()
+    public function getIPv6Feature(): bool
     {
         return $this->get("IPv6Feature");
     }
@@ -57,7 +57,7 @@ class UHostInstanceSet extends Response
      *
      * @param boolean $iPv6Feature
      */
-    public function setIPv6Feature($iPv6Feature)
+    public function setIPv6Feature(bool $iPv6Feature)
     {
         $this->set("IPv6Feature", $iPv6Feature);
     }
@@ -67,7 +67,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getUHostId()
+    public function getUHostId(): string
     {
         return $this->get("UHostId");
     }
@@ -77,7 +77,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -87,7 +87,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getUHostType()
+    public function getUHostType(): string
     {
         return $this->get("UHostType");
     }
@@ -97,7 +97,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $uHostType
      */
-    public function setUHostType($uHostType)
+    public function setUHostType(string $uHostType)
     {
         $this->set("UHostType", $uHostType);
     }
@@ -107,7 +107,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getMachineType()
+    public function getMachineType(): string
     {
         return $this->get("MachineType");
     }
@@ -117,7 +117,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
@@ -127,7 +127,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getCpuPlatform()
+    public function getCpuPlatform(): string
     {
         return $this->get("CpuPlatform");
     }
@@ -137,7 +137,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $cpuPlatform
      */
-    public function setCpuPlatform($cpuPlatform)
+    public function setCpuPlatform(string $cpuPlatform)
     {
         $this->set("CpuPlatform", $cpuPlatform);
     }
@@ -147,7 +147,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getStorageType()
+    public function getStorageType(): string
     {
         return $this->get("StorageType");
     }
@@ -157,7 +157,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $storageType
      */
-    public function setStorageType($storageType)
+    public function setStorageType(string $storageType)
     {
         $this->set("StorageType", $storageType);
     }
@@ -167,7 +167,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -177,7 +177,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -187,7 +187,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getBasicImageId()
+    public function getBasicImageId(): string
     {
         return $this->get("BasicImageId");
     }
@@ -197,7 +197,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $basicImageId
      */
-    public function setBasicImageId($basicImageId)
+    public function setBasicImageId(string $basicImageId)
     {
         $this->set("BasicImageId", $basicImageId);
     }
@@ -207,7 +207,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getBasicImageName()
+    public function getBasicImageName(): string
     {
         return $this->get("BasicImageName");
     }
@@ -217,7 +217,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $basicImageName
      */
-    public function setBasicImageName($basicImageName)
+    public function setBasicImageName(string $basicImageName)
     {
         $this->set("BasicImageName", $basicImageName);
     }
@@ -227,7 +227,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -237,7 +237,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -247,7 +247,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -257,7 +257,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -267,7 +267,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -277,7 +277,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -287,7 +287,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -297,7 +297,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
@@ -307,7 +307,7 @@ class UHostInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -317,7 +317,7 @@ class UHostInstanceSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -327,7 +327,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -337,7 +337,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -347,7 +347,7 @@ class UHostInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime()
+    public function getExpireTime(): int
     {
         return $this->get("ExpireTime");
     }
@@ -357,7 +357,7 @@ class UHostInstanceSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -367,7 +367,7 @@ class UHostInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getCPU()
+    public function getCPU(): int
     {
         return $this->get("CPU");
     }
@@ -377,7 +377,7 @@ class UHostInstanceSet extends Response
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
@@ -387,7 +387,7 @@ class UHostInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getMemory()
+    public function getMemory(): int
     {
         return $this->get("Memory");
     }
@@ -397,7 +397,7 @@ class UHostInstanceSet extends Response
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
@@ -407,7 +407,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getAutoRenew()
+    public function getAutoRenew(): string
     {
         return $this->get("AutoRenew");
     }
@@ -417,7 +417,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $autoRenew
      */
-    public function setAutoRenew($autoRenew)
+    public function setAutoRenew(string $autoRenew)
     {
         $this->set("AutoRenew", $autoRenew);
     }
@@ -427,12 +427,9 @@ class UHostInstanceSet extends Response
      *
      * @return UHostDiskSet[]|null
      */
-    public function getDiskSet()
+    public function getDiskSet(): array
     {
-        $items = $this->get("DiskSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("DiskSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UHostDiskSet($item));
@@ -459,12 +456,9 @@ class UHostInstanceSet extends Response
      *
      * @return UHostIPSet[]|null
      */
-    public function getIPSet()
+    public function getIPSet(): array
     {
-        $items = $this->get("IPSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("IPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UHostIPSet($item));
@@ -491,7 +485,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getNetCapability()
+    public function getNetCapability(): string
     {
         return $this->get("NetCapability");
     }
@@ -501,7 +495,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $netCapability
      */
-    public function setNetCapability($netCapability)
+    public function setNetCapability(string $netCapability)
     {
         $this->set("NetCapability", $netCapability);
     }
@@ -511,7 +505,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getNetworkState()
+    public function getNetworkState(): string
     {
         return $this->get("NetworkState");
     }
@@ -521,7 +515,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $networkState
      */
-    public function setNetworkState($networkState)
+    public function setNetworkState(string $networkState)
     {
         $this->set("NetworkState", $networkState);
     }
@@ -531,7 +525,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getTimemachineFeature()
+    public function getTimemachineFeature(): string
     {
         return $this->get("TimemachineFeature");
     }
@@ -541,7 +535,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $timemachineFeature
      */
-    public function setTimemachineFeature($timemachineFeature)
+    public function setTimemachineFeature(string $timemachineFeature)
     {
         $this->set("TimemachineFeature", $timemachineFeature);
     }
@@ -551,7 +545,7 @@ class UHostInstanceSet extends Response
      *
      * @return boolean|null
      */
-    public function getHotplugFeature()
+    public function getHotplugFeature(): bool
     {
         return $this->get("HotplugFeature");
     }
@@ -561,7 +555,7 @@ class UHostInstanceSet extends Response
      *
      * @param boolean $hotplugFeature
      */
-    public function setHotplugFeature($hotplugFeature)
+    public function setHotplugFeature(bool $hotplugFeature)
     {
         $this->set("HotplugFeature", $hotplugFeature);
     }
@@ -571,7 +565,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetType()
+    public function getSubnetType(): string
     {
         return $this->get("SubnetType");
     }
@@ -581,7 +575,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $subnetType
      */
-    public function setSubnetType($subnetType)
+    public function setSubnetType(string $subnetType)
     {
         $this->set("SubnetType", $subnetType);
     }
@@ -591,7 +585,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getOsName()
+    public function getOsName(): string
     {
         return $this->get("OsName");
     }
@@ -601,7 +595,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $osName
      */
-    public function setOsName($osName)
+    public function setOsName(string $osName)
     {
         $this->set("OsName", $osName);
     }
@@ -611,7 +605,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getOsType()
+    public function getOsType(): string
     {
         return $this->get("OsType");
     }
@@ -621,7 +615,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
@@ -631,7 +625,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getHostType()
+    public function getHostType(): string
     {
         return $this->get("HostType");
     }
@@ -641,7 +635,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $hostType
      */
-    public function setHostType($hostType)
+    public function setHostType(string $hostType)
     {
         $this->set("HostType", $hostType);
     }
@@ -651,7 +645,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getLifeCycle()
+    public function getLifeCycle(): string
     {
         return $this->get("LifeCycle");
     }
@@ -661,7 +655,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $lifeCycle
      */
-    public function setLifeCycle($lifeCycle)
+    public function setLifeCycle(string $lifeCycle)
     {
         $this->set("LifeCycle", $lifeCycle);
     }
@@ -671,7 +665,7 @@ class UHostInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getGPU()
+    public function getGPU(): int
     {
         return $this->get("GPU");
     }
@@ -681,7 +675,7 @@ class UHostInstanceSet extends Response
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }
@@ -691,7 +685,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getBootDiskState()
+    public function getBootDiskState(): string
     {
         return $this->get("BootDiskState");
     }
@@ -701,7 +695,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $bootDiskState
      */
-    public function setBootDiskState($bootDiskState)
+    public function setBootDiskState(string $bootDiskState)
     {
         $this->set("BootDiskState", $bootDiskState);
     }
@@ -711,7 +705,7 @@ class UHostInstanceSet extends Response
      *
      * @return integer|null
      */
-    public function getTotalDiskSpace()
+    public function getTotalDiskSpace(): int
     {
         return $this->get("TotalDiskSpace");
     }
@@ -721,7 +715,7 @@ class UHostInstanceSet extends Response
      *
      * @param int $totalDiskSpace
      */
-    public function setTotalDiskSpace($totalDiskSpace)
+    public function setTotalDiskSpace(int $totalDiskSpace)
     {
         $this->set("TotalDiskSpace", $totalDiskSpace);
     }
@@ -731,7 +725,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getIsolationGroup()
+    public function getIsolationGroup(): string
     {
         return $this->get("IsolationGroup");
     }
@@ -741,7 +735,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup($isolationGroup)
+    public function setIsolationGroup(string $isolationGroup)
     {
         $this->set("IsolationGroup", $isolationGroup);
     }
@@ -751,7 +745,7 @@ class UHostInstanceSet extends Response
      *
      * @return boolean|null
      */
-    public function getCloudInitFeature()
+    public function getCloudInitFeature(): bool
     {
         return $this->get("CloudInitFeature");
     }
@@ -761,7 +755,7 @@ class UHostInstanceSet extends Response
      *
      * @param boolean $cloudInitFeature
      */
-    public function setCloudInitFeature($cloudInitFeature)
+    public function setCloudInitFeature(bool $cloudInitFeature)
     {
         $this->set("CloudInitFeature", $cloudInitFeature);
     }
@@ -771,7 +765,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getRdmaClusterId()
+    public function getRdmaClusterId(): string
     {
         return $this->get("RdmaClusterId");
     }
@@ -781,7 +775,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $rdmaClusterId
      */
-    public function setRdmaClusterId($rdmaClusterId)
+    public function setRdmaClusterId(string $rdmaClusterId)
     {
         $this->set("RdmaClusterId", $rdmaClusterId);
     }
@@ -791,7 +785,7 @@ class UHostInstanceSet extends Response
      *
      * @return string|null
      */
-    public function getRestrictMode()
+    public function getRestrictMode(): string
     {
         return $this->get("RestrictMode");
     }
@@ -801,7 +795,7 @@ class UHostInstanceSet extends Response
      *
      * @param string $restrictMode
      */
-    public function setRestrictMode($restrictMode)
+    public function setRestrictMode(string $restrictMode)
     {
         $this->set("RestrictMode", $restrictMode);
     }
@@ -811,7 +805,7 @@ class UHostInstanceSet extends Response
      *
      * @return boolean|null
      */
-    public function getHpcFeature()
+    public function getHpcFeature(): bool
     {
         return $this->get("HpcFeature");
     }
@@ -821,7 +815,7 @@ class UHostInstanceSet extends Response
      *
      * @param boolean $hpcFeature
      */
-    public function setHpcFeature($hpcFeature)
+    public function setHpcFeature(bool $hpcFeature)
     {
         $this->set("HpcFeature", $hpcFeature);
     }
@@ -831,7 +825,7 @@ class UHostInstanceSet extends Response
      *
      * @return UHostKeyPair|null
      */
-    public function getKeyPair()
+    public function getKeyPair(): UHostKeyPair
     {
         return new UHostKeyPair($this->get("KeyPair"));
     }
@@ -841,7 +835,7 @@ class UHostInstanceSet extends Response
      *
      * @param UHostKeyPair $keyPair
      */
-    public function setKeyPair(array $keyPair)
+    public function setKeyPair(UHostKeyPair $keyPair)
     {
         $this->set("KeyPair", $keyPair->getAll());
     }

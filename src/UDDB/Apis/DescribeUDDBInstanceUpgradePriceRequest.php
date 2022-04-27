@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -48,7 +48,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -58,7 +58,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -68,7 +68,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -78,7 +78,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -88,7 +88,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -98,7 +98,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDDBId()
+    public function getUDDBId(): string
     {
         return $this->get("UDDBId");
     }
@@ -108,7 +108,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $uddbId
      */
-    public function setUDDBId($uddbId)
+    public function setUDDBId(string $uddbId)
     {
         $this->set("UDDBId", $uddbId);
     }
@@ -118,7 +118,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRouterVersion()
+    public function getRouterVersion(): string
     {
         return $this->get("RouterVersion");
     }
@@ -128,7 +128,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $routerVersion
      */
-    public function setRouterVersion($routerVersion)
+    public function setRouterVersion(string $routerVersion)
     {
         $this->set("RouterVersion", $routerVersion);
     }
@@ -138,7 +138,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getRouterNodeNum()
+    public function getRouterNodeNum(): int
     {
         return $this->get("RouterNodeNum");
     }
@@ -148,7 +148,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $routerNodeNum
      */
-    public function setRouterNodeNum($routerNodeNum)
+    public function setRouterNodeNum(int $routerNodeNum)
     {
         $this->set("RouterNodeNum", $routerNodeNum);
     }
@@ -158,7 +158,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeCount()
+    public function getDataNodeCount(): int
     {
         return $this->get("DataNodeCount");
     }
@@ -168,7 +168,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $dataNodeCount
      */
-    public function setDataNodeCount($dataNodeCount)
+    public function setDataNodeCount(int $dataNodeCount)
     {
         $this->set("DataNodeCount", $dataNodeCount);
     }
@@ -178,7 +178,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeMemory()
+    public function getDataNodeMemory(): int
     {
         return $this->get("DataNodeMemory");
     }
@@ -188,7 +188,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory($dataNodeMemory)
+    public function setDataNodeMemory(int $dataNodeMemory)
     {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
@@ -198,7 +198,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeDiskSpace()
+    public function getDataNodeDiskSpace(): int
     {
         return $this->get("DataNodeDiskSpace");
     }
@@ -208,7 +208,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace($dataNodeDiskSpace)
+    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
     {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
@@ -218,7 +218,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDataNodeSlaveCount()
+    public function getDataNodeSlaveCount(): int
     {
         return $this->get("DataNodeSlaveCount");
     }
@@ -228,7 +228,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $dataNodeSlaveCount
      */
-    public function setDataNodeSlaveCount($dataNodeSlaveCount)
+    public function setDataNodeSlaveCount(int $dataNodeSlaveCount)
     {
         $this->set("DataNodeSlaveCount", $dataNodeSlaveCount);
     }
@@ -238,7 +238,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceMode()
+    public function getInstanceMode(): string
     {
         return $this->get("InstanceMode");
     }
@@ -248,7 +248,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
@@ -258,7 +258,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType()
+    public function getInstanceType(): string
     {
         return $this->get("InstanceType");
     }
@@ -268,7 +268,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }

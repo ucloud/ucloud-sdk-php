@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,12 +27,9 @@ class MetricPeriod extends Response
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkOut()
+    public function getNetworkOut(): array
     {
-        $items = $this->get("NetworkOut");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NetworkOut") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MatricPoint($item));
@@ -59,12 +56,9 @@ class MetricPeriod extends Response
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkIn()
+    public function getNetworkIn(): array
     {
-        $items = $this->get("NetworkIn");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NetworkIn") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MatricPoint($item));
@@ -91,12 +85,9 @@ class MetricPeriod extends Response
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkOutUsage()
+    public function getNetworkOutUsage(): array
     {
-        $items = $this->get("NetworkOutUsage");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NetworkOutUsage") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MatricPoint($item));
@@ -123,12 +114,9 @@ class MetricPeriod extends Response
      *
      * @return MatricPoint[]|null
      */
-    public function getNetworkInUsage()
+    public function getNetworkInUsage(): array
     {
-        $items = $this->get("NetworkInUsage");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NetworkInUsage") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new MatricPoint($item));

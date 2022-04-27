@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class GetProjectListResponse extends Response
      *
      * @return integer|null
      */
-    public function getProjectCount()
+    public function getProjectCount(): int
     {
         return $this->get("ProjectCount");
     }
@@ -38,7 +38,7 @@ class GetProjectListResponse extends Response
      *
      * @param int $projectCount
      */
-    public function setProjectCount($projectCount)
+    public function setProjectCount(int $projectCount)
     {
         $this->set("ProjectCount", $projectCount);
     }
@@ -48,12 +48,9 @@ class GetProjectListResponse extends Response
      *
      * @return ProjectListInfo[]|null
      */
-    public function getProjectSet()
+    public function getProjectSet(): array
     {
-        $items = $this->get("ProjectSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("ProjectSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ProjectListInfo($item));

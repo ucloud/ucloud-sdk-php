@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\UK8S\Apis\AddUK8SExistingUHostRequest;
 use UCloud\UK8S\Apis\AddUK8SExistingUHostResponse;
+use UCloud\UK8S\Apis\AddUK8SNodeGroupRequest;
+use UCloud\UK8S\Apis\AddUK8SNodeGroupResponse;
 use UCloud\UK8S\Apis\AddUK8SPHostNodeRequest;
 use UCloud\UK8S\Apis\AddUK8SPHostNodeResponse;
 use UCloud\UK8S\Apis\AddUK8SUHostNodeRequest;
@@ -30,6 +32,8 @@ use UCloud\UK8S\Apis\DelUK8SClusterRequest;
 use UCloud\UK8S\Apis\DelUK8SClusterResponse;
 use UCloud\UK8S\Apis\DelUK8SClusterNodeV2Request;
 use UCloud\UK8S\Apis\DelUK8SClusterNodeV2Response;
+use UCloud\UK8S\Apis\DescribeUK8SClusterRequest;
+use UCloud\UK8S\Apis\DescribeUK8SClusterResponse;
 use UCloud\UK8S\Apis\DescribeUK8SImageRequest;
 use UCloud\UK8S\Apis\DescribeUK8SImageResponse;
 use UCloud\UK8S\Apis\DescribeUK8SNodeRequest;
@@ -38,6 +42,10 @@ use UCloud\UK8S\Apis\ListUK8SClusterNodeV2Request;
 use UCloud\UK8S\Apis\ListUK8SClusterNodeV2Response;
 use UCloud\UK8S\Apis\ListUK8SClusterV2Request;
 use UCloud\UK8S\Apis\ListUK8SClusterV2Response;
+use UCloud\UK8S\Apis\ListUK8SNodeGroupRequest;
+use UCloud\UK8S\Apis\ListUK8SNodeGroupResponse;
+use UCloud\UK8S\Apis\RemoveUK8SNodeGroupRequest;
+use UCloud\UK8S\Apis\RemoveUK8SNodeGroupResponse;
 
 /**
  * This client is used to call actions of **UK8S** service
@@ -73,13 +81,53 @@ class UK8SClient extends Client
      * $outputs = [
      * ]
      *
-     * @return AddUK8SExistingUHostResponse
      * @throws UCloudException
      */
-    public function addUK8SExistingUHost(AddUK8SExistingUHostRequest $request = null)
+    public function addUK8SExistingUHost(AddUK8SExistingUHostRequest $request = null): AddUK8SExistingUHostResponse
     {
         $resp = $this->invoke($request);
         return new AddUK8SExistingUHostResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * AddUK8SNodeGroup - 添加UK8S节点池
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/add_uk8s_node_group
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "NodeGroupName" => (string) 节点池名字
+     *     "ClusterId" => (string) 集群ID
+     *     "ImageId" => (string) 镜像ID
+     *     "MachineType" => (string) 云主机机型。枚举值["N", "C", "G", "O", "OS"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     *     "MinimalCpuPlatform" => (string) 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
+     *     "CPU" => (integer) GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     *     "Mem" => (integer) 内存大小。单位：MB
+     *     "GpuType" => (string) GPU类型
+     *     "GPU" => (integer) GPU卡核心数
+     *     "BootDiskType" => (string) 磁盘类型
+     *     "DataDiskSize" => (integer) 数据磁盘大小
+     *     "DataDiskType" => (string) 磁盘类型
+     *     "Tag" => (string) 业务组
+     *     "ChargeType" => (string) 计费模式
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "NodeGroupId" => (string) 节点池ID
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function addUK8SNodeGroup(AddUK8SNodeGroupRequest $request = null): AddUK8SNodeGroupResponse
+    {
+        $resp = $this->invoke($request);
+        return new AddUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -114,10 +162,9 @@ class UK8SClient extends Client
      * $outputs = [
      * ]
      *
-     * @return AddUK8SPHostNodeResponse
      * @throws UCloudException
      */
-    public function addUK8SPHostNode(AddUK8SPHostNodeRequest $request = null)
+    public function addUK8SPHostNode(AddUK8SPHostNodeRequest $request = null): AddUK8SPHostNodeResponse
     {
         $resp = $this->invoke($request);
         return new AddUK8SPHostNodeResponse($resp->toArray(), $resp->getRequestId());
@@ -164,10 +211,9 @@ class UK8SClient extends Client
      *     "NodeIds" => (array<string>) Node实例Id集合
      * ]
      *
-     * @return AddUK8SUHostNodeResponse
      * @throws UCloudException
      */
-    public function addUK8SUHostNode(AddUK8SUHostNodeRequest $request = null)
+    public function addUK8SUHostNode(AddUK8SUHostNodeRequest $request = null): AddUK8SUHostNodeResponse
     {
         $resp = $this->invoke($request);
         return new AddUK8SUHostNodeResponse($resp->toArray(), $resp->getRequestId());
@@ -237,10 +283,9 @@ class UK8SClient extends Client
      *     "ClusterId" => (string) 集群ID
      * ]
      *
-     * @return CreateUK8SClusterV2Response
      * @throws UCloudException
      */
-    public function createUK8SClusterV2(CreateUK8SClusterV2Request $request = null)
+    public function createUK8SClusterV2(CreateUK8SClusterV2Request $request = null): CreateUK8SClusterV2Response
     {
         $resp = $this->invoke($request);
         return new CreateUK8SClusterV2Response($resp->toArray(), $resp->getRequestId());
@@ -265,10 +310,9 @@ class UK8SClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DelUK8SClusterResponse
      * @throws UCloudException
      */
-    public function delUK8SCluster(DelUK8SClusterRequest $request = null)
+    public function delUK8SCluster(DelUK8SClusterRequest $request = null): DelUK8SClusterResponse
     {
         $resp = $this->invoke($request);
         return new DelUK8SClusterResponse($resp->toArray(), $resp->getRequestId());
@@ -294,13 +338,133 @@ class UK8SClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DelUK8SClusterNodeV2Response
      * @throws UCloudException
      */
-    public function delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request $request = null)
+    public function delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request $request = null): DelUK8SClusterNodeV2Response
     {
         $resp = $this->invoke($request);
         return new DelUK8SClusterNodeV2Response($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUK8SCluster - 获取集群信息
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/describe_uk8s_cluster
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 所属区域
+     *     "ProjectId" => (string) 项目id
+     *     "ClusterId" => (string) k8s集群ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ClusterName" => (string) 资源名字
+     *     "ClusterId" => (string) 集群ID
+     *     "VPCId" => (string) 所属VPC
+     *     "SubnetId" => (string) 所属子网
+     *     "PodCIDR" => (string) Pod网段
+     *     "ServiceCIDR" => (string) 服务网段
+     *     "MasterCount" => (integer) Master 节点数量
+     *     "MasterList" => (array<object>) Master节点配置信息，具体参考UhostInfo。托管版不返回该信息[
+     *         [
+     *             "Zone" => (string) 所在机房
+     *             "Name" => (string) 主机名称
+     *             "CPU" => (integer) Cpu数量
+     *             "Memory" => (integer) 内存
+     *             "IPSet" => (array<object>) 节点IP信息[
+     *                 [
+     *                     "Type" => (string) 国际: Internation，BGP: Bgp，内网: Private
+     *                     "IPId" => (string) IP资源ID (内网IP无对应的资源ID)
+     *                     "IP" => (string) IP地址
+     *                     "Bandwidth" => (integer) IP对应的带宽, 单位: Mb (内网IP不显示带宽信息)
+     *                     "Default" => (string) 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。
+     *                 ]
+     *             ]
+     *             "DiskSet" => (array<object>) 节点磁盘信息[
+     *                 [
+     *                     "Type" => (string) 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk
+     *                     "DiskId" => (string) 磁盘长ID
+     *                     "Name" => (string) UDisk名字（仅当磁盘是UDisk时返回）
+     *                     "Drive" => (string) 磁盘盘符
+     *                     "Size" => (integer) 磁盘大小，单位: GB
+     *                     "BackupType" => (string) 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。
+     *                     "IOPS" => (integer) 当前主机的IOPS值
+     *                     "Encrypted" => (string) Yes: 加密 No: 非加密
+     *                     "DiskType" => (string) LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK
+     *                     "IsBoot" => (string) True| False
+     *                 ]
+     *             ]
+     *             "NodeId" => (string) 主机ID
+     *             "OsName" => (string) 镜像信息
+     *             "CreateTime" => (integer) 创建时间
+     *             "ExpireTime" => (integer) 到期时间
+     *             "State" => (string) 主机状态
+     *             "NodeType" => (string) 节点类型：uhost表示云主机;uphost表示物理云主机
+     *         ]
+     *     ]
+     *     "NodeList" => (array<object>) Node节点配置信息,具体参考UhostInfo[
+     *         [
+     *             "Zone" => (string) 所在机房
+     *             "Name" => (string) 主机名称
+     *             "CPU" => (integer) Cpu数量
+     *             "Memory" => (integer) 内存
+     *             "IPSet" => (array<object>) 节点IP信息[
+     *                 [
+     *                     "Type" => (string) 国际: Internation，BGP: Bgp，内网: Private
+     *                     "IPId" => (string) IP资源ID (内网IP无对应的资源ID)
+     *                     "IP" => (string) IP地址
+     *                     "Bandwidth" => (integer) IP对应的带宽, 单位: Mb (内网IP不显示带宽信息)
+     *                     "Default" => (string) 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。
+     *                 ]
+     *             ]
+     *             "DiskSet" => (array<object>) 节点磁盘信息[
+     *                 [
+     *                     "Type" => (string) 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk
+     *                     "DiskId" => (string) 磁盘长ID
+     *                     "Name" => (string) UDisk名字（仅当磁盘是UDisk时返回）
+     *                     "Drive" => (string) 磁盘盘符
+     *                     "Size" => (integer) 磁盘大小，单位: GB
+     *                     "BackupType" => (string) 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。
+     *                     "IOPS" => (integer) 当前主机的IOPS值
+     *                     "Encrypted" => (string) Yes: 加密 No: 非加密
+     *                     "DiskType" => (string) LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK
+     *                     "IsBoot" => (string) True| False
+     *                 ]
+     *             ]
+     *             "NodeId" => (string) 主机ID
+     *             "OsName" => (string) 镜像信息
+     *             "CreateTime" => (integer) 创建时间
+     *             "ExpireTime" => (integer) 到期时间
+     *             "State" => (string) 主机状态
+     *             "NodeType" => (string) 节点类型：uhost表示云主机;uphost表示物理云主机
+     *         ]
+     *     ]
+     *     "CreateTime" => (integer) 创建时间
+     *     "NodeCount" => (integer) Node节点数量
+     *     "ApiServer" => (string) 集群apiserver地址
+     *     "Status" => (string) 状态
+     *     "ExternalApiServer" => (string) 集群外部apiserver地址
+     *     "KubeProxy" => (object) kube-proxy配置[
+     *         "Mode" => (string) KubeProxy模式，枚举值为[ipvs,iptables]
+     *     ]
+     *     "Version" => (string) K8S版本
+     *     "ClusterDomain" => (string) 自定义或者默认的clusterdomain
+     *     "EtcdCert" => (string) 集群etcd服务证书
+     *     "EtcdKey" => (string) 集群etcd服务密钥
+     *     "CACert" => (string) 集群CA根证书
+     *     "MasterResourceStatus" => (string) Master配置预警：Normal正常；Warning 需要升级；Error    需要紧急升级；
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function describeUK8SCluster(DescribeUK8SClusterRequest $request = null): DescribeUK8SClusterResponse
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUK8SClusterResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -337,10 +501,9 @@ class UK8SClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUK8SImageResponse
      * @throws UCloudException
      */
-    public function describeUK8SImage(DescribeUK8SImageRequest $request = null)
+    public function describeUK8SImage(DescribeUK8SImageRequest $request = null): DescribeUK8SImageResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUK8SImageResponse($resp->toArray(), $resp->getRequestId());
@@ -402,10 +565,9 @@ class UK8SClient extends Client
      *     "Taints" => (array<string>) 字符串数组，每一项是类似 "node-role.kubernetes.io/master:NoSchedule" 的污点
      * ]
      *
-     * @return DescribeUK8SNodeResponse
      * @throws UCloudException
      */
-    public function describeUK8SNode(DescribeUK8SNodeRequest $request = null)
+    public function describeUK8SNode(DescribeUK8SNodeRequest $request = null): DescribeUK8SNodeResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUK8SNodeResponse($resp->toArray(), $resp->getRequestId());
@@ -466,10 +628,9 @@ class UK8SClient extends Client
      *     "TotalCount" => (integer) 满足条件的节点数量，包括Master。
      * ]
      *
-     * @return ListUK8SClusterNodeV2Response
      * @throws UCloudException
      */
-    public function listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request $request = null)
+    public function listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request $request = null): ListUK8SClusterNodeV2Response
     {
         $resp = $this->invoke($request);
         return new ListUK8SClusterNodeV2Response($resp->toArray(), $resp->getRequestId());
@@ -514,12 +675,83 @@ class UK8SClient extends Client
      *     ]
      * ]
      *
-     * @return ListUK8SClusterV2Response
      * @throws UCloudException
      */
-    public function listUK8SClusterV2(ListUK8SClusterV2Request $request = null)
+    public function listUK8SClusterV2(ListUK8SClusterV2Request $request = null): ListUK8SClusterV2Response
     {
         $resp = $this->invoke($request);
         return new ListUK8SClusterV2Response($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ListUK8SNodeGroup - 列出UK8S节点池
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/list_uk8s_node_group
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) 集群ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "NodeGroupList" => (array<object>) 节点池列表[
+     *         [
+     *             "NodeGroupId" => (string) 节点池ID
+     *             "NodeGroupName" => (string) 节点池名字
+     *             "ImageId" => (string) 镜像ID
+     *             "MachineType" => (string) 机型
+     *             "MinimalCpuPlatform" => (string) cpu平台
+     *             "CPU" => (integer) 虚拟CPU核数
+     *             "Mem" => (integer) 内存大小
+     *             "GpuType" => (string) GPU类型
+     *             "GPU" => (integer) GPU卡核心数
+     *             "BootDiskType" => (string) 系统盘类型
+     *             "DataDiskSize" => (integer) 数据盘大小
+     *             "DataDiskType" => (string) 数据盘类型
+     *             "Tag" => (string) 业务组
+     *             "ChargeType" => (string) 付费方式
+     *             "NodeList" => (array<string>) 节点id列表
+     *         ]
+     *     ]
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function listUK8SNodeGroup(ListUK8SNodeGroupRequest $request = null): ListUK8SNodeGroupResponse
+    {
+        $resp = $this->invoke($request);
+        return new ListUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * RemoveUK8SNodeGroup - 删除UK8S节点池
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/remove_uk8s_node_group
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "NodeGroupId" => (string) 节点池Id
+     *     "ClusterId" => (string) 集群id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function removeUK8SNodeGroup(RemoveUK8SNodeGroupRequest $request = null): RemoveUK8SNodeGroupResponse
+    {
+        $resp = $this->invoke($request);
+        return new RemoveUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
     }
 }

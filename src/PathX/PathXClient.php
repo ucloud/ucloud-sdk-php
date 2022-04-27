@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,10 @@ use UCloud\PathX\Apis\CreateGlobalSSHInstanceRequest;
 use UCloud\PathX\Apis\CreateGlobalSSHInstanceResponse;
 use UCloud\PathX\Apis\CreatePathXSSLRequest;
 use UCloud\PathX\Apis\CreatePathXSSLResponse;
+use UCloud\PathX\Apis\CreateUGA3InstanceRequest;
+use UCloud\PathX\Apis\CreateUGA3InstanceResponse;
+use UCloud\PathX\Apis\CreateUGA3PortRequest;
+use UCloud\PathX\Apis\CreateUGA3PortResponse;
 use UCloud\PathX\Apis\CreateUGAForwarderRequest;
 use UCloud\PathX\Apis\CreateUGAForwarderResponse;
 use UCloud\PathX\Apis\CreateUGAInstanceRequest;
@@ -34,6 +38,10 @@ use UCloud\PathX\Apis\DeleteGlobalSSHInstanceRequest;
 use UCloud\PathX\Apis\DeleteGlobalSSHInstanceResponse;
 use UCloud\PathX\Apis\DeletePathXSSLRequest;
 use UCloud\PathX\Apis\DeletePathXSSLResponse;
+use UCloud\PathX\Apis\DeleteUGA3InstanceRequest;
+use UCloud\PathX\Apis\DeleteUGA3InstanceResponse;
+use UCloud\PathX\Apis\DeleteUGA3PortRequest;
+use UCloud\PathX\Apis\DeleteUGA3PortResponse;
 use UCloud\PathX\Apis\DeleteUGAForwarderRequest;
 use UCloud\PathX\Apis\DeleteUGAForwarderResponse;
 use UCloud\PathX\Apis\DeleteUGAInstanceRequest;
@@ -46,6 +54,12 @@ use UCloud\PathX\Apis\DescribePathXLineConfigRequest;
 use UCloud\PathX\Apis\DescribePathXLineConfigResponse;
 use UCloud\PathX\Apis\DescribePathXSSLRequest;
 use UCloud\PathX\Apis\DescribePathXSSLResponse;
+use UCloud\PathX\Apis\DescribeUGA3AreaRequest;
+use UCloud\PathX\Apis\DescribeUGA3AreaResponse;
+use UCloud\PathX\Apis\DescribeUGA3InstanceRequest;
+use UCloud\PathX\Apis\DescribeUGA3InstanceResponse;
+use UCloud\PathX\Apis\DescribeUGA3OptimizationRequest;
+use UCloud\PathX\Apis\DescribeUGA3OptimizationResponse;
 use UCloud\PathX\Apis\DescribeUGAInstanceRequest;
 use UCloud\PathX\Apis\DescribeUGAInstanceResponse;
 use UCloud\PathX\Apis\DescribeUPathRequest;
@@ -58,10 +72,26 @@ use UCloud\PathX\Apis\GetGlobalSSHUpdatePriceRequest;
 use UCloud\PathX\Apis\GetGlobalSSHUpdatePriceResponse;
 use UCloud\PathX\Apis\GetPathXMetricRequest;
 use UCloud\PathX\Apis\GetPathXMetricResponse;
+use UCloud\PathX\Apis\GetUGA3MetricRequest;
+use UCloud\PathX\Apis\GetUGA3MetricResponse;
+use UCloud\PathX\Apis\GetUGA3PriceRequest;
+use UCloud\PathX\Apis\GetUGA3PriceResponse;
+use UCloud\PathX\Apis\GetUGA3UpdatePriceRequest;
+use UCloud\PathX\Apis\GetUGA3UpdatePriceResponse;
 use UCloud\PathX\Apis\ModifyGlobalSSHPortRequest;
 use UCloud\PathX\Apis\ModifyGlobalSSHPortResponse;
+use UCloud\PathX\Apis\ModifyGlobalSSHRemarkRequest;
+use UCloud\PathX\Apis\ModifyGlobalSSHRemarkResponse;
 use UCloud\PathX\Apis\ModifyGlobalSSHTypeRequest;
 use UCloud\PathX\Apis\ModifyGlobalSSHTypeResponse;
+use UCloud\PathX\Apis\ModifyUGA3BandwidthRequest;
+use UCloud\PathX\Apis\ModifyUGA3BandwidthResponse;
+use UCloud\PathX\Apis\ModifyUGA3InstanceRequest;
+use UCloud\PathX\Apis\ModifyUGA3InstanceResponse;
+use UCloud\PathX\Apis\ModifyUGA3OriginInfoRequest;
+use UCloud\PathX\Apis\ModifyUGA3OriginInfoResponse;
+use UCloud\PathX\Apis\ModifyUGA3PortRequest;
+use UCloud\PathX\Apis\ModifyUGA3PortResponse;
 use UCloud\PathX\Apis\ModifyUPathBandwidthRequest;
 use UCloud\PathX\Apis\ModifyUPathBandwidthResponse;
 use UCloud\PathX\Apis\ModifyUPathTemplateRequest;
@@ -100,10 +130,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return BindPathXSSLResponse
      * @throws UCloudException
      */
-    public function bindPathXSSL(BindPathXSSLRequest $request = null)
+    public function bindPathXSSL(BindPathXSSLRequest $request = null): BindPathXSSLResponse
     {
         $resp = $this->invoke($request);
         return new BindPathXSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -138,10 +167,9 @@ class PathXClient extends Client
      *     "AcceleratingDomain" => (string) 加速域名，访问该域名可就近接入
      * ]
      *
-     * @return CreateGlobalSSHInstanceResponse
      * @throws UCloudException
      */
-    public function createGlobalSSHInstance(CreateGlobalSSHInstanceRequest $request = null)
+    public function createGlobalSSHInstance(CreateGlobalSSHInstanceRequest $request = null): CreateGlobalSSHInstanceResponse
     {
         $resp = $this->invoke($request);
         return new CreateGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -170,13 +198,75 @@ class PathXClient extends Client
      *     "SSLId" => (string) SSL证书的Id
      * ]
      *
-     * @return CreatePathXSSLResponse
      * @throws UCloudException
      */
-    public function createPathXSSL(CreatePathXSSLRequest $request = null)
+    public function createPathXSSL(CreatePathXSSLRequest $request = null): CreatePathXSSLResponse
     {
         $resp = $this->invoke($request);
         return new CreatePathXSSLResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * CreateUGA3Instance - 创建全球统一接入加速配置项
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/create_uga3_instance
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Bandwidth" => (integer) 实例的共享带宽大小，单位Mbps
+     *     "Name" => (string) 加速配置实例名称,默认PathX
+     *     "AreaCode" => (string) 非必填,如果不填，会根据Domain 和IPList 去选一个最近的源站区域BKK表示AreaCode;曼谷表示Area["BKK":"曼谷","DXB":"迪拜","FRA":"法兰克福","SGN":"胡志明市","HKG":"香港",CGK":"雅加达","LOS":"拉各斯","LHR":"伦敦","LAX":"洛杉矶","MNL":"马尼拉","DME":"莫斯科","BOM":"孟买","MSP":"圣保罗","ICN":"首尔","PVG":"上海","SIN":"新加坡","NRT":"东京","IAD":"华盛顿","TPE": "台北"]
+     *     "Remark" => (string) 备注项
+     *     "ChargeType" => (string) 支付方式，如按月、按年、按时[Year,Month,Dynamic]
+     *     "Quantity" => (integer) 购买周期
+     *     "AccelerationArea" => (string) 加速大区,默认Global,[    "Global":"全球",    "AP":"亚太",    "EU":"欧洲",    "ME":"中东",    "OA":"大洋洲",    "AF":"非洲",    "NA":"北美洲",    "SA":"南美洲"]
+     *     "OriginIPList" => (string) 加速源IP，多个IP用英文半角逗号(,)隔开；IPList和Domain二选一必填
+     *     "OriginDomain" => (string) 加速源域名，IPList和Domain二选一必填
+     *     "CouponId" => (string) 使用代金券可冲抵部分费用，仅全地域可用的代金券
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "InstanceId" => (string) 加速配置ID
+     *     "CName" => (string) 加速域名 用户可把业务域名CName到此域名上
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function createUGA3Instance(CreateUGA3InstanceRequest $request = null): CreateUGA3InstanceResponse
+    {
+        $resp = $this->invoke($request);
+        return new CreateUGA3InstanceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * CreateUGA3Port - 创建统一接入加速实例端口，目前仅支持四层TCP端口
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/create_uga3_port
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 加速配置实例ID
+     *     "TCP" => (array<integer>) TCP接入端口，禁用65123端口
+     *     "TCPRS" => (array<integer>) TCP回源端口
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function createUGA3Port(CreateUGA3PortRequest $request = null): CreateUGA3PortResponse
+    {
+        $resp = $this->invoke($request);
+        return new CreateUGA3PortResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -212,10 +302,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return CreateUGAForwarderResponse
      * @throws UCloudException
      */
-    public function createUGAForwarder(CreateUGAForwarderRequest $request = null)
+    public function createUGAForwarder(CreateUGAForwarderRequest $request = null): CreateUGAForwarderResponse
     {
         $resp = $this->invoke($request);
         return new CreateUGAForwarderResponse($resp->toArray(), $resp->getRequestId());
@@ -244,10 +333,9 @@ class PathXClient extends Client
      *     "CName" => (string) 加速域名 用户可把业务域名CName到此域名上。注意：未绑定线路情况时 加速域名解析不出IP。
      * ]
      *
-     * @return CreateUGAInstanceResponse
      * @throws UCloudException
      */
-    public function createUGAInstance(CreateUGAInstanceRequest $request = null)
+    public function createUGAInstance(CreateUGAInstanceRequest $request = null): CreateUGAInstanceResponse
     {
         $resp = $this->invoke($request);
         return new CreateUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -261,26 +349,26 @@ class PathXClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "Name" => (string) UPath名字
-     *     "LineId" => (string) 选择的线路
-     *     "Bandwidth" => (integer) 线路带宽，最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。
+     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Name" => (string) 名字，便于记忆区分
+     *     "LineId" => (string) 选择的线路，由DescribePathXLineConfig接口提供
+     *     "Bandwidth" => (integer) 当PostPaid为false时，该值为预付费固定带宽；当PostPaid为true时，该值为后付费保底带宽，保底带宽越大可用的上限带宽越大。最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。可联系产品团队咨询最大带宽。
      *     "ChargeType" => (string) 计费模式，默认为Month 按月收费,可选范围['Month','Year','Dynamic']
      *     "Quantity" => (integer) 购买周期，ChargeType为Month时，Quantity默认为0代表购买到月底，按时和按年付费该参数必须大于0
-     *     "PostPaid" => (boolean) 是否开启后付费, 默认为false
+     *     "PostPaid" => (boolean) 是否开启后付费, 默认为false ，不开启后付费。当ChargeType为Dynamic时不能开启后付费。
+     *     "PathType" => (string) private:专线线路；public:海外SD-WAN。默认为private。
      *     "CouponId" => (string) 代金券Id
      * ]
      *
      * Outputs:
      *
      * $outputs = [
-     *     "UPathId" => (string) 加速线路实例Id
+     *     "PathId" => (string) 加速线路实例Id
      * ]
      *
-     * @return CreateUPathResponse
      * @throws UCloudException
      */
-    public function createUPath(CreateUPathRequest $request = null)
+    public function createUPath(CreateUPathRequest $request = null): CreateUPathResponse
     {
         $resp = $this->invoke($request);
         return new CreateUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -303,10 +391,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteGlobalSSHInstanceResponse
      * @throws UCloudException
      */
-    public function deleteGlobalSSHInstance(DeleteGlobalSSHInstanceRequest $request = null)
+    public function deleteGlobalSSHInstance(DeleteGlobalSSHInstanceRequest $request = null): DeleteGlobalSSHInstanceResponse
     {
         $resp = $this->invoke($request);
         return new DeleteGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -329,13 +416,63 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeletePathXSSLResponse
      * @throws UCloudException
      */
-    public function deletePathXSSL(DeletePathXSSLRequest $request = null)
+    public function deletePathXSSL(DeletePathXSSLRequest $request = null): DeletePathXSSLResponse
     {
         $resp = $this->invoke($request);
         return new DeletePathXSSLResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DeleteUGA3Instance - 删除全球统一接入转发实例
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/delete_uga3_instance
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 实例Id,资源的唯一标识
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function deleteUGA3Instance(DeleteUGA3InstanceRequest $request = null): DeleteUGA3InstanceResponse
+    {
+        $resp = $this->invoke($request);
+        return new DeleteUGA3InstanceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DeleteUGA3Port - 删除统一接入加速实例转发器 按接入端口删除
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/delete_uga3_port
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 加速配置实例ID
+     *     "TCP" => (array<integer>) TCP接入端口
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function deleteUGA3Port(DeleteUGA3PortRequest $request = null): DeleteUGA3PortResponse
+    {
+        $resp = $this->invoke($request);
+        return new DeleteUGA3PortResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -363,10 +500,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUGAForwarderResponse
      * @throws UCloudException
      */
-    public function deleteUGAForwarder(DeleteUGAForwarderRequest $request = null)
+    public function deleteUGAForwarder(DeleteUGAForwarderRequest $request = null): DeleteUGAForwarderResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUGAForwarderResponse($resp->toArray(), $resp->getRequestId());
@@ -389,10 +525,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUGAInstanceResponse
      * @throws UCloudException
      */
-    public function deleteUGAInstance(DeleteUGAInstanceRequest $request = null)
+    public function deleteUGAInstance(DeleteUGAInstanceRequest $request = null): DeleteUGAInstanceResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -415,10 +550,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUPathResponse
      * @throws UCloudException
      */
-    public function deleteUPath(DeleteUPathRequest $request = null)
+    public function deleteUPath(DeleteUPathRequest $request = null): DeleteUPathResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -459,10 +593,9 @@ class PathXClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeGlobalSSHInstanceResponse
      * @throws UCloudException
      */
-    public function describeGlobalSSHInstance(DescribeGlobalSSHInstanceRequest $request = null)
+    public function describeGlobalSSHInstance(DescribeGlobalSSHInstanceRequest $request = null): DescribeGlobalSSHInstanceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeGlobalSSHInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -503,10 +636,9 @@ class PathXClient extends Client
      *     ]
      * ]
      *
-     * @return DescribePathXLineConfigResponse
      * @throws UCloudException
      */
-    public function describePathXLineConfig(DescribePathXLineConfigRequest $request = null)
+    public function describePathXLineConfig(DescribePathXLineConfigRequest $request = null): DescribePathXLineConfigResponse
     {
         $resp = $this->invoke($request);
         return new DescribePathXLineConfigResponse($resp->toArray(), $resp->getRequestId());
@@ -551,13 +683,168 @@ class PathXClient extends Client
      *     "TotalCount" => (integer) 符合条件的证书总数
      * ]
      *
-     * @return DescribePathXSSLResponse
      * @throws UCloudException
      */
-    public function describePathXSSL(DescribePathXSSLRequest $request = null)
+    public function describePathXSSL(DescribePathXSSLRequest $request = null): DescribePathXSSLResponse
     {
         $resp = $this->invoke($request);
         return new DescribePathXSSLResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUGA3Area - 获取全球接入源站可选列表
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_uga3_area
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "IPList" => (string) IP集合，非必填。如果填IP或者域名，会推荐一个地域在返回列表的第一个，源站IP集合，以逗号分隔[127.0.0.1,127.0.0.2]
+     *     "Domain" => (string) 域名，非必填。如果填IP或者域名，会推荐一个地域在返回列表的第一个
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "AreaSet" => (array<object>) 支持源站的地区,比如：AreaSet[{            "Area": "首尔",            "AreaCode": "ICN",            "CountryCode": "CN",            "ContinentCode": "CN"        }]ContinentCode:["CN","NA","OT"];"CN":表示国内，"NA":表示美洲，“OT"：表示欧洲等其他地区[
+     *         [
+     *             "AreaCode" => (string) 源站区域代码
+     *             "Area" => (string) 源站区域中文
+     *             "CountryCode" => (string) 国家代码
+     *             "FlagUnicode" => (string) 国旗unicode
+     *             "FlagEmoji" => (string) 国旗 emoji
+     *             "ContinentCode" => (string) 大陆代码
+     *         ]
+     *     ]
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function describeUGA3Area(DescribeUGA3AreaRequest $request = null): DescribeUGA3AreaResponse
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUGA3AreaResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUGA3Instance - 获取全球统一接入加速服务加速配置信息，指定实例ID返回单个实例。未指定实例ID时 指定分页参数 则按创建时间降序 返回记录
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_uga3_instance
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 加速配置实例ID，如果传了实例ID 则返回匹配实例ID的记录；如果没传则返回 ProjectId 下全部实例且符合分页要求
+     *     "Limit" => (integer) 返回的最大条数，默认为100，最大值400
+     *     "Offset" => (integer) 偏移量，默认为0
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ForwardInstanceInfos" => (array<object>) 全球加速实例信息列表[
+     *         [
+     *             "InstanceId" => (string) 加速配置ID
+     *             "CName" => (string) 加速域名
+     *             "Name" => (string) 加速实例名称
+     *             "AccelerationArea" => (string) 加速大区代码
+     *             "AccelerationAreaName" => (string) 加速大区名称
+     *             "AccelerationAreaInfos" => (array<object>) 加速节点列表[
+     *                 [
+     *                     "AccelerationArea" => (string) 加速区code
+     *                     "AccelerationNodes" => (array<object>) 加速节点信息[
+     *                         [
+     *                             "AreaCode" => (string) AreaCode ,城市机场代码
+     *                             "Area" => (string) AreaCode对应城市名
+     *                             "FlagEmoji" => (string) 国旗Emoji
+     *                             "FlagUnicode" => (string) 国旗Unicode
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "EgressIpList" => (array<object>) 回源出口IP地址[
+     *                 [
+     *                     "IP" => (string)  线路回源节点EIP
+     *                     "Area" => (string) 线路回源节点机房代号
+     *                 ]
+     *             ]
+     *             "Bandwidth" => (integer) 购买的带宽值
+     *             "OriginArea" => (string) 源站中文名
+     *             "OriginAreaCode" => (string) 源站AreaCode
+     *             "CreateTime" => (integer) 资源创建时间
+     *             "ExpireTime" => (integer) 资源过期时间
+     *             "ChargeType" => (string) 计费方式
+     *             "Remark" => (string) 备注
+     *             "PortSets" => (array<object>) 端口列表[
+     *                 [
+     *                     "Protocol" => (string) 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"，"WSWS"，"WSSWS"，"WSSWSS"]。TCP和UDP代表四层转发，其余为七层转发。
+     *                     "RSPort" => (integer) 源站服务器监听的端口号
+     *                     "Port" => (integer) 加速端口
+     *                 ]
+     *             ]
+     *             "IPList" => (array<string>) 源站IP列表，多个值由半角英文逗号相隔
+     *             "Domain" => (string) 源站域名
+     *         ]
+     *     ]
+     *     "TotalCount" => (integer) 符合条件的总数
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function describeUGA3Instance(DescribeUGA3InstanceRequest $request = null): DescribeUGA3InstanceResponse
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUGA3InstanceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUGA3Optimization - 获取全球接入UGA3线路加速化情况
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/describe_uga3_optimization
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "AreaCode" => (string) 源站AreaCode
+     *     "TimeRange" => (string) 默认一天 ，枚举类型["Hour","Day","Week"]
+     *     "AccelerationArea" => (string) 加速大区,默认Global,[    "Global":"全球",    "AP":"亚太",    "EU":"欧洲",    "ME":"中东",    "OA":"大洋洲",    "AF":"非洲",    "NA":"北美洲",    "SA":"南美洲"]
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "AccelerationInfos" => (array<object>) 加速详情[
+     *         [
+     *             "AccelerationArea" => (string) 加速大区代码
+     *             "AccelerationName" => (string) 加速大区名称
+     *             "NodeInfo" => (array<object>) 加速提升情况[
+     *                 [
+     *                     "Area" => (string) 加速区域
+     *                     "AreaCode" => (string) 加速区域Code
+     *                     "CountryCode" => (string) 国家代码
+     *                     "FlagUnicode" => (string) 国旗Code
+     *                     "FlagEmoji" => (string) 国旗Emoji
+     *                     "Latency" => (number) 加速延迟
+     *                     "LatencyInternet" => (number) 公网延迟
+     *                     "LatencyOptimization" => (number) 加速提升比例
+     *                     "Loss" => (number) 加速后丢包率
+     *                     "LossInternet" => (number) 原始丢包率
+     *                     "LossOptimization" => (number) 丢包下降比例
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function describeUGA3Optimization(DescribeUGA3OptimizationRequest $request = null): DescribeUGA3OptimizationResponse
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUGA3OptimizationResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -621,8 +908,8 @@ class PathXClient extends Client
      *             ]
      *             "OutPublicIpList" => (array<object>) 线路出口IP地址[
      *                 [
-     *                     "IP" => (string)  线路出口EIP
-     *                     "Area" => (string) 线路出口机房代号
+     *                     "IP" => (string)  线路回源节点EIP
+     *                     "Area" => (string) 线路回源节点机房代号
      *                 ]
      *             ]
      *         ]
@@ -630,10 +917,9 @@ class PathXClient extends Client
      *     "TotalCount" => (integer) 符合条件的总数
      * ]
      *
-     * @return DescribeUGAInstanceResponse
      * @throws UCloudException
      */
-    public function describeUGAInstance(DescribeUGAInstanceRequest $request = null)
+    public function describeUGAInstance(DescribeUGAInstanceRequest $request = null): DescribeUGAInstanceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUGAInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -675,18 +961,17 @@ class PathXClient extends Client
      *             "LineToName" => (string) 线路出口名称
      *             "OutPublicIpList" => (array<object>) 线路出口IP数组[
      *                 [
-     *                     "IP" => (string)  线路出口EIP
-     *                     "Area" => (string) 线路出口机房代号
+     *                     "IP" => (string)  线路回源节点EIP
+     *                     "Area" => (string) 线路回源节点机房代号
      *                 ]
      *             ]
      *         ]
      *     ]
      * ]
      *
-     * @return DescribeUPathResponse
      * @throws UCloudException
      */
-    public function describeUPath(DescribeUPathRequest $request = null)
+    public function describeUPath(DescribeUPathRequest $request = null): DescribeUPathResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -722,10 +1007,9 @@ class PathXClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUPathTemplateResponse
      * @throws UCloudException
      */
-    public function describeUPathTemplate(DescribeUPathTemplateRequest $request = null)
+    public function describeUPathTemplate(DescribeUPathTemplateRequest $request = null): DescribeUPathTemplateResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUPathTemplateResponse($resp->toArray(), $resp->getRequestId());
@@ -751,10 +1035,9 @@ class PathXClient extends Client
      *     "Price" => (number) 价格,返回单位为元
      * ]
      *
-     * @return GetGlobalSSHPriceResponse
      * @throws UCloudException
      */
-    public function getGlobalSSHPrice(GetGlobalSSHPriceRequest $request = null)
+    public function getGlobalSSHPrice(GetGlobalSSHPriceRequest $request = null): GetGlobalSSHPriceResponse
     {
         $resp = $this->invoke($request);
         return new GetGlobalSSHPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -781,10 +1064,9 @@ class PathXClient extends Client
      *     "Price" => (number) 价格,返回单位为元。正数表示付费升级，负数表示降级退费。
      * ]
      *
-     * @return GetGlobalSSHUpdatePriceResponse
      * @throws UCloudException
      */
-    public function getGlobalSSHUpdatePrice(GetGlobalSSHUpdatePriceRequest $request = null)
+    public function getGlobalSSHUpdatePrice(GetGlobalSSHUpdatePriceRequest $request = null): GetGlobalSSHUpdatePriceResponse
     {
         $resp = $this->invoke($request);
         return new GetGlobalSSHUpdatePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -838,13 +1120,182 @@ class PathXClient extends Client
      *     ]
      * ]
      *
-     * @return GetPathXMetricResponse
      * @throws UCloudException
      */
-    public function getPathXMetric(GetPathXMetricRequest $request = null)
+    public function getPathXMetric(GetPathXMetricRequest $request = null): GetPathXMetricResponse
     {
         $resp = $this->invoke($request);
         return new GetPathXMetricResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUGA3Metric - 获取全地域加速监控信息
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/get_uga3_metric
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 资源ID
+     *     "BeginTime" => (integer) 查询起始时间，10位长度时间戳
+     *     "EndTime" => (integer) 查询结束时间，10位长度时间戳
+     *     "MetricName" => (array<string>) 查询监控的指标项。可不传 NetworkOut:出口总带宽    NetworkIn：入口总带宽 NetworkOutUsage：出口带宽使用率 NetworkInUsage：入口总带宽使用率 NetworkOutSubline ：子线路出口带宽  NetworkInSubline：子线路入口带宽    Delay：线路平均延迟    DelaySubline：子线路延迟  ConnectCount：当前连接数  ConnectCountSubline：子线路当前连接数    DelayPromote：延迟提升   DelayPromoteSubline：子线路延迟提升
+     *     "IsSubline" => (boolean) 是否为子线路。为了简化查询,true 会返回所有子线路监控项可以，false:返回所有汇总的监控数据
+     *     "AreaCode" => (string) 子线路AreaCode ,子线路的时候传，不是子线路可以不传
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (object) 监控数据结果集[
+     *         "NetworkOut" => (array<object>) 出向带宽[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "NetworkIn" => (array<object>) 入向带宽[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "NetworkOutUsage" => (array<object>) 出向带宽使用率[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "NetworkInUsage" => (array<object>) 入向带宽使用率[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "NetworkOutSubline" => (array<object>) 子线路出口带宽[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "NetworkInSubline" => (array<object>) 子线路入口带宽[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "Delay" => (array<object>) 线路平均延迟[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "DelaySubline" => (array<object>) 子线路延迟[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "DelayPromote" => (array<object>) 延迟提升[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "DelayPromoteSubline" => (array<object>) 子线路延迟提升[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "ConnectCount" => (array<object>) 当前连接数[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *         "ConnectCountSubline" => (array<object>) 子线路当前连接数[
+     *             [
+     *                 "Timestamp" => (integer) 时间戳
+     *                 "Value" => (integer) 监控点数值
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function getUGA3Metric(GetUGA3MetricRequest $request = null): GetUGA3MetricResponse
+    {
+        $resp = $this->invoke($request);
+        return new GetUGA3MetricResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUGA3Price - 获取全球统一接入转发实例价格
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/get_uga3_price
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Bandwidth" => (integer) 共享带宽大小
+     *     "AreaCode" => (string) 源站区域
+     *     "Quantity" => (integer) 购买时间数量，当ChargeType为Month时 Quantity默认为0，代表购买至月底。按年按小时必须为大于0
+     *     "ChargeType" => (string) 计费方式，默认按月支付。Month: 按月; Year: 按年; Dynamic: 按小时收
+     *     "AccelerationArea" => (string) 加速大区,默认返回所有加速大区价格
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "UGA3Price" => (array<object>) 加速大区对应价格[
+     *         [
+     *             "AccelerationArea" => (string) 加速大区代码
+     *             "AccelerationAreaName" => (string) 加速大区名称
+     *             "AccelerationForwarderPrice" => (number) 转发配置价格
+     *             "AccelerationBandwidthPrice" => (number) 加速配置带宽价格
+     *         ]
+     *     ]
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function getUGA3Price(GetUGA3PriceRequest $request = null): GetUGA3PriceResponse
+    {
+        $resp = $this->invoke($request);
+        return new GetUGA3PriceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUGA3UpdatePrice - 全球统一接入获取实例更新价格（增加、删退）
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/get_uga3_update_price
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 资源ID
+     *     "Bandwidth" => (integer) 只有升级带宽的时候有价格变化
+     *     "AccelerationArea" => (string) 暂未支持，加速大区，在更换加速大区的时候使用
+     *     "AreaCode" => (string) 暂未支持，源站区域
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Price" => (number) 价格 元。大于0需付费，小于0则退费。
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function getUGA3UpdatePrice(GetUGA3UpdatePriceRequest $request = null): GetUGA3UpdatePriceResponse
+    {
+        $resp = $this->invoke($request);
+        return new GetUGA3UpdatePriceResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -865,13 +1316,38 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyGlobalSSHPortResponse
      * @throws UCloudException
      */
-    public function modifyGlobalSSHPort(ModifyGlobalSSHPortRequest $request = null)
+    public function modifyGlobalSSHPort(ModifyGlobalSSHPortRequest $request = null): ModifyGlobalSSHPortResponse
     {
         $resp = $this->invoke($request);
         return new ModifyGlobalSSHPortResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ModifyGlobalSSHRemark - 修改GlobalSSH备注
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_global_ssh_remark
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID，如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 实例ID,资源唯一标识
+     *     "Remark" => (string) 备注信息，不填默认为空字符串
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function modifyGlobalSSHRemark(ModifyGlobalSSHRemarkRequest $request = null): ModifyGlobalSSHRemarkResponse
+    {
+        $resp = $this->invoke($request);
+        return new ModifyGlobalSSHRemarkResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -895,13 +1371,120 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyGlobalSSHTypeResponse
      * @throws UCloudException
      */
-    public function modifyGlobalSSHType(ModifyGlobalSSHTypeRequest $request = null)
+    public function modifyGlobalSSHType(ModifyGlobalSSHTypeRequest $request = null): ModifyGlobalSSHTypeResponse
     {
         $resp = $this->invoke($request);
         return new ModifyGlobalSSHTypeResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ModifyUGA3Bandwidth - 修改统一接入加速配置带宽
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_uga3_bandwidth
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 加速配置实例ID，格式uga3-xxxx
+     *     "Bandwidth" => (integer) 带宽大小，范围[1,100]，不传则不更新
+     *     "CouponId" => (string) 需要全地域可用的代金券
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function modifyUGA3Bandwidth(ModifyUGA3BandwidthRequest $request = null): ModifyUGA3BandwidthResponse
+    {
+        $resp = $this->invoke($request);
+        return new ModifyUGA3BandwidthResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ModifyUGA3Instance - 修改统一接入加速配置属性，如Name，ReMark
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_uga3_instance
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 加速配置实例ID，格式uga-xxxx。不支持GlobalSSH实例。
+     *     "Name" => (string) 加速配置实例名称，不填或空字符串则不更新
+     *     "Remark" => (string) 备注信息，暂时前端为使用
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function modifyUGA3Instance(ModifyUGA3InstanceRequest $request = null): ModifyUGA3InstanceResponse
+    {
+        $resp = $this->invoke($request);
+        return new ModifyUGA3InstanceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ModifyUGA3OriginInfo - Domain， IPList注意：修改Domain或IPList时， 请确保源站服务端口已经开启且外网防火墙允许pathx出口ip访问。
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_uga3_origin_info
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 加速配置实例ID，格式uga3-xxxx。
+     *     "OriginDomain" => (string) 加速源域名，仅支持1个域名。修改源站时 OriginIPList和OriginDomain至少填一个。OriginIPList和OriginDomain都填时 以Domain为准,如果两个都不填，不修改
+     *     "OriginIPList" => (string) ，加速源IP，多个IP用英文半角逗号(,)隔开。修改源站时 ，OriginIPList和OriginDomain至少填一个。OriginIPList和OriginDomain都填时 以OriginDomain为准。如果两个都不填，不修改
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function modifyUGA3OriginInfo(ModifyUGA3OriginInfoRequest $request = null): ModifyUGA3OriginInfoResponse
+    {
+        $resp = $this->invoke($request);
+        return new ModifyUGA3OriginInfoResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ModifyUGA3Port - 修改统一接入加速实例端口,目前仅支持四层TCP端口
+     *
+     * See also: https://docs.ucloud.cn/api/pathx-api/modify_uga3_port
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 加速配置实例ID
+     *     "TCP" => (array<integer>) TCP接入端口，禁用65123端口
+     *     "TCPRS" => (array<integer>) TCP回源端口
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function modifyUGA3Port(ModifyUGA3PortRequest $request = null): ModifyUGA3PortResponse
+    {
+        $resp = $this->invoke($request);
+        return new ModifyUGA3PortResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -922,10 +1505,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyUPathBandwidthResponse
      * @throws UCloudException
      */
-    public function modifyUPathBandwidth(ModifyUPathBandwidthRequest $request = null)
+    public function modifyUPathBandwidth(ModifyUPathBandwidthRequest $request = null): ModifyUPathBandwidthResponse
     {
         $resp = $this->invoke($request);
         return new ModifyUPathBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -955,10 +1537,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyUPathTemplateResponse
      * @throws UCloudException
      */
-    public function modifyUPathTemplate(ModifyUPathTemplateRequest $request = null)
+    public function modifyUPathTemplate(ModifyUPathTemplateRequest $request = null): ModifyUPathTemplateResponse
     {
         $resp = $this->invoke($request);
         return new ModifyUPathTemplateResponse($resp->toArray(), $resp->getRequestId());
@@ -983,10 +1564,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UGABindUPathResponse
      * @throws UCloudException
      */
-    public function ugaBindUPath(UGABindUPathRequest $request = null)
+    public function ugaBindUPath(UGABindUPathRequest $request = null): UGABindUPathResponse
     {
         $resp = $this->invoke($request);
         return new UGABindUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -1010,10 +1590,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UGAUnBindUPathResponse
      * @throws UCloudException
      */
-    public function ugaUnBindUPath(UGAUnBindUPathRequest $request = null)
+    public function ugaUnBindUPath(UGAUnBindUPathRequest $request = null): UGAUnBindUPathResponse
     {
         $resp = $this->invoke($request);
         return new UGAUnBindUPathResponse($resp->toArray(), $resp->getRequestId());
@@ -1038,10 +1617,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UnBindPathXSSLResponse
      * @throws UCloudException
      */
-    public function unBindPathXSSL(UnBindPathXSSLRequest $request = null)
+    public function unBindPathXSSL(UnBindPathXSSLRequest $request = null): UnBindPathXSSLResponse
     {
         $resp = $this->invoke($request);
         return new UnBindPathXSSLResponse($resp->toArray(), $resp->getRequestId());
@@ -1065,10 +1643,9 @@ class PathXClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpdatePathXWhitelistResponse
      * @throws UCloudException
      */
-    public function updatePathXWhitelist(UpdatePathXWhitelistRequest $request = null)
+    public function updatePathXWhitelist(UpdatePathXWhitelistRequest $request = null): UpdatePathXWhitelistResponse
     {
         $resp = $this->invoke($request);
         return new UpdatePathXWhitelistResponse($resp->toArray(), $resp->getRequestId());

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CfgDictList extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -37,7 +37,7 @@ class CfgDictList extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -47,7 +47,7 @@ class CfgDictList extends Response
      *
      * @return string|null
      */
-    public function getMountPath()
+    public function getMountPath(): string
     {
         return $this->get("MountPath");
     }
@@ -57,7 +57,7 @@ class CfgDictList extends Response
      *
      * @param string $mountPath
      */
-    public function setMountPath($mountPath)
+    public function setMountPath(string $mountPath)
     {
         $this->set("MountPath", $mountPath);
     }
@@ -67,7 +67,7 @@ class CfgDictList extends Response
      *
      * @return string|null
      */
-    public function getResourceId()
+    public function getResourceId(): string
     {
         return $this->get("ResourceId");
     }
@@ -77,7 +77,7 @@ class CfgDictList extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }

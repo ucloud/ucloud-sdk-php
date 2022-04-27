@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -51,7 +51,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -61,7 +61,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -71,7 +71,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -81,7 +81,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -91,7 +91,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -101,7 +101,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -111,7 +111,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -121,7 +121,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getAdminPassword()
+    public function getAdminPassword(): string
     {
         return $this->get("AdminPassword");
     }
@@ -131,7 +131,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $adminPassword
      */
-    public function setAdminPassword($adminPassword)
+    public function setAdminPassword(string $adminPassword)
     {
         $this->set("AdminPassword", $adminPassword);
     }
@@ -141,7 +141,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getDBTypeId()
+    public function getDBTypeId(): string
     {
         return $this->get("DBTypeId");
     }
@@ -151,7 +151,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
@@ -161,7 +161,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSpace()
+    public function getDiskSpace(): int
     {
         return $this->get("DiskSpace");
     }
@@ -171,7 +171,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -181,7 +181,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getParamGroupId()
+    public function getParamGroupId(): int
     {
         return $this->get("ParamGroupId");
     }
@@ -191,7 +191,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId($paramGroupId)
+    public function setParamGroupId(int $paramGroupId)
     {
         $this->set("ParamGroupId", $paramGroupId);
     }
@@ -201,7 +201,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemoryLimit()
+    public function getMemoryLimit(): int
     {
         return $this->get("MemoryLimit");
     }
@@ -211,7 +211,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
@@ -221,7 +221,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort()
+    public function getPort(): int
     {
         return $this->get("Port");
     }
@@ -231,7 +231,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
@@ -241,7 +241,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -251,7 +251,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -261,7 +261,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -271,7 +271,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -281,7 +281,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getAdminUser()
+    public function getAdminUser(): string
     {
         return $this->get("AdminUser");
     }
@@ -291,7 +291,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $adminUser
      */
-    public function setAdminUser($adminUser)
+    public function setAdminUser(string $adminUser)
     {
         $this->set("AdminUser", $adminUser);
     }
@@ -301,7 +301,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getBackupCount()
+    public function getBackupCount(): int
     {
         return $this->get("BackupCount");
     }
@@ -311,7 +311,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $backupCount
      */
-    public function setBackupCount($backupCount)
+    public function setBackupCount(int $backupCount)
     {
         $this->set("BackupCount", $backupCount);
     }
@@ -321,7 +321,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getBackupTime()
+    public function getBackupTime(): int
     {
         return $this->get("BackupTime");
     }
@@ -331,7 +331,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
@@ -341,7 +341,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getBackupDuration()
+    public function getBackupDuration(): int
     {
         return $this->get("BackupDuration");
     }
@@ -351,7 +351,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $backupDuration
      */
-    public function setBackupDuration($backupDuration)
+    public function setBackupDuration(int $backupDuration)
     {
         $this->set("BackupDuration", $backupDuration);
     }
@@ -361,7 +361,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return boolean|null
      */
-    public function getUseSSD()
+    public function getUseSSD(): bool
     {
         return $this->get("UseSSD");
     }
@@ -371,7 +371,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
@@ -381,7 +381,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getSSDType()
+    public function getSSDType(): string
     {
         return $this->get("SSDType");
     }
@@ -391,7 +391,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }
@@ -401,7 +401,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return integer|null
      */
-    public function getCPU()
+    public function getCPU(): int
     {
         return $this->get("CPU");
     }
@@ -411,7 +411,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
@@ -421,7 +421,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType()
+    public function getInstanceType(): string
     {
         return $this->get("InstanceType");
     }
@@ -431,7 +431,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -441,7 +441,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -451,7 +451,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -461,7 +461,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -471,7 +471,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -481,7 +481,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string|null
      */
-    public function getClusterId()
+    public function getClusterId(): string
     {
         return $this->get("ClusterId");
     }
@@ -491,7 +491,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
@@ -501,7 +501,7 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @return string[]|null
      */
-    public function getCouponId()
+    public function getCouponId(): array
     {
         return $this->get("CouponId");
     }

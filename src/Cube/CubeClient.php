@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ use UCloud\Cube\Apis\ModifyCubeExtendInfoRequest;
 use UCloud\Cube\Apis\ModifyCubeExtendInfoResponse;
 use UCloud\Cube\Apis\ModifyCubeTagRequest;
 use UCloud\Cube\Apis\ModifyCubeTagResponse;
+use UCloud\Cube\Apis\RebootCubePodRequest;
+use UCloud\Cube\Apis\RebootCubePodResponse;
 use UCloud\Cube\Apis\RenewCubePodRequest;
 use UCloud\Cube\Apis\RenewCubePodResponse;
 use UCloud\Cube\Apis\UpdateCubeDeploymentRequest;
@@ -88,10 +90,9 @@ class CubeClient extends Client
      *     "Deployment" => (string) 经过base64编码的Deployment的yaml
      * ]
      *
-     * @return CreateCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function createCubeDeployment(CreateCubeDeploymentRequest $request = null)
+    public function createCubeDeployment(CreateCubeDeploymentRequest $request = null): CreateCubeDeploymentResponse
     {
         $resp = $this->invoke($request);
         return new CreateCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
@@ -128,10 +129,9 @@ class CubeClient extends Client
      *     "CubeId" => (string) cube的资源Id
      * ]
      *
-     * @return CreateCubePodResponse
      * @throws UCloudException
      */
-    public function createCubePod(CreateCubePodRequest $request = null)
+    public function createCubePod(CreateCubePodRequest $request = null): CreateCubePodResponse
     {
         $resp = $this->invoke($request);
         return new CreateCubePodResponse($resp->toArray(), $resp->getRequestId());
@@ -156,10 +156,9 @@ class CubeClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function deleteCubeDeployment(DeleteCubeDeploymentRequest $request = null)
+    public function deleteCubeDeployment(DeleteCubeDeploymentRequest $request = null): DeleteCubeDeploymentResponse
     {
         $resp = $this->invoke($request);
         return new DeleteCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
@@ -186,10 +185,9 @@ class CubeClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteCubePodResponse
      * @throws UCloudException
      */
-    public function deleteCubePod(DeleteCubePodRequest $request = null)
+    public function deleteCubePod(DeleteCubePodRequest $request = null): DeleteCubePodResponse
     {
         $resp = $this->invoke($request);
         return new DeleteCubePodResponse($resp->toArray(), $resp->getRequestId());
@@ -215,10 +213,9 @@ class CubeClient extends Client
      *     "Deployment" => (string) 经过base64编码的Deployment的yaml
      * ]
      *
-     * @return GetCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function getCubeDeployment(GetCubeDeploymentRequest $request = null)
+    public function getCubeDeployment(GetCubeDeploymentRequest $request = null): GetCubeDeploymentResponse
     {
         $resp = $this->invoke($request);
         return new GetCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
@@ -247,10 +244,9 @@ class CubeClient extends Client
      *     "TerminalUrl" => (string) terminal的登录连接地址，限单点登录，有效时间5min
      * ]
      *
-     * @return GetCubeExecTokenResponse
      * @throws UCloudException
      */
-    public function getCubeExecToken(GetCubeExecTokenRequest $request = null)
+    public function getCubeExecToken(GetCubeExecTokenRequest $request = null): GetCubeExecTokenResponse
     {
         $resp = $this->invoke($request);
         return new GetCubeExecTokenResponse($resp->toArray(), $resp->getRequestId());
@@ -301,10 +297,9 @@ class CubeClient extends Client
      *     ]
      * ]
      *
-     * @return GetCubeExtendInfoResponse
      * @throws UCloudException
      */
-    public function getCubeExtendInfo(GetCubeExtendInfoRequest $request = null)
+    public function getCubeExtendInfo(GetCubeExtendInfoRequest $request = null): GetCubeExtendInfoResponse
     {
         $resp = $this->invoke($request);
         return new GetCubeExtendInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -344,10 +339,9 @@ class CubeClient extends Client
      *     ]
      * ]
      *
-     * @return GetCubeMetricsResponse
      * @throws UCloudException
      */
-    public function getCubeMetrics(GetCubeMetricsRequest $request = null)
+    public function getCubeMetrics(GetCubeMetricsRequest $request = null): GetCubeMetricsResponse
     {
         $resp = $this->invoke($request);
         return new GetCubeMetricsResponse($resp->toArray(), $resp->getRequestId());
@@ -374,10 +368,9 @@ class CubeClient extends Client
      *     "Pod" => (string) base64编码的pod的yaml
      * ]
      *
-     * @return GetCubePodResponse
      * @throws UCloudException
      */
-    public function getCubePod(GetCubePodRequest $request = null)
+    public function getCubePod(GetCubePodRequest $request = null): GetCubePodResponse
     {
         $resp = $this->invoke($request);
         return new GetCubePodResponse($resp->toArray(), $resp->getRequestId());
@@ -408,10 +401,9 @@ class CubeClient extends Client
      *     "OriginalPrice" => (integer) 列表价格，单位为分
      * ]
      *
-     * @return GetCubePriceResponse
      * @throws UCloudException
      */
-    public function getCubePrice(GetCubePriceRequest $request = null)
+    public function getCubePrice(GetCubePriceRequest $request = null): GetCubePriceResponse
     {
         $resp = $this->invoke($request);
         return new GetCubePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -439,10 +431,9 @@ class CubeClient extends Client
      *     "Token" => (string) 有效时间5min
      * ]
      *
-     * @return GetCubeTokenResponse
      * @throws UCloudException
      */
-    public function getCubeToken(GetCubeTokenRequest $request = null)
+    public function getCubeToken(GetCubeTokenRequest $request = null): GetCubeTokenResponse
     {
         $resp = $this->invoke($request);
         return new GetCubeTokenResponse($resp->toArray(), $resp->getRequestId());
@@ -470,10 +461,9 @@ class CubeClient extends Client
      *     "Deployments" => (array<string>) DeploymentInfo
      * ]
      *
-     * @return ListCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function listCubeDeployment(ListCubeDeploymentRequest $request = null)
+    public function listCubeDeployment(ListCubeDeploymentRequest $request = null): ListCubeDeploymentResponse
     {
         $resp = $this->invoke($request);
         return new ListCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
@@ -505,10 +495,9 @@ class CubeClient extends Client
      *     "TotalCount" => (integer) Cube的总数
      * ]
      *
-     * @return ListCubePodResponse
      * @throws UCloudException
      */
-    public function listCubePod(ListCubePodRequest $request = null)
+    public function listCubePod(ListCubePodRequest $request = null): ListCubePodResponse
     {
         $resp = $this->invoke($request);
         return new ListCubePodResponse($resp->toArray(), $resp->getRequestId());
@@ -534,10 +523,9 @@ class CubeClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyCubeExtendInfoResponse
      * @throws UCloudException
      */
-    public function modifyCubeExtendInfo(ModifyCubeExtendInfoRequest $request = null)
+    public function modifyCubeExtendInfo(ModifyCubeExtendInfoRequest $request = null): ModifyCubeExtendInfoResponse
     {
         $resp = $this->invoke($request);
         return new ModifyCubeExtendInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -564,13 +552,39 @@ class CubeClient extends Client
      *     "CubeId" => (string) CubeId
      * ]
      *
-     * @return ModifyCubeTagResponse
      * @throws UCloudException
      */
-    public function modifyCubeTag(ModifyCubeTagRequest $request = null)
+    public function modifyCubeTag(ModifyCubeTagRequest $request = null): ModifyCubeTagResponse
     {
         $resp = $this->invoke($request);
         return new ModifyCubeTagResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * RebootCubePod - 重启Cube Pod
+     *
+     * See also: https://docs.ucloud.cn/api/cube-api/reboot_cube_pod
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "CubeId" => (string) cube资源id（cube-xxxxxx）
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function rebootCubePod(RebootCubePodRequest $request = null): RebootCubePodResponse
+    {
+        $resp = $this->invoke($request);
+        return new RebootCubePodResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -594,10 +608,9 @@ class CubeClient extends Client
      *     "Pod" => (string) base64编码过的yaml，需要解码获取信息
      * ]
      *
-     * @return RenewCubePodResponse
      * @throws UCloudException
      */
-    public function renewCubePod(RenewCubePodRequest $request = null)
+    public function renewCubePod(RenewCubePodRequest $request = null): RenewCubePodResponse
     {
         $resp = $this->invoke($request);
         return new RenewCubePodResponse($resp->toArray(), $resp->getRequestId());
@@ -625,10 +638,9 @@ class CubeClient extends Client
      *     "Deployment" => (string) 经过base64编码的Deployment的yaml
      * ]
      *
-     * @return UpdateCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function updateCubeDeployment(UpdateCubeDeploymentRequest $request = null)
+    public function updateCubeDeployment(UpdateCubeDeploymentRequest $request = null): UpdateCubeDeploymentResponse
     {
         $resp = $this->invoke($request);
         return new UpdateCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());

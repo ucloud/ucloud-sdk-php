@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getUDiskId()
+    public function getUDiskId(): string
     {
         return $this->get("UDiskId");
     }
@@ -37,7 +37,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
@@ -47,7 +47,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getUHostId()
+    public function getUHostId(): string
     {
         return $this->get("UHostId");
     }
@@ -57,7 +57,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -67,7 +67,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getHostId()
+    public function getHostId(): string
     {
         return $this->get("HostId");
     }
@@ -77,7 +77,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }
@@ -87,7 +87,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getDeviceName()
+    public function getDeviceName(): string
     {
         return $this->get("DeviceName");
     }
@@ -97,7 +97,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @param string $deviceName
      */
-    public function setDeviceName($deviceName)
+    public function setDeviceName(string $deviceName)
     {
         $this->set("DeviceName", $deviceName);
     }

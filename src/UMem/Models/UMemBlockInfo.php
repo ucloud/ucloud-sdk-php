@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UMemBlockInfo extends Response
      *
      * @return string|null
      */
-    public function getBlockId()
+    public function getBlockId(): string
     {
         return $this->get("BlockId");
     }
@@ -37,29 +37,9 @@ class UMemBlockInfo extends Response
      *
      * @param string $blockId
      */
-    public function setBlockId($blockId)
+    public function setBlockId(string $blockId)
     {
         $this->set("BlockId", $blockId);
-    }
-
-    /**
-     * BlockVip: 分片ip
-     *
-     * @return string|null
-     */
-    public function getBlockVip()
-    {
-        return $this->get("BlockVip");
-    }
-
-    /**
-     * BlockVip: 分片ip
-     *
-     * @param string $blockVip
-     */
-    public function setBlockVip($blockVip)
-    {
-        $this->set("BlockVip", $blockVip);
     }
 
     /**
@@ -67,7 +47,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockPort()
+    public function getBlockPort(): int
     {
         return $this->get("BlockPort");
     }
@@ -77,7 +57,7 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockPort
      */
-    public function setBlockPort($blockPort)
+    public function setBlockPort(int $blockPort)
     {
         $this->set("BlockPort", $blockPort);
     }
@@ -87,7 +67,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockSize()
+    public function getBlockSize(): int
     {
         return $this->get("BlockSize");
     }
@@ -97,29 +77,9 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockSize
      */
-    public function setBlockSize($blockSize)
+    public function setBlockSize(int $blockSize)
     {
         $this->set("BlockSize", $blockSize);
-    }
-
-    /**
-     * BlockUsedSize: 使用量单位MB
-     *
-     * @return integer|null
-     */
-    public function getBlockUsedSize()
-    {
-        return $this->get("BlockUsedSize");
-    }
-
-    /**
-     * BlockUsedSize: 使用量单位MB
-     *
-     * @param int $blockUsedSize
-     */
-    public function setBlockUsedSize($blockUsedSize)
-    {
-        $this->set("BlockUsedSize", $blockUsedSize);
     }
 
     /**
@@ -127,7 +87,7 @@ class UMemBlockInfo extends Response
      *
      * @return string|null
      */
-    public function getBlockState()
+    public function getBlockState(): string
     {
         return $this->get("BlockState");
     }
@@ -137,7 +97,7 @@ class UMemBlockInfo extends Response
      *
      * @param string $blockState
      */
-    public function setBlockState($blockState)
+    public function setBlockState(string $blockState)
     {
         $this->set("BlockState", $blockState);
     }
@@ -147,7 +107,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockSlotBegin()
+    public function getBlockSlotBegin(): int
     {
         return $this->get("BlockSlotBegin");
     }
@@ -157,7 +117,7 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockSlotBegin
      */
-    public function setBlockSlotBegin($blockSlotBegin)
+    public function setBlockSlotBegin(int $blockSlotBegin)
     {
         $this->set("BlockSlotBegin", $blockSlotBegin);
     }
@@ -167,7 +127,7 @@ class UMemBlockInfo extends Response
      *
      * @return integer|null
      */
-    public function getBlockSlotEnd()
+    public function getBlockSlotEnd(): int
     {
         return $this->get("BlockSlotEnd");
     }
@@ -177,8 +137,48 @@ class UMemBlockInfo extends Response
      *
      * @param int $blockSlotEnd
      */
-    public function setBlockSlotEnd($blockSlotEnd)
+    public function setBlockSlotEnd(int $blockSlotEnd)
     {
         $this->set("BlockSlotEnd", $blockSlotEnd);
+    }
+
+    /**
+     * BlockVip: 分片ip
+     *
+     * @return string|null
+     */
+    public function getBlockVip(): string
+    {
+        return $this->get("BlockVip");
+    }
+
+    /**
+     * BlockVip: 分片ip
+     *
+     * @param string $blockVip
+     */
+    public function setBlockVip(string $blockVip)
+    {
+        $this->set("BlockVip", $blockVip);
+    }
+
+    /**
+     * BlockUsedSize: 使用量单位MB
+     *
+     * @return integer|null
+     */
+    public function getBlockUsedSize(): int
+    {
+        return $this->get("BlockUsedSize");
+    }
+
+    /**
+     * BlockUsedSize: 使用量单位MB
+     *
+     * @param int $blockUsedSize
+     */
+    public function setBlockUsedSize(int $blockUsedSize)
+    {
+        $this->set("BlockUsedSize", $blockUsedSize);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateULBResponse extends Response
      *
      * @return string|null
      */
-    public function getULBId()
+    public function getULBId(): string
     {
         return $this->get("ULBId");
     }
@@ -37,7 +37,7 @@ class CreateULBResponse extends Response
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -47,7 +47,7 @@ class CreateULBResponse extends Response
      *
      * @return string|null
      */
-    public function getIPv6AddressId()
+    public function getIPv6AddressId(): string
     {
         return $this->get("IPv6AddressId");
     }
@@ -57,7 +57,7 @@ class CreateULBResponse extends Response
      *
      * @param string $iPv6AddressId
      */
-    public function setIPv6AddressId($iPv6AddressId)
+    public function setIPv6AddressId(string $iPv6AddressId)
     {
         $this->set("IPv6AddressId", $iPv6AddressId);
     }

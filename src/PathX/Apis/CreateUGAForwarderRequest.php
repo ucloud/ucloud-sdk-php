@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return string|null
      */
-    public function getUGAId()
+    public function getUGAId(): string
     {
         return $this->get("UGAId");
     }
@@ -64,7 +64,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
@@ -74,7 +74,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPHTTP()
+    public function getHTTPHTTP(): array
     {
         return $this->get("HTTPHTTP");
     }
@@ -94,7 +94,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPHTTPRS()
+    public function getHTTPHTTPRS(): array
     {
         return $this->get("HTTPHTTPRS");
     }
@@ -114,7 +114,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTP()
+    public function getHTTPSHTTP(): array
     {
         return $this->get("HTTPSHTTP");
     }
@@ -134,7 +134,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPRS()
+    public function getHTTPSHTTPRS(): array
     {
         return $this->get("HTTPSHTTPRS");
     }
@@ -154,7 +154,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPS()
+    public function getHTTPSHTTPS(): array
     {
         return $this->get("HTTPSHTTPS");
     }
@@ -174,7 +174,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getHTTPSHTTPSRS()
+    public function getHTTPSHTTPSRS(): array
     {
         return $this->get("HTTPSHTTPSRS");
     }
@@ -194,7 +194,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getTCP()
+    public function getTCP(): array
     {
         return $this->get("TCP");
     }
@@ -214,7 +214,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getTCPRS()
+    public function getTCPRS(): array
     {
         return $this->get("TCPRS");
     }
@@ -234,7 +234,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getUDP()
+    public function getUDP(): array
     {
         return $this->get("UDP");
     }
@@ -254,7 +254,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getUDPRS()
+    public function getUDPRS(): array
     {
         return $this->get("UDPRS");
     }
@@ -274,7 +274,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSWS()
+    public function getWSWS(): array
     {
         return $this->get("WSWS");
     }
@@ -294,7 +294,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSWSRS()
+    public function getWSWSRS(): array
     {
         return $this->get("WSWSRS");
     }
@@ -314,7 +314,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSSWSS()
+    public function getWSSWSS(): array
     {
         return $this->get("WSSWSS");
     }
@@ -334,7 +334,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSSWSSRS()
+    public function getWSSWSSRS(): array
     {
         return $this->get("WSSWSSRS");
     }
@@ -354,7 +354,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSSWS()
+    public function getWSSWS(): array
     {
         return $this->get("WSSWS");
     }
@@ -374,7 +374,7 @@ class CreateUGAForwarderRequest extends Request
      *
      * @return int[]|null
      */
-    public function getWSSWSRS()
+    public function getWSSWSRS(): array
     {
         return $this->get("WSSWSRS");
     }

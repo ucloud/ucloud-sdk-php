@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class BatchInfo extends Response
      *
      * @return string|null
      */
-    public function getTemplateId()
+    public function getTemplateId(): string
     {
         return $this->get("TemplateId");
     }
@@ -37,7 +37,7 @@ class BatchInfo extends Response
      *
      * @param string $templateId
      */
-    public function setTemplateId($templateId)
+    public function setTemplateId(string $templateId)
     {
         $this->set("TemplateId", $templateId);
     }
@@ -47,7 +47,7 @@ class BatchInfo extends Response
      *
      * @return string|null
      */
-    public function getSigContent()
+    public function getSigContent(): string
     {
         return $this->get("SigContent");
     }
@@ -57,7 +57,7 @@ class BatchInfo extends Response
      *
      * @param string $sigContent
      */
-    public function setSigContent($sigContent)
+    public function setSigContent(string $sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
@@ -67,12 +67,9 @@ class BatchInfo extends Response
      *
      * @return FailPhoneDetail[]|null
      */
-    public function getTarget()
+    public function getTarget(): array
     {
-        $items = $this->get("Target");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Target") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new FailPhoneDetail($item));
@@ -99,7 +96,7 @@ class BatchInfo extends Response
      *
      * @return string|null
      */
-    public function getFailureDetails()
+    public function getFailureDetails(): string
     {
         return $this->get("FailureDetails");
     }
@@ -109,7 +106,7 @@ class BatchInfo extends Response
      *
      * @param string $failureDetails
      */
-    public function setFailureDetails($failureDetails)
+    public function setFailureDetails(string $failureDetails)
     {
         $this->set("FailureDetails", $failureDetails);
     }

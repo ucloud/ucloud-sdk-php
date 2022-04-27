@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -46,7 +46,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -56,7 +56,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return integer|null
      */
-    public function getPurpose()
+    public function getPurpose(): int
     {
         return $this->get("Purpose");
     }
@@ -66,7 +66,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param int $purpose
      */
-    public function setPurpose($purpose)
+    public function setPurpose(int $purpose)
     {
         $this->set("Purpose", $purpose);
     }
@@ -76,7 +76,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplateName()
+    public function getTemplateName(): string
     {
         return $this->get("TemplateName");
     }
@@ -86,7 +86,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $templateName
      */
-    public function setTemplateName($templateName)
+    public function setTemplateName(string $templateName)
     {
         $this->set("TemplateName", $templateName);
     }
@@ -96,7 +96,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getTemplate()
+    public function getTemplate(): string
     {
         return $this->get("Template");
     }
@@ -106,7 +106,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $template
      */
-    public function setTemplate($template)
+    public function setTemplate(string $template)
     {
         $this->set("Template", $template);
     }
@@ -116,7 +116,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return boolean|null
      */
-    public function getInternational()
+    public function getInternational(): bool
     {
         return $this->get("International");
     }
@@ -126,7 +126,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param boolean $international
      */
-    public function setInternational($international)
+    public function setInternational(bool $international)
     {
         $this->set("International", $international);
     }
@@ -136,7 +136,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -146,7 +146,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -156,7 +156,7 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @return string|null
      */
-    public function getUnsubscribeInfo()
+    public function getUnsubscribeInfo(): string
     {
         return $this->get("UnsubscribeInfo");
     }
@@ -166,8 +166,28 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $unsubscribeInfo
      */
-    public function setUnsubscribeInfo($unsubscribeInfo)
+    public function setUnsubscribeInfo(string $unsubscribeInfo)
     {
         $this->set("UnsubscribeInfo", $unsubscribeInfo);
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @return string|null
+     */
+    public function getInstruction(): string
+    {
+        return $this->get("Instruction");
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @param string $instruction
+     */
+    public function setInstruction(string $instruction)
+    {
+        $this->set("Instruction", $instruction);
     }
 }

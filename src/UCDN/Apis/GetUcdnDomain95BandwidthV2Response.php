@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetUcdnDomain95BandwidthV2Response extends Response
      *
      * @return integer|null
      */
-    public function getTime()
+    public function getTime(): int
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class GetUcdnDomain95BandwidthV2Response extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class GetUcdnDomain95BandwidthV2Response extends Response
      *
      * @return float|null
      */
-    public function getCdnBandwidth()
+    public function getCdnBandwidth(): float
     {
         return $this->get("CdnBandwidth");
     }
@@ -57,7 +57,7 @@ class GetUcdnDomain95BandwidthV2Response extends Response
      *
      * @param float $cdnBandwidth
      */
-    public function setCdnBandwidth($cdnBandwidth)
+    public function setCdnBandwidth(float $cdnBandwidth)
     {
         $this->set("CdnBandwidth", $cdnBandwidth);
     }

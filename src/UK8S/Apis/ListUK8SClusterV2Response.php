@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class ListUK8SClusterV2Response extends Response
      *
      * @return integer|null
      */
-    public function getClusterCount()
+    public function getClusterCount(): int
     {
         return $this->get("ClusterCount");
     }
@@ -38,7 +38,7 @@ class ListUK8SClusterV2Response extends Response
      *
      * @param int $clusterCount
      */
-    public function setClusterCount($clusterCount)
+    public function setClusterCount(int $clusterCount)
     {
         $this->set("ClusterCount", $clusterCount);
     }
@@ -48,12 +48,9 @@ class ListUK8SClusterV2Response extends Response
      *
      * @return ClusterSet[]|null
      */
-    public function getClusterSet()
+    public function getClusterSet(): array
     {
-        $items = $this->get("ClusterSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("ClusterSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ClusterSet($item));

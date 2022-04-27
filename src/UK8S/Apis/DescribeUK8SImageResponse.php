@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,9 @@ class DescribeUK8SImageResponse extends Response
      *
      * @return ImageInfo[]|null
      */
-    public function getImageSet()
+    public function getImageSet(): array
     {
-        $items = $this->get("ImageSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("ImageSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ImageInfo($item));
@@ -61,12 +58,9 @@ class DescribeUK8SImageResponse extends Response
      *
      * @return ImageInfo[]|null
      */
-    public function getPHostImageSet()
+    public function getPHostImageSet(): array
     {
-        $items = $this->get("PHostImageSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("PHostImageSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ImageInfo($item));

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getStorageVolume()
+    public function getStorageVolume(): int
     {
         return $this->get("StorageVolume");
     }
@@ -63,7 +63,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @param int $storageVolume
      */
-    public function setStorageVolume($storageVolume)
+    public function setStorageVolume(int $storageVolume)
     {
         $this->set("StorageVolume", $storageVolume);
     }
@@ -73,7 +73,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDownloadTraffic()
+    public function getDownloadTraffic(): int
     {
         return $this->get("DownloadTraffic");
     }
@@ -83,7 +83,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @param int $downloadTraffic
      */
-    public function setDownloadTraffic($downloadTraffic)
+    public function setDownloadTraffic(int $downloadTraffic)
     {
         $this->set("DownloadTraffic", $downloadTraffic);
     }
@@ -93,7 +93,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getRequestCount()
+    public function getRequestCount(): int
     {
         return $this->get("RequestCount");
     }
@@ -103,7 +103,7 @@ class GetUFileQuotaPriceRequest extends Request
      *
      * @param int $requestCount
      */
-    public function setRequestCount($requestCount)
+    public function setRequestCount(int $requestCount)
     {
         $this->set("RequestCount", $requestCount);
     }

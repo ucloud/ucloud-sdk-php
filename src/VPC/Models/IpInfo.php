@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getIp()
+    public function getIp(): string
     {
         return $this->get("Ip");
     }
@@ -37,7 +37,7 @@ class IpInfo extends Response
      *
      * @param string $ip
      */
-    public function setIp($ip)
+    public function setIp(string $ip)
     {
         $this->set("Ip", $ip);
     }
@@ -47,7 +47,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getMask()
+    public function getMask(): string
     {
         return $this->get("Mask");
     }
@@ -57,7 +57,7 @@ class IpInfo extends Response
      *
      * @param string $mask
      */
-    public function setMask($mask)
+    public function setMask(string $mask)
     {
         $this->set("Mask", $mask);
     }
@@ -67,7 +67,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getGateway()
+    public function getGateway(): string
     {
         return $this->get("Gateway");
     }
@@ -77,7 +77,7 @@ class IpInfo extends Response
      *
      * @param string $gateway
      */
-    public function setGateway($gateway)
+    public function setGateway(string $gateway)
     {
         $this->set("Gateway", $gateway);
     }
@@ -87,7 +87,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getMac()
+    public function getMac(): string
     {
         return $this->get("Mac");
     }
@@ -97,7 +97,7 @@ class IpInfo extends Response
      *
      * @param string $mac
      */
-    public function setMac($mac)
+    public function setMac(string $mac)
     {
         $this->set("Mac", $mac);
     }
@@ -107,7 +107,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -117,7 +117,7 @@ class IpInfo extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -127,7 +127,7 @@ class IpInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -137,7 +137,7 @@ class IpInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }

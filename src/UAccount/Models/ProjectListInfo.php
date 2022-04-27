@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ProjectListInfo extends Response
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -37,7 +37,7 @@ class ProjectListInfo extends Response
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -47,7 +47,7 @@ class ProjectListInfo extends Response
      *
      * @return string|null
      */
-    public function getProjectName()
+    public function getProjectName(): string
     {
         return $this->get("ProjectName");
     }
@@ -57,7 +57,7 @@ class ProjectListInfo extends Response
      *
      * @param string $projectName
      */
-    public function setProjectName($projectName)
+    public function setProjectName(string $projectName)
     {
         $this->set("ProjectName", $projectName);
     }
@@ -67,7 +67,7 @@ class ProjectListInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -77,7 +77,7 @@ class ProjectListInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -87,7 +87,7 @@ class ProjectListInfo extends Response
      *
      * @return boolean|null
      */
-    public function getIsDefault()
+    public function getIsDefault(): bool
     {
         return $this->get("IsDefault");
     }
@@ -97,7 +97,7 @@ class ProjectListInfo extends Response
      *
      * @param boolean $isDefault
      */
-    public function setIsDefault($isDefault)
+    public function setIsDefault(bool $isDefault)
     {
         $this->set("IsDefault", $isDefault);
     }
@@ -107,7 +107,7 @@ class ProjectListInfo extends Response
      *
      * @return integer|null
      */
-    public function getResourceCount()
+    public function getResourceCount(): int
     {
         return $this->get("ResourceCount");
     }
@@ -117,7 +117,7 @@ class ProjectListInfo extends Response
      *
      * @param int $resourceCount
      */
-    public function setResourceCount($resourceCount)
+    public function setResourceCount(int $resourceCount)
     {
         $this->set("ResourceCount", $resourceCount);
     }
@@ -127,7 +127,7 @@ class ProjectListInfo extends Response
      *
      * @return integer|null
      */
-    public function getMemberCount()
+    public function getMemberCount(): int
     {
         return $this->get("MemberCount");
     }
@@ -137,7 +137,7 @@ class ProjectListInfo extends Response
      *
      * @param int $memberCount
      */
-    public function setMemberCount($memberCount)
+    public function setMemberCount(int $memberCount)
     {
         $this->set("MemberCount", $memberCount);
     }
@@ -147,7 +147,7 @@ class ProjectListInfo extends Response
      *
      * @return string|null
      */
-    public function getParentId()
+    public function getParentId(): string
     {
         return $this->get("ParentId");
     }
@@ -157,7 +157,7 @@ class ProjectListInfo extends Response
      *
      * @param string $parentId
      */
-    public function setParentId($parentId)
+    public function setParentId(string $parentId)
     {
         $this->set("ParentId", $parentId);
     }
@@ -167,7 +167,7 @@ class ProjectListInfo extends Response
      *
      * @return string|null
      */
-    public function getParentName()
+    public function getParentName(): string
     {
         return $this->get("ParentName");
     }
@@ -177,7 +177,7 @@ class ProjectListInfo extends Response
      *
      * @param string $parentName
      */
-    public function setParentName($parentName)
+    public function setParentName(string $parentName)
     {
         $this->set("ParentName", $parentName);
     }

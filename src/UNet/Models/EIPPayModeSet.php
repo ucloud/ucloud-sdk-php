@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class EIPPayModeSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -37,7 +37,7 @@ class EIPPayModeSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -47,7 +47,7 @@ class EIPPayModeSet extends Response
      *
      * @return string|null
      */
-    public function getEIPPayMode()
+    public function getEIPPayMode(): string
     {
         return $this->get("EIPPayMode");
     }
@@ -57,7 +57,7 @@ class EIPPayModeSet extends Response
      *
      * @param string $eipPayMode
      */
-    public function setEIPPayMode($eipPayMode)
+    public function setEIPPayMode(string $eipPayMode)
     {
         $this->set("EIPPayMode", $eipPayMode);
     }

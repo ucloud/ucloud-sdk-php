@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -37,7 +37,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -47,7 +47,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->get("Status");
     }
@@ -57,7 +57,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
@@ -67,7 +67,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getLastProbeTime()
+    public function getLastProbeTime(): string
     {
         return $this->get("LastProbeTime");
     }
@@ -77,7 +77,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $lastProbeTime
      */
-    public function setLastProbeTime($lastProbeTime)
+    public function setLastProbeTime(string $lastProbeTime)
     {
         $this->set("LastProbeTime", $lastProbeTime);
     }
@@ -87,7 +87,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getLastTransitionTime()
+    public function getLastTransitionTime(): string
     {
         return $this->get("LastTransitionTime");
     }
@@ -97,7 +97,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $lastTransitionTime
      */
-    public function setLastTransitionTime($lastTransitionTime)
+    public function setLastTransitionTime(string $lastTransitionTime)
     {
         $this->set("LastTransitionTime", $lastTransitionTime);
     }
@@ -107,7 +107,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getReason()
+    public function getReason(): string
     {
         return $this->get("Reason");
     }
@@ -117,7 +117,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $reason
      */
-    public function setReason($reason)
+    public function setReason(string $reason)
     {
         $this->set("Reason", $reason);
     }
@@ -127,7 +127,7 @@ class K8SNodeCondition extends Response
      *
      * @return string|null
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->get("Message");
     }
@@ -137,7 +137,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $message
      */
-    public function setMessage($message)
+    public function setMessage(string $message)
     {
         $this->set("Message", $message);
     }

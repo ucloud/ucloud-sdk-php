@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class QueryUSMSSignatureResponse extends Response
      *
      * @return OutSignature|null
      */
-    public function getData()
+    public function getData(): OutSignature
     {
         return new OutSignature($this->get("Data"));
     }
@@ -38,7 +38,7 @@ class QueryUSMSSignatureResponse extends Response
      *
      * @param OutSignature $data
      */
-    public function setData(array $data)
+    public function setData(OutSignature $data)
     {
         $this->set("Data", $data->getAll());
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\UEC\Apis\BindUEcFirewallRequest;
 use UCloud\UEC\Apis\BindUEcFirewallResponse;
+use UCloud\UEC\Apis\CreateUEcCustomImageRequest;
+use UCloud\UEC\Apis\CreateUEcCustomImageResponse;
 use UCloud\UEC\Apis\CreateUEcFirewallRequest;
 use UCloud\UEC\Apis\CreateUEcFirewallResponse;
 use UCloud\UEC\Apis\CreateUEcHolderRequest;
@@ -125,13 +127,40 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return BindUEcFirewallResponse
      * @throws UCloudException
      */
-    public function bindUEcFirewall(BindUEcFirewallRequest $request = null)
+    public function bindUEcFirewall(BindUEcFirewallRequest $request = null): BindUEcFirewallResponse
     {
         $resp = $this->invoke($request);
         return new BindUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * CreateUEcCustomImage - 从指定虚拟机，生成自定义镜像。
+     *
+     * See also: https://docs.ucloud.cn/api/uec-api/create_u_ec_custom_image
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "NodeId" => (string) 虚拟机实例ID
+     *     "ImageName" => (string) 镜像名称
+     *     "ImageDescription" => (string) 镜像描述
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ImageId" => (string) 镜像ID
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function createUEcCustomImage(CreateUEcCustomImageRequest $request = null): CreateUEcCustomImageResponse
+    {
+        $resp = $this->invoke($request);
+        return new CreateUEcCustomImageResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -163,10 +192,9 @@ class UECClient extends Client
      *     "FirewallId" => (string) 防火墙Id
      * ]
      *
-     * @return CreateUEcFirewallResponse
      * @throws UCloudException
      */
-    public function createUEcFirewall(CreateUEcFirewallRequest $request = null)
+    public function createUEcFirewall(CreateUEcFirewallRequest $request = null): CreateUEcFirewallResponse
     {
         $resp = $this->invoke($request);
         return new CreateUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -226,10 +254,9 @@ class UECClient extends Client
      *     "ResourceId" => (string) 容器组资源id
      * ]
      *
-     * @return CreateUEcHolderResponse
      * @throws UCloudException
      */
-    public function createUEcHolder(CreateUEcHolderRequest $request = null)
+    public function createUEcHolder(CreateUEcHolderRequest $request = null): CreateUEcHolderResponse
     {
         $resp = $this->invoke($request);
         return new CreateUEcHolderResponse($resp->toArray(), $resp->getRequestId());
@@ -256,10 +283,9 @@ class UECClient extends Client
      *     "SubnetId" => (string) 子网ID
      * ]
      *
-     * @return CreateUEcSubnetResponse
      * @throws UCloudException
      */
-    public function createUEcSubnet(CreateUEcSubnetRequest $request = null)
+    public function createUEcSubnet(CreateUEcSubnetRequest $request = null): CreateUEcSubnetResponse
     {
         $resp = $this->invoke($request);
         return new CreateUEcSubnetResponse($resp->toArray(), $resp->getRequestId());
@@ -306,10 +332,9 @@ class UECClient extends Client
      *     ]
      * ]
      *
-     * @return CreateUEcVHostResponse
      * @throws UCloudException
      */
-    public function createUEcVHost(CreateUEcVHostRequest $request = null)
+    public function createUEcVHost(CreateUEcVHostRequest $request = null): CreateUEcVHostResponse
     {
         $resp = $this->invoke($request);
         return new CreateUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -334,10 +359,9 @@ class UECClient extends Client
      *     "ImageId" => (integer) 镜像ID
      * ]
      *
-     * @return DeleteUEcCustomImageResponse
      * @throws UCloudException
      */
-    public function deleteUEcCustomImage(DeleteUEcCustomImageRequest $request = null)
+    public function deleteUEcCustomImage(DeleteUEcCustomImageRequest $request = null): DeleteUEcCustomImageResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUEcCustomImageResponse($resp->toArray(), $resp->getRequestId());
@@ -360,10 +384,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUEcHolderResponse
      * @throws UCloudException
      */
-    public function deleteUEcHolder(DeleteUEcHolderRequest $request = null)
+    public function deleteUEcHolder(DeleteUEcHolderRequest $request = null): DeleteUEcHolderResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUEcHolderResponse($resp->toArray(), $resp->getRequestId());
@@ -386,10 +409,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUEcSubnetResponse
      * @throws UCloudException
      */
-    public function deleteUEcSubnet(DeleteUEcSubnetRequest $request = null)
+    public function deleteUEcSubnet(DeleteUEcSubnetRequest $request = null): DeleteUEcSubnetResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUEcSubnetResponse($resp->toArray(), $resp->getRequestId());
@@ -412,10 +434,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUEcVHostResponse
      * @throws UCloudException
      */
-    public function deleteUEcVHost(DeleteUEcVHostRequest $request = null)
+    public function deleteUEcVHost(DeleteUEcVHostRequest $request = null): DeleteUEcVHostResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -462,10 +483,9 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 满足条件的节点总数
      * ]
      *
-     * @return DescribeUEcFirewallResponse
      * @throws UCloudException
      */
-    public function describeUEcFirewall(DescribeUEcFirewallRequest $request = null)
+    public function describeUEcFirewall(DescribeUEcFirewallRequest $request = null): DescribeUEcFirewallResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -498,10 +518,9 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 资源总数
      * ]
      *
-     * @return DescribeUEcFirewallResourceResponse
      * @throws UCloudException
      */
-    public function describeUEcFirewallResource(DescribeUEcFirewallResourceRequest $request = null)
+    public function describeUEcFirewallResource(DescribeUEcFirewallResourceRequest $request = null): DescribeUEcFirewallResourceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUEcFirewallResourceResponse($resp->toArray(), $resp->getRequestId());
@@ -595,10 +614,9 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 满足条件的容器组总数
      * ]
      *
-     * @return DescribeUEcHolderResponse
      * @throws UCloudException
      */
-    public function describeUEcHolder(DescribeUEcHolderRequest $request = null)
+    public function describeUEcHolder(DescribeUEcHolderRequest $request = null): DescribeUEcHolderResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUEcHolderResponse($resp->toArray(), $resp->getRequestId());
@@ -636,10 +654,9 @@ class UECClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUEcHolderIDCResponse
      * @throws UCloudException
      */
-    public function describeUEcHolderIDC(DescribeUEcHolderIDCRequest $request = null)
+    public function describeUEcHolderIDC(DescribeUEcHolderIDCRequest $request = null): DescribeUEcHolderIDCResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUEcHolderIDCResponse($resp->toArray(), $resp->getRequestId());
@@ -658,7 +675,8 @@ class UECClient extends Client
      *     "Memory" => (integer) 节点内存大小， 单位GB
      *     "IdcId" => (array<string>) Idc机房id。默认全部机房
      *     "Type" => (integer) 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
-     *     "ProductType" => (string) 产品类型：normal（通用型），hf（高主频型）
+     *     "ProductType" => (string) 产品类型：normal（经济型），hf（标准型）,g(GPU型)
+     *     "Gpu" => (integer) Gpu卡核心数
      * ]
      *
      * Outputs:
@@ -677,10 +695,9 @@ class UECClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUEcIDCResponse
      * @throws UCloudException
      */
-    public function describeUEcIDC(DescribeUEcIDCRequest $request = null)
+    public function describeUEcIDC(DescribeUEcIDCRequest $request = null): DescribeUEcIDCResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUEcIDCResponse($resp->toArray(), $resp->getRequestId());
@@ -716,10 +733,9 @@ class UECClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUEcSubnetResponse
      * @throws UCloudException
      */
-    public function describeUEcSubnet(DescribeUEcSubnetRequest $request = null)
+    public function describeUEcSubnet(DescribeUEcSubnetRequest $request = null): DescribeUEcSubnetResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUEcSubnetResponse($resp->toArray(), $resp->getRequestId());
@@ -772,14 +788,14 @@ class UECClient extends Client
      *             ]
      *             "FirewallId" => (string) 防火墙Id
      *             "ProductType" => (string) 机器类型(normal-经济型,hf-标准型,g-GPU型)
+     *             "InnerIps" => (array<string>) 内网ip列表
      *         ]
      *     ]
      * ]
      *
-     * @return DescribeUEcVHostResponse
      * @throws UCloudException
      */
-    public function describeUEcVHost(DescribeUEcVHostRequest $request = null)
+    public function describeUEcVHost(DescribeUEcVHostRequest $request = null): DescribeUEcVHostResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -812,10 +828,9 @@ class UECClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUEcVHostISPResponse
      * @throws UCloudException
      */
-    public function describeUEcVHostISP(DescribeUEcVHostISPRequest $request = null)
+    public function describeUEcVHostISP(DescribeUEcVHostISPRequest $request = null): DescribeUEcVHostISPResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUEcVHostISPResponse($resp->toArray(), $resp->getRequestId());
@@ -840,10 +855,9 @@ class UECClient extends Client
      *     "Data" => (string) 返回的日志数据
      * ]
      *
-     * @return GetUEcHolderLogResponse
      * @throws UCloudException
      */
-    public function getUEcHolderLog(GetUEcHolderLogRequest $request = null)
+    public function getUEcHolderLog(GetUEcHolderLogRequest $request = null): GetUEcHolderLogResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcHolderLogResponse($resp->toArray(), $resp->getRequestId());
@@ -908,10 +922,9 @@ class UECClient extends Client
      *     ]
      * ]
      *
-     * @return GetUEcHolderMetricsResponse
      * @throws UCloudException
      */
-    public function getUEcHolderMetrics(GetUEcHolderMetricsRequest $request = null)
+    public function getUEcHolderMetrics(GetUEcHolderMetricsRequest $request = null): GetUEcHolderMetricsResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcHolderMetricsResponse($resp->toArray(), $resp->getRequestId());
@@ -949,10 +962,9 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 满足条件的机房总数
      * ]
      *
-     * @return GetUEcIDCCutInfoResponse
      * @throws UCloudException
      */
-    public function getUEcIDCCutInfo(GetUEcIDCCutInfoRequest $request = null)
+    public function getUEcIDCCutInfo(GetUEcIDCCutInfoRequest $request = null): GetUEcIDCCutInfoResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcIDCCutInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -1040,10 +1052,9 @@ class UECClient extends Client
      *     ]
      * ]
      *
-     * @return GetUEcIDCVHostDataResponse
      * @throws UCloudException
      */
-    public function getUEcIDCVHostData(GetUEcIDCVHostDataRequest $request = null)
+    public function getUEcIDCVHostData(GetUEcIDCVHostDataRequest $request = null): GetUEcIDCVHostDataResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcIDCVHostDataResponse($resp->toArray(), $resp->getRequestId());
@@ -1088,10 +1099,9 @@ class UECClient extends Client
      *     "TotalCount" => (integer) 镜像总数
      * ]
      *
-     * @return GetUEcImageResponse
      * @throws UCloudException
      */
-    public function getUEcImage(GetUEcImageRequest $request = null)
+    public function getUEcImage(GetUEcImageRequest $request = null): GetUEcImageResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcImageResponse($resp->toArray(), $resp->getRequestId());
@@ -1122,10 +1132,9 @@ class UECClient extends Client
      *     "IpPrice" => (number) IP和带宽价格
      * ]
      *
-     * @return GetUEcPodPriceResponse
      * @throws UCloudException
      */
-    public function getUEcPodPrice(GetUEcPodPriceRequest $request = null)
+    public function getUEcPodPrice(GetUEcPodPriceRequest $request = null): GetUEcPodPriceResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcPodPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -1154,10 +1163,9 @@ class UECClient extends Client
      *     "Price" => (integer) 规格调整差价
      * ]
      *
-     * @return GetUEcUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getUEcUpgradePrice(GetUEcUpgradePriceRequest $request = null)
+    public function getUEcUpgradePrice(GetUEcUpgradePriceRequest $request = null): GetUEcUpgradePriceResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -1245,10 +1253,9 @@ class UECClient extends Client
      *     ]
      * ]
      *
-     * @return GetUEcVHostDataResponse
      * @throws UCloudException
      */
-    public function getUEcVHostData(GetUEcVHostDataRequest $request = null)
+    public function getUEcVHostData(GetUEcVHostDataRequest $request = null): GetUEcVHostDataResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcVHostDataResponse($resp->toArray(), $resp->getRequestId());
@@ -1284,10 +1291,9 @@ class UECClient extends Client
      *     "IpPrice" => (number) Ip和带宽价格
      * ]
      *
-     * @return GetUEcVHostPriceResponse
      * @throws UCloudException
      */
-    public function getUEcVHostPrice(GetUEcVHostPriceRequest $request = null)
+    public function getUEcVHostPrice(GetUEcVHostPriceRequest $request = null): GetUEcVHostPriceResponse
     {
         $resp = $this->invoke($request);
         return new GetUEcVHostPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -1317,10 +1323,9 @@ class UECClient extends Client
      *     "ImageId" => (string) 镜像Id
      * ]
      *
-     * @return ImportUEcCustomImageResponse
      * @throws UCloudException
      */
-    public function importUEcCustomImage(ImportUEcCustomImageRequest $request = null)
+    public function importUEcCustomImage(ImportUEcCustomImageRequest $request = null): ImportUEcCustomImageResponse
     {
         $resp = $this->invoke($request);
         return new ImportUEcCustomImageResponse($resp->toArray(), $resp->getRequestId());
@@ -1347,10 +1352,9 @@ class UECClient extends Client
      *     "LinkPort" => (integer) 登录端口
      * ]
      *
-     * @return LoginUEcDockerResponse
      * @throws UCloudException
      */
-    public function loginUEcDocker(LoginUEcDockerRequest $request = null)
+    public function loginUEcDocker(LoginUEcDockerRequest $request = null): LoginUEcDockerResponse
     {
         $resp = $this->invoke($request);
         return new LoginUEcDockerResponse($resp->toArray(), $resp->getRequestId());
@@ -1374,10 +1378,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyUEcBandwidthResponse
      * @throws UCloudException
      */
-    public function modifyUEcBandwidth(ModifyUEcBandwidthRequest $request = null)
+    public function modifyUEcBandwidth(ModifyUEcBandwidthRequest $request = null): ModifyUEcBandwidthResponse
     {
         $resp = $this->invoke($request);
         return new ModifyUEcBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -1401,10 +1404,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyUEcHolderNameResponse
      * @throws UCloudException
      */
-    public function modifyUEcHolderName(ModifyUEcHolderNameRequest $request = null)
+    public function modifyUEcHolderName(ModifyUEcHolderNameRequest $request = null): ModifyUEcHolderNameResponse
     {
         $resp = $this->invoke($request);
         return new ModifyUEcHolderNameResponse($resp->toArray(), $resp->getRequestId());
@@ -1429,10 +1431,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyUEcImageNameResponse
      * @throws UCloudException
      */
-    public function modifyUEcImageName(ModifyUEcImageNameRequest $request = null)
+    public function modifyUEcImageName(ModifyUEcImageNameRequest $request = null): ModifyUEcImageNameResponse
     {
         $resp = $this->invoke($request);
         return new ModifyUEcImageNameResponse($resp->toArray(), $resp->getRequestId());
@@ -1455,10 +1456,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return PoweroffUEcVHostResponse
      * @throws UCloudException
      */
-    public function poweroffUEcVHost(PoweroffUEcVHostRequest $request = null)
+    public function poweroffUEcVHost(PoweroffUEcVHostRequest $request = null): PoweroffUEcVHostResponse
     {
         $resp = $this->invoke($request);
         return new PoweroffUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1485,10 +1485,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ReinstallUEcVHostResponse
      * @throws UCloudException
      */
-    public function reinstallUEcVHost(ReinstallUEcVHostRequest $request = null)
+    public function reinstallUEcVHost(ReinstallUEcVHostRequest $request = null): ReinstallUEcVHostResponse
     {
         $resp = $this->invoke($request);
         return new ReinstallUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1511,10 +1510,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return RestartUEcHolderResponse
      * @throws UCloudException
      */
-    public function restartUEcHolder(RestartUEcHolderRequest $request = null)
+    public function restartUEcHolder(RestartUEcHolderRequest $request = null): RestartUEcHolderResponse
     {
         $resp = $this->invoke($request);
         return new RestartUEcHolderResponse($resp->toArray(), $resp->getRequestId());
@@ -1537,10 +1535,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return RestartUEcVHostResponse
      * @throws UCloudException
      */
-    public function restartUEcVHost(RestartUEcVHostRequest $request = null)
+    public function restartUEcVHost(RestartUEcVHostRequest $request = null): RestartUEcVHostResponse
     {
         $resp = $this->invoke($request);
         return new RestartUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1563,10 +1560,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return StartUEcVHostResponse
      * @throws UCloudException
      */
-    public function startUEcVHost(StartUEcVHostRequest $request = null)
+    public function startUEcVHost(StartUEcVHostRequest $request = null): StartUEcVHostResponse
     {
         $resp = $this->invoke($request);
         return new StartUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1589,10 +1585,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return StopUEcVHostResponse
      * @throws UCloudException
      */
-    public function stopUEcVHost(StopUEcVHostRequest $request = null)
+    public function stopUEcVHost(StopUEcVHostRequest $request = null): StopUEcVHostResponse
     {
         $resp = $this->invoke($request);
         return new StopUEcVHostResponse($resp->toArray(), $resp->getRequestId());
@@ -1616,10 +1611,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UnBindUEcFirewallResponse
      * @throws UCloudException
      */
-    public function unBindUEcFirewall(UnBindUEcFirewallRequest $request = null)
+    public function unBindUEcFirewall(UnBindUEcFirewallRequest $request = null): UnBindUEcFirewallResponse
     {
         $resp = $this->invoke($request);
         return new UnBindUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -1652,10 +1646,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpdateUEcFirewallResponse
      * @throws UCloudException
      */
-    public function updateUEcFirewall(UpdateUEcFirewallRequest $request = null)
+    public function updateUEcFirewall(UpdateUEcFirewallRequest $request = null): UpdateUEcFirewallResponse
     {
         $resp = $this->invoke($request);
         return new UpdateUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
@@ -1680,10 +1673,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpdateUEcFirewallAttributeResponse
      * @throws UCloudException
      */
-    public function updateUEcFirewallAttribute(UpdateUEcFirewallAttributeRequest $request = null)
+    public function updateUEcFirewallAttribute(UpdateUEcFirewallAttributeRequest $request = null): UpdateUEcFirewallAttributeResponse
     {
         $resp = $this->invoke($request);
         return new UpdateUEcFirewallAttributeResponse($resp->toArray(), $resp->getRequestId());
@@ -1708,10 +1700,9 @@ class UECClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpdateUEcSubnetResponse
      * @throws UCloudException
      */
-    public function updateUEcSubnet(UpdateUEcSubnetRequest $request = null)
+    public function updateUEcSubnet(UpdateUEcSubnetRequest $request = null): UpdateUEcSubnetResponse
     {
         $resp = $this->invoke($request);
         return new UpdateUEcSubnetResponse($resp->toArray(), $resp->getRequestId());

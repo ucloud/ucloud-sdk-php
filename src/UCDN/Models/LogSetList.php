@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class LogSetList extends Response
      *
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->get("Domain");
     }
@@ -37,7 +37,7 @@ class LogSetList extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
@@ -47,12 +47,9 @@ class LogSetList extends Response
      *
      * @return LogSetInfo[]|null
      */
-    public function getLogs()
+    public function getLogs(): array
     {
-        $items = $this->get("Logs");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Logs") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new LogSetInfo($item));

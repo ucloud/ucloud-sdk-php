@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,9 @@ class UDPNClient extends Client
      *     "UDPNId" => (string) 资源名称
      * ]
      *
-     * @return AllocateUDPNResponse
      * @throws UCloudException
      */
-    public function allocateUDPN(AllocateUDPNRequest $request = null)
+    public function allocateUDPN(AllocateUDPNRequest $request = null): AllocateUDPNResponse
     {
         $resp = $this->invoke($request);
         return new AllocateUDPNResponse($resp->toArray(), $resp->getRequestId());
@@ -105,10 +104,9 @@ class UDPNClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUDPNResponse
      * @throws UCloudException
      */
-    public function describeUDPN(DescribeUDPNRequest $request = null)
+    public function describeUDPN(DescribeUDPNRequest $request = null): DescribeUDPNResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDPNResponse($resp->toArray(), $resp->getRequestId());
@@ -139,10 +137,9 @@ class UDPNClient extends Client
      *     ]
      * ]
      *
-     * @return GetUDPNLineListResponse
      * @throws UCloudException
      */
-    public function getUDPNLineList(GetUDPNLineListRequest $request = null)
+    public function getUDPNLineList(GetUDPNLineListRequest $request = null): GetUDPNLineListResponse
     {
         $resp = $this->invoke($request);
         return new GetUDPNLineListResponse($resp->toArray(), $resp->getRequestId());
@@ -172,10 +169,9 @@ class UDPNClient extends Client
      *     "Price" => (number) 专线价格
      * ]
      *
-     * @return GetUDPNPriceResponse
      * @throws UCloudException
      */
-    public function getUDPNPrice(GetUDPNPriceRequest $request = null)
+    public function getUDPNPrice(GetUDPNPriceRequest $request = null): GetUDPNPriceResponse
     {
         $resp = $this->invoke($request);
         return new GetUDPNPriceResponse($resp->toArray(), $resp->getRequestId());
@@ -201,10 +197,9 @@ class UDPNClient extends Client
      *     "Price" => (number) 升级后的价格
      * ]
      *
-     * @return GetUDPNUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getUDPNUpgradePrice(GetUDPNUpgradePriceRequest $request = null)
+    public function getUDPNUpgradePrice(GetUDPNUpgradePriceRequest $request = null): GetUDPNUpgradePriceResponse
     {
         $resp = $this->invoke($request);
         return new GetUDPNUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -229,10 +224,9 @@ class UDPNClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyUDPNBandwidthResponse
      * @throws UCloudException
      */
-    public function modifyUDPNBandwidth(ModifyUDPNBandwidthRequest $request = null)
+    public function modifyUDPNBandwidth(ModifyUDPNBandwidthRequest $request = null): ModifyUDPNBandwidthResponse
     {
         $resp = $this->invoke($request);
         return new ModifyUDPNBandwidthResponse($resp->toArray(), $resp->getRequestId());
@@ -256,10 +250,9 @@ class UDPNClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ReleaseUDPNResponse
      * @throws UCloudException
      */
-    public function releaseUDPN(ReleaseUDPNRequest $request = null)
+    public function releaseUDPN(ReleaseUDPNRequest $request = null): ReleaseUDPNResponse
     {
         $resp = $this->invoke($request);
         return new ReleaseUDPNResponse($resp->toArray(), $resp->getRequestId());

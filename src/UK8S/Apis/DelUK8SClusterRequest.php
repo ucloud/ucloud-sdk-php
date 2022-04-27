@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class DelUK8SClusterRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class DelUK8SClusterRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class DelUK8SClusterRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class DelUK8SClusterRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class DelUK8SClusterRequest extends Request
      *
      * @return string|null
      */
-    public function getClusterId()
+    public function getClusterId(): string
     {
         return $this->get("ClusterId");
     }
@@ -84,7 +84,7 @@ class DelUK8SClusterRequest extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
@@ -94,7 +94,7 @@ class DelUK8SClusterRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseUDisk()
+    public function getReleaseUDisk(): bool
     {
         return $this->get("ReleaseUDisk");
     }
@@ -104,7 +104,7 @@ class DelUK8SClusterRequest extends Request
      *
      * @param boolean $releaseUDisk
      */
-    public function setReleaseUDisk($releaseUDisk)
+    public function setReleaseUDisk(bool $releaseUDisk)
     {
         $this->set("ReleaseUDisk", $releaseUDisk);
     }

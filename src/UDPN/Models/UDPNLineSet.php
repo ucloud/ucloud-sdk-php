@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UDPNLineSet extends Response
      *
      * @return string|null
      */
-    public function getLocalRegion()
+    public function getLocalRegion(): string
     {
         return $this->get("LocalRegion");
     }
@@ -37,7 +37,7 @@ class UDPNLineSet extends Response
      *
      * @param string $localRegion
      */
-    public function setLocalRegion($localRegion)
+    public function setLocalRegion(string $localRegion)
     {
         $this->set("LocalRegion", $localRegion);
     }
@@ -47,7 +47,7 @@ class UDPNLineSet extends Response
      *
      * @return string|null
      */
-    public function getRemoteRegion()
+    public function getRemoteRegion(): string
     {
         return $this->get("RemoteRegion");
     }
@@ -57,7 +57,7 @@ class UDPNLineSet extends Response
      *
      * @param string $remoteRegion
      */
-    public function setRemoteRegion($remoteRegion)
+    public function setRemoteRegion(string $remoteRegion)
     {
         $this->set("RemoteRegion", $remoteRegion);
     }
@@ -67,7 +67,7 @@ class UDPNLineSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidthUpperLimit()
+    public function getBandwidthUpperLimit(): int
     {
         return $this->get("BandwidthUpperLimit");
     }
@@ -77,7 +77,7 @@ class UDPNLineSet extends Response
      *
      * @param int $bandwidthUpperLimit
      */
-    public function setBandwidthUpperLimit($bandwidthUpperLimit)
+    public function setBandwidthUpperLimit(int $bandwidthUpperLimit)
     {
         $this->set("BandwidthUpperLimit", $bandwidthUpperLimit);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateVPNGatewayResponse extends Response
      *
      * @return string|null
      */
-    public function getVPNGatewayId()
+    public function getVPNGatewayId(): string
     {
         return $this->get("VPNGatewayId");
     }
@@ -37,7 +37,7 @@ class CreateVPNGatewayResponse extends Response
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId($vpnGatewayId)
+    public function setVPNGatewayId(string $vpnGatewayId)
     {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }

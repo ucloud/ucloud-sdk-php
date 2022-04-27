@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUFileTokenResponse extends Response
      *
      * @return string|null
      */
-    public function getTokenId()
+    public function getTokenId(): string
     {
         return $this->get("TokenId");
     }
@@ -37,7 +37,7 @@ class CreateUFileTokenResponse extends Response
      *
      * @param string $tokenId
      */
-    public function setTokenId($tokenId)
+    public function setTokenId(string $tokenId)
     {
         $this->set("TokenId", $tokenId);
     }

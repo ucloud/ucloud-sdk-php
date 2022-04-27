@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,12 +27,9 @@ class UFileReportItem extends Response
      *
      * @return UFileTotalReportItem[]|null
      */
-    public function getTotal()
+    public function getTotal(): array
     {
-        $items = $this->get("Total");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Total") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UFileTotalReportItem($item));
@@ -59,12 +56,9 @@ class UFileReportItem extends Response
      *
      * @return UFileDailyReportItem[]|null
      */
-    public function getDaily()
+    public function getDaily(): array
     {
-        $items = $this->get("Daily");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Daily") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UFileDailyReportItem($item));

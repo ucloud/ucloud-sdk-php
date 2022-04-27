@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -85,7 +85,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -95,7 +95,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnet()
+    public function getSubnet(): string
     {
         return $this->get("Subnet");
     }
@@ -105,7 +105,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $subnet
      */
-    public function setSubnet($subnet)
+    public function setSubnet(string $subnet)
     {
         $this->set("Subnet", $subnet);
     }
@@ -115,7 +115,7 @@ class CreateSubnetRequest extends Request
      *
      * @return integer|null
      */
-    public function getNetmask()
+    public function getNetmask(): int
     {
         return $this->get("Netmask");
     }
@@ -125,7 +125,7 @@ class CreateSubnetRequest extends Request
      *
      * @param int $netmask
      */
-    public function setNetmask($netmask)
+    public function setNetmask(int $netmask)
     {
         $this->set("Netmask", $netmask);
     }
@@ -135,7 +135,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetName()
+    public function getSubnetName(): string
     {
         return $this->get("SubnetName");
     }
@@ -145,7 +145,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $subnetName
      */
-    public function setSubnetName($subnetName)
+    public function setSubnetName(string $subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -155,7 +155,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -165,7 +165,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -175,7 +175,7 @@ class CreateSubnetRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -185,7 +185,7 @@ class CreateSubnetRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

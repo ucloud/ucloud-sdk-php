@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class HttpCodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getTime()
+    public function getTime(): int
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class HttpCodeInfo extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class HttpCodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getHttpOneXX()
+    public function getHttpOneXX(): int
     {
         return $this->get("HttpOneXX");
     }
@@ -57,7 +57,7 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpOneXX
      */
-    public function setHttpOneXX($httpOneXX)
+    public function setHttpOneXX(int $httpOneXX)
     {
         $this->set("HttpOneXX", $httpOneXX);
     }
@@ -67,7 +67,7 @@ class HttpCodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getHttpTwoXX()
+    public function getHttpTwoXX(): int
     {
         return $this->get("HttpTwoXX");
     }
@@ -77,7 +77,7 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpTwoXX
      */
-    public function setHttpTwoXX($httpTwoXX)
+    public function setHttpTwoXX(int $httpTwoXX)
     {
         $this->set("HttpTwoXX", $httpTwoXX);
     }
@@ -87,7 +87,7 @@ class HttpCodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getHttpThreeXX()
+    public function getHttpThreeXX(): int
     {
         return $this->get("HttpThreeXX");
     }
@@ -97,7 +97,7 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpThreeXX
      */
-    public function setHttpThreeXX($httpThreeXX)
+    public function setHttpThreeXX(int $httpThreeXX)
     {
         $this->set("HttpThreeXX", $httpThreeXX);
     }
@@ -107,7 +107,7 @@ class HttpCodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getHttpFourXX()
+    public function getHttpFourXX(): int
     {
         return $this->get("HttpFourXX");
     }
@@ -117,7 +117,7 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpFourXX
      */
-    public function setHttpFourXX($httpFourXX)
+    public function setHttpFourXX(int $httpFourXX)
     {
         $this->set("HttpFourXX", $httpFourXX);
     }
@@ -127,7 +127,7 @@ class HttpCodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getHttpFiveXX()
+    public function getHttpFiveXX(): int
     {
         return $this->get("HttpFiveXX");
     }
@@ -137,7 +137,7 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpFiveXX
      */
-    public function setHttpFiveXX($httpFiveXX)
+    public function setHttpFiveXX(int $httpFiveXX)
     {
         $this->set("HttpFiveXX", $httpFiveXX);
     }

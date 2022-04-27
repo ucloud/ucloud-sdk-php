@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getNodeId()
+    public function getNodeId(): string
     {
         return $this->get("NodeId");
     }
@@ -57,7 +57,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -67,7 +67,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getNodeRole()
+    public function getNodeRole(): string
     {
         return $this->get("NodeRole");
     }
@@ -77,7 +77,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $nodeRole
      */
-    public function setNodeRole($nodeRole)
+    public function setNodeRole(string $nodeRole)
     {
         $this->set("NodeRole", $nodeRole);
     }
@@ -87,7 +87,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getNodeStatus()
+    public function getNodeStatus(): string
     {
         return $this->get("NodeStatus");
     }
@@ -97,7 +97,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $nodeStatus
      */
-    public function setNodeStatus($nodeStatus)
+    public function setNodeStatus(string $nodeStatus)
     {
         $this->set("NodeStatus", $nodeStatus);
     }
@@ -107,7 +107,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getInstanceType()
+    public function getInstanceType(): string
     {
         return $this->get("InstanceType");
     }
@@ -117,7 +117,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -127,7 +127,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getInstanceName()
+    public function getInstanceName(): string
     {
         return $this->get("InstanceName");
     }
@@ -137,7 +137,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $instanceName
      */
-    public function setInstanceName($instanceName)
+    public function setInstanceName(string $instanceName)
     {
         $this->set("InstanceName", $instanceName);
     }
@@ -147,7 +147,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getInstanceId()
+    public function getInstanceId(): string
     {
         return $this->get("InstanceId");
     }
@@ -157,7 +157,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $instanceId
      */
-    public function setInstanceId($instanceId)
+    public function setInstanceId(string $instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -167,7 +167,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getMachineType()
+    public function getMachineType(): string
     {
         return $this->get("MachineType");
     }
@@ -177,7 +177,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
@@ -187,7 +187,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getOsType()
+    public function getOsType(): string
     {
         return $this->get("OsType");
     }
@@ -197,7 +197,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
@@ -207,7 +207,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getOsName()
+    public function getOsName(): string
     {
         return $this->get("OsName");
     }
@@ -217,7 +217,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $osName
      */
-    public function setOsName($osName)
+    public function setOsName(string $osName)
     {
         $this->set("OsName", $osName);
     }
@@ -227,7 +227,7 @@ class NodeInfoV2 extends Response
      *
      * @return integer|null
      */
-    public function getCPU()
+    public function getCPU(): int
     {
         return $this->get("CPU");
     }
@@ -237,7 +237,7 @@ class NodeInfoV2 extends Response
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
@@ -247,7 +247,7 @@ class NodeInfoV2 extends Response
      *
      * @return integer|null
      */
-    public function getMemory()
+    public function getMemory(): int
     {
         return $this->get("Memory");
     }
@@ -257,7 +257,7 @@ class NodeInfoV2 extends Response
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
@@ -267,12 +267,9 @@ class NodeInfoV2 extends Response
      *
      * @return UHostIPSet[]|null
      */
-    public function getIPSet()
+    public function getIPSet(): array
     {
-        $items = $this->get("IPSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("IPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UHostIPSet($item));
@@ -299,7 +296,7 @@ class NodeInfoV2 extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -309,7 +306,7 @@ class NodeInfoV2 extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -319,7 +316,7 @@ class NodeInfoV2 extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime()
+    public function getExpireTime(): int
     {
         return $this->get("ExpireTime");
     }
@@ -329,7 +326,7 @@ class NodeInfoV2 extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -339,7 +336,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getAsgId()
+    public function getAsgId(): string
     {
         return $this->get("AsgId");
     }
@@ -349,7 +346,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $asgId
      */
-    public function setAsgId($asgId)
+    public function setAsgId(string $asgId)
     {
         $this->set("AsgId", $asgId);
     }
@@ -359,7 +356,7 @@ class NodeInfoV2 extends Response
      *
      * @return boolean|null
      */
-    public function getUnschedulable()
+    public function getUnschedulable(): bool
     {
         return $this->get("Unschedulable");
     }
@@ -369,7 +366,7 @@ class NodeInfoV2 extends Response
      *
      * @param boolean $unschedulable
      */
-    public function setUnschedulable($unschedulable)
+    public function setUnschedulable(bool $unschedulable)
     {
         $this->set("Unschedulable", $unschedulable);
     }
@@ -379,7 +376,7 @@ class NodeInfoV2 extends Response
      *
      * @return KubeProxy|null
      */
-    public function getKubeProxy()
+    public function getKubeProxy(): KubeProxy
     {
         return new KubeProxy($this->get("KubeProxy"));
     }
@@ -389,7 +386,7 @@ class NodeInfoV2 extends Response
      *
      * @param KubeProxy $kubeProxy
      */
-    public function setKubeProxy(array $kubeProxy)
+    public function setKubeProxy(KubeProxy $kubeProxy)
     {
         $this->set("KubeProxy", $kubeProxy->getAll());
     }
@@ -399,7 +396,7 @@ class NodeInfoV2 extends Response
      *
      * @return string|null
      */
-    public function getNodeLogInfo()
+    public function getNodeLogInfo(): string
     {
         return $this->get("NodeLogInfo");
     }
@@ -409,7 +406,7 @@ class NodeInfoV2 extends Response
      *
      * @param string $nodeLogInfo
      */
-    public function setNodeLogInfo($nodeLogInfo)
+    public function setNodeLogInfo(string $nodeLogInfo)
     {
         $this->set("NodeLogInfo", $nodeLogInfo);
     }
@@ -419,7 +416,7 @@ class NodeInfoV2 extends Response
      *
      * @return integer|null
      */
-    public function getGPU()
+    public function getGPU(): int
     {
         return $this->get("GPU");
     }
@@ -429,7 +426,7 @@ class NodeInfoV2 extends Response
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }

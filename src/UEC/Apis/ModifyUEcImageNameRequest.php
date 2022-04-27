@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -64,7 +64,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -74,7 +74,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @return string|null
      */
-    public function getImageName()
+    public function getImageName(): string
     {
         return $this->get("ImageName");
     }
@@ -84,7 +84,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -94,7 +94,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @return string|null
      */
-    public function getImageDesc()
+    public function getImageDesc(): string
     {
         return $this->get("ImageDesc");
     }
@@ -104,7 +104,7 @@ class ModifyUEcImageNameRequest extends Request
      *
      * @param string $imageDesc
      */
-    public function setImageDesc($imageDesc)
+    public function setImageDesc(string $imageDesc)
     {
         $this->set("ImageDesc", $imageDesc);
     }

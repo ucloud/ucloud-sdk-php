@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DescribeUDBInstanceLogResponse extends Response
      *
      * @return string|null
      */
-    public function getLog()
+    public function getLog(): string
     {
         return $this->get("Log");
     }
@@ -37,7 +37,7 @@ class DescribeUDBInstanceLogResponse extends Response
      *
      * @param string $log
      */
-    public function setLog($log)
+    public function setLog(string $log)
     {
         $this->set("Log", $log);
     }
@@ -47,7 +47,7 @@ class DescribeUDBInstanceLogResponse extends Response
      *
      * @return string|null
      */
-    public function getNextTime()
+    public function getNextTime(): string
     {
         return $this->get("NextTime");
     }
@@ -57,7 +57,7 @@ class DescribeUDBInstanceLogResponse extends Response
      *
      * @param string $nextTime
      */
-    public function setNextTime($nextTime)
+    public function setNextTime(string $nextTime)
     {
         $this->set("NextTime", $nextTime);
     }

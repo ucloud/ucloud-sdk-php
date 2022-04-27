@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -49,7 +49,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -59,7 +59,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return string|null
      */
-    public function getIdcId()
+    public function getIdcId(): string
     {
         return $this->get("IdcId");
     }
@@ -69,7 +69,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -79,7 +79,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return float|null
      */
-    public function getCpuCore()
+    public function getCpuCore(): float
     {
         return $this->get("CpuCore");
     }
@@ -89,7 +89,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param float $cpuCore
      */
-    public function setCpuCore($cpuCore)
+    public function setCpuCore(float $cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
@@ -99,7 +99,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemSize()
+    public function getMemSize(): int
     {
         return $this->get("MemSize");
     }
@@ -109,7 +109,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -119,7 +119,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -129,7 +129,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -139,7 +139,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -149,7 +149,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -159,7 +159,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return string|null
      */
-    public function getProductType()
+    public function getProductType(): string
     {
         return $this->get("ProductType");
     }
@@ -169,7 +169,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }
@@ -179,7 +179,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return integer|null
      */
-    public function getRestartStrategy()
+    public function getRestartStrategy(): int
     {
         return $this->get("RestartStrategy");
     }
@@ -189,7 +189,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $restartStrategy
      */
-    public function setRestartStrategy($restartStrategy)
+    public function setRestartStrategy(int $restartStrategy)
     {
         $this->set("RestartStrategy", $restartStrategy);
     }
@@ -199,7 +199,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return string|null
      */
-    public function getElasticIp()
+    public function getElasticIp(): string
     {
         return $this->get("ElasticIp");
     }
@@ -209,7 +209,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $elasticIp
      */
-    public function setElasticIp($elasticIp)
+    public function setElasticIp(string $elasticIp)
     {
         $this->set("ElasticIp", $elasticIp);
     }
@@ -219,7 +219,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -229,7 +229,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -239,7 +239,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return string|null
      */
-    public function getFirewallId()
+    public function getFirewallId(): string
     {
         return $this->get("FirewallId");
     }
@@ -249,7 +249,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
@@ -259,7 +259,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return integer|null
      */
-    public function getChargeType()
+    public function getChargeType(): int
     {
         return $this->get("ChargeType");
     }
@@ -269,7 +269,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(int $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -279,7 +279,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @return integer|null
      */
-    public function getChargeQuantity()
+    public function getChargeQuantity(): int
     {
         return $this->get("ChargeQuantity");
     }
@@ -289,7 +289,7 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity($chargeQuantity)
+    public function setChargeQuantity(int $chargeQuantity)
     {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
@@ -299,12 +299,9 @@ class CreateUEcHolderRequest extends Request
      *
      * @return CreateUEcHolderParamPack[]|null
      */
-    public function getPack()
+    public function getPack(): array
     {
-        $items = $this->get("Pack");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Pack") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUEcHolderParamPack($item));
@@ -331,12 +328,9 @@ class CreateUEcHolderRequest extends Request
      *
      * @return CreateUEcHolderParamImage[]|null
      */
-    public function getImage()
+    public function getImage(): array
     {
-        $items = $this->get("Image");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Image") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUEcHolderParamImage($item));
@@ -363,12 +357,9 @@ class CreateUEcHolderRequest extends Request
      *
      * @return CreateUEcHolderParamStorage[]|null
      */
-    public function getStorage()
+    public function getStorage(): array
     {
-        $items = $this->get("Storage");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Storage") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUEcHolderParamStorage($item));

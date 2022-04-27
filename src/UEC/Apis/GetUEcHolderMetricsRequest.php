@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return string|null
      */
-    public function getPackName()
+    public function getPackName(): string
     {
         return $this->get("PackName");
     }
@@ -65,7 +65,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param string $packName
      */
-    public function setPackName($packName)
+    public function setPackName(string $packName)
     {
         $this->set("PackName", $packName);
     }
@@ -75,7 +75,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return string[]|null
      */
-    public function getType()
+    public function getType(): array
     {
         return $this->get("Type");
     }
@@ -95,7 +95,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceId()
+    public function getResourceId(): string
     {
         return $this->get("ResourceId");
     }
@@ -105,7 +105,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -115,7 +115,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return integer|null
      */
-    public function getStartTime()
+    public function getStartTime(): int
     {
         return $this->get("StartTime");
     }
@@ -125,7 +125,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param int $startTime
      */
-    public function setStartTime($startTime)
+    public function setStartTime(int $startTime)
     {
         $this->set("StartTime", $startTime);
     }
@@ -135,7 +135,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -145,7 +145,7 @@ class GetUEcHolderMetricsRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }

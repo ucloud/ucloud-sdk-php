@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class UpdateFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class UpdateFirewallRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class UpdateFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class UpdateFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class UpdateFirewallRequest extends Request
      *
      * @return string|null
      */
-    public function getFWId()
+    public function getFWId(): string
     {
         return $this->get("FWId");
     }
@@ -85,7 +85,7 @@ class UpdateFirewallRequest extends Request
      *
      * @param string $fwId
      */
-    public function setFWId($fwId)
+    public function setFWId(string $fwId)
     {
         $this->set("FWId", $fwId);
     }
@@ -95,7 +95,7 @@ class UpdateFirewallRequest extends Request
      *
      * @return string[]|null
      */
-    public function getRule()
+    public function getRule(): array
     {
         return $this->get("Rule");
     }

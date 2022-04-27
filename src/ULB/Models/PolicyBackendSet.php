@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PolicyBackendSet extends Response
      *
      * @return string|null
      */
-    public function getBackendId()
+    public function getBackendId(): string
     {
         return $this->get("BackendId");
     }
@@ -37,7 +37,7 @@ class PolicyBackendSet extends Response
      *
      * @param string $backendId
      */
-    public function setBackendId($backendId)
+    public function setBackendId(string $backendId)
     {
         $this->set("BackendId", $backendId);
     }
@@ -47,7 +47,7 @@ class PolicyBackendSet extends Response
      *
      * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): string
     {
         return $this->get("ResourceType");
     }
@@ -57,7 +57,7 @@ class PolicyBackendSet extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -67,7 +67,7 @@ class PolicyBackendSet extends Response
      *
      * @return string|null
      */
-    public function getResourceName()
+    public function getResourceName(): string
     {
         return $this->get("ResourceName");
     }
@@ -77,7 +77,7 @@ class PolicyBackendSet extends Response
      *
      * @param string $resourceName
      */
-    public function setResourceName($resourceName)
+    public function setResourceName(string $resourceName)
     {
         $this->set("ResourceName", $resourceName);
     }
@@ -87,7 +87,7 @@ class PolicyBackendSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceId()
+    public function getSubResourceId(): string
     {
         return $this->get("SubResourceId");
     }
@@ -97,7 +97,7 @@ class PolicyBackendSet extends Response
      *
      * @param string $subResourceId
      */
-    public function setSubResourceId($subResourceId)
+    public function setSubResourceId(string $subResourceId)
     {
         $this->set("SubResourceId", $subResourceId);
     }
@@ -107,7 +107,7 @@ class PolicyBackendSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceName()
+    public function getSubResourceName(): string
     {
         return $this->get("SubResourceName");
     }
@@ -117,7 +117,7 @@ class PolicyBackendSet extends Response
      *
      * @param string $subResourceName
      */
-    public function setSubResourceName($subResourceName)
+    public function setSubResourceName(string $subResourceName)
     {
         $this->set("SubResourceName", $subResourceName);
     }
@@ -127,7 +127,7 @@ class PolicyBackendSet extends Response
      *
      * @return string|null
      */
-    public function getSubResourceType()
+    public function getSubResourceType(): string
     {
         return $this->get("SubResourceType");
     }
@@ -137,7 +137,7 @@ class PolicyBackendSet extends Response
      *
      * @param string $subResourceType
      */
-    public function setSubResourceType($subResourceType)
+    public function setSubResourceType(string $subResourceType)
     {
         $this->set("SubResourceType", $subResourceType);
     }
@@ -147,7 +147,7 @@ class PolicyBackendSet extends Response
      *
      * @return string|null
      */
-    public function getObjectId()
+    public function getObjectId(): string
     {
         return $this->get("ObjectId");
     }
@@ -157,7 +157,7 @@ class PolicyBackendSet extends Response
      *
      * @param string $objectId
      */
-    public function setObjectId($objectId)
+    public function setObjectId(string $objectId)
     {
         $this->set("ObjectId", $objectId);
     }
@@ -167,7 +167,7 @@ class PolicyBackendSet extends Response
      *
      * @return integer|null
      */
-    public function getPort()
+    public function getPort(): int
     {
         return $this->get("Port");
     }
@@ -177,7 +177,7 @@ class PolicyBackendSet extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
@@ -187,7 +187,7 @@ class PolicyBackendSet extends Response
      *
      * @return string|null
      */
-    public function getPrivateIP()
+    public function getPrivateIP(): string
     {
         return $this->get("PrivateIP");
     }
@@ -197,7 +197,7 @@ class PolicyBackendSet extends Response
      *
      * @param string $privateIP
      */
-    public function setPrivateIP($privateIP)
+    public function setPrivateIP(string $privateIP)
     {
         $this->set("PrivateIP", $privateIP);
     }

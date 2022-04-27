@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UGAL4Forwarder extends Response
      *
      * @return integer|null
      */
-    public function getPort()
+    public function getPort(): int
     {
         return $this->get("Port");
     }
@@ -37,7 +37,7 @@ class UGAL4Forwarder extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
@@ -47,7 +47,7 @@ class UGAL4Forwarder extends Response
      *
      * @return string|null
      */
-    public function getProtocol()
+    public function getProtocol(): string
     {
         return $this->get("Protocol");
     }
@@ -57,7 +57,7 @@ class UGAL4Forwarder extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -67,7 +67,7 @@ class UGAL4Forwarder extends Response
      *
      * @return integer|null
      */
-    public function getRSPort()
+    public function getRSPort(): int
     {
         return $this->get("RSPort");
     }
@@ -77,7 +77,7 @@ class UGAL4Forwarder extends Response
      *
      * @param int $rsPort
      */
-    public function setRSPort($rsPort)
+    public function setRSPort(int $rsPort)
     {
         $this->set("RSPort", $rsPort);
     }

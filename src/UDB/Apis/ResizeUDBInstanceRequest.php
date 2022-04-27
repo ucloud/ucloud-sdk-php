@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId()
+    public function getDBId(): string
     {
         return $this->get("DBId");
     }
@@ -106,7 +106,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -116,7 +116,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemoryLimit()
+    public function getMemoryLimit(): int
     {
         return $this->get("MemoryLimit");
     }
@@ -126,7 +126,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
@@ -136,7 +136,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSpace()
+    public function getDiskSpace(): int
     {
         return $this->get("DiskSpace");
     }
@@ -146,7 +146,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -156,7 +156,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getUseSSD()
+    public function getUseSSD(): bool
     {
         return $this->get("UseSSD");
     }
@@ -166,7 +166,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
@@ -176,7 +176,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getSSDType()
+    public function getSSDType(): string
     {
         return $this->get("SSDType");
     }
@@ -186,7 +186,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }
@@ -196,7 +196,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDBCId()
+    public function getUDBCId(): string
     {
         return $this->get("UDBCId");
     }
@@ -206,7 +206,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $udbcId
      */
-    public function setUDBCId($udbcId)
+    public function setUDBCId(string $udbcId)
     {
         $this->set("UDBCId", $udbcId);
     }
@@ -216,7 +216,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType()
+    public function getInstanceType(): string
     {
         return $this->get("InstanceType");
     }
@@ -226,7 +226,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -236,7 +236,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceMode()
+    public function getInstanceMode(): string
     {
         return $this->get("InstanceMode");
     }
@@ -246,7 +246,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
@@ -256,7 +256,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getStartAfterUpgrade()
+    public function getStartAfterUpgrade(): bool
     {
         return $this->get("StartAfterUpgrade");
     }
@@ -266,7 +266,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param boolean $startAfterUpgrade
      */
-    public function setStartAfterUpgrade($startAfterUpgrade)
+    public function setStartAfterUpgrade(bool $startAfterUpgrade)
     {
         $this->set("StartAfterUpgrade", $startAfterUpgrade);
     }
@@ -276,7 +276,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -286,7 +286,7 @@ class ResizeUDBInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

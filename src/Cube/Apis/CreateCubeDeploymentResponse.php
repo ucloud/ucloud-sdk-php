@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @return string|null
      */
-    public function getDeploymentId()
+    public function getDeploymentId(): string
     {
         return $this->get("DeploymentId");
     }
@@ -37,7 +37,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @param string $deploymentId
      */
-    public function setDeploymentId($deploymentId)
+    public function setDeploymentId(string $deploymentId)
     {
         $this->set("DeploymentId", $deploymentId);
     }
@@ -47,7 +47,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @return string|null
      */
-    public function getDeployment()
+    public function getDeployment(): string
     {
         return $this->get("Deployment");
     }
@@ -57,7 +57,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @param string $deployment
      */
-    public function setDeployment($deployment)
+    public function setDeployment(string $deployment)
     {
         $this->set("Deployment", $deployment);
     }

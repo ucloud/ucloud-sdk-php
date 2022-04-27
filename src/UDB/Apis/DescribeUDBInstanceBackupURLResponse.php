@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DescribeUDBInstanceBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getBackupPath()
+    public function getBackupPath(): string
     {
         return $this->get("BackupPath");
     }
@@ -37,7 +37,7 @@ class DescribeUDBInstanceBackupURLResponse extends Response
      *
      * @param string $backupPath
      */
-    public function setBackupPath($backupPath)
+    public function setBackupPath(string $backupPath)
     {
         $this->set("BackupPath", $backupPath);
     }
@@ -47,7 +47,7 @@ class DescribeUDBInstanceBackupURLResponse extends Response
      *
      * @return string|null
      */
-    public function getInnerBackupPath()
+    public function getInnerBackupPath(): string
     {
         return $this->get("InnerBackupPath");
     }
@@ -57,7 +57,7 @@ class DescribeUDBInstanceBackupURLResponse extends Response
      *
      * @param string $innerBackupPath
      */
-    public function setInnerBackupPath($innerBackupPath)
+    public function setInnerBackupPath(string $innerBackupPath)
     {
         $this->set("InnerBackupPath", $innerBackupPath);
     }

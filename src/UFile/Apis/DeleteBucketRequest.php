@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class DeleteBucketRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class DeleteBucketRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class DeleteBucketRequest extends Request
      *
      * @return string|null
      */
-    public function getBucketName()
+    public function getBucketName(): string
     {
         return $this->get("BucketName");
     }
@@ -63,7 +63,7 @@ class DeleteBucketRequest extends Request
      *
      * @param string $bucketName
      */
-    public function setBucketName($bucketName)
+    public function setBucketName(string $bucketName)
     {
         $this->set("BucketName", $bucketName);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,12 +30,9 @@ class DescribeUPathResponse extends Response
      *
      * @return UPathInfo[]|null
      */
-    public function getUPathSet()
+    public function getUPathSet(): array
     {
-        $items = $this->get("UPathSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("UPathSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UPathInfo($item));

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class FreezeMemberRequest extends Request
      *
      * @return string|null
      */
-    public function getMemberEmail()
+    public function getMemberEmail(): string
     {
         return $this->get("MemberEmail");
     }
@@ -43,7 +43,7 @@ class FreezeMemberRequest extends Request
      *
      * @param string $memberEmail
      */
-    public function setMemberEmail($memberEmail)
+    public function setMemberEmail(string $memberEmail)
     {
         $this->set("MemberEmail", $memberEmail);
     }

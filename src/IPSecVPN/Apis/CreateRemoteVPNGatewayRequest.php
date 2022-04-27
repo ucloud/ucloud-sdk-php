@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -66,7 +66,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -76,7 +76,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayName()
+    public function getRemoteVPNGatewayName(): string
     {
         return $this->get("RemoteVPNGatewayName");
     }
@@ -86,7 +86,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @param string $remoteVPNGatewayName
      */
-    public function setRemoteVPNGatewayName($remoteVPNGatewayName)
+    public function setRemoteVPNGatewayName(string $remoteVPNGatewayName)
     {
         $this->set("RemoteVPNGatewayName", $remoteVPNGatewayName);
     }
@@ -96,7 +96,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayAddr()
+    public function getRemoteVPNGatewayAddr(): string
     {
         return $this->get("RemoteVPNGatewayAddr");
     }
@@ -106,7 +106,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @param string $remoteVPNGatewayAddr
      */
-    public function setRemoteVPNGatewayAddr($remoteVPNGatewayAddr)
+    public function setRemoteVPNGatewayAddr(string $remoteVPNGatewayAddr)
     {
         $this->set("RemoteVPNGatewayAddr", $remoteVPNGatewayAddr);
     }
@@ -116,7 +116,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -126,7 +126,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -136,7 +136,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -146,7 +146,7 @@ class CreateRemoteVPNGatewayRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UMemBackupSet extends Response
      *
      * @return string|null
      */
-    public function getBackupName()
+    public function getBackupName(): string
     {
         return $this->get("BackupName");
     }
@@ -37,7 +37,7 @@ class UMemBackupSet extends Response
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }
@@ -47,7 +47,7 @@ class UMemBackupSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -57,7 +57,7 @@ class UMemBackupSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -67,7 +67,7 @@ class UMemBackupSet extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -77,7 +77,7 @@ class UMemBackupSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
@@ -87,7 +87,7 @@ class UMemBackupSet extends Response
      *
      * @return string|null
      */
-    public function getBackupId()
+    public function getBackupId(): string
     {
         return $this->get("BackupId");
     }
@@ -97,7 +97,7 @@ class UMemBackupSet extends Response
      *
      * @param string $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(string $backupId)
     {
         $this->set("BackupId", $backupId);
     }
@@ -107,7 +107,7 @@ class UMemBackupSet extends Response
      *
      * @return string|null
      */
-    public function getBackupType()
+    public function getBackupType(): string
     {
         return $this->get("BackupType");
     }
@@ -117,7 +117,7 @@ class UMemBackupSet extends Response
      *
      * @param string $backupType
      */
-    public function setBackupType($backupType)
+    public function setBackupType(string $backupType)
     {
         $this->set("BackupType", $backupType);
     }
@@ -127,7 +127,7 @@ class UMemBackupSet extends Response
      *
      * @return integer|null
      */
-    public function getBlockCount()
+    public function getBlockCount(): int
     {
         return $this->get("BlockCount");
     }
@@ -137,7 +137,7 @@ class UMemBackupSet extends Response
      *
      * @param int $blockCount
      */
-    public function setBlockCount($blockCount)
+    public function setBlockCount(int $blockCount)
     {
         $this->set("BlockCount", $blockCount);
     }

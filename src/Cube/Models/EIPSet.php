@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class EIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -37,7 +37,7 @@ class EIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -47,7 +47,7 @@ class EIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidthType()
+    public function getBandwidthType(): int
     {
         return $this->get("BandwidthType");
     }
@@ -57,7 +57,7 @@ class EIPSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType($bandwidthType)
+    public function setBandwidthType(int $bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
@@ -67,7 +67,7 @@ class EIPSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -77,7 +77,7 @@ class EIPSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -87,12 +87,9 @@ class EIPSet extends Response
      *
      * @return EIPAddr[]|null
      */
-    public function getEIPAddr()
+    public function getEIPAddr(): array
     {
-        $items = $this->get("EIPAddr");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EIPAddr") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EIPAddr($item));
@@ -119,7 +116,7 @@ class EIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -129,7 +126,7 @@ class EIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -139,7 +136,7 @@ class EIPSet extends Response
      *
      * @return string|null
      */
-    public function getPayMode()
+    public function getPayMode(): string
     {
         return $this->get("PayMode");
     }
@@ -149,7 +146,7 @@ class EIPSet extends Response
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }
@@ -159,7 +156,7 @@ class EIPSet extends Response
      *
      * @return string|null
      */
-    public function getResource()
+    public function getResource(): string
     {
         return $this->get("Resource");
     }
@@ -169,7 +166,7 @@ class EIPSet extends Response
      *
      * @param string $resource
      */
-    public function setResource($resource)
+    public function setResource(string $resource)
     {
         $this->set("Resource", $resource);
     }
@@ -179,7 +176,7 @@ class EIPSet extends Response
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->get("Status");
     }
@@ -189,7 +186,7 @@ class EIPSet extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
@@ -199,7 +196,7 @@ class EIPSet extends Response
      *
      * @return integer|null
      */
-    public function getWeight()
+    public function getWeight(): int
     {
         return $this->get("Weight");
     }
@@ -209,7 +206,7 @@ class EIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->set("Weight", $weight);
     }

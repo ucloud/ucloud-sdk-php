@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId()
+    public function getDBId(): string
     {
         return $this->get("DBId");
     }
@@ -105,7 +105,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -115,7 +115,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupName()
+    public function getBackupName(): string
     {
         return $this->get("BackupName");
     }
@@ -125,7 +125,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }
@@ -135,7 +135,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getUseBlacklist()
+    public function getUseBlacklist(): bool
     {
         return $this->get("UseBlacklist");
     }
@@ -145,7 +145,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param boolean $useBlacklist
      */
-    public function setUseBlacklist($useBlacklist)
+    public function setUseBlacklist(bool $useBlacklist)
     {
         $this->set("UseBlacklist", $useBlacklist);
     }
@@ -155,7 +155,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupMethod()
+    public function getBackupMethod(): string
     {
         return $this->get("BackupMethod");
     }
@@ -165,7 +165,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $backupMethod
      */
-    public function setBackupMethod($backupMethod)
+    public function setBackupMethod(string $backupMethod)
     {
         $this->set("BackupMethod", $backupMethod);
     }
@@ -175,7 +175,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getBlacklist()
+    public function getBlacklist(): string
     {
         return $this->get("Blacklist");
     }
@@ -185,7 +185,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $blacklist
      */
-    public function setBlacklist($blacklist)
+    public function setBlacklist(string $blacklist)
     {
         $this->set("Blacklist", $blacklist);
     }
@@ -195,7 +195,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getForceBackup()
+    public function getForceBackup(): bool
     {
         return $this->get("ForceBackup");
     }
@@ -205,7 +205,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param boolean $forceBackup
      */
-    public function setForceBackup($forceBackup)
+    public function setForceBackup(bool $forceBackup)
     {
         $this->set("ForceBackup", $forceBackup);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CacheConf extends Response
      *
      * @return string|null
      */
-    public function getPathPattern()
+    public function getPathPattern(): string
     {
         return $this->get("PathPattern");
     }
@@ -37,7 +37,7 @@ class CacheConf extends Response
      *
      * @param string $pathPattern
      */
-    public function setPathPattern($pathPattern)
+    public function setPathPattern(string $pathPattern)
     {
         $this->set("PathPattern", $pathPattern);
     }
@@ -47,7 +47,7 @@ class CacheConf extends Response
      *
      * @return integer|null
      */
-    public function getCacheTTL()
+    public function getCacheTTL(): int
     {
         return $this->get("CacheTTL");
     }
@@ -57,7 +57,7 @@ class CacheConf extends Response
      *
      * @param int $cacheTTL
      */
-    public function setCacheTTL($cacheTTL)
+    public function setCacheTTL(int $cacheTTL)
     {
         $this->set("CacheTTL", $cacheTTL);
     }
@@ -67,7 +67,7 @@ class CacheConf extends Response
      *
      * @return string|null
      */
-    public function getCacheUnit()
+    public function getCacheUnit(): string
     {
         return $this->get("CacheUnit");
     }
@@ -77,7 +77,7 @@ class CacheConf extends Response
      *
      * @param string $cacheUnit
      */
-    public function setCacheUnit($cacheUnit)
+    public function setCacheUnit(string $cacheUnit)
     {
         $this->set("CacheUnit", $cacheUnit);
     }
@@ -87,7 +87,7 @@ class CacheConf extends Response
      *
      * @return boolean|null
      */
-    public function getCacheBehavior()
+    public function getCacheBehavior(): bool
     {
         return $this->get("CacheBehavior");
     }
@@ -97,7 +97,7 @@ class CacheConf extends Response
      *
      * @param boolean $cacheBehavior
      */
-    public function setCacheBehavior($cacheBehavior)
+    public function setCacheBehavior(bool $cacheBehavior)
     {
         $this->set("CacheBehavior", $cacheBehavior);
     }
@@ -107,7 +107,7 @@ class CacheConf extends Response
      *
      * @return string|null
      */
-    public function getHttpCodePattern()
+    public function getHttpCodePattern(): string
     {
         return $this->get("HttpCodePattern");
     }
@@ -117,7 +117,7 @@ class CacheConf extends Response
      *
      * @param string $httpCodePattern
      */
-    public function setHttpCodePattern($httpCodePattern)
+    public function setHttpCodePattern(string $httpCodePattern)
     {
         $this->set("HttpCodePattern", $httpCodePattern);
     }
@@ -127,7 +127,7 @@ class CacheConf extends Response
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->get("Description");
     }
@@ -137,7 +137,7 @@ class CacheConf extends Response
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
@@ -147,7 +147,7 @@ class CacheConf extends Response
      *
      * @return boolean|null
      */
-    public function getFollowOriginRule()
+    public function getFollowOriginRule(): bool
     {
         return $this->get("FollowOriginRule");
     }
@@ -157,7 +157,7 @@ class CacheConf extends Response
      *
      * @param boolean $followOriginRule
      */
-    public function setFollowOriginRule($followOriginRule)
+    public function setFollowOriginRule(bool $followOriginRule)
     {
         $this->set("FollowOriginRule", $followOriginRule);
     }

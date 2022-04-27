@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -65,7 +65,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -75,7 +75,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getClusterId()
+    public function getClusterId(): string
     {
         return $this->get("ClusterId");
     }
@@ -85,7 +85,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
@@ -95,7 +95,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return string|null
      */
-    public function getNodeId()
+    public function getNodeId(): string
     {
         return $this->get("NodeId");
     }
@@ -105,7 +105,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -115,7 +115,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseDataUDisk()
+    public function getReleaseDataUDisk(): bool
     {
         return $this->get("ReleaseDataUDisk");
     }
@@ -125,7 +125,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param boolean $releaseDataUDisk
      */
-    public function setReleaseDataUDisk($releaseDataUDisk)
+    public function setReleaseDataUDisk(bool $releaseDataUDisk)
     {
         $this->set("ReleaseDataUDisk", $releaseDataUDisk);
     }

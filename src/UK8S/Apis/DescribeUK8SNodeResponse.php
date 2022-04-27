@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -38,7 +38,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -48,7 +48,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string[]|null
      */
-    public function getLabels()
+    public function getLabels(): array
     {
         return $this->get("Labels");
     }
@@ -68,7 +68,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string[]|null
      */
-    public function getAnnotations()
+    public function getAnnotations(): array
     {
         return $this->get("Annotations");
     }
@@ -88,7 +88,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return integer|null
      */
-    public function getCreationTimestamp()
+    public function getCreationTimestamp(): int
     {
         return $this->get("CreationTimestamp");
     }
@@ -98,7 +98,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param int $creationTimestamp
      */
-    public function setCreationTimestamp($creationTimestamp)
+    public function setCreationTimestamp(int $creationTimestamp)
     {
         $this->set("CreationTimestamp", $creationTimestamp);
     }
@@ -108,7 +108,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getProviderID()
+    public function getProviderID(): string
     {
         return $this->get("ProviderID");
     }
@@ -118,7 +118,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $providerID
      */
-    public function setProviderID($providerID)
+    public function setProviderID(string $providerID)
     {
         $this->set("ProviderID", $providerID);
     }
@@ -128,7 +128,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getKernelVersion()
+    public function getKernelVersion(): string
     {
         return $this->get("KernelVersion");
     }
@@ -138,7 +138,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $kernelVersion
      */
-    public function setKernelVersion($kernelVersion)
+    public function setKernelVersion(string $kernelVersion)
     {
         $this->set("KernelVersion", $kernelVersion);
     }
@@ -148,7 +148,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getOSImage()
+    public function getOSImage(): string
     {
         return $this->get("OSImage");
     }
@@ -158,7 +158,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $osImage
      */
-    public function setOSImage($osImage)
+    public function setOSImage(string $osImage)
     {
         $this->set("OSImage", $osImage);
     }
@@ -168,7 +168,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getContainerRuntimeVersion()
+    public function getContainerRuntimeVersion(): string
     {
         return $this->get("ContainerRuntimeVersion");
     }
@@ -178,7 +178,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $containerRuntimeVersion
      */
-    public function setContainerRuntimeVersion($containerRuntimeVersion)
+    public function setContainerRuntimeVersion(string $containerRuntimeVersion)
     {
         $this->set("ContainerRuntimeVersion", $containerRuntimeVersion);
     }
@@ -188,7 +188,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getKubeletVersion()
+    public function getKubeletVersion(): string
     {
         return $this->get("KubeletVersion");
     }
@@ -198,7 +198,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $kubeletVersion
      */
-    public function setKubeletVersion($kubeletVersion)
+    public function setKubeletVersion(string $kubeletVersion)
     {
         $this->set("KubeletVersion", $kubeletVersion);
     }
@@ -208,7 +208,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getKubeProxyVersion()
+    public function getKubeProxyVersion(): string
     {
         return $this->get("KubeProxyVersion");
     }
@@ -218,7 +218,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $kubeProxyVersion
      */
-    public function setKubeProxyVersion($kubeProxyVersion)
+    public function setKubeProxyVersion(string $kubeProxyVersion)
     {
         $this->set("KubeProxyVersion", $kubeProxyVersion);
     }
@@ -228,7 +228,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getInternalIP()
+    public function getInternalIP(): string
     {
         return $this->get("InternalIP");
     }
@@ -238,7 +238,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $internalIP
      */
-    public function setInternalIP($internalIP)
+    public function setInternalIP(string $internalIP)
     {
         $this->set("InternalIP", $internalIP);
     }
@@ -248,7 +248,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getHostname()
+    public function getHostname(): string
     {
         return $this->get("Hostname");
     }
@@ -258,7 +258,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $hostname
      */
-    public function setHostname($hostname)
+    public function setHostname(string $hostname)
     {
         $this->set("Hostname", $hostname);
     }
@@ -268,7 +268,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return integer|null
      */
-    public function getAllocatedPodCount()
+    public function getAllocatedPodCount(): int
     {
         return $this->get("AllocatedPodCount");
     }
@@ -278,7 +278,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param int $allocatedPodCount
      */
-    public function setAllocatedPodCount($allocatedPodCount)
+    public function setAllocatedPodCount(int $allocatedPodCount)
     {
         $this->set("AllocatedPodCount", $allocatedPodCount);
     }
@@ -288,7 +288,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return integer|null
      */
-    public function getPodCapacity()
+    public function getPodCapacity(): int
     {
         return $this->get("PodCapacity");
     }
@@ -298,7 +298,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param int $podCapacity
      */
-    public function setPodCapacity($podCapacity)
+    public function setPodCapacity(int $podCapacity)
     {
         $this->set("PodCapacity", $podCapacity);
     }
@@ -308,7 +308,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return boolean|null
      */
-    public function getUnschedulable()
+    public function getUnschedulable(): bool
     {
         return $this->get("Unschedulable");
     }
@@ -318,7 +318,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param boolean $unschedulable
      */
-    public function setUnschedulable($unschedulable)
+    public function setUnschedulable(bool $unschedulable)
     {
         $this->set("Unschedulable", $unschedulable);
     }
@@ -328,7 +328,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getCPUCapacity()
+    public function getCPUCapacity(): string
     {
         return $this->get("CPUCapacity");
     }
@@ -338,7 +338,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuCapacity
      */
-    public function setCPUCapacity($cpuCapacity)
+    public function setCPUCapacity(string $cpuCapacity)
     {
         $this->set("CPUCapacity", $cpuCapacity);
     }
@@ -348,7 +348,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getMemoryCapacity()
+    public function getMemoryCapacity(): string
     {
         return $this->get("MemoryCapacity");
     }
@@ -358,7 +358,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryCapacity
      */
-    public function setMemoryCapacity($memoryCapacity)
+    public function setMemoryCapacity(string $memoryCapacity)
     {
         $this->set("MemoryCapacity", $memoryCapacity);
     }
@@ -368,7 +368,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getMemoryRequests()
+    public function getMemoryRequests(): string
     {
         return $this->get("MemoryRequests");
     }
@@ -378,7 +378,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryRequests
      */
-    public function setMemoryRequests($memoryRequests)
+    public function setMemoryRequests(string $memoryRequests)
     {
         $this->set("MemoryRequests", $memoryRequests);
     }
@@ -388,7 +388,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getMemoryRequestsFraction()
+    public function getMemoryRequestsFraction(): string
     {
         return $this->get("MemoryRequestsFraction");
     }
@@ -398,7 +398,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryRequestsFraction
      */
-    public function setMemoryRequestsFraction($memoryRequestsFraction)
+    public function setMemoryRequestsFraction(string $memoryRequestsFraction)
     {
         $this->set("MemoryRequestsFraction", $memoryRequestsFraction);
     }
@@ -408,7 +408,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getMemoryLimits()
+    public function getMemoryLimits(): string
     {
         return $this->get("MemoryLimits");
     }
@@ -418,7 +418,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryLimits
      */
-    public function setMemoryLimits($memoryLimits)
+    public function setMemoryLimits(string $memoryLimits)
     {
         $this->set("MemoryLimits", $memoryLimits);
     }
@@ -428,7 +428,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getMemoryLimitsFraction()
+    public function getMemoryLimitsFraction(): string
     {
         return $this->get("MemoryLimitsFraction");
     }
@@ -438,7 +438,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryLimitsFraction
      */
-    public function setMemoryLimitsFraction($memoryLimitsFraction)
+    public function setMemoryLimitsFraction(string $memoryLimitsFraction)
     {
         $this->set("MemoryLimitsFraction", $memoryLimitsFraction);
     }
@@ -448,7 +448,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getCPURequests()
+    public function getCPURequests(): string
     {
         return $this->get("CPURequests");
     }
@@ -458,7 +458,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuRequests
      */
-    public function setCPURequests($cpuRequests)
+    public function setCPURequests(string $cpuRequests)
     {
         $this->set("CPURequests", $cpuRequests);
     }
@@ -468,7 +468,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getCPURequestsFraction()
+    public function getCPURequestsFraction(): string
     {
         return $this->get("CPURequestsFraction");
     }
@@ -478,7 +478,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuRequestsFraction
      */
-    public function setCPURequestsFraction($cpuRequestsFraction)
+    public function setCPURequestsFraction(string $cpuRequestsFraction)
     {
         $this->set("CPURequestsFraction", $cpuRequestsFraction);
     }
@@ -488,7 +488,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getCPULimits()
+    public function getCPULimits(): string
     {
         return $this->get("CPULimits");
     }
@@ -498,7 +498,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuLimits
      */
-    public function setCPULimits($cpuLimits)
+    public function setCPULimits(string $cpuLimits)
     {
         $this->set("CPULimits", $cpuLimits);
     }
@@ -508,7 +508,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string|null
      */
-    public function getCPULimitsFraction()
+    public function getCPULimitsFraction(): string
     {
         return $this->get("CPULimitsFraction");
     }
@@ -518,7 +518,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuLimitsFraction
      */
-    public function setCPULimitsFraction($cpuLimitsFraction)
+    public function setCPULimitsFraction(string $cpuLimitsFraction)
     {
         $this->set("CPULimitsFraction", $cpuLimitsFraction);
     }
@@ -528,12 +528,9 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return K8SNodeCondition[]|null
      */
-    public function getConditions()
+    public function getConditions(): array
     {
-        $items = $this->get("Conditions");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Conditions") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new K8SNodeCondition($item));
@@ -560,7 +557,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string[]|null
      */
-    public function getContainerImages()
+    public function getContainerImages(): array
     {
         return $this->get("ContainerImages");
     }
@@ -580,7 +577,7 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @return string[]|null
      */
-    public function getTaints()
+    public function getTaints(): array
     {
         return $this->get("Taints");
     }

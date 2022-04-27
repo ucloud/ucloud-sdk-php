@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class VIPSet extends Response
      *
      * @return string|null
      */
-    public function getVIP()
+    public function getVIP(): string
     {
         return $this->get("VIP");
     }
@@ -37,7 +37,7 @@ class VIPSet extends Response
      *
      * @param string $vip
      */
-    public function setVIP($vip)
+    public function setVIP(string $vip)
     {
         $this->set("VIP", $vip);
     }
@@ -47,7 +47,7 @@ class VIPSet extends Response
      *
      * @return string|null
      */
-    public function getVIPId()
+    public function getVIPId(): string
     {
         return $this->get("VIPId");
     }
@@ -57,7 +57,7 @@ class VIPSet extends Response
      *
      * @param string $vipId
      */
-    public function setVIPId($vipId)
+    public function setVIPId(string $vipId)
     {
         $this->set("VIPId", $vipId);
     }
@@ -67,7 +67,7 @@ class VIPSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -77,7 +77,7 @@ class VIPSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }

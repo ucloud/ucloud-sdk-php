@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -83,7 +83,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -93,7 +93,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageType()
+    public function getImageType(): string
     {
         return $this->get("ImageType");
     }
@@ -103,7 +103,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $imageType
      */
-    public function setImageType($imageType)
+    public function setImageType(string $imageType)
     {
         $this->set("ImageType", $imageType);
     }
@@ -113,7 +113,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getOsType()
+    public function getOsType(): string
     {
         return $this->get("OsType");
     }
@@ -123,7 +123,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
@@ -133,7 +133,7 @@ class DescribeImageRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -143,7 +143,7 @@ class DescribeImageRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -153,7 +153,7 @@ class DescribeImageRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -163,7 +163,7 @@ class DescribeImageRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
@@ -173,7 +173,7 @@ class DescribeImageRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->get("Limit");
     }
@@ -183,7 +183,7 @@ class DescribeImageRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
@@ -193,7 +193,7 @@ class DescribeImageRequest extends Request
      *
      * @return integer|null
      */
-    public function getPriceSet()
+    public function getPriceSet(): int
     {
         return $this->get("PriceSet");
     }
@@ -203,7 +203,7 @@ class DescribeImageRequest extends Request
      *
      * @param int $priceSet
      */
-    public function setPriceSet($priceSet)
+    public function setPriceSet(int $priceSet)
     {
         $this->set("PriceSet", $priceSet);
     }

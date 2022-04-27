@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUMemSpaceResponse extends Response
      *
      * @return string|null
      */
-    public function getSpaceId()
+    public function getSpaceId(): string
     {
         return $this->get("SpaceId");
     }
@@ -37,7 +37,7 @@ class CreateUMemSpaceResponse extends Response
      *
      * @param string $spaceId
      */
-    public function setSpaceId($spaceId)
+    public function setSpaceId(string $spaceId)
     {
         $this->set("SpaceId", $spaceId);
     }

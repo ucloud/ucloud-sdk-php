@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CertList extends Response
      *
      * @return string|null
      */
-    public function getCertName()
+    public function getCertName(): string
     {
         return $this->get("CertName");
     }
@@ -37,7 +37,7 @@ class CertList extends Response
      *
      * @param string $certName
      */
-    public function setCertName($certName)
+    public function setCertName(string $certName)
     {
         $this->set("CertName", $certName);
     }
@@ -47,7 +47,7 @@ class CertList extends Response
      *
      * @return string|null
      */
-    public function getCommonName()
+    public function getCommonName(): string
     {
         return $this->get("CommonName");
     }
@@ -57,7 +57,7 @@ class CertList extends Response
      *
      * @param string $commonName
      */
-    public function setCommonName($commonName)
+    public function setCommonName(string $commonName)
     {
         $this->set("CommonName", $commonName);
     }
@@ -67,7 +67,7 @@ class CertList extends Response
      *
      * @return string|null
      */
-    public function getDnsName()
+    public function getDnsName(): string
     {
         return $this->get("DnsName");
     }
@@ -77,7 +77,7 @@ class CertList extends Response
      *
      * @param string $dnsName
      */
-    public function setDnsName($dnsName)
+    public function setDnsName(string $dnsName)
     {
         $this->set("DnsName", $dnsName);
     }
@@ -87,7 +87,7 @@ class CertList extends Response
      *
      * @return integer|null
      */
-    public function getBeginTime()
+    public function getBeginTime(): int
     {
         return $this->get("BeginTime");
     }
@@ -97,7 +97,7 @@ class CertList extends Response
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -107,7 +107,7 @@ class CertList extends Response
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -117,7 +117,7 @@ class CertList extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -127,7 +127,7 @@ class CertList extends Response
      *
      * @return integer|null
      */
-    public function getDomainCount()
+    public function getDomainCount(): int
     {
         return $this->get("DomainCount");
     }
@@ -137,7 +137,7 @@ class CertList extends Response
      *
      * @param int $domainCount
      */
-    public function setDomainCount($domainCount)
+    public function setDomainCount(int $domainCount)
     {
         $this->set("DomainCount", $domainCount);
     }
@@ -147,7 +147,7 @@ class CertList extends Response
      *
      * @return string|null
      */
-    public function getUserCert()
+    public function getUserCert(): string
     {
         return $this->get("UserCert");
     }
@@ -157,7 +157,7 @@ class CertList extends Response
      *
      * @param string $userCert
      */
-    public function setUserCert($userCert)
+    public function setUserCert(string $userCert)
     {
         $this->set("UserCert", $userCert);
     }
@@ -167,7 +167,7 @@ class CertList extends Response
      *
      * @return string|null
      */
-    public function getCaCert()
+    public function getCaCert(): string
     {
         return $this->get("CaCert");
     }
@@ -177,7 +177,7 @@ class CertList extends Response
      *
      * @param string $caCert
      */
-    public function setCaCert($caCert)
+    public function setCaCert(string $caCert)
     {
         $this->set("CaCert", $caCert);
     }
@@ -187,7 +187,7 @@ class CertList extends Response
      *
      * @return string[]|null
      */
-    public function getDomains()
+    public function getDomains(): array
     {
         return $this->get("Domains");
     }

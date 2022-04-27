@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,12 +31,9 @@ class DescribeBaremetalMachineTypeResponse extends Response
      *
      * @return PHostCloudMachineTypeSet[]|null
      */
-    public function getMachineTypes()
+    public function getMachineTypes(): array
     {
-        $items = $this->get("MachineTypes");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("MachineTypes") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new PHostCloudMachineTypeSet($item));

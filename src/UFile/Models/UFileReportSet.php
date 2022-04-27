@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UFileReportSet extends Response
      *
      * @return integer|null
      */
-    public function getTime()
+    public function getTime(): int
     {
         return $this->get("Time");
     }
@@ -37,7 +37,7 @@ class UFileReportSet extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
@@ -47,7 +47,7 @@ class UFileReportSet extends Response
      *
      * @return float|null
      */
-    public function getStorageVolume()
+    public function getStorageVolume(): float
     {
         return $this->get("StorageVolume");
     }
@@ -57,7 +57,7 @@ class UFileReportSet extends Response
      *
      * @param float $storageVolume
      */
-    public function setStorageVolume($storageVolume)
+    public function setStorageVolume(float $storageVolume)
     {
         $this->set("StorageVolume", $storageVolume);
     }
@@ -67,7 +67,7 @@ class UFileReportSet extends Response
      *
      * @return float|null
      */
-    public function getDownloadTraffic()
+    public function getDownloadTraffic(): float
     {
         return $this->get("DownloadTraffic");
     }
@@ -77,7 +77,7 @@ class UFileReportSet extends Response
      *
      * @param float $downloadTraffic
      */
-    public function setDownloadTraffic($downloadTraffic)
+    public function setDownloadTraffic(float $downloadTraffic)
     {
         $this->set("DownloadTraffic", $downloadTraffic);
     }
@@ -87,7 +87,7 @@ class UFileReportSet extends Response
      *
      * @return float|null
      */
-    public function getRequestCount()
+    public function getRequestCount(): float
     {
         return $this->get("RequestCount");
     }
@@ -97,7 +97,7 @@ class UFileReportSet extends Response
      *
      * @param float $requestCount
      */
-    public function setRequestCount($requestCount)
+    public function setRequestCount(float $requestCount)
     {
         $this->set("RequestCount", $requestCount);
     }

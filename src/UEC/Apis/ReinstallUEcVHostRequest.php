@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getNodeId()
+    public function getNodeId(): string
     {
         return $this->get("NodeId");
     }
@@ -64,7 +64,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -74,7 +74,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -84,7 +84,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -94,7 +94,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getKeepData()
+    public function getKeepData(): int
     {
         return $this->get("KeepData");
     }
@@ -104,7 +104,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param int $keepData
      */
-    public function setKeepData($keepData)
+    public function setKeepData(int $keepData)
     {
         $this->set("KeepData", $keepData);
     }
@@ -114,7 +114,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return string|null
      */
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->get("Password");
     }
@@ -124,7 +124,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
@@ -134,7 +134,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @return integer|null
      */
-    public function getSysDiskSize()
+    public function getSysDiskSize(): int
     {
         return $this->get("SysDiskSize");
     }
@@ -144,7 +144,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize($sysDiskSize)
+    public function setSysDiskSize(int $sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }

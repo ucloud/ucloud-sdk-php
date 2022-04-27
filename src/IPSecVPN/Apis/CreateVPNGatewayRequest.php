@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -67,7 +67,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -77,7 +77,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getVPNGatewayName()
+    public function getVPNGatewayName(): string
     {
         return $this->get("VPNGatewayName");
     }
@@ -87,7 +87,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $vpnGatewayName
      */
-    public function setVPNGatewayName($vpnGatewayName)
+    public function setVPNGatewayName(string $vpnGatewayName)
     {
         $this->set("VPNGatewayName", $vpnGatewayName);
     }
@@ -97,7 +97,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -107,7 +107,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -117,7 +117,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getGrade()
+    public function getGrade(): string
     {
         return $this->get("Grade");
     }
@@ -127,7 +127,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $grade
      */
-    public function setGrade($grade)
+    public function setGrade(string $grade)
     {
         $this->set("Grade", $grade);
     }
@@ -137,7 +137,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -147,7 +147,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -157,7 +157,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -167,7 +167,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -177,7 +177,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -187,7 +187,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -197,7 +197,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -207,7 +207,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -217,7 +217,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getBusinessId()
+    public function getBusinessId(): string
     {
         return $this->get("BusinessId");
     }
@@ -227,7 +227,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $businessId
      */
-    public function setBusinessId($businessId)
+    public function setBusinessId(string $businessId)
     {
         $this->set("BusinessId", $businessId);
     }
@@ -237,7 +237,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -247,7 +247,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -257,7 +257,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -267,7 +267,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

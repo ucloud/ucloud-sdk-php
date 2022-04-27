@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class SlaveInfo extends Response
      *
      * @return string|null
      */
-    public function getId()
+    public function getId(): string
     {
         return $this->get("Id");
     }
@@ -37,7 +37,7 @@ class SlaveInfo extends Response
      *
      * @param string $id
      */
-    public function setId($id)
+    public function setId(string $id)
     {
         $this->set("Id", $id);
     }
@@ -47,7 +47,7 @@ class SlaveInfo extends Response
      *
      * @return string|null
      */
-    public function getDataNodeId()
+    public function getDataNodeId(): string
     {
         return $this->get("DataNodeId");
     }
@@ -57,7 +57,7 @@ class SlaveInfo extends Response
      *
      * @param string $dataNodeId
      */
-    public function setDataNodeId($dataNodeId)
+    public function setDataNodeId(string $dataNodeId)
     {
         $this->set("DataNodeId", $dataNodeId);
     }
@@ -67,7 +67,7 @@ class SlaveInfo extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -77,7 +77,7 @@ class SlaveInfo extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }

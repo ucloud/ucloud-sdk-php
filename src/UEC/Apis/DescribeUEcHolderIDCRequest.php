@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return float|null
      */
-    public function getCpu()
+    public function getCpu(): float
     {
         return $this->get("Cpu");
     }
@@ -64,7 +64,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param float $cpu
      */
-    public function setCpu($cpu)
+    public function setCpu(float $cpu)
     {
         $this->set("Cpu", $cpu);
     }
@@ -74,7 +74,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemory()
+    public function getMemory(): int
     {
         return $this->get("Memory");
     }
@@ -84,7 +84,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
@@ -94,7 +94,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIdcId()
+    public function getIdcId(): array
     {
         return $this->get("IdcId");
     }
@@ -114,7 +114,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return integer|null
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->get("Type");
     }
@@ -124,7 +124,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
@@ -134,7 +134,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @return string|null
      */
-    public function getProductType()
+    public function getProductType(): string
     {
         return $this->get("ProductType");
     }
@@ -144,7 +144,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -37,7 +37,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -47,7 +47,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return integer|null
      */
-    public function getOwe()
+    public function getOwe(): int
     {
         return $this->get("Owe");
     }
@@ -57,7 +57,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param int $owe
      */
-    public function setOwe($owe)
+    public function setOwe(int $owe)
     {
         $this->set("Owe", $owe);
     }
@@ -67,7 +67,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return UFileQuotaLeft|null
      */
-    public function getStorage()
+    public function getStorage(): UFileQuotaLeft
     {
         return new UFileQuotaLeft($this->get("Storage"));
     }
@@ -77,7 +77,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param UFileQuotaLeft $storage
      */
-    public function setStorage(array $storage)
+    public function setStorage(UFileQuotaLeft $storage)
     {
         $this->set("Storage", $storage->getAll());
     }
@@ -87,7 +87,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return UFileQuotaLeft|null
      */
-    public function getDownloadFlow()
+    public function getDownloadFlow(): UFileQuotaLeft
     {
         return new UFileQuotaLeft($this->get("DownloadFlow"));
     }
@@ -97,7 +97,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param UFileQuotaLeft $downloadFlow
      */
-    public function setDownloadFlow(array $downloadFlow)
+    public function setDownloadFlow(UFileQuotaLeft $downloadFlow)
     {
         $this->set("DownloadFlow", $downloadFlow->getAll());
     }
@@ -107,7 +107,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @return UFileQuotaLeft|null
      */
-    public function getRequestCnt()
+    public function getRequestCnt(): UFileQuotaLeft
     {
         return new UFileQuotaLeft($this->get("RequestCnt"));
     }
@@ -117,7 +117,7 @@ class UFileQuotaDataSetItem extends Response
      *
      * @param UFileQuotaLeft $requestCnt
      */
-    public function setRequestCnt(array $requestCnt)
+    public function setRequestCnt(UFileQuotaLeft $requestCnt)
     {
         $this->set("RequestCnt", $requestCnt->getAll());
     }

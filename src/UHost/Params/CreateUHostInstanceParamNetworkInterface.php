@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
      *
      * @return CreateUHostInstanceParamNetworkInterfaceEIP|null
      */
-    public function getEIP()
+    public function getEIP(): CreateUHostInstanceParamNetworkInterfaceEIP
     {
         return new CreateUHostInstanceParamNetworkInterfaceEIP($this->get("EIP"));
     }
@@ -37,7 +37,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
      *
      * @param CreateUHostInstanceParamNetworkInterfaceEIP $eip
      */
-    public function setEIP(array $eip)
+    public function setEIP(CreateUHostInstanceParamNetworkInterfaceEIP $eip)
     {
         $this->set("EIP", $eip->getAll());
     }
@@ -47,7 +47,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
      *
      * @return CreateUHostInstanceParamNetworkInterfaceIPv6|null
      */
-    public function getIPv6()
+    public function getIPv6(): CreateUHostInstanceParamNetworkInterfaceIPv6
     {
         return new CreateUHostInstanceParamNetworkInterfaceIPv6($this->get("IPv6"));
     }
@@ -57,7 +57,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
      *
      * @param CreateUHostInstanceParamNetworkInterfaceIPv6 $iPv6
      */
-    public function setIPv6(array $iPv6)
+    public function setIPv6(CreateUHostInstanceParamNetworkInterfaceIPv6 $iPv6)
     {
         $this->set("IPv6", $iPv6->getAll());
     }
@@ -67,7 +67,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
      *
      * @return boolean|null
      */
-    public function getCreateCernetIp()
+    public function getCreateCernetIp(): bool
     {
         return $this->get("CreateCernetIp");
     }
@@ -77,7 +77,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
      *
      * @param boolean $createCernetIp
      */
-    public function setCreateCernetIp($createCernetIp)
+    public function setCreateCernetIp(bool $createCernetIp)
     {
         $this->set("CreateCernetIp", $createCernetIp);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceId()
+    public function getResourceId(): string
     {
         return $this->get("ResourceId");
     }
@@ -37,7 +37,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -47,7 +47,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getPrivateIP()
+    public function getPrivateIP(): string
     {
         return $this->get("PrivateIP");
     }
@@ -57,7 +57,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @param string $privateIP
      */
-    public function setPrivateIP($privateIP)
+    public function setPrivateIP(string $privateIP)
     {
         $this->set("PrivateIP", $privateIP);
     }
@@ -67,7 +67,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): string
     {
         return $this->get("ResourceType");
     }
@@ -77,7 +77,7 @@ class GetAvailableResourceForPolicyDataSet extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }

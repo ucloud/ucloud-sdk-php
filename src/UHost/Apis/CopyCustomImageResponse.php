@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CopyCustomImageResponse extends Response
      *
      * @return string|null
      */
-    public function getTargetImageId()
+    public function getTargetImageId(): string
     {
         return $this->get("TargetImageId");
     }
@@ -37,7 +37,7 @@ class CopyCustomImageResponse extends Response
      *
      * @param string $targetImageId
      */
-    public function setTargetImageId($targetImageId)
+    public function setTargetImageId(string $targetImageId)
     {
         $this->set("TargetImageId", $targetImageId);
     }

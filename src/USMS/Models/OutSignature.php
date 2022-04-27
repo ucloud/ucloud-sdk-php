@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class OutSignature extends Response
      *
      * @return string|null
      */
-    public function getSigId()
+    public function getSigId(): string
     {
         return $this->get("SigId");
     }
@@ -37,7 +37,7 @@ class OutSignature extends Response
      *
      * @param string $sigId
      */
-    public function setSigId($sigId)
+    public function setSigId(string $sigId)
     {
         $this->set("SigId", $sigId);
     }
@@ -47,7 +47,7 @@ class OutSignature extends Response
      *
      * @return string|null
      */
-    public function getSigContent()
+    public function getSigContent(): string
     {
         return $this->get("SigContent");
     }
@@ -57,7 +57,7 @@ class OutSignature extends Response
      *
      * @param string $sigContent
      */
-    public function setSigContent($sigContent)
+    public function setSigContent(string $sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
@@ -67,7 +67,7 @@ class OutSignature extends Response
      *
      * @return integer|null
      */
-    public function getStatus()
+    public function getStatus(): int
     {
         return $this->get("Status");
     }
@@ -77,7 +77,7 @@ class OutSignature extends Response
      *
      * @param int $status
      */
-    public function setStatus($status)
+    public function setStatus(int $status)
     {
         $this->set("Status", $status);
     }
@@ -87,7 +87,7 @@ class OutSignature extends Response
      *
      * @return string|null
      */
-    public function getErrDesc()
+    public function getErrDesc(): string
     {
         return $this->get("ErrDesc");
     }
@@ -97,7 +97,7 @@ class OutSignature extends Response
      *
      * @param string $errDesc
      */
-    public function setErrDesc($errDesc)
+    public function setErrDesc(string $errDesc)
     {
         $this->set("ErrDesc", $errDesc);
     }

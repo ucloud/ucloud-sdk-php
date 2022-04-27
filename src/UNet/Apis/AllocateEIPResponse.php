@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,9 @@ class AllocateEIPResponse extends Response
      *
      * @return UnetAllocateEIPSet[]|null
      */
-    public function getEIPSet()
+    public function getEIPSet(): array
     {
-        $items = $this->get("EIPSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UnetAllocateEIPSet($item));

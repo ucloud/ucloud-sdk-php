@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,12 +27,9 @@ class VPCInfo extends Response
      *
      * @return VPCNetworkInfo[]|null
      */
-    public function getNetworkInfo()
+    public function getNetworkInfo(): array
     {
-        $items = $this->get("NetworkInfo");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NetworkInfo") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new VPCNetworkInfo($item));
@@ -59,7 +56,7 @@ class VPCInfo extends Response
      *
      * @return integer|null
      */
-    public function getSubnetCount()
+    public function getSubnetCount(): int
     {
         return $this->get("SubnetCount");
     }
@@ -69,7 +66,7 @@ class VPCInfo extends Response
      *
      * @param int $subnetCount
      */
-    public function setSubnetCount($subnetCount)
+    public function setSubnetCount(int $subnetCount)
     {
         $this->set("SubnetCount", $subnetCount);
     }
@@ -79,7 +76,7 @@ class VPCInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -89,7 +86,7 @@ class VPCInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -99,7 +96,7 @@ class VPCInfo extends Response
      *
      * @return integer|null
      */
-    public function getUpdateTime()
+    public function getUpdateTime(): int
     {
         return $this->get("UpdateTime");
     }
@@ -109,7 +106,7 @@ class VPCInfo extends Response
      *
      * @param int $updateTime
      */
-    public function setUpdateTime($updateTime)
+    public function setUpdateTime(int $updateTime)
     {
         $this->set("UpdateTime", $updateTime);
     }
@@ -119,7 +116,7 @@ class VPCInfo extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -129,7 +126,7 @@ class VPCInfo extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -139,7 +136,7 @@ class VPCInfo extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -149,7 +146,7 @@ class VPCInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -159,7 +156,7 @@ class VPCInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -169,7 +166,7 @@ class VPCInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -179,7 +176,7 @@ class VPCInfo extends Response
      *
      * @return string[]|null
      */
-    public function getNetwork()
+    public function getNetwork(): array
     {
         return $this->get("Network");
     }
@@ -199,7 +196,7 @@ class VPCInfo extends Response
      *
      * @return string|null
      */
-    public function getIPv6Network()
+    public function getIPv6Network(): string
     {
         return $this->get("IPv6Network");
     }
@@ -209,7 +206,7 @@ class VPCInfo extends Response
      *
      * @param string $iPv6Network
      */
-    public function setIPv6Network($iPv6Network)
+    public function setIPv6Network(string $iPv6Network)
     {
         $this->set("IPv6Network", $iPv6Network);
     }
@@ -219,7 +216,7 @@ class VPCInfo extends Response
      *
      * @return string|null
      */
-    public function getOperatorName()
+    public function getOperatorName(): string
     {
         return $this->get("OperatorName");
     }
@@ -229,7 +226,7 @@ class VPCInfo extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }

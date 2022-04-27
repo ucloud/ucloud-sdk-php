@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class SendUSMSMessageResponse extends Response
      *
      * @return string|null
      */
-    public function getSessionNo()
+    public function getSessionNo(): string
     {
         return $this->get("SessionNo");
     }
@@ -37,7 +37,7 @@ class SendUSMSMessageResponse extends Response
      *
      * @param string $sessionNo
      */
-    public function setSessionNo($sessionNo)
+    public function setSessionNo(string $sessionNo)
     {
         $this->set("SessionNo", $sessionNo);
     }
@@ -47,7 +47,7 @@ class SendUSMSMessageResponse extends Response
      *
      * @return string|null
      */
-    public function getUserId()
+    public function getUserId(): string
     {
         return $this->get("UserId");
     }
@@ -57,7 +57,7 @@ class SendUSMSMessageResponse extends Response
      *
      * @param string $userId
      */
-    public function setUserId($userId)
+    public function setUserId(string $userId)
     {
         $this->set("UserId", $userId);
     }

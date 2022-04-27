@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class FirewallSet extends Response
      *
      * @return string|null
      */
-    public function getFirewallName()
+    public function getFirewallName(): string
     {
         return $this->get("FirewallName");
     }
@@ -37,7 +37,7 @@ class FirewallSet extends Response
      *
      * @param string $firewallName
      */
-    public function setFirewallName($firewallName)
+    public function setFirewallName(string $firewallName)
     {
         $this->set("FirewallName", $firewallName);
     }
@@ -47,7 +47,7 @@ class FirewallSet extends Response
      *
      * @return string|null
      */
-    public function getFirewallId()
+    public function getFirewallId(): string
     {
         return $this->get("FirewallId");
     }
@@ -57,7 +57,7 @@ class FirewallSet extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }

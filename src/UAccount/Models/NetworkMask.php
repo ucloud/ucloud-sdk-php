@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NetworkMask extends Response
      *
      * @return string|null
      */
-    public function getAPINetworkMask()
+    public function getAPINetworkMask(): string
     {
         return $this->get("APINetworkMask");
     }
@@ -37,7 +37,7 @@ class NetworkMask extends Response
      *
      * @param string $apiNetworkMask
      */
-    public function setAPINetworkMask($apiNetworkMask)
+    public function setAPINetworkMask(string $apiNetworkMask)
     {
         $this->set("APINetworkMask", $apiNetworkMask);
     }
@@ -47,7 +47,7 @@ class NetworkMask extends Response
      *
      * @return string|null
      */
-    public function getLoginNetworkMask()
+    public function getLoginNetworkMask(): string
     {
         return $this->get("LoginNetworkMask");
     }
@@ -57,7 +57,7 @@ class NetworkMask extends Response
      *
      * @param string $loginNetworkMask
      */
-    public function setLoginNetworkMask($loginNetworkMask)
+    public function setLoginNetworkMask(string $loginNetworkMask)
     {
         $this->set("LoginNetworkMask", $loginNetworkMask);
     }

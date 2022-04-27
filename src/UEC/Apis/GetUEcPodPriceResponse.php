@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class GetUEcPodPriceResponse extends Response
      *
      * @return float|null
      */
-    public function getHolderPrice()
+    public function getHolderPrice(): float
     {
         return $this->get("HolderPrice");
     }
@@ -37,7 +37,7 @@ class GetUEcPodPriceResponse extends Response
      *
      * @param float $holderPrice
      */
-    public function setHolderPrice($holderPrice)
+    public function setHolderPrice(float $holderPrice)
     {
         $this->set("HolderPrice", $holderPrice);
     }
@@ -47,7 +47,7 @@ class GetUEcPodPriceResponse extends Response
      *
      * @return float|null
      */
-    public function getIpPrice()
+    public function getIpPrice(): float
     {
         return $this->get("IpPrice");
     }
@@ -57,7 +57,7 @@ class GetUEcPodPriceResponse extends Response
      *
      * @param float $ipPrice
      */
-    public function setIpPrice($ipPrice)
+    public function setIpPrice(float $ipPrice)
     {
         $this->set("IpPrice", $ipPrice);
     }

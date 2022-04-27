@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class GetEIPPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class GetEIPPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class GetEIPPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class GetEIPPriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class GetEIPPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getOperatorName()
+    public function getOperatorName(): string
     {
         return $this->get("OperatorName");
     }
@@ -85,7 +85,7 @@ class GetEIPPriceRequest extends Request
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
@@ -95,7 +95,7 @@ class GetEIPPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -105,7 +105,7 @@ class GetEIPPriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -115,7 +115,7 @@ class GetEIPPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -125,7 +125,7 @@ class GetEIPPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -135,7 +135,7 @@ class GetEIPPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getPayMode()
+    public function getPayMode(): string
     {
         return $this->get("PayMode");
     }
@@ -145,7 +145,7 @@ class GetEIPPriceRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }
@@ -155,7 +155,7 @@ class GetEIPPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -165,7 +165,7 @@ class GetEIPPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }

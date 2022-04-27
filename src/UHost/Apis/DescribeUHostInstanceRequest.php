@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -43,7 +43,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -53,7 +53,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -63,7 +63,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -73,7 +73,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -83,7 +83,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -93,7 +93,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string[]|null
      */
-    public function getUHostIds()
+    public function getUHostIds(): array
     {
         return $this->get("UHostIds");
     }
@@ -113,7 +113,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -123,7 +123,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -133,7 +133,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -143,7 +143,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
@@ -153,7 +153,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->get("Limit");
     }
@@ -163,7 +163,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
@@ -173,7 +173,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getIsolationGroup()
+    public function getIsolationGroup(): string
     {
         return $this->get("IsolationGroup");
     }
@@ -183,7 +183,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup($isolationGroup)
+    public function setIsolationGroup(string $isolationGroup)
     {
         $this->set("IsolationGroup", $isolationGroup);
     }
@@ -193,7 +193,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -203,7 +203,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -213,7 +213,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -223,7 +223,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -233,7 +233,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDiskIdForAttachment()
+    public function getUDiskIdForAttachment(): string
     {
         return $this->get("UDiskIdForAttachment");
     }
@@ -243,7 +243,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $uDiskIdForAttachment
      */
-    public function setUDiskIdForAttachment($uDiskIdForAttachment)
+    public function setUDiskIdForAttachment(string $uDiskIdForAttachment)
     {
         $this->set("UDiskIdForAttachment", $uDiskIdForAttachment);
     }

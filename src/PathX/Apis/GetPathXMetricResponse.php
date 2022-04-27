@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class GetPathXMetricResponse extends Response
      *
      * @return MetricPeriod|null
      */
-    public function getDataSet()
+    public function getDataSet(): MetricPeriod
     {
         return new MetricPeriod($this->get("DataSet"));
     }
@@ -42,7 +42,7 @@ class GetPathXMetricResponse extends Response
      *
      * @param MetricPeriod $dataSet
      */
-    public function setDataSet(array $dataSet)
+    public function setDataSet(MetricPeriod $dataSet)
     {
         $this->set("DataSet", $dataSet->getAll());
     }

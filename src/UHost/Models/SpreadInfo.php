@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class SpreadInfo extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class SpreadInfo extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class SpreadInfo extends Response
      *
      * @return integer|null
      */
-    public function getUHostCount()
+    public function getUHostCount(): int
     {
         return $this->get("UHostCount");
     }
@@ -57,7 +57,7 @@ class SpreadInfo extends Response
      *
      * @param int $uHostCount
      */
-    public function setUHostCount($uHostCount)
+    public function setUHostCount(int $uHostCount)
     {
         $this->set("UHostCount", $uHostCount);
     }

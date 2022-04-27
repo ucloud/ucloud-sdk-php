@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getPeer1()
+    public function getPeer1(): string
     {
         return $this->get("Peer1");
     }
@@ -65,7 +65,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $peer1
      */
-    public function setPeer1($peer1)
+    public function setPeer1(string $peer1)
     {
         $this->set("Peer1", $peer1);
     }
@@ -75,7 +75,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getPeer2()
+    public function getPeer2(): string
     {
         return $this->get("Peer2");
     }
@@ -85,7 +85,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $peer2
      */
-    public function setPeer2($peer2)
+    public function setPeer2(string $peer2)
     {
         $this->set("Peer2", $peer2);
     }
@@ -95,7 +95,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -105,7 +105,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -115,7 +115,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -125,7 +125,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -135,7 +135,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -145,7 +145,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -155,7 +155,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getPayMode()
+    public function getPayMode(): string
     {
         return $this->get("PayMode");
     }
@@ -165,7 +165,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }

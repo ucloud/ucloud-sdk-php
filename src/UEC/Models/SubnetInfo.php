@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -37,7 +37,7 @@ class SubnetInfo extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -47,7 +47,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetName()
+    public function getSubnetName(): string
     {
         return $this->get("SubnetName");
     }
@@ -57,7 +57,7 @@ class SubnetInfo extends Response
      *
      * @param string $subnetName
      */
-    public function setSubnetName($subnetName)
+    public function setSubnetName(string $subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
@@ -67,7 +67,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getIdcId()
+    public function getIdcId(): string
     {
         return $this->get("IdcId");
     }
@@ -77,7 +77,7 @@ class SubnetInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -87,7 +87,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getCIDR()
+    public function getCIDR(): string
     {
         return $this->get("CIDR");
     }
@@ -97,7 +97,7 @@ class SubnetInfo extends Response
      *
      * @param string $cidr
      */
-    public function setCIDR($cidr)
+    public function setCIDR(string $cidr)
     {
         $this->set("CIDR", $cidr);
     }
@@ -107,7 +107,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -117,7 +117,7 @@ class SubnetInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -127,7 +127,7 @@ class SubnetInfo extends Response
      *
      * @return string|null
      */
-    public function getComment()
+    public function getComment(): string
     {
         return $this->get("Comment");
     }
@@ -137,7 +137,7 @@ class SubnetInfo extends Response
      *
      * @param string $comment
      */
-    public function setComment($comment)
+    public function setComment(string $comment)
     {
         $this->set("Comment", $comment);
     }
@@ -147,7 +147,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getTotalIpCnt()
+    public function getTotalIpCnt(): int
     {
         return $this->get("TotalIpCnt");
     }
@@ -157,7 +157,7 @@ class SubnetInfo extends Response
      *
      * @param int $totalIpCnt
      */
-    public function setTotalIpCnt($totalIpCnt)
+    public function setTotalIpCnt(int $totalIpCnt)
     {
         $this->set("TotalIpCnt", $totalIpCnt);
     }
@@ -167,7 +167,7 @@ class SubnetInfo extends Response
      *
      * @return integer|null
      */
-    public function getAvailableIPCnt()
+    public function getAvailableIPCnt(): int
     {
         return $this->get("AvailableIPCnt");
     }
@@ -177,7 +177,7 @@ class SubnetInfo extends Response
      *
      * @param int $availableIPCnt
      */
-    public function setAvailableIPCnt($availableIPCnt)
+    public function setAvailableIPCnt(int $availableIPCnt)
     {
         $this->set("AvailableIPCnt", $availableIPCnt);
     }

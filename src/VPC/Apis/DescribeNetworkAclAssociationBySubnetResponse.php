@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class DescribeNetworkAclAssociationBySubnetResponse extends Response
      *
      * @return AssociationInfo|null
      */
-    public function getAssociation()
+    public function getAssociation(): AssociationInfo
     {
         return new AssociationInfo($this->get("Association"));
     }
@@ -38,7 +38,7 @@ class DescribeNetworkAclAssociationBySubnetResponse extends Response
      *
      * @param AssociationInfo $association
      */
-    public function setAssociation(array $association)
+    public function setAssociation(AssociationInfo $association)
     {
         $this->set("Association", $association->getAll());
     }

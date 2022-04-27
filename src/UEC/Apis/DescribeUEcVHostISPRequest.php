@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @return string|null
      */
-    public function getIspName()
+    public function getIspName(): string
     {
         return $this->get("IspName");
     }
@@ -42,7 +42,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $ispName
      */
-    public function setIspName($ispName)
+    public function setIspName(string $ispName)
     {
         $this->set("IspName", $ispName);
     }
@@ -52,7 +52,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @return string|null
      */
-    public function getProvince()
+    public function getProvince(): string
     {
         return $this->get("Province");
     }
@@ -62,7 +62,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
@@ -72,7 +72,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @return string|null
      */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->get("City");
     }
@@ -82,7 +82,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }

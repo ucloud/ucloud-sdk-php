@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,8 @@ use UCloud\UDB\Apis\ExtractUDBParamGroupRequest;
 use UCloud\UDB\Apis\ExtractUDBParamGroupResponse;
 use UCloud\UDB\Apis\FetchUDBInstanceEarliestRecoverTimeRequest;
 use UCloud\UDB\Apis\FetchUDBInstanceEarliestRecoverTimeResponse;
+use UCloud\UDB\Apis\GetUDBClientConnNumRequest;
+use UCloud\UDB\Apis\GetUDBClientConnNumResponse;
 use UCloud\UDB\Apis\ModifyUDBInstanceNameRequest;
 use UCloud\UDB\Apis\ModifyUDBInstanceNameResponse;
 use UCloud\UDB\Apis\ModifyUDBInstancePasswordRequest;
@@ -163,10 +165,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return BackupUDBInstanceResponse
      * @throws UCloudException
      */
-    public function backupUDBInstance(BackupUDBInstanceRequest $request = null)
+    public function backupUDBInstance(BackupUDBInstanceRequest $request = null): BackupUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new BackupUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -193,10 +194,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return BackupUDBInstanceBinlogResponse
      * @throws UCloudException
      */
-    public function backupUDBInstanceBinlog(BackupUDBInstanceBinlogRequest $request = null)
+    public function backupUDBInstanceBinlog(BackupUDBInstanceBinlogRequest $request = null): BackupUDBInstanceBinlogResponse
     {
         $resp = $this->invoke($request);
         return new BackupUDBInstanceBinlogResponse($resp->toArray(), $resp->getRequestId());
@@ -222,10 +222,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return BackupUDBInstanceErrorLogResponse
      * @throws UCloudException
      */
-    public function backupUDBInstanceErrorLog(BackupUDBInstanceErrorLogRequest $request = null)
+    public function backupUDBInstanceErrorLog(BackupUDBInstanceErrorLogRequest $request = null): BackupUDBInstanceErrorLogResponse
     {
         $resp = $this->invoke($request);
         return new BackupUDBInstanceErrorLogResponse($resp->toArray(), $resp->getRequestId());
@@ -252,10 +251,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return BackupUDBInstanceSlowLogResponse
      * @throws UCloudException
      */
-    public function backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogRequest $request = null)
+    public function backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogRequest $request = null): BackupUDBInstanceSlowLogResponse
     {
         $resp = $this->invoke($request);
         return new BackupUDBInstanceSlowLogResponse($resp->toArray(), $resp->getRequestId());
@@ -281,10 +279,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ChangeUDBParamGroupResponse
      * @throws UCloudException
      */
-    public function changeUDBParamGroup(ChangeUDBParamGroupRequest $request = null)
+    public function changeUDBParamGroup(ChangeUDBParamGroupRequest $request = null): ChangeUDBParamGroupResponse
     {
         $resp = $this->invoke($request);
         return new ChangeUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -310,10 +307,9 @@ class UDBClient extends Client
      *     "LastestTime" => (integer) 核查成功返回值为可以回档到的最近时刻,核查失败不返回
      * ]
      *
-     * @return CheckRecoverUDBInstanceResponse
      * @throws UCloudException
      */
-    public function checkRecoverUDBInstance(CheckRecoverUDBInstanceRequest $request = null)
+    public function checkRecoverUDBInstance(CheckRecoverUDBInstanceRequest $request = null): CheckRecoverUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new CheckRecoverUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -338,10 +334,9 @@ class UDBClient extends Client
      *     "Allowance" => (string) Yes ，No ，Yes即可以升级，No为不可以升级
      * ]
      *
-     * @return CheckUDBInstanceToHAAllowanceResponse
      * @throws UCloudException
      */
-    public function checkUDBInstanceToHAAllowance(CheckUDBInstanceToHAAllowanceRequest $request = null)
+    public function checkUDBInstanceToHAAllowance(CheckUDBInstanceToHAAllowanceRequest $request = null): CheckUDBInstanceToHAAllowanceResponse
     {
         $resp = $this->invoke($request);
         return new CheckUDBInstanceToHAAllowanceResponse($resp->toArray(), $resp->getRequestId());
@@ -368,10 +363,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ClearUDBLogResponse
      * @throws UCloudException
      */
-    public function clearUDBLog(ClearUDBLogRequest $request = null)
+    public function clearUDBLog(ClearUDBLogRequest $request = null): ClearUDBLogResponse
     {
         $resp = $this->invoke($request);
         return new ClearUDBLogResponse($resp->toArray(), $resp->getRequestId());
@@ -417,10 +411,9 @@ class UDBClient extends Client
      *     "DBIds" => (array<string>) 返回所有副本集成员的Id
      * ]
      *
-     * @return CreateMongoDBReplicaSetResponse
      * @throws UCloudException
      */
-    public function createMongoDBReplicaSet(CreateMongoDBReplicaSetRequest $request = null)
+    public function createMongoDBReplicaSet(CreateMongoDBReplicaSetRequest $request = null): CreateMongoDBReplicaSetResponse
     {
         $resp = $this->invoke($request);
         return new CreateMongoDBReplicaSetResponse($resp->toArray(), $resp->getRequestId());
@@ -473,10 +466,9 @@ class UDBClient extends Client
      *     "DBId" => (string) BD实例id
      * ]
      *
-     * @return CreateUDBInstanceResponse
      * @throws UCloudException
      */
-    public function createUDBInstance(CreateUDBInstanceRequest $request = null)
+    public function createUDBInstance(CreateUDBInstanceRequest $request = null): CreateUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -512,10 +504,9 @@ class UDBClient extends Client
      *     "DBId" => (string) db实例id
      * ]
      *
-     * @return CreateUDBInstanceByRecoveryResponse
      * @throws UCloudException
      */
-    public function createUDBInstanceByRecovery(CreateUDBInstanceByRecoveryRequest $request = null)
+    public function createUDBInstanceByRecovery(CreateUDBInstanceByRecoveryRequest $request = null): CreateUDBInstanceByRecoveryResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDBInstanceByRecoveryResponse($resp->toArray(), $resp->getRequestId());
@@ -545,10 +536,9 @@ class UDBClient extends Client
      *     "GroupId" => (integer) 新配置参数组id
      * ]
      *
-     * @return CreateUDBParamGroupResponse
      * @throws UCloudException
      */
-    public function createUDBParamGroup(CreateUDBParamGroupRequest $request = null)
+    public function createUDBParamGroup(CreateUDBParamGroupRequest $request = null): CreateUDBParamGroupResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -579,10 +569,9 @@ class UDBClient extends Client
      *     "DBId" => (string) 创建从节点的DBId
      * ]
      *
-     * @return CreateUDBReplicationInstanceResponse
      * @throws UCloudException
      */
-    public function createUDBReplicationInstance(CreateUDBReplicationInstanceRequest $request = null)
+    public function createUDBReplicationInstance(CreateUDBReplicationInstanceRequest $request = null): CreateUDBReplicationInstanceResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDBReplicationInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -618,10 +607,9 @@ class UDBClient extends Client
      *     "DBId" => (string) db实例id
      * ]
      *
-     * @return CreateUDBRouteInstanceResponse
      * @throws UCloudException
      */
-    public function createUDBRouteInstance(CreateUDBRouteInstanceRequest $request = null)
+    public function createUDBRouteInstance(CreateUDBRouteInstanceRequest $request = null): CreateUDBRouteInstanceResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDBRouteInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -662,10 +650,9 @@ class UDBClient extends Client
      *     "DBId" => (string) 创建slave的DBId
      * ]
      *
-     * @return CreateUDBSlaveResponse
      * @throws UCloudException
      */
-    public function createUDBSlave(CreateUDBSlaveRequest $request = null)
+    public function createUDBSlave(CreateUDBSlaveRequest $request = null): CreateUDBSlaveResponse
     {
         $resp = $this->invoke($request);
         return new CreateUDBSlaveResponse($resp->toArray(), $resp->getRequestId());
@@ -691,10 +678,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUDBInstanceResponse
      * @throws UCloudException
      */
-    public function deleteUDBInstance(DeleteUDBInstanceRequest $request = null)
+    public function deleteUDBInstance(DeleteUDBInstanceRequest $request = null): DeleteUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -720,10 +706,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUDBLogPackageResponse
      * @throws UCloudException
      */
-    public function deleteUDBLogPackage(DeleteUDBLogPackageRequest $request = null)
+    public function deleteUDBLogPackage(DeleteUDBLogPackageRequest $request = null): DeleteUDBLogPackageResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUDBLogPackageResponse($resp->toArray(), $resp->getRequestId());
@@ -749,10 +734,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DeleteUDBParamGroupResponse
      * @throws UCloudException
      */
-    public function deleteUDBParamGroup(DeleteUDBParamGroupRequest $request = null)
+    public function deleteUDBParamGroup(DeleteUDBParamGroupRequest $request = null): DeleteUDBParamGroupResponse
     {
         $resp = $this->invoke($request);
         return new DeleteUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -798,10 +782,9 @@ class UDBClient extends Client
      *     "TotalCount" => (integer) 满足条件备份总数，如果指定dbid，则是该db备份总数
      * ]
      *
-     * @return DescribeUDBBackupResponse
      * @throws UCloudException
      */
-    public function describeUDBBackup(DescribeUDBBackupRequest $request = null)
+    public function describeUDBBackup(DescribeUDBBackupRequest $request = null): DescribeUDBBackupResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBBackupResponse($resp->toArray(), $resp->getRequestId());
@@ -827,10 +810,9 @@ class UDBClient extends Client
      *     "Blacklist" => (string) DB的黑名单列表, db.%为指定库 dbname.tablename为指定表
      * ]
      *
-     * @return DescribeUDBBackupBlacklistResponse
      * @throws UCloudException
      */
-    public function describeUDBBackupBlacklist(DescribeUDBBackupBlacklistRequest $request = null)
+    public function describeUDBBackupBlacklist(DescribeUDBBackupBlacklistRequest $request = null): DescribeUDBBackupBlacklistResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBBackupBlacklistResponse($resp->toArray(), $resp->getRequestId());
@@ -857,10 +839,9 @@ class UDBClient extends Client
      *     "InnerBackupPath" => (string) DB实例备份文件的内网地址
      * ]
      *
-     * @return DescribeUDBBinlogBackupURLResponse
      * @throws UCloudException
      */
-    public function describeUDBBinlogBackupURL(DescribeUDBBinlogBackupURLRequest $request = null)
+    public function describeUDBBinlogBackupURL(DescribeUDBBinlogBackupURLRequest $request = null): DescribeUDBBinlogBackupURLResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBBinlogBackupURLResponse($resp->toArray(), $resp->getRequestId());
@@ -979,10 +960,9 @@ class UDBClient extends Client
      *     "TotalCount" => (integer) 用户db组的数量，对于 mysql: 主从结对数量，没有slave，则只有master mongodb: 副本集数量
      * ]
      *
-     * @return DescribeUDBInstanceResponse
      * @throws UCloudException
      */
-    public function describeUDBInstance(DescribeUDBInstanceRequest $request = null)
+    public function describeUDBInstance(DescribeUDBInstanceRequest $request = null): DescribeUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1009,10 +989,9 @@ class UDBClient extends Client
      *     "State" => (string) 备份状态 0 Backuping // 备份中 1 Success // 备份成功 2 Failed // 备份失败 3 Expired // 备份过期
      * ]
      *
-     * @return DescribeUDBInstanceBackupStateResponse
      * @throws UCloudException
      */
-    public function describeUDBInstanceBackupState(DescribeUDBInstanceBackupStateRequest $request = null)
+    public function describeUDBInstanceBackupState(DescribeUDBInstanceBackupStateRequest $request = null): DescribeUDBInstanceBackupStateResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceBackupStateResponse($resp->toArray(), $resp->getRequestId());
@@ -1040,10 +1019,9 @@ class UDBClient extends Client
      *     "InnerBackupPath" => (string) DB实例备份文件内网的地址
      * ]
      *
-     * @return DescribeUDBInstanceBackupURLResponse
      * @throws UCloudException
      */
-    public function describeUDBInstanceBackupURL(DescribeUDBInstanceBackupURLRequest $request = null)
+    public function describeUDBInstanceBackupURL(DescribeUDBInstanceBackupURLRequest $request = null): DescribeUDBInstanceBackupURLResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceBackupURLResponse($resp->toArray(), $resp->getRequestId());
@@ -1078,10 +1056,9 @@ class UDBClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUDBInstanceBinlogResponse
      * @throws UCloudException
      */
-    public function describeUDBInstanceBinlog(DescribeUDBInstanceBinlogRequest $request = null)
+    public function describeUDBInstanceBinlog(DescribeUDBInstanceBinlogRequest $request = null): DescribeUDBInstanceBinlogResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceBinlogResponse($resp->toArray(), $resp->getRequestId());
@@ -1108,10 +1085,9 @@ class UDBClient extends Client
      *     "State" => (string) 备份状态 0 Backuping // 备份中 1 Success // 备份成功 2 Failed // 备份失败 3 Expired // 备份过期
      * ]
      *
-     * @return DescribeUDBInstanceBinlogBackupStateResponse
      * @throws UCloudException
      */
-    public function describeUDBInstanceBinlogBackupState(DescribeUDBInstanceBinlogBackupStateRequest $request = null)
+    public function describeUDBInstanceBinlogBackupState(DescribeUDBInstanceBinlogBackupStateRequest $request = null): DescribeUDBInstanceBinlogBackupStateResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceBinlogBackupStateResponse($resp->toArray(), $resp->getRequestId());
@@ -1141,10 +1117,9 @@ class UDBClient extends Client
      *     "NextTime" => (string) 此次查询到的日志的下一个时间，用于下一次轮询时的BeginTime参数；如果日志查询结束则返回为空，前端结束查询
      * ]
      *
-     * @return DescribeUDBInstanceLogResponse
      * @throws UCloudException
      */
-    public function describeUDBInstanceLog(DescribeUDBInstanceLogRequest $request = null)
+    public function describeUDBInstanceLog(DescribeUDBInstanceLogRequest $request = null): DescribeUDBInstanceLogResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceLogResponse($resp->toArray(), $resp->getRequestId());
@@ -1182,10 +1157,9 @@ class UDBClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUDBInstancePriceResponse
      * @throws UCloudException
      */
-    public function describeUDBInstancePrice(DescribeUDBInstancePriceRequest $request = null)
+    public function describeUDBInstancePrice(DescribeUDBInstancePriceRequest $request = null): DescribeUDBInstancePriceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstancePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -1211,10 +1185,9 @@ class UDBClient extends Client
      *     "State" => (string) DB状态标记 Init：初始化中；Fail：安装失败； Starting：启动中； Running ： 运行 ；Shutdown：关闭中； Shutoff ：已关闭； Delete：已删除； Upgrading：升级中； Promoting： 提升为独库进行中； Recovering： 恢复中； Recover fail：恢复失败。
      * ]
      *
-     * @return DescribeUDBInstanceStateResponse
      * @throws UCloudException
      */
-    public function describeUDBInstanceState(DescribeUDBInstanceStateRequest $request = null)
+    public function describeUDBInstanceState(DescribeUDBInstanceStateRequest $request = null): DescribeUDBInstanceStateResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceStateResponse($resp->toArray(), $resp->getRequestId());
@@ -1244,10 +1217,9 @@ class UDBClient extends Client
      *     "Price" => (integer) 价格，单位为分
      * ]
      *
-     * @return DescribeUDBInstanceUpgradePriceResponse
      * @throws UCloudException
      */
-    public function describeUDBInstanceUpgradePrice(DescribeUDBInstanceUpgradePriceRequest $request = null)
+    public function describeUDBInstanceUpgradePrice(DescribeUDBInstanceUpgradePriceRequest $request = null): DescribeUDBInstanceUpgradePriceResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBInstanceUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -1275,10 +1247,9 @@ class UDBClient extends Client
      *     "UsernetPath" => (string) 备份用户网URL
      * ]
      *
-     * @return DescribeUDBLogBackupURLResponse
      * @throws UCloudException
      */
-    public function describeUDBLogBackupURL(DescribeUDBLogBackupURLRequest $request = null)
+    public function describeUDBLogBackupURL(DescribeUDBLogBackupURLRequest $request = null): DescribeUDBLogBackupURLResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBLogBackupURLResponse($resp->toArray(), $resp->getRequestId());
@@ -1324,10 +1295,9 @@ class UDBClient extends Client
      *     "TotalCount" => (integer) 备份总数，如果指定dbid，则是该db备份总数
      * ]
      *
-     * @return DescribeUDBLogPackageResponse
      * @throws UCloudException
      */
-    public function describeUDBLogPackage(DescribeUDBLogPackageRequest $request = null)
+    public function describeUDBLogPackage(DescribeUDBLogPackageRequest $request = null): DescribeUDBLogPackageResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBLogPackageResponse($resp->toArray(), $resp->getRequestId());
@@ -1378,10 +1348,9 @@ class UDBClient extends Client
      *     "TotalCount" => (integer) 参数组总数，列表操作时才会有该参数
      * ]
      *
-     * @return DescribeUDBParamGroupResponse
      * @throws UCloudException
      */
-    public function describeUDBParamGroup(DescribeUDBParamGroupRequest $request = null)
+    public function describeUDBParamGroup(DescribeUDBParamGroupRequest $request = null): DescribeUDBParamGroupResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -1422,10 +1391,9 @@ class UDBClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUDBSplittingInfoResponse
      * @throws UCloudException
      */
-    public function describeUDBSplittingInfo(DescribeUDBSplittingInfoRequest $request = null)
+    public function describeUDBSplittingInfo(DescribeUDBSplittingInfoRequest $request = null): DescribeUDBSplittingInfoResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBSplittingInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -1458,10 +1426,9 @@ class UDBClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeUDBTypeResponse
      * @throws UCloudException
      */
-    public function describeUDBType(DescribeUDBTypeRequest $request = null)
+    public function describeUDBType(DescribeUDBTypeRequest $request = null): DescribeUDBTypeResponse
     {
         $resp = $this->invoke($request);
         return new DescribeUDBTypeResponse($resp->toArray(), $resp->getRequestId());
@@ -1485,10 +1452,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return DisableUDBRWSplittingResponse
      * @throws UCloudException
      */
-    public function disableUDBRWSplitting(DisableUDBRWSplittingRequest $request = null)
+    public function disableUDBRWSplitting(DisableUDBRWSplittingRequest $request = null): DisableUDBRWSplittingResponse
     {
         $resp = $this->invoke($request);
         return new DisableUDBRWSplittingResponse($resp->toArray(), $resp->getRequestId());
@@ -1514,10 +1480,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return EditUDBBackupBlacklistResponse
      * @throws UCloudException
      */
-    public function editUDBBackupBlacklist(EditUDBBackupBlacklistRequest $request = null)
+    public function editUDBBackupBlacklist(EditUDBBackupBlacklistRequest $request = null): EditUDBBackupBlacklistResponse
     {
         $resp = $this->invoke($request);
         return new EditUDBBackupBlacklistResponse($resp->toArray(), $resp->getRequestId());
@@ -1544,10 +1509,9 @@ class UDBClient extends Client
      *     "RWIp" => (string) 读写分离访问IP
      * ]
      *
-     * @return EnableUDBRWSplittingResponse
      * @throws UCloudException
      */
-    public function enableUDBRWSplitting(EnableUDBRWSplittingRequest $request = null)
+    public function enableUDBRWSplitting(EnableUDBRWSplittingRequest $request = null): EnableUDBRWSplittingResponse
     {
         $resp = $this->invoke($request);
         return new EnableUDBRWSplittingResponse($resp->toArray(), $resp->getRequestId());
@@ -1573,10 +1537,9 @@ class UDBClient extends Client
      *     "Content" => (string) 配置文件内容
      * ]
      *
-     * @return ExtractUDBParamGroupResponse
      * @throws UCloudException
      */
-    public function extractUDBParamGroup(ExtractUDBParamGroupRequest $request = null)
+    public function extractUDBParamGroup(ExtractUDBParamGroupRequest $request = null): ExtractUDBParamGroupResponse
     {
         $resp = $this->invoke($request);
         return new ExtractUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -1602,13 +1565,45 @@ class UDBClient extends Client
      *     "EarliestTime" => (integer) 获取最早可回档时间点
      * ]
      *
-     * @return FetchUDBInstanceEarliestRecoverTimeResponse
      * @throws UCloudException
      */
-    public function fetchUDBInstanceEarliestRecoverTime(FetchUDBInstanceEarliestRecoverTimeRequest $request = null)
+    public function fetchUDBInstanceEarliestRecoverTime(FetchUDBInstanceEarliestRecoverTimeRequest $request = null): FetchUDBInstanceEarliestRecoverTimeResponse
     {
         $resp = $this->invoke($request);
         return new FetchUDBInstanceEarliestRecoverTimeResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUDBClientConnNum - 输入一个DBID，能够获取客户端来源IP以及对应的连接数
+     *
+     * See also: https://docs.ucloud.cn/api/udb-api/get_udb_client_conn_num
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "DBId" => (string) DB实例id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (array<object>) db实例ip和连接数信息[
+     *         [
+     *             "Ip" => (string) 客户端IP
+     *             "Num" => (integer) 该Ip连接数
+     *         ]
+     *     ]
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function getUDBClientConnNum(GetUDBClientConnNumRequest $request = null): GetUDBClientConnNumResponse
+    {
+        $resp = $this->invoke($request);
+        return new GetUDBClientConnNumResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -1631,10 +1626,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyUDBInstanceNameResponse
      * @throws UCloudException
      */
-    public function modifyUDBInstanceName(ModifyUDBInstanceNameRequest $request = null)
+    public function modifyUDBInstanceName(ModifyUDBInstanceNameRequest $request = null): ModifyUDBInstanceNameResponse
     {
         $resp = $this->invoke($request);
         return new ModifyUDBInstanceNameResponse($resp->toArray(), $resp->getRequestId());
@@ -1661,10 +1655,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ModifyUDBInstancePasswordResponse
      * @throws UCloudException
      */
-    public function modifyUDBInstancePassword(ModifyUDBInstancePasswordRequest $request = null)
+    public function modifyUDBInstancePassword(ModifyUDBInstancePasswordRequest $request = null): ModifyUDBInstancePasswordResponse
     {
         $resp = $this->invoke($request);
         return new ModifyUDBInstancePasswordResponse($resp->toArray(), $resp->getRequestId());
@@ -1688,10 +1681,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return PromoteUDBInstanceToHAResponse
      * @throws UCloudException
      */
-    public function promoteUDBInstanceToHA(PromoteUDBInstanceToHARequest $request = null)
+    public function promoteUDBInstanceToHA(PromoteUDBInstanceToHARequest $request = null): PromoteUDBInstanceToHAResponse
     {
         $resp = $this->invoke($request);
         return new PromoteUDBInstanceToHAResponse($resp->toArray(), $resp->getRequestId());
@@ -1717,10 +1709,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return PromoteUDBSlaveResponse
      * @throws UCloudException
      */
-    public function promoteUDBSlave(PromoteUDBSlaveRequest $request = null)
+    public function promoteUDBSlave(PromoteUDBSlaveRequest $request = null): PromoteUDBSlaveResponse
     {
         $resp = $this->invoke($request);
         return new PromoteUDBSlaveResponse($resp->toArray(), $resp->getRequestId());
@@ -1754,10 +1745,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return ResizeUDBInstanceResponse
      * @throws UCloudException
      */
-    public function resizeUDBInstance(ResizeUDBInstanceRequest $request = null)
+    public function resizeUDBInstance(ResizeUDBInstanceRequest $request = null): ResizeUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new ResizeUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1781,10 +1771,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return RestartRWSplittingResponse
      * @throws UCloudException
      */
-    public function restartRWSplitting(RestartRWSplittingRequest $request = null)
+    public function restartRWSplitting(RestartRWSplittingRequest $request = null): RestartRWSplittingResponse
     {
         $resp = $this->invoke($request);
         return new RestartRWSplittingResponse($resp->toArray(), $resp->getRequestId());
@@ -1809,10 +1798,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return RestartUDBInstanceResponse
      * @throws UCloudException
      */
-    public function restartUDBInstance(RestartUDBInstanceRequest $request = null)
+    public function restartUDBInstance(RestartUDBInstanceRequest $request = null): RestartUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new RestartUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1840,10 +1828,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return SetUDBRWSplittingResponse
      * @throws UCloudException
      */
-    public function setUDBRWSplitting(SetUDBRWSplittingRequest $request = null)
+    public function setUDBRWSplitting(SetUDBRWSplittingRequest $request = null): SetUDBRWSplittingResponse
     {
         $resp = $this->invoke($request);
         return new SetUDBRWSplittingResponse($resp->toArray(), $resp->getRequestId());
@@ -1868,10 +1855,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return StartUDBInstanceResponse
      * @throws UCloudException
      */
-    public function startUDBInstance(StartUDBInstanceRequest $request = null)
+    public function startUDBInstance(StartUDBInstanceRequest $request = null): StartUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new StartUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
@@ -1897,27 +1883,27 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return StopUDBInstanceResponse
      * @throws UCloudException
      */
-    public function stopUDBInstance(StopUDBInstanceRequest $request = null)
+    public function stopUDBInstance(StopUDBInstanceRequest $request = null): StopUDBInstanceResponse
     {
         $resp = $this->invoke($request);
         return new StopUDBInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
-     * SwitchUDBHAToSentinel - UDB高可用实例从HAProxy版本升级为Sentinel版本（不带HAProxy）升级耗时30-70秒
+     * SwitchUDBHAToSentinel - UDB高可用实例从HAProxy版本升级为Sentinel版本（不带HAProxy）升级耗时5-10秒
      *
      * See also: https://docs.ucloud.cn/api/udb-api/switch_udb_ha_to_sentinel
      *
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "DBId" => (string) UDB的实例ID
+     *     "ForceSwitch" => (boolean) 是否跳过预检查强制升级。
      * ]
      *
      * Outputs:
@@ -1925,10 +1911,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return SwitchUDBHAToSentinelResponse
      * @throws UCloudException
      */
-    public function switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest $request = null)
+    public function switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest $request = null): SwitchUDBHAToSentinelResponse
     {
         $resp = $this->invoke($request);
         return new SwitchUDBHAToSentinelResponse($resp->toArray(), $resp->getRequestId());
@@ -1956,10 +1941,9 @@ class UDBClient extends Client
      *     "DBId" => (string) 切换后高可用db实例的Id
      * ]
      *
-     * @return SwitchUDBInstanceToHAResponse
      * @throws UCloudException
      */
-    public function switchUDBInstanceToHA(SwitchUDBInstanceToHARequest $request = null)
+    public function switchUDBInstanceToHA(SwitchUDBInstanceToHARequest $request = null): SwitchUDBInstanceToHAResponse
     {
         $resp = $this->invoke($request);
         return new SwitchUDBInstanceToHAResponse($resp->toArray(), $resp->getRequestId());
@@ -1988,10 +1972,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpdateUDBInstanceBackupStrategyResponse
      * @throws UCloudException
      */
-    public function updateUDBInstanceBackupStrategy(UpdateUDBInstanceBackupStrategyRequest $request = null)
+    public function updateUDBInstanceBackupStrategy(UpdateUDBInstanceBackupStrategyRequest $request = null): UpdateUDBInstanceBackupStrategyResponse
     {
         $resp = $this->invoke($request);
         return new UpdateUDBInstanceBackupStrategyResponse($resp->toArray(), $resp->getRequestId());
@@ -2018,10 +2001,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpdateUDBInstanceSlaveBackupSwitchResponse
      * @throws UCloudException
      */
-    public function updateUDBInstanceSlaveBackupSwitch(UpdateUDBInstanceSlaveBackupSwitchRequest $request = null)
+    public function updateUDBInstanceSlaveBackupSwitch(UpdateUDBInstanceSlaveBackupSwitchRequest $request = null): UpdateUDBInstanceSlaveBackupSwitchResponse
     {
         $resp = $this->invoke($request);
         return new UpdateUDBInstanceSlaveBackupSwitchResponse($resp->toArray(), $resp->getRequestId());
@@ -2051,10 +2033,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpdateUDBParamGroupResponse
      * @throws UCloudException
      */
-    public function updateUDBParamGroup(UpdateUDBParamGroupRequest $request = null)
+    public function updateUDBParamGroup(UpdateUDBParamGroupRequest $request = null): UpdateUDBParamGroupResponse
     {
         $resp = $this->invoke($request);
         return new UpdateUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());
@@ -2079,10 +2060,9 @@ class UDBClient extends Client
      * $outputs = [
      * ]
      *
-     * @return UpgradeUDBInstanceToHAResponse
      * @throws UCloudException
      */
-    public function upgradeUDBInstanceToHA(UpgradeUDBInstanceToHARequest $request = null)
+    public function upgradeUDBInstanceToHA(UpgradeUDBInstanceToHARequest $request = null): UpgradeUDBInstanceToHAResponse
     {
         $resp = $this->invoke($request);
         return new UpgradeUDBInstanceToHAResponse($resp->toArray(), $resp->getRequestId());
@@ -2112,10 +2092,9 @@ class UDBClient extends Client
      *     "GroupId" => (integer) 配置参数组id
      * ]
      *
-     * @return UploadUDBParamGroupResponse
      * @throws UCloudException
      */
-    public function uploadUDBParamGroup(UploadUDBParamGroupRequest $request = null)
+    public function uploadUDBParamGroup(UploadUDBParamGroupRequest $request = null): UploadUDBParamGroupResponse
     {
         $resp = $this->invoke($request);
         return new UploadUDBParamGroupResponse($resp->toArray(), $resp->getRequestId());

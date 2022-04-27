@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,41 +30,41 @@ class DeleteNATGWRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
 
     /**
-     * ProjectId: 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
 
     /**
-     * ProjectId: 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class DeleteNATGWRequest extends Request
      *
      * @return string|null
      */
-    public function getNATGWId()
+    public function getNATGWId(): string
     {
         return $this->get("NATGWId");
     }
@@ -84,7 +84,7 @@ class DeleteNATGWRequest extends Request
      *
      * @param string $natgwId
      */
-    public function setNATGWId($natgwId)
+    public function setNATGWId(string $natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -94,7 +94,7 @@ class DeleteNATGWRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseEip()
+    public function getReleaseEip(): bool
     {
         return $this->get("ReleaseEip");
     }
@@ -104,7 +104,7 @@ class DeleteNATGWRequest extends Request
      *
      * @param boolean $releaseEip
      */
-    public function setReleaseEip($releaseEip)
+    public function setReleaseEip(bool $releaseEip)
     {
         $this->set("ReleaseEip", $releaseEip);
     }

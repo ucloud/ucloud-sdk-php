@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return string|null
      */
-    public function getNodeId()
+    public function getNodeId(): string
     {
         return $this->get("NodeId");
     }
@@ -63,7 +63,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
@@ -73,7 +73,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCpuCore()
+    public function getCpuCore(): int
     {
         return $this->get("CpuCore");
     }
@@ -83,7 +83,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $cpuCore
      */
-    public function setCpuCore($cpuCore)
+    public function setCpuCore(int $cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
@@ -93,7 +93,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemSize()
+    public function getMemSize(): int
     {
         return $this->get("MemSize");
     }
@@ -103,7 +103,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -113,7 +113,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSysDiskSize()
+    public function getSysDiskSize(): int
     {
         return $this->get("SysDiskSize");
     }
@@ -123,7 +123,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize($sysDiskSize)
+    public function setSysDiskSize(int $sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
@@ -133,7 +133,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getDiskSize()
+    public function getDiskSize(): int
     {
         return $this->get("DiskSize");
     }
@@ -143,7 +143,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $diskSize
      */
-    public function setDiskSize($diskSize)
+    public function setDiskSize(int $diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }
@@ -153,7 +153,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getNetLimit()
+    public function getNetLimit(): int
     {
         return $this->get("NetLimit");
     }
@@ -163,7 +163,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $netLimit
      */
-    public function setNetLimit($netLimit)
+    public function setNetLimit(int $netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UnetEIPAddrSet extends Response
      *
      * @return string|null
      */
-    public function getOperatorName()
+    public function getOperatorName(): string
     {
         return $this->get("OperatorName");
     }
@@ -37,7 +37,7 @@ class UnetEIPAddrSet extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
@@ -47,7 +47,7 @@ class UnetEIPAddrSet extends Response
      *
      * @return string|null
      */
-    public function getIP()
+    public function getIP(): string
     {
         return $this->get("IP");
     }
@@ -57,7 +57,7 @@ class UnetEIPAddrSet extends Response
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }

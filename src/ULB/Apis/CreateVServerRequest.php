@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getULBId()
+    public function getULBId(): string
     {
         return $this->get("ULBId");
     }
@@ -84,7 +84,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
@@ -94,7 +94,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getVServerName()
+    public function getVServerName(): string
     {
         return $this->get("VServerName");
     }
@@ -104,7 +104,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $vServerName
      */
-    public function setVServerName($vServerName)
+    public function setVServerName(string $vServerName)
     {
         $this->set("VServerName", $vServerName);
     }
@@ -114,7 +114,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getListenType()
+    public function getListenType(): string
     {
         return $this->get("ListenType");
     }
@@ -124,7 +124,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $listenType
      */
-    public function setListenType($listenType)
+    public function setListenType(string $listenType)
     {
         $this->set("ListenType", $listenType);
     }
@@ -134,7 +134,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getProtocol()
+    public function getProtocol(): string
     {
         return $this->get("Protocol");
     }
@@ -144,7 +144,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -154,7 +154,7 @@ class CreateVServerRequest extends Request
      *
      * @return integer|null
      */
-    public function getFrontendPort()
+    public function getFrontendPort(): int
     {
         return $this->get("FrontendPort");
     }
@@ -164,7 +164,7 @@ class CreateVServerRequest extends Request
      *
      * @param int $frontendPort
      */
-    public function setFrontendPort($frontendPort)
+    public function setFrontendPort(int $frontendPort)
     {
         $this->set("FrontendPort", $frontendPort);
     }
@@ -174,7 +174,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getMethod()
+    public function getMethod(): string
     {
         return $this->get("Method");
     }
@@ -184,7 +184,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $method
      */
-    public function setMethod($method)
+    public function setMethod(string $method)
     {
         $this->set("Method", $method);
     }
@@ -194,7 +194,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getPersistenceType()
+    public function getPersistenceType(): string
     {
         return $this->get("PersistenceType");
     }
@@ -204,7 +204,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $persistenceType
      */
-    public function setPersistenceType($persistenceType)
+    public function setPersistenceType(string $persistenceType)
     {
         $this->set("PersistenceType", $persistenceType);
     }
@@ -214,7 +214,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getPersistenceInfo()
+    public function getPersistenceInfo(): string
     {
         return $this->get("PersistenceInfo");
     }
@@ -224,7 +224,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $persistenceInfo
      */
-    public function setPersistenceInfo($persistenceInfo)
+    public function setPersistenceInfo(string $persistenceInfo)
     {
         $this->set("PersistenceInfo", $persistenceInfo);
     }
@@ -234,7 +234,7 @@ class CreateVServerRequest extends Request
      *
      * @return integer|null
      */
-    public function getClientTimeout()
+    public function getClientTimeout(): int
     {
         return $this->get("ClientTimeout");
     }
@@ -244,7 +244,7 @@ class CreateVServerRequest extends Request
      *
      * @param int $clientTimeout
      */
-    public function setClientTimeout($clientTimeout)
+    public function setClientTimeout(int $clientTimeout)
     {
         $this->set("ClientTimeout", $clientTimeout);
     }
@@ -254,7 +254,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getMonitorType()
+    public function getMonitorType(): string
     {
         return $this->get("MonitorType");
     }
@@ -264,7 +264,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $monitorType
      */
-    public function setMonitorType($monitorType)
+    public function setMonitorType(string $monitorType)
     {
         $this->set("MonitorType", $monitorType);
     }
@@ -274,7 +274,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->get("Domain");
     }
@@ -284,7 +284,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
@@ -294,7 +294,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getPath()
+    public function getPath(): string
     {
         return $this->get("Path");
     }
@@ -304,7 +304,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $path
      */
-    public function setPath($path)
+    public function setPath(string $path)
     {
         $this->set("Path", $path);
     }
@@ -314,7 +314,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getRequestMsg()
+    public function getRequestMsg(): string
     {
         return $this->get("RequestMsg");
     }
@@ -324,7 +324,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $requestMsg
      */
-    public function setRequestMsg($requestMsg)
+    public function setRequestMsg(string $requestMsg)
     {
         $this->set("RequestMsg", $requestMsg);
     }
@@ -334,7 +334,7 @@ class CreateVServerRequest extends Request
      *
      * @return string|null
      */
-    public function getResponseMsg()
+    public function getResponseMsg(): string
     {
         return $this->get("ResponseMsg");
     }
@@ -344,7 +344,7 @@ class CreateVServerRequest extends Request
      *
      * @param string $responseMsg
      */
-    public function setResponseMsg($responseMsg)
+    public function setResponseMsg(string $responseMsg)
     {
         $this->set("ResponseMsg", $responseMsg);
     }

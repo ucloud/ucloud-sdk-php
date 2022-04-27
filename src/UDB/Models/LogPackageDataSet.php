@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class LogPackageDataSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupId()
+    public function getBackupId(): int
     {
         return $this->get("BackupId");
     }
@@ -37,7 +37,7 @@ class LogPackageDataSet extends Response
      *
      * @param int $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(int $backupId)
     {
         $this->set("BackupId", $backupId);
     }
@@ -47,7 +47,7 @@ class LogPackageDataSet extends Response
      *
      * @return string|null
      */
-    public function getBackupName()
+    public function getBackupName(): string
     {
         return $this->get("BackupName");
     }
@@ -57,7 +57,7 @@ class LogPackageDataSet extends Response
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }
@@ -67,7 +67,7 @@ class LogPackageDataSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupTime()
+    public function getBackupTime(): int
     {
         return $this->get("BackupTime");
     }
@@ -77,7 +77,7 @@ class LogPackageDataSet extends Response
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
@@ -87,7 +87,7 @@ class LogPackageDataSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupSize()
+    public function getBackupSize(): int
     {
         return $this->get("BackupSize");
     }
@@ -97,7 +97,7 @@ class LogPackageDataSet extends Response
      *
      * @param int $backupSize
      */
-    public function setBackupSize($backupSize)
+    public function setBackupSize(int $backupSize)
     {
         $this->set("BackupSize", $backupSize);
     }
@@ -107,7 +107,7 @@ class LogPackageDataSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupType()
+    public function getBackupType(): int
     {
         return $this->get("BackupType");
     }
@@ -117,7 +117,7 @@ class LogPackageDataSet extends Response
      *
      * @param int $backupType
      */
-    public function setBackupType($backupType)
+    public function setBackupType(int $backupType)
     {
         $this->set("BackupType", $backupType);
     }
@@ -127,7 +127,7 @@ class LogPackageDataSet extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -137,7 +137,7 @@ class LogPackageDataSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
@@ -147,7 +147,7 @@ class LogPackageDataSet extends Response
      *
      * @return string|null
      */
-    public function getDBId()
+    public function getDBId(): string
     {
         return $this->get("DBId");
     }
@@ -157,7 +157,7 @@ class LogPackageDataSet extends Response
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -167,7 +167,7 @@ class LogPackageDataSet extends Response
      *
      * @return string|null
      */
-    public function getDBName()
+    public function getDBName(): string
     {
         return $this->get("DBName");
     }
@@ -177,7 +177,7 @@ class LogPackageDataSet extends Response
      *
      * @param string $dbName
      */
-    public function setDBName($dbName)
+    public function setDBName(string $dbName)
     {
         $this->set("DBName", $dbName);
     }
@@ -187,7 +187,7 @@ class LogPackageDataSet extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -197,7 +197,7 @@ class LogPackageDataSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -207,7 +207,7 @@ class LogPackageDataSet extends Response
      *
      * @return string|null
      */
-    public function getBackupZone()
+    public function getBackupZone(): string
     {
         return $this->get("BackupZone");
     }
@@ -217,7 +217,7 @@ class LogPackageDataSet extends Response
      *
      * @param string $backupZone
      */
-    public function setBackupZone($backupZone)
+    public function setBackupZone(string $backupZone)
     {
         $this->set("BackupZone", $backupZone);
     }

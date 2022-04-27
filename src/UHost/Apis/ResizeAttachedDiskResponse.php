@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ResizeAttachedDiskResponse extends Response
      *
      * @return string|null
      */
-    public function getDiskId()
+    public function getDiskId(): string
     {
         return $this->get("DiskId");
     }
@@ -37,7 +37,7 @@ class ResizeAttachedDiskResponse extends Response
      *
      * @param string $diskId
      */
-    public function setDiskId($diskId)
+    public function setDiskId(string $diskId)
     {
         $this->set("DiskId", $diskId);
     }
@@ -47,7 +47,7 @@ class ResizeAttachedDiskResponse extends Response
      *
      * @return boolean|null
      */
-    public function getNeedRestart()
+    public function getNeedRestart(): bool
     {
         return $this->get("NeedRestart");
     }
@@ -57,7 +57,7 @@ class ResizeAttachedDiskResponse extends Response
      *
      * @param boolean $needRestart
      */
-    public function setNeedRestart($needRestart)
+    public function setNeedRestart(bool $needRestart)
     {
         $this->set("NeedRestart", $needRestart);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -47,7 +47,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -57,7 +57,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getArea()
+    public function getArea(): string
     {
         return $this->get("Area");
     }
@@ -67,7 +67,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $area
      */
-    public function setArea($area)
+    public function setArea(string $area)
     {
         $this->set("Area", $area);
     }
@@ -77,7 +77,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getTargetIP()
+    public function getTargetIP(): string
     {
         return $this->get("TargetIP");
     }
@@ -87,7 +87,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $targetIP
      */
-    public function setTargetIP($targetIP)
+    public function setTargetIP(string $targetIP)
     {
         $this->set("TargetIP", $targetIP);
     }
@@ -97,7 +97,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getPort()
+    public function getPort(): int
     {
         return $this->get("Port");
     }
@@ -107,7 +107,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
@@ -117,7 +117,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getAreaCode()
+    public function getAreaCode(): string
     {
         return $this->get("AreaCode");
     }
@@ -127,7 +127,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $areaCode
      */
-    public function setAreaCode($areaCode)
+    public function setAreaCode(string $areaCode)
     {
         $this->set("AreaCode", $areaCode);
     }
@@ -137,7 +137,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -147,7 +147,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -157,7 +157,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -167,7 +167,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -177,7 +177,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -187,7 +187,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -197,7 +197,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType()
+    public function getInstanceType(): string
     {
         return $this->get("InstanceType");
     }
@@ -207,7 +207,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -217,7 +217,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidthPackage()
+    public function getBandwidthPackage(): int
     {
         return $this->get("BandwidthPackage");
     }
@@ -227,7 +227,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param int $bandwidthPackage
      */
-    public function setBandwidthPackage($bandwidthPackage)
+    public function setBandwidthPackage(int $bandwidthPackage)
     {
         $this->set("BandwidthPackage", $bandwidthPackage);
     }
@@ -237,7 +237,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getForwardRegion()
+    public function getForwardRegion(): string
     {
         return $this->get("ForwardRegion");
     }
@@ -247,7 +247,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $forwardRegion
      */
-    public function setForwardRegion($forwardRegion)
+    public function setForwardRegion(string $forwardRegion)
     {
         $this->set("ForwardRegion", $forwardRegion);
     }
@@ -257,7 +257,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -267,7 +267,7 @@ class CreateGlobalSSHInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

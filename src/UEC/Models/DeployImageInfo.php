@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DeployImageInfo extends Response
      *
      * @return string|null
      */
-    public function getIdcId()
+    public function getIdcId(): string
     {
         return $this->get("IdcId");
     }
@@ -37,7 +37,7 @@ class DeployImageInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
@@ -47,7 +47,7 @@ class DeployImageInfo extends Response
      *
      * @return integer|null
      */
-    public function getState()
+    public function getState(): int
     {
         return $this->get("State");
     }
@@ -57,7 +57,7 @@ class DeployImageInfo extends Response
      *
      * @param int $state
      */
-    public function setState($state)
+    public function setState(int $state)
     {
         $this->set("State", $state);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class IpLocationInfo extends Response
      *
      * @return string|null
      */
-    public function getIp()
+    public function getIp(): string
     {
         return $this->get("Ip");
     }
@@ -37,7 +37,7 @@ class IpLocationInfo extends Response
      *
      * @param string $ip
      */
-    public function setIp($ip)
+    public function setIp(string $ip)
     {
         $this->set("Ip", $ip);
     }
@@ -47,7 +47,7 @@ class IpLocationInfo extends Response
      *
      * @return string|null
      */
-    public function getArea()
+    public function getArea(): string
     {
         return $this->get("Area");
     }
@@ -57,7 +57,7 @@ class IpLocationInfo extends Response
      *
      * @param string $area
      */
-    public function setArea($area)
+    public function setArea(string $area)
     {
         $this->set("Area", $area);
     }
@@ -67,7 +67,7 @@ class IpLocationInfo extends Response
      *
      * @return string|null
      */
-    public function getIsp()
+    public function getIsp(): string
     {
         return $this->get("Isp");
     }
@@ -77,7 +77,7 @@ class IpLocationInfo extends Response
      *
      * @param string $isp
      */
-    public function setIsp($isp)
+    public function setIsp(string $isp)
     {
         $this->set("Isp", $isp);
     }
@@ -87,7 +87,7 @@ class IpLocationInfo extends Response
      *
      * @return string|null
      */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->get("City");
     }
@@ -97,7 +97,7 @@ class IpLocationInfo extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
@@ -107,7 +107,7 @@ class IpLocationInfo extends Response
      *
      * @return boolean|null
      */
-    public function getExist()
+    public function getExist(): bool
     {
         return $this->get("Exist");
     }
@@ -117,7 +117,7 @@ class IpLocationInfo extends Response
      *
      * @param boolean $exist
      */
-    public function setExist($exist)
+    public function setExist(bool $exist)
     {
         $this->set("Exist", $exist);
     }

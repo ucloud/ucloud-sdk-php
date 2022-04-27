@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class AccountInfo extends Response
      *
      * @return string|null
      */
-    public function getAmountFreeze()
+    public function getAmountFreeze(): string
     {
         return $this->get("AmountFreeze");
     }
@@ -37,7 +37,7 @@ class AccountInfo extends Response
      *
      * @param string $amountFreeze
      */
-    public function setAmountFreeze($amountFreeze)
+    public function setAmountFreeze(string $amountFreeze)
     {
         $this->set("AmountFreeze", $amountFreeze);
     }
@@ -47,7 +47,7 @@ class AccountInfo extends Response
      *
      * @return string|null
      */
-    public function getAmountCredit()
+    public function getAmountCredit(): string
     {
         return $this->get("AmountCredit");
     }
@@ -57,7 +57,7 @@ class AccountInfo extends Response
      *
      * @param string $amountCredit
      */
-    public function setAmountCredit($amountCredit)
+    public function setAmountCredit(string $amountCredit)
     {
         $this->set("AmountCredit", $amountCredit);
     }
@@ -67,7 +67,7 @@ class AccountInfo extends Response
      *
      * @return string|null
      */
-    public function getAmountFree()
+    public function getAmountFree(): string
     {
         return $this->get("AmountFree");
     }
@@ -77,7 +77,7 @@ class AccountInfo extends Response
      *
      * @param string $amountFree
      */
-    public function setAmountFree($amountFree)
+    public function setAmountFree(string $amountFree)
     {
         $this->set("AmountFree", $amountFree);
     }
@@ -87,7 +87,7 @@ class AccountInfo extends Response
      *
      * @return string|null
      */
-    public function getAmount()
+    public function getAmount(): string
     {
         return $this->get("Amount");
     }
@@ -97,7 +97,7 @@ class AccountInfo extends Response
      *
      * @param string $amount
      */
-    public function setAmount($amount)
+    public function setAmount(string $amount)
     {
         $this->set("Amount", $amount);
     }
@@ -107,7 +107,7 @@ class AccountInfo extends Response
      *
      * @return string|null
      */
-    public function getAmountAvailable()
+    public function getAmountAvailable(): string
     {
         return $this->get("AmountAvailable");
     }
@@ -117,7 +117,7 @@ class AccountInfo extends Response
      *
      * @param string $amountAvailable
      */
-    public function setAmountAvailable($amountAvailable)
+    public function setAmountAvailable(string $amountAvailable)
     {
         $this->set("AmountAvailable", $amountAvailable);
     }

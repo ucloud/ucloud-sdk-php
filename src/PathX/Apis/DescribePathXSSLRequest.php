@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSSLId()
+    public function getSSLId(): string
     {
         return $this->get("SSLId");
     }
@@ -63,7 +63,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $sslId
      */
-    public function setSSLId($sslId)
+    public function setSSLId(string $sslId)
     {
         $this->set("SSLId", $sslId);
     }
@@ -73,7 +73,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return string|null
      */
-    public function getSearchValue()
+    public function getSearchValue(): string
     {
         return $this->get("SearchValue");
     }
@@ -83,7 +83,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $searchValue
      */
-    public function setSearchValue($searchValue)
+    public function setSearchValue(string $searchValue)
     {
         $this->set("SearchValue", $searchValue);
     }
@@ -93,7 +93,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return integer|null
      */
-    public function getLimit()
+    public function getLimit(): int
     {
         return $this->get("Limit");
     }
@@ -103,7 +103,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
@@ -113,7 +113,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @return integer|null
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->get("Offset");
     }
@@ -123,7 +123,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }

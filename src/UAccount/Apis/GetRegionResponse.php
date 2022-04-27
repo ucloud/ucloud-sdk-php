@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,9 @@ class GetRegionResponse extends Response
      *
      * @return RegionInfo[]|null
      */
-    public function getRegions()
+    public function getRegions(): array
     {
-        $items = $this->get("Regions");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Regions") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new RegionInfo($item));

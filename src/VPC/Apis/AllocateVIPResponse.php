@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,9 @@ class AllocateVIPResponse extends Response
      *
      * @return VIPSet[]|null
      */
-    public function getVIPSet()
+    public function getVIPSet(): array
     {
-        $items = $this->get("VIPSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("VIPSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new VIPSet($item));
@@ -60,7 +57,7 @@ class AllocateVIPResponse extends Response
      *
      * @return string[]|null
      */
-    public function getDataSet()
+    public function getDataSet(): array
     {
         return $this->get("DataSet");
     }

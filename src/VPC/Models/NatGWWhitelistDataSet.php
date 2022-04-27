@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NatGWWhitelistDataSet extends Response
      *
      * @return string|null
      */
-    public function getNATGWId()
+    public function getNATGWId(): string
     {
         return $this->get("NATGWId");
     }
@@ -37,7 +37,7 @@ class NatGWWhitelistDataSet extends Response
      *
      * @param string $natgwId
      */
-    public function setNATGWId($natgwId)
+    public function setNATGWId(string $natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -47,7 +47,7 @@ class NatGWWhitelistDataSet extends Response
      *
      * @return integer|null
      */
-    public function getIfOpen()
+    public function getIfOpen(): int
     {
         return $this->get("IfOpen");
     }
@@ -57,7 +57,7 @@ class NatGWWhitelistDataSet extends Response
      *
      * @param int $ifOpen
      */
-    public function setIfOpen($ifOpen)
+    public function setIfOpen(int $ifOpen)
     {
         $this->set("IfOpen", $ifOpen);
     }
@@ -67,12 +67,9 @@ class NatGWWhitelistDataSet extends Response
      *
      * @return DescribeWhiteListResourceObjectIPInfo[]|null
      */
-    public function getObjectIPInfo()
+    public function getObjectIPInfo(): array
     {
-        $items = $this->get("ObjectIPInfo");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("ObjectIPInfo") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new DescribeWhiteListResourceObjectIPInfo($item));

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -37,7 +37,7 @@ class UMemDataSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -47,7 +47,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getOwnSlave()
+    public function getOwnSlave(): string
     {
         return $this->get("OwnSlave");
     }
@@ -57,7 +57,7 @@ class UMemDataSet extends Response
      *
      * @param string $ownSlave
      */
-    public function setOwnSlave($ownSlave)
+    public function setOwnSlave(string $ownSlave)
     {
         $this->set("OwnSlave", $ownSlave);
     }
@@ -67,12 +67,9 @@ class UMemDataSet extends Response
      *
      * @return UMemSlaveDataSet[]|null
      */
-    public function getDataSet()
+    public function getDataSet(): array
     {
-        $items = $this->get("DataSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("DataSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UMemSlaveDataSet($item));
@@ -99,7 +96,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getRole()
+    public function getRole(): string
     {
         return $this->get("Role");
     }
@@ -109,7 +106,7 @@ class UMemDataSet extends Response
      *
      * @param string $role
      */
-    public function setRole($role)
+    public function setRole(string $role)
     {
         $this->set("Role", $role);
     }
@@ -119,7 +116,7 @@ class UMemDataSet extends Response
      *
      * @return integer|null
      */
-    public function getRewriteTime()
+    public function getRewriteTime(): int
     {
         return $this->get("RewriteTime");
     }
@@ -129,7 +126,7 @@ class UMemDataSet extends Response
      *
      * @param int $rewriteTime
      */
-    public function setRewriteTime($rewriteTime)
+    public function setRewriteTime(int $rewriteTime)
     {
         $this->set("RewriteTime", $rewriteTime);
     }
@@ -139,7 +136,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -149,7 +146,7 @@ class UMemDataSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -159,7 +156,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -169,7 +166,7 @@ class UMemDataSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -179,7 +176,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceId()
+    public function getResourceId(): string
     {
         return $this->get("ResourceId");
     }
@@ -189,7 +186,7 @@ class UMemDataSet extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -199,7 +196,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -209,7 +206,7 @@ class UMemDataSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -219,7 +216,7 @@ class UMemDataSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -229,7 +226,7 @@ class UMemDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -239,7 +236,7 @@ class UMemDataSet extends Response
      *
      * @return integer|null
      */
-    public function getExpireTime()
+    public function getExpireTime(): int
     {
         return $this->get("ExpireTime");
     }
@@ -249,7 +246,7 @@ class UMemDataSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
@@ -259,7 +256,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -269,7 +266,7 @@ class UMemDataSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -279,7 +276,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getProtocol()
+    public function getProtocol(): string
     {
         return $this->get("Protocol");
     }
@@ -289,7 +286,7 @@ class UMemDataSet extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
@@ -299,7 +296,7 @@ class UMemDataSet extends Response
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -309,7 +306,7 @@ class UMemDataSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -319,7 +316,7 @@ class UMemDataSet extends Response
      *
      * @return integer|null
      */
-    public function getUsedSize()
+    public function getUsedSize(): int
     {
         return $this->get("UsedSize");
     }
@@ -329,7 +326,7 @@ class UMemDataSet extends Response
      *
      * @param int $usedSize
      */
-    public function setUsedSize($usedSize)
+    public function setUsedSize(int $usedSize)
     {
         $this->set("UsedSize", $usedSize);
     }
@@ -339,7 +336,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -349,7 +346,7 @@ class UMemDataSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
@@ -359,7 +356,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -369,7 +366,7 @@ class UMemDataSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -379,12 +376,9 @@ class UMemDataSet extends Response
      *
      * @return UMemSpaceAddressSet[]|null
      */
-    public function getAddress()
+    public function getAddress(): array
     {
-        $items = $this->get("Address");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Address") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new UMemSpaceAddressSet($item));
@@ -411,7 +405,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -421,7 +415,7 @@ class UMemDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -431,7 +425,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): string
     {
         return $this->get("ResourceType");
     }
@@ -441,7 +435,7 @@ class UMemDataSet extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -451,7 +445,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getConfigId()
+    public function getConfigId(): string
     {
         return $this->get("ConfigId");
     }
@@ -461,7 +455,7 @@ class UMemDataSet extends Response
      *
      * @param string $configId
      */
-    public function setConfigId($configId)
+    public function setConfigId(string $configId)
     {
         $this->set("ConfigId", $configId);
     }
@@ -471,7 +465,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getAutoBackup()
+    public function getAutoBackup(): string
     {
         return $this->get("AutoBackup");
     }
@@ -481,7 +475,7 @@ class UMemDataSet extends Response
      *
      * @param string $autoBackup
      */
-    public function setAutoBackup($autoBackup)
+    public function setAutoBackup(string $autoBackup)
     {
         $this->set("AutoBackup", $autoBackup);
     }
@@ -491,7 +485,7 @@ class UMemDataSet extends Response
      *
      * @return integer|null
      */
-    public function getBackupTime()
+    public function getBackupTime(): int
     {
         return $this->get("BackupTime");
     }
@@ -501,7 +495,7 @@ class UMemDataSet extends Response
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
@@ -511,7 +505,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getHighAvailability()
+    public function getHighAvailability(): string
     {
         return $this->get("HighAvailability");
     }
@@ -521,7 +515,7 @@ class UMemDataSet extends Response
      *
      * @param string $highAvailability
      */
-    public function setHighAvailability($highAvailability)
+    public function setHighAvailability(string $highAvailability)
     {
         $this->set("HighAvailability", $highAvailability);
     }
@@ -531,7 +525,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getVersion()
+    public function getVersion(): string
     {
         return $this->get("Version");
     }
@@ -541,7 +535,7 @@ class UMemDataSet extends Response
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
@@ -551,7 +545,7 @@ class UMemDataSet extends Response
      *
      * @return string|null
      */
-    public function getSlaveZone()
+    public function getSlaveZone(): string
     {
         return $this->get("SlaveZone");
     }
@@ -561,7 +555,7 @@ class UMemDataSet extends Response
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone($slaveZone)
+    public function setSlaveZone(string $slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
     }

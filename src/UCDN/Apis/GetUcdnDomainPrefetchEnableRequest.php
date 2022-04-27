@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -43,7 +43,7 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -53,7 +53,7 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
      *
      * @return string|null
      */
-    public function getDomainId()
+    public function getDomainId(): string
     {
         return $this->get("DomainId");
     }
@@ -63,7 +63,7 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
      *
      * @param string $domainId
      */
-    public function setDomainId($domainId)
+    public function setDomainId(string $domainId)
     {
         $this->set("DomainId", $domainId);
     }

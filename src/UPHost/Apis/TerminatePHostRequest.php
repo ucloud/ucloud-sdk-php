@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class TerminatePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class TerminatePHostRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class TerminatePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class TerminatePHostRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class TerminatePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class TerminatePHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class TerminatePHostRequest extends Request
      *
      * @return string|null
      */
-    public function getPHostId()
+    public function getPHostId(): string
     {
         return $this->get("PHostId");
     }
@@ -105,7 +105,7 @@ class TerminatePHostRequest extends Request
      *
      * @param string $pHostId
      */
-    public function setPHostId($pHostId)
+    public function setPHostId(string $pHostId)
     {
         $this->set("PHostId", $pHostId);
     }
@@ -115,7 +115,7 @@ class TerminatePHostRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseEIP()
+    public function getReleaseEIP(): bool
     {
         return $this->get("ReleaseEIP");
     }
@@ -125,7 +125,7 @@ class TerminatePHostRequest extends Request
      *
      * @param boolean $releaseEIP
      */
-    public function setReleaseEIP($releaseEIP)
+    public function setReleaseEIP(bool $releaseEIP)
     {
         $this->set("ReleaseEIP", $releaseEIP);
     }
@@ -135,7 +135,7 @@ class TerminatePHostRequest extends Request
      *
      * @return boolean|null
      */
-    public function getReleaseUDisk()
+    public function getReleaseUDisk(): bool
     {
         return $this->get("ReleaseUDisk");
     }
@@ -145,7 +145,7 @@ class TerminatePHostRequest extends Request
      *
      * @param boolean $releaseUDisk
      */
-    public function setReleaseUDisk($releaseUDisk)
+    public function setReleaseUDisk(bool $releaseUDisk)
     {
         $this->set("ReleaseUDisk", $releaseUDisk);
     }

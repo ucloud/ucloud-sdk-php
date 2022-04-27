@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\UPHost\Apis\CreatePHostRequest;
 use UCloud\UPHost\Apis\CreatePHostResponse;
+use UCloud\UPHost\Apis\CreatePHostImageRequest;
+use UCloud\UPHost\Apis\CreatePHostImageResponse;
 use UCloud\UPHost\Apis\DescribeBaremetalMachineTypeRequest;
 use UCloud\UPHost\Apis\DescribeBaremetalMachineTypeResponse;
 use UCloud\UPHost\Apis\DescribePHostRequest;
@@ -34,6 +36,8 @@ use UCloud\UPHost\Apis\GetPHostDiskUpgradePriceRequest;
 use UCloud\UPHost\Apis\GetPHostDiskUpgradePriceResponse;
 use UCloud\UPHost\Apis\GetPHostPriceRequest;
 use UCloud\UPHost\Apis\GetPHostPriceResponse;
+use UCloud\UPHost\Apis\ModifyPHostImageInfoRequest;
+use UCloud\UPHost\Apis\ModifyPHostImageInfoResponse;
 use UCloud\UPHost\Apis\ModifyPHostInfoRequest;
 use UCloud\UPHost\Apis\ModifyPHostInfoResponse;
 use UCloud\UPHost\Apis\PoweroffPHostRequest;
@@ -48,8 +52,12 @@ use UCloud\UPHost\Apis\ResizePHostAttachedDiskRequest;
 use UCloud\UPHost\Apis\ResizePHostAttachedDiskResponse;
 use UCloud\UPHost\Apis\StartPHostRequest;
 use UCloud\UPHost\Apis\StartPHostResponse;
+use UCloud\UPHost\Apis\StopPHostRequest;
+use UCloud\UPHost\Apis\StopPHostResponse;
 use UCloud\UPHost\Apis\TerminatePHostRequest;
 use UCloud\UPHost\Apis\TerminatePHostResponse;
+use UCloud\UPHost\Apis\TerminatePHostImageRequest;
+use UCloud\UPHost\Apis\TerminatePHostImageResponse;
 
 /**
  * This client is used to call actions of **UPHost** service
@@ -99,13 +107,42 @@ class UPHostClient extends Client
      *     "PHostId" => (array<string>) PHost的资源ID数组
      * ]
      *
-     * @return CreatePHostResponse
      * @throws UCloudException
      */
-    public function createPHost(CreatePHostRequest $request = null)
+    public function createPHost(CreatePHostRequest $request = null): CreatePHostResponse
     {
         $resp = $this->invoke($request);
         return new CreatePHostResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * CreatePHostImage - 创建裸金属2.0用户自定义镜像
+     *
+     * See also: https://docs.ucloud.cn/api/uphost-api/create_phost_image
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "PHostId" => (string) UPHost实例ID
+     *     "ImageName" => (string) 镜像名称
+     *     "ImageDescription" => (string) 镜像描述
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ImageId" => (string) 镜像ID
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function createPHostImage(CreatePHostImageRequest $request = null): CreatePHostImageResponse
+    {
+        $resp = $this->invoke($request);
+        return new CreatePHostImageResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -149,10 +186,9 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
-     * @return DescribeBaremetalMachineTypeResponse
      * @throws UCloudException
      */
-    public function describeBaremetalMachineType(DescribeBaremetalMachineTypeRequest $request = null)
+    public function describeBaremetalMachineType(DescribeBaremetalMachineTypeRequest $request = null): DescribeBaremetalMachineTypeResponse
     {
         $resp = $this->invoke($request);
         return new DescribeBaremetalMachineTypeResponse($resp->toArray(), $resp->getRequestId());
@@ -237,10 +273,9 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
-     * @return DescribePHostResponse
      * @throws UCloudException
      */
-    public function describePHost(DescribePHostRequest $request = null)
+    public function describePHost(DescribePHostRequest $request = null): DescribePHostResponse
     {
         $resp = $this->invoke($request);
         return new DescribePHostResponse($resp->toArray(), $resp->getRequestId());
@@ -254,10 +289,10 @@ class UPHostClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "ImageType" => (string) 镜像类别，枚举值，Base是基础镜像；
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ImageType" => (string) 镜像类别，枚举值，Base是基础镜像；Custom是自制镜像。
      *     "ImageId" => (array<string>) 镜像ID
      *     "Offset" => (integer) 数据偏移量，默认为0
      *     "Limit" => (integer) 返回数据长度，默认为20
@@ -276,14 +311,18 @@ class UPHostClient extends Client
      *             "OsType" => (string) 操作系统类型
      *             "Support" => (array<string>) 支持的机型
      *             "Version" => (string) 当前版本
+     *             "ImageType" => (string) 枚举值：Base=>基础镜像，Custom=>自制镜像。
+     *             "CreateTime" => (integer) 裸金属2.0参数。镜像创建时间。
+     *             "State" => (string) 裸金属2.0参数。镜像当前状态。
+     *             "ImageSize" => (integer) 裸金属2.0参数。镜像大小。
+     *             "ImageDescription" => (string) 镜像描述
      *         ]
      *     ]
      * ]
      *
-     * @return DescribePHostImageResponse
      * @throws UCloudException
      */
-    public function describePHostImage(DescribePHostImageRequest $request = null)
+    public function describePHostImage(DescribePHostImageRequest $request = null): DescribePHostImageResponse
     {
         $resp = $this->invoke($request);
         return new DescribePHostImageResponse($resp->toArray(), $resp->getRequestId());
@@ -340,10 +379,9 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
-     * @return DescribePHostMachineTypeResponse
      * @throws UCloudException
      */
-    public function describePHostMachineType(DescribePHostMachineTypeRequest $request = null)
+    public function describePHostMachineType(DescribePHostMachineTypeRequest $request = null): DescribePHostMachineTypeResponse
     {
         $resp = $this->invoke($request);
         return new DescribePHostMachineTypeResponse($resp->toArray(), $resp->getRequestId());
@@ -374,10 +412,9 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
-     * @return DescribePHostTagsResponse
      * @throws UCloudException
      */
-    public function describePHostTags(DescribePHostTagsRequest $request = null)
+    public function describePHostTags(DescribePHostTagsRequest $request = null): DescribePHostTagsResponse
     {
         $resp = $this->invoke($request);
         return new DescribePHostTagsResponse($resp->toArray(), $resp->getRequestId());
@@ -407,10 +444,9 @@ class UPHostClient extends Client
      *     "OriginalPrice" => (number) 升价差价原价。精度为小数点后2位。
      * ]
      *
-     * @return GetPHostDiskUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getPHostDiskUpgradePrice(GetPHostDiskUpgradePriceRequest $request = null)
+    public function getPHostDiskUpgradePrice(GetPHostDiskUpgradePriceRequest $request = null): GetPHostDiskUpgradePriceResponse
     {
         $resp = $this->invoke($request);
         return new GetPHostDiskUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
@@ -454,13 +490,42 @@ class UPHostClient extends Client
      *     ]
      * ]
      *
-     * @return GetPHostPriceResponse
      * @throws UCloudException
      */
-    public function getPHostPrice(GetPHostPriceRequest $request = null)
+    public function getPHostPrice(GetPHostPriceRequest $request = null): GetPHostPriceResponse
     {
         $resp = $this->invoke($request);
         return new GetPHostPriceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ModifyPHostImageInfo - 修改自定义镜像名称和备注
+     *
+     * See also: https://docs.ucloud.cn/api/uphost-api/modify_phost_image_info
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ImageId" => (string) 镜像ID
+     *     "Name" => (string) 镜像名称
+     *     "Remark" => (string) 备注
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ImageId" => (string) 镜像ID
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function modifyPHostImageInfo(ModifyPHostImageInfoRequest $request = null): ModifyPHostImageInfoResponse
+    {
+        $resp = $this->invoke($request);
+        return new ModifyPHostImageInfoResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -486,10 +551,9 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
-     * @return ModifyPHostInfoResponse
      * @throws UCloudException
      */
-    public function modifyPHostInfo(ModifyPHostInfoRequest $request = null)
+    public function modifyPHostInfo(ModifyPHostInfoRequest $request = null): ModifyPHostInfoResponse
     {
         $resp = $this->invoke($request);
         return new ModifyPHostInfoResponse($resp->toArray(), $resp->getRequestId());
@@ -515,10 +579,9 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
-     * @return PoweroffPHostResponse
      * @throws UCloudException
      */
-    public function poweroffPHost(PoweroffPHostRequest $request = null)
+    public function poweroffPHost(PoweroffPHostRequest $request = null): PoweroffPHostResponse
     {
         $resp = $this->invoke($request);
         return new PoweroffPHostResponse($resp->toArray(), $resp->getRequestId());
@@ -544,10 +607,9 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
-     * @return RebootPHostResponse
      * @throws UCloudException
      */
-    public function rebootPHost(RebootPHostRequest $request = null)
+    public function rebootPHost(RebootPHostRequest $request = null): RebootPHostResponse
     {
         $resp = $this->invoke($request);
         return new RebootPHostResponse($resp->toArray(), $resp->getRequestId());
@@ -581,10 +643,9 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
-     * @return ReinstallPHostResponse
      * @throws UCloudException
      */
-    public function reinstallPHost(ReinstallPHostRequest $request = null)
+    public function reinstallPHost(ReinstallPHostRequest $request = null): ReinstallPHostResponse
     {
         $resp = $this->invoke($request);
         return new ReinstallPHostResponse($resp->toArray(), $resp->getRequestId());
@@ -611,10 +672,9 @@ class UPHostClient extends Client
      *     "PHostId" => (string) 裸金属实例ID
      * ]
      *
-     * @return ResetPHostPasswordResponse
      * @throws UCloudException
      */
-    public function resetPHostPassword(ResetPHostPasswordRequest $request = null)
+    public function resetPHostPassword(ResetPHostPasswordRequest $request = null): ResetPHostPasswordResponse
     {
         $resp = $this->invoke($request);
         return new ResetPHostPasswordResponse($resp->toArray(), $resp->getRequestId());
@@ -642,10 +702,9 @@ class UPHostClient extends Client
      *     "UDiskId" => (string) 改配成功的磁盘id
      * ]
      *
-     * @return ResizePHostAttachedDiskResponse
      * @throws UCloudException
      */
-    public function resizePHostAttachedDisk(ResizePHostAttachedDiskRequest $request = null)
+    public function resizePHostAttachedDisk(ResizePHostAttachedDiskRequest $request = null): ResizePHostAttachedDiskResponse
     {
         $resp = $this->invoke($request);
         return new ResizePHostAttachedDiskResponse($resp->toArray(), $resp->getRequestId());
@@ -671,13 +730,40 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
-     * @return StartPHostResponse
      * @throws UCloudException
      */
-    public function startPHost(StartPHostRequest $request = null)
+    public function startPHost(StartPHostRequest $request = null): StartPHostResponse
     {
         $resp = $this->invoke($request);
         return new StartPHostResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * StopPHost - 关闭物理机
+     *
+     * See also: https://docs.ucloud.cn/api/uphost-api/stop_phost
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "PHostId" => (string) PHost资源ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "PHostId" => (string) PHost 的资源ID
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function stopPHost(StopPHostRequest $request = null): StopPHostResponse
+    {
+        $resp = $this->invoke($request);
+        return new StopPHostResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -702,12 +788,39 @@ class UPHostClient extends Client
      *     "PHostId" => (string) PHost 的资源ID
      * ]
      *
-     * @return TerminatePHostResponse
      * @throws UCloudException
      */
-    public function terminatePHost(TerminatePHostRequest $request = null)
+    public function terminatePHost(TerminatePHostRequest $request = null): TerminatePHostResponse
     {
         $resp = $this->invoke($request);
         return new TerminatePHostResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * TerminatePHostImage - 删除裸金属2.0用户自定义镜像
+     *
+     * See also: https://docs.ucloud.cn/api/uphost-api/terminate_phost_image
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ImageId" => (string) 自制镜像ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ImageId" => (string) 自制镜像ID
+     * ]
+     *
+     * @throws UCloudException
+     */
+    public function terminatePHostImage(TerminatePHostImageRequest $request = null): TerminatePHostImageResponse
+    {
+        $resp = $this->invoke($request);
+        return new TerminatePHostImageResponse($resp->toArray(), $resp->getRequestId());
     }
 }

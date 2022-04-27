@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DockerInfo extends Response
      *
      * @return float|null
      */
-    public function getCpuCores()
+    public function getCpuCores(): float
     {
         return $this->get("CpuCores");
     }
@@ -37,7 +37,7 @@ class DockerInfo extends Response
      *
      * @param float $cpuCores
      */
-    public function setCpuCores($cpuCores)
+    public function setCpuCores(float $cpuCores)
     {
         $this->set("CpuCores", $cpuCores);
     }
@@ -47,7 +47,7 @@ class DockerInfo extends Response
      *
      * @return float|null
      */
-    public function getMemSize()
+    public function getMemSize(): float
     {
         return $this->get("MemSize");
     }
@@ -57,7 +57,7 @@ class DockerInfo extends Response
      *
      * @param float $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(float $memSize)
     {
         $this->set("MemSize", $memSize);
     }
@@ -67,7 +67,7 @@ class DockerInfo extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -77,7 +77,7 @@ class DockerInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -87,7 +87,7 @@ class DockerInfo extends Response
      *
      * @return integer|null
      */
-    public function getState()
+    public function getState(): int
     {
         return $this->get("State");
     }
@@ -97,7 +97,7 @@ class DockerInfo extends Response
      *
      * @param int $state
      */
-    public function setState($state)
+    public function setState(int $state)
     {
         $this->set("State", $state);
     }
@@ -107,7 +107,7 @@ class DockerInfo extends Response
      *
      * @return string|null
      */
-    public function getImageName()
+    public function getImageName(): string
     {
         return $this->get("ImageName");
     }
@@ -117,7 +117,7 @@ class DockerInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
@@ -127,7 +127,7 @@ class DockerInfo extends Response
      *
      * @return string|null
      */
-    public function getWorkDir()
+    public function getWorkDir(): string
     {
         return $this->get("WorkDir");
     }
@@ -137,7 +137,7 @@ class DockerInfo extends Response
      *
      * @param string $workDir
      */
-    public function setWorkDir($workDir)
+    public function setWorkDir(string $workDir)
     {
         $this->set("WorkDir", $workDir);
     }
@@ -147,7 +147,7 @@ class DockerInfo extends Response
      *
      * @return string|null
      */
-    public function getCommand()
+    public function getCommand(): string
     {
         return $this->get("Command");
     }
@@ -157,7 +157,7 @@ class DockerInfo extends Response
      *
      * @param string $command
      */
-    public function setCommand($command)
+    public function setCommand(string $command)
     {
         $this->set("Command", $command);
     }
@@ -167,7 +167,7 @@ class DockerInfo extends Response
      *
      * @return string|null
      */
-    public function getArgs()
+    public function getArgs(): string
     {
         return $this->get("Args");
     }
@@ -177,7 +177,7 @@ class DockerInfo extends Response
      *
      * @param string $args
      */
-    public function setArgs($args)
+    public function setArgs(string $args)
     {
         $this->set("Args", $args);
     }
@@ -187,12 +187,9 @@ class DockerInfo extends Response
      *
      * @return EnvList[]|null
      */
-    public function getEnvList()
+    public function getEnvList(): array
     {
-        $items = $this->get("EnvList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EnvList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EnvList($item));
@@ -219,12 +216,9 @@ class DockerInfo extends Response
      *
      * @return CfgDictList[]|null
      */
-    public function getCfgDictList()
+    public function getCfgDictList(): array
     {
-        $items = $this->get("CfgDictList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("CfgDictList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CfgDictList($item));

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUEcHolderParamStorage extends Request
      *
      * @return string|null
      */
-    public function getPath()
+    public function getPath(): string
     {
         return $this->get("Path");
     }
@@ -37,7 +37,7 @@ class CreateUEcHolderParamStorage extends Request
      *
      * @param string $path
      */
-    public function setPath($path)
+    public function setPath(string $path)
     {
         $this->set("Path", $path);
     }
@@ -47,7 +47,7 @@ class CreateUEcHolderParamStorage extends Request
      *
      * @return string|null
      */
-    public function getResourceId()
+    public function getResourceId(): string
     {
         return $this->get("ResourceId");
     }
@@ -57,7 +57,7 @@ class CreateUEcHolderParamStorage extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }

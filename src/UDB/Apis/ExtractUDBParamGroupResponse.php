@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ExtractUDBParamGroupResponse extends Response
      *
      * @return string|null
      */
-    public function getContent()
+    public function getContent(): string
     {
         return $this->get("Content");
     }
@@ -37,7 +37,7 @@ class ExtractUDBParamGroupResponse extends Response
      *
      * @param string $content
      */
-    public function setContent($content)
+    public function setContent(string $content)
     {
         $this->set("Content", $content);
     }

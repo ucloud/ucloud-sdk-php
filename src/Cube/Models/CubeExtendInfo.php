@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CubeExtendInfo extends Response
      *
      * @return string|null
      */
-    public function getCubeId()
+    public function getCubeId(): string
     {
         return $this->get("CubeId");
     }
@@ -37,7 +37,7 @@ class CubeExtendInfo extends Response
      *
      * @param string $cubeId
      */
-    public function setCubeId($cubeId)
+    public function setCubeId(string $cubeId)
     {
         $this->set("CubeId", $cubeId);
     }
@@ -47,7 +47,7 @@ class CubeExtendInfo extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -57,7 +57,7 @@ class CubeExtendInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -67,12 +67,9 @@ class CubeExtendInfo extends Response
      *
      * @return EIPSet[]|null
      */
-    public function getEip()
+    public function getEip(): array
     {
-        $items = $this->get("Eip");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Eip") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new EIPSet($item));
@@ -99,7 +96,7 @@ class CubeExtendInfo extends Response
      *
      * @return integer|null
      */
-    public function getExpiration()
+    public function getExpiration(): int
     {
         return $this->get("Expiration");
     }
@@ -109,7 +106,7 @@ class CubeExtendInfo extends Response
      *
      * @param int $expiration
      */
-    public function setExpiration($expiration)
+    public function setExpiration(int $expiration)
     {
         $this->set("Expiration", $expiration);
     }
@@ -119,7 +116,7 @@ class CubeExtendInfo extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -129,7 +126,7 @@ class CubeExtendInfo extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }

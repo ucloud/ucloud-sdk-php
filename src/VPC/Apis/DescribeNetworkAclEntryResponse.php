@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,9 @@ class DescribeNetworkAclEntryResponse extends Response
      *
      * @return AclEntryInfo[]|null
      */
-    public function getEntryList()
+    public function getEntryList(): array
     {
-        $items = $this->get("EntryList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("EntryList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AclEntryInfo($item));

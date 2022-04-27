@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -55,7 +55,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -65,7 +65,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -75,7 +75,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -85,7 +85,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -95,7 +95,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -105,7 +105,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -115,7 +115,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -125,7 +125,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getServiceCIDR()
+    public function getServiceCIDR(): string
     {
         return $this->get("ServiceCIDR");
     }
@@ -135,7 +135,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $serviceCIDR
      */
-    public function setServiceCIDR($serviceCIDR)
+    public function setServiceCIDR(string $serviceCIDR)
     {
         $this->set("ServiceCIDR", $serviceCIDR);
     }
@@ -145,7 +145,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getClusterName()
+    public function getClusterName(): string
     {
         return $this->get("ClusterName");
     }
@@ -155,7 +155,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $clusterName
      */
-    public function setClusterName($clusterName)
+    public function setClusterName(string $clusterName)
     {
         $this->set("ClusterName", $clusterName);
     }
@@ -165,7 +165,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->get("Password");
     }
@@ -175,7 +175,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
@@ -185,12 +185,9 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return CreateUK8SClusterV2ParamMaster[]|null
      */
-    public function getMaster()
+    public function getMaster(): array
     {
-        $items = $this->get("Master");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Master") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUK8SClusterV2ParamMaster($item));
@@ -217,7 +214,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getMasterMachineType()
+    public function getMasterMachineType(): string
     {
         return $this->get("MasterMachineType");
     }
@@ -227,7 +224,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterMachineType
      */
-    public function setMasterMachineType($masterMachineType)
+    public function setMasterMachineType(string $masterMachineType)
     {
         $this->set("MasterMachineType", $masterMachineType);
     }
@@ -237,7 +234,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return integer|null
      */
-    public function getMasterCPU()
+    public function getMasterCPU(): int
     {
         return $this->get("MasterCPU");
     }
@@ -247,7 +244,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param int $masterCPU
      */
-    public function setMasterCPU($masterCPU)
+    public function setMasterCPU(int $masterCPU)
     {
         $this->set("MasterCPU", $masterCPU);
     }
@@ -257,7 +254,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return integer|null
      */
-    public function getMasterMem()
+    public function getMasterMem(): int
     {
         return $this->get("MasterMem");
     }
@@ -267,7 +264,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param int $masterMem
      */
-    public function setMasterMem($masterMem)
+    public function setMasterMem(int $masterMem)
     {
         $this->set("MasterMem", $masterMem);
     }
@@ -277,12 +274,9 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return CreateUK8SClusterV2ParamNodes[]|null
      */
-    public function getNodes()
+    public function getNodes(): array
     {
-        $items = $this->get("Nodes");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Nodes") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUK8SClusterV2ParamNodes($item));
@@ -309,7 +303,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getMasterBootDiskType()
+    public function getMasterBootDiskType(): string
     {
         return $this->get("MasterBootDiskType");
     }
@@ -319,7 +313,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterBootDiskType
      */
-    public function setMasterBootDiskType($masterBootDiskType)
+    public function setMasterBootDiskType(string $masterBootDiskType)
     {
         $this->set("MasterBootDiskType", $masterBootDiskType);
     }
@@ -329,7 +323,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getMasterDataDiskType()
+    public function getMasterDataDiskType(): string
     {
         return $this->get("MasterDataDiskType");
     }
@@ -339,7 +333,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterDataDiskType
      */
-    public function setMasterDataDiskType($masterDataDiskType)
+    public function setMasterDataDiskType(string $masterDataDiskType)
     {
         $this->set("MasterDataDiskType", $masterDataDiskType);
     }
@@ -349,7 +343,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getMasterMinmalCpuPlatform()
+    public function getMasterMinmalCpuPlatform(): string
     {
         return $this->get("MasterMinmalCpuPlatform");
     }
@@ -359,7 +353,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterMinmalCpuPlatform
      */
-    public function setMasterMinmalCpuPlatform($masterMinmalCpuPlatform)
+    public function setMasterMinmalCpuPlatform(string $masterMinmalCpuPlatform)
     {
         $this->set("MasterMinmalCpuPlatform", $masterMinmalCpuPlatform);
     }
@@ -369,7 +363,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return integer|null
      */
-    public function getMasterDataDiskSize()
+    public function getMasterDataDiskSize(): int
     {
         return $this->get("MasterDataDiskSize");
     }
@@ -379,7 +373,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param int $masterDataDiskSize
      */
-    public function setMasterDataDiskSize($masterDataDiskSize)
+    public function setMasterDataDiskSize(int $masterDataDiskSize)
     {
         $this->set("MasterDataDiskSize", $masterDataDiskSize);
     }
@@ -389,7 +383,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -399,7 +393,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -409,7 +403,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getK8sVersion()
+    public function getK8sVersion(): string
     {
         return $this->get("K8sVersion");
     }
@@ -419,7 +413,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $k8sVersion
      */
-    public function setK8sVersion($k8sVersion)
+    public function setK8sVersion(string $k8sVersion)
     {
         $this->set("K8sVersion", $k8sVersion);
     }
@@ -429,7 +423,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -439,7 +433,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -449,7 +443,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getExternalApiServer()
+    public function getExternalApiServer(): string
     {
         return $this->get("ExternalApiServer");
     }
@@ -459,7 +453,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $externalApiServer
      */
-    public function setExternalApiServer($externalApiServer)
+    public function setExternalApiServer(string $externalApiServer)
     {
         $this->set("ExternalApiServer", $externalApiServer);
     }
@@ -469,7 +463,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getMasterIsolationGroup()
+    public function getMasterIsolationGroup(): string
     {
         return $this->get("MasterIsolationGroup");
     }
@@ -479,7 +473,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterIsolationGroup
      */
-    public function setMasterIsolationGroup($masterIsolationGroup)
+    public function setMasterIsolationGroup(string $masterIsolationGroup)
     {
         $this->set("MasterIsolationGroup", $masterIsolationGroup);
     }
@@ -489,7 +483,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return CreateUK8SClusterV2ParamKubeProxy|null
      */
-    public function getKubeProxy()
+    public function getKubeProxy(): CreateUK8SClusterV2ParamKubeProxy
     {
         return new CreateUK8SClusterV2ParamKubeProxy($this->get("KubeProxy"));
     }
@@ -499,7 +493,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param CreateUK8SClusterV2ParamKubeProxy $kubeProxy
      */
-    public function setKubeProxy(array $kubeProxy)
+    public function setKubeProxy(CreateUK8SClusterV2ParamKubeProxy $kubeProxy)
     {
         $this->set("KubeProxy", $kubeProxy->getAll());
     }
@@ -509,7 +503,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -519,7 +513,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -529,7 +523,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getUserData()
+    public function getUserData(): string
     {
         return $this->get("UserData");
     }
@@ -539,7 +533,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $userData
      */
-    public function setUserData($userData)
+    public function setUserData(string $userData)
     {
         $this->set("UserData", $userData);
     }
@@ -549,7 +543,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @return string|null
      */
-    public function getInitScript()
+    public function getInitScript(): string
     {
         return $this->get("InitScript");
     }
@@ -559,7 +553,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $initScript
      */
-    public function setInitScript($initScript)
+    public function setInitScript(string $initScript)
     {
         $this->set("InitScript", $initScript);
     }

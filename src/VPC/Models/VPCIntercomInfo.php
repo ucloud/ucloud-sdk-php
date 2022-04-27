@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class VPCIntercomInfo extends Response
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -37,7 +37,7 @@ class VPCIntercomInfo extends Response
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -47,7 +47,7 @@ class VPCIntercomInfo extends Response
      *
      * @return integer|null
      */
-    public function getVPCType()
+    public function getVPCType(): int
     {
         return $this->get("VPCType");
     }
@@ -57,7 +57,7 @@ class VPCIntercomInfo extends Response
      *
      * @param int $vpcType
      */
-    public function setVPCType($vpcType)
+    public function setVPCType(int $vpcType)
     {
         $this->set("VPCType", $vpcType);
     }
@@ -67,7 +67,7 @@ class VPCIntercomInfo extends Response
      *
      * @return integer|null
      */
-    public function getAccountId()
+    public function getAccountId(): int
     {
         return $this->get("AccountId");
     }
@@ -77,7 +77,7 @@ class VPCIntercomInfo extends Response
      *
      * @param int $accountId
      */
-    public function setAccountId($accountId)
+    public function setAccountId(int $accountId)
     {
         $this->set("AccountId", $accountId);
     }
@@ -87,7 +87,7 @@ class VPCIntercomInfo extends Response
      *
      * @return string[]|null
      */
-    public function getNetwork()
+    public function getNetwork(): array
     {
         return $this->get("Network");
     }
@@ -107,7 +107,7 @@ class VPCIntercomInfo extends Response
      *
      * @return string|null
      */
-    public function getDstRegion()
+    public function getDstRegion(): string
     {
         return $this->get("DstRegion");
     }
@@ -117,7 +117,7 @@ class VPCIntercomInfo extends Response
      *
      * @param string $dstRegion
      */
-    public function setDstRegion($dstRegion)
+    public function setDstRegion(string $dstRegion)
     {
         $this->set("DstRegion", $dstRegion);
     }
@@ -127,7 +127,7 @@ class VPCIntercomInfo extends Response
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -137,7 +137,7 @@ class VPCIntercomInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -147,7 +147,7 @@ class VPCIntercomInfo extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -157,7 +157,7 @@ class VPCIntercomInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -167,7 +167,7 @@ class VPCIntercomInfo extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -177,7 +177,7 @@ class VPCIntercomInfo extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }

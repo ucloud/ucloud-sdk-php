@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,9 @@ class DescribeUEcSubnetResponse extends Response
      *
      * @return SubnetInfo[]|null
      */
-    public function getSubnetList()
+    public function getSubnetList(): array
     {
-        $items = $this->get("SubnetList");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("SubnetList") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new SubnetInfo($item));

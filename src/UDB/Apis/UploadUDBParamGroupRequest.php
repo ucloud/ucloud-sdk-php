@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -48,7 +48,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -58,7 +58,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -68,7 +68,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -78,7 +78,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -88,7 +88,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -98,7 +98,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getDBTypeId()
+    public function getDBTypeId(): string
     {
         return $this->get("DBTypeId");
     }
@@ -108,7 +108,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
@@ -118,7 +118,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getGroupName()
+    public function getGroupName(): string
     {
         return $this->get("GroupName");
     }
@@ -128,7 +128,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @param string $groupName
      */
-    public function setGroupName($groupName)
+    public function setGroupName(string $groupName)
     {
         $this->set("GroupName", $groupName);
     }
@@ -138,7 +138,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->get("Description");
     }
@@ -148,7 +148,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
@@ -158,7 +158,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @return string|null
      */
-    public function getContent()
+    public function getContent(): string
     {
         return $this->get("Content");
     }
@@ -168,7 +168,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @param string $content
      */
-    public function setContent($content)
+    public function setContent(string $content)
     {
         $this->set("Content", $content);
     }
@@ -178,7 +178,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @return boolean|null
      */
-    public function getRegionFlag()
+    public function getRegionFlag(): bool
     {
         return $this->get("RegionFlag");
     }
@@ -188,7 +188,7 @@ class UploadUDBParamGroupRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }

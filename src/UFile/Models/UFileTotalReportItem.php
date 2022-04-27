@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class UFileTotalReportItem extends Response
      *
      * @return float|null
      */
-    public function getFlow()
+    public function getFlow(): float
     {
         return $this->get("Flow");
     }
@@ -37,7 +37,7 @@ class UFileTotalReportItem extends Response
      *
      * @param float $flow
      */
-    public function setFlow($flow)
+    public function setFlow(float $flow)
     {
         $this->set("Flow", $flow);
     }
@@ -47,7 +47,7 @@ class UFileTotalReportItem extends Response
      *
      * @return float|null
      */
-    public function getIdleFlow()
+    public function getIdleFlow(): float
     {
         return $this->get("IdleFlow");
     }
@@ -57,7 +57,7 @@ class UFileTotalReportItem extends Response
      *
      * @param float $idleFlow
      */
-    public function setIdleFlow($idleFlow)
+    public function setIdleFlow(float $idleFlow)
     {
         $this->set("IdleFlow", $idleFlow);
     }
@@ -67,7 +67,7 @@ class UFileTotalReportItem extends Response
      *
      * @return float|null
      */
-    public function getBusyFlow()
+    public function getBusyFlow(): float
     {
         return $this->get("BusyFlow");
     }
@@ -77,7 +77,7 @@ class UFileTotalReportItem extends Response
      *
      * @param float $busyFlow
      */
-    public function setBusyFlow($busyFlow)
+    public function setBusyFlow(float $busyFlow)
     {
         $this->set("BusyFlow", $busyFlow);
     }
@@ -87,7 +87,7 @@ class UFileTotalReportItem extends Response
      *
      * @return float|null
      */
-    public function getCdnFlow()
+    public function getCdnFlow(): float
     {
         return $this->get("CdnFlow");
     }
@@ -97,27 +97,27 @@ class UFileTotalReportItem extends Response
      *
      * @param float $cdnFlow
      */
-    public function setCdnFlow($cdnFlow)
+    public function setCdnFlow(float $cdnFlow)
     {
         $this->set("CdnFlow", $cdnFlow);
     }
 
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @return float|null
      */
-    public function getApiTimes()
+    public function getApiTimes(): float
     {
         return $this->get("ApiTimes");
     }
 
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @param float $apiTimes
      */
-    public function setApiTimes($apiTimes)
+    public function setApiTimes(float $apiTimes)
     {
         $this->set("ApiTimes", $apiTimes);
     }

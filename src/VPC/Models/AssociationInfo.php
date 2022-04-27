@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class AssociationInfo extends Response
      *
      * @return string|null
      */
-    public function getAssociationId()
+    public function getAssociationId(): string
     {
         return $this->get("AssociationId");
     }
@@ -37,7 +37,7 @@ class AssociationInfo extends Response
      *
      * @param string $associationId
      */
-    public function setAssociationId($associationId)
+    public function setAssociationId(string $associationId)
     {
         $this->set("AssociationId", $associationId);
     }
@@ -47,7 +47,7 @@ class AssociationInfo extends Response
      *
      * @return string|null
      */
-    public function getAclId()
+    public function getAclId(): string
     {
         return $this->get("AclId");
     }
@@ -57,7 +57,7 @@ class AssociationInfo extends Response
      *
      * @param string $aclId
      */
-    public function setAclId($aclId)
+    public function setAclId(string $aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -67,7 +67,7 @@ class AssociationInfo extends Response
      *
      * @return string|null
      */
-    public function getSubnetworkId()
+    public function getSubnetworkId(): string
     {
         return $this->get("SubnetworkId");
     }
@@ -77,7 +77,7 @@ class AssociationInfo extends Response
      *
      * @param string $subnetworkId
      */
-    public function setSubnetworkId($subnetworkId)
+    public function setSubnetworkId(string $subnetworkId)
     {
         $this->set("SubnetworkId", $subnetworkId);
     }
@@ -87,7 +87,7 @@ class AssociationInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -97,7 +97,7 @@ class AssociationInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }

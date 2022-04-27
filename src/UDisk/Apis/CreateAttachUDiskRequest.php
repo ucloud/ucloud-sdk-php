@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -46,7 +46,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -56,7 +56,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -66,7 +66,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -76,7 +76,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -86,7 +86,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -96,7 +96,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -106,7 +106,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -116,7 +116,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -126,7 +126,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -136,7 +136,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUHostId()
+    public function getUHostId(): string
     {
         return $this->get("UHostId");
     }
@@ -146,7 +146,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
@@ -156,7 +156,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -166,7 +166,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -176,7 +176,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -186,7 +186,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -196,7 +196,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUDataArkMode()
+    public function getUDataArkMode(): string
     {
         return $this->get("UDataArkMode");
     }
@@ -206,7 +206,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode($uDataArkMode)
+    public function setUDataArkMode(string $uDataArkMode)
     {
         $this->set("UDataArkMode", $uDataArkMode);
     }
@@ -216,7 +216,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getSnapshotService()
+    public function getSnapshotService(): string
     {
         return $this->get("SnapshotService");
     }
@@ -226,7 +226,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $snapshotService
      */
-    public function setSnapshotService($snapshotService)
+    public function setSnapshotService(string $snapshotService)
     {
         $this->set("SnapshotService", $snapshotService);
     }
@@ -236,7 +236,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -246,7 +246,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -256,7 +256,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getDiskType()
+    public function getDiskType(): string
     {
         return $this->get("DiskType");
     }
@@ -266,7 +266,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $diskType
      */
-    public function setDiskType($diskType)
+    public function setDiskType(string $diskType)
     {
         $this->set("DiskType", $diskType);
     }
@@ -276,7 +276,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getUKmsMode()
+    public function getUKmsMode(): string
     {
         return $this->get("UKmsMode");
     }
@@ -286,7 +286,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $uKmsMode
      */
-    public function setUKmsMode($uKmsMode)
+    public function setUKmsMode(string $uKmsMode)
     {
         $this->set("UKmsMode", $uKmsMode);
     }
@@ -296,7 +296,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getCmkId()
+    public function getCmkId(): string
     {
         return $this->get("CmkId");
     }
@@ -306,7 +306,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $cmkId
      */
-    public function setCmkId($cmkId)
+    public function setCmkId(string $cmkId)
     {
         $this->set("CmkId", $cmkId);
     }
@@ -316,7 +316,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getMultiAttach()
+    public function getMultiAttach(): string
     {
         return $this->get("MultiAttach");
     }
@@ -326,7 +326,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $multiAttach
      */
-    public function setMultiAttach($multiAttach)
+    public function setMultiAttach(string $multiAttach)
     {
         $this->set("MultiAttach", $multiAttach);
     }
@@ -336,7 +336,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getHostId()
+    public function getHostId(): string
     {
         return $this->get("HostId");
     }
@@ -346,7 +346,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }
@@ -356,7 +356,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -366,7 +366,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

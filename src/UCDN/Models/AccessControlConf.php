@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class AccessControlConf extends Response
      *
      * @return string[]|null
      */
-    public function getIpBlackList()
+    public function getIpBlackList(): array
     {
         return $this->get("IpBlackList");
     }
@@ -47,7 +47,7 @@ class AccessControlConf extends Response
      *
      * @return ReferConf|null
      */
-    public function getReferConf()
+    public function getReferConf(): ReferConf
     {
         return new ReferConf($this->get("ReferConf"));
     }
@@ -57,7 +57,7 @@ class AccessControlConf extends Response
      *
      * @param ReferConf $referConf
      */
-    public function setReferConf(array $referConf)
+    public function setReferConf(ReferConf $referConf)
     {
         $this->set("ReferConf", $referConf->getAll());
     }

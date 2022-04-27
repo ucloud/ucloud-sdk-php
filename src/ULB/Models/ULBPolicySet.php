@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,31 @@ class ULBPolicySet extends Response
     
 
     /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @return string|null
+     */
+    public function getDomainMatchMode(): string
+    {
+        return $this->get("DomainMatchMode");
+    }
+
+    /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @param string $domainMatchMode
+     */
+    public function setDomainMatchMode(string $domainMatchMode)
+    {
+        $this->set("DomainMatchMode", $domainMatchMode);
+    }
+
+    /**
      * PolicyId: 内容转发Id，默认内容转发类型下为空。
      *
      * @return string|null
      */
-    public function getPolicyId()
+    public function getPolicyId(): string
     {
         return $this->get("PolicyId");
     }
@@ -37,7 +57,7 @@ class ULBPolicySet extends Response
      *
      * @param string $policyId
      */
-    public function setPolicyId($policyId)
+    public function setPolicyId(string $policyId)
     {
         $this->set("PolicyId", $policyId);
     }
@@ -47,7 +67,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getPolicyType()
+    public function getPolicyType(): string
     {
         return $this->get("PolicyType");
     }
@@ -57,7 +77,7 @@ class ULBPolicySet extends Response
      *
      * @param string $policyType
      */
-    public function setPolicyType($policyType)
+    public function setPolicyType(string $policyType)
     {
         $this->set("PolicyType", $policyType);
     }
@@ -67,7 +87,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->get("Type");
     }
@@ -77,7 +97,7 @@ class ULBPolicySet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
@@ -87,7 +107,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getMatch()
+    public function getMatch(): string
     {
         return $this->get("Match");
     }
@@ -97,7 +117,7 @@ class ULBPolicySet extends Response
      *
      * @param string $match
      */
-    public function setMatch($match)
+    public function setMatch(string $match)
     {
         $this->set("Match", $match);
     }
@@ -107,7 +127,7 @@ class ULBPolicySet extends Response
      *
      * @return integer|null
      */
-    public function getPolicyPriority()
+    public function getPolicyPriority(): int
     {
         return $this->get("PolicyPriority");
     }
@@ -117,7 +137,7 @@ class ULBPolicySet extends Response
      *
      * @param int $policyPriority
      */
-    public function setPolicyPriority($policyPriority)
+    public function setPolicyPriority(int $policyPriority)
     {
         $this->set("PolicyPriority", $policyPriority);
     }
@@ -127,7 +147,7 @@ class ULBPolicySet extends Response
      *
      * @return string|null
      */
-    public function getVServerId()
+    public function getVServerId(): string
     {
         return $this->get("VServerId");
     }
@@ -137,7 +157,7 @@ class ULBPolicySet extends Response
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
@@ -147,7 +167,7 @@ class ULBPolicySet extends Response
      *
      * @return integer|null
      */
-    public function getTotalCount()
+    public function getTotalCount(): int
     {
         return $this->get("TotalCount");
     }
@@ -157,7 +177,7 @@ class ULBPolicySet extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
@@ -167,12 +187,9 @@ class ULBPolicySet extends Response
      *
      * @return PolicyBackendSet[]|null
      */
-    public function getBackendSet()
+    public function getBackendSet(): array
     {
-        $items = $this->get("BackendSet");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("BackendSet") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new PolicyBackendSet($item));

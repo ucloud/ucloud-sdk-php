@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ class GetPathXMetricRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -49,7 +49,7 @@ class GetPathXMetricRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -59,7 +59,7 @@ class GetPathXMetricRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceId()
+    public function getResourceId(): string
     {
         return $this->get("ResourceId");
     }
@@ -69,7 +69,7 @@ class GetPathXMetricRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
@@ -79,7 +79,7 @@ class GetPathXMetricRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime()
+    public function getBeginTime(): int
     {
         return $this->get("BeginTime");
     }
@@ -89,7 +89,7 @@ class GetPathXMetricRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -99,7 +99,7 @@ class GetPathXMetricRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -109,7 +109,7 @@ class GetPathXMetricRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -119,7 +119,7 @@ class GetPathXMetricRequest extends Request
      *
      * @return string[]|null
      */
-    public function getMetricName()
+    public function getMetricName(): array
     {
         return $this->get("MetricName");
     }
@@ -139,7 +139,7 @@ class GetPathXMetricRequest extends Request
      *
      * @return string|null
      */
-    public function getResourceType()
+    public function getResourceType(): string
     {
         return $this->get("ResourceType");
     }
@@ -149,7 +149,7 @@ class GetPathXMetricRequest extends Request
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
@@ -159,7 +159,7 @@ class GetPathXMetricRequest extends Request
      *
      * @return string|null
      */
-    public function getLineId()
+    public function getLineId(): string
     {
         return $this->get("LineId");
     }
@@ -169,7 +169,7 @@ class GetPathXMetricRequest extends Request
      *
      * @param string $lineId
      */
-    public function setLineId($lineId)
+    public function setLineId(string $lineId)
     {
         $this->set("LineId", $lineId);
     }

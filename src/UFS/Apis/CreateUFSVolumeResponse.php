@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @return string|null
      */
-    public function getVolumeName()
+    public function getVolumeName(): string
     {
         return $this->get("VolumeName");
     }
@@ -37,7 +37,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeName
      */
-    public function setVolumeName($volumeName)
+    public function setVolumeName(string $volumeName)
     {
         $this->set("VolumeName", $volumeName);
     }
@@ -47,7 +47,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @return string|null
      */
-    public function getVolumeId()
+    public function getVolumeId(): string
     {
         return $this->get("VolumeId");
     }
@@ -57,7 +57,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeId
      */
-    public function setVolumeId($volumeId)
+    public function setVolumeId(string $volumeId)
     {
         $this->set("VolumeId", $volumeId);
     }
@@ -67,7 +67,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @return string|null
      */
-    public function getVolumeStatus()
+    public function getVolumeStatus(): string
     {
         return $this->get("VolumeStatus");
     }
@@ -77,7 +77,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeStatus
      */
-    public function setVolumeStatus($volumeStatus)
+    public function setVolumeStatus(string $volumeStatus)
     {
         $this->set("VolumeStatus", $volumeStatus);
     }

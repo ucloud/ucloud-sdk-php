@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class MetricDataSet extends Response
      *
      * @return string|null
      */
-    public function getMetricName()
+    public function getMetricName(): string
     {
         return $this->get("MetricName");
     }
@@ -37,7 +37,7 @@ class MetricDataSet extends Response
      *
      * @param string $metricName
      */
-    public function setMetricName($metricName)
+    public function setMetricName(string $metricName)
     {
         $this->set("MetricName", $metricName);
     }
@@ -47,12 +47,9 @@ class MetricDataSet extends Response
      *
      * @return ValueSet[]|null
      */
-    public function getValues()
+    public function getValues(): array
     {
-        $items = $this->get("Values");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Values") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new ValueSet($item));

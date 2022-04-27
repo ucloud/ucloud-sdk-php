@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DataNodeInfo extends Response
      *
      * @return string|null
      */
-    public function getId()
+    public function getId(): string
     {
         return $this->get("Id");
     }
@@ -37,7 +37,7 @@ class DataNodeInfo extends Response
      *
      * @param string $id
      */
-    public function setId($id)
+    public function setId(string $id)
     {
         $this->set("Id", $id);
     }
@@ -47,7 +47,7 @@ class DataNodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getMemory()
+    public function getMemory(): int
     {
         return $this->get("Memory");
     }
@@ -57,7 +57,7 @@ class DataNodeInfo extends Response
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
@@ -67,7 +67,7 @@ class DataNodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getDiskSpace()
+    public function getDiskSpace(): int
     {
         return $this->get("DiskSpace");
     }
@@ -77,7 +77,7 @@ class DataNodeInfo extends Response
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
@@ -87,7 +87,7 @@ class DataNodeInfo extends Response
      *
      * @return integer|null
      */
-    public function getSlaveCount()
+    public function getSlaveCount(): int
     {
         return $this->get("SlaveCount");
     }
@@ -97,7 +97,7 @@ class DataNodeInfo extends Response
      *
      * @param int $slaveCount
      */
-    public function setSlaveCount($slaveCount)
+    public function setSlaveCount(int $slaveCount)
     {
         $this->set("SlaveCount", $slaveCount);
     }
@@ -107,7 +107,7 @@ class DataNodeInfo extends Response
      *
      * @return string|null
      */
-    public function getState()
+    public function getState(): string
     {
         return $this->get("State");
     }
@@ -117,7 +117,7 @@ class DataNodeInfo extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
@@ -127,12 +127,9 @@ class DataNodeInfo extends Response
      *
      * @return SlaveInfo[]|null
      */
-    public function getSlaveInfos()
+    public function getSlaveInfos(): array
     {
-        $items = $this->get("SlaveInfos");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("SlaveInfos") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new SlaveInfo($item));
@@ -159,7 +156,7 @@ class DataNodeInfo extends Response
      *
      * @return string|null
      */
-    public function getLastTransTaskId()
+    public function getLastTransTaskId(): string
     {
         return $this->get("LastTransTaskId");
     }
@@ -169,7 +166,7 @@ class DataNodeInfo extends Response
      *
      * @param string $lastTransTaskId
      */
-    public function setLastTransTaskId($lastTransTaskId)
+    public function setLastTransTaskId(string $lastTransTaskId)
     {
         $this->set("LastTransTaskId", $lastTransTaskId);
     }
@@ -179,7 +176,7 @@ class DataNodeInfo extends Response
      *
      * @return string|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): string
     {
         return $this->get("CreateTime");
     }
@@ -189,7 +186,7 @@ class DataNodeInfo extends Response
      *
      * @param string $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(string $createTime)
     {
         $this->set("CreateTime", $createTime);
     }

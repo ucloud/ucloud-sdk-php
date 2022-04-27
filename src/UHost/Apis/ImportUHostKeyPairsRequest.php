@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -64,7 +64,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -74,7 +74,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -84,7 +84,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -94,7 +94,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getKeyPairName()
+    public function getKeyPairName(): string
     {
         return $this->get("KeyPairName");
     }
@@ -104,7 +104,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName($keyPairName)
+    public function setKeyPairName(string $keyPairName)
     {
         $this->set("KeyPairName", $keyPairName);
     }
@@ -114,7 +114,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @return string|null
      */
-    public function getPublicKeyBody()
+    public function getPublicKeyBody(): string
     {
         return $this->get("PublicKeyBody");
     }
@@ -124,7 +124,7 @@ class ImportUHostKeyPairsRequest extends Request
      *
      * @param string $publicKeyBody
      */
-    public function setPublicKeyBody($publicKeyBody)
+    public function setPublicKeyBody(string $publicKeyBody)
     {
         $this->set("PublicKeyBody", $publicKeyBody);
     }

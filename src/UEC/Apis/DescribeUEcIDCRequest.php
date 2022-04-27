@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class DescribeUEcIDCRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class DescribeUEcIDCRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class DescribeUEcIDCRequest extends Request
      *
      * @return integer|null
      */
-    public function getCpu()
+    public function getCpu(): int
     {
         return $this->get("Cpu");
     }
@@ -64,7 +64,7 @@ class DescribeUEcIDCRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCpu($cpu)
+    public function setCpu(int $cpu)
     {
         $this->set("Cpu", $cpu);
     }
@@ -74,7 +74,7 @@ class DescribeUEcIDCRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemory()
+    public function getMemory(): int
     {
         return $this->get("Memory");
     }
@@ -84,7 +84,7 @@ class DescribeUEcIDCRequest extends Request
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
@@ -94,7 +94,7 @@ class DescribeUEcIDCRequest extends Request
      *
      * @return string[]|null
      */
-    public function getIdcId()
+    public function getIdcId(): array
     {
         return $this->get("IdcId");
     }
@@ -114,7 +114,7 @@ class DescribeUEcIDCRequest extends Request
      *
      * @return integer|null
      */
-    public function getType()
+    public function getType(): int
     {
         return $this->get("Type");
     }
@@ -124,28 +124,48 @@ class DescribeUEcIDCRequest extends Request
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
 
     /**
-     * ProductType: 产品类型：normal（通用型），hf（高主频型）
+     * ProductType: 产品类型：normal（经济型），hf（标准型）,g(GPU型)
      *
      * @return string|null
      */
-    public function getProductType()
+    public function getProductType(): string
     {
         return $this->get("ProductType");
     }
 
     /**
-     * ProductType: 产品类型：normal（通用型），hf（高主频型）
+     * ProductType: 产品类型：normal（经济型），hf（标准型）,g(GPU型)
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
+    }
+
+    /**
+     * Gpu: Gpu卡核心数
+     *
+     * @return integer|null
+     */
+    public function getGpu(): int
+    {
+        return $this->get("Gpu");
+    }
+
+    /**
+     * Gpu: Gpu卡核心数
+     *
+     * @param int $gpu
+     */
+    public function setGpu(int $gpu)
+    {
+        $this->set("Gpu", $gpu);
     }
 }

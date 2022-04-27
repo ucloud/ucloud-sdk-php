@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class SetNetworkMaskRequest extends Request
      *
      * @return string|null
      */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->get("Code");
     }
@@ -43,7 +43,7 @@ class SetNetworkMaskRequest extends Request
      *
      * @param string $code
      */
-    public function setCode($code)
+    public function setCode(string $code)
     {
         $this->set("Code", $code);
     }
@@ -53,7 +53,7 @@ class SetNetworkMaskRequest extends Request
      *
      * @return string|null
      */
-    public function getAPINetworkMask()
+    public function getAPINetworkMask(): string
     {
         return $this->get("APINetworkMask");
     }
@@ -63,7 +63,7 @@ class SetNetworkMaskRequest extends Request
      *
      * @param string $apiNetworkMask
      */
-    public function setAPINetworkMask($apiNetworkMask)
+    public function setAPINetworkMask(string $apiNetworkMask)
     {
         $this->set("APINetworkMask", $apiNetworkMask);
     }
@@ -73,7 +73,7 @@ class SetNetworkMaskRequest extends Request
      *
      * @return string|null
      */
-    public function getLoginNetworkMask()
+    public function getLoginNetworkMask(): string
     {
         return $this->get("LoginNetworkMask");
     }
@@ -83,7 +83,7 @@ class SetNetworkMaskRequest extends Request
      *
      * @param string $loginNetworkMask
      */
-    public function setLoginNetworkMask($loginNetworkMask)
+    public function setLoginNetworkMask(string $loginNetworkMask)
     {
         $this->set("LoginNetworkMask", $loginNetworkMask);
     }

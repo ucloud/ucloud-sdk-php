@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -47,7 +47,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -57,7 +57,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -67,7 +67,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -77,7 +77,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @return string|null
      */
-    public function getDBId()
+    public function getDBId(): string
     {
         return $this->get("DBId");
     }
@@ -87,7 +87,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
@@ -97,7 +97,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @return integer|null
      */
-    public function getBeginTime()
+    public function getBeginTime(): int
     {
         return $this->get("BeginTime");
     }
@@ -107,7 +107,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
@@ -117,7 +117,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @return integer|null
      */
-    public function getEndTime()
+    public function getEndTime(): int
     {
         return $this->get("EndTime");
     }
@@ -127,7 +127,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
@@ -137,7 +137,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @return string|null
      */
-    public function getBackupName()
+    public function getBackupName(): string
     {
         return $this->get("BackupName");
     }
@@ -147,7 +147,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }

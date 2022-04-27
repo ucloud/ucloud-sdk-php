@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @return string|null
      */
-    public function getMasterDBId()
+    public function getMasterDBId(): string
     {
         return $this->get("MasterDBId");
     }
@@ -105,7 +105,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId($masterDBId)
+    public function setMasterDBId(string $masterDBId)
     {
         $this->set("MasterDBId", $masterDBId);
     }
@@ -115,7 +115,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @return integer|null
      */
-    public function getBackupSwitch()
+    public function getBackupSwitch(): int
     {
         return $this->get("BackupSwitch");
     }
@@ -125,7 +125,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @param int $backupSwitch
      */
-    public function setBackupSwitch($backupSwitch)
+    public function setBackupSwitch(int $backupSwitch)
     {
         $this->set("BackupSwitch", $backupSwitch);
     }
@@ -135,7 +135,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @return string|null
      */
-    public function getSlaveDBId()
+    public function getSlaveDBId(): string
     {
         return $this->get("SlaveDBId");
     }
@@ -145,7 +145,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
      *
      * @param string $slaveDBId
      */
-    public function setSlaveDBId($slaveDBId)
+    public function setSlaveDBId(string $slaveDBId)
     {
         $this->set("SlaveDBId", $slaveDBId);
     }

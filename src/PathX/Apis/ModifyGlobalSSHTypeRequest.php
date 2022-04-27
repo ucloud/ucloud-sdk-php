@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -45,7 +45,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -55,7 +55,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceId()
+    public function getInstanceId(): string
     {
         return $this->get("InstanceId");
     }
@@ -65,7 +65,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @param string $instanceId
      */
-    public function setInstanceId($instanceId)
+    public function setInstanceId(string $instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
@@ -75,7 +75,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getInstanceType()
+    public function getInstanceType(): string
     {
         return $this->get("InstanceType");
     }
@@ -85,7 +85,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
@@ -95,7 +95,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -105,7 +105,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -115,7 +115,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getQuantity()
+    public function getQuantity(): string
     {
         return $this->get("Quantity");
     }
@@ -125,7 +125,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @param string $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(string $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -135,7 +135,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -145,7 +145,7 @@ class ModifyGlobalSSHTypeRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -65,7 +65,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -75,7 +75,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getShareBandwidthId()
+    public function getShareBandwidthId(): string
     {
         return $this->get("ShareBandwidthId");
     }
@@ -85,7 +85,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
@@ -95,7 +95,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -105,7 +105,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -115,7 +115,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string[]|null
      */
-    public function getEIPIds()
+    public function getEIPIds(): array
     {
         return $this->get("EIPIds");
     }
@@ -135,7 +135,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getPayMode()
+    public function getPayMode(): string
     {
         return $this->get("PayMode");
     }
@@ -145,7 +145,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }
@@ -155,7 +155,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @return string|null
      */
-    public function getIPVersion()
+    public function getIPVersion(): string
     {
         return $this->get("IPVersion");
     }
@@ -165,7 +165,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $ipVersion
      */
-    public function setIPVersion($ipVersion)
+    public function setIPVersion(string $ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }

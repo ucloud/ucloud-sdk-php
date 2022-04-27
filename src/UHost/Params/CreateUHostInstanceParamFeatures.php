@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class CreateUHostInstanceParamFeatures extends Request
      *
      * @return boolean|null
      */
-    public function getUNI()
+    public function getUNI(): bool
     {
         return $this->get("UNI");
     }
@@ -37,7 +37,7 @@ class CreateUHostInstanceParamFeatures extends Request
      *
      * @param boolean $uni
      */
-    public function setUNI($uni)
+    public function setUNI(bool $uni)
     {
         $this->set("UNI", $uni);
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getClusterName()
+    public function getClusterName(): string
     {
         return $this->get("ClusterName");
     }
@@ -37,7 +37,7 @@ class ClusterSet extends Response
      *
      * @param string $clusterName
      */
-    public function setClusterName($clusterName)
+    public function setClusterName(string $clusterName)
     {
         $this->set("ClusterName", $clusterName);
     }
@@ -47,7 +47,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getClusterId()
+    public function getClusterId(): string
     {
         return $this->get("ClusterId");
     }
@@ -57,7 +57,7 @@ class ClusterSet extends Response
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
@@ -67,7 +67,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -77,7 +77,7 @@ class ClusterSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -87,7 +87,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -97,7 +97,7 @@ class ClusterSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -107,7 +107,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getPodCIDR()
+    public function getPodCIDR(): string
     {
         return $this->get("PodCIDR");
     }
@@ -117,7 +117,7 @@ class ClusterSet extends Response
      *
      * @param string $podCIDR
      */
-    public function setPodCIDR($podCIDR)
+    public function setPodCIDR(string $podCIDR)
     {
         $this->set("PodCIDR", $podCIDR);
     }
@@ -127,7 +127,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getServiceCIDR()
+    public function getServiceCIDR(): string
     {
         return $this->get("ServiceCIDR");
     }
@@ -137,7 +137,7 @@ class ClusterSet extends Response
      *
      * @param string $serviceCIDR
      */
-    public function setServiceCIDR($serviceCIDR)
+    public function setServiceCIDR(string $serviceCIDR)
     {
         $this->set("ServiceCIDR", $serviceCIDR);
     }
@@ -147,7 +147,7 @@ class ClusterSet extends Response
      *
      * @return integer|null
      */
-    public function getMasterCount()
+    public function getMasterCount(): int
     {
         return $this->get("MasterCount");
     }
@@ -157,7 +157,7 @@ class ClusterSet extends Response
      *
      * @param int $masterCount
      */
-    public function setMasterCount($masterCount)
+    public function setMasterCount(int $masterCount)
     {
         $this->set("MasterCount", $masterCount);
     }
@@ -167,7 +167,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getApiServer()
+    public function getApiServer(): string
     {
         return $this->get("ApiServer");
     }
@@ -177,7 +177,7 @@ class ClusterSet extends Response
      *
      * @param string $apiServer
      */
-    public function setApiServer($apiServer)
+    public function setApiServer(string $apiServer)
     {
         $this->set("ApiServer", $apiServer);
     }
@@ -187,7 +187,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getK8sVersion()
+    public function getK8sVersion(): string
     {
         return $this->get("K8sVersion");
     }
@@ -197,7 +197,7 @@ class ClusterSet extends Response
      *
      * @param string $k8sVersion
      */
-    public function setK8sVersion($k8sVersion)
+    public function setK8sVersion(string $k8sVersion)
     {
         $this->set("K8sVersion", $k8sVersion);
     }
@@ -207,7 +207,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getClusterLogInfo()
+    public function getClusterLogInfo(): string
     {
         return $this->get("ClusterLogInfo");
     }
@@ -217,7 +217,7 @@ class ClusterSet extends Response
      *
      * @param string $clusterLogInfo
      */
-    public function setClusterLogInfo($clusterLogInfo)
+    public function setClusterLogInfo(string $clusterLogInfo)
     {
         $this->set("ClusterLogInfo", $clusterLogInfo);
     }
@@ -227,7 +227,7 @@ class ClusterSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -237,7 +237,7 @@ class ClusterSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -247,7 +247,7 @@ class ClusterSet extends Response
      *
      * @return integer|null
      */
-    public function getNodeCount()
+    public function getNodeCount(): int
     {
         return $this->get("NodeCount");
     }
@@ -257,7 +257,7 @@ class ClusterSet extends Response
      *
      * @param int $nodeCount
      */
-    public function setNodeCount($nodeCount)
+    public function setNodeCount(int $nodeCount)
     {
         $this->set("NodeCount", $nodeCount);
     }
@@ -267,7 +267,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getExternalApiServer()
+    public function getExternalApiServer(): string
     {
         return $this->get("ExternalApiServer");
     }
@@ -277,7 +277,7 @@ class ClusterSet extends Response
      *
      * @param string $externalApiServer
      */
-    public function setExternalApiServer($externalApiServer)
+    public function setExternalApiServer(string $externalApiServer)
     {
         $this->set("ExternalApiServer", $externalApiServer);
     }
@@ -287,7 +287,7 @@ class ClusterSet extends Response
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->get("Status");
     }
@@ -297,7 +297,7 @@ class ClusterSet extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }

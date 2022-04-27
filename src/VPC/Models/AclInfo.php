@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class AclInfo extends Response
      *
      * @return string|null
      */
-    public function getVpcId()
+    public function getVpcId(): string
     {
         return $this->get("VpcId");
     }
@@ -37,7 +37,7 @@ class AclInfo extends Response
      *
      * @param string $vpcId
      */
-    public function setVpcId($vpcId)
+    public function setVpcId(string $vpcId)
     {
         $this->set("VpcId", $vpcId);
     }
@@ -47,7 +47,7 @@ class AclInfo extends Response
      *
      * @return string|null
      */
-    public function getAclId()
+    public function getAclId(): string
     {
         return $this->get("AclId");
     }
@@ -57,7 +57,7 @@ class AclInfo extends Response
      *
      * @param string $aclId
      */
-    public function setAclId($aclId)
+    public function setAclId(string $aclId)
     {
         $this->set("AclId", $aclId);
     }
@@ -67,7 +67,7 @@ class AclInfo extends Response
      *
      * @return string|null
      */
-    public function getAclName()
+    public function getAclName(): string
     {
         return $this->get("AclName");
     }
@@ -77,7 +77,7 @@ class AclInfo extends Response
      *
      * @param string $aclName
      */
-    public function setAclName($aclName)
+    public function setAclName(string $aclName)
     {
         $this->set("AclName", $aclName);
     }
@@ -87,7 +87,7 @@ class AclInfo extends Response
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->get("Description");
     }
@@ -97,7 +97,7 @@ class AclInfo extends Response
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
@@ -107,12 +107,9 @@ class AclInfo extends Response
      *
      * @return AclEntryInfo[]|null
      */
-    public function getEntries()
+    public function getEntries(): array
     {
-        $items = $this->get("Entries");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Entries") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AclEntryInfo($item));
@@ -139,12 +136,9 @@ class AclInfo extends Response
      *
      * @return AssociationInfo[]|null
      */
-    public function getAssociations()
+    public function getAssociations(): array
     {
-        $items = $this->get("Associations");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Associations") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new AssociationInfo($item));
@@ -171,7 +165,7 @@ class AclInfo extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -181,7 +175,7 @@ class AclInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -191,7 +185,7 @@ class AclInfo extends Response
      *
      * @return integer|null
      */
-    public function getUpdateTime()
+    public function getUpdateTime(): int
     {
         return $this->get("UpdateTime");
     }
@@ -201,7 +195,7 @@ class AclInfo extends Response
      *
      * @param int $updateTime
      */
-    public function setUpdateTime($updateTime)
+    public function setUpdateTime(int $updateTime)
     {
         $this->set("UpdateTime", $updateTime);
     }

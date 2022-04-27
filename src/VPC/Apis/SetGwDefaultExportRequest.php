@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -44,7 +44,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -54,7 +54,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -64,7 +64,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -74,7 +74,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @return string|null
      */
-    public function getNATGWId()
+    public function getNATGWId(): string
     {
         return $this->get("NATGWId");
     }
@@ -84,7 +84,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @param string $natgwId
      */
-    public function setNATGWId($natgwId)
+    public function setNATGWId(string $natgwId)
     {
         $this->set("NATGWId", $natgwId);
     }
@@ -94,7 +94,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @return string|null
      */
-    public function getExportIp()
+    public function getExportIp(): string
     {
         return $this->get("ExportIp");
     }
@@ -104,7 +104,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @param string $exportIp
      */
-    public function setExportIp($exportIp)
+    public function setExportIp(string $exportIp)
     {
         $this->set("ExportIp", $exportIp);
     }
@@ -114,7 +114,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @return string|null
      */
-    public function getExportEipId()
+    public function getExportEipId(): string
     {
         return $this->get("ExportEipId");
     }
@@ -124,7 +124,7 @@ class SetGwDefaultExportRequest extends Request
      *
      * @param string $exportEipId
      */
-    public function setExportEipId($exportEipId)
+    public function setExportEipId(string $exportEipId)
     {
         $this->set("ExportEipId", $exportEipId);
     }

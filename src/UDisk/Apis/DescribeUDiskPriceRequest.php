@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -45,7 +45,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -55,7 +55,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -65,7 +65,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -75,7 +75,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -85,7 +85,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -95,7 +95,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->get("Size");
     }
@@ -105,7 +105,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
@@ -115,7 +115,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
@@ -125,7 +125,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -135,7 +135,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -145,7 +145,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -155,7 +155,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getUDataArkMode()
+    public function getUDataArkMode(): string
     {
         return $this->get("UDataArkMode");
     }
@@ -165,7 +165,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode($uDataArkMode)
+    public function setUDataArkMode(string $uDataArkMode)
     {
         $this->set("UDataArkMode", $uDataArkMode);
     }
@@ -175,7 +175,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getSnapshotService()
+    public function getSnapshotService(): string
     {
         return $this->get("SnapshotService");
     }
@@ -185,7 +185,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $snapshotService
      */
-    public function setSnapshotService($snapshotService)
+    public function setSnapshotService(string $snapshotService)
     {
         $this->set("SnapshotService", $snapshotService);
     }
@@ -195,7 +195,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getDiskType()
+    public function getDiskType(): string
     {
         return $this->get("DiskType");
     }
@@ -205,7 +205,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $diskType
      */
-    public function setDiskType($diskType)
+    public function setDiskType(string $diskType)
     {
         $this->set("DiskType", $diskType);
     }
@@ -215,7 +215,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getIsTotalPrice()
+    public function getIsTotalPrice(): string
     {
         return $this->get("IsTotalPrice");
     }
@@ -225,7 +225,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $isTotalPrice
      */
-    public function setIsTotalPrice($isTotalPrice)
+    public function setIsTotalPrice(string $isTotalPrice)
     {
         $this->set("IsTotalPrice", $isTotalPrice);
     }
@@ -235,7 +235,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @return string|null
      */
-    public function getMachineType()
+    public function getMachineType(): string
     {
         return $this->get("MachineType");
     }
@@ -245,7 +245,7 @@ class DescribeUDiskPriceRequest extends Request
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }

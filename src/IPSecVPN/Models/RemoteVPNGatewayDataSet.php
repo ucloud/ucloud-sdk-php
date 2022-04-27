@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayId()
+    public function getRemoteVPNGatewayId(): string
     {
         return $this->get("RemoteVPNGatewayId");
     }
@@ -37,7 +37,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId($remoteVPNGatewayId)
+    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
     {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }
@@ -47,7 +47,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayName()
+    public function getRemoteVPNGatewayName(): string
     {
         return $this->get("RemoteVPNGatewayName");
     }
@@ -57,7 +57,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $remoteVPNGatewayName
      */
-    public function setRemoteVPNGatewayName($remoteVPNGatewayName)
+    public function setRemoteVPNGatewayName(string $remoteVPNGatewayName)
     {
         $this->set("RemoteVPNGatewayName", $remoteVPNGatewayName);
     }
@@ -67,7 +67,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getRemoteVPNGatewayAddr()
+    public function getRemoteVPNGatewayAddr(): string
     {
         return $this->get("RemoteVPNGatewayAddr");
     }
@@ -77,7 +77,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $remoteVPNGatewayAddr
      */
-    public function setRemoteVPNGatewayAddr($remoteVPNGatewayAddr)
+    public function setRemoteVPNGatewayAddr(string $remoteVPNGatewayAddr)
     {
         $this->set("RemoteVPNGatewayAddr", $remoteVPNGatewayAddr);
     }
@@ -87,7 +87,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -97,7 +97,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
@@ -107,7 +107,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): string
     {
         return $this->get("Remark");
     }
@@ -117,7 +117,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
@@ -127,7 +127,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getCreateTime(): int
     {
         return $this->get("CreateTime");
     }
@@ -137,7 +137,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
@@ -147,7 +147,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @return integer|null
      */
-    public function getTunnelCount()
+    public function getTunnelCount(): int
     {
         return $this->get("TunnelCount");
     }
@@ -157,7 +157,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param int $tunnelCount
      */
-    public function setTunnelCount($tunnelCount)
+    public function setTunnelCount(int $tunnelCount)
     {
         $this->set("TunnelCount", $tunnelCount);
     }

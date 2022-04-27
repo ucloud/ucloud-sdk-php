@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -44,7 +44,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -54,7 +54,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @return string|null
      */
-    public function getMemberEmail()
+    public function getMemberEmail(): string
     {
         return $this->get("MemberEmail");
     }
@@ -64,7 +64,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @param string $memberEmail
      */
-    public function setMemberEmail($memberEmail)
+    public function setMemberEmail(string $memberEmail)
     {
         $this->set("MemberEmail", $memberEmail);
     }
@@ -74,7 +74,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @return string|null
      */
-    public function getCharacterId()
+    public function getCharacterId(): string
     {
         return $this->get("CharacterId");
     }
@@ -84,7 +84,7 @@ class AddMemberToProjectRequest extends Request
      *
      * @param string $characterId
      */
-    public function setCharacterId($characterId)
+    public function setCharacterId(string $characterId)
     {
         $this->set("CharacterId", $characterId);
     }

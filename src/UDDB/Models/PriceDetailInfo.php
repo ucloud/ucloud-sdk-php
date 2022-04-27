@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class PriceDetailInfo extends Response
      *
      * @return float|null
      */
-    public function getMiddlewarePrice()
+    public function getMiddlewarePrice(): float
     {
         return $this->get("MiddlewarePrice");
     }
@@ -37,7 +37,7 @@ class PriceDetailInfo extends Response
      *
      * @param float $middlewarePrice
      */
-    public function setMiddlewarePrice($middlewarePrice)
+    public function setMiddlewarePrice(float $middlewarePrice)
     {
         $this->set("MiddlewarePrice", $middlewarePrice);
     }
@@ -47,7 +47,7 @@ class PriceDetailInfo extends Response
      *
      * @return float|null
      */
-    public function getDataNodePrice()
+    public function getDataNodePrice(): float
     {
         return $this->get("DataNodePrice");
     }
@@ -57,7 +57,7 @@ class PriceDetailInfo extends Response
      *
      * @param float $dataNodePrice
      */
-    public function setDataNodePrice($dataNodePrice)
+    public function setDataNodePrice(float $dataNodePrice)
     {
         $this->set("DataNodePrice", $dataNodePrice);
     }
@@ -67,7 +67,7 @@ class PriceDetailInfo extends Response
      *
      * @return float|null
      */
-    public function getDataNodeSlavePrice()
+    public function getDataNodeSlavePrice(): float
     {
         return $this->get("DataNodeSlavePrice");
     }
@@ -77,7 +77,7 @@ class PriceDetailInfo extends Response
      *
      * @param float $dataNodeSlavePrice
      */
-    public function setDataNodeSlavePrice($dataNodeSlavePrice)
+    public function setDataNodeSlavePrice(float $dataNodeSlavePrice)
     {
         $this->set("DataNodeSlavePrice", $dataNodeSlavePrice);
     }

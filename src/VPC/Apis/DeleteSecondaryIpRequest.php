@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -48,7 +48,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -58,7 +58,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -68,7 +68,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -78,7 +78,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -88,7 +88,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -98,7 +98,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getIp()
+    public function getIp(): string
     {
         return $this->get("Ip");
     }
@@ -108,7 +108,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @param string $ip
      */
-    public function setIp($ip)
+    public function setIp(string $ip)
     {
         $this->set("Ip", $ip);
     }
@@ -118,7 +118,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getMac()
+    public function getMac(): string
     {
         return $this->get("Mac");
     }
@@ -128,7 +128,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @param string $mac
      */
-    public function setMac($mac)
+    public function setMac(string $mac)
     {
         $this->set("Mac", $mac);
     }
@@ -138,7 +138,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -148,7 +148,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -158,7 +158,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -168,7 +168,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -178,7 +178,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @return string|null
      */
-    public function getObjectId()
+    public function getObjectId(): string
     {
         return $this->get("ObjectId");
     }
@@ -188,7 +188,7 @@ class DeleteSecondaryIpRequest extends Request
      *
      * @param string $objectId
      */
-    public function setObjectId($objectId)
+    public function setObjectId(string $objectId)
     {
         $this->set("ObjectId", $objectId);
     }

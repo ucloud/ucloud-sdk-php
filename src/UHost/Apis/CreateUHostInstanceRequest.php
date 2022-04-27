@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ use UCloud\Core\Request\Request;
 use UCloud\UHost\Params\CreateUHostInstanceParamDisks;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterface;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceEIP;
-use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceIPv6;
 use UCloud\UHost\Params\CreateUHostInstanceParamVolumes;
 use UCloud\UHost\Params\CreateUHostInstanceParamFeatures;
@@ -43,7 +42,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): string
     {
         return $this->get("Region");
     }
@@ -53,7 +52,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
@@ -63,7 +62,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getZone()
+    public function getZone(): string
     {
         return $this->get("Zone");
     }
@@ -73,7 +72,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
@@ -83,7 +82,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getProjectId()
+    public function getProjectId(): string
     {
         return $this->get("ProjectId");
     }
@@ -93,7 +92,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
@@ -103,7 +102,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getImageId()
+    public function getImageId(): string
     {
         return $this->get("ImageId");
     }
@@ -113,7 +112,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
@@ -123,12 +122,9 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return CreateUHostInstanceParamDisks[]|null
      */
-    public function getDisks()
+    public function getDisks(): array
     {
-        $items = $this->get("Disks");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Disks") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUHostInstanceParamDisks($item));
@@ -155,7 +151,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getLoginMode()
+    public function getLoginMode(): string
     {
         return $this->get("LoginMode");
     }
@@ -165,7 +161,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $loginMode
      */
-    public function setLoginMode($loginMode)
+    public function setLoginMode(string $loginMode)
     {
         $this->set("LoginMode", $loginMode);
     }
@@ -175,7 +171,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->get("Password");
     }
@@ -185,7 +181,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
@@ -195,7 +191,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->get("Name");
     }
@@ -205,7 +201,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
@@ -215,7 +211,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->get("Tag");
     }
@@ -225,27 +221,27 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例 \\ 默认为月付
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例(内测阶段) \\ 默认为月付
      *
      * @return string|null
      */
-    public function getChargeType()
+    public function getChargeType(): string
     {
         return $this->get("ChargeType");
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例 \\ 默认为月付
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例(内测阶段) \\ 默认为月付
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
@@ -255,7 +251,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getQuantity()
+    public function getQuantity(): int
     {
         return $this->get("Quantity");
     }
@@ -265,7 +261,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
@@ -275,7 +271,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getUHostType()
+    public function getUHostType(): string
     {
         return $this->get("UHostType");
     }
@@ -285,7 +281,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $uHostType
      */
-    public function setUHostType($uHostType)
+    public function setUHostType(string $uHostType)
     {
         $this->set("UHostType", $uHostType);
     }
@@ -295,7 +291,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getCPU()
+    public function getCPU(): int
     {
         return $this->get("CPU");
     }
@@ -305,7 +301,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
@@ -315,7 +311,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMemory()
+    public function getMemory(): int
     {
         return $this->get("Memory");
     }
@@ -325,7 +321,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
@@ -335,7 +331,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getGpuType()
+    public function getGpuType(): string
     {
         return $this->get("GpuType");
     }
@@ -345,7 +341,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $gpuType
      */
-    public function setGpuType($gpuType)
+    public function setGpuType(string $gpuType)
     {
         $this->set("GpuType", $gpuType);
     }
@@ -355,7 +351,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getGPU()
+    public function getGPU(): int
     {
         return $this->get("GPU");
     }
@@ -365,7 +361,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }
@@ -375,7 +371,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getNetCapability()
+    public function getNetCapability(): string
     {
         return $this->get("NetCapability");
     }
@@ -385,7 +381,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $netCapability
      */
-    public function setNetCapability($netCapability)
+    public function setNetCapability(string $netCapability)
     {
         $this->set("NetCapability", $netCapability);
     }
@@ -395,7 +391,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return boolean|null
      */
-    public function getHotplugFeature()
+    public function getHotplugFeature(): bool
     {
         return $this->get("HotplugFeature");
     }
@@ -405,7 +401,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param boolean $hotplugFeature
      */
-    public function setHotplugFeature($hotplugFeature)
+    public function setHotplugFeature(bool $hotplugFeature)
     {
         $this->set("HotplugFeature", $hotplugFeature);
     }
@@ -415,7 +411,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getVPCId()
+    public function getVPCId(): string
     {
         return $this->get("VPCId");
     }
@@ -425,7 +421,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
@@ -435,7 +431,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getSubnetId()
+    public function getSubnetId(): string
     {
         return $this->get("SubnetId");
     }
@@ -445,7 +441,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
@@ -455,7 +451,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string[]|null
      */
-    public function getPrivateIp()
+    public function getPrivateIp(): array
     {
         return $this->get("PrivateIp");
     }
@@ -475,7 +471,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getSecurityGroupId()
+    public function getSecurityGroupId(): string
     {
         return $this->get("SecurityGroupId");
     }
@@ -485,7 +481,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $securityGroupId
      */
-    public function setSecurityGroupId($securityGroupId)
+    public function setSecurityGroupId(string $securityGroupId)
     {
         $this->set("SecurityGroupId", $securityGroupId);
     }
@@ -495,7 +491,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getIsolationGroup()
+    public function getIsolationGroup(): string
     {
         return $this->get("IsolationGroup");
     }
@@ -505,7 +501,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup($isolationGroup)
+    public function setIsolationGroup(string $isolationGroup)
     {
         $this->set("IsolationGroup", $isolationGroup);
     }
@@ -515,7 +511,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getAlarmTemplateId()
+    public function getAlarmTemplateId(): int
     {
         return $this->get("AlarmTemplateId");
     }
@@ -525,7 +521,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $alarmTemplateId
      */
-    public function setAlarmTemplateId($alarmTemplateId)
+    public function setAlarmTemplateId(int $alarmTemplateId)
     {
         $this->set("AlarmTemplateId", $alarmTemplateId);
     }
@@ -535,7 +531,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getMachineType()
+    public function getMachineType(): string
     {
         return $this->get("MachineType");
     }
@@ -545,7 +541,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
@@ -555,7 +551,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getMinimalCpuPlatform()
+    public function getMinimalCpuPlatform(): string
     {
         return $this->get("MinimalCpuPlatform");
     }
@@ -565,7 +561,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $minimalCpuPlatform
      */
-    public function setMinimalCpuPlatform($minimalCpuPlatform)
+    public function setMinimalCpuPlatform(string $minimalCpuPlatform)
     {
         $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
     }
@@ -575,7 +571,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return integer|null
      */
-    public function getMaxCount()
+    public function getMaxCount(): int
     {
         return $this->get("MaxCount");
     }
@@ -585,7 +581,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $maxCount
      */
-    public function setMaxCount($maxCount)
+    public function setMaxCount(int $maxCount)
     {
         $this->set("MaxCount", $maxCount);
     }
@@ -595,12 +591,9 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return CreateUHostInstanceParamNetworkInterface[]|null
      */
-    public function getNetworkInterface()
+    public function getNetworkInterface(): array
     {
-        $items = $this->get("NetworkInterface");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("NetworkInterface") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUHostInstanceParamNetworkInterface($item));
@@ -627,7 +620,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getUserData()
+    public function getUserData(): string
     {
         return $this->get("UserData");
     }
@@ -637,7 +630,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $userData
      */
-    public function setUserData($userData)
+    public function setUserData(string $userData)
     {
         $this->set("UserData", $userData);
     }
@@ -647,7 +640,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getAutoDataDiskInit()
+    public function getAutoDataDiskInit(): string
     {
         return $this->get("AutoDataDiskInit");
     }
@@ -657,7 +650,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $autoDataDiskInit
      */
-    public function setAutoDataDiskInit($autoDataDiskInit)
+    public function setAutoDataDiskInit(string $autoDataDiskInit)
     {
         $this->set("AutoDataDiskInit", $autoDataDiskInit);
     }
@@ -667,12 +660,9 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return CreateUHostInstanceParamVolumes[]|null
      */
-    public function getVolumes()
+    public function getVolumes(): array
     {
-        $items = $this->get("Volumes");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("Volumes") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new CreateUHostInstanceParamVolumes($item));
@@ -699,7 +689,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getKeyPairId()
+    public function getKeyPairId(): string
     {
         return $this->get("KeyPairId");
     }
@@ -709,7 +699,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId($keyPairId)
+    public function setKeyPairId(string $keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
@@ -719,7 +709,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return CreateUHostInstanceParamFeatures|null
      */
-    public function getFeatures()
+    public function getFeatures(): CreateUHostInstanceParamFeatures
     {
         return new CreateUHostInstanceParamFeatures($this->get("Features"));
     }
@@ -729,7 +719,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param CreateUHostInstanceParamFeatures $features
      */
-    public function setFeatures(array $features)
+    public function setFeatures(CreateUHostInstanceParamFeatures $features)
     {
         $this->set("Features", $features->getAll());
     }
@@ -739,7 +729,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @return string|null
      */
-    public function getCouponId()
+    public function getCouponId(): string
     {
         return $this->get("CouponId");
     }
@@ -749,7 +739,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

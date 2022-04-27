@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class NatGatewayIPSet extends Response
      *
      * @return string|null
      */
-    public function getEIPId()
+    public function getEIPId(): string
     {
         return $this->get("EIPId");
     }
@@ -37,7 +37,7 @@ class NatGatewayIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
@@ -47,7 +47,7 @@ class NatGatewayIPSet extends Response
      *
      * @return integer|null
      */
-    public function getWeight()
+    public function getWeight(): int
     {
         return $this->get("Weight");
     }
@@ -57,7 +57,7 @@ class NatGatewayIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->set("Weight", $weight);
     }
@@ -67,7 +67,7 @@ class NatGatewayIPSet extends Response
      *
      * @return string|null
      */
-    public function getBandwidthType()
+    public function getBandwidthType(): string
     {
         return $this->get("BandwidthType");
     }
@@ -77,7 +77,7 @@ class NatGatewayIPSet extends Response
      *
      * @param string $bandwidthType
      */
-    public function setBandwidthType($bandwidthType)
+    public function setBandwidthType(string $bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
@@ -87,7 +87,7 @@ class NatGatewayIPSet extends Response
      *
      * @return integer|null
      */
-    public function getBandwidth()
+    public function getBandwidth(): int
     {
         return $this->get("Bandwidth");
     }
@@ -97,7 +97,7 @@ class NatGatewayIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
@@ -107,12 +107,9 @@ class NatGatewayIPSet extends Response
      *
      * @return NatGWIPResInfo[]|null
      */
-    public function getIPResInfo()
+    public function getIPResInfo(): array
     {
-        $items = $this->get("IPResInfo");
-        if ($items == null) {
-            return [];
-        }
+        $items = $this->get("IPResInfo") ?? [];
         $result = [];
         foreach ($items as $i => $item) {
             array_push($result, new NatGWIPResInfo($item));
