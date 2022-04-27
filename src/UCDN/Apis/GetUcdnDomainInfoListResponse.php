@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UCDN\Models\DomainBaseInfo;
 
 class GetUcdnDomainInfoListResponse extends Response
 {
-    
 
     /**
      * TotalCount: 账户下域名总个数
@@ -38,15 +40,14 @@ class GetUcdnDomainInfoListResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DomainInfoList: 域名基本信息
      *
-     * @return DomainBaseInfo[]|null
+     * @return DomainBaseInfoModel[]|null
      */
     public function getDomainInfoList()
     {
@@ -56,7 +57,7 @@ class GetUcdnDomainInfoListResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new DomainBaseInfo($item));
+            array_push($result, new DomainBaseInfoModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class GetUcdnDomainInfoListResponse extends Response
     /**
      * DomainInfoList: 域名基本信息
      *
-     * @param DomainBaseInfo[] $domainInfoList
+     * @param DomainBaseInfoModel[] $domainInfoList
      */
     public function setDomainInfoList(array $domainInfoList)
     {

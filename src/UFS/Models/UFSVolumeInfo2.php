@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFS\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UFS\Models\DescribeUFSVolume2Response;
+
 class UFSVolumeInfo2 extends Response
 {
-    
 
     /**
      * VolumeName: 文件系统名称
@@ -37,11 +40,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $volumeName
      */
-    public function setVolumeName($volumeName)
+    public function setVolumeName(string $volumeName)
     {
         $this->set("VolumeName", $volumeName);
     }
-
     /**
      * VolumeId: 文件系统ID
      *
@@ -57,11 +59,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $volumeId
      */
-    public function setVolumeId($volumeId)
+    public function setVolumeId(string $volumeId)
     {
         $this->set("VolumeId", $volumeId);
     }
-
     /**
      * TotalMountPointNum: 当前文件系统已创建的挂载点数目
      *
@@ -77,11 +78,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $totalMountPointNum
      */
-    public function setTotalMountPointNum($totalMountPointNum)
+    public function setTotalMountPointNum(int $totalMountPointNum)
     {
         $this->set("TotalMountPointNum", $totalMountPointNum);
     }
-
     /**
      * MaxMountPointNum: 文件系统允许创建的最大挂载点数目
      *
@@ -97,11 +97,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $maxMountPointNum
      */
-    public function setMaxMountPointNum($maxMountPointNum)
+    public function setMaxMountPointNum(int $maxMountPointNum)
     {
         $this->set("MaxMountPointNum", $maxMountPointNum);
     }
-
     /**
      * StorageType: 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型
      *
@@ -117,11 +116,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $storageType
      */
-    public function setStorageType($storageType)
+    public function setStorageType(string $storageType)
     {
         $this->set("StorageType", $storageType);
     }
-
     /**
      * ProtocolType: 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
      *
@@ -137,11 +135,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $protocolType
      */
-    public function setProtocolType($protocolType)
+    public function setProtocolType(string $protocolType)
     {
         $this->set("ProtocolType", $protocolType);
     }
-
     /**
      * Remark: 文件系统备注信息
      *
@@ -157,11 +154,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * Tag: 文件系统所属业务组
      *
@@ -177,11 +173,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * CreateTime: 文件系统创建时间（unix时间戳）
      *
@@ -197,11 +192,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpiredTime: 文件系统过期时间（unix时间戳）
      *
@@ -217,11 +211,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
-
     /**
      * Size: 文件系统大小，单位GB
      *
@@ -237,11 +230,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * UsedSize: 文件系统当前使用容量，单位GB
      *
@@ -257,11 +249,10 @@ class UFSVolumeInfo2 extends Response
      *
      * @param int $usedSize
      */
-    public function setUsedSize($usedSize)
+    public function setUsedSize(int $usedSize)
     {
         $this->set("UsedSize", $usedSize);
     }
-
     /**
      * IsExpired: 是否过期
      *
@@ -277,7 +268,7 @@ class UFSVolumeInfo2 extends Response
      *
      * @param string $isExpired
      */
-    public function setIsExpired($isExpired)
+    public function setIsExpired(string $isExpired)
     {
         $this->set("IsExpired", $isExpired);
     }

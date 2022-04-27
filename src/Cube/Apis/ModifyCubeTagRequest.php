@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class ModifyCubeTagRequest extends Request
         $this->markRequired("Tag");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -45,11 +46,10 @@ class ModifyCubeTagRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -65,11 +65,10 @@ class ModifyCubeTagRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -85,11 +84,10 @@ class ModifyCubeTagRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * CubeId: CubeId
      *
@@ -105,11 +103,10 @@ class ModifyCubeTagRequest extends Request
      *
      * @param string $cubeId
      */
-    public function setCubeId($cubeId)
+    public function setCubeId(string $cubeId)
     {
         $this->set("CubeId", $cubeId);
     }
-
     /**
      * Tag: 业务组名称
      *
@@ -125,7 +122,7 @@ class ModifyCubeTagRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }

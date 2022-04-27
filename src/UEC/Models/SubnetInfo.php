@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\DescribeUEcSubnetResponse;
+
 class SubnetInfo extends Response
 {
-    
 
     /**
      * SubnetId: 子网ID
@@ -37,11 +40,10 @@ class SubnetInfo extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * SubnetName: 子网名称
      *
@@ -57,11 +59,10 @@ class SubnetInfo extends Response
      *
      * @param string $subnetName
      */
-    public function setSubnetName($subnetName)
+    public function setSubnetName(string $subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
-
     /**
      * IdcId: 机房ID
      *
@@ -77,11 +78,10 @@ class SubnetInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * CIDR: 子网cidr
      *
@@ -97,11 +97,10 @@ class SubnetInfo extends Response
      *
      * @param string $cidr
      */
-    public function setCIDR($cidr)
+    public function setCIDR(string $cidr)
     {
         $this->set("CIDR", $cidr);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -117,11 +116,10 @@ class SubnetInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * Comment: 备注
      *
@@ -137,11 +135,10 @@ class SubnetInfo extends Response
      *
      * @param string $comment
      */
-    public function setComment($comment)
+    public function setComment(string $comment)
     {
         $this->set("Comment", $comment);
     }
-
     /**
      * TotalIpCnt: 总ip数
      *
@@ -157,11 +154,10 @@ class SubnetInfo extends Response
      *
      * @param int $totalIpCnt
      */
-    public function setTotalIpCnt($totalIpCnt)
+    public function setTotalIpCnt(int $totalIpCnt)
     {
         $this->set("TotalIpCnt", $totalIpCnt);
     }
-
     /**
      * AvailableIPCnt: 可用ip数
      *
@@ -177,7 +173,7 @@ class SubnetInfo extends Response
      *
      * @param int $availableIPCnt
      */
-    public function setAvailableIPCnt($availableIPCnt)
+    public function setAvailableIPCnt(int $availableIPCnt)
     {
         $this->set("AvailableIPCnt", $availableIPCnt);
     }

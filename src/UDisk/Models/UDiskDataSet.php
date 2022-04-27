@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDisk\Models\DescribeUDiskInnerResponse;
+use UCloud\UDisk\Models\DescribeUDiskResponse;
+
 class UDiskDataSet extends Response
 {
-    
 
     /**
      * Zone: 可用区
@@ -37,11 +41,10 @@ class UDiskDataSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * UDiskId: UDisk实例Id
      *
@@ -57,11 +60,10 @@ class UDiskDataSet extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
-
     /**
      * Name: 实例名称
      *
@@ -77,11 +79,10 @@ class UDiskDataSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Size: 容量单位GB
      *
@@ -97,11 +98,10 @@ class UDiskDataSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * Status: 状态:Available(可用),Attaching(挂载中), InUse(已挂载), Detaching(卸载中), Initializating(分配中), Failed(创建失败),Cloning(克隆中),Restoring(恢复中),RestoreFailed(恢复失败),
      *
@@ -117,11 +117,10 @@ class UDiskDataSet extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -137,11 +136,10 @@ class UDiskDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpiredTime: 过期时间
      *
@@ -157,11 +155,10 @@ class UDiskDataSet extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
-
     /**
      * UHostId: 挂载的UHost的Id。【即将废弃，建议使用HostId】
      *
@@ -177,11 +174,10 @@ class UDiskDataSet extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
-
     /**
      * UHostName: 挂载的UHost的Name。【即将废弃，建议使用HostName】
      *
@@ -197,11 +193,10 @@ class UDiskDataSet extends Response
      *
      * @param string $uHostName
      */
-    public function setUHostName($uHostName)
+    public function setUHostName(string $uHostName)
     {
         $this->set("UHostName", $uHostName);
     }
-
     /**
      * UHostIP: 挂载的UHost的IP。【即将废弃，建议使用HostIP】
      *
@@ -217,11 +212,10 @@ class UDiskDataSet extends Response
      *
      * @param string $uHostIP
      */
-    public function setUHostIP($uHostIP)
+    public function setUHostIP(string $uHostIP)
     {
         $this->set("UHostIP", $uHostIP);
     }
-
     /**
      * HostId: 挂载的Host的Id
      *
@@ -237,11 +231,10 @@ class UDiskDataSet extends Response
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }
-
     /**
      * HostName: 挂载的Host的Name
      *
@@ -257,11 +250,10 @@ class UDiskDataSet extends Response
      *
      * @param string $hostName
      */
-    public function setHostName($hostName)
+    public function setHostName(string $hostName)
     {
         $this->set("HostName", $hostName);
     }
-
     /**
      * HostIP: 挂载的Host的IP
      *
@@ -277,11 +269,10 @@ class UDiskDataSet extends Response
      *
      * @param string $hostIP
      */
-    public function setHostIP($hostIP)
+    public function setHostIP(string $hostIP)
     {
         $this->set("HostIP", $hostIP);
     }
-
     /**
      * DeviceName: 挂载的设备名称
      *
@@ -297,11 +288,10 @@ class UDiskDataSet extends Response
      *
      * @param string $deviceName
      */
-    public function setDeviceName($deviceName)
+    public function setDeviceName(string $deviceName)
     {
         $this->set("DeviceName", $deviceName);
     }
-
     /**
      * ChargeType: Year,Month,Dynamic,Trial,Postpay
      *
@@ -317,11 +307,10 @@ class UDiskDataSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Tag: 业务组名称
      *
@@ -337,11 +326,10 @@ class UDiskDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * IsExpire: 资源是否过期，过期:"Yes", 未过期:"No"
      *
@@ -357,11 +345,10 @@ class UDiskDataSet extends Response
      *
      * @param string $isExpire
      */
-    public function setIsExpire($isExpire)
+    public function setIsExpire(string $isExpire)
     {
         $this->set("IsExpire", $isExpire);
     }
-
     /**
      * Version: 是否支持数据方舟，支持:"2.0", 不支持:"1.0"
      *
@@ -377,11 +364,10 @@ class UDiskDataSet extends Response
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
-
     /**
      * UDataArkMode: 是否开启数据方舟，开启:"Yes", 不支持:"No"
      *
@@ -397,11 +383,10 @@ class UDiskDataSet extends Response
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode($uDataArkMode)
+    public function setUDataArkMode(string $uDataArkMode)
     {
         $this->set("UDataArkMode", $uDataArkMode);
     }
-
     /**
      * SnapshotCount: 该盘快照个数
      *
@@ -417,11 +402,10 @@ class UDiskDataSet extends Response
      *
      * @param int $snapshotCount
      */
-    public function setSnapshotCount($snapshotCount)
+    public function setSnapshotCount(int $snapshotCount)
     {
         $this->set("SnapshotCount", $snapshotCount);
     }
-
     /**
      * SnapshotLimit: 该盘快照上限
      *
@@ -437,11 +421,10 @@ class UDiskDataSet extends Response
      *
      * @param int $snapshotLimit
      */
-    public function setSnapshotLimit($snapshotLimit)
+    public function setSnapshotLimit(int $snapshotLimit)
     {
         $this->set("SnapshotLimit", $snapshotLimit);
     }
-
     /**
      * DiskType: 请求中的ProtocolVersion字段为1时，需结合IsBoot确定具体磁盘类型:普通数据盘：DiskType:"CLOUD_NORMAL",IsBoot:"False"； 普通系统盘：DiskType:"CLOUD_NORMAL",IsBoot:"True"；SSD数据盘：DiskType:"CLOUD_SSD",IsBoot:"False"；SSD系统盘：DiskType:"CLOUD_SSD",IsBoot:"True"；RSSD数据盘：DiskType:"CLOUD_RSSD",IsBoot:"False"；RSSD系统盘：DiskType:"CLOUD_RSSD",IsBoot:"True"；高效数据盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"False"；高效系统盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"True"。请求中的ProtocolVersion字段为0或没有该字段时，云硬盘类型参照如下:普通数据盘：DataDisk；普通系统盘：SystemDisk；SSD数据盘：SSDDataDisk；SSD系统盘：SSDSystemDisk；RSSD数据盘：RSSDDataDisk；RSSD系统盘：RSSDSystemDisk；高效数据盘：EfficiencyDataDisk；高效系统盘：EfficiencySystemDisk。
      *
@@ -457,11 +440,10 @@ class UDiskDataSet extends Response
      *
      * @param string $diskType
      */
-    public function setDiskType($diskType)
+    public function setDiskType(string $diskType)
     {
         $this->set("DiskType", $diskType);
     }
-
     /**
      * CloneEnable: 是否支持克隆，1支持 ，0不支持
      *
@@ -477,11 +459,10 @@ class UDiskDataSet extends Response
      *
      * @param int $cloneEnable
      */
-    public function setCloneEnable($cloneEnable)
+    public function setCloneEnable(int $cloneEnable)
     {
         $this->set("CloneEnable", $cloneEnable);
     }
-
     /**
      * SnapEnable: 是否支持快照，1支持 ，0不支持
      *
@@ -497,11 +478,10 @@ class UDiskDataSet extends Response
      *
      * @param int $snapEnable
      */
-    public function setSnapEnable($snapEnable)
+    public function setSnapEnable(int $snapEnable)
     {
         $this->set("SnapEnable", $snapEnable);
     }
-
     /**
      * ArkSwitchEnable: 是否支持开启方舟，1支持 ，0不支持
      *
@@ -517,11 +497,10 @@ class UDiskDataSet extends Response
      *
      * @param int $arkSwitchEnable
      */
-    public function setArkSwitchEnable($arkSwitchEnable)
+    public function setArkSwitchEnable(int $arkSwitchEnable)
     {
         $this->set("ArkSwitchEnable", $arkSwitchEnable);
     }
-
     /**
      * UKmsMode: 是否是加密盘，是:"Yes", 否:"No"
      *
@@ -537,11 +516,10 @@ class UDiskDataSet extends Response
      *
      * @param string $uKmsMode
      */
-    public function setUKmsMode($uKmsMode)
+    public function setUKmsMode(string $uKmsMode)
     {
         $this->set("UKmsMode", $uKmsMode);
     }
-
     /**
      * CmkId: 该盘的cmk id
      *
@@ -557,11 +535,10 @@ class UDiskDataSet extends Response
      *
      * @param string $cmkId
      */
-    public function setCmkId($cmkId)
+    public function setCmkId(string $cmkId)
     {
         $this->set("CmkId", $cmkId);
     }
-
     /**
      * DataKey: 该盘的密文密钥
      *
@@ -577,11 +554,10 @@ class UDiskDataSet extends Response
      *
      * @param string $dataKey
      */
-    public function setDataKey($dataKey)
+    public function setDataKey(string $dataKey)
     {
         $this->set("DataKey", $dataKey);
     }
-
     /**
      * CmkIdStatus: 该盘cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘)
      *
@@ -597,11 +573,10 @@ class UDiskDataSet extends Response
      *
      * @param string $cmkIdStatus
      */
-    public function setCmkIdStatus($cmkIdStatus)
+    public function setCmkIdStatus(string $cmkIdStatus)
     {
         $this->set("CmkIdStatus", $cmkIdStatus);
     }
-
     /**
      * CmkIdAlias: cmk id 别名
      *
@@ -617,11 +592,10 @@ class UDiskDataSet extends Response
      *
      * @param string $cmkIdAlias
      */
-    public function setCmkIdAlias($cmkIdAlias)
+    public function setCmkIdAlias(string $cmkIdAlias)
     {
         $this->set("CmkIdAlias", $cmkIdAlias);
     }
-
     /**
      * IsBoot: 是否是系统盘，是："True", 否："False"
      *
@@ -637,11 +611,10 @@ class UDiskDataSet extends Response
      *
      * @param string $isBoot
      */
-    public function setIsBoot($isBoot)
+    public function setIsBoot(string $isBoot)
     {
         $this->set("IsBoot", $isBoot);
     }
-
     /**
      * BackupMode: 该盘的备份方式。快照服务："SnapshotService"；数据方舟："UDataArk"；无备份方式：""
      *
@@ -657,11 +630,10 @@ class UDiskDataSet extends Response
      *
      * @param string $backupMode
      */
-    public function setBackupMode($backupMode)
+    public function setBackupMode(string $backupMode)
     {
         $this->set("BackupMode", $backupMode);
     }
-
     /**
      * RdmaClusterId: RDMA集群id，仅RSSD返回该值；其他类型云盘返回""。当云盘的此值与快杰云主机的RdmaClusterId相同时，RSSD可以挂载到这台云主机。
      *
@@ -677,7 +649,7 @@ class UDiskDataSet extends Response
      *
      * @param string $rdmaClusterId
      */
-    public function setRdmaClusterId($rdmaClusterId)
+    public function setRdmaClusterId(string $rdmaClusterId)
     {
         $this->set("RdmaClusterId", $rdmaClusterId);
     }

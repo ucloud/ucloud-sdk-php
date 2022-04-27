@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDB\Models\LogPackageDataSet;
 
 class DescribeUDBLogPackageResponse extends Response
 {
-    
 
     /**
      * DataSet: 备份信息 参见LogPackageDataSet
      *
-     * @return LogPackageDataSet[]|null
+     * @return LogPackageDataSetModel[]|null
      */
     public function getDataSet()
     {
@@ -36,7 +38,7 @@ class DescribeUDBLogPackageResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new LogPackageDataSet($item));
+            array_push($result, new LogPackageDataSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeUDBLogPackageResponse extends Response
     /**
      * DataSet: 备份信息 参见LogPackageDataSet
      *
-     * @param LogPackageDataSet[] $dataSet
+     * @param LogPackageDataSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {
@@ -54,7 +56,6 @@ class DescribeUDBLogPackageResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 备份总数，如果指定dbid，则是该db备份总数
      *
@@ -70,7 +71,7 @@ class DescribeUDBLogPackageResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

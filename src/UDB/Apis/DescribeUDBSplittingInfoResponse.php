@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDB\Models\UDBRWSplittingSet;
 
 class DescribeUDBSplittingInfoResponse extends Response
 {
-    
 
     /**
      * Zone: 可用区
@@ -38,11 +40,10 @@ class DescribeUDBSplittingInfoResponse extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * MasterDBId: DB实例ID
      *
@@ -58,11 +59,10 @@ class DescribeUDBSplittingInfoResponse extends Response
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId($masterDBId)
+    public function setMasterDBId(string $masterDBId)
     {
         $this->set("MasterDBId", $masterDBId);
     }
-
     /**
      * RWIP: 读写分离IP
      *
@@ -78,11 +78,10 @@ class DescribeUDBSplittingInfoResponse extends Response
      *
      * @param string $rwip
      */
-    public function setRWIP($rwip)
+    public function setRWIP(string $rwip)
     {
         $this->set("RWIP", $rwip);
     }
-
     /**
      * DelayThreshold: 时间阈值
      *
@@ -98,11 +97,10 @@ class DescribeUDBSplittingInfoResponse extends Response
      *
      * @param int $delayThreshold
      */
-    public function setDelayThreshold($delayThreshold)
+    public function setDelayThreshold(int $delayThreshold)
     {
         $this->set("DelayThreshold", $delayThreshold);
     }
-
     /**
      * Port: 端口号
      *
@@ -118,11 +116,10 @@ class DescribeUDBSplittingInfoResponse extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * ReadModel: 读写分离策略
      *
@@ -138,11 +135,10 @@ class DescribeUDBSplittingInfoResponse extends Response
      *
      * @param string $readModel
      */
-    public function setReadModel($readModel)
+    public function setReadModel(string $readModel)
     {
         $this->set("ReadModel", $readModel);
     }
-
     /**
      * DBTypeId: 数据库版本
      *
@@ -158,11 +154,10 @@ class DescribeUDBSplittingInfoResponse extends Response
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
-
     /**
      * RWState: 读写分离状态
      *
@@ -178,15 +173,14 @@ class DescribeUDBSplittingInfoResponse extends Response
      *
      * @param string $rwState
      */
-    public function setRWState($rwState)
+    public function setRWState(string $rwState)
     {
         $this->set("RWState", $rwState);
     }
-
     /**
      * DataSet: 读写分离从库信息
      *
-     * @return UDBRWSplittingSet[]|null
+     * @return UDBRWSplittingSetModel[]|null
      */
     public function getDataSet()
     {
@@ -196,7 +190,7 @@ class DescribeUDBSplittingInfoResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UDBRWSplittingSet($item));
+            array_push($result, new UDBRWSplittingSetModel($item));
         }
         return $result;
     }
@@ -204,7 +198,7 @@ class DescribeUDBSplittingInfoResponse extends Response
     /**
      * DataSet: 读写分离从库信息
      *
-     * @param UDBRWSplittingSet[] $dataSet
+     * @param UDBRWSplittingSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

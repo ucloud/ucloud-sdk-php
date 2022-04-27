@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class DescribeGlobalSSHInstanceRequest extends Request
         $this->markRequired("ProjectId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID，如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -43,11 +44,10 @@ class DescribeGlobalSSHInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * InstanceId: 实例ID，资源唯一标识
      *
@@ -63,7 +63,7 @@ class DescribeGlobalSSHInstanceRequest extends Request
      *
      * @param string $instanceId
      */
-    public function setInstanceId($instanceId)
+    public function setInstanceId(string $instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\PathX\Models\UGAAInfo;
-use UCloud\PathX\Models\UPathSet;
-use UCloud\PathX\Models\UGAATask;
-use UCloud\PathX\Models\UGAL4Forwarder;
 use UCloud\PathX\Models\UGAL7Forwarder;
+use UCloud\PathX\Models\UGAL4Forwarder;
 use UCloud\PathX\Models\OutPublicIpInfo;
+use UCloud\PathX\Models\UGAATask;
+use UCloud\PathX\Models\UPathSet;
 
 class DescribeUGAInstanceResponse extends Response
 {
-    
 
     /**
      * UGAList: 全球加速实例信息列表
      *
-     * @return UGAAInfo[]|null
+     * @return UGAAInfoModel[]|null
      */
     public function getUGAList()
     {
@@ -41,7 +43,7 @@ class DescribeUGAInstanceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UGAAInfo($item));
+            array_push($result, new UGAAInfoModel($item));
         }
         return $result;
     }
@@ -49,7 +51,7 @@ class DescribeUGAInstanceResponse extends Response
     /**
      * UGAList: 全球加速实例信息列表
      *
-     * @param UGAAInfo[] $ugaList
+     * @param UGAAInfoModel[] $ugaList
      */
     public function setUGAList(array $ugaList)
     {
@@ -59,7 +61,6 @@ class DescribeUGAInstanceResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 符合条件的总数
      *
@@ -75,7 +76,7 @@ class DescribeUGAInstanceResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

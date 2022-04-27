@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\FirewallRuleSet;
+use UCloud\UNet\Models\DescribeFirewallResponse;
+
 class FirewallDataSet extends Response
 {
-    
 
     /**
      * FWId: 防火墙ID
@@ -37,11 +41,10 @@ class FirewallDataSet extends Response
      *
      * @param string $fwId
      */
-    public function setFWId($fwId)
+    public function setFWId(string $fwId)
     {
         $this->set("FWId", $fwId);
     }
-
     /**
      * GroupId: 安全组ID（即将废弃）
      *
@@ -57,11 +60,10 @@ class FirewallDataSet extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(string $groupId)
     {
         $this->set("GroupId", $groupId);
     }
-
     /**
      * Name: 防火墙名称
      *
@@ -77,11 +79,10 @@ class FirewallDataSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Tag: 防火墙业务组
      *
@@ -97,11 +98,10 @@ class FirewallDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Remark: 防火墙备注
      *
@@ -117,11 +117,10 @@ class FirewallDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * ResourceCount: 防火墙绑定资源数量
      *
@@ -137,11 +136,10 @@ class FirewallDataSet extends Response
      *
      * @param int $resourceCount
      */
-    public function setResourceCount($resourceCount)
+    public function setResourceCount(int $resourceCount)
     {
         $this->set("ResourceCount", $resourceCount);
     }
-
     /**
      * CreateTime: 防火墙组创建时间，格式为Unix Timestamp
      *
@@ -157,11 +155,10 @@ class FirewallDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * Type: 防火墙组类型，枚举值为： "user defined", 用户自定义防火墙； "recommend web", 默认Web防火墙； "recommend non web", 默认非Web防火墙
      *
@@ -177,15 +174,14 @@ class FirewallDataSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * Rule: 防火墙组中的规则列表，参见 FirewallRuleSet
      *
-     * @return FirewallRuleSet[]|null
+     * @return FirewallRuleSetModel[]|null
      */
     public function getRule()
     {
@@ -195,7 +191,7 @@ class FirewallDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new FirewallRuleSet($item));
+            array_push($result, new FirewallRuleSetModel($item));
         }
         return $result;
     }
@@ -203,7 +199,7 @@ class FirewallDataSet extends Response
     /**
      * Rule: 防火墙组中的规则列表，参见 FirewallRuleSet
      *
-     * @param FirewallRuleSet[] $rule
+     * @param FirewallRuleSetModel[] $rule
      */
     public function setRule(array $rule)
     {

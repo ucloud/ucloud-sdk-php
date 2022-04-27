@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\ImageList;
+use UCloud\UEC\Models\EnvList;
+use UCloud\UEC\Models\IpList;
+use UCloud\UEC\Models\DescribeUEcHolderResponse;
+use UCloud\UEC\Models\ListUEcHolderResponse;
+use UCloud\UEC\Models\StorVolumeInfo;
+use UCloud\UEC\Models\DockerInfo;
+use UCloud\UEC\Models\CfgDictList;
+
 class HolderList extends Response
 {
-    
 
     /**
      * ResourceId: 容器组资源id
@@ -37,11 +47,10 @@ class HolderList extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
-
     /**
      * HolderName: 容器组名称
      *
@@ -57,11 +66,10 @@ class HolderList extends Response
      *
      * @param string $holderName
      */
-    public function setHolderName($holderName)
+    public function setHolderName(string $holderName)
     {
         $this->set("HolderName", $holderName);
     }
-
     /**
      * SubnetId: 容器组子网id
      *
@@ -77,11 +85,10 @@ class HolderList extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * InnerIp: 容器组内网ip
      *
@@ -97,15 +104,14 @@ class HolderList extends Response
      *
      * @param string $innerIp
      */
-    public function setInnerIp($innerIp)
+    public function setInnerIp(string $innerIp)
     {
         $this->set("InnerIp", $innerIp);
     }
-
     /**
      * IpList: 容器组外网ip集合（详情参考IpList）
      *
-     * @return IpList[]|null
+     * @return IpListModel[]|null
      */
     public function getIpList()
     {
@@ -115,7 +121,7 @@ class HolderList extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new IpList($item));
+            array_push($result, new IpListModel($item));
         }
         return $result;
     }
@@ -123,7 +129,7 @@ class HolderList extends Response
     /**
      * IpList: 容器组外网ip集合（详情参考IpList）
      *
-     * @param IpList[] $ipList
+     * @param IpListModel[] $ipList
      */
     public function setIpList(array $ipList)
     {
@@ -133,7 +139,6 @@ class HolderList extends Response
         }
         return $result;
     }
-
     /**
      * State: 容器组运行状态0：初始化；1：拉取镜像；2：启动中；3：运行中；4：错误；5：正在重启；6：正在删除；7：已经删除；8：容器运行错误；9：启动失败；99：异常
      *
@@ -149,11 +154,10 @@ class HolderList extends Response
      *
      * @param int $state
      */
-    public function setState($state)
+    public function setState(int $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -169,11 +173,10 @@ class HolderList extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpireTime: 过期时间
      *
@@ -189,11 +192,10 @@ class HolderList extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * Type: 线路类型（运营商类型： 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通）
      *
@@ -209,11 +211,10 @@ class HolderList extends Response
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * IdcId: 机房id
      *
@@ -229,11 +230,10 @@ class HolderList extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * OcName: 机房名称
      *
@@ -249,11 +249,10 @@ class HolderList extends Response
      *
      * @param string $ocName
      */
-    public function setOcName($ocName)
+    public function setOcName(string $ocName)
     {
         $this->set("OcName", $ocName);
     }
-
     /**
      * Province: 省份名称
      *
@@ -269,11 +268,10 @@ class HolderList extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
-
     /**
      * City: 城市名称
      *
@@ -289,11 +287,10 @@ class HolderList extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
-
     /**
      * RestartStrategy: 0：总是；1：失败是；2：永不
      *
@@ -309,11 +306,10 @@ class HolderList extends Response
      *
      * @param int $restartStrategy
      */
-    public function setRestartStrategy($restartStrategy)
+    public function setRestartStrategy(int $restartStrategy)
     {
         $this->set("RestartStrategy", $restartStrategy);
     }
-
     /**
      * DockerCount: 容器数量
      *
@@ -329,15 +325,14 @@ class HolderList extends Response
      *
      * @param int $dockerCount
      */
-    public function setDockerCount($dockerCount)
+    public function setDockerCount(int $dockerCount)
     {
         $this->set("DockerCount", $dockerCount);
     }
-
     /**
      * DockerInfo: 容器信息（详情参考DockerInfo）
      *
-     * @return DockerInfo[]|null
+     * @return DockerInfoModel[]|null
      */
     public function getDockerInfo()
     {
@@ -347,7 +342,7 @@ class HolderList extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new DockerInfo($item));
+            array_push($result, new DockerInfoModel($item));
         }
         return $result;
     }
@@ -355,7 +350,7 @@ class HolderList extends Response
     /**
      * DockerInfo: 容器信息（详情参考DockerInfo）
      *
-     * @param DockerInfo[] $dockerInfo
+     * @param DockerInfoModel[] $dockerInfo
      */
     public function setDockerInfo(array $dockerInfo)
     {
@@ -365,7 +360,6 @@ class HolderList extends Response
         }
         return $result;
     }
-
     /**
      * ProductType: 机器类型（normal经济型，hf标准型）
      *
@@ -381,11 +375,10 @@ class HolderList extends Response
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }
-
     /**
      * NetLimit: 外网绑定的带宽
      *
@@ -401,11 +394,10 @@ class HolderList extends Response
      *
      * @param int $netLimit
      */
-    public function setNetLimit($netLimit)
+    public function setNetLimit(int $netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }
-
     /**
      * FirewallId: 外网防火墙id
      *
@@ -421,15 +413,14 @@ class HolderList extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
-
     /**
      * StorVolumeInfo: 存储卷信息（详情参考StorVolumeInfo）
      *
-     * @return StorVolumeInfo[]|null
+     * @return StorVolumeInfoModel[]|null
      */
     public function getStorVolumeInfo()
     {
@@ -439,7 +430,7 @@ class HolderList extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new StorVolumeInfo($item));
+            array_push($result, new StorVolumeInfoModel($item));
         }
         return $result;
     }
@@ -447,7 +438,7 @@ class HolderList extends Response
     /**
      * StorVolumeInfo: 存储卷信息（详情参考StorVolumeInfo）
      *
-     * @param StorVolumeInfo[] $storVolumeInfo
+     * @param StorVolumeInfoModel[] $storVolumeInfo
      */
     public function setStorVolumeInfo(array $storVolumeInfo)
     {
@@ -457,7 +448,6 @@ class HolderList extends Response
         }
         return $result;
     }
-
     /**
      * StorVolumeCount: 存储卷数量
      *
@@ -473,15 +463,14 @@ class HolderList extends Response
      *
      * @param int $storVolumeCount
      */
-    public function setStorVolumeCount($storVolumeCount)
+    public function setStorVolumeCount(int $storVolumeCount)
     {
         $this->set("StorVolumeCount", $storVolumeCount);
     }
-
     /**
      * ImageList: 容器组镜像密钥列表（详情参考ImageList）
      *
-     * @return ImageList[]|null
+     * @return ImageListModel[]|null
      */
     public function getImageList()
     {
@@ -491,7 +480,7 @@ class HolderList extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ImageList($item));
+            array_push($result, new ImageListModel($item));
         }
         return $result;
     }
@@ -499,7 +488,7 @@ class HolderList extends Response
     /**
      * ImageList: 容器组镜像密钥列表（详情参考ImageList）
      *
-     * @param ImageList[] $imageList
+     * @param ImageListModel[] $imageList
      */
     public function setImageList(array $imageList)
     {

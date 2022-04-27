@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
 class DescribeUMemUpgradePriceResponse extends Response
 {
-    
 
     /**
      * Price: 价格
@@ -37,11 +38,10 @@ class DescribeUMemUpgradePriceResponse extends Response
      *
      * @param int $price
      */
-    public function setPrice($price)
+    public function setPrice(int $price)
     {
         $this->set("Price", $price);
     }
-
     /**
      * OriginalPrice: 原价
      *
@@ -57,7 +57,7 @@ class DescribeUMemUpgradePriceResponse extends Response
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice($originalPrice)
+    public function setOriginalPrice(int $originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }

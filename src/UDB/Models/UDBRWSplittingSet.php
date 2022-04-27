@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDB\Models\DescribeUDBSplittingInfoResponse;
+
 class UDBRWSplittingSet extends Response
 {
-    
 
     /**
      * DBId: DB实例ID
@@ -37,11 +40,10 @@ class UDBRWSplittingSet extends Response
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
-
     /**
      * Role: 主库/从库
      *
@@ -57,11 +59,10 @@ class UDBRWSplittingSet extends Response
      *
      * @param string $role
      */
-    public function setRole($role)
+    public function setRole(string $role)
     {
         $this->set("Role", $role);
     }
-
     /**
      * VirtualIP: DBIP
      *
@@ -77,11 +78,10 @@ class UDBRWSplittingSet extends Response
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP($virtualIP)
+    public function setVirtualIP(string $virtualIP)
     {
         $this->set("VirtualIP", $virtualIP);
     }
-
     /**
      * ReadWeight: 读写分离比重
      *
@@ -97,11 +97,10 @@ class UDBRWSplittingSet extends Response
      *
      * @param int $readWeight
      */
-    public function setReadWeight($readWeight)
+    public function setReadWeight(int $readWeight)
     {
         $this->set("ReadWeight", $readWeight);
     }
-
     /**
      * State: DB状态
      *
@@ -117,7 +116,7 @@ class UDBRWSplittingSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }

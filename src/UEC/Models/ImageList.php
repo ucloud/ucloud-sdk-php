@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\HolderList;
+use UCloud\UEC\Models\ListUEcHolderResponse;
+use UCloud\UEC\Models\DescribeUEcHolderResponse;
+
 class ImageList extends Response
 {
-    
 
     /**
      * StoreAddr: 仓库地址
@@ -37,11 +42,10 @@ class ImageList extends Response
      *
      * @param string $storeAddr
      */
-    public function setStoreAddr($storeAddr)
+    public function setStoreAddr(string $storeAddr)
     {
         $this->set("StoreAddr", $storeAddr);
     }
-
     /**
      * UserName: 用户名称
      *
@@ -57,11 +61,10 @@ class ImageList extends Response
      *
      * @param string $userName
      */
-    public function setUserName($userName)
+    public function setUserName(string $userName)
     {
         $this->set("UserName", $userName);
     }
-
     /**
      * ImageKey: 镜像密钥
      *
@@ -77,7 +80,7 @@ class ImageList extends Response
      *
      * @param string $imageKey
      */
-    public function setImageKey($imageKey)
+    public function setImageKey(string $imageKey)
     {
         $this->set("ImageKey", $imageKey);
     }

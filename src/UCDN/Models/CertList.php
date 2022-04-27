@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetCertificateV2Response;
+use UCloud\UCDN\Models\GetCertificateResponse;
+
 class CertList extends Response
 {
-    
 
     /**
      * CertName: 证书名
@@ -37,11 +41,10 @@ class CertList extends Response
      *
      * @param string $certName
      */
-    public function setCertName($certName)
+    public function setCertName(string $certName)
     {
         $this->set("CertName", $certName);
     }
-
     /**
      * CommonName: 通用名
      *
@@ -57,11 +60,10 @@ class CertList extends Response
      *
      * @param string $commonName
      */
-    public function setCommonName($commonName)
+    public function setCommonName(string $commonName)
     {
         $this->set("CommonName", $commonName);
     }
-
     /**
      * DnsName: dns名称
      *
@@ -77,11 +79,10 @@ class CertList extends Response
      *
      * @param string $dnsName
      */
-    public function setDnsName($dnsName)
+    public function setDnsName(string $dnsName)
     {
         $this->set("DnsName", $dnsName);
     }
-
     /**
      * BeginTime: 证书开始时间
      *
@@ -97,11 +98,10 @@ class CertList extends Response
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 证书获取时间
      *
@@ -117,11 +117,10 @@ class CertList extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
-
     /**
      * DomainCount: 已配置域名个数
      *
@@ -137,11 +136,10 @@ class CertList extends Response
      *
      * @param int $domainCount
      */
-    public function setDomainCount($domainCount)
+    public function setDomainCount(int $domainCount)
     {
         $this->set("DomainCount", $domainCount);
     }
-
     /**
      * UserCert: 证书内容
      *
@@ -157,11 +155,10 @@ class CertList extends Response
      *
      * @param string $userCert
      */
-    public function setUserCert($userCert)
+    public function setUserCert(string $userCert)
     {
         $this->set("UserCert", $userCert);
     }
-
     /**
      * CaCert: ca证内容
      *
@@ -177,11 +174,10 @@ class CertList extends Response
      *
      * @param string $caCert
      */
-    public function setCaCert($caCert)
+    public function setCaCert(string $caCert)
     {
         $this->set("CaCert", $caCert);
     }
-
     /**
      * Domains: 已配置的域名列表
      *

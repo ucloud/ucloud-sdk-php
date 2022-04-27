@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class DescribeUDBParamGroupRequest extends Request
         $this->markRequired("Region");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -43,11 +44,10 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -63,11 +63,10 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -83,11 +82,10 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Offset: 分页显示的起始偏移，列表操作则指定
      *
@@ -103,11 +101,10 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 分页显示的条目数，列表操作则指定
      *
@@ -123,11 +120,10 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * GroupId: 参数组id，如果指定则获取描述，否则是列表操作，需要 指定Offset/Limit
      *
@@ -143,11 +139,10 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param int $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(int $groupId)
     {
         $this->set("GroupId", $groupId);
     }
-
     /**
      * IsInUDBC: 是否选取专区中配置
      *
@@ -163,11 +158,10 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param boolean $isInUDBC
      */
-    public function setIsInUDBC($isInUDBC)
+    public function setIsInUDBC(bool $isInUDBC)
     {
         $this->set("IsInUDBC", $isInUDBC);
     }
-
     /**
      * RegionFlag: 当请求没有填写Zone时，如果指定为true，表示只拉取跨可用区的相关配置文件，否则，拉取所有机房的配置文件（包括每个单可用区和跨可用区）
      *
@@ -183,11 +177,10 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }
-
     /**
      * ClassType: 如果未指定GroupId，则可选是否选取特定DB类型的配置(sql, nosql, postgresql, sqlserver)
      *
@@ -203,7 +196,7 @@ class DescribeUDBParamGroupRequest extends Request
      *
      * @param string $classType
      */
-    public function setClassType($classType)
+    public function setClassType(string $classType)
     {
         $this->set("ClassType", $classType);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\Cube\Models\EIPSet;
+use UCloud\Cube\Models\GetCubeExtendInfoResponse;
+use UCloud\Cube\Models\EIPAddr;
+
 class CubeExtendInfo extends Response
 {
-    
 
     /**
      * CubeId: Cube的Id
@@ -37,11 +42,10 @@ class CubeExtendInfo extends Response
      *
      * @param string $cubeId
      */
-    public function setCubeId($cubeId)
+    public function setCubeId(string $cubeId)
     {
         $this->set("CubeId", $cubeId);
     }
-
     /**
      * Name: Cube的名称
      *
@@ -57,15 +61,14 @@ class CubeExtendInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Eip: EIPSet
      *
-     * @return EIPSet[]|null
+     * @return EIPSetModel[]|null
      */
     public function getEip()
     {
@@ -75,7 +78,7 @@ class CubeExtendInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new EIPSet($item));
+            array_push($result, new EIPSetModel($item));
         }
         return $result;
     }
@@ -83,7 +86,7 @@ class CubeExtendInfo extends Response
     /**
      * Eip: EIPSet
      *
-     * @param EIPSet[] $eip
+     * @param EIPSetModel[] $eip
      */
     public function setEip(array $eip)
     {
@@ -93,7 +96,6 @@ class CubeExtendInfo extends Response
         }
         return $result;
     }
-
     /**
      * Expiration: 资源有效期
      *
@@ -109,11 +111,10 @@ class CubeExtendInfo extends Response
      *
      * @param int $expiration
      */
-    public function setExpiration($expiration)
+    public function setExpiration(int $expiration)
     {
         $this->set("Expiration", $expiration);
     }
-
     /**
      * Tag: 业务组名称
      *
@@ -129,7 +130,7 @@ class CubeExtendInfo extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }

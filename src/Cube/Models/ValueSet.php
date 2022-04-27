@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\Cube\Models\GetCubeMetricsResponse;
+use UCloud\Cube\Models\MetricDataSet;
+
 class ValueSet extends Response
 {
-    
 
     /**
      * Value:
@@ -37,11 +41,10 @@ class ValueSet extends Response
      *
      * @param float $value
      */
-    public function setValue($value)
+    public function setValue(float $value)
     {
         $this->set("Value", $value);
     }
-
     /**
      * Timestamp:
      *
@@ -57,7 +60,7 @@ class ValueSet extends Response
      *
      * @param int $timestamp
      */
-    public function setTimestamp($timestamp)
+    public function setTimestamp(int $timestamp)
     {
         $this->set("Timestamp", $timestamp);
     }

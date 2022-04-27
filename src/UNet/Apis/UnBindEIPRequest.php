@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class UnBindEIPRequest extends Request
         $this->markRequired("ResourceId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -46,11 +47,10 @@ class UnBindEIPRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -66,11 +66,10 @@ class UnBindEIPRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * EIPId: 弹性IP的资源Id
      *
@@ -86,11 +85,10 @@ class UnBindEIPRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
-
     /**
      * ResourceType: 弹性IP请求解绑的资源类型, 枚举值为: uhost: 云主机; ulb, 负载均衡器 upm: 物理机; hadoophost: 大数据集群;fortresshost：堡垒机；udockhost：容器；udhost：私有专区主机；natgw：NAT网关；udb：udb；vpngw：ipsec vpn；ucdr：云灾备；dbaudit：数据库审计；
      *
@@ -106,11 +104,10 @@ class UnBindEIPRequest extends Request
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
-
     /**
      * ResourceId: 弹性IP请求解绑的资源ID
      *
@@ -126,7 +123,7 @@ class UnBindEIPRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }

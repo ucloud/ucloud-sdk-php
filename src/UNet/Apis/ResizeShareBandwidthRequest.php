@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class ResizeShareBandwidthRequest extends Request
         $this->markRequired("ShareBandwidthId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -45,11 +46,10 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -65,11 +65,10 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ShareBandwidth: 带宽值，单位为Mb，范围 [20-5000] (最大值受地域限制)
      *
@@ -85,11 +84,10 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth($shareBandwidth)
+    public function setShareBandwidth(int $shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
-
     /**
      * ShareBandwidthId: 共享带宽的Id
      *
@@ -105,7 +103,7 @@ class ResizeShareBandwidthRequest extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }

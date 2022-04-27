@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class UpdateFirewallAttributeRequest extends Request
         $this->markRequired("FWId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -44,11 +45,10 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -64,11 +64,10 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * FWId: 防火墙资源ID
      *
@@ -84,11 +83,10 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $fwId
      */
-    public function setFWId($fwId)
+    public function setFWId(string $fwId)
     {
         $this->set("FWId", $fwId);
     }
-
     /**
      * Name: 防火墙名称，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
      *
@@ -104,11 +102,10 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Tag: 防火墙业务组，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
      *
@@ -124,11 +121,10 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Remark: 防火墙备注，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
      *
@@ -144,7 +140,7 @@ class UpdateFirewallAttributeRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

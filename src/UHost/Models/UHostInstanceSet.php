@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\UHostKeyPair;
+use UCloud\UHost\Models\DescribeUHostLiteResponse;
+use UCloud\UHost\Models\UHostDiskSet;
+use UCloud\UHost\Models\UHostIPSet;
+use UCloud\UHost\Models\DescribeUHostInstanceResponse;
+
 class UHostInstanceSet extends Response
 {
-    
 
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
@@ -37,11 +44,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * IPv6Feature: true:有ipv6特性；false，没有ipv6特性
      *
@@ -57,11 +63,10 @@ class UHostInstanceSet extends Response
      *
      * @param boolean $iPv6Feature
      */
-    public function setIPv6Feature($iPv6Feature)
+    public function setIPv6Feature(bool $iPv6Feature)
     {
         $this->set("IPv6Feature", $iPv6Feature);
     }
-
     /**
      * UHostId: UHost实例ID
      *
@@ -77,11 +82,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
-
     /**
      * UHostType: 【建议不再使用】云主机机型（旧）。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
@@ -97,11 +101,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $uHostType
      */
-    public function setUHostType($uHostType)
+    public function setUHostType(string $uHostType)
     {
         $this->set("UHostType", $uHostType);
     }
-
     /**
      * MachineType: 云主机机型（新）。参考[[api:uhost-api:uhost_type#主机概念20版本|云主机机型说明]]。
      *
@@ -117,11 +120,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
-
     /**
      * CpuPlatform: 云主机CPU平台。参考[[api:uhost-api:uhost_type#主机概念20版本|云主机机型说明]]。
      *
@@ -137,11 +139,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $cpuPlatform
      */
-    public function setCpuPlatform($cpuPlatform)
+    public function setCpuPlatform(string $cpuPlatform)
     {
         $this->set("CpuPlatform", $cpuPlatform);
     }
-
     /**
      * StorageType: 【建议不再使用】主机磁盘类型。 枚举值为：\\ > LocalDisk，本地磁盘; \\ > UDisk 云盘。\\只要有一块磁盘为本地盘，即返回LocalDisk。
      *
@@ -157,11 +158,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $storageType
      */
-    public function setStorageType($storageType)
+    public function setStorageType(string $storageType)
     {
         $this->set("StorageType", $storageType);
     }
-
     /**
      * ImageId: 【建议不再使用】主机的系统盘ID。
      *
@@ -177,11 +177,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * BasicImageId: 基础镜像ID（指当前自定义镜像的来源镜像）
      *
@@ -197,11 +196,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $basicImageId
      */
-    public function setBasicImageId($basicImageId)
+    public function setBasicImageId(string $basicImageId)
     {
         $this->set("BasicImageId", $basicImageId);
     }
-
     /**
      * BasicImageName: 基础镜像名称（指当前自定义镜像的来源镜像）
      *
@@ -217,11 +215,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $basicImageName
      */
-    public function setBasicImageName($basicImageName)
+    public function setBasicImageName(string $basicImageName)
     {
         $this->set("BasicImageName", $basicImageName);
     }
-
     /**
      * Tag: 业务组名称
      *
@@ -237,11 +234,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Remark: 备注
      *
@@ -257,11 +253,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * Name: UHost实例名称
      *
@@ -277,11 +272,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * State: 实例状态，枚举值：\\ >初始化: Initializing; \\ >启动中: Starting; \\> 运行中: Running; \\> 关机中: Stopping; \\ >关机: Stopped \\ >安装失败: Install Fail; \\ >重启中: Rebooting; \\ > 未知(空字符串，获取状态超时或出错)：""
      *
@@ -297,11 +291,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * CreateTime: 创建时间，格式为Unix时间戳
      *
@@ -317,11 +310,10 @@ class UHostInstanceSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ChargeType: 计费模式，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费（需开启权限）；Preemptive 为抢占式实例；
      *
@@ -337,11 +329,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * ExpireTime: 到期时间，格式为Unix时间戳
      *
@@ -357,11 +348,10 @@ class UHostInstanceSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * CPU: 虚拟CPU核数，单位: 个
      *
@@ -377,11 +367,10 @@ class UHostInstanceSet extends Response
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
-
     /**
      * Memory: 内存大小，单位: MB
      *
@@ -397,11 +386,10 @@ class UHostInstanceSet extends Response
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
-
     /**
      * AutoRenew: 是否自动续费，自动续费：“Yes”，不自动续费：“No”
      *
@@ -417,15 +405,14 @@ class UHostInstanceSet extends Response
      *
      * @param string $autoRenew
      */
-    public function setAutoRenew($autoRenew)
+    public function setAutoRenew(string $autoRenew)
     {
         $this->set("AutoRenew", $autoRenew);
     }
-
     /**
      * DiskSet: 磁盘信息见 UHostDiskSet
      *
-     * @return UHostDiskSet[]|null
+     * @return UHostDiskSetModel[]|null
      */
     public function getDiskSet()
     {
@@ -435,7 +422,7 @@ class UHostInstanceSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UHostDiskSet($item));
+            array_push($result, new UHostDiskSetModel($item));
         }
         return $result;
     }
@@ -443,7 +430,7 @@ class UHostInstanceSet extends Response
     /**
      * DiskSet: 磁盘信息见 UHostDiskSet
      *
-     * @param UHostDiskSet[] $diskSet
+     * @param UHostDiskSetModel[] $diskSet
      */
     public function setDiskSet(array $diskSet)
     {
@@ -453,11 +440,10 @@ class UHostInstanceSet extends Response
         }
         return $result;
     }
-
     /**
      * IPSet: 详细信息见 UHostIPSet
      *
-     * @return UHostIPSet[]|null
+     * @return UHostIPSetModel[]|null
      */
     public function getIPSet()
     {
@@ -467,7 +453,7 @@ class UHostInstanceSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UHostIPSet($item));
+            array_push($result, new UHostIPSetModel($item));
         }
         return $result;
     }
@@ -475,7 +461,7 @@ class UHostInstanceSet extends Response
     /**
      * IPSet: 详细信息见 UHostIPSet
      *
-     * @param UHostIPSet[] $ipSet
+     * @param UHostIPSetModel[] $ipSet
      */
     public function setIPSet(array $ipSet)
     {
@@ -485,7 +471,6 @@ class UHostInstanceSet extends Response
         }
         return $result;
     }
-
     /**
      * NetCapability: 网络增强。Normal: 无；Super： 网络增强1.0； Ultra: 网络增强2.0
      *
@@ -501,11 +486,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $netCapability
      */
-    public function setNetCapability($netCapability)
+    public function setNetCapability(string $netCapability)
     {
         $this->set("NetCapability", $netCapability);
     }
-
     /**
      * NetworkState: 【建议不再使用】网络状态。 连接：Connected， 断开：NotConnected
      *
@@ -521,11 +505,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $networkState
      */
-    public function setNetworkState($networkState)
+    public function setNetworkState(string $networkState)
     {
         $this->set("NetworkState", $networkState);
     }
-
     /**
      * TimemachineFeature: 【建议不再使用】数据方舟模式。枚举值：\\ > Yes: 开启方舟； \\ > no，未开启方舟
      *
@@ -541,11 +524,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $timemachineFeature
      */
-    public function setTimemachineFeature($timemachineFeature)
+    public function setTimemachineFeature(string $timemachineFeature)
     {
         $this->set("TimemachineFeature", $timemachineFeature);
     }
-
     /**
      * HotplugFeature: true: 开启热升级； false，未开启热升级
      *
@@ -561,11 +543,10 @@ class UHostInstanceSet extends Response
      *
      * @param boolean $hotplugFeature
      */
-    public function setHotplugFeature($hotplugFeature)
+    public function setHotplugFeature(bool $hotplugFeature)
     {
         $this->set("HotplugFeature", $hotplugFeature);
     }
-
     /**
      * SubnetType: 【建议不再使用】仅北京A的云主机会返回此字段。基础网络模式：Default；子网模式：Private
      *
@@ -581,11 +562,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $subnetType
      */
-    public function setSubnetType($subnetType)
+    public function setSubnetType(string $subnetType)
     {
         $this->set("SubnetType", $subnetType);
     }
-
     /**
      * OsName: 创建主机的最初来源镜像的操作系统名称（若直接通过基础镜像创建，此处返回和BasicImageName一致）
      *
@@ -601,11 +581,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $osName
      */
-    public function setOsName($osName)
+    public function setOsName(string $osName)
     {
         $this->set("OsName", $osName);
     }
-
     /**
      * OsType: 操作系统类别。返回"Linux"或者"Windows"
      *
@@ -621,11 +600,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
-
     /**
      * HostType: 【建议不再使用】主机系列：N2，表示系列2；N1，表示系列1
      *
@@ -641,11 +619,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $hostType
      */
-    public function setHostType($hostType)
+    public function setHostType(string $hostType)
     {
         $this->set("HostType", $hostType);
     }
-
     /**
      * LifeCycle: 主机的生命周期类型。目前仅支持Normal：普通；
      *
@@ -661,11 +638,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $lifeCycle
      */
-    public function setLifeCycle($lifeCycle)
+    public function setLifeCycle(string $lifeCycle)
     {
         $this->set("LifeCycle", $lifeCycle);
     }
-
     /**
      * GPU: GPU个数
      *
@@ -681,11 +657,10 @@ class UHostInstanceSet extends Response
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }
-
     /**
      * BootDiskState: 系统盘状态 Normal表示初始化完成；Initializing表示在初始化。仍在初始化的系统盘无法制作镜像。
      *
@@ -701,11 +676,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $bootDiskState
      */
-    public function setBootDiskState($bootDiskState)
+    public function setBootDiskState(string $bootDiskState)
     {
         $this->set("BootDiskState", $bootDiskState);
     }
-
     /**
      * TotalDiskSpace: 总的数据盘存储空间。
      *
@@ -721,11 +695,10 @@ class UHostInstanceSet extends Response
      *
      * @param int $totalDiskSpace
      */
-    public function setTotalDiskSpace($totalDiskSpace)
+    public function setTotalDiskSpace(int $totalDiskSpace)
     {
         $this->set("TotalDiskSpace", $totalDiskSpace);
     }
-
     /**
      * IsolationGroup: 隔离组id，不在隔离组则返回""
      *
@@ -741,11 +714,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup($isolationGroup)
+    public function setIsolationGroup(string $isolationGroup)
     {
         $this->set("IsolationGroup", $isolationGroup);
     }
-
     /**
      * CloudInitFeature: true，支持cloutinit方式初始化；false,不支持
      *
@@ -761,11 +733,10 @@ class UHostInstanceSet extends Response
      *
      * @param boolean $cloudInitFeature
      */
-    public function setCloudInitFeature($cloudInitFeature)
+    public function setCloudInitFeature(bool $cloudInitFeature)
     {
         $this->set("CloudInitFeature", $cloudInitFeature);
     }
-
     /**
      * RdmaClusterId: RDMA集群id，仅快杰云主机返回该值；其他类型云主机返回""。当云主机的此值与RSSD云盘的RdmaClusterId相同时，RSSD可以挂载到这台云主机。
      *
@@ -781,11 +752,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $rdmaClusterId
      */
-    public function setRdmaClusterId($rdmaClusterId)
+    public function setRdmaClusterId(string $rdmaClusterId)
     {
         $this->set("RdmaClusterId", $rdmaClusterId);
     }
-
     /**
      * RestrictMode: 仅抢占式实例返回，LowSpeed为低速模式，PowerOff为关机模式
      *
@@ -801,11 +771,10 @@ class UHostInstanceSet extends Response
      *
      * @param string $restrictMode
      */
-    public function setRestrictMode($restrictMode)
+    public function setRestrictMode(string $restrictMode)
     {
         $this->set("RestrictMode", $restrictMode);
     }
-
     /**
      * HpcFeature: true: 开启 hpc 系列功能；false: 未开启
      *
@@ -821,27 +790,26 @@ class UHostInstanceSet extends Response
      *
      * @param boolean $hpcFeature
      */
-    public function setHpcFeature($hpcFeature)
+    public function setHpcFeature(bool $hpcFeature)
     {
         $this->set("HpcFeature", $hpcFeature);
     }
-
     /**
      * KeyPair: 密钥信息见 UHostKeyPair
      *
-     * @return UHostKeyPair|null
+     * @return UHostKeyPairModel|null
      */
     public function getKeyPair()
     {
-        return new UHostKeyPair($this->get("KeyPair"));
+        return new UHostKeyPairModel($this->get("KeyPair"));
     }
 
     /**
      * KeyPair: 密钥信息见 UHostKeyPair
      *
-     * @param UHostKeyPair $keyPair
+     * @param UHostKeyPairModel $keyPair
      */
-    public function setKeyPair(array $keyPair)
+    public function setKeyPair(UHostKeyPairModel $keyPair)
     {
         $this->set("KeyPair", $keyPair->getAll());
     }

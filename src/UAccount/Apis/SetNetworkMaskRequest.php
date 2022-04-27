@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class SetNetworkMaskRequest extends Request
         $this->markRequired("Code");
     }
 
-    
 
     /**
      * Code: 短信验证码
@@ -43,11 +44,10 @@ class SetNetworkMaskRequest extends Request
      *
      * @param string $code
      */
-    public function setCode($code)
+    public function setCode(string $code)
     {
         $this->set("Code", $code);
     }
-
     /**
      * APINetworkMask: API调用网络掩码，多个IP以英文逗号分隔。默认空字符串，不限制登录IP。
      *
@@ -63,11 +63,10 @@ class SetNetworkMaskRequest extends Request
      *
      * @param string $apiNetworkMask
      */
-    public function setAPINetworkMask($apiNetworkMask)
+    public function setAPINetworkMask(string $apiNetworkMask)
     {
         $this->set("APINetworkMask", $apiNetworkMask);
     }
-
     /**
      * LoginNetworkMask: 登录网络掩码，多个IP以英文逗号分隔。默认空字符串，不限制登录IP。
      *
@@ -83,7 +82,7 @@ class SetNetworkMaskRequest extends Request
      *
      * @param string $loginNetworkMask
      */
-    public function setLoginNetworkMask($loginNetworkMask)
+    public function setLoginNetworkMask(string $loginNetworkMask)
     {
         $this->set("LoginNetworkMask", $loginNetworkMask);
     }

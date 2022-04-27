@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\USMS\Models\GetUSMSSendReceiptResponse;
+use UCloud\USMS\Models\ReceiptPerSession;
+
 class ReceiptPerPhone extends Response
 {
-    
 
     /**
      * Phone: 手机号码
@@ -37,11 +41,10 @@ class ReceiptPerPhone extends Response
      *
      * @param string $phone
      */
-    public function setPhone($phone)
+    public function setPhone(string $phone)
     {
         $this->set("Phone", $phone);
     }
-
     /**
      * CostCount: 消耗短信条数
      *
@@ -57,11 +60,10 @@ class ReceiptPerPhone extends Response
      *
      * @param int $costCount
      */
-    public function setCostCount($costCount)
+    public function setCostCount(int $costCount)
     {
         $this->set("CostCount", $costCount);
     }
-
     /**
      * ReceiptResult: 回执结果，枚举值：\\ > 发送成功: 代表成功 \\ > Success: 代表成功 \\ > 发送失败: 代表失败 \\ > Fail: 代表失败 \\ > 状态未知: 代表未知 \\ > Unknow: 代表未知
      *
@@ -77,11 +79,10 @@ class ReceiptPerPhone extends Response
      *
      * @param string $receiptResult
      */
-    public function setReceiptResult($receiptResult)
+    public function setReceiptResult(string $receiptResult)
     {
         $this->set("ReceiptResult", $receiptResult);
     }
-
     /**
      * ReceiptCode: 状态报告编码
      *
@@ -97,11 +98,10 @@ class ReceiptPerPhone extends Response
      *
      * @param string $receiptCode
      */
-    public function setReceiptCode($receiptCode)
+    public function setReceiptCode(string $receiptCode)
     {
         $this->set("ReceiptCode", $receiptCode);
     }
-
     /**
      * ReceiptDesc: 回执结果描述
      *
@@ -117,11 +117,10 @@ class ReceiptPerPhone extends Response
      *
      * @param string $receiptDesc
      */
-    public function setReceiptDesc($receiptDesc)
+    public function setReceiptDesc(string $receiptDesc)
     {
         $this->set("ReceiptDesc", $receiptDesc);
     }
-
     /**
      * ReceiptTime: 回执返回时间
      *
@@ -137,11 +136,10 @@ class ReceiptPerPhone extends Response
      *
      * @param int $receiptTime
      */
-    public function setReceiptTime($receiptTime)
+    public function setReceiptTime(int $receiptTime)
     {
         $this->set("ReceiptTime", $receiptTime);
     }
-
     /**
      * UserId: 自定义的业务标识ID，字符串
      *
@@ -157,7 +155,7 @@ class ReceiptPerPhone extends Response
      *
      * @param string $userId
      */
-    public function setUserId($userId)
+    public function setUserId(string $userId)
     {
         $this->set("UserId", $userId);
     }

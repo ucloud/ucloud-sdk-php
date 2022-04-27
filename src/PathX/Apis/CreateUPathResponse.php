@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,31 +15,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateUPathResponse extends Response
 {
-    
 
     /**
-     * UPathId: 加速线路实例Id
+     * PathId: 加速线路实例Id
      *
      * @return string|null
      */
-    public function getUPathId()
+    public function getPathId()
     {
-        return $this->get("UPathId");
+        return $this->get("PathId");
     }
 
     /**
-     * UPathId: 加速线路实例Id
+     * PathId: 加速线路实例Id
      *
-     * @param string $uPathId
+     * @param string $pathId
      */
-    public function setUPathId($uPathId)
+    public function setPathId(string $pathId)
     {
-        $this->set("UPathId", $uPathId);
+        $this->set("PathId", $pathId);
     }
 }

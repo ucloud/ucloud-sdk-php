@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\DomainConfigInfo;
+use UCloud\UCDN\Models\GetUcdnDomainConfigResponse;
+use UCloud\UCDN\Models\GetUcdnDomainConfigV2Response;
+
 class OriginConf extends Response
 {
-    
 
     /**
      * OriginIpList: 源站ip即cdn服务器回源访问的ip地址。多个源站ip，可以这样表述，如：["1.1.1.1","2.2.2.2"]
@@ -41,7 +46,6 @@ class OriginConf extends Response
     {
         $this->set("OriginIpList", $originIpList);
     }
-
     /**
      * OriginHost: 回源Http请求头部Host，默认是加速域名
      *
@@ -57,11 +61,10 @@ class OriginConf extends Response
      *
      * @param string $originHost
      */
-    public function setOriginHost($originHost)
+    public function setOriginHost(string $originHost)
     {
         $this->set("OriginHost", $originHost);
     }
-
     /**
      * OriginPort: 回源端口
      *
@@ -77,11 +80,10 @@ class OriginConf extends Response
      *
      * @param int $originPort
      */
-    public function setOriginPort($originPort)
+    public function setOriginPort(int $originPort)
     {
         $this->set("OriginPort", $originPort);
     }
-
     /**
      * BackupOriginEnable: 1如果为false表示BackupOriginIp为空，表示没有备份源站，忽略BackupOriginIp，BackupOriginHost字段2如果为true表示BackupOriginIp.n必须至少有一个备份源站地址
      *
@@ -97,11 +99,10 @@ class OriginConf extends Response
      *
      * @param boolean $backupOriginEnable
      */
-    public function setBackupOriginEnable($backupOriginEnable)
+    public function setBackupOriginEnable(bool $backupOriginEnable)
     {
         $this->set("BackupOriginEnable", $backupOriginEnable);
     }
-
     /**
      * BackupOriginIpList: 备份源站ip即cdn服务器回源访问的ip地址。多个源站ip，可以这样表述，如：["1.1.1.1","2.2.2.2"]
      *
@@ -121,7 +122,6 @@ class OriginConf extends Response
     {
         $this->set("BackupOriginIpList", $backupOriginIpList);
     }
-
     /**
      * BackupOriginHost: 备份回源Http请求头部Host，默认是加速域名
      *
@@ -137,11 +137,10 @@ class OriginConf extends Response
      *
      * @param string $backupOriginHost
      */
-    public function setBackupOriginHost($backupOriginHost)
+    public function setBackupOriginHost(string $backupOriginHost)
     {
         $this->set("BackupOriginHost", $backupOriginHost);
     }
-
     /**
      * OriginErrorCode: 主源响应的回源错误码（如：404|500），默认空字符串
      *
@@ -157,11 +156,10 @@ class OriginConf extends Response
      *
      * @param string $originErrorCode
      */
-    public function setOriginErrorCode($originErrorCode)
+    public function setOriginErrorCode(string $originErrorCode)
     {
         $this->set("OriginErrorCode", $originErrorCode);
     }
-
     /**
      * OriginErrorNum: 回主源的回源失败数，默认1
      *
@@ -177,11 +175,10 @@ class OriginConf extends Response
      *
      * @param int $originErrorNum
      */
-    public function setOriginErrorNum($originErrorNum)
+    public function setOriginErrorNum(int $originErrorNum)
     {
         $this->set("OriginErrorNum", $originErrorNum);
     }
-
     /**
      * OriginProtocol: 源站协议http，http|https   默认http
      *
@@ -197,11 +194,10 @@ class OriginConf extends Response
      *
      * @param string $originProtocol
      */
-    public function setOriginProtocol($originProtocol)
+    public function setOriginProtocol(string $originProtocol)
     {
         $this->set("OriginProtocol", $originProtocol);
     }
-
     /**
      * OriginFollow301: 跟随301跳转  0=不跟随 1=跟随
      *
@@ -217,7 +213,7 @@ class OriginConf extends Response
      *
      * @param int $originFollow301
      */
-    public function setOriginFollow301($originFollow301)
+    public function setOriginFollow301(int $originFollow301)
     {
         $this->set("OriginFollow301", $originFollow301);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\PathX\Models\AlarmRuler;
 
 class DescribeUPathTemplateResponse extends Response
 {
-    
 
     /**
      * DataSet: 监控模板详情
      *
-     * @return AlarmRuler[]|null
+     * @return AlarmRulerModel[]|null
      */
     public function getDataSet()
     {
@@ -36,7 +38,7 @@ class DescribeUPathTemplateResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new AlarmRuler($item));
+            array_push($result, new AlarmRulerModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeUPathTemplateResponse extends Response
     /**
      * DataSet: 监控模板详情
      *
-     * @param AlarmRuler[] $dataSet
+     * @param AlarmRulerModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

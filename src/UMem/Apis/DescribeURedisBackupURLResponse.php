@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
 
 class DescribeURedisBackupURLResponse extends Response
 {
-    
 
     /**
      * BackupURL: 备份文件公网的地址
@@ -37,11 +38,10 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @param string $backupURL
      */
-    public function setBackupURL($backupURL)
+    public function setBackupURL(string $backupURL)
     {
         $this->set("BackupURL", $backupURL);
     }
-
     /**
      * BackupPath: 备份文件公网的地址
      *
@@ -57,7 +57,7 @@ class DescribeURedisBackupURLResponse extends Response
      *
      * @param string $backupPath
      */
-    public function setBackupPath($backupPath)
+    public function setBackupPath(string $backupPath)
     {
         $this->set("BackupPath", $backupPath);
     }

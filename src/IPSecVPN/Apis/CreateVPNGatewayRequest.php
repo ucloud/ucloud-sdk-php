@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Request\Request;
@@ -30,7 +32,6 @@ class CreateVPNGatewayRequest extends Request
         $this->markRequired("Grade");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -47,11 +48,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -67,11 +67,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * VPNGatewayName: 新建VPN网关名称
      *
@@ -87,11 +86,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $vpnGatewayName
      */
-    public function setVPNGatewayName($vpnGatewayName)
+    public function setVPNGatewayName(string $vpnGatewayName)
     {
         $this->set("VPNGatewayName", $vpnGatewayName);
     }
-
     /**
      * VPCId: 新建VPN网关所属VPC的资源ID
      *
@@ -107,11 +105,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * Grade: 购买的VPN网关规格，枚举值为: Standard, 标准型; Enhanced, 增强型
      *
@@ -127,11 +124,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $grade
      */
-    public function setGrade($grade)
+    public function setGrade(string $grade)
     {
         $this->set("Grade", $grade);
     }
-
     /**
      * Remark: 备注，默认为空
      *
@@ -147,11 +143,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * Tag: 业务组名称，默认为 "Default"
      *
@@ -167,11 +162,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Quantity: 购买时长, 默认: 1
      *
@@ -187,11 +181,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * ChargeType: 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费；Dynamic, 按需付费(需开启权限)；Trial, 试用(需开启权限)；默认为按月付费
      *
@@ -207,11 +200,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * BusinessId: 业务组ID
      *
@@ -227,11 +219,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $businessId
      */
-    public function setBusinessId($businessId)
+    public function setBusinessId(string $businessId)
     {
         $this->set("BusinessId", $businessId);
     }
-
     /**
      * EIPId: 若要绑定EIP，在此填上EIP的资源ID
      *
@@ -247,11 +238,10 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
-
     /**
      * CouponId: 代金券ID, 默认不使用
      *
@@ -267,7 +257,7 @@ class CreateVPNGatewayRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

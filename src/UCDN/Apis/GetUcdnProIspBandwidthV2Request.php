@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class GetUcdnProIspBandwidthV2Request extends Request
         $this->markRequired("Type");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -45,11 +46,10 @@ class GetUcdnProIspBandwidthV2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * BeginTime: 查询的起始日期，格式为Unix Timestamp
      *
@@ -65,11 +65,10 @@ class GetUcdnProIspBandwidthV2Request extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 查询的结束日期，格式为Unix Timestamp
      *
@@ -85,11 +84,10 @@ class GetUcdnProIspBandwidthV2Request extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
-
     /**
      * Type: 时间粒度0 (按5分钟粒度)1 (按小时粒度)2(按天粒度)3(按分钟粒度）
      *
@@ -105,11 +103,10 @@ class GetUcdnProIspBandwidthV2Request extends Request
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * DomainId: 域名id，创建域名时生成的id。默认全部域名
      *
@@ -129,7 +126,6 @@ class GetUcdnProIspBandwidthV2Request extends Request
     {
         $this->set("DomainId", $domainId);
     }
-
     /**
      * Province: 省份代码（省份拼音），可以传多个，不传则查询所有省份
      *
@@ -149,7 +145,6 @@ class GetUcdnProIspBandwidthV2Request extends Request
     {
         $this->set("Province", $province);
     }
-
     /**
      * Isp: 运营商代码（运营商拼音），一次只能查询一个运营商，不传递默认取所有运营商
      *
@@ -165,7 +160,7 @@ class GetUcdnProIspBandwidthV2Request extends Request
      *
      * @param string $isp
      */
-    public function setIsp($isp)
+    public function setIsp(string $isp)
     {
         $this->set("Isp", $isp);
     }

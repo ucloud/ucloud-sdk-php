@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,10 +31,9 @@ class CreateUFSVolumeRequest extends Request
         $this->markRequired("ProtocolType");
     }
 
-    
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -42,17 +43,16 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -62,17 +62,16 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
-     * Size: 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
+     * Size: 文件系统大小，单位为GB，必须为100的整数倍，容量型Size最小为500GB，性能型文件系统Size最小为100GB
      *
      * @return integer|null
      */
@@ -82,17 +81,16 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * Size: 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
+     * Size: 文件系统大小，单位为GB，必须为100的整数倍，容量型Size最小为500GB，性能型文件系统Size最小为100GB
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
-     * StorageType: 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型
+     * StorageType: 文件系统存储类型，Basic表示容量型，Advanced表示性能型
      *
      * @return string|null
      */
@@ -102,17 +100,16 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * StorageType: 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型
+     * StorageType: 文件系统存储类型，Basic表示容量型，Advanced表示性能型
      *
      * @param string $storageType
      */
-    public function setStorageType($storageType)
+    public function setStorageType(string $storageType)
     {
         $this->set("StorageType", $storageType);
     }
-
     /**
-     * ProtocolType: 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
+     * ProtocolType: 文件系统协议，目前仅支持NFSv4
      *
      * @return string|null
      */
@@ -122,15 +119,14 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * ProtocolType: 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
+     * ProtocolType: 文件系统协议，目前仅支持NFSv4
      *
      * @param string $protocolType
      */
-    public function setProtocolType($protocolType)
+    public function setProtocolType(string $protocolType)
     {
         $this->set("ProtocolType", $protocolType);
     }
-
     /**
      * VolumeName: 文件系统名称
      *
@@ -146,11 +142,10 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $volumeName
      */
-    public function setVolumeName($volumeName)
+    public function setVolumeName(string $volumeName)
     {
         $this->set("VolumeName", $volumeName);
     }
-
     /**
      * Remark: 备注
      *
@@ -166,11 +161,10 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * Tag: 文件系统所属业务组
      *
@@ -186,11 +180,10 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * ChargeType: 计费模式，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费（需开启权限）； Trial，试用（需开启权限） 默认为Dynamic
      *
@@ -206,11 +199,10 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长 默认: 1
      *
@@ -226,11 +218,10 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * CouponId: 使用的代金券id
      *
@@ -246,7 +237,7 @@ class CreateUFSVolumeRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

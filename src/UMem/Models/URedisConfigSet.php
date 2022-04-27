@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UMem\Models\DescribeURedisConfigResponse;
+
 class URedisConfigSet extends Response
 {
-    
 
     /**
      * Zone: Zone
@@ -37,11 +40,10 @@ class URedisConfigSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ConfigId: 配置ID
      *
@@ -57,11 +59,10 @@ class URedisConfigSet extends Response
      *
      * @param string $configId
      */
-    public function setConfigId($configId)
+    public function setConfigId(string $configId)
     {
         $this->set("ConfigId", $configId);
     }
-
     /**
      * Name: 配置名称
      *
@@ -77,11 +78,10 @@ class URedisConfigSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Description: 配置描述
      *
@@ -97,11 +97,10 @@ class URedisConfigSet extends Response
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
-
     /**
      * Version: 配置对应的Redis版本
      *
@@ -117,11 +116,10 @@ class URedisConfigSet extends Response
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
-
     /**
      * IsModify: 置是否可以修改
      *
@@ -137,11 +135,10 @@ class URedisConfigSet extends Response
      *
      * @param string $isModify
      */
-    public function setIsModify($isModify)
+    public function setIsModify(string $isModify)
     {
         $this->set("IsModify", $isModify);
     }
-
     /**
      * State: 配置所处的状态
      *
@@ -157,11 +154,10 @@ class URedisConfigSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * CreateTime: 创建时间 (UNIX时间戳)
      *
@@ -177,11 +173,10 @@ class URedisConfigSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ModifyTime: 修改时间 (UNIX时间戳)
      *
@@ -197,11 +192,10 @@ class URedisConfigSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime($modifyTime)
+    public function setModifyTime(int $modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
-
     /**
      * RegionFlag: 是否是跨机房URedis(默认false)
      *
@@ -217,7 +211,7 @@ class URedisConfigSet extends Response
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }

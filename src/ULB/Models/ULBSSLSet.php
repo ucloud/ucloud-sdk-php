@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\ULB\Models\SSLBindedTargetSet;
+use UCloud\ULB\Models\ULBSet;
+use UCloud\ULB\Models\DescribeSSLResponse;
+use UCloud\ULB\Models\ULBVServerSet;
+use UCloud\ULB\Models\DescribeULBResponse;
+use UCloud\ULB\Models\DescribeVServerResponse;
+
 class ULBSSLSet extends Response
 {
-    
 
     /**
      * SSLId: SSL证书的Id
@@ -37,11 +45,10 @@ class ULBSSLSet extends Response
      *
      * @param string $sslId
      */
-    public function setSSLId($sslId)
+    public function setSSLId(string $sslId)
     {
         $this->set("SSLId", $sslId);
     }
-
     /**
      * SSLName: SSL证书的名字
      *
@@ -57,11 +64,10 @@ class ULBSSLSet extends Response
      *
      * @param string $sslName
      */
-    public function setSSLName($sslName)
+    public function setSSLName(string $sslName)
     {
         $this->set("SSLName", $sslName);
     }
-
     /**
      * SSLType: SSL证书类型，暂时只有 Pem 一种类型
      *
@@ -77,11 +83,10 @@ class ULBSSLSet extends Response
      *
      * @param string $sslType
      */
-    public function setSSLType($sslType)
+    public function setSSLType(string $sslType)
     {
         $this->set("SSLType", $sslType);
     }
-
     /**
      * SSLContent: SSL证书的内容
      *
@@ -97,11 +102,10 @@ class ULBSSLSet extends Response
      *
      * @param string $sslContent
      */
-    public function setSSLContent($sslContent)
+    public function setSSLContent(string $sslContent)
     {
         $this->set("SSLContent", $sslContent);
     }
-
     /**
      * CreateTime: SSL证书的创建时间
      *
@@ -117,11 +121,10 @@ class ULBSSLSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * HashValue: SSL证书的HASH值
      *
@@ -137,15 +140,14 @@ class ULBSSLSet extends Response
      *
      * @param string $hashValue
      */
-    public function setHashValue($hashValue)
+    public function setHashValue(string $hashValue)
     {
         $this->set("HashValue", $hashValue);
     }
-
     /**
      * BindedTargetSet: SSL证书绑定到的对象
      *
-     * @return SSLBindedTargetSet[]|null
+     * @return SSLBindedTargetSetModel[]|null
      */
     public function getBindedTargetSet()
     {
@@ -155,7 +157,7 @@ class ULBSSLSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new SSLBindedTargetSet($item));
+            array_push($result, new SSLBindedTargetSetModel($item));
         }
         return $result;
     }
@@ -163,7 +165,7 @@ class ULBSSLSet extends Response
     /**
      * BindedTargetSet: SSL证书绑定到的对象
      *
-     * @param SSLBindedTargetSet[] $bindedTargetSet
+     * @param SSLBindedTargetSetModel[] $bindedTargetSet
      */
     public function setBindedTargetSet(array $bindedTargetSet)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateUFileTokenResponse extends Response
 {
-    
 
     /**
      * TokenId: 创建令牌的token_id
@@ -37,7 +38,7 @@ class CreateUFileTokenResponse extends Response
      *
      * @param string $tokenId
      */
-    public function setTokenId($tokenId)
+    public function setTokenId(string $tokenId)
     {
         $this->set("TokenId", $tokenId);
     }

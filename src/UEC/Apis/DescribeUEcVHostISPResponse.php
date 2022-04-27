@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UEC\Models\NodeIspList;
 
 class DescribeUEcVHostISPResponse extends Response
 {
-    
 
     /**
      * NodeIspList: 节点运营商列表
      *
-     * @return NodeIspList[]|null
+     * @return NodeIspListModel[]|null
      */
     public function getNodeIspList()
     {
@@ -36,7 +38,7 @@ class DescribeUEcVHostISPResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new NodeIspList($item));
+            array_push($result, new NodeIspListModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeUEcVHostISPResponse extends Response
     /**
      * NodeIspList: 节点运营商列表
      *
-     * @param NodeIspList[] $nodeIspList
+     * @param NodeIspListModel[] $nodeIspList
      */
     public function setNodeIspList(array $nodeIspList)
     {

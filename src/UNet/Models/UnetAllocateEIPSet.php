@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\AllocateEIPResponse;
+use UCloud\UNet\Models\AllocateEIPWithIPResponse;
+use UCloud\UNet\Models\UnetEIPAddrSet;
+
 class UnetAllocateEIPSet extends Response
 {
-    
 
     /**
      * EIPId: 申请到的EIP资源ID
@@ -37,15 +42,14 @@ class UnetAllocateEIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
-
     /**
      * EIPAddr: 申请到的IPv4地址.
      *
-     * @return UnetEIPAddrSet[]|null
+     * @return UnetEIPAddrSetModel[]|null
      */
     public function getEIPAddr()
     {
@@ -55,7 +59,7 @@ class UnetAllocateEIPSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UnetEIPAddrSet($item));
+            array_push($result, new UnetEIPAddrSetModel($item));
         }
         return $result;
     }
@@ -63,7 +67,7 @@ class UnetAllocateEIPSet extends Response
     /**
      * EIPAddr: 申请到的IPv4地址.
      *
-     * @param UnetEIPAddrSet[] $eipAddr
+     * @param UnetEIPAddrSetModel[] $eipAddr
      */
     public function setEIPAddr(array $eipAddr)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UNet\Models\UnetAllocateEIPSet;
 use UCloud\UNet\Models\UnetEIPAddrSet;
 
 class AllocateEIPResponse extends Response
 {
-    
 
     /**
      * EIPSet: 申请到的EIP资源详情 参见 UnetAllocateEIPSet
      *
-     * @return UnetAllocateEIPSet[]|null
+     * @return UnetAllocateEIPSetModel[]|null
      */
     public function getEIPSet()
     {
@@ -37,7 +39,7 @@ class AllocateEIPResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UnetAllocateEIPSet($item));
+            array_push($result, new UnetAllocateEIPSetModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class AllocateEIPResponse extends Response
     /**
      * EIPSet: 申请到的EIP资源详情 参见 UnetAllocateEIPSet
      *
-     * @param UnetAllocateEIPSet[] $eipSet
+     * @param UnetAllocateEIPSetModel[] $eipSet
      */
     public function setEIPSet(array $eipSet)
     {

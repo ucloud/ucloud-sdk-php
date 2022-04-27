@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UMem\Models\DescribeURedisBackupResponse;
+
 class URedisBackupSet extends Response
 {
-    
 
     /**
      * BackupId: 备份ID
@@ -37,11 +40,10 @@ class URedisBackupSet extends Response
      *
      * @param string $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(string $backupId)
     {
         $this->set("BackupId", $backupId);
     }
-
     /**
      * Zone: 可用区，参见[可用区列表](../summary/regionlist.html)
      *
@@ -57,11 +59,10 @@ class URedisBackupSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * GroupId: 对应的实例ID
      *
@@ -77,11 +78,10 @@ class URedisBackupSet extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(string $groupId)
     {
         $this->set("GroupId", $groupId);
     }
-
     /**
      * GroupName: 组名称
      *
@@ -97,11 +97,10 @@ class URedisBackupSet extends Response
      *
      * @param string $groupName
      */
-    public function setGroupName($groupName)
+    public function setGroupName(string $groupName)
     {
         $this->set("GroupName", $groupName);
     }
-
     /**
      * BackupName: 备份的名称
      *
@@ -117,11 +116,10 @@ class URedisBackupSet extends Response
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }
-
     /**
      * BackupTime: 备份时间 (UNIX时间戳)
      *
@@ -137,11 +135,10 @@ class URedisBackupSet extends Response
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
-
     /**
      * BackupSize: 备份文件大小, 以字节为单位
      *
@@ -157,11 +154,10 @@ class URedisBackupSet extends Response
      *
      * @param int $backupSize
      */
-    public function setBackupSize($backupSize)
+    public function setBackupSize(int $backupSize)
     {
         $this->set("BackupSize", $backupSize);
     }
-
     /**
      * BackupType: 备份类型: Manual 手动 Auto 自动
      *
@@ -177,11 +173,10 @@ class URedisBackupSet extends Response
      *
      * @param string $backupType
      */
-    public function setBackupType($backupType)
+    public function setBackupType(string $backupType)
     {
         $this->set("BackupType", $backupType);
     }
-
     /**
      * State: 备份的状态: Backuping 备份中 Success 备份成功 Error 备份失败 Expired 备份过期
      *
@@ -197,7 +192,7 @@ class URedisBackupSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class ReinstallUHostInstanceRequest extends Request
         $this->markRequired("UHostId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -44,11 +45,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -64,11 +64,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -84,11 +83,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * UHostId: UHost实例资源ID 参见 [DescribeUHostInstance](describe_uhost_instance.html)
      *
@@ -104,11 +102,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
-
     /**
      * Password: 如果重装UHost实例时LoginMode为Password，则必须填写，如果LoginMode为KeyPair，不需要填写 （密码格式使用BASE64编码；举例如下：# echo -n Password1 | base64UGFzc3dvcmQx。）
      *
@@ -124,11 +121,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
-
     /**
      * ImageId: 镜像Id，默认使用原镜像 参见 [DescribeImage](describe_image.html)
      *
@@ -144,11 +140,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * ReserveDisk: 是否保留数据盘，保留：Yes，不报留：No， 默认：Yes；如果是从Windows重装为Linux或反之，则无法保留数据盘（该参数目前仅对本地数据盘起作用）
      *
@@ -164,11 +159,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $reserveDisk
      */
-    public function setReserveDisk($reserveDisk)
+    public function setReserveDisk(string $reserveDisk)
     {
         $this->set("ReserveDisk", $reserveDisk);
     }
-
     /**
      * BootDiskSpace: 系统盘大小。 单位：GB， 范围[20,100]， 步长：10
      *
@@ -184,11 +178,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param int $bootDiskSpace
      */
-    public function setBootDiskSpace($bootDiskSpace)
+    public function setBootDiskSpace(int $bootDiskSpace)
     {
         $this->set("BootDiskSpace", $bootDiskSpace);
     }
-
     /**
      * UserData: cloudinit初始化使用。注意：1、总数据量大小不超多16K 2、使用base64编码
      *
@@ -204,11 +197,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $userData
      */
-    public function setUserData($userData)
+    public function setUserData(string $userData)
     {
         $this->set("UserData", $userData);
     }
-
     /**
      * AutoDataDiskInit: 数据盘是否需要自动分区挂载。当镜像支持Cloud-init Feature时可填写此字段。取值“On”（默认值）， “Off”
      *
@@ -224,11 +216,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $autoDataDiskInit
      */
-    public function setAutoDataDiskInit($autoDataDiskInit)
+    public function setAutoDataDiskInit(string $autoDataDiskInit)
     {
         $this->set("AutoDataDiskInit", $autoDataDiskInit);
     }
-
     /**
      * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair。
      *
@@ -244,11 +235,10 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $loginMode
      */
-    public function setLoginMode($loginMode)
+    public function setLoginMode(string $loginMode)
     {
         $this->set("LoginMode", $loginMode);
     }
-
     /**
      * KeyPairId: KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。
      *
@@ -264,7 +254,7 @@ class ReinstallUHostInstanceRequest extends Request
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId($keyPairId)
+    public function setKeyPairId(string $keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }

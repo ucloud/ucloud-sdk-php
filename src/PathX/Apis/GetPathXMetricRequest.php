@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
@@ -32,7 +34,6 @@ class GetPathXMetricRequest extends Request
         $this->markRequired("LineId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -49,11 +50,10 @@ class GetPathXMetricRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ResourceId: ResourceId，如upath ID  和 uga ID
      *
@@ -69,11 +69,10 @@ class GetPathXMetricRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
-
     /**
      * BeginTime: 查询起始时间，10位长度时间戳
      *
@@ -89,11 +88,10 @@ class GetPathXMetricRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 查询结束时间，10位长度时间戳
      *
@@ -109,11 +107,10 @@ class GetPathXMetricRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
-
     /**
      * MetricName: 查询监控的指标项。目前仅允许以下四项：NetworkOut:出向带宽，NetworkIn:入向带宽，NetworkOutUsage:出向带宽使用率，NetworkInUsage:入向带宽使用率
      *
@@ -133,7 +130,6 @@ class GetPathXMetricRequest extends Request
     {
         $this->set("MetricName", $metricName);
     }
-
     /**
      * ResourceType: upath:加速线路,uga:加速实例
      *
@@ -149,11 +145,10 @@ class GetPathXMetricRequest extends Request
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
-
     /**
      * LineId: 具体线路id，调用DescribePathXLineConfig接口获取线路列表
      *
@@ -169,7 +164,7 @@ class GetPathXMetricRequest extends Request
      *
      * @param string $lineId
      */
-    public function setLineId($lineId)
+    public function setLineId(string $lineId)
     {
         $this->set("LineId", $lineId);
     }

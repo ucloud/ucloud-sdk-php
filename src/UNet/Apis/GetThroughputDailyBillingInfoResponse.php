@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UNet\Models\ThroughputDailyBillingInfo;
 
 class GetThroughputDailyBillingInfoResponse extends Response
 {
-    
 
     /**
      * Stats: EIP流量计费信息，详见模型ThroughputDailyBillingInfo
      *
-     * @return ThroughputDailyBillingInfo[]|null
+     * @return ThroughputDailyBillingInfoModel[]|null
      */
     public function getStats()
     {
@@ -36,7 +38,7 @@ class GetThroughputDailyBillingInfoResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ThroughputDailyBillingInfo($item));
+            array_push($result, new ThroughputDailyBillingInfoModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class GetThroughputDailyBillingInfoResponse extends Response
     /**
      * Stats: EIP流量计费信息，详见模型ThroughputDailyBillingInfo
      *
-     * @param ThroughputDailyBillingInfo[] $stats
+     * @param ThroughputDailyBillingInfoModel[] $stats
      */
     public function setStats(array $stats)
     {
@@ -54,7 +56,6 @@ class GetThroughputDailyBillingInfoResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalOut: 计费总流量
      *
@@ -70,11 +71,10 @@ class GetThroughputDailyBillingInfoResponse extends Response
      *
      * @param int $totalOut
      */
-    public function setTotalOut($totalOut)
+    public function setTotalOut(int $totalOut)
     {
         $this->set("TotalOut", $totalOut);
     }
-
     /**
      * EIPId: 资源ID
      *
@@ -90,7 +90,7 @@ class GetThroughputDailyBillingInfoResponse extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }

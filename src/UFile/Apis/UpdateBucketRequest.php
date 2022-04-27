@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class UpdateBucketRequest extends Request
         $this->markRequired("Type");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
@@ -44,11 +45,10 @@ class UpdateBucketRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * BucketName: 待修改Bucket的名称
      *
@@ -64,11 +64,10 @@ class UpdateBucketRequest extends Request
      *
      * @param string $bucketName
      */
-    public function setBucketName($bucketName)
+    public function setBucketName(string $bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
-
     /**
      * Type: Bucket访问类型;public或private
      *
@@ -84,7 +83,7 @@ class UpdateBucketRequest extends Request
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }

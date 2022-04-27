@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\IPSecVPN\Models\VPNTunnelDataSet;
-use UCloud\IPSecVPN\Models\IKEData;
 use UCloud\IPSecVPN\Models\IPSecData;
+use UCloud\IPSecVPN\Models\IKEData;
 
 class DescribeVPNTunnelResponse extends Response
 {
-    
 
     /**
      * TotalCount: VPN隧道总数
@@ -40,15 +42,14 @@ class DescribeVPNTunnelResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: 获取的VPN隧道信息列表，每项参数详见 VPNTunnelDataSet
      *
-     * @return VPNTunnelDataSet[]|null
+     * @return VPNTunnelDataSetModel[]|null
      */
     public function getDataSet()
     {
@@ -58,7 +59,7 @@ class DescribeVPNTunnelResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new VPNTunnelDataSet($item));
+            array_push($result, new VPNTunnelDataSetModel($item));
         }
         return $result;
     }
@@ -66,7 +67,7 @@ class DescribeVPNTunnelResponse extends Response
     /**
      * DataSet: 获取的VPN隧道信息列表，每项参数详见 VPNTunnelDataSet
      *
-     * @param VPNTunnelDataSet[] $dataSet
+     * @param VPNTunnelDataSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

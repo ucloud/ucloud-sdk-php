@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\GetUEcIDCVHostDataResponse;
+use UCloud\UEC\Models\GetUEcVHostDataResponse;
+use UCloud\UEC\Models\MonitorInfo;
+
 class DataSet extends Response
 {
-    
 
     /**
      * CPUUtilization: cpu使用率
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getCPUUtilization()
     {
@@ -35,7 +40,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -43,7 +48,7 @@ class DataSet extends Response
     /**
      * CPUUtilization: cpu使用率
      *
-     * @param MonitorInfo[] $cpuUtilization
+     * @param MonitorInfoModel[] $cpuUtilization
      */
     public function setCPUUtilization(array $cpuUtilization)
     {
@@ -53,11 +58,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * MemUtilization: 内存使用率
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getMemUtilization()
     {
@@ -67,7 +71,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -75,7 +79,7 @@ class DataSet extends Response
     /**
      * MemUtilization: 内存使用率
      *
-     * @param MonitorInfo[] $memUtilization
+     * @param MonitorInfoModel[] $memUtilization
      */
     public function setMemUtilization(array $memUtilization)
     {
@@ -85,11 +89,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * NICOut: 网卡出带宽
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getNICOut()
     {
@@ -99,7 +102,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -107,7 +110,7 @@ class DataSet extends Response
     /**
      * NICOut: 网卡出带宽
      *
-     * @param MonitorInfo[] $nicOut
+     * @param MonitorInfoModel[] $nicOut
      */
     public function setNICOut(array $nicOut)
     {
@@ -117,11 +120,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * NICIn: 网卡入带宽
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getNICIn()
     {
@@ -131,7 +133,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -139,7 +141,7 @@ class DataSet extends Response
     /**
      * NICIn: 网卡入带宽
      *
-     * @param MonitorInfo[] $nicIn
+     * @param MonitorInfoModel[] $nicIn
      */
     public function setNICIn(array $nicIn)
     {
@@ -149,11 +151,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * NetPacketOut: 网卡出包量
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getNetPacketOut()
     {
@@ -163,7 +164,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -171,7 +172,7 @@ class DataSet extends Response
     /**
      * NetPacketOut: 网卡出包量
      *
-     * @param MonitorInfo[] $netPacketOut
+     * @param MonitorInfoModel[] $netPacketOut
      */
     public function setNetPacketOut(array $netPacketOut)
     {
@@ -181,11 +182,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * NetPacketIn: 网卡入包量
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getNetPacketIn()
     {
@@ -195,7 +195,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -203,7 +203,7 @@ class DataSet extends Response
     /**
      * NetPacketIn: 网卡入包量
      *
-     * @param MonitorInfo[] $netPacketIn
+     * @param MonitorInfoModel[] $netPacketIn
      */
     public function setNetPacketIn(array $netPacketIn)
     {
@@ -213,11 +213,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * IORead: 磁盘读取量
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getIORead()
     {
@@ -227,7 +226,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -235,7 +234,7 @@ class DataSet extends Response
     /**
      * IORead: 磁盘读取量
      *
-     * @param MonitorInfo[] $ioRead
+     * @param MonitorInfoModel[] $ioRead
      */
     public function setIORead(array $ioRead)
     {
@@ -245,11 +244,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * IOWrite: 磁盘写入量
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getIOWrite()
     {
@@ -259,7 +257,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -267,7 +265,7 @@ class DataSet extends Response
     /**
      * IOWrite: 磁盘写入量
      *
-     * @param MonitorInfo[] $ioWrite
+     * @param MonitorInfoModel[] $ioWrite
      */
     public function setIOWrite(array $ioWrite)
     {
@@ -277,11 +275,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * DiskReadOps: 磁盘读取次数
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getDiskReadOps()
     {
@@ -291,7 +288,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -299,7 +296,7 @@ class DataSet extends Response
     /**
      * DiskReadOps: 磁盘读取次数
      *
-     * @param MonitorInfo[] $diskReadOps
+     * @param MonitorInfoModel[] $diskReadOps
      */
     public function setDiskReadOps(array $diskReadOps)
     {
@@ -309,11 +306,10 @@ class DataSet extends Response
         }
         return $result;
     }
-
     /**
      * DiskWriteOps: 磁盘写入次数
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getDiskWriteOps()
     {
@@ -323,7 +319,7 @@ class DataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -331,7 +327,7 @@ class DataSet extends Response
     /**
      * DiskWriteOps: 磁盘写入次数
      *
-     * @param MonitorInfo[] $diskWriteOps
+     * @param MonitorInfoModel[] $diskWriteOps
      */
     public function setDiskWriteOps(array $diskWriteOps)
     {

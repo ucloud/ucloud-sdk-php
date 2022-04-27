@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UFile\Models\GetUFileReportResponse;
+
 class UFileReportSet extends Response
 {
-    
 
     /**
      * Time: 配额消费时间，unix时间戳，精确到日期
@@ -37,11 +40,10 @@ class UFileReportSet extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
-
     /**
      * StorageVolume: 配额消费当日使用的存储容量，单位：GB*天
      *
@@ -57,11 +59,10 @@ class UFileReportSet extends Response
      *
      * @param float $storageVolume
      */
-    public function setStorageVolume($storageVolume)
+    public function setStorageVolume(float $storageVolume)
     {
         $this->set("StorageVolume", $storageVolume);
     }
-
     /**
      * DownloadTraffic: 配额消费当日使用的下载流量，单位：GB
      *
@@ -77,11 +78,10 @@ class UFileReportSet extends Response
      *
      * @param float $downloadTraffic
      */
-    public function setDownloadTraffic($downloadTraffic)
+    public function setDownloadTraffic(float $downloadTraffic)
     {
         $this->set("DownloadTraffic", $downloadTraffic);
     }
-
     /**
      * RequestCount: 配额消费当日使用的请求次数，单位：万次
      *
@@ -97,7 +97,7 @@ class UFileReportSet extends Response
      *
      * @param float $requestCount
      */
-    public function setRequestCount($requestCount)
+    public function setRequestCount(float $requestCount)
     {
         $this->set("RequestCount", $requestCount);
     }

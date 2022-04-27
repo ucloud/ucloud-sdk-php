@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Response\Response;
 
 class DeleteBucketResponse extends Response
 {
-    
 
     /**
      * BucketName: Bucket的名称
@@ -37,11 +38,10 @@ class DeleteBucketResponse extends Response
      *
      * @param string $bucketName
      */
-    public function setBucketName($bucketName)
+    public function setBucketName(string $bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
-
     /**
      * BucketId: Bucket的ID
      *
@@ -57,7 +57,7 @@ class DeleteBucketResponse extends Response
      *
      * @param string $bucketId
      */
-    public function setBucketId($bucketId)
+    public function setBucketId(string $bucketId)
     {
         $this->set("BucketId", $bucketId);
     }

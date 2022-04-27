@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class DescribeURedisConfigRequest extends Request
         $this->markRequired("RegionFlag");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -85,11 +84,10 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * RegionFlag: 是否是跨机房URedis(默认false)
      *
@@ -105,11 +103,10 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }
-
     /**
      * Version: Redis版本号
      *
@@ -125,11 +122,10 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
-
     /**
      * ConfigId: 配置文件ID
      *
@@ -145,11 +141,10 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param string $configId
      */
-    public function setConfigId($configId)
+    public function setConfigId(string $configId)
     {
         $this->set("ConfigId", $configId);
     }
-
     /**
      * Offset: 页显示的起始偏移, 默认值为0
      *
@@ -165,11 +160,10 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 页显示的条目数, 默认值为10
      *
@@ -185,7 +179,7 @@ class DescribeURedisConfigRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }

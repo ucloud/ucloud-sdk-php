@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\PathX\Models\PathXSSLSet;
+
 use UCloud\PathX\Models\SSLBindedTargetSet;
+use UCloud\PathX\Models\PathXSSLSet;
 
 class DescribePathXSSLResponse extends Response
 {
-    
 
     /**
      * DataSet: SSL证书详细信息，具体结构见 PathXSSLSet
      *
-     * @return PathXSSLSet[]|null
+     * @return PathXSSLSetModel[]|null
      */
     public function getDataSet()
     {
@@ -37,7 +39,7 @@ class DescribePathXSSLResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new PathXSSLSet($item));
+            array_push($result, new PathXSSLSetModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class DescribePathXSSLResponse extends Response
     /**
      * DataSet: SSL证书详细信息，具体结构见 PathXSSLSet
      *
-     * @param PathXSSLSet[] $dataSet
+     * @param PathXSSLSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {
@@ -55,7 +57,6 @@ class DescribePathXSSLResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 符合条件的证书总数
      *
@@ -71,7 +72,7 @@ class DescribePathXSSLResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

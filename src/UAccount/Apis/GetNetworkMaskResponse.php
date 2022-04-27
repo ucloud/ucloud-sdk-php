@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,31 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UAccount\Models\NetworkMask;
 
 class GetNetworkMaskResponse extends Response
 {
-    
 
     /**
      * Data: 接口返回数据
      *
-     * @return NetworkMask|null
+     * @return NetworkMaskModel|null
      */
     public function getData()
     {
-        return new NetworkMask($this->get("Data"));
+        return new NetworkMaskModel($this->get("Data"));
     }
 
     /**
      * Data: 接口返回数据
      *
-     * @param NetworkMask $data
+     * @param NetworkMaskModel $data
      */
-    public function setData(array $data)
+    public function setData(NetworkMaskModel $data)
     {
         $this->set("Data", $data->getAll());
     }

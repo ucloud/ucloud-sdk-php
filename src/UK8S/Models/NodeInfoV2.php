@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UK8S\Models\KubeProxy;
+use UCloud\UK8S\Models\UHostIPSet;
+use UCloud\UK8S\Models\ListUK8SClusterNodeV2Response;
+
 class NodeInfoV2 extends Response
 {
-    
 
     /**
      * Zone: Node所在可用区
@@ -37,11 +42,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * NodeId: NodeId，Node在UK8S处的唯一标示，如uk8s-reewqe5-sdasadsda
      *
@@ -57,11 +61,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
-
     /**
      * NodeRole: node角色，枚举值为master、node
      *
@@ -77,11 +80,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $nodeRole
      */
-    public function setNodeRole($nodeRole)
+    public function setNodeRole(string $nodeRole)
     {
         $this->set("NodeRole", $nodeRole);
     }
-
     /**
      * NodeStatus: Node的状态：枚举值：初始化："Initializing"；启动中："Starting"；运行："Running"；停止中："Stopping"；停止："Stopped"；待删除："ToBeDeleted"；删除中："Deleting"；异常："Error"；安装失败："Install Fail"；
      *
@@ -97,11 +99,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $nodeStatus
      */
-    public function setNodeStatus($nodeStatus)
+    public function setNodeStatus(string $nodeStatus)
     {
         $this->set("NodeStatus", $nodeStatus);
     }
-
     /**
      * InstanceType: Node节点的资源类型，枚举值为UHost或UPHost。
      *
@@ -117,11 +118,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
-
     /**
      * InstanceName: 资源名称，初始值等于NodeId，用户可在UHost或UPHost处修改。
      *
@@ -137,11 +137,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $instanceName
      */
-    public function setInstanceName($instanceName)
+    public function setInstanceName(string $instanceName)
     {
         $this->set("InstanceName", $instanceName);
     }
-
     /**
      * InstanceId: 资源ID，如uhost-xxxx，或uphost-xxxxx。
      *
@@ -157,11 +156,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $instanceId
      */
-    public function setInstanceId($instanceId)
+    public function setInstanceId(string $instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
-
     /**
      * MachineType: 机型类别，分别对应Uhost的MachineType或PHost的PHostType。
      *
@@ -177,11 +175,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
-
     /**
      * OsType: Node节点的操作系统类别，如Linux或Windows。
      *
@@ -197,11 +194,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
-
     /**
      * OsName: Node节点的镜像名称。
      *
@@ -217,11 +213,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $osName
      */
-    public function setOsName($osName)
+    public function setOsName(string $osName)
     {
         $this->set("OsName", $osName);
     }
-
     /**
      * CPU: Node节点CPU核数，单位: 个。
      *
@@ -237,11 +232,10 @@ class NodeInfoV2 extends Response
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
-
     /**
      * Memory: 内存大小，单位: MB。
      *
@@ -257,15 +251,14 @@ class NodeInfoV2 extends Response
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
-
     /**
      * IPSet: 节点IP信息，详细信息见 UHostIPSet。
      *
-     * @return UHostIPSet[]|null
+     * @return UHostIPSetModel[]|null
      */
     public function getIPSet()
     {
@@ -275,7 +268,7 @@ class NodeInfoV2 extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UHostIPSet($item));
+            array_push($result, new UHostIPSetModel($item));
         }
         return $result;
     }
@@ -283,7 +276,7 @@ class NodeInfoV2 extends Response
     /**
      * IPSet: 节点IP信息，详细信息见 UHostIPSet。
      *
-     * @param UHostIPSet[] $ipSet
+     * @param UHostIPSetModel[] $ipSet
      */
     public function setIPSet(array $ipSet)
     {
@@ -293,7 +286,6 @@ class NodeInfoV2 extends Response
         }
         return $result;
     }
-
     /**
      * CreateTime: 节点创建时间
      *
@@ -309,11 +301,10 @@ class NodeInfoV2 extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpireTime: 节点计费到期时间
      *
@@ -329,11 +320,10 @@ class NodeInfoV2 extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * AsgId: 节点所属伸缩组ID，非伸缩组创建出来的节点，伸缩组ID为Default。
      *
@@ -349,11 +339,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $asgId
      */
-    public function setAsgId($asgId)
+    public function setAsgId(string $asgId)
     {
         $this->set("AsgId", $asgId);
     }
-
     /**
      * Unschedulable: 是否允许Pod调度到该节点，枚举值为true或false。
      *
@@ -369,31 +358,29 @@ class NodeInfoV2 extends Response
      *
      * @param boolean $unschedulable
      */
-    public function setUnschedulable($unschedulable)
+    public function setUnschedulable(bool $unschedulable)
     {
         $this->set("Unschedulable", $unschedulable);
     }
-
     /**
      * KubeProxy: kubeproxy信息，详细信息见KubeProxy。
      *
-     * @return KubeProxy|null
+     * @return KubeProxyModel|null
      */
     public function getKubeProxy()
     {
-        return new KubeProxy($this->get("KubeProxy"));
+        return new KubeProxyModel($this->get("KubeProxy"));
     }
 
     /**
      * KubeProxy: kubeproxy信息，详细信息见KubeProxy。
      *
-     * @param KubeProxy $kubeProxy
+     * @param KubeProxyModel $kubeProxy
      */
-    public function setKubeProxy(array $kubeProxy)
+    public function setKubeProxy(KubeProxyModel $kubeProxy)
     {
         $this->set("KubeProxy", $kubeProxy->getAll());
     }
-
     /**
      * NodeLogInfo: 加节点时判断是否没有资源，如果返回NORESOURCE则代表没有资源了
      *
@@ -409,11 +396,10 @@ class NodeInfoV2 extends Response
      *
      * @param string $nodeLogInfo
      */
-    public function setNodeLogInfo($nodeLogInfo)
+    public function setNodeLogInfo(string $nodeLogInfo)
     {
         $this->set("NodeLogInfo", $nodeLogInfo);
     }
-
     /**
      * GPU: 节点的GPU颗数。
      *
@@ -429,7 +415,7 @@ class NodeInfoV2 extends Response
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -30,7 +32,6 @@ class SetUDBRWSplittingRequest extends Request
         $this->markRequired("DBIds");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -47,11 +48,10 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -67,11 +67,10 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * MasterDBId: DB实例ID（master)
      *
@@ -87,11 +86,10 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId($masterDBId)
+    public function setMasterDBId(string $masterDBId)
     {
         $this->set("MasterDBId", $masterDBId);
     }
-
     /**
      * ReadModel: 读写分离策略
      *
@@ -107,11 +105,10 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param string $readModel
      */
-    public function setReadModel($readModel)
+    public function setReadModel(string $readModel)
     {
         $this->set("ReadModel", $readModel);
     }
-
     /**
      * DBIds: DBIds.0 代表UDB主节点， DBIds.1 到DBIds.n 代表1到N个从节点
      *
@@ -131,7 +128,6 @@ class SetUDBRWSplittingRequest extends Request
     {
         $this->set("DBIds", $dbIds);
     }
-
     /**
      * ReadPercents: udb主从节点的只读比例。ReadPercents.0代表主节点的只读比例，ReadPercents.1代表从节点1的读写比例， 以此类推
      *
@@ -151,7 +147,6 @@ class SetUDBRWSplittingRequest extends Request
     {
         $this->set("ReadPercents", $readPercents);
     }
-
     /**
      * DelayThreshold: 时间阙值
      *
@@ -167,7 +162,7 @@ class SetUDBRWSplittingRequest extends Request
      *
      * @param int $delayThreshold
      */
-    public function setDelayThreshold($delayThreshold)
+    public function setDelayThreshold(int $delayThreshold)
     {
         $this->set("DelayThreshold", $delayThreshold);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
         $this->markRequired("DiskSpace");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -46,11 +47,10 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -66,11 +66,10 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -86,11 +85,10 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * DBId: 实例的Id
      *
@@ -106,11 +104,10 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
-
     /**
      * MemoryLimit: 内存限制(MB)
      *
@@ -126,11 +123,10 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
-
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 500G
      *
@@ -146,11 +142,10 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
-
     /**
      * UseSSD: 是否使用SSD，默认为false
      *
@@ -166,11 +161,10 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
-
     /**
      * SSDType: SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选
      *
@@ -186,7 +180,7 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }

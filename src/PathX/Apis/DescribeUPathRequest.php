@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class DescribeUPathRequest extends Request
         $this->markRequired("ProjectId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。请参考[GetProjectList接口](../summary/get_project_list.html)
@@ -43,11 +44,10 @@ class DescribeUPathRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * UPathId: 如果不填参数 返回 ProjectId 下所有的线路资源，填此参数则返回upath实例ID匹配的线路
      *
@@ -63,7 +63,7 @@ class DescribeUPathRequest extends Request
      *
      * @param string $uPathId
      */
-    public function setUPathId($uPathId)
+    public function setUPathId(string $uPathId)
     {
         $this->set("UPathId", $uPathId);
     }

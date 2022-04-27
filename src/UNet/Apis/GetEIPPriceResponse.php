@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UNet\Models\EIPPriceDetailSet;
 
 class GetEIPPriceResponse extends Response
 {
-    
 
     /**
      * PriceSet: 弹性IP价格详情 详情见 EIPPriceDetailSet
      *
-     * @return EIPPriceDetailSet[]|null
+     * @return EIPPriceDetailSetModel[]|null
      */
     public function getPriceSet()
     {
@@ -36,7 +38,7 @@ class GetEIPPriceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new EIPPriceDetailSet($item));
+            array_push($result, new EIPPriceDetailSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class GetEIPPriceResponse extends Response
     /**
      * PriceSet: 弹性IP价格详情 详情见 EIPPriceDetailSet
      *
-     * @param EIPPriceDetailSet[] $priceSet
+     * @param EIPPriceDetailSetModel[] $priceSet
      */
     public function setPriceSet(array $priceSet)
     {

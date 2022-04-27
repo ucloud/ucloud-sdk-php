@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\DescribeUHostInstanceResponse;
+use UCloud\UHost\Models\UHostInstanceSet;
+use UCloud\UHost\Models\DescribeUHostLiteResponse;
+
 class UHostKeyPair extends Response
 {
-    
 
     /**
      * KeyPairId: 密钥对ID
@@ -37,11 +42,10 @@ class UHostKeyPair extends Response
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId($keyPairId)
+    public function setKeyPairId(string $keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
-
     /**
      * KeyPairState: 主机密钥对状态，Normal 正常，Deleted 删除
      *
@@ -57,7 +61,7 @@ class UHostKeyPair extends Response
      *
      * @param string $keyPairState
      */
-    public function setKeyPairState($keyPairState)
+    public function setKeyPairState(string $keyPairState)
     {
         $this->set("KeyPairState", $keyPairState);
     }

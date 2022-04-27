@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
@@ -32,7 +34,6 @@ class GetCubePriceRequest extends Request
         $this->markRequired("Quantity");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -49,11 +50,10 @@ class GetCubePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -69,11 +69,10 @@ class GetCubePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -89,11 +88,10 @@ class GetCubePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Count: 购买数量
      *
@@ -109,11 +107,10 @@ class GetCubePriceRequest extends Request
      *
      * @param string $count
      */
-    public function setCount($count)
+    public function setCount(string $count)
     {
         $this->set("Count", $count);
     }
-
     /**
      * Cpu: CPU 配置，单位为毫核，例如如 1 核则须输入 1000
      *
@@ -129,11 +126,10 @@ class GetCubePriceRequest extends Request
      *
      * @param string $cpu
      */
-    public function setCpu($cpu)
+    public function setCpu(string $cpu)
     {
         $this->set("Cpu", $cpu);
     }
-
     /**
      * Mem: 内存配置，单位为 Mi，例如 1Gi 须输入 1024
      *
@@ -149,11 +145,10 @@ class GetCubePriceRequest extends Request
      *
      * @param string $mem
      */
-    public function setMem($mem)
+    public function setMem(string $mem)
     {
         $this->set("Mem", $mem);
     }
-
     /**
      * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按秒后付费，默认为月付
      *
@@ -169,11 +164,10 @@ class GetCubePriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长。默认:值 1。按小时购买（Dynamic/Postpay）时无需此参数。 月付时，此参数传0，代表购买至月末。
      *
@@ -189,7 +183,7 @@ class GetCubePriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }

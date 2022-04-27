@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UMem\Models\UMemDataSet;
-use UCloud\UMem\Models\UMemSlaveDataSet;
 use UCloud\UMem\Models\UMemSpaceAddressSet;
+use UCloud\UMem\Models\UMemSlaveDataSet;
 
 class DescribeUMemResponse extends Response
 {
-    
 
     /**
      * TotalCount: 根据过滤条件得到的总数
@@ -40,15 +42,14 @@ class DescribeUMemResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: UMem实例列表, 详细参见UMemDataSet
      *
-     * @return UMemDataSet[]|null
+     * @return UMemDataSetModel[]|null
      */
     public function getDataSet()
     {
@@ -58,7 +59,7 @@ class DescribeUMemResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UMemDataSet($item));
+            array_push($result, new UMemDataSetModel($item));
         }
         return $result;
     }
@@ -66,7 +67,7 @@ class DescribeUMemResponse extends Response
     /**
      * DataSet: UMem实例列表, 详细参见UMemDataSet
      *
-     * @param UMemDataSet[] $dataSet
+     * @param UMemDataSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

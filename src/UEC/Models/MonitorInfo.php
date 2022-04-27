@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\MetricisDataSet;
+use UCloud\UEC\Models\GetUEcVHostDataResponse;
+use UCloud\UEC\Models\GetUEcHolderMetricsResponse;
+use UCloud\UEC\Models\GetUEcIDCVHostDataResponse;
+use UCloud\UEC\Models\DataSet;
+
 class MonitorInfo extends Response
 {
-    
 
     /**
      * TimeStamp: 时间戳
@@ -37,11 +44,10 @@ class MonitorInfo extends Response
      *
      * @param int $timeStamp
      */
-    public function setTimeStamp($timeStamp)
+    public function setTimeStamp(int $timeStamp)
     {
         $this->set("TimeStamp", $timeStamp);
     }
-
     /**
      * Value: 值
      *
@@ -57,7 +63,7 @@ class MonitorInfo extends Response
      *
      * @param int $value
      */
-    public function setValue($value)
+    public function setValue(int $value)
     {
         $this->set("Value", $value);
     }

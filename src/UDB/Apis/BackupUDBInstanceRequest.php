@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class BackupUDBInstanceRequest extends Request
         $this->markRequired("BackupName");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -85,11 +84,10 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * DBId: DB实例Id,该值可以通过DescribeUDBInstance获取
      *
@@ -105,11 +103,10 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
-
     /**
      * BackupName: 备份名称
      *
@@ -125,11 +122,10 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }
-
     /**
      * UseBlacklist: 是否使用黑名单备份，默认false
      *
@@ -145,11 +141,10 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param boolean $useBlacklist
      */
-    public function setUseBlacklist($useBlacklist)
+    public function setUseBlacklist(bool $useBlacklist)
     {
         $this->set("UseBlacklist", $useBlacklist);
     }
-
     /**
      * BackupMethod: 使用的备份方式。（快照备份即物理备份。注意只有SSD版本的mysql实例支持设置为snapshot）
      *
@@ -165,11 +160,10 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $backupMethod
      */
-    public function setBackupMethod($backupMethod)
+    public function setBackupMethod(string $backupMethod)
     {
         $this->set("BackupMethod", $backupMethod);
     }
-
     /**
      * Blacklist: 备份黑名单列表，以 ; 分隔。注意：只有逻辑备份下备份黑名单才生效，快照备份备份黑名单下无效
      *
@@ -185,11 +179,10 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param string $blacklist
      */
-    public function setBlacklist($blacklist)
+    public function setBlacklist(string $blacklist)
     {
         $this->set("Blacklist", $blacklist);
     }
-
     /**
      * ForceBackup: true表示逻辑备份时是使用 --force 参数，false表示不使用 --force 参数。物理备份此参数无效。
      *
@@ -205,7 +198,7 @@ class BackupUDBInstanceRequest extends Request
      *
      * @param boolean $forceBackup
      */
-    public function setForceBackup($forceBackup)
+    public function setForceBackup(bool $forceBackup)
     {
         $this->set("ForceBackup", $forceBackup);
     }

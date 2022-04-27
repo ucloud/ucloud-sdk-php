@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class DescribeBucketRequest extends Request
         parent::__construct(["Action" => "DescribeBucket"]);
     }
 
-    
 
     /**
      * Region: 如果提供此参数，则获取相应地域下所有空间的空间名称(只返回空间名称信息)
@@ -42,11 +43,10 @@ class DescribeBucketRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -62,11 +62,10 @@ class DescribeBucketRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * BucketName: 待获取Bucket的名称，若不提供，则获取所有Bucket
      *
@@ -82,11 +81,10 @@ class DescribeBucketRequest extends Request
      *
      * @param string $bucketName
      */
-    public function setBucketName($bucketName)
+    public function setBucketName(string $bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
-
     /**
      * Offset: 获取所有Bucket列表的偏移数目，默认为0
      *
@@ -102,11 +100,10 @@ class DescribeBucketRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 获取所有Bucket列表的限制数目，默认为20
      *
@@ -122,7 +119,7 @@ class DescribeBucketRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }

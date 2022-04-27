@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateBandwidthPackageResponse extends Response
 {
-    
 
     /**
      * BandwidthPackageId: 所创建带宽包的资源ID
@@ -37,7 +38,7 @@ class CreateBandwidthPackageResponse extends Response
      *
      * @param string $bandwidthPackageId
      */
-    public function setBandwidthPackageId($bandwidthPackageId)
+    public function setBandwidthPackageId(string $bandwidthPackageId)
     {
         $this->set("BandwidthPackageId", $bandwidthPackageId);
     }

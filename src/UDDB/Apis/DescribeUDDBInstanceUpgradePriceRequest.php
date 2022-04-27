@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -31,7 +33,6 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
         $this->markRequired("RouterNodeNum");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -48,11 +49,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -68,11 +68,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -88,11 +87,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * UDDBId: UDDB实例ID
      *
@@ -108,11 +106,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $uddbId
      */
-    public function setUDDBId($uddbId)
+    public function setUDDBId(string $uddbId)
     {
         $this->set("UDDBId", $uddbId);
     }
-
     /**
      * RouterVersion: UDDB路由节点的版本。分为三种： Trival(免费版)： 2中间件节点； QPS：1.5WFeelFree(标准版)： 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w；EnjoyAlone(物理机版)：专享物理机，节点数让客户可选
      *
@@ -128,11 +125,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $routerVersion
      */
-    public function setRouterVersion($routerVersion)
+    public function setRouterVersion(string $routerVersion)
     {
         $this->set("RouterVersion", $routerVersion);
     }
-
     /**
      * RouterNodeNum: 其他版本：该参数可不填；专享版：物理机节点的个数。一台物理机有2个节点
      *
@@ -148,11 +144,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $routerNodeNum
      */
-    public function setRouterNodeNum($routerNodeNum)
+    public function setRouterNodeNum(int $routerNodeNum)
     {
         $this->set("RouterNodeNum", $routerNodeNum);
     }
-
     /**
      * DataNodeCount: 新的数据节点个数 取值必须>0.
      *
@@ -168,11 +163,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $dataNodeCount
      */
-    public function setDataNodeCount($dataNodeCount)
+    public function setDataNodeCount(int $dataNodeCount)
     {
         $this->set("DataNodeCount", $dataNodeCount);
     }
-
     /**
      * DataNodeMemory: 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值.
      *
@@ -188,11 +182,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory($dataNodeMemory)
+    public function setDataNodeMemory(int $dataNodeMemory)
     {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
-
     /**
      * DataNodeDiskSpace: 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.
      *
@@ -208,11 +201,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace($dataNodeDiskSpace)
+    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
     {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
-
     /**
      * DataNodeSlaveCount: 每个数据节点的只读实例个数, 取值必须>=0.
      *
@@ -228,11 +220,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param int $dataNodeSlaveCount
      */
-    public function setDataNodeSlaveCount($dataNodeSlaveCount)
+    public function setDataNodeSlaveCount(int $dataNodeSlaveCount)
     {
         $this->set("DataNodeSlaveCount", $dataNodeSlaveCount);
     }
-
     /**
      * InstanceMode: 存储节点的高可用模式， 分为高可用UDB（HA）和普通UDB（Normal），如果不填， 则默认为HA
      *
@@ -248,11 +239,10 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
-
     /**
      * InstanceType: 存储节点和只读实例的磁盘类型。分为：SSD磁盘（SATA_SSD）或普通磁盘(Normal)。 如果不填，则默认为SATA_SSD
      *
@@ -268,7 +258,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }

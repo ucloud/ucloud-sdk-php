@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UCDN\Models\HttpCodeInfo;
 
 class GetUcdnDomainOriginHttpCodeResponse extends Response
 {
-    
 
     /**
      * HttpCodeDetail: 状态码实例表。详细见HttpCodeInfo
      *
-     * @return HttpCodeInfo[]|null
+     * @return HttpCodeInfoModel[]|null
      */
     public function getHttpCodeDetail()
     {
@@ -36,7 +38,7 @@ class GetUcdnDomainOriginHttpCodeResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new HttpCodeInfo($item));
+            array_push($result, new HttpCodeInfoModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class GetUcdnDomainOriginHttpCodeResponse extends Response
     /**
      * HttpCodeDetail: 状态码实例表。详细见HttpCodeInfo
      *
-     * @param HttpCodeInfo[] $httpCodeDetail
+     * @param HttpCodeInfoModel[] $httpCodeDetail
      */
     public function setHttpCodeDetail(array $httpCodeDetail)
     {

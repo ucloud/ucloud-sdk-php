@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -30,7 +32,6 @@ class BackupUDBInstanceSlowLogRequest extends Request
         $this->markRequired("BackupName");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -47,11 +48,10 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -67,11 +67,10 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * DBId: DB实例Id,该值可以通过DescribeUDBInstance获取
      *
@@ -87,11 +86,10 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
-
     /**
      * BeginTime: 过滤条件:起始时间(时间戳)
      *
@@ -107,11 +105,10 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 过滤条件:结束时间(时间戳)
      *
@@ -127,11 +124,10 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
-
     /**
      * BackupName: 备份文件名称
      *
@@ -147,7 +143,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }

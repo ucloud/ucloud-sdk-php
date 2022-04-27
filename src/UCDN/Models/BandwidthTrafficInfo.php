@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnDomainBandwidthV2Response;
+use UCloud\UCDN\Models\GetUcdnDomainBandwidthByIpProtocolResponse;
+
 class BandwidthTrafficInfo extends Response
 {
-    
 
     /**
      * Time: 带宽获取的时间点。格式：时间戳
@@ -37,11 +41,10 @@ class BandwidthTrafficInfo extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
-
     /**
      * CdnBandwidth: 返回值返回指定时间区间内CDN的带宽峰值，单位Mbps（如果请求参数Type为0，则Value是五分钟粒度的带宽值，如果Type为1，则Value是1小时的带宽峰值，如果Type为2，则Value是一天内的带宽峰值）
      *
@@ -57,11 +60,10 @@ class BandwidthTrafficInfo extends Response
      *
      * @param float $cdnBandwidth
      */
-    public function setCdnBandwidth($cdnBandwidth)
+    public function setCdnBandwidth(float $cdnBandwidth)
     {
         $this->set("CdnBandwidth", $cdnBandwidth);
     }
-
     /**
      * Traffic: 对应时间粒度的流量，单位字节
      *
@@ -77,7 +79,7 @@ class BandwidthTrafficInfo extends Response
      *
      * @param float $traffic
      */
-    public function setTraffic($traffic)
+    public function setTraffic(float $traffic)
     {
         $this->set("Traffic", $traffic);
     }

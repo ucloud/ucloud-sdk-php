@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UPHost\Models\DescribePHostResponse;
+use UCloud\UPHost\Models\PHostSet;
+
 class PHostIPSet extends Response
 {
-    
 
     /**
      * OperatorName:  国际: Internation， BGP: BGP， 内网: Private
@@ -37,11 +41,10 @@ class PHostIPSet extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
-
     /**
      * IPId: IP资源ID(内网IP无资源ID)（待废弃）
      *
@@ -57,11 +60,10 @@ class PHostIPSet extends Response
      *
      * @param string $ipId
      */
-    public function setIPId($ipId)
+    public function setIPId(string $ipId)
     {
         $this->set("IPId", $ipId);
     }
-
     /**
      * IPAddr: IP地址，
      *
@@ -77,11 +79,10 @@ class PHostIPSet extends Response
      *
      * @param string $ipAddr
      */
-    public function setIPAddr($ipAddr)
+    public function setIPAddr(string $ipAddr)
     {
         $this->set("IPAddr", $ipAddr);
     }
-
     /**
      * MACAddr: MAC地址
      *
@@ -97,11 +98,10 @@ class PHostIPSet extends Response
      *
      * @param string $macAddr
      */
-    public function setMACAddr($macAddr)
+    public function setMACAddr(string $macAddr)
     {
         $this->set("MACAddr", $macAddr);
     }
-
     /**
      * Bandwidth: IP对应带宽，单位Mb，内网IP不显示带宽信息
      *
@@ -117,11 +117,10 @@ class PHostIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * SubnetId: 子网ID
      *
@@ -137,11 +136,10 @@ class PHostIPSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * VPCId: VPC ID
      *
@@ -157,7 +155,7 @@ class PHostIPSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }

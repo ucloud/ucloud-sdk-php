@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UEC\Models\NodeInfo;
 use UCloud\UEC\Models\NodeIpList;
 
 class DescribeUEcVHostResponse extends Response
 {
-    
 
     /**
      * TotalCount: 满足条件的节点总数
@@ -39,15 +41,14 @@ class DescribeUEcVHostResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * NodeList: 节点列表
      *
-     * @return NodeInfo[]|null
+     * @return NodeInfoModel[]|null
      */
     public function getNodeList()
     {
@@ -57,7 +58,7 @@ class DescribeUEcVHostResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new NodeInfo($item));
+            array_push($result, new NodeInfoModel($item));
         }
         return $result;
     }
@@ -65,7 +66,7 @@ class DescribeUEcVHostResponse extends Response
     /**
      * NodeList: 节点列表
      *
-     * @param NodeInfo[] $nodeList
+     * @param NodeInfoModel[] $nodeList
      */
     public function setNodeList(array $nodeList)
     {

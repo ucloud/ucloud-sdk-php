@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateAttachUDiskResponse extends Response
 {
-    
 
     /**
      * UDiskId: 挂载的UDisk实例ID
@@ -37,11 +38,10 @@ class CreateAttachUDiskResponse extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
-
     /**
      * UHostId: 挂载的UHost实例ID。【即将废弃，建议使用HostId】
      *
@@ -57,11 +57,10 @@ class CreateAttachUDiskResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
-
     /**
      * HostId: 挂载的Host实例ID
      *
@@ -77,11 +76,10 @@ class CreateAttachUDiskResponse extends Response
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }
-
     /**
      * DeviceName: 挂载设备名称
      *
@@ -97,7 +95,7 @@ class CreateAttachUDiskResponse extends Response
      *
      * @param string $deviceName
      */
-    public function setDeviceName($deviceName)
+    public function setDeviceName(string $deviceName)
     {
         $this->set("DeviceName", $deviceName);
     }

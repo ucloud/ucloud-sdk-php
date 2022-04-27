@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDB\Models\UDBInstanceSet;
-use UCloud\UDB\Models\UDBSlaveInstanceSet;
 use UCloud\UDB\Models\UFileDataSet;
+use UCloud\UDB\Models\UDBSlaveInstanceSet;
 
 class DescribeUDBInstanceResponse extends Response
 {
-    
 
     /**
      * DataSet: DB实例信息列表 UDBInstanceSet
      *
-     * @return UDBInstanceSet[]|null
+     * @return UDBInstanceSetModel[]|null
      */
     public function getDataSet()
     {
@@ -38,7 +40,7 @@ class DescribeUDBInstanceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UDBInstanceSet($item));
+            array_push($result, new UDBInstanceSetModel($item));
         }
         return $result;
     }
@@ -46,7 +48,7 @@ class DescribeUDBInstanceResponse extends Response
     /**
      * DataSet: DB实例信息列表 UDBInstanceSet
      *
-     * @param UDBInstanceSet[] $dataSet
+     * @param UDBInstanceSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {
@@ -56,7 +58,6 @@ class DescribeUDBInstanceResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 用户db组的数量，对于 mysql: 主从结对数量，没有slave，则只有master mongodb: 副本集数量
      *
@@ -72,7 +73,7 @@ class DescribeUDBInstanceResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

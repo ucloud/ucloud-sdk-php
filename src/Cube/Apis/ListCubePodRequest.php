@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class ListCubePodRequest extends Request
         $this->markRequired("Region");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -43,11 +44,10 @@ class ListCubePodRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -63,11 +63,10 @@ class ListCubePodRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -83,11 +82,10 @@ class ListCubePodRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * VPCId: VPC的Id
      *
@@ -103,11 +101,10 @@ class ListCubePodRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: 子网Id
      *
@@ -123,11 +120,10 @@ class ListCubePodRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * Group: 组名称
      *
@@ -143,11 +139,10 @@ class ListCubePodRequest extends Request
      *
      * @param string $group
      */
-    public function setGroup($group)
+    public function setGroup(string $group)
     {
         $this->set("Group", $group);
     }
-
     /**
      * Offset: 默认0
      *
@@ -163,11 +158,10 @@ class ListCubePodRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 默认20
      *
@@ -183,11 +177,10 @@ class ListCubePodRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * DeploymentId: Deployment的Id
      *
@@ -203,7 +196,7 @@ class ListCubePodRequest extends Request
      *
      * @param string $deploymentId
      */
-    public function setDeploymentId($deploymentId)
+    public function setDeploymentId(string $deploymentId)
     {
         $this->set("DeploymentId", $deploymentId);
     }

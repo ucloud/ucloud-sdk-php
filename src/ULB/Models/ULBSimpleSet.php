@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\ULB\Models\DescribeULBSimpleResponse;
+use UCloud\ULB\Models\LoggerSet;
+use UCloud\ULB\Models\FirewallSet;
+use UCloud\ULB\Models\ULBIPSet;
+
 class ULBSimpleSet extends Response
 {
-    
 
     /**
      * ListenType: ULB 监听器类型，枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发；Comprehensive，兼容型；Pending，未定型
@@ -37,11 +43,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $listenType
      */
-    public function setListenType($listenType)
+    public function setListenType(string $listenType)
     {
         $this->set("ListenType", $listenType);
     }
-
     /**
      * IPVersion: ULB提供服务的IP类型。枚举值，“IPv4”,"IPv6"。默认为“IPv4”
      *
@@ -57,11 +62,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $ipVersion
      */
-    public function setIPVersion($ipVersion)
+    public function setIPVersion(string $ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }
-
     /**
      * ULBId: 负载均衡的资源ID
      *
@@ -77,11 +81,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
-
     /**
      * Name: 负载均衡的资源名称
      *
@@ -97,11 +100,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Tag: 负载均衡的业务组名称
      *
@@ -117,11 +119,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Remark: 负载均衡的备注
      *
@@ -137,11 +138,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * CreateTime: ULB的创建时间，格式为Unix Timestamp
      *
@@ -157,11 +157,10 @@ class ULBSimpleSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * VPCId: ULB所在的VPC的ID
      *
@@ -177,11 +176,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: ULB 为 InnerMode 时，ULB 所属的子网ID
      *
@@ -197,11 +195,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * BusinessId: ULB 所属的业务组ID
      *
@@ -217,11 +214,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $businessId
      */
-    public function setBusinessId($businessId)
+    public function setBusinessId(string $businessId)
     {
         $this->set("BusinessId", $businessId);
     }
-
     /**
      * PrivateIP: ULB的内网IP，当ULBType为OuterMode时，该值为空
      *
@@ -237,11 +233,10 @@ class ULBSimpleSet extends Response
      *
      * @param string $privateIP
      */
-    public function setPrivateIP($privateIP)
+    public function setPrivateIP(string $privateIP)
     {
         $this->set("PrivateIP", $privateIP);
     }
-
     /**
      * BandwidthType: 带宽类型，枚举值为： 0，非共享带宽； 1，共享带宽
      *
@@ -257,11 +252,10 @@ class ULBSimpleSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType($bandwidthType)
+    public function setBandwidthType(int $bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
-
     /**
      * Bandwidth: 带宽
      *
@@ -277,15 +271,14 @@ class ULBSimpleSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * IPSet: ULB的详细信息列表，具体结构见下方 ULBIPSet
      *
-     * @return ULBIPSet[]|null
+     * @return ULBIPSetModel[]|null
      */
     public function getIPSet()
     {
@@ -295,7 +288,7 @@ class ULBSimpleSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ULBIPSet($item));
+            array_push($result, new ULBIPSetModel($item));
         }
         return $result;
     }
@@ -303,7 +296,7 @@ class ULBSimpleSet extends Response
     /**
      * IPSet: ULB的详细信息列表，具体结构见下方 ULBIPSet
      *
-     * @param ULBIPSet[] $ipSet
+     * @param ULBIPSetModel[] $ipSet
      */
     public function setIPSet(array $ipSet)
     {
@@ -313,7 +306,6 @@ class ULBSimpleSet extends Response
         }
         return $result;
     }
-
     /**
      * VServerCount: ulb下vserver数量
      *
@@ -329,11 +321,10 @@ class ULBSimpleSet extends Response
      *
      * @param int $vServerCount
      */
-    public function setVServerCount($vServerCount)
+    public function setVServerCount(int $vServerCount)
     {
         $this->set("VServerCount", $vServerCount);
     }
-
     /**
      * ULBType: ULB 的类型（InnerMode or OuterMode）
      *
@@ -349,15 +340,14 @@ class ULBSimpleSet extends Response
      *
      * @param string $ulbType
      */
-    public function setULBType($ulbType)
+    public function setULBType(string $ulbType)
     {
         $this->set("ULBType", $ulbType);
     }
-
     /**
      * FirewallSet: 防火墙信息，具体结构见下方 FirewallSet
      *
-     * @return FirewallSet[]|null
+     * @return FirewallSetModel[]|null
      */
     public function getFirewallSet()
     {
@@ -367,7 +357,7 @@ class ULBSimpleSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new FirewallSet($item));
+            array_push($result, new FirewallSetModel($item));
         }
         return $result;
     }
@@ -375,7 +365,7 @@ class ULBSimpleSet extends Response
     /**
      * FirewallSet: 防火墙信息，具体结构见下方 FirewallSet
      *
-     * @param FirewallSet[] $firewallSet
+     * @param FirewallSetModel[] $firewallSet
      */
     public function setFirewallSet(array $firewallSet)
     {
@@ -385,7 +375,6 @@ class ULBSimpleSet extends Response
         }
         return $result;
     }
-
     /**
      * EnableLog: ULB是否开启日志功能。0，关闭；1，开启
      *
@@ -401,27 +390,26 @@ class ULBSimpleSet extends Response
      *
      * @param int $enableLog
      */
-    public function setEnableLog($enableLog)
+    public function setEnableLog(int $enableLog)
     {
         $this->set("EnableLog", $enableLog);
     }
-
     /**
      * LogSet: 日志功能相关信息，仅当EnableLog为true时会返回，具体结构见下方 LoggerSet
      *
-     * @return LoggerSet|null
+     * @return LoggerSetModel|null
      */
     public function getLogSet()
     {
-        return new LoggerSet($this->get("LogSet"));
+        return new LoggerSetModel($this->get("LogSet"));
     }
 
     /**
      * LogSet: 日志功能相关信息，仅当EnableLog为true时会返回，具体结构见下方 LoggerSet
      *
-     * @param LoggerSet $logSet
+     * @param LoggerSetModel $logSet
      */
-    public function setLogSet(array $logSet)
+    public function setLogSet(LoggerSetModel $logSet)
     {
         $this->set("LogSet", $logSet->getAll());
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\GetThroughputDailyBillingInfoResponse;
+
 class ThroughputDailyBillingInfo extends Response
 {
-    
 
     /**
      * StartTime: 计费开始时间
@@ -37,11 +40,10 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @param int $startTime
      */
-    public function setStartTime($startTime)
+    public function setStartTime(int $startTime)
     {
         $this->set("StartTime", $startTime);
     }
-
     /**
      * EndTime: 计费结束时间
      *
@@ -57,11 +59,10 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
-
     /**
      * QuantityOut: 计费流量，单位“GB”
      *
@@ -77,11 +78,10 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @param int $quantityOut
      */
-    public function setQuantityOut($quantityOut)
+    public function setQuantityOut(int $quantityOut)
     {
         $this->set("QuantityOut", $quantityOut);
     }
-
     /**
      * BillingState: 是否已计费，“Yes”或者“No”
      *
@@ -97,7 +97,7 @@ class ThroughputDailyBillingInfo extends Response
      *
      * @param string $billingState
      */
-    public function setBillingState($billingState)
+    public function setBillingState(string $billingState)
     {
         $this->set("BillingState", $billingState);
     }

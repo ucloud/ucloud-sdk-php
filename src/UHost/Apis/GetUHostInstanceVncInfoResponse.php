@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
 class GetUHostInstanceVncInfoResponse extends Response
 {
-    
 
     /**
      * UHostId: UHost实例ID
@@ -37,11 +38,10 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
-
     /**
      * VncIP: Vnc登录IP
      *
@@ -57,11 +57,10 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @param string $vncIP
      */
-    public function setVncIP($vncIP)
+    public function setVncIP(string $vncIP)
     {
         $this->set("VncIP", $vncIP);
     }
-
     /**
      * VncPort: Vnc登录端口
      *
@@ -77,11 +76,10 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @param int $vncPort
      */
-    public function setVncPort($vncPort)
+    public function setVncPort(int $vncPort)
     {
         $this->set("VncPort", $vncPort);
     }
-
     /**
      * VncPassword: Vnc 登录密码
      *
@@ -97,7 +95,7 @@ class GetUHostInstanceVncInfoResponse extends Response
      *
      * @param string $vncPassword
      */
-    public function setVncPassword($vncPassword)
+    public function setVncPassword(string $vncPassword)
     {
         $this->set("VncPassword", $vncPassword);
     }

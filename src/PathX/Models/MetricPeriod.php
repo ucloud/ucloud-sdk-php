@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\MatricPoint;
+use UCloud\PathX\Models\GetPathXMetricResponse;
+
 class MetricPeriod extends Response
 {
-    
 
     /**
      * NetworkOut: 出向带宽
      *
-     * @return MatricPoint[]|null
+     * @return MatricPointModel[]|null
      */
     public function getNetworkOut()
     {
@@ -35,7 +39,7 @@ class MetricPeriod extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MatricPoint($item));
+            array_push($result, new MatricPointModel($item));
         }
         return $result;
     }
@@ -43,7 +47,7 @@ class MetricPeriod extends Response
     /**
      * NetworkOut: 出向带宽
      *
-     * @param MatricPoint[] $networkOut
+     * @param MatricPointModel[] $networkOut
      */
     public function setNetworkOut(array $networkOut)
     {
@@ -53,11 +57,10 @@ class MetricPeriod extends Response
         }
         return $result;
     }
-
     /**
      * NetworkIn: 入向带宽
      *
-     * @return MatricPoint[]|null
+     * @return MatricPointModel[]|null
      */
     public function getNetworkIn()
     {
@@ -67,7 +70,7 @@ class MetricPeriod extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MatricPoint($item));
+            array_push($result, new MatricPointModel($item));
         }
         return $result;
     }
@@ -75,7 +78,7 @@ class MetricPeriod extends Response
     /**
      * NetworkIn: 入向带宽
      *
-     * @param MatricPoint[] $networkIn
+     * @param MatricPointModel[] $networkIn
      */
     public function setNetworkIn(array $networkIn)
     {
@@ -85,11 +88,10 @@ class MetricPeriod extends Response
         }
         return $result;
     }
-
     /**
      * NetworkOutUsage: 出向带宽使用率
      *
-     * @return MatricPoint[]|null
+     * @return MatricPointModel[]|null
      */
     public function getNetworkOutUsage()
     {
@@ -99,7 +101,7 @@ class MetricPeriod extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MatricPoint($item));
+            array_push($result, new MatricPointModel($item));
         }
         return $result;
     }
@@ -107,7 +109,7 @@ class MetricPeriod extends Response
     /**
      * NetworkOutUsage: 出向带宽使用率
      *
-     * @param MatricPoint[] $networkOutUsage
+     * @param MatricPointModel[] $networkOutUsage
      */
     public function setNetworkOutUsage(array $networkOutUsage)
     {
@@ -117,11 +119,10 @@ class MetricPeriod extends Response
         }
         return $result;
     }
-
     /**
      * NetworkInUsage: 入向带宽使用率
      *
-     * @return MatricPoint[]|null
+     * @return MatricPointModel[]|null
      */
     public function getNetworkInUsage()
     {
@@ -131,7 +132,7 @@ class MetricPeriod extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MatricPoint($item));
+            array_push($result, new MatricPointModel($item));
         }
         return $result;
     }
@@ -139,7 +140,7 @@ class MetricPeriod extends Response
     /**
      * NetworkInUsage: 入向带宽使用率
      *
-     * @param MatricPoint[] $networkInUsage
+     * @param MatricPointModel[] $networkInUsage
      */
     public function setNetworkInUsage(array $networkInUsage)
     {

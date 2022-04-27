@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\DescribeUPathResponse;
+use UCloud\PathX\Models\UPathInfo;
+
 class PathXUGAInfo extends Response
 {
-    
 
     /**
      * UGAId: 加速配置ID
@@ -37,11 +41,10 @@ class PathXUGAInfo extends Response
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
-
     /**
      * IPList: 源站IP列表，多个值由半角英文逗号相隔
      *
@@ -61,7 +64,6 @@ class PathXUGAInfo extends Response
     {
         $this->set("IPList", $ipList);
     }
-
     /**
      * Domain: 源站域名
      *
@@ -77,7 +79,7 @@ class PathXUGAInfo extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }

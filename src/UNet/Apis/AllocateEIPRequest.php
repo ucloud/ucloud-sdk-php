@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class AllocateEIPRequest extends Request
         $this->markRequired("Bandwidth");
     }
 
-    
 
     /**
      * Region: 地域。
@@ -45,11 +46,10 @@ class AllocateEIPRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。
      *
@@ -65,13 +65,12 @@ class AllocateEIPRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
-     * OperatorName: 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。
+     * OperatorName: 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp；精品BGP：BGPPro。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。使用BGPPro线路的地域：香港
      *
      * @return string|null
      */
@@ -81,15 +80,14 @@ class AllocateEIPRequest extends Request
     }
 
     /**
-     * OperatorName: 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。
+     * OperatorName: 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp；精品BGP：BGPPro。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。使用BGPPro线路的地域：香港
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
-
     /**
      * Bandwidth: 弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-10000]
      *
@@ -105,11 +103,10 @@ class AllocateEIPRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * Tag: 业务组名称, 默认为 "Default"
      *
@@ -125,11 +122,10 @@ class AllocateEIPRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * ChargeType: 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按时付费，默认为按月付费。
      *
@@ -145,11 +141,10 @@ class AllocateEIPRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买的时长, 默认: 1
      *
@@ -165,11 +160,10 @@ class AllocateEIPRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * PayMode: 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. 默认为 "Bandwidth".“PostAccurateBandwidth”：带宽后付费模式
      *
@@ -185,11 +179,10 @@ class AllocateEIPRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }
-
     /**
      * ShareBandwidthId: 绑定的共享带宽Id,仅当PayMode为ShareBandwidth时有效
      *
@@ -205,11 +198,10 @@ class AllocateEIPRequest extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
-
     /**
      * Name: 弹性IP的名称, 默认为 "EIP"
      *
@@ -225,11 +217,29 @@ class AllocateEIPRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
+    /**
+     * Count: 购买EIP数量，默认值为1
+     *
+     * @return integer|null
+     */
+    public function getCount()
+    {
+        return $this->get("Count");
+    }
 
+    /**
+     * Count: 购买EIP数量，默认值为1
+     *
+     * @param int $count
+     */
+    public function setCount(int $count)
+    {
+        $this->set("Count", $count);
+    }
     /**
      * Remark: 弹性IP的备注, 默认为空
      *
@@ -245,11 +255,10 @@ class AllocateEIPRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * CouponId: 代金券ID, 默认不使用
      *
@@ -265,7 +274,7 @@ class AllocateEIPRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

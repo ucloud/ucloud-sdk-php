@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\USMS\Models\QueryUSMSTemplateResponse;
+
 class OutTemplate extends Response
 {
-    
 
     /**
      * TemplateId: 短信模板ID
@@ -37,11 +40,10 @@ class OutTemplate extends Response
      *
      * @param string $templateId
      */
-    public function setTemplateId($templateId)
+    public function setTemplateId(string $templateId)
     {
         $this->set("TemplateId", $templateId);
     }
-
     /**
      * Purpose: 模板类型，选项：1-验证码类 2-通知类 3-会员推广类
      *
@@ -57,11 +59,10 @@ class OutTemplate extends Response
      *
      * @param int $purpose
      */
-    public function setPurpose($purpose)
+    public function setPurpose(int $purpose)
     {
         $this->set("Purpose", $purpose);
     }
-
     /**
      * TemplateName: 短信模板名称
      *
@@ -77,11 +78,10 @@ class OutTemplate extends Response
      *
      * @param string $templateName
      */
-    public function setTemplateName($templateName)
+    public function setTemplateName(string $templateName)
     {
         $this->set("TemplateName", $templateName);
     }
-
     /**
      * Template: 短信模板内容
      *
@@ -97,11 +97,10 @@ class OutTemplate extends Response
      *
      * @param string $template
      */
-    public function setTemplate($template)
+    public function setTemplate(string $template)
     {
         $this->set("Template", $template);
     }
-
     /**
      * UnsubscribeInfo: 退订信息；一般填写方式“回T退订”，当purpose为3（也即会员推广类）时，为必填项
      *
@@ -117,11 +116,10 @@ class OutTemplate extends Response
      *
      * @param string $unsubscribeInfo
      */
-    public function setUnsubscribeInfo($unsubscribeInfo)
+    public function setUnsubscribeInfo(string $unsubscribeInfo)
     {
         $this->set("UnsubscribeInfo", $unsubscribeInfo);
     }
-
     /**
      * Status: 短信模板状态；状态说明：0-待审核，1-审核中，2-审核通过，3-审核未通过，4-被禁用
      *
@@ -137,11 +135,10 @@ class OutTemplate extends Response
      *
      * @param int $status
      */
-    public function setStatus($status)
+    public function setStatus(int $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * Remark: 模板说明
      *
@@ -157,11 +154,10 @@ class OutTemplate extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * ErrDesc: 审核失败原因
      *
@@ -177,11 +173,10 @@ class OutTemplate extends Response
      *
      * @param string $errDesc
      */
-    public function setErrDesc($errDesc)
+    public function setErrDesc(string $errDesc)
     {
         $this->set("ErrDesc", $errDesc);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -197,8 +192,27 @@ class OutTemplate extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
+    }
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @return string|null
+     */
+    public function getInstruction()
+    {
+        return $this->get("Instruction");
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @param string $instruction
+     */
+    public function setInstruction(string $instruction)
+    {
+        $this->set("Instruction", $instruction);
     }
 }

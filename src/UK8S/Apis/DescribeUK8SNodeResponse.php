@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UK8S\Models\K8SNodeCondition;
 
 class DescribeUK8SNodeResponse extends Response
 {
-    
 
     /**
      * Name: 节点名称
@@ -38,11 +40,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Labels: 字符串数组，每一项是类似 "kubernetes.io/arch=amd64" 的标签
      *
@@ -62,7 +63,6 @@ class DescribeUK8SNodeResponse extends Response
     {
         $this->set("Labels", $labels);
     }
-
     /**
      * Annotations: 字符串数组，每一项是类似 "node.alpha.kubernetes.io/ttl=0" 的注解
      *
@@ -82,7 +82,6 @@ class DescribeUK8SNodeResponse extends Response
     {
         $this->set("Annotations", $annotations);
     }
-
     /**
      * CreationTimestamp: 时间戳，单位是 秒
      *
@@ -98,11 +97,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param int $creationTimestamp
      */
-    public function setCreationTimestamp($creationTimestamp)
+    public function setCreationTimestamp(int $creationTimestamp)
     {
         $this->set("CreationTimestamp", $creationTimestamp);
     }
-
     /**
      * ProviderID: 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc"
      *
@@ -118,11 +116,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $providerID
      */
-    public function setProviderID($providerID)
+    public function setProviderID(string $providerID)
     {
         $this->set("ProviderID", $providerID);
     }
-
     /**
      * KernelVersion: 内核版本，如："4.19.0-6.el7.ucloud.x86_64"
      *
@@ -138,11 +135,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $kernelVersion
      */
-    public function setKernelVersion($kernelVersion)
+    public function setKernelVersion(string $kernelVersion)
     {
         $this->set("KernelVersion", $kernelVersion);
     }
-
     /**
      * OSImage: 操作系统类型，如："CentOS Linux 7 (Core)"
      *
@@ -158,11 +154,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $osImage
      */
-    public function setOSImage($osImage)
+    public function setOSImage(string $osImage)
     {
         $this->set("OSImage", $osImage);
     }
-
     /**
      * ContainerRuntimeVersion: 容器运行时版本，如："docker://18.9.9"
      *
@@ -178,11 +173,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $containerRuntimeVersion
      */
-    public function setContainerRuntimeVersion($containerRuntimeVersion)
+    public function setContainerRuntimeVersion(string $containerRuntimeVersion)
     {
         $this->set("ContainerRuntimeVersion", $containerRuntimeVersion);
     }
-
     /**
      * KubeletVersion: kubelet 版本
      *
@@ -198,11 +192,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $kubeletVersion
      */
-    public function setKubeletVersion($kubeletVersion)
+    public function setKubeletVersion(string $kubeletVersion)
     {
         $this->set("KubeletVersion", $kubeletVersion);
     }
-
     /**
      * KubeProxyVersion: kubeproxy 版本
      *
@@ -218,11 +211,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $kubeProxyVersion
      */
-    public function setKubeProxyVersion($kubeProxyVersion)
+    public function setKubeProxyVersion(string $kubeProxyVersion)
     {
         $this->set("KubeProxyVersion", $kubeProxyVersion);
     }
-
     /**
      * InternalIP: 内部 IP 地址
      *
@@ -238,11 +230,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $internalIP
      */
-    public function setInternalIP($internalIP)
+    public function setInternalIP(string $internalIP)
     {
         $this->set("InternalIP", $internalIP);
     }
-
     /**
      * Hostname: 主机名
      *
@@ -258,11 +249,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $hostname
      */
-    public function setHostname($hostname)
+    public function setHostname(string $hostname)
     {
         $this->set("Hostname", $hostname);
     }
-
     /**
      * AllocatedPodCount: 已分配到当前节点的 Pod 数量
      *
@@ -278,11 +268,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param int $allocatedPodCount
      */
-    public function setAllocatedPodCount($allocatedPodCount)
+    public function setAllocatedPodCount(int $allocatedPodCount)
     {
         $this->set("AllocatedPodCount", $allocatedPodCount);
     }
-
     /**
      * PodCapacity: 节点允许的可分配 Pod 最大数量
      *
@@ -298,11 +287,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param int $podCapacity
      */
-    public function setPodCapacity($podCapacity)
+    public function setPodCapacity(int $podCapacity)
     {
         $this->set("PodCapacity", $podCapacity);
     }
-
     /**
      * Unschedulable: 是否禁止调度
      *
@@ -318,11 +306,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param boolean $unschedulable
      */
-    public function setUnschedulable($unschedulable)
+    public function setUnschedulable(bool $unschedulable)
     {
         $this->set("Unschedulable", $unschedulable);
     }
-
     /**
      * CPUCapacity: 节点 CPU 总量
      *
@@ -338,11 +325,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuCapacity
      */
-    public function setCPUCapacity($cpuCapacity)
+    public function setCPUCapacity(string $cpuCapacity)
     {
         $this->set("CPUCapacity", $cpuCapacity);
     }
-
     /**
      * MemoryCapacity: 节点内存总量
      *
@@ -358,11 +344,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryCapacity
      */
-    public function setMemoryCapacity($memoryCapacity)
+    public function setMemoryCapacity(string $memoryCapacity)
     {
         $this->set("MemoryCapacity", $memoryCapacity);
     }
-
     /**
      * MemoryRequests: 节点上已分配 Pod 的内存请求量
      *
@@ -378,11 +363,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryRequests
      */
-    public function setMemoryRequests($memoryRequests)
+    public function setMemoryRequests(string $memoryRequests)
     {
         $this->set("MemoryRequests", $memoryRequests);
     }
-
     /**
      * MemoryRequestsFraction: 节点上已分配 Pod 的内存请求量占内存总量的比例，如返回值为 "4.5"，则意味着请求量占总量的 4.5%
      *
@@ -398,11 +382,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryRequestsFraction
      */
-    public function setMemoryRequestsFraction($memoryRequestsFraction)
+    public function setMemoryRequestsFraction(string $memoryRequestsFraction)
     {
         $this->set("MemoryRequestsFraction", $memoryRequestsFraction);
     }
-
     /**
      * MemoryLimits: 节点上已分配 Pod 的内存限制量
      *
@@ -418,11 +401,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryLimits
      */
-    public function setMemoryLimits($memoryLimits)
+    public function setMemoryLimits(string $memoryLimits)
     {
         $this->set("MemoryLimits", $memoryLimits);
     }
-
     /**
      * MemoryLimitsFraction: 节点上已分配 Pod 的内存限制量占内存总量的比例，如返回值为 "18"，则意味着限制量占总量的 18%
      *
@@ -438,11 +420,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $memoryLimitsFraction
      */
-    public function setMemoryLimitsFraction($memoryLimitsFraction)
+    public function setMemoryLimitsFraction(string $memoryLimitsFraction)
     {
         $this->set("MemoryLimitsFraction", $memoryLimitsFraction);
     }
-
     /**
      * CPURequests: 节点上已分配 Pod 的 CPU 请求量
      *
@@ -458,11 +439,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuRequests
      */
-    public function setCPURequests($cpuRequests)
+    public function setCPURequests(string $cpuRequests)
     {
         $this->set("CPURequests", $cpuRequests);
     }
-
     /**
      * CPURequestsFraction: 节点上已分配 Pod 的 CPU 请求量占 CPU 总量的比例
      *
@@ -478,11 +458,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuRequestsFraction
      */
-    public function setCPURequestsFraction($cpuRequestsFraction)
+    public function setCPURequestsFraction(string $cpuRequestsFraction)
     {
         $this->set("CPURequestsFraction", $cpuRequestsFraction);
     }
-
     /**
      * CPULimits: 节点上已分配 Pod 的 CPU 限制值
      *
@@ -498,11 +477,10 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuLimits
      */
-    public function setCPULimits($cpuLimits)
+    public function setCPULimits(string $cpuLimits)
     {
         $this->set("CPULimits", $cpuLimits);
     }
-
     /**
      * CPULimitsFraction: 节点上已分配 Pod 的 CPU 限制值占 CPU 总量的比例
      *
@@ -518,15 +496,14 @@ class DescribeUK8SNodeResponse extends Response
      *
      * @param string $cpuLimitsFraction
      */
-    public function setCPULimitsFraction($cpuLimitsFraction)
+    public function setCPULimitsFraction(string $cpuLimitsFraction)
     {
         $this->set("CPULimitsFraction", $cpuLimitsFraction);
     }
-
     /**
      * Conditions: 节点状态数组
      *
-     * @return K8SNodeCondition[]|null
+     * @return K8SNodeConditionModel[]|null
      */
     public function getConditions()
     {
@@ -536,7 +513,7 @@ class DescribeUK8SNodeResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new K8SNodeCondition($item));
+            array_push($result, new K8SNodeConditionModel($item));
         }
         return $result;
     }
@@ -544,7 +521,7 @@ class DescribeUK8SNodeResponse extends Response
     /**
      * Conditions: 节点状态数组
      *
-     * @param K8SNodeCondition[] $conditions
+     * @param K8SNodeConditionModel[] $conditions
      */
     public function setConditions(array $conditions)
     {
@@ -554,7 +531,6 @@ class DescribeUK8SNodeResponse extends Response
         }
         return $result;
     }
-
     /**
      * ContainerImages: 节点上镜像名称数组
      *
@@ -574,7 +550,6 @@ class DescribeUK8SNodeResponse extends Response
     {
         $this->set("ContainerImages", $containerImages);
     }
-
     /**
      * Taints: 字符串数组，每一项是类似 "node-role.kubernetes.io/master:NoSchedule" 的污点
      *

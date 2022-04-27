@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class CreateUDBReplicationInstanceRequest extends Request
         $this->markRequired("Name");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -85,11 +84,10 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * SrcId: primary节点的DBId,该值可以通过DescribeUDBInstance获取
      *
@@ -105,11 +103,10 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $srcId
      */
-    public function setSrcId($srcId)
+    public function setSrcId(string $srcId)
     {
         $this->set("SrcId", $srcId);
     }
-
     /**
      * Name: 实例名称，至少6位
      *
@@ -125,11 +122,10 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Port: 端口号，默认27017，取值范围3306至65535。
      *
@@ -145,11 +141,10 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * IsArbiter: 是否是仲裁节点，默认false，仲裁节点按最小机型创建
      *
@@ -165,11 +160,10 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param boolean $isArbiter
      */
-    public function setIsArbiter($isArbiter)
+    public function setIsArbiter(bool $isArbiter)
     {
         $this->set("IsArbiter", $isArbiter);
     }
-
     /**
      * UseSSD: 是否使用SSD，默认 为 true
      *
@@ -185,11 +179,10 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
-
     /**
      * CouponId: 使用的代金券id
      *
@@ -205,7 +198,7 @@ class CreateUDBReplicationInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

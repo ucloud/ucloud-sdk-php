@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class GetUcdnDomainInfoListRequest extends Request
         parent::__construct(["Action" => "GetUcdnDomainInfoList"]);
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -42,11 +43,10 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * PageSize: 分页的大小，不填默认每页20个
      *
@@ -62,11 +62,10 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @param int $pageSize
      */
-    public function setPageSize($pageSize)
+    public function setPageSize(int $pageSize)
     {
         $this->set("PageSize", $pageSize);
     }
-
     /**
      * PageIndex: 返回第几页，不填默认是第1页
      *
@@ -82,7 +81,7 @@ class GetUcdnDomainInfoListRequest extends Request
      *
      * @param int $pageIndex
      */
-    public function setPageIndex($pageIndex)
+    public function setPageIndex(int $pageIndex)
     {
         $this->set("PageIndex", $pageIndex);
     }

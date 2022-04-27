@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UPHost\Models\PHostTagSet;
 
 class DescribePHostTagsResponse extends Response
 {
-    
 
     /**
      * TotalCount: Tag的个数
@@ -38,15 +40,14 @@ class DescribePHostTagsResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * TagSet: 具体参见 PHostTagSet
      *
-     * @return PHostTagSet[]|null
+     * @return PHostTagSetModel[]|null
      */
     public function getTagSet()
     {
@@ -56,7 +57,7 @@ class DescribePHostTagsResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new PHostTagSet($item));
+            array_push($result, new PHostTagSetModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class DescribePHostTagsResponse extends Response
     /**
      * TagSet: 具体参见 PHostTagSet
      *
-     * @param PHostTagSet[] $tagSet
+     * @param PHostTagSetModel[] $tagSet
      */
     public function setTagSet(array $tagSet)
     {

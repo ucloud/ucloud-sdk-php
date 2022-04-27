@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,31 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDDB\Models\PriceInfo;
 
 class DescribeUDDBInstanceUpgradePriceResponse extends Response
 {
-    
 
     /**
      * PriceInfo: 价格明细, 参考PriceInfo对象定义
      *
-     * @return PriceInfo|null
+     * @return PriceInfoModel|null
      */
     public function getPriceInfo()
     {
-        return new PriceInfo($this->get("PriceInfo"));
+        return new PriceInfoModel($this->get("PriceInfo"));
     }
 
     /**
      * PriceInfo: 价格明细, 参考PriceInfo对象定义
      *
-     * @param PriceInfo $priceInfo
+     * @param PriceInfoModel $priceInfo
      */
-    public function setPriceInfo(array $priceInfo)
+    public function setPriceInfo(PriceInfoModel $priceInfo)
     {
         $this->set("PriceInfo", $priceInfo->getAll());
     }

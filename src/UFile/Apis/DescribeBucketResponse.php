@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UFile\Models\UFileBucketSet;
 use UCloud\UFile\Models\UFileDomainSet;
 
 class DescribeBucketResponse extends Response
 {
-    
 
     /**
      * DataSet: Bucket的描述信息 参数见 UFileBucketSet
      *
-     * @return UFileBucketSet[]|null
+     * @return UFileBucketSetModel[]|null
      */
     public function getDataSet()
     {
@@ -37,7 +39,7 @@ class DescribeBucketResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UFileBucketSet($item));
+            array_push($result, new UFileBucketSetModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class DescribeBucketResponse extends Response
     /**
      * DataSet: Bucket的描述信息 参数见 UFileBucketSet
      *
-     * @param UFileBucketSet[] $dataSet
+     * @param UFileBucketSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

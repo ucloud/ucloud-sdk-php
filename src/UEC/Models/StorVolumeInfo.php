@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\HolderList;
+use UCloud\UEC\Models\ListUEcHolderResponse;
+use UCloud\UEC\Models\GetUEcIDCStorageVolumeResponse;
+use UCloud\UEC\Models\DescribeUEcHolderResponse;
+
 class StorVolumeInfo extends Response
 {
-    
 
     /**
      * Name: 名称
@@ -37,11 +43,10 @@ class StorVolumeInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * ResourceId: 资源id
      *
@@ -57,11 +62,10 @@ class StorVolumeInfo extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
-
     /**
      * MountPoint: 挂载点
      *
@@ -77,11 +81,10 @@ class StorVolumeInfo extends Response
      *
      * @param string $mountPoint
      */
-    public function setMountPoint($mountPoint)
+    public function setMountPoint(string $mountPoint)
     {
         $this->set("MountPoint", $mountPoint);
     }
-
     /**
      * DiskSize: 容量（单位GB）
      *
@@ -97,7 +100,7 @@ class StorVolumeInfo extends Response
      *
      * @param int $diskSize
      */
-    public function setDiskSize($diskSize)
+    public function setDiskSize(int $diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }

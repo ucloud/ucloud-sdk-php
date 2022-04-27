@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\ULB\Models\ULBSet;
+use UCloud\ULB\Models\DescribeULBResponse;
+use UCloud\ULB\Models\ULBSimpleSet;
+use UCloud\ULB\Models\DescribeULBSimpleResponse;
+
 class ULBIPSet extends Response
 {
-    
 
     /**
      * OperatorName: 弹性IP的运营商信息，枚举值为：  Bgp：BGP IP International：国际IP
@@ -37,11 +43,10 @@ class ULBIPSet extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
-
     /**
      * EIP: 弹性IP地址
      *
@@ -57,11 +62,10 @@ class ULBIPSet extends Response
      *
      * @param string $eip
      */
-    public function setEIP($eip)
+    public function setEIP(string $eip)
     {
         $this->set("EIP", $eip);
     }
-
     /**
      * EIPId: 弹性IP的ID
      *
@@ -77,11 +81,10 @@ class ULBIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
-
     /**
      * BandwidthType: 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放）
      *
@@ -97,11 +100,10 @@ class ULBIPSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType($bandwidthType)
+    public function setBandwidthType(int $bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
-
     /**
      * Bandwidth: 弹性IP的带宽值（暂未对外开放）
      *
@@ -117,7 +119,7 @@ class ULBIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

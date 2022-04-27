@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\IPSecVPN\Models\DescribeVPNTunnelResponse;
+use UCloud\IPSecVPN\Models\VPNTunnelDataSet;
+
 class IPSecData extends Response
 {
-    
 
     /**
      * IPSecAuthenticationAlgorithm: IPSec通道中使用的认证算法
@@ -37,11 +41,10 @@ class IPSecData extends Response
      *
      * @param string $ipSecAuthenticationAlgorithm
      */
-    public function setIPSecAuthenticationAlgorithm($ipSecAuthenticationAlgorithm)
+    public function setIPSecAuthenticationAlgorithm(string $ipSecAuthenticationAlgorithm)
     {
         $this->set("IPSecAuthenticationAlgorithm", $ipSecAuthenticationAlgorithm);
     }
-
     /**
      * IPSecEncryptionAlgorithm: IPSec通道中使用的加密算法
      *
@@ -57,11 +60,10 @@ class IPSecData extends Response
      *
      * @param string $ipSecEncryptionAlgorithm
      */
-    public function setIPSecEncryptionAlgorithm($ipSecEncryptionAlgorithm)
+    public function setIPSecEncryptionAlgorithm(string $ipSecEncryptionAlgorithm)
     {
         $this->set("IPSecEncryptionAlgorithm", $ipSecEncryptionAlgorithm);
     }
-
     /**
      * IPSecLocalSubnetIds: 指定VPN连接的本地子网，用逗号分隔
      *
@@ -81,7 +83,6 @@ class IPSecData extends Response
     {
         $this->set("IPSecLocalSubnetIds", $ipSecLocalSubnetIds);
     }
-
     /**
      * IPSecProtocol: 使用的安全协议，ESP或AH
      *
@@ -97,11 +98,10 @@ class IPSecData extends Response
      *
      * @param string $ipSecProtocol
      */
-    public function setIPSecProtocol($ipSecProtocol)
+    public function setIPSecProtocol(string $ipSecProtocol)
     {
         $this->set("IPSecProtocol", $ipSecProtocol);
     }
-
     /**
      * IPSecRemoteSubnets: 指定VPN连接的客户网段，用逗号分隔
      *
@@ -121,7 +121,6 @@ class IPSecData extends Response
     {
         $this->set("IPSecRemoteSubnets", $ipSecRemoteSubnets);
     }
-
     /**
      * IPSecSALifetime: IPSec中SA的生存时间
      *
@@ -137,11 +136,10 @@ class IPSecData extends Response
      *
      * @param string $ipSecSALifetime
      */
-    public function setIPSecSALifetime($ipSecSALifetime)
+    public function setIPSecSALifetime(string $ipSecSALifetime)
     {
         $this->set("IPSecSALifetime", $ipSecSALifetime);
     }
-
     /**
      * IPSecSALifetimeBytes: IPSec中SA的生存时间（以字节计）
      *
@@ -157,11 +155,10 @@ class IPSecData extends Response
      *
      * @param string $ipSecSALifetimeBytes
      */
-    public function setIPSecSALifetimeBytes($ipSecSALifetimeBytes)
+    public function setIPSecSALifetimeBytes(string $ipSecSALifetimeBytes)
     {
         $this->set("IPSecSALifetimeBytes", $ipSecSALifetimeBytes);
     }
-
     /**
      * IPSecPFSDhGroup: 是否开启PFS功能,Disable表示关闭，数字表示DH组
      *
@@ -177,7 +174,7 @@ class IPSecData extends Response
      *
      * @param string $ipSecPFSDhGroup
      */
-    public function setIPSecPFSDhGroup($ipSecPFSDhGroup)
+    public function setIPSecPFSDhGroup(string $ipSecPFSDhGroup)
     {
         $this->set("IPSecPFSDhGroup", $ipSecPFSDhGroup);
     }

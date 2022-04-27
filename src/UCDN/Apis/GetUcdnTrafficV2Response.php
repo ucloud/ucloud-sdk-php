@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UCDN\Models\TrafficSet;
 
 class GetUcdnTrafficV2Response extends Response
 {
-    
 
     /**
      * TrafficSet: 用户不同区域的流量信息, 具体结构参见TrafficSet部分
      *
-     * @return TrafficSet[]|null
+     * @return TrafficSetModel[]|null
      */
     public function getTrafficSet()
     {
@@ -36,7 +38,7 @@ class GetUcdnTrafficV2Response extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new TrafficSet($item));
+            array_push($result, new TrafficSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class GetUcdnTrafficV2Response extends Response
     /**
      * TrafficSet: 用户不同区域的流量信息, 具体结构参见TrafficSet部分
      *
-     * @param TrafficSet[] $trafficSet
+     * @param TrafficSetModel[] $trafficSet
      */
     public function setTrafficSet(array $trafficSet)
     {

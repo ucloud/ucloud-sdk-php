@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class CreateURedisGroupRequest extends Request
         $this->markRequired("HighAvailability");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -46,11 +47,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -66,11 +66,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -86,11 +85,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Name: 请求创建组的名称 (范围[6-63],只能包含英文、数字以及符号-和_)
      *
@@ -106,11 +104,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * HighAvailability: 是否开启高可用,enable或disable
      *
@@ -126,11 +123,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $highAvailability
      */
-    public function setHighAvailability($highAvailability)
+    public function setHighAvailability(string $highAvailability)
     {
         $this->set("HighAvailability", $highAvailability);
     }
-
     /**
      * Size: 每个节点的内存大小,单位GB,默认1GB,目前仅支持1/2/4/8/16/32,六种
      *
@@ -146,11 +142,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * AutoBackup: 是否自动备份,enable或disable，默认disable
      *
@@ -166,11 +161,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $autoBackup
      */
-    public function setAutoBackup($autoBackup)
+    public function setAutoBackup(string $autoBackup)
     {
         $this->set("AutoBackup", $autoBackup);
     }
-
     /**
      * BackupTime: 自动备份开始时间,范围[0-23],默认3点
      *
@@ -186,11 +180,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
-
     /**
      * ConfigId: 配置ID,目前支持 3.0版本配置ID:"03f58ca9-b64d-4bdd-abc7-c6b9a46fd801",3.2版本配置ID:"3e45ac48-f8a2-a9q2-261d-l342dab130gf", 4.0版本配置ID:"6c9298a3-9d7f-428c-b1d0-e87ab3b8a1ea",默认版本3.0,从备份创建为必传项
      *
@@ -206,11 +199,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $configId
      */
-    public function setConfigId($configId)
+    public function setConfigId(string $configId)
     {
         $this->set("ConfigId", $configId);
     }
-
     /**
      * Version: Redis版本信息(详见DescribeURedisVersion返回结果),默认版本3.0
      *
@@ -226,11 +218,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
-
     /**
      * ChargeType: 计费模式，Year , Month, Dynamic 默认: Month
      *
@@ -246,11 +237,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长，默认为1
      *
@@ -266,11 +256,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * Tag: 业务组名称
      *
@@ -286,11 +275,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Password: 初始化密码,需要 base64 编码
      *
@@ -306,11 +294,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
-
     /**
      * BackupId: 有此项代表从备份中创建，无代表正常创建
      *
@@ -326,11 +313,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(string $backupId)
     {
         $this->set("BackupId", $backupId);
     }
-
     /**
      * SlaveZone: 跨机房URedis，slave所在可用区（必须和Zone在同一Region，且不可相同）
      *
@@ -346,11 +332,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone($slaveZone)
+    public function setSlaveZone(string $slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
     }
-
     /**
      * MasterGroupId: Master Redis Group的ID，创建只读Slave时，必须填写
      *
@@ -366,11 +351,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $masterGroupId
      */
-    public function setMasterGroupId($masterGroupId)
+    public function setMasterGroupId(string $masterGroupId)
     {
         $this->set("MasterGroupId", $masterGroupId);
     }
-
     /**
      * EnableIpV6: 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true
      *
@@ -386,11 +370,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param boolean $enableIpV6
      */
-    public function setEnableIpV6($enableIpV6)
+    public function setEnableIpV6(bool $enableIpV6)
     {
         $this->set("EnableIpV6", $enableIpV6);
     }
-
     /**
      * SubnetId: 子网ID
      *
@@ -406,11 +389,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * VPCId: VPC的ID
      *
@@ -426,11 +408,10 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * CouponId: 代金券ID
      *
@@ -446,7 +427,7 @@ class CreateURedisGroupRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

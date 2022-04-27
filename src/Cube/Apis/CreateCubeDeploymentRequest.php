@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
@@ -30,7 +32,6 @@ class CreateCubeDeploymentRequest extends Request
         $this->markRequired("Deployment");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -47,11 +48,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -67,11 +67,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -87,11 +86,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * VPCId: VPCId
      *
@@ -107,11 +105,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: 子网Id
      *
@@ -127,11 +124,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * Deployment: base64编码的Deployment的yaml。大小不超过16KB
      *
@@ -147,11 +143,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $deployment
      */
-    public function setDeployment($deployment)
+    public function setDeployment(string $deployment)
     {
         $this->set("Deployment", $deployment);
     }
-
     /**
      * Name: Deployment名称
      *
@@ -167,11 +162,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Postpay， \\ 后付费；默认为后付费
      *
@@ -187,11 +181,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * CpuPlatform: Cpu平台（V6：Intel、A2：AMD），默认V6。支持的地域（北京2B、北京2E、上海2A、广东、香港 、东京）目前北京2E仅有A2，其余地域仅有V6
      *
@@ -207,11 +200,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $cpuPlatform
      */
-    public function setCpuPlatform($cpuPlatform)
+    public function setCpuPlatform(string $cpuPlatform)
     {
         $this->set("CpuPlatform", $cpuPlatform);
     }
-
     /**
      * KubeConfig: base64编码的kubeconfig。大小不超过16KB
      *
@@ -227,11 +219,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $kubeConfig
      */
-    public function setKubeConfig($kubeConfig)
+    public function setKubeConfig(string $kubeConfig)
     {
         $this->set("KubeConfig", $kubeConfig);
     }
-
     /**
      * Quantity: 购买时长。默认:值 1。 月付时，此参数传0，代表购买至月末。
      *
@@ -247,11 +238,10 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * Tag: 业务组。默认：Default（Default即为未分组）
      *
@@ -267,7 +257,7 @@ class CreateCubeDeploymentRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }

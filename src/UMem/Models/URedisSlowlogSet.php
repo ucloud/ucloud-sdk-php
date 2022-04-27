@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UMem\Models\DescribeURedisSlowlogResponse;
+
 class URedisSlowlogSet extends Response
 {
-    
 
     /**
      * StartTime: 查询发生的时间
@@ -37,11 +40,10 @@ class URedisSlowlogSet extends Response
      *
      * @param int $startTime
      */
-    public function setStartTime($startTime)
+    public function setStartTime(int $startTime)
     {
         $this->set("StartTime", $startTime);
     }
-
     /**
      * SpendTime: 查询消耗的时间
      *
@@ -57,11 +59,10 @@ class URedisSlowlogSet extends Response
      *
      * @param int $spendTime
      */
-    public function setSpendTime($spendTime)
+    public function setSpendTime(int $spendTime)
     {
         $this->set("SpendTime", $spendTime);
     }
-
     /**
      * Command: 查询命令
      *
@@ -77,7 +78,7 @@ class URedisSlowlogSet extends Response
      *
      * @param string $command
      */
-    public function setCommand($command)
+    public function setCommand(string $command)
     {
         $this->set("Command", $command);
     }

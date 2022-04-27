@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UPHost\Models\DescribePHostImageResponse;
+
 class PHostImageSet extends Response
 {
-    
 
     /**
      * ImageId: 镜像ID
@@ -37,11 +40,10 @@ class PHostImageSet extends Response
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * ImageName: 镜像名称
      *
@@ -57,11 +59,10 @@ class PHostImageSet extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
-
     /**
      * OsName: 操作系统名称
      *
@@ -77,11 +78,10 @@ class PHostImageSet extends Response
      *
      * @param string $osName
      */
-    public function setOsName($osName)
+    public function setOsName(string $osName)
     {
         $this->set("OsName", $osName);
     }
-
     /**
      * OsType: 操作系统类型
      *
@@ -97,11 +97,10 @@ class PHostImageSet extends Response
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
-
     /**
      * Support: 支持的机型
      *
@@ -121,7 +120,6 @@ class PHostImageSet extends Response
     {
         $this->set("Support", $support);
     }
-
     /**
      * Version: 当前版本
      *
@@ -137,8 +135,103 @@ class PHostImageSet extends Response
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
+    }
+    /**
+     * ImageType: 枚举值：Base=>基础镜像，Custom=>自制镜像。
+     *
+     * @return string|null
+     */
+    public function getImageType()
+    {
+        return $this->get("ImageType");
+    }
+
+    /**
+     * ImageType: 枚举值：Base=>基础镜像，Custom=>自制镜像。
+     *
+     * @param string $imageType
+     */
+    public function setImageType(string $imageType)
+    {
+        $this->set("ImageType", $imageType);
+    }
+    /**
+     * CreateTime: 裸金属2.0参数。镜像创建时间。
+     *
+     * @return integer|null
+     */
+    public function getCreateTime()
+    {
+        return $this->get("CreateTime");
+    }
+
+    /**
+     * CreateTime: 裸金属2.0参数。镜像创建时间。
+     *
+     * @param int $createTime
+     */
+    public function setCreateTime(int $createTime)
+    {
+        $this->set("CreateTime", $createTime);
+    }
+    /**
+     * State: 裸金属2.0参数。镜像当前状态。
+     *
+     * @return string|null
+     */
+    public function getState()
+    {
+        return $this->get("State");
+    }
+
+    /**
+     * State: 裸金属2.0参数。镜像当前状态。
+     *
+     * @param string $state
+     */
+    public function setState(string $state)
+    {
+        $this->set("State", $state);
+    }
+    /**
+     * ImageSize: 裸金属2.0参数。镜像大小。
+     *
+     * @return integer|null
+     */
+    public function getImageSize()
+    {
+        return $this->get("ImageSize");
+    }
+
+    /**
+     * ImageSize: 裸金属2.0参数。镜像大小。
+     *
+     * @param int $imageSize
+     */
+    public function setImageSize(int $imageSize)
+    {
+        $this->set("ImageSize", $imageSize);
+    }
+    /**
+     * ImageDescription: 镜像描述
+     *
+     * @return string|null
+     */
+    public function getImageDescription()
+    {
+        return $this->get("ImageDescription");
+    }
+
+    /**
+     * ImageDescription: 镜像描述
+     *
+     * @param string $imageDescription
+     */
+    public function setImageDescription(string $imageDescription)
+    {
+        $this->set("ImageDescription", $imageDescription);
     }
 }

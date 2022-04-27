@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Request\Request;
-use UCloud\UPHost\Params\CreatePHostParamDisks;
+
+use UCloud\UPHost\Models\CreatePHostRequestDisks;
 
 class CreatePHostRequest extends Request
 {
@@ -30,7 +33,6 @@ class CreatePHostRequest extends Request
         $this->markRequired("Password");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -47,11 +49,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -67,11 +68,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -87,11 +87,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ImageId: ImageId，可以通过接口 [DescribePHostImage](api/uphost-api/describe_phost_image.html)获取
      *
@@ -107,11 +106,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * Password: 密码（密码需使用base64进行编码）
      *
@@ -127,11 +125,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
-
     /**
      * Type: 物理机类型，默认为：db-2(基础型-SAS-V3)
      *
@@ -147,11 +144,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * Name: 物理机名称，默认为phost
      *
@@ -167,11 +163,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Remark: 物理机备注，默认为空
      *
@@ -187,11 +182,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * Tag: 业务组，默认为default
      *
@@ -207,11 +201,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * ChargeType: 计费模式，枚举值为：year, 按年付费； month,按月付费；默认为按月付费
      *
@@ -227,11 +220,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长，1-10个月或1-10年；默认值为1。月付时，此参数传0，代表购买至月末，1代表整月。
      *
@@ -247,11 +239,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(string $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * SecurityGroupId: 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
      *
@@ -267,11 +258,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $securityGroupId
      */
-    public function setSecurityGroupId($securityGroupId)
+    public function setSecurityGroupId(string $securityGroupId)
     {
         $this->set("SecurityGroupId", $securityGroupId);
     }
-
     /**
      * Raid: Raid配置，默认Raid10  支持:Raid0、Raid1、Raid5、Raid10，NoRaid
      *
@@ -287,11 +277,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $raid
      */
-    public function setRaid($raid)
+    public function setRaid(string $raid)
     {
         $this->set("Raid", $raid);
     }
-
     /**
      * VPCId: VPC ID，不填为默认，VPC2.0下需要填写此字段。
      *
@@ -307,11 +296,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: 子网ID，不填为默认，VPC2.0下需要填写此字段。
      *
@@ -327,11 +315,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * Cluster: 网络环境，可选千兆：1G ，万兆：10G， 默认1G。智能网卡可以选择25G。
      *
@@ -347,15 +334,14 @@ class CreatePHostRequest extends Request
      *
      * @param string $cluster
      */
-    public function setCluster($cluster)
+    public function setCluster(string $cluster)
     {
         $this->set("Cluster", $cluster);
     }
-
     /**
      * Disks:
      *
-     * @return CreatePHostParamDisks[]|null
+     * @return CreatePHostRequestDisksModel[]|null
      */
     public function getDisks()
     {
@@ -365,7 +351,7 @@ class CreatePHostRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreatePHostParamDisks($item));
+            array_push($result, new CreatePHostRequestDisksModel($item));
         }
         return $result;
     }
@@ -373,7 +359,7 @@ class CreatePHostRequest extends Request
     /**
      * Disks:
      *
-     * @param CreatePHostParamDisks[] $disks
+     * @param CreatePHostRequestDisksModel[] $disks
      */
     public function setDisks(array $disks)
     {
@@ -383,7 +369,6 @@ class CreatePHostRequest extends Request
         }
         return $result;
     }
-
     /**
      * VpcIp: 指定内网ip创建
      *
@@ -399,11 +384,10 @@ class CreatePHostRequest extends Request
      *
      * @param string $vpcIp
      */
-    public function setVpcIp($vpcIp)
+    public function setVpcIp(string $vpcIp)
     {
         $this->set("VpcIp", $vpcIp);
     }
-
     /**
      * CouponId: 代金券
      *
@@ -419,7 +403,7 @@ class CreatePHostRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

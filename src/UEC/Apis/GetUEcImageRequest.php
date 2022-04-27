@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class GetUEcImageRequest extends Request
         parent::__construct(["Action" => "GetUEcImage"]);
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -42,11 +43,10 @@ class GetUEcImageRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ImageType: 镜像类型：1标准镜像，2行业镜像，3自定义镜像
      *
@@ -62,11 +62,10 @@ class GetUEcImageRequest extends Request
      *
      * @param string $imageType
      */
-    public function setImageType($imageType)
+    public function setImageType(string $imageType)
     {
         $this->set("ImageType", $imageType);
     }
-
     /**
      * Offset: 数据偏移量，默认0，非负整数
      *
@@ -82,11 +81,10 @@ class GetUEcImageRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 返回数据长度， 默认20，非负整数
      *
@@ -102,7 +100,7 @@ class GetUEcImageRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }

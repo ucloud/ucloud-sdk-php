@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
-use UCloud\UHost\Params\CreateUHostInstanceParamDisks;
-use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterface;
-use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceEIP;
-use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH;
-use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceIPv6;
-use UCloud\UHost\Params\CreateUHostInstanceParamVolumes;
-use UCloud\UHost\Params\CreateUHostInstanceParamFeatures;
+
+use UCloud\UHost\Models\CreateUHostInstanceRequestNetworkInterface;
+use UCloud\UHost\Models\CreateUHostInstanceRequestNetworkInterfaceIPv6;
+use UCloud\UHost\Models\CreateUHostInstanceRequestNetworkInterfaceEIP;
+use UCloud\UHost\Models\CreateUHostInstanceRequestDisks;
+use UCloud\UHost\Models\CreateUHostInstanceRequestFeatures;
+use UCloud\UHost\Models\CreateUHostInstanceRequestVolumes;
 
 class CreateUHostInstanceRequest extends Request
 {
@@ -36,7 +38,6 @@ class CreateUHostInstanceRequest extends Request
         $this->markRequired("LoginMode");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -53,11 +54,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -73,11 +73,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -93,11 +92,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ImageId: 镜像ID。 请通过 [DescribeImage](describe_image.html)获取
      *
@@ -113,15 +111,14 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * Disks:
      *
-     * @return CreateUHostInstanceParamDisks[]|null
+     * @return CreateUHostInstanceRequestDisksModel[]|null
      */
     public function getDisks()
     {
@@ -131,7 +128,7 @@ class CreateUHostInstanceRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUHostInstanceParamDisks($item));
+            array_push($result, new CreateUHostInstanceRequestDisksModel($item));
         }
         return $result;
     }
@@ -139,7 +136,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * Disks:
      *
-     * @param CreateUHostInstanceParamDisks[] $disks
+     * @param CreateUHostInstanceRequestDisksModel[] $disks
      */
     public function setDisks(array $disks)
     {
@@ -149,7 +146,6 @@ class CreateUHostInstanceRequest extends Request
         }
         return $result;
     }
-
     /**
      * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair。
      *
@@ -165,11 +161,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $loginMode
      */
-    public function setLoginMode($loginMode)
+    public function setLoginMode(string $loginMode)
     {
         $this->set("LoginMode", $loginMode);
     }
-
     /**
      * Password: UHost密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，举例如下：# echo -n Password1 | base64UGFzc3dvcmQx。
      *
@@ -185,11 +180,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
-
     /**
      * Name: UHost实例名称。默认：UHost。请遵照[[api:uhost-api:specification|字段规范]]设定实例名称。
      *
@@ -205,11 +199,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Tag: 业务组。默认：Default（Default即为未分组）。请遵照[[api:uhost-api:specification|字段规范]]设定业务组。
      *
@@ -225,13 +218,12 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例 \\ 默认为月付
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例(内测阶段) \\ 默认为月付
      *
      * @return string|null
      */
@@ -241,15 +233,14 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例 \\ 默认为月付
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例(内测阶段) \\ 默认为月付
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长。默认:值 1。按小时购买（Dynamic/Postpay）时无需此参数。 月付时，此参数传0，代表购买至月末。
      *
@@ -265,11 +256,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * UHostType: 【建议后续不再使用】云主机机型（V1.0），在本字段和字段MachineType中，仅需要其中1个字段即可。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
@@ -285,11 +275,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $uHostType
      */
-    public function setUHostType($uHostType)
+    public function setUHostType(string $uHostType)
     {
         $this->set("UHostType", $uHostType);
     }
-
     /**
      * CPU: 虚拟CPU核数。可选参数：1-64（具体机型与CPU的对应关系参照控制台）。默认值: 4。
      *
@@ -305,11 +294,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
-
     /**
      * Memory: 内存大小。单位：MB。范围 ：[1024, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
      *
@@ -325,11 +313,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
-
     /**
      * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S"]，MachineType为G时必填
      *
@@ -345,11 +332,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $gpuType
      */
-    public function setGpuType($gpuType)
+    public function setGpuType(string $gpuType)
     {
         $this->set("GpuType", $gpuType);
     }
-
     /**
      * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *
@@ -365,11 +351,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }
-
     /**
      * NetCapability: 网络增强特性。枚举值：Normal（默认），不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（仅支持部分可用区，请参考控制台）
      *
@@ -385,11 +370,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $netCapability
      */
-    public function setNetCapability($netCapability)
+    public function setNetCapability(string $netCapability)
     {
         $this->set("NetCapability", $netCapability);
     }
-
     /**
      * HotplugFeature: 热升级特性。True为开启，False为未开启，默认False。
      *
@@ -405,11 +389,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param boolean $hotplugFeature
      */
-    public function setHotplugFeature($hotplugFeature)
+    public function setHotplugFeature(bool $hotplugFeature)
     {
         $this->set("HotplugFeature", $hotplugFeature);
     }
-
     /**
      * VPCId: VPC ID。默认为当前地域的默认VPC。
      *
@@ -425,11 +408,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: 子网 ID。默认为当前地域的默认子网。
      *
@@ -445,11 +427,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * PrivateIp: 【数组】创建云主机时指定内网IP。若不传值，则随机分配当前子网下的IP。调用方式举例：PrivateIp.0=x.x.x.x。当前只支持一个内网IP。
      *
@@ -469,7 +450,6 @@ class CreateUHostInstanceRequest extends Request
     {
         $this->set("PrivateIp", $privateIp);
     }
-
     /**
      * SecurityGroupId: 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
      *
@@ -485,11 +465,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $securityGroupId
      */
-    public function setSecurityGroupId($securityGroupId)
+    public function setSecurityGroupId(string $securityGroupId)
     {
         $this->set("SecurityGroupId", $securityGroupId);
     }
-
     /**
      * IsolationGroup: 硬件隔离组id。可通过DescribeIsolationGroup获取。
      *
@@ -505,11 +484,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup($isolationGroup)
+    public function setIsolationGroup(string $isolationGroup)
     {
         $this->set("IsolationGroup", $isolationGroup);
     }
-
     /**
      * AlarmTemplateId: 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败只会在后台有日志，不会影响创建主机流程，也不会在前端报错。
      *
@@ -525,11 +503,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $alarmTemplateId
      */
-    public function setAlarmTemplateId($alarmTemplateId)
+    public function setAlarmTemplateId(int $alarmTemplateId)
     {
         $this->set("AlarmTemplateId", $alarmTemplateId);
     }
-
     /**
      * MachineType: 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OS", "OM", "OPRO", "OMAX", "O.BM", "O.EPC"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
@@ -545,11 +522,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
-
     /**
      * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Amd/Epyc2", "Amd/Auto"],默认值是"Intel/Auto"。
      *
@@ -565,11 +541,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $minimalCpuPlatform
      */
-    public function setMinimalCpuPlatform($minimalCpuPlatform)
+    public function setMinimalCpuPlatform(string $minimalCpuPlatform)
     {
         $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
     }
-
     /**
      * MaxCount: 本次最大创建主机数量，取值范围是[1,100]，默认值为1。
      *
@@ -585,15 +560,14 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param int $maxCount
      */
-    public function setMaxCount($maxCount)
+    public function setMaxCount(int $maxCount)
     {
         $this->set("MaxCount", $maxCount);
     }
-
     /**
      * NetworkInterface:
      *
-     * @return CreateUHostInstanceParamNetworkInterface[]|null
+     * @return CreateUHostInstanceRequestNetworkInterfaceModel[]|null
      */
     public function getNetworkInterface()
     {
@@ -603,7 +577,7 @@ class CreateUHostInstanceRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUHostInstanceParamNetworkInterface($item));
+            array_push($result, new CreateUHostInstanceRequestNetworkInterfaceModel($item));
         }
         return $result;
     }
@@ -611,7 +585,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * NetworkInterface:
      *
-     * @param CreateUHostInstanceParamNetworkInterface[] $networkInterface
+     * @param CreateUHostInstanceRequestNetworkInterfaceModel[] $networkInterface
      */
     public function setNetworkInterface(array $networkInterface)
     {
@@ -621,7 +595,6 @@ class CreateUHostInstanceRequest extends Request
         }
         return $result;
     }
-
     /**
      * UserData: 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码
      *
@@ -637,11 +610,10 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $userData
      */
-    public function setUserData($userData)
+    public function setUserData(string $userData)
     {
         $this->set("UserData", $userData);
     }
-
     /**
      * AutoDataDiskInit: 数据盘是否需要自动分区挂载。当镜像支持“Cloud-init”Feature时可填写此字段。取值 >“On” 自动挂载（默认值）> “Off” 不自动挂载。
      *
@@ -657,15 +629,14 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $autoDataDiskInit
      */
-    public function setAutoDataDiskInit($autoDataDiskInit)
+    public function setAutoDataDiskInit(string $autoDataDiskInit)
     {
         $this->set("AutoDataDiskInit", $autoDataDiskInit);
     }
-
     /**
      * Volumes:
      *
-     * @return CreateUHostInstanceParamVolumes[]|null
+     * @return CreateUHostInstanceRequestVolumesModel[]|null
      */
     public function getVolumes()
     {
@@ -675,7 +646,7 @@ class CreateUHostInstanceRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUHostInstanceParamVolumes($item));
+            array_push($result, new CreateUHostInstanceRequestVolumesModel($item));
         }
         return $result;
     }
@@ -683,7 +654,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * Volumes:
      *
-     * @param CreateUHostInstanceParamVolumes[] $volumes
+     * @param CreateUHostInstanceRequestVolumesModel[] $volumes
      */
     public function setVolumes(array $volumes)
     {
@@ -693,7 +664,6 @@ class CreateUHostInstanceRequest extends Request
         }
         return $result;
     }
-
     /**
      * KeyPairId: KeypairId 密钥对ID，LoginMode为KeyPair时此项必须
      *
@@ -709,31 +679,29 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId($keyPairId)
+    public function setKeyPairId(string $keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
-
     /**
      * Features:
      *
-     * @return CreateUHostInstanceParamFeatures|null
+     * @return CreateUHostInstanceRequestFeaturesModel|null
      */
     public function getFeatures()
     {
-        return new CreateUHostInstanceParamFeatures($this->get("Features"));
+        return new CreateUHostInstanceRequestFeaturesModel($this->get("Features"));
     }
 
     /**
      * Features:
      *
-     * @param CreateUHostInstanceParamFeatures $features
+     * @param CreateUHostInstanceRequestFeaturesModel $features
      */
-    public function setFeatures(array $features)
+    public function setFeatures(CreateUHostInstanceRequestFeaturesModel $features)
     {
         $this->set("Features", $features->getAll());
     }
-
     /**
      * CouponId: 主机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看
      *
@@ -749,7 +717,7 @@ class CreateUHostInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

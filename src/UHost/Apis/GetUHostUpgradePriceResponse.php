@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
 class GetUHostUpgradePriceResponse extends Response
 {
-    
 
     /**
      * Price: 规格调整差价。精确到小数点后2位。
@@ -37,11 +38,10 @@ class GetUHostUpgradePriceResponse extends Response
      *
      * @param float $price
      */
-    public function setPrice($price)
+    public function setPrice(float $price)
     {
         $this->set("Price", $price);
     }
-
     /**
      * OriginalPrice: 限时优惠的折前原价
      *
@@ -57,7 +57,7 @@ class GetUHostUpgradePriceResponse extends Response
      *
      * @param float $originalPrice
      */
-    public function setOriginalPrice($originalPrice)
+    public function setOriginalPrice(float $originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }

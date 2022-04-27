@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class CreateUSMSTemplateRequest extends Request
         $this->markRequired("Template");
     }
 
-    
 
     /**
      * ProjectId: 项目ID，不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -46,11 +47,10 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Purpose: 短信模板用途类型：1-验证码类短信模板；2-系统通知类短信模板；3-会员推广类短信模板；
      *
@@ -66,11 +66,10 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param int $purpose
      */
-    public function setPurpose($purpose)
+    public function setPurpose(int $purpose)
     {
         $this->set("Purpose", $purpose);
     }
-
     /**
      * TemplateName: 短信模板名称，不超过32个字符，每个中文、符号、英文、数字等都计为1个字。
      *
@@ -86,11 +85,10 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $templateName
      */
-    public function setTemplateName($templateName)
+    public function setTemplateName(string $templateName)
     {
         $this->set("TemplateName", $templateName);
     }
-
     /**
      * Template: 短信模板内容，说明如下：字数不超过500，每个中文、符号、英文、数组等都计为一个字；模板中的变量填写格式：{N}，其中N为大于1的整数，有多个参数时，建议N从1开始顺次，例如：{1}、{2}等；短信模板禁止仅包括变量的情况；
      *
@@ -106,11 +104,10 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $template
      */
-    public function setTemplate($template)
+    public function setTemplate(string $template)
     {
         $this->set("Template", $template);
     }
-
     /**
      * International: 标记是否为国际短信。true:国际短信，false:国内短信，若不传值则默认该值为false
      *
@@ -126,11 +123,10 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param boolean $international
      */
-    public function setInternational($international)
+    public function setInternational(bool $international)
     {
         $this->set("International", $international);
     }
-
     /**
      * Remark: 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。
      *
@@ -146,11 +142,10 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * UnsubscribeInfo: 当Purpose为3时，也即会员推广类短信模板，该项必填。枚举值：TD退订、回T退订、回N退订、回TD退订、退订回T、退订回D、退订回TD、退订回复T、退订回复D、退订回复N、退订回复TD、拒收回T
      *
@@ -166,8 +161,27 @@ class CreateUSMSTemplateRequest extends Request
      *
      * @param string $unsubscribeInfo
      */
-    public function setUnsubscribeInfo($unsubscribeInfo)
+    public function setUnsubscribeInfo(string $unsubscribeInfo)
     {
         $this->set("UnsubscribeInfo", $unsubscribeInfo);
+    }
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @return string|null
+     */
+    public function getInstruction()
+    {
+        return $this->get("Instruction");
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @param string $instruction
+     */
+    public function setInstruction(string $instruction)
+    {
+        $this->set("Instruction", $instruction);
     }
 }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\ULB\Models\PolicyBackendSet;
+use UCloud\ULB\Models\ULBVServerSet;
+use UCloud\ULB\Models\DescribeULBResponse;
+use UCloud\ULB\Models\ULBSet;
+use UCloud\ULB\Models\DescribeVServerResponse;
+
 class ULBPolicySet extends Response
 {
-    
 
+    /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @return string|null
+     */
+    public function getDomainMatchMode()
+    {
+        return $this->get("DomainMatchMode");
+    }
+
+    /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @param string $domainMatchMode
+     */
+    public function setDomainMatchMode(string $domainMatchMode)
+    {
+        $this->set("DomainMatchMode", $domainMatchMode);
+    }
     /**
      * PolicyId: 内容转发Id，默认内容转发类型下为空。
      *
@@ -37,11 +63,10 @@ class ULBPolicySet extends Response
      *
      * @param string $policyId
      */
-    public function setPolicyId($policyId)
+    public function setPolicyId(string $policyId)
     {
         $this->set("PolicyId", $policyId);
     }
-
     /**
      * PolicyType: 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发
      *
@@ -57,11 +82,10 @@ class ULBPolicySet extends Response
      *
      * @param string $policyType
      */
-    public function setPolicyType($policyType)
+    public function setPolicyType(string $policyType)
     {
         $this->set("PolicyType", $policyType);
     }
-
     /**
      * Type: 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空
      *
@@ -77,11 +101,10 @@ class ULBPolicySet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * Match: 内容转发匹配字段;默认内容转发类型下为空。
      *
@@ -97,11 +120,10 @@ class ULBPolicySet extends Response
      *
      * @param string $match
      */
-    public function setMatch($match)
+    public function setMatch(string $match)
     {
         $this->set("Match", $match);
     }
-
     /**
      * PolicyPriority: 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。
      *
@@ -117,11 +139,10 @@ class ULBPolicySet extends Response
      *
      * @param int $policyPriority
      */
-    public function setPolicyPriority($policyPriority)
+    public function setPolicyPriority(int $policyPriority)
     {
         $this->set("PolicyPriority", $policyPriority);
     }
-
     /**
      * VServerId: 所属VServerId
      *
@@ -137,11 +158,10 @@ class ULBPolicySet extends Response
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
-
     /**
      * TotalCount: 默认内容转发类型下返回当前rs总数
      *
@@ -157,15 +177,14 @@ class ULBPolicySet extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * BackendSet: 内容转发下rs的详细信息，参考PolicyBackendSet
      *
-     * @return PolicyBackendSet[]|null
+     * @return PolicyBackendSetModel[]|null
      */
     public function getBackendSet()
     {
@@ -175,7 +194,7 @@ class ULBPolicySet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new PolicyBackendSet($item));
+            array_push($result, new PolicyBackendSetModel($item));
         }
         return $result;
     }
@@ -183,7 +202,7 @@ class ULBPolicySet extends Response
     /**
      * BackendSet: 内容转发下rs的详细信息，参考PolicyBackendSet
      *
-     * @param PolicyBackendSet[] $backendSet
+     * @param PolicyBackendSetModel[] $backendSet
      */
     public function setBackendSet(array $backendSet)
     {

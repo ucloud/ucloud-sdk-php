@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\GetUImageFromTimeMachineResponse;
+use UCloud\UHost\Models\DescribeImageResponse;
+
 class UHostImageSet extends Response
 {
-    
 
     /**
      * Zone: 可用区，参见 [可用区列表](../summary/regionlist.html)
@@ -37,11 +41,10 @@ class UHostImageSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ImageId: 镜像ID
      *
@@ -57,11 +60,10 @@ class UHostImageSet extends Response
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * ImageName: 镜像名称
      *
@@ -77,11 +79,10 @@ class UHostImageSet extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
-
     /**
      * OsType: 操作系统类型：Linux，Windows
      *
@@ -97,11 +98,10 @@ class UHostImageSet extends Response
      *
      * @param string $osType
      */
-    public function setOsType($osType)
+    public function setOsType(string $osType)
     {
         $this->set("OsType", $osType);
     }
-
     /**
      * OsName: 操作系统名称
      *
@@ -117,11 +117,10 @@ class UHostImageSet extends Response
      *
      * @param string $osName
      */
-    public function setOsName($osName)
+    public function setOsName(string $osName)
     {
         $this->set("OsName", $osName);
     }
-
     /**
      * ImageType: 镜像类型 标准镜像：Base， 行业镜像：Business，自定义镜像：Custom
      *
@@ -137,11 +136,10 @@ class UHostImageSet extends Response
      *
      * @param string $imageType
      */
-    public function setImageType($imageType)
+    public function setImageType(string $imageType)
     {
         $this->set("ImageType", $imageType);
     }
-
     /**
      * Features: 特殊状态标识， 目前包含NetEnhnced（网络增强1.0）, NetEnhanced_Ultra]（网络增强2.0）, HotPlug(热升级), CloudInit, IPv6
      *
@@ -161,7 +159,6 @@ class UHostImageSet extends Response
     {
         $this->set("Features", $features);
     }
-
     /**
      * FuncType: 行业镜像类型（仅行业镜像将返回这个值）
      *
@@ -177,11 +174,10 @@ class UHostImageSet extends Response
      *
      * @param string $funcType
      */
-    public function setFuncType($funcType)
+    public function setFuncType(string $funcType)
     {
         $this->set("FuncType", $funcType);
     }
-
     /**
      * IntegratedSoftware: 集成软件名称（仅行业镜像将返回这个值）
      *
@@ -197,11 +193,10 @@ class UHostImageSet extends Response
      *
      * @param string $integratedSoftware
      */
-    public function setIntegratedSoftware($integratedSoftware)
+    public function setIntegratedSoftware(string $integratedSoftware)
     {
         $this->set("IntegratedSoftware", $integratedSoftware);
     }
-
     /**
      * Vendor: 供应商（仅行业镜像将返回这个值）
      *
@@ -217,11 +212,10 @@ class UHostImageSet extends Response
      *
      * @param string $vendor
      */
-    public function setVendor($vendor)
+    public function setVendor(string $vendor)
     {
         $this->set("Vendor", $vendor);
     }
-
     /**
      * Links: 介绍链接（仅行业镜像将返回这个值）
      *
@@ -237,11 +231,10 @@ class UHostImageSet extends Response
      *
      * @param string $links
      */
-    public function setLinks($links)
+    public function setLinks(string $links)
     {
         $this->set("Links", $links);
     }
-
     /**
      * State: 镜像状态， 可用：Available，制作中：Making， 不可用：Unavailable
      *
@@ -257,11 +250,10 @@ class UHostImageSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * ImageDescription: 镜像描述
      *
@@ -277,11 +269,10 @@ class UHostImageSet extends Response
      *
      * @param string $imageDescription
      */
-    public function setImageDescription($imageDescription)
+    public function setImageDescription(string $imageDescription)
     {
         $this->set("ImageDescription", $imageDescription);
     }
-
     /**
      * CreateTime: 创建时间，格式为Unix时间戳
      *
@@ -297,11 +288,10 @@ class UHostImageSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ImageSize: 镜像大小
      *
@@ -317,11 +307,10 @@ class UHostImageSet extends Response
      *
      * @param int $imageSize
      */
-    public function setImageSize($imageSize)
+    public function setImageSize(int $imageSize)
     {
         $this->set("ImageSize", $imageSize);
     }
-
     /**
      * MinimalCPU: 默认值为空'''。当CentOS 7.3/7.4/7.5等镜像会标记为“Broadwell”
      *
@@ -337,7 +326,7 @@ class UHostImageSet extends Response
      *
      * @param string $minimalCPU
      */
-    public function setMinimalCPU($minimalCPU)
+    public function setMinimalCPU(string $minimalCPU)
     {
         $this->set("MinimalCPU", $minimalCPU);
     }

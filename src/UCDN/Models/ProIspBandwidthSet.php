@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnProIspBandwidthResponse;
+use UCloud\UCDN\Models\ProIspBandwidthList;
+use UCloud\UCDN\Models\GetUcdnProIspBandwidthV2Response;
+
 class ProIspBandwidthSet extends Response
 {
-    
 
     /**
      * Province: 省份代码
@@ -37,15 +42,14 @@ class ProIspBandwidthSet extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
-
     /**
      * BandwidthTrafficList: 省份带宽流量实例表
      *
-     * @return ProIspBandwidthList[]|null
+     * @return ProIspBandwidthListModel[]|null
      */
     public function getBandwidthTrafficList()
     {
@@ -55,7 +59,7 @@ class ProIspBandwidthSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ProIspBandwidthList($item));
+            array_push($result, new ProIspBandwidthListModel($item));
         }
         return $result;
     }
@@ -63,7 +67,7 @@ class ProIspBandwidthSet extends Response
     /**
      * BandwidthTrafficList: 省份带宽流量实例表
      *
-     * @param ProIspBandwidthList[] $bandwidthTrafficList
+     * @param ProIspBandwidthListModel[] $bandwidthTrafficList
      */
     public function setBandwidthTrafficList(array $bandwidthTrafficList)
     {

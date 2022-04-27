@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class ReleaseShareBandwidthRequest extends Request
         $this->markRequired("EIPBandwidth");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -65,11 +65,10 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ShareBandwidthId: 共享带宽ID
      *
@@ -85,11 +84,10 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
-
     /**
      * EIPBandwidth: 关闭共享带宽后，各EIP恢复为的带宽值
      *
@@ -105,11 +103,10 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param int $eipBandwidth
      */
-    public function setEIPBandwidth($eipBandwidth)
+    public function setEIPBandwidth(int $eipBandwidth)
     {
         $this->set("EIPBandwidth", $eipBandwidth);
     }
-
     /**
      * PayMode: 默认为 Bandwidth 带宽计费
      *
@@ -125,7 +122,7 @@ class ReleaseShareBandwidthRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }

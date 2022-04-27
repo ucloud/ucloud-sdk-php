@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\USMS\Models\ReceiptPerPhone;
+use UCloud\USMS\Models\GetUSMSSendReceiptResponse;
+
 class ReceiptPerSession extends Response
 {
-    
 
     /**
      * SessionNo: 发送短信时返回的SessionNo
@@ -37,15 +41,14 @@ class ReceiptPerSession extends Response
      *
      * @param string $sessionNo
      */
-    public function setSessionNo($sessionNo)
+    public function setSessionNo(string $sessionNo)
     {
         $this->set("SessionNo", $sessionNo);
     }
-
     /**
      * ReceiptSet: 每个手机号的短信回执信息集合
      *
-     * @return ReceiptPerPhone[]|null
+     * @return ReceiptPerPhoneModel[]|null
      */
     public function getReceiptSet()
     {
@@ -55,7 +58,7 @@ class ReceiptPerSession extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ReceiptPerPhone($item));
+            array_push($result, new ReceiptPerPhoneModel($item));
         }
         return $result;
     }
@@ -63,7 +66,7 @@ class ReceiptPerSession extends Response
     /**
      * ReceiptSet: 每个手机号的短信回执信息集合
      *
-     * @param ReceiptPerPhone[] $receiptSet
+     * @param ReceiptPerPhoneModel[] $receiptSet
      */
     public function setReceiptSet(array $receiptSet)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UAccount\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UAccount\Models\GetRegionResponse;
+
 class RegionInfo extends Response
 {
-    
 
     /**
      * RegionId: 数据中心ID
@@ -37,11 +40,10 @@ class RegionInfo extends Response
      *
      * @param int $regionId
      */
-    public function setRegionId($regionId)
+    public function setRegionId(int $regionId)
     {
         $this->set("RegionId", $regionId);
     }
-
     /**
      * RegionName: 数据中心名称
      *
@@ -57,11 +59,10 @@ class RegionInfo extends Response
      *
      * @param string $regionName
      */
-    public function setRegionName($regionName)
+    public function setRegionName(string $regionName)
     {
         $this->set("RegionName", $regionName);
     }
-
     /**
      * IsDefault: 是否用户当前默认数据中心
      *
@@ -77,11 +78,10 @@ class RegionInfo extends Response
      *
      * @param boolean $isDefault
      */
-    public function setIsDefault($isDefault)
+    public function setIsDefault(bool $isDefault)
     {
         $this->set("IsDefault", $isDefault);
     }
-
     /**
      * BitMaps: 用户在此数据中心的权限位
      *
@@ -97,11 +97,10 @@ class RegionInfo extends Response
      *
      * @param string $bitMaps
      */
-    public function setBitMaps($bitMaps)
+    public function setBitMaps(string $bitMaps)
     {
         $this->set("BitMaps", $bitMaps);
     }
-
     /**
      * Region: 地域名字，如cn-bj
      *
@@ -117,11 +116,10 @@ class RegionInfo extends Response
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区名字，如cn-bj-01
      *
@@ -137,7 +135,7 @@ class RegionInfo extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }

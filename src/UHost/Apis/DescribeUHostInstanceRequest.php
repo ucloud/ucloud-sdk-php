@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class DescribeUHostInstanceRequest extends Request
         $this->markRequired("Region");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -43,11 +44,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -63,11 +63,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -83,11 +82,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * UHostIds: 【数组】UHost主机的资源ID，例如UHostIds.0代表希望获取信息 的主机1，UHostIds.1代表主机2。 如果不传入，则返回当前Region 所有符合条件的UHost实例。
      *
@@ -107,7 +105,6 @@ class DescribeUHostInstanceRequest extends Request
     {
         $this->set("UHostIds", $uHostIds);
     }
-
     /**
      * Tag: 要查询的业务组名称
      *
@@ -123,11 +120,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
@@ -143,11 +139,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 返回数据长度，默认为20，最大100
      *
@@ -163,11 +158,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * IsolationGroup: 硬件隔离组id。通过硬件隔离组筛选主机。
      *
@@ -183,11 +177,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup($isolationGroup)
+    public function setIsolationGroup(string $isolationGroup)
     {
         $this->set("IsolationGroup", $isolationGroup);
     }
-
     /**
      * VPCId: vpc id。通过VPC筛选主机。北京一地域无效。
      *
@@ -203,11 +196,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: 子网id。通过子网筛选主机。北京一地域无效。
      *
@@ -223,11 +215,10 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * UDiskIdForAttachment: 要挂载的云盘id，过滤返回能被UDiskId挂载的云主机。目前主要针对rssd云盘使用
      *
@@ -243,7 +234,7 @@ class DescribeUHostInstanceRequest extends Request
      *
      * @param string $uDiskIdForAttachment
      */
-    public function setUDiskIdForAttachment($uDiskIdForAttachment)
+    public function setUDiskIdForAttachment(string $uDiskIdForAttachment)
     {
         $this->set("UDiskIdForAttachment", $uDiskIdForAttachment);
     }

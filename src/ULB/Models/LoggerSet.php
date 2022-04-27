@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\ULB\Models\DescribeULBResponse;
+use UCloud\ULB\Models\ULBSet;
+use UCloud\ULB\Models\ULBSimpleSet;
+use UCloud\ULB\Models\DescribeULBSimpleResponse;
+
 class LoggerSet extends Response
 {
-    
 
     /**
      * BucketName: ulb日志上传的bucket
@@ -37,11 +43,10 @@ class LoggerSet extends Response
      *
      * @param string $bucketName
      */
-    public function setBucketName($bucketName)
+    public function setBucketName(string $bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
-
     /**
      * TokenID: 上传到bucket使用的token的tokenid
      *
@@ -57,11 +62,10 @@ class LoggerSet extends Response
      *
      * @param string $tokenID
      */
-    public function setTokenID($tokenID)
+    public function setTokenID(string $tokenID)
     {
         $this->set("TokenID", $tokenID);
     }
-
     /**
      * TokenName: bucket的token名称
      *
@@ -77,7 +81,7 @@ class LoggerSet extends Response
      *
      * @param string $tokenName
      */
-    public function setTokenName($tokenName)
+    public function setTokenName(string $tokenName)
     {
         $this->set("TokenName", $tokenName);
     }

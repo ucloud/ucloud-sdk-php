@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UK8S\Models\ClusterSet;
 
 class ListUK8SClusterV2Response extends Response
 {
-    
 
     /**
      * ClusterCount: 满足条件的集群数量
@@ -38,15 +40,14 @@ class ListUK8SClusterV2Response extends Response
      *
      * @param int $clusterCount
      */
-    public function setClusterCount($clusterCount)
+    public function setClusterCount(int $clusterCount)
     {
         $this->set("ClusterCount", $clusterCount);
     }
-
     /**
      * ClusterSet: 集群信息，具体参考ClusterSet
      *
-     * @return ClusterSet[]|null
+     * @return ClusterSetModel[]|null
      */
     public function getClusterSet()
     {
@@ -56,7 +57,7 @@ class ListUK8SClusterV2Response extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ClusterSet($item));
+            array_push($result, new ClusterSetModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class ListUK8SClusterV2Response extends Response
     /**
      * ClusterSet: 集群信息，具体参考ClusterSet
      *
-     * @param ClusterSet[] $clusterSet
+     * @param ClusterSetModel[] $clusterSet
      */
     public function setClusterSet(array $clusterSet)
     {

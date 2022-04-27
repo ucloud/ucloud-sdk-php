@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDDB\Models\DataNodeInfo;
+use UCloud\UDDB\Models\DescribeUDDBInstanceResponse;
+use UCloud\UDDB\Models\DataSetUDDB;
+use UCloud\UDDB\Models\ListUDDBInstanceResponse;
+
 class SlaveInfo extends Response
 {
-    
 
     /**
      * Id: 只读实例ID
@@ -37,11 +43,10 @@ class SlaveInfo extends Response
      *
      * @param string $id
      */
-    public function setId($id)
+    public function setId(string $id)
     {
         $this->set("Id", $id);
     }
-
     /**
      * DataNodeId: 对应数据节点的ID
      *
@@ -57,11 +62,10 @@ class SlaveInfo extends Response
      *
      * @param string $dataNodeId
      */
-    public function setDataNodeId($dataNodeId)
+    public function setDataNodeId(string $dataNodeId)
     {
         $this->set("DataNodeId", $dataNodeId);
     }
-
     /**
      * State: 只读实例状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中 Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
      *
@@ -77,7 +81,7 @@ class SlaveInfo extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }

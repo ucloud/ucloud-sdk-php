@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\USMS\Models\FailPhoneDetail;
+use UCloud\USMS\Models\SendBatchUSMSMessageResponse;
+
 class BatchInfo extends Response
 {
-    
 
     /**
      * TemplateId: 模板ID
@@ -37,11 +41,10 @@ class BatchInfo extends Response
      *
      * @param string $templateId
      */
-    public function setTemplateId($templateId)
+    public function setTemplateId(string $templateId)
     {
         $this->set("TemplateId", $templateId);
     }
-
     /**
      * SigContent: 签名
      *
@@ -57,15 +60,14 @@ class BatchInfo extends Response
      *
      * @param string $sigContent
      */
-    public function setSigContent($sigContent)
+    public function setSigContent(string $sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
-
     /**
      * Target: 具体号码信息
      *
-     * @return FailPhoneDetail[]|null
+     * @return FailPhoneDetailModel[]|null
      */
     public function getTarget()
     {
@@ -75,7 +77,7 @@ class BatchInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new FailPhoneDetail($item));
+            array_push($result, new FailPhoneDetailModel($item));
         }
         return $result;
     }
@@ -83,7 +85,7 @@ class BatchInfo extends Response
     /**
      * Target: 具体号码信息
      *
-     * @param FailPhoneDetail[] $target
+     * @param FailPhoneDetailModel[] $target
      */
     public function setTarget(array $target)
     {
@@ -93,7 +95,6 @@ class BatchInfo extends Response
         }
         return $result;
     }
-
     /**
      * FailureDetails: 未能成功发送的详情。注：模板/签名检验失败时，该字段有效
      *
@@ -109,7 +110,7 @@ class BatchInfo extends Response
      *
      * @param string $failureDetails
      */
-    public function setFailureDetails($failureDetails)
+    public function setFailureDetails(string $failureDetails)
     {
         $this->set("FailureDetails", $failureDetails);
     }

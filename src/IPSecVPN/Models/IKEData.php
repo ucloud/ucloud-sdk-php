@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\IPSecVPN\Models\VPNTunnelDataSet;
+use UCloud\IPSecVPN\Models\DescribeVPNTunnelResponse;
+
 class IKEData extends Response
 {
-    
 
     /**
      * IKEAuthenticationAlgorithm: IKE认证算法
@@ -37,11 +41,10 @@ class IKEData extends Response
      *
      * @param string $ikeAuthenticationAlgorithm
      */
-    public function setIKEAuthenticationAlgorithm($ikeAuthenticationAlgorithm)
+    public function setIKEAuthenticationAlgorithm(string $ikeAuthenticationAlgorithm)
     {
         $this->set("IKEAuthenticationAlgorithm", $ikeAuthenticationAlgorithm);
     }
-
     /**
      * IKEDhGroup: IKEDH组
      *
@@ -57,11 +60,10 @@ class IKEData extends Response
      *
      * @param string $ikeDhGroup
      */
-    public function setIKEDhGroup($ikeDhGroup)
+    public function setIKEDhGroup(string $ikeDhGroup)
     {
         $this->set("IKEDhGroup", $ikeDhGroup);
     }
-
     /**
      * IKEEncryptionAlgorithm: IKE加密算法
      *
@@ -77,11 +79,10 @@ class IKEData extends Response
      *
      * @param string $ikeEncryptionAlgorithm
      */
-    public function setIKEEncryptionAlgorithm($ikeEncryptionAlgorithm)
+    public function setIKEEncryptionAlgorithm(string $ikeEncryptionAlgorithm)
     {
         $this->set("IKEEncryptionAlgorithm", $ikeEncryptionAlgorithm);
     }
-
     /**
      * IKEExchangeMode: IKEv1协商模式
      *
@@ -97,11 +98,10 @@ class IKEData extends Response
      *
      * @param string $ikeExchangeMode
      */
-    public function setIKEExchangeMode($ikeExchangeMode)
+    public function setIKEExchangeMode(string $ikeExchangeMode)
     {
         $this->set("IKEExchangeMode", $ikeExchangeMode);
     }
-
     /**
      * IKELocalId: IKE本地ID标识
      *
@@ -117,11 +117,10 @@ class IKEData extends Response
      *
      * @param string $ikeLocalId
      */
-    public function setIKELocalId($ikeLocalId)
+    public function setIKELocalId(string $ikeLocalId)
     {
         $this->set("IKELocalId", $ikeLocalId);
     }
-
     /**
      * IKEPreSharedKey: IKE预共享秘钥
      *
@@ -137,11 +136,10 @@ class IKEData extends Response
      *
      * @param string $ikePreSharedKey
      */
-    public function setIKEPreSharedKey($ikePreSharedKey)
+    public function setIKEPreSharedKey(string $ikePreSharedKey)
     {
         $this->set("IKEPreSharedKey", $ikePreSharedKey);
     }
-
     /**
      * IKERemoteId: IKE对端ID标识
      *
@@ -157,11 +155,10 @@ class IKEData extends Response
      *
      * @param string $ikeRemoteId
      */
-    public function setIKERemoteId($ikeRemoteId)
+    public function setIKERemoteId(string $ikeRemoteId)
     {
         $this->set("IKERemoteId", $ikeRemoteId);
     }
-
     /**
      * IKESALifetime: IKE秘钥生存时间
      *
@@ -177,11 +174,10 @@ class IKEData extends Response
      *
      * @param string $ikesaLifetime
      */
-    public function setIKESALifetime($ikesaLifetime)
+    public function setIKESALifetime(string $ikesaLifetime)
     {
         $this->set("IKESALifetime", $ikesaLifetime);
     }
-
     /**
      * IKEVersion: IKE版本
      *
@@ -197,7 +193,7 @@ class IKEData extends Response
      *
      * @param string $ikeVersion
      */
-    public function setIKEVersion($ikeVersion)
+    public function setIKEVersion(string $ikeVersion)
     {
         $this->set("IKEVersion", $ikeVersion);
     }

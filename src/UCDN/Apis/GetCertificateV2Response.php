@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UCDN\Models\CertList;
 
 class GetCertificateV2Response extends Response
 {
-    
 
     /**
      * TotalCount: 证书数量
@@ -38,15 +40,14 @@ class GetCertificateV2Response extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * CertList: 证书信息列表
      *
-     * @return CertList[]|null
+     * @return CertListModel[]|null
      */
     public function getCertList()
     {
@@ -56,7 +57,7 @@ class GetCertificateV2Response extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CertList($item));
+            array_push($result, new CertListModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class GetCertificateV2Response extends Response
     /**
      * CertList: 证书信息列表
      *
-     * @param CertList[] $certList
+     * @param CertListModel[] $certList
      */
     public function setCertList(array $certList)
     {

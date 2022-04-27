@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class GetPHostDiskUpgradePriceRequest extends Request
         $this->markRequired("DiskSpace");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -46,11 +47,10 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -66,11 +66,10 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -86,11 +85,10 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * PHostId: UPHost实例ID。
      *
@@ -106,11 +104,10 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $pHostId
      */
-    public function setPHostId($pHostId)
+    public function setPHostId(string $pHostId)
     {
         $this->set("PHostId", $pHostId);
     }
-
     /**
      * DiskSpace: 磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB，数据盘单块盘20-32000GB。
      *
@@ -126,11 +123,10 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
-
     /**
      * UDiskId: 磁盘 ID。获取扩容价格必填（只能扩不能减）；重装时候不需要填（根据所选盘大小决定）
      *
@@ -146,11 +142,10 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
-
     /**
      * ReinstallTag: 是否重装价格获取。复用此接口。扩容只能增加云盘大小。重装不限制。枚举值：true/false
      *
@@ -166,7 +161,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
      *
      * @param boolean $reinstallTag
      */
-    public function setReinstallTag($reinstallTag)
+    public function setReinstallTag(bool $reinstallTag)
     {
         $this->set("ReinstallTag", $reinstallTag);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnProIspRequestNumV2Response;
+use UCloud\UCDN\Models\ProIspRequestListV2;
+
 class ProIspRequestNumSetV2 extends Response
 {
-    
 
     /**
      * Province: 省份代码
@@ -37,15 +41,14 @@ class ProIspRequestNumSetV2 extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
-
     /**
      * RequestList: 省份请求数实例表 ProIspRequestListV2
      *
-     * @return ProIspRequestListV2[]|null
+     * @return ProIspRequestListV2Model[]|null
      */
     public function getRequestList()
     {
@@ -55,7 +58,7 @@ class ProIspRequestNumSetV2 extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ProIspRequestListV2($item));
+            array_push($result, new ProIspRequestListV2Model($item));
         }
         return $result;
     }
@@ -63,7 +66,7 @@ class ProIspRequestNumSetV2 extends Response
     /**
      * RequestList: 省份请求数实例表 ProIspRequestListV2
      *
-     * @param ProIspRequestListV2[] $requestList
+     * @param ProIspRequestListV2Model[] $requestList
      */
     public function setRequestList(array $requestList)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,10 +31,9 @@ class AllocateShareBandwidthRequest extends Request
         $this->markRequired("ShareBandwidth");
     }
 
-    
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -42,15 +43,14 @@ class AllocateShareBandwidthRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。
      *
@@ -66,11 +66,10 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Name: 共享带宽名字
      *
@@ -86,11 +85,10 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * ChargeType: 付费方式:Year 按年,Month 按月,Dynamic 按时;
      *
@@ -106,11 +104,10 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * ShareBandwidth: 共享带宽值
      *
@@ -126,11 +123,10 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth($shareBandwidth)
+    public function setShareBandwidth(int $shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
-
     /**
      * Quantity: 购买时长
      *
@@ -146,11 +142,10 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * IPVersion: 共享带宽类型，IPv4或者IPv6，不传默认IPv4
      *
@@ -166,7 +161,7 @@ class AllocateShareBandwidthRequest extends Request
      *
      * @param string $ipVersion
      */
-    public function setIPVersion($ipVersion)
+    public function setIPVersion(string $ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }

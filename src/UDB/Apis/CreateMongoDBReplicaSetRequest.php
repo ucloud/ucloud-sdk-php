@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -34,7 +36,6 @@ class CreateMongoDBReplicaSetRequest extends Request
         $this->markRequired("Port");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -51,11 +52,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -71,11 +71,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -91,11 +90,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Name: PrimaryDB实例名称，至少6位
      *
@@ -111,11 +109,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * AdminPassword: 管理员密码
      *
@@ -131,11 +128,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $adminPassword
      */
-    public function setAdminPassword($adminPassword)
+    public function setAdminPassword(string $adminPassword)
     {
         $this->set("AdminPassword", $adminPassword);
     }
-
     /**
      * DBTypeId: DB类型id对应的字符串形式（例如：mongodb-2.6）注意：当前仅支持mongodb
      *
@@ -151,11 +147,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
-
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 3000G
      *
@@ -171,11 +166,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
-
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
@@ -191,11 +185,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId($paramGroupId)
+    public function setParamGroupId(int $paramGroupId)
     {
         $this->set("ParamGroupId", $paramGroupId);
     }
-
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M
      *
@@ -211,11 +204,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
-
     /**
      * Port: 端口号
      *
@@ -231,11 +223,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * ChargeType: Year， Month， Dynamic，Trial，默认: Month
      *
@@ -251,11 +242,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长(N个月)，默认值1个月。如果为0，代表购买到月底。
      *
@@ -271,11 +261,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * AdminUser: 管理员帐户名，默认root
      *
@@ -291,11 +280,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $adminUser
      */
-    public function setAdminUser($adminUser)
+    public function setAdminUser(string $adminUser)
     {
         $this->set("AdminUser", $adminUser);
     }
-
     /**
      * BackupCount: 备份策略，每周备份数量，默认7次
      *
@@ -311,11 +299,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $backupCount
      */
-    public function setBackupCount($backupCount)
+    public function setBackupCount(int $backupCount)
     {
         $this->set("BackupCount", $backupCount);
     }
-
     /**
      * BackupTime: 备份策略，备份开始时间，单位小时计，默认1点
      *
@@ -331,11 +318,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
-
     /**
      * BackupDuration: 备份策略，备份时间间隔，单位小时计，默认24小时
      *
@@ -351,11 +337,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $backupDuration
      */
-    public function setBackupDuration($backupDuration)
+    public function setBackupDuration(int $backupDuration)
     {
         $this->set("BackupDuration", $backupDuration);
     }
-
     /**
      * UseSSD: 是否使用SSD，默认为true
      *
@@ -371,11 +356,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
-
     /**
      * SSDType: SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选
      *
@@ -391,11 +375,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }
-
     /**
      * CPU: cpu核数
      *
@@ -411,11 +394,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
-
     /**
      * InstanceType: UDB数据库机型
      *
@@ -431,11 +413,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
-
     /**
      * SubnetId: 子网ID
      *
@@ -451,11 +432,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * VPCId: VPC的ID
      *
@@ -471,11 +451,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * ClusterId: 所属分片集群的ID
      *
@@ -491,11 +470,10 @@ class CreateMongoDBReplicaSetRequest extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
-
     /**
      * CouponId: CouponId.0 代表第一个代金券id，对于传入多个代金券id，后面为 CouponId.1, CouponId.2 以此类推
      *

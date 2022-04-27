@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class DescribeUEcVHostISPRequest extends Request
         parent::__construct(["Action" => "DescribeUEcVHostISP"]);
     }
 
-    
 
     /**
      * IspName: 运营商名称
@@ -42,11 +43,10 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $ispName
      */
-    public function setIspName($ispName)
+    public function setIspName(string $ispName)
     {
         $this->set("IspName", $ispName);
     }
-
     /**
      * Province: 省份
      *
@@ -62,11 +62,10 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
-
     /**
      * City: 城市
      *
@@ -82,7 +81,7 @@ class DescribeUEcVHostISPRequest extends Request
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UMem\Models\DescribeURedisGroupResponse;
+
 class URedisGroupSet extends Response
 {
-    
 
     /**
      * Zone: 实例所在可用区，或者master redis所在可用区，参见 [可用区列表](../summary/regionlist.html)
@@ -37,11 +40,10 @@ class URedisGroupSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * RewriteTime: 返回运维时间 0 //0点 1 //1点 以此类推
      *
@@ -57,11 +59,10 @@ class URedisGroupSet extends Response
      *
      * @param int $rewriteTime
      */
-    public function setRewriteTime($rewriteTime)
+    public function setRewriteTime(int $rewriteTime)
     {
         $this->set("RewriteTime", $rewriteTime);
     }
-
     /**
      * Role: 实例类型
      *
@@ -77,11 +78,10 @@ class URedisGroupSet extends Response
      *
      * @param string $role
      */
-    public function setRole($role)
+    public function setRole(string $role)
     {
         $this->set("Role", $role);
     }
-
     /**
      * VPCId: vpcid
      *
@@ -97,11 +97,10 @@ class URedisGroupSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: subnetid
      *
@@ -117,11 +116,10 @@ class URedisGroupSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * GroupId: 组ID
      *
@@ -137,11 +135,10 @@ class URedisGroupSet extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(string $groupId)
     {
         $this->set("GroupId", $groupId);
     }
-
     /**
      * Name: 组名称
      *
@@ -157,11 +154,10 @@ class URedisGroupSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Type: 空间类型:single(无热备),double(热备)
      *
@@ -177,11 +173,10 @@ class URedisGroupSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * Protocol: 协议
      *
@@ -197,11 +192,10 @@ class URedisGroupSet extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
-
     /**
      * MemorySize: 容量单位GB
      *
@@ -217,11 +211,10 @@ class URedisGroupSet extends Response
      *
      * @param int $memorySize
      */
-    public function setMemorySize($memorySize)
+    public function setMemorySize(int $memorySize)
     {
         $this->set("MemorySize", $memorySize);
     }
-
     /**
      * GroupName: 组名称
      *
@@ -237,11 +230,10 @@ class URedisGroupSet extends Response
      *
      * @param string $groupName
      */
-    public function setGroupName($groupName)
+    public function setGroupName(string $groupName)
     {
         $this->set("GroupName", $groupName);
     }
-
     /**
      * ConfigId: 节点的配置ID
      *
@@ -257,11 +249,10 @@ class URedisGroupSet extends Response
      *
      * @param string $configId
      */
-    public function setConfigId($configId)
+    public function setConfigId(string $configId)
     {
         $this->set("ConfigId", $configId);
     }
-
     /**
      * VirtualIP: 节点的虚拟IP地址
      *
@@ -277,11 +268,10 @@ class URedisGroupSet extends Response
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP($virtualIP)
+    public function setVirtualIP(string $virtualIP)
     {
         $this->set("VirtualIP", $virtualIP);
     }
-
     /**
      * Port: 节点分配的服务端口
      *
@@ -297,11 +287,10 @@ class URedisGroupSet extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * Size: 容量单位GB
      *
@@ -317,11 +306,10 @@ class URedisGroupSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * UsedSize: 使用量单位MB
      *
@@ -337,11 +325,10 @@ class URedisGroupSet extends Response
      *
      * @param int $usedSize
      */
-    public function setUsedSize($usedSize)
+    public function setUsedSize(int $usedSize)
     {
         $this->set("UsedSize", $usedSize);
     }
-
     /**
      * AutoBackup: 是否需要自动备份,enable,disable
      *
@@ -357,11 +344,10 @@ class URedisGroupSet extends Response
      *
      * @param string $autoBackup
      */
-    public function setAutoBackup($autoBackup)
+    public function setAutoBackup(string $autoBackup)
     {
         $this->set("AutoBackup", $autoBackup);
     }
-
     /**
      * BackupTime: 组自动备份开始时间,单位小时计,范围[0-23]
      *
@@ -377,11 +363,10 @@ class URedisGroupSet extends Response
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
-
     /**
      * HighAvailability: 是否开启高可用,enable,disable
      *
@@ -397,11 +382,10 @@ class URedisGroupSet extends Response
      *
      * @param string $highAvailability
      */
-    public function setHighAvailability($highAvailability)
+    public function setHighAvailability(string $highAvailability)
     {
         $this->set("HighAvailability", $highAvailability);
     }
-
     /**
      * Version: Redis版本信息
      *
@@ -417,11 +401,10 @@ class URedisGroupSet extends Response
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
-
     /**
      * ExpireTime: 过期时间 (UNIX时间戳)
      *
@@ -437,11 +420,10 @@ class URedisGroupSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * ChargeType: 计费类型:Year,Month,Dynamic 默认Dynamic
      *
@@ -457,11 +439,10 @@ class URedisGroupSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * State: 状态标记 Creating // 初始化中 CreateFail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败
      *
@@ -477,11 +458,10 @@ class URedisGroupSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * CreateTime: 创建时间 (UNIX时间戳)
      *
@@ -497,11 +477,10 @@ class URedisGroupSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ModifyTime: 修改时间 (UNIX时间戳)
      *
@@ -517,11 +496,10 @@ class URedisGroupSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime($modifyTime)
+    public function setModifyTime(int $modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
-
     /**
      * Tag: 业务组名称
      *
@@ -537,11 +515,10 @@ class URedisGroupSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * SlaveZone: 跨机房URedis，slave redis所在可用区，参见 [可用区列表](../summary/regionlist.html)
      *
@@ -557,7 +534,7 @@ class URedisGroupSet extends Response
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone($slaveZone)
+    public function setSlaveZone(string $slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
     }

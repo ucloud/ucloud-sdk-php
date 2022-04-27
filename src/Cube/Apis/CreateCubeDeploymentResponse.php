@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateCubeDeploymentResponse extends Response
 {
-    
 
     /**
      * DeploymentId: 控制器ID
@@ -37,11 +38,10 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @param string $deploymentId
      */
-    public function setDeploymentId($deploymentId)
+    public function setDeploymentId(string $deploymentId)
     {
         $this->set("DeploymentId", $deploymentId);
     }
-
     /**
      * Deployment: 经过base64编码的Deployment的yaml
      *
@@ -57,7 +57,7 @@ class CreateCubeDeploymentResponse extends Response
      *
      * @param string $deployment
      */
-    public function setDeployment($deployment)
+    public function setDeployment(string $deployment)
     {
         $this->set("Deployment", $deployment);
     }

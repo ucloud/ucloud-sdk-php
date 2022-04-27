@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UMem\Models\DescribeUMemSpaceResponse;
+use UCloud\UMem\Models\UMemDataSet;
+use UCloud\UMem\Models\DescribeUMemResponse;
+use UCloud\UMem\Models\UMemSpaceSet;
+
 class UMemSpaceAddressSet extends Response
 {
-    
 
     /**
      * IP: UMem实例访问IP
@@ -37,11 +43,10 @@ class UMemSpaceAddressSet extends Response
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }
-
     /**
      * Port: UMem实例访问Port
      *
@@ -57,7 +62,7 @@ class UMemSpaceAddressSet extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }

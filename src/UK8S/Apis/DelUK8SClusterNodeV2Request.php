@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class DelUK8SClusterNodeV2Request extends Request
         $this->markRequired("NodeId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
@@ -45,11 +46,10 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ClusterId: UK8S集群ID。 可从UK8S控制台获取。
      *
@@ -85,11 +84,10 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
-
     /**
      * NodeId: Node在UK8S处的唯一标示，如uk8s-reewqe5-sdasadsda。**非云主机或物理云主机资源Id**
      *
@@ -105,11 +103,10 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
-
     /**
      * ReleaseDataUDisk: 删除节点时是否释放数据盘。 枚举值[true:释放，false: 不释放]，默认为true。
      *
@@ -125,7 +122,7 @@ class DelUK8SClusterNodeV2Request extends Request
      *
      * @param boolean $releaseDataUDisk
      */
-    public function setReleaseDataUDisk($releaseDataUDisk)
+    public function setReleaseDataUDisk(bool $releaseDataUDisk)
     {
         $this->set("ReleaseDataUDisk", $releaseDataUDisk);
     }

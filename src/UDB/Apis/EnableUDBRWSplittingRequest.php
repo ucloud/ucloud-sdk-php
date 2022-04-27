@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class EnableUDBRWSplittingRequest extends Request
         $this->markRequired("MasterDBId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -45,11 +46,10 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -65,11 +65,10 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * MasterDBId: DB实例ID（主库）
      *
@@ -85,11 +84,10 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @param string $masterDBId
      */
-    public function setMasterDBId($masterDBId)
+    public function setMasterDBId(string $masterDBId)
     {
         $this->set("MasterDBId", $masterDBId);
     }
-
     /**
      * BackupZone: 备份的可用区。用于创建跨可用区读写分离的一个节点，跨机房的读写分离必须有这个参数
      *
@@ -105,7 +103,7 @@ class EnableUDBRWSplittingRequest extends Request
      *
      * @param string $backupZone
      */
-    public function setBackupZone($backupZone)
+    public function setBackupZone(string $backupZone)
     {
         $this->set("BackupZone", $backupZone);
     }

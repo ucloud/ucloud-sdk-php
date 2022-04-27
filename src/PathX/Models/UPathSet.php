@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\DescribeUGAInstanceResponse;
+use UCloud\PathX\Models\UGAAInfo;
+
 class UPathSet extends Response
 {
-    
 
     /**
      * UPathName: UPath名字
@@ -37,11 +41,10 @@ class UPathSet extends Response
      *
      * @param string $uPathName
      */
-    public function setUPathName($uPathName)
+    public function setUPathName(string $uPathName)
     {
         $this->set("UPathName", $uPathName);
     }
-
     /**
      * UPathId: UPath 实例ID
      *
@@ -57,11 +60,10 @@ class UPathSet extends Response
      *
      * @param string $uPathId
      */
-    public function setUPathId($uPathId)
+    public function setUPathId(string $uPathId)
     {
         $this->set("UPathId", $uPathId);
     }
-
     /**
      * Bandwidth: 带宽 Mbps, 1~800Mbps
      *
@@ -77,11 +79,10 @@ class UPathSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * LineId: 线路ID
      *
@@ -97,11 +98,10 @@ class UPathSet extends Response
      *
      * @param string $lineId
      */
-    public function setLineId($lineId)
+    public function setLineId(string $lineId)
     {
         $this->set("LineId", $lineId);
     }
-
     /**
      * LineFromName: 线路起点中文名字，加速区域
      *
@@ -117,11 +117,10 @@ class UPathSet extends Response
      *
      * @param string $lineFromName
      */
-    public function setLineFromName($lineFromName)
+    public function setLineFromName(string $lineFromName)
     {
         $this->set("LineFromName", $lineFromName);
     }
-
     /**
      * LineToName: 线路对端中文名字，源站区域
      *
@@ -137,11 +136,10 @@ class UPathSet extends Response
      *
      * @param string $lineToName
      */
-    public function setLineToName($lineToName)
+    public function setLineToName(string $lineToName)
     {
         $this->set("LineToName", $lineToName);
     }
-
     /**
      * LineFrom: 线路起点英文代号，加速区域
      *
@@ -157,11 +155,10 @@ class UPathSet extends Response
      *
      * @param string $lineFrom
      */
-    public function setLineFrom($lineFrom)
+    public function setLineFrom(string $lineFrom)
     {
         $this->set("LineFrom", $lineFrom);
     }
-
     /**
      * LineTo: 线路对端英文代号，源站区域
      *
@@ -177,7 +174,7 @@ class UPathSet extends Response
      *
      * @param string $lineTo
      */
-    public function setLineTo($lineTo)
+    public function setLineTo(string $lineTo)
     {
         $this->set("LineTo", $lineTo);
     }

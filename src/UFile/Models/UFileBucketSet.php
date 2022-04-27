@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UFile\Models\UFileDomainSet;
+use UCloud\UFile\Models\DescribeBucketResponse;
+
 class UFileBucketSet extends Response
 {
-    
 
     /**
      * Region: Bucket所属地域
@@ -37,11 +41,10 @@ class UFileBucketSet extends Response
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * BucketName: Bucket名称
      *
@@ -57,11 +60,10 @@ class UFileBucketSet extends Response
      *
      * @param string $bucketName
      */
-    public function setBucketName($bucketName)
+    public function setBucketName(string $bucketName)
     {
         $this->set("BucketName", $bucketName);
     }
-
     /**
      * BucketId: Bucket的ID
      *
@@ -77,31 +79,29 @@ class UFileBucketSet extends Response
      *
      * @param string $bucketId
      */
-    public function setBucketId($bucketId)
+    public function setBucketId(string $bucketId)
     {
         $this->set("BucketId", $bucketId);
     }
-
     /**
      * Domain: Bucket的域名集合 参数见 UFileDomainSet
      *
-     * @return UFileDomainSet|null
+     * @return UFileDomainSetModel|null
      */
     public function getDomain()
     {
-        return new UFileDomainSet($this->get("Domain"));
+        return new UFileDomainSetModel($this->get("Domain"));
     }
 
     /**
      * Domain: Bucket的域名集合 参数见 UFileDomainSet
      *
-     * @param UFileDomainSet $domain
+     * @param UFileDomainSetModel $domain
      */
-    public function setDomain(array $domain)
+    public function setDomain(UFileDomainSetModel $domain)
     {
         $this->set("Domain", $domain->getAll());
     }
-
     /**
      * CdnDomainId: 与Bucket关联的CND加速域名的ID列表
      *
@@ -121,7 +121,6 @@ class UFileBucketSet extends Response
     {
         $this->set("CdnDomainId", $cdnDomainId);
     }
-
     /**
      * Type: Bucket访问类型
      *
@@ -137,11 +136,10 @@ class UFileBucketSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * CreateTime: Bucket的创建时间
      *
@@ -157,11 +155,10 @@ class UFileBucketSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ModifyTime: Bucket的修改时间
      *
@@ -177,11 +174,10 @@ class UFileBucketSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime($modifyTime)
+    public function setModifyTime(int $modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
-
     /**
      * Biz: Bucket所属业务, general或vod或udb general: 普通业务； vod: 视频云业务; udb: 云数据库业务
      *
@@ -197,11 +193,10 @@ class UFileBucketSet extends Response
      *
      * @param string $biz
      */
-    public function setBiz($biz)
+    public function setBiz(string $biz)
     {
         $this->set("Biz", $biz);
     }
-
     /**
      * Tag: 所属业务组
      *
@@ -217,11 +212,10 @@ class UFileBucketSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * HasUserDomain: 是否存在自定义域名。0不存在，1存在，2错误
      *
@@ -237,7 +231,7 @@ class UFileBucketSet extends Response
      *
      * @param int $hasUserDomain
      */
-    public function setHasUserDomain($hasUserDomain)
+    public function setHasUserDomain(int $hasUserDomain)
     {
         $this->set("HasUserDomain", $hasUserDomain);
     }

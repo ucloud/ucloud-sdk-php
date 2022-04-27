@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,10 +31,9 @@ class CreateUPathRequest extends Request
         $this->markRequired("Bandwidth");
     }
 
-    
 
     /**
-     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -42,17 +43,16 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
-     * Name: UPath名字
+     * Name: 名字，便于记忆区分
      *
      * @return string|null
      */
@@ -62,17 +62,16 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * Name: UPath名字
+     * Name: 名字，便于记忆区分
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
-     * LineId: 选择的线路
+     * LineId: 选择的线路，由DescribePathXLineConfig接口提供
      *
      * @return string|null
      */
@@ -82,17 +81,16 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * LineId: 选择的线路
+     * LineId: 选择的线路，由DescribePathXLineConfig接口提供
      *
      * @param string $lineId
      */
-    public function setLineId($lineId)
+    public function setLineId(string $lineId)
     {
         $this->set("LineId", $lineId);
     }
-
     /**
-     * Bandwidth: 线路带宽，最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。
+     * Bandwidth: 当PostPaid为false时，该值为预付费固定带宽；当PostPaid为true时，该值为后付费保底带宽，保底带宽越大可用的上限带宽越大。最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。可联系产品团队咨询最大带宽。
      *
      * @return integer|null
      */
@@ -102,15 +100,14 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * Bandwidth: 线路带宽，最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。
+     * Bandwidth: 当PostPaid为false时，该值为预付费固定带宽；当PostPaid为true时，该值为后付费保底带宽，保底带宽越大可用的上限带宽越大。最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。可联系产品团队咨询最大带宽。
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * ChargeType: 计费模式，默认为Month 按月收费,可选范围['Month','Year','Dynamic']
      *
@@ -126,11 +123,10 @@ class CreateUPathRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买周期，ChargeType为Month时，Quantity默认为0代表购买到月底，按时和按年付费该参数必须大于0
      *
@@ -146,13 +142,12 @@ class CreateUPathRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
-     * PostPaid: 是否开启后付费, 默认为false
+     * PostPaid: 是否开启后付费, 默认为false ，不开启后付费。当ChargeType为Dynamic时不能开启后付费。
      *
      * @return boolean|null
      */
@@ -162,15 +157,33 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * PostPaid: 是否开启后付费, 默认为false
+     * PostPaid: 是否开启后付费, 默认为false ，不开启后付费。当ChargeType为Dynamic时不能开启后付费。
      *
      * @param boolean $postPaid
      */
-    public function setPostPaid($postPaid)
+    public function setPostPaid(bool $postPaid)
     {
         $this->set("PostPaid", $postPaid);
     }
+    /**
+     * PathType: private:专线线路；public:海外SD-WAN。默认为private。
+     *
+     * @return string|null
+     */
+    public function getPathType()
+    {
+        return $this->get("PathType");
+    }
 
+    /**
+     * PathType: private:专线线路；public:海外SD-WAN。默认为private。
+     *
+     * @param string $pathType
+     */
+    public function setPathType(string $pathType)
+    {
+        $this->set("PathType", $pathType);
+    }
     /**
      * CouponId: 代金券Id
      *
@@ -186,7 +199,7 @@ class CreateUPathRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

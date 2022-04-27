@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\DescribeUEcVHostResponse;
+use UCloud\UEC\Models\NodeInfo;
+
 class NodeIpList extends Response
 {
-    
 
     /**
      * Ip: 外网ip
@@ -37,11 +41,10 @@ class NodeIpList extends Response
      *
      * @param string $ip
      */
-    public function setIp($ip)
+    public function setIp(string $ip)
     {
         $this->set("Ip", $ip);
     }
-
     /**
      * Isp: 运营商
      *
@@ -57,11 +60,10 @@ class NodeIpList extends Response
      *
      * @param string $isp
      */
-    public function setIsp($isp)
+    public function setIsp(string $isp)
     {
         $this->set("Isp", $isp);
     }
-
     /**
      * IspName: 运营商名称
      *
@@ -77,7 +79,7 @@ class NodeIpList extends Response
      *
      * @param string $ispName
      */
-    public function setIspName($ispName)
+    public function setIspName(string $ispName)
     {
         $this->set("IspName", $ispName);
     }

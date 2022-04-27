@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class CloneUDiskRequest extends Request
         $this->markRequired("SourceId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -46,11 +47,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -66,11 +66,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -86,11 +85,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Name: 实例名称
      *
@@ -106,11 +104,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * SourceId: 克隆父Disk的Id
      *
@@ -126,11 +123,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $sourceId
      */
-    public function setSourceId($sourceId)
+    public function setSourceId(string $sourceId)
     {
         $this->set("SourceId", $sourceId);
     }
-
     /**
      * UDataArkMode: 【开启数据方舟入口已关闭】是否开启数据方舟。Yes：开启，No：不开启，默认值：No
      *
@@ -146,11 +142,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode($uDataArkMode)
+    public function setUDataArkMode(string $uDataArkMode)
     {
         $this->set("UDataArkMode", $uDataArkMode);
     }
-
     /**
      * SnapshotService: 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
      *
@@ -166,11 +161,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $snapshotService
      */
-    public function setSnapshotService($snapshotService)
+    public function setSnapshotService(string $snapshotService)
     {
         $this->set("SnapshotService", $snapshotService);
     }
-
     /**
      * Quantity: 购买时长 默认: 1
      *
@@ -186,11 +180,10 @@ class CloneUDiskRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * Comment: Disk注释
      *
@@ -206,11 +199,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $comment
      */
-    public function setComment($comment)
+    public function setComment(string $comment)
     {
         $this->set("Comment", $comment);
     }
-
     /**
      * ChargeType: Year , Month, Dynamic，Postpay，Trial 默认: Month
      *
@@ -226,11 +218,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Tag: 业务组 默认：Default
      *
@@ -246,13 +237,12 @@ class CloneUDiskRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
-     * RdmaClusterId: 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     * RdmaClusterId: RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *
      * @return string|null
      */
@@ -262,15 +252,14 @@ class CloneUDiskRequest extends Request
     }
 
     /**
-     * RdmaClusterId: 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     * RdmaClusterId: RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *
      * @param string $rdmaClusterId
      */
-    public function setRdmaClusterId($rdmaClusterId)
+    public function setRdmaClusterId(string $rdmaClusterId)
     {
         $this->set("RdmaClusterId", $rdmaClusterId);
     }
-
     /**
      * HostId: Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *
@@ -286,11 +275,10 @@ class CloneUDiskRequest extends Request
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }
-
     /**
      * CouponId: 使用的代金券id
      *
@@ -306,7 +294,7 @@ class CloneUDiskRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

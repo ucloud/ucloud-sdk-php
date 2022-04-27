@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class DescribeUDiskRequest extends Request
         $this->markRequired("Region");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -43,11 +44,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -63,11 +63,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -83,11 +82,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * UDiskId: UDisk Id(留空返回全部)
      *
@@ -103,11 +101,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
-
     /**
      * Offset: 数据偏移量, 默认为0
      *
@@ -123,11 +120,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 返回数据长度, 默认为20
      *
@@ -143,11 +139,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * DiskType: ProtocolVersion字段为1时，需结合IsBoot确定具体磁盘类型:普通数据盘：DiskType:"CLOUD_NORMAL",IsBoot:"False"；普通系统盘：DiskType:"CLOUD_NORMAL",IsBoot:"True"；SSD数据盘：DiskType:"CLOUD_SSD",IsBoot:"False"；SSD系统盘：DiskType:"CLOUD_SSD",IsBoot:"True"；RSSD数据盘：DiskType:"CLOUD_RSSD",IsBoot:"False"；RSSD系统盘：DiskType:"CLOUD_RSSD",IsBoot:"True"；高效数据盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"False"；高效系统盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"True"；为空拉取所有。ProtocolVersion字段为0或没有该字段时，可设为以下几个值:普通数据盘：DataDisk；普通系统盘：SystemDisk；SSD数据盘：SSDDataDisk；SSD系统盘：SSDSystemDisk；RSSD数据盘：RSSDDataDisk；RSSD系统盘：RSSDSystemDisk：高效数据盘：EfficiencyDataDisk；高效系统盘：EfficiencySystemDisk；为空拉取所有。
      *
@@ -163,11 +158,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $diskType
      */
-    public function setDiskType($diskType)
+    public function setDiskType(string $diskType)
     {
         $this->set("DiskType", $diskType);
     }
-
     /**
      * ProtocolVersion: 请求协议版本，建议升级为1，为1时DiskType与UHost磁盘类型定义一致；默认为0
      *
@@ -183,11 +177,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param int $protocolVersion
      */
-    public function setProtocolVersion($protocolVersion)
+    public function setProtocolVersion(int $protocolVersion)
     {
         $this->set("ProtocolVersion", $protocolVersion);
     }
-
     /**
      * IsBoot: ProtocolVersion字段为1且DiskType不为空时，必须设置，设置规则请参照DiskType；ProtocolVersion字段为1且DiskType为空时，该字段无效。ProtocolVersion字段为0或没有该字段时，该字段无效。
      *
@@ -203,11 +196,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $isBoot
      */
-    public function setIsBoot($isBoot)
+    public function setIsBoot(string $isBoot)
     {
         $this->set("IsBoot", $isBoot);
     }
-
     /**
      * IgnoreUBillInfo: 是否忽略计费信息。Yes：忽略，No：不忽略，默认值（No）。（如不关心账单信息，建议选填“Yes”，可降低请求延时）
      *
@@ -223,11 +215,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $ignoreUBillInfo
      */
-    public function setIgnoreUBillInfo($ignoreUBillInfo)
+    public function setIgnoreUBillInfo(string $ignoreUBillInfo)
     {
         $this->set("IgnoreUBillInfo", $ignoreUBillInfo);
     }
-
     /**
      * IgnoreBackupMode: 是否忽略快照服务信息。Yes：忽略，No：不忽略，默认值（No）。（如不关心快照服务信息，建议选填“Yes”，可降低请求延时）
      *
@@ -243,11 +234,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $ignoreBackupMode
      */
-    public function setIgnoreBackupMode($ignoreBackupMode)
+    public function setIgnoreBackupMode(string $ignoreBackupMode)
     {
         $this->set("IgnoreBackupMode", $ignoreBackupMode);
     }
-
     /**
      * UDiskBasicInfo: 是否只返回云盘基础信息（只包含云盘及关联主机的资源信息）。Yes：是，No：否，默认值（No）。（如仅需要基础信息，建议选填“Yes”，可降低请求延时）
      *
@@ -263,11 +253,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $uDiskBasicInfo
      */
-    public function setUDiskBasicInfo($uDiskBasicInfo)
+    public function setUDiskBasicInfo(string $uDiskBasicInfo)
     {
         $this->set("UDiskBasicInfo", $uDiskBasicInfo);
     }
-
     /**
      * UHostIdForAttachment: 根据传入的UHostIdForAttachment，筛选出能被挂载在该主机上的云盘【本字段即将废弃，建议使用HostIdForAttachment】
      *
@@ -283,11 +272,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $uHostIdForAttachment
      */
-    public function setUHostIdForAttachment($uHostIdForAttachment)
+    public function setUHostIdForAttachment(string $uHostIdForAttachment)
     {
         $this->set("UHostIdForAttachment", $uHostIdForAttachment);
     }
-
     /**
      * HostIdForAttachment: 根据传入的HostIdForAttachment，筛选出能被挂载在该主机上的云盘。目前主要针对RSSD云盘。
      *
@@ -303,11 +291,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $hostIdForAttachment
      */
-    public function setHostIdForAttachment($hostIdForAttachment)
+    public function setHostIdForAttachment(string $hostIdForAttachment)
     {
         $this->set("HostIdForAttachment", $hostIdForAttachment);
     }
-
     /**
      * HostId: 根据传入的HostId，返回与该主机关联的云盘信息。
      *
@@ -323,11 +310,10 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }
-
     /**
      * HostProduct: 宿主产品类型，可筛选挂载在该类型宿主上的云盘。可选值：uhost, uphost。为空拉取所有。（当HostIdForAttachment字段不为空时，该字段可以不填，若HostIdForAttachment与该字段宿主类型冲突，则以HostIdForAttachment字段为准。）
      *
@@ -343,7 +329,7 @@ class DescribeUDiskRequest extends Request
      *
      * @param string $hostProduct
      */
-    public function setHostProduct($hostProduct)
+    public function setHostProduct(string $hostProduct)
     {
         $this->set("HostProduct", $hostProduct);
     }

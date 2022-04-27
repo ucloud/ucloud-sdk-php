@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UNet\Models\ResourceSet;
 
 class DescribeFirewallResourceResponse extends Response
 {
-    
 
     /**
      * ResourceSet: 资源列表，见 ResourceSet
      *
-     * @return ResourceSet[]|null
+     * @return ResourceSetModel[]|null
      */
     public function getResourceSet()
     {
@@ -36,7 +38,7 @@ class DescribeFirewallResourceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ResourceSet($item));
+            array_push($result, new ResourceSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeFirewallResourceResponse extends Response
     /**
      * ResourceSet: 资源列表，见 ResourceSet
      *
-     * @param ResourceSet[] $resourceSet
+     * @param ResourceSetModel[] $resourceSet
      */
     public function setResourceSet(array $resourceSet)
     {
@@ -54,7 +56,6 @@ class DescribeFirewallResourceResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 绑定资源总数
      *
@@ -70,7 +71,7 @@ class DescribeFirewallResourceResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

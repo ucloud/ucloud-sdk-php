@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
 class RenewCubePodResponse extends Response
 {
-    
 
     /**
      * Pod: base64编码过的yaml，需要解码获取信息
@@ -37,7 +38,7 @@ class RenewCubePodResponse extends Response
      *
      * @param string $pod
      */
-    public function setPod($pod)
+    public function setPod(string $pod)
     {
         $this->set("Pod", $pod);
     }

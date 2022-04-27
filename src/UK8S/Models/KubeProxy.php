@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UK8S\Models\ListUK8SClusterNodeV2Response;
+use UCloud\UK8S\Models\NodeInfoV2;
+
 class KubeProxy extends Response
 {
-    
 
     /**
      * Mode: KubeProxy模式，枚举值为[ipvs,iptables]
@@ -37,7 +41,7 @@ class KubeProxy extends Response
      *
      * @param string $mode
      */
-    public function setMode($mode)
+    public function setMode(string $mode)
     {
         $this->set("Mode", $mode);
     }

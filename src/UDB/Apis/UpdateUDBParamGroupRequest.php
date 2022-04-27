@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class UpdateUDBParamGroupRequest extends Request
         $this->markRequired("GroupId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -85,11 +84,10 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * GroupId: 配置参数组id，使用DescribeUDBParamGroup获得
      *
@@ -105,11 +103,10 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param int $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(int $groupId)
     {
         $this->set("GroupId", $groupId);
     }
-
     /**
      * Key: 参数名称（与Value配合使用）
      *
@@ -125,11 +122,10 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $key
      */
-    public function setKey($key)
+    public function setKey(string $key)
     {
         $this->set("Key", $key);
     }
-
     /**
      * Value: 参数值（与Key配合使用）
      *
@@ -145,11 +141,10 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $value
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->set("Value", $value);
     }
-
     /**
      * Name: 配置文件的名字，不传时认为不修改名字，传了则不能为空
      *
@@ -165,11 +160,10 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Description: 配置文件的描述，不传时认为不修改
      *
@@ -185,11 +179,10 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
-
     /**
      * RegionFlag: 该配置文件是否是地域级别配置文件，默认是false
      *
@@ -205,7 +198,7 @@ class UpdateUDBParamGroupRequest extends Request
      *
      * @param boolean $regionFlag
      */
-    public function setRegionFlag($regionFlag)
+    public function setRegionFlag(bool $regionFlag)
     {
         $this->set("RegionFlag", $regionFlag);
     }

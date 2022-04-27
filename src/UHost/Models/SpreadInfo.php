@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\IsolationGroup;
+use UCloud\UHost\Models\DescribeIsolationGroupResponse;
+
 class SpreadInfo extends Response
 {
-    
 
     /**
      * Zone: 可用区信息
@@ -37,11 +41,10 @@ class SpreadInfo extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * UHostCount: 当前地域所有可用区中硬件隔离组中云主机的数量，不超过7。
      *
@@ -57,7 +60,7 @@ class SpreadInfo extends Response
      *
      * @param int $uHostCount
      */
-    public function setUHostCount($uHostCount)
+    public function setUHostCount(int $uHostCount)
     {
         $this->set("UHostCount", $uHostCount);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\CreateUHostKeyPairResponse;
+
 class KeyPair extends Response
 {
-    
 
     /**
      * ProjectId: 项目ID。
@@ -37,11 +40,10 @@ class KeyPair extends Response
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * KeyPairId: 密钥对ID。
      *
@@ -57,11 +59,10 @@ class KeyPair extends Response
      *
      * @param string $keyPairId
      */
-    public function setKeyPairId($keyPairId)
+    public function setKeyPairId(string $keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
     }
-
     /**
      * KeyPairName: 密钥对名称。 长度为1~63个英文或中文字符。
      *
@@ -77,11 +78,10 @@ class KeyPair extends Response
      *
      * @param string $keyPairName
      */
-    public function setKeyPairName($keyPairName)
+    public function setKeyPairName(string $keyPairName)
     {
         $this->set("KeyPairName", $keyPairName);
     }
-
     /**
      * KeyPairFingerPrint: 密钥对指纹。md5(ProjectId|KeyPairId|PublicKey)
      *
@@ -97,11 +97,10 @@ class KeyPair extends Response
      *
      * @param string $keyPairFingerPrint
      */
-    public function setKeyPairFingerPrint($keyPairFingerPrint)
+    public function setKeyPairFingerPrint(string $keyPairFingerPrint)
     {
         $this->set("KeyPairFingerPrint", $keyPairFingerPrint);
     }
-
     /**
      * PrivateKeyBody: 密钥对的私钥内容。只有创建接口才会返回。
      *
@@ -117,11 +116,10 @@ class KeyPair extends Response
      *
      * @param string $privateKeyBody
      */
-    public function setPrivateKeyBody($privateKeyBody)
+    public function setPrivateKeyBody(string $privateKeyBody)
     {
         $this->set("PrivateKeyBody", $privateKeyBody);
     }
-
     /**
      * CreateTime: 密钥对的创建时间，格式为Unix Timestamp。
      *
@@ -137,7 +135,7 @@ class KeyPair extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }

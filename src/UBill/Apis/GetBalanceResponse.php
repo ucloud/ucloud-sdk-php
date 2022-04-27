@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,31 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UBill\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UBill\Models\AccountInfo;
 
 class GetBalanceResponse extends Response
 {
-    
 
     /**
      * AccountInfo: 账户余额信息
      *
-     * @return AccountInfo|null
+     * @return AccountInfoModel|null
      */
     public function getAccountInfo()
     {
-        return new AccountInfo($this->get("AccountInfo"));
+        return new AccountInfoModel($this->get("AccountInfo"));
     }
 
     /**
      * AccountInfo: 账户余额信息
      *
-     * @param AccountInfo $accountInfo
+     * @param AccountInfoModel $accountInfo
      */
-    public function setAccountInfo(array $accountInfo)
+    public function setAccountInfo(AccountInfoModel $accountInfo)
     {
         $this->set("AccountInfo", $accountInfo->getAll());
     }

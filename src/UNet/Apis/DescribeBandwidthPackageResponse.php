@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UNet\Models\UnetBandwidthPackageSet;
+
 use UCloud\UNet\Models\EIPAddrSet;
+use UCloud\UNet\Models\UnetBandwidthPackageSet;
 
 class DescribeBandwidthPackageResponse extends Response
 {
-    
 
     /**
      * TotalCount: 满足条件的带宽包总数
@@ -39,15 +41,14 @@ class DescribeBandwidthPackageResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSets: 带宽包详细信息, 参见 UnetBandwidthPackageSet
      *
-     * @return UnetBandwidthPackageSet[]|null
+     * @return UnetBandwidthPackageSetModel[]|null
      */
     public function getDataSets()
     {
@@ -57,7 +58,7 @@ class DescribeBandwidthPackageResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UnetBandwidthPackageSet($item));
+            array_push($result, new UnetBandwidthPackageSetModel($item));
         }
         return $result;
     }
@@ -65,7 +66,7 @@ class DescribeBandwidthPackageResponse extends Response
     /**
      * DataSets: 带宽包详细信息, 参见 UnetBandwidthPackageSet
      *
-     * @param UnetBandwidthPackageSet[] $dataSets
+     * @param UnetBandwidthPackageSetModel[] $dataSets
      */
     public function setDataSets(array $dataSets)
     {

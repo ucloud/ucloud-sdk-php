@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CheckRecoverUDBInstanceResponse extends Response
 {
-    
 
     /**
      * LastestTime: 核查成功返回值为可以回档到的最近时刻,核查失败不返回
@@ -37,7 +38,7 @@ class CheckRecoverUDBInstanceResponse extends Response
      *
      * @param int $lastestTime
      */
-    public function setLastestTime($lastestTime)
+    public function setLastestTime(int $lastestTime)
     {
         $this->set("LastestTime", $lastestTime);
     }

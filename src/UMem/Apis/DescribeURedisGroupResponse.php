@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UMem\Models\URedisGroupSet;
 
 class DescribeURedisGroupResponse extends Response
 {
-    
 
     /**
      * TotalCount: 组的总的节点个数
@@ -38,15 +40,14 @@ class DescribeURedisGroupResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: 组列表 参见 URedisGroupSet
      *
-     * @return URedisGroupSet[]|null
+     * @return URedisGroupSetModel[]|null
      */
     public function getDataSet()
     {
@@ -56,7 +57,7 @@ class DescribeURedisGroupResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new URedisGroupSet($item));
+            array_push($result, new URedisGroupSetModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class DescribeURedisGroupResponse extends Response
     /**
      * DataSet: 组列表 参见 URedisGroupSet
      *
-     * @param URedisGroupSet[] $dataSet
+     * @param URedisGroupSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class DescribeEIPRequest extends Request
         $this->markRequired("Region");
     }
 
-    
 
     /**
      * Region: 地域
@@ -43,11 +44,10 @@ class DescribeEIPRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写
      *
@@ -63,11 +63,10 @@ class DescribeEIPRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * EIPIds: 弹性IP的资源ID如果为空, 则返回当前 Region中符合条件的的所有EIP
      *
@@ -87,7 +86,6 @@ class DescribeEIPRequest extends Request
     {
         $this->set("EIPIds", $eipIds);
     }
-
     /**
      * Offset: 数据偏移量, 默认为0
      *
@@ -103,11 +101,10 @@ class DescribeEIPRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 数据分页值, 默认为20
      *
@@ -123,11 +120,10 @@ class DescribeEIPRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * IPs: IP地址，支持通过ip查询，如果ip与EIP都传，会取并集查询
      *

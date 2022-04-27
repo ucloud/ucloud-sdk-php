@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class GetUEcPodPriceRequest extends Request
         $this->markRequired("IdcId");
     }
 
-    
 
     /**
      * IdcId: 机房id
@@ -43,11 +44,10 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * CpuCore: 容器组总Cpu核心数
      *
@@ -63,11 +63,10 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param float $cpuCore
      */
-    public function setCpuCore($cpuCore)
+    public function setCpuCore(float $cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
-
     /**
      * MemSize: 容器组总内存大小（单位M）
      *
@@ -83,11 +82,10 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
-
     /**
      * ChargeType: 支付类型（2按月，3按年，默认2）
      *
@@ -103,11 +101,10 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(int $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * ChargeQuantity: 月数或年数（默认值：1，当支付类型为按月时，默认值为0）
      *
@@ -123,11 +120,10 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity($chargeQuantity)
+    public function setChargeQuantity(int $chargeQuantity)
     {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
-
     /**
      * ProductType: 产品类型（normal：标准型，hf：高性能型，默认：normal）
      *
@@ -143,11 +139,10 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }
-
     /**
      * ElasticIp: 是否绑定外网IP（yes：是，no：否，默认：no）
      *
@@ -163,11 +158,10 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param string $elasticIp
      */
-    public function setElasticIp($elasticIp)
+    public function setElasticIp(string $elasticIp)
     {
         $this->set("ElasticIp", $elasticIp);
     }
-
     /**
      * Bandwidth: 绑定的带宽，默认0，当绑定外网IP时默认1（单位M）
      *
@@ -183,7 +177,7 @@ class GetUEcPodPriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }

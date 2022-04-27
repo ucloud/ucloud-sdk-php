@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnDomainLogResponse;
+use UCloud\UCDN\Models\LogSetInfo;
+
 class LogSetList extends Response
 {
-    
 
     /**
      * Domain: 域名
@@ -37,15 +41,14 @@ class LogSetList extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
-
     /**
      * Logs: 域名信息列表，参考LogSetInfo
      *
-     * @return LogSetInfo[]|null
+     * @return LogSetInfoModel[]|null
      */
     public function getLogs()
     {
@@ -55,7 +58,7 @@ class LogSetList extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new LogSetInfo($item));
+            array_push($result, new LogSetInfoModel($item));
         }
         return $result;
     }
@@ -63,7 +66,7 @@ class LogSetList extends Response
     /**
      * Logs: 域名信息列表，参考LogSetInfo
      *
-     * @param LogSetInfo[] $logs
+     * @param LogSetInfoModel[] $logs
      */
     public function setLogs(array $logs)
     {

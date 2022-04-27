@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
-use UCloud\UK8S\Params\CreateUK8SClusterV2ParamMaster;
-use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodes;
-use UCloud\UK8S\Params\CreateUK8SClusterV2ParamKubeProxy;
+
+use UCloud\UK8S\Models\CreateUK8SClusterV2RequestMaster;
+use UCloud\UK8S\Models\CreateUK8SClusterV2RequestKubeProxy;
+use UCloud\UK8S\Models\CreateUK8SClusterV2RequestNodes;
 
 class CreateUK8SClusterV2Request extends Request
 {
@@ -38,7 +41,6 @@ class CreateUK8SClusterV2Request extends Request
         $this->markRequired("MasterMem");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -55,11 +57,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -75,11 +76,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * VPCId: 集群Node及Pod所属VPC
      *
@@ -95,11 +95,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: 集群Node及Pod所属子网
      *
@@ -115,11 +114,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * ServiceCIDR: Service 网段，用于分配ClusterIP，如172.17.0.0/16。该网段不能与集群所属VPC网段重叠。
      *
@@ -135,11 +133,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $serviceCIDR
      */
-    public function setServiceCIDR($serviceCIDR)
+    public function setServiceCIDR(string $serviceCIDR)
     {
         $this->set("ServiceCIDR", $serviceCIDR);
     }
-
     /**
      * ClusterName: 集群名称
      *
@@ -155,11 +152,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $clusterName
      */
-    public function setClusterName($clusterName)
+    public function setClusterName(string $clusterName)
     {
         $this->set("ClusterName", $clusterName);
     }
-
     /**
      * Password: 集群节点密码，包括Master和Node。密码需包含最少一个大写字母，请使用base64进行编码，举例如下：# echo -n Password1 | base64
      *
@@ -175,15 +171,14 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
-
     /**
      * Master:
      *
-     * @return CreateUK8SClusterV2ParamMaster[]|null
+     * @return CreateUK8SClusterV2RequestMasterModel[]|null
      */
     public function getMaster()
     {
@@ -193,7 +188,7 @@ class CreateUK8SClusterV2Request extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUK8SClusterV2ParamMaster($item));
+            array_push($result, new CreateUK8SClusterV2RequestMasterModel($item));
         }
         return $result;
     }
@@ -201,7 +196,7 @@ class CreateUK8SClusterV2Request extends Request
     /**
      * Master:
      *
-     * @param CreateUK8SClusterV2ParamMaster[] $master
+     * @param CreateUK8SClusterV2RequestMasterModel[] $master
      */
     public function setMaster(array $master)
     {
@@ -211,7 +206,6 @@ class CreateUK8SClusterV2Request extends Request
         }
         return $result;
     }
-
     /**
      * MasterMachineType: Master节点的云主机机型（V2.0），如["N", "C", "O", "OS"]，具体请参照云主机机型。
      *
@@ -227,11 +221,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterMachineType
      */
-    public function setMasterMachineType($masterMachineType)
+    public function setMasterMachineType(string $masterMachineType)
     {
         $this->set("MasterMachineType", $masterMachineType);
     }
-
     /**
      * MasterCPU: Master节点的虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。
      *
@@ -247,11 +240,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param int $masterCPU
      */
-    public function setMasterCPU($masterCPU)
+    public function setMasterCPU(int $masterCPU)
     {
         $this->set("MasterCPU", $masterCPU);
     }
-
     /**
      * MasterMem: Master节点的内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。
      *
@@ -267,15 +259,14 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param int $masterMem
      */
-    public function setMasterMem($masterMem)
+    public function setMasterMem(int $masterMem)
     {
         $this->set("MasterMem", $masterMem);
     }
-
     /**
      * Nodes:
      *
-     * @return CreateUK8SClusterV2ParamNodes[]|null
+     * @return CreateUK8SClusterV2RequestNodesModel[]|null
      */
     public function getNodes()
     {
@@ -285,7 +276,7 @@ class CreateUK8SClusterV2Request extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUK8SClusterV2ParamNodes($item));
+            array_push($result, new CreateUK8SClusterV2RequestNodesModel($item));
         }
         return $result;
     }
@@ -293,7 +284,7 @@ class CreateUK8SClusterV2Request extends Request
     /**
      * Nodes:
      *
-     * @param CreateUK8SClusterV2ParamNodes[] $nodes
+     * @param CreateUK8SClusterV2RequestNodesModel[] $nodes
      */
     public function setNodes(array $nodes)
     {
@@ -303,7 +294,6 @@ class CreateUK8SClusterV2Request extends Request
         }
         return $result;
     }
-
     /**
      * MasterBootDiskType: Master节点系统盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
      *
@@ -319,11 +309,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterBootDiskType
      */
-    public function setMasterBootDiskType($masterBootDiskType)
+    public function setMasterBootDiskType(string $masterBootDiskType)
     {
         $this->set("MasterBootDiskType", $masterBootDiskType);
     }
-
     /**
      * MasterDataDiskType: Master节点数据盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
      *
@@ -339,11 +328,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterDataDiskType
      */
-    public function setMasterDataDiskType($masterDataDiskType)
+    public function setMasterDataDiskType(string $masterDataDiskType)
     {
         $this->set("MasterDataDiskType", $masterDataDiskType);
     }
-
     /**
      * MasterMinmalCpuPlatform: Master节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
      *
@@ -359,11 +347,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterMinmalCpuPlatform
      */
-    public function setMasterMinmalCpuPlatform($masterMinmalCpuPlatform)
+    public function setMasterMinmalCpuPlatform(string $masterMinmalCpuPlatform)
     {
         $this->set("MasterMinmalCpuPlatform", $masterMinmalCpuPlatform);
     }
-
     /**
      * MasterDataDiskSize: Master节点的数据盘大小，单位GB，默认为0。范围 ：[20, 1000]
      *
@@ -379,11 +366,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param int $masterDataDiskSize
      */
-    public function setMasterDataDiskSize($masterDataDiskSize)
+    public function setMasterDataDiskSize(int $masterDataDiskSize)
     {
         $this->set("MasterDataDiskSize", $masterDataDiskSize);
     }
-
     /**
      * ChargeType: 集群所有节点的付费模式。枚举值为： Year，按年付费； Month，按月付费； Dynamic，按小时付费（需开启权限），默认按月。
      *
@@ -399,11 +385,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * K8sVersion: k8s集群的版本，版本信息请参考UK8S集群创建页，不指定的话默认为当前支持的最高版本。
      *
@@ -419,11 +404,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $k8sVersion
      */
-    public function setK8sVersion($k8sVersion)
+    public function setK8sVersion(string $k8sVersion)
     {
         $this->set("K8sVersion", $k8sVersion);
     }
-
     /**
      * Quantity: 购买时长。默认为1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
@@ -439,11 +423,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * ExternalApiServer: 是否允许外网访问apiserver，开启：Yes 不开启：No。默认为No。
      *
@@ -459,11 +442,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $externalApiServer
      */
-    public function setExternalApiServer($externalApiServer)
+    public function setExternalApiServer(string $externalApiServer)
     {
         $this->set("ExternalApiServer", $externalApiServer);
     }
-
     /**
      * MasterIsolationGroup: 【无效，已删除】当前将自动为Master节点创建隔离组，确保Master节点归属于不同物理机。
      *
@@ -479,31 +461,29 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $masterIsolationGroup
      */
-    public function setMasterIsolationGroup($masterIsolationGroup)
+    public function setMasterIsolationGroup(string $masterIsolationGroup)
     {
         $this->set("MasterIsolationGroup", $masterIsolationGroup);
     }
-
     /**
      * KubeProxy:
      *
-     * @return CreateUK8SClusterV2ParamKubeProxy|null
+     * @return CreateUK8SClusterV2RequestKubeProxyModel|null
      */
     public function getKubeProxy()
     {
-        return new CreateUK8SClusterV2ParamKubeProxy($this->get("KubeProxy"));
+        return new CreateUK8SClusterV2RequestKubeProxyModel($this->get("KubeProxy"));
     }
 
     /**
      * KubeProxy:
      *
-     * @param CreateUK8SClusterV2ParamKubeProxy $kubeProxy
+     * @param CreateUK8SClusterV2RequestKubeProxyModel $kubeProxy
      */
-    public function setKubeProxy(array $kubeProxy)
+    public function setKubeProxy(CreateUK8SClusterV2RequestKubeProxyModel $kubeProxy)
     {
         $this->set("KubeProxy", $kubeProxy->getAll());
     }
-
     /**
      * ImageId: Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。
      *
@@ -519,11 +499,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * UserData: 用户自定义数据。注意：1、总数据量大小不超多16K；2、使用base64编码。
      *
@@ -539,11 +518,10 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $userData
      */
-    public function setUserData($userData)
+    public function setUserData(string $userData)
     {
         $this->set("UserData", $userData);
     }
-
     /**
      * InitScript: 用户自定义脚本，与UserData不同，自定义脚本将在集群安装完毕后执行。注意：1、总数据量大小不超多16K；2、使用base64编码。
      *
@@ -559,7 +537,7 @@ class CreateUK8SClusterV2Request extends Request
      *
      * @param string $initScript
      */
-    public function setInitScript($initScript)
+    public function setInitScript(string $initScript)
     {
         $this->set("InitScript", $initScript);
     }

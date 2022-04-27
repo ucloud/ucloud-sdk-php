@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,10 +30,9 @@ class UpdateVPNTunnelAttributeRequest extends Request
         $this->markRequired("VPNTunnelId");
     }
 
-    
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,17 +42,16 @@ class UpdateVPNTunnelAttributeRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,15 +61,14 @@ class UpdateVPNTunnelAttributeRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * VPNTunnelId: VPN隧道的资源ID
      *
@@ -85,11 +84,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $vpnTunnelId
      */
-    public function setVPNTunnelId($vpnTunnelId)
+    public function setVPNTunnelId(string $vpnTunnelId)
     {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }
-
     /**
      * IKEPreSharedKey: 预共享密钥
      *
@@ -105,11 +103,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikePreSharedKey
      */
-    public function setIKEPreSharedKey($ikePreSharedKey)
+    public function setIKEPreSharedKey(string $ikePreSharedKey)
     {
         $this->set("IKEPreSharedKey", $ikePreSharedKey);
     }
-
     /**
      * IKEEncryptionAlgorithm: IKE协商过程中使用的加密算法
      *
@@ -125,11 +122,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeEncryptionAlgorithm
      */
-    public function setIKEEncryptionAlgorithm($ikeEncryptionAlgorithm)
+    public function setIKEEncryptionAlgorithm(string $ikeEncryptionAlgorithm)
     {
         $this->set("IKEEncryptionAlgorithm", $ikeEncryptionAlgorithm);
     }
-
     /**
      * IKEAuthenticationAlgorithm: IKE协商过程中使用的认证算法
      *
@@ -145,11 +141,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeAuthenticationAlgorithm
      */
-    public function setIKEAuthenticationAlgorithm($ikeAuthenticationAlgorithm)
+    public function setIKEAuthenticationAlgorithm(string $ikeAuthenticationAlgorithm)
     {
         $this->set("IKEAuthenticationAlgorithm", $ikeAuthenticationAlgorithm);
     }
-
     /**
      * IKEExchangeMode: IKE协商过程中使用的模式，可选“主动模式”与“野蛮模式”。IKEV2不使用该参数。
      *
@@ -165,11 +160,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeExchangeMode
      */
-    public function setIKEExchangeMode($ikeExchangeMode)
+    public function setIKEExchangeMode(string $ikeExchangeMode)
     {
         $this->set("IKEExchangeMode", $ikeExchangeMode);
     }
-
     /**
      * IKELocalId: 本端标识。不填时默认使用之前的参数，结合IKEversion进行校验，IKEV2时不能为auto。
      *
@@ -185,11 +179,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeLocalId
      */
-    public function setIKELocalId($ikeLocalId)
+    public function setIKELocalId(string $ikeLocalId)
     {
         $this->set("IKELocalId", $ikeLocalId);
     }
-
     /**
      * IKERemoteId: 客户端标识。不填时默认使用之前的参数，结合IKEversion进行校验，IKEV2时不能为auto。
      *
@@ -205,11 +198,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeRemoteId
      */
-    public function setIKERemoteId($ikeRemoteId)
+    public function setIKERemoteId(string $ikeRemoteId)
     {
         $this->set("IKERemoteId", $ikeRemoteId);
     }
-
     /**
      * IKEDhGroup: IKE协商过程中使用的DH组
      *
@@ -225,11 +217,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeDhGroup
      */
-    public function setIKEDhGroup($ikeDhGroup)
+    public function setIKEDhGroup(string $ikeDhGroup)
     {
         $this->set("IKEDhGroup", $ikeDhGroup);
     }
-
     /**
      * IKESALifetime: IKE中SA的生存时间
      *
@@ -245,11 +236,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikesaLifetime
      */
-    public function setIKESALifetime($ikesaLifetime)
+    public function setIKESALifetime(string $ikesaLifetime)
     {
         $this->set("IKESALifetime", $ikesaLifetime);
     }
-
     /**
      * IPSecProtocol: 使用的安全协议，ESP或AH
      *
@@ -265,11 +255,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecProtocol
      */
-    public function setIPSecProtocol($ipSecProtocol)
+    public function setIPSecProtocol(string $ipSecProtocol)
     {
         $this->set("IPSecProtocol", $ipSecProtocol);
     }
-
     /**
      * IPSecLocalSubnetIds: 指定VPN连接的本地子网的id，用逗号分隔
      *
@@ -289,7 +278,6 @@ class UpdateVPNTunnelAttributeRequest extends Request
     {
         $this->set("IPSecLocalSubnetIds", $ipSecLocalSubnetIds);
     }
-
     /**
      * IPSecRemoteSubnets: 指定VPN连接的客户网段，用逗号分隔
      *
@@ -309,7 +297,6 @@ class UpdateVPNTunnelAttributeRequest extends Request
     {
         $this->set("IPSecRemoteSubnets", $ipSecRemoteSubnets);
     }
-
     /**
      * IPSecEncryptionAlgorithm: IPSec隧道中使用的加密算法
      *
@@ -325,11 +312,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecEncryptionAlgorithm
      */
-    public function setIPSecEncryptionAlgorithm($ipSecEncryptionAlgorithm)
+    public function setIPSecEncryptionAlgorithm(string $ipSecEncryptionAlgorithm)
     {
         $this->set("IPSecEncryptionAlgorithm", $ipSecEncryptionAlgorithm);
     }
-
     /**
      * IPSecAuthenticationAlgorithm: IPSec隧道中使用的认证算法
      *
@@ -345,11 +331,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecAuthenticationAlgorithm
      */
-    public function setIPSecAuthenticationAlgorithm($ipSecAuthenticationAlgorithm)
+    public function setIPSecAuthenticationAlgorithm(string $ipSecAuthenticationAlgorithm)
     {
         $this->set("IPSecAuthenticationAlgorithm", $ipSecAuthenticationAlgorithm);
     }
-
     /**
      * IPSecSALifetime: IPSec中SA的生存时间
      *
@@ -365,11 +350,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecSALifetime
      */
-    public function setIPSecSALifetime($ipSecSALifetime)
+    public function setIPSecSALifetime(string $ipSecSALifetime)
     {
         $this->set("IPSecSALifetime", $ipSecSALifetime);
     }
-
     /**
      * IPSecSALifetimeBytes: IPSec中SA的生存时间（以字节计）
      *
@@ -385,11 +369,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecSALifetimeBytes
      */
-    public function setIPSecSALifetimeBytes($ipSecSALifetimeBytes)
+    public function setIPSecSALifetimeBytes(string $ipSecSALifetimeBytes)
     {
         $this->set("IPSecSALifetimeBytes", $ipSecSALifetimeBytes);
     }
-
     /**
      * IPSecPFSDhGroup: IPSec中的PFS是否开启
      *
@@ -405,11 +388,10 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ipSecPFSDhGroup
      */
-    public function setIPSecPFSDhGroup($ipSecPFSDhGroup)
+    public function setIPSecPFSDhGroup(string $ipSecPFSDhGroup)
     {
         $this->set("IPSecPFSDhGroup", $ipSecPFSDhGroup);
     }
-
     /**
      * IKEVersion: 枚举值："IKE V1","IKE V2"
      *
@@ -425,8 +407,27 @@ class UpdateVPNTunnelAttributeRequest extends Request
      *
      * @param string $ikeVersion
      */
-    public function setIKEVersion($ikeVersion)
+    public function setIKEVersion(string $ikeVersion)
     {
         $this->set("IKEVersion", $ikeVersion);
+    }
+    /**
+     * IPSecCloseAction: IPSec隧道关闭后的处理动作，默认与原本一致，若原本为空，必传。枚举值：“none”,不处理（推荐为none，流量会自动触发隧道重建）；“restart”重建
+     *
+     * @return string|null
+     */
+    public function getIPSecCloseAction()
+    {
+        return $this->get("IPSecCloseAction");
+    }
+
+    /**
+     * IPSecCloseAction: IPSec隧道关闭后的处理动作，默认与原本一致，若原本为空，必传。枚举值：“none”,不处理（推荐为none，流量会自动触发隧道重建）；“restart”重建
+     *
+     * @param string $ipSecCloseAction
+     */
+    public function setIPSecCloseAction(string $ipSecCloseAction)
+    {
+        $this->set("IPSecCloseAction", $ipSecCloseAction);
     }
 }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateUFSVolumeResponse extends Response
 {
-    
 
     /**
      * VolumeName: 文件系统名称
@@ -37,11 +38,10 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeName
      */
-    public function setVolumeName($volumeName)
+    public function setVolumeName(string $volumeName)
     {
         $this->set("VolumeName", $volumeName);
     }
-
     /**
      * VolumeId: 文件系统ID
      *
@@ -57,11 +57,10 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeId
      */
-    public function setVolumeId($volumeId)
+    public function setVolumeId(string $volumeId)
     {
         $this->set("VolumeId", $volumeId);
     }
-
     /**
      * VolumeStatus: 文件系统挂载点状态
      *
@@ -77,7 +76,7 @@ class CreateUFSVolumeResponse extends Response
      *
      * @param string $volumeStatus
      */
-    public function setVolumeStatus($volumeStatus)
+    public function setVolumeStatus(string $volumeStatus)
     {
         $this->set("VolumeStatus", $volumeStatus);
     }

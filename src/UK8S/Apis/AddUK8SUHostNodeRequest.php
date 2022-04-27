@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
@@ -33,7 +35,6 @@ class AddUK8SUHostNodeRequest extends Request
         $this->markRequired("ChargeType");
     }
 
-    
 
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -50,11 +51,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -70,11 +70,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -90,11 +89,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ClusterId: UK8S集群ID。 可从UK8S控制台获取。
      *
@@ -110,11 +108,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $clusterId
      */
-    public function setClusterId($clusterId)
+    public function setClusterId(string $clusterId)
     {
         $this->set("ClusterId", $clusterId);
     }
-
     /**
      * CPU: 虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。默认值: 4。
      *
@@ -130,11 +127,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
-
     /**
      * Count: 创建Node节点数量，取值范围是[1,50]。
      *
@@ -150,11 +146,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param int $count
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->set("Count", $count);
     }
-
     /**
      * Password: Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 | base64
      *
@@ -170,11 +165,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
-
     /**
      * Mem: 内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
      *
@@ -190,11 +184,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param int $mem
      */
-    public function setMem($mem)
+    public function setMem(int $mem)
     {
         $this->set("Mem", $mem);
     }
-
     /**
      * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\ 默认为月付
      *
@@ -210,11 +203,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * BootDiskType: 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
      *
@@ -230,11 +222,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $bootDiskType
      */
-    public function setBootDiskType($bootDiskType)
+    public function setBootDiskType(string $bootDiskType)
     {
         $this->set("BootDiskType", $bootDiskType);
     }
-
     /**
      * DataDiskType: 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
      *
@@ -250,11 +241,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $dataDiskType
      */
-    public function setDataDiskType($dataDiskType)
+    public function setDataDiskType(string $dataDiskType)
     {
         $this->set("DataDiskType", $dataDiskType);
     }
-
     /**
      * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
      *
@@ -270,11 +260,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param int $dataDiskSize
      */
-    public function setDataDiskSize($dataDiskSize)
+    public function setDataDiskSize(int $dataDiskSize)
     {
         $this->set("DataDiskSize", $dataDiskSize);
     }
-
     /**
      * Quantity: 购买时长。默认: 1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
@@ -290,11 +279,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * MachineType: 云主机机型。枚举值["N", "C", "G", "O", "OS"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
@@ -310,11 +298,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
-
     /**
      * MinmalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
      *
@@ -330,11 +317,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $minmalCpuPlatform
      */
-    public function setMinmalCpuPlatform($minmalCpuPlatform)
+    public function setMinmalCpuPlatform(string $minmalCpuPlatform)
     {
         $this->set("MinmalCpuPlatform", $minmalCpuPlatform);
     }
-
     /**
      * GpuType: GPU类型，枚举值["K80", "P40", "V100",]，MachineType为G时必填
      *
@@ -350,11 +336,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $gpuType
      */
-    public function setGpuType($gpuType)
+    public function setGpuType(string $gpuType)
     {
         $this->set("GpuType", $gpuType);
     }
-
     /**
      * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *
@@ -370,11 +355,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }
-
     /**
      * Labels: Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
      *
@@ -390,11 +374,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $labels
      */
-    public function setLabels($labels)
+    public function setLabels(string $labels)
     {
         $this->set("Labels", $labels);
     }
-
     /**
      * MaxPods: 默认110，生产环境建议小于等于110。
      *
@@ -410,11 +393,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param int $maxPods
      */
-    public function setMaxPods($maxPods)
+    public function setMaxPods(int $maxPods)
     {
         $this->set("MaxPods", $maxPods);
     }
-
     /**
      * IsolationGroup: 硬件隔离组id。可通过DescribeIsolationGroup获取。
      *
@@ -430,11 +412,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $isolationGroup
      */
-    public function setIsolationGroup($isolationGroup)
+    public function setIsolationGroup(string $isolationGroup)
     {
         $this->set("IsolationGroup", $isolationGroup);
     }
-
     /**
      * ImageId: 镜像 Id，不填时后台程序会自动选用一个可用的镜像 Id，支持用户自定义镜像，自定义镜像必须基于基础镜像制作。
      *
@@ -450,11 +431,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
      *
@@ -470,11 +450,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * DisableSchedule: 用于标示添加完节点后是否将节点临时禁用. 传入 "true" 表示禁用,传入其它或不传表示不禁用
      *
@@ -490,11 +469,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param boolean $disableSchedule
      */
-    public function setDisableSchedule($disableSchedule)
+    public function setDisableSchedule(bool $disableSchedule)
     {
         $this->set("DisableSchedule", $disableSchedule);
     }
-
     /**
      * UserData: 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。
      *
@@ -510,11 +488,10 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $userData
      */
-    public function setUserData($userData)
+    public function setUserData(string $userData)
     {
         $this->set("UserData", $userData);
     }
-
     /**
      * InitScript: 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。
      *
@@ -530,7 +507,7 @@ class AddUK8SUHostNodeRequest extends Request
      *
      * @param string $initScript
      */
-    public function setInitScript($initScript)
+    public function setInitScript(string $initScript)
     {
         $this->set("InitScript", $initScript);
     }

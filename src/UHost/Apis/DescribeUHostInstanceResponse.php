@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UHost\Models\UHostInstanceSet;
-use UCloud\UHost\Models\UHostDiskSet;
-use UCloud\UHost\Models\UHostIPSet;
 use UCloud\UHost\Models\UHostKeyPair;
+use UCloud\UHost\Models\UHostIPSet;
+use UCloud\UHost\Models\UHostDiskSet;
 
 class DescribeUHostInstanceResponse extends Response
 {
-    
 
     /**
      * TotalCount: UHostInstance总数
@@ -41,15 +43,14 @@ class DescribeUHostInstanceResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * UHostSet: 云主机实例列表，每项参数可见下面 UHostInstanceSet
      *
-     * @return UHostInstanceSet[]|null
+     * @return UHostInstanceSetModel[]|null
      */
     public function getUHostSet()
     {
@@ -59,7 +60,7 @@ class DescribeUHostInstanceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UHostInstanceSet($item));
+            array_push($result, new UHostInstanceSetModel($item));
         }
         return $result;
     }
@@ -67,7 +68,7 @@ class DescribeUHostInstanceResponse extends Response
     /**
      * UHostSet: 云主机实例列表，每项参数可见下面 UHostInstanceSet
      *
-     * @param UHostInstanceSet[] $uHostSet
+     * @param UHostInstanceSetModel[] $uHostSet
      */
     public function setUHostSet(array $uHostSet)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\ResourceSet;
+use UCloud\UEC\Models\GetUEcIDCCutInfoResponse;
+
 class IDCCutInfo extends Response
 {
-    
 
     /**
      * IDCName: 机房名称
@@ -37,11 +41,10 @@ class IDCCutInfo extends Response
      *
      * @param string $idcName
      */
-    public function setIDCName($idcName)
+    public function setIDCName(string $idcName)
     {
         $this->set("IDCName", $idcName);
     }
-
     /**
      * Province: 省份
      *
@@ -57,11 +60,10 @@ class IDCCutInfo extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
-
     /**
      * City: 城市
      *
@@ -77,11 +79,10 @@ class IDCCutInfo extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
-
     /**
      * StartTime: 割接开始时间
      *
@@ -97,11 +98,10 @@ class IDCCutInfo extends Response
      *
      * @param int $startTime
      */
-    public function setStartTime($startTime)
+    public function setStartTime(int $startTime)
     {
         $this->set("StartTime", $startTime);
     }
-
     /**
      * EndTime: 割接结束时间
      *
@@ -117,11 +117,10 @@ class IDCCutInfo extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
-
     /**
      * CutType: 割接类型（中断、抖动、断电）
      *
@@ -137,15 +136,14 @@ class IDCCutInfo extends Response
      *
      * @param string $cutType
      */
-    public function setCutType($cutType)
+    public function setCutType(string $cutType)
     {
         $this->set("CutType", $cutType);
     }
-
     /**
      * ResourceSet: 受影响的资源信息列表
      *
-     * @return ResourceSet[]|null
+     * @return ResourceSetModel[]|null
      */
     public function getResourceSet()
     {
@@ -155,7 +153,7 @@ class IDCCutInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ResourceSet($item));
+            array_push($result, new ResourceSetModel($item));
         }
         return $result;
     }
@@ -163,7 +161,7 @@ class IDCCutInfo extends Response
     /**
      * ResourceSet: 受影响的资源信息列表
      *
-     * @param ResourceSet[] $resourceSet
+     * @param ResourceSetModel[] $resourceSet
      */
     public function setResourceSet(array $resourceSet)
     {

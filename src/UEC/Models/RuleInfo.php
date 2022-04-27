@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\FirewallInfo;
+use UCloud\UEC\Models\DescribeUEcFirewallResponse;
+
 class RuleInfo extends Response
 {
-    
 
     /**
      * ProtocolType: 协议，可选值：TCP，UDP，ICMP
@@ -37,11 +41,10 @@ class RuleInfo extends Response
      *
      * @param string $protocolType
      */
-    public function setProtocolType($protocolType)
+    public function setProtocolType(string $protocolType)
     {
         $this->set("ProtocolType", $protocolType);
     }
-
     /**
      * Port: 端口，范围用"-"符号分隔，如：1-65535
      *
@@ -57,11 +60,10 @@ class RuleInfo extends Response
      *
      * @param string $port
      */
-    public function setPort($port)
+    public function setPort(string $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * SrcIp: 源ip
      *
@@ -77,11 +79,10 @@ class RuleInfo extends Response
      *
      * @param string $srcIp
      */
-    public function setSrcIp($srcIp)
+    public function setSrcIp(string $srcIp)
     {
         $this->set("SrcIp", $srcIp);
     }
-
     /**
      * Action: ACCEPT（接受）和DROP（拒绝）
      *
@@ -97,11 +98,10 @@ class RuleInfo extends Response
      *
      * @param string $action
      */
-    public function setAction($action)
+    public function setAction(string $action)
     {
         $this->set("Action", $action);
     }
-
     /**
      * Priority: 优先级：HIGH（高），MEDIUM（中），LOW（低）
      *
@@ -117,11 +117,10 @@ class RuleInfo extends Response
      *
      * @param string $priority
      */
-    public function setPriority($priority)
+    public function setPriority(string $priority)
     {
         $this->set("Priority", $priority);
     }
-
     /**
      * Remark: 备注
      *
@@ -137,7 +136,7 @@ class RuleInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

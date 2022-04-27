@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnDomainConfigResponse;
+use UCloud\UCDN\Models\DomainConfigInfo;
+use UCloud\UCDN\Models\CacheAllConfig;
+use UCloud\UCDN\Models\GetUcdnDomainConfigV2Response;
+
 class CacheKeyInfo extends Response
 {
-    
 
     /**
      * Ignore: 是否忽略
@@ -37,11 +43,10 @@ class CacheKeyInfo extends Response
      *
      * @param boolean $ignore
      */
-    public function setIgnore($ignore)
+    public function setIgnore(bool $ignore)
     {
         $this->set("Ignore", $ignore);
     }
-
     /**
      * PathPattern: 路径模式，支持正则
      *
@@ -57,11 +62,10 @@ class CacheKeyInfo extends Response
      *
      * @param string $pathPattern
      */
-    public function setPathPattern($pathPattern)
+    public function setPathPattern(string $pathPattern)
     {
         $this->set("PathPattern", $pathPattern);
     }
-
     /**
      * QueryString: 自定义变量,以$符号开头，多个变量用加号(+)连接，$querystring表示所有变量
      *
@@ -77,7 +81,7 @@ class CacheKeyInfo extends Response
      *
      * @param string $queryString
      */
-    public function setQueryString($queryString)
+    public function setQueryString(string $queryString)
     {
         $this->set("QueryString", $queryString);
     }

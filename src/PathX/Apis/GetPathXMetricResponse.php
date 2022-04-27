@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,35 +15,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
+
+use UCloud\PathX\Models\MatricPoint;
 use UCloud\PathX\Models\MetricPeriod;
-use UCloud\PathX\Models\MatricPoint;
-use UCloud\PathX\Models\MatricPoint;
-use UCloud\PathX\Models\MatricPoint;
-use UCloud\PathX\Models\MatricPoint;
 
 class GetPathXMetricResponse extends Response
 {
-    
 
     /**
      * DataSet: 监控数据结果集
      *
-     * @return MetricPeriod|null
+     * @return MetricPeriodModel|null
      */
     public function getDataSet()
     {
-        return new MetricPeriod($this->get("DataSet"));
+        return new MetricPeriodModel($this->get("DataSet"));
     }
 
     /**
      * DataSet: 监控数据结果集
      *
-     * @param MetricPeriod $dataSet
+     * @param MetricPeriodModel $dataSet
      */
-    public function setDataSet(array $dataSet)
+    public function setDataSet(MetricPeriodModel $dataSet)
     {
         $this->set("DataSet", $dataSet->getAll());
     }

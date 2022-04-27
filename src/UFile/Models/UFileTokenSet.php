@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UFile\Models\DescribeUFileTokenResponse;
+
 class UFileTokenSet extends Response
 {
-    
 
     /**
      * TokenId: 令牌ID
@@ -37,11 +40,10 @@ class UFileTokenSet extends Response
      *
      * @param string $tokenId
      */
-    public function setTokenId($tokenId)
+    public function setTokenId(string $tokenId)
     {
         $this->set("TokenId", $tokenId);
     }
-
     /**
      * TokenName: 令牌名称
      *
@@ -57,11 +59,10 @@ class UFileTokenSet extends Response
      *
      * @param string $tokenName
      */
-    public function setTokenName($tokenName)
+    public function setTokenName(string $tokenName)
     {
         $this->set("TokenName", $tokenName);
     }
-
     /**
      * PublicKey: 令牌公钥
      *
@@ -77,11 +78,10 @@ class UFileTokenSet extends Response
      *
      * @param string $publicKey
      */
-    public function setPublicKey($publicKey)
+    public function setPublicKey(string $publicKey)
     {
         $this->set("PublicKey", $publicKey);
     }
-
     /**
      * PrivateKey: 令牌私钥
      *
@@ -97,11 +97,10 @@ class UFileTokenSet extends Response
      *
      * @param string $privateKey
      */
-    public function setPrivateKey($privateKey)
+    public function setPrivateKey(string $privateKey)
     {
         $this->set("PrivateKey", $privateKey);
     }
-
     /**
      * AllowedOps: 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]
      *
@@ -121,7 +120,6 @@ class UFileTokenSet extends Response
     {
         $this->set("AllowedOps", $allowedOps);
     }
-
     /**
      * AllowedPrefixes: 令牌允许操作的key前缀
      *
@@ -141,7 +139,6 @@ class UFileTokenSet extends Response
     {
         $this->set("AllowedPrefixes", $allowedPrefixes);
     }
-
     /**
      * AllowedBuckets: 令牌允许操作的bucket
      *
@@ -161,7 +158,6 @@ class UFileTokenSet extends Response
     {
         $this->set("AllowedBuckets", $allowedBuckets);
     }
-
     /**
      * ExpireTime: 令牌的超时时间点
      *
@@ -177,11 +173,10 @@ class UFileTokenSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -197,11 +192,10 @@ class UFileTokenSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ModifyTime: 修改时间
      *
@@ -217,11 +211,10 @@ class UFileTokenSet extends Response
      *
      * @param int $modifyTime
      */
-    public function setModifyTime($modifyTime)
+    public function setModifyTime(int $modifyTime)
     {
         $this->set("ModifyTime", $modifyTime);
     }
-
     /**
      * Region: 所属地区
      *
@@ -237,7 +230,7 @@ class UFileTokenSet extends Response
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }

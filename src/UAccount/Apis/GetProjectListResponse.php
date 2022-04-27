@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UAccount\Models\ProjectListInfo;
 
 class GetProjectListResponse extends Response
 {
-    
 
     /**
      * ProjectCount: 项目总数
@@ -38,15 +40,14 @@ class GetProjectListResponse extends Response
      *
      * @param int $projectCount
      */
-    public function setProjectCount($projectCount)
+    public function setProjectCount(int $projectCount)
     {
         $this->set("ProjectCount", $projectCount);
     }
-
     /**
      * ProjectSet: JSON格式的项目列表实例
      *
-     * @return ProjectListInfo[]|null
+     * @return ProjectListInfoModel[]|null
      */
     public function getProjectSet()
     {
@@ -56,7 +57,7 @@ class GetProjectListResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ProjectListInfo($item));
+            array_push($result, new ProjectListInfoModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class GetProjectListResponse extends Response
     /**
      * ProjectSet: JSON格式的项目列表实例
      *
-     * @param ProjectListInfo[] $projectSet
+     * @param ProjectListInfoModel[] $projectSet
      */
     public function setProjectSet(array $projectSet)
     {

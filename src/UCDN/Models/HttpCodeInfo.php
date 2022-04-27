@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetNewUcdnDomainHttpCodeResponse;
+use UCloud\UCDN\Models\GetUcdnDomainOriginHttpCodeResponse;
+
 class HttpCodeInfo extends Response
 {
-    
 
     /**
      * Time: 带宽获取的时间点。格式：时间戳
@@ -37,11 +41,10 @@ class HttpCodeInfo extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
-
     /**
      * HttpOneXX: 1xx数量
      *
@@ -57,11 +60,10 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpOneXX
      */
-    public function setHttpOneXX($httpOneXX)
+    public function setHttpOneXX(int $httpOneXX)
     {
         $this->set("HttpOneXX", $httpOneXX);
     }
-
     /**
      * HttpTwoXX: 2xx数量
      *
@@ -77,11 +79,10 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpTwoXX
      */
-    public function setHttpTwoXX($httpTwoXX)
+    public function setHttpTwoXX(int $httpTwoXX)
     {
         $this->set("HttpTwoXX", $httpTwoXX);
     }
-
     /**
      * HttpThreeXX: 3xx数量
      *
@@ -97,11 +98,10 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpThreeXX
      */
-    public function setHttpThreeXX($httpThreeXX)
+    public function setHttpThreeXX(int $httpThreeXX)
     {
         $this->set("HttpThreeXX", $httpThreeXX);
     }
-
     /**
      * HttpFourXX: 4xx数量
      *
@@ -117,11 +117,10 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpFourXX
      */
-    public function setHttpFourXX($httpFourXX)
+    public function setHttpFourXX(int $httpFourXX)
     {
         $this->set("HttpFourXX", $httpFourXX);
     }
-
     /**
      * HttpFiveXX: 5xx数量
      *
@@ -137,7 +136,7 @@ class HttpCodeInfo extends Response
      *
      * @param int $httpFiveXX
      */
-    public function setHttpFiveXX($httpFiveXX)
+    public function setHttpFiveXX(int $httpFiveXX)
     {
         $this->set("HttpFiveXX", $httpFiveXX);
     }

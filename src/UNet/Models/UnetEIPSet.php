@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\ShareBandwidthSet;
+use UCloud\UNet\Models\UnetEIPAddrSet;
+use UCloud\UNet\Models\DescribeEIPResponse;
+use UCloud\UNet\Models\UnetEIPResourceSet;
+
 class UnetEIPSet extends Response
 {
-    
 
     /**
      * EIPId: 弹性IP的资源ID
@@ -37,11 +43,10 @@ class UnetEIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
-
     /**
      * Weight: 外网出口权重, 默认为50, 范围[0-100]
      *
@@ -57,11 +62,10 @@ class UnetEIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->set("Weight", $weight);
     }
-
     /**
      * BandwidthType: 带宽模式, 枚举值为: 0: 非共享带宽模式, 1: 共享带宽模式
      *
@@ -77,11 +81,10 @@ class UnetEIPSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType($bandwidthType)
+    public function setBandwidthType(int $bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
-
     /**
      * Bandwidth: 弹性IP的带宽, 单位为Mbps, 当BandwidthType=1时, 该处显示为共享带宽值. 当BandwidthType=0时, 该处显示这个弹性IP的带宽.
      *
@@ -97,11 +100,10 @@ class UnetEIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * Status: 弹性IP的资源绑定状态, 枚举值为: used: 已绑定, free: 未绑定, freeze: 已冻结
      *
@@ -117,11 +119,10 @@ class UnetEIPSet extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * ChargeType: 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按小时付费; Trial, 试用. 按小时付费和试用这两种付费模式需要开通权限.
      *
@@ -137,11 +138,10 @@ class UnetEIPSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * CreateTime: 弹性IP的创建时间, 格式为Unix Timestamp
      *
@@ -157,11 +157,10 @@ class UnetEIPSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpireTime: 弹性IP的到期时间, 格式为Unix Timestamp
      *
@@ -177,35 +176,33 @@ class UnetEIPSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * Resource: 弹性IP的详细信息列表, 具体结构见下方 UnetEIPResourceSet
      *
-     * @return UnetEIPResourceSet|null
+     * @return UnetEIPResourceSetModel|null
      */
     public function getResource()
     {
-        return new UnetEIPResourceSet($this->get("Resource"));
+        return new UnetEIPResourceSetModel($this->get("Resource"));
     }
 
     /**
      * Resource: 弹性IP的详细信息列表, 具体结构见下方 UnetEIPResourceSet
      *
-     * @param UnetEIPResourceSet $resource
+     * @param UnetEIPResourceSetModel $resource
      */
-    public function setResource(array $resource)
+    public function setResource(UnetEIPResourceSetModel $resource)
     {
         $this->set("Resource", $resource->getAll());
     }
-
     /**
      * EIPAddr: 弹性IP的详细信息列表, 具体结构见下方 UnetEIPAddrSet
      *
-     * @return UnetEIPAddrSet[]|null
+     * @return UnetEIPAddrSetModel[]|null
      */
     public function getEIPAddr()
     {
@@ -215,7 +212,7 @@ class UnetEIPSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UnetEIPAddrSet($item));
+            array_push($result, new UnetEIPAddrSetModel($item));
         }
         return $result;
     }
@@ -223,7 +220,7 @@ class UnetEIPSet extends Response
     /**
      * EIPAddr: 弹性IP的详细信息列表, 具体结构见下方 UnetEIPAddrSet
      *
-     * @param UnetEIPAddrSet[] $eipAddr
+     * @param UnetEIPAddrSetModel[] $eipAddr
      */
     public function setEIPAddr(array $eipAddr)
     {
@@ -233,7 +230,6 @@ class UnetEIPSet extends Response
         }
         return $result;
     }
-
     /**
      * Name: 弹性IP的名称,缺省值为 "EIP"
      *
@@ -249,11 +245,10 @@ class UnetEIPSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Tag: 弹性IP的业务组标识, 缺省值为 "Default"
      *
@@ -269,11 +264,10 @@ class UnetEIPSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Remark: 弹性IP的备注, 缺省值为 ""
      *
@@ -289,11 +283,10 @@ class UnetEIPSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * PayMode: 弹性IP的计费模式, 枚举值为: "Bandwidth", 带宽计费; "Traffic", 流量计费; "ShareBandwidth",共享带宽模式. 默认为 "Bandwidth".
      *
@@ -309,31 +302,29 @@ class UnetEIPSet extends Response
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }
-
     /**
      * ShareBandwidthSet: 共享带宽信息 参见 ShareBandwidthSet
      *
-     * @return ShareBandwidthSet|null
+     * @return ShareBandwidthSetModel|null
      */
     public function getShareBandwidthSet()
     {
-        return new ShareBandwidthSet($this->get("ShareBandwidthSet"));
+        return new ShareBandwidthSetModel($this->get("ShareBandwidthSet"));
     }
 
     /**
      * ShareBandwidthSet: 共享带宽信息 参见 ShareBandwidthSet
      *
-     * @param ShareBandwidthSet $shareBandwidthSet
+     * @param ShareBandwidthSetModel $shareBandwidthSet
      */
-    public function setShareBandwidthSet(array $shareBandwidthSet)
+    public function setShareBandwidthSet(ShareBandwidthSetModel $shareBandwidthSet)
     {
         $this->set("ShareBandwidthSet", $shareBandwidthSet->getAll());
     }
-
     /**
      * Expire: 弹性IP是否到期
      *
@@ -349,7 +340,7 @@ class UnetEIPSet extends Response
      *
      * @param boolean $expire
      */
-    public function setExpire($expire)
+    public function setExpire(bool $expire)
     {
         $this->set("Expire", $expire);
     }

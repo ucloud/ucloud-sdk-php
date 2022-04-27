@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\PathX\Models\UGAALine;
 use UCloud\PathX\Models\LineDetail;
 
 class DescribePathXLineConfigResponse extends Response
 {
-    
 
     /**
      * LineSet: UGAA线路列表,参考UGAALine字段定义
      *
-     * @return UGAALine[]|null
+     * @return UGAALineModel[]|null
      */
     public function getLineSet()
     {
@@ -37,7 +39,7 @@ class DescribePathXLineConfigResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UGAALine($item));
+            array_push($result, new UGAALineModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class DescribePathXLineConfigResponse extends Response
     /**
      * LineSet: UGAA线路列表,参考UGAALine字段定义
      *
-     * @param UGAALine[] $lineSet
+     * @param UGAALineModel[] $lineSet
      */
     public function setLineSet(array $lineSet)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDisk\Models\DescribeRecycleUDiskResponse;
+
 class RecycleUDiskSet extends Response
 {
-    
 
     /**
      * UDiskId: 磁盘id
@@ -37,11 +40,10 @@ class RecycleUDiskSet extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -57,11 +59,10 @@ class RecycleUDiskSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpiredTime: 过期时间
      *
@@ -77,11 +78,10 @@ class RecycleUDiskSet extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
-
     /**
      * CountdownTime: 销毁倒计时
      *
@@ -97,11 +97,10 @@ class RecycleUDiskSet extends Response
      *
      * @param int $countdownTime
      */
-    public function setCountdownTime($countdownTime)
+    public function setCountdownTime(int $countdownTime)
     {
         $this->set("CountdownTime", $countdownTime);
     }
-
     /**
      * Name: 磁盘名称
      *
@@ -117,11 +116,10 @@ class RecycleUDiskSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Size: 磁盘容量
      *
@@ -137,11 +135,10 @@ class RecycleUDiskSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * Tag: 业务组
      *
@@ -157,11 +154,10 @@ class RecycleUDiskSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Zone: 可用区
      *
@@ -177,7 +173,7 @@ class RecycleUDiskSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }

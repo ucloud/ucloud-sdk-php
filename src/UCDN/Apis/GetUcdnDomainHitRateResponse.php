@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UCDN\Models\HitRateInfoV2;
 
 class GetUcdnDomainHitRateResponse extends Response
 {
-    
 
     /**
      * HitRateList: 请求数实例表。
      *
-     * @return HitRateInfoV2[]|null
+     * @return HitRateInfoV2Model[]|null
      */
     public function getHitRateList()
     {
@@ -36,7 +38,7 @@ class GetUcdnDomainHitRateResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new HitRateInfoV2($item));
+            array_push($result, new HitRateInfoV2Model($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class GetUcdnDomainHitRateResponse extends Response
     /**
      * HitRateList: 请求数实例表。
      *
-     * @param HitRateInfoV2[] $hitRateList
+     * @param HitRateInfoV2Model[] $hitRateList
      */
     public function setHitRateList(array $hitRateList)
     {

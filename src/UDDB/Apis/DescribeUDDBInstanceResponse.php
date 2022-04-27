@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDDB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDDB\Models\DataSetUDDB;
 use UCloud\UDDB\Models\DataNodeInfo;
 use UCloud\UDDB\Models\SlaveInfo;
 
 class DescribeUDDBInstanceResponse extends Response
 {
-    
 
     /**
      * DataSet: UDDB实例信息列表, 参见DataSetUDDB项定义
      *
-     * @return DataSetUDDB[]|null
+     * @return DataSetUDDBModel[]|null
      */
     public function getDataSet()
     {
@@ -38,7 +40,7 @@ class DescribeUDDBInstanceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new DataSetUDDB($item));
+            array_push($result, new DataSetUDDBModel($item));
         }
         return $result;
     }
@@ -46,7 +48,7 @@ class DescribeUDDBInstanceResponse extends Response
     /**
      * DataSet: UDDB实例信息列表, 参见DataSetUDDB项定义
      *
-     * @param DataSetUDDB[] $dataSet
+     * @param DataSetUDDBModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

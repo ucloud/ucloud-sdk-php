@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
 
 class AllocateBackendResponse extends Response
 {
-    
 
     /**
      * BackendId: 所添加的后端资源在ULB中的对象ID，（为ULB系统中使用，与资源自身ID无关），可用于 UpdateBackendAttribute/UpdateBackendAttributeBatch/ReleaseBackend
@@ -37,7 +38,7 @@ class AllocateBackendResponse extends Response
      *
      * @param string $backendId
      */
-    public function setBackendId($backendId)
+    public function setBackendId(string $backendId)
     {
         $this->set("BackendId", $backendId);
     }

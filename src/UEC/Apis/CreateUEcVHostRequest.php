@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -31,7 +33,6 @@ class CreateUEcVHostRequest extends Request
         $this->markRequired("NetLimit");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -48,11 +49,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * IdcId: 机房id
      *
@@ -68,11 +68,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * CpuCore: cpu核心数
      *
@@ -88,11 +87,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $cpuCore
      */
-    public function setCpuCore($cpuCore)
+    public function setCpuCore(int $cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
-
     /**
      * MemSize: 内存大小，单位GB
      *
@@ -108,11 +106,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
-
     /**
      * DiskSize: 数据盘大小，单位GB
      *
@@ -128,11 +125,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $diskSize
      */
-    public function setDiskSize($diskSize)
+    public function setDiskSize(int $diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }
-
     /**
      * ImageId: 镜像ID
      *
@@ -148,11 +144,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * NetLimit: 节点带宽限制，单位Mbs
      *
@@ -168,11 +163,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $netLimit
      */
-    public function setNetLimit($netLimit)
+    public function setNetLimit(int $netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }
-
     /**
      * NodeName: 节点名称
      *
@@ -188,11 +182,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $nodeName
      */
-    public function setNodeName($nodeName)
+    public function setNodeName(string $nodeName)
     {
         $this->set("NodeName", $nodeName);
     }
-
     /**
      * SysDiskSize: 系统盘大小，单位GB， 默认20GB
      *
@@ -208,11 +201,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize($sysDiskSize)
+    public function setSysDiskSize(int $sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
-
     /**
      * AccountName: 账户名，默认root
      *
@@ -228,11 +220,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $accountName
      */
-    public function setAccountName($accountName)
+    public function setAccountName(string $accountName)
     {
         $this->set("AccountName", $accountName);
     }
-
     /**
      * PassWord: 密码
      *
@@ -248,11 +239,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $passWord
      */
-    public function setPassWord($passWord)
+    public function setPassWord(string $passWord)
     {
         $this->set("PassWord", $passWord);
     }
-
     /**
      * NodeCount: 创建节点数量，默认1
      *
@@ -268,11 +258,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $nodeCount
      */
-    public function setNodeCount($nodeCount)
+    public function setNodeCount(int $nodeCount)
     {
         $this->set("NodeCount", $nodeCount);
     }
-
     /**
      * ChargeType: 付费方式，1按时，2按月，3按年，默认2
      *
@@ -288,11 +277,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(int $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * ChargeQuantity: 月数或者年数，0计费到月底， 默认0
      *
@@ -308,11 +296,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity($chargeQuantity)
+    public function setChargeQuantity(int $chargeQuantity)
     {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
-
     /**
      * SubnetId: 子网ID
      *
@@ -328,11 +315,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * ProductType: 产品类型：normal（经济型），hf（标准型）,g(Gpu型)
      *
@@ -348,11 +334,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }
-
     /**
      * FirewallId: 外网防护墙规则组，默认
      *
@@ -368,11 +353,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
-
     /**
      * Isp: 运营商（1-电信，2-联通，4移动）
      *
@@ -392,7 +376,6 @@ class CreateUEcVHostRequest extends Request
     {
         $this->set("Isp", $isp);
     }
-
     /**
      * IsNeedOuterIp: 是否需要外网ip（no-否）
      *
@@ -408,11 +391,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $isNeedOuterIp
      */
-    public function setIsNeedOuterIp($isNeedOuterIp)
+    public function setIsNeedOuterIp(string $isNeedOuterIp)
     {
         $this->set("IsNeedOuterIp", $isNeedOuterIp);
     }
-
     /**
      * Gpu: Gpu卡核心数。仅Gpu机型支持此字段
      *
@@ -428,11 +410,10 @@ class CreateUEcVHostRequest extends Request
      *
      * @param int $gpu
      */
-    public function setGpu($gpu)
+    public function setGpu(int $gpu)
     {
         $this->set("Gpu", $gpu);
     }
-
     /**
      * GpuType: Gpu类型，枚举值["T4S"],ProductType为G时必填
      *
@@ -448,7 +429,7 @@ class CreateUEcVHostRequest extends Request
      *
      * @param string $gpuType
      */
-    public function setGpuType($gpuType)
+    public function setGpuType(string $gpuType)
     {
         $this->set("GpuType", $gpuType);
     }

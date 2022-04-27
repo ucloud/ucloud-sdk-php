@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UMem\Models\DescribeUMemBackupResponse;
+
 class UMemBackupSet extends Response
 {
-    
 
     /**
      * BackupName: 备份名称
@@ -37,11 +40,10 @@ class UMemBackupSet extends Response
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -57,11 +59,10 @@ class UMemBackupSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * State: Starting:备份中 Done:完成
      *
@@ -77,11 +78,10 @@ class UMemBackupSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * BackupId: 空间的备份ID
      *
@@ -97,11 +97,10 @@ class UMemBackupSet extends Response
      *
      * @param string $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(string $backupId)
     {
         $this->set("BackupId", $backupId);
     }
-
     /**
      * BackupType: 备份类型: auto(自动) ,manual(手动)
      *
@@ -117,11 +116,10 @@ class UMemBackupSet extends Response
      *
      * @param string $backupType
      */
-    public function setBackupType($backupType)
+    public function setBackupType(string $backupType)
     {
         $this->set("BackupType", $backupType);
     }
-
     /**
      * BlockCount: 本次备份，分片的数量
      *
@@ -137,7 +135,7 @@ class UMemBackupSet extends Response
      *
      * @param int $blockCount
      */
-    public function setBlockCount($blockCount)
+    public function setBlockCount(int $blockCount)
     {
         $this->set("BlockCount", $blockCount);
     }

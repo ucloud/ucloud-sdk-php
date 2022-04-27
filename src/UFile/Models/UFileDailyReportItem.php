@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UFile\Models\UFileReportItem;
+use UCloud\UFile\Models\GetUFileBucketDailyReportResponse;
+use UCloud\UFile\Models\GetUFileDailyReportResponse;
+
 class UFileDailyReportItem extends Response
 {
-    
 
     /**
      * Storage: 标准存储量；单位byte
@@ -37,11 +42,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $storage
      */
-    public function setStorage($storage)
+    public function setStorage(float $storage)
     {
         $this->set("Storage", $storage);
     }
-
     /**
      * IaStorage: 低频存储量；单位byte
      *
@@ -57,11 +61,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $iaStorage
      */
-    public function setIaStorage($iaStorage)
+    public function setIaStorage(float $iaStorage)
     {
         $this->set("IaStorage", $iaStorage);
     }
-
     /**
      * AcStorage: 冷存（归档）存储量；单位byte
      *
@@ -77,11 +80,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $acStorage
      */
-    public function setAcStorage($acStorage)
+    public function setAcStorage(float $acStorage)
     {
         $this->set("AcStorage", $acStorage);
     }
-
     /**
      * IaGetSize: 低频数据取回量；单位byte
      *
@@ -97,11 +99,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $iaGetSize
      */
-    public function setIaGetSize($iaGetSize)
+    public function setIaGetSize(float $iaGetSize)
     {
         $this->set("IaGetSize", $iaGetSize);
     }
-
     /**
      * AcRestore: 冷存激活量，即归档数据取回量；单位byte
      *
@@ -117,11 +118,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $acRestore
      */
-    public function setAcRestore($acRestore)
+    public function setAcRestore(float $acRestore)
     {
         $this->set("AcRestore", $acRestore);
     }
-
     /**
      * BusyFlow: 忙时流量；单位byte；海外无此字段
      *
@@ -137,11 +137,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $busyFlow
      */
-    public function setBusyFlow($busyFlow)
+    public function setBusyFlow(float $busyFlow)
     {
         $this->set("BusyFlow", $busyFlow);
     }
-
     /**
      * IdleFlow: 闲时流量；单位byte；海外无此字段
      *
@@ -157,11 +156,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $idleFlow
      */
-    public function setIdleFlow($idleFlow)
+    public function setIdleFlow(float $idleFlow)
     {
         $this->set("IdleFlow", $idleFlow);
     }
-
     /**
      * CdnFlow: cdn回源流量;单位byte
      *
@@ -177,11 +175,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $cdnFlow
      */
-    public function setCdnFlow($cdnFlow)
+    public function setCdnFlow(float $cdnFlow)
     {
         $this->set("CdnFlow", $cdnFlow);
     }
-
     /**
      * Flow: 下载流量：单位byte；国内无此字段
      *
@@ -197,11 +194,10 @@ class UFileDailyReportItem extends Response
      *
      * @param float $flow
      */
-    public function setFlow($flow)
+    public function setFlow(float $flow)
     {
         $this->set("Flow", $flow);
     }
-
     /**
      * Date: 配额消费时间，unix时间戳（单位s），精确到日期
      *
@@ -217,13 +213,12 @@ class UFileDailyReportItem extends Response
      *
      * @param int $date
      */
-    public function setDate($date)
+    public function setDate(int $date)
     {
         $this->set("Date", $date);
     }
-
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @return float|null
      */
@@ -233,11 +228,11 @@ class UFileDailyReportItem extends Response
     }
 
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @param float $apiTimes
      */
-    public function setApiTimes($apiTimes)
+    public function setApiTimes(float $apiTimes)
     {
         $this->set("ApiTimes", $apiTimes);
     }

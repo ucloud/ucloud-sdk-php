@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\ULB\Models\DescribeSSLResponse;
+use UCloud\ULB\Models\ULBSet;
+use UCloud\ULB\Models\DescribeULBResponse;
+use UCloud\ULB\Models\ULBVServerSet;
+use UCloud\ULB\Models\ULBSSLSet;
+use UCloud\ULB\Models\DescribeVServerResponse;
+
 class SSLBindedTargetSet extends Response
 {
-    
 
     /**
      * VServerId: SSL证书绑定到的VServer的资源ID
@@ -37,11 +45,10 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
-
     /**
      * VServerName: 对应的VServer的名字
      *
@@ -57,11 +64,10 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $vServerName
      */
-    public function setVServerName($vServerName)
+    public function setVServerName(string $vServerName)
     {
         $this->set("VServerName", $vServerName);
     }
-
     /**
      * ULBId: VServer 所属的ULB实例的资源ID
      *
@@ -77,11 +83,10 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
-
     /**
      * ULBName: ULB实例的名称
      *
@@ -97,7 +102,7 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $ulbName
      */
-    public function setULBName($ulbName)
+    public function setULBName(string $ulbName)
     {
         $this->set("ULBName", $ulbName);
     }

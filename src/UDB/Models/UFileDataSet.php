@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDB\Models\DescribeUDBInstanceResponse;
+use UCloud\UDB\Models\DescribeMongoDBShardedClusterResponse;
+use UCloud\UDB\Models\UDBInstanceSet;
+
 class UFileDataSet extends Response
 {
-    
 
     /**
      * TokenID: Ufile的令牌tokenid
@@ -37,11 +42,10 @@ class UFileDataSet extends Response
      *
      * @param string $tokenID
      */
-    public function setTokenID($tokenID)
+    public function setTokenID(string $tokenID)
     {
         $this->set("TokenID", $tokenID);
     }
-
     /**
      * Bucket: bucket名称
      *
@@ -57,7 +61,7 @@ class UFileDataSet extends Response
      *
      * @param string $bucket
      */
-    public function setBucket($bucket)
+    public function setBucket(string $bucket)
     {
         $this->set("Bucket", $bucket);
     }

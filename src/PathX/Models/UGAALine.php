@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\LineDetail;
+use UCloud\PathX\Models\DescribePathXLineConfigResponse;
+
 class UGAALine extends Response
 {
-    
 
     /**
      * LineFrom: 线路源
@@ -37,11 +41,10 @@ class UGAALine extends Response
      *
      * @param string $lineFrom
      */
-    public function setLineFrom($lineFrom)
+    public function setLineFrom(string $lineFrom)
     {
         $this->set("LineFrom", $lineFrom);
     }
-
     /**
      * LineTo: 线路目的
      *
@@ -57,11 +60,10 @@ class UGAALine extends Response
      *
      * @param string $lineTo
      */
-    public function setLineTo($lineTo)
+    public function setLineTo(string $lineTo)
     {
         $this->set("LineTo", $lineTo);
     }
-
     /**
      * LineFromName: 线路源中文名称
      *
@@ -77,11 +79,10 @@ class UGAALine extends Response
      *
      * @param string $lineFromName
      */
-    public function setLineFromName($lineFromName)
+    public function setLineFromName(string $lineFromName)
     {
         $this->set("LineFromName", $lineFromName);
     }
-
     /**
      * LineToName: 线路目的中文名称
      *
@@ -97,11 +98,10 @@ class UGAALine extends Response
      *
      * @param string $lineToName
      */
-    public function setLineToName($lineToName)
+    public function setLineToName(string $lineToName)
     {
         $this->set("LineToName", $lineToName);
     }
-
     /**
      * MaxBandwidth: 线路可售最大带宽
      *
@@ -117,11 +117,10 @@ class UGAALine extends Response
      *
      * @param int $maxBandwidth
      */
-    public function setMaxBandwidth($maxBandwidth)
+    public function setMaxBandwidth(int $maxBandwidth)
     {
         $this->set("MaxBandwidth", $maxBandwidth);
     }
-
     /**
      * LineId: 线路计费Id
      *
@@ -137,15 +136,14 @@ class UGAALine extends Response
      *
      * @param string $lineId
      */
-    public function setLineId($lineId)
+    public function setLineId(string $lineId)
     {
         $this->set("LineId", $lineId);
     }
-
     /**
      * LineDetail: 子线路信息
      *
-     * @return LineDetail[]|null
+     * @return LineDetailModel[]|null
      */
     public function getLineDetail()
     {
@@ -155,7 +153,7 @@ class UGAALine extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new LineDetail($item));
+            array_push($result, new LineDetailModel($item));
         }
         return $result;
     }
@@ -163,7 +161,7 @@ class UGAALine extends Response
     /**
      * LineDetail: 子线路信息
      *
-     * @param LineDetail[] $lineDetail
+     * @param LineDetailModel[] $lineDetail
      */
     public function setLineDetail(array $lineDetail)
     {

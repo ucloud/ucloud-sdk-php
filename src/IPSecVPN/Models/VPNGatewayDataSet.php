@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\IPSecVPN\Models\DescribeVPNGatewayResponse;
+
 class VPNGatewayDataSet extends Response
 {
-    
 
     /**
      * VPNGatewayId: 网关Id
@@ -37,11 +40,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId($vpnGatewayId)
+    public function setVPNGatewayId(string $vpnGatewayId)
     {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
-
     /**
      * VPNGatewayName: 网关名字
      *
@@ -57,11 +59,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $vpnGatewayName
      */
-    public function setVPNGatewayName($vpnGatewayName)
+    public function setVPNGatewayName(string $vpnGatewayName)
     {
         $this->set("VPNGatewayName", $vpnGatewayName);
     }
-
     /**
      * Tag: 网关业务组
      *
@@ -77,11 +78,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Remark: 网关备注
      *
@@ -97,11 +97,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * VPCId: 所属VPCId
      *
@@ -117,11 +116,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * VPCName: 所属VPC名字
      *
@@ -137,11 +135,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $vpcName
      */
-    public function setVPCName($vpcName)
+    public function setVPCName(string $vpcName)
     {
         $this->set("VPCName", $vpcName);
     }
-
     /**
      * ChargeType: 付费类型
      *
@@ -157,11 +154,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -177,11 +173,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpireTime: 到期时间
      *
@@ -197,11 +192,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * AutoRenew: 是否自动续费
      *
@@ -217,11 +211,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $autoRenew
      */
-    public function setAutoRenew($autoRenew)
+    public function setAutoRenew(string $autoRenew)
     {
         $this->set("AutoRenew", $autoRenew);
     }
-
     /**
      * Grade: 网关类型
      *
@@ -237,11 +230,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $grade
      */
-    public function setGrade($grade)
+    public function setGrade(string $grade)
     {
         $this->set("Grade", $grade);
     }
-
     /**
      * EIP: 绑定EIP的IP地址
      *
@@ -257,11 +249,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $eip
      */
-    public function setEIP($eip)
+    public function setEIP(string $eip)
     {
         $this->set("EIP", $eip);
     }
-
     /**
      * EIPType: EIP类型
      *
@@ -277,11 +268,10 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $eipType
      */
-    public function setEIPType($eipType)
+    public function setEIPType(string $eipType)
     {
         $this->set("EIPType", $eipType);
     }
-
     /**
      * EIPId: EIPID
      *
@@ -297,7 +287,7 @@ class VPNGatewayDataSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class CreateUEcSubnetRequest extends Request
         $this->markRequired("CIDR");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -44,11 +45,10 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * IdcId: 机房ID
      *
@@ -64,11 +64,10 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * CIDR: 子网cidr
      *
@@ -84,11 +83,10 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $cidr
      */
-    public function setCIDR($cidr)
+    public function setCIDR(string $cidr)
     {
         $this->set("CIDR", $cidr);
     }
-
     /**
      * SubnetName: 子网名称
      *
@@ -104,11 +102,10 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $subnetName
      */
-    public function setSubnetName($subnetName)
+    public function setSubnetName(string $subnetName)
     {
         $this->set("SubnetName", $subnetName);
     }
-
     /**
      * Comment: 备注
      *
@@ -124,7 +121,7 @@ class CreateUEcSubnetRequest extends Request
      *
      * @param string $comment
      */
-    public function setComment($comment)
+    public function setComment(string $comment)
     {
         $this->set("Comment", $comment);
     }

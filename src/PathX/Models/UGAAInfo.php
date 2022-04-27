@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\OutPublicIpInfo;
+use UCloud\PathX\Models\UGAL7Forwarder;
+use UCloud\PathX\Models\DescribeUGAInstanceResponse;
+use UCloud\PathX\Models\UGAATask;
+use UCloud\PathX\Models\UPathSet;
+use UCloud\PathX\Models\UGAL4Forwarder;
+
 class UGAAInfo extends Response
 {
-    
 
     /**
      * UGAId: 加速配置实例ID
@@ -37,11 +45,10 @@ class UGAAInfo extends Response
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
-
     /**
      * CName: 加速域名，请在加速区域配置您的业务域名的CName记录值为加速域名
      *
@@ -57,11 +64,10 @@ class UGAAInfo extends Response
      *
      * @param string $cName
      */
-    public function setCName($cName)
+    public function setCName(string $cName)
     {
         $this->set("CName", $cName);
     }
-
     /**
      * UGAName: 加速配置名称
      *
@@ -77,11 +83,10 @@ class UGAAInfo extends Response
      *
      * @param string $ugaName
      */
-    public function setUGAName($ugaName)
+    public function setUGAName(string $ugaName)
     {
         $this->set("UGAName", $ugaName);
     }
-
     /**
      * IPList: 源站IP列表，多个值由半角英文逗号相隔
      *
@@ -101,7 +106,6 @@ class UGAAInfo extends Response
     {
         $this->set("IPList", $ipList);
     }
-
     /**
      * Domain: 源站域名
      *
@@ -117,11 +121,10 @@ class UGAAInfo extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
-
     /**
      * Location: 源站所在区域，加速实例在绑定线路后会自动设置该值。console页面上通过该值过滤加速实例可以绑定的upath实例。注意：缺少该值会导致在console上无法修改线路
      *
@@ -137,15 +140,14 @@ class UGAAInfo extends Response
      *
      * @param string $location
      */
-    public function setLocation($location)
+    public function setLocation(string $location)
     {
         $this->set("Location", $location);
     }
-
     /**
      * UPathSet: 绑定的加速线路
      *
-     * @return UPathSet[]|null
+     * @return UPathSetModel[]|null
      */
     public function getUPathSet()
     {
@@ -155,7 +157,7 @@ class UGAAInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UPathSet($item));
+            array_push($result, new UPathSetModel($item));
         }
         return $result;
     }
@@ -163,7 +165,7 @@ class UGAAInfo extends Response
     /**
      * UPathSet: 绑定的加速线路
      *
-     * @param UPathSet[] $uPathSet
+     * @param UPathSetModel[] $uPathSet
      */
     public function setUPathSet(array $uPathSet)
     {
@@ -173,11 +175,10 @@ class UGAAInfo extends Response
         }
         return $result;
     }
-
     /**
      * TaskSet: 端口配置信息（不再维护，建议使用ForwarderSet）
      *
-     * @return UGAATask[]|null
+     * @return UGAATaskModel[]|null
      */
     public function getTaskSet()
     {
@@ -187,7 +188,7 @@ class UGAAInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UGAATask($item));
+            array_push($result, new UGAATaskModel($item));
         }
         return $result;
     }
@@ -195,7 +196,7 @@ class UGAAInfo extends Response
     /**
      * TaskSet: 端口配置信息（不再维护，建议使用ForwarderSet）
      *
-     * @param UGAATask[] $taskSet
+     * @param UGAATaskModel[] $taskSet
      */
     public function setTaskSet(array $taskSet)
     {
@@ -205,11 +206,10 @@ class UGAAInfo extends Response
         }
         return $result;
     }
-
     /**
      * L4ForwarderSet: UGA 4层转发器配置，记录接入或回源端口，接入或回源协议信息
      *
-     * @return UGAL4Forwarder[]|null
+     * @return UGAL4ForwarderModel[]|null
      */
     public function getL4ForwarderSet()
     {
@@ -219,7 +219,7 @@ class UGAAInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UGAL4Forwarder($item));
+            array_push($result, new UGAL4ForwarderModel($item));
         }
         return $result;
     }
@@ -227,7 +227,7 @@ class UGAAInfo extends Response
     /**
      * L4ForwarderSet: UGA 4层转发器配置，记录接入或回源端口，接入或回源协议信息
      *
-     * @param UGAL4Forwarder[] $l4ForwarderSet
+     * @param UGAL4ForwarderModel[] $l4ForwarderSet
      */
     public function setL4ForwarderSet(array $l4ForwarderSet)
     {
@@ -237,11 +237,10 @@ class UGAAInfo extends Response
         }
         return $result;
     }
-
     /**
      * L7ForwarderSet: UGA 7层转发器配置，记录接入或回源端口，接入或回源协议信息 如绑定证书会返回证书ID
      *
-     * @return UGAL7Forwarder[]|null
+     * @return UGAL7ForwarderModel[]|null
      */
     public function getL7ForwarderSet()
     {
@@ -251,7 +250,7 @@ class UGAAInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UGAL7Forwarder($item));
+            array_push($result, new UGAL7ForwarderModel($item));
         }
         return $result;
     }
@@ -259,7 +258,7 @@ class UGAAInfo extends Response
     /**
      * L7ForwarderSet: UGA 7层转发器配置，记录接入或回源端口，接入或回源协议信息 如绑定证书会返回证书ID
      *
-     * @param UGAL7Forwarder[] $l7ForwarderSet
+     * @param UGAL7ForwarderModel[] $l7ForwarderSet
      */
     public function setL7ForwarderSet(array $l7ForwarderSet)
     {
@@ -269,11 +268,10 @@ class UGAAInfo extends Response
         }
         return $result;
     }
-
     /**
      * OutPublicIpList: 线路出口IP地址
      *
-     * @return OutPublicIpInfo[]|null
+     * @return OutPublicIpInfoModel[]|null
      */
     public function getOutPublicIpList()
     {
@@ -283,7 +281,7 @@ class UGAAInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new OutPublicIpInfo($item));
+            array_push($result, new OutPublicIpInfoModel($item));
         }
         return $result;
     }
@@ -291,7 +289,7 @@ class UGAAInfo extends Response
     /**
      * OutPublicIpList: 线路出口IP地址
      *
-     * @param OutPublicIpInfo[] $outPublicIpList
+     * @param OutPublicIpInfoModel[] $outPublicIpList
      */
     public function setOutPublicIpList(array $outPublicIpList)
     {

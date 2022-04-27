@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UAccount\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class InviteSubaccountRequest extends Request
         $this->markRequired("IsFinance");
     }
 
-    
 
     /**
      * UserEmail: 受邀成员邮箱地址，不得重复
@@ -46,11 +47,10 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userEmail
      */
-    public function setUserEmail($userEmail)
+    public function setUserEmail(string $userEmail)
     {
         $this->set("UserEmail", $userEmail);
     }
-
     /**
      * UserPhone: 受邀成员手机号码
      *
@@ -66,11 +66,10 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userPhone
      */
-    public function setUserPhone($userPhone)
+    public function setUserPhone(string $userPhone)
     {
         $this->set("UserPhone", $userPhone);
     }
-
     /**
      * UserName: 受邀成员姓名
      *
@@ -86,11 +85,10 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $userName
      */
-    public function setUserName($userName)
+    public function setUserName(string $userName)
     {
         $this->set("UserName", $userName);
     }
-
     /**
      * IsFinance: 是否有财务权限(true:是,false:否,默认为否)
      *
@@ -106,7 +104,7 @@ class InviteSubaccountRequest extends Request
      *
      * @param string $isFinance
      */
-    public function setIsFinance($isFinance)
+    public function setIsFinance(string $isFinance)
     {
         $this->set("IsFinance", $isFinance);
     }

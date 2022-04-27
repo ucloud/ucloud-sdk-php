@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class QueryUSMSSignatureRequest extends Request
         parent::__construct(["Action" => "QueryUSMSSignature"]);
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
@@ -42,11 +43,10 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * SigId: 已申请的短信签名ID（短信签名申请时的工单ID）；签名ID和签名至少需填写1项；
      *
@@ -62,11 +62,10 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $sigId
      */
-    public function setSigId($sigId)
+    public function setSigId(string $sigId)
     {
         $this->set("SigId", $sigId);
     }
-
     /**
      * SigContent: 签名内容；签名ID和签名至少需填写1项；
      *
@@ -82,7 +81,7 @@ class QueryUSMSSignatureRequest extends Request
      *
      * @param string $sigContent
      */
-    public function setSigContent($sigContent)
+    public function setSigContent(string $sigContent)
     {
         $this->set("SigContent", $sigContent);
     }

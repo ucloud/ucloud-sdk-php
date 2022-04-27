@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\BatchDescribeNewUcdnDomainResponse;
+use UCloud\UCDN\Models\GetUcdnDomainConfigResponse;
+use UCloud\UCDN\Models\CacheAllConfig;
+use UCloud\UCDN\Models\DomainInfo;
+use UCloud\UCDN\Models\GetUcdnDomainConfigV2Response;
+use UCloud\UCDN\Models\DomainConfigInfo;
+
 class CacheConf extends Response
 {
-    
 
     /**
      * PathPattern: 路径模式，支持正则
@@ -37,11 +45,10 @@ class CacheConf extends Response
      *
      * @param string $pathPattern
      */
-    public function setPathPattern($pathPattern)
+    public function setPathPattern(string $pathPattern)
     {
         $this->set("PathPattern", $pathPattern);
     }
-
     /**
      * CacheTTL: 缓存时间
      *
@@ -57,11 +64,10 @@ class CacheConf extends Response
      *
      * @param int $cacheTTL
      */
-    public function setCacheTTL($cacheTTL)
+    public function setCacheTTL(int $cacheTTL)
     {
         $this->set("CacheTTL", $cacheTTL);
     }
-
     /**
      * CacheUnit: 缓存时间的单位。sec（秒），min（分钟），hour（小时），day（天）。上限1年。
      *
@@ -77,11 +83,10 @@ class CacheConf extends Response
      *
      * @param string $cacheUnit
      */
-    public function setCacheUnit($cacheUnit)
+    public function setCacheUnit(string $cacheUnit)
     {
         $this->set("CacheUnit", $cacheUnit);
     }
-
     /**
      * CacheBehavior: 是否缓存，true为缓存，flase为不缓存。为flase的情况下，CacheTTL和CacheUnit强制不生效
      *
@@ -97,11 +102,10 @@ class CacheConf extends Response
      *
      * @param boolean $cacheBehavior
      */
-    public function setCacheBehavior($cacheBehavior)
+    public function setCacheBehavior(bool $cacheBehavior)
     {
         $this->set("CacheBehavior", $cacheBehavior);
     }
-
     /**
      * HttpCodePattern: 状态码模式，非200，206状态码，多个状态码用竖线(|)分隔，该属性仅仅在状态码缓存配置列表中返回
      *
@@ -117,11 +121,10 @@ class CacheConf extends Response
      *
      * @param string $httpCodePattern
      */
-    public function setHttpCodePattern($httpCodePattern)
+    public function setHttpCodePattern(string $httpCodePattern)
     {
         $this->set("HttpCodePattern", $httpCodePattern);
     }
-
     /**
      * Description: 缓存规则描述
      *
@@ -137,11 +140,10 @@ class CacheConf extends Response
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->set("Description", $description);
     }
-
     /**
      * FollowOriginRule: 是否优先遵循源站头部缓存策略，false为不优先遵循源站，true为优先遵循源站缓存头部。默认为0
      *
@@ -157,7 +159,7 @@ class CacheConf extends Response
      *
      * @param boolean $followOriginRule
      */
-    public function setFollowOriginRule($followOriginRule)
+    public function setFollowOriginRule(bool $followOriginRule)
     {
         $this->set("FollowOriginRule", $followOriginRule);
     }

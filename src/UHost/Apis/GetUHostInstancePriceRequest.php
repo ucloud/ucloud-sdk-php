@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
-use UCloud\UHost\Params\GetUHostInstancePriceParamDisks;
-use UCloud\UHost\Params\GetUHostInstancePriceParamVolumes;
-use UCloud\UHost\Params\GetUHostInstancePriceParamVirtualGpu;
+
+use UCloud\UHost\Models\GetUHostInstancePriceRequestVirtualGpu;
+use UCloud\UHost\Models\GetUHostInstancePriceRequestVolumes;
+use UCloud\UHost\Models\GetUHostInstancePriceRequestDisks;
 
 class GetUHostInstancePriceRequest extends Request
 {
@@ -32,7 +35,6 @@ class GetUHostInstancePriceRequest extends Request
         $this->markRequired("Count");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -49,11 +51,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -69,11 +70,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -89,11 +89,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * CPU: CPU核数。可选参数：1-64。可选范围参照控制台。默认值: 4
      *
@@ -109,11 +108,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
-
     /**
      * Memory: 内存大小。单位：MB。范围 ：[1024, 262144]，取值为1024的倍数（可选范围参照好控制台）。默认值：8192
      *
@@ -129,11 +127,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
-
     /**
      * Count: 购买台数，范围[1,5]
      *
@@ -149,15 +146,14 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $count
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->set("Count", $count);
     }
-
     /**
      * Disks:
      *
-     * @return GetUHostInstancePriceParamDisks[]|null
+     * @return GetUHostInstancePriceRequestDisksModel[]|null
      */
     public function getDisks()
     {
@@ -167,7 +163,7 @@ class GetUHostInstancePriceRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new GetUHostInstancePriceParamDisks($item));
+            array_push($result, new GetUHostInstancePriceRequestDisksModel($item));
         }
         return $result;
     }
@@ -175,7 +171,7 @@ class GetUHostInstancePriceRequest extends Request
     /**
      * Disks:
      *
-     * @param GetUHostInstancePriceParamDisks[] $disks
+     * @param GetUHostInstancePriceRequestDisksModel[] $disks
      */
     public function setDisks(array $disks)
     {
@@ -185,7 +181,6 @@ class GetUHostInstancePriceRequest extends Request
         }
         return $result;
     }
-
     /**
      * ImageId: 镜像Id，可通过 [DescribeImage](describe_image.html) 获取镜像ID， 如果镜像ID不传，系统盘大小必传
      *
@@ -201,11 +196,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * GPU: GPU卡核心数。仅GPU机型支持此字段。
      *
@@ -221,11 +215,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $gpu
      */
-    public function setGPU($gpu)
+    public function setGPU(int $gpu)
     {
         $this->set("GPU", $gpu);
     }
-
     /**
      * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时付费 // >Preemptive 抢占式实例 \\ 如果不传某个枚举值，默认返回年付、月付、时付的价格组合集。
      *
@@ -241,11 +234,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * NetCapability: 网络增强。枚举值：Normal，不开启; Super，开启网络增强1.0。 默认值为Normal。
      *
@@ -261,11 +253,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $netCapability
      */
-    public function setNetCapability($netCapability)
+    public function setNetCapability(string $netCapability)
     {
         $this->set("NetCapability", $netCapability);
     }
-
     /**
      * UHostType: 【待废弃】云主机机型（V1版本概念）。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
@@ -281,11 +272,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $uHostType
      */
-    public function setUHostType($uHostType)
+    public function setUHostType(string $uHostType)
     {
         $this->set("UHostType", $uHostType);
     }
-
     /**
      * MachineType: 云主机机型（V2版本概念）。枚举值["N", "C", "G", "O", "OS", "OPRO", "OMAX", "O.BM"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
@@ -301,11 +291,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $machineType
      */
-    public function setMachineType($machineType)
+    public function setMachineType(string $machineType)
     {
         $this->set("MachineType", $machineType);
     }
-
     /**
      * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4","T4S","2080Ti","2080Ti-4C","1080Ti"]
      *
@@ -321,11 +310,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $gpuType
      */
-    public function setGpuType($gpuType)
+    public function setGpuType(string $gpuType)
     {
         $this->set("GpuType", $gpuType);
     }
-
     /**
      * Quantity: 购买时长。默认: 1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
@@ -341,11 +329,10 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * CpuPlatform: 取值"Intel" "Amd"，默认值“Intel”
      *
@@ -361,15 +348,14 @@ class GetUHostInstancePriceRequest extends Request
      *
      * @param string $cpuPlatform
      */
-    public function setCpuPlatform($cpuPlatform)
+    public function setCpuPlatform(string $cpuPlatform)
     {
         $this->set("CpuPlatform", $cpuPlatform);
     }
-
     /**
      * Volumes:
      *
-     * @return GetUHostInstancePriceParamVolumes[]|null
+     * @return GetUHostInstancePriceRequestVolumesModel[]|null
      */
     public function getVolumes()
     {
@@ -379,7 +365,7 @@ class GetUHostInstancePriceRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new GetUHostInstancePriceParamVolumes($item));
+            array_push($result, new GetUHostInstancePriceRequestVolumesModel($item));
         }
         return $result;
     }
@@ -387,7 +373,7 @@ class GetUHostInstancePriceRequest extends Request
     /**
      * Volumes:
      *
-     * @param GetUHostInstancePriceParamVolumes[] $volumes
+     * @param GetUHostInstancePriceRequestVolumesModel[] $volumes
      */
     public function setVolumes(array $volumes)
     {
@@ -397,23 +383,22 @@ class GetUHostInstancePriceRequest extends Request
         }
         return $result;
     }
-
     /**
      * VirtualGpu:
      *
-     * @return GetUHostInstancePriceParamVirtualGpu|null
+     * @return GetUHostInstancePriceRequestVirtualGpuModel|null
      */
     public function getVirtualGpu()
     {
-        return new GetUHostInstancePriceParamVirtualGpu($this->get("VirtualGpu"));
+        return new GetUHostInstancePriceRequestVirtualGpuModel($this->get("VirtualGpu"));
     }
 
     /**
      * VirtualGpu:
      *
-     * @param GetUHostInstancePriceParamVirtualGpu $virtualGpu
+     * @param GetUHostInstancePriceRequestVirtualGpuModel $virtualGpu
      */
-    public function setVirtualGpu(array $virtualGpu)
+    public function setVirtualGpu(GetUHostInstancePriceRequestVirtualGpuModel $virtualGpu)
     {
         $this->set("VirtualGpu", $virtualGpu->getAll());
     }

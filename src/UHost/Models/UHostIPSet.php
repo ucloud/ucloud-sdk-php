@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\ArkUHostInstanceSet;
+use UCloud\UHost\Models\GetArkUHostNotPaidListResponse;
+use UCloud\UHost\Models\UHostInstanceSet;
+use UCloud\UHost\Models\DescribeUHostLiteResponse;
+use UCloud\UHost\Models\DescribeUHostInstanceResponse;
+
 class UHostIPSet extends Response
 {
-    
 
     /**
      * IPMode: IPv4/IPv6；
@@ -37,11 +44,10 @@ class UHostIPSet extends Response
      *
      * @param string $ipMode
      */
-    public function setIPMode($ipMode)
+    public function setIPMode(string $ipMode)
     {
         $this->set("IPMode", $ipMode);
     }
-
     /**
      * Default: 内网 Private 类型下，表示是否为默认网卡。true: 是默认网卡；其他值：不是。
      *
@@ -57,11 +63,10 @@ class UHostIPSet extends Response
      *
      * @param string $default
      */
-    public function setDefault($default)
+    public function setDefault(string $default)
     {
         $this->set("Default", $default);
     }
-
     /**
      * Mac: 内网 Private 类型下，当前网卡的Mac。
      *
@@ -77,11 +82,10 @@ class UHostIPSet extends Response
      *
      * @param string $mac
      */
-    public function setMac($mac)
+    public function setMac(string $mac)
     {
         $this->set("Mac", $mac);
     }
-
     /**
      * Weight: 当前EIP的权重。权重最大的为当前的出口IP。
      *
@@ -97,11 +101,10 @@ class UHostIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->set("Weight", $weight);
     }
-
     /**
      * Type: 国际: Internation，BGP: Bgp，内网: Private
      *
@@ -117,11 +120,10 @@ class UHostIPSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * IPId: 外网IP资源ID 。(内网IP无对应的资源ID)
      *
@@ -137,11 +139,10 @@ class UHostIPSet extends Response
      *
      * @param string $ipId
      */
-    public function setIPId($ipId)
+    public function setIPId(string $ipId)
     {
         $this->set("IPId", $ipId);
     }
-
     /**
      * IP: IP地址
      *
@@ -157,11 +158,10 @@ class UHostIPSet extends Response
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }
-
     /**
      * Bandwidth: IP对应的带宽, 单位: Mb  (内网IP不显示带宽信息)
      *
@@ -177,11 +177,10 @@ class UHostIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * VPCId: IP地址对应的VPC ID。（北京一不支持，字段返回为空）
      *
@@ -197,11 +196,10 @@ class UHostIPSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: IP地址对应的子网 ID。（北京一不支持，字段返回为空）
      *
@@ -217,11 +215,10 @@ class UHostIPSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * NetworkInterfaceId: 弹性网卡为默认网卡时，返回对应的 ID 值
      *
@@ -237,7 +234,7 @@ class UHostIPSet extends Response
      *
      * @param string $networkInterfaceId
      */
-    public function setNetworkInterfaceId($networkInterfaceId)
+    public function setNetworkInterfaceId(string $networkInterfaceId)
     {
         $this->set("NetworkInterfaceId", $networkInterfaceId);
     }

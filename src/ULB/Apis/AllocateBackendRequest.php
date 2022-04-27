@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -31,10 +33,9 @@ class AllocateBackendRequest extends Request
         $this->markRequired("ResourceId");
     }
 
-    
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -44,17 +45,16 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -64,15 +64,14 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ULBId: 负载均衡实例的ID
      *
@@ -88,11 +87,10 @@ class AllocateBackendRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
-
     /**
      * VServerId: VServer实例的ID
      *
@@ -108,13 +106,12 @@ class AllocateBackendRequest extends Request
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
-
     /**
-     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
+     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
      *
      * @return string|null
      */
@@ -124,15 +121,14 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
+     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
-
     /**
      * ResourceId: 所添加的后端资源的资源ID
      *
@@ -148,11 +144,10 @@ class AllocateBackendRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
-
     /**
      * ResourceIP: 所添加的后端服务器的资源实例IP，当ResourceType 为 UHybrid 时有效，且必填
      *
@@ -168,11 +163,10 @@ class AllocateBackendRequest extends Request
      *
      * @param string $resourceIP
      */
-    public function setResourceIP($resourceIP)
+    public function setResourceIP(string $resourceIP)
     {
         $this->set("ResourceIP", $resourceIP);
     }
-
     /**
      * VPCId: 所添加的后端服务器所在的vpc，当ResourceType 为 UHybrid 时有效，且必填
      *
@@ -188,11 +182,10 @@ class AllocateBackendRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: 所添加的后端服务器所在的子网，当ResourceType 为 UHybrid 时有效，且必填
      *
@@ -208,11 +201,10 @@ class AllocateBackendRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * Port: 所添加的后端资源服务端口，取值范围[1-65535]，默认80
      *
@@ -228,13 +220,12 @@ class AllocateBackendRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
-     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
      * @return integer|null
      */
@@ -244,15 +235,14 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
      * @param int $weight
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->set("Weight", $weight);
     }
-
     /**
      * Enabled: 后端实例状态开关，枚举值： 1：启用； 0：禁用 默认为启用
      *
@@ -268,11 +258,10 @@ class AllocateBackendRequest extends Request
      *
      * @param int $enabled
      */
-    public function setEnabled($enabled)
+    public function setEnabled(int $enabled)
     {
         $this->set("Enabled", $enabled);
     }
-
     /**
      * IsBackup: rs是否为backup，默认为00：普通rs1：backup的rs
      *
@@ -288,7 +277,7 @@ class AllocateBackendRequest extends Request
      *
      * @param int $isBackup
      */
-    public function setIsBackup($isBackup)
+    public function setIsBackup(int $isBackup)
     {
         $this->set("IsBackup", $isBackup);
     }

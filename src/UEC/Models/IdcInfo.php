@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\DescribeUEcHolderIDCResponse;
+use UCloud\UEC\Models\DescribeUEcIDCResponse;
+
 class IdcInfo extends Response
 {
-    
 
     /**
      * IdcId: 机房ID
@@ -37,11 +41,10 @@ class IdcInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * Name: 机房名称
      *
@@ -57,11 +60,10 @@ class IdcInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Isp: 运营商
      *
@@ -77,11 +79,10 @@ class IdcInfo extends Response
      *
      * @param string $isp
      */
-    public function setIsp($isp)
+    public function setIsp(string $isp)
     {
         $this->set("Isp", $isp);
     }
-
     /**
      * Province: 省份
      *
@@ -97,11 +98,10 @@ class IdcInfo extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
-
     /**
      * City: 城市
      *
@@ -117,11 +117,10 @@ class IdcInfo extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
-
     /**
      * Type: 运营商类型：0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
@@ -137,11 +136,10 @@ class IdcInfo extends Response
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * MaxNodeCnt: 机房可创建节点最大数量
      *
@@ -157,7 +155,7 @@ class IdcInfo extends Response
      *
      * @param int $maxNodeCnt
      */
-    public function setMaxNodeCnt($maxNodeCnt)
+    public function setMaxNodeCnt(int $maxNodeCnt)
     {
         $this->set("MaxNodeCnt", $maxNodeCnt);
     }

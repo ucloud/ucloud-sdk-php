@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UFile\Models\UFileTokenSet;
 
 class DescribeUFileTokenResponse extends Response
 {
-    
 
     /**
      * DataSet: 令牌描述信息
      *
-     * @return UFileTokenSet[]|null
+     * @return UFileTokenSetModel[]|null
      */
     public function getDataSet()
     {
@@ -36,7 +38,7 @@ class DescribeUFileTokenResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UFileTokenSet($item));
+            array_push($result, new UFileTokenSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeUFileTokenResponse extends Response
     /**
      * DataSet: 令牌描述信息
      *
-     * @param UFileTokenSet[] $dataSet
+     * @param UFileTokenSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

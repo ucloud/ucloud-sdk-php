@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\ULB\Models\ULBSSLSet;
 use UCloud\ULB\Models\SSLBindedTargetSet;
 
 class DescribeSSLResponse extends Response
 {
-    
 
     /**
      * TotalCount: 满足条件的SSL证书总数
@@ -39,15 +41,14 @@ class DescribeSSLResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: SSL证书详细信息，具体结构见 ULBSSLSet
      *
-     * @return ULBSSLSet[]|null
+     * @return ULBSSLSetModel[]|null
      */
     public function getDataSet()
     {
@@ -57,7 +58,7 @@ class DescribeSSLResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ULBSSLSet($item));
+            array_push($result, new ULBSSLSetModel($item));
         }
         return $result;
     }
@@ -65,7 +66,7 @@ class DescribeSSLResponse extends Response
     /**
      * DataSet: SSL证书详细信息，具体结构见 ULBSSLSet
      *
-     * @param ULBSSLSet[] $dataSet
+     * @param ULBSSLSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

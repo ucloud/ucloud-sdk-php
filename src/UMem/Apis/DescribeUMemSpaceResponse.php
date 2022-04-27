@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UMem\Models\UMemSpaceSet;
 use UCloud\UMem\Models\UMemSpaceAddressSet;
 
 class DescribeUMemSpaceResponse extends Response
 {
-    
 
     /**
      * DataSet: JSON 格式的UMem内存空间实例列表, 详细参见 UMemSpaceSet
      *
-     * @return UMemSpaceSet[]|null
+     * @return UMemSpaceSetModel[]|null
      */
     public function getDataSet()
     {
@@ -37,7 +39,7 @@ class DescribeUMemSpaceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UMemSpaceSet($item));
+            array_push($result, new UMemSpaceSetModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class DescribeUMemSpaceResponse extends Response
     /**
      * DataSet: JSON 格式的UMem内存空间实例列表, 详细参见 UMemSpaceSet
      *
-     * @param UMemSpaceSet[] $dataSet
+     * @param UMemSpaceSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {
@@ -55,7 +57,6 @@ class DescribeUMemSpaceResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 根据过滤条件得到的总数
      *
@@ -71,7 +72,7 @@ class DescribeUMemSpaceResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

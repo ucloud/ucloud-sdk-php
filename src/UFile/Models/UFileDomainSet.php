@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UFile\Models\DescribeBucketResponse;
+use UCloud\UFile\Models\UFileBucketSet;
+
 class UFileDomainSet extends Response
 {
-    
 
     /**
      * Src: 源站域名
@@ -41,7 +45,6 @@ class UFileDomainSet extends Response
     {
         $this->set("Src", $src);
     }
-
     /**
      * Cdn: UCDN加速域名
      *
@@ -61,7 +64,6 @@ class UFileDomainSet extends Response
     {
         $this->set("Cdn", $cdn);
     }
-
     /**
      * CustomSrc: 用户自定义源站域名
      *
@@ -81,7 +83,6 @@ class UFileDomainSet extends Response
     {
         $this->set("CustomSrc", $customSrc);
     }
-
     /**
      * CustomCdn: 用户自定义CDN加速域名
      *

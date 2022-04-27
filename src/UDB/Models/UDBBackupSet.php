@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDB\Models\DescribeUDBBackupResponse;
+
 class UDBBackupSet extends Response
 {
-    
 
     /**
      * BackupId: 备份id
@@ -37,11 +40,10 @@ class UDBBackupSet extends Response
      *
      * @param int $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(int $backupId)
     {
         $this->set("BackupId", $backupId);
     }
-
     /**
      * BackupName: 备份名称
      *
@@ -57,11 +59,10 @@ class UDBBackupSet extends Response
      *
      * @param string $backupName
      */
-    public function setBackupName($backupName)
+    public function setBackupName(string $backupName)
     {
         $this->set("BackupName", $backupName);
     }
-
     /**
      * BackupTime: 备份时间(Unix时间戳)
      *
@@ -77,11 +78,10 @@ class UDBBackupSet extends Response
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
-
     /**
      * BackupSize: 备份文件大小(字节)
      *
@@ -97,11 +97,10 @@ class UDBBackupSet extends Response
      *
      * @param int $backupSize
      */
-    public function setBackupSize($backupSize)
+    public function setBackupSize(int $backupSize)
     {
         $this->set("BackupSize", $backupSize);
     }
-
     /**
      * BackupType: 备份类型,取值为0或1,0表示自动，1表示手动
      *
@@ -117,11 +116,10 @@ class UDBBackupSet extends Response
      *
      * @param int $backupType
      */
-    public function setBackupType($backupType)
+    public function setBackupType(int $backupType)
     {
         $this->set("BackupType", $backupType);
     }
-
     /**
      * State: 备份状态 Backuping // 备份中 Success // 备份成功 Failed // 备份失败 Expired // 备份过期
      *
@@ -137,11 +135,10 @@ class UDBBackupSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * DBId: dbid
      *
@@ -157,11 +154,10 @@ class UDBBackupSet extends Response
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
-
     /**
      * DBName: 对应的db名称
      *
@@ -177,11 +173,10 @@ class UDBBackupSet extends Response
      *
      * @param string $dbName
      */
-    public function setDBName($dbName)
+    public function setDBName(string $dbName)
     {
         $this->set("DBName", $dbName);
     }
-
     /**
      * Zone: 备份所在可用区
      *
@@ -197,11 +192,10 @@ class UDBBackupSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * BackupZone: 跨机房高可用备库所在可用区
      *
@@ -217,11 +211,10 @@ class UDBBackupSet extends Response
      *
      * @param string $backupZone
      */
-    public function setBackupZone($backupZone)
+    public function setBackupZone(string $backupZone)
     {
         $this->set("BackupZone", $backupZone);
     }
-
     /**
      * BackupEndTime: 备份完成时间(Unix时间戳)
      *
@@ -237,7 +230,7 @@ class UDBBackupSet extends Response
      *
      * @param int $backupEndTime
      */
-    public function setBackupEndTime($backupEndTime)
+    public function setBackupEndTime(int $backupEndTime)
     {
         $this->set("BackupEndTime", $backupEndTime);
     }

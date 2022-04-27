@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Response\Response;
 
 class GetUFileQuotaPriceResponse extends Response
 {
-    
 
     /**
      * Price: 待支付价格，单位：分
@@ -37,7 +38,7 @@ class GetUFileQuotaPriceResponse extends Response
      *
      * @param float $price
      */
-    public function setPrice($price)
+    public function setPrice(float $price)
     {
         $this->set("Price", $price);
     }

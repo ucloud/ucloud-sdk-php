@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -34,7 +36,6 @@ class CreateUDBInstanceRequest extends Request
         $this->markRequired("MemoryLimit");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -51,11 +52,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -71,11 +71,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -91,11 +90,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Name: 实例名称，至少6位
      *
@@ -111,11 +109,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * AdminPassword: 管理员密码
      *
@@ -131,11 +128,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $adminPassword
      */
-    public function setAdminPassword($adminPassword)
+    public function setAdminPassword(string $adminPassword)
     {
         $this->set("AdminPassword", $adminPassword);
     }
-
     /**
      * DBTypeId: DB类型id，mysql/mongodb/postgesql按版本细分 1：mysql-5.1，2：mysql-5.5，3：percona-5.5，4：mysql-5.6，5：percona-5.6，6：mysql-5.7，7：percona-5.7，8：mariadb-10.0，9：mongodb-2.4，10：mongodb-2.6，11：mongodb-3.0，12：mongodb-3.2,13：postgresql-9.4，14：postgresql-9.6，14：postgresql-10.4
      *
@@ -151,11 +147,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
-
     /**
      * Port: 端口号，mysql默认3306，mongodb默认27017，postgresql默认5432
      *
@@ -171,11 +166,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 32T
      *
@@ -191,11 +185,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
-
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
@@ -211,11 +204,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId($paramGroupId)
+    public function setParamGroupId(int $paramGroupId)
     {
         $this->set("ParamGroupId", $paramGroupId);
     }
-
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      *
@@ -231,11 +223,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
-
     /**
      * ChargeType: Year， Month， Dynamic，Trial，默认: Month
      *
@@ -251,11 +242,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长，默认值1
      *
@@ -271,11 +261,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * AdminUser: 管理员帐户名，默认root
      *
@@ -291,11 +280,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $adminUser
      */
-    public function setAdminUser($adminUser)
+    public function setAdminUser(string $adminUser)
     {
         $this->set("AdminUser", $adminUser);
     }
-
     /**
      * BackupCount: 备份策略，每周备份数量，默认7次
      *
@@ -311,11 +299,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $backupCount
      */
-    public function setBackupCount($backupCount)
+    public function setBackupCount(int $backupCount)
     {
         $this->set("BackupCount", $backupCount);
     }
-
     /**
      * BackupTime: 备份策略，备份开始时间，单位小时计，默认1点
      *
@@ -331,11 +318,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
-
     /**
      * BackupDuration: 备份策略，备份时间间隔，单位小时计，默认24小时
      *
@@ -351,11 +337,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $backupDuration
      */
-    public function setBackupDuration($backupDuration)
+    public function setBackupDuration(int $backupDuration)
     {
         $this->set("BackupDuration", $backupDuration);
     }
-
     /**
      * BackupId: 备份id，如果指定，则表明从备份恢复实例
      *
@@ -371,11 +356,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(int $backupId)
     {
         $this->set("BackupId", $backupId);
     }
-
     /**
      * UseSSD: 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。
      *
@@ -391,11 +375,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
-
     /**
      * SSDType: SSD类型，可选值为"SATA"、“NVMe”，如果UseSSD为true ，则必选
      *
@@ -411,11 +394,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }
-
     /**
      * InstanceMode: UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal"
      *
@@ -431,11 +413,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
-
     /**
      * UDBCId: 专区ID信息（如果这个参数存在这说明是在专区中创建DB）
      *
@@ -451,11 +432,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $udbcId
      */
-    public function setUDBCId($udbcId)
+    public function setUDBCId(string $udbcId)
     {
         $this->set("UDBCId", $udbcId);
     }
-
     /**
      * CPU: cpu核数
      *
@@ -471,11 +451,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param int $cpu
      */
-    public function setCPU($cpu)
+    public function setCPU(int $cpu)
     {
         $this->set("CPU", $cpu);
     }
-
     /**
      * BackupZone: 跨可用区高可用备库所在可用区，参见 [可用区列表](../summary/regionlist.html)
      *
@@ -491,11 +470,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $backupZone
      */
-    public function setBackupZone($backupZone)
+    public function setBackupZone(string $backupZone)
     {
         $this->set("BackupZone", $backupZone);
     }
-
     /**
      * SubnetId: 子网ID
      *
@@ -511,11 +489,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * VPCId: VPC的ID
      *
@@ -531,11 +508,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * DisableSemisync: 是否开启异步高可用，默认不填，可置为true
      *
@@ -551,11 +527,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param boolean $disableSemisync
      */
-    public function setDisableSemisync($disableSemisync)
+    public function setDisableSemisync(bool $disableSemisync)
     {
         $this->set("DisableSemisync", $disableSemisync);
     }
-
     /**
      * ClusterRole: 当DB类型(DBTypeId)为mongodb时，需要指定mongo的角色，可选值为configsrv (配置节点)，shardsrv (数据节点)
      *
@@ -571,11 +546,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $clusterRole
      */
-    public function setClusterRole($clusterRole)
+    public function setClusterRole(string $clusterRole)
     {
         $this->set("ClusterRole", $clusterRole);
     }
-
     /**
      * HAArch: 高可用架构:1） haproxy（默认）: 当前仅支持mysql。2） sentinel: 基于vip和哨兵节点的架构，当前支持mysql和pg。
      *
@@ -591,11 +565,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $haArch
      */
-    public function setHAArch($haArch)
+    public function setHAArch(string $haArch)
     {
         $this->set("HAArch", $haArch);
     }
-
     /**
      * Tag: 实例所在的业务组名称
      *
@@ -611,11 +584,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * EnableIpV6: 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true
      *
@@ -631,11 +603,10 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param boolean $enableIpV6
      */
-    public function setEnableIpV6($enableIpV6)
+    public function setEnableIpV6(bool $enableIpV6)
     {
         $this->set("EnableIpV6", $enableIpV6);
     }
-
     /**
      * CouponId: 使用的代金券id
      *
@@ -651,7 +622,7 @@ class CreateUDBInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

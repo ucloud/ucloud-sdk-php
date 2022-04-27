@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class UpdateBackendAttributeRequest extends Request
         $this->markRequired("BackendId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -46,11 +47,10 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -66,11 +66,10 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ULBId: 负载均衡资源ID
      *
@@ -86,11 +85,10 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param string $ulbId
      */
-    public function setULBId($ulbId)
+    public function setULBId(string $ulbId)
     {
         $this->set("ULBId", $ulbId);
     }
-
     /**
      * BackendId: 后端资源实例的ID(ULB后端ID，非资源自身ID)
      *
@@ -106,11 +104,10 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param string $backendId
      */
-    public function setBackendId($backendId)
+    public function setBackendId(string $backendId)
     {
         $this->set("BackendId", $backendId);
     }
-
     /**
      * Port: 后端资源服务端口，取值范围[1-65535]
      *
@@ -126,11 +123,10 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
      *
@@ -146,11 +142,10 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param int $weight
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->set("Weight", $weight);
     }
-
     /**
      * Enabled: 后端实例状态开关
      *
@@ -166,11 +161,10 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param int $enabled
      */
-    public function setEnabled($enabled)
+    public function setEnabled(int $enabled)
     {
         $this->set("Enabled", $enabled);
     }
-
     /**
      * IsBackup: 是否为backup0：主rs1：备rs默认为0
      *
@@ -186,7 +180,7 @@ class UpdateBackendAttributeRequest extends Request
      *
      * @param int $isBackup
      */
-    public function setIsBackup($isBackup)
+    public function setIsBackup(int $isBackup)
     {
         $this->set("IsBackup", $isBackup);
     }

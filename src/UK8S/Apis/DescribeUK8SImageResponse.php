@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UK8S\Models\ImageInfo;
+
 use UCloud\UK8S\Models\ImageInfo;
 
 class DescribeUK8SImageResponse extends Response
 {
-    
 
     /**
      * ImageSet: 虚拟机可用镜像集合, 详见ImageInfo 数组
      *
-     * @return ImageInfo[]|null
+     * @return ImageInfoModel[]|null
      */
     public function getImageSet()
     {
@@ -37,7 +38,7 @@ class DescribeUK8SImageResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ImageInfo($item));
+            array_push($result, new ImageInfoModel($item));
         }
         return $result;
     }
@@ -45,7 +46,7 @@ class DescribeUK8SImageResponse extends Response
     /**
      * ImageSet: 虚拟机可用镜像集合, 详见ImageInfo 数组
      *
-     * @param ImageInfo[] $imageSet
+     * @param ImageInfoModel[] $imageSet
      */
     public function setImageSet(array $imageSet)
     {
@@ -55,11 +56,10 @@ class DescribeUK8SImageResponse extends Response
         }
         return $result;
     }
-
     /**
      * PHostImageSet: 物理机可用镜像集合, 详见ImageInfo 数组
      *
-     * @return ImageInfo[]|null
+     * @return ImageInfoModel[]|null
      */
     public function getPHostImageSet()
     {
@@ -69,7 +69,7 @@ class DescribeUK8SImageResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ImageInfo($item));
+            array_push($result, new ImageInfoModel($item));
         }
         return $result;
     }
@@ -77,7 +77,7 @@ class DescribeUK8SImageResponse extends Response
     /**
      * PHostImageSet: 物理机可用镜像集合, 详见ImageInfo 数组
      *
-     * @param ImageInfo[] $pHostImageSet
+     * @param ImageInfoModel[] $pHostImageSet
      */
     public function setPHostImageSet(array $pHostImageSet)
     {

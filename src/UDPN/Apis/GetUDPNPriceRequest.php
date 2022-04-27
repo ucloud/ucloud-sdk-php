@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class GetUDPNPriceRequest extends Request
         $this->markRequired("Bandwidth");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Peer1: 专线可用区1，支持地域：北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg, 洛杉矶：us-la， 华盛顿：us-ws， 东京：jpn-tky
      *
@@ -65,11 +65,10 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $peer1
      */
-    public function setPeer1($peer1)
+    public function setPeer1(string $peer1)
     {
         $this->set("Peer1", $peer1);
     }
-
     /**
      * Peer2: 专线可用区2，支持地域：北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg, 洛杉矶：us-la， 华盛顿：us-ws， 东京：jpn-tky
      *
@@ -85,11 +84,10 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $peer2
      */
-    public function setPeer2($peer2)
+    public function setPeer2(string $peer2)
     {
         $this->set("Peer2", $peer2);
     }
-
     /**
      * Bandwidth: 带宽信息
      *
@@ -105,11 +103,10 @@ class GetUDPNPriceRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * ChargeType: 计费类型
      *
@@ -125,11 +122,10 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长
      *
@@ -145,11 +141,10 @@ class GetUDPNPriceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * PayMode: PayMode，枚举值，Bandwidth：带宽；Traffic：流量  默认不填写：带宽
      *
@@ -165,7 +160,7 @@ class GetUDPNPriceRequest extends Request
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }

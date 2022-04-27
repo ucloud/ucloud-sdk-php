@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UEC\Models\ImageInfo;
 use UCloud\UEC\Models\DeployImageInfo;
 
 class GetUEcImageResponse extends Response
 {
-    
 
     /**
      * ImageList: 获取的镜像信息，具体参考下面ImageInfo
      *
-     * @return ImageInfo[]|null
+     * @return ImageInfoModel[]|null
      */
     public function getImageList()
     {
@@ -37,7 +39,7 @@ class GetUEcImageResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ImageInfo($item));
+            array_push($result, new ImageInfoModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class GetUEcImageResponse extends Response
     /**
      * ImageList: 获取的镜像信息，具体参考下面ImageInfo
      *
-     * @param ImageInfo[] $imageList
+     * @param ImageInfoModel[] $imageList
      */
     public function setImageList(array $imageList)
     {
@@ -55,7 +57,6 @@ class GetUEcImageResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 镜像总数
      *
@@ -71,7 +72,7 @@ class GetUEcImageResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

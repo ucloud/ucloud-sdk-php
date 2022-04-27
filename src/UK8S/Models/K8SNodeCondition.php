@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UK8S\Models\DescribeUK8SNodeResponse;
+
 class K8SNodeCondition extends Response
 {
-    
 
     /**
      * Type: Condition 类型，如 MemoryPressure、DiskPressure、PIDPressure、Ready
@@ -37,11 +40,10 @@ class K8SNodeCondition extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * Status: 状态，False、True
      *
@@ -57,11 +59,10 @@ class K8SNodeCondition extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * LastProbeTime: 最后一次上报状态的时间
      *
@@ -77,11 +78,10 @@ class K8SNodeCondition extends Response
      *
      * @param string $lastProbeTime
      */
-    public function setLastProbeTime($lastProbeTime)
+    public function setLastProbeTime(string $lastProbeTime)
     {
         $this->set("LastProbeTime", $lastProbeTime);
     }
-
     /**
      * LastTransitionTime: 最后一次状态转变时间
      *
@@ -97,11 +97,10 @@ class K8SNodeCondition extends Response
      *
      * @param string $lastTransitionTime
      */
-    public function setLastTransitionTime($lastTransitionTime)
+    public function setLastTransitionTime(string $lastTransitionTime)
     {
         $this->set("LastTransitionTime", $lastTransitionTime);
     }
-
     /**
      * Reason: 状态变化的原因
      *
@@ -117,11 +116,10 @@ class K8SNodeCondition extends Response
      *
      * @param string $reason
      */
-    public function setReason($reason)
+    public function setReason(string $reason)
     {
         $this->set("Reason", $reason);
     }
-
     /**
      * Message: 状态变化的描述信息
      *
@@ -137,7 +135,7 @@ class K8SNodeCondition extends Response
      *
      * @param string $message
      */
-    public function setMessage($message)
+    public function setMessage(string $message)
     {
         $this->set("Message", $message);
     }

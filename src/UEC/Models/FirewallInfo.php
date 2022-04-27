@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\RuleInfo;
+use UCloud\UEC\Models\DescribeUEcFirewallResponse;
+
 class FirewallInfo extends Response
 {
-    
 
     /**
      * FirewallId: 防火墙Id
@@ -37,11 +41,10 @@ class FirewallInfo extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
-
     /**
      * Name: 防火墙名称
      *
@@ -57,11 +60,10 @@ class FirewallInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -77,15 +79,14 @@ class FirewallInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * Rule: 防火墙规则组，详情参见RuleInfo
      *
-     * @return RuleInfo[]|null
+     * @return RuleInfoModel[]|null
      */
     public function getRule()
     {
@@ -95,7 +96,7 @@ class FirewallInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new RuleInfo($item));
+            array_push($result, new RuleInfoModel($item));
         }
         return $result;
     }
@@ -103,7 +104,7 @@ class FirewallInfo extends Response
     /**
      * Rule: 防火墙规则组，详情参见RuleInfo
      *
-     * @param RuleInfo[] $rule
+     * @param RuleInfoModel[] $rule
      */
     public function setRule(array $rule)
     {
@@ -113,7 +114,6 @@ class FirewallInfo extends Response
         }
         return $result;
     }
-
     /**
      * ResourceCount: 防火墙绑定资源数量
      *
@@ -129,11 +129,10 @@ class FirewallInfo extends Response
      *
      * @param int $resourceCount
      */
-    public function setResourceCount($resourceCount)
+    public function setResourceCount(int $resourceCount)
     {
         $this->set("ResourceCount", $resourceCount);
     }
-
     /**
      * Type: 防火墙组类型，枚举值为： "user defined", 用户自定义防火墙； "recommend web", 默认Web防火墙； "recommend non web", 默认非Web防火墙
      *
@@ -149,11 +148,10 @@ class FirewallInfo extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * Remark: 描述
      *
@@ -169,7 +167,7 @@ class FirewallInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

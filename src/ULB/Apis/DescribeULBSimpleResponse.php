@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\ULB\Models\ULBSimpleSet;
-use UCloud\ULB\Models\ULBIPSet;
-use UCloud\ULB\Models\FirewallSet;
 use UCloud\ULB\Models\LoggerSet;
+use UCloud\ULB\Models\FirewallSet;
+use UCloud\ULB\Models\ULBIPSet;
 
 class DescribeULBSimpleResponse extends Response
 {
-    
 
     /**
      * TotalCount: 满足条件的ULB总数
@@ -41,15 +43,14 @@ class DescribeULBSimpleResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: ULB列表，每项参数详见 ULBSimpleSet
      *
-     * @return ULBSimpleSet[]|null
+     * @return ULBSimpleSetModel[]|null
      */
     public function getDataSet()
     {
@@ -59,7 +60,7 @@ class DescribeULBSimpleResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ULBSimpleSet($item));
+            array_push($result, new ULBSimpleSetModel($item));
         }
         return $result;
     }
@@ -67,7 +68,7 @@ class DescribeULBSimpleResponse extends Response
     /**
      * DataSet: ULB列表，每项参数详见 ULBSimpleSet
      *
-     * @param ULBSimpleSet[] $dataSet
+     * @param ULBSimpleSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

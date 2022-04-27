@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class AssociateEIPWithShareBandwidthRequest extends Request
         $this->markRequired("ShareBandwidthId");
     }
 
-    
 
     /**
      * Region: 地域。
@@ -45,11 +46,10 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。
      *
@@ -65,11 +65,10 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * EIPIds: 要加入共享带宽的EIP的资源Id
      *
@@ -89,7 +88,6 @@ class AssociateEIPWithShareBandwidthRequest extends Request
     {
         $this->set("EIPIds", $eipIds);
     }
-
     /**
      * ShareBandwidthId: 共享带宽ID
      *
@@ -105,11 +103,10 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
-
     /**
      * IPVersion: 共享带宽类型，IPv4或者IPv6，不传默认IPv4
      *
@@ -125,7 +122,7 @@ class AssociateEIPWithShareBandwidthRequest extends Request
      *
      * @param string $ipVersion
      */
-    public function setIPVersion($ipVersion)
+    public function setIPVersion(string $ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }

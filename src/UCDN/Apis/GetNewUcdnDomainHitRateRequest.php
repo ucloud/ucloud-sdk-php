@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class GetNewUcdnDomainHitRateRequest extends Request
         parent::__construct(["Action" => "GetNewUcdnDomainHitRate"]);
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -42,11 +43,10 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Type: 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度）默认5分钟
      *
@@ -62,11 +62,10 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * DomainId: 域名id，创建域名时生成的id。默认全部域名
      *
@@ -86,7 +85,6 @@ class GetNewUcdnDomainHitRateRequest extends Request
     {
         $this->set("DomainId", $domainId);
     }
-
     /**
      * Areacode: 查询带宽区域 cn代表国内 abroad代表海外，只支持国内
      *
@@ -102,11 +100,10 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param string $areacode
      */
-    public function setAreacode($areacode)
+    public function setAreacode(string $areacode)
     {
         $this->set("Areacode", $areacode);
     }
-
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。如没有赋值，则返回缺少参 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
      *
@@ -122,11 +119,10 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      *
@@ -142,7 +138,7 @@ class GetNewUcdnDomainHitRateRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }

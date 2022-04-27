@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UFile\Models\UFileReportItem;
 use UCloud\UFile\Models\UFileTotalReportItem;
 use UCloud\UFile\Models\UFileDailyReportItem;
 
 class GetUFileDailyReportResponse extends Response
 {
-    
 
     /**
      * DataSet: 消费情况
      *
-     * @return UFileReportItem[]|null
+     * @return UFileReportItemModel[]|null
      */
     public function getDataSet()
     {
@@ -38,7 +40,7 @@ class GetUFileDailyReportResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UFileReportItem($item));
+            array_push($result, new UFileReportItemModel($item));
         }
         return $result;
     }
@@ -46,7 +48,7 @@ class GetUFileDailyReportResponse extends Response
     /**
      * DataSet: 消费情况
      *
-     * @param UFileReportItem[] $dataSet
+     * @param UFileReportItemModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

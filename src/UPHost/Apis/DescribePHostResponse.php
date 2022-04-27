@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UPHost\Models\PHostSet;
-use UCloud\UPHost\Models\PHostCPUSet;
 use UCloud\UPHost\Models\PHostDescDiskSet;
+use UCloud\UPHost\Models\PHostCPUSet;
 use UCloud\UPHost\Models\PHostIPSet;
 
 class DescribePHostResponse extends Response
 {
-    
 
     /**
      * TotalCount: 满足条件的PHost总数
@@ -41,15 +43,14 @@ class DescribePHostResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * PHostSet: PHost资源列表，参见 PHostSet
      *
-     * @return PHostSet[]|null
+     * @return PHostSetModel[]|null
      */
     public function getPHostSet()
     {
@@ -59,7 +60,7 @@ class DescribePHostResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new PHostSet($item));
+            array_push($result, new PHostSetModel($item));
         }
         return $result;
     }
@@ -67,7 +68,7 @@ class DescribePHostResponse extends Response
     /**
      * PHostSet: PHost资源列表，参见 PHostSet
      *
-     * @param PHostSet[] $pHostSet
+     * @param PHostSetModel[] $pHostSet
      */
     public function setPHostSet(array $pHostSet)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\USMS\Models\QueryUSMSSignatureResponse;
+use UCloud\USMS\Models\QueryUSMSVideoMessageSignatureResponse;
+
 class OutSignature extends Response
 {
-    
 
     /**
      * SigId: 短信签名ID
@@ -37,11 +41,10 @@ class OutSignature extends Response
      *
      * @param string $sigId
      */
-    public function setSigId($sigId)
+    public function setSigId(string $sigId)
     {
         $this->set("SigId", $sigId);
     }
-
     /**
      * SigContent: 短信签名内容
      *
@@ -57,11 +60,10 @@ class OutSignature extends Response
      *
      * @param string $sigContent
      */
-    public function setSigContent($sigContent)
+    public function setSigContent(string $sigContent)
     {
         $this->set("SigContent", $sigContent);
     }
-
     /**
      * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
      *
@@ -77,11 +79,10 @@ class OutSignature extends Response
      *
      * @param int $status
      */
-    public function setStatus($status)
+    public function setStatus(int $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * ErrDesc: 短信签名未通过审核原因
      *
@@ -97,7 +98,7 @@ class OutSignature extends Response
      *
      * @param string $errDesc
      */
-    public function setErrDesc($errDesc)
+    public function setErrDesc(string $errDesc)
     {
         $this->set("ErrDesc", $errDesc);
     }

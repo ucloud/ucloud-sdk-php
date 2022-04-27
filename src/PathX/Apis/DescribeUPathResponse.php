@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\PathX\Models\UPathInfo;
-use UCloud\PathX\Models\PathXUGAInfo;
 use UCloud\PathX\Models\OutPublicIpInfo;
+use UCloud\PathX\Models\PathXUGAInfo;
 
 class DescribeUPathResponse extends Response
 {
-    
 
     /**
      * UPathSet: 线路信息数组
      *
-     * @return UPathInfo[]|null
+     * @return UPathInfoModel[]|null
      */
     public function getUPathSet()
     {
@@ -38,7 +40,7 @@ class DescribeUPathResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UPathInfo($item));
+            array_push($result, new UPathInfoModel($item));
         }
         return $result;
     }
@@ -46,7 +48,7 @@ class DescribeUPathResponse extends Response
     /**
      * UPathSet: 线路信息数组
      *
-     * @param UPathInfo[] $uPathSet
+     * @param UPathInfoModel[] $uPathSet
      */
     public function setUPathSet(array $uPathSet)
     {

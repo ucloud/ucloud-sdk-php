@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateUSMSTemplateResponse extends Response
 {
-    
 
     /**
      * TemplateId: 短信模板ID（短信模板申请时的工单ID）
@@ -37,7 +38,7 @@ class CreateUSMSTemplateResponse extends Response
      *
      * @param string $templateId
      */
-    public function setTemplateId($templateId)
+    public function setTemplateId(string $templateId)
     {
         $this->set("TemplateId", $templateId);
     }

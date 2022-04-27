@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class CreateBandwidthPackageRequest extends Request
         $this->markRequired("TimeRange");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -46,11 +47,10 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Bandwidth: 带宽大小(单位Mbps), 取值范围[2,800] (最大值受地域限制)
      *
@@ -66,11 +66,10 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * EIPId: 所绑定弹性IP的资源ID
      *
@@ -86,11 +85,10 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
-
     /**
      * TimeRange: 带宽包有效时长, 取值范围为大于0的整数, 即该带宽包在EnableTime到 EnableTime+TimeRange时间段内生效
      *
@@ -106,11 +104,10 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $timeRange
      */
-    public function setTimeRange($timeRange)
+    public function setTimeRange(int $timeRange)
     {
         $this->set("TimeRange", $timeRange);
     }
-
     /**
      * EnableTime: 生效时间, 格式为 Unix timestamp, 默认为立即开通
      *
@@ -126,11 +123,10 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param int $enableTime
      */
-    public function setEnableTime($enableTime)
+    public function setEnableTime(int $enableTime)
     {
         $this->set("EnableTime", $enableTime);
     }
-
     /**
      * CouponId: 代金券ID
      *
@@ -146,7 +142,7 @@ class CreateBandwidthPackageRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

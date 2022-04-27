@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDB\Models\UDBParamGroupSet;
 use UCloud\UDB\Models\UDBParamMemberSet;
 
 class DescribeUDBParamGroupResponse extends Response
 {
-    
 
     /**
      * DataSet: 参数组列表 参照UDBParamGroupSet
      *
-     * @return UDBParamGroupSet[]|null
+     * @return UDBParamGroupSetModel[]|null
      */
     public function getDataSet()
     {
@@ -37,7 +39,7 @@ class DescribeUDBParamGroupResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UDBParamGroupSet($item));
+            array_push($result, new UDBParamGroupSetModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class DescribeUDBParamGroupResponse extends Response
     /**
      * DataSet: 参数组列表 参照UDBParamGroupSet
      *
-     * @param UDBParamGroupSet[] $dataSet
+     * @param UDBParamGroupSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {
@@ -55,7 +57,6 @@ class DescribeUDBParamGroupResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 参数组总数，列表操作时才会有该参数
      *
@@ -71,7 +72,7 @@ class DescribeUDBParamGroupResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

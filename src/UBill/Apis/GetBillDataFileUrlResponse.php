@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UBill\Apis;
 
 use UCloud\Core\Response\Response;
 
 class GetBillDataFileUrlResponse extends Response
 {
-    
 
     /**
      * FileUrl: 交易账单数据下载URL
@@ -37,11 +38,10 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @param string $fileUrl
      */
-    public function setFileUrl($fileUrl)
+    public function setFileUrl(string $fileUrl)
     {
         $this->set("FileUrl", $fileUrl);
     }
-
     /**
      * IsValid: 生成的 URL是否有效，即有对应数据文件
      *
@@ -57,7 +57,7 @@ class GetBillDataFileUrlResponse extends Response
      *
      * @param string $isValid
      */
-    public function setIsValid($isValid)
+    public function setIsValid(string $isValid)
     {
         $this->set("IsValid", $isValid);
     }

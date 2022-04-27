@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class DeleteCubePodRequest extends Request
         $this->markRequired("ProjectId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -44,11 +45,10 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -64,11 +64,10 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -84,11 +83,10 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Uid: cubeid和uid任意一个（必须）
      *
@@ -104,11 +102,10 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $uid
      */
-    public function setUid($uid)
+    public function setUid(string $uid)
     {
         $this->set("Uid", $uid);
     }
-
     /**
      * CubeId: cubeid和uid任意一个（必须）
      *
@@ -124,11 +121,10 @@ class DeleteCubePodRequest extends Request
      *
      * @param string $cubeId
      */
-    public function setCubeId($cubeId)
+    public function setCubeId(string $cubeId)
     {
         $this->set("CubeId", $cubeId);
     }
-
     /**
      * ReleaseEIP: 删除cube时是否释放绑定的EIP。默认为false。
      *
@@ -144,7 +140,7 @@ class DeleteCubePodRequest extends Request
      *
      * @param boolean $releaseEIP
      */
-    public function setReleaseEIP($releaseEIP)
+    public function setReleaseEIP(bool $releaseEIP)
     {
         $this->set("ReleaseEIP", $releaseEIP);
     }

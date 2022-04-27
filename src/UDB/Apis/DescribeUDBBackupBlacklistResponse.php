@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 
 class DescribeUDBBackupBlacklistResponse extends Response
 {
-    
 
     /**
      * Blacklist: DB的黑名单列表, db.%为指定库 dbname.tablename为指定表
@@ -37,7 +38,7 @@ class DescribeUDBBackupBlacklistResponse extends Response
      *
      * @param string $blacklist
      */
-    public function setBlacklist($blacklist)
+    public function setBlacklist(string $blacklist)
     {
         $this->set("Blacklist", $blacklist);
     }

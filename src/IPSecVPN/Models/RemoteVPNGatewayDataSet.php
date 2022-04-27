@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\IPSecVPN\Models\DescribeRemoteVPNGatewayResponse;
+
 class RemoteVPNGatewayDataSet extends Response
 {
-    
 
     /**
      * RemoteVPNGatewayId: 客户网关ID
@@ -37,11 +40,10 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId($remoteVPNGatewayId)
+    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
     {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }
-
     /**
      * RemoteVPNGatewayName: 客户网关名称
      *
@@ -57,11 +59,10 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $remoteVPNGatewayName
      */
-    public function setRemoteVPNGatewayName($remoteVPNGatewayName)
+    public function setRemoteVPNGatewayName(string $remoteVPNGatewayName)
     {
         $this->set("RemoteVPNGatewayName", $remoteVPNGatewayName);
     }
-
     /**
      * RemoteVPNGatewayAddr: 客户网关IP地址
      *
@@ -77,11 +78,10 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $remoteVPNGatewayAddr
      */
-    public function setRemoteVPNGatewayAddr($remoteVPNGatewayAddr)
+    public function setRemoteVPNGatewayAddr(string $remoteVPNGatewayAddr)
     {
         $this->set("RemoteVPNGatewayAddr", $remoteVPNGatewayAddr);
     }
-
     /**
      * Tag: 用户组
      *
@@ -97,11 +97,10 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Remark: 备注
      *
@@ -117,11 +116,10 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -137,11 +135,10 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * TunnelCount: 活跃的隧道数量
      *
@@ -157,7 +154,7 @@ class RemoteVPNGatewayDataSet extends Response
      *
      * @param int $tunnelCount
      */
-    public function setTunnelCount($tunnelCount)
+    public function setTunnelCount(int $tunnelCount)
     {
         $this->set("TunnelCount", $tunnelCount);
     }

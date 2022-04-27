@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class DescribeUEcFirewallRequest extends Request
         parent::__construct(["Action" => "DescribeUEcFirewall"]);
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -42,11 +43,10 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * FirewallId: 防火墙ID，默认为返回所有防火墙
      *
@@ -62,11 +62,10 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
-
     /**
      * ResourceId: 绑定防火墙组的虚拟机资源ID
      *
@@ -82,11 +81,10 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
-
     /**
      * Limit: 返回数据长度，默认为20
      *
@@ -102,11 +100,10 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
@@ -122,7 +119,7 @@ class DescribeUEcFirewallRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }

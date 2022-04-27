@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UNet\Models\EIPPayModeSet;
 
 class GetEIPPayModeResponse extends Response
 {
-    
 
     /**
      * EIPPayMode: EIP的计费模式, 参见 EIPPayModeSet
      *
-     * @return EIPPayModeSet[]|null
+     * @return EIPPayModeSetModel[]|null
      */
     public function getEIPPayMode()
     {
@@ -36,7 +38,7 @@ class GetEIPPayModeResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new EIPPayModeSet($item));
+            array_push($result, new EIPPayModeSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class GetEIPPayModeResponse extends Response
     /**
      * EIPPayMode: EIP的计费模式, 参见 EIPPayModeSet
      *
-     * @param EIPPayModeSet[] $eipPayMode
+     * @param EIPPayModeSetModel[] $eipPayMode
      */
     public function setEIPPayMode(array $eipPayMode)
     {

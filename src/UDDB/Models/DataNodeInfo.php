@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDDB\Models\SlaveInfo;
+use UCloud\UDDB\Models\ListUDDBInstanceResponse;
+use UCloud\UDDB\Models\DescribeUDDBInstanceResponse;
+use UCloud\UDDB\Models\DataSetUDDB;
+
 class DataNodeInfo extends Response
 {
-    
 
     /**
      * Id: 数据节点ID
@@ -37,11 +43,10 @@ class DataNodeInfo extends Response
      *
      * @param string $id
      */
-    public function setId($id)
+    public function setId(string $id)
     {
         $this->set("Id", $id);
     }
-
     /**
      * Memory: 数据节点的内存配置, 单位：MB
      *
@@ -57,11 +62,10 @@ class DataNodeInfo extends Response
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
-
     /**
      * DiskSpace: 数据节点的磁盘大小配置. 单位: GB
      *
@@ -77,11 +81,10 @@ class DataNodeInfo extends Response
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
-
     /**
      * SlaveCount: 数据节点的只读实例个数.
      *
@@ -97,11 +100,10 @@ class DataNodeInfo extends Response
      *
      * @param int $slaveCount
      */
-    public function setSlaveCount($slaveCount)
+    public function setSlaveCount(int $slaveCount)
     {
         $this->set("SlaveCount", $slaveCount);
     }
-
     /**
      * State: 数据分片状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中 Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
      *
@@ -117,15 +119,14 @@ class DataNodeInfo extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * SlaveInfos: 只读实例信息列表
      *
-     * @return SlaveInfo[]|null
+     * @return SlaveInfoModel[]|null
      */
     public function getSlaveInfos()
     {
@@ -135,7 +136,7 @@ class DataNodeInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new SlaveInfo($item));
+            array_push($result, new SlaveInfoModel($item));
         }
         return $result;
     }
@@ -143,7 +144,7 @@ class DataNodeInfo extends Response
     /**
      * SlaveInfos: 只读实例信息列表
      *
-     * @param SlaveInfo[] $slaveInfos
+     * @param SlaveInfoModel[] $slaveInfos
      */
     public function setSlaveInfos(array $slaveInfos)
     {
@@ -153,7 +154,6 @@ class DataNodeInfo extends Response
         }
         return $result;
     }
-
     /**
      * LastTransTaskId: 最近一次数据迁移任务id
      *
@@ -169,11 +169,10 @@ class DataNodeInfo extends Response
      *
      * @param string $lastTransTaskId
      */
-    public function setLastTransTaskId($lastTransTaskId)
+    public function setLastTransTaskId(string $lastTransTaskId)
     {
         $this->set("LastTransTaskId", $lastTransTaskId);
     }
-
     /**
      * CreateTime: 节点的创建时间
      *
@@ -189,7 +188,7 @@ class DataNodeInfo extends Response
      *
      * @param string $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(string $createTime)
     {
         $this->set("CreateTime", $createTime);
     }

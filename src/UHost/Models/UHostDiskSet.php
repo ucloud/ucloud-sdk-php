@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\DescribeUHostLiteResponse;
+use UCloud\UHost\Models\ArkUHostInstanceSet;
+use UCloud\UHost\Models\DescribeUHostInstanceResponse;
+use UCloud\UHost\Models\GetArkUHostNotPaidListResponse;
+use UCloud\UHost\Models\UHostInstanceSet;
+
 class UHostDiskSet extends Response
 {
-    
 
     /**
      * DiskType: 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。
@@ -37,11 +44,10 @@ class UHostDiskSet extends Response
      *
      * @param string $diskType
      */
-    public function setDiskType($diskType)
+    public function setDiskType(string $diskType)
     {
         $this->set("DiskType", $diskType);
     }
-
     /**
      * IsBoot: 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。
      *
@@ -57,11 +63,10 @@ class UHostDiskSet extends Response
      *
      * @param string $isBoot
      */
-    public function setIsBoot($isBoot)
+    public function setIsBoot(string $isBoot)
     {
         $this->set("IsBoot", $isBoot);
     }
-
     /**
      * Encrypted: "true": 加密盘 "false"：非加密盘
      *
@@ -77,11 +82,10 @@ class UHostDiskSet extends Response
      *
      * @param string $encrypted
      */
-    public function setEncrypted($encrypted)
+    public function setEncrypted(string $encrypted)
     {
         $this->set("Encrypted", $encrypted);
     }
-
     /**
      * Type: 【建议不再使用】磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk
      *
@@ -97,11 +101,10 @@ class UHostDiskSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * DiskId: 磁盘ID
      *
@@ -117,11 +120,10 @@ class UHostDiskSet extends Response
      *
      * @param string $diskId
      */
-    public function setDiskId($diskId)
+    public function setDiskId(string $diskId)
     {
         $this->set("DiskId", $diskId);
     }
-
     /**
      * Name: UDisk名字（仅当磁盘是UDisk时返回）
      *
@@ -137,11 +139,10 @@ class UHostDiskSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Drive: 磁盘盘符
      *
@@ -157,11 +158,10 @@ class UHostDiskSet extends Response
      *
      * @param string $drive
      */
-    public function setDrive($drive)
+    public function setDrive(string $drive)
     {
         $this->set("Drive", $drive);
     }
-
     /**
      * Size: 磁盘大小，单位: GB
      *
@@ -177,11 +177,10 @@ class UHostDiskSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * BackupType: 备份方案。若开通了数据方舟，则为DATAARK
      *
@@ -197,7 +196,7 @@ class UHostDiskSet extends Response
      *
      * @param string $backupType
      */
-    public function setBackupType($backupType)
+    public function setBackupType(string $backupType)
     {
         $this->set("BackupType", $backupType);
     }

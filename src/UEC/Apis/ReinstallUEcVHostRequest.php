@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class ReinstallUEcVHostRequest extends Request
         $this->markRequired("ImageId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -44,11 +45,10 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * NodeId: 虚拟机资源ID
      *
@@ -64,11 +64,10 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
-
     /**
      * ImageId: 镜像ID
      *
@@ -84,11 +83,10 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * KeepData: 是否保留数据盘数据， 0-不保留，1-保留，默认为1
      *
@@ -104,11 +102,10 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param int $keepData
      */
-    public function setKeepData($keepData)
+    public function setKeepData(int $keepData)
     {
         $this->set("KeepData", $keepData);
     }
-
     /**
      * Password: 节点密码
      *
@@ -124,11 +121,10 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
-
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
@@ -144,7 +140,7 @@ class ReinstallUEcVHostRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize($sysDiskSize)
+    public function setSysDiskSize(int $sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }

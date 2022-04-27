@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnDomainConfigV2Response;
+use UCloud\UCDN\Models\AccessControlConf;
+use UCloud\UCDN\Models\DomainConfigInfo;
+use UCloud\UCDN\Models\GetUcdnDomainConfigResponse;
+
 class ReferConf extends Response
 {
-    
 
     /**
      * ReferType: Refer防盗链配置  0白名单，1黑名单
@@ -37,11 +43,10 @@ class ReferConf extends Response
      *
      * @param int $referType
      */
-    public function setReferType($referType)
+    public function setReferType(int $referType)
     {
         $this->set("ReferType", $referType);
     }
-
     /**
      * NullRefer: ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问
      *
@@ -57,11 +62,10 @@ class ReferConf extends Response
      *
      * @param int $nullRefer
      */
-    public function setNullRefer($nullRefer)
+    public function setNullRefer(int $nullRefer)
     {
         $this->set("NullRefer", $nullRefer);
     }
-
     /**
      * ReferList: Refer防盗链规则列表，支持正则表达式
      *

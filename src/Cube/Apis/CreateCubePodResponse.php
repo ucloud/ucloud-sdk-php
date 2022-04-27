@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateCubePodResponse extends Response
 {
-    
 
     /**
      * Pod: base64编码的yaml
@@ -37,11 +38,10 @@ class CreateCubePodResponse extends Response
      *
      * @param string $pod
      */
-    public function setPod($pod)
+    public function setPod(string $pod)
     {
         $this->set("Pod", $pod);
     }
-
     /**
      * CubeId: cube的资源Id
      *
@@ -57,7 +57,7 @@ class CreateCubePodResponse extends Response
      *
      * @param string $cubeId
      */
-    public function setCubeId($cubeId)
+    public function setCubeId(string $cubeId)
     {
         $this->set("CubeId", $cubeId);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UHost\Models\KeyPairDesc;
 
 class DescribeUHostKeyPairsResponse extends Response
 {
-    
 
     /**
      * KeyPairs: 密钥对信息集合
      *
-     * @return KeyPairDesc[]|null
+     * @return KeyPairDescModel[]|null
      */
     public function getKeyPairs()
     {
@@ -36,7 +38,7 @@ class DescribeUHostKeyPairsResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new KeyPairDesc($item));
+            array_push($result, new KeyPairDescModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeUHostKeyPairsResponse extends Response
     /**
      * KeyPairs: 密钥对信息集合
      *
-     * @param KeyPairDesc[] $keyPairs
+     * @param KeyPairDescModel[] $keyPairs
      */
     public function setKeyPairs(array $keyPairs)
     {
@@ -54,7 +56,6 @@ class DescribeUHostKeyPairsResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 密钥对总数
      *
@@ -70,7 +71,7 @@ class DescribeUHostKeyPairsResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

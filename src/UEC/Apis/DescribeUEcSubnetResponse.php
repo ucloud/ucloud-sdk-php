@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UEC\Models\SubnetInfo;
 
 class DescribeUEcSubnetResponse extends Response
 {
-    
 
     /**
      * SubnetList: 子网信息列表
      *
-     * @return SubnetInfo[]|null
+     * @return SubnetInfoModel[]|null
      */
     public function getSubnetList()
     {
@@ -36,7 +38,7 @@ class DescribeUEcSubnetResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new SubnetInfo($item));
+            array_push($result, new SubnetInfoModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeUEcSubnetResponse extends Response
     /**
      * SubnetList: 子网信息列表
      *
-     * @param SubnetInfo[] $subnetList
+     * @param SubnetInfoModel[] $subnetList
      */
     public function setSubnetList(array $subnetList)
     {

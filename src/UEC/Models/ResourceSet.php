@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\IDCCutInfo;
+use UCloud\UEC\Models\GetUEcIDCCutInfoResponse;
+
 class ResourceSet extends Response
 {
-    
 
     /**
      * NodeId: 节点id
@@ -37,11 +41,10 @@ class ResourceSet extends Response
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
-
     /**
      * OuterIps: 机器外网ip集合
      *

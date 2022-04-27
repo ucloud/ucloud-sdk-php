@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
 
 class GetUcdnDomain95BandwidthV2Response extends Response
 {
-    
 
     /**
      * Time: 查询时间期间的95带宽时间点  Unix时间戳
@@ -37,11 +38,10 @@ class GetUcdnDomain95BandwidthV2Response extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
-
     /**
      * CdnBandwidth: 查询期间的CDN的95带宽值，单位Mbps
      *
@@ -57,7 +57,7 @@ class GetUcdnDomain95BandwidthV2Response extends Response
      *
      * @param float $cdnBandwidth
      */
-    public function setCdnBandwidth($cdnBandwidth)
+    public function setCdnBandwidth(float $cdnBandwidth)
     {
         $this->set("CdnBandwidth", $cdnBandwidth);
     }

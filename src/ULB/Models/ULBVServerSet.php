@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\ULB\Models\PolicyBackendSet;
+use UCloud\ULB\Models\ULBBackendSet;
+use UCloud\ULB\Models\ULBSSLSet;
+use UCloud\ULB\Models\SSLBindedTargetSet;
+use UCloud\ULB\Models\DescribeVServerResponse;
+use UCloud\ULB\Models\ULBPolicySet;
+use UCloud\ULB\Models\DescribeULBResponse;
+use UCloud\ULB\Models\ULBSet;
+
 class ULBVServerSet extends Response
 {
-    
 
     /**
      * MonitorType: 健康检查类型，枚举值：Port -> 端口检查；Path -> 路径检查；Ping -> Ping探测， Customize -> UDP检查请求代理型默认值为Port，其中TCP协议仅支持Port，其他协议支持Port和Path; 报文转发型TCP协议仅支持Port，UDP协议支持Ping、Port和Customize
@@ -37,11 +47,29 @@ class ULBVServerSet extends Response
      *
      * @param string $monitorType
      */
-    public function setMonitorType($monitorType)
+    public function setMonitorType(string $monitorType)
     {
         $this->set("MonitorType", $monitorType);
     }
+    /**
+     * ULBId: 负载均衡实例的Id
+     *
+     * @return string|null
+     */
+    public function getULBId()
+    {
+        return $this->get("ULBId");
+    }
 
+    /**
+     * ULBId: 负载均衡实例的Id
+     *
+     * @param string $ulbId
+     */
+    public function setULBId(string $ulbId)
+    {
+        $this->set("ULBId", $ulbId);
+    }
     /**
      * Domain: 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查域名
      *
@@ -57,11 +85,10 @@ class ULBVServerSet extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
-
     /**
      * Path: 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查路径
      *
@@ -77,11 +104,10 @@ class ULBVServerSet extends Response
      *
      * @param string $path
      */
-    public function setPath($path)
+    public function setPath(string $path)
     {
         $this->set("Path", $path);
     }
-
     /**
      * RequestMsg: 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查发出的请求报文
      *
@@ -97,11 +123,10 @@ class ULBVServerSet extends Response
      *
      * @param string $requestMsg
      */
-    public function setRequestMsg($requestMsg)
+    public function setRequestMsg(string $requestMsg)
     {
         $this->set("RequestMsg", $requestMsg);
     }
-
     /**
      * ResponseMsg: 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查请求应收到的响应报文
      *
@@ -117,11 +142,10 @@ class ULBVServerSet extends Response
      *
      * @param string $responseMsg
      */
-    public function setResponseMsg($responseMsg)
+    public function setResponseMsg(string $responseMsg)
     {
         $this->set("ResponseMsg", $responseMsg);
     }
-
     /**
      * VServerId: VServer实例的Id
      *
@@ -137,11 +161,10 @@ class ULBVServerSet extends Response
      *
      * @param string $vServerId
      */
-    public function setVServerId($vServerId)
+    public function setVServerId(string $vServerId)
     {
         $this->set("VServerId", $vServerId);
     }
-
     /**
      * VServerName: VServer实例的名字
      *
@@ -157,11 +180,10 @@ class ULBVServerSet extends Response
      *
      * @param string $vServerName
      */
-    public function setVServerName($vServerName)
+    public function setVServerName(string $vServerName)
     {
         $this->set("VServerName", $vServerName);
     }
-
     /**
      * Protocol: VServer实例的协议。 枚举值为：HTTP，TCP，UDP，HTTPS。
      *
@@ -177,11 +199,10 @@ class ULBVServerSet extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
-
     /**
      * FrontendPort: VServer服务端口
      *
@@ -197,11 +218,10 @@ class ULBVServerSet extends Response
      *
      * @param int $frontendPort
      */
-    public function setFrontendPort($frontendPort)
+    public function setFrontendPort(int $frontendPort)
     {
         $this->set("FrontendPort", $frontendPort);
     }
-
     /**
      * Method: VServer负载均衡的模式，枚举值：Roundrobin -> 轮询;Source -> 源地址；ConsistentHash -> 一致性哈希；SourcePort -> 源地址（计算端口）；ConsistentHashPort -> 一致性哈希（计算端口）。
      *
@@ -217,11 +237,10 @@ class ULBVServerSet extends Response
      *
      * @param string $method
      */
-    public function setMethod($method)
+    public function setMethod(string $method)
     {
         $this->set("Method", $method);
     }
-
     /**
      * PersistenceType: VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。
      *
@@ -237,11 +256,10 @@ class ULBVServerSet extends Response
      *
      * @param string $persistenceType
      */
-    public function setPersistenceType($persistenceType)
+    public function setPersistenceType(string $persistenceType)
     {
         $this->set("PersistenceType", $persistenceType);
     }
-
     /**
      * PersistenceInfo: 根据PersistenceType确定： None或ServerInsert，此字段为空； UserDefined，此字段展示用户自定义会话string。
      *
@@ -257,11 +275,10 @@ class ULBVServerSet extends Response
      *
      * @param string $persistenceInfo
      */
-    public function setPersistenceInfo($persistenceInfo)
+    public function setPersistenceInfo(string $persistenceInfo)
     {
         $this->set("PersistenceInfo", $persistenceInfo);
     }
-
     /**
      * ClientTimeout: 空闲连接的回收时间，单位：秒。
      *
@@ -277,11 +294,10 @@ class ULBVServerSet extends Response
      *
      * @param int $clientTimeout
      */
-    public function setClientTimeout($clientTimeout)
+    public function setClientTimeout(int $clientTimeout)
     {
         $this->set("ClientTimeout", $clientTimeout);
     }
-
     /**
      * Status: VServer的运行状态。枚举值： 0 -> rs全部运行正常;1 -> rs全部运行异常；2 -> rs部分运行异常。
      *
@@ -297,15 +313,14 @@ class ULBVServerSet extends Response
      *
      * @param int $status
      */
-    public function setStatus($status)
+    public function setStatus(int $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * SSLSet: VServer绑定的SSL证书信息，具体结构见下方 ULBSSLSet。
      *
-     * @return ULBSSLSet[]|null
+     * @return ULBSSLSetModel[]|null
      */
     public function getSSLSet()
     {
@@ -315,7 +330,7 @@ class ULBVServerSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ULBSSLSet($item));
+            array_push($result, new ULBSSLSetModel($item));
         }
         return $result;
     }
@@ -323,7 +338,7 @@ class ULBVServerSet extends Response
     /**
      * SSLSet: VServer绑定的SSL证书信息，具体结构见下方 ULBSSLSet。
      *
-     * @param ULBSSLSet[] $sslSet
+     * @param ULBSSLSetModel[] $sslSet
      */
     public function setSSLSet(array $sslSet)
     {
@@ -333,11 +348,10 @@ class ULBVServerSet extends Response
         }
         return $result;
     }
-
     /**
      * BackendSet: 后端资源信息列表，具体结构见下方 ULBBackendSet
      *
-     * @return ULBBackendSet[]|null
+     * @return ULBBackendSetModel[]|null
      */
     public function getBackendSet()
     {
@@ -347,7 +361,7 @@ class ULBVServerSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ULBBackendSet($item));
+            array_push($result, new ULBBackendSetModel($item));
         }
         return $result;
     }
@@ -355,7 +369,7 @@ class ULBVServerSet extends Response
     /**
      * BackendSet: 后端资源信息列表，具体结构见下方 ULBBackendSet
      *
-     * @param ULBBackendSet[] $backendSet
+     * @param ULBBackendSetModel[] $backendSet
      */
     public function setBackendSet(array $backendSet)
     {
@@ -365,7 +379,6 @@ class ULBVServerSet extends Response
         }
         return $result;
     }
-
     /**
      * ListenType: 监听器类型，枚举值为: RequestProxy -> 请求代理；PacketsTransmit -> 报文转发
      *
@@ -381,15 +394,14 @@ class ULBVServerSet extends Response
      *
      * @param string $listenType
      */
-    public function setListenType($listenType)
+    public function setListenType(string $listenType)
     {
         $this->set("ListenType", $listenType);
     }
-
     /**
      * PolicySet: 内容转发信息列表，具体结构见下方 ULBPolicySet
      *
-     * @return ULBPolicySet[]|null
+     * @return ULBPolicySetModel[]|null
      */
     public function getPolicySet()
     {
@@ -399,7 +411,7 @@ class ULBVServerSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ULBPolicySet($item));
+            array_push($result, new ULBPolicySetModel($item));
         }
         return $result;
     }
@@ -407,7 +419,7 @@ class ULBVServerSet extends Response
     /**
      * PolicySet: 内容转发信息列表，具体结构见下方 ULBPolicySet
      *
-     * @param ULBPolicySet[] $policySet
+     * @param ULBPolicySetModel[] $policySet
      */
     public function setPolicySet(array $policySet)
     {

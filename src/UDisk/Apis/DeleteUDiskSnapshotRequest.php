@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class DeleteUDiskSnapshotRequest extends Request
         $this->markRequired("Zone");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -44,11 +45,10 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -64,11 +64,10 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -84,11 +83,10 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * SnapshotId: 快照Id(填写后不能填写UDisk Id)
      *
@@ -104,11 +102,10 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $snapshotId
      */
-    public function setSnapshotId($snapshotId)
+    public function setSnapshotId(string $snapshotId)
     {
         $this->set("SnapshotId", $snapshotId);
     }
-
     /**
      * UDiskId: UDisk Id,删除该盘所创建出来的所有快照(填写后不能填写SnapshotId)
      *
@@ -124,7 +121,7 @@ class DeleteUDiskSnapshotRequest extends Request
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }

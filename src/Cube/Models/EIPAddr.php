@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\Cube\Models\GetCubeExtendInfoResponse;
+use UCloud\Cube\Models\CubeExtendInfo;
+use UCloud\Cube\Models\EIPSet;
+
 class EIPAddr extends Response
 {
-    
 
     /**
      * IP: IP地址
@@ -37,11 +42,10 @@ class EIPAddr extends Response
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }
-
     /**
      * OperatorName: 线路名称BGP或者internalation
      *
@@ -57,7 +61,7 @@ class EIPAddr extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UMem\Models\UMemSpaceAddressSet;
+use UCloud\UMem\Models\UMemSlaveDataSet;
+use UCloud\UMem\Models\DescribeUMemResponse;
+
 class UMemDataSet extends Response
 {
-    
 
     /**
      * Zone: 实例所在可用区，或者master redis所在可用区，参见 [可用区列表](../summary/regionlist.html)
@@ -37,11 +42,10 @@ class UMemDataSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * OwnSlave: 是否拥有只读Slave“Yes” 包含“No” 不包含
      *
@@ -57,15 +61,14 @@ class UMemDataSet extends Response
      *
      * @param string $ownSlave
      */
-    public function setOwnSlave($ownSlave)
+    public function setOwnSlave(string $ownSlave)
     {
         $this->set("OwnSlave", $ownSlave);
     }
-
     /**
      * DataSet: UMEM实例列表 UMemSlaveDataSet 如果没有slave，则没有该字段
      *
-     * @return UMemSlaveDataSet[]|null
+     * @return UMemSlaveDataSetModel[]|null
      */
     public function getDataSet()
     {
@@ -75,7 +78,7 @@ class UMemDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UMemSlaveDataSet($item));
+            array_push($result, new UMemSlaveDataSetModel($item));
         }
         return $result;
     }
@@ -83,7 +86,7 @@ class UMemDataSet extends Response
     /**
      * DataSet: UMEM实例列表 UMemSlaveDataSet 如果没有slave，则没有该字段
      *
-     * @param UMemSlaveDataSet[] $dataSet
+     * @param UMemSlaveDataSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {
@@ -93,7 +96,6 @@ class UMemDataSet extends Response
         }
         return $result;
     }
-
     /**
      * Role: 表示实例是主库还是从库,master,slave仅主备redis返回该项参数
      *
@@ -109,11 +111,10 @@ class UMemDataSet extends Response
      *
      * @param string $role
      */
-    public function setRole($role)
+    public function setRole(string $role)
     {
         $this->set("Role", $role);
     }
-
     /**
      * RewriteTime: 主备redis和分布式redis运维时间0  //0点1  //1点以此类推单机版memcache不返回该项
      *
@@ -129,11 +130,10 @@ class UMemDataSet extends Response
      *
      * @param int $rewriteTime
      */
-    public function setRewriteTime($rewriteTime)
+    public function setRewriteTime(int $rewriteTime)
     {
         $this->set("RewriteTime", $rewriteTime);
     }
-
     /**
      * VPCId: vpc
      *
@@ -149,11 +149,10 @@ class UMemDataSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: 子网
      *
@@ -169,11 +168,10 @@ class UMemDataSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * ResourceId: 资源ID
      *
@@ -189,11 +187,10 @@ class UMemDataSet extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
-
     /**
      * Name: 资源名称
      *
@@ -209,11 +206,10 @@ class UMemDataSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -229,11 +225,10 @@ class UMemDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpireTime: 到期时间
      *
@@ -249,11 +244,10 @@ class UMemDataSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * Type: 空间类型:single(无热备),double(热备)
      *
@@ -269,11 +263,10 @@ class UMemDataSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * Protocol: 协议类型: memcache, redis
      *
@@ -289,11 +282,10 @@ class UMemDataSet extends Response
      *
      * @param string $protocol
      */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol)
     {
         $this->set("Protocol", $protocol);
     }
-
     /**
      * Size: 容量单位GB
      *
@@ -309,11 +301,10 @@ class UMemDataSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * UsedSize: 使用量单位MB
      *
@@ -329,11 +320,10 @@ class UMemDataSet extends Response
      *
      * @param int $usedSize
      */
-    public function setUsedSize($usedSize)
+    public function setUsedSize(int $usedSize)
     {
         $this->set("UsedSize", $usedSize);
     }
-
     /**
      * State: 实例状态                                  Starting                  // 创建中       Creating                  // 初始化中     CreateFail                // 创建失败     Fail                      // 创建失败     Deleting                  // 删除中       DeleteFail                // 删除失败     Running                   // 运行         Resizing                  // 容量调整中   ResizeFail                // 容量调整失败 Configing                 // 配置中       ConfigFail                // 配置失败Restarting                // 重启中SetPasswordFail    //设置密码失败
      *
@@ -349,11 +339,10 @@ class UMemDataSet extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * ChargeType: 计费模式，Year, Month, Dynamic, Trial
      *
@@ -369,15 +358,14 @@ class UMemDataSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Address: IP端口信息请，参见UMemSpaceAddressSet
      *
-     * @return UMemSpaceAddressSet[]|null
+     * @return UMemSpaceAddressSetModel[]|null
      */
     public function getAddress()
     {
@@ -387,7 +375,7 @@ class UMemDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UMemSpaceAddressSet($item));
+            array_push($result, new UMemSpaceAddressSetModel($item));
         }
         return $result;
     }
@@ -395,7 +383,7 @@ class UMemDataSet extends Response
     /**
      * Address: IP端口信息请，参见UMemSpaceAddressSet
      *
-     * @param UMemSpaceAddressSet[] $address
+     * @param UMemSpaceAddressSetModel[] $address
      */
     public function setAddress(array $address)
     {
@@ -405,7 +393,6 @@ class UMemDataSet extends Response
         }
         return $result;
     }
-
     /**
      * Tag: 业务组名称
      *
@@ -421,11 +408,10 @@ class UMemDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * ResourceType: distributed: 分布式版Redis,或者分布式Memcache；single：主备版Redis,或者单机Memcache；performance：高性能版
      *
@@ -441,11 +427,10 @@ class UMemDataSet extends Response
      *
      * @param string $resourceType
      */
-    public function setResourceType($resourceType)
+    public function setResourceType(string $resourceType)
     {
         $this->set("ResourceType", $resourceType);
     }
-
     /**
      * ConfigId: 节点的配置ID
      *
@@ -461,11 +446,10 @@ class UMemDataSet extends Response
      *
      * @param string $configId
      */
-    public function setConfigId($configId)
+    public function setConfigId(string $configId)
     {
         $this->set("ConfigId", $configId);
     }
-
     /**
      * AutoBackup: 是否需要自动备份,enable,disable
      *
@@ -481,11 +465,10 @@ class UMemDataSet extends Response
      *
      * @param string $autoBackup
      */
-    public function setAutoBackup($autoBackup)
+    public function setAutoBackup(string $autoBackup)
     {
         $this->set("AutoBackup", $autoBackup);
     }
-
     /**
      * BackupTime: 自动备份开始时间,单位小时计,范围[0-23]
      *
@@ -501,11 +484,10 @@ class UMemDataSet extends Response
      *
      * @param int $backupTime
      */
-    public function setBackupTime($backupTime)
+    public function setBackupTime(int $backupTime)
     {
         $this->set("BackupTime", $backupTime);
     }
-
     /**
      * HighAvailability: 是否开启高可用,enable,disable
      *
@@ -521,11 +503,10 @@ class UMemDataSet extends Response
      *
      * @param string $highAvailability
      */
-    public function setHighAvailability($highAvailability)
+    public function setHighAvailability(string $highAvailability)
     {
         $this->set("HighAvailability", $highAvailability);
     }
-
     /**
      * Version: Redis版本信息
      *
@@ -541,11 +522,10 @@ class UMemDataSet extends Response
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
-
     /**
      * SlaveZone: 跨机房URedis，slave redis所在可用区，参见 [可用区列表](../summary/regionlist.html)
      *
@@ -561,7 +541,7 @@ class UMemDataSet extends Response
      *
      * @param string $slaveZone
      */
-    public function setSlaveZone($slaveZone)
+    public function setSlaveZone(string $slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
     }

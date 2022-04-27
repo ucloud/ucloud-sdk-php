@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\AdvancedConf;
+use UCloud\UCDN\Models\CacheKeyInfo;
+use UCloud\UCDN\Models\GetUcdnDomainConfigResponse;
+use UCloud\UCDN\Models\ReferConf;
+use UCloud\UCDN\Models\AccessControlConf;
+use UCloud\UCDN\Models\GetUcdnDomainConfigV2Response;
+use UCloud\UCDN\Models\OriginConf;
+use UCloud\UCDN\Models\CacheAllConfig;
+use UCloud\UCDN\Models\CacheConf;
+
 class DomainConfigInfo extends Response
 {
-    
 
     /**
      * AreaCode: 查询带宽区域 cn代表国内 abroad代表海外 all表示全部区域
@@ -37,11 +48,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $areaCode
      */
-    public function setAreaCode($areaCode)
+    public function setAreaCode(string $areaCode)
     {
         $this->set("AreaCode", $areaCode);
     }
-
     /**
      * CdnType: 加速域名的业务类型，web代表网站，stream代表视频 ，download 代表下载
      *
@@ -57,11 +67,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $cdnType
      */
-    public function setCdnType($cdnType)
+    public function setCdnType(string $cdnType)
     {
         $this->set("CdnType", $cdnType);
     }
-
     /**
      * Status: 创建的加速域名的当前的状态。check代表审核中，checkSuccess代表审核通过，checkFail代表审核失败，enable代表加速中，disable代表停止加速，delete代表删除加速enableing代表正在开启加速，disableing代表正在停止加速中，deleteing代表删除中
      *
@@ -77,11 +86,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * Cname: cdn域名。创建加速域名生成的cdn域名，用于设置CNAME记录
      *
@@ -97,11 +105,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $cname
      */
-    public function setCname($cname)
+    public function setCname(string $cname)
     {
         $this->set("Cname", $cname);
     }
-
     /**
      * CreateTime: 域名创建的时间。格式：时间戳
      *
@@ -117,11 +124,10 @@ class DomainConfigInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * TestUrl: 测试url。用于域名创建加速时的测试
      *
@@ -137,11 +143,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $testUrl
      */
-    public function setTestUrl($testUrl)
+    public function setTestUrl(string $testUrl)
     {
         $this->set("TestUrl", $testUrl);
     }
-
     /**
      * HttpsStatusCn: 国内https状态 enableing-开启中 fail-开启失败 enable-启用 disable-未启用
      *
@@ -157,11 +162,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $httpsStatusCn
      */
-    public function setHttpsStatusCn($httpsStatusCn)
+    public function setHttpsStatusCn(string $httpsStatusCn)
     {
         $this->set("HttpsStatusCn", $httpsStatusCn);
     }
-
     /**
      * HttpsStatusAbroad: 国外https状态 enableing-开启中  fail-开启失败 enable-启用 disable-未启用
      *
@@ -177,11 +181,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $httpsStatusAbroad
      */
-    public function setHttpsStatusAbroad($httpsStatusAbroad)
+    public function setHttpsStatusAbroad(string $httpsStatusAbroad)
     {
         $this->set("HttpsStatusAbroad", $httpsStatusAbroad);
     }
-
     /**
      * CertNameCn: 国内证书名称
      *
@@ -197,11 +200,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $certNameCn
      */
-    public function setCertNameCn($certNameCn)
+    public function setCertNameCn(string $certNameCn)
     {
         $this->set("CertNameCn", $certNameCn);
     }
-
     /**
      * CertNameAbroad: 国外证书名称
      *
@@ -217,11 +219,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $certNameAbroad
      */
-    public function setCertNameAbroad($certNameAbroad)
+    public function setCertNameAbroad(string $certNameAbroad)
     {
         $this->set("CertNameAbroad", $certNameAbroad);
     }
-
     /**
      * Tag: 业务组：Default
      *
@@ -237,11 +238,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * DomainId: 域名Id
      *
@@ -257,11 +257,10 @@ class DomainConfigInfo extends Response
      *
      * @param string $domainId
      */
-    public function setDomainId($domainId)
+    public function setDomainId(string $domainId)
     {
         $this->set("DomainId", $domainId);
     }
-
     /**
      * Domain: 域名
      *
@@ -277,87 +276,83 @@ class DomainConfigInfo extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
-
     /**
      * OriginConf: 源站配置 参考OriginConf
      *
-     * @return OriginConf|null
+     * @return OriginConfModel|null
      */
     public function getOriginConf()
     {
-        return new OriginConf($this->get("OriginConf"));
+        return new OriginConfModel($this->get("OriginConf"));
     }
 
     /**
      * OriginConf: 源站配置 参考OriginConf
      *
-     * @param OriginConf $originConf
+     * @param OriginConfModel $originConf
      */
-    public function setOriginConf(array $originConf)
+    public function setOriginConf(OriginConfModel $originConf)
     {
         $this->set("OriginConf", $originConf->getAll());
     }
-
     /**
      * AccessControlConf: 访问控制配置 参考AccessControlConf
      *
-     * @return AccessControlConf|null
+     * @return AccessControlConfModel|null
      */
     public function getAccessControlConf()
     {
-        return new AccessControlConf($this->get("AccessControlConf"));
+        return new AccessControlConfModel($this->get("AccessControlConf"));
     }
 
     /**
      * AccessControlConf: 访问控制配置 参考AccessControlConf
      *
-     * @param AccessControlConf $accessControlConf
+     * @param AccessControlConfModel $accessControlConf
      */
-    public function setAccessControlConf(array $accessControlConf)
+    public function setAccessControlConf(AccessControlConfModel $accessControlConf)
     {
         $this->set("AccessControlConf", $accessControlConf->getAll());
     }
-
     /**
      * CacheConf: 缓存配置 参考CacheAllConfig
      *
-     * @return CacheAllConfig|null
+     * @return CacheAllConfigModel|null
      */
     public function getCacheConf()
     {
-        return new CacheAllConfig($this->get("CacheConf"));
+        return new CacheAllConfigModel($this->get("CacheConf"));
     }
 
     /**
      * CacheConf: 缓存配置 参考CacheAllConfig
      *
-     * @param CacheAllConfig $cacheConf
+     * @param CacheAllConfigModel $cacheConf
      */
-    public function setCacheConf(array $cacheConf)
+    public function setCacheConf(CacheAllConfigModel $cacheConf)
     {
         $this->set("CacheConf", $cacheConf->getAll());
     }
-
     /**
      * AdvancedConf: 高级配置 参考AdvancedConf
      *
-     * @return AdvancedConf|null
+     * @return AdvancedConfModel|null
      */
     public function getAdvancedConf()
     {
-        return new AdvancedConf($this->get("AdvancedConf"));
+        return new AdvancedConfModel($this->get("AdvancedConf"));
     }
 
     /**
      * AdvancedConf: 高级配置 参考AdvancedConf
      *
-     * @param AdvancedConf $advancedConf
+     * @param AdvancedConfModel $advancedConf
      */
-    public function setAdvancedConf(array $advancedConf)
+    public function setAdvancedConf(AdvancedConfModel $advancedConf)
     {
         $this->set("AdvancedConf", $advancedConf->getAll());
     }

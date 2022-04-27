@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\DescribeUEcVHostISPResponse;
+
 class NodeIspList extends Response
 {
-    
 
     /**
      * Province: 省份
@@ -37,11 +40,10 @@ class NodeIspList extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
-
     /**
      * City: 城市
      *
@@ -57,11 +59,10 @@ class NodeIspList extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
-
     /**
      * LineType: 线路类型
      *
@@ -77,11 +78,10 @@ class NodeIspList extends Response
      *
      * @param string $lineType
      */
-    public function setLineType($lineType)
+    public function setLineType(string $lineType)
     {
         $this->set("LineType", $lineType);
     }
-
     /**
      * IspName: 机房运营商名称
      *
@@ -97,11 +97,10 @@ class NodeIspList extends Response
      *
      * @param string $ispName
      */
-    public function setIspName($ispName)
+    public function setIspName(string $ispName)
     {
         $this->set("IspName", $ispName);
     }
-
     /**
      * IdcName: 机房名称
      *
@@ -117,7 +116,7 @@ class NodeIspList extends Response
      *
      * @param string $idcName
      */
-    public function setIdcName($idcName)
+    public function setIdcName(string $idcName)
     {
         $this->set("IdcName", $idcName);
     }

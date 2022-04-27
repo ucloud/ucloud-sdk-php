@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UFile\Models\UFileReportItem;
+use UCloud\UFile\Models\GetUFileBucketDailyReportResponse;
+use UCloud\UFile\Models\GetUFileDailyReportResponse;
+
 class UFileTotalReportItem extends Response
 {
-    
 
     /**
      * Flow: 下载流量：单位byte；国内无此字段
@@ -37,11 +42,10 @@ class UFileTotalReportItem extends Response
      *
      * @param float $flow
      */
-    public function setFlow($flow)
+    public function setFlow(float $flow)
     {
         $this->set("Flow", $flow);
     }
-
     /**
      * IdleFlow: 闲时流量；单位byte；海外无此字段
      *
@@ -57,11 +61,10 @@ class UFileTotalReportItem extends Response
      *
      * @param float $idleFlow
      */
-    public function setIdleFlow($idleFlow)
+    public function setIdleFlow(float $idleFlow)
     {
         $this->set("IdleFlow", $idleFlow);
     }
-
     /**
      * BusyFlow: 忙时流量；单位byte；海外无此字段
      *
@@ -77,11 +80,10 @@ class UFileTotalReportItem extends Response
      *
      * @param float $busyFlow
      */
-    public function setBusyFlow($busyFlow)
+    public function setBusyFlow(float $busyFlow)
     {
         $this->set("BusyFlow", $busyFlow);
     }
-
     /**
      * CdnFlow: cdn回源流量;单位byte
      *
@@ -97,13 +99,12 @@ class UFileTotalReportItem extends Response
      *
      * @param float $cdnFlow
      */
-    public function setCdnFlow($cdnFlow)
+    public function setCdnFlow(float $cdnFlow)
     {
         $this->set("CdnFlow", $cdnFlow);
     }
-
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @return float|null
      */
@@ -113,11 +114,11 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @param float $apiTimes
      */
-    public function setApiTimes($apiTimes)
+    public function setApiTimes(float $apiTimes)
     {
         $this->set("ApiTimes", $apiTimes);
     }

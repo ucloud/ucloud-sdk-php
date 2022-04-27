@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\Cube\Models\CubeExtendInfo;
 use UCloud\Cube\Models\EIPSet;
 use UCloud\Cube\Models\EIPAddr;
 
 class GetCubeExtendInfoResponse extends Response
 {
-    
 
     /**
      * ExtendInfo: CubeExtendInfo
      *
-     * @return CubeExtendInfo[]|null
+     * @return CubeExtendInfoModel[]|null
      */
     public function getExtendInfo()
     {
@@ -38,7 +40,7 @@ class GetCubeExtendInfoResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CubeExtendInfo($item));
+            array_push($result, new CubeExtendInfoModel($item));
         }
         return $result;
     }
@@ -46,7 +48,7 @@ class GetCubeExtendInfoResponse extends Response
     /**
      * ExtendInfo: CubeExtendInfo
      *
-     * @param CubeExtendInfo[] $extendInfo
+     * @param CubeExtendInfoModel[] $extendInfo
      */
     public function setExtendInfo(array $extendInfo)
     {

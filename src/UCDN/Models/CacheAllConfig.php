@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\CacheKeyInfo;
+use UCloud\UCDN\Models\GetUcdnDomainConfigResponse;
+use UCloud\UCDN\Models\CacheConf;
+use UCloud\UCDN\Models\DomainConfigInfo;
+use UCloud\UCDN\Models\GetUcdnDomainConfigV2Response;
+
 class CacheAllConfig extends Response
 {
-    
 
     /**
      * CacheHost: 缓存Host，不同的域名可以配置为同一个CacheHost来实现缓存共享，默认为加速域名
@@ -37,15 +44,14 @@ class CacheAllConfig extends Response
      *
      * @param string $cacheHost
      */
-    public function setCacheHost($cacheHost)
+    public function setCacheHost(string $cacheHost)
     {
         $this->set("CacheHost", $cacheHost);
     }
-
     /**
      * CacheList: 缓存配置列表，参见CacheConf
      *
-     * @return CacheConf[]|null
+     * @return CacheConfModel[]|null
      */
     public function getCacheList()
     {
@@ -55,7 +61,7 @@ class CacheAllConfig extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CacheConf($item));
+            array_push($result, new CacheConfModel($item));
         }
         return $result;
     }
@@ -63,7 +69,7 @@ class CacheAllConfig extends Response
     /**
      * CacheList: 缓存配置列表，参见CacheConf
      *
-     * @param CacheConf[] $cacheList
+     * @param CacheConfModel[] $cacheList
      */
     public function setCacheList(array $cacheList)
     {
@@ -73,11 +79,10 @@ class CacheAllConfig extends Response
         }
         return $result;
     }
-
     /**
      * HttpCodeCacheList: 状态码缓存配置列表，参见CacheConf
      *
-     * @return CacheConf[]|null
+     * @return CacheConfModel[]|null
      */
     public function getHttpCodeCacheList()
     {
@@ -87,7 +92,7 @@ class CacheAllConfig extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CacheConf($item));
+            array_push($result, new CacheConfModel($item));
         }
         return $result;
     }
@@ -95,7 +100,7 @@ class CacheAllConfig extends Response
     /**
      * HttpCodeCacheList: 状态码缓存配置列表，参见CacheConf
      *
-     * @param CacheConf[] $httpCodeCacheList
+     * @param CacheConfModel[] $httpCodeCacheList
      */
     public function setHttpCodeCacheList(array $httpCodeCacheList)
     {
@@ -105,11 +110,10 @@ class CacheAllConfig extends Response
         }
         return $result;
     }
-
     /**
      * CacheKeyList: 忽略参数缓存配置列表，参见CacheKeyInfo
      *
-     * @return CacheKeyInfo[]|null
+     * @return CacheKeyInfoModel[]|null
      */
     public function getCacheKeyList()
     {
@@ -119,7 +123,7 @@ class CacheAllConfig extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CacheKeyInfo($item));
+            array_push($result, new CacheKeyInfoModel($item));
         }
         return $result;
     }
@@ -127,7 +131,7 @@ class CacheAllConfig extends Response
     /**
      * CacheKeyList: 忽略参数缓存配置列表，参见CacheKeyInfo
      *
-     * @param CacheKeyInfo[] $cacheKeyList
+     * @param CacheKeyInfoModel[] $cacheKeyList
      */
     public function setCacheKeyList(array $cacheKeyList)
     {

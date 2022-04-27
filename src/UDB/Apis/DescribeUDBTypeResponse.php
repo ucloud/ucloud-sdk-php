@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDB\Models\UDBTypeSet;
 
 class DescribeUDBTypeResponse extends Response
 {
-    
 
     /**
      * DataSet: DB类型列表 参数见 UDBTypeSet
      *
-     * @return UDBTypeSet[]|null
+     * @return UDBTypeSetModel[]|null
      */
     public function getDataSet()
     {
@@ -36,7 +38,7 @@ class DescribeUDBTypeResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UDBTypeSet($item));
+            array_push($result, new UDBTypeSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeUDBTypeResponse extends Response
     /**
      * DataSet: DB类型列表 参数见 UDBTypeSet
      *
-     * @param UDBTypeSet[] $dataSet
+     * @param UDBTypeSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

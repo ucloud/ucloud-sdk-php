@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\DescribeBandwidthPackageResponse;
+use UCloud\UNet\Models\DescribeShareBandwidthResponse;
+use UCloud\UNet\Models\EIPSetData;
+use UCloud\UNet\Models\UnetBandwidthPackageSet;
+use UCloud\UNet\Models\EIPSet;
+use UCloud\UNet\Models\GetEIPByVMIdResponse;
+use UCloud\UNet\Models\UnetShareBandwidthSet;
+
 class EIPAddrSet extends Response
 {
-    
 
     /**
      * OperatorName: 运营商信息, 枚举值为:  BGP: BGP; International: 国际.
@@ -37,11 +46,10 @@ class EIPAddrSet extends Response
      *
      * @param string $operatorName
      */
-    public function setOperatorName($operatorName)
+    public function setOperatorName(string $operatorName)
     {
         $this->set("OperatorName", $operatorName);
     }
-
     /**
      * IP: 弹性IP地址
      *
@@ -57,7 +65,7 @@ class EIPAddrSet extends Response
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }

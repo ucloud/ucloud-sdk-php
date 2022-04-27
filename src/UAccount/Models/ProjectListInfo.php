@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UAccount\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UAccount\Models\GetProjectListResponse;
+
 class ProjectListInfo extends Response
 {
-    
 
     /**
      * ProjectId: 项目ID
@@ -37,11 +40,10 @@ class ProjectListInfo extends Response
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ProjectName: 项目名称
      *
@@ -57,11 +59,10 @@ class ProjectListInfo extends Response
      *
      * @param string $projectName
      */
-    public function setProjectName($projectName)
+    public function setProjectName(string $projectName)
     {
         $this->set("ProjectName", $projectName);
     }
-
     /**
      * CreateTime: 创建时间(Unix时间戳)
      *
@@ -77,11 +78,10 @@ class ProjectListInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * IsDefault: 是否为默认项目
      *
@@ -97,11 +97,10 @@ class ProjectListInfo extends Response
      *
      * @param boolean $isDefault
      */
-    public function setIsDefault($isDefault)
+    public function setIsDefault(bool $isDefault)
     {
         $this->set("IsDefault", $isDefault);
     }
-
     /**
      * ResourceCount: 项目下资源数量（已废弃，不建议使用）
      *
@@ -117,11 +116,10 @@ class ProjectListInfo extends Response
      *
      * @param int $resourceCount
      */
-    public function setResourceCount($resourceCount)
+    public function setResourceCount(int $resourceCount)
     {
         $this->set("ResourceCount", $resourceCount);
     }
-
     /**
      * MemberCount: 项目下成员数量
      *
@@ -137,11 +135,10 @@ class ProjectListInfo extends Response
      *
      * @param int $memberCount
      */
-    public function setMemberCount($memberCount)
+    public function setMemberCount(int $memberCount)
     {
         $this->set("MemberCount", $memberCount);
     }
-
     /**
      * ParentId: 父项目ID（已废弃）
      *
@@ -157,11 +154,10 @@ class ProjectListInfo extends Response
      *
      * @param string $parentId
      */
-    public function setParentId($parentId)
+    public function setParentId(string $parentId)
     {
         $this->set("ParentId", $parentId);
     }
-
     /**
      * ParentName: 父项目名称（已废弃）
      *
@@ -177,7 +173,7 @@ class ProjectListInfo extends Response
      *
      * @param string $parentName
      */
-    public function setParentName($parentName)
+    public function setParentName(string $parentName)
     {
         $this->set("ParentName", $parentName);
     }

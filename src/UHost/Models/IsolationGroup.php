@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\SpreadInfo;
+use UCloud\UHost\Models\DescribeIsolationGroupResponse;
+
 class IsolationGroup extends Response
 {
-    
 
     /**
      * GroupName: 硬件隔离组名称
@@ -37,11 +41,10 @@ class IsolationGroup extends Response
      *
      * @param string $groupName
      */
-    public function setGroupName($groupName)
+    public function setGroupName(string $groupName)
     {
         $this->set("GroupName", $groupName);
     }
-
     /**
      * GroupId: 硬件隔离组id
      *
@@ -57,15 +60,14 @@ class IsolationGroup extends Response
      *
      * @param string $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(string $groupId)
     {
         $this->set("GroupId", $groupId);
     }
-
     /**
      * SpreadInfoSet: 每个可用区中的机器数量。参见数据结构SpreadInfo。
      *
-     * @return SpreadInfo[]|null
+     * @return SpreadInfoModel[]|null
      */
     public function getSpreadInfoSet()
     {
@@ -75,7 +77,7 @@ class IsolationGroup extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new SpreadInfo($item));
+            array_push($result, new SpreadInfoModel($item));
         }
         return $result;
     }
@@ -83,7 +85,7 @@ class IsolationGroup extends Response
     /**
      * SpreadInfoSet: 每个可用区中的机器数量。参见数据结构SpreadInfo。
      *
-     * @param SpreadInfo[] $spreadInfoSet
+     * @param SpreadInfoModel[] $spreadInfoSet
      */
     public function setSpreadInfoSet(array $spreadInfoSet)
     {
@@ -93,7 +95,6 @@ class IsolationGroup extends Response
         }
         return $result;
     }
-
     /**
      * Remark: 备注
      *
@@ -109,7 +110,7 @@ class IsolationGroup extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class GetUEcIDCVHostDataRequest extends Request
         $this->markRequired("Type");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -44,11 +45,10 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * NodeId: 节点资源id；n为0，1，2...
      *
@@ -68,7 +68,6 @@ class GetUEcIDCVHostDataRequest extends Request
     {
         $this->set("NodeId", $nodeId);
     }
-
     /**
      * Type: 监控数据类型；n为0,1,2,3,4...,9
      *
@@ -88,7 +87,6 @@ class GetUEcIDCVHostDataRequest extends Request
     {
         $this->set("Type", $type);
     }
-
     /**
      * BeginTime: 开始时间戳
      *
@@ -104,11 +102,10 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 结束时间戳
      *
@@ -124,7 +121,7 @@ class GetUEcIDCVHostDataRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }

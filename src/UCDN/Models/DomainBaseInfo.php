@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnDomainInfoListResponse;
+
 class DomainBaseInfo extends Response
 {
-    
 
     /**
      * Domain: 域名
@@ -37,11 +40,10 @@ class DomainBaseInfo extends Response
      *
      * @param string $domain
      */
-    public function setDomain($domain)
+    public function setDomain(string $domain)
     {
         $this->set("Domain", $domain);
     }
-
     /**
      * DomainId: 域名的资源id
      *
@@ -57,7 +59,7 @@ class DomainBaseInfo extends Response
      *
      * @param string $domainId
      */
-    public function setDomainId($domainId)
+    public function setDomainId(string $domainId)
     {
         $this->set("DomainId", $domainId);
     }

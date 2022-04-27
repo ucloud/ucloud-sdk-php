@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UMem\Models\URedisVersionSet;
 
 class DescribeURedisVersionResponse extends Response
 {
-    
 
     /**
      * DataSet: 组列表 参见 URedisVersionSet
      *
-     * @return URedisVersionSet[]|null
+     * @return URedisVersionSetModel[]|null
      */
     public function getDataSet()
     {
@@ -36,7 +38,7 @@ class DescribeURedisVersionResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new URedisVersionSet($item));
+            array_push($result, new URedisVersionSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeURedisVersionResponse extends Response
     /**
      * DataSet: 组列表 参见 URedisVersionSet
      *
-     * @param URedisVersionSet[] $dataSet
+     * @param URedisVersionSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {
@@ -54,7 +56,6 @@ class DescribeURedisVersionResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 总版本个数
      *
@@ -70,7 +71,7 @@ class DescribeURedisVersionResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

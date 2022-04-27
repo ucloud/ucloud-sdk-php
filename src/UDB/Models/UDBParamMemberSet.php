@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDB\Models\UDBParamGroupSet;
+use UCloud\UDB\Models\DescribeUDBParamGroupResponse;
+
 class UDBParamMemberSet extends Response
 {
-    
 
     /**
      * Key: 参数名称
@@ -37,11 +41,10 @@ class UDBParamMemberSet extends Response
      *
      * @param string $key
      */
-    public function setKey($key)
+    public function setKey(string $key)
     {
         $this->set("Key", $key);
     }
-
     /**
      * Value: 参数值
      *
@@ -57,11 +60,10 @@ class UDBParamMemberSet extends Response
      *
      * @param string $value
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->set("Value", $value);
     }
-
     /**
      * ValueType: 参数值应用类型，取值范围为{0,10,20,30},各值 代表意义为 0-unknown、10-int、20-string、 30-bool
      *
@@ -77,11 +79,10 @@ class UDBParamMemberSet extends Response
      *
      * @param int $valueType
      */
-    public function setValueType($valueType)
+    public function setValueType(int $valueType)
     {
         $this->set("ValueType", $valueType);
     }
-
     /**
      * AllowedVal: 允许的值(根据参数类型，用分隔符表示)
      *
@@ -97,11 +98,10 @@ class UDBParamMemberSet extends Response
      *
      * @param string $allowedVal
      */
-    public function setAllowedVal($allowedVal)
+    public function setAllowedVal(string $allowedVal)
     {
         $this->set("AllowedVal", $allowedVal);
     }
-
     /**
      * ApplyType: 参数值应用类型,取值范围为{0,10,20}，各值代表 意义为0-unknown、10-static、20-dynamic
      *
@@ -117,11 +117,10 @@ class UDBParamMemberSet extends Response
      *
      * @param int $applyType
      */
-    public function setApplyType($applyType)
+    public function setApplyType(int $applyType)
     {
         $this->set("ApplyType", $applyType);
     }
-
     /**
      * Modifiable: 是否可更改，默认为false
      *
@@ -137,11 +136,10 @@ class UDBParamMemberSet extends Response
      *
      * @param boolean $modifiable
      */
-    public function setModifiable($modifiable)
+    public function setModifiable(bool $modifiable)
     {
         $this->set("Modifiable", $modifiable);
     }
-
     /**
      * FormatType: 允许值的格式类型，取值范围为{0,10,20}，意义分 别为PVFT_UNKOWN=0,PVFT_RANGE=10, PVFT_ENUM=20
      *
@@ -157,7 +155,7 @@ class UDBParamMemberSet extends Response
      *
      * @param int $formatType
      */
-    public function setFormatType($formatType)
+    public function setFormatType(int $formatType)
     {
         $this->set("FormatType", $formatType);
     }

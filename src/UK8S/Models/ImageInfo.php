@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UK8S\Models\DescribeUK8SImageResponse;
+
 class ImageInfo extends Response
 {
-    
 
     /**
      * ZoneId: 可用区 Id
@@ -37,11 +40,10 @@ class ImageInfo extends Response
      *
      * @param int $zoneId
      */
-    public function setZoneId($zoneId)
+    public function setZoneId(int $zoneId)
     {
         $this->set("ZoneId", $zoneId);
     }
-
     /**
      * ImageId: 镜像 Id
      *
@@ -57,11 +59,10 @@ class ImageInfo extends Response
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * ImageName: 镜像名称
      *
@@ -77,11 +78,10 @@ class ImageInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
-
     /**
      * NotSupportGPU: 该镜像是否支持GPU机型，枚举值[true:不支持，false:支持]。
      *
@@ -97,7 +97,7 @@ class ImageInfo extends Response
      *
      * @param boolean $notSupportGPU
      */
-    public function setNotSupportGPU($notSupportGPU)
+    public function setNotSupportGPU(bool $notSupportGPU)
     {
         $this->set("NotSupportGPU", $notSupportGPU);
     }

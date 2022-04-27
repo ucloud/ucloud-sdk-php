@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\ULB\Models\ULBSimpleSet;
+use UCloud\ULB\Models\DescribeULBSimpleResponse;
+use UCloud\ULB\Models\DescribeULBResponse;
+use UCloud\ULB\Models\ULBSet;
+
 class FirewallSet extends Response
 {
-    
 
     /**
      * FirewallName: 防火墙名称
@@ -37,11 +43,10 @@ class FirewallSet extends Response
      *
      * @param string $firewallName
      */
-    public function setFirewallName($firewallName)
+    public function setFirewallName(string $firewallName)
     {
         $this->set("FirewallName", $firewallName);
     }
-
     /**
      * FirewallId: 防火墙ID
      *
@@ -57,7 +62,7 @@ class FirewallSet extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }

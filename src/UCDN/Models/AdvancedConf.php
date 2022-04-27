@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnDomainConfigResponse;
+use UCloud\UCDN\Models\GetUcdnDomainConfigV2Response;
+use UCloud\UCDN\Models\DomainConfigInfo;
+
 class AdvancedConf extends Response
 {
-    
 
     /**
      * HttpClientHeader: 客户端响应http头列表
@@ -41,7 +46,6 @@ class AdvancedConf extends Response
     {
         $this->set("HttpClientHeader", $httpClientHeader);
     }
-
     /**
      * HttpOriginHeader: 源站http头列表
      *
@@ -61,7 +65,6 @@ class AdvancedConf extends Response
     {
         $this->set("HttpOriginHeader", $httpOriginHeader);
     }
-
     /**
      * Http2Https: http转https回源 true是，false否
      *
@@ -77,7 +80,7 @@ class AdvancedConf extends Response
      *
      * @param boolean $http2Https
      */
-    public function setHttp2Https($http2Https)
+    public function setHttp2Https(bool $http2Https)
     {
         $this->set("Http2Https", $http2Https);
     }

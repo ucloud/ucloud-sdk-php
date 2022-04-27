@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UHost\Models\UHostPriceSet;
 
 class GetUHostInstancePriceResponse extends Response
 {
-    
 
     /**
      * PriceSet: 价格列表 UHostPriceSet
      *
-     * @return UHostPriceSet[]|null
+     * @return UHostPriceSetModel[]|null
      */
     public function getPriceSet()
     {
@@ -36,7 +38,7 @@ class GetUHostInstancePriceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UHostPriceSet($item));
+            array_push($result, new UHostPriceSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class GetUHostInstancePriceResponse extends Response
     /**
      * PriceSet: 价格列表 UHostPriceSet
      *
-     * @param UHostPriceSet[] $priceSet
+     * @param UHostPriceSetModel[] $priceSet
      */
     public function setPriceSet(array $priceSet)
     {

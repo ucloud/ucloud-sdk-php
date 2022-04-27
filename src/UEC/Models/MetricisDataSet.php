@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\MonitorInfo;
+use UCloud\UEC\Models\GetUEcHolderMetricsResponse;
+
 class MetricisDataSet extends Response
 {
-    
 
     /**
      * CPUUtilization: cpu利用率（详情参考MonitorInfo）
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getCPUUtilization()
     {
@@ -35,7 +39,7 @@ class MetricisDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -43,7 +47,7 @@ class MetricisDataSet extends Response
     /**
      * CPUUtilization: cpu利用率（详情参考MonitorInfo）
      *
-     * @param MonitorInfo[] $cpuUtilization
+     * @param MonitorInfoModel[] $cpuUtilization
      */
     public function setCPUUtilization(array $cpuUtilization)
     {
@@ -53,11 +57,10 @@ class MetricisDataSet extends Response
         }
         return $result;
     }
-
     /**
      * MemUtilization: 内存使用率（详情参考MonitorInfo）
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getMemUtilization()
     {
@@ -67,7 +70,7 @@ class MetricisDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -75,7 +78,7 @@ class MetricisDataSet extends Response
     /**
      * MemUtilization: 内存使用率（详情参考MonitorInfo）
      *
-     * @param MonitorInfo[] $memUtilization
+     * @param MonitorInfoModel[] $memUtilization
      */
     public function setMemUtilization(array $memUtilization)
     {
@@ -85,11 +88,10 @@ class MetricisDataSet extends Response
         }
         return $result;
     }
-
     /**
      * NetPacketOut: 网卡出包数（详情参考MonitorInfo）
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getNetPacketOut()
     {
@@ -99,7 +101,7 @@ class MetricisDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -107,7 +109,7 @@ class MetricisDataSet extends Response
     /**
      * NetPacketOut: 网卡出包数（详情参考MonitorInfo）
      *
-     * @param MonitorInfo[] $netPacketOut
+     * @param MonitorInfoModel[] $netPacketOut
      */
     public function setNetPacketOut(array $netPacketOut)
     {
@@ -117,11 +119,10 @@ class MetricisDataSet extends Response
         }
         return $result;
     }
-
     /**
      * NetPacketIn: 网卡入包数（详情参考MonitorInfo）
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getNetPacketIn()
     {
@@ -131,7 +132,7 @@ class MetricisDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -139,7 +140,7 @@ class MetricisDataSet extends Response
     /**
      * NetPacketIn: 网卡入包数（详情参考MonitorInfo）
      *
-     * @param MonitorInfo[] $netPacketIn
+     * @param MonitorInfoModel[] $netPacketIn
      */
     public function setNetPacketIn(array $netPacketIn)
     {
@@ -149,11 +150,10 @@ class MetricisDataSet extends Response
         }
         return $result;
     }
-
     /**
      * NICOut: 网卡出带宽（详情参考MonitorInfo）
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getNICOut()
     {
@@ -163,7 +163,7 @@ class MetricisDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -171,7 +171,7 @@ class MetricisDataSet extends Response
     /**
      * NICOut: 网卡出带宽（详情参考MonitorInfo）
      *
-     * @param MonitorInfo[] $nicOut
+     * @param MonitorInfoModel[] $nicOut
      */
     public function setNICOut(array $nicOut)
     {
@@ -181,11 +181,10 @@ class MetricisDataSet extends Response
         }
         return $result;
     }
-
     /**
      * NICIn: 网卡入带宽（详情参考MonitorInfo）
      *
-     * @return MonitorInfo[]|null
+     * @return MonitorInfoModel[]|null
      */
     public function getNICIn()
     {
@@ -195,7 +194,7 @@ class MetricisDataSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MonitorInfo($item));
+            array_push($result, new MonitorInfoModel($item));
         }
         return $result;
     }
@@ -203,7 +202,7 @@ class MetricisDataSet extends Response
     /**
      * NICIn: 网卡入带宽（详情参考MonitorInfo）
      *
-     * @param MonitorInfo[] $nicIn
+     * @param MonitorInfoModel[] $nicIn
      */
     public function setNICIn(array $nicIn)
     {

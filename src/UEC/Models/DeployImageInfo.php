@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\GetUEcImageResponse;
+use UCloud\UEC\Models\ImageInfo;
+
 class DeployImageInfo extends Response
 {
-    
 
     /**
      * IdcId: 机房ID
@@ -37,11 +41,10 @@ class DeployImageInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * State: 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中
      *
@@ -57,7 +60,7 @@ class DeployImageInfo extends Response
      *
      * @param int $state
      */
-    public function setState($state)
+    public function setState(int $state)
     {
         $this->set("State", $state);
     }

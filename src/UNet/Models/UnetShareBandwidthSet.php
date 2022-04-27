@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\EIPAddrSet;
+use UCloud\UNet\Models\DescribeShareBandwidthResponse;
+use UCloud\UNet\Models\EIPSetData;
+
 class UnetShareBandwidthSet extends Response
 {
-    
 
     /**
      * IPVersion: 共享带宽类型
@@ -37,11 +42,10 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $ipVersion
      */
-    public function setIPVersion($ipVersion)
+    public function setIPVersion(string $ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
     }
-
     /**
      * ShareBandwidth: 共享带宽值(预付费)/共享带宽峰值(后付费), 单位Mbps
      *
@@ -57,11 +61,10 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $shareBandwidth
      */
-    public function setShareBandwidth($shareBandwidth)
+    public function setShareBandwidth(int $shareBandwidth)
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
-
     /**
      * ShareBandwidthId: 共享带宽的资源ID
      *
@@ -77,11 +80,10 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $shareBandwidthId
      */
-    public function setShareBandwidthId($shareBandwidthId)
+    public function setShareBandwidthId(string $shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
-
     /**
      * ChargeType: 付费方式, 预付费:Year 按年,Month 按月,Dynamic 按需;后付费:PostPay(按月)
      *
@@ -97,11 +99,10 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * CreateTime: 创建时间, 格式为Unix Timestamp
      *
@@ -117,11 +118,10 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpireTime: 过期时间, 格式为Unix Timestamp
      *
@@ -137,15 +137,14 @@ class UnetShareBandwidthSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * EIPSet: EIP信息,详情见 EIPSetData
      *
-     * @return EIPSetData[]|null
+     * @return EIPSetDataModel[]|null
      */
     public function getEIPSet()
     {
@@ -155,7 +154,7 @@ class UnetShareBandwidthSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new EIPSetData($item));
+            array_push($result, new EIPSetDataModel($item));
         }
         return $result;
     }
@@ -163,7 +162,7 @@ class UnetShareBandwidthSet extends Response
     /**
      * EIPSet: EIP信息,详情见 EIPSetData
      *
-     * @param EIPSetData[] $eipSet
+     * @param EIPSetDataModel[] $eipSet
      */
     public function setEIPSet(array $eipSet)
     {
@@ -173,7 +172,6 @@ class UnetShareBandwidthSet extends Response
         }
         return $result;
     }
-
     /**
      * Name: 共享带宽名称
      *
@@ -189,7 +187,7 @@ class UnetShareBandwidthSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }

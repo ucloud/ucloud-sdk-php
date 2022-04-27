@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\GetUcdnDomainLogResponse;
+use UCloud\UCDN\Models\LogSetList;
+
 class LogSetInfo extends Response
 {
-    
 
     /**
      * Time: 日志时间UnixTime
@@ -37,11 +41,10 @@ class LogSetInfo extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
-
     /**
      * CnLog: 国内日志url列表
      *
@@ -61,7 +64,6 @@ class LogSetInfo extends Response
     {
         $this->set("CnLog", $cnLog);
     }
-
     /**
      * AbroadLog: 国外日志url列表
      *

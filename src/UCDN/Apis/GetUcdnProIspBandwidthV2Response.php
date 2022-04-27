@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UCDN\Models\ProIspBandwidthSet;
+
 use UCloud\UCDN\Models\ProIspBandwidthList;
+use UCloud\UCDN\Models\ProIspBandwidthSet;
 
 class GetUcdnProIspBandwidthV2Response extends Response
 {
-    
 
     /**
      * BandwidthSet: 按省份的带宽流量实例表。具体参考下面BandwidthSet
      *
-     * @return ProIspBandwidthSet[]|null
+     * @return ProIspBandwidthSetModel[]|null
      */
     public function getBandwidthSet()
     {
@@ -37,7 +39,7 @@ class GetUcdnProIspBandwidthV2Response extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ProIspBandwidthSet($item));
+            array_push($result, new ProIspBandwidthSetModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class GetUcdnProIspBandwidthV2Response extends Response
     /**
      * BandwidthSet: 按省份的带宽流量实例表。具体参考下面BandwidthSet
      *
-     * @param ProIspBandwidthSet[] $bandwidthSet
+     * @param ProIspBandwidthSetModel[] $bandwidthSet
      */
     public function setBandwidthSet(array $bandwidthSet)
     {

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UNet\Models\UnetBandwidthUsageEIPSet;
 
 class DescribeBandwidthUsageResponse extends Response
 {
-    
 
     /**
      * TotalCount: EIPSet中的元素个数
@@ -38,15 +40,14 @@ class DescribeBandwidthUsageResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * EIPSet: 单个弹性IP的带宽用量详细信息, 详见 UnetBandwidthUsageEIPSet, 如没有弹性IP资源则没有该返回值。
      *
-     * @return UnetBandwidthUsageEIPSet[]|null
+     * @return UnetBandwidthUsageEIPSetModel[]|null
      */
     public function getEIPSet()
     {
@@ -56,7 +57,7 @@ class DescribeBandwidthUsageResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UnetBandwidthUsageEIPSet($item));
+            array_push($result, new UnetBandwidthUsageEIPSetModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class DescribeBandwidthUsageResponse extends Response
     /**
      * EIPSet: 单个弹性IP的带宽用量详细信息, 详见 UnetBandwidthUsageEIPSet, 如没有弹性IP资源则没有该返回值。
      *
-     * @param UnetBandwidthUsageEIPSet[] $eipSet
+     * @param UnetBandwidthUsageEIPSetModel[] $eipSet
      */
     public function setEIPSet(array $eipSet)
     {

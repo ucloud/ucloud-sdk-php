@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
         $this->markRequired("GroupId");
     }
 
-    
 
     /**
      * Size: 购买umemcache大小,单位:GB
@@ -44,11 +45,10 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * GroupId: 需要升级的空间的GroupId,请参考DescribeUMemcacheGroup接口
      *
@@ -64,7 +64,7 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
      *
      * @param string $groupId
      */
-    public function setGroupId($groupId)
+    public function setGroupId(string $groupId)
     {
         $this->set("GroupId", $groupId);
     }

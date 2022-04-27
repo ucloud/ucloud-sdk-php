@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\DescribeBandwidthUsageResponse;
+
 class UnetBandwidthUsageEIPSet extends Response
 {
-    
 
     /**
      * CurBandwidth: 最近5分钟带宽用量, 单位Mbps
@@ -37,11 +40,10 @@ class UnetBandwidthUsageEIPSet extends Response
      *
      * @param float $curBandwidth
      */
-    public function setCurBandwidth($curBandwidth)
+    public function setCurBandwidth(float $curBandwidth)
     {
         $this->set("CurBandwidth", $curBandwidth);
     }
-
     /**
      * EIPId: 弹性IP资源ID
      *
@@ -57,7 +59,7 @@ class UnetBandwidthUsageEIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }

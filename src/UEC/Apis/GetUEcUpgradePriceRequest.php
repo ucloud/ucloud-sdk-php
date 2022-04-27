@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class GetUEcUpgradePriceRequest extends Request
         $this->markRequired("NodeId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -43,11 +44,10 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * NodeId: 虚拟机资源ID
      *
@@ -63,11 +63,10 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
-
     /**
      * CpuCore: cpu核心数
      *
@@ -83,11 +82,10 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $cpuCore
      */
-    public function setCpuCore($cpuCore)
+    public function setCpuCore(int $cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
-
     /**
      * MemSize: 内存大小，单位GB
      *
@@ -103,11 +101,10 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
-
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
@@ -123,11 +120,10 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize($sysDiskSize)
+    public function setSysDiskSize(int $sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
-
     /**
      * DiskSize: 数据盘大小，单位GB
      *
@@ -143,11 +139,10 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $diskSize
      */
-    public function setDiskSize($diskSize)
+    public function setDiskSize(int $diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }
-
     /**
      * NetLimit: 节点带宽限制，单位Mbs
      *
@@ -163,7 +158,7 @@ class GetUEcUpgradePriceRequest extends Request
      *
      * @param int $netLimit
      */
-    public function setNetLimit($netLimit)
+    public function setNetLimit(int $netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\FirewallDataSet;
+use UCloud\UNet\Models\DescribeFirewallResponse;
+
 class FirewallRuleSet extends Response
 {
-    
 
     /**
      * SrcIP: 源地址
@@ -37,11 +41,10 @@ class FirewallRuleSet extends Response
      *
      * @param string $srcIP
      */
-    public function setSrcIP($srcIP)
+    public function setSrcIP(string $srcIP)
     {
         $this->set("SrcIP", $srcIP);
     }
-
     /**
      * Priority: 优先级
      *
@@ -57,11 +60,10 @@ class FirewallRuleSet extends Response
      *
      * @param string $priority
      */
-    public function setPriority($priority)
+    public function setPriority(string $priority)
     {
         $this->set("Priority", $priority);
     }
-
     /**
      * ProtocolType: 协议类型
      *
@@ -77,11 +79,10 @@ class FirewallRuleSet extends Response
      *
      * @param string $protocolType
      */
-    public function setProtocolType($protocolType)
+    public function setProtocolType(string $protocolType)
     {
         $this->set("ProtocolType", $protocolType);
     }
-
     /**
      * DstPort: 目标端口
      *
@@ -97,11 +98,10 @@ class FirewallRuleSet extends Response
      *
      * @param string $dstPort
      */
-    public function setDstPort($dstPort)
+    public function setDstPort(string $dstPort)
     {
         $this->set("DstPort", $dstPort);
     }
-
     /**
      * RuleAction: 防火墙动作
      *
@@ -117,11 +117,10 @@ class FirewallRuleSet extends Response
      *
      * @param string $ruleAction
      */
-    public function setRuleAction($ruleAction)
+    public function setRuleAction(string $ruleAction)
     {
         $this->set("RuleAction", $ruleAction);
     }
-
     /**
      * Remark: 防火墙规则备注
      *
@@ -137,7 +136,7 @@ class FirewallRuleSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

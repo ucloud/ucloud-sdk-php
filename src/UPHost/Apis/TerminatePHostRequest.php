@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class TerminatePHostRequest extends Request
         $this->markRequired("PHostId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class TerminatePHostRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class TerminatePHostRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -85,11 +84,10 @@ class TerminatePHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * PHostId: PHost资源ID
      *
@@ -105,11 +103,10 @@ class TerminatePHostRequest extends Request
      *
      * @param string $pHostId
      */
-    public function setPHostId($pHostId)
+    public function setPHostId(string $pHostId)
     {
         $this->set("PHostId", $pHostId);
     }
-
     /**
      * ReleaseEIP: 是否释放绑定的EIP。true: 解绑EIP后，并释放；其他值或不填：解绑EIP。
      *
@@ -125,11 +122,10 @@ class TerminatePHostRequest extends Request
      *
      * @param boolean $releaseEIP
      */
-    public function setReleaseEIP($releaseEIP)
+    public function setReleaseEIP(bool $releaseEIP)
     {
         $this->set("ReleaseEIP", $releaseEIP);
     }
-
     /**
      * ReleaseUDisk: 裸金属机型参数->删除主机时是否同时删除挂载的数据盘。默认为false。
      *
@@ -145,7 +141,7 @@ class TerminatePHostRequest extends Request
      *
      * @param boolean $releaseUDisk
      */
-    public function setReleaseUDisk($releaseUDisk)
+    public function setReleaseUDisk(bool $releaseUDisk)
     {
         $this->set("ReleaseUDisk", $releaseUDisk);
     }

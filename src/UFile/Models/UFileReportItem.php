@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UFile\Models\GetUFileBucketDailyReportResponse;
+use UCloud\UFile\Models\UFileTotalReportItem;
+use UCloud\UFile\Models\GetUFileDailyReportResponse;
+use UCloud\UFile\Models\UFileDailyReportItem;
+
 class UFileReportItem extends Response
 {
-    
 
     /**
      * Total: 总消费情况
      *
-     * @return UFileTotalReportItem[]|null
+     * @return UFileTotalReportItemModel[]|null
      */
     public function getTotal()
     {
@@ -35,7 +41,7 @@ class UFileReportItem extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UFileTotalReportItem($item));
+            array_push($result, new UFileTotalReportItemModel($item));
         }
         return $result;
     }
@@ -43,7 +49,7 @@ class UFileReportItem extends Response
     /**
      * Total: 总消费情况
      *
-     * @param UFileTotalReportItem[] $total
+     * @param UFileTotalReportItemModel[] $total
      */
     public function setTotal(array $total)
     {
@@ -53,11 +59,10 @@ class UFileReportItem extends Response
         }
         return $result;
     }
-
     /**
      * Daily: 日消费情况
      *
-     * @return UFileDailyReportItem[]|null
+     * @return UFileDailyReportItemModel[]|null
      */
     public function getDaily()
     {
@@ -67,7 +72,7 @@ class UFileReportItem extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UFileDailyReportItem($item));
+            array_push($result, new UFileDailyReportItemModel($item));
         }
         return $result;
     }
@@ -75,7 +80,7 @@ class UFileReportItem extends Response
     /**
      * Daily: 日消费情况
      *
-     * @param UFileDailyReportItem[] $daily
+     * @param UFileDailyReportItemModel[] $daily
      */
     public function setDaily(array $daily)
     {

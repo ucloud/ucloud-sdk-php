@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class CreateUDBSlaveRequest extends Request
         $this->markRequired("Name");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -85,11 +84,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * SrcId: master实例的DBId,该值可以通过DescribeUDBInstance获取
      *
@@ -105,11 +103,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $srcId
      */
-    public function setSrcId($srcId)
+    public function setSrcId(string $srcId)
     {
         $this->set("SrcId", $srcId);
     }
-
     /**
      * Name: 实例名称，至少6位
      *
@@ -125,11 +122,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Port: 端口号
      *
@@ -145,11 +141,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * UseSSD: 是否使用SSD，默认为true
      *
@@ -165,11 +160,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
-
     /**
      * SSDType: SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选
      *
@@ -185,11 +179,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $ssdType
      */
-    public function setSSDType($ssdType)
+    public function setSSDType(string $ssdType)
     {
         $this->set("SSDType", $ssdType);
     }
-
     /**
      * IsLock: 是否锁主库，默认为true
      *
@@ -205,11 +198,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param boolean $isLock
      */
-    public function setIsLock($isLock)
+    public function setIsLock(bool $isLock)
     {
         $this->set("IsLock", $isLock);
     }
-
     /**
      * InstanceMode: UDB实例部署模式，可选值如下：Normal: 普通单点实例HA: 高可用部署实例
      *
@@ -225,11 +217,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
-
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      *
@@ -245,11 +236,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
-
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 3000G（API支持，前端暂时只开放内存定制）
      *
@@ -265,11 +255,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
-
     /**
      * InstanceType: UDB实例类型：Normal、SATA_SSD、NVMe_SSD
      *
@@ -285,11 +274,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
-
     /**
      * SubnetId: 子网ID（如果不传用默认子网）
      *
@@ -305,11 +293,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * VPCId: VPCID（如果不传用默认的VPC）
      *
@@ -325,11 +312,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * ChargeType: Year， Month， Dynamic，Trial，默认和主库保持一致
      *
@@ -345,11 +331,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长，默认默认和主库保持一致
      *
@@ -365,11 +350,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * ParamGroupId: DB实例使用的配置参数组id，默认和主库保持一致
      *
@@ -385,11 +369,10 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId($paramGroupId)
+    public function setParamGroupId(int $paramGroupId)
     {
         $this->set("ParamGroupId", $paramGroupId);
     }
-
     /**
      * CouponId: 使用的代金券id
      *
@@ -405,7 +388,7 @@ class CreateUDBSlaveRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

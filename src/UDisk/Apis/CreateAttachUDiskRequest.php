@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class CreateAttachUDiskRequest extends Request
         $this->markRequired("Name");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -46,11 +47,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -66,11 +66,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -86,11 +85,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Size: 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；RSSD数据盘：范围[1~32000]；高效数据盘：范围[1~32000]。
      *
@@ -106,11 +104,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * Name: 实例名称
      *
@@ -126,11 +123,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * UHostId: UHost实例ID。当创建云盘类型为RSSDDataDisk时，根据传入的UHostId，创建与虚机在同一PodId下的云盘。【UHostId和HostId必须选填一个，本字段即将废弃，建议使用HostId】
      *
@@ -146,11 +142,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
-
     /**
      * ChargeType: Year , Month, Dynamic, Postpay, Trial 。 Size小于等于2000时，默认为Dynamic；Size大于2000时，默认为Month。
      *
@@ -166,11 +161,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长 默认: 1
      *
@@ -186,11 +180,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * UDataArkMode: 【开启数据方舟入口已关闭】是否开启数据方舟。Yes：开启，No：不开启，默认值：No
      *
@@ -206,11 +199,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $uDataArkMode
      */
-    public function setUDataArkMode($uDataArkMode)
+    public function setUDataArkMode(string $uDataArkMode)
     {
         $this->set("UDataArkMode", $uDataArkMode);
     }
-
     /**
      * SnapshotService: 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
      *
@@ -226,11 +218,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $snapshotService
      */
-    public function setSnapshotService($snapshotService)
+    public function setSnapshotService(string $snapshotService)
     {
         $this->set("SnapshotService", $snapshotService);
     }
-
     /**
      * Tag: 业务组 默认：Default
      *
@@ -246,11 +237,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * DiskType: UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），RSSDDataDisk（RSSD数据盘），EfficiencyDataDisk（高效数据盘），默认值（DataDisk）
      *
@@ -266,11 +256,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $diskType
      */
-    public function setDiskType($diskType)
+    public function setDiskType(string $diskType)
     {
         $this->set("DiskType", $diskType);
     }
-
     /**
      * UKmsMode: 是否加密。Yes：加密，No：不加密，默认值（No）
      *
@@ -286,11 +275,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $uKmsMode
      */
-    public function setUKmsMode($uKmsMode)
+    public function setUKmsMode(string $uKmsMode)
     {
         $this->set("UKmsMode", $uKmsMode);
     }
-
     /**
      * CmkId: 加密需要的cmk id，UKmsMode为Yes时，必填
      *
@@ -306,11 +294,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $cmkId
      */
-    public function setCmkId($cmkId)
+    public function setCmkId(string $cmkId)
     {
         $this->set("CmkId", $cmkId);
     }
-
     /**
      * MultiAttach: 是否允许多点挂载（Yes: 允许多点挂载， No: 不允许多点挂载， 不填默认Yes ）
      *
@@ -326,11 +313,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $multiAttach
      */
-    public function setMultiAttach($multiAttach)
+    public function setMultiAttach(string $multiAttach)
     {
         $this->set("MultiAttach", $multiAttach);
     }
-
     /**
      * HostId: Host实例ID。当创建云盘类型为RSSDDataDisk时，根据传入的HostId，创建与虚机在同一PodId下的云盘。
      *
@@ -346,11 +332,10 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $hostId
      */
-    public function setHostId($hostId)
+    public function setHostId(string $hostId)
     {
         $this->set("HostId", $hostId);
     }
-
     /**
      * CouponId: 使用的代金券id
      *
@@ -366,7 +351,7 @@ class CreateAttachUDiskRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

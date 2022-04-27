@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UPHost\Models\PHostClusterSet;
+use UCloud\UPHost\Models\DescribeBaremetalMachineTypeResponse;
+use UCloud\UPHost\Models\PHostComponentSet;
+use UCloud\UPHost\Models\PHostCPUSet;
+
 class PHostCloudMachineTypeSet extends Response
 {
-    
 
     /**
      * Type: 物理云主机机型别名，全网唯一。
@@ -37,31 +43,29 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * CPU: CPU信息
      *
-     * @return PHostCPUSet|null
+     * @return PHostCPUSetModel|null
      */
     public function getCPU()
     {
-        return new PHostCPUSet($this->get("CPU"));
+        return new PHostCPUSetModel($this->get("CPU"));
     }
 
     /**
      * CPU: CPU信息
      *
-     * @param PHostCPUSet $cpu
+     * @param PHostCPUSetModel $cpu
      */
-    public function setCPU(array $cpu)
+    public function setCPU(PHostCPUSetModel $cpu)
     {
         $this->set("CPU", $cpu->getAll());
     }
-
     /**
      * Memory: 内存大小，单位MB
      *
@@ -77,35 +81,33 @@ class PHostCloudMachineTypeSet extends Response
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
-
     /**
      * Components: 其他组件信息
      *
-     * @return PHostComponentSet|null
+     * @return PHostComponentSetModel|null
      */
     public function getComponents()
     {
-        return new PHostComponentSet($this->get("Components"));
+        return new PHostComponentSetModel($this->get("Components"));
     }
 
     /**
      * Components: 其他组件信息
      *
-     * @param PHostComponentSet $components
+     * @param PHostComponentSetModel $components
      */
-    public function setComponents(array $components)
+    public function setComponents(PHostComponentSetModel $components)
     {
         $this->set("Components", $components->getAll());
     }
-
     /**
      * Clusters: 集群库存信息
      *
-     * @return PHostClusterSet[]|null
+     * @return PHostClusterSetModel[]|null
      */
     public function getClusters()
     {
@@ -115,7 +117,7 @@ class PHostCloudMachineTypeSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new PHostClusterSet($item));
+            array_push($result, new PHostClusterSetModel($item));
         }
         return $result;
     }
@@ -123,7 +125,7 @@ class PHostCloudMachineTypeSet extends Response
     /**
      * Clusters: 集群库存信息
      *
-     * @param PHostClusterSet[] $clusters
+     * @param PHostClusterSetModel[] $clusters
      */
     public function setClusters(array $clusters)
     {

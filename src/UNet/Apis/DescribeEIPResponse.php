@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UNet\Models\UnetEIPSet;
-use UCloud\UNet\Models\UnetEIPResourceSet;
-use UCloud\UNet\Models\UnetEIPAddrSet;
 use UCloud\UNet\Models\ShareBandwidthSet;
+use UCloud\UNet\Models\UnetEIPAddrSet;
+use UCloud\UNet\Models\UnetEIPResourceSet;
 
 class DescribeEIPResponse extends Response
 {
-    
 
     /**
      * TotalCount: 满足条件的弹性IP总数
@@ -41,11 +43,10 @@ class DescribeEIPResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * UnbindCount: 未绑定的弹性IP总数
      *
@@ -61,11 +62,10 @@ class DescribeEIPResponse extends Response
      *
      * @param int $unbindCount
      */
-    public function setUnbindCount($unbindCount)
+    public function setUnbindCount(int $unbindCount)
     {
         $this->set("UnbindCount", $unbindCount);
     }
-
     /**
      * TotalBandwidth: 满足条件的弹性IP带宽总和, 单位Mbps
      *
@@ -81,15 +81,14 @@ class DescribeEIPResponse extends Response
      *
      * @param int $totalBandwidth
      */
-    public function setTotalBandwidth($totalBandwidth)
+    public function setTotalBandwidth(int $totalBandwidth)
     {
         $this->set("TotalBandwidth", $totalBandwidth);
     }
-
     /**
      * EIPSet: 弹性IP列表, 每项参数详见 UnetEIPSet
      *
-     * @return UnetEIPSet[]|null
+     * @return UnetEIPSetModel[]|null
      */
     public function getEIPSet()
     {
@@ -99,7 +98,7 @@ class DescribeEIPResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UnetEIPSet($item));
+            array_push($result, new UnetEIPSetModel($item));
         }
         return $result;
     }
@@ -107,7 +106,7 @@ class DescribeEIPResponse extends Response
     /**
      * EIPSet: 弹性IP列表, 每项参数详见 UnetEIPSet
      *
-     * @param UnetEIPSet[] $eipSet
+     * @param UnetEIPSetModel[] $eipSet
      */
     public function setEIPSet(array $eipSet)
     {

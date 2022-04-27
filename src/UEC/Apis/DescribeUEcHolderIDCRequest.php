@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class DescribeUEcHolderIDCRequest extends Request
         $this->markRequired("Memory");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -44,11 +45,10 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Cpu: 容器组Cpu核数
      *
@@ -64,11 +64,10 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param float $cpu
      */
-    public function setCpu($cpu)
+    public function setCpu(float $cpu)
     {
         $this->set("Cpu", $cpu);
     }
-
     /**
      * Memory: 容器组内存大小（单位MB）
      *
@@ -84,11 +83,10 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param int $memory
      */
-    public function setMemory($memory)
+    public function setMemory(int $memory)
     {
         $this->set("Memory", $memory);
     }
-
     /**
      * IdcId: Idc机房id。默认全部机房
      *
@@ -108,7 +106,6 @@ class DescribeUEcHolderIDCRequest extends Request
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * Type: 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
@@ -124,11 +121,10 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * ProductType: 产品类型，normal标准型，hf高性能型
      *
@@ -144,7 +140,7 @@ class DescribeUEcHolderIDCRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }

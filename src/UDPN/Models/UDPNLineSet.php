@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDPN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDPN\Models\GetUDPNLineListResponse;
+
 class UDPNLineSet extends Response
 {
-    
 
     /**
      * LocalRegion: 支持UDPN的地域之一，北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg, 华盛顿：us-ws, 洛杉矶：us-la， 东京：jpn-tky
@@ -37,11 +40,10 @@ class UDPNLineSet extends Response
      *
      * @param string $localRegion
      */
-    public function setLocalRegion($localRegion)
+    public function setLocalRegion(string $localRegion)
     {
         $this->set("LocalRegion", $localRegion);
     }
-
     /**
      * RemoteRegion: 支持UDPN的地域之一，北京二：cn-bj2, 上海二：cn-sh2, 广东：cn-gd, 亚太： hk, 上海一：cn-sh1, 法兰克福：ge-fra, 新加坡：sg, 华盛顿：us-ws, 洛杉矶：us-la， 东京：jpn-tky
      *
@@ -57,11 +59,10 @@ class UDPNLineSet extends Response
      *
      * @param string $remoteRegion
      */
-    public function setRemoteRegion($remoteRegion)
+    public function setRemoteRegion(string $remoteRegion)
     {
         $this->set("RemoteRegion", $remoteRegion);
     }
-
     /**
      * BandwidthUpperLimit: 线路带宽上限,单位 M
      *
@@ -77,7 +78,7 @@ class UDPNLineSet extends Response
      *
      * @param int $bandwidthUpperLimit
      */
-    public function setBandwidthUpperLimit($bandwidthUpperLimit)
+    public function setBandwidthUpperLimit(int $bandwidthUpperLimit)
     {
         $this->set("BandwidthUpperLimit", $bandwidthUpperLimit);
     }

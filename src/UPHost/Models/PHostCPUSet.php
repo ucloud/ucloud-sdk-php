@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UPHost\Models\DescribePHostResponse;
+use UCloud\UPHost\Models\PHostCloudMachineTypeSet;
+use UCloud\UPHost\Models\DescribeBaremetalMachineTypeResponse;
+use UCloud\UPHost\Models\PHostMachineTypeSet;
+use UCloud\UPHost\Models\DescribePHostMachineTypeResponse;
+use UCloud\UPHost\Models\PHostSet;
+
 class PHostCPUSet extends Response
 {
-    
 
     /**
      * Model: CPU型号
@@ -37,11 +45,10 @@ class PHostCPUSet extends Response
      *
      * @param string $model
      */
-    public function setModel($model)
+    public function setModel(string $model)
     {
         $this->set("Model", $model);
     }
-
     /**
      * Frequence: CPU主频
      *
@@ -57,11 +64,10 @@ class PHostCPUSet extends Response
      *
      * @param float $frequence
      */
-    public function setFrequence($frequence)
+    public function setFrequence(float $frequence)
     {
         $this->set("Frequence", $frequence);
     }
-
     /**
      * Count: CPU个数
      *
@@ -77,11 +83,10 @@ class PHostCPUSet extends Response
      *
      * @param int $count
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->set("Count", $count);
     }
-
     /**
      * CoreCount: CPU核数
      *
@@ -97,7 +102,7 @@ class PHostCPUSet extends Response
      *
      * @param int $coreCount
      */
-    public function setCoreCount($coreCount)
+    public function setCoreCount(int $coreCount)
     {
         $this->set("CoreCount", $coreCount);
     }

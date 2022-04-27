@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\USMS\Models\BatchInfo;
 use UCloud\USMS\Models\FailPhoneDetail;
 
 class SendBatchUSMSMessageResponse extends Response
 {
-    
 
     /**
      * SessionNo: 本次提交发送任务的唯一ID，可根据该值查询本次发送的短信列表。注：成功提交短信数大于0时，才返回该字段
@@ -39,11 +41,10 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param string $sessionNo
      */
-    public function setSessionNo($sessionNo)
+    public function setSessionNo(string $sessionNo)
     {
         $this->set("SessionNo", $sessionNo);
     }
-
     /**
      * ReqUuid: 本次请求Uuid
      *
@@ -59,11 +60,10 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param string $reqUuid
      */
-    public function setReqUuid($reqUuid)
+    public function setReqUuid(string $reqUuid)
     {
         $this->set("ReqUuid", $reqUuid);
     }
-
     /**
      * SuccessCount: 成功提交短信（未拆分）条数
      *
@@ -79,15 +79,14 @@ class SendBatchUSMSMessageResponse extends Response
      *
      * @param int $successCount
      */
-    public function setSuccessCount($successCount)
+    public function setSuccessCount(int $successCount)
     {
         $this->set("SuccessCount", $successCount);
     }
-
     /**
      * FailContent: 未发送成功的详情，返回码非0时该字段有效，可根据该字段数据重发
      *
-     * @return BatchInfo[]|null
+     * @return BatchInfoModel[]|null
      */
     public function getFailContent()
     {
@@ -97,7 +96,7 @@ class SendBatchUSMSMessageResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new BatchInfo($item));
+            array_push($result, new BatchInfoModel($item));
         }
         return $result;
     }
@@ -105,7 +104,7 @@ class SendBatchUSMSMessageResponse extends Response
     /**
      * FailContent: 未发送成功的详情，返回码非0时该字段有效，可根据该字段数据重发
      *
-     * @param BatchInfo[] $failContent
+     * @param BatchInfoModel[] $failContent
      */
     public function setFailContent(array $failContent)
     {

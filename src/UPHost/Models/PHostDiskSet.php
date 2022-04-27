@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UPHost\Models\PHostMachineTypeSet;
+use UCloud\UPHost\Models\DescribePHostMachineTypeResponse;
+
 class PHostDiskSet extends Response
 {
-    
 
     /**
      * Space: 单盘大小，单位GB
@@ -37,11 +41,10 @@ class PHostDiskSet extends Response
      *
      * @param int $space
      */
-    public function setSpace($space)
+    public function setSpace(int $space)
     {
         $this->set("Space", $space);
     }
-
     /**
      * Count: 磁盘数量
      *
@@ -57,11 +60,10 @@ class PHostDiskSet extends Response
      *
      * @param int $count
      */
-    public function setCount($count)
+    public function setCount(int $count)
     {
         $this->set("Count", $count);
     }
-
     /**
      * Type: 磁盘属性
      *
@@ -77,11 +79,10 @@ class PHostDiskSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * Name: 磁盘名称，sys/data
      *
@@ -97,11 +98,10 @@ class PHostDiskSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * IOCap: 磁盘IO性能，单位MB/s（待废弃）
      *
@@ -117,7 +117,7 @@ class PHostDiskSet extends Response
      *
      * @param int $ioCap
      */
-    public function setIOCap($ioCap)
+    public function setIOCap(int $ioCap)
     {
         $this->set("IOCap", $ioCap);
     }

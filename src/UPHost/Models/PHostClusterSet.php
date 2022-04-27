@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UPHost\Models\DescribeBaremetalMachineTypeResponse;
+use UCloud\UPHost\Models\DescribePHostMachineTypeResponse;
+use UCloud\UPHost\Models\PHostCloudMachineTypeSet;
+use UCloud\UPHost\Models\PHostMachineTypeSet;
+
 class PHostClusterSet extends Response
 {
-    
 
     /**
      * Name: 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G；
@@ -37,11 +43,10 @@ class PHostClusterSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * StockStatus: 库存状态。枚举值：有库存：Available；无库存：SoldOut
      *
@@ -57,7 +62,7 @@ class PHostClusterSet extends Response
      *
      * @param string $stockStatus
      */
-    public function setStockStatus($stockStatus)
+    public function setStockStatus(string $stockStatus)
     {
         $this->set("StockStatus", $stockStatus);
     }

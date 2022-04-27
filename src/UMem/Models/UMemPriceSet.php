@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UMem\Models\DescribeUMemPriceResponse;
+
 class UMemPriceSet extends Response
 {
-    
 
     /**
      * ChargeType: Year， Month， Dynamic，Trial
@@ -37,11 +40,10 @@ class UMemPriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Price: 现价
      *
@@ -57,11 +59,10 @@ class UMemPriceSet extends Response
      *
      * @param int $price
      */
-    public function setPrice($price)
+    public function setPrice(int $price)
     {
         $this->set("Price", $price);
     }
-
     /**
      * OriginalPrice: 原价
      *
@@ -77,7 +78,7 @@ class UMemPriceSet extends Response
      *
      * @param int $originalPrice
      */
-    public function setOriginalPrice($originalPrice)
+    public function setOriginalPrice(int $originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }

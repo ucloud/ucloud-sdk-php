@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UCDN\Models\TaskInfo;
 use UCloud\UCDN\Models\UrlProgressInfo;
 
 class DescribeNewUcdnPrefetchCacheTaskResponse extends Response
 {
-    
 
     /**
      * TotalCount: 预热任务的总数
@@ -39,15 +41,14 @@ class DescribeNewUcdnPrefetchCacheTaskResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * TaskList: 预热任务信息，参考TaskInfo
      *
-     * @return TaskInfo[]|null
+     * @return TaskInfoModel[]|null
      */
     public function getTaskList()
     {
@@ -57,7 +58,7 @@ class DescribeNewUcdnPrefetchCacheTaskResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new TaskInfo($item));
+            array_push($result, new TaskInfoModel($item));
         }
         return $result;
     }
@@ -65,7 +66,7 @@ class DescribeNewUcdnPrefetchCacheTaskResponse extends Response
     /**
      * TaskList: 预热任务信息，参考TaskInfo
      *
-     * @param TaskInfo[] $taskList
+     * @param TaskInfoModel[] $taskList
      */
     public function setTaskList(array $taskList)
     {

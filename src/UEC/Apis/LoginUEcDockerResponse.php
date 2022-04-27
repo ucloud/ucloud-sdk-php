@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
 
 class LoginUEcDockerResponse extends Response
 {
-    
 
     /**
      * SessionId: 返回的token
@@ -37,11 +38,10 @@ class LoginUEcDockerResponse extends Response
      *
      * @param string $sessionId
      */
-    public function setSessionId($sessionId)
+    public function setSessionId(string $sessionId)
     {
         $this->set("SessionId", $sessionId);
     }
-
     /**
      * Link: 登录地址
      *
@@ -57,11 +57,10 @@ class LoginUEcDockerResponse extends Response
      *
      * @param string $link
      */
-    public function setLink($link)
+    public function setLink(string $link)
     {
         $this->set("Link", $link);
     }
-
     /**
      * LinkPort: 登录端口
      *
@@ -77,7 +76,7 @@ class LoginUEcDockerResponse extends Response
      *
      * @param int $linkPort
      */
-    public function setLinkPort($linkPort)
+    public function setLinkPort(int $linkPort)
     {
         $this->set("LinkPort", $linkPort);
     }

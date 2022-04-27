@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\GetEIPPayModeResponse;
+
 class EIPPayModeSet extends Response
 {
-    
 
     /**
      * EIPId: EIP的资源ID
@@ -37,11 +40,10 @@ class EIPPayModeSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
-
     /**
      * EIPPayMode: EIP的计费模式. 枚举值为：Bandwidth, 带宽计费;Traffic, 流量计费; "ShareBandwidth",共享带宽模式
      *
@@ -57,7 +59,7 @@ class EIPPayModeSet extends Response
      *
      * @param string $eipPayMode
      */
-    public function setEIPPayMode($eipPayMode)
+    public function setEIPPayMode(string $eipPayMode)
     {
         $this->set("EIPPayMode", $eipPayMode);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Request\Request;
@@ -32,7 +34,6 @@ class GetCubeMetricsRequest extends Request
         $this->markRequired("ContainerName");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
@@ -49,11 +50,10 @@ class GetCubeMetricsRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
@@ -69,11 +69,10 @@ class GetCubeMetricsRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
@@ -89,11 +88,10 @@ class GetCubeMetricsRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ResourceId: Cube实例资源ID
      *
@@ -109,11 +107,10 @@ class GetCubeMetricsRequest extends Request
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
-
     /**
      * MetricName: 监控指标名称
      *
@@ -133,7 +130,6 @@ class GetCubeMetricsRequest extends Request
     {
         $this->set("MetricName", $metricName);
     }
-
     /**
      * BeginTime: 开始时间
      *
@@ -149,11 +145,10 @@ class GetCubeMetricsRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 结束时间，必须大于开始时间
      *
@@ -169,11 +164,10 @@ class GetCubeMetricsRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
-
     /**
      * ContainerName: Pod内容器名称
      *
@@ -189,7 +183,7 @@ class GetCubeMetricsRequest extends Request
      *
      * @param string $containerName
      */
-    public function setContainerName($containerName)
+    public function setContainerName(string $containerName)
     {
         $this->set("ContainerName", $containerName);
     }

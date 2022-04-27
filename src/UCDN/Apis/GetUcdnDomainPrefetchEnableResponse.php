@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
 
 class GetUcdnDomainPrefetchEnableResponse extends Response
 {
-    
 
     /**
      * Enable: 0表示该域名未开启预取，1表示该域名已开启预取
@@ -37,7 +38,7 @@ class GetUcdnDomainPrefetchEnableResponse extends Response
      *
      * @param int $enable
      */
-    public function setEnable($enable)
+    public function setEnable(int $enable)
     {
         $this->set("Enable", $enable);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDisk\Models\DescribeUDiskSnapshotResponse;
+
 class UDiskSnapshotSet extends Response
 {
-    
 
     /**
      * Zone: 可用区
@@ -37,11 +40,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * SnapshotId: 快照Id
      *
@@ -57,11 +59,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $snapshotId
      */
-    public function setSnapshotId($snapshotId)
+    public function setSnapshotId(string $snapshotId)
     {
         $this->set("SnapshotId", $snapshotId);
     }
-
     /**
      * Name: 快照名称
      *
@@ -77,11 +78,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * UDiskId: 快照的源UDisk的Id
      *
@@ -97,11 +97,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $uDiskId
      */
-    public function setUDiskId($uDiskId)
+    public function setUDiskId(string $uDiskId)
     {
         $this->set("UDiskId", $uDiskId);
     }
-
     /**
      * UDiskName: 快照的源UDisk的Name
      *
@@ -117,11 +116,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $uDiskName
      */
-    public function setUDiskName($uDiskName)
+    public function setUDiskName(string $uDiskName)
     {
         $this->set("UDiskName", $uDiskName);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -137,11 +135,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * Size: 容量单位GB
      *
@@ -157,11 +154,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * Status: 快照状态，Normal:正常,Failed:失败,Creating:制作中
      *
@@ -177,11 +173,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * DiskType: 磁盘类型，0：普通数据盘；1：普通系统盘；2：SSD数据盘；3：SSD系统盘；4：RSSD数据盘；5：RSSD系统盘。
      *
@@ -197,11 +192,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param int $diskType
      */
-    public function setDiskType($diskType)
+    public function setDiskType(int $diskType)
     {
         $this->set("DiskType", $diskType);
     }
-
     /**
      * ExpiredTime: 过期时间
      *
@@ -217,11 +211,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
-
     /**
      * Comment: 快照描述
      *
@@ -237,11 +230,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $comment
      */
-    public function setComment($comment)
+    public function setComment(string $comment)
     {
         $this->set("Comment", $comment);
     }
-
     /**
      * IsUDiskAvailable: 对应磁盘是否处于可用状态
      *
@@ -257,11 +249,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param boolean $isUDiskAvailable
      */
-    public function setIsUDiskAvailable($isUDiskAvailable)
+    public function setIsUDiskAvailable(bool $isUDiskAvailable)
     {
         $this->set("IsUDiskAvailable", $isUDiskAvailable);
     }
-
     /**
      * Version: 快照版本
      *
@@ -277,11 +268,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $version
      */
-    public function setVersion($version)
+    public function setVersion(string $version)
     {
         $this->set("Version", $version);
     }
-
     /**
      * UHostId: 对应磁盘制作快照时所挂载的主机
      *
@@ -297,11 +287,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }
-
     /**
      * UKmsMode: 是否是加密盘快照，是:"Yes", 否:"No"
      *
@@ -317,11 +306,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $uKmsMode
      */
-    public function setUKmsMode($uKmsMode)
+    public function setUKmsMode(string $uKmsMode)
     {
         $this->set("UKmsMode", $uKmsMode);
     }
-
     /**
      * CmkId: 该快照的cmk id
      *
@@ -337,11 +325,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $cmkId
      */
-    public function setCmkId($cmkId)
+    public function setCmkId(string $cmkId)
     {
         $this->set("CmkId", $cmkId);
     }
-
     /**
      * DataKey: 该快照的密文密钥
      *
@@ -357,11 +344,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $dataKey
      */
-    public function setDataKey($dataKey)
+    public function setDataKey(string $dataKey)
     {
         $this->set("DataKey", $dataKey);
     }
-
     /**
      * CmkIdStatus: 该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘)
      *
@@ -377,11 +363,10 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $cmkIdStatus
      */
-    public function setCmkIdStatus($cmkIdStatus)
+    public function setCmkIdStatus(string $cmkIdStatus)
     {
         $this->set("CmkIdStatus", $cmkIdStatus);
     }
-
     /**
      * CmkIdAlias: cmk id 别名
      *
@@ -397,7 +382,7 @@ class UDiskSnapshotSet extends Response
      *
      * @param string $cmkIdAlias
      */
-    public function setCmkIdAlias($cmkIdAlias)
+    public function setCmkIdAlias(string $cmkIdAlias)
     {
         $this->set("CmkIdAlias", $cmkIdAlias);
     }

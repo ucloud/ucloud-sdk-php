@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\QueryIpLocationResponse;
+
 class IpLocationInfo extends Response
 {
-    
 
     /**
      * Ip: 客户端请求的ip
@@ -37,11 +40,10 @@ class IpLocationInfo extends Response
      *
      * @param string $ip
      */
-    public function setIp($ip)
+    public function setIp(string $ip)
     {
         $this->set("Ip", $ip);
     }
-
     /**
      * Area: 地区
      *
@@ -57,11 +59,10 @@ class IpLocationInfo extends Response
      *
      * @param string $area
      */
-    public function setArea($area)
+    public function setArea(string $area)
     {
         $this->set("Area", $area);
     }
-
     /**
      * Isp: 运营商
      *
@@ -77,11 +78,10 @@ class IpLocationInfo extends Response
      *
      * @param string $isp
      */
-    public function setIsp($isp)
+    public function setIsp(string $isp)
     {
         $this->set("Isp", $isp);
     }
-
     /**
      * City: 城市
      *
@@ -97,11 +97,10 @@ class IpLocationInfo extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
-
     /**
      * Exist: ip是否存在
      *
@@ -117,7 +116,7 @@ class IpLocationInfo extends Response
      *
      * @param boolean $exist
      */
-    public function setExist($exist)
+    public function setExist(bool $exist)
     {
         $this->set("Exist", $exist);
     }

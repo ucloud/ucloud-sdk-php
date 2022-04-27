@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDisk\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDisk\Models\UDiskPriceDataSet;
 
 class DescribeUDiskPriceResponse extends Response
 {
-    
 
     /**
      * DataSet: 价格参数列表，具体说明见 UDiskPriceDataSet
      *
-     * @return UDiskPriceDataSet[]|null
+     * @return UDiskPriceDataSetModel[]|null
      */
     public function getDataSet()
     {
@@ -36,7 +38,7 @@ class DescribeUDiskPriceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UDiskPriceDataSet($item));
+            array_push($result, new UDiskPriceDataSetModel($item));
         }
         return $result;
     }
@@ -44,7 +46,7 @@ class DescribeUDiskPriceResponse extends Response
     /**
      * DataSet: 价格参数列表，具体说明见 UDiskPriceDataSet
      *
-     * @param UDiskPriceDataSet[] $dataSet
+     * @param UDiskPriceDataSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

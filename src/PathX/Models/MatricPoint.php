@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\MetricPeriod;
+use UCloud\PathX\Models\GlobalSSHMetric;
+use UCloud\PathX\Models\GetGlobalRDPMetricResponse;
+use UCloud\PathX\Models\GlobalRDPMetric;
+use UCloud\PathX\Models\GetGlobalSSHMetricResponse;
+use UCloud\PathX\Models\GetPathXMetricResponse;
+use UCloud\PathX\Models\GetUGA3MetricResponse;
+use UCloud\PathX\Models\UGA3Metric;
+
 class MatricPoint extends Response
 {
-    
 
     /**
      * Timestamp: 时间戳
@@ -37,11 +47,10 @@ class MatricPoint extends Response
      *
      * @param int $timestamp
      */
-    public function setTimestamp($timestamp)
+    public function setTimestamp(int $timestamp)
     {
         $this->set("Timestamp", $timestamp);
     }
-
     /**
      * Value: 监控点数值
      *
@@ -57,7 +66,7 @@ class MatricPoint extends Response
      *
      * @param int $value
      */
-    public function setValue($value)
+    public function setValue(int $value)
     {
         $this->set("Value", $value);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\Cube\Models\EIPAddr;
+use UCloud\Cube\Models\CubeExtendInfo;
+use UCloud\Cube\Models\GetCubeExtendInfoResponse;
+
 class EIPSet extends Response
 {
-    
 
     /**
      * Bandwidth: EIP带宽值
@@ -37,11 +42,10 @@ class EIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * BandwidthType: 带宽类型0标准普通带宽，1表示共享带宽
      *
@@ -57,11 +61,10 @@ class EIPSet extends Response
      *
      * @param int $bandwidthType
      */
-    public function setBandwidthType($bandwidthType)
+    public function setBandwidthType(int $bandwidthType)
     {
         $this->set("BandwidthType", $bandwidthType);
     }
-
     /**
      * CreateTime: EIP创建时间
      *
@@ -77,15 +80,14 @@ class EIPSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * EIPAddr: EIP地址
      *
-     * @return EIPAddr[]|null
+     * @return EIPAddrModel[]|null
      */
     public function getEIPAddr()
     {
@@ -95,7 +97,7 @@ class EIPSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new EIPAddr($item));
+            array_push($result, new EIPAddrModel($item));
         }
         return $result;
     }
@@ -103,7 +105,7 @@ class EIPSet extends Response
     /**
      * EIPAddr: EIP地址
      *
-     * @param EIPAddr[] $eipAddr
+     * @param EIPAddrModel[] $eipAddr
      */
     public function setEIPAddr(array $eipAddr)
     {
@@ -113,7 +115,6 @@ class EIPSet extends Response
         }
         return $result;
     }
-
     /**
      * EIPId: EIPId
      *
@@ -129,11 +130,10 @@ class EIPSet extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }
-
     /**
      * PayMode: 付费模式，带宽付费或者流量付费
      *
@@ -149,11 +149,10 @@ class EIPSet extends Response
      *
      * @param string $payMode
      */
-    public function setPayMode($payMode)
+    public function setPayMode(string $payMode)
     {
         $this->set("PayMode", $payMode);
     }
-
     /**
      * Resource: EIP绑定对象的资源Id
      *
@@ -169,11 +168,10 @@ class EIPSet extends Response
      *
      * @param string $resource
      */
-    public function setResource($resource)
+    public function setResource(string $resource)
     {
         $this->set("Resource", $resource);
     }
-
     /**
      * Status: EIP状态，表示使用中或者空闲
      *
@@ -189,11 +187,10 @@ class EIPSet extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * Weight: EIP权重
      *
@@ -209,7 +206,7 @@ class EIPSet extends Response
      *
      * @param int $weight
      */
-    public function setWeight($weight)
+    public function setWeight(int $weight)
     {
         $this->set("Weight", $weight);
     }

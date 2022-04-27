@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class CreateSSLRequest extends Request
         $this->markRequired("SSLName");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class CreateSSLRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -65,11 +65,10 @@ class CreateSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * SSLName: SSL证书的名字，默认值为空
      *
@@ -85,11 +84,10 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslName
      */
-    public function setSSLName($sslName)
+    public function setSSLName(string $sslName)
     {
         $this->set("SSLName", $sslName);
     }
-
     /**
      * SSLType: 所添加的SSL证书类型，目前只支持Pem格式
      *
@@ -105,11 +103,10 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslType
      */
-    public function setSSLType($sslType)
+    public function setSSLType(string $sslType)
     {
         $this->set("SSLType", $sslType);
     }
-
     /**
      * SSLContent: SSL证书的完整内容，包括用户证书、加密证书的私钥、CA证书
      *
@@ -125,11 +122,10 @@ class CreateSSLRequest extends Request
      *
      * @param string $sslContent
      */
-    public function setSSLContent($sslContent)
+    public function setSSLContent(string $sslContent)
     {
         $this->set("SSLContent", $sslContent);
     }
-
     /**
      * UserCert: 用户的证书
      *
@@ -145,11 +141,10 @@ class CreateSSLRequest extends Request
      *
      * @param string $userCert
      */
-    public function setUserCert($userCert)
+    public function setUserCert(string $userCert)
     {
         $this->set("UserCert", $userCert);
     }
-
     /**
      * PrivateKey: 加密证书的私钥
      *
@@ -165,11 +160,10 @@ class CreateSSLRequest extends Request
      *
      * @param string $privateKey
      */
-    public function setPrivateKey($privateKey)
+    public function setPrivateKey(string $privateKey)
     {
         $this->set("PrivateKey", $privateKey);
     }
-
     /**
      * CaCert: CA证书
      *
@@ -185,7 +179,7 @@ class CreateSSLRequest extends Request
      *
      * @param string $caCert
      */
-    public function setCaCert($caCert)
+    public function setCaCert(string $caCert)
     {
         $this->set("CaCert", $caCert);
     }

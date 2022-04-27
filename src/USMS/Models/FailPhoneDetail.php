@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\USMS\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\USMS\Models\SendBatchUSMSMessageResponse;
+use UCloud\USMS\Models\BatchInfo;
+
 class FailPhoneDetail extends Response
 {
-    
 
     /**
      * TemplateParams: 模板参数
@@ -41,7 +45,6 @@ class FailPhoneDetail extends Response
     {
         $this->set("TemplateParams", $templateParams);
     }
-
     /**
      * Phone: 手机号
      *
@@ -57,11 +60,10 @@ class FailPhoneDetail extends Response
      *
      * @param string $phone
      */
-    public function setPhone($phone)
+    public function setPhone(string $phone)
     {
         $this->set("Phone", $phone);
     }
-
     /**
      * ExtendCode: 扩展号码
      *
@@ -77,11 +79,10 @@ class FailPhoneDetail extends Response
      *
      * @param string $extendCode
      */
-    public function setExtendCode($extendCode)
+    public function setExtendCode(string $extendCode)
     {
         $this->set("ExtendCode", $extendCode);
     }
-
     /**
      * UserId: 用户自定义ID
      *
@@ -97,11 +98,10 @@ class FailPhoneDetail extends Response
      *
      * @param string $userId
      */
-    public function setUserId($userId)
+    public function setUserId(string $userId)
     {
         $this->set("UserId", $userId);
     }
-
     /**
      * FailureDetails: 发送失败原因。注：若模板/签名校验失败，该字段为空
      *
@@ -117,7 +117,7 @@ class FailPhoneDetail extends Response
      *
      * @param string $failureDetails
      */
-    public function setFailureDetails($failureDetails)
+    public function setFailureDetails(string $failureDetails)
     {
         $this->set("FailureDetails", $failureDetails);
     }

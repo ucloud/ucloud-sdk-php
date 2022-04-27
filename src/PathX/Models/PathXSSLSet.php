@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\DescribePathXSSLResponse;
+use UCloud\PathX\Models\SSLBindedTargetSet;
+
 class PathXSSLSet extends Response
 {
-    
 
     /**
      * SSLId: SSL证书的Id
@@ -37,11 +41,10 @@ class PathXSSLSet extends Response
      *
      * @param string $sslId
      */
-    public function setSSLId($sslId)
+    public function setSSLId(string $sslId)
     {
         $this->set("SSLId", $sslId);
     }
-
     /**
      * SSLName: SSL证书的名字
      *
@@ -57,11 +60,10 @@ class PathXSSLSet extends Response
      *
      * @param string $sslName
      */
-    public function setSSLName($sslName)
+    public function setSSLName(string $sslName)
     {
         $this->set("SSLName", $sslName);
     }
-
     /**
      * SubjectName: 证书域名
      *
@@ -77,11 +79,10 @@ class PathXSSLSet extends Response
      *
      * @param string $subjectName
      */
-    public function setSubjectName($subjectName)
+    public function setSubjectName(string $subjectName)
     {
         $this->set("SubjectName", $subjectName);
     }
-
     /**
      * ExpireTime: 证书过期时间 时间戳
      *
@@ -97,11 +98,10 @@ class PathXSSLSet extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * SourceType: 证书来源，0：用户上传 1: 免费颁发
      *
@@ -117,11 +117,10 @@ class PathXSSLSet extends Response
      *
      * @param int $sourceType
      */
-    public function setSourceType($sourceType)
+    public function setSourceType(int $sourceType)
     {
         $this->set("SourceType", $sourceType);
     }
-
     /**
      * SSLMD5: SSL证书（用户证书、私钥、ca证书合并）内容md5值
      *
@@ -137,11 +136,10 @@ class PathXSSLSet extends Response
      *
      * @param string $sslmd5
      */
-    public function setSSLMD5($sslmd5)
+    public function setSSLMD5(string $sslmd5)
     {
         $this->set("SSLMD5", $sslmd5);
     }
-
     /**
      * CreateTime: SSL证书的创建时间 时间戳
      *
@@ -157,15 +155,14 @@ class PathXSSLSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * SSLBindedTargetSet: SSL证书绑定的对象
      *
-     * @return SSLBindedTargetSet[]|null
+     * @return SSLBindedTargetSetModel[]|null
      */
     public function getSSLBindedTargetSet()
     {
@@ -175,7 +172,7 @@ class PathXSSLSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new SSLBindedTargetSet($item));
+            array_push($result, new SSLBindedTargetSetModel($item));
         }
         return $result;
     }
@@ -183,7 +180,7 @@ class PathXSSLSet extends Response
     /**
      * SSLBindedTargetSet: SSL证书绑定的对象
      *
-     * @param SSLBindedTargetSet[] $sslBindedTargetSet
+     * @param SSLBindedTargetSetModel[] $sslBindedTargetSet
      */
     public function setSSLBindedTargetSet(array $sslBindedTargetSet)
     {
@@ -193,7 +190,6 @@ class PathXSSLSet extends Response
         }
         return $result;
     }
-
     /**
      * SSLContent: SSL证书内容
      *
@@ -209,7 +205,7 @@ class PathXSSLSet extends Response
      *
      * @param string $sslContent
      */
-    public function setSSLContent($sslContent)
+    public function setSSLContent(string $sslContent)
     {
         $this->set("SSLContent", $sslContent);
     }

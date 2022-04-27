@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UHost\Models\IsolationGroup;
+
 use UCloud\UHost\Models\SpreadInfo;
+use UCloud\UHost\Models\IsolationGroup;
 
 class DescribeIsolationGroupResponse extends Response
 {
-    
 
     /**
      * IsolationGroupSet: 硬件隔离组集合。参见数据结构IsolationGroup。
      *
-     * @return IsolationGroup[]|null
+     * @return IsolationGroupModel[]|null
      */
     public function getIsolationGroupSet()
     {
@@ -37,7 +39,7 @@ class DescribeIsolationGroupResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new IsolationGroup($item));
+            array_push($result, new IsolationGroupModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class DescribeIsolationGroupResponse extends Response
     /**
      * IsolationGroupSet: 硬件隔离组集合。参见数据结构IsolationGroup。
      *
-     * @param IsolationGroup[] $isolationGroupSet
+     * @param IsolationGroupModel[] $isolationGroupSet
      */
     public function setIsolationGroupSet(array $isolationGroupSet)
     {
@@ -55,7 +57,6 @@ class DescribeIsolationGroupResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 硬件隔离组总数
      *
@@ -71,7 +72,7 @@ class DescribeIsolationGroupResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

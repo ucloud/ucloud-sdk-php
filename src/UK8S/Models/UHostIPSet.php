@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UK8S\Models\UHostInfoV2;
+use UCloud\UK8S\Models\ListUK8SClusterNodeResponse;
+use UCloud\UK8S\Models\UHostInstanceSet;
+use UCloud\UK8S\Models\NodeInfoV2;
+use UCloud\UK8S\Models\GetUK8SAvailableUHostListResponse;
+use UCloud\UK8S\Models\NodeList;
+use UCloud\UK8S\Models\ListUK8SClusterNodeV2Response;
+
 class UHostIPSet extends Response
 {
-    
 
     /**
      * Type: 国际: Internation，BGP: Bgp，内网: Private
@@ -37,11 +46,10 @@ class UHostIPSet extends Response
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * IPId: IP资源ID (内网IP无对应的资源ID)
      *
@@ -57,11 +65,10 @@ class UHostIPSet extends Response
      *
      * @param string $ipId
      */
-    public function setIPId($ipId)
+    public function setIPId(string $ipId)
     {
         $this->set("IPId", $ipId);
     }
-
     /**
      * IP: IP地址
      *
@@ -77,11 +84,10 @@ class UHostIPSet extends Response
      *
      * @param string $ip
      */
-    public function setIP($ip)
+    public function setIP(string $ip)
     {
         $this->set("IP", $ip);
     }
-
     /**
      * Bandwidth: IP对应的带宽, 单位: Mb (内网IP不显示带宽信息)
      *
@@ -97,11 +103,10 @@ class UHostIPSet extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * VPCId: IP地址对应的VPC ID
      *
@@ -117,11 +122,10 @@ class UHostIPSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * SubnetId: IP地址对应的子网 ID
      *
@@ -137,11 +141,10 @@ class UHostIPSet extends Response
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * Mac: Mac地址
      *
@@ -157,7 +160,7 @@ class UHostIPSet extends Response
      *
      * @param string $mac
      */
-    public function setMac($mac)
+    public function setMac(string $mac)
     {
         $this->set("Mac", $mac);
     }

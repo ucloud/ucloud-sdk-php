@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\DockerInfo;
+use UCloud\UEC\Models\DescribeUEcHolderResponse;
+use UCloud\UEC\Models\HolderList;
+use UCloud\UEC\Models\ListUEcHolderResponse;
+
 class EnvList extends Response
 {
-    
 
     /**
      * Key: 环境变量key值
@@ -37,11 +43,10 @@ class EnvList extends Response
      *
      * @param string $key
      */
-    public function setKey($key)
+    public function setKey(string $key)
     {
         $this->set("Key", $key);
     }
-
     /**
      * Value: 环境变量Value值
      *
@@ -57,7 +62,7 @@ class EnvList extends Response
      *
      * @param string $value
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->set("Value", $value);
     }

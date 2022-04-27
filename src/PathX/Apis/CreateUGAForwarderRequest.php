@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class CreateUGAForwarderRequest extends Request
         $this->markRequired("UGAId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -44,11 +45,10 @@ class CreateUGAForwarderRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * UGAId: 加速配置实例ID
      *
@@ -64,11 +64,10 @@ class CreateUGAForwarderRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
-
     /**
      * HTTPHTTP: HTTP接入HTTP回源转发，接入端口。禁用65123端口
      *
@@ -88,7 +87,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("HTTPHTTP", $httphttp);
     }
-
     /**
      * HTTPHTTPRS: HTTP接入HTTP回源转发，源站监听端口
      *
@@ -108,7 +106,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("HTTPHTTPRS", $httphttprs);
     }
-
     /**
      * HTTPSHTTP: HTTPS接入HTTP回源转发，接入端口。禁用65123端口
      *
@@ -128,7 +125,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("HTTPSHTTP", $httpshttp);
     }
-
     /**
      * HTTPSHTTPRS: HTTPS接入HTTP回源转发，回源端口
      *
@@ -148,7 +144,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("HTTPSHTTPRS", $httpshttprs);
     }
-
     /**
      * HTTPSHTTPS: HTTPS接入HTTPS回源转发，接入端口。禁用65123端口
      *
@@ -168,7 +163,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("HTTPSHTTPS", $httpshttps);
     }
-
     /**
      * HTTPSHTTPSRS: HTTPS接入HTTPS回源转发，源站监听端口
      *
@@ -188,7 +182,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("HTTPSHTTPSRS", $httpshttpsrs);
     }
-
     /**
      * TCP: TCP接入端口，禁用65123端口
      *
@@ -208,7 +201,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("TCP", $tcp);
     }
-
     /**
      * TCPRS: TCP回源端口
      *
@@ -228,7 +220,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("TCPRS", $tcprs);
     }
-
     /**
      * UDP: UDP接入端口，禁用65123端口
      *
@@ -248,7 +239,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("UDP", $udp);
     }
-
     /**
      * UDPRS: UDP回源端口
      *
@@ -268,7 +258,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("UDPRS", $udprs);
     }
-
     /**
      * WSWS: WebSocket接入WebSocket回源转发，接入端口。禁用65123。
      *
@@ -288,7 +277,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("WSWS", $wsws);
     }
-
     /**
      * WSWSRS: WebSocket接入WebSocket回源转发，源站监听端口
      *
@@ -308,7 +296,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("WSWSRS", $wswsrs);
     }
-
     /**
      * WSSWSS: WebSocketS接入WebSocketS回源转发，接入端口。禁用65123。
      *
@@ -328,7 +315,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("WSSWSS", $wsswss);
     }
-
     /**
      * WSSWSSRS: WebSocketS接入WebSocketS回源转发，源站监听端口。
      *
@@ -348,7 +334,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("WSSWSSRS", $wsswssrs);
     }
-
     /**
      * WSSWS: WebSocketS接入WebSocket回源转发，接入端口。禁用65123。
      *
@@ -368,7 +353,6 @@ class CreateUGAForwarderRequest extends Request
     {
         $this->set("WSSWS", $wssws);
     }
-
     /**
      * WSSWSRS: WebSocketS接入WebSocket回源转发，源站监听端口。
      *

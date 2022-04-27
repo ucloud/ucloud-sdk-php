@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
-use UCloud\UEC\Params\CreateUEcHolderParamPack;
-use UCloud\UEC\Params\CreateUEcHolderParamImage;
-use UCloud\UEC\Params\CreateUEcHolderParamStorage;
+
+use UCloud\UEC\Models\CreateUEcHolderRequestImage;
+use UCloud\UEC\Models\CreateUEcHolderRequestPack;
+use UCloud\UEC\Models\CreateUEcHolderRequestStorage;
 
 class CreateUEcHolderRequest extends Request
 {
@@ -32,7 +35,6 @@ class CreateUEcHolderRequest extends Request
         $this->markRequired("SubnetId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -49,11 +51,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * IdcId: 机房id
      *
@@ -69,11 +70,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * CpuCore: 容器组Cpu总核数
      *
@@ -89,11 +89,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param float $cpuCore
      */
-    public function setCpuCore($cpuCore)
+    public function setCpuCore(float $cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
-
     /**
      * MemSize: 容器组总内存，单位MB
      *
@@ -109,11 +108,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
-
     /**
      * SubnetId: 子网ID
      *
@@ -129,11 +127,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $subnetId
      */
-    public function setSubnetId($subnetId)
+    public function setSubnetId(string $subnetId)
     {
         $this->set("SubnetId", $subnetId);
     }
-
     /**
      * Name: 容器组名称（默认default）
      *
@@ -149,11 +146,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * ProductType: 机型（normal-经济型，hf-标准型，默认normal）
      *
@@ -169,11 +165,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }
-
     /**
      * RestartStrategy: 重启策略（0总是，1失败是，2永不，默认0）
      *
@@ -189,11 +184,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $restartStrategy
      */
-    public function setRestartStrategy($restartStrategy)
+    public function setRestartStrategy(int $restartStrategy)
     {
         $this->set("RestartStrategy", $restartStrategy);
     }
-
     /**
      * ElasticIp: 绑定外网ip（yes-绑定，no-不绑定，默认no）
      *
@@ -209,11 +203,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $elasticIp
      */
-    public function setElasticIp($elasticIp)
+    public function setElasticIp(string $elasticIp)
     {
         $this->set("ElasticIp", $elasticIp);
     }
-
     /**
      * Bandwidth: 外网绑定的带宽（单位M，默认0，只有当ElasticIp为yes时，默认1）
      *
@@ -229,11 +222,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * FirewallId: 防火墙ID
      *
@@ -249,11 +241,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
-
     /**
      * ChargeType: 付费方式（2按月、3按年。默认2，默认月付）
      *
@@ -269,11 +260,10 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(int $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * ChargeQuantity: 月数或者年数（默认值：1，当为按月计费时，0表示计费到月底，默认值为0）
      *
@@ -289,15 +279,14 @@ class CreateUEcHolderRequest extends Request
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity($chargeQuantity)
+    public function setChargeQuantity(int $chargeQuantity)
     {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
-
     /**
      * Pack:
      *
-     * @return CreateUEcHolderParamPack[]|null
+     * @return CreateUEcHolderRequestPackModel[]|null
      */
     public function getPack()
     {
@@ -307,7 +296,7 @@ class CreateUEcHolderRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUEcHolderParamPack($item));
+            array_push($result, new CreateUEcHolderRequestPackModel($item));
         }
         return $result;
     }
@@ -315,7 +304,7 @@ class CreateUEcHolderRequest extends Request
     /**
      * Pack:
      *
-     * @param CreateUEcHolderParamPack[] $pack
+     * @param CreateUEcHolderRequestPackModel[] $pack
      */
     public function setPack(array $pack)
     {
@@ -325,11 +314,10 @@ class CreateUEcHolderRequest extends Request
         }
         return $result;
     }
-
     /**
      * Image:
      *
-     * @return CreateUEcHolderParamImage[]|null
+     * @return CreateUEcHolderRequestImageModel[]|null
      */
     public function getImage()
     {
@@ -339,7 +327,7 @@ class CreateUEcHolderRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUEcHolderParamImage($item));
+            array_push($result, new CreateUEcHolderRequestImageModel($item));
         }
         return $result;
     }
@@ -347,7 +335,7 @@ class CreateUEcHolderRequest extends Request
     /**
      * Image:
      *
-     * @param CreateUEcHolderParamImage[] $image
+     * @param CreateUEcHolderRequestImageModel[] $image
      */
     public function setImage(array $image)
     {
@@ -357,11 +345,10 @@ class CreateUEcHolderRequest extends Request
         }
         return $result;
     }
-
     /**
      * Storage:
      *
-     * @return CreateUEcHolderParamStorage[]|null
+     * @return CreateUEcHolderRequestStorageModel[]|null
      */
     public function getStorage()
     {
@@ -371,7 +358,7 @@ class CreateUEcHolderRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUEcHolderParamStorage($item));
+            array_push($result, new CreateUEcHolderRequestStorageModel($item));
         }
         return $result;
     }
@@ -379,7 +366,7 @@ class CreateUEcHolderRequest extends Request
     /**
      * Storage:
      *
-     * @param CreateUEcHolderParamStorage[] $storage
+     * @param CreateUEcHolderRequestStorageModel[] $storage
      */
     public function setStorage(array $storage)
     {

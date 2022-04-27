@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\OutPublicIpInfo;
+use UCloud\PathX\Models\PathXUGAInfo;
+use UCloud\PathX\Models\DescribeUPathResponse;
+
 class UPathInfo extends Response
 {
-    
 
     /**
      * PostPaid: 是否为后付费实例
@@ -37,11 +42,10 @@ class UPathInfo extends Response
      *
      * @param boolean $postPaid
      */
-    public function setPostPaid($postPaid)
+    public function setPostPaid(bool $postPaid)
     {
         $this->set("PostPaid", $postPaid);
     }
-
     /**
      * ChargeType: 计费模式，默认为Month 按月收费,可选范围['Month','Year','Dynamic']
      *
@@ -57,11 +61,10 @@ class UPathInfo extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Name: UPath实例名字
      *
@@ -77,11 +80,10 @@ class UPathInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * UPathId: UPath加速线路实例ID
      *
@@ -97,11 +99,10 @@ class UPathInfo extends Response
      *
      * @param string $uPathId
      */
-    public function setUPathId($uPathId)
+    public function setUPathId(string $uPathId)
     {
         $this->set("UPathId", $uPathId);
     }
-
     /**
      * Bandwidth: 带宽，单位Mbps
      *
@@ -117,11 +118,10 @@ class UPathInfo extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * LineId: 选择的线路
      *
@@ -137,15 +137,14 @@ class UPathInfo extends Response
      *
      * @param string $lineId
      */
-    public function setLineId($lineId)
+    public function setLineId(string $lineId)
     {
         $this->set("LineId", $lineId);
     }
-
     /**
      * UGAList: 与该UPath绑定的UGA列表
      *
-     * @return PathXUGAInfo[]|null
+     * @return PathXUGAInfoModel[]|null
      */
     public function getUGAList()
     {
@@ -155,7 +154,7 @@ class UPathInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new PathXUGAInfo($item));
+            array_push($result, new PathXUGAInfoModel($item));
         }
         return $result;
     }
@@ -163,7 +162,7 @@ class UPathInfo extends Response
     /**
      * UGAList: 与该UPath绑定的UGA列表
      *
-     * @param PathXUGAInfo[] $ugaList
+     * @param PathXUGAInfoModel[] $ugaList
      */
     public function setUGAList(array $ugaList)
     {
@@ -173,7 +172,6 @@ class UPathInfo extends Response
         }
         return $result;
     }
-
     /**
      * CreateTime: UPath创建的时间，10位时间戳
      *
@@ -189,11 +187,10 @@ class UPathInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpireTime: UPath的过期时间，10位时间戳
      *
@@ -209,11 +206,10 @@ class UPathInfo extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * LineFromName: 线路入口名称
      *
@@ -229,11 +225,10 @@ class UPathInfo extends Response
      *
      * @param string $lineFromName
      */
-    public function setLineFromName($lineFromName)
+    public function setLineFromName(string $lineFromName)
     {
         $this->set("LineFromName", $lineFromName);
     }
-
     /**
      * LineToName: 线路出口名称
      *
@@ -249,15 +244,14 @@ class UPathInfo extends Response
      *
      * @param string $lineToName
      */
-    public function setLineToName($lineToName)
+    public function setLineToName(string $lineToName)
     {
         $this->set("LineToName", $lineToName);
     }
-
     /**
      * OutPublicIpList: 线路出口IP数组
      *
-     * @return OutPublicIpInfo[]|null
+     * @return OutPublicIpInfoModel[]|null
      */
     public function getOutPublicIpList()
     {
@@ -267,7 +261,7 @@ class UPathInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new OutPublicIpInfo($item));
+            array_push($result, new OutPublicIpInfoModel($item));
         }
         return $result;
     }
@@ -275,7 +269,7 @@ class UPathInfo extends Response
     /**
      * OutPublicIpList: 线路出口IP数组
      *
-     * @param OutPublicIpInfo[] $outPublicIpList
+     * @param OutPublicIpInfoModel[] $outPublicIpList
      */
     public function setOutPublicIpList(array $outPublicIpList)
     {

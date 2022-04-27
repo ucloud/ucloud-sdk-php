@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\IPSecVPN\Models\GetVPNGatewayPriceResponse;
+
 class VPNGatewayPriceSet extends Response
 {
-    
 
     /**
      * ChargeType: VPN网关付费方式
@@ -37,11 +40,10 @@ class VPNGatewayPriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Price: VPN网关价格, 单位"元"
      *
@@ -57,11 +59,10 @@ class VPNGatewayPriceSet extends Response
      *
      * @param float $price
      */
-    public function setPrice($price)
+    public function setPrice(float $price)
     {
         $this->set("Price", $price);
     }
-
     /**
      * PurchaseValue: 资源有效期, 以Unix Timestamp表示
      *
@@ -77,7 +78,7 @@ class VPNGatewayPriceSet extends Response
      *
      * @param int $purchaseValue
      */
-    public function setPurchaseValue($purchaseValue)
+    public function setPurchaseValue(int $purchaseValue)
     {
         $this->set("PurchaseValue", $purchaseValue);
     }

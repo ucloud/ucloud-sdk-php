@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UPHost\Models\GetPHostPriceResponse;
+
 class PHostPriceSet extends Response
 {
-    
 
     /**
      * ChargeType: Year/Month
@@ -37,11 +40,10 @@ class PHostPriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Price: 价格, 单位:元, 保留小数点后两位有效数字
      *
@@ -57,11 +59,10 @@ class PHostPriceSet extends Response
      *
      * @param float $price
      */
-    public function setPrice($price)
+    public function setPrice(float $price)
     {
         $this->set("Price", $price);
     }
-
     /**
      * Product: 枚举值：phost=>为主机价格，如果是云盘包括了系统盘价格。cloudDisk=>所有数据盘价格，只是裸金属机型才返回此参数。
      *
@@ -77,11 +78,10 @@ class PHostPriceSet extends Response
      *
      * @param string $product
      */
-    public function setProduct($product)
+    public function setProduct(string $product)
     {
         $this->set("Product", $product);
     }
-
     /**
      * OriginalPrice: 原价格, 单位:元, 保留小数点后两位有效数字
      *
@@ -97,7 +97,7 @@ class PHostPriceSet extends Response
      *
      * @param float $originalPrice
      */
-    public function setOriginalPrice($originalPrice)
+    public function setOriginalPrice(float $originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }

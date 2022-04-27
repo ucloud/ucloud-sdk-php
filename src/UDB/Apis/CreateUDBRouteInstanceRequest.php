@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -33,7 +35,6 @@ class CreateUDBRouteInstanceRequest extends Request
         $this->markRequired("ConfigsvrId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -50,11 +51,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -70,11 +70,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -90,11 +89,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * DBTypeId: DB类型id，mongodb按版本细分有1：mongodb-2.4，2：mongodb-2.6,3：mongodb-3.0，4：mongodb-3.2
      *
@@ -110,11 +108,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
-
     /**
      * Name: 实例名称，至少6位
      *
@@ -130,11 +127,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Port: 端口号，mongodb默认27017
      *
@@ -150,11 +146,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
@@ -170,11 +165,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param int $paramGroupId
      */
-    public function setParamGroupId($paramGroupId)
+    public function setParamGroupId(int $paramGroupId)
     {
         $this->set("ParamGroupId", $paramGroupId);
     }
-
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 600M/1500M/3000M /6000M/15000M/30000M
      *
@@ -190,11 +184,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param int $memoryLimit
      */
-    public function setMemoryLimit($memoryLimit)
+    public function setMemoryLimit(int $memoryLimit)
     {
         $this->set("MemoryLimit", $memoryLimit);
     }
-
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 500G
      *
@@ -210,11 +203,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param int $diskSpace
      */
-    public function setDiskSpace($diskSpace)
+    public function setDiskSpace(int $diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
     }
-
     /**
      * ConfigsvrId: 配置服务器的dbid，允许一个或者三个。
      *
@@ -234,7 +226,6 @@ class CreateUDBRouteInstanceRequest extends Request
     {
         $this->set("ConfigsvrId", $configsvrId);
     }
-
     /**
      * ChargeType: Year， Month， Dynamic，Trial，默认: Month
      *
@@ -250,11 +241,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Quantity: 购买时长，默认值1
      *
@@ -270,11 +260,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity)
     {
         $this->set("Quantity", $quantity);
     }
-
     /**
      * UseSSD: 是否使用SSD，默认为ture
      *
@@ -290,11 +279,10 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param boolean $useSSD
      */
-    public function setUseSSD($useSSD)
+    public function setUseSSD(bool $useSSD)
     {
         $this->set("UseSSD", $useSSD);
     }
-
     /**
      * CouponId: 使用的代金券id
      *
@@ -310,7 +298,7 @@ class CreateUDBRouteInstanceRequest extends Request
      *
      * @param string $couponId
      */
-    public function setCouponId($couponId)
+    public function setCouponId(string $couponId)
     {
         $this->set("CouponId", $couponId);
     }

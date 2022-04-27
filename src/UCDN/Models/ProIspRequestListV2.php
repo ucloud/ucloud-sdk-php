@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\ProIspRequestNumSetV2;
+use UCloud\UCDN\Models\GetUcdnProIspRequestNumV2Response;
+
 class ProIspRequestListV2 extends Response
 {
-    
 
     /**
      * Time: 带宽获取的时间点。格式：时间戳
@@ -37,11 +41,10 @@ class ProIspRequestListV2 extends Response
      *
      * @param int $time
      */
-    public function setTime($time)
+    public function setTime(int $time)
     {
         $this->set("Time", $time);
     }
-
     /**
      * CdnRequest: 返回值返回指定时间区间内的请求数
      *
@@ -57,7 +60,7 @@ class ProIspRequestListV2 extends Response
      *
      * @param float $cdnRequest
      */
-    public function setCdnRequest($cdnRequest)
+    public function setCdnRequest(float $cdnRequest)
     {
         $this->set("CdnRequest", $cdnRequest);
     }

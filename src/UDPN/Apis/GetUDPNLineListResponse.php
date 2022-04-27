@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDPN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UDPN\Models\UDPNLineSet;
 
 class GetUDPNLineListResponse extends Response
 {
-    
 
     /**
      * TotalCount: DataSet中的元素个数
@@ -38,15 +40,14 @@ class GetUDPNLineListResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: 当前支持的专线线路详细信息，详见UDPNLineSet
      *
-     * @return UDPNLineSet[]|null
+     * @return UDPNLineSetModel[]|null
      */
     public function getDataSet()
     {
@@ -56,7 +57,7 @@ class GetUDPNLineListResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UDPNLineSet($item));
+            array_push($result, new UDPNLineSetModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class GetUDPNLineListResponse extends Response
     /**
      * DataSet: 当前支持的专线线路详细信息，详见UDPNLineSet
      *
-     * @param UDPNLineSet[] $dataSet
+     * @param UDPNLineSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

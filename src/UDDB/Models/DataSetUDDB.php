@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDDB\Models\DataNodeInfo;
+use UCloud\UDDB\Models\ListUDDBInstanceResponse;
+use UCloud\UDDB\Models\SlaveInfo;
+use UCloud\UDDB\Models\DescribeUDDBInstanceResponse;
+
 class DataSetUDDB extends Response
 {
-    
 
     /**
      * Zone: UDDB实例对应的可用区
@@ -37,11 +43,10 @@ class DataSetUDDB extends Response
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * UDDBId: UDDB实例ID
      *
@@ -57,11 +62,10 @@ class DataSetUDDB extends Response
      *
      * @param string $uddbId
      */
-    public function setUDDBId($uddbId)
+    public function setUDDBId(string $uddbId)
     {
         $this->set("UDDBId", $uddbId);
     }
-
     /**
      * Name: UDDB实例名称
      *
@@ -77,11 +81,10 @@ class DataSetUDDB extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * DBTypeId: UDDB的数据库版本
      *
@@ -97,11 +100,10 @@ class DataSetUDDB extends Response
      *
      * @param string $dbTypeId
      */
-    public function setDBTypeId($dbTypeId)
+    public function setDBTypeId(string $dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
     }
-
     /**
      * AdminUser: 管理员帐户名，默认root
      *
@@ -117,11 +119,10 @@ class DataSetUDDB extends Response
      *
      * @param string $adminUser
      */
-    public function setAdminUser($adminUser)
+    public function setAdminUser(string $adminUser)
     {
         $this->set("AdminUser", $adminUser);
     }
-
     /**
      * VirtualIP: UDDB实例访问的虚IP
      *
@@ -137,11 +138,10 @@ class DataSetUDDB extends Response
      *
      * @param string $virtualIP
      */
-    public function setVirtualIP($virtualIP)
+    public function setVirtualIP(string $virtualIP)
     {
         $this->set("VirtualIP", $virtualIP);
     }
-
     /**
      * Port: UDDB实例访问的端口号
      *
@@ -157,11 +157,10 @@ class DataSetUDDB extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * State: UDDB状态, 状态列表如下: Init: 初始化中 InitFail: 初始化失败 Starting: 启动中 Running: 系统正常运行中 Abnormal: 系统运行中, 有异常, 还能提供服务 Error: 系统运行中, 但不能正常提供服务 Shutdown: 关闭中 Shutoff: 已关闭 Deleted: 已删除 UpgradingUDDB: 升降级UDDB配置中 UpgradingDataNode: 升降级UDDB节点配置中 ChangingSlaveCount: 改变只读实例数量中 ScalingOutUDDB: 水平扩展中
      *
@@ -177,11 +176,10 @@ class DataSetUDDB extends Response
      *
      * @param string $state
      */
-    public function setState($state)
+    public function setState(string $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * CreateTime: UDDB实例创建时间，采用UTC计时时间戳
      *
@@ -197,11 +195,10 @@ class DataSetUDDB extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpiredTime: UDDB实例过期时间，采用UTC计时时间戳
      *
@@ -217,11 +214,10 @@ class DataSetUDDB extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
-
     /**
      * ChargeType: 付费类型，可选值如下: Year: 按年付费 Month: 按月付费 Dynamic: 按需付费(单位: 小时) Trial: 免费试用
      *
@@ -237,11 +233,10 @@ class DataSetUDDB extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * RouterVersion: UDDB路由节点的版本。分为三种： Trival(免费版)： 2中间件节点； QPS：1.5W FellFree(标准版)： 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选
      *
@@ -257,11 +252,10 @@ class DataSetUDDB extends Response
      *
      * @param string $routerVersion
      */
-    public function setRouterVersion($routerVersion)
+    public function setRouterVersion(string $routerVersion)
     {
         $this->set("RouterVersion", $routerVersion);
     }
-
     /**
      * RouterNodeNum: 各版本下的节点个数。体验版： 固定为2节点； 畅享版：固定为4节点（后续可通过管理API调整）；专享版：物理机台数
      *
@@ -277,11 +271,10 @@ class DataSetUDDB extends Response
      *
      * @param int $routerNodeNum
      */
-    public function setRouterNodeNum($routerNodeNum)
+    public function setRouterNodeNum(int $routerNodeNum)
     {
         $this->set("RouterNodeNum", $routerNodeNum);
     }
-
     /**
      * RefQps: 参考QPS。 免费版： 15000； 畅享版： 30000 - 100000 （根据节点数而定）； 专享版： 节点数 * 10w qps
      *
@@ -297,11 +290,10 @@ class DataSetUDDB extends Response
      *
      * @param int $refQps
      */
-    public function setRefQps($refQps)
+    public function setRefQps(int $refQps)
     {
         $this->set("RefQps", $refQps);
     }
-
     /**
      * DataNodeCount: 数据节点个数
      *
@@ -317,11 +309,10 @@ class DataSetUDDB extends Response
      *
      * @param int $dataNodeCount
      */
-    public function setDataNodeCount($dataNodeCount)
+    public function setDataNodeCount(int $dataNodeCount)
     {
         $this->set("DataNodeCount", $dataNodeCount);
     }
-
     /**
      * DataNodeMemory: 数据节点的内存配置, 单位：MB
      *
@@ -337,11 +328,10 @@ class DataSetUDDB extends Response
      *
      * @param int $dataNodeMemory
      */
-    public function setDataNodeMemory($dataNodeMemory)
+    public function setDataNodeMemory(int $dataNodeMemory)
     {
         $this->set("DataNodeMemory", $dataNodeMemory);
     }
-
     /**
      * DataNodeDiskSpace: 数据节点的磁盘大小配置. 单位: GB
      *
@@ -357,11 +347,10 @@ class DataSetUDDB extends Response
      *
      * @param int $dataNodeDiskSpace
      */
-    public function setDataNodeDiskSpace($dataNodeDiskSpace)
+    public function setDataNodeDiskSpace(int $dataNodeDiskSpace)
     {
         $this->set("DataNodeDiskSpace", $dataNodeDiskSpace);
     }
-
     /**
      * DataNodeSlaveCount: 每个数据节点的只读实例个数.
      *
@@ -377,15 +366,14 @@ class DataSetUDDB extends Response
      *
      * @param int $dataNodeSlaveCount
      */
-    public function setDataNodeSlaveCount($dataNodeSlaveCount)
+    public function setDataNodeSlaveCount(int $dataNodeSlaveCount)
     {
         $this->set("DataNodeSlaveCount", $dataNodeSlaveCount);
     }
-
     /**
      * DataNodeList: UDDB实例的数据节点的信息列表
      *
-     * @return DataNodeInfo[]|null
+     * @return DataNodeInfoModel[]|null
      */
     public function getDataNodeList()
     {
@@ -395,7 +383,7 @@ class DataSetUDDB extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new DataNodeInfo($item));
+            array_push($result, new DataNodeInfoModel($item));
         }
         return $result;
     }
@@ -403,7 +391,7 @@ class DataSetUDDB extends Response
     /**
      * DataNodeList: UDDB实例的数据节点的信息列表
      *
-     * @param DataNodeInfo[] $dataNodeList
+     * @param DataNodeInfoModel[] $dataNodeList
      */
     public function setDataNodeList(array $dataNodeList)
     {
@@ -413,7 +401,6 @@ class DataSetUDDB extends Response
         }
         return $result;
     }
-
     /**
      * InstanceMode: 存储节点的高可用模式， 分为高可用UDB（HA）和普通UDB（Normal），如果不填， 则默认为HA
      *
@@ -429,11 +416,10 @@ class DataSetUDDB extends Response
      *
      * @param string $instanceMode
      */
-    public function setInstanceMode($instanceMode)
+    public function setInstanceMode(string $instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
     }
-
     /**
      * InstanceType: 存储节点和只读实例的磁盘类型。分为：SSD磁盘（SATA_SSD）或普通磁盘(Normal)。 如果不填，则默认为SATA_SSD
      *
@@ -449,7 +435,7 @@ class DataSetUDDB extends Response
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }

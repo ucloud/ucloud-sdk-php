@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDB\Models\DescribeUDBInstanceBinlogResponse;
+
 class UDBInstanceBinlogSet extends Response
 {
-    
 
     /**
      * Name: Binlog文件名
@@ -37,11 +40,10 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Size: Binlog文件大小
      *
@@ -57,11 +59,10 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $size
      */
-    public function setSize($size)
+    public function setSize(int $size)
     {
         $this->set("Size", $size);
     }
-
     /**
      * BeginTime: Binlog文件生成时间(时间戳)
      *
@@ -77,11 +78,10 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: Binlog文件结束时间(时间戳)
      *
@@ -97,7 +97,7 @@ class UDBInstanceBinlogSet extends Response
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }

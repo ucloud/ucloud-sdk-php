@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class DescribeUDBInstanceRequest extends Request
         $this->markRequired("Region");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -43,11 +44,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区，不填时默认全部可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -63,11 +63,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -83,11 +82,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * ClassType: DB种类，如果是列表操作，则需要指定,不区分大小写，其取值如下：mysql: SQL；mongo: NOSQL；postgresql: postgresql
      *
@@ -103,11 +101,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $classType
      */
-    public function setClassType($classType)
+    public function setClassType(string $classType)
     {
         $this->set("ClassType", $classType);
     }
-
     /**
      * Offset: 分页显示起始偏移位置，列表操作时必填
      *
@@ -123,11 +120,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 分页显示数量，列表操作时必填
      *
@@ -143,11 +139,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * DBId: DB实例id，如果指定则获取单个db实例的描述，否则为列表操作。 指定DBId时无需填写ClassType、Offset、Limit
      *
@@ -163,11 +158,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
-
     /**
      * IsInUDBC: 是否查看专区里面DB
      *
@@ -183,11 +177,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param boolean $isInUDBC
      */
-    public function setIsInUDBC($isInUDBC)
+    public function setIsInUDBC(bool $isInUDBC)
     {
         $this->set("IsInUDBC", $isInUDBC);
     }
-
     /**
      * UDBCId: IsInUDBC为True,UDBCId为空，说明查看整个可用区的专区的db，如果UDBId不为空则只查看此专区下面的db
      *
@@ -203,11 +196,10 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param string $udbcId
      */
-    public function setUDBCId($udbcId)
+    public function setUDBCId(string $udbcId)
     {
         $this->set("UDBCId", $udbcId);
     }
-
     /**
      * IncludeSlaves: 当只获取这个特定DBId的信息时，如果有该选项，那么把这个DBId实例的所有从库信息一起拉取并返回
      *
@@ -223,7 +215,7 @@ class DescribeUDBInstanceRequest extends Request
      *
      * @param boolean $includeSlaves
      */
-    public function setIncludeSlaves($includeSlaves)
+    public function setIncludeSlaves(bool $includeSlaves)
     {
         $this->set("IncludeSlaves", $includeSlaves);
     }

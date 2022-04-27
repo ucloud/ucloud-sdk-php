@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UBill\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UBill\Models\GetBalanceResponse;
+
 class AccountInfo extends Response
 {
-    
 
     /**
      * AmountFreeze: 冻结账户金额
@@ -37,11 +40,10 @@ class AccountInfo extends Response
      *
      * @param string $amountFreeze
      */
-    public function setAmountFreeze($amountFreeze)
+    public function setAmountFreeze(string $amountFreeze)
     {
         $this->set("AmountFreeze", $amountFreeze);
     }
-
     /**
      * AmountCredit: 信用账户余额
      *
@@ -57,11 +59,10 @@ class AccountInfo extends Response
      *
      * @param string $amountCredit
      */
-    public function setAmountCredit($amountCredit)
+    public function setAmountCredit(string $amountCredit)
     {
         $this->set("AmountCredit", $amountCredit);
     }
-
     /**
      * AmountFree: 赠送账户余额
      *
@@ -77,11 +78,10 @@ class AccountInfo extends Response
      *
      * @param string $amountFree
      */
-    public function setAmountFree($amountFree)
+    public function setAmountFree(string $amountFree)
     {
         $this->set("AmountFree", $amountFree);
     }
-
     /**
      * Amount: 账户余额
      *
@@ -97,11 +97,10 @@ class AccountInfo extends Response
      *
      * @param string $amount
      */
-    public function setAmount($amount)
+    public function setAmount(string $amount)
     {
         $this->set("Amount", $amount);
     }
-
     /**
      * AmountAvailable: 账户可用余额
      *
@@ -117,7 +116,7 @@ class AccountInfo extends Response
      *
      * @param string $amountAvailable
      */
-    public function setAmountAvailable($amountAvailable)
+    public function setAmountAvailable(string $amountAvailable)
     {
         $this->set("AmountAvailable", $amountAvailable);
     }

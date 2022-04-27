@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,25 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UCDN\Models\HttpCodeInfoV2;
-use UCloud\UCDN\Models\HttpCodeV2Detail;
-use UCloud\UCDN\Models\HttpCodeV2Detail;
-use UCloud\UCDN\Models\HttpCodeV2Detail;
-use UCloud\UCDN\Models\HttpCodeV2Detail;
-use UCloud\UCDN\Models\HttpCodeV2Detail;
 use UCloud\UCDN\Models\HttpCodeV2Detail;
 
 class GetUcdnDomainHttpCodeV2Response extends Response
 {
-    
 
     /**
      * HttpCodeDetail: 状态码实例表。详细见HttpCodeInfoV2
      *
-     * @return HttpCodeInfoV2[]|null
+     * @return HttpCodeInfoV2Model[]|null
      */
     public function getHttpCodeDetail()
     {
@@ -42,7 +39,7 @@ class GetUcdnDomainHttpCodeV2Response extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new HttpCodeInfoV2($item));
+            array_push($result, new HttpCodeInfoV2Model($item));
         }
         return $result;
     }
@@ -50,7 +47,7 @@ class GetUcdnDomainHttpCodeV2Response extends Response
     /**
      * HttpCodeDetail: 状态码实例表。详细见HttpCodeInfoV2
      *
-     * @param HttpCodeInfoV2[] $httpCodeDetail
+     * @param HttpCodeInfoV2Model[] $httpCodeDetail
      */
     public function setHttpCodeDetail(array $httpCodeDetail)
     {

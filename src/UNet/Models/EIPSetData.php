@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UNet\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UNet\Models\EIPAddrSet;
+use UCloud\UNet\Models\UnetShareBandwidthSet;
+use UCloud\UNet\Models\DescribeShareBandwidthResponse;
+
 class EIPSetData extends Response
 {
-    
 
     /**
      * Bandwidth: EIP带宽值
@@ -37,15 +42,14 @@ class EIPSetData extends Response
      *
      * @param int $bandwidth
      */
-    public function setBandwidth($bandwidth)
+    public function setBandwidth(int $bandwidth)
     {
         $this->set("Bandwidth", $bandwidth);
     }
-
     /**
      * EIPAddr: EIP的IP信息，详情见EIPAddrSet
      *
-     * @return EIPAddrSet[]|null
+     * @return EIPAddrSetModel[]|null
      */
     public function getEIPAddr()
     {
@@ -55,7 +59,7 @@ class EIPSetData extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new EIPAddrSet($item));
+            array_push($result, new EIPAddrSetModel($item));
         }
         return $result;
     }
@@ -63,7 +67,7 @@ class EIPSetData extends Response
     /**
      * EIPAddr: EIP的IP信息，详情见EIPAddrSet
      *
-     * @param EIPAddrSet[] $eipAddr
+     * @param EIPAddrSetModel[] $eipAddr
      */
     public function setEIPAddr(array $eipAddr)
     {
@@ -73,7 +77,6 @@ class EIPSetData extends Response
         }
         return $result;
     }
-
     /**
      * EIPId: EIP资源Id
      *
@@ -89,7 +92,7 @@ class EIPSetData extends Response
      *
      * @param string $eipId
      */
-    public function setEIPId($eipId)
+    public function setEIPId(string $eipId)
     {
         $this->set("EIPId", $eipId);
     }

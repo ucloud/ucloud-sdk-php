@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UK8S\Models\NodeInfoV2;
-use UCloud\UK8S\Models\UHostIPSet;
+
 use UCloud\UK8S\Models\KubeProxy;
+use UCloud\UK8S\Models\UHostIPSet;
+use UCloud\UK8S\Models\NodeInfoV2;
 
 class ListUK8SClusterNodeV2Response extends Response
 {
-    
 
     /**
      * NodeSet: 节点详细信息，见NodeInfoV2。
      *
-     * @return NodeInfoV2[]|null
+     * @return NodeInfoV2Model[]|null
      */
     public function getNodeSet()
     {
@@ -38,7 +40,7 @@ class ListUK8SClusterNodeV2Response extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new NodeInfoV2($item));
+            array_push($result, new NodeInfoV2Model($item));
         }
         return $result;
     }
@@ -46,7 +48,7 @@ class ListUK8SClusterNodeV2Response extends Response
     /**
      * NodeSet: 节点详细信息，见NodeInfoV2。
      *
-     * @param NodeInfoV2[] $nodeSet
+     * @param NodeInfoV2Model[] $nodeSet
      */
     public function setNodeSet(array $nodeSet)
     {
@@ -56,7 +58,6 @@ class ListUK8SClusterNodeV2Response extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 满足条件的节点数量，包括Master。
      *
@@ -72,7 +73,7 @@ class ListUK8SClusterNodeV2Response extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

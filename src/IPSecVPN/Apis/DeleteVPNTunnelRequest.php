@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class DeleteVPNTunnelRequest extends Request
         $this->markRequired("VPNTunnelId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -65,11 +65,10 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * VPNTunnelId: VPN隧道的资源ID
      *
@@ -85,7 +84,7 @@ class DeleteVPNTunnelRequest extends Request
      *
      * @param string $vpnTunnelId
      */
-    public function setVPNTunnelId($vpnTunnelId)
+    public function setVPNTunnelId(string $vpnTunnelId)
     {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }

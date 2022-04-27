@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UPHost\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class ReinstallPHostRequest extends Request
         $this->markRequired("Password");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -46,11 +47,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -66,11 +66,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -86,11 +85,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * PHostId: PHost资源ID
      *
@@ -106,11 +104,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $pHostId
      */
-    public function setPHostId($pHostId)
+    public function setPHostId(string $pHostId)
     {
         $this->set("PHostId", $pHostId);
     }
-
     /**
      * Password: 密码
      *
@@ -126,11 +123,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->set("Password", $password);
     }
-
     /**
      * ImageId: 镜像Id，参考镜像列表，默认使用原镜像
      *
@@ -146,11 +142,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $imageId
      */
-    public function setImageId($imageId)
+    public function setImageId(string $imageId)
     {
         $this->set("ImageId", $imageId);
     }
-
     /**
      * Name: 物理机名称，默认不更改
      *
@@ -166,11 +161,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Remark: 物理机备注，默认为不更改。
      *
@@ -186,11 +180,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * Tag: 业务组，默认不更改。
      *
@@ -206,11 +199,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * ReserveDisk: 是否保留数据盘，保留：Yes，不报留：No， 默认：Yes
      *
@@ -226,11 +218,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $reserveDisk
      */
-    public function setReserveDisk($reserveDisk)
+    public function setReserveDisk(string $reserveDisk)
     {
         $this->set("ReserveDisk", $reserveDisk);
     }
-
     /**
      * Raid: 不保留数据盘重装，可选Raid
      *
@@ -246,11 +237,10 @@ class ReinstallPHostRequest extends Request
      *
      * @param string $raid
      */
-    public function setRaid($raid)
+    public function setRaid(string $raid)
     {
         $this->set("Raid", $raid);
     }
-
     /**
      * BootDiskSpace: 裸金属机型参数->系统盘大小。 单位：GB， 范围[20,500]， 步长：10
      *
@@ -266,7 +256,7 @@ class ReinstallPHostRequest extends Request
      *
      * @param int $bootDiskSpace
      */
-    public function setBootDiskSpace($bootDiskSpace)
+    public function setBootDiskSpace(int $bootDiskSpace)
     {
         $this->set("BootDiskSpace", $bootDiskSpace);
     }

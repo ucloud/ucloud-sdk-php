@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDDB\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UDDB\Models\DescribeUDDBInstanceUpgradePriceResponse;
+
 class PriceInfo extends Response
 {
-    
 
     /**
      * MiddlewarePrice: 中间件路由节点费用
@@ -37,11 +40,10 @@ class PriceInfo extends Response
      *
      * @param float $middlewarePrice
      */
-    public function setMiddlewarePrice($middlewarePrice)
+    public function setMiddlewarePrice(float $middlewarePrice)
     {
         $this->set("MiddlewarePrice", $middlewarePrice);
     }
-
     /**
      * DataNodePrice: 存储节点费用
      *
@@ -57,11 +59,10 @@ class PriceInfo extends Response
      *
      * @param float $dataNodePrice
      */
-    public function setDataNodePrice($dataNodePrice)
+    public function setDataNodePrice(float $dataNodePrice)
     {
         $this->set("DataNodePrice", $dataNodePrice);
     }
-
     /**
      * DataNodeSlavePrice: 只读实例费用
      *
@@ -77,7 +78,7 @@ class PriceInfo extends Response
      *
      * @param float $dataNodeSlavePrice
      */
-    public function setDataNodeSlavePrice($dataNodeSlavePrice)
+    public function setDataNodeSlavePrice(float $dataNodeSlavePrice)
     {
         $this->set("DataNodeSlavePrice", $dataNodeSlavePrice);
     }

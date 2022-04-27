@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\HolderList;
+use UCloud\UEC\Models\DescribeUEcHolderResponse;
+use UCloud\UEC\Models\EnvList;
+use UCloud\UEC\Models\CfgDictList;
+use UCloud\UEC\Models\ListUEcHolderResponse;
+
 class DockerInfo extends Response
 {
-    
 
     /**
      * CpuCores: CPU核数（/核）精度0.1核
@@ -37,11 +44,10 @@ class DockerInfo extends Response
      *
      * @param float $cpuCores
      */
-    public function setCpuCores($cpuCores)
+    public function setCpuCores(float $cpuCores)
     {
         $this->set("CpuCores", $cpuCores);
     }
-
     /**
      * MemSize: 内存大小（Gi）
      *
@@ -57,11 +63,10 @@ class DockerInfo extends Response
      *
      * @param float $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(float $memSize)
     {
         $this->set("MemSize", $memSize);
     }
-
     /**
      * Name: 容器名称
      *
@@ -77,11 +82,10 @@ class DockerInfo extends Response
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常
      *
@@ -97,11 +101,10 @@ class DockerInfo extends Response
      *
      * @param int $state
      */
-    public function setState($state)
+    public function setState(int $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * ImageName: 镜像名称
      *
@@ -117,11 +120,10 @@ class DockerInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
-
     /**
      * WorkDir: 工作目录
      *
@@ -137,11 +139,10 @@ class DockerInfo extends Response
      *
      * @param string $workDir
      */
-    public function setWorkDir($workDir)
+    public function setWorkDir(string $workDir)
     {
         $this->set("WorkDir", $workDir);
     }
-
     /**
      * Command: 命令
      *
@@ -157,11 +158,10 @@ class DockerInfo extends Response
      *
      * @param string $command
      */
-    public function setCommand($command)
+    public function setCommand(string $command)
     {
         $this->set("Command", $command);
     }
-
     /**
      * Args: 参数
      *
@@ -177,15 +177,14 @@ class DockerInfo extends Response
      *
      * @param string $args
      */
-    public function setArgs($args)
+    public function setArgs(string $args)
     {
         $this->set("Args", $args);
     }
-
     /**
      * EnvList: 环境变量（详情参考EnvList）
      *
-     * @return EnvList[]|null
+     * @return EnvListModel[]|null
      */
     public function getEnvList()
     {
@@ -195,7 +194,7 @@ class DockerInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new EnvList($item));
+            array_push($result, new EnvListModel($item));
         }
         return $result;
     }
@@ -203,7 +202,7 @@ class DockerInfo extends Response
     /**
      * EnvList: 环境变量（详情参考EnvList）
      *
-     * @param EnvList[] $envList
+     * @param EnvListModel[] $envList
      */
     public function setEnvList(array $envList)
     {
@@ -213,11 +212,10 @@ class DockerInfo extends Response
         }
         return $result;
     }
-
     /**
      * CfgDictList: 容器配置字典（详情参考CfgDictList）
      *
-     * @return CfgDictList[]|null
+     * @return CfgDictListModel[]|null
      */
     public function getCfgDictList()
     {
@@ -227,7 +225,7 @@ class DockerInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CfgDictList($item));
+            array_push($result, new CfgDictListModel($item));
         }
         return $result;
     }
@@ -235,7 +233,7 @@ class DockerInfo extends Response
     /**
      * CfgDictList: 容器配置字典（详情参考CfgDictList）
      *
-     * @param CfgDictList[] $cfgDictList
+     * @param CfgDictListModel[] $cfgDictList
      */
     public function setCfgDictList(array $cfgDictList)
     {

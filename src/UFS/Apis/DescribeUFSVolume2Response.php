@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFS\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UFS\Models\UFSVolumeInfo2;
 
 class DescribeUFSVolume2Response extends Response
 {
-    
 
     /**
      * TotalCount: 文件系统总数
@@ -38,15 +40,14 @@ class DescribeUFSVolume2Response extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: 文件系统详细信息列表
      *
-     * @return UFSVolumeInfo2[]|null
+     * @return UFSVolumeInfo2Model[]|null
      */
     public function getDataSet()
     {
@@ -56,7 +57,7 @@ class DescribeUFSVolume2Response extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UFSVolumeInfo2($item));
+            array_push($result, new UFSVolumeInfo2Model($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class DescribeUFSVolume2Response extends Response
     /**
      * DataSet: 文件系统详细信息列表
      *
-     * @param UFSVolumeInfo2[] $dataSet
+     * @param UFSVolumeInfo2Model[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

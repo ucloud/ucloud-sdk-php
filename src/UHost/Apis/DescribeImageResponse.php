@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UHost\Models\UHostImageSet;
 
 class DescribeImageResponse extends Response
 {
-    
 
     /**
      * TotalCount: 满足条件的镜像总数
@@ -38,15 +40,14 @@ class DescribeImageResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * ImageSet: 镜像列表详见 UHostImageSet
      *
-     * @return UHostImageSet[]|null
+     * @return UHostImageSetModel[]|null
      */
     public function getImageSet()
     {
@@ -56,7 +57,7 @@ class DescribeImageResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UHostImageSet($item));
+            array_push($result, new UHostImageSetModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class DescribeImageResponse extends Response
     /**
      * ImageSet: 镜像列表详见 UHostImageSet
      *
-     * @param UHostImageSet[] $imageSet
+     * @param UHostImageSetModel[] $imageSet
      */
     public function setImageSet(array $imageSet)
     {

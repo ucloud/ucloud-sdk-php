@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
-use UCloud\UEC\Params\CreateUEcFirewallParamRule;
+
+use UCloud\UEC\Models\CreateUEcFirewallRequestRule;
 
 class CreateUEcFirewallRequest extends Request
 {
@@ -27,7 +30,6 @@ class CreateUEcFirewallRequest extends Request
         $this->markRequired("Name");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -44,11 +46,10 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Name: 防火墙名称
      *
@@ -64,15 +65,14 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->set("Name", $name);
     }
-
     /**
      * Rule:
      *
-     * @return CreateUEcFirewallParamRule[]|null
+     * @return CreateUEcFirewallRequestRuleModel[]|null
      */
     public function getRule()
     {
@@ -82,7 +82,7 @@ class CreateUEcFirewallRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new CreateUEcFirewallParamRule($item));
+            array_push($result, new CreateUEcFirewallRequestRuleModel($item));
         }
         return $result;
     }
@@ -90,7 +90,7 @@ class CreateUEcFirewallRequest extends Request
     /**
      * Rule:
      *
-     * @param CreateUEcFirewallParamRule[] $rule
+     * @param CreateUEcFirewallRequestRuleModel[] $rule
      */
     public function setRule(array $rule)
     {
@@ -100,7 +100,6 @@ class CreateUEcFirewallRequest extends Request
         }
         return $result;
     }
-
     /**
      * Remark: 描述
      *
@@ -116,7 +115,7 @@ class CreateUEcFirewallRequest extends Request
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\UrlProgressInfo;
+use UCloud\UCDN\Models\DescribeNewUcdnPrefetchCacheTaskResponse;
+use UCloud\UCDN\Models\DescribeNewUcdnRefreshCacheTaskResponse;
+
 class TaskInfo extends Response
 {
-    
 
     /**
      * TaskId: 提交任务时返回的任务ID
@@ -37,15 +42,14 @@ class TaskInfo extends Response
      *
      * @param string $taskId
      */
-    public function setTaskId($taskId)
+    public function setTaskId(string $taskId)
     {
         $this->set("TaskId", $taskId);
     }
-
     /**
      * UrlLists: 任务url的信息列表，参考UrlProgressInfo
      *
-     * @return UrlProgressInfo[]|null
+     * @return UrlProgressInfoModel[]|null
      */
     public function getUrlLists()
     {
@@ -55,7 +59,7 @@ class TaskInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UrlProgressInfo($item));
+            array_push($result, new UrlProgressInfoModel($item));
         }
         return $result;
     }
@@ -63,7 +67,7 @@ class TaskInfo extends Response
     /**
      * UrlLists: 任务url的信息列表，参考UrlProgressInfo
      *
-     * @param UrlProgressInfo[] $urlLists
+     * @param UrlProgressInfoModel[] $urlLists
      */
     public function setUrlLists(array $urlLists)
     {
@@ -73,7 +77,6 @@ class TaskInfo extends Response
         }
         return $result;
     }
-
     /**
      * CreateTime: 刷新任务创建的时间。格式为Unix Timestamp
      *
@@ -89,11 +92,10 @@ class TaskInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * Status: 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知
      *
@@ -109,7 +111,7 @@ class TaskInfo extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class DescribePathXSSLRequest extends Request
         $this->markRequired("ProjectId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。请参考[GetProjectList接口](../summary/get_project_list.html)
@@ -43,11 +44,10 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * SSLId: SSL证书的Id，不传分页获取证书列表
      *
@@ -63,11 +63,10 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $sslId
      */
-    public function setSSLId($sslId)
+    public function setSSLId(string $sslId)
     {
         $this->set("SSLId", $sslId);
     }
-
     /**
      * SearchValue: 不为空则按证书名称、证书域名模糊搜索 分页返回结果
      *
@@ -83,11 +82,10 @@ class DescribePathXSSLRequest extends Request
      *
      * @param string $searchValue
      */
-    public function setSearchValue($searchValue)
+    public function setSearchValue(string $searchValue)
     {
         $this->set("SearchValue", $searchValue);
     }
-
     /**
      * Limit: 最大返回条数，默认100，最大400
      *
@@ -103,11 +101,10 @@ class DescribePathXSSLRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * Offset: 偏移值 默认为0
      *
@@ -123,7 +120,7 @@ class DescribePathXSSLRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }

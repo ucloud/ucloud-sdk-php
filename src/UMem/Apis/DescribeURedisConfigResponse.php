@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UMem\Models\URedisConfigSet;
 
 class DescribeURedisConfigResponse extends Response
 {
-    
 
     /**
      * TotalCount: 根据过滤条件得到的总数
@@ -38,15 +40,14 @@ class DescribeURedisConfigResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: 配置文件列表 参见 URedisConfigSet
      *
-     * @return URedisConfigSet[]|null
+     * @return URedisConfigSetModel[]|null
      */
     public function getDataSet()
     {
@@ -56,7 +57,7 @@ class DescribeURedisConfigResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new URedisConfigSet($item));
+            array_push($result, new URedisConfigSetModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class DescribeURedisConfigResponse extends Response
     /**
      * DataSet: 配置文件列表 参见 URedisConfigSet
      *
-     * @param URedisConfigSet[] $dataSet
+     * @param URedisConfigSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

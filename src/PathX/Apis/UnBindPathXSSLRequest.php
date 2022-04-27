@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
@@ -29,7 +31,6 @@ class UnBindPathXSSLRequest extends Request
         $this->markRequired("Port");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
@@ -46,11 +47,10 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * UGAId: UGA实例ID。
      *
@@ -66,11 +66,10 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
-
     /**
      * SSLId: SSL证书ID。
      *
@@ -86,11 +85,10 @@ class UnBindPathXSSLRequest extends Request
      *
      * @param string $sslId
      */
-    public function setSSLId($sslId)
+    public function setSSLId(string $sslId)
     {
         $this->set("SSLId", $sslId);
     }
-
     /**
      * Port: 解绑SSL证书的HTTPS端口。Port.0 Port.1格式 端口错误则解绑失败。
      *

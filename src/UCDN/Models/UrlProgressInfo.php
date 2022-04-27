@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UCDN\Models\DescribeNewUcdnPrefetchCacheTaskResponse;
+use UCloud\UCDN\Models\DescribeNewUcdnRefreshCacheTaskResponse;
+use UCloud\UCDN\Models\TaskInfo;
+
 class UrlProgressInfo extends Response
 {
-    
 
     /**
      * Url: 刷新的单条url
@@ -37,11 +42,10 @@ class UrlProgressInfo extends Response
      *
      * @param string $url
      */
-    public function setUrl($url)
+    public function setUrl(string $url)
     {
         $this->set("Url", $url);
     }
-
     /**
      * CreateTime: 刷新任务创建的时间。格式为Unix Timestamp
      *
@@ -57,11 +61,10 @@ class UrlProgressInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * FinishTime: 任务完成时间。格式为Unix Timestamp
      *
@@ -77,11 +80,10 @@ class UrlProgressInfo extends Response
      *
      * @param int $finishTime
      */
-    public function setFinishTime($finishTime)
+    public function setFinishTime(int $finishTime)
     {
         $this->set("FinishTime", $finishTime);
     }
-
     /**
      * Status: 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知
      *
@@ -97,11 +99,10 @@ class UrlProgressInfo extends Response
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * Progress: 刷新进度，单位%
      *
@@ -117,7 +118,7 @@ class UrlProgressInfo extends Response
      *
      * @param int $progress
      */
-    public function setProgress($progress)
+    public function setProgress(int $progress)
     {
         $this->set("Progress", $progress);
     }

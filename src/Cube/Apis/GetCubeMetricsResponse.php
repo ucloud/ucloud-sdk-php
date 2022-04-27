@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\Cube\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\Cube\Models\MetricDataSet;
 use UCloud\Cube\Models\ValueSet;
 
 class GetCubeMetricsResponse extends Response
 {
-    
 
     /**
      * DataSets: 时间序列集合
      *
-     * @return MetricDataSet[]|null
+     * @return MetricDataSetModel[]|null
      */
     public function getDataSets()
     {
@@ -37,7 +39,7 @@ class GetCubeMetricsResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new MetricDataSet($item));
+            array_push($result, new MetricDataSetModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class GetCubeMetricsResponse extends Response
     /**
      * DataSets: 时间序列集合
      *
-     * @param MetricDataSet[] $dataSets
+     * @param MetricDataSetModel[] $dataSets
      */
     public function setDataSets(array $dataSets)
     {

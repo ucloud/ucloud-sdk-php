@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class GetUEcVHostPriceRequest extends Request
         $this->markRequired("IdcId");
     }
 
-    
 
     /**
      * IdcId: 机房Id
@@ -43,11 +44,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * NodeCount: 节点数量，默认1
      *
@@ -63,11 +63,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $nodeCount
      */
-    public function setNodeCount($nodeCount)
+    public function setNodeCount(int $nodeCount)
     {
         $this->set("NodeCount", $nodeCount);
     }
-
     /**
      * CpuCore: CPU核数
      *
@@ -83,11 +82,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $cpuCore
      */
-    public function setCpuCore($cpuCore)
+    public function setCpuCore(int $cpuCore)
     {
         $this->set("CpuCore", $cpuCore);
     }
-
     /**
      * MemSize: 内存大小，单位GB
      *
@@ -103,11 +101,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
-
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
@@ -123,11 +120,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize($sysDiskSize)
+    public function setSysDiskSize(int $sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
-
     /**
      * DiskSize: 数据盘大小，单位GB
      *
@@ -143,11 +139,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $diskSize
      */
-    public function setDiskSize($diskSize)
+    public function setDiskSize(int $diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }
-
     /**
      * NetLimit: 网络带宽限速，单位Mbs
      *
@@ -163,11 +158,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $netLimit
      */
-    public function setNetLimit($netLimit)
+    public function setNetLimit(int $netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }
-
     /**
      * ChargeType: 付费方式，1按时，2按月，3按年，默认2
      *
@@ -183,11 +177,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(int $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * ChargeQuantity: 月数或者年数，0计费到月底， 默认0
      *
@@ -203,11 +196,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $chargeQuantity
      */
-    public function setChargeQuantity($chargeQuantity)
+    public function setChargeQuantity(int $chargeQuantity)
     {
         $this->set("ChargeQuantity", $chargeQuantity);
     }
-
     /**
      * ProductType: 产品类型：normal（经济型），hf（标准型），g(Gpu型),默认normal
      *
@@ -223,11 +215,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
     }
-
     /**
      * IpCount: 外网IP的数量，默认1
      *
@@ -243,11 +234,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $ipCount
      */
-    public function setIpCount($ipCount)
+    public function setIpCount(int $ipCount)
     {
         $this->set("IpCount", $ipCount);
     }
-
     /**
      * Gpu: Gpu卡核心数。仅Gpu机型支持此字段
      *
@@ -263,11 +253,10 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param int $gpu
      */
-    public function setGpu($gpu)
+    public function setGpu(int $gpu)
     {
         $this->set("Gpu", $gpu);
     }
-
     /**
      * GpuType: Gpu类型，枚举值["T4"],ProductType为g时必填
      *
@@ -283,7 +272,7 @@ class GetUEcVHostPriceRequest extends Request
      *
      * @param string $gpuType
      */
-    public function setGpuType($gpuType)
+    public function setGpuType(string $gpuType)
     {
         $this->set("GpuType", $gpuType);
     }

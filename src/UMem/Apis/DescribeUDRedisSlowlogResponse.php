@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UMem\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UMem\Models\UDRedisSlowlogSet;
 
 class DescribeUDRedisSlowlogResponse extends Response
 {
-    
 
     /**
      * TotalCount: 总条目数
@@ -38,15 +40,14 @@ class DescribeUDRedisSlowlogResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }
-
     /**
      * DataSet: 条目数据
      *
-     * @return UDRedisSlowlogSet[]|null
+     * @return UDRedisSlowlogSetModel[]|null
      */
     public function getDataSet()
     {
@@ -56,7 +57,7 @@ class DescribeUDRedisSlowlogResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UDRedisSlowlogSet($item));
+            array_push($result, new UDRedisSlowlogSetModel($item));
         }
         return $result;
     }
@@ -64,7 +65,7 @@ class DescribeUDRedisSlowlogResponse extends Response
     /**
      * DataSet: 条目数据
      *
-     * @param UDRedisSlowlogSet[] $dataSet
+     * @param UDRedisSlowlogSetModel[] $dataSet
      */
     public function setDataSet(array $dataSet)
     {

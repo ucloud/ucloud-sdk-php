@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\DescribeGlobalSSHInstanceResponse;
+
 class GlobalSSHInfo extends Response
 {
-    
 
     /**
      * InstanceId: 实例ID，资源唯一标识
@@ -37,11 +40,10 @@ class GlobalSSHInfo extends Response
      *
      * @param string $instanceId
      */
-    public function setInstanceId($instanceId)
+    public function setInstanceId(string $instanceId)
     {
         $this->set("InstanceId", $instanceId);
     }
-
     /**
      * InstanceType: 枚举值：["Enterprise","Basic","Free","Welfare"], 分别代表企业版，基础版本，免费版本，较早的公测免费版
      *
@@ -57,11 +59,10 @@ class GlobalSSHInfo extends Response
      *
      * @param string $instanceType
      */
-    public function setInstanceType($instanceType)
+    public function setInstanceType(string $instanceType)
     {
         $this->set("InstanceType", $instanceType);
     }
-
     /**
      * AcceleratingDomain: GlobalSSH分配的加速域名。
      *
@@ -77,11 +78,10 @@ class GlobalSSHInfo extends Response
      *
      * @param string $acceleratingDomain
      */
-    public function setAcceleratingDomain($acceleratingDomain)
+    public function setAcceleratingDomain(string $acceleratingDomain)
     {
         $this->set("AcceleratingDomain", $acceleratingDomain);
     }
-
     /**
      * Area: 被SSH访问的IP所在地区
      *
@@ -97,11 +97,10 @@ class GlobalSSHInfo extends Response
      *
      * @param string $area
      */
-    public function setArea($area)
+    public function setArea(string $area)
     {
         $this->set("Area", $area);
     }
-
     /**
      * TargetIP: 被SSH访问的源站 IPv4地址。
      *
@@ -117,11 +116,10 @@ class GlobalSSHInfo extends Response
      *
      * @param string $targetIP
      */
-    public function setTargetIP($targetIP)
+    public function setTargetIP(string $targetIP)
     {
         $this->set("TargetIP", $targetIP);
     }
-
     /**
      * Remark: 备注信息
      *
@@ -137,11 +135,10 @@ class GlobalSSHInfo extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * Port: 源站服务器监听的SSH端口，windows系统为RDP端口
      *
@@ -157,11 +154,10 @@ class GlobalSSHInfo extends Response
      *
      * @param int $port
      */
-    public function setPort($port)
+    public function setPort(int $port)
     {
         $this->set("Port", $port);
     }
-
     /**
      * GlobalSSHPort: InstanceType等于Free时，由系统自动分配，不等于源站Port值。InstanceType不等于Free时，与源站Port值相同。
      *
@@ -177,11 +173,10 @@ class GlobalSSHInfo extends Response
      *
      * @param int $globalSSHPort
      */
-    public function setGlobalSSHPort($globalSSHPort)
+    public function setGlobalSSHPort(int $globalSSHPort)
     {
         $this->set("GlobalSSHPort", $globalSSHPort);
     }
-
     /**
      * ChargeType: 支付周期，如Month,Year,Dynamic等
      *
@@ -197,11 +192,10 @@ class GlobalSSHInfo extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * CreateTime: 资源创建时间戳
      *
@@ -217,11 +211,10 @@ class GlobalSSHInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpireTime: 资源过期时间戳
      *
@@ -237,11 +230,10 @@ class GlobalSSHInfo extends Response
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }
-
     /**
      * Expire: 是否过期
      *
@@ -257,11 +249,10 @@ class GlobalSSHInfo extends Response
      *
      * @param boolean $expire
      */
-    public function setExpire($expire)
+    public function setExpire(bool $expire)
     {
         $this->set("Expire", $expire);
     }
-
     /**
      * BandwidthPackage: globalssh Ultimate带宽包大小
      *
@@ -277,11 +268,10 @@ class GlobalSSHInfo extends Response
      *
      * @param int $bandwidthPackage
      */
-    public function setBandwidthPackage($bandwidthPackage)
+    public function setBandwidthPackage(int $bandwidthPackage)
     {
         $this->set("BandwidthPackage", $bandwidthPackage);
     }
-
     /**
      * ForwardRegion: InstanceType为Basic版本时，需要展示具体分配的转发机房
      *
@@ -297,7 +287,7 @@ class GlobalSSHInfo extends Response
      *
      * @param string $forwardRegion
      */
-    public function setForwardRegion($forwardRegion)
+    public function setForwardRegion(string $forwardRegion)
     {
         $this->set("ForwardRegion", $forwardRegion);
     }

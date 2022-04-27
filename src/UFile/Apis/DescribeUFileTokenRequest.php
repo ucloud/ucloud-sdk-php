@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class DescribeUFileTokenRequest extends Request
         parent::__construct(["Action" => "DescribeUFileToken"]);
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -42,11 +43,10 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -62,11 +62,10 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * TokenId: 令牌ID，只返回指定ID信息，否则拉取所有令牌
      *
@@ -82,11 +81,10 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $tokenId
      */
-    public function setTokenId($tokenId)
+    public function setTokenId(string $tokenId)
     {
         $this->set("TokenId", $tokenId);
     }
-
     /**
      * TokenName: 令牌名称，只返回指定令牌名称信息，否则拉取所有令牌
      *
@@ -102,11 +100,10 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param string $tokenName
      */
-    public function setTokenName($tokenName)
+    public function setTokenName(string $tokenName)
     {
         $this->set("TokenName", $tokenName);
     }
-
     /**
      * Display: 0表示显示部分token信息；不传递和其他情况表示显示全部token信息
      *
@@ -122,7 +119,7 @@ class DescribeUFileTokenRequest extends Request
      *
      * @param int $display
      */
-    public function setDisplay($display)
+    public function setDisplay(int $display)
     {
         $this->set("Display", $display);
     }

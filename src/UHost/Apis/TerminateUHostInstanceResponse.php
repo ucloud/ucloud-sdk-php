@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 
 class TerminateUHostInstanceResponse extends Response
 {
-    
 
     /**
      * InRecycle: 用于判断主机删除时是否进入回收站。放入回收站:"Yes", 彻底删除：“No”。
@@ -37,11 +38,10 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @param string $inRecycle
      */
-    public function setInRecycle($inRecycle)
+    public function setInRecycle(string $inRecycle)
     {
         $this->set("InRecycle", $inRecycle);
     }
-
     /**
      * UHostId: UHost 实例 Id
      *
@@ -57,7 +57,7 @@ class TerminateUHostInstanceResponse extends Response
      *
      * @param string $uHostId
      */
-    public function setUHostId($uHostId)
+    public function setUHostId(string $uHostId)
     {
         $this->set("UHostId", $uHostId);
     }

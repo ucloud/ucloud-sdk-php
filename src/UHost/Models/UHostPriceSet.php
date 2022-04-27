@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UHost\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UHost\Models\GetUHostInstancePriceResponse;
+use UCloud\UHost\Models\GetUHostRenewPriceResponse;
+
 class UHostPriceSet extends Response
 {
-    
 
     /**
      * ChargeType: 计费类型。Year，Month，Dynamic
@@ -37,11 +41,10 @@ class UHostPriceSet extends Response
      *
      * @param string $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(string $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * Price: 价格，单位: 元，保留小数点后两位有效数字
      *
@@ -57,11 +60,10 @@ class UHostPriceSet extends Response
      *
      * @param float $price
      */
-    public function setPrice($price)
+    public function setPrice(float $price)
     {
         $this->set("Price", $price);
     }
-
     /**
      * OriginalPrice: 限时优惠的折前原价（即列表价乘以商务折扣后的单价）。
      *
@@ -77,11 +79,10 @@ class UHostPriceSet extends Response
      *
      * @param float $originalPrice
      */
-    public function setOriginalPrice($originalPrice)
+    public function setOriginalPrice(float $originalPrice)
     {
         $this->set("OriginalPrice", $originalPrice);
     }
-
     /**
      * ListPrice: 产品列表价。
      *
@@ -97,7 +98,7 @@ class UHostPriceSet extends Response
      *
      * @param float $listPrice
      */
-    public function setListPrice($listPrice)
+    public function setListPrice(float $listPrice)
     {
         $this->set("ListPrice", $listPrice);
     }

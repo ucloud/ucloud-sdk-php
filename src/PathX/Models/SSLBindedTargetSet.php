@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\PathX\Models\PathXSSLSet;
+use UCloud\PathX\Models\DescribePathXSSLResponse;
+
 class SSLBindedTargetSet extends Response
 {
-    
 
     /**
      * ResourceId: SSL证书绑定到的实例ID
@@ -37,11 +41,10 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $resourceId
      */
-    public function setResourceId($resourceId)
+    public function setResourceId(string $resourceId)
     {
         $this->set("ResourceId", $resourceId);
     }
-
     /**
      * ResourceName: SSL证书绑定到的实例名称
      *
@@ -57,7 +60,7 @@ class SSLBindedTargetSet extends Response
      *
      * @param string $resourceName
      */
-    public function setResourceName($resourceName)
+    public function setResourceName(string $resourceName)
     {
         $this->set("ResourceName", $resourceName);
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Apis;
 
 use UCloud\Core\Response\Response;
 
 class CreateRemoteVPNGatewayResponse extends Response
 {
-    
 
     /**
      * RemoteVPNGatewayId: 新建客户VPN网关的资源ID
@@ -37,7 +38,7 @@ class CreateRemoteVPNGatewayResponse extends Response
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId($remoteVPNGatewayId)
+    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
     {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }

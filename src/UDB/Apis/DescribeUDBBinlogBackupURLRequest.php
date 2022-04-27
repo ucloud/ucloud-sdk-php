@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class DescribeUDBBinlogBackupURLRequest extends Request
         $this->markRequired("BackupId");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * DBId: DB实例Id
      *
@@ -85,11 +84,10 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
-
     /**
      * BackupId: DB实例binlog备份ID，可以从DescribeUDBLogPackage结果当中获得
      *
@@ -105,7 +103,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
      *
      * @param int $backupId
      */
-    public function setBackupId($backupId)
+    public function setBackupId(int $backupId)
     {
         $this->set("BackupId", $backupId);
     }

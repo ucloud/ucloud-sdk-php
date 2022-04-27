@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
@@ -28,7 +30,6 @@ class DescribeUDBBackupRequest extends Request
         $this->markRequired("Limit");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -45,11 +46,10 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
      *
@@ -65,11 +65,10 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param string $zone
      */
-    public function setZone($zone)
+    public function setZone(string $zone)
     {
         $this->set("Zone", $zone);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -85,11 +84,10 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * Offset: 分页显示的起始偏移，列表操作则指定
      *
@@ -105,11 +103,10 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 分页显示的条目数，列表操作则指定
      *
@@ -125,11 +122,10 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }
-
     /**
      * DBId: DB实例Id，如果指定，则只获取该db的备份信息 该值可以通过DescribeUDBInstance获取
      *
@@ -145,11 +141,10 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param string $dbId
      */
-    public function setDBId($dbId)
+    public function setDBId(string $dbId)
     {
         $this->set("DBId", $dbId);
     }
-
     /**
      * BackupType: 备份类型,取值为0或1，0表示自动，1表示手动
      *
@@ -165,11 +160,10 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param int $backupType
      */
-    public function setBackupType($backupType)
+    public function setBackupType(int $backupType)
     {
         $this->set("BackupType", $backupType);
     }
-
     /**
      * BeginTime: 过滤条件:起始时间(Unix时间戳)
      *
@@ -185,11 +179,10 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 过滤条件:结束时间(Unix时间戳)
      *
@@ -205,7 +198,7 @@ class DescribeUDBBackupRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }

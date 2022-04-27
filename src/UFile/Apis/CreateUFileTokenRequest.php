@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UFile\Apis;
 
 use UCloud\Core\Request\Request;
@@ -26,7 +28,6 @@ class CreateUFileTokenRequest extends Request
         $this->markRequired("TokenName");
     }
 
-    
 
     /**
      * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -43,11 +44,10 @@ class CreateUFileTokenRequest extends Request
      *
      * @param string $region
      */
-    public function setRegion($region)
+    public function setRegion(string $region)
     {
         $this->set("Region", $region);
     }
-
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *
@@ -63,11 +63,10 @@ class CreateUFileTokenRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * TokenName: 令牌名称
      *
@@ -83,11 +82,10 @@ class CreateUFileTokenRequest extends Request
      *
      * @param string $tokenName
      */
-    public function setTokenName($tokenName)
+    public function setTokenName(string $tokenName)
     {
         $this->set("TokenName", $tokenName);
     }
-
     /**
      * AllowedOps: 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP  ]。默认TOKEN_ALLOW_NONE
      *
@@ -107,7 +105,6 @@ class CreateUFileTokenRequest extends Request
     {
         $this->set("AllowedOps", $allowedOps);
     }
-
     /**
      * AllowedPrefixes: 令牌允许操作的key前缀，默认*表示全部
      *
@@ -127,7 +124,6 @@ class CreateUFileTokenRequest extends Request
     {
         $this->set("AllowedPrefixes", $allowedPrefixes);
     }
-
     /**
      * AllowedBuckets: 令牌允许操作的bucket，默认*表示全部
      *
@@ -147,7 +143,6 @@ class CreateUFileTokenRequest extends Request
     {
         $this->set("AllowedBuckets", $allowedBuckets);
     }
-
     /**
      * ExpireTime: Unix 时间戳，精确到秒，为令牌过期时间点。默认过期时间为一天（即当前Unix时间戳+86400）；注意：过期时间不能超过 4102416000
      *
@@ -163,7 +158,7 @@ class CreateUFileTokenRequest extends Request
      *
      * @param int $expireTime
      */
-    public function setExpireTime($expireTime)
+    public function setExpireTime(int $expireTime)
     {
         $this->set("ExpireTime", $expireTime);
     }

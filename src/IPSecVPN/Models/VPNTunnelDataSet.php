@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\IPSecVPN\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\IPSecVPN\Models\DescribeVPNTunnelResponse;
+use UCloud\IPSecVPN\Models\IKEData;
+use UCloud\IPSecVPN\Models\IPSecData;
+
 class VPNTunnelDataSet extends Response
 {
-    
 
     /**
      * VPNTunnelId: 隧道id
@@ -37,11 +42,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $vpnTunnelId
      */
-    public function setVPNTunnelId($vpnTunnelId)
+    public function setVPNTunnelId(string $vpnTunnelId)
     {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }
-
     /**
      * VPNTunnelName: 隧道名称
      *
@@ -57,11 +61,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $vpnTunnelName
      */
-    public function setVPNTunnelName($vpnTunnelName)
+    public function setVPNTunnelName(string $vpnTunnelName)
     {
         $this->set("VPNTunnelName", $vpnTunnelName);
     }
-
     /**
      * Tag: 用户组
      *
@@ -77,11 +80,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $tag
      */
-    public function setTag($tag)
+    public function setTag(string $tag)
     {
         $this->set("Tag", $tag);
     }
-
     /**
      * Remark: 备注
      *
@@ -97,11 +99,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $remark
      */
-    public function setRemark($remark)
+    public function setRemark(string $remark)
     {
         $this->set("Remark", $remark);
     }
-
     /**
      * VPNGatewayId: 所属VPN网关id
      *
@@ -117,11 +118,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $vpnGatewayId
      */
-    public function setVPNGatewayId($vpnGatewayId)
+    public function setVPNGatewayId(string $vpnGatewayId)
     {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
-
     /**
      * RemoteVPNGatewayId: 对端网关Id
      *
@@ -137,11 +137,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $remoteVPNGatewayId
      */
-    public function setRemoteVPNGatewayId($remoteVPNGatewayId)
+    public function setRemoteVPNGatewayId(string $remoteVPNGatewayId)
     {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }
-
     /**
      * VPNGatewayName: VPN网关名字
      *
@@ -157,11 +156,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $vpnGatewayName
      */
-    public function setVPNGatewayName($vpnGatewayName)
+    public function setVPNGatewayName(string $vpnGatewayName)
     {
         $this->set("VPNGatewayName", $vpnGatewayName);
     }
-
     /**
      * RemoteVPNGatewayName: 对端网关名字
      *
@@ -177,11 +175,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $remoteVPNGatewayName
      */
-    public function setRemoteVPNGatewayName($remoteVPNGatewayName)
+    public function setRemoteVPNGatewayName(string $remoteVPNGatewayName)
     {
         $this->set("RemoteVPNGatewayName", $remoteVPNGatewayName);
     }
-
     /**
      * VPCId: 所属VPCId
      *
@@ -197,11 +194,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $vpcId
      */
-    public function setVPCId($vpcId)
+    public function setVPCId(string $vpcId)
     {
         $this->set("VPCId", $vpcId);
     }
-
     /**
      * VPCName: 所属VOC名字
      *
@@ -217,11 +213,10 @@ class VPNTunnelDataSet extends Response
      *
      * @param string $vpcName
      */
-    public function setVPCName($vpcName)
+    public function setVPCName(string $vpcName)
     {
         $this->set("VPCName", $vpcName);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -237,47 +232,45 @@ class VPNTunnelDataSet extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * IKEData: IKE参数
      *
-     * @return IKEData|null
+     * @return IKEDataModel|null
      */
     public function getIKEData()
     {
-        return new IKEData($this->get("IKEData"));
+        return new IKEDataModel($this->get("IKEData"));
     }
 
     /**
      * IKEData: IKE参数
      *
-     * @param IKEData $ikeData
+     * @param IKEDataModel $ikeData
      */
-    public function setIKEData(array $ikeData)
+    public function setIKEData(IKEDataModel $ikeData)
     {
         $this->set("IKEData", $ikeData->getAll());
     }
-
     /**
      * IPSecData: IPSec参数
      *
-     * @return IPSecData|null
+     * @return IPSecDataModel|null
      */
     public function getIPSecData()
     {
-        return new IPSecData($this->get("IPSecData"));
+        return new IPSecDataModel($this->get("IPSecData"));
     }
 
     /**
      * IPSecData: IPSec参数
      *
-     * @param IPSecData $ipSecData
+     * @param IPSecDataModel $ipSecData
      */
-    public function setIPSecData(array $ipSecData)
+    public function setIPSecData(IPSecDataModel $ipSecData)
     {
         $this->set("IPSecData", $ipSecData->getAll());
     }

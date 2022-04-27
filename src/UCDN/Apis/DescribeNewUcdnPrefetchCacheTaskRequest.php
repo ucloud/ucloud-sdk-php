@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UCDN\Apis;
 
 use UCloud\Core\Request\Request;
@@ -25,7 +27,6 @@ class DescribeNewUcdnPrefetchCacheTaskRequest extends Request
         parent::__construct(["Action" => "DescribeNewUcdnPrefetchCacheTask"]);
     }
 
-    
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -42,11 +43,10 @@ class DescribeNewUcdnPrefetchCacheTaskRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * TaskId: 提交任务时返回的任务ID
      *
@@ -66,7 +66,6 @@ class DescribeNewUcdnPrefetchCacheTaskRequest extends Request
     {
         $this->set("TaskId", $taskId);
     }
-
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值
      *
@@ -82,11 +81,10 @@ class DescribeNewUcdnPrefetchCacheTaskRequest extends Request
      *
      * @param int $beginTime
      */
-    public function setBeginTime($beginTime)
+    public function setBeginTime(int $beginTime)
     {
         $this->set("BeginTime", $beginTime);
     }
-
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      *
@@ -102,11 +100,10 @@ class DescribeNewUcdnPrefetchCacheTaskRequest extends Request
      *
      * @param int $endTime
      */
-    public function setEndTime($endTime)
+    public function setEndTime(int $endTime)
     {
         $this->set("EndTime", $endTime);
     }
-
     /**
      * Status: 需要获取的内容预热的状态，枚举值：success：成功；wait：等待处理；process：正在处理；failure：失败； unknow：未知，默认选择所有状态
      *
@@ -122,11 +119,10 @@ class DescribeNewUcdnPrefetchCacheTaskRequest extends Request
      *
      * @param string $status
      */
-    public function setStatus($status)
+    public function setStatus(string $status)
     {
         $this->set("Status", $status);
     }
-
     /**
      * Offset: 数据偏移量，默认为0，自然数
      *
@@ -142,11 +138,10 @@ class DescribeNewUcdnPrefetchCacheTaskRequest extends Request
      *
      * @param int $offset
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
         $this->set("Offset", $offset);
     }
-
     /**
      * Limit: 返回数据长度,默认全部，自然数
      *
@@ -162,7 +157,7 @@ class DescribeNewUcdnPrefetchCacheTaskRequest extends Request
      *
      * @param int $limit
      */
-    public function setLimit($limit)
+    public function setLimit(int $limit)
     {
         $this->set("Limit", $limit);
     }

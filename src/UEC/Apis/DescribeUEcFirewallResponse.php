@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Apis;
 
 use UCloud\Core\Response\Response;
+
 use UCloud\UEC\Models\FirewallInfo;
 use UCloud\UEC\Models\RuleInfo;
 
 class DescribeUEcFirewallResponse extends Response
 {
-    
 
     /**
      * FirewallSet: 防火墙组详细信息，参见 FirewallInfo
      *
-     * @return FirewallInfo[]|null
+     * @return FirewallInfoModel[]|null
      */
     public function getFirewallSet()
     {
@@ -37,7 +39,7 @@ class DescribeUEcFirewallResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new FirewallInfo($item));
+            array_push($result, new FirewallInfoModel($item));
         }
         return $result;
     }
@@ -45,7 +47,7 @@ class DescribeUEcFirewallResponse extends Response
     /**
      * FirewallSet: 防火墙组详细信息，参见 FirewallInfo
      *
-     * @param FirewallInfo[] $firewallSet
+     * @param FirewallInfoModel[] $firewallSet
      */
     public function setFirewallSet(array $firewallSet)
     {
@@ -55,7 +57,6 @@ class DescribeUEcFirewallResponse extends Response
         }
         return $result;
     }
-
     /**
      * TotalCount: 满足条件的节点总数
      *
@@ -71,7 +72,7 @@ class DescribeUEcFirewallResponse extends Response
      *
      * @param int $totalCount
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount(int $totalCount)
     {
         $this->set("TotalCount", $totalCount);
     }

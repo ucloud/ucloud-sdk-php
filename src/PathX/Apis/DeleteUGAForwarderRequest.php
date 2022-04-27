@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\PathX\Apis;
 
 use UCloud\Core\Request\Request;
@@ -27,7 +29,6 @@ class DeleteUGAForwarderRequest extends Request
         $this->markRequired("UGAId");
     }
 
-    
 
     /**
      * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -44,11 +45,10 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @param string $projectId
      */
-    public function setProjectId($projectId)
+    public function setProjectId(string $projectId)
     {
         $this->set("ProjectId", $projectId);
     }
-
     /**
      * UGAId: 加速配置实例ID
      *
@@ -64,11 +64,10 @@ class DeleteUGAForwarderRequest extends Request
      *
      * @param string $ugaId
      */
-    public function setUGAId($ugaId)
+    public function setUGAId(string $ugaId)
     {
         $this->set("UGAId", $ugaId);
     }
-
     /**
      * HTTPHTTP: HTTP接入HTTP回源，接入端口。禁用65123端口
      *
@@ -88,7 +87,6 @@ class DeleteUGAForwarderRequest extends Request
     {
         $this->set("HTTPHTTP", $httphttp);
     }
-
     /**
      * HTTPSHTTP: HTTPS接入HTTP回源， 接入端口。禁用65123端口
      *
@@ -108,7 +106,6 @@ class DeleteUGAForwarderRequest extends Request
     {
         $this->set("HTTPSHTTP", $httpshttp);
     }
-
     /**
      * HTTPSHTTPS: HTTPS接入HTTPS回源， 接入端口。禁用65123端口
      *
@@ -128,7 +125,6 @@ class DeleteUGAForwarderRequest extends Request
     {
         $this->set("HTTPSHTTPS", $httpshttps);
     }
-
     /**
      * WSSWSS: WebSocketS接入WebSocketS回源， 接入端口。禁用65123端口
      *
@@ -148,7 +144,6 @@ class DeleteUGAForwarderRequest extends Request
     {
         $this->set("WSSWSS", $wsswss);
     }
-
     /**
      * WSWS: WebSocket接入WebSocket回源， 接入端口。禁用65123端口
      *
@@ -168,7 +163,6 @@ class DeleteUGAForwarderRequest extends Request
     {
         $this->set("WSWS", $wsws);
     }
-
     /**
      * WSSWS: WebSocketS接入WebSocket回源， 接入端口。禁用65123端口。
      *
@@ -188,7 +182,6 @@ class DeleteUGAForwarderRequest extends Request
     {
         $this->set("WSSWS", $wssws);
     }
-
     /**
      * TCP: TCP接入端口
      *
@@ -208,7 +201,6 @@ class DeleteUGAForwarderRequest extends Request
     {
         $this->set("TCP", $tcp);
     }
-
     /**
      * UDP: UDP接入端口
      *

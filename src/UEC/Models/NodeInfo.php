@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace UCloud\UEC\Models;
 
 use UCloud\Core\Response\Response;
 
+use UCloud\UEC\Models\NodeIpList;
+use UCloud\UEC\Models\DescribeUEcVHostResponse;
+
 class NodeInfo extends Response
 {
-    
 
     /**
      * NodeName: 节点名称
@@ -37,11 +41,10 @@ class NodeInfo extends Response
      *
      * @param string $nodeName
      */
-    public function setNodeName($nodeName)
+    public function setNodeName(string $nodeName)
     {
         $this->set("NodeName", $nodeName);
     }
-
     /**
      * NodeId: 节点ID
      *
@@ -57,11 +60,10 @@ class NodeInfo extends Response
      *
      * @param string $nodeId
      */
-    public function setNodeId($nodeId)
+    public function setNodeId(string $nodeId)
     {
         $this->set("NodeId", $nodeId);
     }
-
     /**
      * CoreNum: Cpu核数
      *
@@ -77,11 +79,10 @@ class NodeInfo extends Response
      *
      * @param int $coreNum
      */
-    public function setCoreNum($coreNum)
+    public function setCoreNum(int $coreNum)
     {
         $this->set("CoreNum", $coreNum);
     }
-
     /**
      * MemSize: 节点内存大小，单位GB
      *
@@ -97,11 +98,10 @@ class NodeInfo extends Response
      *
      * @param int $memSize
      */
-    public function setMemSize($memSize)
+    public function setMemSize(int $memSize)
     {
         $this->set("MemSize", $memSize);
     }
-
     /**
      * SysDiskSize: 系统盘大小， 单位GB
      *
@@ -117,11 +117,10 @@ class NodeInfo extends Response
      *
      * @param int $sysDiskSize
      */
-    public function setSysDiskSize($sysDiskSize)
+    public function setSysDiskSize(int $sysDiskSize)
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
-
     /**
      * DiskSize: 数据盘大小， 单位GB
      *
@@ -137,11 +136,10 @@ class NodeInfo extends Response
      *
      * @param int $diskSize
      */
-    public function setDiskSize($diskSize)
+    public function setDiskSize(int $diskSize)
     {
         $this->set("DiskSize", $diskSize);
     }
-
     /**
      * State: 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常
      *
@@ -157,11 +155,10 @@ class NodeInfo extends Response
      *
      * @param int $state
      */
-    public function setState($state)
+    public function setState(int $state)
     {
         $this->set("State", $state);
     }
-
     /**
      * NetLimit: 节点带宽限制， 单位Mbs
      *
@@ -177,11 +174,10 @@ class NodeInfo extends Response
      *
      * @param int $netLimit
      */
-    public function setNetLimit($netLimit)
+    public function setNetLimit(int $netLimit)
     {
         $this->set("NetLimit", $netLimit);
     }
-
     /**
      * IdcId: 机房ID
      *
@@ -197,11 +193,10 @@ class NodeInfo extends Response
      *
      * @param string $idcId
      */
-    public function setIdcId($idcId)
+    public function setIdcId(string $idcId)
     {
         $this->set("IdcId", $idcId);
     }
-
     /**
      * OcName: 机房名称
      *
@@ -217,11 +212,10 @@ class NodeInfo extends Response
      *
      * @param string $ocName
      */
-    public function setOcName($ocName)
+    public function setOcName(string $ocName)
     {
         $this->set("OcName", $ocName);
     }
-
     /**
      * Province: 省份
      *
@@ -237,11 +231,10 @@ class NodeInfo extends Response
      *
      * @param string $province
      */
-    public function setProvince($province)
+    public function setProvince(string $province)
     {
         $this->set("Province", $province);
     }
-
     /**
      * City: 城市
      *
@@ -257,11 +250,10 @@ class NodeInfo extends Response
      *
      * @param string $city
      */
-    public function setCity($city)
+    public function setCity(string $city)
     {
         $this->set("City", $city);
     }
-
     /**
      * Type: 运营商类型： 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
@@ -277,11 +269,10 @@ class NodeInfo extends Response
      *
      * @param int $type
      */
-    public function setType($type)
+    public function setType(int $type)
     {
         $this->set("Type", $type);
     }
-
     /**
      * ChargeType: 付费类型：1按时, 2按月,3按年
      *
@@ -297,11 +288,10 @@ class NodeInfo extends Response
      *
      * @param int $chargeType
      */
-    public function setChargeType($chargeType)
+    public function setChargeType(int $chargeType)
     {
         $this->set("ChargeType", $chargeType);
     }
-
     /**
      * CreateTime: 创建时间
      *
@@ -317,11 +307,10 @@ class NodeInfo extends Response
      *
      * @param int $createTime
      */
-    public function setCreateTime($createTime)
+    public function setCreateTime(int $createTime)
     {
         $this->set("CreateTime", $createTime);
     }
-
     /**
      * ExpiredTime: 过期时间
      *
@@ -337,11 +326,10 @@ class NodeInfo extends Response
      *
      * @param int $expiredTime
      */
-    public function setExpiredTime($expiredTime)
+    public function setExpiredTime(int $expiredTime)
     {
         $this->set("ExpiredTime", $expiredTime);
     }
-
     /**
      * ImageName: 镜像名称
      *
@@ -357,15 +345,14 @@ class NodeInfo extends Response
      *
      * @param string $imageName
      */
-    public function setImageName($imageName)
+    public function setImageName(string $imageName)
     {
         $this->set("ImageName", $imageName);
     }
-
     /**
      * NodeIpList: 外网ip集合（详情参考NodeIpList）
      *
-     * @return NodeIpList[]|null
+     * @return NodeIpListModel[]|null
      */
     public function getNodeIpList()
     {
@@ -375,7 +362,7 @@ class NodeInfo extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new NodeIpList($item));
+            array_push($result, new NodeIpListModel($item));
         }
         return $result;
     }
@@ -383,7 +370,7 @@ class NodeInfo extends Response
     /**
      * NodeIpList: 外网ip集合（详情参考NodeIpList）
      *
-     * @param NodeIpList[] $nodeIpList
+     * @param NodeIpListModel[] $nodeIpList
      */
     public function setNodeIpList(array $nodeIpList)
     {
@@ -393,7 +380,6 @@ class NodeInfo extends Response
         }
         return $result;
     }
-
     /**
      * FirewallId: 防火墙Id
      *
@@ -409,11 +395,10 @@ class NodeInfo extends Response
      *
      * @param string $firewallId
      */
-    public function setFirewallId($firewallId)
+    public function setFirewallId(string $firewallId)
     {
         $this->set("FirewallId", $firewallId);
     }
-
     /**
      * ProductType: 机器类型(normal-经济型,hf-标准型,g-GPU型)
      *
@@ -429,8 +414,27 @@ class NodeInfo extends Response
      *
      * @param string $productType
      */
-    public function setProductType($productType)
+    public function setProductType(string $productType)
     {
         $this->set("ProductType", $productType);
+    }
+    /**
+     * InnerIps: 内网ip列表
+     *
+     * @return string[]|null
+     */
+    public function getInnerIps()
+    {
+        return $this->get("InnerIps");
+    }
+
+    /**
+     * InnerIps: 内网ip列表
+     *
+     * @param string[] $innerIps
+     */
+    public function setInnerIps(array $innerIps)
+    {
+        $this->set("InnerIps", $innerIps);
     }
 }
