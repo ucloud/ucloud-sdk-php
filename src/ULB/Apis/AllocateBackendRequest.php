@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class AllocateBackendRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -44,7 +44,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -54,7 +54,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -64,7 +64,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -114,7 +114,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
+     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
      *
      * @return string|null
      */
@@ -124,7 +124,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
+     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
      *
      * @param string $resourceType
      */
@@ -234,7 +234,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
      * @return integer|null
      */
@@ -244,7 +244,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
      * @param int $weight
      */

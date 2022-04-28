@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,10 @@ use UCloud\UNet\Apis\DescribeFirewallResourceRequest;
 use UCloud\UNet\Apis\DescribeFirewallResourceResponse;
 use UCloud\UNet\Apis\DescribeShareBandwidthRequest;
 use UCloud\UNet\Apis\DescribeShareBandwidthResponse;
+use UCloud\UNet\Apis\DescribeShareBandwidthPriceRequest;
+use UCloud\UNet\Apis\DescribeShareBandwidthPriceResponse;
+use UCloud\UNet\Apis\DescribeShareBandwidthUpdatePriceRequest;
+use UCloud\UNet\Apis\DescribeShareBandwidthUpdatePriceResponse;
 use UCloud\UNet\Apis\DisassociateEIPWithShareBandwidthRequest;
 use UCloud\UNet\Apis\DisassociateEIPWithShareBandwidthResponse;
 use UCloud\UNet\Apis\DisassociateFirewallRequest;
@@ -97,7 +101,7 @@ class UNetClient extends Client
      * $args = [
      *     "Region" => (string) 地域。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。
-     *     "OperatorName" => (string) 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。
+     *     "OperatorName" => (string) 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp；精品BGP：BGPPro。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。使用BGPPro线路的地域：香港
      *     "Bandwidth" => (integer) 弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-10000]
      *     "Tag" => (string) 业务组名称, 默认为 "Default"
      *     "ChargeType" => (string) 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按时付费，默认为按月付费。
@@ -105,6 +109,7 @@ class UNetClient extends Client
      *     "PayMode" => (string) 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. 默认为 "Bandwidth".“PostAccurateBandwidth”：带宽后付费模式
      *     "ShareBandwidthId" => (string) 绑定的共享带宽Id,仅当PayMode为ShareBandwidth时有效
      *     "Name" => (string) 弹性IP的名称, 默认为 "EIP"
+     *     "Count" => (integer) 购买EIP数量，默认值为1
      *     "Remark" => (string) 弹性IP的备注, 默认为空
      *     "CouponId" => (string) 代金券ID, 默认不使用
      * ]
@@ -142,7 +147,7 @@ class UNetClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。
      *     "Name" => (string) 共享带宽名字
      *     "ChargeType" => (string) 付费方式:Year 按年,Month 按月,Dynamic 按时;
@@ -553,10 +558,10 @@ class UNetClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "FWId" => (string) 防火墙ID
-     *     "Limit" => (integer) 返回数据长度，默认为20，最大10000000
+     *     "Limit" => (integer) 返回数据长度，默认为20，最大1000
      *     "Offset" => (integer) 列表起始位置偏移量，默认为0
      * ]
      *
@@ -566,11 +571,14 @@ class UNetClient extends Client
      *     "ResourceSet" => (array<object>) 资源列表，见 ResourceSet[
      *         [
      *             "Zone" => (integer) 可用区
+     *             "SubResourceName" => (string) 资源绑定的虚拟网卡的名称
+     *             "SubResourceId" => (string) 资源绑定的虚拟网卡的ID
+     *             "SubResourceType" => (string) 资源绑定的虚拟网卡的类型，“uni”，虚拟网卡。
      *             "Name" => (string) 名称
      *             "PrivateIP" => (string) 内网IP
      *             "Remark" => (string) 备注
      *             "ResourceID" => (string) 绑定该防火墙的资源id
-     *             "ResourceType" => (string) 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计.
+     *             "ResourceType" => (string) 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计，“uni”，虚拟网卡。
      *             "Status" => (integer) 状态
      *             "Tag" => (string) 业务组
      *         ]
@@ -636,6 +644,65 @@ class UNetClient extends Client
     {
         $resp = $this->invoke($request);
         return new DescribeShareBandwidthResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeShareBandwidthPrice - 获取共享带宽价格
+     *
+     * See also: https://docs.ucloud.cn/api/unet-api/describe_share_bandwidth_price
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ChargeType" => (string) 付费方式, 预付费:Year 按年,Month 按月,Dynamic 按需;
+     *     "ShareBandwidth" => (integer) 共享带宽值
+     *     "Quantity" => (integer) 购买数量
+     *     "OperatorName" => (string) 香港地域支持：BGPPro和International。其他地域无需填写该字段
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "TotalPrice" => (integer) 共享带宽总价格
+     * ]
+     *
+     * @return DescribeShareBandwidthPriceResponse
+     * @throws UCloudException
+     */
+    public function describeShareBandwidthPrice(DescribeShareBandwidthPriceRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeShareBandwidthPriceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeShareBandwidthUpdatePrice - 获取共享带宽升级价格
+     *
+     * See also: https://docs.ucloud.cn/api/unet-api/describe_share_bandwidth_update_price
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ShareBandwidthId" => (string) 共享带宽Id
+     *     "ShareBandwidth" => (integer) 共享带宽值
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Price" => (number) 共享带宽升降级价格
+     * ]
+     *
+     * @return DescribeShareBandwidthUpdatePriceResponse
+     * @throws UCloudException
+     */
+    public function describeShareBandwidthUpdatePrice(DescribeShareBandwidthUpdatePriceRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeShareBandwidthUpdatePriceResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**

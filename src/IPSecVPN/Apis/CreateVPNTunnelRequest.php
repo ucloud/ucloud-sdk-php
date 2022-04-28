@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,15 +30,15 @@ class CreateVPNTunnelRequest extends Request
         $this->markRequired("RemoteVPNGatewayId");
         $this->markRequired("IKEPreSharedKey");
         $this->markRequired("VPCId");
+        $this->markRequired("IKEVersion");
         $this->markRequired("IPSecLocalSubnetIds");
         $this->markRequired("IPSecRemoteSubnets");
-        $this->markRequired("IKEVersion");
     }
 
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -48,7 +48,7 @@ class CreateVPNTunnelRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -58,7 +58,7 @@ class CreateVPNTunnelRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -68,7 +68,7 @@ class CreateVPNTunnelRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -178,6 +178,26 @@ class CreateVPNTunnelRequest extends Request
     }
 
     /**
+     * IKEVersion: ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1
+     *
+     * @return string|null
+     */
+    public function getIKEVersion()
+    {
+        return $this->get("IKEVersion");
+    }
+
+    /**
+     * IKEVersion: ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1
+     *
+     * @param string $ikeVersion
+     */
+    public function setIKEVersion($ikeVersion)
+    {
+        $this->set("IKEVersion", $ikeVersion);
+    }
+
+    /**
      * IPSecLocalSubnetIds: 指定VPN连接的本地子网的资源ID，最多可填写10个。
      *
      * @return string[]|null
@@ -215,26 +235,6 @@ class CreateVPNTunnelRequest extends Request
     public function setIPSecRemoteSubnets(array $ipSecRemoteSubnets)
     {
         $this->set("IPSecRemoteSubnets", $ipSecRemoteSubnets);
-    }
-
-    /**
-     * IKEVersion: ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1
-     *
-     * @return string|null
-     */
-    public function getIKEVersion()
-    {
-        return $this->get("IKEVersion");
-    }
-
-    /**
-     * IKEVersion: ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1
-     *
-     * @param string $ikeVersion
-     */
-    public function setIKEVersion($ikeVersion)
-    {
-        $this->set("IKEVersion", $ikeVersion);
     }
 
     /**
@@ -458,7 +458,7 @@ class CreateVPNTunnelRequest extends Request
     }
 
     /**
-     * IPSecAuthenticationAlgorithm: IPSec隧道中使用的认证算法，枚举值，"md5", "sha1"。默认值为“sha1”
+     * IPSecAuthenticationAlgorithm: IPSec隧道中使用的认证算法，枚举值，"md5", "sha1","sha2-256"。默认值为“sha1”
      *
      * @return string|null
      */
@@ -468,7 +468,7 @@ class CreateVPNTunnelRequest extends Request
     }
 
     /**
-     * IPSecAuthenticationAlgorithm: IPSec隧道中使用的认证算法，枚举值，"md5", "sha1"。默认值为“sha1”
+     * IPSecAuthenticationAlgorithm: IPSec隧道中使用的认证算法，枚举值，"md5", "sha1","sha2-256"。默认值为“sha1”
      *
      * @param string $ipSecAuthenticationAlgorithm
      */
@@ -535,5 +535,25 @@ class CreateVPNTunnelRequest extends Request
     public function setIPSecPFSDhGroup($ipSecPFSDhGroup)
     {
         $this->set("IPSecPFSDhGroup", $ipSecPFSDhGroup);
+    }
+
+    /**
+     * IPSecCloseAction: IPSec隧道关闭后的处理动作，枚举值：“none”，流量触发；“restart”，自动重联，默认为none
+     *
+     * @return string|null
+     */
+    public function getIPSecCloseAction()
+    {
+        return $this->get("IPSecCloseAction");
+    }
+
+    /**
+     * IPSecCloseAction: IPSec隧道关闭后的处理动作，枚举值：“none”，流量触发；“restart”，自动重联，默认为none
+     *
+     * @param string $ipSecCloseAction
+     */
+    public function setIPSecCloseAction($ipSecCloseAction)
+    {
+        $this->set("IPSecCloseAction", $ipSecCloseAction);
     }
 }

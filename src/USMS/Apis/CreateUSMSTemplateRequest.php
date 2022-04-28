@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,5 +169,25 @@ class CreateUSMSTemplateRequest extends Request
     public function setUnsubscribeInfo($unsubscribeInfo)
     {
         $this->set("UnsubscribeInfo", $unsubscribeInfo);
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @return string|null
+     */
+    public function getInstruction()
+    {
+        return $this->get("Instruction");
+    }
+
+    /**
+     * Instruction: 模板变量属性说明
+     *
+     * @param string $instruction
+     */
+    public function setInstruction($instruction)
+    {
+        $this->set("Instruction", $instruction);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
-     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT（SNAPSHOT模式目前仅在上海C支持），快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
-     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT（SNAPSHOT模式目前仅在上海C支持），快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
      *
      * @param string $backupType
      */

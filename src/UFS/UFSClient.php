@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,20 +18,60 @@ namespace UCloud\UFS;
 
 use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
+use UCloud\UFS\Apis\AddUFSVolumeMountPointRequest;
+use UCloud\UFS\Apis\AddUFSVolumeMountPointResponse;
 use UCloud\UFS\Apis\CreateUFSVolumeRequest;
 use UCloud\UFS\Apis\CreateUFSVolumeResponse;
 use UCloud\UFS\Apis\DescribeUFSVolume2Request;
 use UCloud\UFS\Apis\DescribeUFSVolume2Response;
+use UCloud\UFS\Apis\DescribeUFSVolumeMountpointRequest;
+use UCloud\UFS\Apis\DescribeUFSVolumeMountpointResponse;
+use UCloud\UFS\Apis\DescribeUFSVolumePriceRequest;
+use UCloud\UFS\Apis\DescribeUFSVolumePriceResponse;
 use UCloud\UFS\Apis\ExtendUFSVolumeRequest;
 use UCloud\UFS\Apis\ExtendUFSVolumeResponse;
 use UCloud\UFS\Apis\RemoveUFSVolumeRequest;
 use UCloud\UFS\Apis\RemoveUFSVolumeResponse;
+use UCloud\UFS\Apis\RemoveUFSVolumeMountPointRequest;
+use UCloud\UFS\Apis\RemoveUFSVolumeMountPointResponse;
+use UCloud\UFS\Apis\UpdateUFSVolumeInfoRequest;
+use UCloud\UFS\Apis\UpdateUFSVolumeInfoResponse;
 
 /**
  * This client is used to call actions of **UFS** service
  */
 class UFSClient extends Client
 {
+
+    /**
+     * AddUFSVolumeMountPoint - 添加文件系统挂载点
+     *
+     * See also: https://docs.ucloud.cn/api/ufs-api/add_ufs_volume_mount_point
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "VolumeId" => (string) 文件系统ID
+     *     "MountPointName" => (string) 挂载点名称
+     *     "VpcId" => (string) Vpc ID
+     *     "SubnetId" => (string) Subnet ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return AddUFSVolumeMountPointResponse
+     * @throws UCloudException
+     */
+    public function addUFSVolumeMountPoint(AddUFSVolumeMountPointRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new AddUFSVolumeMountPointResponse($resp->toArray(), $resp->getRequestId());
+    }
 
     /**
      * CreateUFSVolume - 创建文件系统
@@ -41,11 +81,11 @@ class UFSClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "Size" => (integer) 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
-     *     "StorageType" => (string) 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型
-     *     "ProtocolType" => (string) 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Size" => (integer) 文件系统大小，单位为GB，必须为100的整数倍，容量型Size最小为500GB，性能型文件系统Size最小为100GB
+     *     "StorageType" => (string) 文件系统存储类型，Basic表示容量型，Advanced表示性能型
+     *     "ProtocolType" => (string) 文件系统协议，目前仅支持NFSv4
      *     "VolumeName" => (string) 文件系统名称
      *     "Remark" => (string) 备注
      *     "Tag" => (string) 文件系统所属业务组
@@ -119,6 +159,83 @@ class UFSClient extends Client
     }
 
     /**
+     * DescribeUFSVolumeMountpoint - 获取文件系统挂载点信息
+     *
+     * See also: https://docs.ucloud.cn/api/ufs-api/describe_ufs_volume_mountpoint
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "VolumeId" => (string) 文件系统ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (array<object>) [
+     *         [
+     *             "MountPointName" => (string) 挂载点名称
+     *             "VpcId" => (string) Vpc ID
+     *             "SubnetId" => (string) Subnet ID
+     *             "MountPointIp" => (string) ${挂载点IP}:/
+     *             "CreateTime" => (integer) 文件系统创建时间（unix时间戳）
+     *             "SubnetDescription" => (string) Subnet ID + 网段的形式，方便前端展示
+     *         ]
+     *     ]
+     *     "TotalMountPointNum" => (integer) 目前的挂载点总数
+     *     "MaxMountPointNum" => (integer) 文件系统能创建的最大挂载点数目
+     * ]
+     *
+     * @return DescribeUFSVolumeMountpointResponse
+     * @throws UCloudException
+     */
+    public function describeUFSVolumeMountpoint(DescribeUFSVolumeMountpointRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUFSVolumeMountpointResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUFSVolumePrice - 获取文件系统价格
+     *
+     * See also: https://docs.ucloud.cn/api/ufs-api/describe_ufs_volume_price
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Size" => (integer) 文件系统大小，单位为GB，新架构容量型最小容量为500GB，以100GB递增，最大不超过100TB。新架构性能型最小容量为100GB，以100GB递增，最大不超过20TB
+     *     "StorageType" => (string) 文件存储类型，枚举值，Basic表示容量型产品，Advanced表示性能型产品
+     *     "Quantity" => (integer) 购买UFS的时长， 默认为1
+     *     "ChargeType" => (string) Year， Month， Dynamic，Trial，默认: Dynamic
+     *     "VolumeId" => (string) 文件系统id，第一次创建文件系统时不需要传这个参数
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (array<object>) ufs 价格信息[
+     *         [
+     *             "ChargeType" => (string) Year， Month， Dynamic，Trial
+     *             "Price" => (number) 价格 (单位: 分)
+     *             "ChargeName" => (string) “UFS”
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return DescribeUFSVolumePriceResponse
+     * @throws UCloudException
+     */
+    public function describeUFSVolumePrice(DescribeUFSVolumePriceRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUFSVolumePriceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * ExtendUFSVolume - 文件系统扩容
      *
      * See also: https://docs.ucloud.cn/api/ufs-api/extend_ufs_volume
@@ -171,5 +288,63 @@ class UFSClient extends Client
     {
         $resp = $this->invoke($request);
         return new RemoveUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * RemoveUFSVolumeMountPoint - 删除文件系统挂载点
+     *
+     * See also: https://docs.ucloud.cn/api/ufs-api/remove_ufs_volume_mount_point
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "VolumeId" => (string) 文件系统ID
+     *     "VpcId" => (string) Vpc ID
+     *     "SubnetId" => (string) Subnet ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return RemoveUFSVolumeMountPointResponse
+     * @throws UCloudException
+     */
+    public function removeUFSVolumeMountPoint(RemoveUFSVolumeMountPointRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new RemoveUFSVolumeMountPointResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateUFSVolumeInfo - 更改文件系统相关信息（名称／备注）
+     *
+     * See also: https://docs.ucloud.cn/api/ufs-api/update_ufs_volume_info
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "VolumeId" => (string) 文件系统ID
+     *     "VolumeName" => (string) 文件系统名称（文件系统名称／备注至少传入其中一个）
+     *     "Remark" => (string) 文件系统备注（文件系统名称／备注至少传入其中一个）
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return UpdateUFSVolumeInfoResponse
+     * @throws UCloudException
+     */
+    public function updateUFSVolumeInfo(UpdateUFSVolumeInfoRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdateUFSVolumeInfoResponse($resp->toArray(), $resp->getRequestId());
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,26 @@ class ULBVServerSet extends Response
     public function setMonitorType($monitorType)
     {
         $this->set("MonitorType", $monitorType);
+    }
+
+    /**
+     * ULBId: 负载均衡实例的Id
+     *
+     * @return string|null
+     */
+    public function getULBId()
+    {
+        return $this->get("ULBId");
+    }
+
+    /**
+     * ULBId: 负载均衡实例的Id
+     *
+     * @param string $ulbId
+     */
+    public function setULBId($ulbId)
+    {
+        $this->set("ULBId", $ulbId);
     }
 
     /**

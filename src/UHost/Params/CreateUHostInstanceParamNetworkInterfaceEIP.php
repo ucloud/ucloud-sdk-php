@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,26 +80,6 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
     public function setShareBandwidthId($shareBandwidthId)
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
-    }
-
-    /**
-     * GlobalSSH:
-     *
-     * @return CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH|null
-     */
-    public function getGlobalSSH()
-    {
-        return new CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH($this->get("GlobalSSH"));
-    }
-
-    /**
-     * GlobalSSH:
-     *
-     * @param CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH $globalSSH
-     */
-    public function setGlobalSSH(array $globalSSH)
-    {
-        $this->set("GlobalSSH", $globalSSH->getAll());
     }
 
     /**

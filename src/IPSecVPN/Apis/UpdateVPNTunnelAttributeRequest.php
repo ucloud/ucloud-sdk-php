@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class UpdateVPNTunnelAttributeRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -428,5 +428,25 @@ class UpdateVPNTunnelAttributeRequest extends Request
     public function setIKEVersion($ikeVersion)
     {
         $this->set("IKEVersion", $ikeVersion);
+    }
+
+    /**
+     * IPSecCloseAction: IPSec隧道关闭后的处理动作，默认与原本一致，若原本为空，必传。枚举值：“none”,不处理（推荐为none，流量会自动触发隧道重建）；“restart”重建
+     *
+     * @return string|null
+     */
+    public function getIPSecCloseAction()
+    {
+        return $this->get("IPSecCloseAction");
+    }
+
+    /**
+     * IPSecCloseAction: IPSec隧道关闭后的处理动作，默认与原本一致，若原本为空，必传。枚举值：“none”,不处理（推荐为none，流量会自动触发隧道重建）；“restart”重建
+     *
+     * @param string $ipSecCloseAction
+     */
+    public function setIPSecCloseAction($ipSecCloseAction)
+    {
+        $this->set("IPSecCloseAction", $ipSecCloseAction);
     }
 }

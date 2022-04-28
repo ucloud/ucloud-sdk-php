@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,26 +63,6 @@ class NatGatewayDataSet extends Response
     }
 
     /**
-     * CreateTime: natgw创建时间
-     *
-     * @return integer|null
-     */
-    public function getCreateTime()
-    {
-        return $this->get("CreateTime");
-    }
-
-    /**
-     * CreateTime: natgw创建时间
-     *
-     * @param int $createTime
-     */
-    public function setCreateTime($createTime)
-    {
-        $this->set("CreateTime", $createTime);
-    }
-
-    /**
      * Tag: 业务组
      *
      * @return string|null
@@ -120,6 +100,26 @@ class NatGatewayDataSet extends Response
     public function setRemark($remark)
     {
         $this->set("Remark", $remark);
+    }
+
+    /**
+     * CreateTime: natgw创建时间
+     *
+     * @return integer|null
+     */
+    public function getCreateTime()
+    {
+        return $this->get("CreateTime");
+    }
+
+    /**
+     * CreateTime: natgw创建时间
+     *
+     * @param int $createTime
+     */
+    public function setCreateTime($createTime)
+    {
+        $this->set("CreateTime", $createTime);
     }
 
     /**
@@ -224,6 +224,46 @@ class NatGatewayDataSet extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * VPCName: VPC名称
+     *
+     * @return string|null
+     */
+    public function getVPCName()
+    {
+        return $this->get("VPCName");
+    }
+
+    /**
+     * VPCName: VPC名称
+     *
+     * @param string $vpcName
+     */
+    public function setVPCName($vpcName)
+    {
+        $this->set("VPCName", $vpcName);
+    }
+
+    /**
+     * IsSnatpoolEnabled: 枚举值，“enable”，默认出口规则使用了负载均衡；“disable”，默认出口规则未使用负载均衡。
+     *
+     * @return string|null
+     */
+    public function getIsSnatpoolEnabled()
+    {
+        return $this->get("IsSnatpoolEnabled");
+    }
+
+    /**
+     * IsSnatpoolEnabled: 枚举值，“enable”，默认出口规则使用了负载均衡；“disable”，默认出口规则未使用负载均衡。
+     *
+     * @param string $isSnatpoolEnabled
+     */
+    public function setIsSnatpoolEnabled($isSnatpoolEnabled)
+    {
+        $this->set("IsSnatpoolEnabled", $isSnatpoolEnabled);
     }
 
     /**

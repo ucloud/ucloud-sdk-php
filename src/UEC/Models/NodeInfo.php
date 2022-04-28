@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -432,5 +432,25 @@ class NodeInfo extends Response
     public function setProductType($productType)
     {
         $this->set("ProductType", $productType);
+    }
+
+    /**
+     * InnerIps: 内网ip列表
+     *
+     * @return string[]|null
+     */
+    public function getInnerIps()
+    {
+        return $this->get("InnerIps");
+    }
+
+    /**
+     * InnerIps: 内网ip列表
+     *
+     * @param string[] $innerIps
+     */
+    public function setInnerIps(array $innerIps)
+    {
+        $this->set("InnerIps", $innerIps);
     }
 }

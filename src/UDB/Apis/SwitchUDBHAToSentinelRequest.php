@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ class SwitchUDBHAToSentinelRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class SwitchUDBHAToSentinelRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class SwitchUDBHAToSentinelRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class SwitchUDBHAToSentinelRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -71,7 +71,7 @@ class SwitchUDBHAToSentinelRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -81,7 +81,7 @@ class SwitchUDBHAToSentinelRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -108,5 +108,25 @@ class SwitchUDBHAToSentinelRequest extends Request
     public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
+    }
+
+    /**
+     * ForceSwitch: 是否跳过预检查强制升级。
+     *
+     * @return boolean|null
+     */
+    public function getForceSwitch()
+    {
+        return $this->get("ForceSwitch");
+    }
+
+    /**
+     * ForceSwitch: 是否跳过预检查强制升级。
+     *
+     * @param boolean $forceSwitch
+     */
+    public function setForceSwitch($forceSwitch)
+    {
+        $this->set("ForceSwitch", $forceSwitch);
     }
 }

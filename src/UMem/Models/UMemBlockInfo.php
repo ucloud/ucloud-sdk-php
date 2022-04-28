@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,26 +43,6 @@ class UMemBlockInfo extends Response
     }
 
     /**
-     * BlockVip: 分片ip
-     *
-     * @return string|null
-     */
-    public function getBlockVip()
-    {
-        return $this->get("BlockVip");
-    }
-
-    /**
-     * BlockVip: 分片ip
-     *
-     * @param string $blockVip
-     */
-    public function setBlockVip($blockVip)
-    {
-        $this->set("BlockVip", $blockVip);
-    }
-
-    /**
      * BlockPort: 分片端口
      *
      * @return integer|null
@@ -100,26 +80,6 @@ class UMemBlockInfo extends Response
     public function setBlockSize($blockSize)
     {
         $this->set("BlockSize", $blockSize);
-    }
-
-    /**
-     * BlockUsedSize: 使用量单位MB
-     *
-     * @return integer|null
-     */
-    public function getBlockUsedSize()
-    {
-        return $this->get("BlockUsedSize");
-    }
-
-    /**
-     * BlockUsedSize: 使用量单位MB
-     *
-     * @param int $blockUsedSize
-     */
-    public function setBlockUsedSize($blockUsedSize)
-    {
-        $this->set("BlockUsedSize", $blockUsedSize);
     }
 
     /**
@@ -180,5 +140,45 @@ class UMemBlockInfo extends Response
     public function setBlockSlotEnd($blockSlotEnd)
     {
         $this->set("BlockSlotEnd", $blockSlotEnd);
+    }
+
+    /**
+     * BlockVip: 分片ip
+     *
+     * @return string|null
+     */
+    public function getBlockVip()
+    {
+        return $this->get("BlockVip");
+    }
+
+    /**
+     * BlockVip: 分片ip
+     *
+     * @param string $blockVip
+     */
+    public function setBlockVip($blockVip)
+    {
+        $this->set("BlockVip", $blockVip);
+    }
+
+    /**
+     * BlockUsedSize: 使用量单位MB
+     *
+     * @return integer|null
+     */
+    public function getBlockUsedSize()
+    {
+        return $this->get("BlockUsedSize");
+    }
+
+    /**
+     * BlockUsedSize: 使用量单位MB
+     *
+     * @param int $blockUsedSize
+     */
+    public function setBlockUsedSize($blockUsedSize)
+    {
+        $this->set("BlockUsedSize", $blockUsedSize);
     }
 }

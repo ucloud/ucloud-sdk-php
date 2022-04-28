@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ class UDiskClient extends Client
      *     "Comment" => (string) Disk注释
      *     "ChargeType" => (string) Year , Month, Dynamic，Postpay，Trial 默认: Month
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]
@@ -159,7 +159,7 @@ class UDiskClient extends Client
      *     "UDataArkMode" => (string) 【开启数据方舟入口已关闭】是否开启数据方舟。Yes：开启，No：不开启，默认值：No
      *     "SnapshotService" => (string) 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]
@@ -200,7 +200,7 @@ class UDiskClient extends Client
      *     "SnapshotService" => (string) 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No
      *     "Size" => (integer) 购买UDisk大小,单位:GB,范围[1~8000]。(UDisk大小设定对本地盘备份有效，对云盘备份无效)
      *     "Tag" => (string) 业务组 默认：Default
-     *     "RdmaClusterId" => (string) 【已废弃】RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
+     *     "RdmaClusterId" => (string) RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。
      *     "HostId" => (string) Host实例ID。克隆出的云盘可直接挂载到该主机上。
      *     "CouponId" => (string) 使用的代金券id
      * ]

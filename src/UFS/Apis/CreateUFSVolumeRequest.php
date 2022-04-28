@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class CreateUFSVolumeRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -42,7 +42,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -52,7 +52,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -72,7 +72,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * Size: 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
+     * Size: 文件系统大小，单位为GB，必须为100的整数倍，容量型Size最小为500GB，性能型文件系统Size最小为100GB
      *
      * @return integer|null
      */
@@ -82,7 +82,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * Size: 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
+     * Size: 文件系统大小，单位为GB，必须为100的整数倍，容量型Size最小为500GB，性能型文件系统Size最小为100GB
      *
      * @param int $size
      */
@@ -92,7 +92,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * StorageType: 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型
+     * StorageType: 文件系统存储类型，Basic表示容量型，Advanced表示性能型
      *
      * @return string|null
      */
@@ -102,7 +102,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * StorageType: 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型
+     * StorageType: 文件系统存储类型，Basic表示容量型，Advanced表示性能型
      *
      * @param string $storageType
      */
@@ -112,7 +112,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * ProtocolType: 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
+     * ProtocolType: 文件系统协议，目前仅支持NFSv4
      *
      * @return string|null
      */
@@ -122,7 +122,7 @@ class CreateUFSVolumeRequest extends Request
     }
 
     /**
-     * ProtocolType: 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
+     * ProtocolType: 文件系统协议，目前仅支持NFSv4
      *
      * @param string $protocolType
      */

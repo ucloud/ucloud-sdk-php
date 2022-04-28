@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ class AllocateEIPRequest extends Request
     }
 
     /**
-     * OperatorName: 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。
+     * OperatorName: 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp；精品BGP：BGPPro。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。使用BGPPro线路的地域：香港
      *
      * @return string|null
      */
@@ -81,7 +81,7 @@ class AllocateEIPRequest extends Request
     }
 
     /**
-     * OperatorName: 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。
+     * OperatorName: 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp；精品BGP：BGPPro。使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。使用BGPPro线路的地域：香港
      *
      * @param string $operatorName
      */
@@ -228,6 +228,26 @@ class AllocateEIPRequest extends Request
     public function setName($name)
     {
         $this->set("Name", $name);
+    }
+
+    /**
+     * Count: 购买EIP数量，默认值为1
+     *
+     * @return integer|null
+     */
+    public function getCount()
+    {
+        return $this->get("Count");
+    }
+
+    /**
+     * Count: 购买EIP数量，默认值为1
+     *
+     * @param int $count
+     */
+    public function setCount($count)
+    {
+        $this->set("Count", $count);
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\UEC\Apis\BindUEcFirewallRequest;
 use UCloud\UEC\Apis\BindUEcFirewallResponse;
+use UCloud\UEC\Apis\CreateUEcCustomImageRequest;
+use UCloud\UEC\Apis\CreateUEcCustomImageResponse;
 use UCloud\UEC\Apis\CreateUEcFirewallRequest;
 use UCloud\UEC\Apis\CreateUEcFirewallResponse;
 use UCloud\UEC\Apis\CreateUEcHolderRequest;
@@ -132,6 +134,35 @@ class UECClient extends Client
     {
         $resp = $this->invoke($request);
         return new BindUEcFirewallResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * CreateUEcCustomImage - 从指定虚拟机，生成自定义镜像。
+     *
+     * See also: https://docs.ucloud.cn/api/uec-api/create_u_ec_custom_image
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "NodeId" => (string) 虚拟机实例ID
+     *     "ImageName" => (string) 镜像名称
+     *     "ImageDescription" => (string) 镜像描述
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ImageId" => (string) 镜像ID
+     * ]
+     *
+     * @return CreateUEcCustomImageResponse
+     * @throws UCloudException
+     */
+    public function createUEcCustomImage(CreateUEcCustomImageRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new CreateUEcCustomImageResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -658,7 +689,8 @@ class UECClient extends Client
      *     "Memory" => (integer) 节点内存大小， 单位GB
      *     "IdcId" => (array<string>) Idc机房id。默认全部机房
      *     "Type" => (integer) 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
-     *     "ProductType" => (string) 产品类型：normal（通用型），hf（高主频型）
+     *     "ProductType" => (string) 产品类型：normal（经济型），hf（标准型）,g(GPU型)
+     *     "Gpu" => (integer) Gpu卡核心数
      * ]
      *
      * Outputs:
@@ -772,6 +804,7 @@ class UECClient extends Client
      *             ]
      *             "FirewallId" => (string) 防火墙Id
      *             "ProductType" => (string) 机器类型(normal-经济型,hf-标准型,g-GPU型)
+     *             "InnerIps" => (array<string>) 内网ip列表
      *         ]
      *     ]
      * ]

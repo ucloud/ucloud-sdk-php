@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,5 +140,105 @@ class PHostImageSet extends Response
     public function setVersion($version)
     {
         $this->set("Version", $version);
+    }
+
+    /**
+     * ImageType: 枚举值：Base=>基础镜像，Custom=>自制镜像。
+     *
+     * @return string|null
+     */
+    public function getImageType()
+    {
+        return $this->get("ImageType");
+    }
+
+    /**
+     * ImageType: 枚举值：Base=>基础镜像，Custom=>自制镜像。
+     *
+     * @param string $imageType
+     */
+    public function setImageType($imageType)
+    {
+        $this->set("ImageType", $imageType);
+    }
+
+    /**
+     * CreateTime: 裸金属2.0参数。镜像创建时间。
+     *
+     * @return integer|null
+     */
+    public function getCreateTime()
+    {
+        return $this->get("CreateTime");
+    }
+
+    /**
+     * CreateTime: 裸金属2.0参数。镜像创建时间。
+     *
+     * @param int $createTime
+     */
+    public function setCreateTime($createTime)
+    {
+        $this->set("CreateTime", $createTime);
+    }
+
+    /**
+     * State: 裸金属2.0参数。镜像当前状态。
+     *
+     * @return string|null
+     */
+    public function getState()
+    {
+        return $this->get("State");
+    }
+
+    /**
+     * State: 裸金属2.0参数。镜像当前状态。
+     *
+     * @param string $state
+     */
+    public function setState($state)
+    {
+        $this->set("State", $state);
+    }
+
+    /**
+     * ImageSize: 裸金属2.0参数。镜像大小。
+     *
+     * @return integer|null
+     */
+    public function getImageSize()
+    {
+        return $this->get("ImageSize");
+    }
+
+    /**
+     * ImageSize: 裸金属2.0参数。镜像大小。
+     *
+     * @param int $imageSize
+     */
+    public function setImageSize($imageSize)
+    {
+        $this->set("ImageSize", $imageSize);
+    }
+
+    /**
+     * ImageDescription: 镜像描述
+     *
+     * @return string|null
+     */
+    public function getImageDescription()
+    {
+        return $this->get("ImageDescription");
+    }
+
+    /**
+     * ImageDescription: 镜像描述
+     *
+     * @param string $imageDescription
+     */
+    public function setImageDescription($imageDescription)
+    {
+        $this->set("ImageDescription", $imageDescription);
     }
 }
