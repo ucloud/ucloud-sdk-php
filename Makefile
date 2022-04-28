@@ -48,6 +48,7 @@ gen:
     	--only "UFile" \
     	--only "USMS" \
     	--only "UEC" \
+    	--only "UPhone" \
 		--public \
 		-s $(HOME)/.oas/vcs/git.ucloudadmin.com/apispec/apispec/specification \
 		$(HOME)/.oas/vcs/git.ucloudadmin.com/apispec/template-opensdk-php .
