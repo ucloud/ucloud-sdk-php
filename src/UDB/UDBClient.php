@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,8 @@ use UCloud\UDB\Apis\ExtractUDBParamGroupRequest;
 use UCloud\UDB\Apis\ExtractUDBParamGroupResponse;
 use UCloud\UDB\Apis\FetchUDBInstanceEarliestRecoverTimeRequest;
 use UCloud\UDB\Apis\FetchUDBInstanceEarliestRecoverTimeResponse;
+use UCloud\UDB\Apis\GetUDBClientConnNumRequest;
+use UCloud\UDB\Apis\GetUDBClientConnNumResponse;
 use UCloud\UDB\Apis\ModifyUDBInstanceNameRequest;
 use UCloud\UDB\Apis\ModifyUDBInstanceNameResponse;
 use UCloud\UDB\Apis\ModifyUDBInstancePasswordRequest;
@@ -1612,6 +1614,40 @@ class UDBClient extends Client
     }
 
     /**
+     * GetUDBClientConnNum - 输入一个DBID，能够获取客户端来源IP以及对应的连接数
+     *
+     * See also: https://docs.ucloud.cn/api/udb-api/get_udb_client_conn_num
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "DBId" => (string) DB实例id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (array<object>) db实例ip和连接数信息[
+     *         [
+     *             "Ip" => (string) 客户端IP
+     *             "Num" => (integer) 该Ip连接数
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUDBClientConnNumResponse
+     * @throws UCloudException
+     */
+    public function getUDBClientConnNum(GetUDBClientConnNumRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUDBClientConnNumResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * ModifyUDBInstanceName - 重命名UDB实例
      *
      * See also: https://docs.ucloud.cn/api/udb-api/modify_udb_instance_name
@@ -1907,17 +1943,18 @@ class UDBClient extends Client
     }
 
     /**
-     * SwitchUDBHAToSentinel - UDB高可用实例从HAProxy版本升级为Sentinel版本（不带HAProxy）升级耗时30-70秒
+     * SwitchUDBHAToSentinel - UDB高可用实例从HAProxy版本升级为Sentinel版本（不带HAProxy）升级耗时5-10秒
      *
      * See also: https://docs.ucloud.cn/api/udb-api/switch_udb_ha_to_sentinel
      *
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "DBId" => (string) UDB的实例ID
+     *     "ForceSwitch" => (boolean) 是否跳过预检查强制升级。
      * ]
      *
      * Outputs:

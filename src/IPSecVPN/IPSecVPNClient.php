@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,16 +127,16 @@ class IPSecVPNClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "VPNTunnelName" => (string) VPN隧道名称
      *     "VPNGatewayId" => (string) VPN网关的资源ID
      *     "RemoteVPNGatewayId" => (string) 客户VPN网关的资源ID
      *     "IKEPreSharedKey" => (string) 预共享密钥
      *     "VPCId" => (string) vpcId
+     *     "IKEVersion" => (string) ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1
      *     "IPSecLocalSubnetIds" => (array<string>) 指定VPN连接的本地子网的资源ID，最多可填写10个。
      *     "IPSecRemoteSubnets" => (array<string>) 指定VPN连接的客户网段，最多可填写20个。
-     *     "IKEVersion" => (string) ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1
      *     "Tag" => (string) 业务组，默认为“Default”
      *     "Remark" => (string) 备注，默认为空
      *     "IKEEncryptionAlgorithm" => (string) IKE协商过程中使用的加密算法，枚举值，"aes128", "aes192", "aes256", "aes512", "3des"。默认值为“aes128”
@@ -148,10 +148,11 @@ class IPSecVPNClient extends Client
      *     "IKESALifetime" => (string) IKE中SA的生存时间，可填写范围为600-604800。默认为86400。
      *     "IPSecProtocol" => (string) 使用的安全协议，枚举值，“esp”，“ah”。默认为“esp”
      *     "IPSecEncryptionAlgorithm" => (string) IPSec隧道中使用的加密算法，枚举值，"aes128", "aes192", "aes256", "aes512", "3des"。默认值为“aes128”
-     *     "IPSecAuthenticationAlgorithm" => (string) IPSec隧道中使用的认证算法，枚举值，"md5", "sha1"。默认值为“sha1”
+     *     "IPSecAuthenticationAlgorithm" => (string) IPSec隧道中使用的认证算法，枚举值，"md5", "sha1","sha2-256"。默认值为“sha1”
      *     "IPSecSALifetime" => (string) IPSec中SA的生存时间，可填写范围为1200 - 604800。默认为3600
      *     "IPSecSALifetimeBytes" => (string) IPSec中SA的生存时间（以字节计）。可选为8000 – 20000000。默认使用SA生存时间，
      *     "IPSecPFSDhGroup" => (string) IPSec的PFS是否开启，枚举值，，不开启，"disable"；数字表示DH组, "1", "2", "5", "14", "15", "16"。默认为“disable”。
+     *     "IPSecCloseAction" => (string) IPSec隧道关闭后的处理动作，枚举值：“none”，流量触发；“restart”，自动重联，默认为none
      * ]
      *
      * Outputs:
@@ -511,8 +512,8 @@ class IPSecVPNClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "VPNTunnelId" => (string) VPN隧道的资源ID
      *     "IKEPreSharedKey" => (string) 预共享密钥
      *     "IKEEncryptionAlgorithm" => (string) IKE协商过程中使用的加密算法
@@ -531,6 +532,7 @@ class IPSecVPNClient extends Client
      *     "IPSecSALifetimeBytes" => (string) IPSec中SA的生存时间（以字节计）
      *     "IPSecPFSDhGroup" => (string) IPSec中的PFS是否开启
      *     "IKEVersion" => (string) 枚举值："IKE V1","IKE V2"
+     *     "IPSecCloseAction" => (string) IPSec隧道关闭后的处理动作，默认与原本一致，若原本为空，必传。枚举值：“none”,不处理（推荐为none，流量会自动触发隧道重建）；“restart”重建
      * ]
      *
      * Outputs:

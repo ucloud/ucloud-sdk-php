@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class CreateUPathRequest extends Request
     
 
     /**
-     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -42,7 +42,7 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID,如org-xxxx。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -52,7 +52,7 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * Name: UPath名字
+     * Name: 名字，便于记忆区分
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * Name: UPath名字
+     * Name: 名字，便于记忆区分
      *
      * @param string $name
      */
@@ -72,7 +72,7 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * LineId: 选择的线路
+     * LineId: 选择的线路，由DescribePathXLineConfig接口提供
      *
      * @return string|null
      */
@@ -82,7 +82,7 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * LineId: 选择的线路
+     * LineId: 选择的线路，由DescribePathXLineConfig接口提供
      *
      * @param string $lineId
      */
@@ -92,7 +92,7 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * Bandwidth: 线路带宽，最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。
+     * Bandwidth: 当PostPaid为false时，该值为预付费固定带宽；当PostPaid为true时，该值为后付费保底带宽，保底带宽越大可用的上限带宽越大。最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。可联系产品团队咨询最大带宽。
      *
      * @return integer|null
      */
@@ -102,7 +102,7 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * Bandwidth: 线路带宽，最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。
+     * Bandwidth: 当PostPaid为false时，该值为预付费固定带宽；当PostPaid为true时，该值为后付费保底带宽，保底带宽越大可用的上限带宽越大。最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。可联系产品团队咨询最大带宽。
      *
      * @param int $bandwidth
      */
@@ -152,7 +152,7 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * PostPaid: 是否开启后付费, 默认为false
+     * PostPaid: 是否开启后付费, 默认为false ，不开启后付费。当ChargeType为Dynamic时不能开启后付费。
      *
      * @return boolean|null
      */
@@ -162,13 +162,33 @@ class CreateUPathRequest extends Request
     }
 
     /**
-     * PostPaid: 是否开启后付费, 默认为false
+     * PostPaid: 是否开启后付费, 默认为false ，不开启后付费。当ChargeType为Dynamic时不能开启后付费。
      *
      * @param boolean $postPaid
      */
     public function setPostPaid($postPaid)
     {
         $this->set("PostPaid", $postPaid);
+    }
+
+    /**
+     * PathType: private:专线线路；public:海外SD-WAN。默认为private。
+     *
+     * @return string|null
+     */
+    public function getPathType()
+    {
+        return $this->get("PathType");
+    }
+
+    /**
+     * PathType: private:专线线路；public:海外SD-WAN。默认为private。
+     *
+     * @param string $pathType
+     */
+    public function setPathType($pathType)
+    {
+        $this->set("PathType", $pathType);
     }
 
     /**

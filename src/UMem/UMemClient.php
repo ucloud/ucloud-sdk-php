@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,8 @@ use UCloud\UMem\Apis\DeleteUMemcacheGroupRequest;
 use UCloud\UMem\Apis\DeleteUMemcacheGroupResponse;
 use UCloud\UMem\Apis\DeleteURedisGroupRequest;
 use UCloud\UMem\Apis\DeleteURedisGroupResponse;
+use UCloud\UMem\Apis\DescribeUDRedisProxyInfoRequest;
+use UCloud\UMem\Apis\DescribeUDRedisProxyInfoResponse;
 use UCloud\UMem\Apis\DescribeUDRedisSlowlogRequest;
 use UCloud\UMem\Apis\DescribeUDRedisSlowlogResponse;
 use UCloud\UMem\Apis\DescribeUMemRequest;
@@ -433,6 +435,42 @@ class UMemClient extends Client
     }
 
     /**
+     * DescribeUDRedisProxyInfo - 拉取udredis所有的代理信息
+     *
+     * See also: https://docs.ucloud.cn/api/umem-api/describe_ud_redis_proxy_info
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "SpaceId" => (string) udredis实例id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (array<object>) 代理数据集[
+     *         [
+     *             "ResourceId" => (string) 代理资源id
+     *             "ProxyId" => (string) 代理id
+     *             "Vip" => (string) 代理ip
+     *             "State" => (string) 代理状态
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return DescribeUDRedisProxyInfoResponse
+     * @throws UCloudException
+     */
+    public function describeUDRedisProxyInfo(DescribeUDRedisProxyInfoRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUDRedisProxyInfoResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DescribeUDRedisSlowlog - 查询UDRedis慢日志
      *
      * See also: https://docs.ucloud.cn/api/umem-api/describe_ud_redis_slowlog
@@ -642,9 +680,9 @@ class UMemClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "SpaceId" => (string) UMem内存资源ID
      *     "Offset" => (integer) 分页显示的起始偏移, 默认值为0
      *     "Limit" => (integer) 分页显示的条目数, 默认值为10
@@ -656,13 +694,13 @@ class UMemClient extends Client
      *     "DataSet" => (array<object>) 分布式redis 分片信息[
      *         [
      *             "BlockId" => (string) 分片id
-     *             "BlockVip" => (string) 分片ip
      *             "BlockPort" => (integer) 分片端口
      *             "BlockSize" => (integer) 容量单位GB
-     *             "BlockUsedSize" => (integer) 使用量单位MB
      *             "BlockState" => (string) 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败
      *             "BlockSlotBegin" => (integer) 分片维护的键槽起始值
      *             "BlockSlotEnd" => (integer) 分片维护的键槽结束值
+     *             "BlockVip" => (string) 分片ip
+     *             "BlockUsedSize" => (integer) 使用量单位MB
      *         ]
      *     ]
      * ]

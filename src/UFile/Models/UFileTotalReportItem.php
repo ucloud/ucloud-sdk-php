@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,7 +103,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @return float|null
      */
@@ -113,7 +113,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * ApiTimes: API请求次数（次）
+     * ApiTimes: API请求次数（万次）
      *
      * @param float $apiTimes
      */

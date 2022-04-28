@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,66 @@ class ResourceSet extends Response
     public function setZone($zone)
     {
         $this->set("Zone", $zone);
+    }
+
+    /**
+     * SubResourceName: 资源绑定的虚拟网卡的名称
+     *
+     * @return string|null
+     */
+    public function getSubResourceName()
+    {
+        return $this->get("SubResourceName");
+    }
+
+    /**
+     * SubResourceName: 资源绑定的虚拟网卡的名称
+     *
+     * @param string $subResourceName
+     */
+    public function setSubResourceName($subResourceName)
+    {
+        $this->set("SubResourceName", $subResourceName);
+    }
+
+    /**
+     * SubResourceId: 资源绑定的虚拟网卡的ID
+     *
+     * @return string|null
+     */
+    public function getSubResourceId()
+    {
+        return $this->get("SubResourceId");
+    }
+
+    /**
+     * SubResourceId: 资源绑定的虚拟网卡的ID
+     *
+     * @param string $subResourceId
+     */
+    public function setSubResourceId($subResourceId)
+    {
+        $this->set("SubResourceId", $subResourceId);
+    }
+
+    /**
+     * SubResourceType: 资源绑定的虚拟网卡的类型，“uni”，虚拟网卡。
+     *
+     * @return string|null
+     */
+    public function getSubResourceType()
+    {
+        return $this->get("SubResourceType");
+    }
+
+    /**
+     * SubResourceType: 资源绑定的虚拟网卡的类型，“uni”，虚拟网卡。
+     *
+     * @param string $subResourceType
+     */
+    public function setSubResourceType($subResourceType)
+    {
+        $this->set("SubResourceType", $subResourceType);
     }
 
     /**
@@ -123,7 +183,7 @@ class ResourceSet extends Response
     }
 
     /**
-     * ResourceType: 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计.
+     * ResourceType: 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计，“uni”，虚拟网卡。
      *
      * @return string|null
      */
@@ -133,7 +193,7 @@ class ResourceSet extends Response
     }
 
     /**
-     * ResourceType: 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计.
+     * ResourceType: 绑定防火墙组的资源类型。"unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机； "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计，“uni”，虚拟网卡。
      *
      * @param string $resourceType
      */

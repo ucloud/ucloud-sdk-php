@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,7 +130,7 @@ class DescribeUEcIDCRequest extends Request
     }
 
     /**
-     * ProductType: 产品类型：normal（通用型），hf（高主频型）
+     * ProductType: 产品类型：normal（经济型），hf（标准型）,g(GPU型)
      *
      * @return string|null
      */
@@ -140,12 +140,32 @@ class DescribeUEcIDCRequest extends Request
     }
 
     /**
-     * ProductType: 产品类型：normal（通用型），hf（高主频型）
+     * ProductType: 产品类型：normal（经济型），hf（标准型）,g(GPU型)
      *
      * @param string $productType
      */
     public function setProductType($productType)
     {
         $this->set("ProductType", $productType);
+    }
+
+    /**
+     * Gpu: Gpu卡核心数
+     *
+     * @return integer|null
+     */
+    public function getGpu()
+    {
+        return $this->get("Gpu");
+    }
+
+    /**
+     * Gpu: Gpu卡核心数
+     *
+     * @param int $gpu
+     */
+    public function setGpu($gpu)
+    {
+        $this->set("Gpu", $gpu);
     }
 }

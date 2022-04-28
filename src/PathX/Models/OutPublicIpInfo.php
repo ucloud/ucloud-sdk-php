@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class OutPublicIpInfo extends Response
     
 
     /**
-     * IP:  线路出口EIP
+     * IP:  线路回源节点EIP
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class OutPublicIpInfo extends Response
     }
 
     /**
-     * IP:  线路出口EIP
+     * IP:  线路回源节点EIP
      *
      * @param string $ip
      */
@@ -43,7 +43,7 @@ class OutPublicIpInfo extends Response
     }
 
     /**
-     * Area: 线路出口机房代号
+     * Area: 线路回源节点机房代号
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class OutPublicIpInfo extends Response
     }
 
     /**
-     * Area: 线路出口机房代号
+     * Area: 线路回源节点机房代号
      *
      * @param string $area
      */

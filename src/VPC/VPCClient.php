@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ use UCloud\VPC\Apis\CreateNetworkAclEntryRequest;
 use UCloud\VPC\Apis\CreateNetworkAclEntryResponse;
 use UCloud\VPC\Apis\CreateRouteTableRequest;
 use UCloud\VPC\Apis\CreateRouteTableResponse;
+use UCloud\VPC\Apis\CreateSnatDnatRuleRequest;
+use UCloud\VPC\Apis\CreateSnatDnatRuleResponse;
 use UCloud\VPC\Apis\CreateSubnetRequest;
 use UCloud\VPC\Apis\CreateSubnetResponse;
 use UCloud\VPC\Apis\CreateVPCRequest;
@@ -64,6 +66,8 @@ use UCloud\VPC\Apis\DeleteRouteTableRequest;
 use UCloud\VPC\Apis\DeleteRouteTableResponse;
 use UCloud\VPC\Apis\DeleteSecondaryIpRequest;
 use UCloud\VPC\Apis\DeleteSecondaryIpResponse;
+use UCloud\VPC\Apis\DeleteSnatDnatRuleRequest;
+use UCloud\VPC\Apis\DeleteSnatDnatRuleResponse;
 use UCloud\VPC\Apis\DeleteSnatRuleRequest;
 use UCloud\VPC\Apis\DeleteSnatRuleResponse;
 use UCloud\VPC\Apis\DeleteSubnetRequest;
@@ -74,6 +78,8 @@ use UCloud\VPC\Apis\DeleteVPCIntercomRequest;
 use UCloud\VPC\Apis\DeleteVPCIntercomResponse;
 use UCloud\VPC\Apis\DeleteWhiteListResourceRequest;
 use UCloud\VPC\Apis\DeleteWhiteListResourceResponse;
+use UCloud\VPC\Apis\DescribeInstanceNetworkInterfaceRequest;
+use UCloud\VPC\Apis\DescribeInstanceNetworkInterfaceResponse;
 use UCloud\VPC\Apis\DescribeNATGWRequest;
 use UCloud\VPC\Apis\DescribeNATGWResponse;
 use UCloud\VPC\Apis\DescribeNATGWPolicyRequest;
@@ -86,10 +92,14 @@ use UCloud\VPC\Apis\DescribeNetworkAclAssociationBySubnetRequest;
 use UCloud\VPC\Apis\DescribeNetworkAclAssociationBySubnetResponse;
 use UCloud\VPC\Apis\DescribeNetworkAclEntryRequest;
 use UCloud\VPC\Apis\DescribeNetworkAclEntryResponse;
+use UCloud\VPC\Apis\DescribeNetworkInterfaceRequest;
+use UCloud\VPC\Apis\DescribeNetworkInterfaceResponse;
 use UCloud\VPC\Apis\DescribeRouteTableRequest;
 use UCloud\VPC\Apis\DescribeRouteTableResponse;
 use UCloud\VPC\Apis\DescribeSecondaryIpRequest;
 use UCloud\VPC\Apis\DescribeSecondaryIpResponse;
+use UCloud\VPC\Apis\DescribeSnatDnatRuleRequest;
+use UCloud\VPC\Apis\DescribeSnatDnatRuleResponse;
 use UCloud\VPC\Apis\DescribeSnatRuleRequest;
 use UCloud\VPC\Apis\DescribeSnatRuleResponse;
 use UCloud\VPC\Apis\DescribeSubnetRequest;
@@ -577,6 +587,35 @@ class VPCClient extends Client
     }
 
     /**
+     * CreateSnatDnatRule - 调用接口后会自动创建内外网IP之间的SNAT和DNAT规则，支持TCP、UDP协议全端口
+     *
+     * See also: https://docs.ucloud.cn/api/vpc2.0-api/create_snat_dnat_rule
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "PrivateIp" => (array<string>) 内网P地址
+     *     "EIP" => (array<string>) EIP的IP地址。按入参顺序，PrivateIp与EIP一一对应建立映射关系。
+     *     "NATGWId" => (string) 映射所使用的NAT网关资源ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return CreateSnatDnatRuleResponse
+     * @throws UCloudException
+     */
+    public function createSnatDnatRule(CreateSnatDnatRuleRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new CreateSnatDnatRuleResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * CreateSubnet - 创建子网
      *
      * See also: https://docs.ucloud.cn/api/vpc2.0-api/create_subnet
@@ -678,8 +717,8 @@ class VPCClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "NATGWId" => (string) NAT网关Id
      *     "ReleaseEip" => (boolean) 是否释放绑定的EIP。true：解绑并释放；false：只解绑不释放。默认为false
      * ]
@@ -869,6 +908,35 @@ class VPCClient extends Client
     }
 
     /**
+     * DeleteSnatDnatRule - 删除NAT创建内外网IP映射规则
+     *
+     * See also: https://docs.ucloud.cn/api/vpc2.0-api/delete_snat_dnat_rule
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "EIP" => (array<string>) EIP的IP地址,PrivateIp与EIP需一一对应
+     *     "PrivateIp" => (array<string>) 内网P地址
+     *     "NATGWId" => (string) 映射所使用的NAT网关资源ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DeleteSnatDnatRuleResponse
+     * @throws UCloudException
+     */
+    public function deleteSnatDnatRule(DeleteSnatDnatRuleRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DeleteSnatDnatRuleResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DeleteSnatRule - 删除指定的出口规则（SNAT规则）
      *
      * See also: https://docs.ucloud.cn/api/vpc2.0-api/delete_snat_rule
@@ -1009,6 +1077,57 @@ class VPCClient extends Client
     }
 
     /**
+     * DescribeInstanceNetworkInterface - 展示云主机绑定的网卡信息
+     *
+     * See also: https://docs.ucloud.cn/api/vpc2.0-api/describe_instance_network_interface
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InstanceId" => (string) 云主机ID
+     *     "Offset" => (integer) 默认为0
+     *     "Limit" => (integer) 默认为20
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "NetworkInterfaceSet" => (array<object>) 虚拟网卡信息[
+     *         [
+     *             "InterfaceId" => (string) 虚拟网卡资源ID
+     *             "VPCId" => (string) 所属VPC
+     *             "SubnetId" => (string) 所属子网
+     *             "PrivateIpSet" => (array<string>) 关联内网IP。当前一个网卡仅支持绑定一个内网IP
+     *             "MacAddress" => (string) 关联Mac
+     *             "Status" => (integer) 绑定状态
+     *             "PrivateIp" => (array<string>) 网卡的内网IP信息
+     *             "Name" => (string) 虚拟网卡名称
+     *             "Netmask" => (string) 内网IP掩码
+     *             "Gateway" => (string) 默认网关
+     *             "AttachInstanceId" => (string) 绑定实例资源ID
+     *             "Default" => (boolean) 是否是绑定实例的默认网卡 false:不是 true:是
+     *             "CreateTime" => (integer) 创建时间
+     *             "Remark" => (string) 备注
+     *             "Tag" => (string) 业务组
+     *             "EIPIdSet" => (array<string>) 虚拟网卡绑定的EIP ID信息
+     *             "FirewallIdSet" => (array<string>) 虚拟网卡绑定的防火墙ID信息
+     *             "PrivateIplimit" => (array<string>) 网卡的内网IP配额信息
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return DescribeInstanceNetworkInterfaceResponse
+     * @throws UCloudException
+     */
+    public function describeInstanceNetworkInterface(DescribeInstanceNetworkInterfaceRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeInstanceNetworkInterfaceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DescribeNATGW - 获取NAT网关信息
      *
      * See also: https://docs.ucloud.cn/api/vpc2.0-api/describe_natgw
@@ -1016,8 +1135,8 @@ class VPCClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "NATGWIds" => (array<string>) NAT网关Id。默认为该项目下所有NAT网关
      *     "Offset" => (integer) 数据偏移量。默认为0
      *     "Limit" => (integer) 数据分页值。默认为20
@@ -1031,9 +1150,9 @@ class VPCClient extends Client
      *         [
      *             "NATGWId" => (string) natgw id
      *             "NATGWName" => (string) natgw名称
-     *             "CreateTime" => (integer) natgw创建时间
      *             "Tag" => (string) 业务组
      *             "Remark" => (string) 备注
+     *             "CreateTime" => (integer) natgw创建时间
      *             "FirewallId" => (string) 绑定的防火墙Id
      *             "VPCId" => (string) 所属VPC Id
      *             "SubnetSet" => (array<object>) 子网 Id[
@@ -1057,6 +1176,8 @@ class VPCClient extends Client
      *                     ]
      *                 ]
      *             ]
+     *             "VPCName" => (string) VPC名称
+     *             "IsSnatpoolEnabled" => (string) 枚举值，“enable”，默认出口规则使用了负载均衡；“disable”，默认出口规则未使用负载均衡。
      *             "PolicyId" => (array<string>) 转发策略Id
      *         ]
      *     ]
@@ -1313,6 +1434,63 @@ class VPCClient extends Client
     }
 
     /**
+     * DescribeNetworkInterface - 展示虚拟网卡信息
+     *
+     * See also: https://docs.ucloud.cn/api/vpc2.0-api/describe_network_interface
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "VPCId" => (string) 所属VPC
+     *     "SubnetId" => (string) 所属子网
+     *     "InterfaceId" => (array<string>) 虚拟网卡ID,可指定 0~n
+     *     "OnlyDefault" => (boolean) 若为true 只返回默认网卡默认为false
+     *     "NoRecycled" => (boolean) 若为true 过滤绑定在回收站主机中的网卡。默认为false。
+     *     "Tag" => (string) 业务组
+     *     "Limit" => (integer) 默认为20
+     *     "Offset" => (integer) 默认为0
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "NetworkInterfaceSet" => (array<object>) 虚拟网卡信息[
+     *         [
+     *             "InterfaceId" => (string) 虚拟网卡资源ID
+     *             "VPCId" => (string) 所属VPC
+     *             "SubnetId" => (string) 所属子网
+     *             "PrivateIpSet" => (array<string>) 关联内网IP。当前一个网卡仅支持绑定一个内网IP
+     *             "MacAddress" => (string) 关联Mac
+     *             "Status" => (integer) 绑定状态
+     *             "PrivateIp" => (array<string>) 网卡的内网IP信息
+     *             "Name" => (string) 虚拟网卡名称
+     *             "Netmask" => (string) 内网IP掩码
+     *             "Gateway" => (string) 默认网关
+     *             "AttachInstanceId" => (string) 绑定实例资源ID
+     *             "Default" => (boolean) 是否是绑定实例的默认网卡 false:不是 true:是
+     *             "CreateTime" => (integer) 创建时间
+     *             "Remark" => (string) 备注
+     *             "Tag" => (string) 业务组
+     *             "EIPIdSet" => (array<string>) 虚拟网卡绑定的EIP ID信息
+     *             "FirewallIdSet" => (array<string>) 虚拟网卡绑定的防火墙ID信息
+     *             "PrivateIplimit" => (array<string>) 网卡的内网IP配额信息
+     *         ]
+     *     ]
+     *     "TotalCount" => (integer) 虚拟网卡总数
+     * ]
+     *
+     * @return DescribeNetworkInterfaceResponse
+     * @throws UCloudException
+     */
+    public function describeNetworkInterface(DescribeNetworkInterfaceRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeNetworkInterfaceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DescribeRouteTable - 获取路由表详细信息(包括路由策略)
      *
      * See also: https://docs.ucloud.cn/api/vpc2.0-api/describe_route_table
@@ -1412,6 +1590,41 @@ class VPCClient extends Client
     {
         $resp = $this->invoke($request);
         return new DescribeSecondaryIpResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeSnatDnatRule - 获取基于NAT创建的内外网IP映射规则信息
+     *
+     * See also: https://docs.ucloud.cn/api/vpc2.0-api/describe_snat_dnat_rule
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "NATGWId" => (array<string>) 获取NAT上添加的所有SnatDnatRule信息
+     *     "EIP" => (array<string>) 获取EIP对应的SnatDnatRule信息
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (array<object>) 规则信息[
+     *         [
+     *             "PrivateIp" => (string) 内网IP地址
+     *             "NATGWId" => (string) 映射所使用的NAT网关资源ID
+     *             "EIP" => (string) EIP的IP地址
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return DescribeSnatDnatRuleResponse
+     * @throws UCloudException
+     */
+    public function describeSnatDnatRule(DescribeSnatDnatRuleRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeSnatDnatRuleResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -2115,8 +2328,8 @@ class VPCClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "NATGWId" => (string) NAT网关Id
      *     "SubnetworkIds" => (array<string>) NAT网关绑定的子网Id
      * ]

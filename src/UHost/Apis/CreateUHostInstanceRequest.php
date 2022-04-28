@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ use UCloud\Core\Request\Request;
 use UCloud\UHost\Params\CreateUHostInstanceParamDisks;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterface;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceEIP;
-use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceEIPGlobalSSH;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceIPv6;
 use UCloud\UHost\Params\CreateUHostInstanceParamVolumes;
 use UCloud\UHost\Params\CreateUHostInstanceParamFeatures;
@@ -231,7 +230,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例 \\ 默认为月付
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例(内测阶段) \\ 默认为月付
      *
      * @return string|null
      */
@@ -241,7 +240,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例 \\ 默认为月付
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例(内测阶段) \\ 默认为月付
      *
      * @param string $chargeType
      */

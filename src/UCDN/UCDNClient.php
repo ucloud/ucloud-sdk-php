@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\UCDN\Apis\AddCertificateRequest;
 use UCloud\UCDN\Apis\AddCertificateResponse;
+use UCloud\UCDN\Apis\ControlUcdnDomainCacheAccessRequest;
+use UCloud\UCDN\Apis\ControlUcdnDomainCacheAccessResponse;
 use UCloud\UCDN\Apis\DeleteCertificateRequest;
 use UCloud\UCDN\Apis\DeleteCertificateResponse;
 use UCloud\UCDN\Apis\DescribeNewUcdnPrefetchCacheTaskRequest;
@@ -28,14 +30,12 @@ use UCloud\UCDN\Apis\DescribeNewUcdnRefreshCacheTaskRequest;
 use UCloud\UCDN\Apis\DescribeNewUcdnRefreshCacheTaskResponse;
 use UCloud\UCDN\Apis\GetCertificateV2Request;
 use UCloud\UCDN\Apis\GetCertificateV2Response;
-use UCloud\UCDN\Apis\GetNewUcdnDomainBandwidthRequest;
-use UCloud\UCDN\Apis\GetNewUcdnDomainBandwidthResponse;
 use UCloud\UCDN\Apis\GetNewUcdnDomainHitRateRequest;
 use UCloud\UCDN\Apis\GetNewUcdnDomainHitRateResponse;
-use UCloud\UCDN\Apis\GetNewUcdnDomainHttpCodeRequest;
-use UCloud\UCDN\Apis\GetNewUcdnDomainHttpCodeResponse;
-use UCloud\UCDN\Apis\GetNewUcdnDomainHttpCodeV2Request;
-use UCloud\UCDN\Apis\GetNewUcdnDomainHttpCodeV2Response;
+use UCloud\UCDN\Apis\GetNewUcdnLogRefererStatisticsRequest;
+use UCloud\UCDN\Apis\GetNewUcdnLogRefererStatisticsResponse;
+use UCloud\UCDN\Apis\GetNewUcdnLogUrlStatisticsRequest;
+use UCloud\UCDN\Apis\GetNewUcdnLogUrlStatisticsResponse;
 use UCloud\UCDN\Apis\GetUcdnDomain95BandwidthV2Request;
 use UCloud\UCDN\Apis\GetUcdnDomain95BandwidthV2Response;
 use UCloud\UCDN\Apis\GetUcdnDomainBandwidthV2Request;
@@ -50,6 +50,8 @@ use UCloud\UCDN\Apis\GetUcdnDomainInfoListRequest;
 use UCloud\UCDN\Apis\GetUcdnDomainInfoListResponse;
 use UCloud\UCDN\Apis\GetUcdnDomainLogRequest;
 use UCloud\UCDN\Apis\GetUcdnDomainLogResponse;
+use UCloud\UCDN\Apis\GetUcdnDomainLogV2Request;
+use UCloud\UCDN\Apis\GetUcdnDomainLogV2Response;
 use UCloud\UCDN\Apis\GetUcdnDomainOriginHttpCodeRequest;
 use UCloud\UCDN\Apis\GetUcdnDomainOriginHttpCodeResponse;
 use UCloud\UCDN\Apis\GetUcdnDomainOriginHttpCodeDetailRequest;
@@ -58,22 +60,14 @@ use UCloud\UCDN\Apis\GetUcdnDomainOriginRequestNumRequest;
 use UCloud\UCDN\Apis\GetUcdnDomainOriginRequestNumResponse;
 use UCloud\UCDN\Apis\GetUcdnDomainPrefetchEnableRequest;
 use UCloud\UCDN\Apis\GetUcdnDomainPrefetchEnableResponse;
-use UCloud\UCDN\Apis\GetUcdnDomainRequestNumV2Request;
-use UCloud\UCDN\Apis\GetUcdnDomainRequestNumV2Response;
 use UCloud\UCDN\Apis\GetUcdnDomainRequestNumV3Request;
 use UCloud\UCDN\Apis\GetUcdnDomainRequestNumV3Response;
-use UCloud\UCDN\Apis\GetUcdnDomainTrafficRequest;
-use UCloud\UCDN\Apis\GetUcdnDomainTrafficResponse;
-use UCloud\UCDN\Apis\GetUcdnPassBandwidthRequest;
-use UCloud\UCDN\Apis\GetUcdnPassBandwidthResponse;
 use UCloud\UCDN\Apis\GetUcdnPassBandwidthV2Request;
 use UCloud\UCDN\Apis\GetUcdnPassBandwidthV2Response;
 use UCloud\UCDN\Apis\GetUcdnProIspBandwidthV2Request;
 use UCloud\UCDN\Apis\GetUcdnProIspBandwidthV2Response;
 use UCloud\UCDN\Apis\GetUcdnProIspRequestNumV2Request;
 use UCloud\UCDN\Apis\GetUcdnProIspRequestNumV2Response;
-use UCloud\UCDN\Apis\GetUcdnTrafficRequest;
-use UCloud\UCDN\Apis\GetUcdnTrafficResponse;
 use UCloud\UCDN\Apis\GetUcdnTrafficV2Request;
 use UCloud\UCDN\Apis\GetUcdnTrafficV2Response;
 use UCloud\UCDN\Apis\PrefetchNewUcdnDomainCacheRequest;
@@ -118,6 +112,33 @@ class UCDNClient extends Client
     {
         $resp = $this->invoke($request);
         return new AddCertificateResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ControlUcdnDomainCacheAccess - 封禁解封缓存访问
+     *
+     * See also: https://docs.ucloud.cn/api/ucdn-api/control_ucdn_domain_cache_access
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "UrlList" => (array<string>) 待封禁的Url，一次封禁多个Url时最多一次30条，只能对表示文件的Url进行操作
+     *     "Type" => (string) forbid=封禁   unforbid=解封  其他值非法
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return ControlUcdnDomainCacheAccessResponse
+     * @throws UCloudException
+     */
+    public function controlUcdnDomainCacheAccess(ControlUcdnDomainCacheAccessRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new ControlUcdnDomainCacheAccessResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -284,43 +305,6 @@ class UCDNClient extends Client
     }
 
     /**
-     * GetNewUcdnDomainBandwidth - 获取域名带宽数据
-     *
-     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_domain_bandwidth
-     *
-     * Arguments:
-     *
-     * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "Type" => (integer) 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度）
-     *     "DomainId" => (array<string>) 域名id，创建域名时生成的id。默认全部域名
-     *     "Areacode" => (string) 查询带宽区域 cn代表国内 abroad代表海外 不填默认为全部区域
-     *     "BeginTime" => (integer) 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。如没有赋值，则返回缺少参 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
-     *     "EndTime" => (integer) 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
-     * ]
-     *
-     * Outputs:
-     *
-     * $outputs = [
-     *     "BandwidthList" => (array<object>) 带宽信息列表，参见BandwidthInfo[
-     *         [
-     *             "Time" => (integer) 带宽获取的时间点。格式：时间戳
-     *             "CdnBandwidth" => (number) 返回值返回指定时间区间内CDN的带宽峰值，单位Mbps（如果请求参数Type为0，则Value是五分钟粒度的带宽值，如果Type为1，则Value是1小时的带宽峰值，如果Type为2，则Value是一天内的带宽峰值）
-     *         ]
-     *     ]
-     *     "Traffic" => (number) 从起始时间到结束时间内的所使用的CDN总流量，单位GB
-     * ]
-     *
-     * @return GetNewUcdnDomainBandwidthResponse
-     * @throws UCloudException
-     */
-    public function getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthRequest $request = null)
-    {
-        $resp = $this->invoke($request);
-        return new GetNewUcdnDomainBandwidthResponse($resp->toArray(), $resp->getRequestId());
-    }
-
-    /**
      * GetNewUcdnDomainHitRate - 获取域名命中率
      *
      * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_domain_hit_rate
@@ -358,135 +342,89 @@ class UCDNClient extends Client
     }
 
     /**
-     * GetNewUcdnDomainHttpCode - 获取域名状态码监控
+     * GetNewUcdnLogRefererStatistics - 获取热点referer统计
      *
-     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_domain_http_code
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_log_referer_statistics
      *
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "Type" => (integer) 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度）
-     *     "DomainId" => (array<string>) 域名id，创建域名时生成的id。默认全部域名
-     *     "Areacode" => (string) 查询带宽区域 cn代表国内 abroad代表海外，只支持国内
-     *     "BeginTime" => (integer) 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。如没有赋值，则返回缺少参 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
-     *     "EndTime" => (integer) 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
+     *     "DomainId" => (string) 域名id，创建域名时生成的id
+     *     "Areacode" => (string) 查询带宽区域 cn代表国内 abroad代表海外 ；目前只支持国内
+     *     "BeginTime" => (integer) 查询带宽的起始时间，格式：时间戳
+     *     "EndTime" => (integer) 查询统计日志的结束时间，格式：时间戳。最大时间间隔30天
+     *     "OrderBy" => (integer) 0表示按流量降序排列，1表示按照下载次数降序排列，默认为0
+     *     "Limit" => (integer) 返回的结果数量限制，默认1000
      * ]
      *
      * Outputs:
      *
      * $outputs = [
-     *     "HttpCodeDetail" => (array<object>) 状态码实例表。详细见HttpCodeInfo[
+     *     "RefererStatistics" => (array<object>) 按天统计实例[
      *         [
-     *             "Time" => (integer) 带宽获取的时间点。格式：时间戳
-     *             "HttpOneXX" => (integer) 1xx数量
-     *             "HttpTwoXX" => (integer) 2xx数量
-     *             "HttpThreeXX" => (integer) 3xx数量
-     *             "HttpFourXX" => (integer) 4xx数量
-     *             "HttpFiveXX" => (integer) 5xx数量
+     *             "Date" => (string) 日期
+     *             "RefererList" => (array<object>) Referer实例表[
+     *                 [
+     *                     "Referer" => (string) 客户端请求的referer
+     *                     "RequestTimes" => (integer) 次数
+     *                     "Percent" => (number) 次数占比，单位%
+     *                 ]
+     *             ]
      *         ]
      *     ]
      * ]
      *
-     * @return GetNewUcdnDomainHttpCodeResponse
+     * @return GetNewUcdnLogRefererStatisticsResponse
      * @throws UCloudException
      */
-    public function getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeRequest $request = null)
+    public function getNewUcdnLogRefererStatistics(GetNewUcdnLogRefererStatisticsRequest $request = null)
     {
         $resp = $this->invoke($request);
-        return new GetNewUcdnDomainHttpCodeResponse($resp->toArray(), $resp->getRequestId());
+        return new GetNewUcdnLogRefererStatisticsResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
-     * GetNewUcdnDomainHttpCodeV2 - 获取域名详细状态码监控
+     * GetNewUcdnLogUrlStatistics - 获取日志url统计
      *
-     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_domain_http_code_v2
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_new_ucdn_log_url_statistics
      *
      * Arguments:
      *
      * $args = [
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "Type" => (integer) 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天粒度，3表示按照一分钟粒度）
-     *     "BeginTime" => (integer) 查询的起始时间，格式为Unix Timestamp。
-     *     "EndTime" => (integer) 查询的结束时间，格式为Unix Timestamp。
-     *     "DomainId" => (array<string>) 域名id，创建域名时生成的id。默认全部域名
-     *     "Areacode" => (string) 查询带宽区域 cn代表国内 abroad代表海外，只支持国内
+     *     "DomainId" => (string) 域名Id
+     *     "Areacode" => (string) 查询带宽区域 cn代表国内 abroad代表海外 只支持国内
+     *     "BeginTime" => (integer) 查询带宽的起始时间，格式：时间戳。BeginTime和EndTime必须同时赋值
+     *     "EndTime" => (integer) 查询统计日志的结束时间，格式：时间戳,最多可拉取30天
+     *     "OrderBy" => (integer) 0表示按流量降序排列，1表示按照下载次数降序排列，默认为0
+     *     "Limit" => (integer) 返回的结果数量限制，默认1000
      * ]
      *
      * Outputs:
      *
      * $outputs = [
-     *     "HttpCodeV2Detail" => (array<object>) 状态码详情[
+     *     "UrlStatisticsList" => (array<object>) 按天统计实例。[
      *         [
-     *             "Time" => (integer) 时间
-     *             "Total" => (integer) 当前分组的总状态码数
-     *             "Http100" => (integer) http100数量
-     *             "Http101" => (integer) http101数量
-     *             "Http102" => (integer) http102数量
-     *             "Http200" => (integer) http200数量
-     *             "Http201" => (integer) http201数量
-     *             "Http202" => (integer) http202数量
-     *             "Http203" => (integer) http203数量
-     *             "Http204" => (integer) http204数量
-     *             "Http205" => (integer) http205数量
-     *             "Http206" => (integer) http206数量
-     *             "Http207" => (integer) http207数量
-     *             "Http300" => (integer) http300数量
-     *             "Http301" => (integer) http301数量
-     *             "Http302" => (integer) http302数量
-     *             "Http303" => (integer) http303数量
-     *             "Http304" => (integer) http304数量
-     *             "Http305" => (integer) http305数量
-     *             "Http306" => (integer) http306数量
-     *             "Http307" => (integer) http307数量
-     *             "Http400" => (integer) http400数量
-     *             "Http401" => (integer) http401数量
-     *             "Http402" => (integer) http402数量
-     *             "Http403" => (integer) http403数量
-     *             "Http404" => (integer) http404数量
-     *             "Http405" => (integer) http405数量
-     *             "Http406" => (integer) http406数量
-     *             "Http407" => (integer) http407数量
-     *             "Http408" => (integer) http408数量
-     *             "Http409" => (integer) http409数量
-     *             "Http410" => (integer) http410数量
-     *             "Http411" => (integer) http411数量
-     *             "Http412" => (integer) http412数量
-     *             "Http413" => (integer) http413数量
-     *             "Http414" => (integer) http414数量
-     *             "Http415" => (integer) http415数量
-     *             "Http416" => (integer) http416数量
-     *             "Http417" => (integer) http417数量
-     *             "Http418" => (integer) http418数量
-     *             "Http421" => (integer) http421数量
-     *             "Http422" => (integer) http422数量
-     *             "Http423" => (integer) http423数量
-     *             "Http424" => (integer) http424数量
-     *             "Http425" => (integer) http425数量
-     *             "Http426" => (integer) http426数量
-     *             "Http449" => (integer) http449数量
-     *             "Http451" => (integer) http451数量
-     *             "Http500" => (integer) http500数量
-     *             "Http501" => (integer) http501数量
-     *             "Http502" => (integer) http502数量
-     *             "Http503" => (integer) http503数量
-     *             "Http504" => (integer) http504数量
-     *             "Http505" => (integer) http505数量
-     *             "Http506" => (integer) http506数量
-     *             "Http507" => (integer) http507数量
-     *             "Http509" => (integer) http509数量
-     *             "Http510" => (integer) http510数量
+     *             "UrlList" => (array<object>) [
+     *                 [
+     *                     "Url" => (string) 下载链接的url
+     *                     "Traffic" => (number) 流量（单位为G）
+     *                     "DownloadTimes" => (integer) 下载次数
+     *                     "Percent" => (number) 流量占比，单位%
+     *                 ]
+     *             ]
+     *             "Date" => (string) 日期
      *         ]
      *     ]
      * ]
      *
-     * @return GetNewUcdnDomainHttpCodeV2Response
+     * @return GetNewUcdnLogUrlStatisticsResponse
      * @throws UCloudException
      */
-    public function getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Request $request = null)
+    public function getNewUcdnLogUrlStatistics(GetNewUcdnLogUrlStatisticsRequest $request = null)
     {
         $resp = $this->invoke($request);
-        return new GetNewUcdnDomainHttpCodeV2Response($resp->toArray(), $resp->getRequestId());
+        return new GetNewUcdnLogUrlStatisticsResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -1172,6 +1110,45 @@ class UCDNClient extends Client
     }
 
     /**
+     * GetUcdnDomainLogV2 - 获取域名5分钟日志
+     *
+     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_log_v2
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "BeginTime" => (integer) 查询的起始时间，格式为Unix Timestamp
+     *     "EndTime" => (integer) 查询的结束时间，格式为Unix Timestamp
+     *     "DomainId" => (array<string>) 域名id，创建域名时生成的id。默认全部域名
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DomainLogSet" => (array<object>) [
+     *         [
+     *             "Domain" => (string) 域名
+     *             "LogList" => (array<object>) 日志信息列表[
+     *                 [
+     *                     "LogTime" => (integer) Unix时间戳
+     *                     "LogUrl" => (string) 日志url地址
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUcdnDomainLogV2Response
+     * @throws UCloudException
+     */
+    public function getUcdnDomainLogV2(GetUcdnDomainLogV2Request $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUcdnDomainLogV2Response($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * GetUcdnDomainOriginHttpCode - 获取域名源站状态码监控
      *
      * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_origin_http_code
@@ -1367,43 +1344,6 @@ class UCDNClient extends Client
     }
 
     /**
-     * GetUcdnDomainRequestNumV2 - 获取域名请求数
-     *
-     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_request_num_v2
-     *
-     * Arguments:
-     *
-     * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "Type" => (integer) 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度, 3=按1分钟）
-     *     "BeginTime" => (integer) 查询的起始时间，格式为Unix Timestamp
-     *     "EndTime" => (integer) 查询的结束时间，格式为Unix Timestamp
-     *     "DomainId" => (array<string>) 域名id，创建域名时生成的id。默认全部域名
-     *     "Areacode" => (string) 查询区域 cn代表国内 abroad代表海外，只支持国内
-     * ]
-     *
-     * Outputs:
-     *
-     * $outputs = [
-     *     "RequestList" => (array<object>) 请求数实例表。[
-     *         [
-     *             "Time" => (integer) 带宽获取的时间点。格式：时间戳
-     *             "CdnRequest" => (number) 返回值返回指定时间区间内的cdn收到的请求次数之和
-     *             "OriginRequest" => (number) 返回值返回指定时间区间内的cdn回源的请求次数之和
-     *         ]
-     *     ]
-     * ]
-     *
-     * @return GetUcdnDomainRequestNumV2Response
-     * @throws UCloudException
-     */
-    public function getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Request $request = null)
-    {
-        $resp = $this->invoke($request);
-        return new GetUcdnDomainRequestNumV2Response($resp->toArray(), $resp->getRequestId());
-    }
-
-    /**
      * GetUcdnDomainRequestNumV3 - 获取域名请求数
      *
      * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_request_num_v3
@@ -1438,78 +1378,6 @@ class UCDNClient extends Client
     {
         $resp = $this->invoke($request);
         return new GetUcdnDomainRequestNumV3Response($resp->toArray(), $resp->getRequestId());
-    }
-
-    /**
-     * GetUcdnDomainTraffic - 获取加速域名流量使用信息
-     *
-     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_domain_traffic
-     *
-     * Arguments:
-     *
-     * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "AccountType" => (string) 指定按项目查询，还是按整个账户查询  取值 top 表示按整个账户查询，取值org表示按项目查询
-     *     "DomainId" => (array<string>) 域名ID，创建加速域名时生成，n从自然数0开始。默认全部域名
-     *     "Areacode" => (string) 查询流量区域 cn代表国内 abroad代表海外，默认全部区域
-     *     "BeginTime" => (integer) 查询的起始日期，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值
-     *     "EndTime" => (integer) 查询的结束日期，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天
-     * ]
-     *
-     * Outputs:
-     *
-     * $outputs = [
-     *     "TrafficSet" => (array<object>) 流量实例表，具体结构见 UcdnDomainTrafficSet[
-     *         [
-     *             "Time" => (integer) 流量获取的时间点，格式为Unix Timestamp
-     *             "Value" => (number) 查询每日流量总值，单位：GB
-     *         ]
-     *     ]
-     * ]
-     *
-     * @return GetUcdnDomainTrafficResponse
-     * @throws UCloudException
-     */
-    public function getUcdnDomainTraffic(GetUcdnDomainTrafficRequest $request = null)
-    {
-        $resp = $this->invoke($request);
-        return new GetUcdnDomainTrafficResponse($resp->toArray(), $resp->getRequestId());
-    }
-
-    /**
-     * GetUcdnPassBandwidth - 获取回源带宽数据（cdn回客户源站部分）
-     *
-     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_pass_bandwidth
-     *
-     * Arguments:
-     *
-     * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "Type" => (integer) 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度）
-     *     "DomainId" => (array<string>) 域名id，创建域名时生成的id。默认全部域名
-     *     "Areacode" => (string) 查询带宽区域 cn代表国内 abroad代表海外，只支持国内
-     *     "BeginTime" => (integer) 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。如没有赋值，则返回缺少参 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
-     *     "EndTime" => (integer) 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
-     * ]
-     *
-     * Outputs:
-     *
-     * $outputs = [
-     *     "BandwidthDetail" => (array<object>) 回源带宽数据[
-     *         [
-     *             "Time" => (integer) 宽获取的时间点。格式：时间戳
-     *             "Bandwidth" => (number) 返回值带宽值数据。
-     *         ]
-     *     ]
-     * ]
-     *
-     * @return GetUcdnPassBandwidthResponse
-     * @throws UCloudException
-     */
-    public function getUcdnPassBandwidth(GetUcdnPassBandwidthRequest $request = null)
-    {
-        $resp = $this->invoke($request);
-        return new GetUcdnPassBandwidthResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -1634,39 +1502,6 @@ class UCDNClient extends Client
     }
 
     /**
-     * GetUcdnTraffic - 获取流量信息
-     *
-     * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_traffic
-     *
-     * Arguments:
-     *
-     * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
-     * ]
-     *
-     * Outputs:
-     *
-     * $outputs = [
-     *     "TrafficSet" => (array<object>) 用户不同区域的流量信息, 具体结构参见TrafficSet部分[
-     *         [
-     *             "Areacode" => (string) 购买流量的区域, cn: 国内; abroad: 国外
-     *             "TrafficTotal" => (number) Areacode区域内总购买流量, 单位GB
-     *             "TrafficLeft" => (number) Areacode区域内总剩余流量, 单位GB
-     *             "TrafficUsed" => (number) Areacode区域内总使用流量, 单位GB
-     *         ]
-     *     ]
-     * ]
-     *
-     * @return GetUcdnTrafficResponse
-     * @throws UCloudException
-     */
-    public function getUcdnTraffic(GetUcdnTrafficRequest $request = null)
-    {
-        $resp = $this->invoke($request);
-        return new GetUcdnTrafficResponse($resp->toArray(), $resp->getRequestId());
-    }
-
-    /**
      * GetUcdnTrafficV2 - 获取流量信息
      *
      * See also: https://docs.ucloud.cn/api/ucdn-api/get_ucdn_traffic_v2
@@ -1769,7 +1604,7 @@ class UCDNClient extends Client
      *
      * $args = [
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "Type" => (string) 刷新类型，file代表文件刷新，dir 代表路径刷新
+     *     "Type" => (string) 刷新类型，file代表文件刷新，dir 代表路径刷新，m3u8带表m3u8刷新
      *     "UrlList" => (array<string>) 需要刷新的URL，n 从自然数0开始，刷新多个URL列表时，一次最多提交30个。必须以”http://域名/”开始。目录要以”/”结尾， 如刷新目录a下所有文件，格式为：http://abc.ucloud.cn/a/；如刷新文件目录a下面img.png文件， 格式为http://abc.ucloud.cn/a/img.png。请正确提交需要刷新的域名
      * ]
      *

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,7 @@ class USMSClient extends Client
      *     "International" => (boolean) 标记是否为国际短信。true:国际短信，false:国内短信，若不传值则默认该值为false
      *     "Remark" => (string) 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。
      *     "UnsubscribeInfo" => (string) 当Purpose为3时，也即会员推广类短信模板，该项必填。枚举值：TD退订、回T退订、回N退订、回TD退订、退订回T、退订回D、退订回TD、退订回复T、退订回复D、退订回复N、退订回复TD、拒收回T
+     *     "Instruction" => (string) 模板变量属性说明
      * ]
      *
      * Outputs:
@@ -250,7 +251,7 @@ class USMSClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "TemplateId" => (string) 模板ID
      * ]
      *
@@ -267,6 +268,7 @@ class USMSClient extends Client
      *         "Remark" => (string) 模板说明
      *         "ErrDesc" => (string) 审核失败原因
      *         "CreateTime" => (integer) 创建时间
+     *         "Instruction" => (string) 模板变量属性说明
      *     ]
      * ]
      *
@@ -399,11 +401,12 @@ class USMSClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "TemplateId" => (string) 短信模板ID
      *     "Template" => (string) 新的模板内容。模板名称和模板内容必须提供一个，否则会报错。小于等于600个字
      *     "TemplateName" => (string) 新的模板名称。小于等于32个字，每个中文、英文、数组、符合都计为一个字
      *     "Remark" => (string) 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。
+     *     "Instruction" => (string) 模板变量属性说明
      * ]
      *
      * Outputs:

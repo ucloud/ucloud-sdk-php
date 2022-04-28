@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ use UCloud\Cube\Apis\ModifyCubeExtendInfoRequest;
 use UCloud\Cube\Apis\ModifyCubeExtendInfoResponse;
 use UCloud\Cube\Apis\ModifyCubeTagRequest;
 use UCloud\Cube\Apis\ModifyCubeTagResponse;
+use UCloud\Cube\Apis\RebootCubePodRequest;
+use UCloud\Cube\Apis\RebootCubePodResponse;
 use UCloud\Cube\Apis\RenewCubePodRequest;
 use UCloud\Cube\Apis\RenewCubePodResponse;
 use UCloud\Cube\Apis\UpdateCubeDeploymentRequest;
@@ -571,6 +573,34 @@ class CubeClient extends Client
     {
         $resp = $this->invoke($request);
         return new ModifyCubeTagResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * RebootCubePod - 重启Cube Pod
+     *
+     * See also: https://docs.ucloud.cn/api/cube-api/reboot_cube_pod
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "CubeId" => (string) cube资源id（cube-xxxxxx）
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return RebootCubePodResponse
+     * @throws UCloudException
+     */
+    public function rebootCubePod(RebootCubePodRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new RebootCubePodResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**

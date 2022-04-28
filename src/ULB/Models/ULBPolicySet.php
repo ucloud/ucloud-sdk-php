@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,26 @@ use UCloud\Core\Response\Response;
 class ULBPolicySet extends Response
 {
     
+
+    /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @return string|null
+     */
+    public function getDomainMatchMode()
+    {
+        return $this->get("DomainMatchMode");
+    }
+
+    /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @param string $domainMatchMode
+     */
+    public function setDomainMatchMode($domainMatchMode)
+    {
+        $this->set("DomainMatchMode", $domainMatchMode);
+    }
 
     /**
      * PolicyId: 内容转发Id，默认内容转发类型下为空。

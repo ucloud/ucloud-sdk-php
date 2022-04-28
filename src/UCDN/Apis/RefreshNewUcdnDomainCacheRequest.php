@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
     }
 
     /**
-     * Type: 刷新类型，file代表文件刷新，dir 代表路径刷新
+     * Type: 刷新类型，file代表文件刷新，dir 代表路径刷新，m3u8带表m3u8刷新
      *
      * @return string|null
      */
@@ -60,7 +60,7 @@ class RefreshNewUcdnDomainCacheRequest extends Request
     }
 
     /**
-     * Type: 刷新类型，file代表文件刷新，dir 代表路径刷新
+     * Type: 刷新类型，file代表文件刷新，dir 代表路径刷新，m3u8带表m3u8刷新
      *
      * @param string $type
      */

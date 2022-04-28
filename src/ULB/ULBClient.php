@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 UCloud Technology Co., Ltd.
+ * Copyright 2022 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,8 @@ use UCloud\ULB\Apis\UpdateBackendAttributeRequest;
 use UCloud\ULB\Apis\UpdateBackendAttributeResponse;
 use UCloud\ULB\Apis\UpdatePolicyRequest;
 use UCloud\ULB\Apis\UpdatePolicyResponse;
+use UCloud\ULB\Apis\UpdateSSLAttributeRequest;
+use UCloud\ULB\Apis\UpdateSSLAttributeResponse;
 use UCloud\ULB\Apis\UpdateULBAttributeRequest;
 use UCloud\ULB\Apis\UpdateULBAttributeResponse;
 use UCloud\ULB\Apis\UpdateVServerAttributeRequest;
@@ -73,17 +75,17 @@ class ULBClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "ULBId" => (string) 负载均衡实例的ID
      *     "VServerId" => (string) VServer实例的ID
-     *     "ResourceType" => (string) 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
+     *     "ResourceType" => (string) 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
      *     "ResourceId" => (string) 所添加的后端资源的资源ID
      *     "ResourceIP" => (string) 所添加的后端服务器的资源实例IP，当ResourceType 为 UHybrid 时有效，且必填
      *     "VPCId" => (string) 所添加的后端服务器所在的vpc，当ResourceType 为 UHybrid 时有效，且必填
      *     "SubnetId" => (string) 所添加的后端服务器所在的子网，当ResourceType 为 UHybrid 时有效，且必填
      *     "Port" => (integer) 所添加的后端资源服务端口，取值范围[1-65535]，默认80
-     *     "Weight" => (integer) 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     *     "Weight" => (integer) 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *     "Enabled" => (integer) 后端实例状态开关，枚举值： 1：启用； 0：禁用 默认为启用
      *     "IsBackup" => (integer) rs是否为backup，默认为00：普通rs1：backup的rs
      * ]
@@ -480,6 +482,7 @@ class ULBClient extends Client
      *             "VServerSet" => (array<object>) 负载均衡实例中存在的VServer实例列表，具体结构见下方 ULBVServerSet[
      *                 [
      *                     "MonitorType" => (string) 健康检查类型，枚举值：Port -> 端口检查；Path -> 路径检查；Ping -> Ping探测， Customize -> UDP检查请求代理型默认值为Port，其中TCP协议仅支持Port，其他协议支持Port和Path; 报文转发型TCP协议仅支持Port，UDP协议支持Ping、Port和Customize
+     *                     "ULBId" => (string) 负载均衡实例的Id
      *                     "Domain" => (string) 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查域名
      *                     "Path" => (string) 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查路径
      *                     "RequestMsg" => (string) 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查发出的请求报文
@@ -531,6 +534,7 @@ class ULBClient extends Client
      *                     "ListenType" => (string) 监听器类型，枚举值为: RequestProxy -> 请求代理；PacketsTransmit -> 报文转发
      *                     "PolicySet" => (array<object>) 内容转发信息列表，具体结构见下方 ULBPolicySet[
      *                         [
+     *                             "DomainMatchMode" => (string) 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
      *                             "PolicyId" => (string) 内容转发Id，默认内容转发类型下为空。
      *                             "PolicyType" => (string) 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发
      *                             "Type" => (string) 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空
@@ -683,6 +687,7 @@ class ULBClient extends Client
      *     "DataSet" => (array<object>) VServer列表，每项参数详见 ULBVServerSet[
      *         [
      *             "MonitorType" => (string) 健康检查类型，枚举值：Port -> 端口检查；Path -> 路径检查；Ping -> Ping探测， Customize -> UDP检查请求代理型默认值为Port，其中TCP协议仅支持Port，其他协议支持Port和Path; 报文转发型TCP协议仅支持Port，UDP协议支持Ping、Port和Customize
+     *             "ULBId" => (string) 负载均衡实例的Id
      *             "Domain" => (string) 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查域名
      *             "Path" => (string) 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查路径
      *             "RequestMsg" => (string) 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查发出的请求报文
@@ -734,6 +739,7 @@ class ULBClient extends Client
      *             "ListenType" => (string) 监听器类型，枚举值为: RequestProxy -> 请求代理；PacketsTransmit -> 报文转发
      *             "PolicySet" => (array<object>) 内容转发信息列表，具体结构见下方 ULBPolicySet[
      *                 [
+     *                     "DomainMatchMode" => (string) 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
      *                     "PolicyId" => (string) 内容转发Id，默认内容转发类型下为空。
      *                     "PolicyType" => (string) 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发
      *                     "Type" => (string) 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空
@@ -888,6 +894,34 @@ class ULBClient extends Client
     {
         $resp = $this->invoke($request);
         return new UpdatePolicyResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateSSLAttribute - 更新修改SSL的属性，如：修改SSLName
+     *
+     * See also: https://docs.ucloud.cn/api/ulb-api/update_ssl_attribute
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "SSLId" => (string) SSL的资源id
+     *     "SSLName" => (string) SSL实例名称，不允许传空
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return UpdateSSLAttributeResponse
+     * @throws UCloudException
+     */
+    public function updateSSLAttribute(UpdateSSLAttributeRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdateSSLAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
