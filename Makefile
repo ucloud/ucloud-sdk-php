@@ -49,5 +49,5 @@ gen:
     	--only "USMS" \
     	--only "UEC" \
 		--public \
-		-s /Users/wenqian/.oas/vcs/git.ucloudadmin.com/apispec/apispec/specification \
-		/Users/wenqian/.oas/vcs/git.ucloudadmin.com/apispec/template-opensdk-php .
+		-s $(HOME)/.oas/vcs/git.ucloudadmin.com/apispec/apispec/specification \
+		$(HOME)/.oas/vcs/git.ucloudadmin.com/apispec/template-opensdk-php .
