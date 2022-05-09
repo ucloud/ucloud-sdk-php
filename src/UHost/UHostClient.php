@@ -32,6 +32,8 @@ use UCloud\UHost\Apis\DeleteIsolationGroupRequest;
 use UCloud\UHost\Apis\DeleteIsolationGroupResponse;
 use UCloud\UHost\Apis\DeleteUHostKeyPairsRequest;
 use UCloud\UHost\Apis\DeleteUHostKeyPairsResponse;
+use UCloud\UHost\Apis\DescribeAvailableInstanceTypesRequest;
+use UCloud\UHost\Apis\DescribeAvailableInstanceTypesResponse;
 use UCloud\UHost\Apis\DescribeImageRequest;
 use UCloud\UHost\Apis\DescribeImageResponse;
 use UCloud\UHost\Apis\DescribeIsolationGroupRequest;
@@ -360,6 +362,100 @@ class UHostClient extends Client
     {
         $resp = $this->invoke($request);
         return new DeleteUHostKeyPairsResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeAvailableInstanceTypes - DescribeAvailableInstanceTypes
+     *
+     * See also: https://docs.ucloud.cn/api/uhost-api/describe_available_instance_types
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "AvailableInstanceTypes" => (array<object>) AvailableInstanceTypes[
+     *         [
+     *             "Name" => (string) 机型名称：快杰O型|O 、快杰共享型|OM 、快杰内存型|OMEM 、 快杰PRO型|OPRO、通用N型|N、高主频C型|C和GPU G型|G等
+     *             "Status" => (string) 机型状态：可售|Normal 、 公测|Beta、售罄|Soldout、隐藏|Hidden
+     *             "CpuPlatforms" => (array<object>) 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回[
+     *                 [
+     *                     "Intel" => (array<string>) 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake']
+     *                     "Amd" => (array<string>) 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2']
+     *                     "Ampere" => (array<string>) 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra']
+     *                 ]
+     *             ]
+     *             "Disks" => (array<object>) 磁盘信息。磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。其中云盘主要包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。MinimalSize为磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。MaximalSize为磁盘最大值。InstantResize表示系统盘是否允许扩容，如果是本地盘，则不允许扩容，InstantResize为false。Features为磁盘可支持的服务：数据方舟|DATAARK，快照服务|SNAPSHOT，加密盘|Encrypted。[
+     *                 [
+     *                     "Name" => (string) 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。
+     *                     "BootDisk" => (array<object>) 系统盘信息[
+     *                         [
+     *                             "Name" => (string) 系统盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
+     *                             "InstantResize" => (boolean) 系统盘是否允许扩容，如果是本地盘，则不允许扩容，InstantResize为false。
+     *                             "MaximalSize" => (integer) MaximalSize为磁盘最大值
+     *                             "Features" => (array<string>) 磁盘可支持的服务
+     *                         ]
+     *                     ]
+     *                     "DataDisk" => (array<object>) 数据盘信息[
+     *                         [
+     *                             "MinimalSize" => (integer) 磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。
+     *                             "Name" => (string) 数据盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
+     *                             "MaximalSize" => (integer) MaximalSize为磁盘最大值
+     *                             "Features" => (array<string>) 数据盘可支持的服务
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "MachineSizes" => (array<object>) GPU、CPU和内存信息。Gpu为GPU可支持的规格，Cpu和Memory分别为CPU和内存可支持的规格。如果非GPU机型，GPU为0。MinimalCpuPlatform代表含义这个CPU和内存规格只能在列出来的CPU平台支持。[
+     *                 [
+     *                     "Gpu" => (integer) Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0
+     *                     "Collection" => (array<object>) CPU和内存可支持的规格[
+     *                         [
+     *                             "Cpu" => (integer) CPU规格
+     *                             "Memory" => (array<integer>) 内存规格
+     *                             "MinimalCpuPlatform" => (array<string>) CPU和内存规格只能在列出来的CPU平台支持
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "Features" => (array<object>)    虚机可支持的特性。目前支持的特性网络增强|NetCapability、热升级|Hotplug。网络增强分为关闭|Normal、网络增强1.0|Super和网络增强2.0|Ultra。Name为可支持的特性名称，Modes为可以提供的模式类别等，RelatedToImageFeature为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。MinimalCpuPlatform表示这个特性必须是列出来的CPU平台及以上的CPU才支持。[
+     *                 [
+     *                     "Name" => (string) 可支持的特性名称。目前支持的特性网络增强|NetCapability、热升级|Hotplug
+     *                     "Modes" => (array<object>) 可以提供的模式类别[
+     *                         [
+     *                             "Name" => (string) 模式|特性名称
+     *                             "RelatedToImageFeature" => (array<string>) 为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。
+     *                             "MinimalCpuPlatform" => (array<string>) 这个特性必须是列出来的CPU平台及以上的CPU才支持
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "MachineClass" => (string) 区分是否是GPU机型：GPU机型|GPU，非GPU机型|Normal。
+     *             "GraphicsMemory" => (object) GPU的显存指标，value为值，单位是GB。[
+     *                 "Value" => (integer) 值，单位是GB
+     *                 "Rate" => (integer) 交互展示参数，可忽略
+     *             ]
+     *             "Performance" => (object) GPU的性能指标，value为值，单位是TFlops。[
+     *                 "Value" => (integer) 值，单位是TFlops
+     *                 "Rate" => (integer) 交互展示参数，可忽略
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return DescribeAvailableInstanceTypesResponse
+     * @throws UCloudException
+     */
+    public function describeAvailableInstanceTypes(DescribeAvailableInstanceTypesRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeAvailableInstanceTypesResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
