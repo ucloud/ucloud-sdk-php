@@ -88,6 +88,8 @@ use UCloud\UPhone\Apis\SetUPhoneManagerModeRequest;
 use UCloud\UPhone\Apis\SetUPhoneManagerModeResponse;
 use UCloud\UPhone\Apis\SetUPhoneSplashScreenRequest;
 use UCloud\UPhone\Apis\SetUPhoneSplashScreenResponse;
+use UCloud\UPhone\Apis\SetUPhoneTokenRequest;
+use UCloud\UPhone\Apis\SetUPhoneTokenResponse;
 use UCloud\UPhone\Apis\UnInstallUPhoneAppVersionRequest;
 use UCloud\UPhone\Apis\UnInstallUPhoneAppVersionResponse;
 use UCloud\UPhone\Apis\UpdateUPhoneImageRequest;
@@ -198,10 +200,10 @@ class UPhoneClient extends Client
      * $args = [
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "Name" => (string) 云手机服务器实例名称。默认：UPhone。请遵照字段规范设定实例名称。
-     *     "ServerModelName" => (string) 云手机服务器规格名称，不超过64个字节。可通过[查询云手机服务器规格列表]()查询支持的云手机服务器规格。
-     *     "UPhoneModelName" => (string) 云手机规格名称，不超过64个字节。可通过[查询云手机规格列表]()查询支持的云手机规格。
-     *     "ImageId" => (string) 云手机镜像ID，不超过32个字节。可通过[查询手机镜像]()查询云手机规格对应的镜像ID。
-     *     "CityId" => (string) 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取
+     *     "ServerModelName" => (string) 云手机服务器规格名称，不超过64个字节。可通过[查询云手机服务器规格列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_server_model)查询支持的云手机服务器规格。
+     *     "UPhoneModelName" => (string) 云手机规格名称，不超过64个字节。可通过[查询云手机规格列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_model)查询支持的云手机规格。
+     *     "ImageId" => (string) 云手机镜像ID，不超过32个字节。可通过[查询手机镜像](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_image)查询云手机规格对应的镜像ID。
+     *     "CityId" => (string) 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取
      *     "ChargeType" => (string) 计费模式。枚举值为：> 年 Year，按年付费；> Month，按月付费；> Dynamic，按小时预付费;默认为月付
      *     "Quantity" => (string) 购买时长。默认值: 1。月付时，此参数传0，代表购买至月末。
      *     "NetworkInterface" => (array<object>)
@@ -296,7 +298,7 @@ class UPhoneClient extends Client
      *     "ServerId" => (string) 云手机服务器的资源ID。
      *     "UPhoneIds" => (array<string>) 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=希望获取信息的云手机 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。如果都不传入，则返回当前 城市 所有符合条件的云手机列表。
      *     "Offset" => (integer) 列表起始位置偏移量，默认为0
-     *     "Limit" => (integer) 返回数据长度，默认为20，最大100
+     *     "Limit" => (integer) 返回数据长度，默认为200，最大200
      *     "Tag" => (string) 要查询的业务组名称
      *     "IsAll" => (boolean) 是否返回全部。如果有此参数，分页不生效。
      * ]
@@ -1375,6 +1377,34 @@ class UPhoneClient extends Client
     {
         $resp = $this->invoke($request);
         return new SetUPhoneSplashScreenResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * SetUPhoneToken - 设置云手机RTC连接Token提高安全性
+     *
+     * See also: https://docs.ucloud.cn/api/uphone-api/set_u_phone_token
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "UPhoneId" => (string) 云手机ID
+     *     "CityId" => (string) 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取
+     *     "Token" => (string) RTC连接Token，为空表示清空Token
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return SetUPhoneTokenResponse
+     * @throws UCloudException
+     */
+    public function setUPhoneToken(SetUPhoneTokenRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new SetUPhoneTokenResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
