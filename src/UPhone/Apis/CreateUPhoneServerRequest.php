@@ -74,7 +74,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * ServerModelName: 云手机服务器规格名称，不超过64个字节。可通过[查询云手机服务器规格列表]()查询支持的云手机服务器规格。
+     * ServerModelName: 云手机服务器规格名称，不超过64个字节。可通过[查询云手机服务器规格列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_server_model)查询支持的云手机服务器规格。
      *
      * @return string|null
      */
@@ -84,7 +84,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * ServerModelName: 云手机服务器规格名称，不超过64个字节。可通过[查询云手机服务器规格列表]()查询支持的云手机服务器规格。
+     * ServerModelName: 云手机服务器规格名称，不超过64个字节。可通过[查询云手机服务器规格列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_server_model)查询支持的云手机服务器规格。
      *
      * @param string $serverModelName
      */
@@ -94,7 +94,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * UPhoneModelName: 云手机规格名称，不超过64个字节。可通过[查询云手机规格列表]()查询支持的云手机规格。
+     * UPhoneModelName: 云手机规格名称，不超过64个字节。可通过[查询云手机规格列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_model)查询支持的云手机规格。
      *
      * @return string|null
      */
@@ -104,7 +104,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * UPhoneModelName: 云手机规格名称，不超过64个字节。可通过[查询云手机规格列表]()查询支持的云手机规格。
+     * UPhoneModelName: 云手机规格名称，不超过64个字节。可通过[查询云手机规格列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_model)查询支持的云手机规格。
      *
      * @param string $uPhoneModelName
      */
@@ -114,7 +114,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * ImageId: 云手机镜像ID，不超过32个字节。可通过[查询手机镜像]()查询云手机规格对应的镜像ID。
+     * ImageId: 云手机镜像ID，不超过32个字节。可通过[查询手机镜像](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_image)查询云手机规格对应的镜像ID。
      *
      * @return string|null
      */
@@ -124,7 +124,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * ImageId: 云手机镜像ID，不超过32个字节。可通过[查询手机镜像]()查询云手机规格对应的镜像ID。
+     * ImageId: 云手机镜像ID，不超过32个字节。可通过[查询手机镜像](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_image)查询云手机规格对应的镜像ID。
      *
      * @param string $imageId
      */
@@ -134,7 +134,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * CityId: 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取
+     * CityId: 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取
      *
      * @return string|null
      */
@@ -144,7 +144,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * CityId: 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取
+     * CityId: 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取
      *
      * @param string $cityId
      */

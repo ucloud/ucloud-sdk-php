@@ -204,11 +204,12 @@ class UHostClient extends Client
      *         [
      *             "IsBoot" => (string) 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。
      *             "Type" => (string) 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。
-     *             "Size" => (integer) 磁盘大小，单位GB，必须是10GB的整数倍。请参考[[api:uhost-api:disk_type|磁盘类型]]。
+     *             "Size" => (integer) 磁盘大小，单位GB。请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *             "BackupType" => (string) 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
      *             "Encrypted" => (boolean) 【功能仅部分可用区开放，详询技术支持】磁盘是否加密。加密：true, 不加密: false加密必须传入对应的的KmsKeyId,默认值false
      *             "KmsKeyId" => (string) 【功能仅部分可用区开放，详询技术支持】kms key id。选择加密盘时必填。
      *             "CouponId" => (string) 云盘代金券id。不适用于系统盘/本地盘。请通过DescribeCoupon接口查询，或登录用户中心查看
+     *             "CustomBackup" => (object)
      *         ]
      *     ]
      *     "LoginMode" => (string) 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair。
@@ -222,7 +223,7 @@ class UHostClient extends Client
      *     "Memory" => (integer) 内存大小。单位：MB。范围 ：[1024, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
      *     "GpuType" => (string) GPU类型，枚举值["K80", "P40", "V100", "T4", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S"]，MachineType为G时必填
      *     "GPU" => (integer) GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
-     *     "NetCapability" => (string) 网络增强特性。枚举值：Normal（默认），不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（仅支持部分可用区，请参考控制台）
+     *     "NetCapability" => (string) 网络增强特性。枚举值：Normal，不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（详情参考官网文档）
      *     "HotplugFeature" => (boolean) 热升级特性。True为开启，False为未开启，默认False。
      *     "VPCId" => (string) VPC ID。默认为当前地域的默认VPC。
      *     "SubnetId" => (string) 子网 ID。默认为当前地域的默认子网。
@@ -249,10 +250,11 @@ class UHostClient extends Client
      *     "UserData" => (string) 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码
      *     "AutoDataDiskInit" => (string) 数据盘是否需要自动分区挂载。当镜像支持“Cloud-init”Feature时可填写此字段。取值 >“On” 自动挂载（默认值）> “Off” 不自动挂载。
      *     "Volumes" => (array<object>)
-     *     "KeyPairId" => (string) KeypairId 密钥对ID，LoginMode为KeyPair时此项必须
+     *     "KeyPairId" => (string) KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。
      *     "Features" => (object) [
      *         "UNI" => (boolean) 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。
      *     ]
+     *     "SecGroupId" => (array<object>)
      *     "CouponId" => (string) 主机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看
      * ]
      *

@@ -63,7 +63,7 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
-     * Size: 磁盘大小，单位GB，必须是10GB的整数倍。请参考[[api:uhost-api:disk_type|磁盘类型]]。
+     * Size: 磁盘大小，单位GB。请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
      * @return integer|null
      */
@@ -73,7 +73,7 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
-     * Size: 磁盘大小，单位GB，必须是10GB的整数倍。请参考[[api:uhost-api:disk_type|磁盘类型]]。
+     * Size: 磁盘大小，单位GB。请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
      * @param int $size
      */
@@ -160,5 +160,25 @@ class CreateUHostInstanceParamDisks extends Request
     public function setCouponId($couponId)
     {
         $this->set("CouponId", $couponId);
+    }
+
+    /**
+     * CustomBackup:
+     *
+     * @return CreateUHostInstanceParamDisksCustomBackup|null
+     */
+    public function getCustomBackup()
+    {
+        return new CreateUHostInstanceParamDisksCustomBackup($this->get("CustomBackup"));
+    }
+
+    /**
+     * CustomBackup:
+     *
+     * @param CreateUHostInstanceParamDisksCustomBackup $customBackup
+     */
+    public function setCustomBackup(array $customBackup)
+    {
+        $this->set("CustomBackup", $customBackup->getAll());
     }
 }

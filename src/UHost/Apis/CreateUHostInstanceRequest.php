@@ -18,11 +18,13 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Request\Request;
 use UCloud\UHost\Params\CreateUHostInstanceParamDisks;
+use UCloud\UHost\Params\CreateUHostInstanceParamDisksCustomBackup;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterface;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceEIP;
 use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceIPv6;
 use UCloud\UHost\Params\CreateUHostInstanceParamVolumes;
 use UCloud\UHost\Params\CreateUHostInstanceParamFeatures;
+use UCloud\UHost\Params\CreateUHostInstanceParamSecGroupId;
 
 class CreateUHostInstanceRequest extends Request
 {
@@ -370,7 +372,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * NetCapability: 网络增强特性。枚举值：Normal（默认），不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（仅支持部分可用区，请参考控制台）
+     * NetCapability: 网络增强特性。枚举值：Normal，不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（详情参考官网文档）
      *
      * @return string|null
      */
@@ -380,7 +382,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * NetCapability: 网络增强特性。枚举值：Normal（默认），不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（仅支持部分可用区，请参考控制台）
+     * NetCapability: 网络增强特性。枚举值：Normal，不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（详情参考官网文档）
      *
      * @param string $netCapability
      */
@@ -694,7 +696,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * KeyPairId: KeypairId 密钥对ID，LoginMode为KeyPair时此项必须
+     * KeyPairId: KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。
      *
      * @return string|null
      */
@@ -704,7 +706,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * KeyPairId: KeypairId 密钥对ID，LoginMode为KeyPair时此项必须
+     * KeyPairId: KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。
      *
      * @param string $keyPairId
      */
@@ -731,6 +733,38 @@ class CreateUHostInstanceRequest extends Request
     public function setFeatures(array $features)
     {
         $this->set("Features", $features->getAll());
+    }
+
+    /**
+     * SecGroupId:
+     *
+     * @return CreateUHostInstanceParamSecGroupId[]|null
+     */
+    public function getSecGroupId()
+    {
+        $items = $this->get("SecGroupId");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUHostInstanceParamSecGroupId($item));
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroupId:
+     *
+     * @param CreateUHostInstanceParamSecGroupId[] $secGroupId
+     */
+    public function setSecGroupId(array $secGroupId)
+    {
+        $result = [];
+        foreach ($secGroupId as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**

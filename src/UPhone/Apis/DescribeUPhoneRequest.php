@@ -129,7 +129,7 @@ class DescribeUPhoneRequest extends Request
     }
 
     /**
-     * Limit: 返回数据长度，默认为20，最大100
+     * Limit: 返回数据长度，默认为200，最大200
      *
      * @return integer|null
      */
@@ -139,7 +139,7 @@ class DescribeUPhoneRequest extends Request
     }
 
     /**
-     * Limit: 返回数据长度，默认为20，最大100
+     * Limit: 返回数据长度，默认为200，最大200
      *
      * @param int $limit
      */
