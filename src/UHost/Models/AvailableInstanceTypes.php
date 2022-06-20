@@ -65,33 +65,21 @@ class AvailableInstanceTypes extends Response
     /**
      * CpuPlatforms: 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回
      *
-     * @return CpuPlatforms[]|null
+     * @return CpuPlatforms|null
      */
     public function getCpuPlatforms()
     {
-        $items = $this->get("CpuPlatforms");
-        if ($items == null) {
-            return [];
-        }
-        $result = [];
-        foreach ($items as $i => $item) {
-            array_push($result, new CpuPlatforms($item));
-        }
-        return $result;
+        return new CpuPlatforms($this->get("CpuPlatforms"));
     }
 
     /**
      * CpuPlatforms: 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回
      *
-     * @param CpuPlatforms[] $cpuPlatforms
+     * @param CpuPlatforms $cpuPlatforms
      */
     public function setCpuPlatforms(array $cpuPlatforms)
     {
-        $result = [];
-        foreach ($cpuPlatforms as $i => $item) {
-            array_push($result, $item->getAll());
-        }
-        return $result;
+        $this->set("CpuPlatforms", $cpuPlatforms->getAll());
     }
 
     /**

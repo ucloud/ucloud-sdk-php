@@ -386,12 +386,10 @@ class UHostClient extends Client
      *         [
      *             "Name" => (string) 机型名称：快杰O型|O 、快杰共享型|OM 、快杰内存型|OMEM 、 快杰PRO型|OPRO、通用N型|N、高主频C型|C和GPU G型|G等
      *             "Status" => (string) 机型状态：可售|Normal 、 公测|Beta、售罄|Soldout、隐藏|Hidden
-     *             "CpuPlatforms" => (array<object>) 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回[
-     *                 [
-     *                     "Intel" => (array<string>) 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake']
-     *                     "Amd" => (array<string>) 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2']
-     *                     "Ampere" => (array<string>) 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra']
-     *                 ]
+     *             "CpuPlatforms" => (object) 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回[
+     *                 "Intel" => (array<string>) 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake']
+     *                 "Amd" => (array<string>) 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2']
+     *                 "Ampere" => (array<string>) 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra']
      *             ]
      *             "Disks" => (array<object>) 磁盘信息。磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。其中云盘主要包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。MinimalSize为磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。MaximalSize为磁盘最大值。InstantResize表示系统盘是否允许扩容，如果是本地盘，则不允许扩容，InstantResize为false。Features为磁盘可支持的服务：数据方舟|DATAARK，快照服务|SNAPSHOT，加密盘|Encrypted。[
      *                 [

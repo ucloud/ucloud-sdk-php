@@ -141,4 +141,44 @@ class UPhoneModelInstance extends Response
     {
         $this->set("Refresh", $refresh);
     }
+
+    /**
+     * Dpi: DPI
+     *
+     * @return integer|null
+     */
+    public function getDpi()
+    {
+        return $this->get("Dpi");
+    }
+
+    /**
+     * Dpi: DPI
+     *
+     * @param int $dpi
+     */
+    public function setDpi($dpi)
+    {
+        $this->set("Dpi", $dpi);
+    }
+
+    /**
+     * Description: 型号描述信息
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->get("Description");
+    }
+
+    /**
+     * Description: 型号描述信息
+     *
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->set("Description", $description);
+    }
 }

@@ -41,4 +41,24 @@ class CreateUPhoneImageResponse extends Response
     {
         $this->set("ImageId", $imageId);
     }
+
+    /**
+     * JobId: 请求的唯一标识Id，`RetCode`为0时返回，可根据此ID查询请求的执行状态
+     *
+     * @return string|null
+     */
+    public function getJobId()
+    {
+        return $this->get("JobId");
+    }
+
+    /**
+     * JobId: 请求的唯一标识Id，`RetCode`为0时返回，可根据此ID查询请求的执行状态
+     *
+     * @param string $jobId
+     */
+    public function setJobId($jobId)
+    {
+        $this->set("JobId", $jobId);
+    }
 }

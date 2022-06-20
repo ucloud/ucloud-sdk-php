@@ -29,7 +29,7 @@ class DescribeRouteTableRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -39,7 +39,7 @@ class DescribeRouteTableRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -49,7 +49,7 @@ class DescribeRouteTableRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -59,7 +59,7 @@ class DescribeRouteTableRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -166,5 +166,45 @@ class DescribeRouteTableRequest extends Request
     public function setBusinessId($businessId)
     {
         $this->set("BusinessId", $businessId);
+    }
+
+    /**
+     * Brief: 默认为 false, 返回详细路由规则信息
+     *
+     * @return boolean|null
+     */
+    public function getBrief()
+    {
+        return $this->get("Brief");
+    }
+
+    /**
+     * Brief: 默认为 false, 返回详细路由规则信息
+     *
+     * @param boolean $brief
+     */
+    public function setBrief($brief)
+    {
+        $this->set("Brief", $brief);
+    }
+
+    /**
+     * LongId: 默认为 false, 表示路由表是短 ID
+     *
+     * @return string|null
+     */
+    public function getLongId()
+    {
+        return $this->get("LongId");
+    }
+
+    /**
+     * LongId: 默认为 false, 表示路由表是短 ID
+     *
+     * @param string $longId
+     */
+    public function setLongId($longId)
+    {
+        $this->set("LongId", $longId);
     }
 }

@@ -23,53 +23,11 @@ class SendUVMSMessageRequest extends Request
     public function __construct()
     {
         parent::__construct(["Action" => "SendUVMSMessage"]);
-        $this->markRequired("Region");
-        $this->markRequired("Zone");
         $this->markRequired("CalledNumber");
         $this->markRequired("TemplateId");
     }
 
     
-
-    /**
-     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     *
-     * @return string|null
-     */
-    public function getRegion()
-    {
-        return $this->get("Region");
-    }
-
-    /**
-     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     *
-     * @param string $region
-     */
-    public function setRegion($region)
-    {
-        $this->set("Region", $region);
-    }
-
-    /**
-     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     *
-     * @return string|null
-     */
-    public function getZone()
-    {
-        return $this->get("Zone");
-    }
-
-    /**
-     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     *
-     * @param string $zone
-     */
-    public function setZone($zone)
-    {
-        $this->set("Zone", $zone);
-    }
 
     /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)

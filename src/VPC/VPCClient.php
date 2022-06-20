@@ -24,6 +24,8 @@ use UCloud\VPC\Apis\AddVPCNetworkRequest;
 use UCloud\VPC\Apis\AddVPCNetworkResponse;
 use UCloud\VPC\Apis\AddWhiteListResourceRequest;
 use UCloud\VPC\Apis\AddWhiteListResourceResponse;
+use UCloud\VPC\Apis\AllocateBatchSecondaryIpRequest;
+use UCloud\VPC\Apis\AllocateBatchSecondaryIpResponse;
 use UCloud\VPC\Apis\AllocateSecondaryIpRequest;
 use UCloud\VPC\Apis\AllocateSecondaryIpResponse;
 use UCloud\VPC\Apis\AllocateVIPRequest;
@@ -42,6 +44,8 @@ use UCloud\VPC\Apis\CreateNetworkAclAssociationRequest;
 use UCloud\VPC\Apis\CreateNetworkAclAssociationResponse;
 use UCloud\VPC\Apis\CreateNetworkAclEntryRequest;
 use UCloud\VPC\Apis\CreateNetworkAclEntryResponse;
+use UCloud\VPC\Apis\CreateNetworkInterfaceRequest;
+use UCloud\VPC\Apis\CreateNetworkInterfaceResponse;
 use UCloud\VPC\Apis\CreateRouteTableRequest;
 use UCloud\VPC\Apis\CreateRouteTableResponse;
 use UCloud\VPC\Apis\CreateSnatDnatRuleRequest;
@@ -243,6 +247,53 @@ class VPCClient extends Client
     {
         $resp = $this->invoke($request);
         return new AddWhiteListResourceResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * AllocateBatchSecondaryIp - 批量申请虚拟网卡辅助IP
+     *
+     * See also: https://docs.ucloud.cn/api/vpc2.0-api/allocate_batch_secondary_ip
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Mac" => (string) 节点mac
+     *     "ObjectId" => (string) 资源Id
+     *     "SubnetId" => (string) 子网Id（若未指定，则根据zone获取默认子网进行创建）
+     *     "VPCId" => (string) vpcId
+     *     "Ip" => (array<string>) 【arry】支持按如下方式申请：①按网段：如192.168.1.32/27，掩码数字最小为27   ②指定IP地址，如192.168.1.3
+     *     "Count" => (integer) 申请的内网IP数量
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "IpsInfo" => (array<object>) 详见IpsInfo[
+     *         [
+     *             "Ip" => (string) 内网IP地址
+     *             "Mask" => (string) 掩码
+     *             "Gateway" => (string) 网关
+     *             "Mac" => (string) MAC地址
+     *             "SubnetId" => (string) 子网资源ID
+     *             "VPCId" => (string) VPC资源ID
+     *             "Status" => (object) IP分配结果，详见StatusInfo[
+     *                 "StatusCode" => (string) 枚举值：Succeeded，Failed
+     *                 "Message" => (string) IP分配失败原因
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return AllocateBatchSecondaryIpResponse
+     * @throws UCloudException
+     */
+    public function allocateBatchSecondaryIp(AllocateBatchSecondaryIpRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new AllocateBatchSecondaryIpResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -553,6 +604,55 @@ class VPCClient extends Client
     {
         $resp = $this->invoke($request);
         return new CreateNetworkAclEntryResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * CreateNetworkInterface - 创建虚拟网卡
+     *
+     * See also: https://docs.ucloud.cn/api/vpc2.0-api/create_network_interface
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "VPCId" => (string) 所属VPCID
+     *     "SubnetId" => (string) 所属子网ID
+     *     "Name" => (string) 虚拟网卡名称，默认为 NetworkInterface
+     *     "PrivateIp" => (array<string>) 指定内网IP。当前一个网卡仅支持绑定一个内网IP
+     *     "SecurityGroupId" => (string) 防火墙GroupId，默认：Web推荐防火墙 可由DescribeSecurityGroupResponse中的GroupId取得
+     *     "Tag" => (string) 业务组
+     *     "Remark" => (string) 备注
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "NetworkInterface" => (object) 若创建成功，则返回虚拟网卡信息。创建失败，无此参数[
+     *         "InterfaceId" => (string) 虚拟网卡资源ID
+     *         "VPCId" => (string) 所属VPC
+     *         "SubnetId" => (string) 所属子网
+     *         "PrivateIpSet" => (array<string>) 关联内网IP。当前一个网卡仅支持绑定一个内网IP
+     *         "MacAddress" => (string) 关联Mac
+     *         "Status" => (integer) 绑定状态
+     *         "Name" => (string) 虚拟网卡名称
+     *         "Netmask" => (string) 内网IP掩码
+     *         "Gateway" => (string) 默认网关
+     *         "AttachInstanceId" => (string) 绑定实例资源ID
+     *         "Default" => (boolean) 是否是绑定实例的默认网卡 false:不是 true:是
+     *         "CreateTime" => (integer) 创建时间
+     *         "Remark" => (string) 备注
+     *         "Tag" => (string) 业务组
+     *     ]
+     * ]
+     *
+     * @return CreateNetworkInterfaceResponse
+     * @throws UCloudException
+     */
+    public function createNetworkInterface(CreateNetworkInterfaceRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new CreateNetworkInterfaceResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -1102,7 +1202,6 @@ class VPCClient extends Client
      *             "PrivateIpSet" => (array<string>) 关联内网IP。当前一个网卡仅支持绑定一个内网IP
      *             "MacAddress" => (string) 关联Mac
      *             "Status" => (integer) 绑定状态
-     *             "PrivateIp" => (array<string>) 网卡的内网IP信息
      *             "Name" => (string) 虚拟网卡名称
      *             "Netmask" => (string) 内网IP掩码
      *             "Gateway" => (string) 默认网关
@@ -1113,7 +1212,6 @@ class VPCClient extends Client
      *             "Tag" => (string) 业务组
      *             "EIPIdSet" => (array<string>) 虚拟网卡绑定的EIP ID信息
      *             "FirewallIdSet" => (array<string>) 虚拟网卡绑定的防火墙ID信息
-     *             "PrivateIplimit" => (array<string>) 网卡的内网IP配额信息
      *         ]
      *     ]
      * ]
@@ -1464,7 +1562,12 @@ class VPCClient extends Client
      *             "PrivateIpSet" => (array<string>) 关联内网IP。当前一个网卡仅支持绑定一个内网IP
      *             "MacAddress" => (string) 关联Mac
      *             "Status" => (integer) 绑定状态
-     *             "PrivateIp" => (array<string>) 网卡的内网IP信息
+     *             "PrivateIp" => (array<object>) 网卡的内网IP信息[
+     *                 [
+     *                     "IpType" => (string) ip类型 SecondaryIp/PrimaryIp
+     *                     "IpAddr" => (array<string>) ip 地址
+     *                 ]
+     *             ]
      *             "Name" => (string) 虚拟网卡名称
      *             "Netmask" => (string) 内网IP掩码
      *             "Gateway" => (string) 默认网关
@@ -1475,7 +1578,10 @@ class VPCClient extends Client
      *             "Tag" => (string) 业务组
      *             "EIPIdSet" => (array<string>) 虚拟网卡绑定的EIP ID信息
      *             "FirewallIdSet" => (array<string>) 虚拟网卡绑定的防火墙ID信息
-     *             "PrivateIplimit" => (array<string>) 网卡的内网IP配额信息
+     *             "PrivateIpLimit" => (object) 网卡的内网IP配额信息[
+     *                 "PrivateIpCount" => (integer) 网卡拥有的内网IP数量
+     *                 "PrivateIpQuota" => (integer) 网卡内网IP配额
+     *             ]
      *         ]
      *     ]
      *     "TotalCount" => (integer) 虚拟网卡总数
@@ -1498,13 +1604,15 @@ class VPCClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "VPCId" => (string) 所属VPC的资源ID
      *     "RouteTableId" => (string) 路由表资源ID
      *     "OffSet" => (integer) 数据偏移量。默认为0
      *     "Limit" => (integer) 数据分页值。默认为20
      *     "BusinessId" => (string) 业务组ID
+     *     "Brief" => (boolean) 默认为 false, 返回详细路由规则信息
+     *     "LongId" => (string) 默认为 false, 表示路由表是短 ID
      * ]
      *
      * Outputs:
@@ -1515,6 +1623,7 @@ class VPCClient extends Client
      *             "RouteTableId" => (string) 路由表资源ID
      *             "RouteTableType" => (integer) 路由表类型。1为默认路由表，0为自定义路由表
      *             "SubnetCount" => (integer) 绑定该路由表的子网数量
+     *             "SubnetIds" => (array<string>) 绑定该路由表的子网
      *             "VPCId" => (string) 路由表所属的VPC资源ID
      *             "VPCName" => (string) 路由表所属的VPC资源名称
      *             "Tag" => (string) 路由表所属业务组
@@ -1527,6 +1636,7 @@ class VPCClient extends Client
      *                     "DstPort" => (integer) 保留字段，暂未使用
      *                     "NexthopId" => (string) 路由下一跳资源ID
      *                     "NexthopType" => (string) 路由表下一跳类型。LOCAL，本VPC内部通信路由；PUBLIC，公共服务路由；CNAT，外网路由；UDPN，跨域高速通道路由；HYBRIDGW，混合云路由；INSTANCE，实例路由；VNET，VPC联通路由；IPSEC VPN，指向VPN网关的路由。
+     *                     "InstanceType" => (string) 实例类型，枚举值：UHOST，云主机；UNI，虚拟网卡；PHOST，物理云主机
      *                     "OriginAddr" => (string) 保留字段，暂未使用
      *                     "Priority" => (integer) 保留字段，暂未使用
      *                     "Remark" => (string) 路由规则备注

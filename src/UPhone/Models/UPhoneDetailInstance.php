@@ -43,7 +43,7 @@ class UPhoneDetailInstance extends Response
     }
 
     /**
-     * UPhoneId: 云手机规格名称
+     * UPhoneId: 云手机的唯一标识，不超过32个字节。
      *
      * @return string|null
      */
@@ -53,13 +53,33 @@ class UPhoneDetailInstance extends Response
     }
 
     /**
-     * UPhoneId: 云手机规格名称
+     * UPhoneId: 云手机的唯一标识，不超过32个字节。
      *
      * @param string $uPhoneId
      */
     public function setUPhoneId($uPhoneId)
     {
         $this->set("UPhoneId", $uPhoneId);
+    }
+
+    /**
+     * UPhoneModelName: 云手机规格名称
+     *
+     * @return string|null
+     */
+    public function getUPhoneModelName()
+    {
+        return $this->get("UPhoneModelName");
+    }
+
+    /**
+     * UPhoneModelName: 云手机规格名称
+     *
+     * @param string $uPhoneModelName
+     */
+    public function setUPhoneModelName($uPhoneModelName)
+    {
+        $this->set("UPhoneModelName", $uPhoneModelName);
     }
 
     /**

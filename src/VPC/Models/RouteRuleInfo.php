@@ -123,6 +123,26 @@ class RouteRuleInfo extends Response
     }
 
     /**
+     * InstanceType: 实例类型，枚举值：UHOST，云主机；UNI，虚拟网卡；PHOST，物理云主机
+     *
+     * @return string|null
+     */
+    public function getInstanceType()
+    {
+        return $this->get("InstanceType");
+    }
+
+    /**
+     * InstanceType: 实例类型，枚举值：UHOST，云主机；UNI，虚拟网卡；PHOST，物理云主机
+     *
+     * @param string $instanceType
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->set("InstanceType", $instanceType);
+    }
+
+    /**
      * OriginAddr: 保留字段，暂未使用
      *
      * @return string|null
