@@ -69,7 +69,7 @@ class DescribeUPhoneJobRequest extends Request
     }
 
     /**
-     * JobIds: 【数组】Job 的唯一标识 Id，调用方式举例：ServerIds.0=希望查询状态的 Job1，ServerIds.1=Job2。 如果不传入，则返回当前 城市 所有符合条件的 Job 。
+     * JobIds: 【数组】Job 的唯一标识 Id，调用方式举例：JobIds.0=希望查询状态的 Job1，JobIds.1=Job2。 如果不传入，则返回当前 城市 所有符合条件的 Job 。
      *
      * @return string[]|null
      */
@@ -79,7 +79,7 @@ class DescribeUPhoneJobRequest extends Request
     }
 
     /**
-     * JobIds: 【数组】Job 的唯一标识 Id，调用方式举例：ServerIds.0=希望查询状态的 Job1，ServerIds.1=Job2。 如果不传入，则返回当前 城市 所有符合条件的 Job 。
+     * JobIds: 【数组】Job 的唯一标识 Id，调用方式举例：JobIds.0=希望查询状态的 Job1，JobIds.1=Job2。 如果不传入，则返回当前 城市 所有符合条件的 Job 。
      *
      * @param string[] $jobIds
      */
@@ -166,5 +166,25 @@ class DescribeUPhoneJobRequest extends Request
     public function setTypes(array $types)
     {
         $this->set("Types", $types);
+    }
+
+    /**
+     * ProductType: 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     *
+     * @return string|null
+     */
+    public function getProductType()
+    {
+        return $this->get("ProductType");
+    }
+
+    /**
+     * ProductType: 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     *
+     * @param string $productType
+     */
+    public function setProductType($productType)
+    {
+        $this->set("ProductType", $productType);
     }
 }

@@ -18,6 +18,8 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\NetworkInterface;
+use UCloud\VPC\Models\UNIIpInfo;
+use UCloud\VPC\Models\UNIQuotaInfo;
 
 class DescribeNetworkInterfaceResponse extends Response
 {

@@ -17,7 +17,7 @@
 namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\VPC\Models\NetworkInterface;
+use UCloud\VPC\Models\InstanceNetworkInterface;
 
 class DescribeInstanceNetworkInterfaceResponse extends Response
 {
@@ -26,7 +26,7 @@ class DescribeInstanceNetworkInterfaceResponse extends Response
     /**
      * NetworkInterfaceSet: 虚拟网卡信息
      *
-     * @return NetworkInterface[]|null
+     * @return InstanceNetworkInterface[]|null
      */
     public function getNetworkInterfaceSet()
     {
@@ -36,7 +36,7 @@ class DescribeInstanceNetworkInterfaceResponse extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new NetworkInterface($item));
+            array_push($result, new InstanceNetworkInterface($item));
         }
         return $result;
     }
@@ -44,7 +44,7 @@ class DescribeInstanceNetworkInterfaceResponse extends Response
     /**
      * NetworkInterfaceSet: 虚拟网卡信息
      *
-     * @param NetworkInterface[] $networkInterfaceSet
+     * @param InstanceNetworkInterface[] $networkInterfaceSet
      */
     public function setNetworkInterfaceSet(array $networkInterfaceSet)
     {

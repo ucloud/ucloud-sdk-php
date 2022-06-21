@@ -50,7 +50,7 @@ class CreateUPhoneImageRequest extends Request
     }
 
     /**
-     * CityId: 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取
+     * CityId: 城市Id，通过[获取城市列表](https://cms-docs.ucloudadmin.com/api/uphone-api/describe_u_phone_cities)获取
      *
      * @return string|null
      */
@@ -60,7 +60,7 @@ class CreateUPhoneImageRequest extends Request
     }
 
     /**
-     * CityId: 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取
+     * CityId: 城市Id，通过[获取城市列表](https://cms-docs.ucloudadmin.com/api/uphone-api/describe_u_phone_cities)获取
      *
      * @param string $cityId
      */
@@ -127,5 +127,25 @@ class CreateUPhoneImageRequest extends Request
     public function setDescription($description)
     {
         $this->set("Description", $description);
+    }
+
+    /**
+     * ProductType: 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     *
+     * @return string|null
+     */
+    public function getProductType()
+    {
+        return $this->get("ProductType");
+    }
+
+    /**
+     * ProductType: 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     *
+     * @param string $productType
+     */
+    public function setProductType($productType)
+    {
+        $this->set("ProductType", $productType);
     }
 }

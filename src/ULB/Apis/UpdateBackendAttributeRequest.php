@@ -132,7 +132,7 @@ class UpdateBackendAttributeRequest extends Request
     }
 
     /**
-     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
      * @return integer|null
      */
@@ -142,7 +142,7 @@ class UpdateBackendAttributeRequest extends Request
     }
 
     /**
-     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
      * @param int $weight
      */

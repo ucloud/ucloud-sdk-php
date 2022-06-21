@@ -23,7 +23,7 @@ class UPhoneServerPriceSet extends Response
     
 
     /**
-     * ChargeType: 计费类型，枚举值：Year，Month
+     * ChargeType: 计费类型，枚举值：Year，Month, Dynamic
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class UPhoneServerPriceSet extends Response
     }
 
     /**
-     * ChargeType: 计费类型，枚举值：Year，Month
+     * ChargeType: 计费类型，枚举值：Year，Month, Dynamic
      *
      * @param string $chargeType
      */
