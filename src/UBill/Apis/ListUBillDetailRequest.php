@@ -49,7 +49,7 @@ class ListUBillDetailRequest extends Request
     }
 
     /**
-     * ProjectName: 项目名称 (筛选项, 默认全部)
+     * ProjectName: 项目名称 (筛选项, 默认全部)	
      *
      * @return string|null
      */
@@ -59,7 +59,7 @@ class ListUBillDetailRequest extends Request
     }
 
     /**
-     * ProjectName: 项目名称 (筛选项, 默认全部)
+     * ProjectName: 项目名称 (筛选项, 默认全部)	
      *
      * @param string $projectName
      */
@@ -69,7 +69,7 @@ class ListUBillDetailRequest extends Request
     }
 
     /**
-     * ResourceIds: 资源ID(筛选项, 默认全部) 支持多筛选，多筛选请在请求参数中添加多个字段例ResourceIds.0: uhost-bzgf1gh5，ResourceIds.1: uhost-gu1xpspa，
+     * ResourceIds: 资源ID(筛选项, 默认全部)	支持多筛选，多筛选请在请求参数中添加多个字段例ResourceIds.0: uhost-bzgf1gh5，ResourceIds.1: uhost-gu1xpspa，
      *
      * @return string[]|null
      */
@@ -79,7 +79,7 @@ class ListUBillDetailRequest extends Request
     }
 
     /**
-     * ResourceIds: 资源ID(筛选项, 默认全部) 支持多筛选，多筛选请在请求参数中添加多个字段例ResourceIds.0: uhost-bzgf1gh5，ResourceIds.1: uhost-gu1xpspa，
+     * ResourceIds: 资源ID(筛选项, 默认全部)	支持多筛选，多筛选请在请求参数中添加多个字段例ResourceIds.0: uhost-bzgf1gh5，ResourceIds.1: uhost-gu1xpspa，
      *
      * @param string[] $resourceIds
      */
@@ -131,7 +131,7 @@ class ListUBillDetailRequest extends Request
     /**
      * ShowZero: 是否显示0元订单 (0 不显示, 1 显示, 默认0)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShowZero()
     {
@@ -149,9 +149,9 @@ class ListUBillDetailRequest extends Request
     }
 
     /**
-     * PaidState: 支付状态 (筛选项, 1:仅显示未支付订单; 2:仅显示已支付订单; 0:两者都显示)
+     * PaidState: 支付状态 (筛选项, 1:仅显示未支付订单; 2:仅显示已支付订单; 0:两者都显示)	
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPaidState()
     {
@@ -159,7 +159,7 @@ class ListUBillDetailRequest extends Request
     }
 
     /**
-     * PaidState: 支付状态 (筛选项, 1:仅显示未支付订单; 2:仅显示已支付订单; 0:两者都显示)
+     * PaidState: 支付状态 (筛选项, 1:仅显示未支付订单; 2:仅显示已支付订单; 0:两者都显示)	
      *
      * @param int $paidState
      */
@@ -191,7 +191,7 @@ class ListUBillDetailRequest extends Request
     /**
      * Limit: 每页数量，默认值25，最大值：100。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -209,9 +209,9 @@ class ListUBillDetailRequest extends Request
     }
 
     /**
-     * Offset: 数据偏移量 (默认0)
+     * Offset: 数据偏移量 (默认0)	
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -219,7 +219,7 @@ class ListUBillDetailRequest extends Request
     }
 
     /**
-     * Offset: 数据偏移量 (默认0)
+     * Offset: 数据偏移量 (默认0)	
      *
      * @param int $offset
      */
@@ -247,4 +247,6 @@ class ListUBillDetailRequest extends Request
     {
         $this->set("ResourceTypes", $resourceTypes);
     }
+
+
 }

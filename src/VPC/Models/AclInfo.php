@@ -169,7 +169,7 @@ class AclInfo extends Response
     /**
      * CreateTime: 创建的Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -189,7 +189,7 @@ class AclInfo extends Response
     /**
      * UpdateTime: 更改的Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUpdateTime()
     {
@@ -205,4 +205,6 @@ class AclInfo extends Response
     {
         $this->set("UpdateTime", $updateTime);
     }
+
+
 }

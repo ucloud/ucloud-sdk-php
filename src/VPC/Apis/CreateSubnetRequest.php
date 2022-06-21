@@ -113,7 +113,7 @@ class CreateSubnetRequest extends Request
     /**
      * Netmask: 子网网络号位数，默认为24
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNetmask()
     {
@@ -189,4 +189,6 @@ class CreateSubnetRequest extends Request
     {
         $this->set("Remark", $remark);
     }
+
+
 }

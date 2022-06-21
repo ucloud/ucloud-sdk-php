@@ -54,4 +54,6 @@ class DescribeSnatDnatRuleResponse extends Response
         }
         return $result;
     }
+
+
 }

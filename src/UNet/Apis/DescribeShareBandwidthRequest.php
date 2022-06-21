@@ -87,4 +87,6 @@ class DescribeShareBandwidthRequest extends Request
     {
         $this->set("ShareBandwidthIds", $shareBandwidthIds);
     }
+
+
 }

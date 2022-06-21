@@ -145,7 +145,7 @@ class BillDetailItem extends Response
     /**
      * CreateTime: 创建时间（时间戳）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -165,7 +165,7 @@ class BillDetailItem extends Response
     /**
      * StartTime: 开始时间（时间戳）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStartTime()
     {
@@ -285,7 +285,7 @@ class BillDetailItem extends Response
     /**
      * ResourceTypeCode: 产品类型代码
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getResourceTypeCode()
     {
@@ -369,7 +369,7 @@ class BillDetailItem extends Response
     /**
      * ShowHover: 订单支付状态。枚举值：\\> 0:未支付 \\ > 1:已支付
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShowHover()
     {
@@ -449,7 +449,7 @@ class BillDetailItem extends Response
     /**
      * Admin: 是否为主账号。枚举值：\\ > 0:子账号 \\ > 1:主账号
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAdmin()
     {
@@ -465,4 +465,6 @@ class BillDetailItem extends Response
     {
         $this->set("Admin", $admin);
     }
+
+
 }

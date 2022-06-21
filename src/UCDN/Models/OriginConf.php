@@ -65,7 +65,7 @@ class OriginConf extends Response
     /**
      * OriginPort: 回源端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginPort()
     {
@@ -165,7 +165,7 @@ class OriginConf extends Response
     /**
      * OriginErrorNum: 回主源的回源失败数，默认1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginErrorNum()
     {
@@ -205,7 +205,7 @@ class OriginConf extends Response
     /**
      * OriginFollow301: 跟随301跳转  0=不跟随 1=跟随
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginFollow301()
     {
@@ -221,4 +221,6 @@ class OriginConf extends Response
     {
         $this->set("OriginFollow301", $originFollow301);
     }
+
+
 }

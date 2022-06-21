@@ -47,4 +47,6 @@ class QueryIpLocationRequest extends Request
     {
         $this->set("Ip", $ip);
     }
+
+
 }

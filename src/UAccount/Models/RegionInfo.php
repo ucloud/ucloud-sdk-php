@@ -25,7 +25,7 @@ class RegionInfo extends Response
     /**
      * RegionId: 数据中心ID
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRegionId()
     {
@@ -141,4 +141,6 @@ class RegionInfo extends Response
     {
         $this->set("Zone", $zone);
     }
+
+
 }

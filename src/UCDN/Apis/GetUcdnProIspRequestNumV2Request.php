@@ -52,7 +52,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
     /**
      * BeginTime: 查询的起始日期，格式为Unix Timestamp  忽略时间部分
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -72,7 +72,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
     /**
      * EndTime: 查询的结束日期，格式为Unix Timestamp  忽略时间部分
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -152,7 +152,7 @@ class GetUcdnProIspRequestNumV2Request extends Request
     /**
      * Type: 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天粒度，3表示按照一分钟粒度）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -168,4 +168,6 @@ class GetUcdnProIspRequestNumV2Request extends Request
     {
         $this->set("Type", $type);
     }
+
+
 }

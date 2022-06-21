@@ -25,7 +25,7 @@ class DeleteUEcCustomImageResponse extends Response
     /**
      * ImageId: 镜像ID
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getImageId()
     {
@@ -41,4 +41,6 @@ class DeleteUEcCustomImageResponse extends Response
     {
         $this->set("ImageId", $imageId);
     }
+
+
 }

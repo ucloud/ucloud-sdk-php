@@ -216,7 +216,7 @@ class AllocateBackendRequest extends Request
     /**
      * Port: 所添加的后端资源服务端口，取值范围[1-65535]，默认80
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -236,7 +236,7 @@ class AllocateBackendRequest extends Request
     /**
      * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getWeight()
     {
@@ -256,7 +256,7 @@ class AllocateBackendRequest extends Request
     /**
      * Enabled: 后端实例状态开关，枚举值： 1：启用； 0：禁用 默认为启用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEnabled()
     {
@@ -276,7 +276,7 @@ class AllocateBackendRequest extends Request
     /**
      * IsBackup: rs是否为backup，默认为00：普通rs1：backup的rs
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIsBackup()
     {
@@ -292,4 +292,6 @@ class AllocateBackendRequest extends Request
     {
         $this->set("IsBackup", $isBackup);
     }
+
+
 }

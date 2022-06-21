@@ -43,7 +43,7 @@ class UnetAllocateEIPSet extends Response
     }
 
     /**
-     * EIPAddr: 申请到的IPv4地址.
+     * EIPAddr: 申请到的IPv4地址. 
      *
      * @return UnetEIPAddrSet[]|null
      */
@@ -61,7 +61,7 @@ class UnetAllocateEIPSet extends Response
     }
 
     /**
-     * EIPAddr: 申请到的IPv4地址.
+     * EIPAddr: 申请到的IPv4地址. 
      *
      * @param UnetEIPAddrSet[] $eipAddr
      */
@@ -73,4 +73,6 @@ class UnetAllocateEIPSet extends Response
         }
         return $result;
     }
+
+
 }

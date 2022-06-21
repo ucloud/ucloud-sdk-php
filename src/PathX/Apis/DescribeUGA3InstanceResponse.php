@@ -62,7 +62,7 @@ class DescribeUGA3InstanceResponse extends Response
     /**
      * TotalCount: 符合条件的总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -78,4 +78,6 @@ class DescribeUGA3InstanceResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

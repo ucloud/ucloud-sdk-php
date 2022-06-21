@@ -113,7 +113,7 @@ class DescribeUDBLogBackupURLRequest extends Request
     /**
      * BackupId: DB实例备份ID
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupId()
     {
@@ -129,4 +129,6 @@ class DescribeUDBLogBackupURLRequest extends Request
     {
         $this->set("BackupId", $backupId);
     }
+
+
 }

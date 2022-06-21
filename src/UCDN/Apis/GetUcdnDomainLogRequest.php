@@ -70,7 +70,7 @@ class GetUcdnDomainLogRequest extends Request
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -90,7 +90,7 @@ class GetUcdnDomainLogRequest extends Request
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -110,7 +110,7 @@ class GetUcdnDomainLogRequest extends Request
     /**
      * Type: 查询粒度  0=default(没有粒度) 1=按小时  2=按天
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -126,4 +126,6 @@ class GetUcdnDomainLogRequest extends Request
     {
         $this->set("Type", $type);
     }
+
+
 }

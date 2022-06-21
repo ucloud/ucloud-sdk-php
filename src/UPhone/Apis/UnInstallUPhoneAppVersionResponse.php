@@ -41,4 +41,6 @@ class UnInstallUPhoneAppVersionResponse extends Response
     {
         $this->set("JobId", $jobId);
     }
+
+
 }

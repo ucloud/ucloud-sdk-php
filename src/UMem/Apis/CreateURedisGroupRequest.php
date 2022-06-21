@@ -134,7 +134,7 @@ class CreateURedisGroupRequest extends Request
     /**
      * Size: 每个节点的内存大小,单位GB,默认1GB,目前仅支持1/2/4/8/16/32,六种
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -174,7 +174,7 @@ class CreateURedisGroupRequest extends Request
     /**
      * BackupTime: 自动备份开始时间,范围[0-23],默认3点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -254,7 +254,7 @@ class CreateURedisGroupRequest extends Request
     /**
      * Quantity: 购买时长，默认为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -450,4 +450,6 @@ class CreateURedisGroupRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

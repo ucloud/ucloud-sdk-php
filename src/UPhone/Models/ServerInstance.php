@@ -105,7 +105,7 @@ class ServerInstance extends Response
     /**
      * CreateTime: 创建时间，格式为Unix时间戳。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -125,7 +125,7 @@ class ServerInstance extends Response
     /**
      * ModifyTime: 修改时间，格式为Unix时间戳。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -145,7 +145,7 @@ class ServerInstance extends Response
     /**
      * ExpireTime: 到期时间，格式为Unix时间戳。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -245,7 +245,7 @@ class ServerInstance extends Response
     /**
      * UPhoneCount: 云手机开数。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUPhoneCount()
     {
@@ -313,4 +313,6 @@ class ServerInstance extends Response
         }
         return $result;
     }
+
+
 }

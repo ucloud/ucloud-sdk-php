@@ -25,7 +25,7 @@ class GetCubePriceResponse extends Response
     /**
      * Price: 折扣后价格，单位为分
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -45,7 +45,7 @@ class GetCubePriceResponse extends Response
     /**
      * OriginalPrice: 列表价格，单位为分
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginalPrice()
     {
@@ -61,4 +61,6 @@ class GetCubePriceResponse extends Response
     {
         $this->set("OriginalPrice", $originalPrice);
     }
+
+
 }

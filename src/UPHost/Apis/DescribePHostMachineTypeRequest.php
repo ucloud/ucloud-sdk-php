@@ -108,4 +108,6 @@ class DescribePHostMachineTypeRequest extends Request
     {
         $this->set("Type", $type);
     }
+
+
 }

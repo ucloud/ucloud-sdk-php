@@ -45,7 +45,7 @@ class UrlProgressInfo extends Response
     /**
      * CreateTime: 刷新任务创建的时间。格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -65,7 +65,7 @@ class UrlProgressInfo extends Response
     /**
      * FinishTime: 任务完成时间。格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getFinishTime()
     {
@@ -105,7 +105,7 @@ class UrlProgressInfo extends Response
     /**
      * Progress: 刷新进度，单位%
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getProgress()
     {
@@ -121,4 +121,6 @@ class UrlProgressInfo extends Response
     {
         $this->set("Progress", $progress);
     }
+
+
 }

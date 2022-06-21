@@ -58,7 +58,7 @@ class DescribeUHostKeyPairsResponse extends Response
     /**
      * TotalCount: 密钥对总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUHostKeyPairsResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

@@ -56,4 +56,6 @@ class DescribeUDDBInstanceResponse extends Response
         }
         return $result;
     }
+
+
 }

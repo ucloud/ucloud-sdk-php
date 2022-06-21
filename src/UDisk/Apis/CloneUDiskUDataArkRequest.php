@@ -135,7 +135,7 @@ class CloneUDiskUDataArkRequest extends Request
     /**
      * SnapshotTime: 指定从方舟克隆的备份时间点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSnapshotTime()
     {
@@ -195,7 +195,7 @@ class CloneUDiskUDataArkRequest extends Request
     /**
      * Quantity: 购买时长 默认: 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -255,7 +255,7 @@ class CloneUDiskUDataArkRequest extends Request
     /**
      * Size: 购买UDisk大小,单位:GB,范围[1~8000]。(UDisk大小设定对本地盘备份有效，对云盘备份无效)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -351,4 +351,6 @@ class CloneUDiskUDataArkRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

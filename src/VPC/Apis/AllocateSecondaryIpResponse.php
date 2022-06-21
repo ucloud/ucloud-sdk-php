@@ -24,7 +24,7 @@ class AllocateSecondaryIpResponse extends Response
     
 
     /**
-     * IpInfo:
+     * IpInfo: 
      *
      * @return IpInfo|null
      */
@@ -34,7 +34,7 @@ class AllocateSecondaryIpResponse extends Response
     }
 
     /**
-     * IpInfo:
+     * IpInfo: 
      *
      * @param IpInfo $ipInfo
      */
@@ -42,4 +42,6 @@ class AllocateSecondaryIpResponse extends Response
     {
         $this->set("IpInfo", $ipInfo->getAll());
     }
+
+
 }

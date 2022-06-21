@@ -58,7 +58,7 @@ class DescribeSnatRuleResponse extends Response
     /**
      * TotalCount: 规则数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeSnatRuleResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

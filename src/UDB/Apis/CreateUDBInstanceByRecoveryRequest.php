@@ -134,7 +134,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     /**
      * RecoveryTime: 恢复到某个时间点的时间戳(UTC时间格式，默认单位秒)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRecoveryTime()
     {
@@ -174,7 +174,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     /**
      * Quantity: 购买时长，默认值1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -310,4 +310,6 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

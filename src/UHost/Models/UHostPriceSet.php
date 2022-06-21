@@ -101,4 +101,6 @@ class UHostPriceSet extends Response
     {
         $this->set("ListPrice", $listPrice);
     }
+
+
 }

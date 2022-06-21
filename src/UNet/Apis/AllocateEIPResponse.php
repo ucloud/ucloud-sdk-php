@@ -55,4 +55,6 @@ class AllocateEIPResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -65,33 +65,21 @@ class AvailableInstanceTypes extends Response
     /**
      * CpuPlatforms: 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回
      *
-     * @return CpuPlatforms[]|null
+     * @return CpuPlatforms|null
      */
     public function getCpuPlatforms()
     {
-        $items = $this->get("CpuPlatforms");
-        if ($items == null) {
-            return [];
-        }
-        $result = [];
-        foreach ($items as $i => $item) {
-            array_push($result, new CpuPlatforms($item));
-        }
-        return $result;
+        return new CpuPlatforms($this->get("CpuPlatforms"));
     }
 
     /**
      * CpuPlatforms: 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回
      *
-     * @param CpuPlatforms[] $cpuPlatforms
+     * @param CpuPlatforms $cpuPlatforms
      */
     public function setCpuPlatforms(array $cpuPlatforms)
     {
-        $result = [];
-        foreach ($cpuPlatforms as $i => $item) {
-            array_push($result, $item->getAll());
-        }
-        return $result;
+        $this->set("CpuPlatforms", $cpuPlatforms->getAll());
     }
 
     /**
@@ -159,7 +147,7 @@ class AvailableInstanceTypes extends Response
     }
 
     /**
-     * Features:    虚机可支持的特性。目前支持的特性网络增强|NetCapability、热升级|Hotplug。网络增强分为关闭|Normal、网络增强1.0|Super和网络增强2.0|Ultra。Name为可支持的特性名称，Modes为可以提供的模式类别等，RelatedToImageFeature为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。MinimalCpuPlatform表示这个特性必须是列出来的CPU平台及以上的CPU才支持。
+     * Features: 	虚机可支持的特性。目前支持的特性网络增强|NetCapability、热升级|Hotplug。网络增强分为关闭|Normal、网络增强1.0|Super和网络增强2.0|Ultra。Name为可支持的特性名称，Modes为可以提供的模式类别等，RelatedToImageFeature为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。MinimalCpuPlatform表示这个特性必须是列出来的CPU平台及以上的CPU才支持。
      *
      * @return Features[]|null
      */
@@ -177,7 +165,7 @@ class AvailableInstanceTypes extends Response
     }
 
     /**
-     * Features:    虚机可支持的特性。目前支持的特性网络增强|NetCapability、热升级|Hotplug。网络增强分为关闭|Normal、网络增强1.0|Super和网络增强2.0|Ultra。Name为可支持的特性名称，Modes为可以提供的模式类别等，RelatedToImageFeature为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。MinimalCpuPlatform表示这个特性必须是列出来的CPU平台及以上的CPU才支持。
+     * Features: 	虚机可支持的特性。目前支持的特性网络增强|NetCapability、热升级|Hotplug。网络增强分为关闭|Normal、网络增强1.0|Super和网络增强2.0|Ultra。Name为可支持的特性名称，Modes为可以提供的模式类别等，RelatedToImageFeature为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。MinimalCpuPlatform表示这个特性必须是列出来的CPU平台及以上的CPU才支持。
      *
      * @param Features[] $features
      */
@@ -249,4 +237,6 @@ class AvailableInstanceTypes extends Response
     {
         $this->set("Performance", $performance->getAll());
     }
+
+
 }

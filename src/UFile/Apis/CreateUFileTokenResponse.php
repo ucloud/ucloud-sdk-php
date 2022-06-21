@@ -41,4 +41,6 @@ class CreateUFileTokenResponse extends Response
     {
         $this->set("TokenId", $tokenId);
     }
+
+
 }

@@ -109,4 +109,6 @@ class AddWhiteListResourceRequest extends Request
     {
         $this->set("ResourceIds", $resourceIds);
     }
+
+
 }

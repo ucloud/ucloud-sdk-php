@@ -41,4 +41,6 @@ class LeaveIsolationGroupResponse extends Response
     {
         $this->set("UHostId", $uHostId);
     }
+
+
 }

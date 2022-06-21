@@ -165,7 +165,7 @@ class UHostDiskSet extends Response
     /**
      * Size: 磁盘大小，单位: GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -201,4 +201,6 @@ class UHostDiskSet extends Response
     {
         $this->set("BackupType", $backupType);
     }
+
+
 }

@@ -121,4 +121,6 @@ class LineDetail extends Response
     {
         $this->set("LineToName", $lineToName);
     }
+
+
 }

@@ -54,7 +54,7 @@ class CreateUSMSTemplateRequest extends Request
     /**
      * Purpose: 短信模板用途类型：1-验证码类短信模板；2-系统通知类短信模板；3-会员推广类短信模板；
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPurpose()
     {
@@ -190,4 +190,6 @@ class CreateUSMSTemplateRequest extends Request
     {
         $this->set("Instruction", $instruction);
     }
+
+
 }

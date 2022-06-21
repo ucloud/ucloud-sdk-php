@@ -41,4 +41,6 @@ class GetUFileQuotaResponse extends Response
     {
         $this->set("LeftQuota", $leftQuota);
     }
+
+
 }

@@ -50,7 +50,7 @@ class DeleteUSMSSignatureRequest extends Request
     }
 
     /**
-     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入
+     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入   
      *
      * @return string[]|null
      */
@@ -60,7 +60,7 @@ class DeleteUSMSSignatureRequest extends Request
     }
 
     /**
-     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入
+     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入   
      *
      * @param string[] $sigIds
      */
@@ -68,4 +68,6 @@ class DeleteUSMSSignatureRequest extends Request
     {
         $this->set("SigIds", $sigIds);
     }
+
+
 }

@@ -148,4 +148,6 @@ class TerminateUHostInstanceRequest extends Request
     {
         $this->set("ReleaseUDisk", $releaseUDisk);
     }
+
+
 }

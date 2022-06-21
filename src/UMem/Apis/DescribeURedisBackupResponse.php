@@ -26,7 +26,7 @@ class DescribeURedisBackupResponse extends Response
     /**
      * TotalCount: 用户名下总的备份个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeURedisBackupResponse extends Response
         }
         return $result;
     }
+
+
 }

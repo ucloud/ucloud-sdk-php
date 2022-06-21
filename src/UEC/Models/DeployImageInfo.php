@@ -45,7 +45,7 @@ class DeployImageInfo extends Response
     /**
      * State: 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getState()
     {
@@ -61,4 +61,6 @@ class DeployImageInfo extends Response
     {
         $this->set("State", $state);
     }
+
+
 }

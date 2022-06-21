@@ -30,7 +30,7 @@ class RemoveMemberFromProjectRequest extends Request
     
 
     /**
-     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。
+     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class RemoveMemberFromProjectRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。
+     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 
      *
      * @param string $projectId
      */
@@ -68,4 +68,6 @@ class RemoveMemberFromProjectRequest extends Request
     {
         $this->set("MemberEmail", $memberEmail);
     }
+
+
 }

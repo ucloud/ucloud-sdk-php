@@ -45,7 +45,7 @@ class VPCIntercomInfo extends Response
     /**
      * VPCType: vpc类型（1表示托管VPC，0表示公有云VPC）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getVPCType()
     {
@@ -65,7 +65,7 @@ class VPCIntercomInfo extends Response
     /**
      * AccountId: 项目Id（数字）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAccountId()
     {
@@ -181,4 +181,6 @@ class VPCIntercomInfo extends Response
     {
         $this->set("Tag", $tag);
     }
+
+
 }

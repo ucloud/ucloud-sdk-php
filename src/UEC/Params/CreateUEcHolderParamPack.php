@@ -65,7 +65,7 @@ class CreateUEcHolderParamPack extends Request
     /**
      * MemSize: 容器内存，单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemSize()
     {
@@ -201,4 +201,6 @@ class CreateUEcHolderParamPack extends Request
     {
         $this->set("ConfigDict", $configDict);
     }
+
+
 }

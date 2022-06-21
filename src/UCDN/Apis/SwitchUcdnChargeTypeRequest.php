@@ -67,4 +67,6 @@ class SwitchUcdnChargeTypeRequest extends Request
     {
         $this->set("ChargeType", $chargeType);
     }
+
+
 }

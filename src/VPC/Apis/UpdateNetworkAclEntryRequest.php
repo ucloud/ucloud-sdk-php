@@ -119,7 +119,7 @@ class UpdateNetworkAclEntryRequest extends Request
     /**
      * Priority: Entry的优先级，对于同样的Direction来说，不能重复
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPriority()
     {
@@ -259,7 +259,7 @@ class UpdateNetworkAclEntryRequest extends Request
     /**
      * TargetType: 应用目标类型。0代表“子网内全部资源”， 1代表“子网内指定资源”。默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTargetType()
     {
@@ -295,4 +295,6 @@ class UpdateNetworkAclEntryRequest extends Request
     {
         $this->set("TargetResourceIds", $targetResourceIds);
     }
+
+
 }

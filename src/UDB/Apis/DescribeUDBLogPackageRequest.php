@@ -93,7 +93,7 @@ class DescribeUDBLogPackageRequest extends Request
     /**
      * Offset: 分页显示的起始偏移，列表操作则指定
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -113,7 +113,7 @@ class DescribeUDBLogPackageRequest extends Request
     /**
      * Limit: 分页显示的条目数，列表操作则指定
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -133,7 +133,7 @@ class DescribeUDBLogPackageRequest extends Request
     /**
      * Type: 需要列出的备份文件类型，每种文件的值如下 2 : BINLOG\_BACKUP 3 : SLOW\_QUERY\_BACKUP 4 : ERRORLOG\_BACKUP
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -193,7 +193,7 @@ class DescribeUDBLogPackageRequest extends Request
     /**
      * BeginTime: 过滤条件:起始时间(时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -213,7 +213,7 @@ class DescribeUDBLogPackageRequest extends Request
     /**
      * EndTime: 过滤条件:结束时间(时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -229,4 +229,6 @@ class DescribeUDBLogPackageRequest extends Request
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

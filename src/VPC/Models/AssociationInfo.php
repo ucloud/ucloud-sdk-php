@@ -85,7 +85,7 @@ class AssociationInfo extends Response
     /**
      * CreateTime: 创建的Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -101,4 +101,6 @@ class AssociationInfo extends Response
     {
         $this->set("CreateTime", $createTime);
     }
+
+
 }

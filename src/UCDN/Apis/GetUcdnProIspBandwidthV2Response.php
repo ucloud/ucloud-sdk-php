@@ -55,4 +55,6 @@ class GetUcdnProIspBandwidthV2Response extends Response
         }
         return $result;
     }
+
+
 }

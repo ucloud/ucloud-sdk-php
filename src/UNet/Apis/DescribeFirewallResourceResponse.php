@@ -58,7 +58,7 @@ class DescribeFirewallResourceResponse extends Response
     /**
      * TotalCount: 绑定资源总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeFirewallResourceResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

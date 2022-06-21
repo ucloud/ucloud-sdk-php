@@ -85,7 +85,7 @@ class UHostIPSet extends Response
     /**
      * Weight: 当前EIP的权重。权重最大的为当前的出口IP。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getWeight()
     {
@@ -165,7 +165,7 @@ class UHostIPSet extends Response
     /**
      * Bandwidth: IP对应的带宽, 单位: Mb  (内网IP不显示带宽信息)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -241,4 +241,6 @@ class UHostIPSet extends Response
     {
         $this->set("NetworkInterfaceId", $networkInterfaceId);
     }
+
+
 }

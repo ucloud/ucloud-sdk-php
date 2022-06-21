@@ -54,4 +54,6 @@ class GetUcdnPassBandwidthV2Response extends Response
         }
         return $result;
     }
+
+
 }

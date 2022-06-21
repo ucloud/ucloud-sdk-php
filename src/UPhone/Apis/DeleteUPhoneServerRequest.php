@@ -90,7 +90,7 @@ class DeleteUPhoneServerRequest extends Request
     }
 
     /**
-     * ReleaseEIP: 删除云手机服务器时是否释放绑定的EIP。默认为false。
+     * ReleaseEIP: 删除云手机服务器时是否释放绑定的EIP。默认为false。	
      *
      * @return boolean|null
      */
@@ -100,7 +100,7 @@ class DeleteUPhoneServerRequest extends Request
     }
 
     /**
-     * ReleaseEIP: 删除云手机服务器时是否释放绑定的EIP。默认为false。
+     * ReleaseEIP: 删除云手机服务器时是否释放绑定的EIP。默认为false。	
      *
      * @param boolean $releaseEIP
      */
@@ -110,7 +110,7 @@ class DeleteUPhoneServerRequest extends Request
     }
 
     /**
-     * ReleaseUDisk: 删除云手机服务器时是否同时删除挂载的数据盘。默认为false。
+     * ReleaseUDisk: 删除云手机服务器时是否同时删除挂载的数据盘。默认为false。	
      *
      * @return boolean|null
      */
@@ -120,7 +120,7 @@ class DeleteUPhoneServerRequest extends Request
     }
 
     /**
-     * ReleaseUDisk: 删除云手机服务器时是否同时删除挂载的数据盘。默认为false。
+     * ReleaseUDisk: 删除云手机服务器时是否同时删除挂载的数据盘。默认为false。	
      *
      * @param boolean $releaseUDisk
      */
@@ -128,4 +128,6 @@ class DeleteUPhoneServerRequest extends Request
     {
         $this->set("ReleaseUDisk", $releaseUDisk);
     }
+
+
 }

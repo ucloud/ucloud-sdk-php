@@ -109,4 +109,6 @@ class DeleteWhiteListResourceRequest extends Request
     {
         $this->set("ResourceIds", $resourceIds);
     }
+
+
 }

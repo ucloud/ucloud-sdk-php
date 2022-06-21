@@ -151,7 +151,7 @@ class CreateUFileTokenRequest extends Request
     /**
      * ExpireTime: Unix 时间戳，精确到秒，为令牌过期时间点。默认过期时间为一天（即当前Unix时间戳+86400）；注意：过期时间不能超过 4102416000
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -167,4 +167,6 @@ class CreateUFileTokenRequest extends Request
     {
         $this->set("ExpireTime", $expireTime);
     }
+
+
 }

@@ -134,7 +134,7 @@ class FlushallURedisGroupRequest extends Request
     /**
      * DbNum: 清空的db，FlushType为FlushDb，此项为必传项
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDbNum()
     {
@@ -154,7 +154,7 @@ class FlushallURedisGroupRequest extends Request
     /**
      * TopOrganizationId: company_id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTopOrganizationId()
     {
@@ -174,7 +174,7 @@ class FlushallURedisGroupRequest extends Request
     /**
      * OrganizationId: OrganizationId
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOrganizationId()
     {
@@ -210,4 +210,6 @@ class FlushallURedisGroupRequest extends Request
     {
         $this->set("SlaveZone", $slaveZone);
     }
+
+
 }

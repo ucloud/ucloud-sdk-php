@@ -153,7 +153,7 @@ class DescribeURedisConfigRequest extends Request
     /**
      * Offset: 页显示的起始偏移, 默认值为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -173,7 +173,7 @@ class DescribeURedisConfigRequest extends Request
     /**
      * Limit: 页显示的条目数, 默认值为10
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -189,4 +189,6 @@ class DescribeURedisConfigRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

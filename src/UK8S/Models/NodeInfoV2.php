@@ -225,7 +225,7 @@ class NodeInfoV2 extends Response
     /**
      * CPU: Node节点CPU核数，单位: 个。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -245,7 +245,7 @@ class NodeInfoV2 extends Response
     /**
      * Memory: 内存大小，单位: MB。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -297,7 +297,7 @@ class NodeInfoV2 extends Response
     /**
      * CreateTime: 节点创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -317,7 +317,7 @@ class NodeInfoV2 extends Response
     /**
      * ExpireTime: 节点计费到期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -417,7 +417,7 @@ class NodeInfoV2 extends Response
     /**
      * GPU: 节点的GPU颗数。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -433,4 +433,6 @@ class NodeInfoV2 extends Response
     {
         $this->set("GPU", $gpu);
     }
+
+
 }

@@ -113,7 +113,7 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
     /**
      * BackupSwitch: 从库的备份开关，范围[0,1],0表示从库备份功能关闭,1 表示从库备份开关打开。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupSwitch()
     {
@@ -149,4 +149,6 @@ class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request
     {
         $this->set("SlaveDBId", $slaveDBId);
     }
+
+
 }

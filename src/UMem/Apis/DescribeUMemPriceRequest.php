@@ -95,7 +95,7 @@ class DescribeUMemPriceRequest extends Request
     /**
      * Size: 购买umem大小,单位:GB,范围[1~1024]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -155,7 +155,7 @@ class DescribeUMemPriceRequest extends Request
     /**
      * Quantity: 购买UMem的时长，默认值为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -171,4 +171,6 @@ class DescribeUMemPriceRequest extends Request
     {
         $this->set("Quantity", $quantity);
     }
+
+
 }

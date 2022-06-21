@@ -26,7 +26,7 @@ class DescribeRecycleUDiskResponse extends Response
     /**
      * TotalCount: 磁盘数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeRecycleUDiskResponse extends Response
         }
         return $result;
     }
+
+
 }

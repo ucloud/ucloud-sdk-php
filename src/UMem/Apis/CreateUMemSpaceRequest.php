@@ -94,7 +94,7 @@ class CreateUMemSpaceRequest extends Request
     /**
      * Size: 内存大小, 单位:GB, 范围[1~1024]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -194,7 +194,7 @@ class CreateUMemSpaceRequest extends Request
     /**
      * Quantity: 购买时长 默认: 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -230,4 +230,6 @@ class CreateUMemSpaceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

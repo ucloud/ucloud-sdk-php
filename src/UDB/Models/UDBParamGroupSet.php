@@ -25,7 +25,7 @@ class UDBParamGroupSet extends Response
     /**
      * GroupId: 参数组id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGroupId()
     {
@@ -153,4 +153,6 @@ class UDBParamGroupSet extends Response
         }
         return $result;
     }
+
+
 }

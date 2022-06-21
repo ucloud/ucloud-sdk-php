@@ -25,7 +25,7 @@ class MonitorInfo extends Response
     /**
      * TimeStamp: 时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTimeStamp()
     {
@@ -45,7 +45,7 @@ class MonitorInfo extends Response
     /**
      * Value: 值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getValue()
     {
@@ -61,4 +61,6 @@ class MonitorInfo extends Response
     {
         $this->set("Value", $value);
     }
+
+
 }

@@ -58,4 +58,6 @@ class DescribePHostMachineTypeResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -108,4 +108,6 @@ class CreateIsolationGroupRequest extends Request
     {
         $this->set("Remark", $remark);
     }
+
+
 }

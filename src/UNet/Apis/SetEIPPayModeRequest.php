@@ -114,7 +114,7 @@ class SetEIPPayModeRequest extends Request
     /**
      * Bandwidth: 调整的目标带宽值, 单位Mbps. 各地域的带宽值范围如下: 流量计费[1-200],其余情况[1-800]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -130,4 +130,6 @@ class SetEIPPayModeRequest extends Request
     {
         $this->set("Bandwidth", $bandwidth);
     }
+
+
 }

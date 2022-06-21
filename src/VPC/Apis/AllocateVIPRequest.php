@@ -153,7 +153,7 @@ class AllocateVIPRequest extends Request
     /**
      * Count: 申请数量，默认: 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -249,4 +249,6 @@ class AllocateVIPRequest extends Request
     {
         $this->set("BusinessId", $businessId);
     }
+
+
 }

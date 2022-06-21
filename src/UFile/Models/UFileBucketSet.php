@@ -145,7 +145,7 @@ class UFileBucketSet extends Response
     /**
      * CreateTime: Bucket的创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -165,7 +165,7 @@ class UFileBucketSet extends Response
     /**
      * ModifyTime: Bucket的修改时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -225,7 +225,7 @@ class UFileBucketSet extends Response
     /**
      * HasUserDomain: 是否存在自定义域名。0不存在，1存在，2错误
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHasUserDomain()
     {
@@ -241,4 +241,6 @@ class UFileBucketSet extends Response
     {
         $this->set("HasUserDomain", $hasUserDomain);
     }
+
+
 }

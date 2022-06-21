@@ -41,4 +41,6 @@ class GetUEcHolderLogResponse extends Response
     {
         $this->set("Data", $data);
     }
+
+
 }

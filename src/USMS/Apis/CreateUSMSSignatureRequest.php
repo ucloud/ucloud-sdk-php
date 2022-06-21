@@ -77,7 +77,7 @@ class CreateUSMSSignatureRequest extends Request
     /**
      * SigType: 签名类型，说明如下：0-公司或企业的全称或简称；1-App应用的全称或简称；2-工信部备案网站的全称或简称；3-公众号或小程序的全称或简称；4-商标名的全称或简称；5-政府/机关事业单位/其他单位的全称或简称；
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSigType()
     {
@@ -97,7 +97,7 @@ class CreateUSMSSignatureRequest extends Request
     /**
      * SigPurpose: 签名用途，0-自用，1-他用；
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSigPurpose()
     {
@@ -117,7 +117,7 @@ class CreateUSMSSignatureRequest extends Request
     /**
      * CertificateType: 签名的资质证明文件类型，需与签名类型保持一致，说明如下：0-三证合一/企业营业执照/组织机构代码证书/社会信用代码证书；1-应用商店后台开发者管理截图；2-备案服务商的备案成功截图(含域名，网站名称，备案号)；3-公众号或小程序的管理界面截图；4-商标注册证书；5-组织机构代码证书、社会信用代码证书；
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCertificateType()
     {
@@ -213,4 +213,6 @@ class CreateUSMSSignatureRequest extends Request
     {
         $this->set("ProxyFile", $proxyFile);
     }
+
+
 }

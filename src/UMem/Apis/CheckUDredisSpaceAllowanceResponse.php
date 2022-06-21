@@ -25,7 +25,7 @@ class CheckUDredisSpaceAllowanceResponse extends Response
     /**
      * Count: 创建实例资源时，表示可创建的数量；扩容资源时，返回1表示可以扩容，0表示可用区资源不足不能扩容
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -41,4 +41,6 @@ class CheckUDredisSpaceAllowanceResponse extends Response
     {
         $this->set("Count", $count);
     }
+
+
 }

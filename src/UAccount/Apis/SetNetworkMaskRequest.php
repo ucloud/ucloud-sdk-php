@@ -87,4 +87,6 @@ class SetNetworkMaskRequest extends Request
     {
         $this->set("LoginNetworkMask", $loginNetworkMask);
     }
+
+
 }

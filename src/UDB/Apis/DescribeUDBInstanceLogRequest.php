@@ -115,7 +115,7 @@ class DescribeUDBInstanceLogRequest extends Request
     /**
      * BeginTime: 查询的日志开始的时间戳（Unix Timestamp）。对于实时查询，这个参数应该是上次轮询请求时的时间戳，后台会返回从该值到当前时间的日志内容。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -135,7 +135,7 @@ class DescribeUDBInstanceLogRequest extends Request
     /**
      * EndTime: 查询日志的结束时间戳(Unix Timestamp），对于实时查询不传该值，与BeginTime的差值不超过24小时：(EndTime-BeginTime) < 24*60*60
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -171,4 +171,6 @@ class DescribeUDBInstanceLogRequest extends Request
     {
         $this->set("LogType", $logType);
     }
+
+
 }

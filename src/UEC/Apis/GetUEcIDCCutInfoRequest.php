@@ -24,4 +24,8 @@ class GetUEcIDCCutInfoRequest extends Request
     {
         parent::__construct(["Action" => "GetUEcIDCCutInfo"]);
     }
+
+    
+
+
 }

@@ -52,7 +52,7 @@ class CreateUGA3InstanceRequest extends Request
     /**
      * Bandwidth: 实例的共享带宽大小，单位Mbps
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -152,7 +152,7 @@ class CreateUGA3InstanceRequest extends Request
     /**
      * Quantity: 购买周期
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -248,4 +248,6 @@ class CreateUGA3InstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

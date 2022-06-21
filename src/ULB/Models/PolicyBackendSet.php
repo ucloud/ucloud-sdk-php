@@ -165,7 +165,7 @@ class PolicyBackendSet extends Response
     /**
      * Port: 所添加的后端资源服务端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -201,4 +201,6 @@ class PolicyBackendSet extends Response
     {
         $this->set("PrivateIP", $privateIP);
     }
+
+
 }

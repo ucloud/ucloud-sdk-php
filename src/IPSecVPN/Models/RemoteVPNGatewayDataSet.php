@@ -125,7 +125,7 @@ class RemoteVPNGatewayDataSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -145,7 +145,7 @@ class RemoteVPNGatewayDataSet extends Response
     /**
      * TunnelCount: 活跃的隧道数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTunnelCount()
     {
@@ -161,4 +161,6 @@ class RemoteVPNGatewayDataSet extends Response
     {
         $this->set("TunnelCount", $tunnelCount);
     }
+
+
 }

@@ -25,7 +25,7 @@ class CheckRecoverUDBInstanceResponse extends Response
     /**
      * LastestTime: 核查成功返回值为可以回档到的最近时刻,核查失败不返回
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLastestTime()
     {
@@ -41,4 +41,6 @@ class CheckRecoverUDBInstanceResponse extends Response
     {
         $this->set("LastestTime", $lastestTime);
     }
+
+
 }

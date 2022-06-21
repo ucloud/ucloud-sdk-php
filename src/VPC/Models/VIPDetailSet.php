@@ -65,7 +65,7 @@ class VIPDetailSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -221,4 +221,6 @@ class VIPDetailSet extends Response
     {
         $this->set("Tag", $tag);
     }
+
+
 }

@@ -50,7 +50,7 @@ class ListUBillOverviewRequest extends Request
     }
 
     /**
-     * Dimension: 账单维度, product 按产品聚合,project 按项目聚合，user 按子账号聚合
+     * Dimension: 账单维度, product 按产品聚合,project 按项目聚合，user 按子账号聚合	
      *
      * @return string|null
      */
@@ -60,7 +60,7 @@ class ListUBillOverviewRequest extends Request
     }
 
     /**
-     * Dimension: 账单维度, product 按产品聚合,project 按项目聚合，user 按子账号聚合
+     * Dimension: 账单维度, product 按产品聚合,project 按项目聚合，user 按子账号聚合	
      *
      * @param string $dimension
      */
@@ -72,7 +72,7 @@ class ListUBillOverviewRequest extends Request
     /**
      * HideUnpaid: 是否显示已入账账单, 1 已入账, 0 待入账 (默认0 )
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHideUnpaid()
     {
@@ -88,4 +88,6 @@ class ListUBillOverviewRequest extends Request
     {
         $this->set("HideUnpaid", $hideUnpaid);
     }
+
+
 }

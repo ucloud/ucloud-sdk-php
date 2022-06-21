@@ -31,7 +31,7 @@ class CreateSSLRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class CreateSSLRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class CreateSSLRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class CreateSSLRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -71,7 +71,7 @@ class CreateSSLRequest extends Request
     }
 
     /**
-     * SSLName: SSL证书的名字，默认值为空
+     * SSLName: SSL证书的名字，默认值不为空
      *
      * @return string|null
      */
@@ -81,7 +81,7 @@ class CreateSSLRequest extends Request
     }
 
     /**
-     * SSLName: SSL证书的名字，默认值为空
+     * SSLName: SSL证书的名字，默认值不为空
      *
      * @param string $sslName
      */
@@ -189,4 +189,6 @@ class CreateSSLRequest extends Request
     {
         $this->set("CaCert", $caCert);
     }
+
+
 }

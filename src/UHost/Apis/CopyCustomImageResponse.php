@@ -41,4 +41,6 @@ class CopyCustomImageResponse extends Response
     {
         $this->set("TargetImageId", $targetImageId);
     }
+
+
 }

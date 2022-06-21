@@ -73,7 +73,7 @@ class GetUFileDailyReportRequest extends Request
     /**
      * StartTime: 查询开始时间;unix时间戳，单位s
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStartTime()
     {
@@ -93,7 +93,7 @@ class GetUFileDailyReportRequest extends Request
     /**
      * EndTime: 查询结束时间;unix时间戳,单位s
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -129,4 +129,6 @@ class GetUFileDailyReportRequest extends Request
     {
         $this->set("BucketName", $bucketName);
     }
+
+
 }

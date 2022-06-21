@@ -105,7 +105,7 @@ class UGAALine extends Response
     /**
      * MaxBandwidth: 线路可售最大带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxBandwidth()
     {
@@ -173,4 +173,6 @@ class UGAALine extends Response
         }
         return $result;
     }
+
+
 }

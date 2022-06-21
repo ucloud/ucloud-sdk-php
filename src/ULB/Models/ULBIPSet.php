@@ -85,7 +85,7 @@ class ULBIPSet extends Response
     /**
      * BandwidthType: 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidthType()
     {
@@ -105,7 +105,7 @@ class ULBIPSet extends Response
     /**
      * Bandwidth: 弹性IP的带宽值（暂未对外开放）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -121,4 +121,6 @@ class ULBIPSet extends Response
     {
         $this->set("Bandwidth", $bandwidth);
     }
+
+
 }

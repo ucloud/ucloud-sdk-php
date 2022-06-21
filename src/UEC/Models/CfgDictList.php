@@ -81,4 +81,6 @@ class CfgDictList extends Response
     {
         $this->set("ResourceId", $resourceId);
     }
+
+
 }

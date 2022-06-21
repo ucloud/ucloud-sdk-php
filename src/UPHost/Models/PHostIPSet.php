@@ -23,7 +23,7 @@ class PHostIPSet extends Response
     
 
     /**
-     * OperatorName:  国际: Internation， BGP: BGP， 内网: Private
+     * OperatorName:  国际: Internation， BGP: BGP， 内网: Private 
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class PHostIPSet extends Response
     }
 
     /**
-     * OperatorName:  国际: Internation， BGP: BGP， 内网: Private
+     * OperatorName:  国际: Internation， BGP: BGP， 内网: Private 
      *
      * @param string $operatorName
      */
@@ -105,7 +105,7 @@ class PHostIPSet extends Response
     /**
      * Bandwidth: IP对应带宽，单位Mb，内网IP不显示带宽信息
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -161,4 +161,6 @@ class PHostIPSet extends Response
     {
         $this->set("VPCId", $vpcId);
     }
+
+
 }

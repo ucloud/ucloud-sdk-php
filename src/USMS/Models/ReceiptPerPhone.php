@@ -45,7 +45,7 @@ class ReceiptPerPhone extends Response
     /**
      * CostCount: 消耗短信条数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCostCount()
     {
@@ -125,7 +125,7 @@ class ReceiptPerPhone extends Response
     /**
      * ReceiptTime: 回执返回时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getReceiptTime()
     {
@@ -161,4 +161,6 @@ class ReceiptPerPhone extends Response
     {
         $this->set("UserId", $userId);
     }
+
+
 }

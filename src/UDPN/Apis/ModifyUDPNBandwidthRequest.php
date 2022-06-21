@@ -72,7 +72,7 @@ class ModifyUDPNBandwidthRequest extends Request
     /**
      * Bandwidth: 调整后专线带宽, 单位为Mbps，取值范围为大于等于2且小于等于1000([2-1000])的整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -108,4 +108,6 @@ class ModifyUDPNBandwidthRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

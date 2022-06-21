@@ -165,7 +165,7 @@ class VPNGatewayDataSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -185,7 +185,7 @@ class VPNGatewayDataSet extends Response
     /**
      * ExpireTime: 到期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -301,4 +301,6 @@ class VPNGatewayDataSet extends Response
     {
         $this->set("EIPId", $eipId);
     }
+
+
 }

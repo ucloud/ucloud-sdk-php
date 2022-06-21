@@ -45,7 +45,7 @@ class DataNodeInfo extends Response
     /**
      * Memory: 数据节点的内存配置, 单位：MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -65,7 +65,7 @@ class DataNodeInfo extends Response
     /**
      * DiskSpace: 数据节点的磁盘大小配置. 单位: GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -85,7 +85,7 @@ class DataNodeInfo extends Response
     /**
      * SlaveCount: 数据节点的只读实例个数.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSlaveCount()
     {
@@ -193,4 +193,6 @@ class DataNodeInfo extends Response
     {
         $this->set("CreateTime", $createTime);
     }
+
+
 }

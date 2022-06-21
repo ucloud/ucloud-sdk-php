@@ -165,7 +165,7 @@ class PHostImageSet extends Response
     /**
      * CreateTime: 裸金属2.0参数。镜像创建时间。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -205,7 +205,7 @@ class PHostImageSet extends Response
     /**
      * ImageSize: 裸金属2.0参数。镜像大小。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getImageSize()
     {
@@ -241,4 +241,6 @@ class PHostImageSet extends Response
     {
         $this->set("ImageDescription", $imageDescription);
     }
+
+
 }

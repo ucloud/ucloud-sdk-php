@@ -88,4 +88,6 @@ class RefreshNewUcdnDomainCacheRequest extends Request
     {
         $this->set("UrlList", $urlList);
     }
+
+
 }

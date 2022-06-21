@@ -141,4 +141,6 @@ class RuleInfo extends Response
     {
         $this->set("Remark", $remark);
     }
+
+
 }

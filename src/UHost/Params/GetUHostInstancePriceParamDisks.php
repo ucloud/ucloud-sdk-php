@@ -45,7 +45,7 @@ class GetUHostInstancePriceParamDisks extends Request
     /**
      * Size: 磁盘大小，单位GB。请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -101,4 +101,6 @@ class GetUHostInstancePriceParamDisks extends Request
     {
         $this->set("BackupType", $backupType);
     }
+
+
 }

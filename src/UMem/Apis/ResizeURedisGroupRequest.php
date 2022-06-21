@@ -113,7 +113,7 @@ class ResizeURedisGroupRequest extends Request
     /**
      * Size: 内存大小, 单位:GB (需要大于原size,且小于等于32) 目前仅支持1/2/4/8/16/32 G 六种容量规格
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -131,7 +131,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * ChargeType:
+     * ChargeType: 
      *
      * @return string|null
      */
@@ -141,7 +141,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * ChargeType:
+     * ChargeType: 
      *
      * @param string $chargeType
      */
@@ -173,7 +173,7 @@ class ResizeURedisGroupRequest extends Request
     /**
      * CouponId: 代金券ID 请参考DescribeCoupon接口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCouponId()
     {
@@ -189,4 +189,6 @@ class ResizeURedisGroupRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

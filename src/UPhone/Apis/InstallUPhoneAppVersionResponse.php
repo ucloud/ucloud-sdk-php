@@ -41,4 +41,6 @@ class InstallUPhoneAppVersionResponse extends Response
     {
         $this->set("JobId", $jobId);
     }
+
+
 }

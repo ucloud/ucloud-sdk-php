@@ -91,7 +91,7 @@ class DescribeUDBParamGroupRequest extends Request
     /**
      * Offset: 分页显示的起始偏移，列表操作则指定
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -111,7 +111,7 @@ class DescribeUDBParamGroupRequest extends Request
     /**
      * Limit: 分页显示的条目数，列表操作则指定
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -131,7 +131,7 @@ class DescribeUDBParamGroupRequest extends Request
     /**
      * GroupId: 参数组id，如果指定则获取描述，否则是列表操作，需要 指定Offset/Limit
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGroupId()
     {
@@ -207,4 +207,6 @@ class DescribeUDBParamGroupRequest extends Request
     {
         $this->set("ClassType", $classType);
     }
+
+
 }

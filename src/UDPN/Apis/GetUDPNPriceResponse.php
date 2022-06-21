@@ -25,7 +25,7 @@ class GetUDPNPriceResponse extends Response
     /**
      * PurchaseValue: 资源有效期 unix 时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPurchaseValue()
     {
@@ -61,4 +61,6 @@ class GetUDPNPriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

@@ -25,7 +25,7 @@ class ImageInfo extends Response
     /**
      * ZoneId: 可用区 Id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getZoneId()
     {
@@ -101,4 +101,6 @@ class ImageInfo extends Response
     {
         $this->set("NotSupportGPU", $notSupportGPU);
     }
+
+
 }

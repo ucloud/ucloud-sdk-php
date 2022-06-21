@@ -83,7 +83,7 @@ class UMemSlaveDataSet extends Response
     }
 
     /**
-     * VirtualIP:
+     * VirtualIP: 
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class UMemSlaveDataSet extends Response
     }
 
     /**
-     * VirtualIP:
+     * VirtualIP: 
      *
      * @param string $virtualIP
      */
@@ -105,7 +105,7 @@ class UMemSlaveDataSet extends Response
     /**
      * RewriteTime: 主备Redis返回运维时间 0//0点 1 //1点 以此类推
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRewriteTime()
     {
@@ -165,7 +165,7 @@ class UMemSlaveDataSet extends Response
     /**
      * Port: 端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -185,7 +185,7 @@ class UMemSlaveDataSet extends Response
     /**
      * MemorySize: 实力大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemorySize()
     {
@@ -245,7 +245,7 @@ class UMemSlaveDataSet extends Response
     /**
      * ModifyTime: 修改时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -285,7 +285,7 @@ class UMemSlaveDataSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -305,7 +305,7 @@ class UMemSlaveDataSet extends Response
     /**
      * ExpireTime: 到期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -325,7 +325,7 @@ class UMemSlaveDataSet extends Response
     /**
      * Size: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -345,7 +345,7 @@ class UMemSlaveDataSet extends Response
     /**
      * UsedSize: 使用量单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUsedSize()
     {
@@ -481,4 +481,6 @@ class UMemSlaveDataSet extends Response
     {
         $this->set("Version", $version);
     }
+
+
 }

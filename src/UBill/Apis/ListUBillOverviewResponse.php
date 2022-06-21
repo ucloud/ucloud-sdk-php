@@ -26,7 +26,7 @@ class ListUBillOverviewResponse extends Response
     /**
      * TotalCount: 账单总览数据总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -64,7 +64,7 @@ class ListUBillOverviewResponse extends Response
     }
 
     /**
-     * TotalPaidAmountReal: 现金账户扣款总额    （已入账时显示）
+     * TotalPaidAmountReal: 现金账户扣款总额	（已入账时显示）
      *
      * @return string|null
      */
@@ -74,7 +74,7 @@ class ListUBillOverviewResponse extends Response
     }
 
     /**
-     * TotalPaidAmountReal: 现金账户扣款总额    （已入账时显示）
+     * TotalPaidAmountReal: 现金账户扣款总额	（已入账时显示）
      *
      * @param string $totalPaidAmountReal
      */
@@ -134,4 +134,6 @@ class ListUBillOverviewResponse extends Response
         }
         return $result;
     }
+
+
 }

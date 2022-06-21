@@ -97,7 +97,7 @@ class CreateUEcHolderRequest extends Request
     /**
      * MemSize: 容器组总内存，单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemSize()
     {
@@ -177,7 +177,7 @@ class CreateUEcHolderRequest extends Request
     /**
      * RestartStrategy: 重启策略（0总是，1失败是，2永不，默认0）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRestartStrategy()
     {
@@ -217,7 +217,7 @@ class CreateUEcHolderRequest extends Request
     /**
      * Bandwidth: 外网绑定的带宽（单位M，默认0，只有当ElasticIp为yes时，默认1）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -257,7 +257,7 @@ class CreateUEcHolderRequest extends Request
     /**
      * ChargeType: 付费方式（2按月、3按年。默认2，默认月付）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeType()
     {
@@ -277,7 +277,7 @@ class CreateUEcHolderRequest extends Request
     /**
      * ChargeQuantity: 月数或者年数（默认值：1，当为按月计费时，0表示计费到月底，默认值为0）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeQuantity()
     {
@@ -295,7 +295,7 @@ class CreateUEcHolderRequest extends Request
     }
 
     /**
-     * Pack:
+     * Pack: 
      *
      * @return CreateUEcHolderParamPack[]|null
      */
@@ -313,7 +313,7 @@ class CreateUEcHolderRequest extends Request
     }
 
     /**
-     * Pack:
+     * Pack: 
      *
      * @param CreateUEcHolderParamPack[] $pack
      */
@@ -327,7 +327,7 @@ class CreateUEcHolderRequest extends Request
     }
 
     /**
-     * Image:
+     * Image: 
      *
      * @return CreateUEcHolderParamImage[]|null
      */
@@ -345,7 +345,7 @@ class CreateUEcHolderRequest extends Request
     }
 
     /**
-     * Image:
+     * Image: 
      *
      * @param CreateUEcHolderParamImage[] $image
      */
@@ -359,7 +359,7 @@ class CreateUEcHolderRequest extends Request
     }
 
     /**
-     * Storage:
+     * Storage: 
      *
      * @return CreateUEcHolderParamStorage[]|null
      */
@@ -377,7 +377,7 @@ class CreateUEcHolderRequest extends Request
     }
 
     /**
-     * Storage:
+     * Storage: 
      *
      * @param CreateUEcHolderParamStorage[] $storage
      */
@@ -389,4 +389,6 @@ class CreateUEcHolderRequest extends Request
         }
         return $result;
     }
+
+
 }

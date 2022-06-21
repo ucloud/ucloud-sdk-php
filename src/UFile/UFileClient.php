@@ -85,8 +85,7 @@ class UFileClient extends Client
      * @return CreateBucketResponse
      * @throws UCloudException
      */
-    public function createBucket(CreateBucketRequest $request = null)
-    {
+    public function createBucket(CreateBucketRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateBucketResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -119,8 +118,7 @@ class UFileClient extends Client
      * @return CreateUFileLifeCycleResponse
      * @throws UCloudException
      */
-    public function createUFileLifeCycle(CreateUFileLifeCycleRequest $request = null)
-    {
+    public function createUFileLifeCycle(CreateUFileLifeCycleRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -151,8 +149,7 @@ class UFileClient extends Client
      * @return CreateUFileTokenResponse
      * @throws UCloudException
      */
-    public function createUFileToken(CreateUFileTokenRequest $request = null)
-    {
+    public function createUFileToken(CreateUFileTokenRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUFileTokenResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -179,8 +176,7 @@ class UFileClient extends Client
      * @return DeleteBucketResponse
      * @throws UCloudException
      */
-    public function deleteBucket(DeleteBucketRequest $request = null)
-    {
+    public function deleteBucket(DeleteBucketRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteBucketResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -207,8 +203,7 @@ class UFileClient extends Client
      * @return DeleteUFileLifeCycleResponse
      * @throws UCloudException
      */
-    public function deleteUFileLifeCycle(DeleteUFileLifeCycleRequest $request = null)
-    {
+    public function deleteUFileLifeCycle(DeleteUFileLifeCycleRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -234,8 +229,7 @@ class UFileClient extends Client
      * @return DeleteUFileTokenResponse
      * @throws UCloudException
      */
-    public function deleteUFileToken(DeleteUFileTokenRequest $request = null)
-    {
+    public function deleteUFileToken(DeleteUFileTokenRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteUFileTokenResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -283,8 +277,7 @@ class UFileClient extends Client
      * @return DescribeBucketResponse
      * @throws UCloudException
      */
-    public function describeBucket(DescribeBucketRequest $request = null)
-    {
+    public function describeBucket(DescribeBucketRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeBucketResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -323,8 +316,7 @@ class UFileClient extends Client
      * @return DescribeUFileLifeCycleResponse
      * @throws UCloudException
      */
-    public function describeUFileLifeCycle(DescribeUFileLifeCycleRequest $request = null)
-    {
+    public function describeUFileLifeCycle(DescribeUFileLifeCycleRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -367,8 +359,7 @@ class UFileClient extends Client
      * @return DescribeUFileTokenResponse
      * @throws UCloudException
      */
-    public function describeUFileToken(DescribeUFileTokenRequest $request = null)
-    {
+    public function describeUFileToken(DescribeUFileTokenRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUFileTokenResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -424,8 +415,7 @@ class UFileClient extends Client
      * @return GetUFileDailyReportResponse
      * @throws UCloudException
      */
-    public function getUFileDailyReport(GetUFileDailyReportRequest $request = null)
-    {
+    public function getUFileDailyReport(GetUFileDailyReportRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUFileDailyReportResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -451,8 +441,7 @@ class UFileClient extends Client
      * @return GetUFileQuotaResponse
      * @throws UCloudException
      */
-    public function getUFileQuota(GetUFileQuotaRequest $request = null)
-    {
+    public function getUFileQuota(GetUFileQuotaRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUFileQuotaResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -493,8 +482,7 @@ class UFileClient extends Client
      * @return GetUFileQuotaInfoResponse
      * @throws UCloudException
      */
-    public function getUFileQuotaInfo(GetUFileQuotaInfoRequest $request = null)
-    {
+    public function getUFileQuotaInfo(GetUFileQuotaInfoRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUFileQuotaInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -522,8 +510,7 @@ class UFileClient extends Client
      * @return GetUFileQuotaPriceResponse
      * @throws UCloudException
      */
-    public function getUFileQuotaPrice(GetUFileQuotaPriceRequest $request = null)
-    {
+    public function getUFileQuotaPrice(GetUFileQuotaPriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUFileQuotaPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -558,8 +545,7 @@ class UFileClient extends Client
      * @return GetUFileReportResponse
      * @throws UCloudException
      */
-    public function getUFileReport(GetUFileReportRequest $request = null)
-    {
+    public function getUFileReport(GetUFileReportRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUFileReportResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -576,7 +562,7 @@ class UFileClient extends Client
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "BucketName" => (string) 存储空间名称
      *     "RefererStatus" => (string) 开启关闭referer防盗链;关闭防盗链会清空防盗链参数设置，开启防盗链必须指定 RefererType、Referers；开启：on， 关闭：off;
-     *     "RefererAllowNull" => (boolean) RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true;
+     *     "RefererAllowNull" => (boolean) RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true; 
      *     "RefererType" => (integer) 防盗链Referer类型，支持两种类型，黑名单和白名单; 1黑名单，2白名单；RefererStatus为"on"时此参数必填；
      *     "Referers" => (array<string>) 防盗链Referer规则，支持正则表达式（不支持符号';')
      * ]
@@ -589,8 +575,7 @@ class UFileClient extends Client
      * @return SetUFileRefererResponse
      * @throws UCloudException
      */
-    public function setUFileReferer(SetUFileRefererRequest $request = null)
-    {
+    public function setUFileReferer(SetUFileRefererRequest $request = null) {
         $resp = $this->invoke($request);
         return new SetUFileRefererResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -618,8 +603,7 @@ class UFileClient extends Client
      * @return UpdateBucketResponse
      * @throws UCloudException
      */
-    public function updateBucket(UpdateBucketRequest $request = null)
-    {
+    public function updateBucket(UpdateBucketRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateBucketResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -652,8 +636,7 @@ class UFileClient extends Client
      * @return UpdateUFileLifeCycleResponse
      * @throws UCloudException
      */
-    public function updateUFileLifeCycle(UpdateUFileLifeCycleRequest $request = null)
-    {
+    public function updateUFileLifeCycle(UpdateUFileLifeCycleRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -684,8 +667,7 @@ class UFileClient extends Client
      * @return UpdateUFileTokenResponse
      * @throws UCloudException
      */
-    public function updateUFileToken(UpdateUFileTokenRequest $request = null)
-    {
+    public function updateUFileToken(UpdateUFileTokenRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateUFileTokenResponse($resp->toArray(), $resp->getRequestId());
     }

@@ -73,7 +73,7 @@ class DescribeURedisUpgradePriceRequest extends Request
     /**
      * Size: 购买uredis大小,单位:GB,范围是[1-32]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -109,4 +109,6 @@ class DescribeURedisUpgradePriceRequest extends Request
     {
         $this->set("GroupId", $groupId);
     }
+
+
 }

@@ -137,7 +137,7 @@ class GetCubeMetricsRequest extends Request
     /**
      * BeginTime: 开始时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -157,7 +157,7 @@ class GetCubeMetricsRequest extends Request
     /**
      * EndTime: 结束时间，必须大于开始时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -193,4 +193,6 @@ class GetCubeMetricsRequest extends Request
     {
         $this->set("ContainerName", $containerName);
     }
+
+
 }

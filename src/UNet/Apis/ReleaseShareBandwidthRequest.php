@@ -93,7 +93,7 @@ class ReleaseShareBandwidthRequest extends Request
     /**
      * EIPBandwidth: 关闭共享带宽后，各EIP恢复为的带宽值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEIPBandwidth()
     {
@@ -129,4 +129,6 @@ class ReleaseShareBandwidthRequest extends Request
     {
         $this->set("PayMode", $payMode);
     }
+
+
 }

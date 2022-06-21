@@ -108,4 +108,6 @@ class GetUPhoneServerRenewPriceRequest extends Request
     {
         $this->set("ChargeType", $chargeType);
     }
+
+
 }

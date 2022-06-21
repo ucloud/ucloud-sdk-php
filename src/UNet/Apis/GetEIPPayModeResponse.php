@@ -54,4 +54,6 @@ class GetEIPPayModeResponse extends Response
         }
         return $result;
     }
+
+
 }

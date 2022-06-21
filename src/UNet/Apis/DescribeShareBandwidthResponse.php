@@ -60,7 +60,7 @@ class DescribeShareBandwidthResponse extends Response
     /**
      * TotalCount: 符合条件的共享带宽总数，大于等于返回DataSet长度
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -76,4 +76,6 @@ class DescribeShareBandwidthResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

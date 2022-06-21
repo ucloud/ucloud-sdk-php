@@ -26,7 +26,7 @@ class DescribeUPhoneAppVersionResponse extends Response
     /**
      * TotalCount: AppVersionInstance总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUPhoneAppVersionResponse extends Response
         }
         return $result;
     }
+
+
 }

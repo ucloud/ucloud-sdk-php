@@ -94,7 +94,7 @@ class CreateUPathRequest extends Request
     /**
      * Bandwidth: 当PostPaid为false时，该值为预付费固定带宽；当PostPaid为true时，该值为后付费保底带宽，保底带宽越大可用的上限带宽越大。最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。可联系产品团队咨询最大带宽。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -134,7 +134,7 @@ class CreateUPathRequest extends Request
     /**
      * Quantity: 购买周期，ChargeType为Month时，Quantity默认为0代表购买到月底，按时和按年付费该参数必须大于0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -210,4 +210,6 @@ class CreateUPathRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

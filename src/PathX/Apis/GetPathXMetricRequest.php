@@ -55,7 +55,7 @@ class GetPathXMetricRequest extends Request
     }
 
     /**
-     * ResourceId: ResourceId，如upath ID  和 uga ID
+     * ResourceId: ResourceId，如upath ID  和 uga ID 
      *
      * @return string|null
      */
@@ -65,7 +65,7 @@ class GetPathXMetricRequest extends Request
     }
 
     /**
-     * ResourceId: ResourceId，如upath ID  和 uga ID
+     * ResourceId: ResourceId，如upath ID  和 uga ID 
      *
      * @param string $resourceId
      */
@@ -77,7 +77,7 @@ class GetPathXMetricRequest extends Request
     /**
      * BeginTime: 查询起始时间，10位长度时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -97,7 +97,7 @@ class GetPathXMetricRequest extends Request
     /**
      * EndTime: 查询结束时间，10位长度时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -173,4 +173,6 @@ class GetPathXMetricRequest extends Request
     {
         $this->set("LineId", $lineId);
     }
+
+
 }

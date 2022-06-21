@@ -108,4 +108,6 @@ class GetUMemSpaceStateRequest extends Request
     {
         $this->set("SpaceId", $spaceId);
     }
+
+
 }

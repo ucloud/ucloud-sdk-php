@@ -101,4 +101,6 @@ class PHostPriceSet extends Response
     {
         $this->set("OriginalPrice", $originalPrice);
     }
+
+
 }

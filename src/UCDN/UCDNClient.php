@@ -108,8 +108,7 @@ class UCDNClient extends Client
      * @return AddCertificateResponse
      * @throws UCloudException
      */
-    public function addCertificate(AddCertificateRequest $request = null)
-    {
+    public function addCertificate(AddCertificateRequest $request = null) {
         $resp = $this->invoke($request);
         return new AddCertificateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -135,8 +134,7 @@ class UCDNClient extends Client
      * @return ControlUcdnDomainCacheAccessResponse
      * @throws UCloudException
      */
-    public function controlUcdnDomainCacheAccess(ControlUcdnDomainCacheAccessRequest $request = null)
-    {
+    public function controlUcdnDomainCacheAccess(ControlUcdnDomainCacheAccessRequest $request = null) {
         $resp = $this->invoke($request);
         return new ControlUcdnDomainCacheAccessResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -161,8 +159,7 @@ class UCDNClient extends Client
      * @return DeleteCertificateResponse
      * @throws UCloudException
      */
-    public function deleteCertificate(DeleteCertificateRequest $request = null)
-    {
+    public function deleteCertificate(DeleteCertificateRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteCertificateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -209,8 +206,7 @@ class UCDNClient extends Client
      * @return DescribeNewUcdnPrefetchCacheTaskResponse
      * @throws UCloudException
      */
-    public function describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskRequest $request = null)
-    {
+    public function describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeNewUcdnPrefetchCacheTaskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -257,8 +253,7 @@ class UCDNClient extends Client
      * @return DescribeNewUcdnRefreshCacheTaskResponse
      * @throws UCloudException
      */
-    public function describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskRequest $request = null)
-    {
+    public function describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeNewUcdnRefreshCacheTaskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -298,8 +293,7 @@ class UCDNClient extends Client
      * @return GetCertificateV2Response
      * @throws UCloudException
      */
-    public function getCertificateV2(GetCertificateV2Request $request = null)
-    {
+    public function getCertificateV2(GetCertificateV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetCertificateV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -335,8 +329,7 @@ class UCDNClient extends Client
      * @return GetNewUcdnDomainHitRateResponse
      * @throws UCloudException
      */
-    public function getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateRequest $request = null)
-    {
+    public function getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetNewUcdnDomainHitRateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -377,8 +370,7 @@ class UCDNClient extends Client
      * @return GetNewUcdnLogRefererStatisticsResponse
      * @throws UCloudException
      */
-    public function getNewUcdnLogRefererStatistics(GetNewUcdnLogRefererStatisticsRequest $request = null)
-    {
+    public function getNewUcdnLogRefererStatistics(GetNewUcdnLogRefererStatisticsRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetNewUcdnLogRefererStatisticsResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -421,8 +413,7 @@ class UCDNClient extends Client
      * @return GetNewUcdnLogUrlStatisticsResponse
      * @throws UCloudException
      */
-    public function getNewUcdnLogUrlStatistics(GetNewUcdnLogUrlStatisticsRequest $request = null)
-    {
+    public function getNewUcdnLogUrlStatistics(GetNewUcdnLogUrlStatisticsRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetNewUcdnLogUrlStatisticsResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -436,8 +427,8 @@ class UCDNClient extends Client
      *
      * $args = [
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "BeginTime" => (integer) 查询的起始日期，格式为Unix Timestamp
-     *     "EndTime" => (integer) 查询的结束日期，格式为Unix Timestamp
+     *     "BeginTime" => (integer) 查询的起始日期，格式为Unix Timestamp  
+     *     "EndTime" => (integer) 查询的结束日期，格式为Unix Timestamp 
      *     "DomainId" => (array<string>) 域名id，创建域名时生成的id。默认全部域名
      *     "Areacode" => (string) 查询带宽区域 cn代表国内 abroad代表海外 不填默认为全部区域
      * ]
@@ -452,8 +443,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomain95BandwidthV2Response
      * @throws UCloudException
      */
-    public function getUcdnDomain95BandwidthV2(GetUcdnDomain95BandwidthV2Request $request = null)
-    {
+    public function getUcdnDomain95BandwidthV2(GetUcdnDomain95BandwidthV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomain95BandwidthV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -491,8 +481,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainBandwidthV2Response
      * @throws UCloudException
      */
-    public function getUcdnDomainBandwidthV2(GetUcdnDomainBandwidthV2Request $request = null)
-    {
+    public function getUcdnDomainBandwidthV2(GetUcdnDomainBandwidthV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainBandwidthV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -594,8 +583,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainConfigResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainConfig(GetUcdnDomainConfigRequest $request = null)
-    {
+    public function getUcdnDomainConfig(GetUcdnDomainConfigRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainConfigResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -632,8 +620,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainHitRateResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainHitRate(GetUcdnDomainHitRateRequest $request = null)
-    {
+    public function getUcdnDomainHitRate(GetUcdnDomainHitRateRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainHitRateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1028,8 +1015,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainHttpCodeV2Response
      * @throws UCloudException
      */
-    public function getUcdnDomainHttpCodeV2(GetUcdnDomainHttpCodeV2Request $request = null)
-    {
+    public function getUcdnDomainHttpCodeV2(GetUcdnDomainHttpCodeV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainHttpCodeV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -1062,8 +1048,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainInfoListResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainInfoList(GetUcdnDomainInfoListRequest $request = null)
-    {
+    public function getUcdnDomainInfoList(GetUcdnDomainInfoListRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainInfoListResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1103,8 +1088,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainLogResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainLog(GetUcdnDomainLogRequest $request = null)
-    {
+    public function getUcdnDomainLog(GetUcdnDomainLogRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainLogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1142,8 +1126,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainLogV2Response
      * @throws UCloudException
      */
-    public function getUcdnDomainLogV2(GetUcdnDomainLogV2Request $request = null)
-    {
+    public function getUcdnDomainLogV2(GetUcdnDomainLogV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainLogV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -1182,8 +1165,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainOriginHttpCodeResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainOriginHttpCode(GetUcdnDomainOriginHttpCodeRequest $request = null)
-    {
+    public function getUcdnDomainOriginHttpCode(GetUcdnDomainOriginHttpCodeRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainOriginHttpCodeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1274,8 +1256,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainOriginHttpCodeDetailResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainOriginHttpCodeDetail(GetUcdnDomainOriginHttpCodeDetailRequest $request = null)
-    {
+    public function getUcdnDomainOriginHttpCodeDetail(GetUcdnDomainOriginHttpCodeDetailRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainOriginHttpCodeDetailResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1310,8 +1291,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainOriginRequestNumResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainOriginRequestNum(GetUcdnDomainOriginRequestNumRequest $request = null)
-    {
+    public function getUcdnDomainOriginRequestNum(GetUcdnDomainOriginRequestNumRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainOriginRequestNumResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1337,8 +1317,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainPrefetchEnableResponse
      * @throws UCloudException
      */
-    public function getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableRequest $request = null)
-    {
+    public function getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainPrefetchEnableResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1374,8 +1353,7 @@ class UCDNClient extends Client
      * @return GetUcdnDomainRequestNumV3Response
      * @throws UCloudException
      */
-    public function getUcdnDomainRequestNumV3(GetUcdnDomainRequestNumV3Request $request = null)
-    {
+    public function getUcdnDomainRequestNumV3(GetUcdnDomainRequestNumV3Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnDomainRequestNumV3Response($resp->toArray(), $resp->getRequestId());
     }
@@ -1410,8 +1388,7 @@ class UCDNClient extends Client
      * @return GetUcdnPassBandwidthV2Response
      * @throws UCloudException
      */
-    public function getUcdnPassBandwidthV2(GetUcdnPassBandwidthV2Request $request = null)
-    {
+    public function getUcdnPassBandwidthV2(GetUcdnPassBandwidthV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnPassBandwidthV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -1425,8 +1402,8 @@ class UCDNClient extends Client
      *
      * $args = [
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "BeginTime" => (integer) 查询的起始日期，格式为Unix Timestamp
-     *     "EndTime" => (integer) 查询的结束日期，格式为Unix Timestamp
+     *     "BeginTime" => (integer) 查询的起始日期，格式为Unix Timestamp  
+     *     "EndTime" => (integer) 查询的结束日期，格式为Unix Timestamp  
      *     "Type" => (integer) 时间粒度0 (按5分钟粒度)1 (按小时粒度)2(按天粒度)3(按分钟粒度）
      *     "DomainId" => (array<string>) 域名id，创建域名时生成的id。默认全部域名
      *     "Province" => (array<string>) 省份代码（省份拼音），可以传多个，不传则查询所有省份
@@ -1453,8 +1430,7 @@ class UCDNClient extends Client
      * @return GetUcdnProIspBandwidthV2Response
      * @throws UCloudException
      */
-    public function getUcdnProIspBandwidthV2(GetUcdnProIspBandwidthV2Request $request = null)
-    {
+    public function getUcdnProIspBandwidthV2(GetUcdnProIspBandwidthV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnProIspBandwidthV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -1495,8 +1471,7 @@ class UCDNClient extends Client
      * @return GetUcdnProIspRequestNumV2Response
      * @throws UCloudException
      */
-    public function getUcdnProIspRequestNumV2(GetUcdnProIspRequestNumV2Request $request = null)
-    {
+    public function getUcdnProIspRequestNumV2(GetUcdnProIspRequestNumV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnProIspRequestNumV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -1528,8 +1503,7 @@ class UCDNClient extends Client
      * @return GetUcdnTrafficV2Response
      * @throws UCloudException
      */
-    public function getUcdnTrafficV2(GetUcdnTrafficV2Request $request = null)
-    {
+    public function getUcdnTrafficV2(GetUcdnTrafficV2Request $request = null) {
         $resp = $this->invoke($request);
         return new GetUcdnTrafficV2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -1555,8 +1529,7 @@ class UCDNClient extends Client
      * @return PrefetchNewUcdnDomainCacheResponse
      * @throws UCloudException
      */
-    public function prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheRequest $request = null)
-    {
+    public function prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheRequest $request = null) {
         $resp = $this->invoke($request);
         return new PrefetchNewUcdnDomainCacheResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1589,8 +1562,7 @@ class UCDNClient extends Client
      * @return QueryIpLocationResponse
      * @throws UCloudException
      */
-    public function queryIpLocation(QueryIpLocationRequest $request = null)
-    {
+    public function queryIpLocation(QueryIpLocationRequest $request = null) {
         $resp = $this->invoke($request);
         return new QueryIpLocationResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1617,8 +1589,7 @@ class UCDNClient extends Client
      * @return RefreshNewUcdnDomainCacheResponse
      * @throws UCloudException
      */
-    public function refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheRequest $request = null)
-    {
+    public function refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheRequest $request = null) {
         $resp = $this->invoke($request);
         return new RefreshNewUcdnDomainCacheResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1643,8 +1614,7 @@ class UCDNClient extends Client
      * @return SwitchUcdnChargeTypeResponse
      * @throws UCloudException
      */
-    public function switchUcdnChargeType(SwitchUcdnChargeTypeRequest $request = null)
-    {
+    public function switchUcdnChargeType(SwitchUcdnChargeTypeRequest $request = null) {
         $resp = $this->invoke($request);
         return new SwitchUcdnChargeTypeResponse($resp->toArray(), $resp->getRequestId());
     }

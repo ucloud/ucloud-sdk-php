@@ -41,4 +41,6 @@ class AllocateShareBandwidthResponse extends Response
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
+
+
 }

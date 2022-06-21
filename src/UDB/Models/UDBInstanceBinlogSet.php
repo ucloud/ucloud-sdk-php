@@ -45,7 +45,7 @@ class UDBInstanceBinlogSet extends Response
     /**
      * Size: Binlog文件大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -65,7 +65,7 @@ class UDBInstanceBinlogSet extends Response
     /**
      * BeginTime: Binlog文件生成时间(时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -85,7 +85,7 @@ class UDBInstanceBinlogSet extends Response
     /**
      * EndTime: Binlog文件结束时间(时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -101,4 +101,6 @@ class UDBInstanceBinlogSet extends Response
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

@@ -70,7 +70,7 @@ class CreateUEcFirewallRequest extends Request
     }
 
     /**
-     * Rule:
+     * Rule: 
      *
      * @return CreateUEcFirewallParamRule[]|null
      */
@@ -88,7 +88,7 @@ class CreateUEcFirewallRequest extends Request
     }
 
     /**
-     * Rule:
+     * Rule: 
      *
      * @param CreateUEcFirewallParamRule[] $rule
      */
@@ -120,4 +120,6 @@ class CreateUEcFirewallRequest extends Request
     {
         $this->set("Remark", $remark);
     }
+
+
 }

@@ -51,7 +51,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * NodeCount: 节点数量，默认1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNodeCount()
     {
@@ -71,7 +71,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * CpuCore: CPU核数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCpuCore()
     {
@@ -91,7 +91,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * MemSize: 内存大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemSize()
     {
@@ -111,7 +111,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSysDiskSize()
     {
@@ -131,7 +131,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * DiskSize: 数据盘大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSize()
     {
@@ -151,7 +151,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * NetLimit: 网络带宽限速，单位Mbs
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNetLimit()
     {
@@ -171,7 +171,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * ChargeType: 付费方式，1按时，2按月，3按年，默认2
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeType()
     {
@@ -191,7 +191,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * ChargeQuantity: 月数或者年数，0计费到月底， 默认0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeQuantity()
     {
@@ -231,7 +231,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * IpCount: 外网IP的数量，默认1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIpCount()
     {
@@ -251,7 +251,7 @@ class GetUEcVHostPriceRequest extends Request
     /**
      * Gpu: Gpu卡核心数。仅Gpu机型支持此字段
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGpu()
     {
@@ -287,4 +287,6 @@ class GetUEcVHostPriceRequest extends Request
     {
         $this->set("GpuType", $gpuType);
     }
+
+
 }

@@ -181,7 +181,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * Master:
+     * Master: 
      *
      * @return CreateUK8SClusterV2ParamMaster[]|null
      */
@@ -199,7 +199,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * Master:
+     * Master: 
      *
      * @param CreateUK8SClusterV2ParamMaster[] $master
      */
@@ -235,7 +235,7 @@ class CreateUK8SClusterV2Request extends Request
     /**
      * MasterCPU: Master节点的虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMasterCPU()
     {
@@ -255,7 +255,7 @@ class CreateUK8SClusterV2Request extends Request
     /**
      * MasterMem: Master节点的内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMasterMem()
     {
@@ -273,7 +273,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * Nodes:
+     * Nodes: 
      *
      * @return CreateUK8SClusterV2ParamNodes[]|null
      */
@@ -291,7 +291,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * Nodes:
+     * Nodes: 
      *
      * @param CreateUK8SClusterV2ParamNodes[] $nodes
      */
@@ -367,7 +367,7 @@ class CreateUK8SClusterV2Request extends Request
     /**
      * MasterDataDiskSize: Master节点的数据盘大小，单位GB，默认为0。范围 ：[20, 1000]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMasterDataDiskSize()
     {
@@ -427,7 +427,7 @@ class CreateUK8SClusterV2Request extends Request
     /**
      * Quantity: 购买时长。默认为1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -485,7 +485,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * KubeProxy:
+     * KubeProxy: 
      *
      * @return CreateUK8SClusterV2ParamKubeProxy|null
      */
@@ -495,7 +495,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * KubeProxy:
+     * KubeProxy: 
      *
      * @param CreateUK8SClusterV2ParamKubeProxy $kubeProxy
      */
@@ -563,4 +563,6 @@ class CreateUK8SClusterV2Request extends Request
     {
         $this->set("InitScript", $initScript);
     }
+
+
 }

@@ -25,7 +25,7 @@ class DataDiskInfo extends Response
     /**
      * MinimalSize: 磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMinimalSize()
     {
@@ -65,7 +65,7 @@ class DataDiskInfo extends Response
     /**
      * MaximalSize: MaximalSize为磁盘最大值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaximalSize()
     {
@@ -101,4 +101,6 @@ class DataDiskInfo extends Response
     {
         $this->set("Features", $features);
     }
+
+
 }

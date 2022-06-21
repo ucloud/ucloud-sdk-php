@@ -81,4 +81,6 @@ class SnatDnatRuleInfo extends Response
     {
         $this->set("EIP", $eip);
     }
+
+
 }

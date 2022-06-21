@@ -55,4 +55,6 @@ class DescribeVPCResponse extends Response
         }
         return $result;
     }
+
+
 }

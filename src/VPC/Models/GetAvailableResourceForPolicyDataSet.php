@@ -81,4 +81,6 @@ class GetAvailableResourceForPolicyDataSet extends Response
     {
         $this->set("ResourceType", $resourceType);
     }
+
+
 }

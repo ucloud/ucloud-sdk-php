@@ -73,4 +73,6 @@ class AccelerationAreaInfos extends Response
         }
         return $result;
     }
+
+
 }

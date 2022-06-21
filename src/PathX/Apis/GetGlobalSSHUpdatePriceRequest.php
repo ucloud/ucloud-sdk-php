@@ -92,7 +92,7 @@ class GetGlobalSSHUpdatePriceRequest extends Request
     /**
      * Quantity: 购买周期，如果ChargeType为Month，Quantity可以不填默认为0；其他情况必须为正整数。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -128,4 +128,6 @@ class GetGlobalSSHUpdatePriceRequest extends Request
     {
         $this->set("ChargeType", $chargeType);
     }
+
+
 }

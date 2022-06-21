@@ -61,4 +61,6 @@ class CreateGlobalSSHInstanceResponse extends Response
     {
         $this->set("AcceleratingDomain", $acceleratingDomain);
     }
+
+
 }

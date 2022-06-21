@@ -135,7 +135,7 @@ class UpgradeUDDBInstanceRequest extends Request
     /**
      * RouterNodeNum: 其他版本：该参数可不填；专享版：物理机台数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRouterNodeNum()
     {
@@ -171,4 +171,6 @@ class UpgradeUDDBInstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

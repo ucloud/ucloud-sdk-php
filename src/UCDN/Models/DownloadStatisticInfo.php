@@ -65,7 +65,7 @@ class DownloadStatisticInfo extends Response
     /**
      * DownloadTimes: 下载次数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDownloadTimes()
     {
@@ -101,4 +101,6 @@ class DownloadStatisticInfo extends Response
     {
         $this->set("Percent", $percent);
     }
+
+
 }

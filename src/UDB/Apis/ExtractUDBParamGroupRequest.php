@@ -72,7 +72,7 @@ class ExtractUDBParamGroupRequest extends Request
     /**
      * GroupId: 配置id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGroupId()
     {
@@ -108,4 +108,6 @@ class ExtractUDBParamGroupRequest extends Request
     {
         $this->set("RegionFlag", $regionFlag);
     }
+
+
 }

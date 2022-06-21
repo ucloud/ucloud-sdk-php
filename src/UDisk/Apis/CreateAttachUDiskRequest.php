@@ -94,7 +94,7 @@ class CreateAttachUDiskRequest extends Request
     /**
      * Size: 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；RSSD数据盘：范围[1~32000]；高效数据盘：范围[1~32000]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -174,7 +174,7 @@ class CreateAttachUDiskRequest extends Request
     /**
      * Quantity: 购买时长 默认: 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -370,4 +370,6 @@ class CreateAttachUDiskRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

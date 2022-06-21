@@ -93,7 +93,7 @@ class DeleteUDBParamGroupRequest extends Request
     /**
      * GroupId: 参数组id,可通过DescribeUDBParamGroup获取
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGroupId()
     {
@@ -129,4 +129,6 @@ class DeleteUDBParamGroupRequest extends Request
     {
         $this->set("RegionFlag", $regionFlag);
     }
+
+
 }

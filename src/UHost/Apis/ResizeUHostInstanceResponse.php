@@ -41,4 +41,6 @@ class ResizeUHostInstanceResponse extends Response
     {
         $this->set("UHostId", $uHostId);
     }
+
+
 }

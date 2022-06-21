@@ -54,4 +54,6 @@ class GetUGA3PriceResponse extends Response
         }
         return $result;
     }
+
+
 }

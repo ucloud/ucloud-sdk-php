@@ -25,7 +25,7 @@ class GetUcdnDomainLogV2Response extends Response
     
 
     /**
-     * DomainLogSet:
+     * DomainLogSet: 
      *
      * @return DomanLogList[]|null
      */
@@ -43,7 +43,7 @@ class GetUcdnDomainLogV2Response extends Response
     }
 
     /**
-     * DomainLogSet:
+     * DomainLogSet: 
      *
      * @param DomanLogList[] $domainLogSet
      */
@@ -55,4 +55,6 @@ class GetUcdnDomainLogV2Response extends Response
         }
         return $result;
     }
+
+
 }

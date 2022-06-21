@@ -185,7 +185,7 @@ class ULBBackendSet extends Response
     /**
      * Port: 后端提供服务的端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -205,7 +205,7 @@ class ULBBackendSet extends Response
     /**
      * Enabled: 后端提供服务的实例启用与否，枚举值：0 禁用 1 启用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEnabled()
     {
@@ -225,7 +225,7 @@ class ULBBackendSet extends Response
     /**
      * Status: 后端提供服务的实例运行状态，枚举值：0健康检查健康状态 1 健康检查异常
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStatus()
     {
@@ -265,7 +265,7 @@ class ULBBackendSet extends Response
     /**
      * IsBackup: 是否为backup，只有当vserver的Backup属性为1时才会有此字段，说明：0：主rs1：备rs
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIsBackup()
     {
@@ -281,4 +281,6 @@ class ULBBackendSet extends Response
     {
         $this->set("IsBackup", $isBackup);
     }
+
+
 }

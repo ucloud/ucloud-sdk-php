@@ -54,4 +54,6 @@ class GetPHostPriceResponse extends Response
         }
         return $result;
     }
+
+
 }

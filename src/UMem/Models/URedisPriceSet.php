@@ -25,7 +25,7 @@ class URedisPriceSet extends Response
     /**
      * OriginalPrice: 原价
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginalPrice()
     {
@@ -65,7 +65,7 @@ class URedisPriceSet extends Response
     /**
      * ListPrice: 产品列表价
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getListPrice()
     {
@@ -85,7 +85,7 @@ class URedisPriceSet extends Response
     /**
      * Price: 总价格
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -101,4 +101,6 @@ class URedisPriceSet extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

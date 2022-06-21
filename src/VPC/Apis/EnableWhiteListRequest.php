@@ -93,7 +93,7 @@ class EnableWhiteListRequest extends Request
     /**
      * IfOpen: 白名单开关标记。0：关闭；1：开启。默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIfOpen()
     {
@@ -109,4 +109,6 @@ class EnableWhiteListRequest extends Request
     {
         $this->set("IfOpen", $ifOpen);
     }
+
+
 }

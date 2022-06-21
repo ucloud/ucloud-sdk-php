@@ -51,7 +51,7 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request
     /**
      * Type: 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度，3表示按照1分钟粒度）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -111,7 +111,7 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。如没有赋值，则返回缺少参 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -131,7 +131,7 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -147,4 +147,6 @@ class GetUcdnDomainOriginHttpCodeRequest extends Request
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

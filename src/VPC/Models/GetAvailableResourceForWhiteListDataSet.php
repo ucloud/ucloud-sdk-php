@@ -201,4 +201,6 @@ class GetAvailableResourceForWhiteListDataSet extends Response
     {
         $this->set("SubResourceType", $subResourceType);
     }
+
+
 }

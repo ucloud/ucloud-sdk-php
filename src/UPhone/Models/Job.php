@@ -23,7 +23,7 @@ class Job extends Response
     
 
     /**
-     * JobId: Job的唯一标识Id
+     * JobId: Job的唯一标识Id	
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class Job extends Response
     }
 
     /**
-     * JobId: Job的唯一标识Id
+     * JobId: Job的唯一标识Id	
      *
      * @param string $jobId
      */
@@ -43,9 +43,9 @@ class Job extends Response
     }
 
     /**
-     * CreateTime: Job创建时间，格式为Unix时间戳。
+     * CreateTime: Job创建时间，格式为Unix时间戳。	
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -53,7 +53,7 @@ class Job extends Response
     }
 
     /**
-     * CreateTime: Job创建时间，格式为Unix时间戳。
+     * CreateTime: Job创建时间，格式为Unix时间戳。	
      *
      * @param int $createTime
      */
@@ -63,9 +63,9 @@ class Job extends Response
     }
 
     /**
-     * BeginTime: Job处理开始时间，格式为Unix时间戳。
+     * BeginTime: Job处理开始时间，格式为Unix时间戳。	
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -73,7 +73,7 @@ class Job extends Response
     }
 
     /**
-     * BeginTime: Job处理开始时间，格式为Unix时间戳。
+     * BeginTime: Job处理开始时间，格式为Unix时间戳。	
      *
      * @param int $beginTime
      */
@@ -83,9 +83,9 @@ class Job extends Response
     }
 
     /**
-     * EndTime: Job处理结束时间，格式为Unix时间戳。
+     * EndTime: Job处理结束时间，格式为Unix时间戳。	
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -93,7 +93,7 @@ class Job extends Response
     }
 
     /**
-     * EndTime: Job处理结束时间，格式为Unix时间戳。
+     * EndTime: Job处理结束时间，格式为Unix时间戳。	
      *
      * @param int $endTime
      */
@@ -143,7 +143,7 @@ class Job extends Response
     }
 
     /**
-     * Tasks: Task信息，详情见数据结构Task（如果State为PENDING，此字段为空）
+     * Tasks: Task信息，详情见数据结构Task（如果State为PENDING，此字段为空）	
      *
      * @return Task[]|null
      */
@@ -161,7 +161,7 @@ class Job extends Response
     }
 
     /**
-     * Tasks: Task信息，详情见数据结构Task（如果State为PENDING，此字段为空）
+     * Tasks: Task信息，详情见数据结构Task（如果State为PENDING，此字段为空）	
      *
      * @param Task[] $tasks
      */
@@ -213,4 +213,6 @@ class Job extends Response
     {
         $this->set("UPhoneIds", $uPhoneIds);
     }
+
+
 }

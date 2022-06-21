@@ -25,7 +25,7 @@ class LogSetInfo extends Response
     /**
      * Time: 日志时间UnixTime
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTime()
     {
@@ -81,4 +81,6 @@ class LogSetInfo extends Response
     {
         $this->set("AbroadLog", $abroadLog);
     }
+
+
 }

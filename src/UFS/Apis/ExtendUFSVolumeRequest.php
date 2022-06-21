@@ -93,7 +93,7 @@ class ExtendUFSVolumeRequest extends Request
     /**
      * Size: 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -109,4 +109,6 @@ class ExtendUFSVolumeRequest extends Request
     {
         $this->set("Size", $size);
     }
+
+
 }

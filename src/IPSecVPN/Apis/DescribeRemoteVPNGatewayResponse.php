@@ -26,7 +26,7 @@ class DescribeRemoteVPNGatewayResponse extends Response
     /**
      * TotalCount: 符合条件的客户VPN网关总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeRemoteVPNGatewayResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -25,7 +25,7 @@ class ResourceSet extends Response
     /**
      * Zone: 可用区
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getZone()
     {
@@ -205,7 +205,7 @@ class ResourceSet extends Response
     /**
      * Status: 状态
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStatus()
     {
@@ -241,4 +241,6 @@ class ResourceSet extends Response
     {
         $this->set("Tag", $tag);
     }
+
+
 }

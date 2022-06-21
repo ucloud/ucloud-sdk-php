@@ -83,7 +83,7 @@ class UPhoneImageInstance extends Response
     }
 
     /**
-     * ImageType: 云手机镜像类型，枚举值：<br />> 用户自制镜像: CUSTOM;  <br />> 标准镜像: BASE;;
+     * ImageType: 云手机镜像类型，枚举值：<br />> 用户自制镜像: CUSTOM;  <br />> 标准镜像: BASE;;  
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class UPhoneImageInstance extends Response
     }
 
     /**
-     * ImageType: 云手机镜像类型，枚举值：<br />> 用户自制镜像: CUSTOM;  <br />> 标准镜像: BASE;;
+     * ImageType: 云手机镜像类型，枚举值：<br />> 用户自制镜像: CUSTOM;  <br />> 标准镜像: BASE;;  
      *
      * @param string $imageType
      */
@@ -105,7 +105,7 @@ class UPhoneImageInstance extends Response
     /**
      * CreateTime: 创建时间，格式为Unix时间戳。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -125,7 +125,7 @@ class UPhoneImageInstance extends Response
     /**
      * ModifyTime: 修改时间，格式为Unix时间戳。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -233,4 +233,6 @@ class UPhoneImageInstance extends Response
         }
         return $result;
     }
+
+
 }

@@ -110,7 +110,7 @@ class SetUFileRefererRequest extends Request
     }
 
     /**
-     * RefererAllowNull: RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true;
+     * RefererAllowNull: RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true; 
      *
      * @return boolean|null
      */
@@ -120,7 +120,7 @@ class SetUFileRefererRequest extends Request
     }
 
     /**
-     * RefererAllowNull: RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true;
+     * RefererAllowNull: RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问;此参数默认为 true; 
      *
      * @param boolean $refererAllowNull
      */
@@ -132,7 +132,7 @@ class SetUFileRefererRequest extends Request
     /**
      * RefererType: 防盗链Referer类型，支持两种类型，黑名单和白名单; 1黑名单，2白名单；RefererStatus为"on"时此参数必填；
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRefererType()
     {
@@ -168,4 +168,6 @@ class SetUFileRefererRequest extends Request
     {
         $this->set("Referers", $referers);
     }
+
+
 }

@@ -86,7 +86,7 @@ class DescribeUK8SNodeResponse extends Response
     /**
      * CreationTimestamp: 时间戳，单位是 秒
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreationTimestamp()
     {
@@ -104,7 +104,7 @@ class DescribeUK8SNodeResponse extends Response
     }
 
     /**
-     * ProviderID: 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc"
+     * ProviderID: 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc" 
      *
      * @return string|null
      */
@@ -114,7 +114,7 @@ class DescribeUK8SNodeResponse extends Response
     }
 
     /**
-     * ProviderID: 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc"
+     * ProviderID: 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc" 
      *
      * @param string $providerID
      */
@@ -266,7 +266,7 @@ class DescribeUK8SNodeResponse extends Response
     /**
      * AllocatedPodCount: 已分配到当前节点的 Pod 数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAllocatedPodCount()
     {
@@ -286,7 +286,7 @@ class DescribeUK8SNodeResponse extends Response
     /**
      * PodCapacity: 节点允许的可分配 Pod 最大数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPodCapacity()
     {
@@ -594,4 +594,6 @@ class DescribeUK8SNodeResponse extends Response
     {
         $this->set("Taints", $taints);
     }
+
+
 }

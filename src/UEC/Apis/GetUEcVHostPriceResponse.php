@@ -61,4 +61,6 @@ class GetUEcVHostPriceResponse extends Response
     {
         $this->set("IpPrice", $ipPrice);
     }
+
+
 }

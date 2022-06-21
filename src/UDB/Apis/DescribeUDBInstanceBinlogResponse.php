@@ -54,4 +54,6 @@ class DescribeUDBInstanceBinlogResponse extends Response
         }
         return $result;
     }
+
+
 }

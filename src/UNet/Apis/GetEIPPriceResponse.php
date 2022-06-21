@@ -54,4 +54,6 @@ class GetEIPPriceResponse extends Response
         }
         return $result;
     }
+
+
 }

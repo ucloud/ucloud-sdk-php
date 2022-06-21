@@ -24,4 +24,8 @@ class GetNetworkMaskRequest extends Request
     {
         parent::__construct(["Action" => "GetNetworkMask"]);
     }
+
+    
+
+
 }

@@ -49,7 +49,7 @@ class UAccountClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。
+     *     "ProjectId" => (string) 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。 
      *     "MemberEmail" => (string) 被加入成员Email
      *     "CharacterId" => (string) 被加入成员归属角色ID
      * ]
@@ -62,8 +62,7 @@ class UAccountClient extends Client
      * @return AddMemberToProjectResponse
      * @throws UCloudException
      */
-    public function addMemberToProject(AddMemberToProjectRequest $request = null)
-    {
+    public function addMemberToProject(AddMemberToProjectRequest $request = null) {
         $resp = $this->invoke($request);
         return new AddMemberToProjectResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -87,8 +86,7 @@ class UAccountClient extends Client
      * @return FreezeMemberResponse
      * @throws UCloudException
      */
-    public function freezeMember(FreezeMemberRequest $request = null)
-    {
+    public function freezeMember(FreezeMemberRequest $request = null) {
         $resp = $this->invoke($request);
         return new FreezeMemberResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -115,8 +113,7 @@ class UAccountClient extends Client
      * @return GetNetworkMaskResponse
      * @throws UCloudException
      */
-    public function getNetworkMask(GetNetworkMaskRequest $request = null)
-    {
+    public function getNetworkMask(GetNetworkMaskRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetNetworkMaskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -153,8 +150,7 @@ class UAccountClient extends Client
      * @return GetProjectListResponse
      * @throws UCloudException
      */
-    public function getProjectList(GetProjectListRequest $request = null)
-    {
+    public function getProjectList(GetProjectListRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetProjectListResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -187,8 +183,7 @@ class UAccountClient extends Client
      * @return GetRegionResponse
      * @throws UCloudException
      */
-    public function getRegion(GetRegionRequest $request = null)
-    {
+    public function getRegion(GetRegionRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetRegionResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -215,8 +210,7 @@ class UAccountClient extends Client
      * @return InviteSubaccountResponse
      * @throws UCloudException
      */
-    public function inviteSubaccount(InviteSubaccountRequest $request = null)
-    {
+    public function inviteSubaccount(InviteSubaccountRequest $request = null) {
         $resp = $this->invoke($request);
         return new InviteSubaccountResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -229,7 +223,7 @@ class UAccountClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。
+     *     "ProjectId" => (string) 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 
      *     "MemberEmail" => (string) 需要被移除成员Email
      * ]
      *
@@ -241,8 +235,7 @@ class UAccountClient extends Client
      * @return RemoveMemberFromProjectResponse
      * @throws UCloudException
      */
-    public function removeMemberFromProject(RemoveMemberFromProjectRequest $request = null)
-    {
+    public function removeMemberFromProject(RemoveMemberFromProjectRequest $request = null) {
         $resp = $this->invoke($request);
         return new RemoveMemberFromProjectResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -268,8 +261,7 @@ class UAccountClient extends Client
      * @return SetNetworkMaskResponse
      * @throws UCloudException
      */
-    public function setNetworkMask(SetNetworkMaskRequest $request = null)
-    {
+    public function setNetworkMask(SetNetworkMaskRequest $request = null) {
         $resp = $this->invoke($request);
         return new SetNetworkMaskResponse($resp->toArray(), $resp->getRequestId());
     }

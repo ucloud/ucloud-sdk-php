@@ -41,4 +41,6 @@ class CreateVPCResponse extends Response
     {
         $this->set("VPCId", $vpcId);
     }
+
+
 }

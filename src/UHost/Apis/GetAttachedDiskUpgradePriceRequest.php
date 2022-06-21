@@ -94,7 +94,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
     /**
      * DiskSpace: 磁盘大小，单位GB，步长为10。取值范围需大于当前磁盘大小，最大值请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -170,4 +170,6 @@ class GetAttachedDiskUpgradePriceRequest extends Request
     {
         $this->set("BackupMode", $backupMode);
     }
+
+
 }

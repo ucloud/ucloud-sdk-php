@@ -105,7 +105,7 @@ class NatGatewayDataSet extends Response
     /**
      * CreateTime: natgw创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -285,4 +285,6 @@ class NatGatewayDataSet extends Response
     {
         $this->set("PolicyId", $policyId);
     }
+
+
 }

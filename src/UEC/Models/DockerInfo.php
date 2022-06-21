@@ -83,9 +83,9 @@ class DockerInfo extends Response
     }
 
     /**
-     * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常
+     * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getState()
     {
@@ -93,7 +93,7 @@ class DockerInfo extends Response
     }
 
     /**
-     * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常
+     * State: 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止；6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常 
      *
      * @param int $state
      */
@@ -245,4 +245,6 @@ class DockerInfo extends Response
         }
         return $result;
     }
+
+
 }

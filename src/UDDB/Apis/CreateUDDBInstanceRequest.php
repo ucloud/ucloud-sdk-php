@@ -181,7 +181,7 @@ class CreateUDDBInstanceRequest extends Request
     /**
      * RouterNodeNum: 其他版本：该参数可不填；专享版：物理机台数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRouterNodeNum()
     {
@@ -201,7 +201,7 @@ class CreateUDDBInstanceRequest extends Request
     /**
      * DataNodeCount: 初始的数据节点个数 取值必须>0.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeCount()
     {
@@ -221,7 +221,7 @@ class CreateUDDBInstanceRequest extends Request
     /**
      * DataNodeMemory: 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeMemory()
     {
@@ -241,7 +241,7 @@ class CreateUDDBInstanceRequest extends Request
     /**
      * DataNodeDiskSpace: 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeDiskSpace()
     {
@@ -321,7 +321,7 @@ class CreateUDDBInstanceRequest extends Request
     /**
      * Quantity: 购买时长，默认值1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -361,7 +361,7 @@ class CreateUDDBInstanceRequest extends Request
     /**
      * Port: 端口号，mysql默认端口为3306
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -381,7 +381,7 @@ class CreateUDDBInstanceRequest extends Request
     /**
      * DataNodeSlaveCount: 每个数据节点的只读实例个数, 取值必须>=0. 默认取值为0.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeSlaveCount()
     {
@@ -457,4 +457,6 @@ class CreateUDDBInstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

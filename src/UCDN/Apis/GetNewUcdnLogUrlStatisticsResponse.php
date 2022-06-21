@@ -55,4 +55,6 @@ class GetNewUcdnLogUrlStatisticsResponse extends Response
         }
         return $result;
     }
+
+
 }

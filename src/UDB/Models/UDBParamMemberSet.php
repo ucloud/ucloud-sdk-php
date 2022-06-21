@@ -65,7 +65,7 @@ class UDBParamMemberSet extends Response
     /**
      * ValueType: 参数值应用类型，取值范围为{0,10,20,30},各值 代表意义为 0-unknown、10-int、20-string、 30-bool
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getValueType()
     {
@@ -105,7 +105,7 @@ class UDBParamMemberSet extends Response
     /**
      * ApplyType: 参数值应用类型,取值范围为{0,10,20}，各值代表 意义为0-unknown、10-static、20-dynamic
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getApplyType()
     {
@@ -145,7 +145,7 @@ class UDBParamMemberSet extends Response
     /**
      * FormatType: 允许值的格式类型，取值范围为{0,10,20}，意义分 别为PVFT_UNKOWN=0,PVFT_RANGE=10, PVFT_ENUM=20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getFormatType()
     {
@@ -161,4 +161,6 @@ class UDBParamMemberSet extends Response
     {
         $this->set("FormatType", $formatType);
     }
+
+
 }

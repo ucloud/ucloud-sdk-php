@@ -54,4 +54,6 @@ class QueryIpLocationResponse extends Response
         }
         return $result;
     }
+
+
 }

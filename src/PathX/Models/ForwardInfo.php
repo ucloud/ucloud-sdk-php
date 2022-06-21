@@ -189,7 +189,7 @@ class ForwardInfo extends Response
     /**
      * Bandwidth: 购买的带宽值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -249,7 +249,7 @@ class ForwardInfo extends Response
     /**
      * CreateTime: 资源创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -269,7 +269,7 @@ class ForwardInfo extends Response
     /**
      * ExpireTime: 资源过期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -397,4 +397,6 @@ class ForwardInfo extends Response
     {
         $this->set("Domain", $domain);
     }
+
+
 }

@@ -110,9 +110,9 @@ class DescribeVPCRequest extends Request
     }
 
     /**
-     * Offset:
+     * Offset: 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -120,7 +120,7 @@ class DescribeVPCRequest extends Request
     }
 
     /**
-     * Offset:
+     * Offset: 
      *
      * @param int $offset
      */
@@ -130,9 +130,9 @@ class DescribeVPCRequest extends Request
     }
 
     /**
-     * Limit:
+     * Limit: 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -140,7 +140,7 @@ class DescribeVPCRequest extends Request
     }
 
     /**
-     * Limit:
+     * Limit: 
      *
      * @param int $limit
      */
@@ -148,4 +148,6 @@ class DescribeVPCRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

@@ -92,7 +92,7 @@ class GetAvailableResourceForPolicyRequest extends Request
     /**
      * Limit: 返回数据长度，默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -112,7 +112,7 @@ class GetAvailableResourceForPolicyRequest extends Request
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -128,4 +128,6 @@ class GetAvailableResourceForPolicyRequest extends Request
     {
         $this->set("Offset", $offset);
     }
+
+
 }

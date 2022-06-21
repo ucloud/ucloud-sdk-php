@@ -114,7 +114,7 @@ class ResizeUDiskRequest extends Request
     /**
      * Size: 调整后大小, 单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；RSSD数据盘：范围[1~32000]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -170,4 +170,6 @@ class ResizeUDiskRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

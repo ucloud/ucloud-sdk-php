@@ -81,4 +81,6 @@ class FeatureModes extends Response
     {
         $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
     }
+
+
 }

@@ -45,7 +45,7 @@ class RouteTableInfo extends Response
     /**
      * RouteTableType: 路由表类型。1为默认路由表，0为自定义路由表
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRouteTableType()
     {
@@ -65,7 +65,7 @@ class RouteTableInfo extends Response
     /**
      * SubnetCount: 绑定该路由表的子网数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSubnetCount()
     {
@@ -80,6 +80,26 @@ class RouteTableInfo extends Response
     public function setSubnetCount($subnetCount)
     {
         $this->set("SubnetCount", $subnetCount);
+    }
+
+    /**
+     * SubnetIds: 绑定该路由表的子网
+     *
+     * @return string[]|null
+     */
+    public function getSubnetIds()
+    {
+        return $this->get("SubnetIds");
+    }
+
+    /**
+     * SubnetIds: 绑定该路由表的子网
+     *
+     * @param string[] $subnetIds
+     */
+    public function setSubnetIds(array $subnetIds)
+    {
+        $this->set("SubnetIds", $subnetIds);
     }
 
     /**
@@ -165,7 +185,7 @@ class RouteTableInfo extends Response
     /**
      * CreateTime: 创建时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -213,4 +233,6 @@ class RouteTableInfo extends Response
         }
         return $result;
     }
+
+
 }

@@ -121,4 +121,6 @@ class NatgwSubnetDataSet extends Response
     {
         $this->set("HasNATGW", $hasNATGW);
     }
+
+
 }

@@ -70,7 +70,7 @@ class UpdateUEcFirewallRequest extends Request
     }
 
     /**
-     * Rule:
+     * Rule: 
      *
      * @return UpdateUEcFirewallParamRule[]|null
      */
@@ -88,7 +88,7 @@ class UpdateUEcFirewallRequest extends Request
     }
 
     /**
-     * Rule:
+     * Rule: 
      *
      * @param UpdateUEcFirewallParamRule[] $rule
      */
@@ -100,4 +100,6 @@ class UpdateUEcFirewallRequest extends Request
         }
         return $result;
     }
+
+
 }

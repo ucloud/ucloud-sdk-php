@@ -99,8 +99,7 @@ class ULBClient extends Client
      * @return AllocateBackendResponse
      * @throws UCloudException
      */
-    public function allocateBackend(AllocateBackendRequest $request = null)
-    {
+    public function allocateBackend(AllocateBackendRequest $request = null) {
         $resp = $this->invoke($request);
         return new AllocateBackendResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -128,8 +127,7 @@ class ULBClient extends Client
      * @return BindSSLResponse
      * @throws UCloudException
      */
-    public function bindSSL(BindSSLRequest $request = null)
-    {
+    public function bindSSL(BindSSLRequest $request = null) {
         $resp = $this->invoke($request);
         return new BindSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -161,8 +159,7 @@ class ULBClient extends Client
      * @return CreatePolicyResponse
      * @throws UCloudException
      */
-    public function createPolicy(CreatePolicyRequest $request = null)
-    {
+    public function createPolicy(CreatePolicyRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreatePolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -175,9 +172,9 @@ class ULBClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "SSLName" => (string) SSL证书的名字，默认值为空
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "SSLName" => (string) SSL证书的名字，默认值不为空
      *     "SSLType" => (string) 所添加的SSL证书类型，目前只支持Pem格式
      *     "SSLContent" => (string) SSL证书的完整内容，包括用户证书、加密证书的私钥、CA证书
      *     "UserCert" => (string) 用户的证书
@@ -194,8 +191,7 @@ class ULBClient extends Client
      * @return CreateSSLResponse
      * @throws UCloudException
      */
-    public function createSSL(CreateSSLRequest $request = null)
-    {
+    public function createSSL(CreateSSLRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -211,7 +207,7 @@ class ULBClient extends Client
      *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "ULBName" => (string) 负载均衡的名字，默认值为“ULB”
-     *     "Tag" => (string) 业务组
+     *     "Tag" => (string) 业务组 
      *     "Remark" => (string) 备注
      *     "OuterMode" => (string) 创建的ULB是否为外网模式，默认即为外网模式
      *     "InnerMode" => (string) 创建的ULB是否为内网模式
@@ -233,8 +229,7 @@ class ULBClient extends Client
      * @return CreateULBResponse
      * @throws UCloudException
      */
-    public function createULB(CreateULBRequest $request = null)
-    {
+    public function createULB(CreateULBRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateULBResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -274,8 +269,7 @@ class ULBClient extends Client
      * @return CreateVServerResponse
      * @throws UCloudException
      */
-    public function createVServer(CreateVServerRequest $request = null)
-    {
+    public function createVServer(CreateVServerRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateVServerResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -302,8 +296,7 @@ class ULBClient extends Client
      * @return DeletePolicyResponse
      * @throws UCloudException
      */
-    public function deletePolicy(DeletePolicyRequest $request = null)
-    {
+    public function deletePolicy(DeletePolicyRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeletePolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -329,8 +322,7 @@ class ULBClient extends Client
      * @return DeleteSSLResponse
      * @throws UCloudException
      */
-    public function deleteSSL(DeleteSSLRequest $request = null)
-    {
+    public function deleteSSL(DeleteSSLRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -357,8 +349,7 @@ class ULBClient extends Client
      * @return DeleteULBResponse
      * @throws UCloudException
      */
-    public function deleteULB(DeleteULBRequest $request = null)
-    {
+    public function deleteULB(DeleteULBRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteULBResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -385,8 +376,7 @@ class ULBClient extends Client
      * @return DeleteVServerResponse
      * @throws UCloudException
      */
-    public function deleteVServer(DeleteVServerRequest $request = null)
-    {
+    public function deleteVServer(DeleteVServerRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteVServerResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -433,8 +423,7 @@ class ULBClient extends Client
      * @return DescribeSSLResponse
      * @throws UCloudException
      */
-    public function describeSSL(DescribeSSLRequest $request = null)
-    {
+    public function describeSSL(DescribeSSLRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -534,7 +523,7 @@ class ULBClient extends Client
      *                     "ListenType" => (string) 监听器类型，枚举值为: RequestProxy -> 请求代理；PacketsTransmit -> 报文转发
      *                     "PolicySet" => (array<object>) 内容转发信息列表，具体结构见下方 ULBPolicySet[
      *                         [
-     *                             "DomainMatchMode" => (string) 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     *                             "DomainMatchMode" => (string) 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名	
      *                             "PolicyId" => (string) 内容转发Id，默认内容转发类型下为空。
      *                             "PolicyType" => (string) 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发
      *                             "Type" => (string) 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空
@@ -585,8 +574,7 @@ class ULBClient extends Client
      * @return DescribeULBResponse
      * @throws UCloudException
      */
-    public function describeULB(DescribeULBRequest $request = null)
-    {
+    public function describeULB(DescribeULBRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeULBResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -658,8 +646,7 @@ class ULBClient extends Client
      * @return DescribeULBSimpleResponse
      * @throws UCloudException
      */
-    public function describeULBSimple(DescribeULBSimpleRequest $request = null)
-    {
+    public function describeULBSimple(DescribeULBSimpleRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeULBSimpleResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -739,7 +726,7 @@ class ULBClient extends Client
      *             "ListenType" => (string) 监听器类型，枚举值为: RequestProxy -> 请求代理；PacketsTransmit -> 报文转发
      *             "PolicySet" => (array<object>) 内容转发信息列表，具体结构见下方 ULBPolicySet[
      *                 [
-     *                     "DomainMatchMode" => (string) 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     *                     "DomainMatchMode" => (string) 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名	
      *                     "PolicyId" => (string) 内容转发Id，默认内容转发类型下为空。
      *                     "PolicyType" => (string) 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发
      *                     "Type" => (string) 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空
@@ -769,8 +756,7 @@ class ULBClient extends Client
      * @return DescribeVServerResponse
      * @throws UCloudException
      */
-    public function describeVServer(DescribeVServerRequest $request = null)
-    {
+    public function describeVServer(DescribeVServerRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeVServerResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -797,8 +783,7 @@ class ULBClient extends Client
      * @return ReleaseBackendResponse
      * @throws UCloudException
      */
-    public function releaseBackend(ReleaseBackendRequest $request = null)
-    {
+    public function releaseBackend(ReleaseBackendRequest $request = null) {
         $resp = $this->invoke($request);
         return new ReleaseBackendResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -826,8 +811,7 @@ class ULBClient extends Client
      * @return UnbindSSLResponse
      * @throws UCloudException
      */
-    public function unbindSSL(UnbindSSLRequest $request = null)
-    {
+    public function unbindSSL(UnbindSSLRequest $request = null) {
         $resp = $this->invoke($request);
         return new UnbindSSLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -845,7 +829,7 @@ class ULBClient extends Client
      *     "ULBId" => (string) 负载均衡资源ID
      *     "BackendId" => (string) 后端资源实例的ID(ULB后端ID，非资源自身ID)
      *     "Port" => (integer) 后端资源服务端口，取值范围[1-65535]
-     *     "Weight" => (integer) 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     *     "Weight" => (integer) 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *     "Enabled" => (integer) 后端实例状态开关
      *     "IsBackup" => (integer) 是否为backup0：主rs1：备rs默认为0
      * ]
@@ -858,8 +842,7 @@ class ULBClient extends Client
      * @return UpdateBackendAttributeResponse
      * @throws UCloudException
      */
-    public function updateBackendAttribute(UpdateBackendAttributeRequest $request = null)
-    {
+    public function updateBackendAttribute(UpdateBackendAttributeRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateBackendAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -890,8 +873,7 @@ class ULBClient extends Client
      * @return UpdatePolicyResponse
      * @throws UCloudException
      */
-    public function updatePolicy(UpdatePolicyRequest $request = null)
-    {
+    public function updatePolicy(UpdatePolicyRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdatePolicyResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -918,8 +900,7 @@ class ULBClient extends Client
      * @return UpdateSSLAttributeResponse
      * @throws UCloudException
      */
-    public function updateSSLAttribute(UpdateSSLAttributeRequest $request = null)
-    {
+    public function updateSSLAttribute(UpdateSSLAttributeRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateSSLAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -948,8 +929,7 @@ class ULBClient extends Client
      * @return UpdateULBAttributeResponse
      * @throws UCloudException
      */
-    public function updateULBAttribute(UpdateULBAttributeRequest $request = null)
-    {
+    public function updateULBAttribute(UpdateULBAttributeRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateULBAttributeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -986,8 +966,7 @@ class ULBClient extends Client
      * @return UpdateVServerAttributeResponse
      * @throws UCloudException
      */
-    public function updateVServerAttribute(UpdateVServerAttributeRequest $request = null)
-    {
+    public function updateVServerAttribute(UpdateVServerAttributeRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateVServerAttributeResponse($resp->toArray(), $resp->getRequestId());
     }

@@ -25,7 +25,7 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
     /**
      * Bandwidth: 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -121,4 +121,6 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

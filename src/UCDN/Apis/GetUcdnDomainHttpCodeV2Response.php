@@ -60,4 +60,6 @@ class GetUcdnDomainHttpCodeV2Response extends Response
         }
         return $result;
     }
+
+
 }

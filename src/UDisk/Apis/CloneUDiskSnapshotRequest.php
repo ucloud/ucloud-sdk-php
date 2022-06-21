@@ -134,7 +134,7 @@ class CloneUDiskSnapshotRequest extends Request
     /**
      * Size: 购买UDisk大小,单位:GB,范围[1~8000]。(UDisk大小设定对本地盘快照有效，对云盘快照无效)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -194,7 +194,7 @@ class CloneUDiskSnapshotRequest extends Request
     /**
      * Quantity: 购买时长 默认: 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -330,4 +330,6 @@ class CloneUDiskSnapshotRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

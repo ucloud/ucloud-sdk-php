@@ -25,7 +25,7 @@ class CreateUDBParamGroupResponse extends Response
     /**
      * GroupId: 新配置参数组id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGroupId()
     {
@@ -41,4 +41,6 @@ class CreateUDBParamGroupResponse extends Response
     {
         $this->set("GroupId", $groupId);
     }
+
+
 }

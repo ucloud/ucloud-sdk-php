@@ -113,4 +113,6 @@ class BatchInfo extends Response
     {
         $this->set("FailureDetails", $failureDetails);
     }
+
+
 }

@@ -95,7 +95,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
     /**
      * BeginTime: 过滤条件:起始时间(时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -115,7 +115,7 @@ class BackupUDBInstanceSlowLogRequest extends Request
     /**
      * EndTime: 过滤条件:结束时间(时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -151,4 +151,6 @@ class BackupUDBInstanceSlowLogRequest extends Request
     {
         $this->set("BackupName", $backupName);
     }
+
+
 }

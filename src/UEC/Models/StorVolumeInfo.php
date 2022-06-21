@@ -85,7 +85,7 @@ class StorVolumeInfo extends Response
     /**
      * DiskSize: 容量（单位GB）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSize()
     {
@@ -101,4 +101,6 @@ class StorVolumeInfo extends Response
     {
         $this->set("DiskSize", $diskSize);
     }
+
+
 }

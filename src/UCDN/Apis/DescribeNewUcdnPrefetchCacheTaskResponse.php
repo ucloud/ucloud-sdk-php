@@ -27,7 +27,7 @@ class DescribeNewUcdnPrefetchCacheTaskResponse extends Response
     /**
      * TotalCount: 预热任务的总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeNewUcdnPrefetchCacheTaskResponse extends Response
         }
         return $result;
     }
+
+
 }

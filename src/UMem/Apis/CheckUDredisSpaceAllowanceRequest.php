@@ -74,7 +74,7 @@ class CheckUDredisSpaceAllowanceRequest extends Request
     /**
      * Size: 创建实例的容量大小,，扩容时的分片目标容量大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -130,4 +130,6 @@ class CheckUDredisSpaceAllowanceRequest extends Request
     {
         $this->set("GroupId", $groupId);
     }
+
+
 }

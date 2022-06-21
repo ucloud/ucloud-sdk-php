@@ -54,4 +54,6 @@ class GetVPNGatewayPriceResponse extends Response
         }
         return $result;
     }
+
+
 }

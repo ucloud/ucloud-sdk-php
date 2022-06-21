@@ -101,4 +101,6 @@ class NATGWSnatRule extends Response
     {
         $this->set("Name", $name);
     }
+
+
 }

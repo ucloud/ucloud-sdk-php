@@ -25,7 +25,7 @@ class RouteRuleInfo extends Response
     /**
      * AccountId: 项目ID信息
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAccountId()
     {
@@ -65,7 +65,7 @@ class RouteRuleInfo extends Response
     /**
      * DstPort: 保留字段，暂未使用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDstPort()
     {
@@ -123,6 +123,26 @@ class RouteRuleInfo extends Response
     }
 
     /**
+     * InstanceType: 实例类型，枚举值：UHOST，云主机；UNI，虚拟网卡；PHOST，物理云主机
+     *
+     * @return string|null
+     */
+    public function getInstanceType()
+    {
+        return $this->get("InstanceType");
+    }
+
+    /**
+     * InstanceType: 实例类型，枚举值：UHOST，云主机；UNI，虚拟网卡；PHOST，物理云主机
+     *
+     * @param string $instanceType
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->set("InstanceType", $instanceType);
+    }
+
+    /**
      * OriginAddr: 保留字段，暂未使用
      *
      * @return string|null
@@ -145,7 +165,7 @@ class RouteRuleInfo extends Response
     /**
      * Priority: 保留字段，暂未使用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPriority()
     {
@@ -225,7 +245,7 @@ class RouteRuleInfo extends Response
     /**
      * RuleType: 路由规则类型。0，系统路由规则；1，自定义路由规则
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRuleType()
     {
@@ -265,7 +285,7 @@ class RouteRuleInfo extends Response
     /**
      * SrcPort: 保留字段，暂未使用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSrcPort()
     {
@@ -301,4 +321,6 @@ class RouteRuleInfo extends Response
     {
         $this->set("VNetId", $vNetId);
     }
+
+
 }

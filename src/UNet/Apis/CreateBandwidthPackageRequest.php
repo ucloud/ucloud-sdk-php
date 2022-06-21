@@ -54,7 +54,7 @@ class CreateBandwidthPackageRequest extends Request
     /**
      * Bandwidth: 带宽大小(单位Mbps), 取值范围[2,800] (最大值受地域限制)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -94,7 +94,7 @@ class CreateBandwidthPackageRequest extends Request
     /**
      * TimeRange: 带宽包有效时长, 取值范围为大于0的整数, 即该带宽包在EnableTime到 EnableTime+TimeRange时间段内生效
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTimeRange()
     {
@@ -114,7 +114,7 @@ class CreateBandwidthPackageRequest extends Request
     /**
      * EnableTime: 生效时间, 格式为 Unix timestamp, 默认为立即开通
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEnableTime()
     {
@@ -150,4 +150,6 @@ class CreateBandwidthPackageRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

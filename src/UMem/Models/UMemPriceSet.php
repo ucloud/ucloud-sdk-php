@@ -45,7 +45,7 @@ class UMemPriceSet extends Response
     /**
      * Price: 现价
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -65,7 +65,7 @@ class UMemPriceSet extends Response
     /**
      * OriginalPrice: 原价
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginalPrice()
     {
@@ -81,4 +81,6 @@ class UMemPriceSet extends Response
     {
         $this->set("OriginalPrice", $originalPrice);
     }
+
+
 }

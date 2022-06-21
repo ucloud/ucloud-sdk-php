@@ -114,7 +114,7 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
     /**
      * MemoryLimit: 内存限制(MB)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemoryLimit()
     {
@@ -134,7 +134,7 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 500G
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -190,4 +190,6 @@ class DescribeUDBInstanceUpgradePriceRequest extends Request
     {
         $this->set("SSDType", $ssdType);
     }
+
+
 }

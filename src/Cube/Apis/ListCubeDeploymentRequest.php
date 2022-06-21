@@ -93,7 +93,7 @@ class ListCubeDeploymentRequest extends Request
     /**
      * Offset: 默认0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -113,7 +113,7 @@ class ListCubeDeploymentRequest extends Request
     /**
      * Limit: 默认20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -129,4 +129,6 @@ class ListCubeDeploymentRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

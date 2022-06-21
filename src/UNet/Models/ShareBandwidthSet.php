@@ -25,7 +25,7 @@ class ShareBandwidthSet extends Response
     /**
      * ShareBandwidth: 共享带宽带宽值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShareBandwidth()
     {
@@ -81,4 +81,6 @@ class ShareBandwidthSet extends Response
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
+
+
 }

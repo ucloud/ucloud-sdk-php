@@ -177,7 +177,7 @@ class GetCubePriceRequest extends Request
     /**
      * Quantity: 购买时长。默认:值 1。按小时购买（Dynamic/Postpay）时无需此参数。 月付时，此参数传0，代表购买至月末。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -193,4 +193,6 @@ class GetCubePriceRequest extends Request
     {
         $this->set("Quantity", $quantity);
     }
+
+
 }

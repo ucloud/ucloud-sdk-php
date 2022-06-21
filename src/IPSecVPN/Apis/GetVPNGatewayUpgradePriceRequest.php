@@ -110,4 +110,6 @@ class GetVPNGatewayUpgradePriceRequest extends Request
     {
         $this->set("Grade", $grade);
     }
+
+
 }

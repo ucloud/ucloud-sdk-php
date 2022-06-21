@@ -41,4 +41,6 @@ class GetGlobalSSHUpdatePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

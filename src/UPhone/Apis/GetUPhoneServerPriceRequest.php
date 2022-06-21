@@ -112,7 +112,7 @@ class GetUPhoneServerPriceRequest extends Request
     /**
      * Quantity: 购买时长。默认: 1。 月付时，此参数传0，代表了购买至月末。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -152,7 +152,7 @@ class GetUPhoneServerPriceRequest extends Request
     /**
      * Bandwidth: 购买独立IP需要此参数。共享带宽总值。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -172,7 +172,7 @@ class GetUPhoneServerPriceRequest extends Request
     /**
      * IpCount: 购买独立IP需要此参数。需要的eip数量。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIpCount()
     {
@@ -188,4 +188,6 @@ class GetUPhoneServerPriceRequest extends Request
     {
         $this->set("IpCount", $ipCount);
     }
+
+
 }

@@ -54,4 +54,6 @@ class GetRegionResponse extends Response
         }
         return $result;
     }
+
+
 }

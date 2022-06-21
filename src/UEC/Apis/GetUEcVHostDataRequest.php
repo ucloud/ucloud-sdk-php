@@ -92,7 +92,7 @@ class GetUEcVHostDataRequest extends Request
     /**
      * BeginTime: 查询起始时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -112,7 +112,7 @@ class GetUEcVHostDataRequest extends Request
     /**
      * EndTime: 查询结束时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -128,4 +128,6 @@ class GetUEcVHostDataRequest extends Request
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

@@ -51,7 +51,7 @@ class GetGlobalSSHPriceRequest extends Request
     /**
      * Quantity: 购买周期，如果ChargeType为Month，Quantity默认为0；其他情况必须为大于0的整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -89,7 +89,7 @@ class GetGlobalSSHPriceRequest extends Request
     }
 
     /**
-     * InstanceType: 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。
+     * InstanceType: 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。 
      *
      * @return string|null
      */
@@ -99,7 +99,7 @@ class GetGlobalSSHPriceRequest extends Request
     }
 
     /**
-     * InstanceType: 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。
+     * InstanceType: 版本类型。枚举值，Enterprise:企业版；Basic:基础版。可不填，默认为Basic。 
      *
      * @param string $instanceType
      */
@@ -107,4 +107,6 @@ class GetGlobalSSHPriceRequest extends Request
     {
         $this->set("InstanceType", $instanceType);
     }
+
+
 }

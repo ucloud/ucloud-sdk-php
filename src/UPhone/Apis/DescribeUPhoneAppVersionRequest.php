@@ -110,7 +110,7 @@ class DescribeUPhoneAppVersionRequest extends Request
     /**
      * Limit: 返回数据长度，默认为20，最大100
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -130,7 +130,7 @@ class DescribeUPhoneAppVersionRequest extends Request
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -146,4 +146,26 @@ class DescribeUPhoneAppVersionRequest extends Request
     {
         $this->set("Offset", $offset);
     }
+
+    /**
+     * ProductType: 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     *
+     * @return string|null
+     */
+    public function getProductType()
+    {
+        return $this->get("ProductType");
+    }
+
+    /**
+     * ProductType: 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     *
+     * @param string $productType
+     */
+    public function setProductType($productType)
+    {
+        $this->set("ProductType", $productType);
+    }
+
+
 }

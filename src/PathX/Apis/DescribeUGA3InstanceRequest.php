@@ -71,7 +71,7 @@ class DescribeUGA3InstanceRequest extends Request
     /**
      * Limit: 返回的最大条数，默认为100，最大值400
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -91,7 +91,7 @@ class DescribeUGA3InstanceRequest extends Request
     /**
      * Offset: 偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -107,4 +107,6 @@ class DescribeUGA3InstanceRequest extends Request
     {
         $this->set("Offset", $offset);
     }
+
+
 }

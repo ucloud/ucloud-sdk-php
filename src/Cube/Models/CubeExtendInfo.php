@@ -97,7 +97,7 @@ class CubeExtendInfo extends Response
     /**
      * Expiration: 资源有效期
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpiration()
     {
@@ -133,4 +133,6 @@ class CubeExtendInfo extends Response
     {
         $this->set("Tag", $tag);
     }
+
+
 }

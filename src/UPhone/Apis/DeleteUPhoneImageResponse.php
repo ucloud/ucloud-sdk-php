@@ -41,4 +41,6 @@ class DeleteUPhoneImageResponse extends Response
     {
         $this->set("ImageId", $imageId);
     }
+
+
 }

@@ -92,7 +92,7 @@ class GetUDPNUpgradePriceRequest extends Request
     /**
      * Bandwidth: 带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -108,4 +108,6 @@ class GetUDPNUpgradePriceRequest extends Request
     {
         $this->set("Bandwidth", $bandwidth);
     }
+
+
 }

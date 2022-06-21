@@ -41,4 +41,6 @@ class GetUFileQuotaPriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

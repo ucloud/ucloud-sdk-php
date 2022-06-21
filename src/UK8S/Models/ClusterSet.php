@@ -145,7 +145,7 @@ class ClusterSet extends Response
     /**
      * MasterCount: Master 节点数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMasterCount()
     {
@@ -225,7 +225,7 @@ class ClusterSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -245,7 +245,7 @@ class ClusterSet extends Response
     /**
      * NodeCount: Node节点数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNodeCount()
     {
@@ -263,7 +263,7 @@ class ClusterSet extends Response
     }
 
     /**
-     * ExternalApiServer: 集群外部apiserver地址
+     * ExternalApiServer: 集群外部apiserver地址	
      *
      * @return string|null
      */
@@ -273,7 +273,7 @@ class ClusterSet extends Response
     }
 
     /**
-     * ExternalApiServer: 集群外部apiserver地址
+     * ExternalApiServer: 集群外部apiserver地址	
      *
      * @param string $externalApiServer
      */
@@ -301,4 +301,6 @@ class ClusterSet extends Response
     {
         $this->set("Status", $status);
     }
+
+
 }

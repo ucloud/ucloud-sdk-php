@@ -86,7 +86,7 @@ class DescribeUDBSplittingInfoResponse extends Response
     /**
      * DelayThreshold: 时间阈值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDelayThreshold()
     {
@@ -106,7 +106,7 @@ class DescribeUDBSplittingInfoResponse extends Response
     /**
      * Port: 端口号
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -214,4 +214,6 @@ class DescribeUDBSplittingInfoResponse extends Response
         }
         return $result;
     }
+
+
 }

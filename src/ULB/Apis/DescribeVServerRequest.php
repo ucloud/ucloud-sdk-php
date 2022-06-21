@@ -112,7 +112,7 @@ class DescribeVServerRequest extends Request
     /**
      * Limit: 数据分页值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -132,7 +132,7 @@ class DescribeVServerRequest extends Request
     /**
      * Offset: 数据偏移量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -148,4 +148,6 @@ class DescribeVServerRequest extends Request
     {
         $this->set("Offset", $offset);
     }
+
+
 }

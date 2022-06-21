@@ -61,4 +61,6 @@ class NatGWIPResInfo extends Response
     {
         $this->set("EIP", $eip);
     }
+
+
 }

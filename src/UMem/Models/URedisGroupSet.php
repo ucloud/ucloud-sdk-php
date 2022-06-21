@@ -45,7 +45,7 @@ class URedisGroupSet extends Response
     /**
      * RewriteTime: 返回运维时间 0 //0点 1 //1点 以此类推
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRewriteTime()
     {
@@ -205,7 +205,7 @@ class URedisGroupSet extends Response
     /**
      * MemorySize: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemorySize()
     {
@@ -285,7 +285,7 @@ class URedisGroupSet extends Response
     /**
      * Port: 节点分配的服务端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -305,7 +305,7 @@ class URedisGroupSet extends Response
     /**
      * Size: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -325,7 +325,7 @@ class URedisGroupSet extends Response
     /**
      * UsedSize: 使用量单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUsedSize()
     {
@@ -365,7 +365,7 @@ class URedisGroupSet extends Response
     /**
      * BackupTime: 组自动备份开始时间,单位小时计,范围[0-23]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -425,7 +425,7 @@ class URedisGroupSet extends Response
     /**
      * ExpireTime: 过期时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -485,7 +485,7 @@ class URedisGroupSet extends Response
     /**
      * CreateTime: 创建时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -505,7 +505,7 @@ class URedisGroupSet extends Response
     /**
      * ModifyTime: 修改时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -561,4 +561,6 @@ class URedisGroupSet extends Response
     {
         $this->set("SlaveZone", $slaveZone);
     }
+
+
 }

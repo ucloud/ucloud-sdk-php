@@ -188,4 +188,6 @@ class DescribeVIPRequest extends Request
     {
         $this->set("BusinessId", $businessId);
     }
+
+
 }

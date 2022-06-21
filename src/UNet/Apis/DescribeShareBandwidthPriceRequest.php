@@ -93,7 +93,7 @@ class DescribeShareBandwidthPriceRequest extends Request
     /**
      * ShareBandwidth: 共享带宽值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShareBandwidth()
     {
@@ -113,7 +113,7 @@ class DescribeShareBandwidthPriceRequest extends Request
     /**
      * Quantity: 购买数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -149,4 +149,6 @@ class DescribeShareBandwidthPriceRequest extends Request
     {
         $this->set("OperatorName", $operatorName);
     }
+
+
 }

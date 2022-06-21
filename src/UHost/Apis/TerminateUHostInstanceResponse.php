@@ -61,4 +61,6 @@ class TerminateUHostInstanceResponse extends Response
     {
         $this->set("UHostId", $uHostId);
     }
+
+
 }

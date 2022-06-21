@@ -23,7 +23,7 @@ class Task extends Response
     
 
     /**
-     * TaskId: Task的唯一标识
+     * TaskId: Task的唯一标识	
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class Task extends Response
     }
 
     /**
-     * TaskId: Task的唯一标识
+     * TaskId: Task的唯一标识	
      *
      * @param string $taskId
      */
@@ -43,9 +43,9 @@ class Task extends Response
     }
 
     /**
-     * BeginTime: 任务处理开始时间，格式为Unix时间戳。
+     * BeginTime: 任务处理开始时间，格式为Unix时间戳。	
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -53,7 +53,7 @@ class Task extends Response
     }
 
     /**
-     * BeginTime: 任务处理开始时间，格式为Unix时间戳。
+     * BeginTime: 任务处理开始时间，格式为Unix时间戳。	
      *
      * @param int $beginTime
      */
@@ -63,9 +63,9 @@ class Task extends Response
     }
 
     /**
-     * EndTime: 任务处理结束时间，格式为Unix时间戳。
+     * EndTime: 任务处理结束时间，格式为Unix时间戳。	
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -73,7 +73,7 @@ class Task extends Response
     }
 
     /**
-     * EndTime: 任务处理结束时间，格式为Unix时间戳。
+     * EndTime: 任务处理结束时间，格式为Unix时间戳。	
      *
      * @param int $endTime
      */
@@ -143,7 +143,7 @@ class Task extends Response
     }
 
     /**
-     * UPhoneId: 云手机的唯一标识，云手机相关任务包含此字段。
+     * UPhoneId: 云手机的唯一标识，云手机相关任务包含此字段。	
      *
      * @return string|null
      */
@@ -153,7 +153,7 @@ class Task extends Response
     }
 
     /**
-     * UPhoneId: 云手机的唯一标识，云手机相关任务包含此字段。
+     * UPhoneId: 云手机的唯一标识，云手机相关任务包含此字段。	
      *
      * @param string $uPhoneId
      */
@@ -181,4 +181,6 @@ class Task extends Response
     {
         $this->set("AppVersionId", $appVersionId);
     }
+
+
 }

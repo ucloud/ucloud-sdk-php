@@ -76,7 +76,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * CpuCore: cpu核心数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCpuCore()
     {
@@ -96,7 +96,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * MemSize: 内存大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemSize()
     {
@@ -116,7 +116,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * DiskSize: 数据盘大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSize()
     {
@@ -156,7 +156,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * NetLimit: 节点带宽限制，单位Mbs
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNetLimit()
     {
@@ -196,7 +196,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * SysDiskSize: 系统盘大小，单位GB， 默认20GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSysDiskSize()
     {
@@ -256,7 +256,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * NodeCount: 创建节点数量，默认1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNodeCount()
     {
@@ -276,7 +276,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * ChargeType: 付费方式，1按时，2按月，3按年，默认2
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeType()
     {
@@ -296,7 +296,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * ChargeQuantity: 月数或者年数，0计费到月底， 默认0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeQuantity()
     {
@@ -416,7 +416,7 @@ class CreateUEcVHostRequest extends Request
     /**
      * Gpu: Gpu卡核心数。仅Gpu机型支持此字段
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGpu()
     {
@@ -452,4 +452,6 @@ class CreateUEcVHostRequest extends Request
     {
         $this->set("GpuType", $gpuType);
     }
+
+
 }

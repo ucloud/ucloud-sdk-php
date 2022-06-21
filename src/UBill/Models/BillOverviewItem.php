@@ -123,7 +123,7 @@ class BillOverviewItem extends Response
     }
 
     /**
-     * ProductCategory: 产品分类    （账单维度按产品筛选时显示）
+     * ProductCategory: 产品分类	（账单维度按产品筛选时显示）
      *
      * @return string|null
      */
@@ -133,7 +133,7 @@ class BillOverviewItem extends Response
     }
 
     /**
-     * ProductCategory: 产品分类    （账单维度按产品筛选时显示）
+     * ProductCategory: 产品分类	（账单维度按产品筛选时显示）
      *
      * @param string $productCategory
      */
@@ -143,7 +143,7 @@ class BillOverviewItem extends Response
     }
 
     /**
-     * ResourceType: 产品类型   （账单维度按产品筛选时显示）
+     * ResourceType: 产品类型	（账单维度按产品筛选时显示）
      *
      * @return string|null
      */
@@ -153,7 +153,7 @@ class BillOverviewItem extends Response
     }
 
     /**
-     * ResourceType: 产品类型   （账单维度按产品筛选时显示）
+     * ResourceType: 产品类型	（账单维度按产品筛选时显示）
      *
      * @param string $resourceType
      */
@@ -165,7 +165,7 @@ class BillOverviewItem extends Response
     /**
      * ResourceTypeCode: 产品类型代码（账单维度按产品筛选时显示）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getResourceTypeCode()
     {
@@ -265,7 +265,7 @@ class BillOverviewItem extends Response
     /**
      * Admin: 该账户是否为主账号，1 主账号，0 子账号（账单维度按子账号筛选时显示）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAdmin()
     {
@@ -281,4 +281,6 @@ class BillOverviewItem extends Response
     {
         $this->set("Admin", $admin);
     }
+
+
 }

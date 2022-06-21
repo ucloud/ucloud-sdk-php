@@ -58,7 +58,7 @@ class DescribeURedisVersionResponse extends Response
     /**
      * TotalCount: 总版本个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeURedisVersionResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

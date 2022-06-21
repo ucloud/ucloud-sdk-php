@@ -59,7 +59,7 @@ class DescribePathXSSLResponse extends Response
     /**
      * TotalCount: 符合条件的证书总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribePathXSSLResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

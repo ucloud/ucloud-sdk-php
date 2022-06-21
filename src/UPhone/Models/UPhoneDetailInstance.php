@@ -43,7 +43,7 @@ class UPhoneDetailInstance extends Response
     }
 
     /**
-     * UPhoneId: 云手机规格名称
+     * UPhoneId: 云手机的唯一标识，不超过32个字节。
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class UPhoneDetailInstance extends Response
     }
 
     /**
-     * UPhoneId: 云手机规格名称
+     * UPhoneId: 云手机的唯一标识，不超过32个字节。
      *
      * @param string $uPhoneId
      */
@@ -63,9 +63,29 @@ class UPhoneDetailInstance extends Response
     }
 
     /**
+     * UPhoneModelName: 云手机规格名称
+     *
+     * @return string|null
+     */
+    public function getUPhoneModelName()
+    {
+        return $this->get("UPhoneModelName");
+    }
+
+    /**
+     * UPhoneModelName: 云手机规格名称
+     *
+     * @param string $uPhoneModelName
+     */
+    public function setUPhoneModelName($uPhoneModelName)
+    {
+        $this->set("UPhoneModelName", $uPhoneModelName);
+    }
+
+    /**
      * CPU: 虚拟CPU核数。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -85,7 +105,7 @@ class UPhoneDetailInstance extends Response
     /**
      * Memory: 内存大小。单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -105,7 +125,7 @@ class UPhoneDetailInstance extends Response
     /**
      * DiskSize: 磁盘大小，单位: GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSize()
     {
@@ -145,7 +165,7 @@ class UPhoneDetailInstance extends Response
     /**
      * Refresh: 刷新率
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRefresh()
     {
@@ -285,7 +305,7 @@ class UPhoneDetailInstance extends Response
     /**
      * CreateTime: 创建时间，格式为Unix时间戳。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -341,4 +361,6 @@ class UPhoneDetailInstance extends Response
     {
         $this->set("AppVersion", $appVersion->getAll());
     }
+
+
 }

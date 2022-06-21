@@ -23,7 +23,7 @@ class UHostImageSet extends Response
     
 
     /**
-     * Zone: 可用区，参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区，参见 [可用区列表](../summary/regionlist.html) 
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class UHostImageSet extends Response
     }
 
     /**
-     * Zone: 可用区，参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区，参见 [可用区列表](../summary/regionlist.html) 
      *
      * @param string $zone
      */
@@ -285,7 +285,7 @@ class UHostImageSet extends Response
     /**
      * CreateTime: 创建时间，格式为Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -305,7 +305,7 @@ class UHostImageSet extends Response
     /**
      * ImageSize: 镜像大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getImageSize()
     {
@@ -341,4 +341,6 @@ class UHostImageSet extends Response
     {
         $this->set("MinimalCPU", $minimalCPU);
     }
+
+
 }

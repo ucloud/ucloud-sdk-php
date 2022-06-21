@@ -175,7 +175,7 @@ class CreateVPNGatewayRequest extends Request
     /**
      * Quantity: 购买时长, 默认: 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -271,4 +271,6 @@ class CreateVPNGatewayRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

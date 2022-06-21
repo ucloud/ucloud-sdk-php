@@ -68,4 +68,6 @@ class DeleteGlobalSSHInstanceRequest extends Request
     {
         $this->set("InstanceId", $instanceId);
     }
+
+
 }

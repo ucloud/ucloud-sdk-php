@@ -65,7 +65,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
     /**
      * CPU: 一组Node节点的虚拟CPU核数。单位：核，范围：[2, 64]，可选范围参考控制台。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -85,7 +85,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
     /**
      * Mem: 一组Node节点的内存大小。单位：MB,范围 ：[4096, 262144]，取值为1024的倍数，可选范围参考控制台。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMem()
     {
@@ -105,7 +105,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
     /**
      * Count: 一组Node节点的数量，范围：[1,10]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -145,7 +145,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
     /**
      * MaxPods: Node节点上可运行最大节点数，默认为110。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxPods()
     {
@@ -265,7 +265,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
     /**
      * GPU: 一组Node节点的GPU卡核心数，仅GPU机型支持此字段。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -285,7 +285,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
     /**
      * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataDiskSize()
     {
@@ -301,4 +301,6 @@ class CreateUK8SClusterV2ParamNodes extends Request
     {
         $this->set("DataDiskSize", $dataDiskSize);
     }
+
+
 }

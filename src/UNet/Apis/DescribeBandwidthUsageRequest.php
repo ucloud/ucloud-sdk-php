@@ -71,7 +71,7 @@ class DescribeBandwidthUsageRequest extends Request
     /**
      * Limit: 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -91,7 +91,7 @@ class DescribeBandwidthUsageRequest extends Request
     /**
      * OffSet: 返回数据偏移量, 默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffSet()
     {
@@ -127,4 +127,6 @@ class DescribeBandwidthUsageRequest extends Request
     {
         $this->set("EIPIds", $eipIds);
     }
+
+
 }

@@ -172,7 +172,7 @@ class UpdateUFileTokenRequest extends Request
     /**
      * ExpireTime: 令牌的超时时间点（时间戳）;注意：过期时间不能超过 4102416000
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -188,4 +188,6 @@ class UpdateUFileTokenRequest extends Request
     {
         $this->set("ExpireTime", $expireTime);
     }
+
+
 }

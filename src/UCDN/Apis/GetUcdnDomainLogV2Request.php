@@ -52,7 +52,7 @@ class GetUcdnDomainLogV2Request extends Request
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -72,7 +72,7 @@ class GetUcdnDomainLogV2Request extends Request
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -108,4 +108,6 @@ class GetUcdnDomainLogV2Request extends Request
     {
         $this->set("DomainId", $domainId);
     }
+
+
 }

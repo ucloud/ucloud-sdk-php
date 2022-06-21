@@ -45,7 +45,7 @@ class NatGWWhitelistDataSet extends Response
     /**
      * IfOpen: 白名单开关标记
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIfOpen()
     {
@@ -93,4 +93,6 @@ class NatGWWhitelistDataSet extends Response
         }
         return $result;
     }
+
+
 }

@@ -55,4 +55,6 @@ class GetUSMSSendReceiptResponse extends Response
         }
         return $result;
     }
+
+
 }

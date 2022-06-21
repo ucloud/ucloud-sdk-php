@@ -54,4 +54,6 @@ class GetUHostInstancePriceResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -101,4 +101,6 @@ class SrcAreaInfo extends Response
     {
         $this->set("FlagUnicode", $flagUnicode);
     }
+
+
 }

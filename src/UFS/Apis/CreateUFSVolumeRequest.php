@@ -74,7 +74,7 @@ class CreateUFSVolumeRequest extends Request
     /**
      * Size: 文件系统大小，单位为GB，必须为100的整数倍，容量型Size最小为500GB，性能型文件系统Size最小为100GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -214,7 +214,7 @@ class CreateUFSVolumeRequest extends Request
     /**
      * Quantity: 购买时长 默认: 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -250,4 +250,6 @@ class CreateUFSVolumeRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

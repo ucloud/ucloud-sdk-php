@@ -22,5 +22,25 @@ class ResetUPhoneResponse extends Response
 {
     
 
+    /**
+     * JobId: 异步请求成功后返回JobId，用以查询Job状态
+     *
+     * @return string|null
+     */
+    public function getJobId()
+    {
+        return $this->get("JobId");
+    }
+
+    /**
+     * JobId: 异步请求成功后返回JobId，用以查询Job状态
+     *
+     * @param string $jobId
+     */
+    public function setJobId($jobId)
+    {
+        $this->set("JobId", $jobId);
+    }
+
 
 }

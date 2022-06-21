@@ -23,7 +23,7 @@ class Results extends Response
     
 
     /**
-     * ExecuteMsg:
+     * ExecuteMsg: 
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class Results extends Response
     }
 
     /**
-     * ExecuteMsg:
+     * ExecuteMsg: 
      *
      * @param string $executeMsg
      */
@@ -43,7 +43,7 @@ class Results extends Response
     }
 
     /**
-     * UPhoneId:
+     * UPhoneId: 
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class Results extends Response
     }
 
     /**
-     * UPhoneId:
+     * UPhoneId: 
      *
      * @param string $uPhoneId
      */
@@ -61,4 +61,6 @@ class Results extends Response
     {
         $this->set("UPhoneId", $uPhoneId);
     }
+
+
 }

@@ -165,7 +165,7 @@ class UFileTokenSet extends Response
     /**
      * ExpireTime: 令牌的超时时间点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -185,7 +185,7 @@ class UFileTokenSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -205,7 +205,7 @@ class UFileTokenSet extends Response
     /**
      * ModifyTime: 修改时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -241,4 +241,6 @@ class UFileTokenSet extends Response
     {
         $this->set("Region", $region);
     }
+
+
 }

@@ -105,7 +105,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getParamGroupId()
     {
@@ -185,7 +185,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * Port: 端口号，mysql默认3306，mongodb默认27017
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -225,7 +225,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * BackupCount: 备份策略，不可修改，备份文件保留的数量，默认7次
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupCount()
     {
@@ -245,7 +245,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * BackupBeginTime: 备份策略，不可修改，开始时间，单位小时计，默认3点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupBeginTime()
     {
@@ -265,7 +265,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * BackupDuration: 备份策略，一天内备份时间间隔，单位小时，默认24小时
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupDuration()
     {
@@ -325,7 +325,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * CreateTime: DB实例创建时间，采用UTC计时时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -345,7 +345,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * ModifyTime: DB实例修改时间，采用UTC计时时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -365,7 +365,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * ExpiredTime: DB实例过期时间，采用UTC计时时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpiredTime()
     {
@@ -405,7 +405,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * MemoryLimit: 内存限制(MB)，默认根据配置机型
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemoryLimit()
     {
@@ -425,7 +425,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * DiskSpace: 磁盘空间(GB), 默认根据配置机型
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -705,7 +705,7 @@ class UDBSlaveInstanceSet extends Response
     /**
      * InstanceTypeId: UDB数据库机型ID
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getInstanceTypeId()
     {
@@ -761,4 +761,6 @@ class UDBSlaveInstanceSet extends Response
     {
         $this->set("IPv6Address", $iPv6Address);
     }
+
+
 }

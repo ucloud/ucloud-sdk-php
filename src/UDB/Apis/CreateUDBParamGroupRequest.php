@@ -136,7 +136,7 @@ class CreateUDBParamGroupRequest extends Request
     /**
      * SrcGroupId: 源参数组id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSrcGroupId()
     {
@@ -192,4 +192,6 @@ class CreateUDBParamGroupRequest extends Request
     {
         $this->set("RegionFlag", $regionFlag);
     }
+
+
 }

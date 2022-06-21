@@ -85,7 +85,7 @@ class ResourceInfo extends Response
     /**
      * State: 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getState()
     {
@@ -121,4 +121,6 @@ class ResourceInfo extends Response
     {
         $this->set("Remark", $remark);
     }
+
+
 }

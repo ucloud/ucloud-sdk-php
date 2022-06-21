@@ -41,4 +41,6 @@ class ResetUHostInstancePasswordResponse extends Response
     {
         $this->set("UHostId", $uHostId);
     }
+
+
 }

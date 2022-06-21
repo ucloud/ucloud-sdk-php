@@ -92,7 +92,7 @@ class DescribeNetworkAclAssociationRequest extends Request
     /**
      * Offset: 列表偏移量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -128,4 +128,6 @@ class DescribeNetworkAclAssociationRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

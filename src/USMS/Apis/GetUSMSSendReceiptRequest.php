@@ -107,4 +107,6 @@ class GetUSMSSendReceiptRequest extends Request
     {
         $this->set("SessionNoSet", $sessionNoSet);
     }
+
+
 }

@@ -121,4 +121,6 @@ class IpLocationInfo extends Response
     {
         $this->set("Exist", $exist);
     }
+
+
 }

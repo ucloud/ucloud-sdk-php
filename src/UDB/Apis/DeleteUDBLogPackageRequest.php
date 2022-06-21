@@ -93,7 +93,7 @@ class DeleteUDBLogPackageRequest extends Request
     /**
      * BackupId: 日志包id，可通过DescribeUDBLogPackage获得
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupId()
     {
@@ -129,4 +129,6 @@ class DeleteUDBLogPackageRequest extends Request
     {
         $this->set("BackupZone", $backupZone);
     }
+
+
 }

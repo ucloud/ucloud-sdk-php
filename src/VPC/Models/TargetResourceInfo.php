@@ -85,7 +85,7 @@ class TargetResourceInfo extends Response
     /**
      * ResourceType: 资源类型
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getResourceType()
     {
@@ -145,7 +145,7 @@ class TargetResourceInfo extends Response
     /**
      * SubResourceType: 资源绑定虚拟网卡的类型
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSubResourceType()
     {
@@ -181,4 +181,6 @@ class TargetResourceInfo extends Response
     {
         $this->set("PrivateIp", $privateIp);
     }
+
+
 }

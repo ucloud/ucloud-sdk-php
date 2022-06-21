@@ -41,4 +41,6 @@ class PoweroffUHostInstanceResponse extends Response
     {
         $this->set("UHostId", $uHostId);
     }
+
+
 }

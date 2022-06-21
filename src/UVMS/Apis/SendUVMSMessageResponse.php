@@ -63,7 +63,7 @@ class SendUVMSMessageResponse extends Response
     }
 
     /**
-     * UserId:  本次提交的自定义业务标识ID，仅当发送时传入有效的UserId，才返回该字段。
+     * UserId: 	本次提交的自定义业务标识ID，仅当发送时传入有效的UserId，才返回该字段。
      *
      * @return string|null
      */
@@ -73,7 +73,7 @@ class SendUVMSMessageResponse extends Response
     }
 
     /**
-     * UserId:  本次提交的自定义业务标识ID，仅当发送时传入有效的UserId，才返回该字段。
+     * UserId: 	本次提交的自定义业务标识ID，仅当发送时传入有效的UserId，才返回该字段。
      *
      * @param string $userId
      */
@@ -81,4 +81,6 @@ class SendUVMSMessageResponse extends Response
     {
         $this->set("UserId", $userId);
     }
+
+
 }

@@ -107,4 +107,6 @@ class DescribeUGA3OptimizationRequest extends Request
     {
         $this->set("AccelerationArea", $accelerationArea);
     }
+
+
 }

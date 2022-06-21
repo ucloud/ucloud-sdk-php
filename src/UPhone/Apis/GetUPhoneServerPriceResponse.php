@@ -54,4 +54,6 @@ class GetUPhoneServerPriceResponse extends Response
         }
         return $result;
     }
+
+
 }

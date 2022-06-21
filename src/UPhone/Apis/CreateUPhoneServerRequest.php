@@ -194,7 +194,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * NetworkInterface:
+     * NetworkInterface: 
      *
      * @return CreateUPhoneServerParamNetworkInterface[]|null
      */
@@ -212,7 +212,7 @@ class CreateUPhoneServerRequest extends Request
     }
 
     /**
-     * NetworkInterface:
+     * NetworkInterface: 
      *
      * @param CreateUPhoneServerParamNetworkInterface[] $networkInterface
      */
@@ -248,7 +248,7 @@ class CreateUPhoneServerRequest extends Request
     /**
      * ShareBandwidth: 独立IP参数。共享带宽值大小。传此参数需要和IpProportion同时传。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShareBandwidth()
     {
@@ -268,7 +268,7 @@ class CreateUPhoneServerRequest extends Request
     /**
      * IpProportion: 独立IP参数。需要独立IP的比例。eg: [4:1]->4， [3:1]->3。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIpProportion()
     {
@@ -324,4 +324,6 @@ class CreateUPhoneServerRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

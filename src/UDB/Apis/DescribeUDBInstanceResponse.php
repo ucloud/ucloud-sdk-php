@@ -60,7 +60,7 @@ class DescribeUDBInstanceResponse extends Response
     /**
      * TotalCount: 用户db组的数量，对于 mysql: 主从结对数量，没有slave，则只有master mongodb: 副本集数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -76,4 +76,6 @@ class DescribeUDBInstanceResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

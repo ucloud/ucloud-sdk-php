@@ -105,7 +105,7 @@ class UMemcacheGroupSet extends Response
     /**
      * Port: 节点分配的服务端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -125,7 +125,7 @@ class UMemcacheGroupSet extends Response
     /**
      * Size: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -145,7 +145,7 @@ class UMemcacheGroupSet extends Response
     /**
      * UsedSize: 使用量单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUsedSize()
     {
@@ -205,7 +205,7 @@ class UMemcacheGroupSet extends Response
     /**
      * CreateTime: 创建时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -225,7 +225,7 @@ class UMemcacheGroupSet extends Response
     /**
      * ModifyTime: 修改时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -245,7 +245,7 @@ class UMemcacheGroupSet extends Response
     /**
      * ExpireTime: 过期时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -301,4 +301,6 @@ class UMemcacheGroupSet extends Response
     {
         $this->set("Tag", $tag);
     }
+
+
 }

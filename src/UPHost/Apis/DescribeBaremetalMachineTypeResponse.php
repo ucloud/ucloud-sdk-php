@@ -57,4 +57,6 @@ class DescribeBaremetalMachineTypeResponse extends Response
         }
         return $result;
     }
+
+
 }

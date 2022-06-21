@@ -118,7 +118,7 @@ class AddUK8SUHostNodeRequest extends Request
     /**
      * CPU: 虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。默认值: 4。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -138,7 +138,7 @@ class AddUK8SUHostNodeRequest extends Request
     /**
      * Count: 创建Node节点数量，取值范围是[1,50]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -178,7 +178,7 @@ class AddUK8SUHostNodeRequest extends Request
     /**
      * Mem: 内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMem()
     {
@@ -258,7 +258,7 @@ class AddUK8SUHostNodeRequest extends Request
     /**
      * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataDiskSize()
     {
@@ -278,7 +278,7 @@ class AddUK8SUHostNodeRequest extends Request
     /**
      * Quantity: 购买时长。默认: 1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -358,7 +358,7 @@ class AddUK8SUHostNodeRequest extends Request
     /**
      * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -398,7 +398,7 @@ class AddUK8SUHostNodeRequest extends Request
     /**
      * MaxPods: 默认110，生产环境建议小于等于110。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxPods()
     {
@@ -534,4 +534,6 @@ class AddUK8SUHostNodeRequest extends Request
     {
         $this->set("InitScript", $initScript);
     }
+
+
 }

@@ -94,7 +94,7 @@ class DescribeUMemUpgradePriceRequest extends Request
     /**
      * Size: 购买UMem大小,单位:GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -150,4 +150,6 @@ class DescribeUMemUpgradePriceRequest extends Request
     {
         $this->set("SpaceId", $spaceId);
     }
+
+
 }

@@ -25,7 +25,7 @@ class GetUcdnDomain95BandwidthV2Response extends Response
     /**
      * Time: 查询时间期间的95带宽时间点  Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTime()
     {
@@ -61,4 +61,6 @@ class GetUcdnDomain95BandwidthV2Response extends Response
     {
         $this->set("CdnBandwidth", $cdnBandwidth);
     }
+
+
 }

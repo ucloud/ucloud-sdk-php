@@ -75,8 +75,7 @@ class USMSClient extends Client
      * @return CreateUSMSSignatureResponse
      * @throws UCloudException
      */
-    public function createUSMSSignature(CreateUSMSSignatureRequest $request = null)
-    {
+    public function createUSMSSignature(CreateUSMSSignatureRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -108,8 +107,7 @@ class USMSClient extends Client
      * @return CreateUSMSTemplateResponse
      * @throws UCloudException
      */
-    public function createUSMSTemplate(CreateUSMSTemplateRequest $request = null)
-    {
+    public function createUSMSTemplate(CreateUSMSTemplateRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -123,7 +121,7 @@ class USMSClient extends Client
      *
      * $args = [
      *     "ProjectId" => (string) 项目ID，不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "SigIds" => (array<string>) 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入
+     *     "SigIds" => (array<string>) 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入   
      * ]
      *
      * Outputs:
@@ -134,8 +132,7 @@ class USMSClient extends Client
      * @return DeleteUSMSSignatureResponse
      * @throws UCloudException
      */
-    public function deleteUSMSSignature(DeleteUSMSSignatureRequest $request = null)
-    {
+    public function deleteUSMSSignature(DeleteUSMSSignatureRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -160,8 +157,7 @@ class USMSClient extends Client
      * @return DeleteUSMSTemplateResponse
      * @throws UCloudException
      */
-    public function deleteUSMSTemplate(DeleteUSMSTemplateRequest $request = null)
-    {
+    public function deleteUSMSTemplate(DeleteUSMSTemplateRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -204,8 +200,7 @@ class USMSClient extends Client
      * @return GetUSMSSendReceiptResponse
      * @throws UCloudException
      */
-    public function getUSMSSendReceipt(GetUSMSSendReceiptRequest $request = null)
-    {
+    public function getUSMSSendReceipt(GetUSMSSendReceiptRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUSMSSendReceiptResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -229,7 +224,7 @@ class USMSClient extends Client
      *     "Data" => (object) 签名信息[
      *         "SigId" => (string) 短信签名ID
      *         "SigContent" => (string) 短信签名内容
-     *         "Status" => (integer) 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
+     *         "Status" => (integer) 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 
      *         "ErrDesc" => (string) 短信签名未通过审核原因
      *     ]
      * ]
@@ -237,8 +232,7 @@ class USMSClient extends Client
      * @return QueryUSMSSignatureResponse
      * @throws UCloudException
      */
-    public function queryUSMSSignature(QueryUSMSSignatureRequest $request = null)
-    {
+    public function queryUSMSSignature(QueryUSMSSignatureRequest $request = null) {
         $resp = $this->invoke($request);
         return new QueryUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -275,8 +269,7 @@ class USMSClient extends Client
      * @return QueryUSMSTemplateResponse
      * @throws UCloudException
      */
-    public function queryUSMSTemplate(QueryUSMSTemplateRequest $request = null)
-    {
+    public function queryUSMSTemplate(QueryUSMSTemplateRequest $request = null) {
         $resp = $this->invoke($request);
         return new QueryUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -290,7 +283,7 @@ class USMSClient extends Client
      *
      * $args = [
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "TaskContent" => (string) 批量发送内容，该参数是json数组的base64编码结果。发送内容json数组中，每个“模板+签名”组合作为一个子项，每个子项内支持多个号码，示例：发送内容json数组（base64编码前）：[{"TemplateId": "UTA20212831C85C", "SigContent": "UCloud", "Target": [{"TemplateParams": ["123456"], "Phone": "18500000123", "ExtendCode": "123", "UserId": "456"} ] } ]   。json数组中各参数的定义："TemplateId":模板ID，"SigContent"短信签名内容，"Target"具体到号码粒度的发送内容。"Target"中的具体字段有："TemplateParams"实际发送的模板参数（若使用的是无参数模板，该参数不能传值），"Phone"手机号码, "ExtendCode"短信扩展码, "UserId"自定义业务标识ID。其中必传参数为"TemplateId", "SigContent", "Target"（"Target"中必传参数为"Phone"）。实际调用本接口时TaskContent传值（发送内容base64编码后）为：W3siVGVtcGxhdGVJZCI6ICJVVEEyMDIxMjgzMUM4NUMiLCAiU2lnQ29udGVudCI6ICJVQ2xvdWQiLCAiVGFyZ2V0IjogW3siVGVtcGxhdGVQYXJhbXMiOiBbIjEyMzQ1NiJdLCAiUGhvbmUiOiAiMTg1MDAwMDAxMjMiLCAiRXh0ZW5kQ29kZSI6ICIxMjMiLCAiVXNlcklkIjogIjQ1NiJ9IF0gfSBdIA==
+     *     "TaskContent" => (string) 批量发送内容，该参数是json数组的base64编码结果。发送内容json数组中，每个“模板+签名”组合作为一个子项，每个子项内支持多个号码，示例：发送内容json数组（base64编码前）：[{"TemplateId": "UTA20212831C85C", "SigContent": "UCloud", "Target": [{"TemplateParams": ["123456"], "Phone": "18500000123", "ExtendCode": "123", "UserId": "456"} ] } ]   。json数组中各参数的定义："TemplateId":模板ID，"SigContent"短信签名内容，"Target"具体到号码粒度的发送内容。"Target"中的具体字段有："TemplateParams"实际发送的模板参数（若使用的是无参数模板，该参数不能传值），"Phone"手机号码, "ExtendCode"短信扩展码, "UserId"自定义业务标识ID。其中必传参数为"TemplateId", "SigContent", "Target"（"Target"中必传参数为"Phone"）。实际调用本接口时TaskContent传值（发送内容base64编码后）为：W3siVGVtcGxhdGVJZCI6ICJVVEEyMDIxMjgzMUM4NUMiLCAiU2lnQ29udGVudCI6ICJVQ2xvdWQiLCAiVGFyZ2V0IjogW3siVGVtcGxhdGVQYXJhbXMiOiBbIjEyMzQ1NiJdLCAiUGhvbmUiOiAiMTg1MDAwMDAxMjMiLCAiRXh0ZW5kQ29kZSI6ICIxMjMiLCAiVXNlcklkIjogIjQ1NiJ9IF0gfSBdIA==     
      * ]
      *
      * Outputs:
@@ -320,8 +313,7 @@ class USMSClient extends Client
      * @return SendBatchUSMSMessageResponse
      * @throws UCloudException
      */
-    public function sendBatchUSMSMessage(SendBatchUSMSMessageRequest $request = null)
-    {
+    public function sendBatchUSMSMessage(SendBatchUSMSMessageRequest $request = null) {
         $resp = $this->invoke($request);
         return new SendBatchUSMSMessageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -353,8 +345,7 @@ class USMSClient extends Client
      * @return SendUSMSMessageResponse
      * @throws UCloudException
      */
-    public function sendUSMSMessage(SendUSMSMessageRequest $request = null)
-    {
+    public function sendUSMSMessage(SendUSMSMessageRequest $request = null) {
         $resp = $this->invoke($request);
         return new SendUSMSMessageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -368,7 +359,7 @@ class USMSClient extends Client
      *
      * $args = [
      *     "ProjectId" => (string) 项目ID，不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "SigId" => (string) 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入
+     *     "SigId" => (string) 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入   
      *     "SigContent" => (string) 新的短信签名内容；长度为2-12个字符, 可包含中文、数字和符号；无需填写【】或[]，系统会自动添加
      *     "SigType" => (integer) 签名类型，说明如下：0-公司或企业的全称或简称；1-App应用的全称或简称；2-工信部备案网站的全称或简称；3-公众号或小程序的全称或简称；4-商标名的全称或简称；5-政府/机关事业单位/其他单位的全称或简称；
      *     "SigPurpose" => (integer) 签名用途，0-自用，1-他用；
@@ -387,8 +378,7 @@ class USMSClient extends Client
      * @return UpdateUSMSSignatureResponse
      * @throws UCloudException
      */
-    public function updateUSMSSignature(UpdateUSMSSignatureRequest $request = null)
-    {
+    public function updateUSMSSignature(UpdateUSMSSignatureRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -417,8 +407,7 @@ class USMSClient extends Client
      * @return UpdateUSMSTemplateResponse
      * @throws UCloudException
      */
-    public function updateUSMSTemplate(UpdateUSMSTemplateRequest $request = null)
-    {
+    public function updateUSMSTemplate(UpdateUSMSTemplateRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());
     }

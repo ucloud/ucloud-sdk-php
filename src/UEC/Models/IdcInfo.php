@@ -125,7 +125,7 @@ class IdcInfo extends Response
     /**
      * Type: 运营商类型：0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -145,7 +145,7 @@ class IdcInfo extends Response
     /**
      * MaxNodeCnt: 机房可创建节点最大数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxNodeCnt()
     {
@@ -161,4 +161,6 @@ class IdcInfo extends Response
     {
         $this->set("MaxNodeCnt", $maxNodeCnt);
     }
+
+
 }

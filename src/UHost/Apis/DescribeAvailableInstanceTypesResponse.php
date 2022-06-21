@@ -64,4 +64,6 @@ class DescribeAvailableInstanceTypesResponse extends Response
         }
         return $result;
     }
+
+
 }

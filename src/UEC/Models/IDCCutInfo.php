@@ -85,7 +85,7 @@ class IDCCutInfo extends Response
     /**
      * StartTime: 割接开始时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStartTime()
     {
@@ -105,7 +105,7 @@ class IDCCutInfo extends Response
     /**
      * EndTime: 割接结束时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -173,4 +173,6 @@ class IDCCutInfo extends Response
         }
         return $result;
     }
+
+
 }

@@ -26,7 +26,7 @@ class DescribeURedisGroupResponse extends Response
     /**
      * TotalCount: 组的总的节点个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeURedisGroupResponse extends Response
         }
         return $result;
     }
+
+
 }

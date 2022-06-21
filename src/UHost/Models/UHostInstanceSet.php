@@ -305,7 +305,7 @@ class UHostInstanceSet extends Response
     /**
      * CreateTime: 创建时间，格式为Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -345,7 +345,7 @@ class UHostInstanceSet extends Response
     /**
      * ExpireTime: 到期时间，格式为Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -365,7 +365,7 @@ class UHostInstanceSet extends Response
     /**
      * CPU: 虚拟CPU核数，单位: 个
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -385,7 +385,7 @@ class UHostInstanceSet extends Response
     /**
      * Memory: 内存大小，单位: MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -669,7 +669,7 @@ class UHostInstanceSet extends Response
     /**
      * GPU: GPU个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -709,7 +709,7 @@ class UHostInstanceSet extends Response
     /**
      * TotalDiskSpace: 总的数据盘存储空间。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalDiskSpace()
     {
@@ -845,4 +845,6 @@ class UHostInstanceSet extends Response
     {
         $this->set("KeyPair", $keyPair->getAll());
     }
+
+
 }

@@ -25,7 +25,7 @@ class PHostDescDiskSet extends Response
     /**
      * Space: 单盘大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSpace()
     {
@@ -45,7 +45,7 @@ class PHostDescDiskSet extends Response
     /**
      * Count: 磁盘数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -105,7 +105,7 @@ class PHostDescDiskSet extends Response
     /**
      * IOCap: 磁盘IO性能，单位MB/s（待废弃）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIOCap()
     {
@@ -181,4 +181,6 @@ class PHostDescDiskSet extends Response
     {
         $this->set("IsBoot", $isBoot);
     }
+
+
 }

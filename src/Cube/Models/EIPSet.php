@@ -25,7 +25,7 @@ class EIPSet extends Response
     /**
      * Bandwidth: EIP带宽值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -45,7 +45,7 @@ class EIPSet extends Response
     /**
      * BandwidthType: 带宽类型0标准普通带宽，1表示共享带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidthType()
     {
@@ -65,7 +65,7 @@ class EIPSet extends Response
     /**
      * CreateTime: EIP创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -197,7 +197,7 @@ class EIPSet extends Response
     /**
      * Weight: EIP权重
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getWeight()
     {
@@ -213,4 +213,6 @@ class EIPSet extends Response
     {
         $this->set("Weight", $weight);
     }
+
+
 }

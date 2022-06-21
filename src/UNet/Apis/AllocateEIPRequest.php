@@ -51,7 +51,7 @@ class AllocateEIPRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class AllocateEIPRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 
      *
      * @param string $projectId
      */
@@ -93,7 +93,7 @@ class AllocateEIPRequest extends Request
     /**
      * Bandwidth: 弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-10000]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -153,7 +153,7 @@ class AllocateEIPRequest extends Request
     /**
      * Quantity: 购买的时长, 默认: 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -233,7 +233,7 @@ class AllocateEIPRequest extends Request
     /**
      * Count: 购买EIP数量，默认值为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -289,4 +289,6 @@ class AllocateEIPRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

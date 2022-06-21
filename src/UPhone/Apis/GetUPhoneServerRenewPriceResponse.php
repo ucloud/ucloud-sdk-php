@@ -24,7 +24,7 @@ class GetUPhoneServerRenewPriceResponse extends Response
     
 
     /**
-     * PriceSet: 价格列表,具体参数见UPhoneServerPriceSet
+     * PriceSet: 价格列表,具体参数见UPhoneServerPriceSet	
      *
      * @return UPhoneServerPriceSet[]|null
      */
@@ -42,7 +42,7 @@ class GetUPhoneServerRenewPriceResponse extends Response
     }
 
     /**
-     * PriceSet: 价格列表,具体参数见UPhoneServerPriceSet
+     * PriceSet: 价格列表,具体参数见UPhoneServerPriceSet	
      *
      * @param UPhoneServerPriceSet[] $priceSet
      */
@@ -54,4 +54,6 @@ class GetUPhoneServerRenewPriceResponse extends Response
         }
         return $result;
     }
+
+
 }

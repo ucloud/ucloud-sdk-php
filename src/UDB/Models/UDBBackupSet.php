@@ -25,7 +25,7 @@ class UDBBackupSet extends Response
     /**
      * BackupId: 备份id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupId()
     {
@@ -65,7 +65,7 @@ class UDBBackupSet extends Response
     /**
      * BackupTime: 备份时间(Unix时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -85,7 +85,7 @@ class UDBBackupSet extends Response
     /**
      * BackupSize: 备份文件大小(字节)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupSize()
     {
@@ -105,7 +105,7 @@ class UDBBackupSet extends Response
     /**
      * BackupType: 备份类型,取值为0或1,0表示自动，1表示手动
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupType()
     {
@@ -225,7 +225,7 @@ class UDBBackupSet extends Response
     /**
      * BackupEndTime: 备份完成时间(Unix时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupEndTime()
     {
@@ -241,4 +241,6 @@ class UDBBackupSet extends Response
     {
         $this->set("BackupEndTime", $backupEndTime);
     }
+
+
 }

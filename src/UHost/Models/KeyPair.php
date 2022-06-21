@@ -125,7 +125,7 @@ class KeyPair extends Response
     /**
      * CreateTime: 密钥对的创建时间，格式为Unix Timestamp。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -141,4 +141,6 @@ class KeyPair extends Response
     {
         $this->set("CreateTime", $createTime);
     }
+
+
 }

@@ -41,4 +41,6 @@ class CheckUDBInstanceToHAAllowanceResponse extends Response
     {
         $this->set("Allowance", $allowance);
     }
+
+
 }

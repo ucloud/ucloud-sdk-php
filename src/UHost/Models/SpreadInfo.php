@@ -45,7 +45,7 @@ class SpreadInfo extends Response
     /**
      * UHostCount: 当前地域所有可用区中硬件隔离组中云主机的数量，不超过7。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUHostCount()
     {
@@ -61,4 +61,6 @@ class SpreadInfo extends Response
     {
         $this->set("UHostCount", $uHostCount);
     }
+
+
 }

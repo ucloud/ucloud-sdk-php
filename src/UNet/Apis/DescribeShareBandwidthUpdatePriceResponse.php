@@ -41,4 +41,6 @@ class DescribeShareBandwidthUpdatePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

@@ -61,4 +61,6 @@ class GetBillDataFileUrlResponse extends Response
     {
         $this->set("IsValid", $isValid);
     }
+
+
 }

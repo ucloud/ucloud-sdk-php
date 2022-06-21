@@ -131,7 +131,7 @@ class DescribeFirewallRequest extends Request
     /**
      * Limit: 返回数据长度，默认为20，最大10000000
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -151,7 +151,7 @@ class DescribeFirewallRequest extends Request
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -167,4 +167,6 @@ class DescribeFirewallRequest extends Request
     {
         $this->set("Offset", $offset);
     }
+
+
 }

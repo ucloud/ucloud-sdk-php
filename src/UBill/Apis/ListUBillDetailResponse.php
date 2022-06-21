@@ -60,7 +60,7 @@ class ListUBillDetailResponse extends Response
     /**
      * TotalCount: 账单明细总长度
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -76,4 +76,6 @@ class ListUBillDetailResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

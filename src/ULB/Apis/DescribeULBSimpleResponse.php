@@ -29,7 +29,7 @@ class DescribeULBSimpleResponse extends Response
     /**
      * TotalCount: 满足条件的ULB总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -77,4 +77,6 @@ class DescribeULBSimpleResponse extends Response
         }
         return $result;
     }
+
+
 }

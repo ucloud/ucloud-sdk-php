@@ -64,7 +64,7 @@ class DescribeUEcHolderResponse extends Response
     /**
      * TotalCount: 满足条件的容器组总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -80,4 +80,6 @@ class DescribeUEcHolderResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

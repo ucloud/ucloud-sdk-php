@@ -152,7 +152,7 @@ class DescribeUK8SClusterResponse extends Response
     /**
      * MasterCount: Master 节点数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMasterCount()
     {
@@ -236,7 +236,7 @@ class DescribeUK8SClusterResponse extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -256,7 +256,7 @@ class DescribeUK8SClusterResponse extends Response
     /**
      * NodeCount: Node节点数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNodeCount()
     {
@@ -472,4 +472,6 @@ class DescribeUK8SClusterResponse extends Response
     {
         $this->set("MasterResourceStatus", $masterResourceStatus);
     }
+
+
 }

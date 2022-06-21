@@ -70,7 +70,7 @@ class SetUPhoneConfigRequest extends Request
     }
 
     /**
-     * UPhoneIds: 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=希望重启的云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。
+     * UPhoneIds: 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。
      *
      * @return string[]|null
      */
@@ -80,7 +80,7 @@ class SetUPhoneConfigRequest extends Request
     }
 
     /**
-     * UPhoneIds: 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=希望重启的云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。
+     * UPhoneIds: 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。
      *
      * @param string[] $uPhoneIds
      */
@@ -130,7 +130,7 @@ class SetUPhoneConfigRequest extends Request
     }
 
     /**
-     * Bitrate: 云手机画面传输码率（例，8000）取值范围[100,5000]
+     * Bitrate: 云手机画面传输码率（例，8000）取值范围[100,50000]
      *
      * @return string|null
      */
@@ -140,7 +140,7 @@ class SetUPhoneConfigRequest extends Request
     }
 
     /**
-     * Bitrate: 云手机画面传输码率（例，8000）取值范围[100,5000]
+     * Bitrate: 云手机画面传输码率（例，8000）取值范围[100,50000]
      *
      * @param string $bitrate
      */
@@ -188,4 +188,26 @@ class SetUPhoneConfigRequest extends Request
     {
         $this->set("Dpi", $dpi);
     }
+
+    /**
+     * ProductType: 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     *
+     * @return string|null
+     */
+    public function getProductType()
+    {
+        return $this->get("ProductType");
+    }
+
+    /**
+     * ProductType: 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     *
+     * @param string $productType
+     */
+    public function setProductType($productType)
+    {
+        $this->set("ProductType", $productType);
+    }
+
+
 }

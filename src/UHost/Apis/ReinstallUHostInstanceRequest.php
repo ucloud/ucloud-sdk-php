@@ -172,7 +172,7 @@ class ReinstallUHostInstanceRequest extends Request
     /**
      * BootDiskSpace: 系统盘大小。 单位：GB， 范围[20,100]， 步长：10
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBootDiskSpace()
     {
@@ -268,4 +268,6 @@ class ReinstallUHostInstanceRequest extends Request
     {
         $this->set("KeyPairId", $keyPairId);
     }
+
+
 }

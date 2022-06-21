@@ -145,7 +145,7 @@ class GlobalSSHInfo extends Response
     /**
      * Port: 源站服务器监听的SSH端口，windows系统为RDP端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -165,7 +165,7 @@ class GlobalSSHInfo extends Response
     /**
      * GlobalSSHPort: InstanceType等于Free时，由系统自动分配，不等于源站Port值。InstanceType不等于Free时，与源站Port值相同。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGlobalSSHPort()
     {
@@ -205,7 +205,7 @@ class GlobalSSHInfo extends Response
     /**
      * CreateTime: 资源创建时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -225,7 +225,7 @@ class GlobalSSHInfo extends Response
     /**
      * ExpireTime: 资源过期时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -265,7 +265,7 @@ class GlobalSSHInfo extends Response
     /**
      * BandwidthPackage: globalssh Ultimate带宽包大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidthPackage()
     {
@@ -301,4 +301,6 @@ class GlobalSSHInfo extends Response
     {
         $this->set("ForwardRegion", $forwardRegion);
     }
+
+
 }

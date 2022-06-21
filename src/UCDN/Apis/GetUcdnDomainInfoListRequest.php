@@ -50,7 +50,7 @@ class GetUcdnDomainInfoListRequest extends Request
     /**
      * PageSize: 分页的大小，不填默认每页20个
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPageSize()
     {
@@ -70,7 +70,7 @@ class GetUcdnDomainInfoListRequest extends Request
     /**
      * PageIndex: 返回第几页，不填默认是第1页
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPageIndex()
     {
@@ -86,4 +86,6 @@ class GetUcdnDomainInfoListRequest extends Request
     {
         $this->set("PageIndex", $pageIndex);
     }
+
+
 }

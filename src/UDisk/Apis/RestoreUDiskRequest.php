@@ -133,7 +133,7 @@ class RestoreUDiskRequest extends Request
     /**
      * SnapshotTime: 指定从方舟恢复的备份时间点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSnapshotTime()
     {
@@ -149,4 +149,6 @@ class RestoreUDiskRequest extends Request
     {
         $this->set("SnapshotTime", $snapshotTime);
     }
+
+
 }

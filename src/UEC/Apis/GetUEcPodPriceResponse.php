@@ -61,4 +61,6 @@ class GetUEcPodPriceResponse extends Response
     {
         $this->set("IpPrice", $ipPrice);
     }
+
+
 }

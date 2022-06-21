@@ -67,7 +67,7 @@ class SendBatchUSMSMessageResponse extends Response
     /**
      * SuccessCount: 成功提交短信（未拆分）条数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSuccessCount()
     {
@@ -115,4 +115,6 @@ class SendBatchUSMSMessageResponse extends Response
         }
         return $result;
     }
+
+
 }

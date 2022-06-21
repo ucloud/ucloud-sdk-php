@@ -159,7 +159,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * Port: 端口号，mysql默认3306，mongodb默认27017，postgresql默认5432
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -179,7 +179,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 32T
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -199,7 +199,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getParamGroupId()
     {
@@ -219,7 +219,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemoryLimit()
     {
@@ -259,7 +259,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * Quantity: 购买时长，默认值1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -299,7 +299,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * BackupCount: 备份策略，每周备份数量，默认7次
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupCount()
     {
@@ -319,7 +319,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * BackupTime: 备份策略，备份开始时间，单位小时计，默认1点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -339,7 +339,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * BackupDuration: 备份策略，备份时间间隔，单位小时计，默认24小时
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupDuration()
     {
@@ -359,7 +359,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * BackupId: 备份id，如果指定，则表明从备份恢复实例
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupId()
     {
@@ -459,7 +459,7 @@ class CreateUDBInstanceRequest extends Request
     /**
      * CPU: cpu核数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -655,4 +655,6 @@ class CreateUDBInstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

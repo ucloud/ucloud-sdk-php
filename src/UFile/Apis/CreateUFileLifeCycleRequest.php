@@ -154,7 +154,7 @@ class CreateUFileLifeCycleRequest extends Request
     /**
      * Days: 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动删除；参数范围：[7,36500]，0代表不启用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDays()
     {
@@ -174,7 +174,7 @@ class CreateUFileLifeCycleRequest extends Request
     /**
      * ArchivalDays: 指定一个过期天数N，文件会在其最近更新时间点的N天后，自动变为归档存储类型；参数范围：[7,36500]，0代表不启用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getArchivalDays()
     {
@@ -194,7 +194,7 @@ class CreateUFileLifeCycleRequest extends Request
     /**
      * IADays: 指定一个过期天数N，文件会在其最近更新时间点的N天后，自动变为低频存储类型；参数范围：[7,36500]，0代表不启用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIADays()
     {
@@ -210,4 +210,6 @@ class CreateUFileLifeCycleRequest extends Request
     {
         $this->set("IADays", $iaDays);
     }
+
+
 }

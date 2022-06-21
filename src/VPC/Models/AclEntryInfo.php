@@ -165,7 +165,7 @@ class AclEntryInfo extends Response
     /**
      * TargetType: 应用目标类型。 0代表“子网内全部资源” ，1代表“子网内指定资源” 。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTargetType()
     {
@@ -185,7 +185,7 @@ class AclEntryInfo extends Response
     /**
      * CreateTime: 创建的Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -205,7 +205,7 @@ class AclEntryInfo extends Response
     /**
      * UpdateTime: 更改的Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUpdateTime()
     {
@@ -257,7 +257,7 @@ class AclEntryInfo extends Response
     /**
      * TargetResourceCount: 应用目标资源数量。TargetType为0时不返回该值。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTargetResourceCount()
     {
@@ -273,4 +273,6 @@ class AclEntryInfo extends Response
     {
         $this->set("TargetResourceCount", $targetResourceCount);
     }
+
+
 }

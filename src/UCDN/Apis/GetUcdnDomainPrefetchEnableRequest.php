@@ -67,4 +67,6 @@ class GetUcdnDomainPrefetchEnableRequest extends Request
     {
         $this->set("DomainId", $domainId);
     }
+
+
 }

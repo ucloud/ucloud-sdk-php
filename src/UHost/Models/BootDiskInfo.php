@@ -65,7 +65,7 @@ class BootDiskInfo extends Response
     /**
      * MaximalSize: MaximalSize为磁盘最大值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaximalSize()
     {
@@ -101,4 +101,6 @@ class BootDiskInfo extends Response
     {
         $this->set("Features", $features);
     }
+
+
 }

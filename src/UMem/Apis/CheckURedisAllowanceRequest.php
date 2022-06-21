@@ -94,7 +94,7 @@ class CheckURedisAllowanceRequest extends Request
     /**
      * Size: 创建实例的容量大小, 单位:GB 目前仅支持1/2/4/8/16/32六种规格；扩缩容时，表示实例的目标资源大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -114,7 +114,7 @@ class CheckURedisAllowanceRequest extends Request
     /**
      * Count: 创建实例的数量，[1-10]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -132,7 +132,7 @@ class CheckURedisAllowanceRequest extends Request
     }
 
     /**
-     * Protocol:
+     * Protocol: 
      *
      * @return string|null
      */
@@ -142,7 +142,7 @@ class CheckURedisAllowanceRequest extends Request
     }
 
     /**
-     * Protocol:
+     * Protocol: 
      *
      * @param string $protocol
      */
@@ -190,4 +190,6 @@ class CheckURedisAllowanceRequest extends Request
     {
         $this->set("GroupId", $groupId);
     }
+
+
 }

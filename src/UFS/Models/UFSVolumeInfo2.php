@@ -65,7 +65,7 @@ class UFSVolumeInfo2 extends Response
     /**
      * TotalMountPointNum: 当前文件系统已创建的挂载点数目
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalMountPointNum()
     {
@@ -85,7 +85,7 @@ class UFSVolumeInfo2 extends Response
     /**
      * MaxMountPointNum: 文件系统允许创建的最大挂载点数目
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxMountPointNum()
     {
@@ -185,7 +185,7 @@ class UFSVolumeInfo2 extends Response
     /**
      * CreateTime: 文件系统创建时间（unix时间戳）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -205,7 +205,7 @@ class UFSVolumeInfo2 extends Response
     /**
      * ExpiredTime: 文件系统过期时间（unix时间戳）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpiredTime()
     {
@@ -225,7 +225,7 @@ class UFSVolumeInfo2 extends Response
     /**
      * Size: 文件系统大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -245,7 +245,7 @@ class UFSVolumeInfo2 extends Response
     /**
      * UsedSize: 文件系统当前使用容量，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUsedSize()
     {
@@ -281,4 +281,6 @@ class UFSVolumeInfo2 extends Response
     {
         $this->set("IsExpired", $isExpired);
     }
+
+
 }

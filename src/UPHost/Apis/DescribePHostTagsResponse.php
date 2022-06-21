@@ -26,7 +26,7 @@ class DescribePHostTagsResponse extends Response
     /**
      * TotalCount: Tag的个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribePHostTagsResponse extends Response
         }
         return $result;
     }
+
+
 }

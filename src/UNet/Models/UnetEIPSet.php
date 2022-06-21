@@ -45,7 +45,7 @@ class UnetEIPSet extends Response
     /**
      * Weight: 外网出口权重, 默认为50, 范围[0-100]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getWeight()
     {
@@ -65,7 +65,7 @@ class UnetEIPSet extends Response
     /**
      * BandwidthType: 带宽模式, 枚举值为: 0: 非共享带宽模式, 1: 共享带宽模式
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidthType()
     {
@@ -85,7 +85,7 @@ class UnetEIPSet extends Response
     /**
      * Bandwidth: 弹性IP的带宽, 单位为Mbps, 当BandwidthType=1时, 该处显示为共享带宽值. 当BandwidthType=0时, 该处显示这个弹性IP的带宽.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -145,7 +145,7 @@ class UnetEIPSet extends Response
     /**
      * CreateTime: 弹性IP的创建时间, 格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -165,7 +165,7 @@ class UnetEIPSet extends Response
     /**
      * ExpireTime: 弹性IP的到期时间, 格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -353,4 +353,6 @@ class UnetEIPSet extends Response
     {
         $this->set("Expire", $expire);
     }
+
+
 }

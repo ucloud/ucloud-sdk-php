@@ -50,7 +50,7 @@ class GetUcdnDomainConfigRequest extends Request
     /**
      * Offset: 数据偏移量，默认0，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -70,7 +70,7 @@ class GetUcdnDomainConfigRequest extends Request
     /**
      * Limit: 返回数据长度， 默认全部，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -126,4 +126,6 @@ class GetUcdnDomainConfigRequest extends Request
     {
         $this->set("ChannelType", $channelType);
     }
+
+
 }

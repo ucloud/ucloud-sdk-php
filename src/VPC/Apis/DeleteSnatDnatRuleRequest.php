@@ -130,4 +130,6 @@ class DeleteSnatDnatRuleRequest extends Request
     {
         $this->set("NATGWId", $natgwId);
     }
+
+
 }

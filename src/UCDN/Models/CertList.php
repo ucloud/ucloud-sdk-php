@@ -85,7 +85,7 @@ class CertList extends Response
     /**
      * BeginTime: 证书开始时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -105,7 +105,7 @@ class CertList extends Response
     /**
      * EndTime: 证书获取时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -125,7 +125,7 @@ class CertList extends Response
     /**
      * DomainCount: 已配置域名个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDomainCount()
     {
@@ -201,4 +201,6 @@ class CertList extends Response
     {
         $this->set("Domains", $domains);
     }
+
+
 }

@@ -67,4 +67,6 @@ class PrefetchNewUcdnDomainCacheRequest extends Request
     {
         $this->set("UrlList", $urlList);
     }
+
+
 }

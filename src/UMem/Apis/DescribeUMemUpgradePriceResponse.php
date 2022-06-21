@@ -25,7 +25,7 @@ class DescribeUMemUpgradePriceResponse extends Response
     /**
      * Price: 价格
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -45,7 +45,7 @@ class DescribeUMemUpgradePriceResponse extends Response
     /**
      * OriginalPrice: 原价
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginalPrice()
     {
@@ -61,4 +61,6 @@ class DescribeUMemUpgradePriceResponse extends Response
     {
         $this->set("OriginalPrice", $originalPrice);
     }
+
+
 }

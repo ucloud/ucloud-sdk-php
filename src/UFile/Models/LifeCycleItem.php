@@ -85,7 +85,7 @@ class LifeCycleItem extends Response
     /**
      * Days: 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动删除，0代表不启用；
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDays()
     {
@@ -145,7 +145,7 @@ class LifeCycleItem extends Response
     /**
      * ArchivalDays: 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为归档存储类型，0代表不启用；
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getArchivalDays()
     {
@@ -165,7 +165,7 @@ class LifeCycleItem extends Response
     /**
      * IADays: 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为低频存储类型，0代表不启用；
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIADays()
     {
@@ -181,4 +181,6 @@ class LifeCycleItem extends Response
     {
         $this->set("IADays", $iaDays);
     }
+
+
 }

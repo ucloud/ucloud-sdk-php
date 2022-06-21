@@ -25,7 +25,7 @@ class MachineSizes extends Response
     /**
      * Gpu: Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGpu()
     {
@@ -73,4 +73,6 @@ class MachineSizes extends Response
         }
         return $result;
     }
+
+
 }

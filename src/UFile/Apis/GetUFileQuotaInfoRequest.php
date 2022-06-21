@@ -88,4 +88,6 @@ class GetUFileQuotaInfoRequest extends Request
     {
         $this->set("QuotaType", $quotaType);
     }
+
+
 }

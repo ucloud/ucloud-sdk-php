@@ -60,7 +60,7 @@ class ListUK8SClusterNodeV2Response extends Response
     /**
      * TotalCount: 满足条件的节点数量，包括Master。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -76,4 +76,6 @@ class ListUK8SClusterNodeV2Response extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

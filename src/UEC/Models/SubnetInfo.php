@@ -105,7 +105,7 @@ class SubnetInfo extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -145,7 +145,7 @@ class SubnetInfo extends Response
     /**
      * TotalIpCnt: 总ip数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalIpCnt()
     {
@@ -165,7 +165,7 @@ class SubnetInfo extends Response
     /**
      * AvailableIPCnt: 可用ip数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAvailableIPCnt()
     {
@@ -181,4 +181,6 @@ class SubnetInfo extends Response
     {
         $this->set("AvailableIPCnt", $availableIPCnt);
     }
+
+
 }

@@ -26,7 +26,7 @@ class DescribeSubnetResourceResponse extends Response
     /**
      * TotalCount: 总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeSubnetResourceResponse extends Response
         }
         return $result;
     }
+
+
 }

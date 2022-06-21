@@ -25,7 +25,7 @@ class ReferConf extends Response
     /**
      * ReferType: Refer防盗链配置  0白名单，1黑名单
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getReferType()
     {
@@ -45,7 +45,7 @@ class ReferConf extends Response
     /**
      * NullRefer: ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNullRefer()
     {
@@ -81,4 +81,6 @@ class ReferConf extends Response
     {
         $this->set("ReferList", $referList);
     }
+
+
 }

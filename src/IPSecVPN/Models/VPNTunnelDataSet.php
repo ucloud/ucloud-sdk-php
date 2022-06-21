@@ -225,7 +225,7 @@ class VPNTunnelDataSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -281,4 +281,6 @@ class VPNTunnelDataSet extends Response
     {
         $this->set("IPSecData", $ipSecData->getAll());
     }
+
+
 }

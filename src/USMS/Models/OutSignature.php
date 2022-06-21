@@ -63,9 +63,9 @@ class OutSignature extends Response
     }
 
     /**
-     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
+     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStatus()
     {
@@ -73,7 +73,7 @@ class OutSignature extends Response
     }
 
     /**
-     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
+     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 
      *
      * @param int $status
      */
@@ -101,4 +101,6 @@ class OutSignature extends Response
     {
         $this->set("ErrDesc", $errDesc);
     }
+
+
 }

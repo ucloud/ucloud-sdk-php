@@ -50,9 +50,9 @@ class GetUcdnDomain95BandwidthV2Request extends Request
     }
 
     /**
-     * BeginTime: 查询的起始日期，格式为Unix Timestamp
+     * BeginTime: 查询的起始日期，格式为Unix Timestamp  
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -60,7 +60,7 @@ class GetUcdnDomain95BandwidthV2Request extends Request
     }
 
     /**
-     * BeginTime: 查询的起始日期，格式为Unix Timestamp
+     * BeginTime: 查询的起始日期，格式为Unix Timestamp  
      *
      * @param int $beginTime
      */
@@ -70,9 +70,9 @@ class GetUcdnDomain95BandwidthV2Request extends Request
     }
 
     /**
-     * EndTime: 查询的结束日期，格式为Unix Timestamp
+     * EndTime: 查询的结束日期，格式为Unix Timestamp 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -80,7 +80,7 @@ class GetUcdnDomain95BandwidthV2Request extends Request
     }
 
     /**
-     * EndTime: 查询的结束日期，格式为Unix Timestamp
+     * EndTime: 查询的结束日期，格式为Unix Timestamp 
      *
      * @param int $endTime
      */
@@ -128,4 +128,6 @@ class GetUcdnDomain95BandwidthV2Request extends Request
     {
         $this->set("Areacode", $areacode);
     }
+
+
 }

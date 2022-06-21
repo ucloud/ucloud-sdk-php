@@ -71,7 +71,7 @@ class DescribeULBSimpleRequest extends Request
     /**
      * Offset: 数据偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -91,7 +91,7 @@ class DescribeULBSimpleRequest extends Request
     /**
      * Limit: 数据分页值，默认为10000
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -187,4 +187,6 @@ class DescribeULBSimpleRequest extends Request
     {
         $this->set("BusinessId", $businessId);
     }
+
+
 }
