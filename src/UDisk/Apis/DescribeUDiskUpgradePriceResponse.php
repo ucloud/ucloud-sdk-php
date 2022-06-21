@@ -25,7 +25,7 @@ class DescribeUDiskUpgradePriceResponse extends Response
     /**
      * Price: 价格
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -45,7 +45,7 @@ class DescribeUDiskUpgradePriceResponse extends Response
     /**
      * OriginalPrice: 用户折后价 (对应计费CustomPrice)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginalPrice()
     {
@@ -61,4 +61,6 @@ class DescribeUDiskUpgradePriceResponse extends Response
     {
         $this->set("OriginalPrice", $originalPrice);
     }
+
+
 }

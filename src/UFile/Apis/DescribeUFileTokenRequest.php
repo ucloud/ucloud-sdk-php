@@ -110,7 +110,7 @@ class DescribeUFileTokenRequest extends Request
     /**
      * Display: 0表示显示部分token信息；不传递和其他情况表示显示全部token信息
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDisplay()
     {
@@ -126,4 +126,6 @@ class DescribeUFileTokenRequest extends Request
     {
         $this->set("Display", $display);
     }
+
+
 }

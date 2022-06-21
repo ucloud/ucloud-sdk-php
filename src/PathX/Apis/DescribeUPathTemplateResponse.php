@@ -54,4 +54,6 @@ class DescribeUPathTemplateResponse extends Response
         }
         return $result;
     }
+
+
 }

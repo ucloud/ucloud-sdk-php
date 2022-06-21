@@ -23,7 +23,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
     
 
     /**
-     * EIP:
+     * EIP: 
      *
      * @return CreateUHostInstanceParamNetworkInterfaceEIP|null
      */
@@ -33,7 +33,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
     }
 
     /**
-     * EIP:
+     * EIP: 
      *
      * @param CreateUHostInstanceParamNetworkInterfaceEIP $eip
      */
@@ -43,7 +43,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
     }
 
     /**
-     * IPv6:
+     * IPv6: 
      *
      * @return CreateUHostInstanceParamNetworkInterfaceIPv6|null
      */
@@ -53,7 +53,7 @@ class CreateUHostInstanceParamNetworkInterface extends Request
     }
 
     /**
-     * IPv6:
+     * IPv6: 
      *
      * @param CreateUHostInstanceParamNetworkInterfaceIPv6 $iPv6
      */
@@ -81,4 +81,6 @@ class CreateUHostInstanceParamNetworkInterface extends Request
     {
         $this->set("CreateCernetIp", $createCernetIp);
     }
+
+
 }

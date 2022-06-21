@@ -65,7 +65,7 @@ class ImageInfo extends Response
     /**
      * ImageType: 镜像类型：1标准镜像，2行业镜像，3自定义镜像
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getImageType()
     {
@@ -125,7 +125,7 @@ class ImageInfo extends Response
     /**
      * State: 镜像状态：镜像状态 1可用，2不可用，3制作中
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getState()
     {
@@ -145,7 +145,7 @@ class ImageInfo extends Response
     /**
      * ImageSize: 镜像大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getImageSize()
     {
@@ -165,7 +165,7 @@ class ImageInfo extends Response
     /**
      * CreateTime: 镜像创建时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -217,7 +217,7 @@ class ImageInfo extends Response
     /**
      * Gpu: 是否支持Gpu(1-支持,0-不支持)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGpu()
     {
@@ -233,4 +233,6 @@ class ImageInfo extends Response
     {
         $this->set("Gpu", $gpu);
     }
+
+
 }

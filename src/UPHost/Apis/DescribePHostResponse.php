@@ -29,7 +29,7 @@ class DescribePHostResponse extends Response
     /**
      * TotalCount: 满足条件的PHost总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -77,4 +77,6 @@ class DescribePHostResponse extends Response
         }
         return $result;
     }
+
+
 }

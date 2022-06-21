@@ -109,4 +109,6 @@ class DeleteNATGWPolicyRequest extends Request
     {
         $this->set("PolicyId", $policyId);
     }
+
+
 }

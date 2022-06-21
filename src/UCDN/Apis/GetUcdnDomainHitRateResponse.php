@@ -54,4 +54,6 @@ class GetUcdnDomainHitRateResponse extends Response
         }
         return $result;
     }
+
+
 }

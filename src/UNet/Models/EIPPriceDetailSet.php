@@ -85,7 +85,7 @@ class EIPPriceDetailSet extends Response
     /**
      * PurchaseValue: 资源有效期, 以Unix Timestamp表示
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPurchaseValue()
     {
@@ -101,4 +101,6 @@ class EIPPriceDetailSet extends Response
     {
         $this->set("PurchaseValue", $purchaseValue);
     }
+
+
 }

@@ -25,7 +25,7 @@ class ProIspBandwidthList extends Response
     /**
      * Time: 带宽获取的时间点。格式：时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTime()
     {
@@ -81,4 +81,6 @@ class ProIspBandwidthList extends Response
     {
         $this->set("Traffic", $traffic);
     }
+
+
 }

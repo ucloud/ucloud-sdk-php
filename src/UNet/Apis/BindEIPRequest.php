@@ -130,4 +130,26 @@ class BindEIPRequest extends Request
     {
         $this->set("ResourceId", $resourceId);
     }
+
+    /**
+     * PrivateIP: EIP与内网IP进行绑定时需要传入UNI下未绑定过EIP的内网IP
+     *
+     * @return string|null
+     */
+    public function getPrivateIP()
+    {
+        return $this->get("PrivateIP");
+    }
+
+    /**
+     * PrivateIP: EIP与内网IP进行绑定时需要传入UNI下未绑定过EIP的内网IP
+     *
+     * @param string $privateIP
+     */
+    public function setPrivateIP($privateIP)
+    {
+        $this->set("PrivateIP", $privateIP);
+    }
+
+
 }

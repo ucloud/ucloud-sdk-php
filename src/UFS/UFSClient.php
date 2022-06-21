@@ -67,8 +67,7 @@ class UFSClient extends Client
      * @return AddUFSVolumeMountPointResponse
      * @throws UCloudException
      */
-    public function addUFSVolumeMountPoint(AddUFSVolumeMountPointRequest $request = null)
-    {
+    public function addUFSVolumeMountPoint(AddUFSVolumeMountPointRequest $request = null) {
         $resp = $this->invoke($request);
         return new AddUFSVolumeMountPointResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -105,8 +104,7 @@ class UFSClient extends Client
      * @return CreateUFSVolumeResponse
      * @throws UCloudException
      */
-    public function createUFSVolume(CreateUFSVolumeRequest $request = null)
-    {
+    public function createUFSVolume(CreateUFSVolumeRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -152,8 +150,7 @@ class UFSClient extends Client
      * @return DescribeUFSVolume2Response
      * @throws UCloudException
      */
-    public function describeUFSVolume2(DescribeUFSVolume2Request $request = null)
-    {
+    public function describeUFSVolume2(DescribeUFSVolume2Request $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUFSVolume2Response($resp->toArray(), $resp->getRequestId());
     }
@@ -191,8 +188,7 @@ class UFSClient extends Client
      * @return DescribeUFSVolumeMountpointResponse
      * @throws UCloudException
      */
-    public function describeUFSVolumeMountpoint(DescribeUFSVolumeMountpointRequest $request = null)
-    {
+    public function describeUFSVolumeMountpoint(DescribeUFSVolumeMountpointRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUFSVolumeMountpointResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -229,8 +225,7 @@ class UFSClient extends Client
      * @return DescribeUFSVolumePriceResponse
      * @throws UCloudException
      */
-    public function describeUFSVolumePrice(DescribeUFSVolumePriceRequest $request = null)
-    {
+    public function describeUFSVolumePrice(DescribeUFSVolumePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUFSVolumePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -257,8 +252,7 @@ class UFSClient extends Client
      * @return ExtendUFSVolumeResponse
      * @throws UCloudException
      */
-    public function extendUFSVolume(ExtendUFSVolumeRequest $request = null)
-    {
+    public function extendUFSVolume(ExtendUFSVolumeRequest $request = null) {
         $resp = $this->invoke($request);
         return new ExtendUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -284,8 +278,7 @@ class UFSClient extends Client
      * @return RemoveUFSVolumeResponse
      * @throws UCloudException
      */
-    public function removeUFSVolume(RemoveUFSVolumeRequest $request = null)
-    {
+    public function removeUFSVolume(RemoveUFSVolumeRequest $request = null) {
         $resp = $this->invoke($request);
         return new RemoveUFSVolumeResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -313,8 +306,7 @@ class UFSClient extends Client
      * @return RemoveUFSVolumeMountPointResponse
      * @throws UCloudException
      */
-    public function removeUFSVolumeMountPoint(RemoveUFSVolumeMountPointRequest $request = null)
-    {
+    public function removeUFSVolumeMountPoint(RemoveUFSVolumeMountPointRequest $request = null) {
         $resp = $this->invoke($request);
         return new RemoveUFSVolumeMountPointResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -342,8 +334,7 @@ class UFSClient extends Client
      * @return UpdateUFSVolumeInfoResponse
      * @throws UCloudException
      */
-    public function updateUFSVolumeInfo(UpdateUFSVolumeInfoRequest $request = null)
-    {
+    public function updateUFSVolumeInfo(UpdateUFSVolumeInfoRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateUFSVolumeInfoResponse($resp->toArray(), $resp->getRequestId());
     }

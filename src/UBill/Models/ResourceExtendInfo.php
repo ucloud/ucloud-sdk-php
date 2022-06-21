@@ -61,4 +61,6 @@ class ResourceExtendInfo extends Response
     {
         $this->set("Value", $value);
     }
+
+
 }

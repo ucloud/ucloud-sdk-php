@@ -61,4 +61,6 @@ class NetworkMask extends Response
     {
         $this->set("LoginNetworkMask", $loginNetworkMask);
     }
+
+
 }

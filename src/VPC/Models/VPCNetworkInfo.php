@@ -45,7 +45,7 @@ class VPCNetworkInfo extends Response
     /**
      * SubnetCount: 地址空间中子网数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSubnetCount()
     {
@@ -61,4 +61,6 @@ class VPCNetworkInfo extends Response
     {
         $this->set("SubnetCount", $subnetCount);
     }
+
+
 }

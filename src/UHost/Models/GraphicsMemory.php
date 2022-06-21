@@ -25,7 +25,7 @@ class GraphicsMemory extends Response
     /**
      * Value: 值，单位是GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getValue()
     {
@@ -45,7 +45,7 @@ class GraphicsMemory extends Response
     /**
      * Rate: 交互展示参数，可忽略
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRate()
     {
@@ -61,4 +61,6 @@ class GraphicsMemory extends Response
     {
         $this->set("Rate", $rate);
     }
+
+
 }

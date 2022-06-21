@@ -32,7 +32,7 @@ class GetBillDataFileUrlRequest extends Request
     /**
      * BillType: 账单类型，传 0 时获取账单总览报表，传 1 获取账单明细报表
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBillType()
     {
@@ -72,7 +72,7 @@ class GetBillDataFileUrlRequest extends Request
     /**
      * BillPeriod: 此字段不推荐使用，建议使用BillingCycle.   若BillingCycle 和 BillPeriod同时存在，BillingCycle 优先
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBillPeriod()
     {
@@ -92,7 +92,7 @@ class GetBillDataFileUrlRequest extends Request
     /**
      * PaidType: 获取账单总览报表时，账单的支付状态，传 0 时获取待支付账单，传 1 时获取已支付账单。获取账单明细报表时该参数无效
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPaidType()
     {
@@ -148,4 +148,6 @@ class GetBillDataFileUrlRequest extends Request
     {
         $this->set("Version", $version);
     }
+
+
 }

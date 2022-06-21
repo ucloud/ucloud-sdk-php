@@ -93,7 +93,7 @@ class GetUDPNPriceRequest extends Request
     /**
      * Bandwidth: 带宽信息
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -133,7 +133,7 @@ class GetUDPNPriceRequest extends Request
     /**
      * Quantity: 购买时长
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -169,4 +169,6 @@ class GetUDPNPriceRequest extends Request
     {
         $this->set("PayMode", $payMode);
     }
+
+
 }

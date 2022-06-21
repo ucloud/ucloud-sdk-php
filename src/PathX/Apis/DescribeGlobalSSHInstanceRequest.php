@@ -67,4 +67,6 @@ class DescribeGlobalSSHInstanceRequest extends Request
     {
         $this->set("InstanceId", $instanceId);
     }
+
+
 }

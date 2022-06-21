@@ -54,4 +54,6 @@ class DescribeGlobalSSHInstanceResponse extends Response
         }
         return $result;
     }
+
+
 }

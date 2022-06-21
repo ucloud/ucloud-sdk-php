@@ -113,7 +113,7 @@ class DescribeURedisSlowlogRequest extends Request
     /**
      * Limit: 分页显示的条目数，默认为10
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -129,4 +129,6 @@ class DescribeURedisSlowlogRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

@@ -75,7 +75,7 @@ class DescribeUDBInstancePriceRequest extends Request
     /**
      * MemoryLimit: 内存限制(MB)，单位为MB.目前支持：1000-96000
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemoryLimit()
     {
@@ -95,7 +95,7 @@ class DescribeUDBInstancePriceRequest extends Request
     /**
      * DiskSpace: 磁盘空间(GB),暂时支持20(GB) - 3000(GB), 输入不带单位
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -135,7 +135,7 @@ class DescribeUDBInstancePriceRequest extends Request
     /**
      * Count: 购买DB实例数量,最大数量为10台, 默认为1台
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -175,7 +175,7 @@ class DescribeUDBInstancePriceRequest extends Request
     /**
      * Quantity: DB购买多少个"计费时间单位"，默认值为1。比如：买2个月，Quantity就是2。如果计费单位是“按月”，并且Quantity为0，表示“购买到月底”
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -251,4 +251,6 @@ class DescribeUDBInstancePriceRequest extends Request
     {
         $this->set("InstanceMode", $instanceMode);
     }
+
+
 }

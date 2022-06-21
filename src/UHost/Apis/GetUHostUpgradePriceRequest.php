@@ -112,7 +112,7 @@ class GetUHostUpgradePriceRequest extends Request
     /**
      * CPU: 虚拟CPU核数。可选参数：1-64（可选范围参考控制台）。默认值为当前实例的CPU核数。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -132,7 +132,7 @@ class GetUHostUpgradePriceRequest extends Request
     /**
      * Memory: 内存大小。单位：MB。范围 ：[1024, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值为当前实例的内存大小。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -152,7 +152,7 @@ class GetUHostUpgradePriceRequest extends Request
     /**
      * NetCapValue: 网卡升降级（1，表示升级，2表示降级，0表示不变）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNetCapValue()
     {
@@ -168,4 +168,6 @@ class GetUHostUpgradePriceRequest extends Request
     {
         $this->set("NetCapValue", $netCapValue);
     }
+
+
 }

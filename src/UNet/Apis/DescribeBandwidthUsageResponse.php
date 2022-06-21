@@ -26,7 +26,7 @@ class DescribeBandwidthUsageResponse extends Response
     /**
      * TotalCount: EIPSet中的元素个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeBandwidthUsageResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -56,4 +56,6 @@ class GetCubeExtendInfoResponse extends Response
         }
         return $result;
     }
+
+
 }

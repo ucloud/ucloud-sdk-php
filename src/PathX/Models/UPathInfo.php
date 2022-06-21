@@ -105,7 +105,7 @@ class UPathInfo extends Response
     /**
      * Bandwidth: 带宽，单位Mbps
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -177,7 +177,7 @@ class UPathInfo extends Response
     /**
      * CreateTime: UPath创建的时间，10位时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -197,7 +197,7 @@ class UPathInfo extends Response
     /**
      * ExpireTime: UPath的过期时间，10位时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -285,4 +285,6 @@ class UPathInfo extends Response
         }
         return $result;
     }
+
+
 }

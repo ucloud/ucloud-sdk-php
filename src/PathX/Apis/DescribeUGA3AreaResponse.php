@@ -54,4 +54,6 @@ class DescribeUGA3AreaResponse extends Response
         }
         return $result;
     }
+
+
 }

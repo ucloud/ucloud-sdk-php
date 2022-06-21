@@ -92,7 +92,7 @@ class GetUEcIDCVHostDataRequest extends Request
     /**
      * BeginTime: 开始时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -112,7 +112,7 @@ class GetUEcIDCVHostDataRequest extends Request
     /**
      * EndTime: 结束时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -128,4 +128,6 @@ class GetUEcIDCVHostDataRequest extends Request
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

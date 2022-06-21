@@ -71,7 +71,7 @@ class GetUEcUpgradePriceRequest extends Request
     /**
      * CpuCore: cpu核心数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCpuCore()
     {
@@ -91,7 +91,7 @@ class GetUEcUpgradePriceRequest extends Request
     /**
      * MemSize: 内存大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemSize()
     {
@@ -111,7 +111,7 @@ class GetUEcUpgradePriceRequest extends Request
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSysDiskSize()
     {
@@ -131,7 +131,7 @@ class GetUEcUpgradePriceRequest extends Request
     /**
      * DiskSize: 数据盘大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSize()
     {
@@ -151,7 +151,7 @@ class GetUEcUpgradePriceRequest extends Request
     /**
      * NetLimit: 节点带宽限制，单位Mbs
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNetLimit()
     {
@@ -167,4 +167,6 @@ class GetUEcUpgradePriceRequest extends Request
     {
         $this->set("NetLimit", $netLimit);
     }
+
+
 }

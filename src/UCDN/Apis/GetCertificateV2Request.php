@@ -50,7 +50,7 @@ class GetCertificateV2Request extends Request
     /**
      * Offset: 偏移，默认为0，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -70,7 +70,7 @@ class GetCertificateV2Request extends Request
     /**
      * Limit: 长度，默认为全部，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -86,4 +86,6 @@ class GetCertificateV2Request extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

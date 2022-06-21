@@ -41,4 +41,6 @@ class CreateVPNTunnelResponse extends Response
     {
         $this->set("VPNTunnelId", $vpnTunnelId);
     }
+
+
 }

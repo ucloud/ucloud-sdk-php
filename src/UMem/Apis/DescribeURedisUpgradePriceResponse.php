@@ -41,4 +41,6 @@ class DescribeURedisUpgradePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

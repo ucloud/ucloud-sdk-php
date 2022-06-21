@@ -193,7 +193,7 @@ class AddUK8SNodeGroupRequest extends Request
     /**
      * CPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -213,7 +213,7 @@ class AddUK8SNodeGroupRequest extends Request
     /**
      * Mem: 内存大小。单位：MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMem()
     {
@@ -253,7 +253,7 @@ class AddUK8SNodeGroupRequest extends Request
     /**
      * GPU: GPU卡核心数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -293,7 +293,7 @@ class AddUK8SNodeGroupRequest extends Request
     /**
      * DataDiskSize: 数据磁盘大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataDiskSize()
     {
@@ -369,4 +369,6 @@ class AddUK8SNodeGroupRequest extends Request
     {
         $this->set("ChargeType", $chargeType);
     }
+
+
 }

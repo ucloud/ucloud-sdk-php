@@ -151,7 +151,7 @@ class DescribeImageRequest extends Request
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -171,7 +171,7 @@ class DescribeImageRequest extends Request
     /**
      * Limit: 返回数据长度，默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -191,7 +191,7 @@ class DescribeImageRequest extends Request
     /**
      * PriceSet: 是否返回价格：1返回，0不返回；默认不返回
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPriceSet()
     {
@@ -207,4 +207,6 @@ class DescribeImageRequest extends Request
     {
         $this->set("PriceSet", $priceSet);
     }
+
+
 }

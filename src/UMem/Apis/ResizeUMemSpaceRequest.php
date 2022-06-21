@@ -113,7 +113,7 @@ class ResizeUMemSpaceRequest extends Request
     /**
      * Size: 内存大小, 单位:GB (需要大于原size,<= 1024)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -149,4 +149,6 @@ class ResizeUMemSpaceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

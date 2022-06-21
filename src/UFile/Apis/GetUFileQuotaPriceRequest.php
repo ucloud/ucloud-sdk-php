@@ -51,7 +51,7 @@ class GetUFileQuotaPriceRequest extends Request
     /**
      * StorageVolume: 存储容量，单位: GB*天，范围: [0, 30 000 000]，步长：100GB*天
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStorageVolume()
     {
@@ -71,7 +71,7 @@ class GetUFileQuotaPriceRequest extends Request
     /**
      * DownloadTraffic: 下载流量，单位: GB，范围: [0, 60 000]，步长：1GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDownloadTraffic()
     {
@@ -91,7 +91,7 @@ class GetUFileQuotaPriceRequest extends Request
     /**
      * RequestCount: 请求次数，单位：万次，范围：[0, 1 000 000]，步长：1万次
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRequestCount()
     {
@@ -107,4 +107,6 @@ class GetUFileQuotaPriceRequest extends Request
     {
         $this->set("RequestCount", $requestCount);
     }
+
+
 }

@@ -129,4 +129,6 @@ class AssociateEIPWithShareBandwidthRequest extends Request
     {
         $this->set("IPVersion", $ipVersion);
     }
+
+
 }

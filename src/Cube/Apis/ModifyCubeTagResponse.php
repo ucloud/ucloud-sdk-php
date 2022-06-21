@@ -41,4 +41,6 @@ class ModifyCubeTagResponse extends Response
     {
         $this->set("CubeId", $cubeId);
     }
+
+
 }

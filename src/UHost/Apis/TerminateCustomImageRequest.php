@@ -88,4 +88,6 @@ class TerminateCustomImageRequest extends Request
     {
         $this->set("ImageId", $imageId);
     }
+
+
 }

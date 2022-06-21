@@ -92,7 +92,7 @@ class CreatePHostImageRequest extends Request
     }
 
     /**
-     * PHostId: UPHost实例ID
+     * PHostId: UPHost实例ID 
      *
      * @return string|null
      */
@@ -102,7 +102,7 @@ class CreatePHostImageRequest extends Request
     }
 
     /**
-     * PHostId: UPHost实例ID
+     * PHostId: UPHost实例ID 
      *
      * @param string $pHostId
      */
@@ -150,4 +150,6 @@ class CreatePHostImageRequest extends Request
     {
         $this->set("ImageDescription", $imageDescription);
     }
+
+
 }

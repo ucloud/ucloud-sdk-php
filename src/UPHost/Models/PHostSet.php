@@ -205,7 +205,7 @@ class PHostSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -225,7 +225,7 @@ class PHostSet extends Response
     /**
      * ExpireTime: 到期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -305,7 +305,7 @@ class PHostSet extends Response
     /**
      * Memory: 内存大小，单位：MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -545,4 +545,6 @@ class PHostSet extends Response
     {
         $this->set("PhostClass", $phostClass);
     }
+
+
 }

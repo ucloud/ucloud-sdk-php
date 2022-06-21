@@ -93,7 +93,7 @@ class ModifyEIPWeightRequest extends Request
     /**
      * Weight: 外网出口权重, 范围[0-100] 取值为0时, 该弹性IP不会被使用. 取值为100时, 同主机下只会使用这个弹性IP，其他弹性IP不会被使用 请勿将多个绑定在同一资源的弹性IP设置为相同权重
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getWeight()
     {
@@ -109,4 +109,6 @@ class ModifyEIPWeightRequest extends Request
     {
         $this->set("Weight", $weight);
     }
+
+
 }

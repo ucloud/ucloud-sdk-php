@@ -114,7 +114,7 @@ class AllocateShareBandwidthRequest extends Request
     /**
      * ShareBandwidth: 共享带宽值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShareBandwidth()
     {
@@ -134,7 +134,7 @@ class AllocateShareBandwidthRequest extends Request
     /**
      * Quantity: 购买时长
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -170,4 +170,6 @@ class AllocateShareBandwidthRequest extends Request
     {
         $this->set("IPVersion", $ipVersion);
     }
+
+
 }

@@ -51,9 +51,9 @@ class GetUcdnProIspBandwidthV2Request extends Request
     }
 
     /**
-     * BeginTime: 查询的起始日期，格式为Unix Timestamp
+     * BeginTime: 查询的起始日期，格式为Unix Timestamp  
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -61,7 +61,7 @@ class GetUcdnProIspBandwidthV2Request extends Request
     }
 
     /**
-     * BeginTime: 查询的起始日期，格式为Unix Timestamp
+     * BeginTime: 查询的起始日期，格式为Unix Timestamp  
      *
      * @param int $beginTime
      */
@@ -71,9 +71,9 @@ class GetUcdnProIspBandwidthV2Request extends Request
     }
 
     /**
-     * EndTime: 查询的结束日期，格式为Unix Timestamp
+     * EndTime: 查询的结束日期，格式为Unix Timestamp  
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -81,7 +81,7 @@ class GetUcdnProIspBandwidthV2Request extends Request
     }
 
     /**
-     * EndTime: 查询的结束日期，格式为Unix Timestamp
+     * EndTime: 查询的结束日期，格式为Unix Timestamp  
      *
      * @param int $endTime
      */
@@ -93,7 +93,7 @@ class GetUcdnProIspBandwidthV2Request extends Request
     /**
      * Type: 时间粒度0 (按5分钟粒度)1 (按小时粒度)2(按天粒度)3(按分钟粒度）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -169,4 +169,6 @@ class GetUcdnProIspBandwidthV2Request extends Request
     {
         $this->set("Isp", $isp);
     }
+
+
 }

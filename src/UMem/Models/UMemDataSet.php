@@ -117,7 +117,7 @@ class UMemDataSet extends Response
     /**
      * RewriteTime: 主备redis和分布式redis运维时间0  //0点1  //1点以此类推单机版memcache不返回该项
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRewriteTime()
     {
@@ -217,7 +217,7 @@ class UMemDataSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -237,7 +237,7 @@ class UMemDataSet extends Response
     /**
      * ExpireTime: 到期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -297,7 +297,7 @@ class UMemDataSet extends Response
     /**
      * Size: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -317,7 +317,7 @@ class UMemDataSet extends Response
     /**
      * UsedSize: 使用量单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUsedSize()
     {
@@ -489,7 +489,7 @@ class UMemDataSet extends Response
     /**
      * BackupTime: 自动备份开始时间,单位小时计,范围[0-23]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -565,4 +565,6 @@ class UMemDataSet extends Response
     {
         $this->set("SlaveZone", $slaveZone);
     }
+
+
 }

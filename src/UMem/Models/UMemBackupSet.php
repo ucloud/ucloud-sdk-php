@@ -45,7 +45,7 @@ class UMemBackupSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -125,7 +125,7 @@ class UMemBackupSet extends Response
     /**
      * BlockCount: 本次备份，分片的数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBlockCount()
     {
@@ -141,4 +141,6 @@ class UMemBackupSet extends Response
     {
         $this->set("BlockCount", $blockCount);
     }
+
+
 }

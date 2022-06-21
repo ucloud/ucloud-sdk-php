@@ -25,7 +25,7 @@ class DescribeUPhoneJobResponse extends Response
     
 
     /**
-     * Jobs: Job信息，详情见数据结构Job（如果Status为等待中，此字段为空）
+     * Jobs: Job信息，详情见数据结构Job（如果Status为等待中，此字段为空）	
      *
      * @return Job[]|null
      */
@@ -43,7 +43,7 @@ class DescribeUPhoneJobResponse extends Response
     }
 
     /**
-     * Jobs: Job信息，详情见数据结构Job（如果Status为等待中，此字段为空）
+     * Jobs: Job信息，详情见数据结构Job（如果Status为等待中，此字段为空）	
      *
      * @param Job[] $jobs
      */
@@ -59,7 +59,7 @@ class DescribeUPhoneJobResponse extends Response
     /**
      * TotalCount: Job总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeUPhoneJobResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

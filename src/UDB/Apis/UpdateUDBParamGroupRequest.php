@@ -93,7 +93,7 @@ class UpdateUDBParamGroupRequest extends Request
     /**
      * GroupId: 配置参数组id，使用DescribeUDBParamGroup获得
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGroupId()
     {
@@ -209,4 +209,6 @@ class UpdateUDBParamGroupRequest extends Request
     {
         $this->set("RegionFlag", $regionFlag);
     }
+
+
 }

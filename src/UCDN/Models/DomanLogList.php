@@ -73,4 +73,6 @@ class DomanLogList extends Response
         }
         return $result;
     }
+
+
 }

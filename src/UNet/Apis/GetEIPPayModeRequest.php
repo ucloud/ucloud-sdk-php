@@ -88,4 +88,6 @@ class GetEIPPayModeRequest extends Request
     {
         $this->set("EIPId", $eipId);
     }
+
+
 }

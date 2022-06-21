@@ -41,4 +41,6 @@ class DeleteIsolationGroupResponse extends Response
     {
         $this->set("GroupId", $groupId);
     }
+
+
 }

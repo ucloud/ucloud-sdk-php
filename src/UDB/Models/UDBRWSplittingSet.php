@@ -85,7 +85,7 @@ class UDBRWSplittingSet extends Response
     /**
      * ReadWeight: 读写分离比重
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getReadWeight()
     {
@@ -121,4 +121,6 @@ class UDBRWSplittingSet extends Response
     {
         $this->set("State", $state);
     }
+
+
 }

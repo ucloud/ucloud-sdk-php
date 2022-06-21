@@ -55,4 +55,6 @@ class GetCubeMetricsResponse extends Response
         }
         return $result;
     }
+
+
 }

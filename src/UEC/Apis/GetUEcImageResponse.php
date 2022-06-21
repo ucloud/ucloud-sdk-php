@@ -59,7 +59,7 @@ class GetUEcImageResponse extends Response
     /**
      * TotalCount: 镜像总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class GetUEcImageResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

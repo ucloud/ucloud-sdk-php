@@ -23,7 +23,7 @@ class ULBPolicySet extends Response
     
 
     /**
-     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名	
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class ULBPolicySet extends Response
     }
 
     /**
-     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名
+     * DomainMatchMode: 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名	
      *
      * @param string $domainMatchMode
      */
@@ -125,7 +125,7 @@ class ULBPolicySet extends Response
     /**
      * PolicyPriority: 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPolicyPriority()
     {
@@ -165,7 +165,7 @@ class ULBPolicySet extends Response
     /**
      * TotalCount: 默认内容转发类型下返回当前rs总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -213,4 +213,6 @@ class ULBPolicySet extends Response
         }
         return $result;
     }
+
+
 }

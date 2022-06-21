@@ -43,7 +43,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * Tag:
+     * Tag: 
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * Tag:
+     * Tag: 
      *
      * @param string $tag
      */
@@ -65,7 +65,7 @@ class UMemSpaceSet extends Response
     /**
      * RewriteTime: 运维时间0   //0点1   //1点依次类推
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRewriteTime()
     {
@@ -103,7 +103,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * SubnetId:
+     * SubnetId: 
      *
      * @return string|null
      */
@@ -113,7 +113,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * SubnetId:
+     * SubnetId: 
      *
      * @param string $subnetId
      */
@@ -123,7 +123,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * VPCId:
+     * VPCId: 
      *
      * @return string|null
      */
@@ -133,7 +133,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * VPCId:
+     * VPCId: 
      *
      * @param string $vpcId
      */
@@ -165,7 +165,7 @@ class UMemSpaceSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -185,7 +185,7 @@ class UMemSpaceSet extends Response
     /**
      * ExpireTime: 到期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -245,7 +245,7 @@ class UMemSpaceSet extends Response
     /**
      * Size: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -265,7 +265,7 @@ class UMemSpaceSet extends Response
     /**
      * UsedSize: 使用量单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUsedSize()
     {
@@ -353,4 +353,6 @@ class UMemSpaceSet extends Response
         }
         return $result;
     }
+
+
 }

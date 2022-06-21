@@ -24,7 +24,7 @@ class DescribeUFSVolumeMountpointResponse extends Response
     
 
     /**
-     * DataSet:
+     * DataSet: 
      *
      * @return MountPointInfo[]|null
      */
@@ -42,7 +42,7 @@ class DescribeUFSVolumeMountpointResponse extends Response
     }
 
     /**
-     * DataSet:
+     * DataSet: 
      *
      * @param MountPointInfo[] $dataSet
      */
@@ -58,7 +58,7 @@ class DescribeUFSVolumeMountpointResponse extends Response
     /**
      * TotalMountPointNum: 目前的挂载点总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalMountPointNum()
     {
@@ -78,7 +78,7 @@ class DescribeUFSVolumeMountpointResponse extends Response
     /**
      * MaxMountPointNum: 文件系统能创建的最大挂载点数目
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxMountPointNum()
     {
@@ -94,4 +94,6 @@ class DescribeUFSVolumeMountpointResponse extends Response
     {
         $this->set("MaxMountPointNum", $maxMountPointNum);
     }
+
+
 }

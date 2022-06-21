@@ -65,7 +65,7 @@ class NodeInfo extends Response
     /**
      * CoreNum: Cpu核数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCoreNum()
     {
@@ -85,7 +85,7 @@ class NodeInfo extends Response
     /**
      * MemSize: 节点内存大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemSize()
     {
@@ -105,7 +105,7 @@ class NodeInfo extends Response
     /**
      * SysDiskSize: 系统盘大小， 单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSysDiskSize()
     {
@@ -125,7 +125,7 @@ class NodeInfo extends Response
     /**
      * DiskSize: 数据盘大小， 单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSize()
     {
@@ -145,7 +145,7 @@ class NodeInfo extends Response
     /**
      * State: 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getState()
     {
@@ -165,7 +165,7 @@ class NodeInfo extends Response
     /**
      * NetLimit: 节点带宽限制， 单位Mbs
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNetLimit()
     {
@@ -265,7 +265,7 @@ class NodeInfo extends Response
     /**
      * Type: 运营商类型： 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -285,7 +285,7 @@ class NodeInfo extends Response
     /**
      * ChargeType: 付费类型：1按时, 2按月,3按年
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeType()
     {
@@ -305,7 +305,7 @@ class NodeInfo extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -325,7 +325,7 @@ class NodeInfo extends Response
     /**
      * ExpiredTime: 过期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpiredTime()
     {
@@ -453,4 +453,6 @@ class NodeInfo extends Response
     {
         $this->set("InnerIps", $innerIps);
     }
+
+
 }

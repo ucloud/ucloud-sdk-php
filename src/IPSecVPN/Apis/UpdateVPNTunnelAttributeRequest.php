@@ -449,4 +449,6 @@ class UpdateVPNTunnelAttributeRequest extends Request
     {
         $this->set("IPSecCloseAction", $ipSecCloseAction);
     }
+
+
 }

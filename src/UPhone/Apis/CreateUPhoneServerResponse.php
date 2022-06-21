@@ -23,7 +23,7 @@ class CreateUPhoneServerResponse extends Response
     
 
     /**
-     * ServerId: 云手机服务器的实例 ID
+     * ServerId: 云手机服务器的实例 ID 
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class CreateUPhoneServerResponse extends Response
     }
 
     /**
-     * ServerId: 云手机服务器的实例 ID
+     * ServerId: 云手机服务器的实例 ID 
      *
      * @param string $serverId
      */
@@ -41,4 +41,6 @@ class CreateUPhoneServerResponse extends Response
     {
         $this->set("ServerId", $serverId);
     }
+
+
 }

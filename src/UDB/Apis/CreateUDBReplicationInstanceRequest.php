@@ -133,7 +133,7 @@ class CreateUDBReplicationInstanceRequest extends Request
     /**
      * Port: 端口号，默认27017，取值范围3306至65535。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -209,4 +209,6 @@ class CreateUDBReplicationInstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

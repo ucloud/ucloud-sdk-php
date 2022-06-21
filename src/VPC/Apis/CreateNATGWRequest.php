@@ -174,7 +174,7 @@ class CreateNATGWRequest extends Request
     /**
      * IfOpen: 白名单开关标记。0表示关闭，1表示开启。默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIfOpen()
     {
@@ -230,4 +230,6 @@ class CreateNATGWRequest extends Request
     {
         $this->set("Remark", $remark);
     }
+
+
 }

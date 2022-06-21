@@ -55,4 +55,6 @@ class DescribeUGA3OptimizationResponse extends Response
         }
         return $result;
     }
+
+
 }

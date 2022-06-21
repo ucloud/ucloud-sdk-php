@@ -65,7 +65,7 @@ class PHostCPUSet extends Response
     /**
      * Count: CPU个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -85,7 +85,7 @@ class PHostCPUSet extends Response
     /**
      * CoreCount: CPU核数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCoreCount()
     {
@@ -101,4 +101,6 @@ class PHostCPUSet extends Response
     {
         $this->set("CoreCount", $coreCount);
     }
+
+
 }

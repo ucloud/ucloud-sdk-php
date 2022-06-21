@@ -109,4 +109,6 @@ class GetCubeExtendInfoRequest extends Request
     {
         $this->set("CubeIds", $cubeIds);
     }
+
+
 }

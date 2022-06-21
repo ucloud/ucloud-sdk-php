@@ -74,4 +74,6 @@ class AllocateVIPResponse extends Response
     {
         $this->set("DataSet", $dataSet);
     }
+
+
 }

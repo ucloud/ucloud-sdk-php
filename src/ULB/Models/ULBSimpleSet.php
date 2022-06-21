@@ -145,7 +145,7 @@ class ULBSimpleSet extends Response
     /**
      * CreateTime: ULB的创建时间，格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -245,7 +245,7 @@ class ULBSimpleSet extends Response
     /**
      * BandwidthType: 带宽类型，枚举值为： 0，非共享带宽； 1，共享带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidthType()
     {
@@ -265,7 +265,7 @@ class ULBSimpleSet extends Response
     /**
      * Bandwidth: 带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -317,7 +317,7 @@ class ULBSimpleSet extends Response
     /**
      * VServerCount: ulb下vserver数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getVServerCount()
     {
@@ -389,7 +389,7 @@ class ULBSimpleSet extends Response
     /**
      * EnableLog: ULB是否开启日志功能。0，关闭；1，开启
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEnableLog()
     {
@@ -425,4 +425,6 @@ class ULBSimpleSet extends Response
     {
         $this->set("LogSet", $logSet->getAll());
     }
+
+
 }

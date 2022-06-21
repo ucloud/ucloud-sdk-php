@@ -93,7 +93,7 @@ class GetEIPPriceRequest extends Request
     /**
      * Bandwidth: 弹性IP的外网带宽, 单位为Mbps, 范围 [0-800]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -153,7 +153,7 @@ class GetEIPPriceRequest extends Request
     /**
      * Quantity: 购买时长。默认: 1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -169,4 +169,6 @@ class GetEIPPriceRequest extends Request
     {
         $this->set("Quantity", $quantity);
     }
+
+
 }

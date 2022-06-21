@@ -53,7 +53,7 @@ class GetUGA3PriceRequest extends Request
     /**
      * Bandwidth: 共享带宽大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -93,7 +93,7 @@ class GetUGA3PriceRequest extends Request
     /**
      * Quantity: 购买时间数量，当ChargeType为Month时 Quantity默认为0，代表购买至月底。按年按小时必须为大于0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -149,4 +149,6 @@ class GetUGA3PriceRequest extends Request
     {
         $this->set("AccelerationArea", $accelerationArea);
     }
+
+
 }

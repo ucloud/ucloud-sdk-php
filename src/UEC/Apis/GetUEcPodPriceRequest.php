@@ -71,7 +71,7 @@ class GetUEcPodPriceRequest extends Request
     /**
      * MemSize: 容器组总内存大小（单位M）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemSize()
     {
@@ -91,7 +91,7 @@ class GetUEcPodPriceRequest extends Request
     /**
      * ChargeType: 支付类型（2按月，3按年，默认2）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeType()
     {
@@ -111,7 +111,7 @@ class GetUEcPodPriceRequest extends Request
     /**
      * ChargeQuantity: 月数或年数（默认值：1，当支付类型为按月时，默认值为0）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getChargeQuantity()
     {
@@ -171,7 +171,7 @@ class GetUEcPodPriceRequest extends Request
     /**
      * Bandwidth: 绑定的带宽，默认0，当绑定外网IP时默认1（单位M）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -187,4 +187,6 @@ class GetUEcPodPriceRequest extends Request
     {
         $this->set("Bandwidth", $bandwidth);
     }
+
+
 }

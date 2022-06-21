@@ -41,4 +41,6 @@ class GetVPNGatewayUpgradePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

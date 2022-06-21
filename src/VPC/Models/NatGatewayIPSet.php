@@ -45,7 +45,7 @@ class NatGatewayIPSet extends Response
     /**
      * Weight: 权重为100的为出口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getWeight()
     {
@@ -85,7 +85,7 @@ class NatGatewayIPSet extends Response
     /**
      * Bandwidth: 带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -133,4 +133,6 @@ class NatGatewayIPSet extends Response
         }
         return $result;
     }
+
+
 }

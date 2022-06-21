@@ -28,7 +28,7 @@ class DescribeVPNTunnelResponse extends Response
     /**
      * TotalCount: VPN隧道总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -76,4 +76,6 @@ class DescribeVPNTunnelResponse extends Response
         }
         return $result;
     }
+
+
 }

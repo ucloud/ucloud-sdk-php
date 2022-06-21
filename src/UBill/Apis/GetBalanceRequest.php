@@ -24,4 +24,8 @@ class GetBalanceRequest extends Request
     {
         parent::__construct(["Action" => "GetBalance"]);
     }
+
+    
+
+
 }

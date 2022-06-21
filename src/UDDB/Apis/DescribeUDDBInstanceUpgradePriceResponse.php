@@ -42,4 +42,6 @@ class DescribeUDDBInstanceUpgradePriceResponse extends Response
     {
         $this->set("PriceInfo", $priceInfo->getAll());
     }
+
+
 }

@@ -54,4 +54,6 @@ class DescribeVPCIntercomResponse extends Response
         }
         return $result;
     }
+
+
 }

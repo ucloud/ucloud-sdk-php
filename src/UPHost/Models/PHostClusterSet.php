@@ -61,4 +61,6 @@ class PHostClusterSet extends Response
     {
         $this->set("StockStatus", $stockStatus);
     }
+
+
 }

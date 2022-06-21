@@ -29,7 +29,7 @@ class DescribeNATGWResponse extends Response
     /**
      * TotalCount: 满足条件的实例的总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -77,4 +77,6 @@ class DescribeNATGWResponse extends Response
         }
         return $result;
     }
+
+
 }

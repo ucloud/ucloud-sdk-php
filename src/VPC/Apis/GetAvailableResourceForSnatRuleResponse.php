@@ -58,7 +58,7 @@ class GetAvailableResourceForSnatRuleResponse extends Response
     /**
      * TotalCount: 总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class GetAvailableResourceForSnatRuleResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

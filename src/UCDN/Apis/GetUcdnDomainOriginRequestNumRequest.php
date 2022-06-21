@@ -53,7 +53,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
     /**
      * Type: 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度, 3=按1分钟）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -73,7 +73,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -93,7 +93,7 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -149,4 +149,6 @@ class GetUcdnDomainOriginRequestNumRequest extends Request
     {
         $this->set("Areacode", $areacode);
     }
+
+
 }

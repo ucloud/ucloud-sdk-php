@@ -112,7 +112,7 @@ class CreateUMemcacheGroupRequest extends Request
     /**
      * Size: 每个节点的内存大小,单位GB,默认1GB 目前仅支持1/2/4/8/16/32这几档
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -192,7 +192,7 @@ class CreateUMemcacheGroupRequest extends Request
     /**
      * Quantity: 购买时长，默认为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -230,7 +230,7 @@ class CreateUMemcacheGroupRequest extends Request
     }
 
     /**
-     * Protocol:
+     * Protocol: 
      *
      * @return string|null
      */
@@ -240,7 +240,7 @@ class CreateUMemcacheGroupRequest extends Request
     }
 
     /**
-     * Protocol:
+     * Protocol: 
      *
      * @param string $protocol
      */
@@ -268,4 +268,6 @@ class CreateUMemcacheGroupRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

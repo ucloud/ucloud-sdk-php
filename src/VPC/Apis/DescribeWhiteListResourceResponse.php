@@ -59,7 +59,7 @@ class DescribeWhiteListResourceResponse extends Response
     /**
      * TotalCount: 上述DataSet总数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeWhiteListResourceResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

@@ -27,7 +27,7 @@ class DescribeUEcVHostResponse extends Response
     /**
      * TotalCount: 满足条件的节点总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeUEcVHostResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -70,7 +70,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
     /**
      * BeginTime: 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -90,7 +90,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
     /**
      * EndTime: 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -130,7 +130,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
     /**
      * Offset: 数据偏移量，默认为0，自然数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -150,7 +150,7 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
     /**
      * Limit: 返回数据长度,默认全部，自然数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -166,4 +166,6 @@ class DescribeNewUcdnRefreshCacheTaskRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

@@ -73,7 +73,7 @@ class DescribeShareBandwidthUpdatePriceRequest extends Request
     /**
      * ShareBandwidth: 共享带宽值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShareBandwidth()
     {
@@ -89,4 +89,6 @@ class DescribeShareBandwidthUpdatePriceRequest extends Request
     {
         $this->set("ShareBandwidth", $shareBandwidth);
     }
+
+
 }

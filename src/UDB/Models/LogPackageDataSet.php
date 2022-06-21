@@ -25,7 +25,7 @@ class LogPackageDataSet extends Response
     /**
      * BackupId: 备份id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupId()
     {
@@ -65,7 +65,7 @@ class LogPackageDataSet extends Response
     /**
      * BackupTime: 备份时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -85,7 +85,7 @@ class LogPackageDataSet extends Response
     /**
      * BackupSize: 备份文件大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupSize()
     {
@@ -105,7 +105,7 @@ class LogPackageDataSet extends Response
     /**
      * BackupType: 备份类型，包括2-binlog备份，3-slowlog备份
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupType()
     {
@@ -221,4 +221,6 @@ class LogPackageDataSet extends Response
     {
         $this->set("BackupZone", $backupZone);
     }
+
+
 }

@@ -95,7 +95,7 @@ class GetPHostPriceRequest extends Request
     /**
      * Count: 购买数量，范围[1-5]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -135,7 +135,7 @@ class GetPHostPriceRequest extends Request
     /**
      * Quantity: 购买时长，1-10个月或1-10年；默认值为1。月付时，此参数传0，代表购买至月末，1代表整月。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -193,7 +193,7 @@ class GetPHostPriceRequest extends Request
     }
 
     /**
-     * Disks:
+     * Disks: 
      *
      * @return GetPHostPriceParamDisks[]|null
      */
@@ -211,7 +211,7 @@ class GetPHostPriceRequest extends Request
     }
 
     /**
-     * Disks:
+     * Disks: 
      *
      * @param GetPHostPriceParamDisks[] $disks
      */
@@ -223,4 +223,6 @@ class GetPHostPriceRequest extends Request
         }
         return $result;
     }
+
+
 }

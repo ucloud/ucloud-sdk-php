@@ -112,7 +112,7 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     /**
      * BackupTime: 备份的整点时间，范围[0,23]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -188,4 +188,6 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     {
         $this->set("BackupMethod", $backupMethod);
     }
+
+
 }

@@ -171,7 +171,7 @@ class DescribeSubnetRequest extends Request
     /**
      * Offset: 偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -191,7 +191,7 @@ class DescribeSubnetRequest extends Request
     /**
      * Limit: 列表长度，默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -227,4 +227,6 @@ class DescribeSubnetRequest extends Request
     {
         $this->set("ShowAvailableIPs", $showAvailableIPs);
     }
+
+
 }

@@ -45,7 +45,7 @@ class UnetShareBandwidthSet extends Response
     /**
      * ShareBandwidth: 共享带宽值(预付费)/共享带宽峰值(后付费), 单位Mbps
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShareBandwidth()
     {
@@ -105,7 +105,7 @@ class UnetShareBandwidthSet extends Response
     /**
      * CreateTime: 创建时间, 格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -125,7 +125,7 @@ class UnetShareBandwidthSet extends Response
     /**
      * ExpireTime: 过期时间, 格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -193,4 +193,6 @@ class UnetShareBandwidthSet extends Response
     {
         $this->set("Name", $name);
     }
+
+
 }

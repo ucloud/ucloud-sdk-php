@@ -108,4 +108,6 @@ class DescribeBaremetalMachineTypeRequest extends Request
     {
         $this->set("Type", $type);
     }
+
+
 }

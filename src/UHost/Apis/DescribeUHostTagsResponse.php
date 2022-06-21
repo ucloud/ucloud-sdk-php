@@ -26,7 +26,7 @@ class DescribeUHostTagsResponse extends Response
     /**
      * TotalCount: 已有主机的业务组总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUHostTagsResponse extends Response
         }
         return $result;
     }
+
+
 }

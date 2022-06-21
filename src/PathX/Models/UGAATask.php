@@ -25,7 +25,7 @@ class UGAATask extends Response
     /**
      * Port: 接入端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -61,4 +61,6 @@ class UGAATask extends Response
     {
         $this->set("Protocol", $protocol);
     }
+
+
 }

@@ -25,7 +25,7 @@ class GetUEcUpgradePriceResponse extends Response
     /**
      * Price: 规格调整差价
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -41,4 +41,6 @@ class GetUEcUpgradePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

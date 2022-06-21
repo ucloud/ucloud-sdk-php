@@ -23,9 +23,9 @@ class MatricPoint extends Response
     
 
     /**
-     * Timestamp: 时间戳
+     * Timestamp: 时间戳 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTimestamp()
     {
@@ -33,7 +33,7 @@ class MatricPoint extends Response
     }
 
     /**
-     * Timestamp: 时间戳
+     * Timestamp: 时间戳 
      *
      * @param int $timestamp
      */
@@ -45,7 +45,7 @@ class MatricPoint extends Response
     /**
      * Value: 监控点数值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getValue()
     {
@@ -61,4 +61,6 @@ class MatricPoint extends Response
     {
         $this->set("Value", $value);
     }
+
+
 }

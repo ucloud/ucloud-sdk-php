@@ -41,4 +41,6 @@ class GetAttachedDiskUpgradePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

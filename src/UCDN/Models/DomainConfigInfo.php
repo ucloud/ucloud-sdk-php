@@ -105,7 +105,7 @@ class DomainConfigInfo extends Response
     /**
      * CreateTime: 域名创建的时间。格式：时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -361,4 +361,6 @@ class DomainConfigInfo extends Response
     {
         $this->set("AdvancedConf", $advancedConf->getAll());
     }
+
+
 }

@@ -125,7 +125,7 @@ class NetworkInterface extends Response
     /**
      * Status: 绑定状态
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStatus()
     {
@@ -145,21 +145,33 @@ class NetworkInterface extends Response
     /**
      * PrivateIp: 网卡的内网IP信息
      *
-     * @return string[]|null
+     * @return UNIIpInfo[]|null
      */
     public function getPrivateIp()
     {
-        return $this->get("PrivateIp");
+        $items = $this->get("PrivateIp");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new UNIIpInfo($item));
+        }
+        return $result;
     }
 
     /**
      * PrivateIp: 网卡的内网IP信息
      *
-     * @param string[] $privateIp
+     * @param UNIIpInfo[] $privateIp
      */
     public function setPrivateIp(array $privateIp)
     {
-        $this->set("PrivateIp", $privateIp);
+        $result = [];
+        foreach ($privateIp as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
@@ -265,7 +277,7 @@ class NetworkInterface extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -363,22 +375,24 @@ class NetworkInterface extends Response
     }
 
     /**
-     * PrivateIplimit: 网卡的内网IP配额信息
+     * PrivateIpLimit: 网卡的内网IP配额信息
      *
-     * @return string[]|null
+     * @return UNIQuotaInfo|null
      */
-    public function getPrivateIplimit()
+    public function getPrivateIpLimit()
     {
-        return $this->get("PrivateIplimit");
+        return new UNIQuotaInfo($this->get("PrivateIpLimit"));
     }
 
     /**
-     * PrivateIplimit: 网卡的内网IP配额信息
+     * PrivateIpLimit: 网卡的内网IP配额信息
      *
-     * @param string[] $privateIplimit
+     * @param UNIQuotaInfo $privateIpLimit
      */
-    public function setPrivateIplimit(array $privateIplimit)
+    public function setPrivateIpLimit(array $privateIpLimit)
     {
-        $this->set("PrivateIplimit", $privateIplimit);
+        $this->set("PrivateIpLimit", $privateIpLimit->getAll());
     }
+
+
 }

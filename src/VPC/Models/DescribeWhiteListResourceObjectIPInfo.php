@@ -201,4 +201,6 @@ class DescribeWhiteListResourceObjectIPInfo extends Response
     {
         $this->set("VPCId", $vpcId);
     }
+
+
 }

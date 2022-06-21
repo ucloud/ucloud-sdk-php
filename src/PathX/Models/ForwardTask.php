@@ -45,7 +45,7 @@ class ForwardTask extends Response
     /**
      * RSPort: 源站服务器监听的端口号
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRSPort()
     {
@@ -65,7 +65,7 @@ class ForwardTask extends Response
     /**
      * Port: 加速端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -81,4 +81,6 @@ class ForwardTask extends Response
     {
         $this->set("Port", $port);
     }
+
+
 }

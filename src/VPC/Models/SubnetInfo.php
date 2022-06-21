@@ -185,7 +185,7 @@ class SubnetInfo extends Response
     /**
      * SubnetType: 子网类型
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSubnetType()
     {
@@ -265,7 +265,7 @@ class SubnetInfo extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -325,7 +325,7 @@ class SubnetInfo extends Response
     /**
      * AvailableIPs: 可用IP数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAvailableIPs()
     {
@@ -341,4 +341,6 @@ class SubnetInfo extends Response
     {
         $this->set("AvailableIPs", $availableIPs);
     }
+
+
 }

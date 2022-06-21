@@ -113,7 +113,7 @@ class DescribeUDBInstanceBackupURLRequest extends Request
     /**
      * BackupId: DB实例备份ID,该值可以通过DescribeUDBBackup获取
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupId()
     {
@@ -129,4 +129,6 @@ class DescribeUDBInstanceBackupURLRequest extends Request
     {
         $this->set("BackupId", $backupId);
     }
+
+
 }

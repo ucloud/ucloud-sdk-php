@@ -116,7 +116,7 @@ class AddUK8SPHostNodeRequest extends Request
     /**
      * Count: 最大创建Node节点数量，取值范围是[1,10]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -176,7 +176,7 @@ class AddUK8SPHostNodeRequest extends Request
     /**
      * Quantity: 购买时长。默认: 1。月付时，此参数传0，代表了购买至月末。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -216,7 +216,7 @@ class AddUK8SPHostNodeRequest extends Request
     /**
      * MaxPods: 默认110，生产环境建议小于等于110。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxPods()
     {
@@ -372,4 +372,6 @@ class AddUK8SPHostNodeRequest extends Request
     {
         $this->set("InitScript", $initScript);
     }
+
+
 }

@@ -25,7 +25,7 @@ class LogInfo extends Response
     /**
      * LogTime: Unix时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLogTime()
     {
@@ -61,4 +61,6 @@ class LogInfo extends Response
     {
         $this->set("LogUrl", $logUrl);
     }
+
+
 }

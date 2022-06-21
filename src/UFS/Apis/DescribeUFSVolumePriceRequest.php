@@ -73,7 +73,7 @@ class DescribeUFSVolumePriceRequest extends Request
     /**
      * Size: 文件系统大小，单位为GB，新架构容量型最小容量为500GB，以100GB递增，最大不超过100TB。新架构性能型最小容量为100GB，以100GB递增，最大不超过20TB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -113,7 +113,7 @@ class DescribeUFSVolumePriceRequest extends Request
     /**
      * Quantity: 购买UFS的时长， 默认为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -169,4 +169,6 @@ class DescribeUFSVolumePriceRequest extends Request
     {
         $this->set("VolumeId", $volumeId);
     }
+
+
 }

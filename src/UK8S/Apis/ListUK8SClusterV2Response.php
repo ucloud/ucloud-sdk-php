@@ -26,7 +26,7 @@ class ListUK8SClusterV2Response extends Response
     /**
      * ClusterCount: 满足条件的集群数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getClusterCount()
     {
@@ -74,4 +74,6 @@ class ListUK8SClusterV2Response extends Response
         }
         return $result;
     }
+
+
 }

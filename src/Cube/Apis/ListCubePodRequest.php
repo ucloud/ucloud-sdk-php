@@ -151,7 +151,7 @@ class ListCubePodRequest extends Request
     /**
      * Offset: 默认0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -171,7 +171,7 @@ class ListCubePodRequest extends Request
     /**
      * Limit: 默认20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -207,4 +207,6 @@ class ListCubePodRequest extends Request
     {
         $this->set("DeploymentId", $deploymentId);
     }
+
+
 }

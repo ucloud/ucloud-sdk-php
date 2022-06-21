@@ -90,7 +90,7 @@ class DescribeBucketRequest extends Request
     /**
      * Offset: 获取所有Bucket列表的偏移数目，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -110,7 +110,7 @@ class DescribeBucketRequest extends Request
     /**
      * Limit: 获取所有Bucket列表的限制数目，默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -126,4 +126,6 @@ class DescribeBucketRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

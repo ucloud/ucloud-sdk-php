@@ -132,7 +132,7 @@ class ResizePHostAttachedDiskRequest extends Request
     /**
      * DiskSpace: 裸金属机型参数->磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB，数据盘单块盘20-32000GB。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -148,4 +148,6 @@ class ResizePHostAttachedDiskRequest extends Request
     {
         $this->set("DiskSpace", $diskSpace);
     }
+
+
 }

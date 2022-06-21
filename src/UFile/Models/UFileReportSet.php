@@ -25,7 +25,7 @@ class UFileReportSet extends Response
     /**
      * Time: 配额消费时间，unix时间戳，精确到日期
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTime()
     {
@@ -101,4 +101,6 @@ class UFileReportSet extends Response
     {
         $this->set("RequestCount", $requestCount);
     }
+
+
 }

@@ -120,7 +120,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * Disks:
+     * Disks: 
      *
      * @return CreateUHostInstanceParamDisks[]|null
      */
@@ -138,7 +138,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * Disks:
+     * Disks: 
      *
      * @param CreateUHostInstanceParamDisks[] $disks
      */
@@ -254,7 +254,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * Quantity: 购买时长。默认:值 1。按小时购买（Dynamic/Postpay）时无需此参数。 月付时，此参数传0，代表购买至月末。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -294,7 +294,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * CPU: 虚拟CPU核数。可选参数：1-64（具体机型与CPU的对应关系参照控制台）。默认值: 4。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -314,7 +314,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * Memory: 内存大小。单位：MB。范围 ：[1024, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -354,7 +354,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -514,7 +514,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * AlarmTemplateId: 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败只会在后台有日志，不会影响创建主机流程，也不会在前端报错。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAlarmTemplateId()
     {
@@ -574,7 +574,7 @@ class CreateUHostInstanceRequest extends Request
     /**
      * MaxCount: 本次最大创建主机数量，取值范围是[1,100]，默认值为1。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxCount()
     {
@@ -592,7 +592,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * NetworkInterface:
+     * NetworkInterface: 
      *
      * @return CreateUHostInstanceParamNetworkInterface[]|null
      */
@@ -610,7 +610,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * NetworkInterface:
+     * NetworkInterface: 
      *
      * @param CreateUHostInstanceParamNetworkInterface[] $networkInterface
      */
@@ -664,7 +664,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * Volumes:
+     * Volumes: 
      *
      * @return CreateUHostInstanceParamVolumes[]|null
      */
@@ -682,7 +682,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * Volumes:
+     * Volumes: 
      *
      * @param CreateUHostInstanceParamVolumes[] $volumes
      */
@@ -716,7 +716,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * Features:
+     * Features: 
      *
      * @return CreateUHostInstanceParamFeatures|null
      */
@@ -726,7 +726,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * Features:
+     * Features: 
      *
      * @param CreateUHostInstanceParamFeatures $features
      */
@@ -736,7 +736,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * SecGroupId:
+     * SecGroupId: 
      *
      * @return CreateUHostInstanceParamSecGroupId[]|null
      */
@@ -754,7 +754,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * SecGroupId:
+     * SecGroupId: 
      *
      * @param CreateUHostInstanceParamSecGroupId[] $secGroupId
      */
@@ -786,4 +786,6 @@ class CreateUHostInstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

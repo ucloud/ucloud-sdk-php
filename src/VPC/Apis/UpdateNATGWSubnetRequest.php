@@ -108,4 +108,6 @@ class UpdateNATGWSubnetRequest extends Request
     {
         $this->set("SubnetworkIds", $subnetworkIds);
     }
+
+
 }

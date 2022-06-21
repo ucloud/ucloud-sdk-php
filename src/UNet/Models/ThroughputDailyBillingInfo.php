@@ -25,7 +25,7 @@ class ThroughputDailyBillingInfo extends Response
     /**
      * StartTime: 计费开始时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStartTime()
     {
@@ -45,7 +45,7 @@ class ThroughputDailyBillingInfo extends Response
     /**
      * EndTime: 计费结束时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -65,7 +65,7 @@ class ThroughputDailyBillingInfo extends Response
     /**
      * QuantityOut: 计费流量，单位“GB”
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantityOut()
     {
@@ -101,4 +101,6 @@ class ThroughputDailyBillingInfo extends Response
     {
         $this->set("BillingState", $billingState);
     }
+
+
 }

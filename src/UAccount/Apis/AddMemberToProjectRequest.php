@@ -30,7 +30,7 @@ class AddMemberToProjectRequest extends Request
     
 
     /**
-     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。
+     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。 
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class AddMemberToProjectRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。
+     * ProjectId: 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。 
      *
      * @param string $projectId
      */
@@ -88,4 +88,6 @@ class AddMemberToProjectRequest extends Request
     {
         $this->set("CharacterId", $characterId);
     }
+
+
 }

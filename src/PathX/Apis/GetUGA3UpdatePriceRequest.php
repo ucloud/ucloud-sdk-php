@@ -72,7 +72,7 @@ class GetUGA3UpdatePriceRequest extends Request
     /**
      * Bandwidth: 只有升级带宽的时候有价格变化
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -128,4 +128,6 @@ class GetUGA3UpdatePriceRequest extends Request
     {
         $this->set("AreaCode", $areaCode);
     }
+
+
 }

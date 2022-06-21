@@ -41,4 +41,6 @@ class GetUGA3UpdatePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

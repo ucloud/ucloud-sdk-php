@@ -68,4 +68,6 @@ class DeleteUGAInstanceRequest extends Request
     {
         $this->set("UGAId", $ugaId);
     }
+
+
 }

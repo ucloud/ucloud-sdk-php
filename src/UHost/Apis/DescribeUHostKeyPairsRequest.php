@@ -130,7 +130,7 @@ class DescribeUHostKeyPairsRequest extends Request
     /**
      * Offset: 列表起始位置偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -150,7 +150,7 @@ class DescribeUHostKeyPairsRequest extends Request
     /**
      * Limit: 返回数据长度，默认为20，最大100
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -166,4 +166,6 @@ class DescribeUHostKeyPairsRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

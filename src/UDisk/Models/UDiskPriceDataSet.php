@@ -45,7 +45,7 @@ class UDiskPriceDataSet extends Response
     /**
      * Price: 实际价格 (单位: 分)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -85,7 +85,7 @@ class UDiskPriceDataSet extends Response
     /**
      * OriginalPrice: 用户折后价(对应计费CustomPrice)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginalPrice()
     {
@@ -105,7 +105,7 @@ class UDiskPriceDataSet extends Response
     /**
      * ListPrice: 原价(对应计费OriginalPrice)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getListPrice()
     {
@@ -121,4 +121,6 @@ class UDiskPriceDataSet extends Response
     {
         $this->set("ListPrice", $listPrice);
     }
+
+
 }

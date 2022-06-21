@@ -61,4 +61,6 @@ class CreateUGAInstanceResponse extends Response
     {
         $this->set("CName", $cName);
     }
+
+
 }

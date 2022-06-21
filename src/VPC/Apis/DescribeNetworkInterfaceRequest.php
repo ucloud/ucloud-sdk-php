@@ -192,7 +192,7 @@ class DescribeNetworkInterfaceRequest extends Request
     /**
      * Limit: 默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -212,7 +212,7 @@ class DescribeNetworkInterfaceRequest extends Request
     /**
      * Offset: 默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -228,4 +228,6 @@ class DescribeNetworkInterfaceRequest extends Request
     {
         $this->set("Offset", $offset);
     }
+
+
 }

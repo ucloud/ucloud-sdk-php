@@ -65,7 +65,7 @@ class UPathSet extends Response
     /**
      * Bandwidth: 带宽 Mbps, 1~800Mbps
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -181,4 +181,6 @@ class UPathSet extends Response
     {
         $this->set("LineTo", $lineTo);
     }
+
+
 }

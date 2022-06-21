@@ -88,4 +88,6 @@ class DeleteIsolationGroupRequest extends Request
     {
         $this->set("GroupId", $groupId);
     }
+
+
 }

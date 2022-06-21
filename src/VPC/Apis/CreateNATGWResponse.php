@@ -41,4 +41,6 @@ class CreateNATGWResponse extends Response
     {
         $this->set("NATGWId", $natgwId);
     }
+
+
 }

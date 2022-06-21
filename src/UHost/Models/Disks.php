@@ -23,7 +23,7 @@ class Disks extends Response
     
 
     /**
-     * Name: 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。
+     * Name: 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class Disks extends Response
     }
 
     /**
-     * Name: 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。
+     * Name: 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 
      *
      * @param string $name
      */
@@ -105,4 +105,6 @@ class Disks extends Response
         }
         return $result;
     }
+
+
 }

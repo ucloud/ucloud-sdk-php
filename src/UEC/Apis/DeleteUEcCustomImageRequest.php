@@ -87,4 +87,6 @@ class DeleteUEcCustomImageRequest extends Request
     {
         $this->set("IdcId", $idcId);
     }
+
+
 }

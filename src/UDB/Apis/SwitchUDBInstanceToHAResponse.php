@@ -41,4 +41,6 @@ class SwitchUDBInstanceToHAResponse extends Response
     {
         $this->set("DBId", $dbId);
     }
+
+
 }

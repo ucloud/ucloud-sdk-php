@@ -125,7 +125,7 @@ class URedisBackupSet extends Response
     /**
      * BackupTime: 备份时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -145,7 +145,7 @@ class URedisBackupSet extends Response
     /**
      * BackupSize: 备份文件大小, 以字节为单位
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupSize()
     {
@@ -201,4 +201,6 @@ class URedisBackupSet extends Response
     {
         $this->set("State", $state);
     }
+
+
 }

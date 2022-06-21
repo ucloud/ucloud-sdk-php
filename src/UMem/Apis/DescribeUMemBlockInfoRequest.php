@@ -115,7 +115,7 @@ class DescribeUMemBlockInfoRequest extends Request
     /**
      * Offset: 分页显示的起始偏移, 默认值为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -135,7 +135,7 @@ class DescribeUMemBlockInfoRequest extends Request
     /**
      * Limit: 分页显示的条目数, 默认值为10
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -151,4 +151,6 @@ class DescribeUMemBlockInfoRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

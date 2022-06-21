@@ -45,7 +45,7 @@ class UPhoneSpec extends Response
     /**
      * UPhoneCount: 手机开数，即该服务器规格能生成对应手机规格的云手机个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUPhoneCount()
     {
@@ -61,4 +61,6 @@ class UPhoneSpec extends Response
     {
         $this->set("UPhoneCount", $uPhoneCount);
     }
+
+
 }

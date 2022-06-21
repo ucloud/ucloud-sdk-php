@@ -93,4 +93,6 @@ class AccelerationInfo extends Response
         }
         return $result;
     }
+
+
 }

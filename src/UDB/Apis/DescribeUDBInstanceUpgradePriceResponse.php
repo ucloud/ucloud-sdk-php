@@ -25,7 +25,7 @@ class DescribeUDBInstanceUpgradePriceResponse extends Response
     /**
      * Price: 价格，单位为分
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -41,4 +41,6 @@ class DescribeUDBInstanceUpgradePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

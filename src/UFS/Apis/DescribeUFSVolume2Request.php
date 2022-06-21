@@ -91,7 +91,7 @@ class DescribeUFSVolume2Request extends Request
     /**
      * Offset: 文件列表起始
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -111,7 +111,7 @@ class DescribeUFSVolume2Request extends Request
     /**
      * Limit: 文件列表长度
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -127,4 +127,6 @@ class DescribeUFSVolume2Request extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

@@ -61,4 +61,6 @@ class ResourceSet extends Response
     {
         $this->set("OuterIps", $outerIps);
     }
+
+
 }

@@ -26,7 +26,7 @@ class DescribeUFSVolume2Response extends Response
     /**
      * TotalCount: 文件系统总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUFSVolume2Response extends Response
         }
         return $result;
     }
+
+
 }

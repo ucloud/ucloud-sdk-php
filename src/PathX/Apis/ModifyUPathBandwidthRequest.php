@@ -73,7 +73,7 @@ class ModifyUPathBandwidthRequest extends Request
     /**
      * Bandwidth: 线路带宽，单位Mbps。最小1Mbps,最大带宽由 DescribePathXLineConfig 接口获得。如需更大带宽，请联系产品团队。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -89,4 +89,6 @@ class ModifyUPathBandwidthRequest extends Request
     {
         $this->set("Bandwidth", $bandwidth);
     }
+
+
 }

@@ -85,7 +85,7 @@ class PathXSSLSet extends Response
     /**
      * ExpireTime: 证书过期时间 时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -105,7 +105,7 @@ class PathXSSLSet extends Response
     /**
      * SourceType: 证书来源，0：用户上传 1: 免费颁发
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSourceType()
     {
@@ -145,7 +145,7 @@ class PathXSSLSet extends Response
     /**
      * CreateTime: SSL证书的创建时间 时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -213,4 +213,6 @@ class PathXSSLSet extends Response
     {
         $this->set("SSLContent", $sslContent);
     }
+
+
 }

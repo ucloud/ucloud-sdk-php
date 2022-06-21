@@ -93,7 +93,7 @@ class ModifyEIPBandwidthRequest extends Request
     /**
      * Bandwidth: 弹性IP的外网带宽, 单位为Mbps. 各地域的带宽值范围如下：流量计费[1-200],带宽计费[1-800]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -109,4 +109,6 @@ class ModifyEIPBandwidthRequest extends Request
     {
         $this->set("Bandwidth", $bandwidth);
     }
+
+
 }

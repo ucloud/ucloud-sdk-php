@@ -121,4 +121,6 @@ class UFileTotalReportItem extends Response
     {
         $this->set("ApiTimes", $apiTimes);
     }
+
+
 }

@@ -65,7 +65,7 @@ class VPNGatewayPriceSet extends Response
     /**
      * PurchaseValue: 资源有效期, 以Unix Timestamp表示
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPurchaseValue()
     {
@@ -81,4 +81,6 @@ class VPNGatewayPriceSet extends Response
     {
         $this->set("PurchaseValue", $purchaseValue);
     }
+
+
 }

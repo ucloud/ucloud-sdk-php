@@ -70,7 +70,7 @@ class DescribeAvailableInstanceTypesRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class DescribeAvailableInstanceTypesRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 
      *
      * @param string $projectId
      */
@@ -88,4 +88,6 @@ class DescribeAvailableInstanceTypesRequest extends Request
     {
         $this->set("ProjectId", $projectId);
     }
+
+
 }

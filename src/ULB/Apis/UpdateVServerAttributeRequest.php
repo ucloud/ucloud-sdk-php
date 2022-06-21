@@ -194,7 +194,7 @@ class UpdateVServerAttributeRequest extends Request
     /**
      * ClientTimeout: 请求代理的VServer下表示空闲连接的回收时间，单位：秒，取值范围：时(0，86400]，默认值为60；报文转发的VServer下表示回话保持的时间，单位：秒，取值范围：[60，900]，0 表示禁用连接保持
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getClientTimeout()
     {
@@ -310,4 +310,6 @@ class UpdateVServerAttributeRequest extends Request
     {
         $this->set("ResponseMsg", $responseMsg);
     }
+
+
 }

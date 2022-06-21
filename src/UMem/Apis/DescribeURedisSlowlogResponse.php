@@ -26,7 +26,7 @@ class DescribeURedisSlowlogResponse extends Response
     /**
      * TotalCount: 总条目数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeURedisSlowlogResponse extends Response
         }
         return $result;
     }
+
+
 }

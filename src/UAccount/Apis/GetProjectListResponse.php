@@ -26,7 +26,7 @@ class GetProjectListResponse extends Response
     /**
      * ProjectCount: 项目总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getProjectCount()
     {
@@ -74,4 +74,6 @@ class GetProjectListResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -54,4 +54,6 @@ class DescribeUMemcachePriceResponse extends Response
         }
         return $result;
     }
+
+
 }

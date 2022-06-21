@@ -45,7 +45,7 @@ class RecycleUDiskSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -65,7 +65,7 @@ class RecycleUDiskSet extends Response
     /**
      * ExpiredTime: 过期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpiredTime()
     {
@@ -85,7 +85,7 @@ class RecycleUDiskSet extends Response
     /**
      * CountdownTime: 销毁倒计时
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCountdownTime()
     {
@@ -125,7 +125,7 @@ class RecycleUDiskSet extends Response
     /**
      * Size: 磁盘容量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -181,4 +181,6 @@ class RecycleUDiskSet extends Response
     {
         $this->set("Zone", $zone);
     }
+
+
 }

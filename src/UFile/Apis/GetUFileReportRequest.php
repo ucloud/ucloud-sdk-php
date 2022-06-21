@@ -73,7 +73,7 @@ class GetUFileReportRequest extends Request
     /**
      * StartTime: 查询开始时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStartTime()
     {
@@ -93,7 +93,7 @@ class GetUFileReportRequest extends Request
     /**
      * EndTime: 查询结束时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -109,4 +109,6 @@ class GetUFileReportRequest extends Request
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

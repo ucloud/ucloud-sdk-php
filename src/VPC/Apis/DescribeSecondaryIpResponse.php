@@ -24,7 +24,7 @@ class DescribeSecondaryIpResponse extends Response
     
 
     /**
-     * DataSet:
+     * DataSet: 
      *
      * @return IpInfo[]|null
      */
@@ -42,7 +42,7 @@ class DescribeSecondaryIpResponse extends Response
     }
 
     /**
-     * DataSet:
+     * DataSet: 
      *
      * @param IpInfo[] $dataSet
      */
@@ -54,4 +54,6 @@ class DescribeSecondaryIpResponse extends Response
         }
         return $result;
     }
+
+
 }

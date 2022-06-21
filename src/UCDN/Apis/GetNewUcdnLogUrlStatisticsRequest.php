@@ -91,7 +91,7 @@ class GetNewUcdnLogUrlStatisticsRequest extends Request
     /**
      * BeginTime: 查询带宽的起始时间，格式：时间戳。BeginTime和EndTime必须同时赋值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -111,7 +111,7 @@ class GetNewUcdnLogUrlStatisticsRequest extends Request
     /**
      * EndTime: 查询统计日志的结束时间，格式：时间戳,最多可拉取30天
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -131,7 +131,7 @@ class GetNewUcdnLogUrlStatisticsRequest extends Request
     /**
      * OrderBy: 0表示按流量降序排列，1表示按照下载次数降序排列，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOrderBy()
     {
@@ -151,7 +151,7 @@ class GetNewUcdnLogUrlStatisticsRequest extends Request
     /**
      * Limit: 返回的结果数量限制，默认1000
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -167,4 +167,6 @@ class GetNewUcdnLogUrlStatisticsRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

@@ -101,4 +101,6 @@ class SetUPhoneGPSParamUPhoneGPSs extends Request
     {
         $this->set("Altitude", $altitude);
     }
+
+
 }

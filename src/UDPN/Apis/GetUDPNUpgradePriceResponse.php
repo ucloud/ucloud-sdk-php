@@ -41,4 +41,6 @@ class GetUDPNUpgradePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

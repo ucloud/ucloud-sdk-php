@@ -23,7 +23,7 @@ class IpInfo extends Response
     
 
     /**
-     * Ip:
+     * Ip: 
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class IpInfo extends Response
     }
 
     /**
-     * Ip:
+     * Ip: 
      *
      * @param string $ip
      */
@@ -43,7 +43,7 @@ class IpInfo extends Response
     }
 
     /**
-     * Mask:
+     * Mask: 
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class IpInfo extends Response
     }
 
     /**
-     * Mask:
+     * Mask: 
      *
      * @param string $mask
      */
@@ -63,7 +63,7 @@ class IpInfo extends Response
     }
 
     /**
-     * Gateway:
+     * Gateway: 
      *
      * @return string|null
      */
@@ -73,7 +73,7 @@ class IpInfo extends Response
     }
 
     /**
-     * Gateway:
+     * Gateway: 
      *
      * @param string $gateway
      */
@@ -83,7 +83,7 @@ class IpInfo extends Response
     }
 
     /**
-     * Mac:
+     * Mac: 
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class IpInfo extends Response
     }
 
     /**
-     * Mac:
+     * Mac: 
      *
      * @param string $mac
      */
@@ -103,7 +103,7 @@ class IpInfo extends Response
     }
 
     /**
-     * SubnetId:
+     * SubnetId: 
      *
      * @return string|null
      */
@@ -113,7 +113,7 @@ class IpInfo extends Response
     }
 
     /**
-     * SubnetId:
+     * SubnetId: 
      *
      * @param string $subnetId
      */
@@ -123,7 +123,7 @@ class IpInfo extends Response
     }
 
     /**
-     * VPCId:
+     * VPCId: 
      *
      * @return string|null
      */
@@ -133,7 +133,7 @@ class IpInfo extends Response
     }
 
     /**
-     * VPCId:
+     * VPCId: 
      *
      * @param string $vpcId
      */
@@ -141,4 +141,6 @@ class IpInfo extends Response
     {
         $this->set("VPCId", $vpcId);
     }
+
+
 }

@@ -41,4 +41,6 @@ class StopUHostInstanceResponse extends Response
     {
         $this->set("UHostId", $uHostId);
     }
+
+
 }

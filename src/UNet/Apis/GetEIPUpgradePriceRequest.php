@@ -93,7 +93,7 @@ class GetEIPUpgradePriceRequest extends Request
     /**
      * Bandwidth: 弹性IP的外网带宽, 单位为Mbps, 范围 [1-800]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -109,4 +109,6 @@ class GetEIPUpgradePriceRequest extends Request
     {
         $this->set("Bandwidth", $bandwidth);
     }
+
+
 }

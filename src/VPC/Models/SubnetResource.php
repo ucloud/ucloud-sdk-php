@@ -101,4 +101,6 @@ class SubnetResource extends Response
     {
         $this->set("IP", $ip);
     }
+
+
 }

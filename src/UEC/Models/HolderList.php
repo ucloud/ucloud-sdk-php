@@ -137,7 +137,7 @@ class HolderList extends Response
     /**
      * State: 容器组运行状态0：初始化；1：拉取镜像；2：启动中；3：运行中；4：错误；5：正在重启；6：正在删除；7：已经删除；8：容器运行错误；9：启动失败；99：异常
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getState()
     {
@@ -157,7 +157,7 @@ class HolderList extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -177,7 +177,7 @@ class HolderList extends Response
     /**
      * ExpireTime: 过期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -197,7 +197,7 @@ class HolderList extends Response
     /**
      * Type: 线路类型（运营商类型： 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -297,7 +297,7 @@ class HolderList extends Response
     /**
      * RestartStrategy: 0：总是；1：失败是；2：永不
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRestartStrategy()
     {
@@ -317,7 +317,7 @@ class HolderList extends Response
     /**
      * DockerCount: 容器数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDockerCount()
     {
@@ -389,7 +389,7 @@ class HolderList extends Response
     /**
      * NetLimit: 外网绑定的带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNetLimit()
     {
@@ -461,7 +461,7 @@ class HolderList extends Response
     /**
      * StorVolumeCount: 存储卷数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStorVolumeCount()
     {
@@ -509,4 +509,6 @@ class HolderList extends Response
         }
         return $result;
     }
+
+
 }

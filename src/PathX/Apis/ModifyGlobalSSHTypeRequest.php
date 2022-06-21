@@ -149,4 +149,6 @@ class ModifyGlobalSSHTypeRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

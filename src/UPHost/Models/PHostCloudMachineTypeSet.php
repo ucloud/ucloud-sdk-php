@@ -65,7 +65,7 @@ class PHostCloudMachineTypeSet extends Response
     /**
      * Memory: 内存大小，单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -133,4 +133,6 @@ class PHostCloudMachineTypeSet extends Response
         }
         return $result;
     }
+
+
 }

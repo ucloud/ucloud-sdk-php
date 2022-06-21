@@ -105,7 +105,7 @@ class ULBSSLSet extends Response
     /**
      * CreateTime: SSL证书的创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -173,4 +173,6 @@ class ULBSSLSet extends Response
         }
         return $result;
     }
+
+
 }

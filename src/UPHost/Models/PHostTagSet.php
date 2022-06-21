@@ -45,7 +45,7 @@ class PHostTagSet extends Response
     /**
      * TotalCount: 该业务组中包含的主机个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -61,4 +61,6 @@ class PHostTagSet extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

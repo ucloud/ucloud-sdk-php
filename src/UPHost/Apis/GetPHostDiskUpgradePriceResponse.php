@@ -61,4 +61,6 @@ class GetPHostDiskUpgradePriceResponse extends Response
     {
         $this->set("OriginalPrice", $originalPrice);
     }
+
+
 }

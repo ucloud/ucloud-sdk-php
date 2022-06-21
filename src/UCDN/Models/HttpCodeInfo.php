@@ -25,7 +25,7 @@ class HttpCodeInfo extends Response
     /**
      * Time: 带宽获取的时间点。格式：时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTime()
     {
@@ -45,7 +45,7 @@ class HttpCodeInfo extends Response
     /**
      * HttpOneXX: 1xx数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttpOneXX()
     {
@@ -65,7 +65,7 @@ class HttpCodeInfo extends Response
     /**
      * HttpTwoXX: 2xx数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttpTwoXX()
     {
@@ -85,7 +85,7 @@ class HttpCodeInfo extends Response
     /**
      * HttpThreeXX: 3xx数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttpThreeXX()
     {
@@ -105,7 +105,7 @@ class HttpCodeInfo extends Response
     /**
      * HttpFourXX: 4xx数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttpFourXX()
     {
@@ -125,7 +125,7 @@ class HttpCodeInfo extends Response
     /**
      * HttpFiveXX: 5xx数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttpFiveXX()
     {
@@ -141,4 +141,6 @@ class HttpCodeInfo extends Response
     {
         $this->set("HttpFiveXX", $httpFiveXX);
     }
+
+
 }

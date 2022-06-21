@@ -54,4 +54,6 @@ class GetUcdnDomainOriginRequestNumResponse extends Response
         }
         return $result;
     }
+
+
 }

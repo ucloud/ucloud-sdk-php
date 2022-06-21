@@ -25,7 +25,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Time: 时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTime()
     {
@@ -45,7 +45,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Total: 当前分组的总状态码数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotal()
     {
@@ -65,7 +65,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http100: http100数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp100()
     {
@@ -85,7 +85,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http101: http101数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp101()
     {
@@ -105,7 +105,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http102: http102数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp102()
     {
@@ -125,7 +125,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http200: http200数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp200()
     {
@@ -145,7 +145,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http201: http201数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp201()
     {
@@ -165,7 +165,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http202: http202数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp202()
     {
@@ -185,7 +185,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http203: http203数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp203()
     {
@@ -205,7 +205,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http204: http204数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp204()
     {
@@ -225,7 +225,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http205: http205数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp205()
     {
@@ -245,7 +245,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http206: http206数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp206()
     {
@@ -265,7 +265,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http207: http207数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp207()
     {
@@ -285,7 +285,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http300: http300数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp300()
     {
@@ -305,7 +305,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http301: http301数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp301()
     {
@@ -325,7 +325,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http302: http302数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp302()
     {
@@ -345,7 +345,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http303: http303数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp303()
     {
@@ -365,7 +365,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http304: http304数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp304()
     {
@@ -385,7 +385,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http305: http305数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp305()
     {
@@ -405,7 +405,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http306: http306数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp306()
     {
@@ -425,7 +425,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http307: http307数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp307()
     {
@@ -445,7 +445,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http400: http400数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp400()
     {
@@ -465,7 +465,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http401: http401数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp401()
     {
@@ -485,7 +485,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http402: http402数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp402()
     {
@@ -505,7 +505,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http403: http403数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp403()
     {
@@ -525,7 +525,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http404: http404数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp404()
     {
@@ -545,7 +545,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http405: http405数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp405()
     {
@@ -565,7 +565,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http406: http406数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp406()
     {
@@ -585,7 +585,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http407: http407数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp407()
     {
@@ -605,7 +605,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http408: http408数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp408()
     {
@@ -625,7 +625,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http409: http409数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp409()
     {
@@ -645,7 +645,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http410: http410数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp410()
     {
@@ -665,7 +665,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http411: http411数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp411()
     {
@@ -685,7 +685,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http412: http412数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp412()
     {
@@ -705,7 +705,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http413: http413数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp413()
     {
@@ -725,7 +725,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http414: http414数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp414()
     {
@@ -745,7 +745,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http415: http415数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp415()
     {
@@ -765,7 +765,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http416: http416数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp416()
     {
@@ -785,7 +785,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http417: http417数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp417()
     {
@@ -805,7 +805,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http418: http418数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp418()
     {
@@ -825,7 +825,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http421: http421数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp421()
     {
@@ -845,7 +845,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http422: http422数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp422()
     {
@@ -865,7 +865,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http423: http423数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp423()
     {
@@ -885,7 +885,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http424: http424数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp424()
     {
@@ -905,7 +905,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http425: http425数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp425()
     {
@@ -925,7 +925,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http426: http426数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp426()
     {
@@ -945,7 +945,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http449: http449数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp449()
     {
@@ -965,7 +965,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http451: http451数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp451()
     {
@@ -985,7 +985,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http500: http500数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp500()
     {
@@ -1005,7 +1005,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http501: http501数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp501()
     {
@@ -1025,7 +1025,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http502: http502数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp502()
     {
@@ -1045,7 +1045,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http503: http503数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp503()
     {
@@ -1065,7 +1065,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http504: http504数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp504()
     {
@@ -1085,7 +1085,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http505: http505数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp505()
     {
@@ -1105,7 +1105,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http506: http506数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp506()
     {
@@ -1125,7 +1125,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http507: http507数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp507()
     {
@@ -1145,7 +1145,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http509: http509数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp509()
     {
@@ -1165,7 +1165,7 @@ class HttpCodeV2Detail extends Response
     /**
      * Http510: http510数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getHttp510()
     {
@@ -1181,4 +1181,6 @@ class HttpCodeV2Detail extends Response
     {
         $this->set("Http510", $http510);
     }
+
+
 }

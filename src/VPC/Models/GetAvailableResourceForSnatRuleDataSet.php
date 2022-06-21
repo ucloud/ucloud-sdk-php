@@ -141,4 +141,6 @@ class GetAvailableResourceForSnatRuleDataSet extends Response
     {
         $this->set("VPCId", $vpcId);
     }
+
+
 }

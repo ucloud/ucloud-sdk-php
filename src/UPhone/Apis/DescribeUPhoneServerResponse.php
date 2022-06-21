@@ -30,7 +30,7 @@ class DescribeUPhoneServerResponse extends Response
     /**
      * TotalCount: ServerInstance总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -78,4 +78,6 @@ class DescribeUPhoneServerResponse extends Response
         }
         return $result;
     }
+
+
 }

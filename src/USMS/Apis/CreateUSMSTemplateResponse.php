@@ -41,4 +41,6 @@ class CreateUSMSTemplateResponse extends Response
     {
         $this->set("TemplateId", $templateId);
     }
+
+
 }

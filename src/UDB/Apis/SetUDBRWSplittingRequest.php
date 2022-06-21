@@ -155,7 +155,7 @@ class SetUDBRWSplittingRequest extends Request
     /**
      * DelayThreshold: 时间阙值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDelayThreshold()
     {
@@ -171,4 +171,6 @@ class SetUDBRWSplittingRequest extends Request
     {
         $this->set("DelayThreshold", $delayThreshold);
     }
+
+
 }

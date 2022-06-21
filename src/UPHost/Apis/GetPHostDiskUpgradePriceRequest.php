@@ -114,7 +114,7 @@ class GetPHostDiskUpgradePriceRequest extends Request
     /**
      * DiskSpace: 磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB，数据盘单块盘20-32000GB。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -170,4 +170,6 @@ class GetPHostDiskUpgradePriceRequest extends Request
     {
         $this->set("ReinstallTag", $reinstallTag);
     }
+
+
 }

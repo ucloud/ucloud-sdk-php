@@ -25,7 +25,7 @@ class EIPSetData extends Response
     /**
      * Bandwidth: EIP带宽值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -93,4 +93,6 @@ class EIPSetData extends Response
     {
         $this->set("EIPId", $eipId);
     }
+
+
 }

@@ -61,4 +61,6 @@ class IpRegion extends Response
     {
         $this->set("StockStatus", $stockStatus);
     }
+
+
 }

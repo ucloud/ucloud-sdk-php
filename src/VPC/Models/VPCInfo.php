@@ -23,7 +23,7 @@ class VPCInfo extends Response
     
 
     /**
-     * NetworkInfo:
+     * NetworkInfo: 
      *
      * @return VPCNetworkInfo[]|null
      */
@@ -41,7 +41,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * NetworkInfo:
+     * NetworkInfo: 
      *
      * @param VPCNetworkInfo[] $networkInfo
      */
@@ -55,9 +55,9 @@ class VPCInfo extends Response
     }
 
     /**
-     * SubnetCount:
+     * SubnetCount: 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSubnetCount()
     {
@@ -65,7 +65,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * SubnetCount:
+     * SubnetCount: 
      *
      * @param int $subnetCount
      */
@@ -75,9 +75,9 @@ class VPCInfo extends Response
     }
 
     /**
-     * CreateTime:
+     * CreateTime: 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -85,7 +85,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * CreateTime:
+     * CreateTime: 
      *
      * @param int $createTime
      */
@@ -95,9 +95,9 @@ class VPCInfo extends Response
     }
 
     /**
-     * UpdateTime:
+     * UpdateTime: 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUpdateTime()
     {
@@ -105,7 +105,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * UpdateTime:
+     * UpdateTime: 
      *
      * @param int $updateTime
      */
@@ -115,7 +115,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * Tag:
+     * Tag: 
      *
      * @return string|null
      */
@@ -125,7 +125,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * Tag:
+     * Tag: 
      *
      * @param string $tag
      */
@@ -135,7 +135,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * Name:
+     * Name: 
      *
      * @return string|null
      */
@@ -145,7 +145,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * Name:
+     * Name: 
      *
      * @param string $name
      */
@@ -175,7 +175,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * Network:
+     * Network: 
      *
      * @return string[]|null
      */
@@ -185,7 +185,7 @@ class VPCInfo extends Response
     }
 
     /**
-     * Network:
+     * Network: 
      *
      * @param string[] $network
      */
@@ -233,4 +233,6 @@ class VPCInfo extends Response
     {
         $this->set("OperatorName", $operatorName);
     }
+
+
 }

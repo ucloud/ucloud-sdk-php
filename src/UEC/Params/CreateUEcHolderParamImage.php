@@ -61,4 +61,6 @@ class CreateUEcHolderParamImage extends Request
     {
         $this->set("StoreAddress", $storeAddress);
     }
+
+
 }

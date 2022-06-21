@@ -205,7 +205,7 @@ class UFileDailyReportItem extends Response
     /**
      * Date: 配额消费时间，unix时间戳（单位s），精确到日期
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDate()
     {
@@ -241,4 +241,6 @@ class UFileDailyReportItem extends Response
     {
         $this->set("ApiTimes", $apiTimes);
     }
+
+
 }

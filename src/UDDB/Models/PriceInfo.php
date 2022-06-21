@@ -81,4 +81,6 @@ class PriceInfo extends Response
     {
         $this->set("DataNodeSlavePrice", $dataNodeSlavePrice);
     }
+
+
 }

@@ -42,4 +42,6 @@ class QueryUSMSTemplateResponse extends Response
     {
         $this->set("Data", $data->getAll());
     }
+
+
 }

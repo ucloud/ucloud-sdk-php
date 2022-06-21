@@ -114,7 +114,7 @@ class ResizeUDBInstanceRequest extends Request
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/ 12000M/16000M/ 24000M/32000M/ 48000M/64000M/96000M/128000M/192000M/256000M/320000M。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemoryLimit()
     {
@@ -134,7 +134,7 @@ class ResizeUDBInstanceRequest extends Request
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G-32T
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -290,4 +290,6 @@ class ResizeUDBInstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

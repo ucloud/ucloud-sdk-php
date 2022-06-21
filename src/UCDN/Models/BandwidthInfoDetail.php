@@ -25,7 +25,7 @@ class BandwidthInfoDetail extends Response
     /**
      * Time: 宽获取的时间点。格式：时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTime()
     {
@@ -61,4 +61,6 @@ class BandwidthInfoDetail extends Response
     {
         $this->set("Bandwidth", $bandwidth);
     }
+
+
 }

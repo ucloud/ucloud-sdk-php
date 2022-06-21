@@ -72,7 +72,7 @@ class DescribeUEcHolderIDCRequest extends Request
     /**
      * Memory: 容器组内存大小（单位MB）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -112,7 +112,7 @@ class DescribeUEcHolderIDCRequest extends Request
     /**
      * Type: 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -148,4 +148,6 @@ class DescribeUEcHolderIDCRequest extends Request
     {
         $this->set("ProductType", $productType);
     }
+
+
 }

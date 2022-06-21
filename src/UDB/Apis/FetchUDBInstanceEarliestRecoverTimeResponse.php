@@ -25,7 +25,7 @@ class FetchUDBInstanceEarliestRecoverTimeResponse extends Response
     /**
      * EarliestTime: 获取最早可回档时间点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEarliestTime()
     {
@@ -41,4 +41,6 @@ class FetchUDBInstanceEarliestRecoverTimeResponse extends Response
     {
         $this->set("EarliestTime", $earliestTime);
     }
+
+
 }

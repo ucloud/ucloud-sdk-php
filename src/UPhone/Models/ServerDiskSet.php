@@ -65,7 +65,7 @@ class ServerDiskSet extends Response
     /**
      * Size: 磁盘大小，单位: GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -81,4 +81,6 @@ class ServerDiskSet extends Response
     {
         $this->set("Size", $size);
     }
+
+
 }

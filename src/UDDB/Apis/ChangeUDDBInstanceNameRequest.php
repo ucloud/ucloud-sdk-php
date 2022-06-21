@@ -131,4 +131,6 @@ class ChangeUDDBInstanceNameRequest extends Request
     {
         $this->set("NewName", $newName);
     }
+
+
 }

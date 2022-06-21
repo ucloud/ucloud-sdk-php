@@ -73,4 +73,6 @@ class ReceiptPerSession extends Response
         }
         return $result;
     }
+
+
 }

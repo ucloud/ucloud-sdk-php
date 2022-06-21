@@ -45,7 +45,7 @@ class RefererList extends Response
     /**
      * RequestTimes: 次数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRequestTimes()
     {
@@ -81,4 +81,6 @@ class RefererList extends Response
     {
         $this->set("Percent", $percent);
     }
+
+
 }

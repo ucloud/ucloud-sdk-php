@@ -89,4 +89,6 @@ class DeleteRemoteVPNGatewayRequest extends Request
     {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }
+
+
 }

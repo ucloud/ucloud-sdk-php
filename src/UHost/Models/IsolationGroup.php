@@ -113,4 +113,6 @@ class IsolationGroup extends Response
     {
         $this->set("Remark", $remark);
     }
+
+
 }

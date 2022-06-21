@@ -25,7 +25,7 @@ class RequestInfoV2 extends Response
     /**
      * Time: 带宽获取的时间点。格式：时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTime()
     {
@@ -61,4 +61,6 @@ class RequestInfoV2 extends Response
     {
         $this->set("CdnRequest", $cdnRequest);
     }
+
+
 }

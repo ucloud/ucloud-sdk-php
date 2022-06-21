@@ -93,7 +93,7 @@ class DescribeUMemcachePriceRequest extends Request
     /**
      * Size: 容量大小,单位:GB 取值范围[1-32]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -133,7 +133,7 @@ class DescribeUMemcachePriceRequest extends Request
     /**
      * Quantity: 购买umemcache的时长，默认值为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -169,4 +169,6 @@ class DescribeUMemcachePriceRequest extends Request
     {
         $this->set("Type", $type);
     }
+
+
 }

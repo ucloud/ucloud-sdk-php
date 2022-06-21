@@ -93,7 +93,7 @@ class DescribeWhiteListResourceRequest extends Request
     /**
      * Offset: 数据偏移量, 默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -113,7 +113,7 @@ class DescribeWhiteListResourceRequest extends Request
     /**
      * Limit: 数据分页值, 默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -129,4 +129,6 @@ class DescribeWhiteListResourceRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

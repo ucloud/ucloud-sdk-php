@@ -90,7 +90,7 @@ class DescribeUEcVHostRequest extends Request
     /**
      * Offset: 数据偏移量，默认0，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -110,7 +110,7 @@ class DescribeUEcVHostRequest extends Request
     /**
      * Limit: 返回数据长度， 默认20，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -126,4 +126,6 @@ class DescribeUEcVHostRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

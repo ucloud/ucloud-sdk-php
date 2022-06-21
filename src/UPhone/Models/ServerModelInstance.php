@@ -23,7 +23,7 @@ class ServerModelInstance extends Response
     
 
     /**
-     * ServerModelName: ServerModel名称
+     * ServerModelName: ServerModel名称	
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * ServerModelName: ServerModel名称
+     * ServerModelName: ServerModel名称	
      *
      * @param string $serverModelName
      */
@@ -45,7 +45,7 @@ class ServerModelInstance extends Response
     /**
      * CPU: 虚拟CPU核数。可选参数：1-64（具体机型与CPU的对应关系参照控制台）。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -65,7 +65,7 @@ class ServerModelInstance extends Response
     /**
      * Memory: 内存大小。单位：MB。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -83,7 +83,7 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * DiskSet: 磁盘信息见 UPhoneDiskSet
+     * DiskSet: 磁盘信息见 UPhoneDiskSet	
      *
      * @return ServerDiskSet[]|null
      */
@@ -101,7 +101,7 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * DiskSet: 磁盘信息见 UPhoneDiskSet
+     * DiskSet: 磁盘信息见 UPhoneDiskSet	
      *
      * @param ServerDiskSet[] $diskSet
      */
@@ -115,7 +115,7 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * GPUType: GPU类型
+     * GPUType: GPU类型	
      *
      * @return string|null
      */
@@ -125,7 +125,7 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * GPUType: GPU类型
+     * GPUType: GPU类型	
      *
      * @param string $gpuType
      */
@@ -135,9 +135,9 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * GPU: GPU个数
+     * GPU: GPU个数	
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -145,7 +145,7 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * GPU: GPU个数
+     * GPU: GPU个数	
      *
      * @param int $gpu
      */
@@ -155,7 +155,7 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * UPhoneSpecs: 【数组】手机说明，包含该服务器规格所能创建的手机规格名及对应手机开数。每项参数可见数据模型 [UPhoneSpec](#UPhoneSpec)
+     * UPhoneSpecs: 【数组】手机说明，包含该服务器规格所能创建的手机规格名及对应手机开数。每项参数可见数据模型 [UPhoneSpec](#UPhoneSpec)	
      *
      * @return UPhoneSpec[]|null
      */
@@ -173,7 +173,7 @@ class ServerModelInstance extends Response
     }
 
     /**
-     * UPhoneSpecs: 【数组】手机说明，包含该服务器规格所能创建的手机规格名及对应手机开数。每项参数可见数据模型 [UPhoneSpec](#UPhoneSpec)
+     * UPhoneSpecs: 【数组】手机说明，包含该服务器规格所能创建的手机规格名及对应手机开数。每项参数可见数据模型 [UPhoneSpec](#UPhoneSpec)	
      *
      * @param UPhoneSpec[] $uPhoneSpecs
      */
@@ -205,4 +205,6 @@ class ServerModelInstance extends Response
     {
         $this->set("ServerModelState", $serverModelState);
     }
+
+
 }

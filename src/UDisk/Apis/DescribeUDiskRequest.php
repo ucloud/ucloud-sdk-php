@@ -111,7 +111,7 @@ class DescribeUDiskRequest extends Request
     /**
      * Offset: 数据偏移量, 默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -131,7 +131,7 @@ class DescribeUDiskRequest extends Request
     /**
      * Limit: 返回数据长度, 默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -171,7 +171,7 @@ class DescribeUDiskRequest extends Request
     /**
      * ProtocolVersion: 请求协议版本，建议升级为1，为1时DiskType与UHost磁盘类型定义一致；默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getProtocolVersion()
     {
@@ -347,4 +347,6 @@ class DescribeUDiskRequest extends Request
     {
         $this->set("HostProduct", $hostProduct);
     }
+
+
 }

@@ -205,7 +205,7 @@ class ULBVServerSet extends Response
     /**
      * FrontendPort: VServer服务端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getFrontendPort()
     {
@@ -285,7 +285,7 @@ class ULBVServerSet extends Response
     /**
      * ClientTimeout: 空闲连接的回收时间，单位：秒。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getClientTimeout()
     {
@@ -305,7 +305,7 @@ class ULBVServerSet extends Response
     /**
      * Status: VServer的运行状态。枚举值： 0 -> rs全部运行正常;1 -> rs全部运行异常；2 -> rs部分运行异常。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStatus()
     {
@@ -437,4 +437,6 @@ class ULBVServerSet extends Response
         }
         return $result;
     }
+
+
 }

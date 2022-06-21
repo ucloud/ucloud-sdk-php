@@ -58,7 +58,7 @@ class DescribeUDiskResponse extends Response
     /**
      * TotalCount: 根据过滤条件得到的总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUDiskResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

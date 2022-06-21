@@ -59,7 +59,7 @@ class DescribeRouteTableResponse extends Response
     /**
      * TotalCount: RouteTables字段的数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeRouteTableResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

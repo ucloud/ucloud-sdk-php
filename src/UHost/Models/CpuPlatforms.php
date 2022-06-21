@@ -81,4 +81,6 @@ class CpuPlatforms extends Response
     {
         $this->set("Ampere", $ampere);
     }
+
+
 }

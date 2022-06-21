@@ -105,7 +105,7 @@ class DiskSet extends Response
     /**
      * Size: 磁盘大小，单位: GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -145,7 +145,7 @@ class DiskSet extends Response
     /**
      * IOPS: 当前主机的IOPS值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIOPS()
     {
@@ -221,4 +221,6 @@ class DiskSet extends Response
     {
         $this->set("IsBoot", $isBoot);
     }
+
+
 }

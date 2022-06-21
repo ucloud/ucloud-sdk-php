@@ -65,7 +65,7 @@ class ProjectListInfo extends Response
     /**
      * CreateTime: 创建时间(Unix时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -105,7 +105,7 @@ class ProjectListInfo extends Response
     /**
      * ResourceCount: 项目下资源数量（已废弃，不建议使用）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getResourceCount()
     {
@@ -125,7 +125,7 @@ class ProjectListInfo extends Response
     /**
      * MemberCount: 项目下成员数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemberCount()
     {
@@ -181,4 +181,6 @@ class ProjectListInfo extends Response
     {
         $this->set("ParentName", $parentName);
     }
+
+
 }

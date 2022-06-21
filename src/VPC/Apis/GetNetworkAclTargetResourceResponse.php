@@ -58,7 +58,7 @@ class GetNetworkAclTargetResourceResponse extends Response
     /**
      * TotalCount: ACL规则应用目标资源总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class GetNetworkAclTargetResourceResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

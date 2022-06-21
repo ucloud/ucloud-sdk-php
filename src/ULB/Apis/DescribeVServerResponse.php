@@ -31,7 +31,7 @@ class DescribeVServerResponse extends Response
     /**
      * TotalCount: 满足条件的VServer总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -79,4 +79,6 @@ class DescribeVServerResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -41,4 +41,6 @@ class RefreshNewUcdnDomainCacheResponse extends Response
     {
         $this->set("TaskId", $taskId);
     }
+
+
 }

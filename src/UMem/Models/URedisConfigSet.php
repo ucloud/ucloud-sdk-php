@@ -165,7 +165,7 @@ class URedisConfigSet extends Response
     /**
      * CreateTime: 创建时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -185,7 +185,7 @@ class URedisConfigSet extends Response
     /**
      * ModifyTime: 修改时间 (UNIX时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -221,4 +221,6 @@ class URedisConfigSet extends Response
     {
         $this->set("RegionFlag", $regionFlag);
     }
+
+
 }

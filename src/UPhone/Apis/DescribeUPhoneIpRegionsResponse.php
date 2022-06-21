@@ -58,7 +58,7 @@ class DescribeUPhoneIpRegionsResponse extends Response
     /**
      * TotalCount: 总数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUPhoneIpRegionsResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

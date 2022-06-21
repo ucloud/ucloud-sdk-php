@@ -81,4 +81,6 @@ class DetachUDiskResponse extends Response
     {
         $this->set("HostId", $hostId);
     }
+
+
 }

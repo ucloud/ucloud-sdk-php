@@ -26,7 +26,7 @@ class GetCertificateV2Response extends Response
     /**
      * TotalCount: 证书数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class GetCertificateV2Response extends Response
         }
         return $result;
     }
+
+
 }

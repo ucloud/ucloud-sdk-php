@@ -107,4 +107,6 @@ class DescribeSnatDnatRuleRequest extends Request
     {
         $this->set("EIP", $eip);
     }
+
+
 }

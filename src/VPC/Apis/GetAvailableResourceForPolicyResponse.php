@@ -54,4 +54,6 @@ class GetAvailableResourceForPolicyResponse extends Response
         }
         return $result;
     }
+
+
 }

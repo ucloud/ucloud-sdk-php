@@ -65,7 +65,7 @@ class UDPNLineSet extends Response
     /**
      * BandwidthUpperLimit: 线路带宽上限,单位 M
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidthUpperLimit()
     {
@@ -81,4 +81,6 @@ class UDPNLineSet extends Response
     {
         $this->set("BandwidthUpperLimit", $bandwidthUpperLimit);
     }
+
+
 }

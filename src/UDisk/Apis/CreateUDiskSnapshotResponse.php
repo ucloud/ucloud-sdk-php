@@ -41,4 +41,6 @@ class CreateUDiskSnapshotResponse extends Response
     {
         $this->set("SnapshotId", $snapshotId);
     }
+
+
 }

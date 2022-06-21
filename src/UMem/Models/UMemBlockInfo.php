@@ -45,7 +45,7 @@ class UMemBlockInfo extends Response
     /**
      * BlockPort: 分片端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBlockPort()
     {
@@ -65,7 +65,7 @@ class UMemBlockInfo extends Response
     /**
      * BlockSize: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBlockSize()
     {
@@ -105,7 +105,7 @@ class UMemBlockInfo extends Response
     /**
      * BlockSlotBegin: 分片维护的键槽起始值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBlockSlotBegin()
     {
@@ -125,7 +125,7 @@ class UMemBlockInfo extends Response
     /**
      * BlockSlotEnd: 分片维护的键槽结束值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBlockSlotEnd()
     {
@@ -165,7 +165,7 @@ class UMemBlockInfo extends Response
     /**
      * BlockUsedSize: 使用量单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBlockUsedSize()
     {
@@ -181,4 +181,6 @@ class UMemBlockInfo extends Response
     {
         $this->set("BlockUsedSize", $blockUsedSize);
     }
+
+
 }

@@ -25,7 +25,7 @@ class GetUcdnDomainPrefetchEnableResponse extends Response
     /**
      * Enable: 0表示该域名未开启预取，1表示该域名已开启预取
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEnable()
     {
@@ -41,4 +41,6 @@ class GetUcdnDomainPrefetchEnableResponse extends Response
     {
         $this->set("Enable", $enable);
     }
+
+
 }

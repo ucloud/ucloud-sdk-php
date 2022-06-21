@@ -27,7 +27,7 @@ class DescribeBandwidthPackageResponse extends Response
     /**
      * TotalCount: 满足条件的带宽包总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeBandwidthPackageResponse extends Response
         }
         return $result;
     }
+
+
 }

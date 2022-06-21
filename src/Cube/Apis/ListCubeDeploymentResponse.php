@@ -23,9 +23,9 @@ class ListCubeDeploymentResponse extends Response
     
 
     /**
-     * TotalCount:
+     * TotalCount: 
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -33,7 +33,7 @@ class ListCubeDeploymentResponse extends Response
     }
 
     /**
-     * TotalCount:
+     * TotalCount: 
      *
      * @param int $totalCount
      */
@@ -61,4 +61,6 @@ class ListCubeDeploymentResponse extends Response
     {
         $this->set("Deployments", $deployments);
     }
+
+
 }

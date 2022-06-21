@@ -45,7 +45,7 @@ class CacheConf extends Response
     /**
      * CacheTTL: 缓存时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCacheTTL()
     {
@@ -161,4 +161,6 @@ class CacheConf extends Response
     {
         $this->set("FollowOriginRule", $followOriginRule);
     }
+
+
 }

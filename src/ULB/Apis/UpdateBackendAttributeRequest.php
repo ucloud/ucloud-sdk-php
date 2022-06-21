@@ -114,7 +114,7 @@ class UpdateBackendAttributeRequest extends Request
     /**
      * Port: 后端资源服务端口，取值范围[1-65535]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -132,9 +132,9 @@ class UpdateBackendAttributeRequest extends Request
     }
 
     /**
-     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getWeight()
     {
@@ -142,7 +142,7 @@ class UpdateBackendAttributeRequest extends Request
     }
 
     /**
-     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     * Weight: 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *
      * @param int $weight
      */
@@ -154,7 +154,7 @@ class UpdateBackendAttributeRequest extends Request
     /**
      * Enabled: 后端实例状态开关
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEnabled()
     {
@@ -174,7 +174,7 @@ class UpdateBackendAttributeRequest extends Request
     /**
      * IsBackup: 是否为backup0：主rs1：备rs默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getIsBackup()
     {
@@ -190,4 +190,6 @@ class UpdateBackendAttributeRequest extends Request
     {
         $this->set("IsBackup", $isBackup);
     }
+
+
 }

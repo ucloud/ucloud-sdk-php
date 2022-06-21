@@ -125,7 +125,7 @@ class FirewallDataSet extends Response
     /**
      * ResourceCount: 防火墙绑定资源数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getResourceCount()
     {
@@ -145,7 +145,7 @@ class FirewallDataSet extends Response
     /**
      * CreateTime: 防火墙组创建时间，格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -213,4 +213,6 @@ class FirewallDataSet extends Response
         }
         return $result;
     }
+
+
 }

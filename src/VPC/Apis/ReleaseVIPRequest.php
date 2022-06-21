@@ -108,4 +108,6 @@ class ReleaseVIPRequest extends Request
     {
         $this->set("VIPId", $vipId);
     }
+
+
 }

@@ -45,7 +45,7 @@ class OutTemplate extends Response
     /**
      * Purpose: 模板类型，选项：1-验证码类 2-通知类 3-会员推广类
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPurpose()
     {
@@ -125,7 +125,7 @@ class OutTemplate extends Response
     /**
      * Status: 短信模板状态；状态说明：0-待审核，1-审核中，2-审核通过，3-审核未通过，4-被禁用
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStatus()
     {
@@ -185,7 +185,7 @@ class OutTemplate extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -221,4 +221,6 @@ class OutTemplate extends Response
     {
         $this->set("Instruction", $instruction);
     }
+
+
 }

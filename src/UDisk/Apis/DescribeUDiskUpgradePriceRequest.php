@@ -94,7 +94,7 @@ class DescribeUDiskUpgradePriceRequest extends Request
     /**
      * Size: 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘：范围[1~4000]；RSSD数据盘：范围[1~32000]；RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -210,4 +210,6 @@ class DescribeUDiskUpgradePriceRequest extends Request
     {
         $this->set("MachineType", $machineType);
     }
+
+
 }

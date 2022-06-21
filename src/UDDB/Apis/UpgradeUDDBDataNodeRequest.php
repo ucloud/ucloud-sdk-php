@@ -115,7 +115,7 @@ class UpgradeUDDBDataNodeRequest extends Request
     /**
      * DataNodeMemory: 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeMemory()
     {
@@ -135,7 +135,7 @@ class UpgradeUDDBDataNodeRequest extends Request
     /**
      * DataNodeDiskSpace: 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeDiskSpace()
     {
@@ -171,4 +171,6 @@ class UpgradeUDDBDataNodeRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

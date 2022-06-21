@@ -110,4 +110,6 @@ class UpdateVPNGatewayRequest extends Request
     {
         $this->set("Grade", $grade);
     }
+
+
 }

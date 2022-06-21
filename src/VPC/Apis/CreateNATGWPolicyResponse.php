@@ -41,4 +41,6 @@ class CreateNATGWPolicyResponse extends Response
     {
         $this->set("PolicyId", $policyId);
     }
+
+
 }

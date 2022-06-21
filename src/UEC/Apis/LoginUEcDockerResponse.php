@@ -65,7 +65,7 @@ class LoginUEcDockerResponse extends Response
     /**
      * LinkPort: 登录端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLinkPort()
     {
@@ -81,4 +81,6 @@ class LoginUEcDockerResponse extends Response
     {
         $this->set("LinkPort", $linkPort);
     }
+
+
 }

@@ -138,7 +138,7 @@ class CreateUDBRouteInstanceRequest extends Request
     /**
      * Port: 端口号，mongodb默认27017
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -158,7 +158,7 @@ class CreateUDBRouteInstanceRequest extends Request
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getParamGroupId()
     {
@@ -178,7 +178,7 @@ class CreateUDBRouteInstanceRequest extends Request
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 600M/1500M/3000M /6000M/15000M/30000M
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemoryLimit()
     {
@@ -198,7 +198,7 @@ class CreateUDBRouteInstanceRequest extends Request
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 500G
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -258,7 +258,7 @@ class CreateUDBRouteInstanceRequest extends Request
     /**
      * Quantity: 购买时长，默认值1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -314,4 +314,6 @@ class CreateUDBRouteInstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

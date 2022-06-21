@@ -23,7 +23,7 @@ class UPhoneServerPriceSet extends Response
     
 
     /**
-     * ChargeType: 计费类型，枚举值：Year，Month
+     * ChargeType: 计费类型，枚举值：Year，Month, Dynamic
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class UPhoneServerPriceSet extends Response
     }
 
     /**
-     * ChargeType: 计费类型，枚举值：Year，Month
+     * ChargeType: 计费类型，枚举值：Year，Month, Dynamic
      *
      * @param string $chargeType
      */
@@ -43,7 +43,7 @@ class UPhoneServerPriceSet extends Response
     }
 
     /**
-     * Price: 价格，单位: 元，保留小数点后两位有效数字
+     * Price: 价格，单位: 元，保留小数点后两位有效数字	
      *
      * @return float|null
      */
@@ -53,7 +53,7 @@ class UPhoneServerPriceSet extends Response
     }
 
     /**
-     * Price: 价格，单位: 元，保留小数点后两位有效数字
+     * Price: 价格，单位: 元，保留小数点后两位有效数字	
      *
      * @param float $price
      */
@@ -63,7 +63,7 @@ class UPhoneServerPriceSet extends Response
     }
 
     /**
-     * OriginalPrice: 限时优惠的折前原价（即列表价乘以商务折扣后的单价）
+     * OriginalPrice: 限时优惠的折前原价（即列表价乘以商务折扣后的单价）	
      *
      * @return float|null
      */
@@ -73,7 +73,7 @@ class UPhoneServerPriceSet extends Response
     }
 
     /**
-     * OriginalPrice: 限时优惠的折前原价（即列表价乘以商务折扣后的单价）
+     * OriginalPrice: 限时优惠的折前原价（即列表价乘以商务折扣后的单价）	
      *
      * @param float $originalPrice
      */
@@ -101,4 +101,6 @@ class UPhoneServerPriceSet extends Response
     {
         $this->set("ListPrice", $listPrice);
     }
+
+
 }

@@ -47,4 +47,6 @@ class FreezeMemberRequest extends Request
     {
         $this->set("MemberEmail", $memberEmail);
     }
+
+
 }

@@ -28,7 +28,7 @@ class DescribeUMemResponse extends Response
     /**
      * TotalCount: 根据过滤条件得到的总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -76,4 +76,6 @@ class DescribeUMemResponse extends Response
         }
         return $result;
     }
+
+
 }

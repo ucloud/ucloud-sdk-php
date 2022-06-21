@@ -25,7 +25,7 @@ class UDRedisSlowlogSet extends Response
     /**
      * StartTime: 查询发生的时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStartTime()
     {
@@ -45,7 +45,7 @@ class UDRedisSlowlogSet extends Response
     /**
      * SpendTime: 查询消耗的时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSpendTime()
     {
@@ -101,4 +101,6 @@ class UDRedisSlowlogSet extends Response
     {
         $this->set("BlockId", $blockId);
     }
+
+
 }

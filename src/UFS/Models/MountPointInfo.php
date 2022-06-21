@@ -105,7 +105,7 @@ class MountPointInfo extends Response
     /**
      * CreateTime: 文件系统创建时间（unix时间戳）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -141,4 +141,6 @@ class MountPointInfo extends Response
     {
         $this->set("SubnetDescription", $subnetDescription);
     }
+
+
 }

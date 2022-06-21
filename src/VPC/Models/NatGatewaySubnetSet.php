@@ -81,4 +81,6 @@ class NatGatewaySubnetSet extends Response
     {
         $this->set("SubnetName", $subnetName);
     }
+
+
 }

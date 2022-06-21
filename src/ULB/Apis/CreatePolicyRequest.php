@@ -176,7 +176,7 @@ class CreatePolicyRequest extends Request
     /**
      * PolicyPriority: 策略优先级，1-9999
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPolicyPriority()
     {
@@ -192,4 +192,6 @@ class CreatePolicyRequest extends Request
     {
         $this->set("PolicyPriority", $policyPriority);
     }
+
+
 }

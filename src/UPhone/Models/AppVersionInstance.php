@@ -125,7 +125,7 @@ class AppVersionInstance extends Response
     /**
      * CreateTime: 创建时间，格式为Unix时间戳。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -145,7 +145,7 @@ class AppVersionInstance extends Response
     /**
      * ModifyTime: 修改时间，格式为Unix时间戳。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getModifyTime()
     {
@@ -181,4 +181,6 @@ class AppVersionInstance extends Response
     {
         $this->set("Description", $description);
     }
+
+
 }

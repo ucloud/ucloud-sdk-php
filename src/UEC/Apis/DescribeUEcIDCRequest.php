@@ -52,7 +52,7 @@ class DescribeUEcIDCRequest extends Request
     /**
      * Cpu: 节点cpu核数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCpu()
     {
@@ -72,7 +72,7 @@ class DescribeUEcIDCRequest extends Request
     /**
      * Memory: 节点内存大小， 单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -112,7 +112,7 @@ class DescribeUEcIDCRequest extends Request
     /**
      * Type: 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getType()
     {
@@ -152,7 +152,7 @@ class DescribeUEcIDCRequest extends Request
     /**
      * Gpu: Gpu卡核心数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGpu()
     {
@@ -168,4 +168,6 @@ class DescribeUEcIDCRequest extends Request
     {
         $this->set("Gpu", $gpu);
     }
+
+
 }

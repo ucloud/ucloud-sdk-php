@@ -152,7 +152,7 @@ class CreateVServerRequest extends Request
     /**
      * FrontendPort: VServer后端端口，取值范围[1-65535]；默认值为80
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getFrontendPort()
     {
@@ -232,7 +232,7 @@ class CreateVServerRequest extends Request
     /**
      * ClientTimeout: ListenType为RequestProxy时表示空闲连接的回收时间，单位：秒，取值范围：时(0，86400]，默认值为60；ListenType为PacketsTransmit时表示连接保持的时间，单位：秒，取值范围：[60，900]，0 表示禁用连接保持
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getClientTimeout()
     {
@@ -348,4 +348,6 @@ class CreateVServerRequest extends Request
     {
         $this->set("ResponseMsg", $responseMsg);
     }
+
+
 }

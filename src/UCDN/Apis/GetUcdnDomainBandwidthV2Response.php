@@ -54,4 +54,6 @@ class GetUcdnDomainBandwidthV2Response extends Response
         }
         return $result;
     }
+
+
 }

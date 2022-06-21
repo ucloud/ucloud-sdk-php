@@ -93,7 +93,7 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
     /**
      * BackupId: 备份记录ID
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupId()
     {
@@ -129,4 +129,6 @@ class DescribeUDBInstanceBinlogBackupStateRequest extends Request
     {
         $this->set("BackupZone", $backupZone);
     }
+
+
 }

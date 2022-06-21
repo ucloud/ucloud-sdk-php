@@ -113,7 +113,7 @@ class ClearUDBLogRequest extends Request
     /**
      * LogType: 日志类型，10-error（暂不支持）、20-slow（暂不支持 ）、30-binlog
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLogType()
     {
@@ -133,7 +133,7 @@ class ClearUDBLogRequest extends Request
     /**
      * BeforeTime: 删除时间点(至少前一天)之前log，采用时间戳(秒)，默认当 前时间点前一天
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeforeTime()
     {
@@ -149,4 +149,6 @@ class ClearUDBLogRequest extends Request
     {
         $this->set("BeforeTime", $beforeTime);
     }
+
+
 }

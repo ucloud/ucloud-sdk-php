@@ -78,7 +78,7 @@ class DescribeVIPResponse extends Response
     /**
      * TotalCount: vip数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -94,4 +94,6 @@ class DescribeVIPResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

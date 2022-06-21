@@ -81,4 +81,6 @@ class PathXUGAInfo extends Response
     {
         $this->set("Domain", $domain);
     }
+
+
 }

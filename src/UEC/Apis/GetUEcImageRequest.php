@@ -70,7 +70,7 @@ class GetUEcImageRequest extends Request
     /**
      * Offset: 数据偏移量，默认0，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -90,7 +90,7 @@ class GetUEcImageRequest extends Request
     /**
      * Limit: 返回数据长度， 默认20，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -106,4 +106,6 @@ class GetUEcImageRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

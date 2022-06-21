@@ -45,7 +45,7 @@ class ConnNumMap extends Response
     /**
      * Num: 该Ip连接数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getNum()
     {
@@ -61,4 +61,6 @@ class ConnNumMap extends Response
     {
         $this->set("Num", $num);
     }
+
+
 }

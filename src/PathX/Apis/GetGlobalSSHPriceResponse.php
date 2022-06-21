@@ -41,4 +41,6 @@ class GetGlobalSSHPriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

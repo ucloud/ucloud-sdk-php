@@ -54,4 +54,6 @@ class GetUcdnDomainOriginHttpCodeResponse extends Response
         }
         return $result;
     }
+
+
 }

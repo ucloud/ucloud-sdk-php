@@ -45,7 +45,7 @@ class PHostComponentSet extends Response
     /**
      * Count: 组件数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -61,4 +61,6 @@ class PHostComponentSet extends Response
     {
         $this->set("Count", $count);
     }
+
+
 }

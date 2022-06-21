@@ -125,7 +125,7 @@ class UDiskSnapshotSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -145,7 +145,7 @@ class UDiskSnapshotSet extends Response
     /**
      * Size: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -185,7 +185,7 @@ class UDiskSnapshotSet extends Response
     /**
      * DiskType: 磁盘类型，0：普通数据盘；1：普通系统盘；2：SSD数据盘；3：SSD系统盘；4：RSSD数据盘；5：RSSD系统盘。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskType()
     {
@@ -205,7 +205,7 @@ class UDiskSnapshotSet extends Response
     /**
      * ExpiredTime: 过期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpiredTime()
     {
@@ -401,4 +401,6 @@ class UDiskSnapshotSet extends Response
     {
         $this->set("CmkIdAlias", $cmkIdAlias);
     }
+
+
 }

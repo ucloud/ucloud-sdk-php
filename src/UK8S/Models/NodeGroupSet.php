@@ -125,7 +125,7 @@ class NodeGroupSet extends Response
     /**
      * CPU: 虚拟CPU核数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -145,7 +145,7 @@ class NodeGroupSet extends Response
     /**
      * Mem: 内存大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMem()
     {
@@ -185,7 +185,7 @@ class NodeGroupSet extends Response
     /**
      * GPU: GPU卡核心数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -225,7 +225,7 @@ class NodeGroupSet extends Response
     /**
      * DataDiskSize: 数据盘大小
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataDiskSize()
     {
@@ -321,4 +321,6 @@ class NodeGroupSet extends Response
     {
         $this->set("NodeList", $nodeList);
     }
+
+
 }

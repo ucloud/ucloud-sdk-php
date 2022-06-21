@@ -29,7 +29,7 @@ class DescribeUHostInstanceResponse extends Response
     /**
      * TotalCount: UHostInstance总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -77,4 +77,6 @@ class DescribeUHostInstanceResponse extends Response
         }
         return $result;
     }
+
+
 }

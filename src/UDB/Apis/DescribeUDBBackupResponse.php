@@ -58,7 +58,7 @@ class DescribeUDBBackupResponse extends Response
     /**
      * TotalCount: 满足条件备份总数，如果指定dbid，则是该db备份总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUDBBackupResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

@@ -23,7 +23,7 @@ class UrlStatistics extends Response
     
 
     /**
-     * UrlList:
+     * UrlList: 
      *
      * @return DownloadStatisticInfo[]|null
      */
@@ -41,7 +41,7 @@ class UrlStatistics extends Response
     }
 
     /**
-     * UrlList:
+     * UrlList: 
      *
      * @param DownloadStatisticInfo[] $urlList
      */
@@ -73,4 +73,6 @@ class UrlStatistics extends Response
     {
         $this->set("Date", $date);
     }
+
+
 }

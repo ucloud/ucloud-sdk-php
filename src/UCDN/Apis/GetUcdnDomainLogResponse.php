@@ -55,4 +55,6 @@ class GetUcdnDomainLogResponse extends Response
         }
         return $result;
     }
+
+
 }

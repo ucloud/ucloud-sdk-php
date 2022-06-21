@@ -59,7 +59,7 @@ class DescribeUPhoneImageResponse extends Response
     /**
      * TotalCount: UPhoneImageInstance总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeUPhoneImageResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

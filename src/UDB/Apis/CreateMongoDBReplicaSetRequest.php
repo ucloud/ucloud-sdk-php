@@ -159,7 +159,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 3000G
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -179,7 +179,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * ParamGroupId: DB实例使用的配置参数组id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getParamGroupId()
     {
@@ -199,7 +199,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemoryLimit()
     {
@@ -219,7 +219,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * Port: 端口号
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -259,7 +259,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * Quantity: 购买时长(N个月)，默认值1个月。如果为0，代表购买到月底。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -299,7 +299,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * BackupCount: 备份策略，每周备份数量，默认7次
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupCount()
     {
@@ -319,7 +319,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * BackupTime: 备份策略，备份开始时间，单位小时计，默认1点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupTime()
     {
@@ -339,7 +339,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * BackupDuration: 备份策略，备份时间间隔，单位小时计，默认24小时
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupDuration()
     {
@@ -399,7 +399,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     /**
      * CPU: cpu核数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -515,4 +515,6 @@ class CreateMongoDBReplicaSetRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

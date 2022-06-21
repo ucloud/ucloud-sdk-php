@@ -108,4 +108,6 @@ class GetUHostInstanceVncInfoRequest extends Request
     {
         $this->set("UHostId", $uHostId);
     }
+
+
 }

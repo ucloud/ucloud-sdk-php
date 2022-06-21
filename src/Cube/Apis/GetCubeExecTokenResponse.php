@@ -61,4 +61,6 @@ class GetCubeExecTokenResponse extends Response
     {
         $this->set("TerminalUrl", $terminalUrl);
     }
+
+
 }

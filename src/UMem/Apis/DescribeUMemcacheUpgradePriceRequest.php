@@ -32,7 +32,7 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
     /**
      * Size: 购买umemcache大小,单位:GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -68,4 +68,6 @@ class DescribeUMemcacheUpgradePriceRequest extends Request
     {
         $this->set("GroupId", $groupId);
     }
+
+
 }

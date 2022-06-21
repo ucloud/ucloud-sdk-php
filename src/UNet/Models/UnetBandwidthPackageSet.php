@@ -45,7 +45,7 @@ class UnetBandwidthPackageSet extends Response
     /**
      * EnableTime: 生效时间, 格式为 Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEnableTime()
     {
@@ -65,7 +65,7 @@ class UnetBandwidthPackageSet extends Response
     /**
      * DisableTime: 失效时间, 格式为 Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDisableTime()
     {
@@ -85,7 +85,7 @@ class UnetBandwidthPackageSet extends Response
     /**
      * CreateTime: 创建时间, 格式为 Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -105,7 +105,7 @@ class UnetBandwidthPackageSet extends Response
     /**
      * Bandwidth: 带宽包的临时带宽值, 单位Mbps
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -173,4 +173,6 @@ class UnetBandwidthPackageSet extends Response
         }
         return $result;
     }
+
+
 }

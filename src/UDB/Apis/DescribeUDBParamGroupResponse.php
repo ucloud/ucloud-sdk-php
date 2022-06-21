@@ -59,7 +59,7 @@ class DescribeUDBParamGroupResponse extends Response
     /**
      * TotalCount: 参数组总数，列表操作时才会有该参数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeUDBParamGroupResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

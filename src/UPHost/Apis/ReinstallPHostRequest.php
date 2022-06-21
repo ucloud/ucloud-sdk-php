@@ -254,7 +254,7 @@ class ReinstallPHostRequest extends Request
     /**
      * BootDiskSpace: 裸金属机型参数->系统盘大小。 单位：GB， 范围[20,500]， 步长：10
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBootDiskSpace()
     {
@@ -270,4 +270,6 @@ class ReinstallPHostRequest extends Request
     {
         $this->set("BootDiskSpace", $bootDiskSpace);
     }
+
+
 }

@@ -133,8 +133,7 @@ class UMemClient extends Client
      * @return CheckUDredisSpaceAllowanceResponse
      * @throws UCloudException
      */
-    public function checkUDredisSpaceAllowance(CheckUDredisSpaceAllowanceRequest $request = null)
-    {
+    public function checkUDredisSpaceAllowance(CheckUDredisSpaceAllowanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new CheckUDredisSpaceAllowanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -152,7 +151,7 @@ class UMemClient extends Client
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "Size" => (integer) 创建实例的容量大小, 单位:GB 目前仅支持1/2/4/8/16/32六种规格；扩缩容时，表示实例的目标资源大小
      *     "Count" => (integer) 创建实例的数量，[1-10]
-     *     "Protocol" => (string)
+     *     "Protocol" => (string) 
      *     "RegionFlag" => (boolean) 是否是跨机房URedis(默认false)
      *     "GroupId" => (string) 资源ID，扩容实例资源时的必传参数
      * ]
@@ -166,8 +165,7 @@ class UMemClient extends Client
      * @return CheckURedisAllowanceResponse
      * @throws UCloudException
      */
-    public function checkURedisAllowance(CheckURedisAllowanceRequest $request = null)
-    {
+    public function checkURedisAllowance(CheckURedisAllowanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new CheckURedisAllowanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -196,8 +194,7 @@ class UMemClient extends Client
      * @return CreateUMemBackupResponse
      * @throws UCloudException
      */
-    public function createUMemBackup(CreateUMemBackupRequest $request = null)
-    {
+    public function createUMemBackup(CreateUMemBackupRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUMemBackupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -231,8 +228,7 @@ class UMemClient extends Client
      * @return CreateUMemSpaceResponse
      * @throws UCloudException
      */
-    public function createUMemSpace(CreateUMemSpaceRequest $request = null)
-    {
+    public function createUMemSpace(CreateUMemSpaceRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUMemSpaceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -255,7 +251,7 @@ class UMemClient extends Client
      *     "ChargeType" => (string) 计费模式，Year , Month, Dynamic 默认: Month
      *     "Quantity" => (integer) 购买时长，默认为1
      *     "Tag" => (string) 业务组 默认：Default
-     *     "Protocol" => (string)
+     *     "Protocol" => (string) 
      *     "CouponId" => (string) 代金券ID
      * ]
      *
@@ -268,8 +264,7 @@ class UMemClient extends Client
      * @return CreateUMemcacheGroupResponse
      * @throws UCloudException
      */
-    public function createUMemcacheGroup(CreateUMemcacheGroupRequest $request = null)
-    {
+    public function createUMemcacheGroup(CreateUMemcacheGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUMemcacheGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -299,8 +294,7 @@ class UMemClient extends Client
      * @return CreateURedisBackupResponse
      * @throws UCloudException
      */
-    public function createURedisBackup(CreateURedisBackupRequest $request = null)
-    {
+    public function createURedisBackup(CreateURedisBackupRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateURedisBackupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -345,8 +339,7 @@ class UMemClient extends Client
      * @return CreateURedisGroupResponse
      * @throws UCloudException
      */
-    public function createURedisGroup(CreateURedisGroupRequest $request = null)
-    {
+    public function createURedisGroup(CreateURedisGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateURedisGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -373,8 +366,7 @@ class UMemClient extends Client
      * @return DeleteUMemSpaceResponse
      * @throws UCloudException
      */
-    public function deleteUMemSpace(DeleteUMemSpaceRequest $request = null)
-    {
+    public function deleteUMemSpace(DeleteUMemSpaceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteUMemSpaceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -401,8 +393,7 @@ class UMemClient extends Client
      * @return DeleteUMemcacheGroupResponse
      * @throws UCloudException
      */
-    public function deleteUMemcacheGroup(DeleteUMemcacheGroupRequest $request = null)
-    {
+    public function deleteUMemcacheGroup(DeleteUMemcacheGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteUMemcacheGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -428,8 +419,7 @@ class UMemClient extends Client
      * @return DeleteURedisGroupResponse
      * @throws UCloudException
      */
-    public function deleteURedisGroup(DeleteURedisGroupRequest $request = null)
-    {
+    public function deleteURedisGroup(DeleteURedisGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteURedisGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -464,8 +454,7 @@ class UMemClient extends Client
      * @return DescribeUDRedisProxyInfoResponse
      * @throws UCloudException
      */
-    public function describeUDRedisProxyInfo(DescribeUDRedisProxyInfoRequest $request = null)
-    {
+    public function describeUDRedisProxyInfo(DescribeUDRedisProxyInfoRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUDRedisProxyInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -502,8 +491,7 @@ class UMemClient extends Client
      * @return DescribeUDRedisSlowlogResponse
      * @throws UCloudException
      */
-    public function describeUDRedisSlowlog(DescribeUDRedisSlowlogRequest $request = null)
-    {
+    public function describeUDRedisSlowlog(DescribeUDRedisSlowlogRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUDRedisSlowlogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -538,7 +526,7 @@ class UMemClient extends Client
      *                     "Zone" => (string) 实例所在可用区，或者master redis所在可用区，参见 [可用区列表](../summary/regionlist.html)
      *                     "SubnetId" => (string) 子网
      *                     "VPCId" => (string) vpc
-     *                     "VirtualIP" => (string)
+     *                     "VirtualIP" => (string) 
      *                     "RewriteTime" => (integer) 主备Redis返回运维时间 0//0点 1 //1点 以此类推
      *                     "MasterGroupId" => (string) 主实例id
      *                     "GroupId" => (string) 资源id
@@ -595,8 +583,7 @@ class UMemClient extends Client
      * @return DescribeUMemResponse
      * @throws UCloudException
      */
-    public function describeUMem(DescribeUMemRequest $request = null)
-    {
+    public function describeUMem(DescribeUMemRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -635,8 +622,7 @@ class UMemClient extends Client
      * @return DescribeUMemBackupResponse
      * @throws UCloudException
      */
-    public function describeUMemBackup(DescribeUMemBackupRequest $request = null)
-    {
+    public function describeUMemBackup(DescribeUMemBackupRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemBackupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -666,8 +652,7 @@ class UMemClient extends Client
      * @return DescribeUMemBackupURLResponse
      * @throws UCloudException
      */
-    public function describeUMemBackupURL(DescribeUMemBackupURLRequest $request = null)
-    {
+    public function describeUMemBackupURL(DescribeUMemBackupURLRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemBackupURLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -708,8 +693,7 @@ class UMemClient extends Client
      * @return DescribeUMemBlockInfoResponse
      * @throws UCloudException
      */
-    public function describeUMemBlockInfo(DescribeUMemBlockInfoRequest $request = null)
-    {
+    public function describeUMemBlockInfo(DescribeUMemBlockInfoRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemBlockInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -746,8 +730,7 @@ class UMemClient extends Client
      * @return DescribeUMemPriceResponse
      * @throws UCloudException
      */
-    public function describeUMemPrice(DescribeUMemPriceRequest $request = null)
-    {
+    public function describeUMemPrice(DescribeUMemPriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -775,11 +758,11 @@ class UMemClient extends Client
      *     "DataSet" => (array<object>) JSON 格式的UMem内存空间实例列表, 详细参见 UMemSpaceSet[
      *         [
      *             "Zone" => (string) 可用区，参见[可用区列表](../summary/regionlist.html)
-     *             "Tag" => (string)
+     *             "Tag" => (string) 
      *             "RewriteTime" => (integer) 运维时间0   //0点1   //1点依次类推
      *             "SpaceId" => (string) 内存空间ID
-     *             "SubnetId" => (string)
-     *             "VPCId" => (string)
+     *             "SubnetId" => (string) 
+     *             "VPCId" => (string) 
      *             "Name" => (string) 内存空间名称
      *             "CreateTime" => (integer) 创建时间
      *             "ExpireTime" => (integer) 到期时间
@@ -803,8 +786,7 @@ class UMemClient extends Client
      * @return DescribeUMemSpaceResponse
      * @throws UCloudException
      */
-    public function describeUMemSpace(DescribeUMemSpaceRequest $request = null)
-    {
+    public function describeUMemSpace(DescribeUMemSpaceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemSpaceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -835,8 +817,7 @@ class UMemClient extends Client
      * @return DescribeUMemUpgradePriceResponse
      * @throws UCloudException
      */
-    public function describeUMemUpgradePrice(DescribeUMemUpgradePriceRequest $request = null)
-    {
+    public function describeUMemUpgradePrice(DescribeUMemUpgradePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -884,8 +865,7 @@ class UMemClient extends Client
      * @return DescribeUMemcacheGroupResponse
      * @throws UCloudException
      */
-    public function describeUMemcacheGroup(DescribeUMemcacheGroupRequest $request = null)
-    {
+    public function describeUMemcacheGroup(DescribeUMemcacheGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemcacheGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -923,8 +903,7 @@ class UMemClient extends Client
      * @return DescribeUMemcachePriceResponse
      * @throws UCloudException
      */
-    public function describeUMemcachePrice(DescribeUMemcachePriceRequest $request = null)
-    {
+    public function describeUMemcachePrice(DescribeUMemcachePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemcachePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -950,8 +929,7 @@ class UMemClient extends Client
      * @return DescribeUMemcacheUpgradePriceResponse
      * @throws UCloudException
      */
-    public function describeUMemcacheUpgradePrice(DescribeUMemcacheUpgradePriceRequest $request = null)
-    {
+    public function describeUMemcacheUpgradePrice(DescribeUMemcacheUpgradePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUMemcacheUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -993,8 +971,7 @@ class UMemClient extends Client
      * @return DescribeURedisBackupResponse
      * @throws UCloudException
      */
-    public function describeURedisBackup(DescribeURedisBackupRequest $request = null)
-    {
+    public function describeURedisBackup(DescribeURedisBackupRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeURedisBackupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1026,8 +1003,7 @@ class UMemClient extends Client
      * @return DescribeURedisBackupURLResponse
      * @throws UCloudException
      */
-    public function describeURedisBackupURL(DescribeURedisBackupURLRequest $request = null)
-    {
+    public function describeURedisBackupURL(DescribeURedisBackupURLRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeURedisBackupURLResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1073,8 +1049,7 @@ class UMemClient extends Client
      * @return DescribeURedisConfigResponse
      * @throws UCloudException
      */
-    public function describeURedisConfig(DescribeURedisConfigRequest $request = null)
-    {
+    public function describeURedisConfig(DescribeURedisConfigRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeURedisConfigResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1135,8 +1110,7 @@ class UMemClient extends Client
      * @return DescribeURedisGroupResponse
      * @throws UCloudException
      */
-    public function describeURedisGroup(DescribeURedisGroupRequest $request = null)
-    {
+    public function describeURedisGroup(DescribeURedisGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeURedisGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1175,8 +1149,7 @@ class UMemClient extends Client
      * @return DescribeURedisPriceResponse
      * @throws UCloudException
      */
-    public function describeURedisPrice(DescribeURedisPriceRequest $request = null)
-    {
+    public function describeURedisPrice(DescribeURedisPriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeURedisPriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1212,8 +1185,7 @@ class UMemClient extends Client
      * @return DescribeURedisSlowlogResponse
      * @throws UCloudException
      */
-    public function describeURedisSlowlog(DescribeURedisSlowlogRequest $request = null)
-    {
+    public function describeURedisSlowlog(DescribeURedisSlowlogRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeURedisSlowlogResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1241,8 +1213,7 @@ class UMemClient extends Client
      * @return DescribeURedisUpgradePriceResponse
      * @throws UCloudException
      */
-    public function describeURedisUpgradePrice(DescribeURedisUpgradePriceRequest $request = null)
-    {
+    public function describeURedisUpgradePrice(DescribeURedisUpgradePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeURedisUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1274,8 +1245,7 @@ class UMemClient extends Client
      * @return DescribeURedisVersionResponse
      * @throws UCloudException
      */
-    public function describeURedisVersion(DescribeURedisVersionRequest $request = null)
-    {
+    public function describeURedisVersion(DescribeURedisVersionRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeURedisVersionResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1307,8 +1277,7 @@ class UMemClient extends Client
      * @return FlushallURedisGroupResponse
      * @throws UCloudException
      */
-    public function flushallURedisGroup(FlushallURedisGroupRequest $request = null)
-    {
+    public function flushallURedisGroup(FlushallURedisGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new FlushallURedisGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1336,8 +1305,7 @@ class UMemClient extends Client
      * @return GetUMemSpaceStateResponse
      * @throws UCloudException
      */
-    public function getUMemSpaceState(GetUMemSpaceStateRequest $request = null)
-    {
+    public function getUMemSpaceState(GetUMemSpaceStateRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUMemSpaceStateResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1366,8 +1334,7 @@ class UMemClient extends Client
      * @return ISolationURedisGroupResponse
      * @throws UCloudException
      */
-    public function iSolationURedisGroup(ISolationURedisGroupRequest $request = null)
-    {
+    public function iSolationURedisGroup(ISolationURedisGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new ISolationURedisGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1395,8 +1362,7 @@ class UMemClient extends Client
      * @return ModifyUMemSpaceNameResponse
      * @throws UCloudException
      */
-    public function modifyUMemSpaceName(ModifyUMemSpaceNameRequest $request = null)
-    {
+    public function modifyUMemSpaceName(ModifyUMemSpaceNameRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyUMemSpaceNameResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1423,8 +1389,7 @@ class UMemClient extends Client
      * @return ModifyURedisGroupNameResponse
      * @throws UCloudException
      */
-    public function modifyURedisGroupName(ModifyURedisGroupNameRequest $request = null)
-    {
+    public function modifyURedisGroupName(ModifyURedisGroupNameRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyURedisGroupNameResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1452,8 +1417,7 @@ class UMemClient extends Client
      * @return ModifyURedisGroupPasswordResponse
      * @throws UCloudException
      */
-    public function modifyURedisGroupPassword(ModifyURedisGroupPasswordRequest $request = null)
-    {
+    public function modifyURedisGroupPassword(ModifyURedisGroupPasswordRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyURedisGroupPasswordResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1480,8 +1444,7 @@ class UMemClient extends Client
      * @return RemoveUDRedisDataResponse
      * @throws UCloudException
      */
-    public function removeUDRedisData(RemoveUDRedisDataRequest $request = null)
-    {
+    public function removeUDRedisData(RemoveUDRedisDataRequest $request = null) {
         $resp = $this->invoke($request);
         return new RemoveUDRedisDataResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1510,8 +1473,7 @@ class UMemClient extends Client
      * @return ResizeUMemSpaceResponse
      * @throws UCloudException
      */
-    public function resizeUMemSpace(ResizeUMemSpaceRequest $request = null)
-    {
+    public function resizeUMemSpace(ResizeUMemSpaceRequest $request = null) {
         $resp = $this->invoke($request);
         return new ResizeUMemSpaceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1529,7 +1491,7 @@ class UMemClient extends Client
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
      *     "GroupId" => (string) 组ID
      *     "Size" => (integer) 内存大小, 单位:GB (需要大于原size,且小于等于32) 目前仅支持1/2/4/8/16/32 G 六种容量规格
-     *     "ChargeType" => (string)
+     *     "ChargeType" => (string) 
      *     "Type" => (string) 空间类型:single(无热备),double(热备)(默认: double)
      *     "CouponId" => (integer) 代金券ID 请参考DescribeCoupon接口
      * ]
@@ -1542,8 +1504,7 @@ class UMemClient extends Client
      * @return ResizeURedisGroupResponse
      * @throws UCloudException
      */
-    public function resizeURedisGroup(ResizeURedisGroupRequest $request = null)
-    {
+    public function resizeURedisGroup(ResizeURedisGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new ResizeURedisGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1570,8 +1531,7 @@ class UMemClient extends Client
      * @return RestartUMemcacheGroupResponse
      * @throws UCloudException
      */
-    public function restartUMemcacheGroup(RestartUMemcacheGroupRequest $request = null)
-    {
+    public function restartUMemcacheGroup(RestartUMemcacheGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new RestartUMemcacheGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1598,8 +1558,7 @@ class UMemClient extends Client
      * @return RestartURedisGroupResponse
      * @throws UCloudException
      */
-    public function restartURedisGroup(RestartURedisGroupRequest $request = null)
-    {
+    public function restartURedisGroup(RestartURedisGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new RestartURedisGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1629,8 +1588,7 @@ class UMemClient extends Client
      * @return UpdateURedisBackupStrategyResponse
      * @throws UCloudException
      */
-    public function updateURedisBackupStrategy(UpdateURedisBackupStrategyRequest $request = null)
-    {
+    public function updateURedisBackupStrategy(UpdateURedisBackupStrategyRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateURedisBackupStrategyResponse($resp->toArray(), $resp->getRequestId());
     }

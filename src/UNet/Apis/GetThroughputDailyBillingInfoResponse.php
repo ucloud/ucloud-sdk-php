@@ -58,7 +58,7 @@ class GetThroughputDailyBillingInfoResponse extends Response
     /**
      * TotalOut: 计费总流量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalOut()
     {
@@ -94,4 +94,6 @@ class GetThroughputDailyBillingInfoResponse extends Response
     {
         $this->set("EIPId", $eipId);
     }
+
+
 }

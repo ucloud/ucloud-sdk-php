@@ -59,7 +59,7 @@ class DescribeIsolationGroupResponse extends Response
     /**
      * TotalCount: 硬件隔离组总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeIsolationGroupResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

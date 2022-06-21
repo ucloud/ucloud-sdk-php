@@ -41,4 +41,6 @@ class GetCubeTokenResponse extends Response
     {
         $this->set("Token", $token);
     }
+
+
 }

@@ -73,7 +73,7 @@ class ModifyGlobalSSHPortRequest extends Request
     /**
      * Port: 源站服务器监听的SSH端口号。收费版本端口范围[1,65535]且不能为80，443，65123端口。免费版不支持修改端口。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -89,4 +89,6 @@ class ModifyGlobalSSHPortRequest extends Request
     {
         $this->set("Port", $port);
     }
+
+
 }

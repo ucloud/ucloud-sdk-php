@@ -255,7 +255,7 @@ class CreateCubePodRequest extends Request
     /**
      * Quantity: 购买时长。默认:值 1。 月付时，此参数传0，代表购买至月末。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -311,4 +311,6 @@ class CreateCubePodRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

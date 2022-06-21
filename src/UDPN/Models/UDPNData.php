@@ -105,7 +105,7 @@ class UDPNData extends Response
     /**
      * Bandwidth: 带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -125,7 +125,7 @@ class UDPNData extends Response
     /**
      * CreateTime: unix 时间戳 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -145,7 +145,7 @@ class UDPNData extends Response
     /**
      * ExpireTime: unix 时间戳 到期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -161,4 +161,6 @@ class UDPNData extends Response
     {
         $this->set("ExpireTime", $expireTime);
     }
+
+
 }

@@ -45,7 +45,7 @@ class UMemcachePriceSet extends Response
     /**
      * Price: 总价格
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPrice()
     {
@@ -65,7 +65,7 @@ class UMemcachePriceSet extends Response
     /**
      * ListPrice: 产品列表价
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getListPrice()
     {
@@ -85,7 +85,7 @@ class UMemcachePriceSet extends Response
     /**
      * OriginalPrice: 原价
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOriginalPrice()
     {
@@ -101,4 +101,6 @@ class UMemcachePriceSet extends Response
     {
         $this->set("OriginalPrice", $originalPrice);
     }
+
+
 }

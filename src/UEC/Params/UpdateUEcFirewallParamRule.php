@@ -103,7 +103,7 @@ class UpdateUEcFirewallParamRule extends Request
     }
 
     /**
-     * Priority:    优先级：HIGH（高），MEDIUM（中），LOW（低）
+     * Priority: 	优先级：HIGH（高），MEDIUM（中），LOW（低）
      *
      * @return string|null
      */
@@ -113,7 +113,7 @@ class UpdateUEcFirewallParamRule extends Request
     }
 
     /**
-     * Priority:    优先级：HIGH（高），MEDIUM（中），LOW（低）
+     * Priority: 	优先级：HIGH（高），MEDIUM（中），LOW（低）
      *
      * @param string $priority
      */
@@ -141,4 +141,6 @@ class UpdateUEcFirewallParamRule extends Request
     {
         $this->set("Remark", $remark);
     }
+
+
 }

@@ -26,7 +26,7 @@ class DescribeUDPNResponse extends Response
     /**
      * TotalCount: 查询到的总数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUDPNResponse extends Response
         }
         return $result;
     }
+
+
 }

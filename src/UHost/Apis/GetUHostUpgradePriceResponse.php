@@ -61,4 +61,6 @@ class GetUHostUpgradePriceResponse extends Response
     {
         $this->set("OriginalPrice", $originalPrice);
     }
+
+
 }

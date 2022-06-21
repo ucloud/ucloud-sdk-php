@@ -54,4 +54,6 @@ class ListSubnetForNATGWResponse extends Response
         }
         return $result;
     }
+
+
 }

@@ -81,4 +81,6 @@ class SlaveInfo extends Response
     {
         $this->set("State", $state);
     }
+
+
 }

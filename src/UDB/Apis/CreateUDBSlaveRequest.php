@@ -133,7 +133,7 @@ class CreateUDBSlaveRequest extends Request
     /**
      * Port: 端口号
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -233,7 +233,7 @@ class CreateUDBSlaveRequest extends Request
     /**
      * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemoryLimit()
     {
@@ -253,7 +253,7 @@ class CreateUDBSlaveRequest extends Request
     /**
      * DiskSpace: 磁盘空间(GB), 暂时支持20G - 3000G（API支持，前端暂时只开放内存定制）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDiskSpace()
     {
@@ -353,7 +353,7 @@ class CreateUDBSlaveRequest extends Request
     /**
      * Quantity: 购买时长，默认默认和主库保持一致
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -373,7 +373,7 @@ class CreateUDBSlaveRequest extends Request
     /**
      * ParamGroupId: DB实例使用的配置参数组id，默认和主库保持一致
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getParamGroupId()
     {
@@ -409,4 +409,6 @@ class CreateUDBSlaveRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

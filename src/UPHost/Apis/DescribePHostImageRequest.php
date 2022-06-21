@@ -132,7 +132,7 @@ class DescribePHostImageRequest extends Request
     /**
      * Offset: 数据偏移量，默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -152,7 +152,7 @@ class DescribePHostImageRequest extends Request
     /**
      * Limit: 返回数据长度，默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -188,4 +188,6 @@ class DescribePHostImageRequest extends Request
     {
         $this->set("MachineType", $machineType);
     }
+
+
 }

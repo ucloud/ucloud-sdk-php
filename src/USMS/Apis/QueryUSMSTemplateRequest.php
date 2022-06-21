@@ -68,4 +68,6 @@ class QueryUSMSTemplateRequest extends Request
     {
         $this->set("TemplateId", $templateId);
     }
+
+
 }

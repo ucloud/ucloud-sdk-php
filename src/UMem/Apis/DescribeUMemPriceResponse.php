@@ -54,4 +54,6 @@ class DescribeUMemPriceResponse extends Response
         }
         return $result;
     }
+
+
 }

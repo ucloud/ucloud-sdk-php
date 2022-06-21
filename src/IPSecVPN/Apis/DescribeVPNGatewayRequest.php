@@ -112,7 +112,7 @@ class DescribeVPNGatewayRequest extends Request
     /**
      * Offset: 数据偏移量。默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -152,7 +152,7 @@ class DescribeVPNGatewayRequest extends Request
     /**
      * Limit: 数据分页值。默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -168,4 +168,6 @@ class DescribeVPNGatewayRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

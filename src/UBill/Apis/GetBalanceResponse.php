@@ -42,4 +42,6 @@ class GetBalanceResponse extends Response
     {
         $this->set("AccountInfo", $accountInfo->getAll());
     }
+
+
 }

@@ -41,4 +41,6 @@ class CreateRemoteVPNGatewayResponse extends Response
     {
         $this->set("RemoteVPNGatewayId", $remoteVPNGatewayId);
     }
+
+
 }

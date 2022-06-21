@@ -93,7 +93,7 @@ class DescribeUDBBackupRequest extends Request
     /**
      * Offset: 分页显示的起始偏移，列表操作则指定
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -113,7 +113,7 @@ class DescribeUDBBackupRequest extends Request
     /**
      * Limit: 分页显示的条目数，列表操作则指定
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -153,7 +153,7 @@ class DescribeUDBBackupRequest extends Request
     /**
      * BackupType: 备份类型,取值为0或1，0表示自动，1表示手动
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupType()
     {
@@ -173,7 +173,7 @@ class DescribeUDBBackupRequest extends Request
     /**
      * BeginTime: 过滤条件:起始时间(Unix时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -193,7 +193,7 @@ class DescribeUDBBackupRequest extends Request
     /**
      * EndTime: 过滤条件:结束时间(Unix时间戳)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -209,4 +209,6 @@ class DescribeUDBBackupRequest extends Request
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

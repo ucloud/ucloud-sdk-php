@@ -93,8 +93,7 @@ class CubeClient extends Client
      * @return CreateCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function createCubeDeployment(CreateCubeDeploymentRequest $request = null)
-    {
+    public function createCubeDeployment(CreateCubeDeploymentRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -133,8 +132,7 @@ class CubeClient extends Client
      * @return CreateCubePodResponse
      * @throws UCloudException
      */
-    public function createCubePod(CreateCubePodRequest $request = null)
-    {
+    public function createCubePod(CreateCubePodRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateCubePodResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -161,8 +159,7 @@ class CubeClient extends Client
      * @return DeleteCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function deleteCubeDeployment(DeleteCubeDeploymentRequest $request = null)
-    {
+    public function deleteCubeDeployment(DeleteCubeDeploymentRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -191,8 +188,7 @@ class CubeClient extends Client
      * @return DeleteCubePodResponse
      * @throws UCloudException
      */
-    public function deleteCubePod(DeleteCubePodRequest $request = null)
-    {
+    public function deleteCubePod(DeleteCubePodRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteCubePodResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -220,8 +216,7 @@ class CubeClient extends Client
      * @return GetCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function getCubeDeployment(GetCubeDeploymentRequest $request = null)
-    {
+    public function getCubeDeployment(GetCubeDeploymentRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -252,8 +247,7 @@ class CubeClient extends Client
      * @return GetCubeExecTokenResponse
      * @throws UCloudException
      */
-    public function getCubeExecToken(GetCubeExecTokenRequest $request = null)
-    {
+    public function getCubeExecToken(GetCubeExecTokenRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetCubeExecTokenResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -306,8 +300,7 @@ class CubeClient extends Client
      * @return GetCubeExtendInfoResponse
      * @throws UCloudException
      */
-    public function getCubeExtendInfo(GetCubeExtendInfoRequest $request = null)
-    {
+    public function getCubeExtendInfo(GetCubeExtendInfoRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetCubeExtendInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -335,11 +328,11 @@ class CubeClient extends Client
      * $outputs = [
      *     "DataSets" => (array<object>) 时间序列集合[
      *         [
-     *             "MetricName" => (string)
+     *             "MetricName" => (string) 
      *             "Values" => (array<object>) [
      *                 [
-     *                     "Value" => (number)
-     *                     "Timestamp" => (integer)
+     *                     "Value" => (number) 
+     *                     "Timestamp" => (integer) 
      *                 ]
      *             ]
      *         ]
@@ -349,8 +342,7 @@ class CubeClient extends Client
      * @return GetCubeMetricsResponse
      * @throws UCloudException
      */
-    public function getCubeMetrics(GetCubeMetricsRequest $request = null)
-    {
+    public function getCubeMetrics(GetCubeMetricsRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetCubeMetricsResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -379,8 +371,7 @@ class CubeClient extends Client
      * @return GetCubePodResponse
      * @throws UCloudException
      */
-    public function getCubePod(GetCubePodRequest $request = null)
-    {
+    public function getCubePod(GetCubePodRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetCubePodResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -413,8 +404,7 @@ class CubeClient extends Client
      * @return GetCubePriceResponse
      * @throws UCloudException
      */
-    public function getCubePrice(GetCubePriceRequest $request = null)
-    {
+    public function getCubePrice(GetCubePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetCubePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -444,8 +434,7 @@ class CubeClient extends Client
      * @return GetCubeTokenResponse
      * @throws UCloudException
      */
-    public function getCubeToken(GetCubeTokenRequest $request = null)
-    {
+    public function getCubeToken(GetCubeTokenRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetCubeTokenResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -468,15 +457,14 @@ class CubeClient extends Client
      * Outputs:
      *
      * $outputs = [
-     *     "TotalCount" => (integer)
+     *     "TotalCount" => (integer) 
      *     "Deployments" => (array<string>) DeploymentInfo
      * ]
      *
      * @return ListCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function listCubeDeployment(ListCubeDeploymentRequest $request = null)
-    {
+    public function listCubeDeployment(ListCubeDeploymentRequest $request = null) {
         $resp = $this->invoke($request);
         return new ListCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -510,8 +498,7 @@ class CubeClient extends Client
      * @return ListCubePodResponse
      * @throws UCloudException
      */
-    public function listCubePod(ListCubePodRequest $request = null)
-    {
+    public function listCubePod(ListCubePodRequest $request = null) {
         $resp = $this->invoke($request);
         return new ListCubePodResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -539,8 +526,7 @@ class CubeClient extends Client
      * @return ModifyCubeExtendInfoResponse
      * @throws UCloudException
      */
-    public function modifyCubeExtendInfo(ModifyCubeExtendInfoRequest $request = null)
-    {
+    public function modifyCubeExtendInfo(ModifyCubeExtendInfoRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyCubeExtendInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -569,8 +555,7 @@ class CubeClient extends Client
      * @return ModifyCubeTagResponse
      * @throws UCloudException
      */
-    public function modifyCubeTag(ModifyCubeTagRequest $request = null)
-    {
+    public function modifyCubeTag(ModifyCubeTagRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyCubeTagResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -597,8 +582,7 @@ class CubeClient extends Client
      * @return RebootCubePodResponse
      * @throws UCloudException
      */
-    public function rebootCubePod(RebootCubePodRequest $request = null)
-    {
+    public function rebootCubePod(RebootCubePodRequest $request = null) {
         $resp = $this->invoke($request);
         return new RebootCubePodResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -627,8 +611,7 @@ class CubeClient extends Client
      * @return RenewCubePodResponse
      * @throws UCloudException
      */
-    public function renewCubePod(RenewCubePodRequest $request = null)
-    {
+    public function renewCubePod(RenewCubePodRequest $request = null) {
         $resp = $this->invoke($request);
         return new RenewCubePodResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -658,8 +641,7 @@ class CubeClient extends Client
      * @return UpdateCubeDeploymentResponse
      * @throws UCloudException
      */
-    public function updateCubeDeployment(UpdateCubeDeploymentRequest $request = null)
-    {
+    public function updateCubeDeployment(UpdateCubeDeploymentRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpdateCubeDeploymentResponse($resp->toArray(), $resp->getRequestId());
     }

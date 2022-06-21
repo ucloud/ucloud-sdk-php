@@ -234,4 +234,6 @@ class UpdateNATGWPolicyRequest extends Request
     {
         $this->set("PolicyName", $policyName);
     }
+
+
 }

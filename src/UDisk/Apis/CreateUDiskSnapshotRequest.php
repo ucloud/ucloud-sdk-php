@@ -134,7 +134,7 @@ class CreateUDiskSnapshotRequest extends Request
     /**
      * Quantity: 购买时长 默认: 1  (已废弃)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -190,4 +190,6 @@ class CreateUDiskSnapshotRequest extends Request
     {
         $this->set("Comment", $comment);
     }
+
+
 }

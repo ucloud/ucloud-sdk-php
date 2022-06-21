@@ -26,7 +26,7 @@ class DescribeSubnetResponse extends Response
     /**
      * TotalCount: 子网总数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeSubnetResponse extends Response
         }
         return $result;
     }
+
+
 }

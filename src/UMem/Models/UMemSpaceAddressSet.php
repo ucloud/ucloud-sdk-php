@@ -45,7 +45,7 @@ class UMemSpaceAddressSet extends Response
     /**
      * Port: UMem实例访问Port
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -61,4 +61,6 @@ class UMemSpaceAddressSet extends Response
     {
         $this->set("Port", $port);
     }
+
+
 }

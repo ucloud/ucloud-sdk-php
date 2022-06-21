@@ -59,7 +59,7 @@ class GetUEcIDCCutInfoResponse extends Response
     /**
      * TotalCount: 满足条件的机房总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class GetUEcIDCCutInfoResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

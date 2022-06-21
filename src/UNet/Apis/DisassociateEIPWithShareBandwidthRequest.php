@@ -93,7 +93,7 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
     /**
      * Bandwidth: 移出共享带宽后，EIP的外网带宽, 单位为Mbps. 各地域带宽范围如下：  流量计费[1-200],带宽计费[1-800]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -169,4 +169,6 @@ class DisassociateEIPWithShareBandwidthRequest extends Request
     {
         $this->set("IPVersion", $ipVersion);
     }
+
+
 }

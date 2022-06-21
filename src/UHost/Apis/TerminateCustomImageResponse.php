@@ -41,4 +41,6 @@ class TerminateCustomImageResponse extends Response
     {
         $this->set("ImageId", $imageId);
     }
+
+
 }

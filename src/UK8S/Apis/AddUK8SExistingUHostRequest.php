@@ -154,7 +154,7 @@ class AddUK8SExistingUHostRequest extends Request
     /**
      * MaxPods: 默认110，生产环境建议小于等于110。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMaxPods()
     {
@@ -290,4 +290,6 @@ class AddUK8SExistingUHostRequest extends Request
     {
         $this->set("InitScript", $initScript);
     }
+
+
 }

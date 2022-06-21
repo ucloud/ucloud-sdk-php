@@ -61,4 +61,6 @@ class OutPublicIpInfo extends Response
     {
         $this->set("Area", $area);
     }
+
+
 }

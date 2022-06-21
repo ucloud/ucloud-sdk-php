@@ -93,7 +93,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
     /**
      * BackupId: DB实例binlog备份ID，可以从DescribeUDBLogPackage结果当中获得
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBackupId()
     {
@@ -109,4 +109,6 @@ class DescribeUDBBinlogBackupURLRequest extends Request
     {
         $this->set("BackupId", $backupId);
     }
+
+
 }

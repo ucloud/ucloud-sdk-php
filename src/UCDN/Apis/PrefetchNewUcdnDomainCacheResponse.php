@@ -41,4 +41,6 @@ class PrefetchNewUcdnDomainCacheResponse extends Response
     {
         $this->set("TaskId", $taskId);
     }
+
+
 }

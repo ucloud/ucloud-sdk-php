@@ -93,7 +93,7 @@ class DescribeInstanceNetworkInterfaceRequest extends Request
     /**
      * Offset: 默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -113,7 +113,7 @@ class DescribeInstanceNetworkInterfaceRequest extends Request
     /**
      * Limit: 默认为20
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -129,4 +129,6 @@ class DescribeInstanceNetworkInterfaceRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+
 }

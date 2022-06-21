@@ -25,7 +25,7 @@ class DescribeShareBandwidthPriceResponse extends Response
     /**
      * TotalPrice: 共享带宽总价格
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalPrice()
     {
@@ -41,4 +41,6 @@ class DescribeShareBandwidthPriceResponse extends Response
     {
         $this->set("TotalPrice", $totalPrice);
     }
+
+
 }

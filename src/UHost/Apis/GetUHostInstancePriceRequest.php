@@ -97,7 +97,7 @@ class GetUHostInstancePriceRequest extends Request
     /**
      * CPU: CPU核数。可选参数：1-64。可选范围参照控制台。默认值: 4
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -117,7 +117,7 @@ class GetUHostInstancePriceRequest extends Request
     /**
      * Memory: 内存大小。单位：MB。范围 ：[1024, 262144]，取值为1024的倍数（可选范围参照好控制台）。默认值：8192
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -137,7 +137,7 @@ class GetUHostInstancePriceRequest extends Request
     /**
      * Count: 购买台数，范围[1,5]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -155,7 +155,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * Disks:
+     * Disks: 
      *
      * @return GetUHostInstancePriceParamDisks[]|null
      */
@@ -173,7 +173,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * Disks:
+     * Disks: 
      *
      * @param GetUHostInstancePriceParamDisks[] $disks
      */
@@ -209,7 +209,7 @@ class GetUHostInstancePriceRequest extends Request
     /**
      * GPU: GPU卡核心数。仅GPU机型支持此字段。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGPU()
     {
@@ -329,7 +329,7 @@ class GetUHostInstancePriceRequest extends Request
     /**
      * Quantity: 购买时长。默认: 1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -367,7 +367,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * Volumes:
+     * Volumes: 
      *
      * @return GetUHostInstancePriceParamVolumes[]|null
      */
@@ -385,7 +385,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * Volumes:
+     * Volumes: 
      *
      * @param GetUHostInstancePriceParamVolumes[] $volumes
      */
@@ -399,7 +399,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * VirtualGpu:
+     * VirtualGpu: 
      *
      * @return GetUHostInstancePriceParamVirtualGpu|null
      */
@@ -409,7 +409,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * VirtualGpu:
+     * VirtualGpu: 
      *
      * @param GetUHostInstancePriceParamVirtualGpu $virtualGpu
      */
@@ -417,4 +417,6 @@ class GetUHostInstancePriceRequest extends Request
     {
         $this->set("VirtualGpu", $virtualGpu->getAll());
     }
+
+
 }

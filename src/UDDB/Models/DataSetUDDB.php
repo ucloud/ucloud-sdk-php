@@ -145,7 +145,7 @@ class DataSetUDDB extends Response
     /**
      * Port: UDDB实例访问的端口号
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -185,7 +185,7 @@ class DataSetUDDB extends Response
     /**
      * CreateTime: UDDB实例创建时间，采用UTC计时时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -205,7 +205,7 @@ class DataSetUDDB extends Response
     /**
      * ExpiredTime: UDDB实例过期时间，采用UTC计时时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpiredTime()
     {
@@ -265,7 +265,7 @@ class DataSetUDDB extends Response
     /**
      * RouterNodeNum: 各版本下的节点个数。体验版： 固定为2节点； 畅享版：固定为4节点（后续可通过管理API调整）；专享版：物理机台数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRouterNodeNum()
     {
@@ -285,7 +285,7 @@ class DataSetUDDB extends Response
     /**
      * RefQps: 参考QPS。 免费版： 15000； 畅享版： 30000 - 100000 （根据节点数而定）； 专享版： 节点数 * 10w qps
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRefQps()
     {
@@ -305,7 +305,7 @@ class DataSetUDDB extends Response
     /**
      * DataNodeCount: 数据节点个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeCount()
     {
@@ -325,7 +325,7 @@ class DataSetUDDB extends Response
     /**
      * DataNodeMemory: 数据节点的内存配置, 单位：MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeMemory()
     {
@@ -345,7 +345,7 @@ class DataSetUDDB extends Response
     /**
      * DataNodeDiskSpace: 数据节点的磁盘大小配置. 单位: GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeDiskSpace()
     {
@@ -365,7 +365,7 @@ class DataSetUDDB extends Response
     /**
      * DataNodeSlaveCount: 每个数据节点的只读实例个数.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeSlaveCount()
     {
@@ -453,4 +453,6 @@ class DataSetUDDB extends Response
     {
         $this->set("InstanceType", $instanceType);
     }
+
+
 }

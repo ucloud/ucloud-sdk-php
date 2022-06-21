@@ -54,4 +54,6 @@ class DescribeUDBInstancePriceResponse extends Response
         }
         return $result;
     }
+
+
 }

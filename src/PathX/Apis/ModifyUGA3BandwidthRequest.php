@@ -72,7 +72,7 @@ class ModifyUGA3BandwidthRequest extends Request
     /**
      * Bandwidth: 带宽大小，范围[1,100]，不传则不更新
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -108,4 +108,6 @@ class ModifyUGA3BandwidthRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

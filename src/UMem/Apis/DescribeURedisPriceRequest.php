@@ -93,7 +93,7 @@ class DescribeURedisPriceRequest extends Request
     /**
      * Size: 量大小,单位:GB  取值范围[1-32]
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -133,7 +133,7 @@ class DescribeURedisPriceRequest extends Request
     /**
      * Quantity: 计费模式为Dynamic时，购买的时长, 默认为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -189,4 +189,6 @@ class DescribeURedisPriceRequest extends Request
     {
         $this->set("ProductType", $productType);
     }
+
+
 }

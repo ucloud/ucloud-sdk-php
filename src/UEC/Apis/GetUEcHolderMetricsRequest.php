@@ -113,7 +113,7 @@ class GetUEcHolderMetricsRequest extends Request
     /**
      * StartTime: 开始时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStartTime()
     {
@@ -133,7 +133,7 @@ class GetUEcHolderMetricsRequest extends Request
     /**
      * EndTime: 结束时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -149,4 +149,6 @@ class GetUEcHolderMetricsRequest extends Request
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

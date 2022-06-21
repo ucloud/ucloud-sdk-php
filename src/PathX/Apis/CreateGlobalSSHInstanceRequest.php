@@ -95,7 +95,7 @@ class CreateGlobalSSHInstanceRequest extends Request
     /**
      * Port: 源站服务器监听的SSH端口，可取范围[1-65535]，不能使用80，443,  65123端口。如果InstanceType=Free，取值范围缩小为[22,3389],linux系统选择22，windows系统自动选3389。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -175,7 +175,7 @@ class CreateGlobalSSHInstanceRequest extends Request
     /**
      * Quantity: 购买数量按月购买至月底请传0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -215,7 +215,7 @@ class CreateGlobalSSHInstanceRequest extends Request
     /**
      * BandwidthPackage: Ultimate版本带宽包大小,枚举值：[0,20,40]。单位MB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidthPackage()
     {
@@ -271,4 +271,6 @@ class CreateGlobalSSHInstanceRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

@@ -61,4 +61,6 @@ class DescribeUDBInstanceLogResponse extends Response
     {
         $this->set("NextTime", $nextTime);
     }
+
+
 }

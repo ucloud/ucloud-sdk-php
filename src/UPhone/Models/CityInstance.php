@@ -121,4 +121,6 @@ class CityInstance extends Response
     {
         $this->set("CityAlias", $cityAlias);
     }
+
+
 }

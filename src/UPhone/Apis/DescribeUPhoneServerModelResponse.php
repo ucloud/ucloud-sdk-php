@@ -17,6 +17,7 @@
 namespace UCloud\UPhone\Apis;
 
 use UCloud\Core\Response\Response;
+use UCloud\UPhone\Models\StockInfo;
 use UCloud\UPhone\Models\ServerModelInstance;
 use UCloud\UPhone\Models\ServerDiskSet;
 use UCloud\UPhone\Models\UPhoneSpec;
@@ -28,7 +29,7 @@ class DescribeUPhoneServerModelResponse extends Response
     /**
      * TotalCount: ServerModelInstance总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -43,6 +44,38 @@ class DescribeUPhoneServerModelResponse extends Response
     public function setTotalCount($totalCount)
     {
         $this->set("TotalCount", $totalCount);
+    }
+
+    /**
+     * Stock: 服务器model的库存
+     *
+     * @return StockInfo[]|null
+     */
+    public function getStock()
+    {
+        $items = $this->get("Stock");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new StockInfo($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Stock: 服务器model的库存
+     *
+     * @param StockInfo[] $stock
+     */
+    public function setStock(array $stock)
+    {
+        $result = [];
+        foreach ($stock as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
@@ -76,4 +109,6 @@ class DescribeUPhoneServerModelResponse extends Response
         }
         return $result;
     }
+
+
 }

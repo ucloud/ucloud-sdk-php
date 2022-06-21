@@ -77,7 +77,7 @@ class TaskInfo extends Response
     /**
      * CreateTime: 刷新任务创建的时间。格式为Unix Timestamp
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -113,4 +113,6 @@ class TaskInfo extends Response
     {
         $this->set("Status", $status);
     }
+
+
 }

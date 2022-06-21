@@ -45,7 +45,7 @@ class UFileQuotaDataSetItem extends Response
     /**
      * Owe: 是否欠费：1表示欠费；0表示未欠费
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOwe()
     {
@@ -121,4 +121,6 @@ class UFileQuotaDataSetItem extends Response
     {
         $this->set("RequestCnt", $requestCnt->getAll());
     }
+
+
 }

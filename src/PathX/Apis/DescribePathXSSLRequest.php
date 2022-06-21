@@ -91,7 +91,7 @@ class DescribePathXSSLRequest extends Request
     /**
      * Limit: 最大返回条数，默认100，最大400
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -111,7 +111,7 @@ class DescribePathXSSLRequest extends Request
     /**
      * Offset: 偏移值 默认为0
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -127,4 +127,6 @@ class DescribePathXSSLRequest extends Request
     {
         $this->set("Offset", $offset);
     }
+
+
 }

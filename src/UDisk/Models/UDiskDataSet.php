@@ -85,7 +85,7 @@ class UDiskDataSet extends Response
     /**
      * Size: 容量单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -125,7 +125,7 @@ class UDiskDataSet extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -145,7 +145,7 @@ class UDiskDataSet extends Response
     /**
      * ExpiredTime: 过期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpiredTime()
     {
@@ -405,7 +405,7 @@ class UDiskDataSet extends Response
     /**
      * SnapshotCount: 该盘快照个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSnapshotCount()
     {
@@ -425,7 +425,7 @@ class UDiskDataSet extends Response
     /**
      * SnapshotLimit: 该盘快照上限
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSnapshotLimit()
     {
@@ -465,7 +465,7 @@ class UDiskDataSet extends Response
     /**
      * CloneEnable: 是否支持克隆，1支持 ，0不支持
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCloneEnable()
     {
@@ -485,7 +485,7 @@ class UDiskDataSet extends Response
     /**
      * SnapEnable: 是否支持快照，1支持 ，0不支持
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSnapEnable()
     {
@@ -505,7 +505,7 @@ class UDiskDataSet extends Response
     /**
      * ArkSwitchEnable: 是否支持开启方舟，1支持 ，0不支持
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getArkSwitchEnable()
     {
@@ -681,4 +681,6 @@ class UDiskDataSet extends Response
     {
         $this->set("RdmaClusterId", $rdmaClusterId);
     }
+
+
 }

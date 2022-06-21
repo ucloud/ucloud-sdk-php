@@ -25,7 +25,7 @@ class Collection extends Response
     /**
      * Cpu: CPU规格
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCpu()
     {
@@ -81,4 +81,6 @@ class Collection extends Response
     {
         $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
     }
+
+
 }

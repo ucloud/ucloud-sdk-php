@@ -122,8 +122,7 @@ class UHostClient extends Client
      * @return CopyCustomImageResponse
      * @throws UCloudException
      */
-    public function copyCustomImage(CopyCustomImageRequest $request = null)
-    {
+    public function copyCustomImage(CopyCustomImageRequest $request = null) {
         $resp = $this->invoke($request);
         return new CopyCustomImageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -153,8 +152,7 @@ class UHostClient extends Client
      * @return CreateCustomImageResponse
      * @throws UCloudException
      */
-    public function createCustomImage(CreateCustomImageRequest $request = null)
-    {
+    public function createCustomImage(CreateCustomImageRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateCustomImageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -182,8 +180,7 @@ class UHostClient extends Client
      * @return CreateIsolationGroupResponse
      * @throws UCloudException
      */
-    public function createIsolationGroup(CreateIsolationGroupRequest $request = null)
-    {
+    public function createIsolationGroup(CreateIsolationGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateIsolationGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -209,7 +206,7 @@ class UHostClient extends Client
      *             "Encrypted" => (boolean) 【功能仅部分可用区开放，详询技术支持】磁盘是否加密。加密：true, 不加密: false加密必须传入对应的的KmsKeyId,默认值false
      *             "KmsKeyId" => (string) 【功能仅部分可用区开放，详询技术支持】kms key id。选择加密盘时必填。
      *             "CouponId" => (string) 云盘代金券id。不适用于系统盘/本地盘。请通过DescribeCoupon接口查询，或登录用户中心查看
-     *             "CustomBackup" => (object)
+     *             "CustomBackup" => (object) 
      *         ]
      *     ]
      *     "LoginMode" => (string) 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair。
@@ -243,18 +240,18 @@ class UHostClient extends Client
      *                 "OperatorName" => (string) 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2: Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk: International kr-seoul:International us-ws:International ge-fra:International sg:International tw-kh:International.其他海外线路均为 International
      *                 "CouponId" => (string) 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。
      *             ]
-     *             "IPv6" => (object)
+     *             "IPv6" => (object) 
      *             "CreateCernetIp" => (boolean) 申请并绑定一个教育网EIP。True为申请并绑定，False为不会申请绑定，默认False。当前只支持具有HPC特性的机型。
      *         ]
      *     ]
      *     "UserData" => (string) 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码
      *     "AutoDataDiskInit" => (string) 数据盘是否需要自动分区挂载。当镜像支持“Cloud-init”Feature时可填写此字段。取值 >“On” 自动挂载（默认值）> “Off” 不自动挂载。
-     *     "Volumes" => (array<object>)
+     *     "Volumes" => (array<object>) 
      *     "KeyPairId" => (string) KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。
      *     "Features" => (object) [
      *         "UNI" => (boolean) 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。
      *     ]
-     *     "SecGroupId" => (array<object>)
+     *     "SecGroupId" => (array<object>) 
      *     "CouponId" => (string) 主机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看
      * ]
      *
@@ -268,8 +265,7 @@ class UHostClient extends Client
      * @return CreateUHostInstanceResponse
      * @throws UCloudException
      */
-    public function createUHostInstance(CreateUHostInstanceRequest $request = null)
-    {
+    public function createUHostInstance(CreateUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -304,8 +300,7 @@ class UHostClient extends Client
      * @return CreateUHostKeyPairResponse
      * @throws UCloudException
      */
-    public function createUHostKeyPair(CreateUHostKeyPairRequest $request = null)
-    {
+    public function createUHostKeyPair(CreateUHostKeyPairRequest $request = null) {
         $resp = $this->invoke($request);
         return new CreateUHostKeyPairResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -332,8 +327,7 @@ class UHostClient extends Client
      * @return DeleteIsolationGroupResponse
      * @throws UCloudException
      */
-    public function deleteIsolationGroup(DeleteIsolationGroupRequest $request = null)
-    {
+    public function deleteIsolationGroup(DeleteIsolationGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteIsolationGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -360,8 +354,7 @@ class UHostClient extends Client
      * @return DeleteUHostKeyPairsResponse
      * @throws UCloudException
      */
-    public function deleteUHostKeyPairs(DeleteUHostKeyPairsRequest $request = null)
-    {
+    public function deleteUHostKeyPairs(DeleteUHostKeyPairsRequest $request = null) {
         $resp = $this->invoke($request);
         return new DeleteUHostKeyPairsResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -376,7 +369,7 @@ class UHostClient extends Client
      * $args = [
      *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 
      * ]
      *
      * Outputs:
@@ -386,16 +379,14 @@ class UHostClient extends Client
      *         [
      *             "Name" => (string) 机型名称：快杰O型|O 、快杰共享型|OM 、快杰内存型|OMEM 、 快杰PRO型|OPRO、通用N型|N、高主频C型|C和GPU G型|G等
      *             "Status" => (string) 机型状态：可售|Normal 、 公测|Beta、售罄|Soldout、隐藏|Hidden
-     *             "CpuPlatforms" => (array<object>) 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回[
-     *                 [
-     *                     "Intel" => (array<string>) 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake']
-     *                     "Amd" => (array<string>) 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2']
-     *                     "Ampere" => (array<string>) 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra']
-     *                 ]
+     *             "CpuPlatforms" => (object) 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回[
+     *                 "Intel" => (array<string>) 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake']
+     *                 "Amd" => (array<string>) 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2']
+     *                 "Ampere" => (array<string>) 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra']
      *             ]
      *             "Disks" => (array<object>) 磁盘信息。磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。其中云盘主要包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。MinimalSize为磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。MaximalSize为磁盘最大值。InstantResize表示系统盘是否允许扩容，如果是本地盘，则不允许扩容，InstantResize为false。Features为磁盘可支持的服务：数据方舟|DATAARK，快照服务|SNAPSHOT，加密盘|Encrypted。[
      *                 [
-     *                     "Name" => (string) 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。
+     *                     "Name" => (string) 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 
      *                     "BootDisk" => (array<object>) 系统盘信息[
      *                         [
      *                             "Name" => (string) 系统盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
@@ -426,7 +417,7 @@ class UHostClient extends Client
      *                     ]
      *                 ]
      *             ]
-     *             "Features" => (array<object>)    虚机可支持的特性。目前支持的特性网络增强|NetCapability、热升级|Hotplug。网络增强分为关闭|Normal、网络增强1.0|Super和网络增强2.0|Ultra。Name为可支持的特性名称，Modes为可以提供的模式类别等，RelatedToImageFeature为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。MinimalCpuPlatform表示这个特性必须是列出来的CPU平台及以上的CPU才支持。[
+     *             "Features" => (array<object>) 	虚机可支持的特性。目前支持的特性网络增强|NetCapability、热升级|Hotplug。网络增强分为关闭|Normal、网络增强1.0|Super和网络增强2.0|Ultra。Name为可支持的特性名称，Modes为可以提供的模式类别等，RelatedToImageFeature为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。MinimalCpuPlatform表示这个特性必须是列出来的CPU平台及以上的CPU才支持。[
      *                 [
      *                     "Name" => (string) 可支持的特性名称。目前支持的特性网络增强|NetCapability、热升级|Hotplug
      *                     "Modes" => (array<object>) 可以提供的模式类别[
@@ -454,8 +445,7 @@ class UHostClient extends Client
      * @return DescribeAvailableInstanceTypesResponse
      * @throws UCloudException
      */
-    public function describeAvailableInstanceTypes(DescribeAvailableInstanceTypesRequest $request = null)
-    {
+    public function describeAvailableInstanceTypes(DescribeAvailableInstanceTypesRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeAvailableInstanceTypesResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -485,7 +475,7 @@ class UHostClient extends Client
      *     "TotalCount" => (integer) 满足条件的镜像总数
      *     "ImageSet" => (array<object>) 镜像列表详见 UHostImageSet[
      *         [
-     *             "Zone" => (string) 可用区，参见 [可用区列表](../summary/regionlist.html)
+     *             "Zone" => (string) 可用区，参见 [可用区列表](../summary/regionlist.html) 
      *             "ImageId" => (string) 镜像ID
      *             "ImageName" => (string) 镜像名称
      *             "OsType" => (string) 操作系统类型：Linux，Windows
@@ -508,8 +498,7 @@ class UHostClient extends Client
      * @return DescribeImageResponse
      * @throws UCloudException
      */
-    public function describeImage(DescribeImageRequest $request = null)
-    {
+    public function describeImage(DescribeImageRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeImageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -551,8 +540,7 @@ class UHostClient extends Client
      * @return DescribeIsolationGroupResponse
      * @throws UCloudException
      */
-    public function describeIsolationGroup(DescribeIsolationGroupRequest $request = null)
-    {
+    public function describeIsolationGroup(DescribeIsolationGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeIsolationGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -660,8 +648,7 @@ class UHostClient extends Client
      * @return DescribeUHostInstanceResponse
      * @throws UCloudException
      */
-    public function describeUHostInstance(DescribeUHostInstanceRequest $request = null)
-    {
+    public function describeUHostInstance(DescribeUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -701,8 +688,7 @@ class UHostClient extends Client
      * @return DescribeUHostKeyPairsResponse
      * @throws UCloudException
      */
-    public function describeUHostKeyPairs(DescribeUHostKeyPairsRequest $request = null)
-    {
+    public function describeUHostKeyPairs(DescribeUHostKeyPairsRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUHostKeyPairsResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -736,8 +722,7 @@ class UHostClient extends Client
      * @return DescribeUHostTagsResponse
      * @throws UCloudException
      */
-    public function describeUHostTags(DescribeUHostTagsRequest $request = null)
-    {
+    public function describeUHostTags(DescribeUHostTagsRequest $request = null) {
         $resp = $this->invoke($request);
         return new DescribeUHostTagsResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -768,8 +753,7 @@ class UHostClient extends Client
      * @return GetAttachedDiskUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getAttachedDiskUpgradePrice(GetAttachedDiskUpgradePriceRequest $request = null)
-    {
+    public function getAttachedDiskUpgradePrice(GetAttachedDiskUpgradePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetAttachedDiskUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -805,8 +789,8 @@ class UHostClient extends Client
      *     "GpuType" => (string) GPU类型，枚举值["K80", "P40", "V100", "T4","T4S","2080Ti","2080Ti-4C","1080Ti"]
      *     "Quantity" => (integer) 购买时长。默认: 1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *     "CpuPlatform" => (string) 取值"Intel" "Amd"，默认值“Intel”
-     *     "Volumes" => (array<object>)
-     *     "VirtualGpu" => (object)
+     *     "Volumes" => (array<object>) 
+     *     "VirtualGpu" => (object) 
      * ]
      *
      * Outputs:
@@ -825,8 +809,7 @@ class UHostClient extends Client
      * @return GetUHostInstancePriceResponse
      * @throws UCloudException
      */
-    public function getUHostInstancePrice(GetUHostInstancePriceRequest $request = null)
-    {
+    public function getUHostInstancePrice(GetUHostInstancePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUHostInstancePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -857,8 +840,7 @@ class UHostClient extends Client
      * @return GetUHostInstanceVncInfoResponse
      * @throws UCloudException
      */
-    public function getUHostInstanceVncInfo(GetUHostInstanceVncInfoRequest $request = null)
-    {
+    public function getUHostInstanceVncInfo(GetUHostInstanceVncInfoRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUHostInstanceVncInfoResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -890,8 +872,7 @@ class UHostClient extends Client
      * @return GetUHostUpgradePriceResponse
      * @throws UCloudException
      */
-    public function getUHostUpgradePrice(GetUHostUpgradePriceRequest $request = null)
-    {
+    public function getUHostUpgradePrice(GetUHostUpgradePriceRequest $request = null) {
         $resp = $this->invoke($request);
         return new GetUHostUpgradePriceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -924,8 +905,7 @@ class UHostClient extends Client
      * @return ImportCustomImageResponse
      * @throws UCloudException
      */
-    public function importCustomImage(ImportCustomImageRequest $request = null)
-    {
+    public function importCustomImage(ImportCustomImageRequest $request = null) {
         $resp = $this->invoke($request);
         return new ImportCustomImageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -956,8 +936,7 @@ class UHostClient extends Client
      * @return ImportUHostKeyPairsResponse
      * @throws UCloudException
      */
-    public function importUHostKeyPairs(ImportUHostKeyPairsRequest $request = null)
-    {
+    public function importUHostKeyPairs(ImportUHostKeyPairsRequest $request = null) {
         $resp = $this->invoke($request);
         return new ImportUHostKeyPairsResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -986,8 +965,7 @@ class UHostClient extends Client
      * @return LeaveIsolationGroupResponse
      * @throws UCloudException
      */
-    public function leaveIsolationGroup(LeaveIsolationGroupRequest $request = null)
-    {
+    public function leaveIsolationGroup(LeaveIsolationGroupRequest $request = null) {
         $resp = $this->invoke($request);
         return new LeaveIsolationGroupResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1017,8 +995,7 @@ class UHostClient extends Client
      * @return ModifyUHostIPResponse
      * @throws UCloudException
      */
-    public function modifyUHostIP(ModifyUHostIPRequest $request = null)
-    {
+    public function modifyUHostIP(ModifyUHostIPRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyUHostIPResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1047,8 +1024,7 @@ class UHostClient extends Client
      * @return ModifyUHostInstanceNameResponse
      * @throws UCloudException
      */
-    public function modifyUHostInstanceName(ModifyUHostInstanceNameRequest $request = null)
-    {
+    public function modifyUHostInstanceName(ModifyUHostInstanceNameRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyUHostInstanceNameResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1077,8 +1053,7 @@ class UHostClient extends Client
      * @return ModifyUHostInstanceRemarkResponse
      * @throws UCloudException
      */
-    public function modifyUHostInstanceRemark(ModifyUHostInstanceRemarkRequest $request = null)
-    {
+    public function modifyUHostInstanceRemark(ModifyUHostInstanceRemarkRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyUHostInstanceRemarkResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1107,8 +1082,7 @@ class UHostClient extends Client
      * @return ModifyUHostInstanceTagResponse
      * @throws UCloudException
      */
-    public function modifyUHostInstanceTag(ModifyUHostInstanceTagRequest $request = null)
-    {
+    public function modifyUHostInstanceTag(ModifyUHostInstanceTagRequest $request = null) {
         $resp = $this->invoke($request);
         return new ModifyUHostInstanceTagResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1136,8 +1110,7 @@ class UHostClient extends Client
      * @return PoweroffUHostInstanceResponse
      * @throws UCloudException
      */
-    public function poweroffUHostInstance(PoweroffUHostInstanceRequest $request = null)
-    {
+    public function poweroffUHostInstance(PoweroffUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new PoweroffUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1166,8 +1139,7 @@ class UHostClient extends Client
      * @return RebootUHostInstanceResponse
      * @throws UCloudException
      */
-    public function rebootUHostInstance(RebootUHostInstanceRequest $request = null)
-    {
+    public function rebootUHostInstance(RebootUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new RebootUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1203,8 +1175,7 @@ class UHostClient extends Client
      * @return ReinstallUHostInstanceResponse
      * @throws UCloudException
      */
-    public function reinstallUHostInstance(ReinstallUHostInstanceRequest $request = null)
-    {
+    public function reinstallUHostInstance(ReinstallUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new ReinstallUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1233,8 +1204,7 @@ class UHostClient extends Client
      * @return ResetUHostInstancePasswordResponse
      * @throws UCloudException
      */
-    public function resetUHostInstancePassword(ResetUHostInstancePasswordRequest $request = null)
-    {
+    public function resetUHostInstancePassword(ResetUHostInstancePasswordRequest $request = null) {
         $resp = $this->invoke($request);
         return new ResetUHostInstancePasswordResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1266,8 +1236,7 @@ class UHostClient extends Client
      * @return ResizeAttachedDiskResponse
      * @throws UCloudException
      */
-    public function resizeAttachedDisk(ResizeAttachedDiskRequest $request = null)
-    {
+    public function resizeAttachedDisk(ResizeAttachedDiskRequest $request = null) {
         $resp = $this->invoke($request);
         return new ResizeAttachedDiskResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1298,8 +1267,7 @@ class UHostClient extends Client
      * @return ResizeUHostInstanceResponse
      * @throws UCloudException
      */
-    public function resizeUHostInstance(ResizeUHostInstanceRequest $request = null)
-    {
+    public function resizeUHostInstance(ResizeUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new ResizeUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1328,8 +1296,7 @@ class UHostClient extends Client
      * @return StartUHostInstanceResponse
      * @throws UCloudException
      */
-    public function startUHostInstance(StartUHostInstanceRequest $request = null)
-    {
+    public function startUHostInstance(StartUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new StartUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1357,8 +1324,7 @@ class UHostClient extends Client
      * @return StopUHostInstanceResponse
      * @throws UCloudException
      */
-    public function stopUHostInstance(StopUHostInstanceRequest $request = null)
-    {
+    public function stopUHostInstance(StopUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new StopUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1385,8 +1351,7 @@ class UHostClient extends Client
      * @return TerminateCustomImageResponse
      * @throws UCloudException
      */
-    public function terminateCustomImage(TerminateCustomImageRequest $request = null)
-    {
+    public function terminateCustomImage(TerminateCustomImageRequest $request = null) {
         $resp = $this->invoke($request);
         return new TerminateCustomImageResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1417,8 +1382,7 @@ class UHostClient extends Client
      * @return TerminateUHostInstanceResponse
      * @throws UCloudException
      */
-    public function terminateUHostInstance(TerminateUHostInstanceRequest $request = null)
-    {
+    public function terminateUHostInstance(TerminateUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new TerminateUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }
@@ -1446,8 +1410,7 @@ class UHostClient extends Client
      * @return UpgradeToArkUHostInstanceResponse
      * @throws UCloudException
      */
-    public function upgradeToArkUHostInstance(UpgradeToArkUHostInstanceRequest $request = null)
-    {
+    public function upgradeToArkUHostInstance(UpgradeToArkUHostInstanceRequest $request = null) {
         $resp = $this->invoke($request);
         return new UpgradeToArkUHostInstanceResponse($resp->toArray(), $resp->getRequestId());
     }

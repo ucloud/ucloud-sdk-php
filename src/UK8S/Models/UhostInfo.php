@@ -65,7 +65,7 @@ class UhostInfo extends Response
     /**
      * CPU: Cpu数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCPU()
     {
@@ -85,7 +85,7 @@ class UhostInfo extends Response
     /**
      * Memory: 内存
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getMemory()
     {
@@ -209,7 +209,7 @@ class UhostInfo extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -229,7 +229,7 @@ class UhostInfo extends Response
     /**
      * ExpireTime: 到期时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getExpireTime()
     {
@@ -285,4 +285,6 @@ class UhostInfo extends Response
     {
         $this->set("NodeType", $nodeType);
     }
+
+
 }

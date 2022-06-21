@@ -61,4 +61,6 @@ class CreateUHostInstanceResponse extends Response
     {
         $this->set("IPs", $iPs);
     }
+
+
 }

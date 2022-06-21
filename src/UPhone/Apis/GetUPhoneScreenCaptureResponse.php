@@ -41,4 +41,6 @@ class GetUPhoneScreenCaptureResponse extends Response
     {
         $this->set("URL", $url);
     }
+
+
 }

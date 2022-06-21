@@ -25,7 +25,7 @@ class Performance extends Response
     /**
      * Value: 值，单位是TFlops
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getValue()
     {
@@ -45,7 +45,7 @@ class Performance extends Response
     /**
      * Rate: 交互展示参数，可忽略
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRate()
     {
@@ -61,4 +61,6 @@ class Performance extends Response
     {
         $this->set("Rate", $rate);
     }
+
+
 }

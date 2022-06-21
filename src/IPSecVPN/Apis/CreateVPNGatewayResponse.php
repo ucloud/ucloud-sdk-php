@@ -41,4 +41,6 @@ class CreateVPNGatewayResponse extends Response
     {
         $this->set("VPNGatewayId", $vpnGatewayId);
     }
+
+
 }

@@ -41,4 +41,6 @@ class GetEIPUpgradePriceResponse extends Response
     {
         $this->set("Price", $price);
     }
+
+
 }

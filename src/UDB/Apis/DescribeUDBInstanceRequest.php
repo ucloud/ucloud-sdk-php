@@ -111,7 +111,7 @@ class DescribeUDBInstanceRequest extends Request
     /**
      * Offset: 分页显示起始偏移位置，列表操作时必填
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -131,7 +131,7 @@ class DescribeUDBInstanceRequest extends Request
     /**
      * Limit: 分页显示数量，列表操作时必填
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -227,4 +227,6 @@ class DescribeUDBInstanceRequest extends Request
     {
         $this->set("IncludeSlaves", $includeSlaves);
     }
+
+
 }

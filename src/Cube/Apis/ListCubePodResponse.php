@@ -45,7 +45,7 @@ class ListCubePodResponse extends Response
     /**
      * TotalCount: Cube的总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -61,4 +61,6 @@ class ListCubePodResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }

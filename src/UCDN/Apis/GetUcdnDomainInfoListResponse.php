@@ -26,7 +26,7 @@ class GetUcdnDomainInfoListResponse extends Response
     /**
      * TotalCount: 账户下域名总个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class GetUcdnDomainInfoListResponse extends Response
         }
         return $result;
     }
+
+
 }

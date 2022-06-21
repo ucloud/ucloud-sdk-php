@@ -109,4 +109,6 @@ class DeleteVPNGatewayRequest extends Request
     {
         $this->set("ReleaseEip", $releaseEip);
     }
+
+
 }

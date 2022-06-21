@@ -92,7 +92,7 @@ class ReinstallUEcVHostRequest extends Request
     /**
      * KeepData: 是否保留数据盘数据， 0-不保留，1-保留，默认为1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getKeepData()
     {
@@ -132,7 +132,7 @@ class ReinstallUEcVHostRequest extends Request
     /**
      * SysDiskSize: 系统盘大小，单位GB
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSysDiskSize()
     {
@@ -148,4 +148,6 @@ class ReinstallUEcVHostRequest extends Request
     {
         $this->set("SysDiskSize", $sysDiskSize);
     }
+
+
 }

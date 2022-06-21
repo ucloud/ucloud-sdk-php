@@ -29,7 +29,7 @@ class DescribeEIPResponse extends Response
     /**
      * TotalCount: 满足条件的弹性IP总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -49,7 +49,7 @@ class DescribeEIPResponse extends Response
     /**
      * UnbindCount: 未绑定的弹性IP总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getUnbindCount()
     {
@@ -69,7 +69,7 @@ class DescribeEIPResponse extends Response
     /**
      * TotalBandwidth: 满足条件的弹性IP带宽总和, 单位Mbps
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalBandwidth()
     {
@@ -117,4 +117,6 @@ class DescribeEIPResponse extends Response
         }
         return $result;
     }
+
+
 }

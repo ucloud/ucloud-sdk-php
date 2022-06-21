@@ -94,7 +94,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
     /**
      * StartTime: 查询开始时间时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getStartTime()
     {
@@ -114,7 +114,7 @@ class GetThroughputDailyBillingInfoRequest extends Request
     /**
      * EndTime: 查询结束时间时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -130,4 +130,6 @@ class GetThroughputDailyBillingInfoRequest extends Request
     {
         $this->set("EndTime", $endTime);
     }
+
+
 }

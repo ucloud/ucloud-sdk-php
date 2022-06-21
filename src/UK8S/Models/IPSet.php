@@ -85,7 +85,7 @@ class IPSet extends Response
     /**
      * Bandwidth: IP对应的带宽, 单位: Mb (内网IP不显示带宽信息)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -121,4 +121,6 @@ class IPSet extends Response
     {
         $this->set("Default", $default);
     }
+
+
 }

@@ -65,7 +65,7 @@ class FirewallInfo extends Response
     /**
      * CreateTime: 创建时间
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getCreateTime()
     {
@@ -117,7 +117,7 @@ class FirewallInfo extends Response
     /**
      * ResourceCount: 防火墙绑定资源数量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getResourceCount()
     {
@@ -173,4 +173,6 @@ class FirewallInfo extends Response
     {
         $this->set("Remark", $remark);
     }
+
+
 }

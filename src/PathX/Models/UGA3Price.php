@@ -101,4 +101,6 @@ class UGA3Price extends Response
     {
         $this->set("AccelerationBandwidthPrice", $accelerationBandwidthPrice);
     }
+
+
 }

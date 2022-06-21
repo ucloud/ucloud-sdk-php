@@ -150,4 +150,6 @@ class CreateRemoteVPNGatewayRequest extends Request
     {
         $this->set("Remark", $remark);
     }
+
+
 }

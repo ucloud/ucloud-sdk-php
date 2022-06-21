@@ -241,4 +241,6 @@ class NodeDelays extends Response
     {
         $this->set("LossOptimization", $lossOptimization);
     }
+
+
 }

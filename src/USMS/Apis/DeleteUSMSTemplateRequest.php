@@ -68,4 +68,6 @@ class DeleteUSMSTemplateRequest extends Request
     {
         $this->set("TemplateIds", $templateIds);
     }
+
+
 }

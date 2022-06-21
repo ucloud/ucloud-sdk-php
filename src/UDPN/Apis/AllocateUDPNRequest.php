@@ -113,7 +113,7 @@ class AllocateUDPNRequest extends Request
     /**
      * Bandwidth: 带宽
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBandwidth()
     {
@@ -153,7 +153,7 @@ class AllocateUDPNRequest extends Request
     /**
      * Quantity: 计费时长，默认 1
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getQuantity()
     {
@@ -209,4 +209,6 @@ class AllocateUDPNRequest extends Request
     {
         $this->set("CouponId", $couponId);
     }
+
+
 }

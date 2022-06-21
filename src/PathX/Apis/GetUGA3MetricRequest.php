@@ -74,7 +74,7 @@ class GetUGA3MetricRequest extends Request
     /**
      * BeginTime: 查询起始时间，10位长度时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getBeginTime()
     {
@@ -94,7 +94,7 @@ class GetUGA3MetricRequest extends Request
     /**
      * EndTime: 查询结束时间，10位长度时间戳
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getEndTime()
     {
@@ -112,7 +112,7 @@ class GetUGA3MetricRequest extends Request
     }
 
     /**
-     * MetricName: 查询监控的指标项。可不传 NetworkOut:出口总带宽    NetworkIn：入口总带宽 NetworkOutUsage：出口带宽使用率 NetworkInUsage：入口总带宽使用率 NetworkOutSubline ：子线路出口带宽  NetworkInSubline：子线路入口带宽    Delay：线路平均延迟    DelaySubline：子线路延迟  ConnectCount：当前连接数  ConnectCountSubline：子线路当前连接数    DelayPromote：延迟提升   DelayPromoteSubline：子线路延迟提升
+     * MetricName: 查询监控的指标项。可不传	NetworkOut:出口总带宽	NetworkIn：入口总带宽	NetworkOutUsage：出口带宽使用率	NetworkInUsage：入口总带宽使用率	NetworkOutSubline ：子线路出口带宽	NetworkInSubline：子线路入口带宽	Delay：线路平均延迟	DelaySubline：子线路延迟	ConnectCount：当前连接数	ConnectCountSubline：子线路当前连接数	DelayPromote：延迟提升	DelayPromoteSubline：子线路延迟提升
      *
      * @return string[]|null
      */
@@ -122,7 +122,7 @@ class GetUGA3MetricRequest extends Request
     }
 
     /**
-     * MetricName: 查询监控的指标项。可不传 NetworkOut:出口总带宽    NetworkIn：入口总带宽 NetworkOutUsage：出口带宽使用率 NetworkInUsage：入口总带宽使用率 NetworkOutSubline ：子线路出口带宽  NetworkInSubline：子线路入口带宽    Delay：线路平均延迟    DelaySubline：子线路延迟  ConnectCount：当前连接数  ConnectCountSubline：子线路当前连接数    DelayPromote：延迟提升   DelayPromoteSubline：子线路延迟提升
+     * MetricName: 查询监控的指标项。可不传	NetworkOut:出口总带宽	NetworkIn：入口总带宽	NetworkOutUsage：出口带宽使用率	NetworkInUsage：入口总带宽使用率	NetworkOutSubline ：子线路出口带宽	NetworkInSubline：子线路入口带宽	Delay：线路平均延迟	DelaySubline：子线路延迟	ConnectCount：当前连接数	ConnectCountSubline：子线路当前连接数	DelayPromote：延迟提升	DelayPromoteSubline：子线路延迟提升
      *
      * @param string[] $metricName
      */
@@ -170,4 +170,6 @@ class GetUGA3MetricRequest extends Request
     {
         $this->set("AreaCode", $areaCode);
     }
+
+
 }

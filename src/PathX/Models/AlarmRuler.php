@@ -45,7 +45,7 @@ class AlarmRuler extends Response
     /**
      * AlarmFrequency: 告警探测周期，单位秒
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAlarmFrequency()
     {
@@ -85,7 +85,7 @@ class AlarmRuler extends Response
     /**
      * ContactGroupId: 联系组ID
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getContactGroupId()
     {
@@ -125,7 +125,7 @@ class AlarmRuler extends Response
     /**
      * Threshold: 告警阈值，带宽使用率的阈值范围是[50,100]的正整数，带宽告警阈值为1000000的倍数, 如大于2Mbps则告警 阈值应该传 2000000
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getThreshold()
     {
@@ -145,7 +145,7 @@ class AlarmRuler extends Response
     /**
      * TriggerCount: 告警触发周期（次数）
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTriggerCount()
     {
@@ -165,7 +165,7 @@ class AlarmRuler extends Response
     /**
      * AlarmTemplateRuleId: 告警模板策略ID
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getAlarmTemplateRuleId()
     {
@@ -201,4 +201,6 @@ class AlarmRuler extends Response
     {
         $this->set("ResourceType", $resourceType);
     }
+
+
 }

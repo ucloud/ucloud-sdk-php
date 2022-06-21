@@ -108,4 +108,6 @@ class DeleteNATGWRequest extends Request
     {
         $this->set("ReleaseEip", $releaseEip);
     }
+
+
 }

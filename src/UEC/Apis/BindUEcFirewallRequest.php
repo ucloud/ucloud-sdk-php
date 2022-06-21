@@ -88,4 +88,6 @@ class BindUEcFirewallRequest extends Request
     {
         $this->set("ResourceId", $resourceId);
     }
+
+
 }

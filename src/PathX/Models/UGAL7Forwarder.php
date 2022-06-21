@@ -25,7 +25,7 @@ class UGAL7Forwarder extends Response
     /**
      * Port: 接入端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getPort()
     {
@@ -65,7 +65,7 @@ class UGAL7Forwarder extends Response
     /**
      * RSPort: RSPort，源站监听端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRSPort()
     {
@@ -121,4 +121,6 @@ class UGAL7Forwarder extends Response
     {
         $this->set("SSLName", $sslName);
     }
+
+
 }

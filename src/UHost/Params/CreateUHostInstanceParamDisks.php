@@ -65,7 +65,7 @@ class CreateUHostInstanceParamDisks extends Request
     /**
      * Size: 磁盘大小，单位GB。请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getSize()
     {
@@ -163,7 +163,7 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
-     * CustomBackup:
+     * CustomBackup: 
      *
      * @return CreateUHostInstanceParamDisksCustomBackup|null
      */
@@ -173,7 +173,7 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
-     * CustomBackup:
+     * CustomBackup: 
      *
      * @param CreateUHostInstanceParamDisksCustomBackup $customBackup
      */
@@ -181,4 +181,6 @@ class CreateUHostInstanceParamDisks extends Request
     {
         $this->set("CustomBackup", $customBackup->getAll());
     }
+
+
 }

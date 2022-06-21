@@ -136,7 +136,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
     /**
      * RouterNodeNum: 其他版本：该参数可不填；专享版：物理机节点的个数。一台物理机有2个节点
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getRouterNodeNum()
     {
@@ -156,7 +156,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
     /**
      * DataNodeCount: 新的数据节点个数 取值必须>0.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeCount()
     {
@@ -176,7 +176,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
     /**
      * DataNodeMemory: 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeMemory()
     {
@@ -196,7 +196,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
     /**
      * DataNodeDiskSpace: 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeDiskSpace()
     {
@@ -216,7 +216,7 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
     /**
      * DataNodeSlaveCount: 每个数据节点的只读实例个数, 取值必须>=0.
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getDataNodeSlaveCount()
     {
@@ -272,4 +272,6 @@ class DescribeUDDBInstanceUpgradePriceRequest extends Request
     {
         $this->set("InstanceType", $instanceType);
     }
+
+
 }

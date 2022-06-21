@@ -71,7 +71,7 @@ class DescribeNetworkAclRequest extends Request
     /**
      * Offset: 列表偏移量
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -127,4 +127,6 @@ class DescribeNetworkAclRequest extends Request
     {
         $this->set("VpcId", $vpcId);
     }
+
+
 }

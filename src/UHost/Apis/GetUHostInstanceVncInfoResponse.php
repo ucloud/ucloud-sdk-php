@@ -65,7 +65,7 @@ class GetUHostInstanceVncInfoResponse extends Response
     /**
      * VncPort: Vnc登录端口
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getVncPort()
     {
@@ -101,4 +101,6 @@ class GetUHostInstanceVncInfoResponse extends Response
     {
         $this->set("VncPassword", $vncPassword);
     }
+
+
 }

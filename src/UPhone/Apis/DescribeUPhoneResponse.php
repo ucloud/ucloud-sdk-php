@@ -26,7 +26,7 @@ class DescribeUPhoneResponse extends Response
     /**
      * TotalCount: UPhoneInstance总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class DescribeUPhoneResponse extends Response
         }
         return $result;
     }
+
+
 }

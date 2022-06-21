@@ -61,4 +61,6 @@ class DescribeUDBLogBackupURLResponse extends Response
     {
         $this->set("UsernetPath", $usernetPath);
     }
+
+
 }

@@ -70,7 +70,7 @@ class DescribeUEcHolderRequest extends Request
     /**
      * Limit: 返回数据长度，默认为20，非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getLimit()
     {
@@ -90,7 +90,7 @@ class DescribeUEcHolderRequest extends Request
     /**
      * Offset: 列表起始位置偏移量，默认为0。非负整数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -106,4 +106,6 @@ class DescribeUEcHolderRequest extends Request
     {
         $this->set("Offset", $offset);
     }
+
+
 }

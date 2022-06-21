@@ -61,4 +61,6 @@ class DomainBaseInfo extends Response
     {
         $this->set("DomainId", $domainId);
     }
+
+
 }

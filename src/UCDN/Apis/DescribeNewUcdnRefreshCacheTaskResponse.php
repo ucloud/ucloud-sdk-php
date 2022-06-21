@@ -27,7 +27,7 @@ class DescribeNewUcdnRefreshCacheTaskResponse extends Response
     /**
      * TotalCount: 刷新任务的总数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -75,4 +75,6 @@ class DescribeNewUcdnRefreshCacheTaskResponse extends Response
         }
         return $result;
     }
+
+
 }

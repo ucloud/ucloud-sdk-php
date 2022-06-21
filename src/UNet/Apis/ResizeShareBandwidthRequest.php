@@ -73,7 +73,7 @@ class ResizeShareBandwidthRequest extends Request
     /**
      * ShareBandwidth: 带宽值，单位为Mb，范围 [20-5000] (最大值受地域限制)
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getShareBandwidth()
     {
@@ -109,4 +109,6 @@ class ResizeShareBandwidthRequest extends Request
     {
         $this->set("ShareBandwidthId", $shareBandwidthId);
     }
+
+
 }

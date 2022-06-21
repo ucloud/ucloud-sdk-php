@@ -25,7 +25,7 @@ class UploadUDBParamGroupResponse extends Response
     /**
      * GroupId: 配置参数组id
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getGroupId()
     {
@@ -41,4 +41,6 @@ class UploadUDBParamGroupResponse extends Response
     {
         $this->set("GroupId", $groupId);
     }
+
+
 }

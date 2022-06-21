@@ -56,4 +56,6 @@ class GetUFileDailyReportResponse extends Response
         }
         return $result;
     }
+
+
 }

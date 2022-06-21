@@ -58,7 +58,7 @@ class GetAvailableResourceForWhiteListResponse extends Response
     /**
      * TotalCount: 白名单资源列表的总的个数
      *
-     * @return integer|null
+     * @return int|null
      */
     public function getTotalCount()
     {
@@ -74,4 +74,6 @@ class GetAvailableResourceForWhiteListResponse extends Response
     {
         $this->set("TotalCount", $totalCount);
     }
+
+
 }
