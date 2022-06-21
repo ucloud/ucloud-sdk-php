@@ -83,6 +83,26 @@ class RouteTableInfo extends Response
     }
 
     /**
+     * SubnetIds: 绑定该路由表的子网
+     *
+     * @return string[]|null
+     */
+    public function getSubnetIds()
+    {
+        return $this->get("SubnetIds");
+    }
+
+    /**
+     * SubnetIds: 绑定该路由表的子网
+     *
+     * @param string[] $subnetIds
+     */
+    public function setSubnetIds(array $subnetIds)
+    {
+        $this->set("SubnetIds", $subnetIds);
+    }
+
+    /**
      * VPCId: 路由表所属的VPC资源ID
      *
      * @return string|null

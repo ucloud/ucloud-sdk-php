@@ -401,4 +401,84 @@ class UPhoneInstance extends Response
     {
         $this->set("Remark", $remark);
     }
+
+    /**
+     * ChargeType: 计费模式。枚举值为： > 年 Year，按年付费； > Month，按月付费； > Dynamic，按小时预付费; 默认为月付
+     *
+     * @return string|null
+     */
+    public function getChargeType()
+    {
+        return $this->get("ChargeType");
+    }
+
+    /**
+     * ChargeType: 计费模式。枚举值为： > 年 Year，按年付费； > Month，按月付费； > Dynamic，按小时预付费; 默认为月付
+     *
+     * @param string $chargeType
+     */
+    public function setChargeType($chargeType)
+    {
+        $this->set("ChargeType", $chargeType);
+    }
+
+    /**
+     * ExpireTime: 到期时间；格式为Unix时间戳
+     *
+     * @return integer|null
+     */
+    public function getExpireTime()
+    {
+        return $this->get("ExpireTime");
+    }
+
+    /**
+     * ExpireTime: 到期时间；格式为Unix时间戳
+     *
+     * @param int $expireTime
+     */
+    public function setExpireTime($expireTime)
+    {
+        $this->set("ExpireTime", $expireTime);
+    }
+
+    /**
+     * IpRegion: IP所属地域Id，eg: hk，th-bkk
+     *
+     * @return string|null
+     */
+    public function getIpRegion()
+    {
+        return $this->get("IpRegion");
+    }
+
+    /**
+     * IpRegion: IP所属地域Id，eg: hk，th-bkk
+     *
+     * @param string $ipRegion
+     */
+    public function setIpRegion($ipRegion)
+    {
+        $this->set("IpRegion", $ipRegion);
+    }
+
+    /**
+     * Ip: 云手机IP地址
+     *
+     * @return string|null
+     */
+    public function getIp()
+    {
+        return $this->get("Ip");
+    }
+
+    /**
+     * Ip: 云手机IP地址
+     *
+     * @param string $ip
+     */
+    public function setIp($ip)
+    {
+        $this->set("Ip", $ip);
+    }
 }

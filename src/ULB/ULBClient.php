@@ -175,9 +175,9 @@ class ULBClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "SSLName" => (string) SSL证书的名字，默认值为空
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "SSLName" => (string) SSL证书的名字，默认值不为空
      *     "SSLType" => (string) 所添加的SSL证书类型，目前只支持Pem格式
      *     "SSLContent" => (string) SSL证书的完整内容，包括用户证书、加密证书的私钥、CA证书
      *     "UserCert" => (string) 用户的证书
@@ -845,7 +845,7 @@ class ULBClient extends Client
      *     "ULBId" => (string) 负载均衡资源ID
      *     "BackendId" => (string) 后端资源实例的ID(ULB后端ID，非资源自身ID)
      *     "Port" => (integer) 后端资源服务端口，取值范围[1-65535]
-     *     "Weight" => (integer) 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1
+     *     "Weight" => (integer) 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1
      *     "Enabled" => (integer) 后端实例状态开关
      *     "IsBackup" => (integer) 是否为backup0：主rs1：备rs默认为0
      * ]
