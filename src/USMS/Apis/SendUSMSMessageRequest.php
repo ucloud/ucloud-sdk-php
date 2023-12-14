@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2023 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ class SendUSMSMessageRequest extends Request
         parent::__construct(["Action" => "SendUSMSMessage"]);
         $this->markRequired("ProjectId");
         $this->markRequired("PhoneNumbers");
-        $this->markRequired("SigContent");
         $this->markRequired("TemplateId");
     }
 
@@ -72,26 +71,6 @@ class SendUSMSMessageRequest extends Request
     }
 
     /**
-     * SigContent: 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
-     *
-     * @return string|null
-     */
-    public function getSigContent()
-    {
-        return $this->get("SigContent");
-    }
-
-    /**
-     * SigContent: 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
-     *
-     * @param string $sigContent
-     */
-    public function setSigContent($sigContent)
-    {
-        $this->set("SigContent", $sigContent);
-    }
-
-    /**
      * TemplateId: 模板ID（也即短信模板申请时的工单ID），请到[USMS控制台](https://console.ucloud.cn/usms)的模板管理页面查看；使用的短信模板必须是已申请并通过审核；
      *
      * @return string|null
@@ -109,6 +88,26 @@ class SendUSMSMessageRequest extends Request
     public function setTemplateId($templateId)
     {
         $this->set("TemplateId", $templateId);
+    }
+
+    /**
+     * SigContent: 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
+     *
+     * @return string|null
+     */
+    public function getSigContent()
+    {
+        return $this->get("SigContent");
+    }
+
+    /**
+     * SigContent: 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
+     *
+     * @param string $sigContent
+     */
+    public function setSigContent($sigContent)
+    {
+        $this->set("SigContent", $sigContent);
     }
 
     /**

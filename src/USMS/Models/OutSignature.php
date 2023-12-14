@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2023 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class OutSignature extends Response
     
 
     /**
-     * SigId: 短信签名ID
+     * SigId: 签名ID
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class OutSignature extends Response
     }
 
     /**
-     * SigId: 短信签名ID
+     * SigId: 签名ID
      *
      * @param string $sigId
      */
@@ -43,7 +43,7 @@ class OutSignature extends Response
     }
 
     /**
-     * SigContent: 短信签名内容
+     * SigContent: 签名内容
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class OutSignature extends Response
     }
 
     /**
-     * SigContent: 短信签名内容
+     * SigContent: 签名内容
      *
      * @param string $sigContent
      */
@@ -63,7 +63,7 @@ class OutSignature extends Response
     }
 
     /**
-     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
+     * Status: 签名状态。0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
      *
      * @return integer|null
      */
@@ -73,7 +73,7 @@ class OutSignature extends Response
     }
 
     /**
-     * Status: 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
+     * Status: 签名状态。0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
      *
      * @param int $status
      */
@@ -83,7 +83,7 @@ class OutSignature extends Response
     }
 
     /**
-     * ErrDesc: 短信签名未通过审核原因
+     * ErrDesc: 签名审核失败原因
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class OutSignature extends Response
     }
 
     /**
-     * ErrDesc: 短信签名未通过审核原因
+     * ErrDesc: 签名审核失败原因
      *
      * @param string $errDesc
      */

@@ -18,12 +18,14 @@ namespace UCloud\USMS\Apis;
 
 use UCloud\Core\Request\Request;
 
-class GetUSMSSendReceiptRequest extends Request
+class AddBackfillRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "GetUSMSSendReceipt"]);
-        $this->markRequired("SessionNoSet");
+        parent::__construct(["Action" => "AddBackfill"]);
+        $this->markRequired("ProjectId");
+        $this->markRequired("SendNo");
+        $this->markRequired("Target");
     }
 
     
@@ -89,22 +91,102 @@ class GetUSMSSendReceiptRequest extends Request
     }
 
     /**
-     * SessionNoSet: 发送短信时返回的SessionNo集合，SessionNoSet.0,SessionNoSet.1....格式，单次调用集合数需控制在100个以内
+     * SendNo: 发送Number，记录一次发送请求的唯一性
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getSessionNoSet()
+    public function getSendNo()
     {
-        return $this->get("SessionNoSet");
+        return $this->get("SendNo");
     }
 
     /**
-     * SessionNoSet: 发送短信时返回的SessionNo集合，SessionNoSet.0,SessionNoSet.1....格式，单次调用集合数需控制在100个以内
+     * SendNo: 发送Number，记录一次发送请求的唯一性
      *
-     * @param string[] $sessionNoSet
+     * @param string $sendNo
      */
-    public function setSessionNoSet(array $sessionNoSet)
+    public function setSendNo($sendNo)
     {
-        $this->set("SessionNoSet", $sessionNoSet);
+        $this->set("SendNo", $sendNo);
+    }
+
+    /**
+     * Target: 短信的接收目标,手机号需要添加国家码，比如(1)231xxxx
+     *
+     * @return string|null
+     */
+    public function getTarget()
+    {
+        return $this->get("Target");
+    }
+
+    /**
+     * Target: 短信的接收目标,手机号需要添加国家码，比如(1)231xxxx
+     *
+     * @param string $target
+     */
+    public function setTarget($target)
+    {
+        $this->set("Target", $target);
+    }
+
+    /**
+     * BackfillTime: 回填时间，秒级别时间戳
+     *
+     * @return integer|null
+     */
+    public function getBackfillTime()
+    {
+        return $this->get("BackfillTime");
+    }
+
+    /**
+     * BackfillTime: 回填时间，秒级别时间戳
+     *
+     * @param int $backfillTime
+     */
+    public function setBackfillTime($backfillTime)
+    {
+        $this->set("BackfillTime", $backfillTime);
+    }
+
+    /**
+     * Content: 回填内容
+     *
+     * @return string|null
+     */
+    public function getContent()
+    {
+        return $this->get("Content");
+    }
+
+    /**
+     * Content: 回填内容
+     *
+     * @param string $content
+     */
+    public function setContent($content)
+    {
+        $this->set("Content", $content);
+    }
+
+    /**
+     * SendTime: 发送请求的时间，秒级别时间戳
+     *
+     * @return integer|null
+     */
+    public function getSendTime()
+    {
+        return $this->get("SendTime");
+    }
+
+    /**
+     * SendTime: 发送请求的时间，秒级别时间戳
+     *
+     * @param int $sendTime
+     */
+    public function setSendTime($sendTime)
+    {
+        $this->set("SendTime", $sendTime);
     }
 }
