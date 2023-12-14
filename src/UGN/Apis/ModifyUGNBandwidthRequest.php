@@ -14,17 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\USMS\Apis;
+namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class QueryUSMSTemplateRequest extends Request
+class ModifyUGNBandwidthRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "QueryUSMSTemplate"]);
-        $this->markRequired("ProjectId");
-        $this->markRequired("TemplateId");
+        parent::__construct(["Action" => "ModifyUGNBandwidth"]);
+        $this->markRequired("PackageID");
+        $this->markRequired("UGNID");
+        $this->markRequired("BandWidth");
     }
 
     
@@ -50,22 +51,62 @@ class QueryUSMSTemplateRequest extends Request
     }
 
     /**
-     * TemplateId: 模板ID
+     * PackageID: 带宽包id
      *
      * @return string|null
      */
-    public function getTemplateId()
+    public function getPackageID()
     {
-        return $this->get("TemplateId");
+        return $this->get("PackageID");
     }
 
     /**
-     * TemplateId: 模板ID
+     * PackageID: 带宽包id
      *
-     * @param string $templateId
+     * @param string $packageID
      */
-    public function setTemplateId($templateId)
+    public function setPackageID($packageID)
     {
-        $this->set("TemplateId", $templateId);
+        $this->set("PackageID", $packageID);
+    }
+
+    /**
+     * UGNID: 云联网id
+     *
+     * @return string|null
+     */
+    public function getUGNID()
+    {
+        return $this->get("UGNID");
+    }
+
+    /**
+     * UGNID: 云联网id
+     *
+     * @param string $ugnid
+     */
+    public function setUGNID($ugnid)
+    {
+        $this->set("UGNID", $ugnid);
+    }
+
+    /**
+     * BandWidth: 带宽值
+     *
+     * @return integer|null
+     */
+    public function getBandWidth()
+    {
+        return $this->get("BandWidth");
+    }
+
+    /**
+     * BandWidth: 带宽值
+     *
+     * @param int $bandWidth
+     */
+    public function setBandWidth($bandWidth)
+    {
+        $this->set("BandWidth", $bandWidth);
     }
 }

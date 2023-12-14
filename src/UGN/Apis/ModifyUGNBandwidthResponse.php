@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\USMS\Apis;
+namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class DeleteUSMSSignatureResponse extends Response
+class ModifyUGNBandwidthResponse extends Response
 {
     
 
