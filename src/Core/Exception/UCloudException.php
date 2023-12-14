@@ -33,7 +33,7 @@ class UCloudException extends Exception
     /**
      * Original Response
      *
-     * @var Response
+     * @var Response|null
      */
     private $response;
     /**
@@ -44,7 +44,7 @@ class UCloudException extends Exception
      * @param int|int $retCode
      * @param Throwable|null $previous
      * @param string $requestId
-     * @param Response $response
+     * @param Response|null $response
      */
     public function __construct($type, $message = "", $retCode = 0, $previous = null, $requestId = "", $response = null)
     {
@@ -77,7 +77,7 @@ class UCloudException extends Exception
     /**
      * Get response
      *
-     * @return Response
+     * @return Response|null
      */
     public function getResponse()
     {
