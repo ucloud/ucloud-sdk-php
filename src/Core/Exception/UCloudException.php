@@ -1,12 +1,10 @@
 <?php
 
-
 namespace UCloud\Core\Exception;
 
 use Exception;
 use Throwable;
 use UCloud\Core\Response\Response;
-
 
 class UCloudException extends Exception
 {
@@ -81,7 +79,7 @@ class UCloudException extends Exception
      *
      * @return Response
      */
-    public  function getResponse()
+    public function getResponse()
     {
         return $this->response;
     }
