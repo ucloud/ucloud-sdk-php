@@ -87,7 +87,8 @@ class Transport implements TransportInterface
                 $resp->getMessage(),
                 $resp->getRetCode(),
                 null,
-                $requestId
+                $requestId,
+                $resp
             );
         }
         return $resp;
