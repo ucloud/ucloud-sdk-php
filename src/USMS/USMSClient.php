@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2023 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ namespace UCloud\USMS;
 
 use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
+use UCloud\USMS\Apis\AddBackfillRequest;
+use UCloud\USMS\Apis\AddBackfillResponse;
 use UCloud\USMS\Apis\CreateUSMSSignatureRequest;
 use UCloud\USMS\Apis\CreateUSMSSignatureResponse;
 use UCloud\USMS\Apis\CreateUSMSTemplateRequest;
@@ -46,6 +48,38 @@ use UCloud\USMS\Apis\UpdateUSMSTemplateResponse;
  */
 class USMSClient extends Client
 {
+
+    /**
+     * AddBackfill - 用户通过接口发送消息，当消息在终端被消费，调用该接口，进行记录。
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/add_backfill
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "SendNo" => (string) 发送Number，记录一次发送请求的唯一性
+     *     "Target" => (string) 短信的接收目标,手机号需要添加国家码，比如(1)231xxxx
+     *     "BackfillTime" => (integer) 回填时间，秒级别时间戳
+     *     "Content" => (string) 回填内容
+     *     "SendTime" => (integer) 发送请求的时间，秒级别时间戳
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return AddBackfillResponse
+     * @throws UCloudException
+     */
+    public function addBackfill(AddBackfillRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new AddBackfillResponse($resp->toArray(), $resp->getRequestId());
+    }
 
     /**
      * CreateUSMSSignature - 调用接口CreateUSMSSignature申请短信签名
@@ -227,10 +261,10 @@ class USMSClient extends Client
      *
      * $outputs = [
      *     "Data" => (object) 签名信息[
-     *         "SigId" => (string) 短信签名ID
-     *         "SigContent" => (string) 短信签名内容
-     *         "Status" => (integer) 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
-     *         "ErrDesc" => (string) 短信签名未通过审核原因
+     *         "SigId" => (string) 签名ID
+     *         "SigContent" => (string) 签名内容
+     *         "Status" => (integer) 签名状态。0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用
+     *         "ErrDesc" => (string) 签名审核失败原因
      *     ]
      * ]
      *
@@ -336,8 +370,8 @@ class USMSClient extends Client
      * $args = [
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "PhoneNumbers" => (array<string>) 电话号码数组，电话号码格式为(60)1xxxxxxxx，()中为国际长途区号(如中国为86或0086，两种格式都支持)，后面为电话号码.若不传入国际区号，如1851623xxxx，则默认为国内手机号
-     *     "SigContent" => (string) 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
      *     "TemplateId" => (string) 模板ID（也即短信模板申请时的工单ID），请到[USMS控制台](https://console.ucloud.cn/usms)的模板管理页面查看；使用的短信模板必须是已申请并通过审核；
+     *     "SigContent" => (string) 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
      *     "TemplateParams" => (array<string>) 模板可变参数，以数组的方式填写，举例，TemplateParams.0，TemplateParams.1，... 若模板中无可变参数，则该项可不填写；若模板中有可变参数，则该项为必填项，参数个数需与变量个数保持一致，否则无法发送；
      *     "ExtendCode" => (string) 短信扩展码，格式为阿拉伯数字串，默认不开通，如需开通请联系 UCloud技术支持
      *     "UserId" => (string) 自定义的业务标识ID，字符串（ 长度不能超过32 位），不支持 单引号、表情包符号等特殊字符

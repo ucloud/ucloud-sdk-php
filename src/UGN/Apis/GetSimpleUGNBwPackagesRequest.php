@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\USMS\Apis;
+namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class QueryUSMSTemplateRequest extends Request
+class GetSimpleUGNBwPackagesRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "QueryUSMSTemplate"]);
+        parent::__construct(["Action" => "GetSimpleUGNBwPackages"]);
         $this->markRequired("ProjectId");
-        $this->markRequired("TemplateId");
+        $this->markRequired("UGNID");
     }
 
     
@@ -50,22 +50,62 @@ class QueryUSMSTemplateRequest extends Request
     }
 
     /**
-     * TemplateId: 模板ID
+     * UGNID:
      *
      * @return string|null
      */
-    public function getTemplateId()
+    public function getUGNID()
     {
-        return $this->get("TemplateId");
+        return $this->get("UGNID");
     }
 
     /**
-     * TemplateId: 模板ID
+     * UGNID:
      *
-     * @param string $templateId
+     * @param string $ugnid
      */
-    public function setTemplateId($templateId)
+    public function setUGNID($ugnid)
     {
-        $this->set("TemplateId", $templateId);
+        $this->set("UGNID", $ugnid);
+    }
+
+    /**
+     * Offset: 偏移量，默认0
+     *
+     * @return integer|null
+     */
+    public function getOffset()
+    {
+        return $this->get("Offset");
+    }
+
+    /**
+     * Offset: 偏移量，默认0
+     *
+     * @param int $offset
+     */
+    public function setOffset($offset)
+    {
+        $this->set("Offset", $offset);
+    }
+
+    /**
+     * Limit:   分页大小，默认20
+     *
+     * @return integer|null
+     */
+    public function getLimit()
+    {
+        return $this->get("Limit");
+    }
+
+    /**
+     * Limit:   分页大小，默认20
+     *
+     * @param int $limit
+     */
+    public function setLimit($limit)
+    {
+        $this->set("Limit", $limit);
     }
 }

@@ -14,23 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\USMS\Apis;
+namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class DeleteUSMSSignatureRequest extends Request
+class DescribeSimpleUGNRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "DeleteUSMSSignature"]);
-        $this->markRequired("ProjectId");
-        $this->markRequired("SigIds");
+        parent::__construct(["Action" => "DescribeSimpleUGN"]);
+        $this->markRequired("UGNID");
     }
 
     
 
     /**
-     * ProjectId: 项目ID，不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -40,7 +39,7 @@ class DeleteUSMSSignatureRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID，不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -50,22 +49,22 @@ class DeleteUSMSSignatureRequest extends Request
     }
 
     /**
-     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入
+     * UGNID: UGN ID
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getSigIds()
+    public function getUGNID()
     {
-        return $this->get("SigIds");
+        return $this->get("UGNID");
     }
 
     /**
-     * SigIds: 签名ID（也即短信签名申请时的工单ID），支持以数组的方式，举例，以SigIds.0、SigIds.1...SigIds.N方式传入
+     * UGNID: UGN ID
      *
-     * @param string[] $sigIds
+     * @param string $ugnid
      */
-    public function setSigIds(array $sigIds)
+    public function setUGNID($ugnid)
     {
-        $this->set("SigIds", $sigIds);
+        $this->set("UGNID", $ugnid);
     }
 }
