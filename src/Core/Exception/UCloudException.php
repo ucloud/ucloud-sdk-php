@@ -50,7 +50,7 @@ class UCloudException extends Exception
     {
         $this->type = $type;
         $this->requestId = $requestId;
-        $this->response = $response
+        $this->response = $response;
         parent::__construct($message, $retCode, $previous);
     }
 
