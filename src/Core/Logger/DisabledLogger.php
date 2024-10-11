@@ -1,15 +1,16 @@
 <?php
 
-
 namespace UCloud\Core\Logger;
 
-use Psr\Log\AbstractLogger;
-use Psr\Log\LoggerInterface;
+use ReflectionMethod;
 
-class DisabledLogger extends AbstractLogger implements LoggerInterface
-{
-    public function log($level, $message, array $context = [])
-    {
-        // Do nothing
+$logMethodReflection = new ReflectionMethod("Psr\Log\AbstractLogger", "log");
+if (version_compare(PHP_VERSION, '8.0.0', '<')) {
+    include "compatibility/DisabledLoggerPsrLogV1.php";
+} else {
+    if ($logMethodReflection->hasReturnType()) {
+        include "compatibility/DisabledLoggerPsrLogV3.php";
+    } else {
+        include "compatibility/DisabledLoggerPsrLogV1.php";
     }
 }
