@@ -1,7 +1,7 @@
 <?php
 
-use Psr\Log\LoggerInterface;
 use Psr\Log\AbstractLogger;
+use Psr\Log\LoggerInterface;
 
 class DefaultLoggerPsrLogV3 extends AbstractLogger implements LoggerInterface
 {
@@ -9,7 +9,8 @@ class DefaultLoggerPsrLogV3 extends AbstractLogger implements LoggerInterface
         $level,
         string|\Stringable $message,
         array $context = []
-    ): void {
+    ): void
+    {
         $line = $level . " " . $message;
         if (!empty($context)) {
             $line = " " . json_encode($context, JSON_PRETTY_PRINT);

@@ -1,7 +1,7 @@
 <?php
 
-use Psr\Log\LoggerInterface;
 use Psr\Log\AbstractLogger;
+use Psr\Log\LoggerInterface;
 
 class DisabledLoggerPsrLogV1 extends AbstractLogger implements LoggerInterface
 {
