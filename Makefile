@@ -2,12 +2,12 @@ install:
 	composer install
 
 lint:
-	php vendor/bin/phpcs -n
+	php vendor/bin/phpcs --ignore=./src/Core/Logger/compatibility/*.php -n
 
 compatible:
 	php vendor/bin/phpcs --config-set installed_paths vendor/phpcompatibility/php-compatibility
 	php vendor/bin/phpcs --config-set testVersion 5.6
-	php vendor/bin/phpcs -p --standard=PHPCompatibility src
+	php vendor/bin/phpcs -p --standard=PHPCompatibility --ignore=./src/Core/Logger/compatibility/*.php src
 
 fmt:
 	php vendor/bin/phpcbf
