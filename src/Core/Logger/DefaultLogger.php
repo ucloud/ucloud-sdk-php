@@ -2,17 +2,15 @@
 
 namespace UCloud\Core\Logger;
 
-use Psr\Log\LoggerInterface;
-use Psr\Log\AbstractLogger;
+use ReflectionMethod;
 
-class DefaultLogger extends AbstractLogger implements LoggerInterface
-{
-    public function log($level, $message, array $context = [])
-    {
-        $line = $level . " " . $message;
-        if (!empty($context)) {
-            $line = " " . json_encode($context, JSON_PRETTY_PRINT);
-        }
-        echo $line . "\n";
+$logMethodReflection = new ReflectionMethod("Psr\Log\AbstractLogger", "log");
+if (version_compare(PHP_VERSION, '8.0.0', '<')) {
+    include "compatibility/DefaultLoggerPsrLogV1.php";
+} else {
+    if ($logMethodReflection->hasReturnType()) {
+        include "compatibility/DefaultLoggerPsrLogV3.php";
+    } else {
+        include "compatibility/DefaultLoggerPsrLogV1.php";
     }
 }
