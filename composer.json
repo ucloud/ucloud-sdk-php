@@ -41,5 +41,6 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
-    }
+    },
+    "include-path": ["lib/"]
 }
