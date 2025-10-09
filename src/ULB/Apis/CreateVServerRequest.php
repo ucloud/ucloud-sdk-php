@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ class CreateVServerRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡实例ID
+     * ULBId: 传统型负载均衡实例ID
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class CreateVServerRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡实例ID
+     * ULBId: 传统型负载均衡实例ID
      *
      * @param string $ulbId
      */
@@ -347,5 +347,85 @@ class CreateVServerRequest extends Request
     public function setResponseMsg($responseMsg)
     {
         $this->set("ResponseMsg", $responseMsg);
+    }
+
+    /**
+     * SecurityPolicyId: 安全策略组ID，默认值'Default'
+     *
+     * @return string|null
+     */
+    public function getSecurityPolicyId()
+    {
+        return $this->get("SecurityPolicyId");
+    }
+
+    /**
+     * SecurityPolicyId: 安全策略组ID，默认值'Default'
+     *
+     * @param string $securityPolicyId
+     */
+    public function setSecurityPolicyId($securityPolicyId)
+    {
+        $this->set("SecurityPolicyId", $securityPolicyId);
+    }
+
+    /**
+     * EnableCompression: 0:关闭 1:开启，用于数据压缩功能
+     *
+     * @return integer|null
+     */
+    public function getEnableCompression()
+    {
+        return $this->get("EnableCompression");
+    }
+
+    /**
+     * EnableCompression: 0:关闭 1:开启，用于数据压缩功能
+     *
+     * @param int $enableCompression
+     */
+    public function setEnableCompression($enableCompression)
+    {
+        $this->set("EnableCompression", $enableCompression);
+    }
+
+    /**
+     * ForwardPort: 重定向端口，取值范围[0-65535]；默认值为0，代表关闭；仅HTTP协议支持开启重定向功能
+     *
+     * @return integer|null
+     */
+    public function getForwardPort()
+    {
+        return $this->get("ForwardPort");
+    }
+
+    /**
+     * ForwardPort: 重定向端口，取值范围[0-65535]；默认值为0，代表关闭；仅HTTP协议支持开启重定向功能
+     *
+     * @param int $forwardPort
+     */
+    public function setForwardPort($forwardPort)
+    {
+        $this->set("ForwardPort", $forwardPort);
+    }
+
+    /**
+     * EnableHTTP2: 0:关闭 1:开启，用于开启http2功能；默认值为0
+     *
+     * @return integer|null
+     */
+    public function getEnableHTTP2()
+    {
+        return $this->get("EnableHTTP2");
+    }
+
+    /**
+     * EnableHTTP2: 0:关闭 1:开启，用于开启http2功能；默认值为0
+     *
+     * @param int $enableHTTP2
+     */
+    public function setEnableHTTP2($enableHTTP2)
+    {
+        $this->set("EnableHTTP2", $enableHTTP2);
     }
 }

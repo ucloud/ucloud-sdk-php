@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,5 +188,25 @@ class CreateSSLRequest extends Request
     public function setCaCert($caCert)
     {
         $this->set("CaCert", $caCert);
+    }
+
+    /**
+     * USSLId: USSL证书的ID
+     *
+     * @return string|null
+     */
+    public function getUSSLId()
+    {
+        return $this->get("USSLId");
+    }
+
+    /**
+     * USSLId: USSL证书的ID
+     *
+     * @param string $usslId
+     */
+    public function setUSSLId($usslId)
+    {
+        $this->set("USSLId", $usslId);
     }
 }

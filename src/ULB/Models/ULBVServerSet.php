@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,26 @@ class ULBVServerSet extends Response
     public function setMonitorType($monitorType)
     {
         $this->set("MonitorType", $monitorType);
+    }
+
+    /**
+     * PersistenceType: VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。
+     *
+     * @return string|null
+     */
+    public function getPersistenceType()
+    {
+        return $this->get("PersistenceType");
+    }
+
+    /**
+     * PersistenceType: VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。
+     *
+     * @param string $persistenceType
+     */
+    public function setPersistenceType($persistenceType)
+    {
+        $this->set("PersistenceType", $persistenceType);
     }
 
     /**
@@ -243,26 +263,6 @@ class ULBVServerSet extends Response
     }
 
     /**
-     * PersistenceType: VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。
-     *
-     * @return string|null
-     */
-    public function getPersistenceType()
-    {
-        return $this->get("PersistenceType");
-    }
-
-    /**
-     * PersistenceType: VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。
-     *
-     * @param string $persistenceType
-     */
-    public function setPersistenceType($persistenceType)
-    {
-        $this->set("PersistenceType", $persistenceType);
-    }
-
-    /**
      * PersistenceInfo: 根据PersistenceType确定： None或ServerInsert，此字段为空； UserDefined，此字段展示用户自定义会话string。
      *
      * @return string|null
@@ -436,5 +436,85 @@ class ULBVServerSet extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * EnableCompression: 数据压缩开关，0:关闭 1:开启
+     *
+     * @return integer|null
+     */
+    public function getEnableCompression()
+    {
+        return $this->get("EnableCompression");
+    }
+
+    /**
+     * EnableCompression: 数据压缩开关，0:关闭 1:开启
+     *
+     * @param int $enableCompression
+     */
+    public function setEnableCompression($enableCompression)
+    {
+        $this->set("EnableCompression", $enableCompression);
+    }
+
+    /**
+     * SecurityPolicy: VServer绑定的安全策略,具体结构见BindSecurityPolicy
+     *
+     * @return BindSecurityPolicy|null
+     */
+    public function getSecurityPolicy()
+    {
+        return new BindSecurityPolicy($this->get("SecurityPolicy"));
+    }
+
+    /**
+     * SecurityPolicy: VServer绑定的安全策略,具体结构见BindSecurityPolicy
+     *
+     * @param BindSecurityPolicy $securityPolicy
+     */
+    public function setSecurityPolicy(array $securityPolicy)
+    {
+        $this->set("SecurityPolicy", $securityPolicy->getAll());
+    }
+
+    /**
+     * ForwardPort: 重定向端口，取值范围[0-65535]；默认值为0，代表关闭；仅HTTP协议支持开启重定向功能
+     *
+     * @return integer|null
+     */
+    public function getForwardPort()
+    {
+        return $this->get("ForwardPort");
+    }
+
+    /**
+     * ForwardPort: 重定向端口，取值范围[0-65535]；默认值为0，代表关闭；仅HTTP协议支持开启重定向功能
+     *
+     * @param int $forwardPort
+     */
+    public function setForwardPort($forwardPort)
+    {
+        $this->set("ForwardPort", $forwardPort);
+    }
+
+    /**
+     * EnableHTTP2: 0:关闭 1:开启，用于开启http2功能；默认值为0
+     *
+     * @return integer|null
+     */
+    public function getEnableHTTP2()
+    {
+        return $this->get("EnableHTTP2");
+    }
+
+    /**
+     * EnableHTTP2: 0:关闭 1:开启，用于开启http2功能；默认值为0
+     *
+     * @param int $enableHTTP2
+     */
+    public function setEnableHTTP2($enableHTTP2)
+    {
+        $this->set("EnableHTTP2", $enableHTTP2);
     }
 }

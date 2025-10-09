@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,7 +129,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * OuterMode: 创建的ULB是否为外网模式，默认即为外网模式
+     * OuterMode: 创建的CLB是否为外网模式，默认即为外网模式
      *
      * @return string|null
      */
@@ -139,7 +139,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * OuterMode: 创建的ULB是否为外网模式，默认即为外网模式
+     * OuterMode: 创建的CLB是否为外网模式，默认即为外网模式
      *
      * @param string $outerMode
      */
@@ -149,7 +149,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * InnerMode: 创建的ULB是否为内网模式
+     * InnerMode: 创建的CLB是否为内网模式
      *
      * @return string|null
      */
@@ -159,7 +159,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * InnerMode: 创建的ULB是否为内网模式
+     * InnerMode: 创建的CLB是否为内网模式
      *
      * @param string $innerMode
      */
@@ -189,7 +189,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * VPCId: ULB所在的VPC的ID, 如果不传则使用默认的VPC
+     * VPCId: CLB所在的VPC的ID。 如果不传则使用默认的VPC，若不传且无默认VPC则接口报错
      *
      * @return string|null
      */
@@ -199,7 +199,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * VPCId: ULB所在的VPC的ID, 如果不传则使用默认的VPC
+     * VPCId: CLB所在的VPC的ID。 如果不传则使用默认的VPC，若不传且无默认VPC则接口报错
      *
      * @param string $vpcId
      */
@@ -209,7 +209,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * SubnetId: ULB 所属的子网ID，如果不传则随机选择一个。
+     * SubnetId: CLB 所属的子网ID，如果不传则随机选择一个。
      *
      * @return string|null
      */
@@ -219,7 +219,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * SubnetId: ULB 所属的子网ID，如果不传则随机选择一个。
+     * SubnetId: CLB 所属的子网ID，如果不传则随机选择一个。
      *
      * @param string $subnetId
      */
@@ -229,7 +229,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * BusinessId: ULB 所属的业务组ID，如果不传则使用默认的业务组
+     * BusinessId: CLB 所属的业务组ID，如果不传则使用默认的业务组
      *
      * @return string|null
      */
@@ -239,7 +239,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * BusinessId: ULB 所属的业务组ID，如果不传则使用默认的业务组
+     * BusinessId: CLB 所属的业务组ID，如果不传则使用默认的业务组
      *
      * @param string $businessId
      */
@@ -269,7 +269,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * ListenType: ULB 监听器类型，外网ULB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。
+     * ListenType: CLB 监听器类型，外网CLB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。
      *
      * @return string|null
      */
@@ -279,7 +279,7 @@ class CreateULBRequest extends Request
     }
 
     /**
-     * ListenType: ULB 监听器类型，外网ULB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。
+     * ListenType: CLB 监听器类型，外网CLB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发。
      *
      * @param string $listenType
      */

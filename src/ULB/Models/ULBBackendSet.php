@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -280,5 +280,45 @@ class ULBBackendSet extends Response
     public function setIsBackup($isBackup)
     {
         $this->set("IsBackup", $isBackup);
+    }
+
+    /**
+     * Weight: 后端RS权重（在加权轮询算法下有效）
+     *
+     * @return integer|null
+     */
+    public function getWeight()
+    {
+        return $this->get("Weight");
+    }
+
+    /**
+     * Weight: 后端RS权重（在加权轮询算法下有效）
+     *
+     * @param int $weight
+     */
+    public function setWeight($weight)
+    {
+        $this->set("Weight", $weight);
+    }
+
+    /**
+     * VPCId: 后端服务器所在的VPC
+     *
+     * @return string|null
+     */
+    public function getVPCId()
+    {
+        return $this->get("VPCId");
+    }
+
+    /**
+     * VPCId: 后端服务器所在的VPC
+     *
+     * @param string $vpcId
+     */
+    public function setVPCId($vpcId)
+    {
+        $this->set("VPCId", $vpcId);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ class DescribeULBSimpleResponse extends Response
     
 
     /**
-     * TotalCount: 满足条件的ULB总数
+     * TotalCount: 满足条件的CLB总数
      *
      * @return integer|null
      */
@@ -37,7 +37,7 @@ class DescribeULBSimpleResponse extends Response
     }
 
     /**
-     * TotalCount: 满足条件的ULB总数
+     * TotalCount: 满足条件的CLB总数
      *
      * @param int $totalCount
      */
@@ -47,7 +47,7 @@ class DescribeULBSimpleResponse extends Response
     }
 
     /**
-     * DataSet: ULB列表，每项参数详见 ULBSimpleSet
+     * DataSet: CLB列表，每项参数详见 ULBSimpleSet
      *
      * @return ULBSimpleSet[]|null
      */
@@ -65,7 +65,7 @@ class DescribeULBSimpleResponse extends Response
     }
 
     /**
-     * DataSet: ULB列表，每项参数详见 ULBSimpleSet
+     * DataSet: CLB列表，每项参数详见 ULBSimpleSet
      *
      * @param ULBSimpleSet[] $dataSet
      */
