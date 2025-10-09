@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ class UpdateBackendAttributeRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡资源ID
+     * ULBId: 传统型负载均衡资源ID
      *
      * @return string|null
      */
@@ -82,7 +82,7 @@ class UpdateBackendAttributeRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡资源ID
+     * ULBId: 传统型负载均衡资源ID
      *
      * @param string $ulbId
      */
@@ -92,7 +92,7 @@ class UpdateBackendAttributeRequest extends Request
     }
 
     /**
-     * BackendId: 后端资源实例的ID(ULB后端ID，非资源自身ID)
+     * BackendId: 后端资源实例的ID(CLB后端ID，非资源自身ID)
      *
      * @return string|null
      */
@@ -102,7 +102,7 @@ class UpdateBackendAttributeRequest extends Request
     }
 
     /**
-     * BackendId: 后端资源实例的ID(ULB后端ID，非资源自身ID)
+     * BackendId: 后端资源实例的ID(CLB后端ID，非资源自身ID)
      *
      * @param string $backendId
      */

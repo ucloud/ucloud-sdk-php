@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,5 +172,105 @@ class ULBSSLSet extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * SSLSource: SSL证书来源，SSL证书来源，0代表证书来自于ULB平台，1代表证书来自于USSL平台
+     *
+     * @return integer|null
+     */
+    public function getSSLSource()
+    {
+        return $this->get("SSLSource");
+    }
+
+    /**
+     * SSLSource: SSL证书来源，SSL证书来源，0代表证书来自于ULB平台，1代表证书来自于USSL平台
+     *
+     * @param int $sslSource
+     */
+    public function setSSLSource($sslSource)
+    {
+        $this->set("SSLSource", $sslSource);
+    }
+
+    /**
+     * USSLId: USSL证书平台的编号,只有当SSLSource为1时才出现
+     *
+     * @return string|null
+     */
+    public function getUSSLId()
+    {
+        return $this->get("USSLId");
+    }
+
+    /**
+     * USSLId: USSL证书平台的编号,只有当SSLSource为1时才出现
+     *
+     * @param string $usslId
+     */
+    public function setUSSLId($usslId)
+    {
+        $this->set("USSLId", $usslId);
+    }
+
+    /**
+     * Domains: SSL证书平台的域名，多域名时，不展示扩展域名
+     *
+     * @return string|null
+     */
+    public function getDomains()
+    {
+        return $this->get("Domains");
+    }
+
+    /**
+     * Domains: SSL证书平台的域名，多域名时，不展示扩展域名
+     *
+     * @param string $domains
+     */
+    public function setDomains($domains)
+    {
+        $this->set("Domains", $domains);
+    }
+
+    /**
+     * NotBefore: 证书颁发时间
+     *
+     * @return integer|null
+     */
+    public function getNotBefore()
+    {
+        return $this->get("NotBefore");
+    }
+
+    /**
+     * NotBefore: 证书颁发时间
+     *
+     * @param int $notBefore
+     */
+    public function setNotBefore($notBefore)
+    {
+        $this->set("NotBefore", $notBefore);
+    }
+
+    /**
+     * NotAfter: 证书过期时间
+     *
+     * @return integer|null
+     */
+    public function getNotAfter()
+    {
+        return $this->get("NotAfter");
+    }
+
+    /**
+     * NotAfter: 证书过期时间
+     *
+     * @param int $notAfter
+     */
+    public function setNotAfter($notAfter)
+    {
+        $this->set("NotAfter", $notAfter);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ class UpdateULBAttributeRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -71,7 +71,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * ULBId: ULB资源ID
+     * ULBId: CLB资源ID
      *
      * @return string|null
      */
@@ -81,7 +81,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * ULBId: ULB资源ID
+     * ULBId: CLB资源ID
      *
      * @param string $ulbId
      */
@@ -91,7 +91,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * Name: 名字
+     * Name: 名字，不传则默认不修改
      *
      * @return string|null
      */
@@ -101,7 +101,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * Name: 名字
+     * Name: 名字，不传则默认不修改
      *
      * @param string $name
      */
@@ -111,7 +111,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * Tag: 业务
+     * Tag: 业务，不传则默认不修改
      *
      * @return string|null
      */
@@ -121,7 +121,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * Tag: 业务
+     * Tag: 业务，不传则默认不修改
      *
      * @param string $tag
      */
@@ -131,7 +131,7 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * Remark: 备注
+     * Remark: 备注，不传则默认不修改
      *
      * @return string|null
      */
@@ -141,12 +141,112 @@ class UpdateULBAttributeRequest extends Request
     }
 
     /**
-     * Remark: 备注
+     * Remark: 备注，不传则默认不修改
      *
      * @param string $remark
      */
     public function setRemark($remark)
     {
         $this->set("Remark", $remark);
+    }
+
+    /**
+     * EnableLog: 日志开关，1代表开启日志，0代表关闭日志，传1时必须同时传BucketName，TokenName与TokenId二选一
+     *
+     * @return integer|null
+     */
+    public function getEnableLog()
+    {
+        return $this->get("EnableLog");
+    }
+
+    /**
+     * EnableLog: 日志开关，1代表开启日志，0代表关闭日志，传1时必须同时传BucketName，TokenName与TokenId二选一
+     *
+     * @param int $enableLog
+     */
+    public function setEnableLog($enableLog)
+    {
+        $this->set("EnableLog", $enableLog);
+    }
+
+    /**
+     * BucketName: 设置用于存储ulb日志的bucket
+     *
+     * @return string|null
+     */
+    public function getBucketName()
+    {
+        return $this->get("BucketName");
+    }
+
+    /**
+     * BucketName: 设置用于存储ulb日志的bucket
+     *
+     * @param string $bucketName
+     */
+    public function setBucketName($bucketName)
+    {
+        $this->set("BucketName", $bucketName);
+    }
+
+    /**
+     * TokenName: 用于指定上传到bucket所需的token，与TokenId选填其一即可
+     *
+     * @return string|null
+     */
+    public function getTokenName()
+    {
+        return $this->get("TokenName");
+    }
+
+    /**
+     * TokenName: 用于指定上传到bucket所需的token，与TokenId选填其一即可
+     *
+     * @param string $tokenName
+     */
+    public function setTokenName($tokenName)
+    {
+        $this->set("TokenName", $tokenName);
+    }
+
+    /**
+     * TokenId: 用于指定上传到bucket所需的token，与TokenName选填其一即可
+     *
+     * @return string|null
+     */
+    public function getTokenId()
+    {
+        return $this->get("TokenId");
+    }
+
+    /**
+     * TokenId: 用于指定上传到bucket所需的token，与TokenName选填其一即可
+     *
+     * @param string $tokenId
+     */
+    public function setTokenId($tokenId)
+    {
+        $this->set("TokenId", $tokenId);
+    }
+
+    /**
+     * IsWAFOn: 是否开启WAF。枚举类型：Yes，No，默认值为No
+     *
+     * @return string|null
+     */
+    public function getIsWAFOn()
+    {
+        return $this->get("IsWAFOn");
+    }
+
+    /**
+     * IsWAFOn: 是否开启WAF。枚举类型：Yes，No，默认值为No
+     *
+     * @param string $isWAFOn
+     */
+    public function setIsWAFOn($isWAFOn)
+    {
+        $this->set("IsWAFOn", $isWAFOn);
     }
 }

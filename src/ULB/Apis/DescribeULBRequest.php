@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,7 +109,7 @@ class DescribeULBRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡实例的Id。 若指定则返回指定的负载均衡实例的信息； 若不指定则返回当前数据中心中所有的负载均衡实例的信息
+     * ULBId: 传统型负载均衡实例的Id。 若指定则返回指定的传统型负载均衡实例的信息； 若不指定则返回当前数据中心中所有的传统型负载均衡实例的信息
      *
      * @return string|null
      */
@@ -119,7 +119,7 @@ class DescribeULBRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡实例的Id。 若指定则返回指定的负载均衡实例的信息； 若不指定则返回当前数据中心中所有的负载均衡实例的信息
+     * ULBId: 传统型负载均衡实例的Id。 若指定则返回指定的传统型负载均衡实例的信息； 若不指定则返回当前数据中心中所有的传统型负载均衡实例的信息
      *
      * @param string $ulbId
      */
@@ -129,7 +129,7 @@ class DescribeULBRequest extends Request
     }
 
     /**
-     * VPCId: ULB所属的VPC
+     * VPCId: CLB所属的VPC
      *
      * @return string|null
      */
@@ -139,7 +139,7 @@ class DescribeULBRequest extends Request
     }
 
     /**
-     * VPCId: ULB所属的VPC
+     * VPCId: CLB所属的VPC
      *
      * @param string $vpcId
      */
@@ -149,7 +149,7 @@ class DescribeULBRequest extends Request
     }
 
     /**
-     * SubnetId: ULB所属的子网ID
+     * SubnetId: CLB所属的子网ID
      *
      * @return string|null
      */
@@ -159,7 +159,7 @@ class DescribeULBRequest extends Request
     }
 
     /**
-     * SubnetId: ULB所属的子网ID
+     * SubnetId: CLB所属的子网ID
      *
      * @param string $subnetId
      */
@@ -169,7 +169,7 @@ class DescribeULBRequest extends Request
     }
 
     /**
-     * BusinessId: ULB所属的业务组ID
+     * BusinessId: CLB所属的业务组ID
      *
      * @return string|null
      */
@@ -179,7 +179,7 @@ class DescribeULBRequest extends Request
     }
 
     /**
-     * BusinessId: ULB所属的业务组ID
+     * BusinessId: CLB所属的业务组ID
      *
      * @param string $businessId
      */
