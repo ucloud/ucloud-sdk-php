@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ use UCloud\ULB\Models\SSLBindedTargetSet;
 use UCloud\ULB\Models\ULBBackendSet;
 use UCloud\ULB\Models\ULBPolicySet;
 use UCloud\ULB\Models\PolicyBackendSet;
+use UCloud\ULB\Models\BindSecurityPolicy;
 
 class DescribeVServerResponse extends Response
 {

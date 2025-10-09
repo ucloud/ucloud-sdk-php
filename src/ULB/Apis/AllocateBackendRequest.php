@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,6 @@ class AllocateBackendRequest extends Request
         $this->markRequired("ULBId");
         $this->markRequired("VServerId");
         $this->markRequired("ResourceType");
-        $this->markRequired("ResourceId");
     }
 
     
@@ -74,7 +73,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡实例的ID
+     * ULBId: 传统型负载均衡实例的ID
      *
      * @return string|null
      */
@@ -84,7 +83,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡实例的ID
+     * ULBId: 传统型负载均衡实例的ID
      *
      * @param string $ulbId
      */
@@ -114,7 +113,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
+     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机；UHybrid->混合云主机；CUBE->Cube， IP->IP类型；默认值为UHost。报文转发模式不支持UHybrid、CUBE、IP
      *
      * @return string|null
      */
@@ -124,7 +123,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker -> 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
+     * ResourceType: 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机；UHybrid->混合云主机；CUBE->Cube， IP->IP类型；默认值为UHost。报文转发模式不支持UHybrid、CUBE、IP
      *
      * @param string $resourceType
      */
@@ -134,7 +133,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceId: 所添加的后端资源的资源ID
+     * ResourceId: 所添加的后端资源的资源ID；与ResourceIP二选一必填
      *
      * @return string|null
      */
@@ -144,7 +143,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceId: 所添加的后端资源的资源ID
+     * ResourceId: 所添加的后端资源的资源ID；与ResourceIP二选一必填
      *
      * @param string $resourceId
      */
@@ -154,7 +153,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceIP: 所添加的后端服务器的资源实例IP，当ResourceType 为 UHybrid 时有效，且必填
+     * ResourceIP: 所添加的后端服务器的资源实例IP，当ResourceType 为 UHybrid 或 IP时有效，且必填；与ResourceId二选一必填
      *
      * @return string|null
      */
@@ -164,7 +163,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * ResourceIP: 所添加的后端服务器的资源实例IP，当ResourceType 为 UHybrid 时有效，且必填
+     * ResourceIP: 所添加的后端服务器的资源实例IP，当ResourceType 为 UHybrid 或 IP时有效，且必填；与ResourceId二选一必填
      *
      * @param string $resourceIP
      */
@@ -174,7 +173,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * VPCId: 所添加的后端服务器所在的vpc，当ResourceType 为 UHybrid 时有效，且必填
+     * VPCId: 所添加的后端服务器所在的vpc，当ResourceType 为 UHybrid 或 IP 时有效，且必填
      *
      * @return string|null
      */
@@ -184,7 +183,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * VPCId: 所添加的后端服务器所在的vpc，当ResourceType 为 UHybrid 时有效，且必填
+     * VPCId: 所添加的后端服务器所在的vpc，当ResourceType 为 UHybrid 或 IP 时有效，且必填
      *
      * @param string $vpcId
      */
@@ -194,7 +193,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * SubnetId: 所添加的后端服务器所在的子网，当ResourceType 为 UHybrid 时有效，且必填
+     * SubnetId: 所添加的后端服务器所在的子网，当ResourceType 为 UHybrid 或 IP 时有效，且必填
      *
      * @return string|null
      */
@@ -204,7 +203,7 @@ class AllocateBackendRequest extends Request
     }
 
     /**
-     * SubnetId: 所添加的后端服务器所在的子网，当ResourceType 为 UHybrid 时有效，且必填
+     * SubnetId: 所添加的后端服务器所在的子网，当ResourceType 为 UHybrid 或 IP 时有效，且必填
      *
      * @param string $subnetId
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ use UCloud\ULB\Models\SSLBindedTargetSet;
 use UCloud\ULB\Models\ULBBackendSet;
 use UCloud\ULB\Models\ULBPolicySet;
 use UCloud\ULB\Models\PolicyBackendSet;
+use UCloud\ULB\Models\BindSecurityPolicy;
 use UCloud\ULB\Models\FirewallSet;
 use UCloud\ULB\Models\LoggerSet;
 
@@ -33,7 +34,7 @@ class DescribeULBResponse extends Response
     
 
     /**
-     * TotalCount: 满足条件的ULB总数
+     * TotalCount: 满足条件的CLB总数
      *
      * @return integer|null
      */
@@ -43,7 +44,7 @@ class DescribeULBResponse extends Response
     }
 
     /**
-     * TotalCount: 满足条件的ULB总数
+     * TotalCount: 满足条件的CLB总数
      *
      * @param int $totalCount
      */
@@ -53,7 +54,7 @@ class DescribeULBResponse extends Response
     }
 
     /**
-     * DataSet: ULB列表，每项参数详见 ULBSet
+     * DataSet: CLB列表，每项参数详见 ULBSet
      *
      * @return ULBSet[]|null
      */
@@ -71,7 +72,7 @@ class DescribeULBResponse extends Response
     }
 
     /**
-     * DataSet: ULB列表，每项参数详见 ULBSet
+     * DataSet: CLB列表，每项参数详见 ULBSet
      *
      * @param ULBSet[] $dataSet
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -264,6 +264,26 @@ class ULBSet extends Response
     public function setIPVersion($ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
+    }
+
+    /**
+     * SnatIps: ULB后向代理IP，仅当有代理IP时返回否
+     *
+     * @return string[]|null
+     */
+    public function getSnatIps()
+    {
+        return $this->get("SnatIps");
+    }
+
+    /**
+     * SnatIps: ULB后向代理IP，仅当有代理IP时返回否
+     *
+     * @param string[] $snatIps
+     */
+    public function setSnatIps(array $snatIps)
+    {
+        $this->set("SnatIps", $snatIps);
     }
 
     /**
