@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,26 @@ class ULBSimpleSet extends Response
     public function setIPVersion($ipVersion)
     {
         $this->set("IPVersion", $ipVersion);
+    }
+
+    /**
+     * SnatIps: ULB后向代理IP，仅当有代理IP时返回否
+     *
+     * @return string[]|null
+     */
+    public function getSnatIps()
+    {
+        return $this->get("SnatIps");
+    }
+
+    /**
+     * SnatIps: ULB后向代理IP，仅当有代理IP时返回否
+     *
+     * @param string[] $snatIps
+     */
+    public function setSnatIps(array $snatIps)
+    {
+        $this->set("SnatIps", $snatIps);
     }
 
     /**
@@ -424,5 +444,25 @@ class ULBSimpleSet extends Response
     public function setLogSet(array $logSet)
     {
         $this->set("LogSet", $logSet->getAll());
+    }
+
+    /**
+     * WAFMode: WAF功能状态，枚举类型：Unavailable：无法创建WAF；NoWAF：未绑定WAF；Intranet：内网回源Waf；Extranet：外网回源Waf
+     *
+     * @return string|null
+     */
+    public function getWAFMode()
+    {
+        return $this->get("WAFMode");
+    }
+
+    /**
+     * WAFMode: WAF功能状态，枚举类型：Unavailable：无法创建WAF；NoWAF：未绑定WAF；Intranet：内网回源Waf；Extranet：外网回源Waf
+     *
+     * @param string $wafMode
+     */
+    public function setWAFMode($wafMode)
+    {
+        $this->set("WAFMode", $wafMode);
     }
 }

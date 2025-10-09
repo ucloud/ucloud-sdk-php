@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ class DescribeVServerRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡实例的Id
+     * ULBId: 传统型负载均衡实例的Id
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class DescribeVServerRequest extends Request
     }
 
     /**
-     * ULBId: 负载均衡实例的Id
+     * ULBId: 传统型负载均衡实例的Id
      *
      * @param string $ulbId
      */
@@ -90,7 +90,7 @@ class DescribeVServerRequest extends Request
     }
 
     /**
-     * VServerId: VServer实例的Id；若指定则返回指定的VServer实例的信息； 若不指定则返回当前负载均衡实例下所有VServer的信息
+     * VServerId: CLB下的VServer实例的Id；若指定则返回指定的VServer实例的信息； 若不指定则返回当前传统型负载均衡实例下所有VServer的信息
      *
      * @return string|null
      */
@@ -100,7 +100,7 @@ class DescribeVServerRequest extends Request
     }
 
     /**
-     * VServerId: VServer实例的Id；若指定则返回指定的VServer实例的信息； 若不指定则返回当前负载均衡实例下所有VServer的信息
+     * VServerId: CLB下的VServer实例的Id；若指定则返回指定的VServer实例的信息； 若不指定则返回当前传统型负载均衡实例下所有VServer的信息
      *
      * @param string $vServerId
      */

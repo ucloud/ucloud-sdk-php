@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ class CreatePolicyRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -44,7 +44,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -54,7 +54,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -64,7 +64,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -74,7 +74,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * ULBId: 需要添加内容转发策略的负载均衡实例ID
+     * ULBId: 需要添加内容转发策略的传统型负载均衡实例ID
      *
      * @return string|null
      */
@@ -84,7 +84,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * ULBId: 需要添加内容转发策略的负载均衡实例ID
+     * ULBId: 需要添加内容转发策略的传统型负载均衡实例ID
      *
      * @param string $ulbId
      */
@@ -94,7 +94,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * VServerId: 需要添加内容转发策略的VServer实例ID
+     * VServerId: 需要添加内容转发策略的传统型负载均衡VServer实例ID
      *
      * @return string|null
      */
@@ -104,7 +104,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * VServerId: 需要添加内容转发策略的VServer实例ID
+     * VServerId: 需要添加内容转发策略的传统型负载均衡VServer实例ID
      *
      * @param string $vServerId
      */
@@ -114,7 +114,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * BackendId: 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId
+     * BackendId: 内容转发策略应用的传统型负载均衡后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId
      *
      * @return string[]|null
      */
@@ -124,7 +124,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * BackendId: 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId
+     * BackendId: 内容转发策略应用的传统型负载均衡后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId
      *
      * @param string[] $backendId
      */
@@ -154,6 +154,26 @@ class CreatePolicyRequest extends Request
     }
 
     /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式，默认与原本一致。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @return string|null
+     */
+    public function getDomainMatchMode()
+    {
+        return $this->get("DomainMatchMode");
+    }
+
+    /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式，默认与原本一致。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @param string $domainMatchMode
+     */
+    public function setDomainMatchMode($domainMatchMode)
+    {
+        $this->set("DomainMatchMode", $domainMatchMode);
+    }
+
+    /**
      * Type: 内容转发匹配字段的类型
      *
      * @return string|null
@@ -174,7 +194,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * PolicyPriority: 策略优先级，1-9999
+     * PolicyPriority: 策略优先级，1-9999；只针对路径规则生效
      *
      * @return integer|null
      */
@@ -184,7 +204,7 @@ class CreatePolicyRequest extends Request
     }
 
     /**
-     * PolicyPriority: 策略优先级，1-9999
+     * PolicyPriority: 策略优先级，1-9999；只针对路径规则生效
      *
      * @param int $policyPriority
      */

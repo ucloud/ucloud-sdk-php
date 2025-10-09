@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class UpdatePolicyRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -43,7 +43,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -53,7 +53,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -63,7 +63,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -73,7 +73,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * ULBId: 需要添加内容转发策略的负载均衡实例ID
+     * ULBId: 需要添加内容转发策略的传统型负载均衡实例ID
      *
      * @return string|null
      */
@@ -83,7 +83,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * ULBId: 需要添加内容转发策略的负载均衡实例ID
+     * ULBId: 需要添加内容转发策略的传统型负载均衡实例ID
      *
      * @param string $ulbId
      */
@@ -93,7 +93,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * VServerId: 需要添加内容转发策略的VServer实例ID，只支持请求代理模式下，HTTP或HTTPS协议的VServer
+     * VServerId: 需要添加内容转发策略的VServer实例ID，只支持请求代理模式下，HTTP或HTTPS协议的CLB下的VServer
      *
      * @return string|null
      */
@@ -103,7 +103,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * VServerId: 需要添加内容转发策略的VServer实例ID，只支持请求代理模式下，HTTP或HTTPS协议的VServer
+     * VServerId: 需要添加内容转发策略的VServer实例ID，只支持请求代理模式下，HTTP或HTTPS协议的CLB下的VServer
      *
      * @param string $vServerId
      */
@@ -133,7 +133,47 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * PolicyId: 转发规则的ID，当Type为Default时，可以不传或为空
+     * PolicyPriority: 策略优先级，1-9999；只针对路径规则生效
+     *
+     * @return integer|null
+     */
+    public function getPolicyPriority()
+    {
+        return $this->get("PolicyPriority");
+    }
+
+    /**
+     * PolicyPriority: 策略优先级，1-9999；只针对路径规则生效
+     *
+     * @param int $policyPriority
+     */
+    public function setPolicyPriority($policyPriority)
+    {
+        $this->set("PolicyPriority", $policyPriority);
+    }
+
+    /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式，默认与原本一致。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @return string|null
+     */
+    public function getDomainMatchMode()
+    {
+        return $this->get("DomainMatchMode");
+    }
+
+    /**
+     * DomainMatchMode: 内容转发规则中域名的匹配方式，默认与原本一致。枚举值：Regular，正则；Wildcard，泛域名
+     *
+     * @param string $domainMatchMode
+     */
+    public function setDomainMatchMode($domainMatchMode)
+    {
+        $this->set("DomainMatchMode", $domainMatchMode);
+    }
+
+    /**
+     * PolicyId: 传统型负载均衡转发规则的ID，当Type为Default时，可以不传或为空
      *
      * @return string|null
      */
@@ -143,7 +183,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * PolicyId: 转发规则的ID，当Type为Default时，可以不传或为空
+     * PolicyId: 传统型负载均衡转发规则的ID，当Type为Default时，可以不传或为空
      *
      * @param string $policyId
      */
@@ -153,7 +193,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * BackendId: 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId，不传表示更新转发节点为空
+     * BackendId: 内容转发策略应用的后端资源实例的ID（CLB的后端节点Id），来源于 AllocateBackend 返回的 BackendId，不传表示更新转发节点为空
      *
      * @return string[]|null
      */
@@ -163,7 +203,7 @@ class UpdatePolicyRequest extends Request
     }
 
     /**
-     * BackendId: 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId，不传表示更新转发节点为空
+     * BackendId: 内容转发策略应用的后端资源实例的ID（CLB的后端节点Id），来源于 AllocateBackend 返回的 BackendId，不传表示更新转发节点为空
      *
      * @param string[] $backendId
      */
