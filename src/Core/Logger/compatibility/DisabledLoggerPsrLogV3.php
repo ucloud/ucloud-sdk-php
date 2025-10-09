@@ -9,8 +9,7 @@ class DisabledLoggerPsrLogV3 extends AbstractLogger implements LoggerInterface
         $level,
         string|\Stringable $message,
         array $context = []
-    ): void
-    {
+    ): void {
         // Do nothing
     }
 }
