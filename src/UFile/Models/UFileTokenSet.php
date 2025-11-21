@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,26 @@ use UCloud\Core\Response\Response;
 class UFileTokenSet extends Response
 {
     
+
+    /**
+     * Region: 所属地区
+     *
+     * @return string|null
+     */
+    public function getRegion()
+    {
+        return $this->get("Region");
+    }
+
+    /**
+     * Region: 所属地区
+     *
+     * @param string $region
+     */
+    public function setRegion($region)
+    {
+        $this->set("Region", $region);
+    }
 
     /**
      * TokenId: 令牌ID
@@ -103,7 +123,7 @@ class UFileTokenSet extends Response
     }
 
     /**
-     * AllowedOps: 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]
+     * AllowedOps: 令牌允许执行的操作，[ TOKEN_ALLOW_NONE 没有权限, TOKEN_ALLOW_READ 下载权限, TOKEN_ALLOW_WRITE 上传权限, TOKEN_ALLOW_DELETE 删除权限, TOKEN_ALLOW_LIST 列表权限, TOKEN_ALLOW_IOP 图片处理权限]
      *
      * @return string[]|null
      */
@@ -113,7 +133,7 @@ class UFileTokenSet extends Response
     }
 
     /**
-     * AllowedOps: 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]
+     * AllowedOps: 令牌允许执行的操作，[ TOKEN_ALLOW_NONE 没有权限, TOKEN_ALLOW_READ 下载权限, TOKEN_ALLOW_WRITE 上传权限, TOKEN_ALLOW_DELETE 删除权限, TOKEN_ALLOW_LIST 列表权限, TOKEN_ALLOW_IOP 图片处理权限]
      *
      * @param string[] $allowedOps
      */
@@ -223,22 +243,42 @@ class UFileTokenSet extends Response
     }
 
     /**
-     * Region: 所属地区
+     * BlackIPList: 令牌黑名单
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getRegion()
+    public function getBlackIPList()
     {
-        return $this->get("Region");
+        return $this->get("BlackIPList");
     }
 
     /**
-     * Region: 所属地区
+     * BlackIPList: 令牌黑名单
      *
-     * @param string $region
+     * @param string[] $blackIPList
      */
-    public function setRegion($region)
+    public function setBlackIPList(array $blackIPList)
     {
-        $this->set("Region", $region);
+        $this->set("BlackIPList", $blackIPList);
+    }
+
+    /**
+     * WhiteIPList: 令牌白名单
+     *
+     * @return string[]|null
+     */
+    public function getWhiteIPList()
+    {
+        return $this->get("WhiteIPList");
+    }
+
+    /**
+     * WhiteIPList: 令牌白名单
+     *
+     * @param string[] $whiteIPList
+     */
+    public function setWhiteIPList(array $whiteIPList)
+    {
+        $this->set("WhiteIPList", $whiteIPList);
     }
 }

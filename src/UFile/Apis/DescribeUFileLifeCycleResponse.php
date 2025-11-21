@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,13 +24,13 @@ class DescribeUFileLifeCycleResponse extends Response
     
 
     /**
-     * DateSet: 生命周期信息
+     * DataSet: 生命周期信息
      *
      * @return LifeCycleItem[]|null
      */
-    public function getDateSet()
+    public function getDataSet()
     {
-        $items = $this->get("DateSet");
+        $items = $this->get("DataSet");
         if ($items == null) {
             return [];
         }
@@ -42,14 +42,14 @@ class DescribeUFileLifeCycleResponse extends Response
     }
 
     /**
-     * DateSet: 生命周期信息
+     * DataSet: 生命周期信息
      *
-     * @param LifeCycleItem[] $dateSet
+     * @param LifeCycleItem[] $dataSet
      */
-    public function setDateSet(array $dateSet)
+    public function setDataSet(array $dataSet)
     {
         $result = [];
-        foreach ($dateSet as $i => $item) {
+        foreach ($dataSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;

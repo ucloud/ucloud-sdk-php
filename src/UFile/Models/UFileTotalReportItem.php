@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class UFileTotalReportItem extends Response
     
 
     /**
-     * Flow: 下载流量：单位byte；国内无此字段
+     * Flow: 下载流量：单位GB；国内无此字段
      *
      * @return float|null
      */
@@ -33,7 +33,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * Flow: 下载流量：单位byte；国内无此字段
+     * Flow: 下载流量：单位GB；国内无此字段
      *
      * @param float $flow
      */
@@ -43,7 +43,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * IdleFlow: 闲时流量；单位byte；海外无此字段
+     * IdleFlow: 闲时流量；单位GB；海外无此字段
      *
      * @return float|null
      */
@@ -53,7 +53,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * IdleFlow: 闲时流量；单位byte；海外无此字段
+     * IdleFlow: 闲时流量；单位GB；海外无此字段
      *
      * @param float $idleFlow
      */
@@ -63,7 +63,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * BusyFlow: 忙时流量；单位byte；海外无此字段
+     * BusyFlow: 忙时流量；单位GB；海外无此字段
      *
      * @return float|null
      */
@@ -73,7 +73,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * BusyFlow: 忙时流量；单位byte；海外无此字段
+     * BusyFlow: 忙时流量；单位GB；海外无此字段
      *
      * @param float $busyFlow
      */
@@ -83,7 +83,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * CdnFlow: cdn回源流量;单位byte
+     * CdnFlow: cdn回源流量;单位GB
      *
      * @return float|null
      */
@@ -93,7 +93,7 @@ class UFileTotalReportItem extends Response
     }
 
     /**
-     * CdnFlow: cdn回源流量;单位byte
+     * CdnFlow: cdn回源流量;单位GB
      *
      * @param float $cdnFlow
      */
