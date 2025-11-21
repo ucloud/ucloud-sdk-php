@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ class CreateUFileTokenRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -39,7 +39,7 @@ class CreateUFileTokenRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -49,7 +49,7 @@ class CreateUFileTokenRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -59,7 +59,7 @@ class CreateUFileTokenRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -89,7 +89,7 @@ class CreateUFileTokenRequest extends Request
     }
 
     /**
-     * AllowedOps: 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP  ]。默认TOKEN_ALLOW_NONE
+     * AllowedOps: 令牌允许执行的操作[ TOKEN_ALLOW_NONE 没有权限, TOKEN_ALLOW_READ 下载权限 , TOKEN_ALLOW_WRITE 上传权限 , TOKEN_ALLOW_DELETE 删除权限 , TOKEN_ALLOW_LIST 列表权限, TOKEN_ALLOW_IOP 图片处理权限, TOKEN_DENY_UPDATE 禁止覆盖权限]。默认TOKEN_ALLOW_NONE
      *
      * @return string[]|null
      */
@@ -99,7 +99,7 @@ class CreateUFileTokenRequest extends Request
     }
 
     /**
-     * AllowedOps: 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP  ]。默认TOKEN_ALLOW_NONE
+     * AllowedOps: 令牌允许执行的操作[ TOKEN_ALLOW_NONE 没有权限, TOKEN_ALLOW_READ 下载权限 , TOKEN_ALLOW_WRITE 上传权限 , TOKEN_ALLOW_DELETE 删除权限 , TOKEN_ALLOW_LIST 列表权限, TOKEN_ALLOW_IOP 图片处理权限, TOKEN_DENY_UPDATE 禁止覆盖权限]。默认TOKEN_ALLOW_NONE
      *
      * @param string[] $allowedOps
      */
@@ -166,5 +166,45 @@ class CreateUFileTokenRequest extends Request
     public function setExpireTime($expireTime)
     {
         $this->set("ExpireTime", $expireTime);
+    }
+
+    /**
+     * BlackIPList: 令牌黑名单，支持ipv4，ipv6格式。
+     *
+     * @return string[]|null
+     */
+    public function getBlackIPList()
+    {
+        return $this->get("BlackIPList");
+    }
+
+    /**
+     * BlackIPList: 令牌黑名单，支持ipv4，ipv6格式。
+     *
+     * @param string[] $blackIPList
+     */
+    public function setBlackIPList(array $blackIPList)
+    {
+        $this->set("BlackIPList", $blackIPList);
+    }
+
+    /**
+     * WhiteIPList: 令牌白名单，支持ipv4，ipv6格式。
+     *
+     * @return string[]|null
+     */
+    public function getWhiteIPList()
+    {
+        return $this->get("WhiteIPList");
+    }
+
+    /**
+     * WhiteIPList: 令牌白名单，支持ipv4，ipv6格式。
+     *
+     * @param string[] $whiteIPList
+     */
+    public function setWhiteIPList(array $whiteIPList)
+    {
+        $this->set("WhiteIPList", $whiteIPList);
     }
 }

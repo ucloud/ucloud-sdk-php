@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -209,5 +209,25 @@ class CreateUFileLifeCycleRequest extends Request
     public function setIADays($iaDays)
     {
         $this->set("IADays", $iaDays);
+    }
+
+    /**
+     * Tags: Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，单个object的tag的最大数量为10
+     *
+     * @return string|null
+     */
+    public function getTags()
+    {
+        return $this->get("Tags");
+    }
+
+    /**
+     * Tags: Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，单个object的tag的最大数量为10
+     *
+     * @param string $tags
+     */
+    public function setTags($tags)
+    {
+        $this->set("Tags", $tags);
     }
 }

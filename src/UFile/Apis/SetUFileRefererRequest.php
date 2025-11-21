@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,7 +130,7 @@ class SetUFileRefererRequest extends Request
     }
 
     /**
-     * RefererType: 防盗链Referer类型，支持两种类型，黑名单和白名单; 1黑名单，2白名单；RefererStatus为"on"时此参数必填；
+     * RefererType: 防盗链Referer类型，支持三种类型，1代表设置黑名单、2代表设置白名单，3代表同时设置黑白名单; （其中1和2是为了向前兼容，后续调用只应该传递类型3）RefererStatus为"on"时此参数必填；
      *
      * @return integer|null
      */
@@ -140,7 +140,7 @@ class SetUFileRefererRequest extends Request
     }
 
     /**
-     * RefererType: 防盗链Referer类型，支持两种类型，黑名单和白名单; 1黑名单，2白名单；RefererStatus为"on"时此参数必填；
+     * RefererType: 防盗链Referer类型，支持三种类型，1代表设置黑名单、2代表设置白名单，3代表同时设置黑白名单; （其中1和2是为了向前兼容，后续调用只应该传递类型3）RefererStatus为"on"时此参数必填；
      *
      * @param int $refererType
      */
@@ -150,7 +150,7 @@ class SetUFileRefererRequest extends Request
     }
 
     /**
-     * Referers: 防盗链Referer规则，支持正则表达式（不支持符号';')
+     * Referers: 防盗链Referer规则，支持正则表达式（不支持符号';')，该字段已弃用，请使用WhiteList.n或BlackList.n
      *
      * @return string[]|null
      */
@@ -160,12 +160,52 @@ class SetUFileRefererRequest extends Request
     }
 
     /**
-     * Referers: 防盗链Referer规则，支持正则表达式（不支持符号';')
+     * Referers: 防盗链Referer规则，支持正则表达式（不支持符号';')，该字段已弃用，请使用WhiteList.n或BlackList.n
      *
      * @param string[] $referers
      */
     public function setReferers(array $referers)
     {
         $this->set("Referers", $referers);
+    }
+
+    /**
+     * WhiteList: 白名单列表中的一项
+     *
+     * @return string[]|null
+     */
+    public function getWhiteList()
+    {
+        return $this->get("WhiteList");
+    }
+
+    /**
+     * WhiteList: 白名单列表中的一项
+     *
+     * @param string[] $whiteList
+     */
+    public function setWhiteList(array $whiteList)
+    {
+        $this->set("WhiteList", $whiteList);
+    }
+
+    /**
+     * BlackList: 黑名单列表中的一项
+     *
+     * @return string[]|null
+     */
+    public function getBlackList()
+    {
+        return $this->get("BlackList");
+    }
+
+    /**
+     * BlackList: 黑名单列表中的一项
+     *
+     * @param string[] $blackList
+     */
+    public function setBlackList(array $blackList)
+    {
+        $this->set("BlackList", $blackList);
     }
 }

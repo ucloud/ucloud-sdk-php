@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2025 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,46 @@ use UCloud\Core\Response\Response;
 class LifeCycleItem extends Response
 {
     
+
+    /**
+     * MinSize: 文件的最小size
+     *
+     * @return string|null
+     */
+    public function getMinSize()
+    {
+        return $this->get("MinSize");
+    }
+
+    /**
+     * MinSize: 文件的最小size
+     *
+     * @param string $minSize
+     */
+    public function setMinSize($minSize)
+    {
+        $this->set("MinSize", $minSize);
+    }
+
+    /**
+     * MaxSize: 文件的最大size
+     *
+     * @return string|null
+     */
+    public function getMaxSize()
+    {
+        return $this->get("MaxSize");
+    }
+
+    /**
+     * MaxSize: 文件的最大size
+     *
+     * @param string $maxSize
+     */
+    public function setMaxSize($maxSize)
+    {
+        $this->set("MaxSize", $maxSize);
+    }
 
     /**
      * LifeCycleId: 生命周期Id
