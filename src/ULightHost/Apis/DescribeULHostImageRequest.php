@@ -1,0 +1,250 @@
+<?php
+/**
+ * Copyright 2025 UCloud Technology Co., Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+namespace UCloud\ULightHost\Apis;
+
+use UCloud\Core\Request\Request;
+
+class DescribeULHostImageRequest extends Request
+{
+    public function __construct()
+    {
+        parent::__construct(["Action" => "DescribeULHostImage"]);
+        $this->markRequired("Region");
+    }
+
+    
+
+    /**
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @return string|null
+     */
+    public function getRegion()
+    {
+        return $this->get("Region");
+    }
+
+    /**
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @param string $region
+     */
+    public function setRegion($region)
+    {
+        $this->set("Region", $region);
+    }
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
+    }
+
+    /**
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *
+     * @return string|null
+     */
+    public function getProjectId()
+    {
+        return $this->get("ProjectId");
+    }
+
+    /**
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *
+     * @param string $projectId
+     */
+    public function setProjectId($projectId)
+    {
+        $this->set("ProjectId", $projectId);
+    }
+
+    /**
+     * ImageType: 镜像类型。标准镜像：Base，应用镜像：App， 自定义镜像：Custom，默认返回所有类型
+     *
+     * @return string|null
+     */
+    public function getImageType()
+    {
+        return $this->get("ImageType");
+    }
+
+    /**
+     * ImageType: 镜像类型。标准镜像：Base，应用镜像：App， 自定义镜像：Custom，默认返回所有类型
+     *
+     * @param string $imageType
+     */
+    public function setImageType($imageType)
+    {
+        $this->set("ImageType", $imageType);
+    }
+
+    /**
+     * Scene: 使用场景，当ImageType为"App"时生效。- Normal 常规专区- CrossBorder 跨境专区默认返回所有
+     *
+     * @return string|null
+     */
+    public function getScene()
+    {
+        return $this->get("Scene");
+    }
+
+    /**
+     * Scene: 使用场景，当ImageType为"App"时生效。- Normal 常规专区- CrossBorder 跨境专区默认返回所有
+     *
+     * @param string $scene
+     */
+    public function setScene($scene)
+    {
+        $this->set("Scene", $scene);
+    }
+
+    /**
+     * OsType: 操作系统类型：Linux， Windows 默认返回所有类型
+     *
+     * @return string|null
+     */
+    public function getOsType()
+    {
+        return $this->get("OsType");
+    }
+
+    /**
+     * OsType: 操作系统类型：Linux， Windows 默认返回所有类型
+     *
+     * @param string $osType
+     */
+    public function setOsType($osType)
+    {
+        $this->set("OsType", $osType);
+    }
+
+    /**
+     * ImageId: 镜像Id
+     *
+     * @return string|null
+     */
+    public function getImageId()
+    {
+        return $this->get("ImageId");
+    }
+
+    /**
+     * ImageId: 镜像Id
+     *
+     * @param string $imageId
+     */
+    public function setImageId($imageId)
+    {
+        $this->set("ImageId", $imageId);
+    }
+
+    /**
+     * ImageIds: 镜像Id列表
+     *
+     * @return string[]|null
+     */
+    public function getImageIds()
+    {
+        return $this->get("ImageIds");
+    }
+
+    /**
+     * ImageIds: 镜像Id列表
+     *
+     * @param string[] $imageIds
+     */
+    public function setImageIds(array $imageIds)
+    {
+        $this->set("ImageIds", $imageIds);
+    }
+
+    /**
+     * Tag: 业务组Id。默认：Default
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->get("Tag");
+    }
+
+    /**
+     * Tag: 业务组Id。默认：Default
+     *
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->set("Tag", $tag);
+    }
+
+    /**
+     * Offset: 列表起始位置偏移量，默认为0
+     *
+     * @return integer|null
+     */
+    public function getOffset()
+    {
+        return $this->get("Offset");
+    }
+
+    /**
+     * Offset: 列表起始位置偏移量，默认为0
+     *
+     * @param int $offset
+     */
+    public function setOffset($offset)
+    {
+        $this->set("Offset", $offset);
+    }
+
+    /**
+     * Limit: 返回数据长度，默认为20
+     *
+     * @return integer|null
+     */
+    public function getLimit()
+    {
+        return $this->get("Limit");
+    }
+
+    /**
+     * Limit: 返回数据长度，默认为20
+     *
+     * @param int $limit
+     */
+    public function setLimit($limit)
+    {
+        $this->set("Limit", $limit);
+    }
+}
