@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,5 +100,45 @@ class UpdateListenerAttributeParamHealthCheckConfig extends Request
     public function setPath($path)
     {
         $this->set("Path", $path);
+    }
+
+    /**
+     * Method: （应用型专用）HTTP检查方法。只支持GET和HEAD。
+     *
+     * @return string|null
+     */
+    public function getMethod()
+    {
+        return $this->get("Method");
+    }
+
+    /**
+     * Method: （应用型专用）HTTP检查方法。只支持GET和HEAD。
+     *
+     * @param string $method
+     */
+    public function setMethod($method)
+    {
+        $this->set("Method", $method);
+    }
+
+    /**
+     * ResponseCode: （应用型专用）GRPC检查响应码
+     *
+     * @return string|null
+     */
+    public function getResponseCode()
+    {
+        return $this->get("ResponseCode");
+    }
+
+    /**
+     * ResponseCode: （应用型专用）GRPC检查响应码
+     *
+     * @param string $responseCode
+     */
+    public function setResponseCode($responseCode)
+    {
+        $this->set("ResponseCode", $responseCode);
     }
 }

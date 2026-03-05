@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ use UCloud\ULB\Models\FixedResponseConfigSet;
 use UCloud\ULB\Models\InsertHeaderConfigSet;
 use UCloud\ULB\Models\CorsConfigSet;
 use UCloud\ULB\Models\RemoveHeaderConfigSet;
+use UCloud\ULB\Models\SecGroupInfo;
 
 class DescribeLoadBalancersResponse extends Response
 {

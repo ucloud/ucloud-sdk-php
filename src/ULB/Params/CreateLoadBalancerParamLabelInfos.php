@@ -14,51 +14,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\ULB\Models;
+namespace UCloud\ULB\Params;
 
-use UCloud\Core\Response\Response;
+use UCloud\Core\Request\Request;
 
-class ForwardTargetSet extends Response
+class CreateLoadBalancerParamLabelInfos extends Request
 {
     
 
     /**
-     * Id: 服务节点的标识ID
+     * Key: 标签键
      *
      * @return string|null
      */
-    public function getId()
+    public function getKey()
     {
-        return $this->get("Id");
+        return $this->get("Key");
     }
 
     /**
-     * Id: 服务节点的标识ID
+     * Key: 标签键
      *
-     * @param string $id
+     * @param string $key
      */
-    public function setId($id)
+    public function setKey($key)
     {
-        $this->set("Id", $id);
+        $this->set("Key", $key);
     }
 
     /**
-     * Weight: 权重。仅监听器负载均衡算法是加权轮询是有效；取值范围[1-100]，默认值为1
+     * Value: 标签值
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getWeight()
+    public function getValue()
     {
-        return $this->get("Weight");
+        return $this->get("Value");
     }
 
     /**
-     * Weight: 权重。仅监听器负载均衡算法是加权轮询是有效；取值范围[1-100]，默认值为1
+     * Value: 标签值
      *
-     * @param int $weight
+     * @param string $value
      */
-    public function setWeight($weight)
+    public function setValue($value)
     {
-        $this->set("Weight", $weight);
+        $this->set("Value", $value);
     }
 }

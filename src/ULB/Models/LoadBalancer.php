@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -404,5 +404,37 @@ class LoadBalancer extends Response
     public function setAutoRenewEnabled($autoRenewEnabled)
     {
         $this->set("AutoRenewEnabled", $autoRenewEnabled);
+    }
+
+    /**
+     * SecGroup: 安全组信息
+     *
+     * @return SecGroupInfo[]|null
+     */
+    public function getSecGroup()
+    {
+        $items = $this->get("SecGroup");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new SecGroupInfo($item));
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroup: 安全组信息
+     *
+     * @param SecGroupInfo[] $secGroup
+     */
+    public function setSecGroup(array $secGroup)
+    {
+        $result = [];
+        foreach ($secGroup as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }
