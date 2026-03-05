@@ -14,51 +14,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\ULB\Models;
+namespace UCloud\ULB\Params;
 
-use UCloud\Core\Response\Response;
+use UCloud\Core\Request\Request;
 
-class ForwardTargetSet extends Response
+class CreateLoadBalancerParamSecGroups extends Request
 {
     
 
     /**
-     * Id: 服务节点的标识ID
+     * SecGroupId: 安全组id
      *
      * @return string|null
      */
-    public function getId()
+    public function getSecGroupId()
     {
-        return $this->get("Id");
+        return $this->get("SecGroupId");
     }
 
     /**
-     * Id: 服务节点的标识ID
+     * SecGroupId: 安全组id
      *
-     * @param string $id
+     * @param string $secGroupId
      */
-    public function setId($id)
+    public function setSecGroupId($secGroupId)
     {
-        $this->set("Id", $id);
+        $this->set("SecGroupId", $secGroupId);
     }
 
     /**
-     * Weight: 权重。仅监听器负载均衡算法是加权轮询是有效；取值范围[1-100]，默认值为1
+     * Priority: 安全组优先级
      *
      * @return integer|null
      */
-    public function getWeight()
+    public function getPriority()
     {
-        return $this->get("Weight");
+        return $this->get("Priority");
     }
 
     /**
-     * Weight: 权重。仅监听器负载均衡算法是加权轮询是有效；取值范围[1-100]，默认值为1
+     * Priority: 安全组优先级
      *
-     * @param int $weight
+     * @param int $priority
      */
-    public function setWeight($weight)
+    public function setPriority($priority)
     {
-        $this->set("Weight", $weight);
+        $this->set("Priority", $priority);
     }
 }

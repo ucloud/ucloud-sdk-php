@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ class UpdateListenerAttributeParamStickinessConfig extends Request
     }
 
     /**
-     * Type: （应用型专用）Cookie处理方式。限定枚举值："ServerInsert" / "UserDefined"，默认值为：“ServerInsert”
+     * Type: （应用型专用）Cookie处理方式。限定枚举值："ServerInsert" / "UserDefined"，不传值则不修改
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class UpdateListenerAttributeParamStickinessConfig extends Request
     }
 
     /**
-     * Type: （应用型专用）Cookie处理方式。限定枚举值："ServerInsert" / "UserDefined"，默认值为：“ServerInsert”
+     * Type: （应用型专用）Cookie处理方式。限定枚举值："ServerInsert" / "UserDefined"，不传值则不修改
      *
      * @param string $type
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -299,9 +299,11 @@ class ULBClient extends Client
      *     ]
      *     "HealthCheckConfig" => (object) [
      *         "Enabled" => (boolean) 是否开启健康检查功能。暂时不支持关闭。默认值为：true
-     *         "Type" => (string) 健康检查方式。应用型限定取值：“Port”/"HTTP"，默认值：“Port”
+     *         "Type" => (string) 健康检查方式。应用型限定取值：“Port”/"HTTP/GRPC"，默认值：“Port”
      *         "Domain" => (string) （应用型专用）HTTP检查域名
      *         "Path" => (string) （应用型专用）HTTP检查路径
+     *         "Method" => (string) （应用型专用）HTTP检查方法。只支持GET和HEAD。
+     *         "ResponseCode" => (string) （应用型专用）GRPC检查响应码
      *     ]
      *     "CompressionEnabled" => (boolean) （应用型专用）是否开启数据压缩功能。目前只支持使用gzip对特定文件类型进行压缩。默认值为：false
      *     "HTTP2Enabled" => (boolean) （应用型专用）是否开启HTTP/2特性。仅HTTPS监听支持开启；默认值为：false
@@ -343,6 +345,18 @@ class ULBClient extends Client
      *     "IPVersion" => (string) 负载均衡实例的IP协议。限定枚举值："IPv4" / "IPv6"/"DualStack"，默认值为：“IPv4”
      *     "ChargeType" => (string) 付费模式。限定枚举值："Year" / "Month"/"Day"/"Dynamic"，默认值为：“Month”
      *     "Quantity" => (integer) 购买的时长, 默认: 1; 0-> 购买至月末(0只在月付费有效，其余付费模式传0，实际收费按一个周期计费)
+     *     "SecGroups" => (array<object>) [
+     *         [
+     *             "SecGroupId" => (string) 安全组id
+     *             "Priority" => (integer) 安全组优先级
+     *         ]
+     *     ]
+     *     "LabelInfos" => (array<object>) [
+     *         [
+     *             "Key" => (string) 标签键
+     *             "Value" => (string) 标签值
+     *         ]
+     *     ]
      *     "CouponId" => (string) 代金券code
      * ]
      *
@@ -917,6 +931,8 @@ class ULBClient extends Client
      *                 "Type" => (string) 健康检查方式。应用型限定取值： Port -> 端口检查；HTTP -> HTTP检查； 默认值：Port
      *                 "Domain" => (string) （应用型专用）HTTP检查域名。 当Type为HTTP时，此字段有意义，代表HTTP检查域名
      *                 "Path" => (string) （应用型专用）HTTP检查路径。当Type为HTTP时，此字段有意义，代表HTTP检查路径
+     *                 "Method" => (string) （应用型专用）HTTP检查方法。当Type为HTTP时，此字段有意义，代表HTTP检查方法
+     *                 "ResponseCode" => (string) （应用型专用）GRPC检查响应码。当Type为GRPC时，此字段有意义，代表GRPC检查响应码
      *             ]
      *             "CompressionEnabled" => (boolean) （应用型专用）是否开启数据压缩功能。目前只支持使用gzip对特定文件类型进行压缩
      *             "HTTP2Enabled" => (boolean) （应用型专用）是否开启HTTP/2特性。仅HTTPS监听支持开启
@@ -1088,6 +1104,8 @@ class ULBClient extends Client
      *                         "Type" => (string) 健康检查方式。应用型限定取值： Port -> 端口检查；HTTP -> HTTP检查； 默认值：Port
      *                         "Domain" => (string) （应用型专用）HTTP检查域名。 当Type为HTTP时，此字段有意义，代表HTTP检查域名
      *                         "Path" => (string) （应用型专用）HTTP检查路径。当Type为HTTP时，此字段有意义，代表HTTP检查路径
+     *                         "Method" => (string) （应用型专用）HTTP检查方法。当Type为HTTP时，此字段有意义，代表HTTP检查方法
+     *                         "ResponseCode" => (string) （应用型专用）GRPC检查响应码。当Type为GRPC时，此字段有意义，代表GRPC检查响应码
      *                     ]
      *                     "CompressionEnabled" => (boolean) （应用型专用）是否开启数据压缩功能。目前只支持使用gzip对特定文件类型进行压缩
      *                     "HTTP2Enabled" => (boolean) （应用型专用）是否开启HTTP/2特性。仅HTTPS监听支持开启
@@ -1167,6 +1185,14 @@ class ULBClient extends Client
      *             ]
      *             "Status" => (string) lb状态：Normal-正常；Arrears-欠费停服
      *             "AutoRenewEnabled" => (boolean) 是否开启自动续费
+     *             "SecGroup" => (array<object>) 安全组信息[
+     *                 [
+     *                     "SecgroupId" => (string) 安全组id
+     *                     "Name" => (string) 安全组名称
+     *                     "VPCId" => (string) 安全组所属vpc id
+     *                     "Priority" => (integer) 优先级
+     *                 ]
+     *             ]
      *         ]
      *     ]
      * ]
@@ -2077,7 +2103,7 @@ class ULBClient extends Client
      *     "Scheduler" => (string) 负载均衡算法。应用型限定取值："Roundrobin"/"Source"/"WeightRoundrobin"/" Leastconn"/"Backup"
      *     "StickinessConfig" => (object) [
      *         "Enabled" => (boolean) 是否开启会话保持功能。应用型负载均衡实例基于Cookie实现，网络型负载均衡则基于源IP，保证在对应的空闲超时时间内，同一个源IP送到同一个服务节点。默认值为：false
-     *         "Type" => (string) （应用型专用）Cookie处理方式。限定枚举值："ServerInsert" / "UserDefined"，默认值为：“ServerInsert”
+     *         "Type" => (string) （应用型专用）Cookie处理方式。限定枚举值："ServerInsert" / "UserDefined"，不传值则不修改
      *         "CookieName" => (string) （应用型专用）自定义Cookie。当StickinessType取值"UserDefined"时有效；限定字符长度：[0-255]
      *     ]
      *     "HealthCheckConfig" => (object) [
@@ -2085,6 +2111,8 @@ class ULBClient extends Client
      *         "Type" => (string) 健康检查方式。应用型限定取值：“Port”/"HTTP"；默认值：“Port”
      *         "Domain" => (string) （应用型专用）HTTP检查域名
      *         "Path" => (string) （应用型专用）HTTP检查路径
+     *         "Method" => (string) （应用型专用）HTTP检查方法。只支持GET和HEAD。
+     *         "ResponseCode" => (string) （应用型专用）GRPC检查响应码
      *     ]
      *     "CompressionEnabled" => (boolean) （应用型专用）是否开启数据压缩功能。目前只支持使用gzip对特定文件类型进行压缩
      *     "HTTP2Enabled" => (boolean) （应用型专用）是否开启HTTP/2特性。仅HTTPS监听支持开启

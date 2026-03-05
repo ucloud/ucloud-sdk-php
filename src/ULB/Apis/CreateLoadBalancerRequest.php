@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@
 namespace UCloud\ULB\Apis;
 
 use UCloud\Core\Request\Request;
+use UCloud\ULB\Params\CreateLoadBalancerParamSecGroups;
+use UCloud\ULB\Params\CreateLoadBalancerParamLabelInfos;
 
 class CreateLoadBalancerRequest extends Request
 {
@@ -249,6 +251,70 @@ class CreateLoadBalancerRequest extends Request
     public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
+    }
+
+    /**
+     * SecGroups:
+     *
+     * @return CreateLoadBalancerParamSecGroups[]|null
+     */
+    public function getSecGroups()
+    {
+        $items = $this->get("SecGroups");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateLoadBalancerParamSecGroups($item));
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroups:
+     *
+     * @param CreateLoadBalancerParamSecGroups[] $secGroups
+     */
+    public function setSecGroups(array $secGroups)
+    {
+        $result = [];
+        foreach ($secGroups as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * LabelInfos:
+     *
+     * @return CreateLoadBalancerParamLabelInfos[]|null
+     */
+    public function getLabelInfos()
+    {
+        $items = $this->get("LabelInfos");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateLoadBalancerParamLabelInfos($item));
+        }
+        return $result;
+    }
+
+    /**
+     * LabelInfos:
+     *
+     * @param CreateLoadBalancerParamLabelInfos[] $labelInfos
+     */
+    public function setLabelInfos(array $labelInfos)
+    {
+        $result = [];
+        foreach ($labelInfos as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
