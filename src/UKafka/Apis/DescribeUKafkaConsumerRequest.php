@@ -1,0 +1,154 @@
+<?php
+/**
+ * Copyright 2026 UCloud Technology Co., Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+namespace UCloud\UKafka\Apis;
+
+use UCloud\Core\Request\Request;
+
+class DescribeUKafkaConsumerRequest extends Request
+{
+    public function __construct()
+    {
+        parent::__construct(["Action" => "DescribeUKafkaConsumer"]);
+        $this->markRequired("Region");
+        $this->markRequired("Zone");
+        $this->markRequired("ClusterInstanceId");
+        $this->markRequired("ConsumerGroup");
+        $this->markRequired("Type");
+    }
+
+    
+
+    /**
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @return string|null
+     */
+    public function getRegion()
+    {
+        return $this->get("Region");
+    }
+
+    /**
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @param string $region
+     */
+    public function setRegion($region)
+    {
+        $this->set("Region", $region);
+    }
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
+    }
+
+    /**
+     * ProjectId: 项目 ID。不填写为默认项目，子帐号必须填写。 请参考 [GetProjectList 接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *
+     * @return string|null
+     */
+    public function getProjectId()
+    {
+        return $this->get("ProjectId");
+    }
+
+    /**
+     * ProjectId: 项目 ID。不填写为默认项目，子帐号必须填写。 请参考 [GetProjectList 接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *
+     * @param string $projectId
+     */
+    public function setProjectId($projectId)
+    {
+        $this->set("ProjectId", $projectId);
+    }
+
+    /**
+     * ClusterInstanceId: Kafka 集群 ID
+     *
+     * @return string|null
+     */
+    public function getClusterInstanceId()
+    {
+        return $this->get("ClusterInstanceId");
+    }
+
+    /**
+     * ClusterInstanceId: Kafka 集群 ID
+     *
+     * @param string $clusterInstanceId
+     */
+    public function setClusterInstanceId($clusterInstanceId)
+    {
+        $this->set("ClusterInstanceId", $clusterInstanceId);
+    }
+
+    /**
+     * ConsumerGroup: 消费组组名
+     *
+     * @return string|null
+     */
+    public function getConsumerGroup()
+    {
+        return $this->get("ConsumerGroup");
+    }
+
+    /**
+     * ConsumerGroup: 消费组组名
+     *
+     * @param string $consumerGroup
+     */
+    public function setConsumerGroup($consumerGroup)
+    {
+        $this->set("ConsumerGroup", $consumerGroup);
+    }
+
+    /**
+     * Type: 消费者组类型（同消费者组列表返回的类型值）
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->get("Type");
+    }
+
+    /**
+     * Type: 消费者组类型（同消费者组列表返回的类型值）
+     *
+     * @param string $type
+     */
+    public function setType($type)
+    {
+        $this->set("Type", $type);
+    }
+}
