@@ -135,7 +135,7 @@ class AddUKafkaInstanceNodeRequest extends Request
     /**
      * NodeCount: 新添加节点数量
      *
-     * @return integer|null
+     * @return string|null
      */
     public function getNodeCount()
     {
@@ -145,7 +145,7 @@ class AddUKafkaInstanceNodeRequest extends Request
     /**
      * NodeCount: 新添加节点数量
      *
-     * @param int $nodeCount
+     * @param string $nodeCount
      */
     public function setNodeCount($nodeCount)
     {

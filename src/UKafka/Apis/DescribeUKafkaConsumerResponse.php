@@ -65,7 +65,7 @@ class DescribeUKafkaConsumerResponse extends Response
     /**
      * Topics: 消费者组所订阅 topic 信息
      *
-     * @return string|null
+     * @return string[]|null
      */
     public function getTopics()
     {
@@ -75,9 +75,9 @@ class DescribeUKafkaConsumerResponse extends Response
     /**
      * Topics: 消费者组所订阅 topic 信息
      *
-     * @param string $topics
+     * @param string[] $topics
      */
-    public function setTopics($topics)
+    public function setTopics(array $topics)
     {
         $this->set("Topics", $topics);
     }

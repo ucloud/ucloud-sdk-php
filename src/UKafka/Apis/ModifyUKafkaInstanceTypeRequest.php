@@ -112,7 +112,7 @@ class ModifyUKafkaInstanceTypeRequest extends Request
     }
 
     /**
-     * NodeType: 目标机型，支持的机型可通过GetUKafkaNodeType 接口返回的InstanceTypeSet[].InstanceTypeName
+     * NodeType: 目标机型，支持的机型可通过GetUKafkaNodeType 接口返回的InstanceTypeSet[].InstanceTypeName。仅升级CPU 和内存
      *
      * @return string|null
      */
@@ -122,7 +122,7 @@ class ModifyUKafkaInstanceTypeRequest extends Request
     }
 
     /**
-     * NodeType: 目标机型，支持的机型可通过GetUKafkaNodeType 接口返回的InstanceTypeSet[].InstanceTypeName
+     * NodeType: 目标机型，支持的机型可通过GetUKafkaNodeType 接口返回的InstanceTypeSet[].InstanceTypeName。仅升级CPU 和内存
      *
      * @param string $nodeType
      */

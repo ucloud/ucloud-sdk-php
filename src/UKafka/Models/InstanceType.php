@@ -121,4 +121,64 @@ class InstanceType extends Response
     {
         $this->set("Memory", $memory);
     }
+
+    /**
+     * MaxDiskSize: 机型最大支持磁盘大小
+     *
+     * @return integer|null
+     */
+    public function getMaxDiskSize()
+    {
+        return $this->get("MaxDiskSize");
+    }
+
+    /**
+     * MaxDiskSize: 机型最大支持磁盘大小
+     *
+     * @param int $maxDiskSize
+     */
+    public function setMaxDiskSize($maxDiskSize)
+    {
+        $this->set("MaxDiskSize", $maxDiskSize);
+    }
+
+    /**
+     * MinDiskSize: 机型最小支持磁盘大小
+     *
+     * @return integer|null
+     */
+    public function getMinDiskSize()
+    {
+        return $this->get("MinDiskSize");
+    }
+
+    /**
+     * MinDiskSize: 机型最小支持磁盘大小
+     *
+     * @param int $minDiskSize
+     */
+    public function setMinDiskSize($minDiskSize)
+    {
+        $this->set("MinDiskSize", $minDiskSize);
+    }
+
+    /**
+     * IsOpenSecGroup: 该机型是否支持安全组
+     *
+     * @return boolean|null
+     */
+    public function getIsOpenSecGroup()
+    {
+        return $this->get("IsOpenSecGroup");
+    }
+
+    /**
+     * IsOpenSecGroup: 该机型是否支持安全组
+     *
+     * @param boolean $isOpenSecGroup
+     */
+    public function setIsOpenSecGroup($isOpenSecGroup)
+    {
+        $this->set("IsOpenSecGroup", $isOpenSecGroup);
+    }
 }

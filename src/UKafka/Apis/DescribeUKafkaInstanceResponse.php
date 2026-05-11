@@ -31,7 +31,7 @@ class DescribeUKafkaInstanceResponse extends Response
     
 
     /**
-     * ClusterSet: 集群信息列表
+     * ClusterSet: 实例信息列表
      *
      * @return ClusterInfo[]|null
      */
@@ -49,7 +49,7 @@ class DescribeUKafkaInstanceResponse extends Response
     }
 
     /**
-     * ClusterSet: 集群信息列表
+     * ClusterSet: 实例信息列表
      *
      * @param ClusterInfo[] $clusterSet
      */

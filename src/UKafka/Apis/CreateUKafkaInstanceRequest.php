@@ -217,7 +217,7 @@ class CreateUKafkaInstanceRequest extends Request
     }
 
     /**
-     * InstanceName: 实例名，可自定义
+     * InstanceName: 实例名，可自定义。只能包含中英文、数字以及- _ .
      *
      * @return string|null
      */
@@ -227,7 +227,7 @@ class CreateUKafkaInstanceRequest extends Request
     }
 
     /**
-     * InstanceName: 实例名，可自定义
+     * InstanceName: 实例名，可自定义。只能包含中英文、数字以及- _ .
      *
      * @param string $instanceName
      */
@@ -277,7 +277,7 @@ class CreateUKafkaInstanceRequest extends Request
     }
 
     /**
-     * NodeCount: 集群节点数量。默认 3 节点
+     * NodeCount: 实例节点数量。默认 3 节点
      *
      * @return integer|null
      */
@@ -287,7 +287,7 @@ class CreateUKafkaInstanceRequest extends Request
     }
 
     /**
-     * NodeCount: 集群节点数量。默认 3 节点
+     * NodeCount: 实例节点数量。默认 3 节点
      *
      * @param int $nodeCount
      */
