@@ -81,4 +81,24 @@ class Group extends Response
     {
         $this->set("NumOfTopics", $numOfTopics);
     }
+
+    /**
+     * GroupId: 消费者组资源ID
+     *
+     * @return string|null
+     */
+    public function getGroupId()
+    {
+        return $this->get("GroupId");
+    }
+
+    /**
+     * GroupId: 消费者组资源ID
+     *
+     * @param string $groupId
+     */
+    public function setGroupId($groupId)
+    {
+        $this->set("GroupId", $groupId);
+    }
 }

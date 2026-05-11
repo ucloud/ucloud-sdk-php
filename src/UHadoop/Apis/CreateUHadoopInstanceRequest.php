@@ -30,7 +30,7 @@ class CreateUHadoopInstanceRequest extends Request
         $this->markRequired("InstanceGroupConfigs");
         $this->markRequired("VPCId");
         $this->markRequired("SubnetId");
-        $this->markRequired("AppConfig");
+        $this->markRequired("AppConfigs");
         $this->markRequired("Framework");
     }
 
@@ -97,7 +97,7 @@ class CreateUHadoopInstanceRequest extends Request
     }
 
     /**
-     * Password: 集群机器的登录密码
+     * Password: 集群机器的登录密码,需要输入base64编码后的内容
      *
      * @return string|null
      */
@@ -107,7 +107,7 @@ class CreateUHadoopInstanceRequest extends Request
     }
 
     /**
-     * Password: 集群机器的登录密码
+     * Password: 集群机器的登录密码,需要输入base64编码后的内容
      *
      * @param string $password
      */
@@ -197,23 +197,23 @@ class CreateUHadoopInstanceRequest extends Request
     }
 
     /**
-     * AppConfig: 集群需要安装的组件，格式：组件#版本通过ListUHadoopFrameworkApp接口获取，例如：Spark#3.3.0
+     * AppConfigs: 集群需要安装的组件，格式：组件#版本通过ListUHadoopFrameworkApp接口获取，例如：Spark#3.3.0
      *
      * @return string[]|null
      */
-    public function getAppConfig()
+    public function getAppConfigs()
     {
-        return $this->get("AppConfig");
+        return $this->get("AppConfigs");
     }
 
     /**
-     * AppConfig: 集群需要安装的组件，格式：组件#版本通过ListUHadoopFrameworkApp接口获取，例如：Spark#3.3.0
+     * AppConfigs: 集群需要安装的组件，格式：组件#版本通过ListUHadoopFrameworkApp接口获取，例如：Spark#3.3.0
      *
-     * @param string[] $appConfig
+     * @param string[] $appConfigs
      */
-    public function setAppConfig(array $appConfig)
+    public function setAppConfigs(array $appConfigs)
     {
-        $this->set("AppConfig", $appConfig);
+        $this->set("AppConfigs", $appConfigs);
     }
 
     /**

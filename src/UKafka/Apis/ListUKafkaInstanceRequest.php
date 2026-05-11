@@ -24,6 +24,7 @@ class ListUKafkaInstanceRequest extends Request
     {
         parent::__construct(["Action" => "ListUKafkaInstance"]);
         $this->markRequired("Region");
+        $this->markRequired("Zone");
     }
 
     
@@ -129,26 +130,6 @@ class ListUKafkaInstanceRequest extends Request
     }
 
     /**
-     * Filter: 是否过滤删除了的节点，默认为‘true’
-     *
-     * @return string|null
-     */
-    public function getFilter()
-    {
-        return $this->get("Filter");
-    }
-
-    /**
-     * Filter: 是否过滤删除了的节点，默认为‘true’
-     *
-     * @param string $filter
-     */
-    public function setFilter($filter)
-    {
-        $this->set("Filter", $filter);
-    }
-
-    /**
      * VPCId: VPCId
      *
      * @return string|null
@@ -206,25 +187,5 @@ class ListUKafkaInstanceRequest extends Request
     public function setBusinessId($businessId)
     {
         $this->set("BusinessId", $businessId);
-    }
-
-    /**
-     * ClusterInstanceId: 实例ID
-     *
-     * @return string|null
-     */
-    public function getClusterInstanceId()
-    {
-        return $this->get("ClusterInstanceId");
-    }
-
-    /**
-     * ClusterInstanceId: 实例ID
-     *
-     * @param string $clusterInstanceId
-     */
-    public function setClusterInstanceId($clusterInstanceId)
-    {
-        $this->set("ClusterInstanceId", $clusterInstanceId);
     }
 }

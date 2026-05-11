@@ -17,29 +17,30 @@
 namespace UCloud\UKafka\Apis;
 
 use UCloud\Core\Response\Response;
+use UCloud\UKafka\Models\ClusterSet;
 
 class ListUKafkaInstanceResponse extends Response
 {
     
 
     /**
-     * ClusterSet: 信息
+     * ClusterSet: 实例信息
      *
-     * @return string|null
+     * @return ClusterSet|null
      */
     public function getClusterSet()
     {
-        return $this->get("ClusterSet");
+        return new ClusterSet($this->get("ClusterSet"));
     }
 
     /**
-     * ClusterSet: 信息
+     * ClusterSet: 实例信息
      *
-     * @param string $clusterSet
+     * @param ClusterSet $clusterSet
      */
-    public function setClusterSet($clusterSet)
+    public function setClusterSet(array $clusterSet)
     {
-        $this->set("ClusterSet", $clusterSet);
+        $this->set("ClusterSet", $clusterSet->getAll());
     }
 
     /**

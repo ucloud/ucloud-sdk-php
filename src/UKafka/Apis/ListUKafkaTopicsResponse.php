@@ -56,7 +56,7 @@ class ListUKafkaTopicsResponse extends Response
     }
 
     /**
-     * Length: 列表长度
+     * Length: topic 列表长度
      *
      * @return integer|null
      */
@@ -66,7 +66,7 @@ class ListUKafkaTopicsResponse extends Response
     }
 
     /**
-     * Length: 列表长度
+     * Length: topic 列表长度
      *
      * @param int $length
      */

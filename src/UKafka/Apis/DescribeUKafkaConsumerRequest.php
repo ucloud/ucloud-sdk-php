@@ -93,7 +93,7 @@ class DescribeUKafkaConsumerRequest extends Request
     }
 
     /**
-     * ClusterInstanceId: Kafka 集群 ID
+     * ClusterInstanceId: 实例 ID
      *
      * @return string|null
      */
@@ -103,7 +103,7 @@ class DescribeUKafkaConsumerRequest extends Request
     }
 
     /**
-     * ClusterInstanceId: Kafka 集群 ID
+     * ClusterInstanceId: 实例 ID
      *
      * @param string $clusterInstanceId
      */
