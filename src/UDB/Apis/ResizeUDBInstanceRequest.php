@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class ResizeUDBInstanceRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -42,7 +42,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -52,7 +52,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -72,7 +72,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -82,7 +82,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -112,7 +112,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/ 12000M/16000M/ 24000M/32000M/ 48000M/64000M/96000M/128000M/192000M/256000M/320000M。
+     * MemoryLimit: 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/ 12000M/16000M/ 24000M/32000M/ 48000M/64000M/96000M/128000M/192000M/256000M/320000M。
      *
      * @return integer|null
      */
@@ -122,7 +122,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/ 12000M/16000M/ 24000M/32000M/ 48000M/64000M/96000M/128000M/192000M/256000M/320000M。
+     * MemoryLimit: 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/ 12000M/16000M/ 24000M/32000M/ 48000M/64000M/96000M/128000M/192000M/256000M/320000M。
      *
      * @param int $memoryLimit
      */
@@ -152,27 +152,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * UseSSD: 是否使用SSD，默认为true
-     *
-     * @return boolean|null
-     */
-    public function getUseSSD()
-    {
-        return $this->get("UseSSD");
-    }
-
-    /**
-     * UseSSD: 是否使用SSD，默认为true
-     *
-     * @param boolean $useSSD
-     */
-    public function setUseSSD($useSSD)
-    {
-        $this->set("UseSSD", $useSSD);
-    }
-
-    /**
-     * SSDType: SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选
+     * SSDType: SSD类型，可选值为"SATA"、“NVMe”
      *
      * @return string|null
      */
@@ -182,33 +162,13 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * SSDType: SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选
+     * SSDType: SSD类型，可选值为"SATA"、“NVMe”
      *
      * @param string $ssdType
      */
     public function setSSDType($ssdType)
     {
         $this->set("SSDType", $ssdType);
-    }
-
-    /**
-     * UDBCId: 专区的ID，如果有值表示专区中的DB配置升降级
-     *
-     * @return string|null
-     */
-    public function getUDBCId()
-    {
-        return $this->get("UDBCId");
-    }
-
-    /**
-     * UDBCId: 专区的ID，如果有值表示专区中的DB配置升降级
-     *
-     * @param string $udbcId
-     */
-    public function setUDBCId($udbcId)
-    {
-        $this->set("UDBCId", $udbcId);
     }
 
     /**
@@ -269,6 +229,66 @@ class ResizeUDBInstanceRequest extends Request
     public function setStartAfterUpgrade($startAfterUpgrade)
     {
         $this->set("StartAfterUpgrade", $startAfterUpgrade);
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @return string|null
+     */
+    public function getSpecificationType()
+    {
+        return $this->get("SpecificationType");
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @param string $specificationType
+     */
+    public function setSpecificationType($specificationType)
+    {
+        $this->set("SpecificationType", $specificationType);
+    }
+
+    /**
+     * CPU: 数据库的CPU核数（只对普通版的SQLServer有用）
+     *
+     * @return integer|null
+     */
+    public function getCPU()
+    {
+        return $this->get("CPU");
+    }
+
+    /**
+     * CPU: 数据库的CPU核数（只对普通版的SQLServer有用）
+     *
+     * @param int $cpu
+     */
+    public function setCPU($cpu)
+    {
+        $this->set("CPU", $cpu);
     }
 
     /**

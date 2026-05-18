@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
+use UCloud\UDB\Params\CreateUDBInstanceParamLabels;
 
 class CreateUDBInstanceRequest extends Request
 {
@@ -31,13 +32,12 @@ class CreateUDBInstanceRequest extends Request
         $this->markRequired("Port");
         $this->markRequired("DiskSpace");
         $this->markRequired("ParamGroupId");
-        $this->markRequired("MemoryLimit");
     }
 
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -47,7 +47,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -57,7 +57,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -67,7 +67,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -77,7 +77,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -87,7 +87,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -137,7 +137,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * DBTypeId: DB类型id，mysql/mongodb/postgesql按版本细分 1：mysql-5.1，2：mysql-5.5，3：percona-5.5，4：mysql-5.6，5：percona-5.6，6：mysql-5.7，7：percona-5.7，8：mariadb-10.0，9：mongodb-2.4，10：mongodb-2.6，11：mongodb-3.0，12：mongodb-3.2,13：postgresql-9.4，14：postgresql-9.6，14：postgresql-10.4
+     * DBTypeId: DB类型，mysql/sqlserver按版本细分 mysql-8.0, mysql-5.6, percona-5.6, mysql-5.7, percona-5.7,  sqlserver-2017
      *
      * @return string|null
      */
@@ -147,7 +147,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * DBTypeId: DB类型id，mysql/mongodb/postgesql按版本细分 1：mysql-5.1，2：mysql-5.5，3：percona-5.5，4：mysql-5.6，5：percona-5.6，6：mysql-5.7，7：percona-5.7，8：mariadb-10.0，9：mongodb-2.4，10：mongodb-2.6，11：mongodb-3.0，12：mongodb-3.2,13：postgresql-9.4，14：postgresql-9.6，14：postgresql-10.4
+     * DBTypeId: DB类型，mysql/sqlserver按版本细分 mysql-8.0, mysql-5.6, percona-5.6, mysql-5.7, percona-5.7,  sqlserver-2017
      *
      * @param string $dbTypeId
      */
@@ -157,7 +157,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * Port: 端口号，mysql默认3306，mongodb默认27017，postgresql默认5432
+     * Port: 端口号，mysql默认3306，sqlserver默认1433
      *
      * @return integer|null
      */
@@ -167,7 +167,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * Port: 端口号，mysql默认3306，mongodb默认27017，postgresql默认5432
+     * Port: 端口号，mysql默认3306，sqlserver默认1433
      *
      * @param int $port
      */
@@ -217,7 +217,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
+     * MemoryLimit: 内存限制(MB)（待废弃，请通过指定MachineType和SpecificationType创建），目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      *
      * @return integer|null
      */
@@ -227,7 +227,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
+     * MemoryLimit: 内存限制(MB)（待废弃，请通过指定MachineType和SpecificationType创建），目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      *
      * @param int $memoryLimit
      */
@@ -377,27 +377,27 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * UseSSD: 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。
+     * InstanceType: 对于快杰机型，请使用最新的 SpecificationClass 和 StorageClass 字段进行创建。目前仅有少量地域支持 SATA_SSD 存储类型；若创建的是 SATA_SSD 机型，可通过该字段指定。字段说明：SATA_SSD：SATA SSD 机型（仅部分地域支持）NVMe_SSD：快杰机型
      *
-     * @return boolean|null
+     * @return string|null
      */
-    public function getUseSSD()
+    public function getInstanceType()
     {
-        return $this->get("UseSSD");
+        return $this->get("InstanceType");
     }
 
     /**
-     * UseSSD: 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。
+     * InstanceType: 对于快杰机型，请使用最新的 SpecificationClass 和 StorageClass 字段进行创建。目前仅有少量地域支持 SATA_SSD 存储类型；若创建的是 SATA_SSD 机型，可通过该字段指定。字段说明：SATA_SSD：SATA SSD 机型（仅部分地域支持）NVMe_SSD：快杰机型
      *
-     * @param boolean $useSSD
+     * @param string $instanceType
      */
-    public function setUseSSD($useSSD)
+    public function setInstanceType($instanceType)
     {
-        $this->set("UseSSD", $useSSD);
+        $this->set("InstanceType", $instanceType);
     }
 
     /**
-     * SSDType: SSD类型，可选值为"SATA"、“NVMe”，如果UseSSD为true ，则必选
+     * SSDType: 已废弃
      *
      * @return string|null
      */
@@ -407,7 +407,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * SSDType: SSD类型，可选值为"SATA"、“NVMe”，如果UseSSD为true ，则必选
+     * SSDType: 已废弃
      *
      * @param string $ssdType
      */
@@ -437,27 +437,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * UDBCId: 专区ID信息（如果这个参数存在这说明是在专区中创建DB）
-     *
-     * @return string|null
-     */
-    public function getUDBCId()
-    {
-        return $this->get("UDBCId");
-    }
-
-    /**
-     * UDBCId: 专区ID信息（如果这个参数存在这说明是在专区中创建DB）
-     *
-     * @param string $udbcId
-     */
-    public function setUDBCId($udbcId)
-    {
-        $this->set("UDBCId", $udbcId);
-    }
-
-    /**
-     * CPU: cpu核数
+     * CPU: cpu核数，如果db类型为sqlserver，必传参数
      *
      * @return integer|null
      */
@@ -467,7 +447,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * CPU: cpu核数
+     * CPU: cpu核数，如果db类型为sqlserver，必传参数
      *
      * @param int $cpu
      */
@@ -477,7 +457,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * BackupZone: 跨可用区高可用备库所在可用区，参见 [可用区列表](../summary/regionlist.html)
+     * BackupZone: 跨可用区高可用备库所在可用区，参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -487,7 +467,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * BackupZone: 跨可用区高可用备库所在可用区，参见 [可用区列表](../summary/regionlist.html)
+     * BackupZone: 跨可用区高可用备库所在可用区，参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $backupZone
      */
@@ -557,7 +537,7 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * ClusterRole: 当DB类型(DBTypeId)为mongodb时，需要指定mongo的角色，可选值为configsrv (配置节点)，shardsrv (数据节点)
+     * ClusterRole: 已废弃
      *
      * @return string|null
      */
@@ -567,33 +547,13 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * ClusterRole: 当DB类型(DBTypeId)为mongodb时，需要指定mongo的角色，可选值为configsrv (配置节点)，shardsrv (数据节点)
+     * ClusterRole: 已废弃
      *
      * @param string $clusterRole
      */
     public function setClusterRole($clusterRole)
     {
         $this->set("ClusterRole", $clusterRole);
-    }
-
-    /**
-     * HAArch: 高可用架构:1） haproxy（默认）: 当前仅支持mysql。2） sentinel: 基于vip和哨兵节点的架构，当前支持mysql和pg。
-     *
-     * @return string|null
-     */
-    public function getHAArch()
-    {
-        return $this->get("HAArch");
-    }
-
-    /**
-     * HAArch: 高可用架构:1） haproxy（默认）: 当前仅支持mysql。2） sentinel: 基于vip和哨兵节点的架构，当前支持mysql和pg。
-     *
-     * @param string $haArch
-     */
-    public function setHAArch($haArch)
-    {
-        $this->set("HAArch", $haArch);
     }
 
     /**
@@ -617,23 +577,215 @@ class CreateUDBInstanceRequest extends Request
     }
 
     /**
-     * EnableIpV6: 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true
+     * DBSubVersion: MySQL 小版本号，支持指定小版本进行创建，请通过 DescribeUDBType 接口获取可用版本。
      *
-     * @return boolean|null
+     * @return string|null
      */
-    public function getEnableIpV6()
+    public function getDBSubVersion()
     {
-        return $this->get("EnableIpV6");
+        return $this->get("DBSubVersion");
     }
 
     /**
-     * EnableIpV6: 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true
+     * DBSubVersion: MySQL 小版本号，支持指定小版本进行创建，请通过 DescribeUDBType 接口获取可用版本。
      *
-     * @param boolean $enableIpV6
+     * @param string $dbSubVersion
      */
-    public function setEnableIpV6($enableIpV6)
+    public function setDBSubVersion($dbSubVersion)
     {
-        $this->set("EnableIpV6", $enableIpV6);
+        $this->set("DBSubVersion", $dbSubVersion);
+    }
+
+    /**
+     * CaseSensitivityParam: mysql大小写参数, 0 为大小写敏感, 1 为大小写不敏感, 目前只针对mysql8.0有效
+     *
+     * @return integer|null
+     */
+    public function getCaseSensitivityParam()
+    {
+        return $this->get("CaseSensitivityParam");
+    }
+
+    /**
+     * CaseSensitivityParam: mysql大小写参数, 0 为大小写敏感, 1 为大小写不敏感, 目前只针对mysql8.0有效
+     *
+     * @param int $caseSensitivityParam
+     */
+    public function setCaseSensitivityParam($caseSensitivityParam)
+    {
+        $this->set("CaseSensitivityParam", $caseSensitivityParam);
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @return string|null
+     */
+    public function getSpecificationType()
+    {
+        return $this->get("SpecificationType");
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @param string $specificationType
+     */
+    public function setSpecificationType($specificationType)
+    {
+        $this->set("SpecificationType", $specificationType);
+    }
+
+    /**
+     * MachineType: 规格类型 ID，当 SpecificationType = 1 时生效，请通过 ListUDBMachineType 接口获取。
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 规格类型 ID，当 SpecificationType = 1 时生效，请通过 ListUDBMachineType 接口获取。
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
+    }
+
+    /**
+     * AlarmTemplateId: 告警模版id
+     *
+     * @return string|null
+     */
+    public function getAlarmTemplateId()
+    {
+        return $this->get("AlarmTemplateId");
+    }
+
+    /**
+     * AlarmTemplateId: 告警模版id
+     *
+     * @param string $alarmTemplateId
+     */
+    public function setAlarmTemplateId($alarmTemplateId)
+    {
+        $this->set("AlarmTemplateId", $alarmTemplateId);
+    }
+
+    /**
+     * BackupURL: 备份文件的US3内网下载地址
+     *
+     * @return string|null
+     */
+    public function getBackupURL()
+    {
+        return $this->get("BackupURL");
+    }
+
+    /**
+     * BackupURL: 备份文件的US3内网下载地址
+     *
+     * @param string $backupURL
+     */
+    public function setBackupURL($backupURL)
+    {
+        $this->set("BackupURL", $backupURL);
+    }
+
+    /**
+     * StorageClass: 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 ，该字段和SpecificationClass组合优先级比InstanceType字段高
+     *
+     * @return string|null
+     */
+    public function getStorageClass()
+    {
+        return $this->get("StorageClass");
+    }
+
+    /**
+     * StorageClass: 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 ，该字段和SpecificationClass组合优先级比InstanceType字段高
+     *
+     * @param string $storageClass
+     */
+    public function setStorageClass($storageClass)
+    {
+        $this->set("StorageClass", $storageClass);
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVMe型, OM: 共享型，N: 通用型
+     *
+     * @return string|null
+     */
+    public function getSpecificationClass()
+    {
+        return $this->get("SpecificationClass");
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVMe型, OM: 共享型，N: 通用型
+     *
+     * @param string $specificationClass
+     */
+    public function setSpecificationClass($specificationClass)
+    {
+        $this->set("SpecificationClass", $specificationClass);
+    }
+
+    /**
+     * SemisyncFlag: 半同步开启开关 1：表示开启半同步，2：表示关闭半同步，0：表示默认值，默认也是开启半同步
+     *
+     * @return integer|null
+     */
+    public function getSemisyncFlag()
+    {
+        return $this->get("SemisyncFlag");
+    }
+
+    /**
+     * SemisyncFlag: 半同步开启开关 1：表示开启半同步，2：表示关闭半同步，0：表示默认值，默认也是开启半同步
+     *
+     * @param int $semisyncFlag
+     */
+    public function setSemisyncFlag($semisyncFlag)
+    {
+        $this->set("SemisyncFlag", $semisyncFlag);
+    }
+
+    /**
+     * Labels:
+     *
+     * @return CreateUDBInstanceParamLabels[]|null
+     */
+    public function getLabels()
+    {
+        $items = $this->get("Labels");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUDBInstanceParamLabels($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Labels:
+     *
+     * @param CreateUDBInstanceParamLabels[] $labels
+     */
+    public function setLabels(array $labels)
+    {
+        $result = [];
+        foreach ($labels as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**

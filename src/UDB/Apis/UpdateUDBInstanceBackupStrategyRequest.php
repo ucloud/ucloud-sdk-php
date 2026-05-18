@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -50,7 +50,7 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -60,7 +60,7 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -70,7 +70,7 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -170,7 +170,7 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     }
 
     /**
-     * BackupMethod: 选择默认的备份方式，可选 snapshot 表示使用快照/物理备份，不填或者其它任何值为默认的逻辑备份。需要同时设置BackupDate字段。（注意现在只有SSD 版本的 MySQL实例支持物理备份）
+     * BackupMethod: 选择默认的备份方式，可选nobackup表示不备份， snapshot 表示使用快照备份，logic 表示使用逻辑备份。需要同时设置BackupDate字段。（快照备份即物理备份。SSD版本的mysql实例支持设置为snapshot，NVMe版本的mysql实例支持设置为xtrabackup）
      *
      * @return string|null
      */
@@ -180,12 +180,92 @@ class UpdateUDBInstanceBackupStrategyRequest extends Request
     }
 
     /**
-     * BackupMethod: 选择默认的备份方式，可选 snapshot 表示使用快照/物理备份，不填或者其它任何值为默认的逻辑备份。需要同时设置BackupDate字段。（注意现在只有SSD 版本的 MySQL实例支持物理备份）
+     * BackupMethod: 选择默认的备份方式，可选nobackup表示不备份， snapshot 表示使用快照备份，logic 表示使用逻辑备份。需要同时设置BackupDate字段。（快照备份即物理备份。SSD版本的mysql实例支持设置为snapshot，NVMe版本的mysql实例支持设置为xtrabackup）
      *
      * @param string $backupMethod
      */
     public function setBackupMethod($backupMethod)
     {
         $this->set("BackupMethod", $backupMethod);
+    }
+
+    /**
+     * UserTokenID: 自动备份转存到用户自己的bucket 的tokenid， 需要用户自己自己设置权限
+     *
+     * @return string|null
+     */
+    public function getUserTokenID()
+    {
+        return $this->get("UserTokenID");
+    }
+
+    /**
+     * UserTokenID: 自动备份转存到用户自己的bucket 的tokenid， 需要用户自己自己设置权限
+     *
+     * @param string $userTokenID
+     */
+    public function setUserTokenID($userTokenID)
+    {
+        $this->set("UserTokenID", $userTokenID);
+    }
+
+    /**
+     * UserBucket: 自动备份转存到用户自己的bucket名称，要包含到对应的token id里
+     *
+     * @return string|null
+     */
+    public function getUserBucket()
+    {
+        return $this->get("UserBucket");
+    }
+
+    /**
+     * UserBucket: 自动备份转存到用户自己的bucket名称，要包含到对应的token id里
+     *
+     * @param string $userBucket
+     */
+    public function setUserBucket($userBucket)
+    {
+        $this->set("UserBucket", $userBucket);
+    }
+
+    /**
+     * EnableBinlogBackup: 是否开启binlog备份, 默认为未开启
+     *
+     * @return boolean|null
+     */
+    public function getEnableBinlogBackup()
+    {
+        return $this->get("EnableBinlogBackup");
+    }
+
+    /**
+     * EnableBinlogBackup: 是否开启binlog备份, 默认为未开启
+     *
+     * @param boolean $enableBinlogBackup
+     */
+    public function setEnableBinlogBackup($enableBinlogBackup)
+    {
+        $this->set("EnableBinlogBackup", $enableBinlogBackup);
+    }
+
+    /**
+     * BinlogRemoteSaveDays: 远端binlog保存时长(天)
+     *
+     * @return integer|null
+     */
+    public function getBinlogRemoteSaveDays()
+    {
+        return $this->get("BinlogRemoteSaveDays");
+    }
+
+    /**
+     * BinlogRemoteSaveDays: 远端binlog保存时长(天)
+     *
+     * @param int $binlogRemoteSaveDays
+     */
+    public function setBinlogRemoteSaveDays($binlogRemoteSaveDays)
+    {
+        $this->set("BinlogRemoteSaveDays", $binlogRemoteSaveDays);
     }
 }

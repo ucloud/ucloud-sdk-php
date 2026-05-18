@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ class DescribeUDBInstanceRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -39,7 +39,7 @@ class DescribeUDBInstanceRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -49,7 +49,7 @@ class DescribeUDBInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区，不填时默认全部可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区，不填时默认全部可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -59,7 +59,7 @@ class DescribeUDBInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区，不填时默认全部可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区，不填时默认全部可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -69,7 +69,7 @@ class DescribeUDBInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -79,7 +79,7 @@ class DescribeUDBInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -226,5 +226,45 @@ class DescribeUDBInstanceRequest extends Request
     public function setIncludeSlaves($includeSlaves)
     {
         $this->set("IncludeSlaves", $includeSlaves);
+    }
+
+    /**
+     * VPCId: 根据VPCId筛选DB
+     *
+     * @return string|null
+     */
+    public function getVPCId()
+    {
+        return $this->get("VPCId");
+    }
+
+    /**
+     * VPCId: 根据VPCId筛选DB
+     *
+     * @param string $vpcId
+     */
+    public function setVPCId($vpcId)
+    {
+        $this->set("VPCId", $vpcId);
+    }
+
+    /**
+     * Tag: 根据 业务组 筛选DB
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->get("Tag");
+    }
+
+    /**
+     * Tag: 根据 业务组 筛选DB
+     *
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->set("Tag", $tag);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,26 @@ use UCloud\Core\Response\Response;
 class UDBParamGroupSet extends Response
 {
     
+
+    /**
+     * GroupType: 参数组类型：1：稳定版参数组，2:高性能版参数组。默认是稳定版参数组
+     *
+     * @return integer|null
+     */
+    public function getGroupType()
+    {
+        return $this->get("GroupType");
+    }
+
+    /**
+     * GroupType: 参数组类型：1：稳定版参数组，2:高性能版参数组。默认是稳定版参数组
+     *
+     * @param int $groupType
+     */
+    public function setGroupType($groupType)
+    {
+        $this->set("GroupType", $groupType);
+    }
 
     /**
      * GroupId: 参数组id

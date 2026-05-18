@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ class DescribeUDBTypeRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class DescribeUDBTypeRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -50,7 +50,7 @@ class DescribeUDBTypeRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -60,7 +60,7 @@ class DescribeUDBTypeRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -70,7 +70,7 @@ class DescribeUDBTypeRequest extends Request
     }
 
     /**
-     * BackupZone: 跨可用区高可用DB的备库所在区域，仅当该可用区支持跨可用区高可用时填入。参见 [可用区列表](../summary/regionlist.html)
+     * BackupZone: 跨可用区高可用DB的备库所在区域，仅当该可用区支持跨可用区高可用时填入。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class DescribeUDBTypeRequest extends Request
     }
 
     /**
-     * BackupZone: 跨可用区高可用DB的备库所在区域，仅当该可用区支持跨可用区高可用时填入。参见 [可用区列表](../summary/regionlist.html)
+     * BackupZone: 跨可用区高可用DB的备库所在区域，仅当该可用区支持跨可用区高可用时填入。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $backupZone
      */
@@ -167,5 +167,25 @@ class DescribeUDBTypeRequest extends Request
     public function setCompatibleWithDBType($compatibleWithDBType)
     {
         $this->set("CompatibleWithDBType", $compatibleWithDBType);
+    }
+
+    /**
+     * DBSubVersion: 返回从备份创建实例时，该小版本号所支持的备份创建小版本。如果没传，则表示不是从备份创建。
+     *
+     * @return string|null
+     */
+    public function getDBSubVersion()
+    {
+        return $this->get("DBSubVersion");
+    }
+
+    /**
+     * DBSubVersion: 返回从备份创建实例时，该小版本号所支持的备份创建小版本。如果没传，则表示不是从备份创建。
+     *
+     * @param string $dbSubVersion
+     */
+    public function setDBSubVersion($dbSubVersion)
+    {
+        $this->set("DBSubVersion", $dbSubVersion);
     }
 }

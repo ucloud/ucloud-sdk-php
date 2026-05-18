@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,26 @@ use UCloud\Core\Response\Response;
 class LogPackageDataSet extends Response
 {
     
+
+    /**
+     * Zone: 所在可用区
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 所在可用区
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
+    }
 
     /**
      * BackupId: 备份id
@@ -123,6 +143,26 @@ class LogPackageDataSet extends Response
     }
 
     /**
+     * BinlogType: binlog备份类型 Manual //手动备份 Auto //自动备份
+     *
+     * @return string|null
+     */
+    public function getBinlogType()
+    {
+        return $this->get("BinlogType");
+    }
+
+    /**
+     * BinlogType: binlog备份类型 Manual //手动备份 Auto //自动备份
+     *
+     * @param string $binlogType
+     */
+    public function setBinlogType($binlogType)
+    {
+        $this->set("BinlogType", $binlogType);
+    }
+
+    /**
      * State: 备份状态 Backuping // 备份中 Success // 备份成功 Failed // 备份失败 Expired // 备份过期
      *
      * @return string|null
@@ -180,26 +220,6 @@ class LogPackageDataSet extends Response
     public function setDBName($dbName)
     {
         $this->set("DBName", $dbName);
-    }
-
-    /**
-     * Zone: 所在可用区
-     *
-     * @return string|null
-     */
-    public function getZone()
-    {
-        return $this->get("Zone");
-    }
-
-    /**
-     * Zone: 所在可用区
-     *
-     * @param string $zone
-     */
-    public function setZone($zone)
-    {
-        $this->set("Zone", $zone);
     }
 
     /**

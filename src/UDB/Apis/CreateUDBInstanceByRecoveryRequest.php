@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -42,7 +42,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -52,7 +52,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -72,7 +72,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -82,7 +82,7 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -289,6 +289,86 @@ class CreateUDBInstanceByRecoveryRequest extends Request
     public function setEnableIpV6($enableIpV6)
     {
         $this->set("EnableIpV6", $enableIpV6);
+    }
+
+    /**
+     * Tables: 指定需要恢复的表, 如果指定该字段则回档实例只有指定的表数据，格式为(库名.表名)， 指定多个用逗号隔开，eg: [ udb.test, mysql_school.my_student]
+     *
+     * @return string|null
+     */
+    public function getTables()
+    {
+        return $this->get("Tables");
+    }
+
+    /**
+     * Tables: 指定需要恢复的表, 如果指定该字段则回档实例只有指定的表数据，格式为(库名.表名)， 指定多个用逗号隔开，eg: [ udb.test, mysql_school.my_student]
+     *
+     * @param string $tables
+     */
+    public function setTables($tables)
+    {
+        $this->set("Tables", $tables);
+    }
+
+    /**
+     * AdminPassword: 管理员密码 (指定库表回档到新实例时有效)
+     *
+     * @return string|null
+     */
+    public function getAdminPassword()
+    {
+        return $this->get("AdminPassword");
+    }
+
+    /**
+     * AdminPassword: 管理员密码 (指定库表回档到新实例时有效)
+     *
+     * @param string $adminPassword
+     */
+    public function setAdminPassword($adminPassword)
+    {
+        $this->set("AdminPassword", $adminPassword);
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @return integer|null
+     */
+    public function getSpecificationType()
+    {
+        return $this->get("SpecificationType");
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @param int $specificationType
+     */
+    public function setSpecificationType($specificationType)
+    {
+        $this->set("SpecificationType", $specificationType);
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
     }
 
     /**

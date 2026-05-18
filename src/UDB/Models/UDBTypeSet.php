@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,5 +40,25 @@ class UDBTypeSet extends Response
     public function setDBTypeId($dbTypeId)
     {
         $this->set("DBTypeId", $dbTypeId);
+    }
+
+    /**
+     * DBSubVersion: mysql子版本，如mysql-8.0.25,mysql-8.0.16
+     *
+     * @return string|null
+     */
+    public function getDBSubVersion()
+    {
+        return $this->get("DBSubVersion");
+    }
+
+    /**
+     * DBSubVersion: mysql子版本，如mysql-8.0.25,mysql-8.0.16
+     *
+     * @param string $dbSubVersion
+     */
+    public function setDBSubVersion($dbSubVersion)
+    {
+        $this->set("DBSubVersion", $dbSubVersion);
     }
 }
