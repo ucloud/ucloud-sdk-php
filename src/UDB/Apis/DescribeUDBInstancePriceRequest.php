@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ class DescribeUDBInstancePriceRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -43,7 +43,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -53,7 +53,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -63,7 +63,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -73,7 +73,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，单位为MB.目前支持：1000-96000
+     * MemoryLimit: 内存限制(MB)，单位为MB.目前支持：2000-96000
      *
      * @return integer|null
      */
@@ -83,7 +83,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，单位为MB.目前支持：1000-96000
+     * MemoryLimit: 内存限制(MB)，单位为MB.目前支持：2000-96000
      *
      * @param int $memoryLimit
      */
@@ -193,27 +193,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * UseSSD: 是否使用SSD，只能填true或false，默认为false
-     *
-     * @return string|null
-     */
-    public function getUseSSD()
-    {
-        return $this->get("UseSSD");
-    }
-
-    /**
-     * UseSSD: 是否使用SSD，只能填true或false，默认为false
-     *
-     * @param string $useSSD
-     */
-    public function setUseSSD($useSSD)
-    {
-        $this->set("UseSSD", $useSSD);
-    }
-
-    /**
-     * SSDType: SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必填
+     * SSDType: 该字段已废弃。
      *
      * @return string|null
      */
@@ -223,7 +203,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * SSDType: SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必填
+     * SSDType: 该字段已废弃。
      *
      * @param string $ssdType
      */
@@ -233,7 +213,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * InstanceMode: 实例的部署类型。可选值为：Normal: 普通单点实例，Slave: 从库实例,HA: 高可用部署实例，默认是Normal
+     * InstanceMode: 实例的部署类型。可选值为：Normal: 普通单点实例，Slave: 从库实例，HA: 高可用部署实例，默认是Normal
      *
      * @return string|null
      */
@@ -243,12 +223,132 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * InstanceMode: 实例的部署类型。可选值为：Normal: 普通单点实例，Slave: 从库实例,HA: 高可用部署实例，默认是Normal
+     * InstanceMode: 实例的部署类型。可选值为：Normal: 普通单点实例，Slave: 从库实例，HA: 高可用部署实例，默认是Normal
      *
      * @param string $instanceMode
      */
     public function setInstanceMode($instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
+    }
+
+    /**
+     * CPU: CPU个数，如果db类型为sqlserver，则为必填参数
+     *
+     * @return integer|null
+     */
+    public function getCPU()
+    {
+        return $this->get("CPU");
+    }
+
+    /**
+     * CPU: CPU个数，如果db类型为sqlserver，则为必填参数
+     *
+     * @param int $cpu
+     */
+    public function setCPU($cpu)
+    {
+        $this->set("CPU", $cpu);
+    }
+
+    /**
+     * InstanceType: 对于快杰机型，请使用最新的 SpecificationClass 和 StorageClass 字段进行创建。目前仅有少量地域支持 SATA_SSD 存储类型；若创建的是 SATA_SSD 机型，可通过该字段指定。字段说明：SATA_SSD：SATA SSD 机型（仅部分地域支持）NVMe_SSD：快杰机型
+     *
+     * @return string|null
+     */
+    public function getInstanceType()
+    {
+        return $this->get("InstanceType");
+    }
+
+    /**
+     * InstanceType: 对于快杰机型，请使用最新的 SpecificationClass 和 StorageClass 字段进行创建。目前仅有少量地域支持 SATA_SSD 存储类型；若创建的是 SATA_SSD 机型，可通过该字段指定。字段说明：SATA_SSD：SATA SSD 机型（仅部分地域支持）NVMe_SSD：快杰机型
+     *
+     * @param string $instanceType
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->set("InstanceType", $instanceType);
+    }
+
+    /**
+     * SpecificationType:   实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @return integer|null
+     */
+    public function getSpecificationType()
+    {
+        return $this->get("SpecificationType");
+    }
+
+    /**
+     * SpecificationType:   实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @param int $specificationType
+     */
+    public function setSpecificationType($specificationType)
+    {
+        $this->set("SpecificationType", $specificationType);
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
+    }
+
+    /**
+     * StorageClass: 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 ，该字段和SpecificationClass组合优先级比InstanceType字段高
+     *
+     * @return string|null
+     */
+    public function getStorageClass()
+    {
+        return $this->get("StorageClass");
+    }
+
+    /**
+     * StorageClass: 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 ，该字段和SpecificationClass组合优先级比InstanceType字段高
+     *
+     * @param string $storageClass
+     */
+    public function setStorageClass($storageClass)
+    {
+        $this->set("StorageClass", $storageClass);
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVME, OM: 共享型，N: 通用型
+     *
+     * @return string|null
+     */
+    public function getSpecificationClass()
+    {
+        return $this->get("SpecificationClass");
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVME, OM: 共享型，N: 通用型
+     *
+     * @param string $specificationClass
+     */
+    public function setSpecificationClass($specificationClass)
+    {
+        $this->set("SpecificationClass", $specificationClass);
     }
 }

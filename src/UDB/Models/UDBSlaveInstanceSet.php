@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,26 @@ class UDBSlaveInstanceSet extends Response
     public function setZone($zone)
     {
         $this->set("Zone", $zone);
+    }
+
+    /**
+     * ReplicationDelaySeconds: 延时从库时长
+     *
+     * @return integer|null
+     */
+    public function getReplicationDelaySeconds()
+    {
+        return $this->get("ReplicationDelaySeconds");
+    }
+
+    /**
+     * ReplicationDelaySeconds: 延时从库时长
+     *
+     * @param int $replicationDelaySeconds
+     */
+    public function setReplicationDelaySeconds($replicationDelaySeconds)
+    {
+        $this->set("ReplicationDelaySeconds", $replicationDelaySeconds);
     }
 
     /**
@@ -303,7 +323,7 @@ class UDBSlaveInstanceSet extends Response
     }
 
     /**
-     * State: DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败
+     * State: DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败,Remakeing:重做中,RemakeFail:重做失败, MajorVersionUpgrading:小版本升级中，MajorVersionUpgradeWaitForSwitch:高可用等待切换，MajorVersionUpgradeFail
      *
      * @return string|null
      */
@@ -313,7 +333,7 @@ class UDBSlaveInstanceSet extends Response
     }
 
     /**
-     * State: DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败
+     * State: DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败,Remakeing:重做中,RemakeFail:重做失败, MajorVersionUpgrading:小版本升级中，MajorVersionUpgradeWaitForSwitch:高可用等待切换，MajorVersionUpgradeFail
      *
      * @param string $state
      */
@@ -743,22 +763,62 @@ class UDBSlaveInstanceSet extends Response
     }
 
     /**
-     * IPv6Address: 获取该实例的IPv6地址
+     * CaseSensitivityParam: 0 区分大小写, 1不区分, 只针对mysql8.0
      *
-     * @return string|null
+     * @return integer|null
      */
-    public function getIPv6Address()
+    public function getCaseSensitivityParam()
     {
-        return $this->get("IPv6Address");
+        return $this->get("CaseSensitivityParam");
     }
 
     /**
-     * IPv6Address: 获取该实例的IPv6地址
+     * CaseSensitivityParam: 0 区分大小写, 1不区分, 只针对mysql8.0
      *
-     * @param string $iPv6Address
+     * @param int $caseSensitivityParam
      */
-    public function setIPv6Address($iPv6Address)
+    public function setCaseSensitivityParam($caseSensitivityParam)
     {
-        $this->set("IPv6Address", $iPv6Address);
+        $this->set("CaseSensitivityParam", $caseSensitivityParam);
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @return integer|null
+     */
+    public function getSpecificationType()
+    {
+        return $this->get("SpecificationType");
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @param int $specificationType
+     */
+    public function setSpecificationType($specificationType)
+    {
+        $this->set("SpecificationType", $specificationType);
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
     }
 }

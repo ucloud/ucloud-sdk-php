@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,12 +26,13 @@ class DescribeUDBBinlogBackupURLRequest extends Request
         $this->markRequired("Region");
         $this->markRequired("DBId");
         $this->markRequired("BackupId");
+        $this->markRequired("BinlogType");
     }
 
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +42,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +52,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -61,7 +62,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -91,7 +92,7 @@ class DescribeUDBBinlogBackupURLRequest extends Request
     }
 
     /**
-     * BackupId: DB实例binlog备份ID，可以从DescribeUDBLogPackage结果当中获得
+     * BackupId: DB实例日志备份ID，可以从DescribeUDBLogPackage结果当中获得
      *
      * @return integer|null
      */
@@ -101,12 +102,32 @@ class DescribeUDBBinlogBackupURLRequest extends Request
     }
 
     /**
-     * BackupId: DB实例binlog备份ID，可以从DescribeUDBLogPackage结果当中获得
+     * BackupId: DB实例日志备份ID，可以从DescribeUDBLogPackage结果当中获得
      *
      * @param int $backupId
      */
     public function setBackupId($backupId)
     {
         $this->set("BackupId", $backupId);
+    }
+
+    /**
+     * BinlogType: binlog备份类型 Manual:手动备份 ,Auto:自动备份
+     *
+     * @return string|null
+     */
+    public function getBinlogType()
+    {
+        return $this->get("BinlogType");
+    }
+
+    /**
+     * BinlogType: binlog备份类型 Manual:手动备份 ,Auto:自动备份
+     *
+     * @param string $binlogType
+     */
+    public function setBinlogType($binlogType)
+    {
+        $this->set("BinlogType", $binlogType);
     }
 }

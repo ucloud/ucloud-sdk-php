@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,26 @@ class UDBInstanceSet extends Response
     public function setZone($zone)
     {
         $this->set("Zone", $zone);
+    }
+
+    /**
+     * CaseSensitivityParam: 0区分大小写, 1不分区
+     *
+     * @return integer|null
+     */
+    public function getCaseSensitivityParam()
+    {
+        return $this->get("CaseSensitivityParam");
+    }
+
+    /**
+     * CaseSensitivityParam: 0区分大小写, 1不分区
+     *
+     * @param int $caseSensitivityParam
+     */
+    public function setCaseSensitivityParam($caseSensitivityParam)
+    {
+        $this->set("CaseSensitivityParam", $caseSensitivityParam);
     }
 
     /**
@@ -263,7 +283,7 @@ class UDBInstanceSet extends Response
     }
 
     /**
-     * InstanceTypeId: UDB数据库机型ID
+     * InstanceTypeId: UDB数据库机型ID (已弃用)
      *
      * @return integer|null
      */
@@ -273,7 +293,7 @@ class UDBInstanceSet extends Response
     }
 
     /**
-     * InstanceTypeId: UDB数据库机型ID
+     * InstanceTypeId: UDB数据库机型ID (已弃用)
      *
      * @param int $instanceTypeId
      */
@@ -423,7 +443,7 @@ class UDBInstanceSet extends Response
     }
 
     /**
-     * State: DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败
+     * State: DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败, Remakeing:重做中,RemakeFail:重做失败，VersionUpgrading:小版本升级中，VersionUpgradeWaitForSwitch:高可用等待切换，VersionUpgradeFail：小版本升级失败，UpdatingSSL：修改SSL中，UpdateSSLFail：修改SSL失败,MajorVersionUpgrading:小版本升级中，MajorVersionUpgradeWaitForSwitch:高可用等待切换，MajorVersionUpgradeFail
      *
      * @return string|null
      */
@@ -433,7 +453,7 @@ class UDBInstanceSet extends Response
     }
 
     /**
-     * State: DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败
+     * State: DB状态标记 Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover fail：恢复失败, Remakeing:重做中,RemakeFail:重做失败，VersionUpgrading:小版本升级中，VersionUpgradeWaitForSwitch:高可用等待切换，VersionUpgradeFail：小版本升级失败，UpdatingSSL：修改SSL中，UpdateSSLFail：修改SSL失败,MajorVersionUpgrading:小版本升级中，MajorVersionUpgradeWaitForSwitch:高可用等待切换，MajorVersionUpgradeFail
      *
      * @param string $state
      */
@@ -832,5 +852,145 @@ class UDBInstanceSet extends Response
     public function setUserUFileData(array $userUFileData)
     {
         $this->set("UserUFileData", $userUFileData->getAll());
+    }
+
+    /**
+     * DBSubVersion: mysql实例提供具体小版本信息
+     *
+     * @return string|null
+     */
+    public function getDBSubVersion()
+    {
+        return $this->get("DBSubVersion");
+    }
+
+    /**
+     * DBSubVersion: mysql实例提供具体小版本信息
+     *
+     * @param string $dbSubVersion
+     */
+    public function setDBSubVersion($dbSubVersion)
+    {
+        $this->set("DBSubVersion", $dbSubVersion);
+    }
+
+    /**
+     * EnableSSL: mysql是否开启了SSL；1->未开启  2->开启
+     *
+     * @return integer|null
+     */
+    public function getEnableSSL()
+    {
+        return $this->get("EnableSSL");
+    }
+
+    /**
+     * EnableSSL: mysql是否开启了SSL；1->未开启  2->开启
+     *
+     * @param int $enableSSL
+     */
+    public function setEnableSSL($enableSSL)
+    {
+        $this->set("EnableSSL", $enableSSL);
+    }
+
+    /**
+     * SSLExpirationTime: SSL到期时间
+     *
+     * @return integer|null
+     */
+    public function getSSLExpirationTime()
+    {
+        return $this->get("SSLExpirationTime");
+    }
+
+    /**
+     * SSLExpirationTime: SSL到期时间
+     *
+     * @param int $sslExpirationTime
+     */
+    public function setSSLExpirationTime($sslExpirationTime)
+    {
+        $this->set("SSLExpirationTime", $sslExpirationTime);
+    }
+
+    /**
+     * BackupMethod: 默认的备份方式，nobackup表示不备份， snapshot 表示使用快照备份，logic 表示使用逻辑备份，xtrabackup表示使用物理备份。
+     *
+     * @return string|null
+     */
+    public function getBackupMethod()
+    {
+        return $this->get("BackupMethod");
+    }
+
+    /**
+     * BackupMethod: 默认的备份方式，nobackup表示不备份， snapshot 表示使用快照备份，logic 表示使用逻辑备份，xtrabackup表示使用物理备份。
+     *
+     * @param string $backupMethod
+     */
+    public function setBackupMethod($backupMethod)
+    {
+        $this->set("BackupMethod", $backupMethod);
+    }
+
+    /**
+     * MachineType: 数据库机型规格
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 数据库机型规格
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
+    }
+
+    /**
+     * SpecificationType: 是否使用可选cpu类型规格
+     *
+     * @return integer|null
+     */
+    public function getSpecificationType()
+    {
+        return $this->get("SpecificationType");
+    }
+
+    /**
+     * SpecificationType: 是否使用可选cpu类型规格
+     *
+     * @param int $specificationType
+     */
+    public function setSpecificationType($specificationType)
+    {
+        $this->set("SpecificationType", $specificationType);
+    }
+
+    /**
+     * CPU: CPU核数
+     *
+     * @return integer|null
+     */
+    public function getCPU()
+    {
+        return $this->get("CPU");
+    }
+
+    /**
+     * CPU: CPU核数
+     *
+     * @param int $cpu
+     */
+    public function setCPU($cpu)
+    {
+        $this->set("CPU", $cpu);
     }
 }

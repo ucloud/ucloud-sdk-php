@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,5 +60,25 @@ class DescribeUDBInstanceBackupURLResponse extends Response
     public function setInnerBackupPath($innerBackupPath)
     {
         $this->set("InnerBackupPath", $innerBackupPath);
+    }
+
+    /**
+     * MD5: 备份文件的md5值
+     *
+     * @return string|null
+     */
+    public function getMD5()
+    {
+        return $this->get("MD5");
+    }
+
+    /**
+     * MD5: 备份文件的md5值
+     *
+     * @param string $md5
+     */
+    public function setMD5($md5)
+    {
+        $this->set("MD5", $md5);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ class CreateUDBSlaveRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -71,7 +71,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -81,7 +81,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -151,27 +151,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * UseSSD: 是否使用SSD，默认为true
-     *
-     * @return boolean|null
-     */
-    public function getUseSSD()
-    {
-        return $this->get("UseSSD");
-    }
-
-    /**
-     * UseSSD: 是否使用SSD，默认为true
-     *
-     * @param boolean $useSSD
-     */
-    public function setUseSSD($useSSD)
-    {
-        $this->set("UseSSD", $useSSD);
-    }
-
-    /**
-     * SSDType: SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选
+     * SSDType: 仅对主为SSD型实例有效。 可选值"SATA","NVMe"
      *
      * @return string|null
      */
@@ -181,7 +161,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * SSDType: SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选
+     * SSDType: 仅对主为SSD型实例有效。 可选值"SATA","NVMe"
      *
      * @param string $ssdType
      */
@@ -211,27 +191,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * InstanceMode: UDB实例部署模式，可选值如下：Normal: 普通单点实例HA: 高可用部署实例
-     *
-     * @return string|null
-     */
-    public function getInstanceMode()
-    {
-        return $this->get("InstanceMode");
-    }
-
-    /**
-     * InstanceMode: UDB实例部署模式，可选值如下：Normal: 普通单点实例HA: 高可用部署实例
-     *
-     * @param string $instanceMode
-     */
-    public function setInstanceMode($instanceMode)
-    {
-        $this->set("InstanceMode", $instanceMode);
-    }
-
-    /**
-     * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
+     * MemoryLimit: 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      *
      * @return integer|null
      */
@@ -241,7 +201,7 @@ class CreateUDBSlaveRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
+     * MemoryLimit: 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      *
      * @param int $memoryLimit
      */
@@ -268,26 +228,6 @@ class CreateUDBSlaveRequest extends Request
     public function setDiskSpace($diskSpace)
     {
         $this->set("DiskSpace", $diskSpace);
-    }
-
-    /**
-     * InstanceType: UDB实例类型：Normal、SATA_SSD、NVMe_SSD
-     *
-     * @return string|null
-     */
-    public function getInstanceType()
-    {
-        return $this->get("InstanceType");
-    }
-
-    /**
-     * InstanceType: UDB实例类型：Normal、SATA_SSD、NVMe_SSD
-     *
-     * @param string $instanceType
-     */
-    public function setInstanceType($instanceType)
-    {
-        $this->set("InstanceType", $instanceType);
     }
 
     /**
@@ -388,6 +328,86 @@ class CreateUDBSlaveRequest extends Request
     public function setParamGroupId($paramGroupId)
     {
         $this->set("ParamGroupId", $paramGroupId);
+    }
+
+    /**
+     * IsCreatePhysically: 使用物理方式创建从库，目前仅限创建快杰从库，默认为false
+     *
+     * @return boolean|null
+     */
+    public function getIsCreatePhysically()
+    {
+        return $this->get("IsCreatePhysically");
+    }
+
+    /**
+     * IsCreatePhysically: 使用物理方式创建从库，目前仅限创建快杰从库，默认为false
+     *
+     * @param boolean $isCreatePhysically
+     */
+    public function setIsCreatePhysically($isCreatePhysically)
+    {
+        $this->set("IsCreatePhysically", $isCreatePhysically);
+    }
+
+    /**
+     * DelaySeconds: 设置从库的延时复制时长（单位秒）
+     *
+     * @return integer|null
+     */
+    public function getDelaySeconds()
+    {
+        return $this->get("DelaySeconds");
+    }
+
+    /**
+     * DelaySeconds: 设置从库的延时复制时长（单位秒）
+     *
+     * @param int $delaySeconds
+     */
+    public function setDelaySeconds($delaySeconds)
+    {
+        $this->set("DelaySeconds", $delaySeconds);
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @return integer|null
+     */
+    public function getSpecificationType()
+    {
+        return $this->get("SpecificationType");
+    }
+
+    /**
+     * SpecificationType: 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType
+     *
+     * @param int $specificationType
+     */
+    public function setSpecificationType($specificationType)
+    {
+        $this->set("SpecificationType", $specificationType);
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -47,7 +47,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -57,7 +57,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -67,7 +67,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -77,7 +77,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -87,7 +87,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -137,7 +137,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * DBTypeId: DB类型id对应的字符串形式（例如：mongodb-2.6）注意：当前仅支持mongodb
+     * DBTypeId: DB类型id对应的字符串形式 mongodb-3.4,mongodb-3.6,mongodb-4.0
      *
      * @return string|null
      */
@@ -147,7 +147,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * DBTypeId: DB类型id对应的字符串形式（例如：mongodb-2.6）注意：当前仅支持mongodb
+     * DBTypeId: DB类型id对应的字符串形式 mongodb-3.4,mongodb-3.6,mongodb-4.0
      *
      * @param string $dbTypeId
      */
@@ -197,7 +197,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M
+     * MemoryLimit: 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M
      *
      * @return integer|null
      */
@@ -207,7 +207,7 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M
+     * MemoryLimit: 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/ 64000M/96000M
      *
      * @param int $memoryLimit
      */
@@ -357,46 +357,6 @@ class CreateMongoDBReplicaSetRequest extends Request
     }
 
     /**
-     * UseSSD: 是否使用SSD，默认为true
-     *
-     * @return boolean|null
-     */
-    public function getUseSSD()
-    {
-        return $this->get("UseSSD");
-    }
-
-    /**
-     * UseSSD: 是否使用SSD，默认为true
-     *
-     * @param boolean $useSSD
-     */
-    public function setUseSSD($useSSD)
-    {
-        $this->set("UseSSD", $useSSD);
-    }
-
-    /**
-     * SSDType: SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选
-     *
-     * @return string|null
-     */
-    public function getSSDType()
-    {
-        return $this->get("SSDType");
-    }
-
-    /**
-     * SSDType: SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选
-     *
-     * @param string $ssdType
-     */
-    public function setSSDType($ssdType)
-    {
-        $this->set("SSDType", $ssdType);
-    }
-
-    /**
      * CPU: cpu核数
      *
      * @return integer|null
@@ -414,26 +374,6 @@ class CreateMongoDBReplicaSetRequest extends Request
     public function setCPU($cpu)
     {
         $this->set("CPU", $cpu);
-    }
-
-    /**
-     * InstanceType: UDB数据库机型
-     *
-     * @return string|null
-     */
-    public function getInstanceType()
-    {
-        return $this->get("InstanceType");
-    }
-
-    /**
-     * InstanceType: UDB数据库机型
-     *
-     * @param string $instanceType
-     */
-    public function setInstanceType($instanceType)
-    {
-        $this->set("InstanceType", $instanceType);
     }
 
     /**

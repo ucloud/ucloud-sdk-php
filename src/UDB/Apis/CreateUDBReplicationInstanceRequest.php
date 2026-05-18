@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ class CreateUDBReplicationInstanceRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class CreateUDBReplicationInstanceRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class CreateUDBReplicationInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class CreateUDBReplicationInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -71,7 +71,7 @@ class CreateUDBReplicationInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -81,7 +81,7 @@ class CreateUDBReplicationInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -171,7 +171,7 @@ class CreateUDBReplicationInstanceRequest extends Request
     }
 
     /**
-     * UseSSD: 是否使用SSD，默认 为 true
+     * UseSSD: 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。
      *
      * @return boolean|null
      */
@@ -181,13 +181,73 @@ class CreateUDBReplicationInstanceRequest extends Request
     }
 
     /**
-     * UseSSD: 是否使用SSD，默认 为 true
+     * UseSSD: 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。
      *
      * @param boolean $useSSD
      */
     public function setUseSSD($useSSD)
     {
         $this->set("UseSSD", $useSSD);
+    }
+
+    /**
+     * InstanceType: UDB数据库机型: "Normal": "标准机型" , "SATA_SSD": "SSD机型" , "PCIE_SSD": "SSD高性能机型" , "Normal_Volume": "标准大容量机型", "SATA_SSD_Volume": "SSD大容量机型" , "PCIE_SSD_Volume": "SSD高性能大容量机型", "NVMe_SSD": "快杰机型"
+     *
+     * @return string|null
+     */
+    public function getInstanceType()
+    {
+        return $this->get("InstanceType");
+    }
+
+    /**
+     * InstanceType: UDB数据库机型: "Normal": "标准机型" , "SATA_SSD": "SSD机型" , "PCIE_SSD": "SSD高性能机型" , "Normal_Volume": "标准大容量机型", "SATA_SSD_Volume": "SSD大容量机型" , "PCIE_SSD_Volume": "SSD高性能大容量机型", "NVMe_SSD": "快杰机型"
+     *
+     * @param string $instanceType
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->set("InstanceType", $instanceType);
+    }
+
+    /**
+     * ChargeType: Year， Month， Dynamic，Trial，默认和主库保持一致
+     *
+     * @return string|null
+     */
+    public function getChargeType()
+    {
+        return $this->get("ChargeType");
+    }
+
+    /**
+     * ChargeType: Year， Month， Dynamic，Trial，默认和主库保持一致
+     *
+     * @param string $chargeType
+     */
+    public function setChargeType($chargeType)
+    {
+        $this->set("ChargeType", $chargeType);
+    }
+
+    /**
+     * Quantity: 购买时长，默认默认和主库保持一致
+     *
+     * @return string|null
+     */
+    public function getQuantity()
+    {
+        return $this->get("Quantity");
+    }
+
+    /**
+     * Quantity: 购买时长，默认默认和主库保持一致
+     *
+     * @param string $quantity
+     */
+    public function setQuantity($quantity)
+    {
+        $this->set("Quantity", $quantity);
     }
 
     /**

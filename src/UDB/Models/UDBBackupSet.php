@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,26 @@ use UCloud\Core\Response\Response;
 class UDBBackupSet extends Response
 {
     
+
+    /**
+     * Zone: 备份所在可用区
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 备份所在可用区
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
+    }
 
     /**
      * BackupId: 备份id
@@ -143,6 +163,26 @@ class UDBBackupSet extends Response
     }
 
     /**
+     * ErrorInfo: 备份错误信息
+     *
+     * @return string|null
+     */
+    public function getErrorInfo()
+    {
+        return $this->get("ErrorInfo");
+    }
+
+    /**
+     * ErrorInfo: 备份错误信息
+     *
+     * @param string $errorInfo
+     */
+    public function setErrorInfo($errorInfo)
+    {
+        $this->set("ErrorInfo", $errorInfo);
+    }
+
+    /**
      * DBId: dbid
      *
      * @return string|null
@@ -183,26 +223,6 @@ class UDBBackupSet extends Response
     }
 
     /**
-     * Zone: 备份所在可用区
-     *
-     * @return string|null
-     */
-    public function getZone()
-    {
-        return $this->get("Zone");
-    }
-
-    /**
-     * Zone: 备份所在可用区
-     *
-     * @param string $zone
-     */
-    public function setZone($zone)
-    {
-        $this->set("Zone", $zone);
-    }
-
-    /**
      * BackupZone: 跨机房高可用备库所在可用区
      *
      * @return string|null
@@ -240,5 +260,25 @@ class UDBBackupSet extends Response
     public function setBackupEndTime($backupEndTime)
     {
         $this->set("BackupEndTime", $backupEndTime);
+    }
+
+    /**
+     * MD5: 备份文件的MD5值，备份完成后显示，备份中或备份失败时为空,目前只支持Mysql NVMe机型与Mongo
+     *
+     * @return string|null
+     */
+    public function getMD5()
+    {
+        return $this->get("MD5");
+    }
+
+    /**
+     * MD5: 备份文件的MD5值，备份完成后显示，备份中或备份失败时为空,目前只支持Mysql NVMe机型与Mongo
+     *
+     * @param string $md5
+     */
+    public function setMD5($md5)
+    {
+        $this->set("MD5", $md5);
     }
 }
