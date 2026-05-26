@@ -26,8 +26,6 @@ class CreateUKafkaInstanceRequest extends Request
         $this->markRequired("Region");
         $this->markRequired("Zone");
         $this->markRequired("FrameworkVersion");
-        $this->markRequired("VPCId");
-        $this->markRequired("SubnetId");
         $this->markRequired("ChargeType");
         $this->markRequired("NodeType");
         $this->markRequired("DiskSize");
@@ -117,46 +115,6 @@ class CreateUKafkaInstanceRequest extends Request
     }
 
     /**
-     * VPCId: VPCID
-     *
-     * @return string|null
-     */
-    public function getVPCId()
-    {
-        return $this->get("VPCId");
-    }
-
-    /**
-     * VPCId: VPCID
-     *
-     * @param string $vpcId
-     */
-    public function setVPCId($vpcId)
-    {
-        $this->set("VPCId", $vpcId);
-    }
-
-    /**
-     * SubnetId: 子网 ID
-     *
-     * @return string|null
-     */
-    public function getSubnetId()
-    {
-        return $this->get("SubnetId");
-    }
-
-    /**
-     * SubnetId: 子网 ID
-     *
-     * @param string $subnetId
-     */
-    public function setSubnetId($subnetId)
-    {
-        $this->set("SubnetId", $subnetId);
-    }
-
-    /**
      * ChargeType: 付费方式
      *
      * @return string|null
@@ -234,6 +192,46 @@ class CreateUKafkaInstanceRequest extends Request
     public function setInstanceName($instanceName)
     {
         $this->set("InstanceName", $instanceName);
+    }
+
+    /**
+     * VPCId: VPCID，不填时为默认VPCID
+     *
+     * @return string|null
+     */
+    public function getVPCId()
+    {
+        return $this->get("VPCId");
+    }
+
+    /**
+     * VPCId: VPCID，不填时为默认VPCID
+     *
+     * @param string $vpcId
+     */
+    public function setVPCId($vpcId)
+    {
+        $this->set("VPCId", $vpcId);
+    }
+
+    /**
+     * SubnetId: 子网 ID，不填时为默认子网 ID
+     *
+     * @return string|null
+     */
+    public function getSubnetId()
+    {
+        return $this->get("SubnetId");
+    }
+
+    /**
+     * SubnetId: 子网 ID，不填时为默认子网 ID
+     *
+     * @param string $subnetId
+     */
+    public function setSubnetId($subnetId)
+    {
+        $this->set("SubnetId", $subnetId);
     }
 
     /**
