@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,26 @@ use UCloud\Core\Response\Response;
 class NodeGroupSet extends Response
 {
     
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
+    }
 
     /**
      * NodeGroupId: 节点池ID
@@ -223,6 +243,26 @@ class NodeGroupSet extends Response
     }
 
     /**
+     * BootDiskSize: 系统盘大小
+     *
+     * @return integer|null
+     */
+    public function getBootDiskSize()
+    {
+        return $this->get("BootDiskSize");
+    }
+
+    /**
+     * BootDiskSize: 系统盘大小
+     *
+     * @param int $bootDiskSize
+     */
+    public function setBootDiskSize($bootDiskSize)
+    {
+        $this->set("BootDiskSize", $bootDiskSize);
+    }
+
+    /**
      * DataDiskSize: 数据盘大小
      *
      * @return integer|null
@@ -320,5 +360,145 @@ class NodeGroupSet extends Response
     public function setNodeList(array $nodeList)
     {
         $this->set("NodeList", $nodeList);
+    }
+
+    /**
+     * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
+     *
+     * @return string|null
+     */
+    public function getSubnetId()
+    {
+        return $this->get("SubnetId");
+    }
+
+    /**
+     * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
+     *
+     * @param string $subnetId
+     */
+    public function setSubnetId($subnetId)
+    {
+        $this->set("SubnetId", $subnetId);
+    }
+
+    /**
+     * IsolationGroupId: 硬件隔离组id。可通过DescribeIsolationGroup获取。
+     *
+     * @return string|null
+     */
+    public function getIsolationGroupId()
+    {
+        return $this->get("IsolationGroupId");
+    }
+
+    /**
+     * IsolationGroupId: 硬件隔离组id。可通过DescribeIsolationGroup获取。
+     *
+     * @param string $isolationGroupId
+     */
+    public function setIsolationGroupId($isolationGroupId)
+    {
+        $this->set("IsolationGroupId", $isolationGroupId);
+    }
+
+    /**
+     * MaxPods: int默认110，生产环境建议小于等于110。
+     *
+     * @return string|null
+     */
+    public function getMaxPods()
+    {
+        return $this->get("MaxPods");
+    }
+
+    /**
+     * MaxPods: int默认110，生产环境建议小于等于110。
+     *
+     * @param string $maxPods
+     */
+    public function setMaxPods($maxPods)
+    {
+        $this->set("MaxPods", $maxPods);
+    }
+
+    /**
+     * UserData: 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。
+     *
+     * @return string|null
+     */
+    public function getUserData()
+    {
+        return $this->get("UserData");
+    }
+
+    /**
+     * UserData: 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。
+     *
+     * @param string $userData
+     */
+    public function setUserData($userData)
+    {
+        $this->set("UserData", $userData);
+    }
+
+    /**
+     * InitScript: 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。
+     *
+     * @return string|null
+     */
+    public function getInitScript()
+    {
+        return $this->get("InitScript");
+    }
+
+    /**
+     * InitScript: 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。
+     *
+     * @param string $initScript
+     */
+    public function setInitScript($initScript)
+    {
+        $this->set("InitScript", $initScript);
+    }
+
+    /**
+     * Taints: Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *
+     * @return string|null
+     */
+    public function getTaints()
+    {
+        return $this->get("Taints");
+    }
+
+    /**
+     * Taints: Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *
+     * @param string $taints
+     */
+    public function setTaints($taints)
+    {
+        $this->set("Taints", $taints);
+    }
+
+    /**
+     * Labels: Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *
+     * @return string|null
+     */
+    public function getLabels()
+    {
+        return $this->get("Labels");
+    }
+
+    /**
+     * Labels: Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *
+     * @param string $labels
+     */
+    public function setLabels($labels)
+    {
+        $this->set("Labels", $labels);
     }
 }

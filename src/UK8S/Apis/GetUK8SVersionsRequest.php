@@ -18,14 +18,14 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 
-class RemoveUK8SNodeGroupRequest extends Request
+class GetUK8SVersionsRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "RemoveUK8SNodeGroup"]);
+        parent::__construct(["Action" => "GetUK8SVersions"]);
         $this->markRequired("Region");
-        $this->markRequired("NodeGroupId");
-        $this->markRequired("ClusterId");
+        $this->markRequired("ProjectId");
+        $this->markRequired("Kind");
     }
 
     
@@ -51,7 +51,7 @@ class RemoveUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class RemoveUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -71,42 +71,22 @@ class RemoveUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * NodeGroupId: 节点池Id
+     * Kind: 集群类型，可选值为[Dedicated]
      *
      * @return string|null
      */
-    public function getNodeGroupId()
+    public function getKind()
     {
-        return $this->get("NodeGroupId");
+        return $this->get("Kind");
     }
 
     /**
-     * NodeGroupId: 节点池Id
+     * Kind: 集群类型，可选值为[Dedicated]
      *
-     * @param string $nodeGroupId
+     * @param string $kind
      */
-    public function setNodeGroupId($nodeGroupId)
+    public function setKind($kind)
     {
-        $this->set("NodeGroupId", $nodeGroupId);
-    }
-
-    /**
-     * ClusterId: 集群id
-     *
-     * @return string|null
-     */
-    public function getClusterId()
-    {
-        return $this->get("ClusterId");
-    }
-
-    /**
-     * ClusterId: 集群id
-     *
-     * @param string $clusterId
-     */
-    public function setClusterId($clusterId)
-    {
-        $this->set("ClusterId", $clusterId);
+        $this->set("Kind", $kind);
     }
 }

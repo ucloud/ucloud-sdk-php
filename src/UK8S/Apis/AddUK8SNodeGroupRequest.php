@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -368,5 +368,45 @@ class AddUK8SNodeGroupRequest extends Request
     public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
+    }
+
+    /**
+     * BootDiskSize: 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @return integer|null
+     */
+    public function getBootDiskSize()
+    {
+        return $this->get("BootDiskSize");
+    }
+
+    /**
+     * BootDiskSize: 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @param int $bootDiskSize
+     */
+    public function setBootDiskSize($bootDiskSize)
+    {
+        $this->set("BootDiskSize", $bootDiskSize);
+    }
+
+    /**
+     * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
+     *
+     * @return string|null
+     */
+    public function getSubnetId()
+    {
+        return $this->get("SubnetId");
+    }
+
+    /**
+     * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
+     *
+     * @param string $subnetId
+     */
+    public function setSubnetId($subnetId)
+    {
+        $this->set("SubnetId", $subnetId);
     }
 }

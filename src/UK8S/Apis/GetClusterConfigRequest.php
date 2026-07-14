@@ -18,40 +18,19 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 
-class RemoveUK8SNodeGroupRequest extends Request
+class GetClusterConfigRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "RemoveUK8SNodeGroup"]);
+        parent::__construct(["Action" => "GetClusterConfig"]);
         $this->markRequired("Region");
-        $this->markRequired("NodeGroupId");
         $this->markRequired("ClusterId");
     }
 
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     *
-     * @return string|null
-     */
-    public function getRegion()
-    {
-        return $this->get("Region");
-    }
-
-    /**
-     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     *
-     * @param string $region
-     */
-    public function setRegion($region)
-    {
-        $this->set("Region", $region);
-    }
-
-    /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * ProjectId: 所在项目
      *
      * @return string|null
      */
@@ -61,7 +40,7 @@ class RemoveUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * ProjectId: 所在项目
      *
      * @param string $projectId
      */
@@ -71,27 +50,27 @@ class RemoveUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * NodeGroupId: 节点池Id
+     * Region: 所在区域
      *
      * @return string|null
      */
-    public function getNodeGroupId()
+    public function getRegion()
     {
-        return $this->get("NodeGroupId");
+        return $this->get("Region");
     }
 
     /**
-     * NodeGroupId: 节点池Id
+     * Region: 所在区域
      *
-     * @param string $nodeGroupId
+     * @param string $region
      */
-    public function setNodeGroupId($nodeGroupId)
+    public function setRegion($region)
     {
-        $this->set("NodeGroupId", $nodeGroupId);
+        $this->set("Region", $region);
     }
 
     /**
-     * ClusterId: 集群id
+     * ClusterId: 集群ID
      *
      * @return string|null
      */
@@ -101,7 +80,7 @@ class RemoveUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * ClusterId: 集群id
+     * ClusterId: 集群ID
      *
      * @param string $clusterId
      */
