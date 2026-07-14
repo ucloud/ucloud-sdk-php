@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
+use UCloud\UK8S\Params\AddUK8SUHostNodeParamNetworkInterface;
+use UCloud\UK8S\Params\AddUK8SUHostNodeParamNetworkInterfaceEIP;
+use UCloud\UK8S\Params\AddUK8SUHostNodeParamSecGroupId;
 
 class AddUK8SUHostNodeRequest extends Request
 {
@@ -236,6 +239,26 @@ class AddUK8SUHostNodeRequest extends Request
     }
 
     /**
+     * BootDiskSize: 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @return integer|null
+     */
+    public function getBootDiskSize()
+    {
+        return $this->get("BootDiskSize");
+    }
+
+    /**
+     * BootDiskSize: 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @param int $bootDiskSize
+     */
+    public function setBootDiskSize($bootDiskSize)
+    {
+        $this->set("BootDiskSize", $bootDiskSize);
+    }
+
+    /**
      * DataDiskType: 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
      *
      * @return string|null
@@ -313,26 +336,6 @@ class AddUK8SUHostNodeRequest extends Request
     public function setMachineType($machineType)
     {
         $this->set("MachineType", $machineType);
-    }
-
-    /**
-     * MinmalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
-     *
-     * @return string|null
-     */
-    public function getMinmalCpuPlatform()
-    {
-        return $this->get("MinmalCpuPlatform");
-    }
-
-    /**
-     * MinmalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
-     *
-     * @param string $minmalCpuPlatform
-     */
-    public function setMinmalCpuPlatform($minmalCpuPlatform)
-    {
-        $this->set("MinmalCpuPlatform", $minmalCpuPlatform);
     }
 
     /**
@@ -533,5 +536,269 @@ class AddUK8SUHostNodeRequest extends Request
     public function setInitScript($initScript)
     {
         $this->set("InitScript", $initScript);
+    }
+
+    /**
+     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
+     *
+     * @return string|null
+     */
+    public function getMinimalCpuPlatform()
+    {
+        return $this->get("MinimalCpuPlatform");
+    }
+
+    /**
+     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
+     *
+     * @param string $minimalCpuPlatform
+     */
+    public function setMinimalCpuPlatform($minimalCpuPlatform)
+    {
+        $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
+    }
+
+    /**
+     * Taints: Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *
+     * @return string|null
+     */
+    public function getTaints()
+    {
+        return $this->get("Taints");
+    }
+
+    /**
+     * Taints: Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *
+     * @param string $taints
+     */
+    public function setTaints($taints)
+    {
+        $this->set("Taints", $taints);
+    }
+
+    /**
+     * Tag: 业务组
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->get("Tag");
+    }
+
+    /**
+     * Tag: 业务组
+     *
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->set("Tag", $tag);
+    }
+
+    /**
+     * NodeGroupId: 节点池id
+     *
+     * @return string|null
+     */
+    public function getNodeGroupId()
+    {
+        return $this->get("NodeGroupId");
+    }
+
+    /**
+     * NodeGroupId: 节点池id
+     *
+     * @param string $nodeGroupId
+     */
+    public function setNodeGroupId($nodeGroupId)
+    {
+        $this->set("NodeGroupId", $nodeGroupId);
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @return string|null
+     */
+    public function getSecurityMode()
+    {
+        return $this->get("SecurityMode");
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @param string $securityMode
+     */
+    public function setSecurityMode($securityMode)
+    {
+        $this->set("SecurityMode", $securityMode);
+    }
+
+    /**
+     * NamePrefix: 自定义主机名前缀。完整的自定义主机名为{NamePrefix}-{NodeIP}。
+     *
+     * @return string|null
+     */
+    public function getNamePrefix()
+    {
+        return $this->get("NamePrefix");
+    }
+
+    /**
+     * NamePrefix: 自定义主机名前缀。完整的自定义主机名为{NamePrefix}-{NodeIP}。
+     *
+     * @param string $namePrefix
+     */
+    public function setNamePrefix($namePrefix)
+    {
+        $this->set("NamePrefix", $namePrefix);
+    }
+
+    /**
+     * NetCapability: 网络增强特性。枚举值：Normal，不开启; Super，开启网络增强1.0； Ultra，开启网络增强2.0；Extreme，开启网络增强3.0; Infiniband, 开启网络增强4.0（详情参考主机官网文档）
+     *
+     * @return string|null
+     */
+    public function getNetCapability()
+    {
+        return $this->get("NetCapability");
+    }
+
+    /**
+     * NetCapability: 网络增强特性。枚举值：Normal，不开启; Super，开启网络增强1.0； Ultra，开启网络增强2.0；Extreme，开启网络增强3.0; Infiniband, 开启网络增强4.0（详情参考主机官网文档）
+     *
+     * @param string $netCapability
+     */
+    public function setNetCapability($netCapability)
+    {
+        $this->set("NetCapability", $netCapability);
+    }
+
+    /**
+     * UNIFeature: 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。
+     *
+     * @return boolean|null
+     */
+    public function getUNIFeature()
+    {
+        return $this->get("UNIFeature");
+    }
+
+    /**
+     * UNIFeature: 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。
+     *
+     * @param boolean $uniFeature
+     */
+    public function setUNIFeature($uniFeature)
+    {
+        $this->set("UNIFeature", $uniFeature);
+    }
+
+    /**
+     * NetworkInterface:
+     *
+     * @return AddUK8SUHostNodeParamNetworkInterface[]|null
+     */
+    public function getNetworkInterface()
+    {
+        $items = $this->get("NetworkInterface");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new AddUK8SUHostNodeParamNetworkInterface($item));
+        }
+        return $result;
+    }
+
+    /**
+     * NetworkInterface:
+     *
+     * @param AddUK8SUHostNodeParamNetworkInterface[] $networkInterface
+     */
+    public function setNetworkInterface(array $networkInterface)
+    {
+        $result = [];
+        foreach ($networkInterface as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * SecurityGroupId: 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *
+     * @return string|null
+     */
+    public function getSecurityGroupId()
+    {
+        return $this->get("SecurityGroupId");
+    }
+
+    /**
+     * SecurityGroupId: 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *
+     * @param string $securityGroupId
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->set("SecurityGroupId", $securityGroupId);
+    }
+
+    /**
+     * SecGroupId:
+     *
+     * @return AddUK8SUHostNodeParamSecGroupId[]|null
+     */
+    public function getSecGroupId()
+    {
+        $items = $this->get("SecGroupId");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new AddUK8SUHostNodeParamSecGroupId($item));
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroupId:
+     *
+     * @param AddUK8SUHostNodeParamSecGroupId[] $secGroupId
+     */
+    public function setSecGroupId(array $secGroupId)
+    {
+        $result = [];
+        foreach ($secGroupId as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * UserLabels: UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *
+     * @return string|null
+     */
+    public function getUserLabels()
+    {
+        return $this->get("UserLabels");
+    }
+
+    /**
+     * UserLabels: UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *
+     * @param string $userLabels
+     */
+    public function setUserLabels($userLabels)
+    {
+        $this->set("UserLabels", $userLabels);
     }
 }

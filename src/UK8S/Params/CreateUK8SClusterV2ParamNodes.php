@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
     
 
     /**
-     * Zone: 一组Nodes节点所属可用区，可创建多组Nodes节点，如一组是CPU Nodes节点，另一组是GPU Nodes节点。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 一组Nodes节点所属可用区，可创建多组Nodes节点，如一组是CPU Nodes节点，另一组是GPU Nodes节点。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class CreateUK8SClusterV2ParamNodes extends Request
     }
 
     /**
-     * Zone: 一组Nodes节点所属可用区，可创建多组Nodes节点，如一组是CPU Nodes节点，另一组是GPU Nodes节点。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 一组Nodes节点所属可用区，可创建多组Nodes节点，如一组是CPU Nodes节点，另一组是GPU Nodes节点。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -203,6 +203,26 @@ class CreateUK8SClusterV2ParamNodes extends Request
     }
 
     /**
+     * BootDiskSIze: Node节点的系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @return integer|null
+     */
+    public function getBootDiskSIze()
+    {
+        return $this->get("BootDiskSIze");
+    }
+
+    /**
+     * BootDiskSIze: Node节点的系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @param int $bootDiskSIze
+     */
+    public function setBootDiskSIze($bootDiskSIze)
+    {
+        $this->set("BootDiskSIze", $bootDiskSIze);
+    }
+
+    /**
      * DataDiskType: 一组Node节点的数据盘类型，请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
      *
      * @return string|null
@@ -220,26 +240,6 @@ class CreateUK8SClusterV2ParamNodes extends Request
     public function setDataDiskType($dataDiskType)
     {
         $this->set("DataDiskType", $dataDiskType);
-    }
-
-    /**
-     * MinmalCpuPlatform: Node节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
-     *
-     * @return string|null
-     */
-    public function getMinmalCpuPlatform()
-    {
-        return $this->get("MinmalCpuPlatform");
-    }
-
-    /**
-     * MinmalCpuPlatform: Node节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
-     *
-     * @param string $minmalCpuPlatform
-     */
-    public function setMinmalCpuPlatform($minmalCpuPlatform)
-    {
-        $this->set("MinmalCpuPlatform", $minmalCpuPlatform);
     }
 
     /**
@@ -300,5 +300,209 @@ class CreateUK8SClusterV2ParamNodes extends Request
     public function setDataDiskSize($dataDiskSize)
     {
         $this->set("DataDiskSize", $dataDiskSize);
+    }
+
+    /**
+     * MinimalCpuPlatform: Node节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
+     *
+     * @return string|null
+     */
+    public function getMinimalCpuPlatform()
+    {
+        return $this->get("MinimalCpuPlatform");
+    }
+
+    /**
+     * MinimalCpuPlatform: Node节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
+     *
+     * @param string $minimalCpuPlatform
+     */
+    public function setMinimalCpuPlatform($minimalCpuPlatform)
+    {
+        $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
+    }
+
+    /**
+     * Taints: Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *
+     * @return string|null
+     */
+    public function getTaints()
+    {
+        return $this->get("Taints");
+    }
+
+    /**
+     * Taints: Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *
+     * @param string $taints
+     */
+    public function setTaints($taints)
+    {
+        $this->set("Taints", $taints);
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @return string|null
+     */
+    public function getSecurityMode()
+    {
+        return $this->get("SecurityMode");
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @param string $securityMode
+     */
+    public function setSecurityMode($securityMode)
+    {
+        $this->set("SecurityMode", $securityMode);
+    }
+
+    /**
+     * NamePrefix: 一组Node的自定义主机名前缀。 完整的自定义主机名为{NamePrefix}-{NodeIP}。
+     *
+     * @return string|null
+     */
+    public function getNamePrefix()
+    {
+        return $this->get("NamePrefix");
+    }
+
+    /**
+     * NamePrefix: 一组Node的自定义主机名前缀。 完整的自定义主机名为{NamePrefix}-{NodeIP}。
+     *
+     * @param string $namePrefix
+     */
+    public function setNamePrefix($namePrefix)
+    {
+        $this->set("NamePrefix", $namePrefix);
+    }
+
+    /**
+     * ImageId: Node节点的镜像 ID，不填则使用ImageId参数。支持用户自定义镜像。
+     *
+     * @return string|null
+     */
+    public function getImageId()
+    {
+        return $this->get("ImageId");
+    }
+
+    /**
+     * ImageId: Node节点的镜像 ID，不填则使用ImageId参数。支持用户自定义镜像。
+     *
+     * @param string $imageId
+     */
+    public function setImageId($imageId)
+    {
+        $this->set("ImageId", $imageId);
+    }
+
+    /**
+     * UNIFeature: 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。
+     *
+     * @return string|null
+     */
+    public function getUNIFeature()
+    {
+        return $this->get("UNIFeature");
+    }
+
+    /**
+     * UNIFeature: 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。
+     *
+     * @param string $uniFeature
+     */
+    public function setUNIFeature($uniFeature)
+    {
+        $this->set("UNIFeature", $uniFeature);
+    }
+
+    /**
+     * NetworkInterface:
+     *
+     * @return CreateUK8SClusterV2ParamNodesNetworkInterface[]|null
+     */
+    public function getNetworkInterface()
+    {
+        $items = $this->get("NetworkInterface");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUK8SClusterV2ParamNodesNetworkInterface($item));
+        }
+        return $result;
+    }
+
+    /**
+     * NetworkInterface:
+     *
+     * @param CreateUK8SClusterV2ParamNodesNetworkInterface[] $networkInterface
+     */
+    public function setNetworkInterface(array $networkInterface)
+    {
+        $result = [];
+        foreach ($networkInterface as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * SecurityGroupId: 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *
+     * @return string|null
+     */
+    public function getSecurityGroupId()
+    {
+        return $this->get("SecurityGroupId");
+    }
+
+    /**
+     * SecurityGroupId: 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *
+     * @param string $securityGroupId
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->set("SecurityGroupId", $securityGroupId);
+    }
+
+    /**
+     * SecGroupId:
+     *
+     * @return CreateUK8SClusterV2ParamNodesSecGroupId[]|null
+     */
+    public function getSecGroupId()
+    {
+        $items = $this->get("SecGroupId");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUK8SClusterV2ParamNodesSecGroupId($item));
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroupId:
+     *
+     * @param CreateUK8SClusterV2ParamNodesSecGroupId[] $secGroupId
+     */
+    public function setSecGroupId(array $secGroupId)
+    {
+        $result = [];
+        foreach ($secGroupId as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }

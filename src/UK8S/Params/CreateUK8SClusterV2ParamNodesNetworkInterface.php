@@ -18,27 +18,27 @@ namespace UCloud\UK8S\Params;
 
 use UCloud\Core\Request\Request;
 
-class CreateUK8SClusterV2ParamKubeProxy extends Request
+class CreateUK8SClusterV2ParamNodesNetworkInterface extends Request
 {
     
 
     /**
-     * Mode: 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。
+     * EIP:
      *
-     * @return string|null
+     * @return CreateUK8SClusterV2ParamNodesNetworkInterfaceEIP|null
      */
-    public function getMode()
+    public function getEIP()
     {
-        return $this->get("Mode");
+        return new CreateUK8SClusterV2ParamNodesNetworkInterfaceEIP($this->get("EIP"));
     }
 
     /**
-     * Mode: 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。
+     * EIP:
      *
-     * @param string $mode
+     * @param CreateUK8SClusterV2ParamNodesNetworkInterfaceEIP $eip
      */
-    public function setMode($mode)
+    public function setEIP(array $eip)
     {
-        $this->set("Mode", $mode);
+        $this->set("EIP", $eip->getAll());
     }
 }

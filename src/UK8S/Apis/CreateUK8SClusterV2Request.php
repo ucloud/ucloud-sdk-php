@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,11 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamMaster;
+use UCloud\UK8S\Params\CreateUK8SClusterV2ParamMasterSecGroupId;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodes;
+use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodesNetworkInterface;
+use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodesNetworkInterfaceEIP;
+use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodesSecGroupId;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamKubeProxy;
 
 class CreateUK8SClusterV2Request extends Request
@@ -41,7 +45,7 @@ class CreateUK8SClusterV2Request extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -51,7 +55,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -61,7 +65,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * ProjectId: 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -71,7 +75,7 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * ProjectId: 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -325,6 +329,26 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
+     * MasterBootDiskSize: Master节点系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @return integer|null
+     */
+    public function getMasterBootDiskSize()
+    {
+        return $this->get("MasterBootDiskSize");
+    }
+
+    /**
+     * MasterBootDiskSize: Master节点系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @param int $masterBootDiskSize
+     */
+    public function setMasterBootDiskSize($masterBootDiskSize)
+    {
+        $this->set("MasterBootDiskSize", $masterBootDiskSize);
+    }
+
+    /**
      * MasterDataDiskType: Master节点数据盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
      *
      * @return string|null
@@ -342,26 +366,6 @@ class CreateUK8SClusterV2Request extends Request
     public function setMasterDataDiskType($masterDataDiskType)
     {
         $this->set("MasterDataDiskType", $masterDataDiskType);
-    }
-
-    /**
-     * MasterMinmalCpuPlatform: Master节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
-     *
-     * @return string|null
-     */
-    public function getMasterMinmalCpuPlatform()
-    {
-        return $this->get("MasterMinmalCpuPlatform");
-    }
-
-    /**
-     * MasterMinmalCpuPlatform: Master节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
-     *
-     * @param string $masterMinmalCpuPlatform
-     */
-    public function setMasterMinmalCpuPlatform($masterMinmalCpuPlatform)
-    {
-        $this->set("MasterMinmalCpuPlatform", $masterMinmalCpuPlatform);
     }
 
     /**
@@ -562,5 +566,145 @@ class CreateUK8SClusterV2Request extends Request
     public function setInitScript($initScript)
     {
         $this->set("InitScript", $initScript);
+    }
+
+    /**
+     * MasterMinimalCpuPlatform: Master节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
+     *
+     * @return string|null
+     */
+    public function getMasterMinimalCpuPlatform()
+    {
+        return $this->get("MasterMinimalCpuPlatform");
+    }
+
+    /**
+     * MasterMinimalCpuPlatform: Master节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
+     *
+     * @param string $masterMinimalCpuPlatform
+     */
+    public function setMasterMinimalCpuPlatform($masterMinimalCpuPlatform)
+    {
+        $this->set("MasterMinimalCpuPlatform", $masterMinimalCpuPlatform);
+    }
+
+    /**
+     * ClusterDomain: 创建集群的时候定义clusterdomain
+     *
+     * @return string|null
+     */
+    public function getClusterDomain()
+    {
+        return $this->get("ClusterDomain");
+    }
+
+    /**
+     * ClusterDomain: 创建集群的时候定义clusterdomain
+     *
+     * @param string $clusterDomain
+     */
+    public function setClusterDomain($clusterDomain)
+    {
+        $this->set("ClusterDomain", $clusterDomain);
+    }
+
+    /**
+     * Tag: 业务组
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->get("Tag");
+    }
+
+    /**
+     * Tag: 业务组
+     *
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->set("Tag", $tag);
+    }
+
+    /**
+     * MasterImageId: Master节点的镜像 ID，不填则使用ImageId参数。支持用户自定义镜像。
+     *
+     * @return string|null
+     */
+    public function getMasterImageId()
+    {
+        return $this->get("MasterImageId");
+    }
+
+    /**
+     * MasterImageId: Master节点的镜像 ID，不填则使用ImageId参数。支持用户自定义镜像。
+     *
+     * @param string $masterImageId
+     */
+    public function setMasterImageId($masterImageId)
+    {
+        $this->set("MasterImageId", $masterImageId);
+    }
+
+    /**
+     * LbClass: master lb 类型默认ulb，可选ulb nlb
+     *
+     * @return string|null
+     */
+    public function getLbClass()
+    {
+        return $this->get("LbClass");
+    }
+
+    /**
+     * LbClass: master lb 类型默认ulb，可选ulb nlb
+     *
+     * @param string $lbClass
+     */
+    public function setLbClass($lbClass)
+    {
+        $this->set("LbClass", $lbClass);
+    }
+
+    /**
+     * ForwardSrcIPMethod: LbClass为nlb的时候支持的源ip转发模式，目前只支持Toa,为空则不开源ip功能 枚举："",Toa
+     *
+     * @return string|null
+     */
+    public function getForwardSrcIPMethod()
+    {
+        return $this->get("ForwardSrcIPMethod");
+    }
+
+    /**
+     * ForwardSrcIPMethod: LbClass为nlb的时候支持的源ip转发模式，目前只支持Toa,为空则不开源ip功能 枚举："",Toa
+     *
+     * @param string $forwardSrcIPMethod
+     */
+    public function setForwardSrcIPMethod($forwardSrcIPMethod)
+    {
+        $this->set("ForwardSrcIPMethod", $forwardSrcIPMethod);
+    }
+
+    /**
+     * UserLabels: UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *
+     * @return string|null
+     */
+    public function getUserLabels()
+    {
+        return $this->get("UserLabels");
+    }
+
+    /**
+     * UserLabels: UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *
+     * @param string $userLabels
+     */
+    public function setUserLabels($userLabels)
+    {
+        $this->set("UserLabels", $userLabels);
     }
 }

@@ -18,27 +18,47 @@ namespace UCloud\UK8S\Models;
 
 use UCloud\Core\Response\Response;
 
-class KubeProxy extends Response
+class UK8SVersionData extends Response
 {
     
 
     /**
-     * Mode: KubeProxy模式，枚举值为[ipvs,iptables]
+     * K8sVersion: K8S 版本
      *
      * @return string|null
      */
-    public function getMode()
+    public function getK8sVersion()
     {
-        return $this->get("Mode");
+        return $this->get("K8sVersion");
     }
 
     /**
-     * Mode: KubeProxy模式，枚举值为[ipvs,iptables]
+     * K8sVersion: K8S 版本
      *
-     * @param string $mode
+     * @param string $k8sVersion
      */
-    public function setMode($mode)
+    public function setK8sVersion($k8sVersion)
     {
-        $this->set("Mode", $mode);
+        $this->set("K8sVersion", $k8sVersion);
+    }
+
+    /**
+     * ContainerdVersion: Containerd 版本
+     *
+     * @return string|null
+     */
+    public function getContainerdVersion()
+    {
+        return $this->get("ContainerdVersion");
+    }
+
+    /**
+     * ContainerdVersion: Containerd 版本
+     *
+     * @param string $containerdVersion
+     */
+    public function setContainerdVersion($containerdVersion)
+    {
+        $this->set("ContainerdVersion", $containerdVersion);
     }
 }

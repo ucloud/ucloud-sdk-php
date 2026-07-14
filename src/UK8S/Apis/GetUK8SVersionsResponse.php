@@ -17,39 +17,39 @@
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UK8S\Models\NodeGroupSet;
+use UCloud\UK8S\Models\UK8SVersionData;
 
-class ListUK8SNodeGroupResponse extends Response
+class GetUK8SVersionsResponse extends Response
 {
     
 
     /**
-     * NodeGroupList: 节点池列表
+     * Data: UK8S 版本信息列表。
      *
-     * @return NodeGroupSet[]|null
+     * @return UK8SVersionData[]|null
      */
-    public function getNodeGroupList()
+    public function getData()
     {
-        $items = $this->get("NodeGroupList");
+        $items = $this->get("Data");
         if ($items == null) {
             return [];
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new NodeGroupSet($item));
+            array_push($result, new UK8SVersionData($item));
         }
         return $result;
     }
 
     /**
-     * NodeGroupList: 节点池列表
+     * Data: UK8S 版本信息列表。
      *
-     * @param NodeGroupSet[] $nodeGroupList
+     * @param UK8SVersionData[] $data
      */
-    public function setNodeGroupList(array $nodeGroupList)
+    public function setData(array $data)
     {
         $result = [];
-        foreach ($nodeGroupList as $i => $item) {
+        foreach ($data as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
