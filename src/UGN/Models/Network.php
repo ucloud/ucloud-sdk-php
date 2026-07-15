@@ -18,7 +18,7 @@ namespace UCloud\UGN\Models;
 
 use UCloud\Core\Response\Response;
 
-class SimpleNetwork extends Response
+class Network extends Response
 {
     
 
@@ -83,7 +83,7 @@ class SimpleNetwork extends Response
     }
 
     /**
-     * Type: 网络实例类型：VPC/HybridGW/...
+     * Type: 网络实例类型：VPC/UCVR/...
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class SimpleNetwork extends Response
     }
 
     /**
-     * Type: 网络实例类型：VPC/HybridGW/...
+     * Type: 网络实例类型：VPC/UCVR/...
      *
      * @param string $type
      */
@@ -120,6 +120,26 @@ class SimpleNetwork extends Response
     public function setOrgName($orgName)
     {
         $this->set("OrgName", $orgName);
+    }
+
+    /**
+     * CompanyID: 网络实例所属公司ID
+     *
+     * @return integer|null
+     */
+    public function getCompanyID()
+    {
+        return $this->get("CompanyID");
+    }
+
+    /**
+     * CompanyID: 网络实例所属公司ID
+     *
+     * @param int $companyID
+     */
+    public function setCompanyID($companyID)
+    {
+        $this->set("CompanyID", $companyID);
     }
 
     /**
@@ -163,22 +183,42 @@ class SimpleNetwork extends Response
     }
 
     /**
-     * CreateTime:
+     * VNI: 网络实例的唯一标识，如 vpc 的 tunnel_id
      *
      * @return integer|null
      */
-    public function getCreateTime()
+    public function getVNI()
     {
-        return $this->get("CreateTime");
+        return $this->get("VNI");
     }
 
     /**
-     * CreateTime:
+     * VNI: 网络实例的唯一标识，如 vpc 的 tunnel_id
      *
-     * @param int $createTime
+     * @param int $vni
      */
-    public function setCreateTime($createTime)
+    public function setVNI($vni)
     {
-        $this->set("CreateTime", $createTime);
+        $this->set("VNI", $vni);
+    }
+
+    /**
+     * InsertTime: 创建时间
+     *
+     * @return integer|null
+     */
+    public function getInsertTime()
+    {
+        return $this->get("InsertTime");
+    }
+
+    /**
+     * InsertTime: 创建时间
+     *
+     * @param int $insertTime
+     */
+    public function setInsertTime($insertTime)
+    {
+        $this->set("InsertTime", $insertTime);
     }
 }

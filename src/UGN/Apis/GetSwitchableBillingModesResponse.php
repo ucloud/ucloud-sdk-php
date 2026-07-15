@@ -18,9 +18,27 @@ namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ModifyUGNBandwidthResponse extends Response
+class GetSwitchableBillingModesResponse extends Response
 {
     
 
+    /**
+     * PayModes: 支持的计费类型。FixedBw：固定带宽，Traffic：流量计费，Max5：第五峰值。
+     *
+     * @return string[]|null
+     */
+    public function getPayModes()
+    {
+        return $this->get("PayModes");
+    }
 
+    /**
+     * PayModes: 支持的计费类型。FixedBw：固定带宽，Traffic：流量计费，Max5：第五峰值。
+     *
+     * @param string[] $payModes
+     */
+    public function setPayModes(array $payModes)
+    {
+        $this->set("PayModes", $payModes);
+    }
 }

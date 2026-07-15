@@ -18,12 +18,14 @@ namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ListUGNRequest extends Request
+class DeleteRoutePolicyRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUGN"]);
+        parent::__construct(["Action" => "DeleteRoutePolicy"]);
         $this->markRequired("ProjectId");
+        $this->markRequired("UGNID");
+        $this->markRequired("PolicyIds");
     }
 
     
@@ -49,42 +51,42 @@ class ListUGNRequest extends Request
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: 云联网实例ID
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getUGNID()
     {
-        return $this->get("Limit");
+        return $this->get("UGNID");
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: 云联网实例ID
      *
-     * @param int $limit
+     * @param string $ugnid
      */
-    public function setLimit($limit)
+    public function setUGNID($ugnid)
     {
-        $this->set("Limit", $limit);
+        $this->set("UGNID", $ugnid);
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * PolicyIds: 需要删除的路由策略ID数组
      *
-     * @return integer|null
+     * @return string[]|null
      */
-    public function getOffset()
+    public function getPolicyIds()
     {
-        return $this->get("Offset");
+        return $this->get("PolicyIds");
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * PolicyIds: 需要删除的路由策略ID数组
      *
-     * @param int $offset
+     * @param string[] $policyIds
      */
-    public function setOffset($offset)
+    public function setPolicyIds(array $policyIds)
     {
-        $this->set("Offset", $offset);
+        $this->set("PolicyIds", $policyIds);
     }
 }

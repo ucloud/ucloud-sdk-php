@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ class ListSimpleBwPackageRequest extends Request
     }
 
     /**
-     * Offset:
+     * Offset: 偏移量，默认0
      *
      * @return integer|null
      */
@@ -59,7 +59,7 @@ class ListSimpleBwPackageRequest extends Request
     }
 
     /**
-     * Offset:
+     * Offset: 偏移量，默认0
      *
      * @param int $offset
      */
@@ -69,7 +69,7 @@ class ListSimpleBwPackageRequest extends Request
     }
 
     /**
-     * Limit:
+     * Limit: 分页大小，默认20
      *
      * @return integer|null
      */
@@ -79,7 +79,7 @@ class ListSimpleBwPackageRequest extends Request
     }
 
     /**
-     * Limit:
+     * Limit: 分页大小，默认20
      *
      * @param int $limit
      */

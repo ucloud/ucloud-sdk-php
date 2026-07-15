@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ class ListSimpleBwPackageResponse extends Response
     
 
     /**
-     * TotalCount:
+     * TotalCount: 带宽包数量
      *
      * @return integer|null
      */
@@ -34,7 +34,7 @@ class ListSimpleBwPackageResponse extends Response
     }
 
     /**
-     * TotalCount:
+     * TotalCount: 带宽包数量
      *
      * @param int $totalCount
      */
@@ -44,7 +44,7 @@ class ListSimpleBwPackageResponse extends Response
     }
 
     /**
-     * Offset:
+     * Offset: 偏移量
      *
      * @return integer|null
      */
@@ -54,7 +54,7 @@ class ListSimpleBwPackageResponse extends Response
     }
 
     /**
-     * Offset:
+     * Offset: 偏移量
      *
      * @param int $offset
      */
@@ -64,7 +64,7 @@ class ListSimpleBwPackageResponse extends Response
     }
 
     /**
-     * Limit:
+     * Limit: 分页大小
      *
      * @return integer|null
      */
@@ -74,7 +74,7 @@ class ListSimpleBwPackageResponse extends Response
     }
 
     /**
-     * Limit:
+     * Limit: 分页大小
      *
      * @param int $limit
      */
@@ -84,7 +84,7 @@ class ListSimpleBwPackageResponse extends Response
     }
 
     /**
-     * BwPackages:
+     * BwPackages: 带宽包列表
      *
      * @return SimpleBwPackage[]|null
      */
@@ -102,7 +102,7 @@ class ListSimpleBwPackageResponse extends Response
     }
 
     /**
-     * BwPackages:
+     * BwPackages: 带宽包列表
      *
      * @param SimpleBwPackage[] $bwPackages
      */

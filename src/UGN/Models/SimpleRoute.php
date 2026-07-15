@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,5 +140,145 @@ class SimpleRoute extends Response
     public function setPriority($priority)
     {
         $this->set("Priority", $priority);
+    }
+
+    /**
+     * Deny: true: 由于命中路由策略而失效
+     *
+     * @return boolean|null
+     */
+    public function getDeny()
+    {
+        return $this->get("Deny");
+    }
+
+    /**
+     * Deny: true: 由于命中路由策略而失效
+     *
+     * @param boolean $deny
+     */
+    public function setDeny($deny)
+    {
+        $this->set("Deny", $deny);
+    }
+
+    /**
+     * Restrict: true: 由于优先级比其他前缀相同的路由低而失效
+     *
+     * @return boolean|null
+     */
+    public function getRestrict()
+    {
+        return $this->get("Restrict");
+    }
+
+    /**
+     * Restrict: true: 由于优先级比其他前缀相同的路由低而失效
+     *
+     * @param boolean $restrict
+     */
+    public function setRestrict($restrict)
+    {
+        $this->set("Restrict", $restrict);
+    }
+
+    /**
+     * Conflict: true: 由于优先级相同但插入数据库的时间比其他前缀相同的路由晚而失效
+     *
+     * @return boolean|null
+     */
+    public function getConflict()
+    {
+        return $this->get("Conflict");
+    }
+
+    /**
+     * Conflict: true: 由于优先级相同但插入数据库的时间比其他前缀相同的路由晚而失效
+     *
+     * @param boolean $conflict
+     */
+    public function setConflict($conflict)
+    {
+        $this->set("Conflict", $conflict);
+    }
+
+    /**
+     * InPolicyId: 匹配中的入向路由策略id
+     *
+     * @return string|null
+     */
+    public function getInPolicyId()
+    {
+        return $this->get("InPolicyId");
+    }
+
+    /**
+     * InPolicyId: 匹配中的入向路由策略id
+     *
+     * @param string $inPolicyId
+     */
+    public function setInPolicyId($inPolicyId)
+    {
+        $this->set("InPolicyId", $inPolicyId);
+    }
+
+    /**
+     * InPolicyName: 匹配中的入向路由策略名称
+     *
+     * @return string|null
+     */
+    public function getInPolicyName()
+    {
+        return $this->get("InPolicyName");
+    }
+
+    /**
+     * InPolicyName: 匹配中的入向路由策略名称
+     *
+     * @param string $inPolicyName
+     */
+    public function setInPolicyName($inPolicyName)
+    {
+        $this->set("InPolicyName", $inPolicyName);
+    }
+
+    /**
+     * OutPolicyId: 匹配中的出向路由策略id
+     *
+     * @return string|null
+     */
+    public function getOutPolicyId()
+    {
+        return $this->get("OutPolicyId");
+    }
+
+    /**
+     * OutPolicyId: 匹配中的出向路由策略id
+     *
+     * @param string $outPolicyId
+     */
+    public function setOutPolicyId($outPolicyId)
+    {
+        $this->set("OutPolicyId", $outPolicyId);
+    }
+
+    /**
+     * OutPolicyName: 匹配中的出向路由策略名称
+     *
+     * @return string|null
+     */
+    public function getOutPolicyName()
+    {
+        return $this->get("OutPolicyName");
+    }
+
+    /**
+     * OutPolicyName: 匹配中的出向路由策略名称
+     *
+     * @param string $outPolicyName
+     */
+    public function setOutPolicyName($outPolicyName)
+    {
+        $this->set("OutPolicyName", $outPolicyName);
     }
 }

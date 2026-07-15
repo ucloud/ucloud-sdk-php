@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class SimpleBwPackage extends Response
     
 
     /**
-     * PackageID:
+     * PackageID: 带宽包 ID
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class SimpleBwPackage extends Response
     }
 
     /**
-     * PackageID:
+     * PackageID: 带宽包 ID
      *
      * @param string $packageID
      */
@@ -43,7 +43,7 @@ class SimpleBwPackage extends Response
     }
 
     /**
-     * UGNID:
+     * UGNID: UGN ID
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class SimpleBwPackage extends Response
     }
 
     /**
-     * UGNID:
+     * UGNID: UGN ID
      *
      * @param string $ugnid
      */
@@ -203,7 +203,7 @@ class SimpleBwPackage extends Response
     }
 
     /**
-     * Name:
+     * Name: 带宽包名称
      *
      * @return string|null
      */
@@ -213,7 +213,7 @@ class SimpleBwPackage extends Response
     }
 
     /**
-     * Name:
+     * Name: 带宽包名称
      *
      * @param string $name
      */
@@ -223,7 +223,7 @@ class SimpleBwPackage extends Response
     }
 
     /**
-     * Remark:
+     * Remark: 备注
      *
      * @return string|null
      */
@@ -233,7 +233,7 @@ class SimpleBwPackage extends Response
     }
 
     /**
-     * Remark:
+     * Remark: 备注
      *
      * @param string $remark
      */

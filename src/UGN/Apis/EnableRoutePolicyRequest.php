@@ -18,12 +18,15 @@ namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ListUGNRequest extends Request
+class EnableRoutePolicyRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUGN"]);
+        parent::__construct(["Action" => "EnableRoutePolicy"]);
         $this->markRequired("ProjectId");
+        $this->markRequired("UGNID");
+        $this->markRequired("PolicyId");
+        $this->markRequired("Enable");
     }
 
     
@@ -49,42 +52,62 @@ class ListUGNRequest extends Request
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: 云联网实例ID
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getUGNID()
     {
-        return $this->get("Limit");
+        return $this->get("UGNID");
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: 云联网实例ID
      *
-     * @param int $limit
+     * @param string $ugnid
      */
-    public function setLimit($limit)
+    public function setUGNID($ugnid)
     {
-        $this->set("Limit", $limit);
+        $this->set("UGNID", $ugnid);
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * PolicyId: 路由策略ID
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getOffset()
+    public function getPolicyId()
     {
-        return $this->get("Offset");
+        return $this->get("PolicyId");
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * PolicyId: 路由策略ID
      *
-     * @param int $offset
+     * @param string $policyId
      */
-    public function setOffset($offset)
+    public function setPolicyId($policyId)
     {
-        $this->set("Offset", $offset);
+        $this->set("PolicyId", $policyId);
+    }
+
+    /**
+     * Enable: 是否启用
+     *
+     * @return boolean|null
+     */
+    public function getEnable()
+    {
+        return $this->get("Enable");
+    }
+
+    /**
+     * Enable: 是否启用
+     *
+     * @param boolean $enable
+     */
+    public function setEnable($enable)
+    {
+        $this->set("Enable", $enable);
     }
 }

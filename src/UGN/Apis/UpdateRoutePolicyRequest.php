@@ -17,13 +17,17 @@
 namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
+use UCloud\UGN\Params\UpdateRoutePolicyParamPolicy;
+use UCloud\UGN\Params\UpdateRoutePolicyParamPolicySrcNetworks;
+use UCloud\UGN\Params\UpdateRoutePolicyParamPolicyDstNetworks;
 
-class ListUGNRequest extends Request
+class UpdateRoutePolicyRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUGN"]);
+        parent::__construct(["Action" => "UpdateRoutePolicy"]);
         $this->markRequired("ProjectId");
+        $this->markRequired("UGNID");
     }
 
     
@@ -49,42 +53,42 @@ class ListUGNRequest extends Request
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: 云联网实例ID
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getUGNID()
     {
-        return $this->get("Limit");
+        return $this->get("UGNID");
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: 云联网实例ID
      *
-     * @param int $limit
+     * @param string $ugnid
      */
-    public function setLimit($limit)
+    public function setUGNID($ugnid)
     {
-        $this->set("Limit", $limit);
+        $this->set("UGNID", $ugnid);
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * Policy:
      *
-     * @return integer|null
+     * @return UpdateRoutePolicyParamPolicy|null
      */
-    public function getOffset()
+    public function getPolicy()
     {
-        return $this->get("Offset");
+        return new UpdateRoutePolicyParamPolicy($this->get("Policy"));
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * Policy:
      *
-     * @param int $offset
+     * @param UpdateRoutePolicyParamPolicy $policy
      */
-    public function setOffset($offset)
+    public function setPolicy(array $policy)
     {
-        $this->set("Offset", $offset);
+        $this->set("Policy", $policy->getAll());
     }
 }

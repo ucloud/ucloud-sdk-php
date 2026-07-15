@@ -18,12 +18,14 @@ namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ListUGNRequest extends Request
+class GetUGNRouteTableRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUGN"]);
+        parent::__construct(["Action" => "GetUGNRouteTable"]);
         $this->markRequired("ProjectId");
+        $this->markRequired("UGNID");
+        $this->markRequired("Type");
     }
 
     
@@ -49,42 +51,42 @@ class ListUGNRequest extends Request
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: 云联网实例ID
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getUGNID()
     {
-        return $this->get("Limit");
+        return $this->get("UGNID");
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: 云联网实例ID
      *
-     * @param int $limit
+     * @param string $ugnid
      */
-    public function setLimit($limit)
+    public function setUGNID($ugnid)
     {
-        $this->set("Limit", $limit);
+        $this->set("UGNID", $ugnid);
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * Type: 路由表类型，分为初始路由表、中阶路由表以及最终路由表，限定取值："Origin"/"Middle"/"Final"
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getOffset()
+    public function getType()
     {
-        return $this->get("Offset");
+        return $this->get("Type");
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * Type: 路由表类型，分为初始路由表、中阶路由表以及最终路由表，限定取值："Origin"/"Middle"/"Final"
      *
-     * @param int $offset
+     * @param string $type
      */
-    public function setOffset($offset)
+    public function setType($type)
     {
-        $this->set("Offset", $offset);
+        $this->set("Type", $type);
     }
 }

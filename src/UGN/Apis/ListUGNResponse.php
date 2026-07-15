@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ class ListUGNResponse extends Response
     
 
     /**
-     * UGNs:
+     * UGNs: UGN 列表
      *
      * @return UGN[]|null
      */
@@ -42,7 +42,7 @@ class ListUGNResponse extends Response
     }
 
     /**
-     * UGNs:
+     * UGNs: UGN 列表
      *
      * @param UGN[] $ugNs
      */
@@ -56,7 +56,7 @@ class ListUGNResponse extends Response
     }
 
     /**
-     * TotalCount:
+     * TotalCount: UGN数量
      *
      * @return integer|null
      */
@@ -66,7 +66,7 @@ class ListUGNResponse extends Response
     }
 
     /**
-     * TotalCount:
+     * TotalCount: UGN数量
      *
      * @param int $totalCount
      */
@@ -76,7 +76,7 @@ class ListUGNResponse extends Response
     }
 
     /**
-     * Offset:
+     * Offset: 偏移量
      *
      * @return integer|null
      */
@@ -86,7 +86,7 @@ class ListUGNResponse extends Response
     }
 
     /**
-     * Offset:
+     * Offset: 偏移量
      *
      * @param int $offset
      */
@@ -96,7 +96,7 @@ class ListUGNResponse extends Response
     }
 
     /**
-     * Limit:
+     * Limit: 分页大小
      *
      * @return integer|null
      */
@@ -106,7 +106,7 @@ class ListUGNResponse extends Response
     }
 
     /**
-     * Limit:
+     * Limit: 分页大小
      *
      * @param int $limit
      */

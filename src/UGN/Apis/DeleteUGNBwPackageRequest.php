@@ -18,12 +18,13 @@ namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ListUGNRequest extends Request
+class DeleteUGNBwPackageRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUGN"]);
-        $this->markRequired("ProjectId");
+        parent::__construct(["Action" => "DeleteUGNBwPackage"]);
+        $this->markRequired("BwPackageID");
+        $this->markRequired("UGNID");
     }
 
     
@@ -49,42 +50,42 @@ class ListUGNRequest extends Request
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * BwPackageID: 带宽包ID
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getBwPackageID()
     {
-        return $this->get("Limit");
+        return $this->get("BwPackageID");
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * BwPackageID: 带宽包ID
      *
-     * @param int $limit
+     * @param string $bwPackageID
      */
-    public function setLimit($limit)
+    public function setBwPackageID($bwPackageID)
     {
-        $this->set("Limit", $limit);
+        $this->set("BwPackageID", $bwPackageID);
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * UGNID: UGNID
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getOffset()
+    public function getUGNID()
     {
-        return $this->get("Offset");
+        return $this->get("UGNID");
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * UGNID: UGNID
      *
-     * @param int $offset
+     * @param string $ugnid
      */
-    public function setOffset($offset)
+    public function setUGNID($ugnid)
     {
-        $this->set("Offset", $offset);
+        $this->set("UGNID", $ugnid);
     }
 }
