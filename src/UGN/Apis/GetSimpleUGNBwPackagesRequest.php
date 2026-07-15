@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ class GetSimpleUGNBwPackagesRequest extends Request
     }
 
     /**
-     * UGNID:
+     * UGNID: UGN ID
      *
      * @return string|null
      */
@@ -60,7 +60,7 @@ class GetSimpleUGNBwPackagesRequest extends Request
     }
 
     /**
-     * UGNID:
+     * UGNID: UGN ID
      *
      * @param string $ugnid
      */
@@ -107,5 +107,25 @@ class GetSimpleUGNBwPackagesRequest extends Request
     public function setLimit($limit)
     {
         $this->set("Limit", $limit);
+    }
+
+    /**
+     * PackageIds: 带宽包ID列表，不填查询UGN下全部带宽包
+     *
+     * @return string[]|null
+     */
+    public function getPackageIds()
+    {
+        return $this->get("PackageIds");
+    }
+
+    /**
+     * PackageIds: 带宽包ID列表，不填查询UGN下全部带宽包
+     *
+     * @param string[] $packageIds
+     */
+    public function setPackageIds(array $packageIds)
+    {
+        $this->set("PackageIds", $packageIds);
     }
 }

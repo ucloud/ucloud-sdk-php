@@ -17,13 +17,15 @@
 namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
+use UCloud\UGN\Params\AttachUGNNetworksParamNetworks;
 
-class ListUGNRequest extends Request
+class AttachUGNNetworksRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUGN"]);
+        parent::__construct(["Action" => "AttachUGNNetworks"]);
         $this->markRequired("ProjectId");
+        $this->markRequired("UGNID");
     }
 
     
@@ -49,42 +51,54 @@ class ListUGNRequest extends Request
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: UGN ID
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getUGNID()
     {
-        return $this->get("Limit");
+        return $this->get("UGNID");
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * UGNID: UGN ID
      *
-     * @param int $limit
+     * @param string $ugnid
      */
-    public function setLimit($limit)
+    public function setUGNID($ugnid)
     {
-        $this->set("Limit", $limit);
+        $this->set("UGNID", $ugnid);
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * Networks:
      *
-     * @return integer|null
+     * @return AttachUGNNetworksParamNetworks[]|null
      */
-    public function getOffset()
+    public function getNetworks()
     {
-        return $this->get("Offset");
+        $items = $this->get("Networks");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new AttachUGNNetworksParamNetworks($item));
+        }
+        return $result;
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * Networks:
      *
-     * @param int $offset
+     * @param AttachUGNNetworksParamNetworks[] $networks
      */
-    public function setOffset($offset)
+    public function setNetworks(array $networks)
     {
-        $this->set("Offset", $offset);
+        $result = [];
+        foreach ($networks as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }

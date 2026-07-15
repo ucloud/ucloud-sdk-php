@@ -17,12 +17,13 @@
 namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Request\Request;
+use UCloud\UGN\Params\CreateUGNParamNetworks;
 
-class ListUGNRequest extends Request
+class CreateUGNRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUGN"]);
+        parent::__construct(["Action" => "CreateUGN"]);
         $this->markRequired("ProjectId");
     }
 
@@ -49,42 +50,74 @@ class ListUGNRequest extends Request
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * Name: UGN名称
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getLimit()
+    public function getName()
     {
-        return $this->get("Limit");
+        return $this->get("Name");
     }
 
     /**
-     * Limit: 分页大小，默认20
+     * Name: UGN名称
      *
-     * @param int $limit
+     * @param string $name
      */
-    public function setLimit($limit)
+    public function setName($name)
     {
-        $this->set("Limit", $limit);
+        $this->set("Name", $name);
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * Remark: 备注
      *
-     * @return integer|null
+     * @return string|null
      */
-    public function getOffset()
+    public function getRemark()
     {
-        return $this->get("Offset");
+        return $this->get("Remark");
     }
 
     /**
-     * Offset: 偏移量，默认0
+     * Remark: 备注
      *
-     * @param int $offset
+     * @param string $remark
      */
-    public function setOffset($offset)
+    public function setRemark($remark)
     {
-        $this->set("Offset", $offset);
+        $this->set("Remark", $remark);
+    }
+
+    /**
+     * Networks:
+     *
+     * @return CreateUGNParamNetworks[]|null
+     */
+    public function getNetworks()
+    {
+        $items = $this->get("Networks");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUGNParamNetworks($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Networks:
+     *
+     * @param CreateUGNParamNetworks[] $networks
+     */
+    public function setNetworks(array $networks)
+    {
+        $result = [];
+        foreach ($networks as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }

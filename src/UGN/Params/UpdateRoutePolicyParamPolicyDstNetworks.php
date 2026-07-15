@@ -14,13 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\UGN\Apis;
+namespace UCloud\UGN\Params;
 
-use UCloud\Core\Response\Response;
+use UCloud\Core\Request\Request;
 
-class ModifyUGNBandwidthResponse extends Response
+class UpdateRoutePolicyParamPolicyDstNetworks extends Request
 {
     
 
+    /**
+     * NetworkId: 路由策略需要作用的网络实例ID数组
+     *
+     * @return string|null
+     */
+    public function getNetworkId()
+    {
+        return $this->get("NetworkId");
+    }
 
+    /**
+     * NetworkId: 路由策略需要作用的网络实例ID数组
+     *
+     * @param string $networkId
+     */
+    public function setNetworkId($networkId)
+    {
+        $this->set("NetworkId", $networkId);
+    }
 }

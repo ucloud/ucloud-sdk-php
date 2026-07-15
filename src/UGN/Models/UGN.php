@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,5 +140,45 @@ class UGN extends Response
     public function setBwPackageCount($bwPackageCount)
     {
         $this->set("BwPackageCount", $bwPackageCount);
+    }
+
+    /**
+     * PolicyCount: 关联的路由策略数量
+     *
+     * @return integer|null
+     */
+    public function getPolicyCount()
+    {
+        return $this->get("PolicyCount");
+    }
+
+    /**
+     * PolicyCount: 关联的路由策略数量
+     *
+     * @param int $policyCount
+     */
+    public function setPolicyCount($policyCount)
+    {
+        $this->set("PolicyCount", $policyCount);
+    }
+
+    /**
+     * ApplyNetworksCount: 申请待加入的网络数量
+     *
+     * @return integer|null
+     */
+    public function getApplyNetworksCount()
+    {
+        return $this->get("ApplyNetworksCount");
+    }
+
+    /**
+     * ApplyNetworksCount: 申请待加入的网络数量
+     *
+     * @param int $applyNetworksCount
+     */
+    public function setApplyNetworksCount($applyNetworksCount)
+    {
+        $this->set("ApplyNetworksCount", $applyNetworksCount);
     }
 }

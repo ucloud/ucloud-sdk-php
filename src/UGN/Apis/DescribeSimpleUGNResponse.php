@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,16 @@ use UCloud\UGN\Models\UGN;
 use UCloud\UGN\Models\SimpleNetwork;
 use UCloud\UGN\Models\SimpleBwPackage;
 use UCloud\UGN\Models\SimpleRoute;
+use UCloud\UGN\Models\Policy;
+use UCloud\UGN\Models\NetworkAndPrefix;
+use UCloud\UGN\Models\NetworkAndPrefix;
 
 class DescribeSimpleUGNResponse extends Response
 {
     
 
     /**
-     * UGN:
+     * UGN: 云联网实例基本信息
      *
      * @return UGN|null
      */
@@ -37,7 +40,7 @@ class DescribeSimpleUGNResponse extends Response
     }
 
     /**
-     * UGN:
+     * UGN: 云联网实例基本信息
      *
      * @param UGN $ugn
      */
@@ -47,7 +50,7 @@ class DescribeSimpleUGNResponse extends Response
     }
 
     /**
-     * Networks:
+     * Networks: 加入云联网网络实例基本信息
      *
      * @return SimpleNetwork[]|null
      */
@@ -65,7 +68,7 @@ class DescribeSimpleUGNResponse extends Response
     }
 
     /**
-     * Networks:
+     * Networks: 加入云联网网络实例基本信息
      *
      * @param SimpleNetwork[] $networks
      */
@@ -79,7 +82,7 @@ class DescribeSimpleUGNResponse extends Response
     }
 
     /**
-     * BwPackages:
+     * BwPackages: 云联网下的带宽基本信息
      *
      * @return SimpleBwPackage[]|null
      */
@@ -97,7 +100,7 @@ class DescribeSimpleUGNResponse extends Response
     }
 
     /**
-     * BwPackages:
+     * BwPackages: 云联网下的带宽基本信息
      *
      * @param SimpleBwPackage[] $bwPackages
      */
@@ -111,7 +114,7 @@ class DescribeSimpleUGNResponse extends Response
     }
 
     /**
-     * Routes:
+     * Routes: 云联网下的路由基本信息
      *
      * @return SimpleRoute[]|null
      */
@@ -129,7 +132,7 @@ class DescribeSimpleUGNResponse extends Response
     }
 
     /**
-     * Routes:
+     * Routes: 云联网下的路由基本信息
      *
      * @param SimpleRoute[] $routes
      */
@@ -137,6 +140,38 @@ class DescribeSimpleUGNResponse extends Response
     {
         $result = [];
         foreach ($routes as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * Policies: 云联网的路由策略基本信息
+     *
+     * @return Policy[]|null
+     */
+    public function getPolicies()
+    {
+        $items = $this->get("Policies");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new Policy($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Policies: 云联网的路由策略基本信息
+     *
+     * @param Policy[] $policies
+     */
+    public function setPolicies(array $policies)
+    {
+        $result = [];
+        foreach ($policies as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;

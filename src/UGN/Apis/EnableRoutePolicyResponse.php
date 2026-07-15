@@ -18,7 +18,7 @@ namespace UCloud\UGN\Apis;
 
 use UCloud\Core\Response\Response;
 
-class ModifyUGNBandwidthResponse extends Response
+class EnableRoutePolicyResponse extends Response
 {
     
 
