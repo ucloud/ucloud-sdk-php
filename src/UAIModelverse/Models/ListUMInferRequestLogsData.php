@@ -14,65 +14,61 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\UAIModelverse\Apis;
+namespace UCloud\UAIModelverse\Models;
 
 use UCloud\Core\Response\Response;
-use UCloud\UAIModelverse\Models\SquareModel;
-use UCloud\UAIModelverse\Models\Pricing;
-use UCloud\UAIModelverse\Models\PriceTier;
-use UCloud\UAIModelverse\Models\PriceRate;
 
-class ListUFSquareModelResponse extends Response
+class ListUMInferRequestLogsData extends Response
 {
     
 
     /**
-     * TotalCount: 总数
+     * Summary: 汇总信息
      *
-     * @return integer|null
+     * @return RequestLogSummary|null
      */
-    public function getTotalCount()
+    public function getSummary()
     {
-        return $this->get("TotalCount");
+        return new RequestLogSummary($this->get("Summary"));
     }
 
     /**
-     * TotalCount: 总数
+     * Summary: 汇总信息
      *
-     * @param int $totalCount
+     * @param RequestLogSummary $summary
      */
-    public function setTotalCount($totalCount)
+    public function setSummary(array $summary)
     {
-        $this->set("TotalCount", $totalCount);
+        $this->set("Summary", $summary->getAll());
     }
 
     /**
-     * SquareModels: 广场模型
+     * Items: 日志列表，数组元素为 RequestLogItem
      *
-     * @return SquareModel[]|null
+     * @return RequestLogItem[]|null
      */
-    public function getSquareModels()
+    public function getItems()
     {
-        $items = $this->get("SquareModels");
+        $items = $this->get("Items");
         if ($items == null) {
             return [];
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new SquareModel($item));
+            array_push($result, new RequestLogItem($item));
         }
         return $result;
     }
 
     /**
-     * SquareModels: 广场模型
+     * Items: 日志列表，数组元素为 RequestLogItem
      *
-     * @param SquareModel[] $squareModels
+     * @param RequestLogItem[] $items
      */
-    public function setSquareModels(array $squareModels)
+    public function setItems(array $items)
     {
         $result = [];
-        foreach ($squareModels as $i => $item) {
+        foreach ($items as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
