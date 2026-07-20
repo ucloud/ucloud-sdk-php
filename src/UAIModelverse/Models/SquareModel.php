@@ -23,6 +23,26 @@ class SquareModel extends Response
     
 
     /**
+     * Manufacturer: 制造商
+     *
+     * @return string|null
+     */
+    public function getManufacturer()
+    {
+        return $this->get("Manufacturer");
+    }
+
+    /**
+     * Manufacturer: 制造商
+     *
+     * @param string $manufacturer
+     */
+    public function setManufacturer($manufacturer)
+    {
+        $this->set("Manufacturer", $manufacturer);
+    }
+
+    /**
      * Id: 主键
      *
      * @return string|null
@@ -280,5 +300,37 @@ class SquareModel extends Response
     public function setPricing(array $pricing)
     {
         $this->set("Pricing", $pricing->getAll());
+    }
+
+    /**
+     * Tiers: 价格阶梯（有序数组）
+     *
+     * @return PriceTier[]|null
+     */
+    public function getTiers()
+    {
+        $items = $this->get("Tiers");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new PriceTier($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Tiers: 价格阶梯（有序数组）
+     *
+     * @param PriceTier[] $tiers
+     */
+    public function setTiers(array $tiers)
+    {
+        $result = [];
+        foreach ($tiers as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }
