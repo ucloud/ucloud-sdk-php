@@ -83,6 +83,26 @@ class Pricing extends Response
     }
 
     /**
+     * Video: 生视频定价
+     *
+     * @return string|null
+     */
+    public function getVideo()
+    {
+        return $this->get("Video");
+    }
+
+    /**
+     * Video: 生视频定价
+     *
+     * @param string $video
+     */
+    public function setVideo($video)
+    {
+        $this->set("Video", $video);
+    }
+
+    /**
      * Currency: 币种
      *
      * @return string|null
@@ -100,5 +120,45 @@ class Pricing extends Response
     public function setCurrency($currency)
     {
         $this->set("Currency", $currency);
+    }
+
+    /**
+     * Unit: 单位（中文），如“次” “百万”
+     *
+     * @return string|null
+     */
+    public function getUnit()
+    {
+        return $this->get("Unit");
+    }
+
+    /**
+     * Unit: 单位（中文），如“次” “百万”
+     *
+     * @param string $unit
+     */
+    public function setUnit($unit)
+    {
+        $this->set("Unit", $unit);
+    }
+
+    /**
+     * UnitEn: 单位（English），如“Time” “Million”
+     *
+     * @return string|null
+     */
+    public function getUnitEn()
+    {
+        return $this->get("UnitEn");
+    }
+
+    /**
+     * UnitEn: 单位（English），如“Time” “Million”
+     *
+     * @param string $unitEn
+     */
+    public function setUnitEn($unitEn)
+    {
+        $this->set("UnitEn", $unitEn);
     }
 }

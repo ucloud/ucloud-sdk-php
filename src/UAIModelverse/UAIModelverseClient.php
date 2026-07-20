@@ -28,26 +28,36 @@ use UCloud\UAIModelverse\Apis\DownloadListUnpaidOrdersRequest;
 use UCloud\UAIModelverse\Apis\DownloadListUnpaidOrdersResponse;
 use UCloud\UAIModelverse\Apis\DownloadOrderSummaryRequest;
 use UCloud\UAIModelverse\Apis\DownloadOrderSummaryResponse;
+use UCloud\UAIModelverse\Apis\DownloadUMInferRequestLogRequest;
+use UCloud\UAIModelverse\Apis\DownloadUMInferRequestLogResponse;
 use UCloud\UAIModelverse\Apis\GetFilterOptionsRequest;
 use UCloud\UAIModelverse\Apis\GetFilterOptionsResponse;
 use UCloud\UAIModelverse\Apis\GetOrderAmountRequest;
 use UCloud\UAIModelverse\Apis\GetOrderAmountResponse;
-use UCloud\UAIModelverse\Apis\GetUMInferAPIModelRequest;
-use UCloud\UAIModelverse\Apis\GetUMInferAPIModelResponse;
-use UCloud\UAIModelverse\Apis\GetUMInferTokenUsageRequest;
-use UCloud\UAIModelverse\Apis\GetUMInferTokenUsageResponse;
+use UCloud\UAIModelverse\Apis\GetUFSquareModelDetailRequest;
+use UCloud\UAIModelverse\Apis\GetUFSquareModelDetailResponse;
+use UCloud\UAIModelverse\Apis\GetUFSquareModelPricesRequest;
+use UCloud\UAIModelverse\Apis\GetUFSquareModelPricesResponse;
+use UCloud\UAIModelverse\Apis\GetUMInferRequestLogDetailRequest;
+use UCloud\UAIModelverse\Apis\GetUMInferRequestLogDetailResponse;
 use UCloud\UAIModelverse\Apis\ListPaidOrderSummaryRequest;
 use UCloud\UAIModelverse\Apis\ListPaidOrderSummaryResponse;
 use UCloud\UAIModelverse\Apis\ListPaidOrdersRequest;
 use UCloud\UAIModelverse\Apis\ListPaidOrdersResponse;
 use UCloud\UAIModelverse\Apis\ListUFSquareModelRequest;
 use UCloud\UAIModelverse\Apis\ListUFSquareModelResponse;
+use UCloud\UAIModelverse\Apis\ListUFSquareModelFiltersAuthRequest;
+use UCloud\UAIModelverse\Apis\ListUFSquareModelFiltersAuthResponse;
 use UCloud\UAIModelverse\Apis\ListUMInferAPIKeyRequest;
 use UCloud\UAIModelverse\Apis\ListUMInferAPIKeyResponse;
+use UCloud\UAIModelverse\Apis\ListUMInferRequestLogsRequest;
+use UCloud\UAIModelverse\Apis\ListUMInferRequestLogsResponse;
 use UCloud\UAIModelverse\Apis\ListUnpaidOrderSummaryRequest;
 use UCloud\UAIModelverse\Apis\ListUnpaidOrderSummaryResponse;
 use UCloud\UAIModelverse\Apis\ListUnpaidOrdersRequest;
 use UCloud\UAIModelverse\Apis\ListUnpaidOrdersResponse;
+use UCloud\UAIModelverse\Apis\StartPayUnpaidOrdersRequest;
+use UCloud\UAIModelverse\Apis\StartPayUnpaidOrdersResponse;
 use UCloud\UAIModelverse\Apis\UpdateUMInferAPIKeyRequest;
 use UCloud\UAIModelverse\Apis\UpdateUMInferAPIKeyResponse;
 
@@ -257,6 +267,41 @@ class UAIModelverseClient extends Client
     }
 
     /**
+     * DownloadUMInferRequestLog - 导出推理请求日志。单次导出时间范围最长 30 天，最多导出 2000 万条日志；同一 TopOrganizationID 同一时间仅允许 1 个导出任务在执行，已有任务执行中时请稍后重试。
+     *
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/download_um_infer_request_log
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 业务地域，如 cn-wlcb。可先调用 ListUMInferRegions 获取可选地域
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。请参考 [GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "StartTime" => (integer) 导出开始时间，Unix 毫秒时间戳
+     *     "EndTime" => (integer) 导出结束时间，Unix 毫秒时间戳，最长支持 30 天范围
+     *     "Email" => (string) 接收导出结果的邮箱地址
+     *     "ModelNames" => (array<string>) 模型名称列表，用于过滤
+     *     "ApiKeyIds" => (array<string>) API Key ID 列表，用于过滤
+     *     "RequestId" => (string) 请求 ID，用于精确过滤
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "TaskId" => (string) 导出任务 ID
+     *     "TotalCount" => (integer) 本次导出查询命中的日志行数
+     * ]
+     *
+     * @return DownloadUMInferRequestLogResponse
+     * @throws UCloudException
+     */
+    public function downloadUMInferRequestLog(DownloadUMInferRequestLogRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DownloadUMInferRequestLogResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * GetFilterOptions - 查询可用于订单筛选的资源、模型、地域等选项列表
      *
      * See also: https://docs.ucloud.cn/api/uai-modelverse-api/get_filter_options
@@ -380,93 +425,177 @@ class UAIModelverseClient extends Client
     }
 
     /**
-     * GetUMInferAPIModel - 获取该apikey能调用api的模型列表
+     * GetUFSquareModelDetail - 获取广场模型详情
      *
-     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/get_um_infer_api_model
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/get_uf_square_model_detail
      *
      * Arguments:
      *
      * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "KeyId" => (string) apikey 的id
-     *     "ModelType" => (integer) 模型类型，1: 文本生成，2: 图片生成。
-     *     "SquareId" => (string) 模型广场的id，用来跳转体验中心
+     *     "Id" => (string) 主键
      * ]
      *
      * Outputs:
      *
      * $outputs = [
-     *     "Data" => (array<object>) 模型名称的字符串列表[
-     *         [
-     *             "ServedModelName" => (string) 使用OpenAI接口调用时，填入的 model值
-     *             "Id" => (string) id
-     *             "Name" => (string) 名称
-     *             "SimpleDescribe" => (string) 描述
-     *             "Language" => (array<string>) 语言
-     *             "Icon" => (string) 图标链接
-     *             "Pricing" => (object) 模型价格[
-     *                 "Completion" => (number) 输出定价
-     *                 "Prompt" => (number) 提示词定价
-     *                 "Image" => (number) 生图定价
-     *                 "Currency" => (string) 币种
+     *     "SquareModel" => (object) 模型[
+     *         "Manufacturer" => (string) 制造商
+     *         "Id" => (string) 主键
+     *         "Name" => (string) 名称
+     *         "SimpleDescribe" => (string) 简要描述
+     *         "Describe" => (string) 详细描述
+     *         "Language" => (array<string>) 语言
+     *         "MaxModelLen" => (integer) 模型长度
+     *         "ModelType" => (string) 模型类型
+     *         "HfUpdateTime" => (integer) HuggingFace 更新时间
+     *         "CreateAt" => (integer) 创建时间
+     *         "UpdateAt" => (integer) 更新时间
+     *         "SupportedCapabilities" => (array<string>) 模型能力
+     *         "Icon" => (string) 图标
+     *         "Pricing" => (object) 定价策略[
+     *             "Completion" => (number) 输出定价
+     *             "Prompt" => (number) 提示词定价
+     *             "Image" => (number) 生图定价
+     *             "Video" => (string) 生视频定价
+     *             "Currency" => (string) 币种
+     *             "Unit" => (string) 单位（中文），如“次” “百万”
+     *             "UnitEn" => (string) 单位（English），如“Time” “Million”
+     *         ]
+     *         "Tiers" => (array<object>) 价格阶梯（有序数组）[
+     *             [
+     *                 "Rates" => (array<object>) 该档位下的收费列表（有序数组）[
+     *                     [
+     *                         "ChargeItemDescriptionEn" => (string) 收费项描述英文描述
+     *                         "Currency" => (string) 货币单位
+     *                         "Unit" => (string) 计价单位
+     *                         "UnitEn" => (string) 计价单位英文
+     *                         "ChargeItem" => (string) 收费项：input/output/thinking/tool...
+     *                         "ChargeItemDescription" => (string) 收费项描述
+     *                         "Price" => (string) 价格
+     *                     ]
+     *                 ]
+     *                 "DescriptionEn" => (string) 档位描述（例如 "标准上下文 32k"）
+     *                 "Condition" => (string) 档位/条件（例如 "32k"、"128k"）
+     *                 "Description" => (string) 档位描述（例如 "标准上下文 32k"）
      *             ]
-     *             "CreateAt" => (integer) 创建时间
-     *             "UpdateAt" => (integer) 更新时间
      *         ]
      *     ]
      * ]
      *
-     * @return GetUMInferAPIModelResponse
+     * @return GetUFSquareModelDetailResponse
      * @throws UCloudException
      */
-    public function getUMInferAPIModel(GetUMInferAPIModelRequest $request = null)
+    public function getUFSquareModelDetail(GetUFSquareModelDetailRequest $request = null)
     {
         $resp = $this->invoke($request);
-        return new GetUMInferAPIModelResponse($resp->toArray(), $resp->getRequestId());
+        return new GetUFSquareModelDetailResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
-     * GetUMInferTokenUsage - 获取某个key下的某个模型的token使用量
+     * GetUFSquareModelPrices - 批量查询模型价格
      *
-     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/get_um_infer_token_usage
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/get_uf_square_model_prices
      *
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "KeyId" => (string) apikey的id
-     *     "Model" => (string) 模型名称
-     *     "StartTime" => (integer) 开始时间戳
-     *     "EndTime" => (integer) 结束时间戳
+     *     "Keyword" => (string) 模型名称模糊搜索（例：deepseek-r1）
+     *     "Offset" => (integer) 列表起始位置偏移量，默认为0
+     *     "Limit" => (integer) 返回数据长度，默认为20
      * ]
      *
      * Outputs:
      *
      * $outputs = [
-     *     "Data" => (object) token使用详情[
-     *         "Total" => (integer) 总token量
-     *         "InTotal" => (integer) 输出总token
-     *         "OutTotal" => (integer) 输出总token
-     *         "ImageGenerationNum" => (integer) 生图总张数
-     *         "RequestTotal" => (integer) 请求总次数
-     *         "Usages" => (array<object>) 每个时间戳的token使用量[
-     *             [
-     *                 "Type" => (string) 类型，in输入 out输出 total总  request_count 请求次数 image_generation 生图张数
-     *                 "Count" => (integer) 数量
-     *                 "Timestamp" => (integer) unix时间戳
-     *                 "Model" => (string) 模型名称
+     *     "Models" => (array<object>) 匹配模型的价格信息[
+     *         [
+     *             "Manufacturer" => (string) 制造商
+     *             "ModelName" => (string) 模型名称
+     *             "ModelId" => (string) ModelId
+     *             "Tiers" => (array<object>) 价格阶梯（有序数组）[
+     *                 [
+     *                     "Rates" => (array<object>) 该档位下的收费列表（有序数组）[
+     *                         [
+     *                             "ChargeItemDescriptionEn" => (string) 收费项描述英文描述
+     *                             "Currency" => (string) 货币单位
+     *                             "Unit" => (string) 计价单位
+     *                             "UnitEn" => (string) 计价单位英文
+     *                             "ChargeItem" => (string) 收费项：input/output/thinking/tool...
+     *                             "ChargeItemDescription" => (string) 收费项描述
+     *                             "Price" => (string) 价格
+     *                         ]
+     *                     ]
+     *                     "DescriptionEn" => (string) 档位描述（例如 "标准上下文 32k"）
+     *                     "Condition" => (string) 档位/条件（例如 "32k"、"128k"）
+     *                     "Description" => (string) 档位描述（例如 "标准上下文 32k"）
+     *                 ]
      *             ]
      *         ]
      *     ]
+     *     "TotalCount" => (integer) 总条数用于翻页
      * ]
      *
-     * @return GetUMInferTokenUsageResponse
+     * @return GetUFSquareModelPricesResponse
      * @throws UCloudException
      */
-    public function getUMInferTokenUsage(GetUMInferTokenUsageRequest $request = null)
+    public function getUFSquareModelPrices(GetUFSquareModelPricesRequest $request = null)
     {
         $resp = $this->invoke($request);
-        return new GetUMInferTokenUsageResponse($resp->toArray(), $resp->getRequestId());
+        return new GetUFSquareModelPricesResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUMInferRequestLogDetail - 原始日志详情
+     *
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/get_um_infer_request_log_detail
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 业务地域，如 cn-wlcb。可先调用 ListUMInferRegions 获取可选地域
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。请参考 [GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "RequestId" => (string) 请求 ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Data" => (object) 请求日志详情[
+     *         "RequestId" => (string) 请求 ID
+     *         "TopOrganizationId" => (string) 顶级组织 ID
+     *         "OrganizationId" => (string) 组织 ID
+     *         "ClientIp" => (string) 客户端 IP
+     *         "Region" => (string) 业务地域
+     *         "StartTime" => (integer) 请求开始时间，Unix 毫秒时间戳
+     *         "StartTimeReadable" => (string) 请求开始时间，可读格式
+     *         "ModelName" => (string) 模型名称
+     *         "IsStream" => (boolean) 是否流式请求
+     *         "ApiKeyId" => (string) API Key ID
+     *         "HttpStatusCode" => (integer) HTTP 状态码
+     *         "ErrorCode" => (string) 错误码
+     *         "ErrorMessage" => (string) 错误信息
+     *         "IsSuccess" => (boolean) 请求是否成功
+     *         "Latency" => (integer) 请求总延迟，单位毫秒
+     *         "FirstTokenLatency" => (integer) 首 Token 延迟，单位毫秒
+     *         "OutputTokenThroughput" => (number) 输出 Token 吞吐
+     *         "Usage" => (string) 模型返回的 usage 原文 JSON
+     *         "Request" => (string) 请求原文，本期返回为空
+     *         "Response" => (string) 响应原文，本期返回为空
+     *         "Extras" => (string) 扩展信息，本期返回为空
+     *     ]
+     * ]
+     *
+     * @return GetUMInferRequestLogDetailResponse
+     * @throws UCloudException
+     */
+    public function getUMInferRequestLogDetail(GetUMInferRequestLogDetailRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUMInferRequestLogDetailResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -637,6 +766,7 @@ class UAIModelverseClient extends Client
      *     "TotalCount" => (integer) 总数
      *     "SquareModels" => (array<object>) 广场模型[
      *         [
+     *             "Manufacturer" => (string) 制造商
      *             "Id" => (string) 主键
      *             "Name" => (string) 名称
      *             "SimpleDescribe" => (string) 简要描述
@@ -653,7 +783,28 @@ class UAIModelverseClient extends Client
      *                 "Completion" => (number) 输出定价
      *                 "Prompt" => (number) 提示词定价
      *                 "Image" => (number) 生图定价
+     *                 "Video" => (string) 生视频定价
      *                 "Currency" => (string) 币种
+     *                 "Unit" => (string) 单位（中文），如“次” “百万”
+     *                 "UnitEn" => (string) 单位（English），如“Time” “Million”
+     *             ]
+     *             "Tiers" => (array<object>) 价格阶梯（有序数组）[
+     *                 [
+     *                     "Rates" => (array<object>) 该档位下的收费列表（有序数组）[
+     *                         [
+     *                             "ChargeItemDescriptionEn" => (string) 收费项描述英文描述
+     *                             "Currency" => (string) 货币单位
+     *                             "Unit" => (string) 计价单位
+     *                             "UnitEn" => (string) 计价单位英文
+     *                             "ChargeItem" => (string) 收费项：input/output/thinking/tool...
+     *                             "ChargeItemDescription" => (string) 收费项描述
+     *                             "Price" => (string) 价格
+     *                         ]
+     *                     ]
+     *                     "DescriptionEn" => (string) 档位描述（例如 "标准上下文 32k"）
+     *                     "Condition" => (string) 档位/条件（例如 "32k"、"128k"）
+     *                     "Description" => (string) 档位描述（例如 "标准上下文 32k"）
+     *                 ]
      *             ]
      *         ]
      *     ]
@@ -666,6 +817,33 @@ class UAIModelverseClient extends Client
     {
         $resp = $this->invoke($request);
         return new ListUFSquareModelResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ListUFSquareModelFiltersAuth - 登录状态下获取模型广场过滤器中内容
+     *
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/list_uf_square_model_filters_auth
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return ListUFSquareModelFiltersAuthResponse
+     * @throws UCloudException
+     */
+    public function listUFSquareModelFiltersAuth(ListUFSquareModelFiltersAuthRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new ListUFSquareModelFiltersAuthResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -717,6 +895,71 @@ class UAIModelverseClient extends Client
     {
         $resp = $this->invoke($request);
         return new ListUMInferAPIKeyResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ListUMInferRequestLogs - 日志明细列表
+     *
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/list_um_infer_request_logs
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 业务地域，如 cn-wlcb。可先调用 ListUMInferRegions 获取可选地域
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。请参考 [GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "StartTime" => (integer) 查询开始时间，Unix 毫秒时间戳
+     *     "EndTime" => (integer) 查询结束时间，Unix 毫秒时间戳，必须大于等于 StartTime
+     *     "ModelNames" => (array<string>) 模型名称列表，用于过滤
+     *     "ApiKeyIds" => (array<string>) API Key ID 列表，用于过滤
+     *     "RequestId" => (string) 请求 ID，用于精确过滤
+     *     "Offset" => (integer) 列表偏移量，默认 0
+     *     "Limit" => (integer) 返回数量，默认 20
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Data" => (object) 日志明细列表返回数据[
+     *         "Summary" => (object) 汇总信息[
+     *             "TotalRequests" => (integer) 查询条件命中的总请求数
+     *             "FailedRequests" => (integer) 查询条件命中的失败请求数
+     *         ]
+     *         "Items" => (array<object>) 日志列表，数组元素为 RequestLogItem[
+     *             [
+     *                 "RequestId" => (string) 请求 ID
+     *                 "StartTime" => (integer) 请求开始时间，Unix 毫秒时间戳
+     *                 "StartTimeReadable" => (string) 请求开始时间，可读格式
+     *                 "Region" => (string) 业务地域
+     *                 "ModelName" => (string) 模型名称
+     *                 "ApiKeyId" => (string) API Key ID
+     *                 "ApiKeyName" => (string) API Key 名称
+     *                 "Latency" => (integer) 请求总延迟，单位毫秒
+     *                 "FirstTokenLatency" => (integer) 首 Token 延迟，单位毫秒
+     *                 "OutputTokenThroughput" => (number) 输出 Token 吞吐
+     *                 "HttpStatusCode" => (integer) HTTP 状态码
+     *                 "ErrorCode" => (string) 错误码
+     *                 "IsSuccess" => (boolean) 请求是否成功
+     *                 "TotalTokens" => (integer) 总 Token 数
+     *                 "PromptTokens" => (integer) 输入 Token 数
+     *                 "CompletionTokens" => (integer) 输出 Token 数
+     *                 "CacheHitTokens" => (integer) 缓存命中 Token 数
+     *                 "CacheCreationTokens" => (integer) 缓存写入 Token 数
+     *                 "CacheCreation5mTokens" => (integer) 5 分钟缓存写入 Token 数
+     *                 "CacheCreation1hTokens" => (integer) 1 小时缓存写入 Token 数
+     *                 "HasInferenceLog" => (boolean) 是否存在推理日志
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return ListUMInferRequestLogsResponse
+     * @throws UCloudException
+     */
+    public function listUMInferRequestLogs(ListUMInferRequestLogsRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new ListUMInferRequestLogsResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -853,6 +1096,38 @@ class UAIModelverseClient extends Client
     {
         $resp = $this->invoke($request);
         return new ListUnpaidOrdersResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * StartPayUnpaidOrders - 批量支付欠费订单，指定 OrderNos 支付，最多 50 个
+     *
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/start_pay_unpaid_orders
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "OrderNos" => (array<string>) 欠费订单号列表，最多 50 个
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "SuccessCount" => (integer) 支付成功数量
+     *     "FailureCount" => (integer) 支付失败数量
+     *     "Results" => (object) 支付结果[
+     *         "OrderNo" => (string) 订单号
+     *         "Success" => (boolean) 是否支付成功
+     *         "Reason" => (string) 失败原因（成功时为空）
+     *     ]
+     * ]
+     *
+     * @return StartPayUnpaidOrdersResponse
+     * @throws UCloudException
+     */
+    public function startPayUnpaidOrders(StartPayUnpaidOrdersRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new StartPayUnpaidOrdersResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
