@@ -92,7 +92,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * DBId: 实例的Id
+     * DBId: DB实例Id,该值可以通过DescribeUDBInstance获取
      *
      * @return string|null
      */
@@ -102,7 +102,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * DBId: 实例的Id
+     * DBId: DB实例Id,该值可以通过DescribeUDBInstance获取
      *
      * @param string $dbId
      */
@@ -232,7 +232,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     * MachineType: 规格类型ID,当SpecificationType为1时有效, 可以通过 ListUDBMachineType 查询。
      *
      * @return string|null
      */
@@ -242,7 +242,7 @@ class ResizeUDBInstanceRequest extends Request
     }
 
     /**
-     * MachineType: 规格类型ID,当SpecificationType为1时有效
+     * MachineType: 规格类型ID,当SpecificationType为1时有效, 可以通过 ListUDBMachineType 查询。
      *
      * @param string $machineType
      */

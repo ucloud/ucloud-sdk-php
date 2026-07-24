@@ -821,4 +821,44 @@ class UDBSlaveInstanceSet extends Response
     {
         $this->set("MachineType", $machineType);
     }
+
+    /**
+     * StorageClass: CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘，LOCAL_SSD: SSD本地盘
+     *
+     * @return string|null
+     */
+    public function getStorageClass()
+    {
+        return $this->get("StorageClass");
+    }
+
+    /**
+     * StorageClass: CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘，LOCAL_SSD: SSD本地盘
+     *
+     * @param string $storageClass
+     */
+    public function setStorageClass($storageClass)
+    {
+        $this->set("StorageClass", $storageClass);
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVME, OM: 共享型，N: 通用型 空的话，显示为-
+     *
+     * @return string|null
+     */
+    public function getSpecificationClass()
+    {
+        return $this->get("SpecificationClass");
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVME, OM: 共享型，N: 通用型 空的话，显示为-
+     *
+     * @param string $specificationClass
+     */
+    public function setSpecificationClass($specificationClass)
+    {
+        $this->set("SpecificationClass", $specificationClass);
+    }
 }

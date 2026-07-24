@@ -22,5 +22,23 @@ class BackupUDBInstanceResponse extends Response
 {
     
 
+    /**
+     * BackupId: 备份记录 ID
+     *
+     * @return integer|null
+     */
+    public function getBackupId()
+    {
+        return $this->get("BackupId");
+    }
 
+    /**
+     * BackupId: 备份记录 ID
+     *
+     * @param int $backupId
+     */
+    public function setBackupId($backupId)
+    {
+        $this->set("BackupId", $backupId);
+    }
 }

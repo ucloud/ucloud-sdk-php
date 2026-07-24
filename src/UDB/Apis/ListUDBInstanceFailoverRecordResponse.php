@@ -17,62 +17,41 @@
 namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UDB\Models\UDBTypeSet;
-use UCloud\UDB\Models\UDBTypeSet;
+use UCloud\UDB\Models\FailoverRecord;
 
-class DescribeUDBTypeResponse extends Response
+class ListUDBInstanceFailoverRecordResponse extends Response
 {
     
 
     /**
-     * DataSet: DB类型列表 参数见 UDBTypeSet
+     * Dataset: 容灾记录列表
      *
-     * @return UDBTypeSet[]|null
+     * @return FailoverRecord[]|null
      */
-    public function getDataSet()
+    public function getDataset()
     {
-        $items = $this->get("DataSet");
+        $items = $this->get("Dataset");
         if ($items == null) {
             return [];
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new UDBTypeSet($item));
+            array_push($result, new FailoverRecord($item));
         }
         return $result;
     }
 
     /**
-     * DataSet: DB类型列表 参数见 UDBTypeSet
+     * Dataset: 容灾记录列表
      *
-     * @param UDBTypeSet[] $dataSet
+     * @param FailoverRecord[] $dataset
      */
-    public function setDataSet(array $dataSet)
+    public function setDataset(array $dataset)
     {
         $result = [];
-        foreach ($dataSet as $i => $item) {
+        foreach ($dataset as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;
-    }
-
-    /**
-     * DedaultType: 推荐DB版本
-     *
-     * @return UDBTypeSet|null
-     */
-    public function getDedaultType()
-    {
-        return new UDBTypeSet($this->get("DedaultType"));
-    }
-
-    /**
-     * DedaultType: 推荐DB版本
-     *
-     * @param UDBTypeSet $dedaultType
-     */
-    public function setDedaultType(array $dedaultType)
-    {
-        $this->set("DedaultType", $dedaultType->getAll());
     }
 }

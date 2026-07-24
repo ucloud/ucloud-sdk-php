@@ -18,14 +18,14 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUDBInstancePasswordRequest extends Request
+class DescribeUDBBinlogBackupStrategyRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ModifyUDBInstancePassword"]);
+        parent::__construct(["Action" => "DescribeUDBBinlogBackupStrategy"]);
         $this->markRequired("Region");
+        $this->markRequired("Zone");
         $this->markRequired("DBId");
-        $this->markRequired("Password");
     }
 
     
@@ -91,7 +91,7 @@ class ModifyUDBInstancePasswordRequest extends Request
     }
 
     /**
-     * DBId: 实例的ID,该值可以通过DescribeUDBInstance获取
+     * DBId: DB实例Id
      *
      * @return string|null
      */
@@ -101,52 +101,12 @@ class ModifyUDBInstancePasswordRequest extends Request
     }
 
     /**
-     * DBId: 实例的ID,该值可以通过DescribeUDBInstance获取
+     * DBId: DB实例Id
      *
      * @param string $dbId
      */
     public function setDBId($dbId)
     {
         $this->set("DBId", $dbId);
-    }
-
-    /**
-     * Password: 实例的新密码。 8-36 位，支持大小写字母、数字、@#$%^*-+=_,?!&()~.|，须包含两类及以上字符
-     *
-     * @return string|null
-     */
-    public function getPassword()
-    {
-        return $this->get("Password");
-    }
-
-    /**
-     * Password: 实例的新密码。 8-36 位，支持大小写字母、数字、@#$%^*-+=_,?!&()~.|，须包含两类及以上字符
-     *
-     * @param string $password
-     */
-    public function setPassword($password)
-    {
-        $this->set("Password", $password);
-    }
-
-    /**
-     * AccountName: sqlserver帐号，仅在sqlserver的情况下填该参数
-     *
-     * @return string|null
-     */
-    public function getAccountName()
-    {
-        return $this->get("AccountName");
-    }
-
-    /**
-     * AccountName: sqlserver帐号，仅在sqlserver的情况下填该参数
-     *
-     * @param string $accountName
-     */
-    public function setAccountName($accountName)
-    {
-        $this->set("AccountName", $accountName);
     }
 }

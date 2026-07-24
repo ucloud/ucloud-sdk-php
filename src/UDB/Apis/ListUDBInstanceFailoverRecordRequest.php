@@ -18,14 +18,16 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ModifyUDBInstancePasswordRequest extends Request
+class ListUDBInstanceFailoverRecordRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ModifyUDBInstancePassword"]);
+        parent::__construct(["Action" => "ListUDBInstanceFailoverRecord"]);
         $this->markRequired("Region");
+        $this->markRequired("Zone");
         $this->markRequired("DBId");
-        $this->markRequired("Password");
+        $this->markRequired("StartTime");
+        $this->markRequired("EndTime");
     }
 
     
@@ -91,7 +93,7 @@ class ModifyUDBInstancePasswordRequest extends Request
     }
 
     /**
-     * DBId: 实例的ID,该值可以通过DescribeUDBInstance获取
+     * DBId: 实例id
      *
      * @return string|null
      */
@@ -101,7 +103,7 @@ class ModifyUDBInstancePasswordRequest extends Request
     }
 
     /**
-     * DBId: 实例的ID,该值可以通过DescribeUDBInstance获取
+     * DBId: 实例id
      *
      * @param string $dbId
      */
@@ -111,42 +113,42 @@ class ModifyUDBInstancePasswordRequest extends Request
     }
 
     /**
-     * Password: 实例的新密码。 8-36 位，支持大小写字母、数字、@#$%^*-+=_,?!&()~.|，须包含两类及以上字符
+     * StartTime: 开始时间
      *
-     * @return string|null
+     * @return integer|null
      */
-    public function getPassword()
+    public function getStartTime()
     {
-        return $this->get("Password");
+        return $this->get("StartTime");
     }
 
     /**
-     * Password: 实例的新密码。 8-36 位，支持大小写字母、数字、@#$%^*-+=_,?!&()~.|，须包含两类及以上字符
+     * StartTime: 开始时间
      *
-     * @param string $password
+     * @param int $startTime
      */
-    public function setPassword($password)
+    public function setStartTime($startTime)
     {
-        $this->set("Password", $password);
+        $this->set("StartTime", $startTime);
     }
 
     /**
-     * AccountName: sqlserver帐号，仅在sqlserver的情况下填该参数
+     * EndTime: 结束时间
      *
-     * @return string|null
+     * @return integer|null
      */
-    public function getAccountName()
+    public function getEndTime()
     {
-        return $this->get("AccountName");
+        return $this->get("EndTime");
     }
 
     /**
-     * AccountName: sqlserver帐号，仅在sqlserver的情况下填该参数
+     * EndTime: 结束时间
      *
-     * @param string $accountName
+     * @param int $endTime
      */
-    public function setAccountName($accountName)
+    public function setEndTime($endTime)
     {
-        $this->set("AccountName", $accountName);
+        $this->set("EndTime", $endTime);
     }
 }
