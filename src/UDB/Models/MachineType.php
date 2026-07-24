@@ -23,6 +23,46 @@ class MachineType extends Response
     
 
     /**
+     * StorageClass: 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘
+     *
+     * @return string|null
+     */
+    public function getStorageClass()
+    {
+        return $this->get("StorageClass");
+    }
+
+    /**
+     * StorageClass: 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘
+     *
+     * @param string $storageClass
+     */
+    public function setStorageClass($storageClass)
+    {
+        $this->set("StorageClass", $storageClass);
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVMe型, OM: 共享型，N: 通用型
+     *
+     * @return string|null
+     */
+    public function getSpecificationClass()
+    {
+        return $this->get("SpecificationClass");
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVMe型, OM: 共享型，N: 通用型
+     *
+     * @param string $specificationClass
+     */
+    public function setSpecificationClass($specificationClass)
+    {
+        $this->set("SpecificationClass", $specificationClass);
+    }
+
+    /**
      * ID: 计算规格id, 目前支持CPU和内存比1:2、1:4、1:8三类配比规格;规格的格式为："机型.配比.CPU核数规格"；机型支持o和n两种机型，分别代表快杰NVMe和SSD云盘机型；配比映射关系如下:2m代表CPU内存配比1比2，4m代表CPU内存配比1比4，8m代表CPU内存配比1比8，CPU核数规格射关系如下：small代表1C，medium代表2C，xlarge代表4C，2xlarge代表8C，4xlarge代表16C，8xlarge代表32C，16xlarge代表64C，例如 "o.mysql4m.medium"表示创建快杰NVMe机型2C8G的实例，"o.mysql8m.4xlarge"表示创建快杰NVMe机型16C128G的实例
      *
      * @return string|null
@@ -103,7 +143,7 @@ class MachineType extends Response
     }
 
     /**
-     * Os: 内部云主机机型，可选"o/n"
+     * Os: 内部云主机机型，可选"O/N/OM"
      *
      * @return string|null
      */
@@ -113,7 +153,7 @@ class MachineType extends Response
     }
 
     /**
-     * Os: 内部云主机机型，可选"o/n"
+     * Os: 内部云主机机型，可选"O/N/OM"
      *
      * @param string $os
      */

@@ -100,7 +100,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * Name: 实例名称，至少6位
+     * Name: 实例名称，至少6位,最大63位
      *
      * @return string|null
      */
@@ -110,7 +110,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * Name: 实例名称，至少6位
+     * Name: 实例名称，至少6位,最大63位
      *
      * @param string $name
      */
@@ -120,7 +120,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * AdminPassword: 管理员密码
+     * AdminPassword: 管理员密码。 8-36 位，支持大小写字母、数字、@#$%^*-+=_,?!&()~.|，须包含两类及以上字符
      *
      * @return string|null
      */
@@ -130,7 +130,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * AdminPassword: 管理员密码
+     * AdminPassword: 管理员密码。 8-36 位，支持大小写字母、数字、@#$%^*-+=_,?!&()~.|，须包含两类及以上字符
      *
      * @param string $adminPassword
      */
@@ -140,7 +140,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * DBTypeId: DB类型，mysql按版本细分 mysql-8.4, mysql-8.0,  mysql-5.7, percona-5.7, mysql-5.6, percona-5.6、mysql-5.5
+     * DBTypeId: DB类型，mysql按版本细分 mysql-8.4, mysql-8.0,  mysql-5.7, percona-5.7, mysql-5.6, percona-5.6、mysql-5.5。 可以通过 DescribeUDBType 查询
      *
      * @return string|null
      */
@@ -150,7 +150,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * DBTypeId: DB类型，mysql按版本细分 mysql-8.4, mysql-8.0,  mysql-5.7, percona-5.7, mysql-5.6, percona-5.6、mysql-5.5
+     * DBTypeId: DB类型，mysql按版本细分 mysql-8.4, mysql-8.0,  mysql-5.7, percona-5.7, mysql-5.6, percona-5.6、mysql-5.5。 可以通过 DescribeUDBType 查询
      *
      * @param string $dbTypeId
      */
@@ -180,7 +180,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * DiskSpace: 磁盘空间(GB), 暂时支持20G - 32T
+     * DiskSpace: 磁盘空间(GB)，支持约 20G–32T，步长通常为 10；
      *
      * @return integer|null
      */
@@ -190,7 +190,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * DiskSpace: 磁盘空间(GB), 暂时支持20G - 32T
+     * DiskSpace: 磁盘空间(GB)，支持约 20G–32T，步长通常为 10；
      *
      * @param int $diskSpace
      */
@@ -200,7 +200,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * ParamGroupId: DB实例使用的配置参数组id
+     * ParamGroupId: DB实例使用的配置参数组id，取值见 DescribeUDBParamGroup 返回的 `GroupId`，且须与 `DBTypeId` 匹配。
      *
      * @return integer|null
      */
@@ -210,7 +210,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * ParamGroupId: DB实例使用的配置参数组id
+     * ParamGroupId: DB实例使用的配置参数组id，取值见 DescribeUDBParamGroup 返回的 `GroupId`，且须与 `DBTypeId` 匹配。
      *
      * @param int $paramGroupId
      */
@@ -240,7 +240,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * StorageClass: 存储类型 CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 ，该字段和SpecificationClass组合使用，CLOUD_RSSD对应O型，CLOUD_SSD_ESSENTIAL对应OM型(北京2、乌兰察布支持)，注：圣保罗、丹佛、哈萨克斯坦地域仅支持O2机型，CLOUD_RSSD对应O2型
+     * StorageClass: 存储类型 CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 ，该字段和SpecificationClass组合使用，CLOUD_RSSD对应O型，CLOUD_SSD_ESSENTIAL对应OM型(北京2、乌兰察布支持)，注：圣保罗、丹佛、哈萨克斯坦地域仅支持O2机型，CLOUD_RSSD对应O2型。 可从 ListUDBMachineType 同条规格读取
      *
      * @return string|null
      */
@@ -250,7 +250,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * StorageClass: 存储类型 CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 ，该字段和SpecificationClass组合使用，CLOUD_RSSD对应O型，CLOUD_SSD_ESSENTIAL对应OM型(北京2、乌兰察布支持)，注：圣保罗、丹佛、哈萨克斯坦地域仅支持O2机型，CLOUD_RSSD对应O2型
+     * StorageClass: 存储类型 CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 ，该字段和SpecificationClass组合使用，CLOUD_RSSD对应O型，CLOUD_SSD_ESSENTIAL对应OM型(北京2、乌兰察布支持)，注：圣保罗、丹佛、哈萨克斯坦地域仅支持O2机型，CLOUD_RSSD对应O2型。 可从 ListUDBMachineType 同条规格读取
      *
      * @param string $storageClass
      */
@@ -380,7 +380,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * BackupId: 备份id，如果指定，则表明从备份恢复实例
+     * BackupId: 备份 ID；指定则从备份恢复。取值见 DescribeUDBBackup。
      *
      * @return integer|null
      */
@@ -390,7 +390,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * BackupId: 备份id，如果指定，则表明从备份恢复实例
+     * BackupId: 备份 ID；指定则从备份恢复。取值见 DescribeUDBBackup。
      *
      * @param int $backupId
      */
@@ -440,7 +440,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * SubnetId: 子网ID
+     * SubnetId: 子网 ID。与 `VPCId` 须同属一个 VPC
      *
      * @return string|null
      */
@@ -450,7 +450,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * SubnetId: 子网ID
+     * SubnetId: 子网 ID。与 `VPCId` 须同属一个 VPC
      *
      * @param string $subnetId
      */
@@ -460,7 +460,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * VPCId: VPC的ID
+     * VPCId: VPC ID。与 `SubnetId` 成对使用；取值见 UVPC 相关接口
      *
      * @return string|null
      */
@@ -470,7 +470,7 @@ class CreateUDBMySQLInstanceRequest extends Request
     }
 
     /**
-     * VPCId: VPC的ID
+     * VPCId: VPC ID。与 `SubnetId` 成对使用；取值见 UVPC 相关接口
      *
      * @param string $vpcId
      */

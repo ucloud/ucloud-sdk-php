@@ -36,7 +36,7 @@ class CreateUDBRouteInstanceRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -46,7 +46,7 @@ class CreateUDBRouteInstanceRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -56,7 +56,7 @@ class CreateUDBRouteInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -66,7 +66,7 @@ class CreateUDBRouteInstanceRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -76,7 +76,7 @@ class CreateUDBRouteInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -86,7 +86,7 @@ class CreateUDBRouteInstanceRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */

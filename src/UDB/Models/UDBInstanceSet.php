@@ -43,6 +43,66 @@ class UDBInstanceSet extends Response
     }
 
     /**
+     * AutoRenew: 0 不自动续费， 1 自动续费
+     *
+     * @return integer|null
+     */
+    public function getAutoRenew()
+    {
+        return $this->get("AutoRenew");
+    }
+
+    /**
+     * AutoRenew: 0 不自动续费， 1 自动续费
+     *
+     * @param int $autoRenew
+     */
+    public function setAutoRenew($autoRenew)
+    {
+        $this->set("AutoRenew", $autoRenew);
+    }
+
+    /**
+     * StorageClass: CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘，LOCAL_SSD: SSD本地盘
+     *
+     * @return string|null
+     */
+    public function getStorageClass()
+    {
+        return $this->get("StorageClass");
+    }
+
+    /**
+     * StorageClass: CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘，LOCAL_SSD: SSD本地盘
+     *
+     * @param string $storageClass
+     */
+    public function setStorageClass($storageClass)
+    {
+        $this->set("StorageClass", $storageClass);
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVME, OM: 共享型，N: 通用型空的话，显示为-
+     *
+     * @return string|null
+     */
+    public function getSpecificationClass()
+    {
+        return $this->get("SpecificationClass");
+    }
+
+    /**
+     * SpecificationClass: 规格类型 O: NVME, OM: 共享型，N: 通用型空的话，显示为-
+     *
+     * @param string $specificationClass
+     */
+    public function setSpecificationClass($specificationClass)
+    {
+        $this->set("SpecificationClass", $specificationClass);
+    }
+
+    /**
      * CaseSensitivityParam: 0区分大小写, 1不分区
      *
      * @return integer|null
@@ -123,7 +183,7 @@ class UDBInstanceSet extends Response
     }
 
     /**
-     * DBTypeId: DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下： 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6， 7：percona-5.6
+     * DBTypeId: DB类型，mysql/mongodb 按版本细分 mysql-8.4, mysql-8.0, mysql-5.7, percona-5.7, mysql-5.6, percona-5.6、mysql-5.5、mongodb-2.4 、mongodb-2.6 等。可以通过 DescribeUDBType 查询
      *
      * @return string|null
      */
@@ -133,7 +193,7 @@ class UDBInstanceSet extends Response
     }
 
     /**
-     * DBTypeId: DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下： 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6， 7：percona-5.6
+     * DBTypeId: DB类型，mysql/mongodb 按版本细分 mysql-8.4, mysql-8.0, mysql-5.7, percona-5.7, mysql-5.6, percona-5.6、mysql-5.5、mongodb-2.4 、mongodb-2.6 等。可以通过 DescribeUDBType 查询
      *
      * @param string $dbTypeId
      */
@@ -855,7 +915,7 @@ class UDBInstanceSet extends Response
     }
 
     /**
-     * DBSubVersion: mysql实例提供具体小版本信息
+     * DBSubVersion: 实例提供具体内核版本信息
      *
      * @return string|null
      */
@@ -865,7 +925,7 @@ class UDBInstanceSet extends Response
     }
 
     /**
-     * DBSubVersion: mysql实例提供具体小版本信息
+     * DBSubVersion: 实例提供具体内核版本信息
      *
      * @param string $dbSubVersion
      */
@@ -992,5 +1052,25 @@ class UDBInstanceSet extends Response
     public function setCPU($cpu)
     {
         $this->set("CPU", $cpu);
+    }
+
+    /**
+     * ForceEncryption: 是否强制加密，1为强制加密，0是不强制加密
+     *
+     * @return integer|null
+     */
+    public function getForceEncryption()
+    {
+        return $this->get("ForceEncryption");
+    }
+
+    /**
+     * ForceEncryption: 是否强制加密，1为强制加密，0是不强制加密
+     *
+     * @param int $forceEncryption
+     */
+    public function setForceEncryption($forceEncryption)
+    {
+        $this->set("ForceEncryption", $forceEncryption);
     }
 }
