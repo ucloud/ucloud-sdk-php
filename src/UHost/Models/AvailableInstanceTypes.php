@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,46 @@ use UCloud\Core\Response\Response;
 class AvailableInstanceTypes extends Response
 {
     
+
+    /**
+     * Zone: 可用区信息
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 可用区信息
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
+    }
+
+    /**
+     * InstanceType: 实例类型，枚举值["uhost", "spot"]
+     *
+     * @return string|null
+     */
+    public function getInstanceType()
+    {
+        return $this->get("InstanceType");
+    }
+
+    /**
+     * InstanceType: 实例类型，枚举值["uhost", "spot"]
+     *
+     * @param string $instanceType
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->set("InstanceType", $instanceType);
+    }
 
     /**
      * Name: 机型名称：快杰O型|O 、快杰共享型|OM 、快杰内存型|OMEM 、 快杰PRO型|OPRO、通用N型|N、高主频C型|C和GPU G型|G等
@@ -80,6 +120,38 @@ class AvailableInstanceTypes extends Response
     public function setCpuPlatforms(array $cpuPlatforms)
     {
         $this->set("CpuPlatforms", $cpuPlatforms->getAll());
+    }
+
+    /**
+     * UHostFamilies: 规格族信息
+     *
+     * @return UHostFamily[]|null
+     */
+    public function getUHostFamilies()
+    {
+        $items = $this->get("UHostFamilies");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new UHostFamily($item));
+        }
+        return $result;
+    }
+
+    /**
+     * UHostFamilies: 规格族信息
+     *
+     * @param UHostFamily[] $uHostFamilies
+     */
+    public function setUHostFamilies(array $uHostFamilies)
+    {
+        $result = [];
+        foreach ($uHostFamilies as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
@@ -236,5 +308,45 @@ class AvailableInstanceTypes extends Response
     public function setPerformance(array $performance)
     {
         $this->set("Performance", $performance->getAll());
+    }
+
+    /**
+     * ParentType: 父机型
+     *
+     * @return string|null
+     */
+    public function getParentType()
+    {
+        return $this->get("ParentType");
+    }
+
+    /**
+     * ParentType: 父机型
+     *
+     * @param string $parentType
+     */
+    public function setParentType($parentType)
+    {
+        $this->set("ParentType", $parentType);
+    }
+
+    /**
+     * Description: 机型描述
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->get("Description");
+    }
+
+    /**
+     * Description: 机型描述
+     *
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->set("Description", $description);
     }
 }

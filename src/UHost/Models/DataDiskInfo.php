@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,5 +100,25 @@ class DataDiskInfo extends Response
     public function setFeatures(array $features)
     {
         $this->set("Features", $features);
+    }
+
+    /**
+     * BackupMode: 支持的快照备份策略
+     *
+     * @return string[]|null
+     */
+    public function getBackupMode()
+    {
+        return $this->get("BackupMode");
+    }
+
+    /**
+     * BackupMode: 支持的快照备份策略
+     *
+     * @param string[] $backupMode
+     */
+    public function setBackupMode(array $backupMode)
+    {
+        $this->set("BackupMode", $backupMode);
     }
 }

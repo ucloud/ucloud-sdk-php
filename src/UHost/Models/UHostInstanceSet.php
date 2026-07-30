@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,26 +40,6 @@ class UHostInstanceSet extends Response
     public function setZone($zone)
     {
         $this->set("Zone", $zone);
-    }
-
-    /**
-     * IPv6Feature: true:有ipv6特性；false，没有ipv6特性
-     *
-     * @return boolean|null
-     */
-    public function getIPv6Feature()
-    {
-        return $this->get("IPv6Feature");
-    }
-
-    /**
-     * IPv6Feature: true:有ipv6特性；false，没有ipv6特性
-     *
-     * @param boolean $iPv6Feature
-     */
-    public function setIPv6Feature($iPv6Feature)
-    {
-        $this->set("IPv6Feature", $iPv6Feature);
     }
 
     /**
@@ -140,6 +120,26 @@ class UHostInstanceSet extends Response
     public function setCpuPlatform($cpuPlatform)
     {
         $this->set("CpuPlatform", $cpuPlatform);
+    }
+
+    /**
+     * UHostFamily: 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"（快杰型）时，支持以下取值： - o1i：快杰型 O1 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台 - o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台 默认值：o1i 或 o1a或o1r（系统将根据资源情况自动选择） 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台
+     *
+     * @return string|null
+     */
+    public function getUHostFamily()
+    {
+        return $this->get("UHostFamily");
+    }
+
+    /**
+     * UHostFamily: 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"（快杰型）时，支持以下取值： - o1i：快杰型 O1 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台 - o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台 默认值：o1i 或 o1a或o1r（系统将根据资源情况自动选择） 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台
+     *
+     * @param string $uHostFamily
+     */
+    public function setUHostFamily($uHostFamily)
+    {
+        $this->set("UHostFamily", $uHostFamily);
     }
 
     /**
@@ -547,26 +547,6 @@ class UHostInstanceSet extends Response
     }
 
     /**
-     * HotplugFeature: true: 开启热升级； false，未开启热升级
-     *
-     * @return boolean|null
-     */
-    public function getHotplugFeature()
-    {
-        return $this->get("HotplugFeature");
-    }
-
-    /**
-     * HotplugFeature: true: 开启热升级； false，未开启热升级
-     *
-     * @param boolean $hotplugFeature
-     */
-    public function setHotplugFeature($hotplugFeature)
-    {
-        $this->set("HotplugFeature", $hotplugFeature);
-    }
-
-    /**
      * SubnetType: 【建议不再使用】仅北京A的云主机会返回此字段。基础网络模式：Default；子网模式：Private
      *
      * @return string|null
@@ -687,6 +667,46 @@ class UHostInstanceSet extends Response
     }
 
     /**
+     * GpuType: GPU类型;枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","A100","A800","H20"]
+     *
+     * @return string|null
+     */
+    public function getGpuType()
+    {
+        return $this->get("GpuType");
+    }
+
+    /**
+     * GpuType: GPU类型;枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","A100","A800","H20"]
+     *
+     * @param string $gpuType
+     */
+    public function setGpuType($gpuType)
+    {
+        $this->set("GpuType", $gpuType);
+    }
+
+    /**
+     * HotPlugMaxCpu: 热升级支持的最大CPU个数
+     *
+     * @return integer|null
+     */
+    public function getHotPlugMaxCpu()
+    {
+        return $this->get("HotPlugMaxCpu");
+    }
+
+    /**
+     * HotPlugMaxCpu: 热升级支持的最大CPU个数
+     *
+     * @param int $hotPlugMaxCpu
+     */
+    public function setHotPlugMaxCpu($hotPlugMaxCpu)
+    {
+        $this->set("HotPlugMaxCpu", $hotPlugMaxCpu);
+    }
+
+    /**
      * BootDiskState: 系统盘状态 Normal表示初始化完成；Initializing表示在初始化。仍在初始化的系统盘无法制作镜像。
      *
      * @return string|null
@@ -747,26 +767,6 @@ class UHostInstanceSet extends Response
     }
 
     /**
-     * CloudInitFeature: true，支持cloutinit方式初始化；false,不支持
-     *
-     * @return boolean|null
-     */
-    public function getCloudInitFeature()
-    {
-        return $this->get("CloudInitFeature");
-    }
-
-    /**
-     * CloudInitFeature: true，支持cloutinit方式初始化；false,不支持
-     *
-     * @param boolean $cloudInitFeature
-     */
-    public function setCloudInitFeature($cloudInitFeature)
-    {
-        $this->set("CloudInitFeature", $cloudInitFeature);
-    }
-
-    /**
      * RdmaClusterId: RDMA集群id，仅快杰云主机返回该值；其他类型云主机返回""。当云主机的此值与RSSD云盘的RdmaClusterId相同时，RSSD可以挂载到这台云主机。
      *
      * @return string|null
@@ -807,6 +807,66 @@ class UHostInstanceSet extends Response
     }
 
     /**
+     * HotplugFeature: true: 开启热升级； false，未开启热升级
+     *
+     * @return boolean|null
+     */
+    public function getHotplugFeature()
+    {
+        return $this->get("HotplugFeature");
+    }
+
+    /**
+     * HotplugFeature: true: 开启热升级； false，未开启热升级
+     *
+     * @param boolean $hotplugFeature
+     */
+    public function setHotplugFeature($hotplugFeature)
+    {
+        $this->set("HotplugFeature", $hotplugFeature);
+    }
+
+    /**
+     * CloudInitFeature: true: 支持cloutinit方式初始化；false: 不支持
+     *
+     * @return boolean|null
+     */
+    public function getCloudInitFeature()
+    {
+        return $this->get("CloudInitFeature");
+    }
+
+    /**
+     * CloudInitFeature: true: 支持cloutinit方式初始化；false: 不支持
+     *
+     * @param boolean $cloudInitFeature
+     */
+    public function setCloudInitFeature($cloudInitFeature)
+    {
+        $this->set("CloudInitFeature", $cloudInitFeature);
+    }
+
+    /**
+     * IPv6Feature: true: 有ipv6特性；false，没有ipv6特性
+     *
+     * @return boolean|null
+     */
+    public function getIPv6Feature()
+    {
+        return $this->get("IPv6Feature");
+    }
+
+    /**
+     * IPv6Feature: true: 有ipv6特性；false，没有ipv6特性
+     *
+     * @param boolean $iPv6Feature
+     */
+    public function setIPv6Feature($iPv6Feature)
+    {
+        $this->set("IPv6Feature", $iPv6Feature);
+    }
+
+    /**
      * HpcFeature: true: 开启 hpc 系列功能；false: 未开启
      *
      * @return boolean|null
@@ -827,6 +887,86 @@ class UHostInstanceSet extends Response
     }
 
     /**
+     * EpcInstance: true: 高性能计算主机；false: 不是
+     *
+     * @return boolean|null
+     */
+    public function getEpcInstance()
+    {
+        return $this->get("EpcInstance");
+    }
+
+    /**
+     * EpcInstance: true: 高性能计算主机；false: 不是
+     *
+     * @param boolean $epcInstance
+     */
+    public function setEpcInstance($epcInstance)
+    {
+        $this->set("EpcInstance", $epcInstance);
+    }
+
+    /**
+     * SecGroupInstance: 【待废弃】true: 绑定了安全组的主机；false: 不是
+     *
+     * @return boolean|null
+     */
+    public function getSecGroupInstance()
+    {
+        return $this->get("SecGroupInstance");
+    }
+
+    /**
+     * SecGroupInstance: 【待废弃】true: 绑定了安全组的主机；false: 不是
+     *
+     * @param boolean $secGroupInstance
+     */
+    public function setSecGroupInstance($secGroupInstance)
+    {
+        $this->set("SecGroupInstance", $secGroupInstance);
+    }
+
+    /**
+     * NetFeatureTag: Firewall:防火墙,SecGroup:安全组,Acl:acl
+     *
+     * @return string|null
+     */
+    public function getNetFeatureTag()
+    {
+        return $this->get("NetFeatureTag");
+    }
+
+    /**
+     * NetFeatureTag: Firewall:防火墙,SecGroup:安全组,Acl:acl
+     *
+     * @param string $netFeatureTag
+     */
+    public function setNetFeatureTag($netFeatureTag)
+    {
+        $this->set("NetFeatureTag", $netFeatureTag);
+    }
+
+    /**
+     * HiddenKvm: true: 开启 hidden kvm 功能；false: 不是
+     *
+     * @return boolean|null
+     */
+    public function getHiddenKvm()
+    {
+        return $this->get("HiddenKvm");
+    }
+
+    /**
+     * HiddenKvm: true: 开启 hidden kvm 功能；false: 不是
+     *
+     * @param boolean $hiddenKvm
+     */
+    public function setHiddenKvm($hiddenKvm)
+    {
+        $this->set("HiddenKvm", $hiddenKvm);
+    }
+
+    /**
      * KeyPair: 密钥信息见 UHostKeyPair
      *
      * @return UHostKeyPair|null
@@ -844,5 +984,45 @@ class UHostInstanceSet extends Response
     public function setKeyPair(array $keyPair)
     {
         $this->set("KeyPair", $keyPair->getAll());
+    }
+
+    /**
+     * UDHostAttribute: 私有专区宿主机属性
+     *
+     * @return UDSetUDHostAttribute|null
+     */
+    public function getUDHostAttribute()
+    {
+        return new UDSetUDHostAttribute($this->get("UDHostAttribute"));
+    }
+
+    /**
+     * UDHostAttribute: 私有专区宿主机属性
+     *
+     * @param UDSetUDHostAttribute $udHostAttribute
+     */
+    public function setUDHostAttribute(array $udHostAttribute)
+    {
+        $this->set("UDHostAttribute", $udHostAttribute->getAll());
+    }
+
+    /**
+     * SpotAttribute: 竞价实例信息
+     *
+     * @return SpotAttribute|null
+     */
+    public function getSpotAttribute()
+    {
+        return new SpotAttribute($this->get("SpotAttribute"));
+    }
+
+    /**
+     * SpotAttribute: 竞价实例信息
+     *
+     * @param SpotAttribute $spotAttribute
+     */
+    public function setSpotAttribute(array $spotAttribute)
+    {
+        $this->set("SpotAttribute", $spotAttribute->getAll());
     }
 }
