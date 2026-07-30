@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ use UCloud\UHost\Params\CreateUHostInstanceParamNetworkInterfaceIPv6;
 use UCloud\UHost\Params\CreateUHostInstanceParamVolumes;
 use UCloud\UHost\Params\CreateUHostInstanceParamFeatures;
 use UCloud\UHost\Params\CreateUHostInstanceParamSecGroupId;
+use UCloud\UHost\Params\CreateUHostInstanceParamLabels;
 
 class CreateUHostInstanceRequest extends Request
 {
@@ -152,7 +153,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair。
+     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair，Password，自制镜像密码：ImagePasswd。
      *
      * @return string|null
      */
@@ -162,7 +163,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair。
+     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair，Password，自制镜像密码：ImagePasswd。
      *
      * @param string $loginMode
      */
@@ -172,7 +173,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * Password: UHost密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，举例如下：# echo -n Password1 | base64UGFzc3dvcmQx。
+     * Password: UHost密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，举例如下：# echo -n Password1 | base64 UGFzc3dvcmQx。
      *
      * @return string|null
      */
@@ -182,7 +183,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * Password: UHost密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，举例如下：# echo -n Password1 | base64UGFzc3dvcmQx。
+     * Password: UHost密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，举例如下：# echo -n Password1 | base64 UGFzc3dvcmQx。
      *
      * @param string $password
      */
@@ -232,7 +233,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例(内测阶段) \\ 默认为月付
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\ > Spot计费为抢占式实例(内测阶段) \\ 默认为月付
      *
      * @return string|null
      */
@@ -242,7 +243,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\Preemptive计费为抢占式实例(内测阶段) \\ 默认为月付
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\ > Spot计费为抢占式实例(内测阶段) \\ 默认为月付
      *
      * @param string $chargeType
      */
@@ -332,7 +333,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S"]，MachineType为G时必填
+     * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","4090_48G","A100","A800","H20"]。MachineType为G时必填
      *
      * @return string|null
      */
@@ -342,7 +343,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S"]，MachineType为G时必填
+     * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","4090_48G","A100","A800","H20"]。MachineType为G时必填
      *
      * @param string $gpuType
      */
@@ -372,7 +373,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * NetCapability: 网络增强特性。枚举值：Normal，不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（详情参考官网文档）
+     * NetCapability: 网络增强特性。枚举值：Normal，不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0；Extreme，开启网络增强3.0（详情参考官网文档）
      *
      * @return string|null
      */
@@ -382,7 +383,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * NetCapability: 网络增强特性。枚举值：Normal，不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0（详情参考官网文档）
+     * NetCapability: 网络增强特性。枚举值：Normal，不开启;  Super，开启网络增强1.0； Ultra，开启网络增强2.0；Extreme，开启网络增强3.0（详情参考官网文档）
      *
      * @param string $netCapability
      */
@@ -512,7 +513,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * AlarmTemplateId: 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败只会在后台有日志，不会影响创建主机流程，也不会在前端报错。
+     * AlarmTemplateId: 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败不会影响创建主机流程。
      *
      * @return integer|null
      */
@@ -522,7 +523,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * AlarmTemplateId: 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败只会在后台有日志，不会影响创建主机流程，也不会在前端报错。
+     * AlarmTemplateId: 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败不会影响创建主机流程。
      *
      * @param int $alarmTemplateId
      */
@@ -532,7 +533,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * MachineType: 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OS", "OM", "OPRO", "OMAX", "O.BM", "O.EPC"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     * MachineType: 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OM", "OMEM"， "OPRO", "OPROG"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
      * @return string|null
      */
@@ -542,7 +543,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * MachineType: 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OS", "OM", "OPRO", "OMAX", "O.BM", "O.EPC"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     * MachineType: 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OM", "OMEM"， "OPRO", "OPROG"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
      * @param string $machineType
      */
@@ -552,7 +553,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Amd/Epyc2", "Amd/Auto"],默认值是"Intel/Auto"。
+     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Intel/SapphireRapids", "Amd/Epyc2", "Amd/Auto","Ampere/Auto","Ampere/Altra"],默认值是"Intel/Auto"。
      *
      * @return string|null
      */
@@ -562,7 +563,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Amd/Epyc2", "Amd/Auto"],默认值是"Intel/Auto"。
+     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Intel/SapphireRapids", "Amd/Epyc2", "Amd/Auto","Ampere/Auto","Ampere/Altra"],默认值是"Intel/Auto"。
      *
      * @param string $minimalCpuPlatform
      */
@@ -572,7 +573,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * MaxCount: 本次最大创建主机数量，取值范围是[1,100]，默认值为1。
+     * MaxCount: 本次最大创建主机数量，取值范围是[1,100]，默认值为1。- 库存数量不足时，按库存数量创建。- 配额不足时，返回错误。- 使用隔离组时，以隔离组可用数量为准。
      *
      * @return integer|null
      */
@@ -582,7 +583,7 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
-     * MaxCount: 本次最大创建主机数量，取值范围是[1,100]，默认值为1。
+     * MaxCount: 本次最大创建主机数量，取值范围是[1,100]，默认值为1。- 库存数量不足时，按库存数量创建。- 配额不足时，返回错误。- 使用隔离组时，以隔离组可用数量为准。
      *
      * @param int $maxCount
      */
@@ -765,6 +766,178 @@ class CreateUHostInstanceRequest extends Request
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @return string|null
+     */
+    public function getSecurityMode()
+    {
+        return $this->get("SecurityMode");
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @param string $securityMode
+     */
+    public function setSecurityMode($securityMode)
+    {
+        $this->set("SecurityMode", $securityMode);
+    }
+
+    /**
+     * UDSetId: 【私有专区属性】专区id
+     *
+     * @return string|null
+     */
+    public function getUDSetId()
+    {
+        return $this->get("UDSetId");
+    }
+
+    /**
+     * UDSetId: 【私有专区属性】专区id
+     *
+     * @param string $udSetId
+     */
+    public function setUDSetId($udSetId)
+    {
+        $this->set("UDSetId", $udSetId);
+    }
+
+    /**
+     * UDHostId: 【私有专区属性】专区宿主机id
+     *
+     * @return string|null
+     */
+    public function getUDHostId()
+    {
+        return $this->get("UDHostId");
+    }
+
+    /**
+     * UDHostId: 【私有专区属性】专区宿主机id
+     *
+     * @param string $udHostId
+     */
+    public function setUDHostId($udHostId)
+    {
+        $this->set("UDHostId", $udHostId);
+    }
+
+    /**
+     * HostBinding: 【私有专区属性】专区云主机开启宿住关联属性
+     *
+     * @return boolean|null
+     */
+    public function getHostBinding()
+    {
+        return $this->get("HostBinding");
+    }
+
+    /**
+     * HostBinding: 【私有专区属性】专区云主机开启宿住关联属性
+     *
+     * @param boolean $hostBinding
+     */
+    public function setHostBinding($hostBinding)
+    {
+        $this->set("HostBinding", $hostBinding);
+    }
+
+    /**
+     * MinCount: 本次最小创建主机数量，取值范围是[1,100]，默认值为1。- 配额不足时，返回错误。
+     *
+     * @return integer|null
+     */
+    public function getMinCount()
+    {
+        return $this->get("MinCount");
+    }
+
+    /**
+     * MinCount: 本次最小创建主机数量，取值范围是[1,100]，默认值为1。- 配额不足时，返回错误。
+     *
+     * @param int $minCount
+     */
+    public function setMinCount($minCount)
+    {
+        $this->set("MinCount", $minCount);
+    }
+
+    /**
+     * Labels:
+     *
+     * @return CreateUHostInstanceParamLabels[]|null
+     */
+    public function getLabels()
+    {
+        $items = $this->get("Labels");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUHostInstanceParamLabels($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Labels:
+     *
+     * @param CreateUHostInstanceParamLabels[] $labels
+     */
+    public function setLabels(array $labels)
+    {
+        $result = [];
+        foreach ($labels as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * DeletionProtection: 删除保护，设置删除保护参数，true表示不允许控制台删除
+     *
+     * @return boolean|null
+     */
+    public function getDeletionProtection()
+    {
+        return $this->get("DeletionProtection");
+    }
+
+    /**
+     * DeletionProtection: 删除保护，设置删除保护参数，true表示不允许控制台删除
+     *
+     * @param boolean $deletionProtection
+     */
+    public function setDeletionProtection($deletionProtection)
+    {
+        $this->set("DeletionProtection", $deletionProtection);
+    }
+
+    /**
+     * UHostFamily: 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"（快杰型）时，支持以下取值：- o1i：快杰型 O1 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台- o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台 默认值：o1i 或 o1a当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     *
+     * @return string|null
+     */
+    public function getUHostFamily()
+    {
+        return $this->get("UHostFamily");
+    }
+
+    /**
+     * UHostFamily: 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"（快杰型）时，支持以下取值：- o1i：快杰型 O1 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台- o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台 默认值：o1i 或 o1a当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     *
+     * @param string $uHostFamily
+     */
+    public function setUHostFamily($uHostFamily)
+    {
+        $this->set("UHostFamily", $uHostFamily);
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ namespace UCloud\UHost\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UHost\Models\AvailableInstanceTypes;
 use UCloud\UHost\Models\CpuPlatforms;
+use UCloud\UHost\Models\UHostFamily;
+use UCloud\UHost\Models\CpuPlatformWithModels;
 use UCloud\UHost\Models\Disks;
 use UCloud\UHost\Models\BootDiskInfo;
 use UCloud\UHost\Models\DataDiskInfo;
@@ -63,5 +65,25 @@ class DescribeAvailableInstanceTypesResponse extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * Status: 当前区域是否可售
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->get("Status");
+    }
+
+    /**
+     * Status: 当前区域是否可售
+     *
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->set("Status", $status);
     }
 }

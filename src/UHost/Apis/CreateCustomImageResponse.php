@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,5 +40,25 @@ class CreateCustomImageResponse extends Response
     public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
+    }
+
+    /**
+     * DataSnapshotIds: 云盘数据盘快照id列表
+     *
+     * @return string[]|null
+     */
+    public function getDataSnapshotIds()
+    {
+        return $this->get("DataSnapshotIds");
+    }
+
+    /**
+     * DataSnapshotIds: 云盘数据盘快照id列表
+     *
+     * @param string[] $dataSnapshotIds
+     */
+    public function setDataSnapshotIds(array $dataSnapshotIds)
+    {
+        $this->set("DataSnapshotIds", $dataSnapshotIds);
     }
 }
