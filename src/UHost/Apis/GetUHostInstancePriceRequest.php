@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ namespace UCloud\UHost\Apis;
 use UCloud\Core\Request\Request;
 use UCloud\UHost\Params\GetUHostInstancePriceParamDisks;
 use UCloud\UHost\Params\GetUHostInstancePriceParamVolumes;
-use UCloud\UHost\Params\GetUHostInstancePriceParamVirtualGpu;
 
 class GetUHostInstancePriceRequest extends Request
 {
@@ -227,7 +226,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时付费 // >Preemptive 抢占式实例 \\ 如果不传某个枚举值，默认返回年付、月付、时付的价格组合集。
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时付费 // >Spot 抢占式实例 \\ 如果不传某个枚举值，默认返回年付、月付、时付的价格组合集。
      *
      * @return string|null
      */
@@ -237,7 +236,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时付费 // >Preemptive 抢占式实例 \\ 如果不传某个枚举值，默认返回年付、月付、时付的价格组合集。
+     * ChargeType: 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时付费 // >Spot 抢占式实例 \\ 如果不传某个枚举值，默认返回年付、月付、时付的价格组合集。
      *
      * @param string $chargeType
      */
@@ -287,7 +286,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * MachineType: 云主机机型（V2版本概念）。枚举值["N", "C", "G", "O", "OS", "OPRO", "OMAX", "O.BM"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     * MachineType: 云主机机型（V2版本概念）。枚举值["N", "C", "G", "O", "OS", "OPRO", "OMAX", "O.BM", "O.EPC"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
      * @return string|null
      */
@@ -297,7 +296,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * MachineType: 云主机机型（V2版本概念）。枚举值["N", "C", "G", "O", "OS", "OPRO", "OMAX", "O.BM"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     * MachineType: 云主机机型（V2版本概念）。枚举值["N", "C", "G", "O", "OS", "OPRO", "OMAX", "O.BM", "O.EPC"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
      * @param string $machineType
      */
@@ -307,7 +306,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4","T4S","2080Ti","2080Ti-4C","1080Ti"]
+     * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","A100","A800"]
      *
      * @return string|null
      */
@@ -317,7 +316,7 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4","T4S","2080Ti","2080Ti-4C","1080Ti"]
+     * GpuType: GPU类型，枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100", "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","A100","A800"]
      *
      * @param string $gpuType
      */
@@ -399,22 +398,62 @@ class GetUHostInstancePriceRequest extends Request
     }
 
     /**
-     * VirtualGpu:
+     * UDSetUHostInstance: 专区云主机。如果要在专区宿主机上创建云主机，该参数可以填写为true
      *
-     * @return GetUHostInstancePriceParamVirtualGpu|null
+     * @return boolean|null
      */
-    public function getVirtualGpu()
+    public function getUDSetUHostInstance()
     {
-        return new GetUHostInstancePriceParamVirtualGpu($this->get("VirtualGpu"));
+        return $this->get("UDSetUHostInstance");
     }
 
     /**
-     * VirtualGpu:
+     * UDSetUHostInstance: 专区云主机。如果要在专区宿主机上创建云主机，该参数可以填写为true
      *
-     * @param GetUHostInstancePriceParamVirtualGpu $virtualGpu
+     * @param boolean $udSetUHostInstance
      */
-    public function setVirtualGpu(array $virtualGpu)
+    public function setUDSetUHostInstance($udSetUHostInstance)
     {
-        $this->set("VirtualGpu", $virtualGpu->getAll());
+        $this->set("UDSetUHostInstance", $udSetUHostInstance);
+    }
+
+    /**
+     * ShowPriceDetails: 返回价格详细信息
+     *
+     * @return boolean|null
+     */
+    public function getShowPriceDetails()
+    {
+        return $this->get("ShowPriceDetails");
+    }
+
+    /**
+     * ShowPriceDetails: 返回价格详细信息
+     *
+     * @param boolean $showPriceDetails
+     */
+    public function setShowPriceDetails($showPriceDetails)
+    {
+        $this->set("ShowPriceDetails", $showPriceDetails);
+    }
+
+    /**
+     * UHostFamily: 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。当 MachineType 为 "O"（快杰型）时，支持以下取值： - o1i：快杰型 O1 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台- o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台 默认值：o1i 或 o1a或o1r当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     *
+     * @return string|null
+     */
+    public function getUHostFamily()
+    {
+        return $this->get("UHostFamily");
+    }
+
+    /**
+     * UHostFamily: 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。当 MachineType 为 "O"（快杰型）时，支持以下取值： - o1i：快杰型 O1 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台- o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台 默认值：o1i 或 o1a或o1r当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     *
+     * @param string $uHostFamily
+     */
+    public function setUHostFamily($uHostFamily)
+    {
+        $this->set("UHostFamily", $uHostFamily);
     }
 }

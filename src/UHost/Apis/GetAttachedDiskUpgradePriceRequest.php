@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,7 +92,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
     }
 
     /**
-     * DiskSpace: 磁盘大小，单位GB，步长为10。取值范围需大于当前磁盘大小，最大值请参考[[api:uhost-api:disk_type|磁盘类型]]。
+     * DiskSpace: 磁盘大小，单位GB。取值范围需大于当前磁盘大小，最大值请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
      * @return integer|null
      */
@@ -102,7 +102,7 @@ class GetAttachedDiskUpgradePriceRequest extends Request
     }
 
     /**
-     * DiskSpace: 磁盘大小，单位GB，步长为10。取值范围需大于当前磁盘大小，最大值请参考[[api:uhost-api:disk_type|磁盘类型]]。
+     * DiskSpace: 磁盘大小，单位GB。取值范围需大于当前磁盘大小，最大值请参考[[api:uhost-api:disk_type|磁盘类型]]。
      *
      * @param int $diskSpace
      */
