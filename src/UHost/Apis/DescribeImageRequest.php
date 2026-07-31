@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,26 @@ class DescribeImageRequest extends Request
     }
 
     /**
+     * FuncType: 镜像归属,枚举值:["gpu","app","uhost"]。"gpu": 对gpu进行处理过的行业镜像；"app"：轻量云主机专用的镜像；"uhost"：云主机镜像市场的行业镜像。FuncType传参错误会被忽略
+     *
+     * @return string|null
+     */
+    public function getFuncType()
+    {
+        return $this->get("FuncType");
+    }
+
+    /**
+     * FuncType: 镜像归属,枚举值:["gpu","app","uhost"]。"gpu": 对gpu进行处理过的行业镜像；"app"：轻量云主机专用的镜像；"uhost"：云主机镜像市场的行业镜像。FuncType传参错误会被忽略
+     *
+     * @param string $funcType
+     */
+    public function setFuncType($funcType)
+    {
+        $this->set("FuncType", $funcType);
+    }
+
+    /**
      * OsType: 操作系统类型：Linux， Windows 默认返回所有类型
      *
      * @return string|null
@@ -146,6 +166,46 @@ class DescribeImageRequest extends Request
     public function setImageId($imageId)
     {
         $this->set("ImageId", $imageId);
+    }
+
+    /**
+     * ImageIds: 镜像Id列表
+     *
+     * @return string[]|null
+     */
+    public function getImageIds()
+    {
+        return $this->get("ImageIds");
+    }
+
+    /**
+     * ImageIds: 镜像Id列表
+     *
+     * @param string[] $imageIds
+     */
+    public function setImageIds(array $imageIds)
+    {
+        $this->set("ImageIds", $imageIds);
+    }
+
+    /**
+     * Tag: 业务组Id。默认：Default
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->get("Tag");
+    }
+
+    /**
+     * Tag: 业务组Id。默认：Default
+     *
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->set("Tag", $tag);
     }
 
     /**

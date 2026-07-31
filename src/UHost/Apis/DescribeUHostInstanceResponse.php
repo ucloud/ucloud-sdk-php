@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ use UCloud\UHost\Models\UHostInstanceSet;
 use UCloud\UHost\Models\UHostDiskSet;
 use UCloud\UHost\Models\UHostIPSet;
 use UCloud\UHost\Models\UHostKeyPair;
+use UCloud\UHost\Models\UDSetUDHostAttribute;
+use UCloud\UHost\Models\SpotAttribute;
 
 class DescribeUHostInstanceResponse extends Response
 {

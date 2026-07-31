@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ class ResetUHostInstancePasswordRequest extends Request
         parent::__construct(["Action" => "ResetUHostInstancePassword"]);
         $this->markRequired("Region");
         $this->markRequired("UHostId");
-        $this->markRequired("Password");
     }
 
     
@@ -128,5 +127,65 @@ class ResetUHostInstancePasswordRequest extends Request
     public function setPassword($password)
     {
         $this->set("Password", $password);
+    }
+
+    /**
+     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair。
+     *
+     * @return string|null
+     */
+    public function getLoginMode()
+    {
+        return $this->get("LoginMode");
+    }
+
+    /**
+     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair。
+     *
+     * @param string $loginMode
+     */
+    public function setLoginMode($loginMode)
+    {
+        $this->set("LoginMode", $loginMode);
+    }
+
+    /**
+     * KeyPairId: KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。
+     *
+     * @return string|null
+     */
+    public function getKeyPairId()
+    {
+        return $this->get("KeyPairId");
+    }
+
+    /**
+     * KeyPairId: KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。
+     *
+     * @param string $keyPairId
+     */
+    public function setKeyPairId($keyPairId)
+    {
+        $this->set("KeyPairId", $keyPairId);
+    }
+
+    /**
+     * AutoStart: 修改密码结束后是否立即开机，默认为false， 如果设置为true，则修改密码成功后立即开机； 抢占式和后付费云主机暂不支持当前功能；
+     *
+     * @return boolean|null
+     */
+    public function getAutoStart()
+    {
+        return $this->get("AutoStart");
+    }
+
+    /**
+     * AutoStart: 修改密码结束后是否立即开机，默认为false， 如果设置为true，则修改密码成功后立即开机； 抢占式和后付费云主机暂不支持当前功能；
+     *
+     * @param boolean $autoStart
+     */
+    public function setAutoStart($autoStart)
+    {
+        $this->set("AutoStart", $autoStart);
     }
 }

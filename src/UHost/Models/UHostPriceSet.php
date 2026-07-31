@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ class UHostPriceSet extends Response
     }
 
     /**
-     * OriginalPrice: 限时优惠的折前原价（即列表价乘以商务折扣后的单价）。
+     * OriginalPrice: 限时优惠的折前原价。
      *
      * @return float|null
      */
@@ -73,7 +73,7 @@ class UHostPriceSet extends Response
     }
 
     /**
-     * OriginalPrice: 限时优惠的折前原价（即列表价乘以商务折扣后的单价）。
+     * OriginalPrice: 限时优惠的折前原价。
      *
      * @param float $originalPrice
      */
@@ -83,22 +83,42 @@ class UHostPriceSet extends Response
     }
 
     /**
-     * ListPrice: 产品列表价。
+     * PriceDetail: 价格详细信息（只有询价接口返回）。
      *
-     * @return float|null
+     * @return PriceDetail|null
      */
-    public function getListPrice()
+    public function getPriceDetail()
     {
-        return $this->get("ListPrice");
+        return new PriceDetail($this->get("PriceDetail"));
     }
 
     /**
-     * ListPrice: 产品列表价。
+     * PriceDetail: 价格详细信息（只有询价接口返回）。
      *
-     * @param float $listPrice
+     * @param PriceDetail $priceDetail
      */
-    public function setListPrice($listPrice)
+    public function setPriceDetail(array $priceDetail)
     {
-        $this->set("ListPrice", $listPrice);
+        $this->set("PriceDetail", $priceDetail->getAll());
+    }
+
+    /**
+     * OriginalPriceDetail: 原价详细信息（只有询价接口返回）。
+     *
+     * @return PriceDetail|null
+     */
+    public function getOriginalPriceDetail()
+    {
+        return new PriceDetail($this->get("OriginalPriceDetail"));
+    }
+
+    /**
+     * OriginalPriceDetail: 原价详细信息（只有询价接口返回）。
+     *
+     * @param PriceDetail $originalPriceDetail
+     */
+    public function setOriginalPriceDetail(array $originalPriceDetail)
+    {
+        $this->set("OriginalPriceDetail", $originalPriceDetail->getAll());
     }
 }

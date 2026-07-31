@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
-     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
-     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+     * BackupType: 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
      *
      * @param string $backupType
      */
@@ -163,6 +163,26 @@ class CreateUHostInstanceParamDisks extends Request
     }
 
     /**
+     * BackupMode: 指定快照备份策略。当Disks.N.BackupType为"SNAPSHOT"时此参数生效。枚举值："Base"：标准版，"Ultimate"：旗舰版，"Custom"：自定义备份链；默认值："Base"。
+     *
+     * @return string|null
+     */
+    public function getBackupMode()
+    {
+        return $this->get("BackupMode");
+    }
+
+    /**
+     * BackupMode: 指定快照备份策略。当Disks.N.BackupType为"SNAPSHOT"时此参数生效。枚举值："Base"：标准版，"Ultimate"：旗舰版，"Custom"：自定义备份链；默认值："Base"。
+     *
+     * @param string $backupMode
+     */
+    public function setBackupMode($backupMode)
+    {
+        $this->set("BackupMode", $backupMode);
+    }
+
+    /**
      * CustomBackup:
      *
      * @return CreateUHostInstanceParamDisksCustomBackup|null
@@ -180,5 +200,25 @@ class CreateUHostInstanceParamDisks extends Request
     public function setCustomBackup(array $customBackup)
     {
         $this->set("CustomBackup", $customBackup->getAll());
+    }
+
+    /**
+     * SnapshotId: 从快照创建盘时所用快照id，目前仅支持数据盘
+     *
+     * @return string|null
+     */
+    public function getSnapshotId()
+    {
+        return $this->get("SnapshotId");
+    }
+
+    /**
+     * SnapshotId: 从快照创建盘时所用快照id，目前仅支持数据盘
+     *
+     * @param string $snapshotId
+     */
+    public function setSnapshotId($snapshotId)
+    {
+        $this->set("SnapshotId", $snapshotId);
     }
 }

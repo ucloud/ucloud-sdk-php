@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,6 +150,26 @@ class ResizeUHostInstanceRequest extends Request
     }
 
     /**
+     * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     *
+     * @return integer|null
+     */
+    public function getGPU()
+    {
+        return $this->get("GPU");
+    }
+
+    /**
+     * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     *
+     * @param int $gpu
+     */
+    public function setGPU($gpu)
+    {
+        $this->set("GPU", $gpu);
+    }
+
+    /**
      * NetCapValue: 网卡升降级（1，表示升级，2表示降级，0表示不变）
      *
      * @return integer|null
@@ -167,5 +187,25 @@ class ResizeUHostInstanceRequest extends Request
     public function setNetCapValue($netCapValue)
     {
         $this->set("NetCapValue", $netCapValue);
+    }
+
+    /**
+     * AutoStart: 扩容结束后是否立即开机，默认为false，如果设置为true，则扩容成功后立即开机；抢占式和后付费云主机暂不支持当前功能；
+     *
+     * @return boolean|null
+     */
+    public function getAutoStart()
+    {
+        return $this->get("AutoStart");
+    }
+
+    /**
+     * AutoStart: 扩容结束后是否立即开机，默认为false，如果设置为true，则扩容成功后立即开机；抢占式和后付费云主机暂不支持当前功能；
+     *
+     * @param boolean $autoStart
+     */
+    public function setAutoStart($autoStart)
+    {
+        $this->set("AutoStart", $autoStart);
     }
 }

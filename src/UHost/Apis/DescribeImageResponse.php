@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UHost\Models\UHostImageSet;
+use UCloud\UHost\Models\BasePriceSet;
 
 class DescribeImageResponse extends Response
 {
