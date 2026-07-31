@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,6 @@ class DescribeAvailableInstanceTypesRequest extends Request
     public function __construct()
     {
         parent::__construct(["Action" => "DescribeAvailableInstanceTypes"]);
-        $this->markRequired("Region");
-        $this->markRequired("Zone");
     }
 
     
@@ -87,5 +85,25 @@ class DescribeAvailableInstanceTypesRequest extends Request
     public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
+    }
+
+    /**
+     * MachineTypes: 指定机型列表
+     *
+     * @return string[]|null
+     */
+    public function getMachineTypes()
+    {
+        return $this->get("MachineTypes");
+    }
+
+    /**
+     * MachineTypes: 指定机型列表
+     *
+     * @param string[] $machineTypes
+     */
+    public function setMachineTypes(array $machineTypes)
+    {
+        $this->set("MachineTypes", $machineTypes);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,26 @@ class UHostImageSet extends Response
     }
 
     /**
+     * Tag: 业务组
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->get("Tag");
+    }
+
+    /**
+     * Tag: 业务组
+     *
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->set("Tag", $tag);
+    }
+
+    /**
      * OsType: 操作系统类型：Linux，Windows
      *
      * @return string|null
@@ -143,7 +163,7 @@ class UHostImageSet extends Response
     }
 
     /**
-     * Features: 特殊状态标识， 目前包含NetEnhnced（网络增强1.0）, NetEnhanced_Ultra]（网络增强2.0）, HotPlug(热升级), CloudInit, IPv6
+     * Features: 特殊状态标识，目前包含NetEnhnced（网络增强1.0）, NetEnhanced_Ultra（网络增强2.0）, NetEnhanced_Extreme（网络增强3.0）, HotPlug(热升级), GPU（GPU镜像）,CloudInit, IPv6（支持IPv6网络）,RssdAttachable（支持RSSD云盘）,Vgpu_AMD（支持AMD的vgpu）,Vgpu_NVIDIA（支持NVIDIA的vgpu）,Aarch64_Type（支持arm64架构）
      *
      * @return string[]|null
      */
@@ -153,7 +173,7 @@ class UHostImageSet extends Response
     }
 
     /**
-     * Features: 特殊状态标识， 目前包含NetEnhnced（网络增强1.0）, NetEnhanced_Ultra]（网络增强2.0）, HotPlug(热升级), CloudInit, IPv6
+     * Features: 特殊状态标识，目前包含NetEnhnced（网络增强1.0）, NetEnhanced_Ultra（网络增强2.0）, NetEnhanced_Extreme（网络增强3.0）, HotPlug(热升级), GPU（GPU镜像）,CloudInit, IPv6（支持IPv6网络）,RssdAttachable（支持RSSD云盘）,Vgpu_AMD（支持AMD的vgpu）,Vgpu_NVIDIA（支持NVIDIA的vgpu）,Aarch64_Type（支持arm64架构）
      *
      * @param string[] $features
      */
@@ -163,7 +183,7 @@ class UHostImageSet extends Response
     }
 
     /**
-     * FuncType: 行业镜像类型（仅行业镜像将返回这个值）
+     * FuncType: 镜像归属,枚举值:["gpu","app","uhost"]。"gpu": 对gpu进行处理过的行业镜像；"app"：轻量云主机专用的镜像；"uhost"：云主机镜像市场的行业镜像
      *
      * @return string|null
      */
@@ -173,7 +193,7 @@ class UHostImageSet extends Response
     }
 
     /**
-     * FuncType: 行业镜像类型（仅行业镜像将返回这个值）
+     * FuncType: 镜像归属,枚举值:["gpu","app","uhost"]。"gpu": 对gpu进行处理过的行业镜像；"app"：轻量云主机专用的镜像；"uhost"：云主机镜像市场的行业镜像
      *
      * @param string $funcType
      */
@@ -243,7 +263,7 @@ class UHostImageSet extends Response
     }
 
     /**
-     * State: 镜像状态， 可用：Available，制作中：Making， 不可用：Unavailable
+     * State: 镜像状态， 可用：Available，制作中：Making， 不可用：Unavailable，复制中：Copying
      *
      * @return string|null
      */
@@ -253,7 +273,7 @@ class UHostImageSet extends Response
     }
 
     /**
-     * State: 镜像状态， 可用：Available，制作中：Making， 不可用：Unavailable
+     * State: 镜像状态， 可用：Available，制作中：Making， 不可用：Unavailable，复制中：Copying
      *
      * @param string $state
      */
@@ -340,5 +360,137 @@ class UHostImageSet extends Response
     public function setMinimalCPU($minimalCPU)
     {
         $this->set("MinimalCPU", $minimalCPU);
+    }
+
+    /**
+     * MaintainEol: 系统EOL的时间，格式：YYYY/MM/DD
+     *
+     * @return string|null
+     */
+    public function getMaintainEol()
+    {
+        return $this->get("MaintainEol");
+    }
+
+    /**
+     * MaintainEol: 系统EOL的时间，格式：YYYY/MM/DD
+     *
+     * @param string $maintainEol
+     */
+    public function setMaintainEol($maintainEol)
+    {
+        $this->set("MaintainEol", $maintainEol);
+    }
+
+    /**
+     * DataSnapshotIds: 关联的云盘数据盘快照Id列表
+     *
+     * @return string[]|null
+     */
+    public function getDataSnapshotIds()
+    {
+        return $this->get("DataSnapshotIds");
+    }
+
+    /**
+     * DataSnapshotIds: 关联的云盘数据盘快照Id列表
+     *
+     * @param string[] $dataSnapshotIds
+     */
+    public function setDataSnapshotIds(array $dataSnapshotIds)
+    {
+        $this->set("DataSnapshotIds", $dataSnapshotIds);
+    }
+
+    /**
+     * SupportedGPUTypes: 支持的GPU机型
+     *
+     * @return string[]|null
+     */
+    public function getSupportedGPUTypes()
+    {
+        return $this->get("SupportedGPUTypes");
+    }
+
+    /**
+     * SupportedGPUTypes: 支持的GPU机型
+     *
+     * @param string[] $supportedGPUTypes
+     */
+    public function setSupportedGPUTypes(array $supportedGPUTypes)
+    {
+        $this->set("SupportedGPUTypes", $supportedGPUTypes);
+    }
+
+    /**
+     * SceneCategories: 场景分类，目前包含Featured（精选），PreInstalledDrivers（预装驱动），AIPainting（AI绘画），AIModels（AI模型），HPC（高性能计算）
+     *
+     * @return string[]|null
+     */
+    public function getSceneCategories()
+    {
+        return $this->get("SceneCategories");
+    }
+
+    /**
+     * SceneCategories: 场景分类，目前包含Featured（精选），PreInstalledDrivers（预装驱动），AIPainting（AI绘画），AIModels（AI模型），HPC（高性能计算）
+     *
+     * @param string[] $sceneCategories
+     */
+    public function setSceneCategories(array $sceneCategories)
+    {
+        $this->set("SceneCategories", $sceneCategories);
+    }
+
+    /**
+     * PrimarySoftware: 主要安装软件
+     *
+     * @return string|null
+     */
+    public function getPrimarySoftware()
+    {
+        return $this->get("PrimarySoftware");
+    }
+
+    /**
+     * PrimarySoftware: 主要安装软件
+     *
+     * @param string $primarySoftware
+     */
+    public function setPrimarySoftware($primarySoftware)
+    {
+        $this->set("PrimarySoftware", $primarySoftware);
+    }
+
+    /**
+     * PriceSet: 镜像的价格信息
+     *
+     * @return BasePriceSet[]|null
+     */
+    public function getPriceSet()
+    {
+        $items = $this->get("PriceSet");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new BasePriceSet($item));
+        }
+        return $result;
+    }
+
+    /**
+     * PriceSet: 镜像的价格信息
+     *
+     * @param BasePriceSet[] $priceSet
+     */
+    public function setPriceSet(array $priceSet)
+    {
+        $result = [];
+        foreach ($priceSet as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }

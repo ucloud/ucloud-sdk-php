@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,5 +22,43 @@ class CreateUHostInstanceParamSecGroupId extends Request
 {
     
 
+    /**
+     * Id: 安全组 ID。至多可以同时绑定5个安全组。
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->get("Id");
+    }
 
+    /**
+     * Id: 安全组 ID。至多可以同时绑定5个安全组。
+     *
+     * @param string $id
+     */
+    public function setId($id)
+    {
+        $this->set("Id", $id);
+    }
+
+    /**
+     * Priority: 安全组优先级。取值范围[1, 5]
+     *
+     * @return integer|null
+     */
+    public function getPriority()
+    {
+        return $this->get("Priority");
+    }
+
+    /**
+     * Priority: 安全组优先级。取值范围[1, 5]
+     *
+     * @param int $priority
+     */
+    public function setPriority($priority)
+    {
+        $this->set("Priority", $priority);
+    }
 }

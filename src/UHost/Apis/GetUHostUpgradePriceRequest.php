@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,7 +150,27 @@ class GetUHostUpgradePriceRequest extends Request
     }
 
     /**
-     * NetCapValue: 网卡升降级（1，表示升级，2表示降级，0表示不变）
+     * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     *
+     * @return integer|null
+     */
+    public function getGPU()
+    {
+        return $this->get("GPU");
+    }
+
+    /**
+     * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     *
+     * @param int $gpu
+     */
+    public function setGPU($gpu)
+    {
+        $this->set("GPU", $gpu);
+    }
+
+    /**
+     * NetCapValue: 网卡升降级（1，表示升级，2表示降级，0表示不变）。仅支持网络增强1.0和网络增强2.0的开启和关闭，不支持网络增强特性互相转换，如网络增强1.0升级到网络增强2.0是不被支持的。
      *
      * @return integer|null
      */
@@ -160,7 +180,7 @@ class GetUHostUpgradePriceRequest extends Request
     }
 
     /**
-     * NetCapValue: 网卡升降级（1，表示升级，2表示降级，0表示不变）
+     * NetCapValue: 网卡升降级（1，表示升级，2表示降级，0表示不变）。仅支持网络增强1.0和网络增强2.0的开启和关闭，不支持网络增强特性互相转换，如网络增强1.0升级到网络增强2.0是不被支持的。
      *
      * @param int $netCapValue
      */

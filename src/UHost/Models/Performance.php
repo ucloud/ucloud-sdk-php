@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ class Performance extends Response
     /**
      * Value: 值，单位是TFlops
      *
-     * @return integer|null
+     * @return float|null
      */
     public function getValue()
     {
@@ -35,7 +35,7 @@ class Performance extends Response
     /**
      * Value: 值，单位是TFlops
      *
-     * @param int $value
+     * @param float $value
      */
     public function setValue($value)
     {
