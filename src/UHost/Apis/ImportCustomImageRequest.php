@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -192,6 +192,26 @@ class ImportCustomImageRequest extends Request
     public function setAuth($auth)
     {
         $this->set("Auth", $auth);
+    }
+
+    /**
+     * Tag: 业务组
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->get("Tag");
+    }
+
+    /**
+     * Tag: 业务组
+     *
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->set("Tag", $tag);
     }
 
     /**
