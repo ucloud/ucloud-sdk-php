@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,5 +148,45 @@ class CreateCustomImageRequest extends Request
     public function setImageDescription($imageDescription)
     {
         $this->set("ImageDescription", $imageDescription);
+    }
+
+    /**
+     * Tag: 镜像业务组。默认：Default
+     *
+     * @return string|null
+     */
+    public function getTag()
+    {
+        return $this->get("Tag");
+    }
+
+    /**
+     * Tag: 镜像业务组。默认：Default
+     *
+     * @param string $tag
+     */
+    public function setTag($tag)
+    {
+        $this->set("Tag", $tag);
+    }
+
+    /**
+     * DataUDiskIds: 【数组】关联的云盘数据盘id列表。注意: 云盘数据盘需要开启快照服务
+     *
+     * @return string[]|null
+     */
+    public function getDataUDiskIds()
+    {
+        return $this->get("DataUDiskIds");
+    }
+
+    /**
+     * DataUDiskIds: 【数组】关联的云盘数据盘id列表。注意: 云盘数据盘需要开启快照服务
+     *
+     * @param string[] $dataUDiskIds
+     */
+    public function setDataUDiskIds(array $dataUDiskIds)
+    {
+        $this->set("DataUDiskIds", $dataUDiskIds);
     }
 }

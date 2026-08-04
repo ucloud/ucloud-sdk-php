@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,7 +150,7 @@ class ReinstallUHostInstanceRequest extends Request
     }
 
     /**
-     * ReserveDisk: 是否保留数据盘，保留：Yes，不报留：No， 默认：Yes；如果是从Windows重装为Linux或反之，则无法保留数据盘（该参数目前仅对本地数据盘起作用）
+     * ReserveDisk: 是否保留数据盘，保留：Yes，不保留：No， 默认：Yes；如果是从Windows重装为Linux或反之，则无法保留数据盘（该参数目前仅对本地数据盘起作用）
      *
      * @return string|null
      */
@@ -160,7 +160,7 @@ class ReinstallUHostInstanceRequest extends Request
     }
 
     /**
-     * ReserveDisk: 是否保留数据盘，保留：Yes，不报留：No， 默认：Yes；如果是从Windows重装为Linux或反之，则无法保留数据盘（该参数目前仅对本地数据盘起作用）
+     * ReserveDisk: 是否保留数据盘，保留：Yes，不保留：No， 默认：Yes；如果是从Windows重装为Linux或反之，则无法保留数据盘（该参数目前仅对本地数据盘起作用）
      *
      * @param string $reserveDisk
      */
@@ -170,7 +170,7 @@ class ReinstallUHostInstanceRequest extends Request
     }
 
     /**
-     * BootDiskSpace: 系统盘大小。 单位：GB， 范围[20,100]， 步长：10
+     * BootDiskSpace: 系统盘大小。 单位：GB， 范围[20,100]。
      *
      * @return integer|null
      */
@@ -180,7 +180,7 @@ class ReinstallUHostInstanceRequest extends Request
     }
 
     /**
-     * BootDiskSpace: 系统盘大小。 单位：GB， 范围[20,100]， 步长：10
+     * BootDiskSpace: 系统盘大小。 单位：GB， 范围[20,100]。
      *
      * @param int $bootDiskSpace
      */
@@ -230,7 +230,7 @@ class ReinstallUHostInstanceRequest extends Request
     }
 
     /**
-     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair。
+     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair，自制镜像密码: ImagePasswd。
      *
      * @return string|null
      */
@@ -240,7 +240,7 @@ class ReinstallUHostInstanceRequest extends Request
     }
 
     /**
-     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair。
+     * LoginMode: 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair，自制镜像密码: ImagePasswd。
      *
      * @param string $loginMode
      */
@@ -267,5 +267,25 @@ class ReinstallUHostInstanceRequest extends Request
     public function setKeyPairId($keyPairId)
     {
         $this->set("KeyPairId", $keyPairId);
+    }
+
+    /**
+     * HostName: 操作系统主机名
+     *
+     * @return string|null
+     */
+    public function getHostName()
+    {
+        return $this->get("HostName");
+    }
+
+    /**
+     * HostName: 操作系统主机名
+     *
+     * @param string $hostName
+     */
+    public function setHostName($hostName)
+    {
+        $this->set("HostName", $hostName);
     }
 }

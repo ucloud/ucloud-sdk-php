@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,7 +131,7 @@ class CopyCustomImageRequest extends Request
     }
 
     /**
-     * TargetRegion: 目标地域，不跨地域不用填
+     * TargetRegion: 目标地域，不跨地域可不填
      *
      * @return string|null
      */
@@ -141,7 +141,7 @@ class CopyCustomImageRequest extends Request
     }
 
     /**
-     * TargetRegion: 目标地域，不跨地域不用填
+     * TargetRegion: 目标地域，不跨地域可不填
      *
      * @param string $targetRegion
      */
@@ -188,5 +188,45 @@ class CopyCustomImageRequest extends Request
     public function setTargetImageDescription($targetImageDescription)
     {
         $this->set("TargetImageDescription", $targetImageDescription);
+    }
+
+    /**
+     * TargetImageTag: 目标镜像业务组
+     *
+     * @return string|null
+     */
+    public function getTargetImageTag()
+    {
+        return $this->get("TargetImageTag");
+    }
+
+    /**
+     * TargetImageTag: 目标镜像业务组
+     *
+     * @param string $targetImageTag
+     */
+    public function setTargetImageTag($targetImageTag)
+    {
+        $this->set("TargetImageTag", $targetImageTag);
+    }
+
+    /**
+     * TargetRegionList: 目标地域的集合，批量复制时填写
+     *
+     * @return string[]|null
+     */
+    public function getTargetRegionList()
+    {
+        return $this->get("TargetRegionList");
+    }
+
+    /**
+     * TargetRegionList: 目标地域的集合，批量复制时填写
+     *
+     * @param string[] $targetRegionList
+     */
+    public function setTargetRegionList(array $targetRegionList)
+    {
+        $this->set("TargetRegionList", $targetRegionList);
     }
 }
