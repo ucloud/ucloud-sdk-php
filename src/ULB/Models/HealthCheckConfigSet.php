@@ -23,7 +23,7 @@ class HealthCheckConfigSet extends Response
     
 
     /**
-     * Enabled: 是否开启健康检查功能。暂时不支持关闭。 默认值为：true
+     * Enabled: 是否开启健康检查功能。 默认值为：true
      *
      * @return boolean|null
      */
@@ -33,7 +33,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Enabled: 是否开启健康检查功能。暂时不支持关闭。 默认值为：true
+     * Enabled: 是否开启健康检查功能。 默认值为：true
      *
      * @param boolean $enabled
      */
@@ -43,7 +43,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Type: 健康检查方式。应用型限定取值： Port -> 端口检查；HTTP -> HTTP检查； 默认值：Port
+     * Type: 健康检查方式。应用型限定取值： Port -> 端口检查；HTTP -> HTTP检查；GRPC -> GRPC检测； 默认值：Port
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Type: 健康检查方式。应用型限定取值： Port -> 端口检查；HTTP -> HTTP检查； 默认值：Port
+     * Type: 健康检查方式。应用型限定取值： Port -> 端口检查；HTTP -> HTTP检查；GRPC -> GRPC检测； 默认值：Port
      *
      * @param string $type
      */
@@ -63,7 +63,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Domain: （应用型专用）HTTP检查域名。 当Type为HTTP时，此字段有意义，代表HTTP检查域名
+     * Domain: （应用型专用）HTTP检查域名。 当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查域名
      *
      * @return string|null
      */
@@ -73,7 +73,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Domain: （应用型专用）HTTP检查域名。 当Type为HTTP时，此字段有意义，代表HTTP检查域名
+     * Domain: （应用型专用）HTTP检查域名。 当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查域名
      *
      * @param string $domain
      */
@@ -83,7 +83,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Path: （应用型专用）HTTP检查路径。当Type为HTTP时，此字段有意义，代表HTTP检查路径
+     * Path: （应用型专用）HTTP检查路径。当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查路径
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Path: （应用型专用）HTTP检查路径。当Type为HTTP时，此字段有意义，代表HTTP检查路径
+     * Path: （应用型专用）HTTP检查路径。当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查路径
      *
      * @param string $path
      */
@@ -103,7 +103,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Method: （应用型专用）HTTP检查方法。当Type为HTTP时，此字段有意义，代表HTTP检查方法
+     * Method: （应用型专用）HTTP检查方法。当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查方法
      *
      * @return string|null
      */
@@ -113,7 +113,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * Method: （应用型专用）HTTP检查方法。当Type为HTTP时，此字段有意义，代表HTTP检查方法
+     * Method: （应用型专用）HTTP检查方法。当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查方法
      *
      * @param string $method
      */
@@ -123,7 +123,7 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * ResponseCode: （应用型专用）GRPC检查响应码。当Type为GRPC时，此字段有意义，代表GRPC检查响应码
+     * ResponseCode: （应用型专用）检查预期状态码。HTTP时为2xx,3xx格式(逗号分隔)，GRPC时为数字码(逗号分隔)。
      *
      * @return string|null
      */
@@ -133,12 +133,132 @@ class HealthCheckConfigSet extends Response
     }
 
     /**
-     * ResponseCode: （应用型专用）GRPC检查响应码。当Type为GRPC时，此字段有意义，代表GRPC检查响应码
+     * ResponseCode: （应用型专用）检查预期状态码。HTTP时为2xx,3xx格式(逗号分隔)，GRPC时为数字码(逗号分隔)。
      *
      * @param string $responseCode
      */
     public function setResponseCode($responseCode)
     {
         $this->set("ResponseCode", $responseCode);
+    }
+
+    /**
+     * HTTPVersion: （应用型专用）检查协议
+     *
+     * @return string|null
+     */
+    public function getHTTPVersion()
+    {
+        return $this->get("HTTPVersion");
+    }
+
+    /**
+     * HTTPVersion: （应用型专用）检查协议
+     *
+     * @param string $httpVersion
+     */
+    public function setHTTPVersion($httpVersion)
+    {
+        $this->set("HTTPVersion", $httpVersion);
+    }
+
+    /**
+     * Port: （应用型专用）端口
+     *
+     * @return integer|null
+     */
+    public function getPort()
+    {
+        return $this->get("Port");
+    }
+
+    /**
+     * Port: （应用型专用）端口
+     *
+     * @param int $port
+     */
+    public function setPort($port)
+    {
+        $this->set("Port", $port);
+    }
+
+    /**
+     * TimeOut: （应用型专用）超时时间，秒，必须小于Interval
+     *
+     * @return integer|null
+     */
+    public function getTimeOut()
+    {
+        return $this->get("TimeOut");
+    }
+
+    /**
+     * TimeOut: （应用型专用）超时时间，秒，必须小于Interval
+     *
+     * @param int $timeOut
+     */
+    public function setTimeOut($timeOut)
+    {
+        $this->set("TimeOut", $timeOut);
+    }
+
+    /**
+     * Interval: （应用型专用）间隔时间，秒，必须大于TimeOut
+     *
+     * @return integer|null
+     */
+    public function getInterval()
+    {
+        return $this->get("Interval");
+    }
+
+    /**
+     * Interval: （应用型专用）间隔时间，秒，必须大于TimeOut
+     *
+     * @param int $interval
+     */
+    public function setInterval($interval)
+    {
+        $this->set("Interval", $interval);
+    }
+
+    /**
+     * UpCounts: （应用型专用）判定成功的连续次数
+     *
+     * @return integer|null
+     */
+    public function getUpCounts()
+    {
+        return $this->get("UpCounts");
+    }
+
+    /**
+     * UpCounts: （应用型专用）判定成功的连续次数
+     *
+     * @param int $upCounts
+     */
+    public function setUpCounts($upCounts)
+    {
+        $this->set("UpCounts", $upCounts);
+    }
+
+    /**
+     * DownCounts: （应用型专用）判定失败的连续次数
+     *
+     * @return integer|null
+     */
+    public function getDownCounts()
+    {
+        return $this->get("DownCounts");
+    }
+
+    /**
+     * DownCounts: （应用型专用）判定失败的连续次数
+     *
+     * @param int $downCounts
+     */
+    public function setDownCounts($downCounts)
+    {
+        $this->set("DownCounts", $downCounts);
     }
 }

@@ -161,4 +161,44 @@ class RuleAction extends Response
     {
         $this->set("Order", $order);
     }
+
+    /**
+     * ProxyBufferingConfig: 关闭缓存
+     *
+     * @return ProxyBufferingConfig|null
+     */
+    public function getProxyBufferingConfig()
+    {
+        return new ProxyBufferingConfig($this->get("ProxyBufferingConfig"));
+    }
+
+    /**
+     * ProxyBufferingConfig: 关闭缓存
+     *
+     * @param ProxyBufferingConfig $proxyBufferingConfig
+     */
+    public function setProxyBufferingConfig(array $proxyBufferingConfig)
+    {
+        $this->set("ProxyBufferingConfig", $proxyBufferingConfig->getAll());
+    }
+
+    /**
+     * BackendConnectionConfig: 开启长连接
+     *
+     * @return BackendConnectionConfig|null
+     */
+    public function getBackendConnectionConfig()
+    {
+        return new BackendConnectionConfig($this->get("BackendConnectionConfig"));
+    }
+
+    /**
+     * BackendConnectionConfig: 开启长连接
+     *
+     * @param BackendConnectionConfig $backendConnectionConfig
+     */
+    public function setBackendConnectionConfig(array $backendConnectionConfig)
+    {
+        $this->set("BackendConnectionConfig", $backendConnectionConfig->getAll());
+    }
 }

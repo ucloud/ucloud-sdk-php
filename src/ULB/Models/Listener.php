@@ -417,4 +417,24 @@ class Listener extends Response
     {
         $this->set("State", $state);
     }
+
+    /**
+     * TargetProtocol: 后端协议。应用型限定取值：“HTTP,HTTPS,GRPC"，默认值“HTTP”
+     *
+     * @return string|null
+     */
+    public function getTargetProtocol()
+    {
+        return $this->get("TargetProtocol");
+    }
+
+    /**
+     * TargetProtocol: 后端协议。应用型限定取值：“HTTP,HTTPS,GRPC"，默认值“HTTP”
+     *
+     * @param string $targetProtocol
+     */
+    public function setTargetProtocol($targetProtocol)
+    {
+        $this->set("TargetProtocol", $targetProtocol);
+    }
 }

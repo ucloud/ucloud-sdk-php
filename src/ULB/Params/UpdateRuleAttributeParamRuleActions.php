@@ -161,4 +161,44 @@ class UpdateRuleAttributeParamRuleActions extends Request
     {
         $this->set("FixedResponseConfig", $fixedResponseConfig->getAll());
     }
+
+    /**
+     * ProxyBufferingConfig:
+     *
+     * @return UpdateRuleAttributeParamRuleActionsProxyBufferingConfig|null
+     */
+    public function getProxyBufferingConfig()
+    {
+        return new UpdateRuleAttributeParamRuleActionsProxyBufferingConfig($this->get("ProxyBufferingConfig"));
+    }
+
+    /**
+     * ProxyBufferingConfig:
+     *
+     * @param UpdateRuleAttributeParamRuleActionsProxyBufferingConfig $proxyBufferingConfig
+     */
+    public function setProxyBufferingConfig(array $proxyBufferingConfig)
+    {
+        $this->set("ProxyBufferingConfig", $proxyBufferingConfig->getAll());
+    }
+
+    /**
+     * BackendConnectionConfig:
+     *
+     * @return UpdateRuleAttributeParamRuleActionsBackendConnectionConfig|null
+     */
+    public function getBackendConnectionConfig()
+    {
+        return new UpdateRuleAttributeParamRuleActionsBackendConnectionConfig($this->get("BackendConnectionConfig"));
+    }
+
+    /**
+     * BackendConnectionConfig:
+     *
+     * @param UpdateRuleAttributeParamRuleActionsBackendConnectionConfig $backendConnectionConfig
+     */
+    public function setBackendConnectionConfig(array $backendConnectionConfig)
+    {
+        $this->set("BackendConnectionConfig", $backendConnectionConfig->getAll());
+    }
 }
