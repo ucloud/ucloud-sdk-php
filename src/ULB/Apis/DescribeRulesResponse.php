@@ -28,6 +28,8 @@ use UCloud\ULB\Models\FixedResponseConfigSet;
 use UCloud\ULB\Models\InsertHeaderConfigSet;
 use UCloud\ULB\Models\CorsConfigSet;
 use UCloud\ULB\Models\RemoveHeaderConfigSet;
+use UCloud\ULB\Models\ProxyBufferingConfig;
+use UCloud\ULB\Models\BackendConnectionConfig;
 
 class DescribeRulesResponse extends Response
 {

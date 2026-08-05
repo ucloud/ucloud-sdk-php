@@ -27,6 +27,8 @@ use UCloud\ULB\Params\UpdateRuleAttributeParamRuleActionsInsertHeaderConfig;
 use UCloud\ULB\Params\UpdateRuleAttributeParamRuleActionsRemoveHeaderConfig;
 use UCloud\ULB\Params\UpdateRuleAttributeParamRuleActionsCorsConfig;
 use UCloud\ULB\Params\UpdateRuleAttributeParamRuleActionsFixedResponseConfig;
+use UCloud\ULB\Params\UpdateRuleAttributeParamRuleActionsProxyBufferingConfig;
+use UCloud\ULB\Params\UpdateRuleAttributeParamRuleActionsBackendConnectionConfig;
 
 class UpdateRuleAttributeRequest extends Request
 {

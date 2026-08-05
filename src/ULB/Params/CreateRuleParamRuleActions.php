@@ -161,4 +161,44 @@ class CreateRuleParamRuleActions extends Request
     {
         $this->set("FixedResponseConfig", $fixedResponseConfig->getAll());
     }
+
+    /**
+     * ProxyBufferingConfig:
+     *
+     * @return CreateRuleParamRuleActionsProxyBufferingConfig|null
+     */
+    public function getProxyBufferingConfig()
+    {
+        return new CreateRuleParamRuleActionsProxyBufferingConfig($this->get("ProxyBufferingConfig"));
+    }
+
+    /**
+     * ProxyBufferingConfig:
+     *
+     * @param CreateRuleParamRuleActionsProxyBufferingConfig $proxyBufferingConfig
+     */
+    public function setProxyBufferingConfig(array $proxyBufferingConfig)
+    {
+        $this->set("ProxyBufferingConfig", $proxyBufferingConfig->getAll());
+    }
+
+    /**
+     * BackendConnectionConfig:
+     *
+     * @return CreateRuleParamRuleActionsBackendConnectionConfig|null
+     */
+    public function getBackendConnectionConfig()
+    {
+        return new CreateRuleParamRuleActionsBackendConnectionConfig($this->get("BackendConnectionConfig"));
+    }
+
+    /**
+     * BackendConnectionConfig:
+     *
+     * @param CreateRuleParamRuleActionsBackendConnectionConfig $backendConnectionConfig
+     */
+    public function setBackendConnectionConfig(array $backendConnectionConfig)
+    {
+        $this->set("BackendConnectionConfig", $backendConnectionConfig->getAll());
+    }
 }
