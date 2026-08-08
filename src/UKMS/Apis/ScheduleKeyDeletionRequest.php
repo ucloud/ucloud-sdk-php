@@ -72,7 +72,7 @@ class ScheduleKeyDeletionRequest extends Request
     /**
      * KeyId: 密钥 DB 数字 ID。
      *
-     * @return integer|null
+     * @return string|null
      */
     public function getKeyId()
     {
@@ -82,7 +82,7 @@ class ScheduleKeyDeletionRequest extends Request
     /**
      * KeyId: 密钥 DB 数字 ID。
      *
-     * @param int $keyId
+     * @param string $keyId
      */
     public function setKeyId($keyId)
     {
@@ -107,5 +107,25 @@ class ScheduleKeyDeletionRequest extends Request
     public function setResourceId($resourceId)
     {
         $this->set("ResourceId", $resourceId);
+    }
+
+    /**
+     * DeleteDay: 删除等待天数，取值范围为 7~30 天；未填写时默认为 30 天。
+     *
+     * @return integer|null
+     */
+    public function getDeleteDay()
+    {
+        return $this->get("DeleteDay");
+    }
+
+    /**
+     * DeleteDay: 删除等待天数，取值范围为 7~30 天；未填写时默认为 30 天。
+     *
+     * @param int $deleteDay
+     */
+    public function setDeleteDay($deleteDay)
+    {
+        $this->set("DeleteDay", $deleteDay);
     }
 }

@@ -24,7 +24,6 @@ class VerifyRequest extends Request
     {
         parent::__construct(["Action" => "Verify"]);
         $this->markRequired("Region");
-        $this->markRequired("ResourceId");
         $this->markRequired("KeyId");
         $this->markRequired("SigningMessage");
         $this->markRequired("SignatureResult");
@@ -71,26 +70,6 @@ class VerifyRequest extends Request
     public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
-    }
-
-    /**
-     * ResourceId: UKMS 实例资源 ID。
-     *
-     * @return string|null
-     */
-    public function getResourceId()
-    {
-        return $this->get("ResourceId");
-    }
-
-    /**
-     * ResourceId: UKMS 实例资源 ID。
-     *
-     * @param string $resourceId
-     */
-    public function setResourceId($resourceId)
-    {
-        $this->set("ResourceId", $resourceId);
     }
 
     /**
@@ -171,6 +150,26 @@ class VerifyRequest extends Request
     public function setSigningAlgorithm($signingAlgorithm)
     {
         $this->set("SigningAlgorithm", $signingAlgorithm);
+    }
+
+    /**
+     * ResourceId: UKMS 实例资源 ID。
+     *
+     * @return string|null
+     */
+    public function getResourceId()
+    {
+        return $this->get("ResourceId");
+    }
+
+    /**
+     * ResourceId: UKMS 实例资源 ID。
+     *
+     * @param string $resourceId
+     */
+    public function setResourceId($resourceId)
+    {
+        $this->set("ResourceId", $resourceId);
     }
 
     /**
