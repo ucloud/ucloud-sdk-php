@@ -72,7 +72,7 @@ class EnableKeyRequest extends Request
     /**
      * KeyId: 密钥 DB 数字 ID。
      *
-     * @return integer|null
+     * @return string|null
      */
     public function getKeyId()
     {
@@ -82,7 +82,7 @@ class EnableKeyRequest extends Request
     /**
      * KeyId: 密钥 DB 数字 ID。
      *
-     * @param int $keyId
+     * @param string $keyId
      */
     public function setKeyId($keyId)
     {

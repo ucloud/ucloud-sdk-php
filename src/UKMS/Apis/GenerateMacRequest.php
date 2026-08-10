@@ -26,6 +26,7 @@ class GenerateMacRequest extends Request
         $this->markRequired("Region");
         $this->markRequired("KeyId");
         $this->markRequired("MacMessage");
+        $this->markRequired("MacAlgorithm");
     }
 
     
@@ -108,5 +109,25 @@ class GenerateMacRequest extends Request
     public function setMacMessage($macMessage)
     {
         $this->set("MacMessage", $macMessage);
+    }
+
+    /**
+     * MacAlgorithm: 用于生成消息认证码的 MAC 算法。
+     *
+     * @return string|null
+     */
+    public function getMacAlgorithm()
+    {
+        return $this->get("MacAlgorithm");
+    }
+
+    /**
+     * MacAlgorithm: 用于生成消息认证码的 MAC 算法。
+     *
+     * @param string $macAlgorithm
+     */
+    public function setMacAlgorithm($macAlgorithm)
+    {
+        $this->set("MacAlgorithm", $macAlgorithm);
     }
 }
