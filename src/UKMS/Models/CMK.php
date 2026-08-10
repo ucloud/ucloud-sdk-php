@@ -43,67 +43,27 @@ class CMK extends Response
     }
 
     /**
-     * Type: 密钥类型，仅支持UCloudManagedKeys、CustomerManagedKeys。默认值CustomerManagedKeys
+     * KeyType: 密钥类型，如RSA、EC、DES
      *
      * @return string|null
      */
-    public function getType()
+    public function getKeyType()
     {
-        return $this->get("Type");
+        return $this->get("KeyType");
     }
 
     /**
-     * Type: 密钥类型，仅支持UCloudManagedKeys、CustomerManagedKeys。默认值CustomerManagedKeys
+     * KeyType: 密钥类型，如RSA、EC、DES
      *
-     * @param string $type
+     * @param string $keyType
      */
-    public function setType($type)
+    public function setKeyType($keyType)
     {
-        $this->set("Type", $type);
+        $this->set("KeyType", $keyType);
     }
 
     /**
-     * Description: 对密钥的描述说明
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->get("Description");
-    }
-
-    /**
-     * Description: 对密钥的描述说明
-     *
-     * @param string $description
-     */
-    public function setDescription($description)
-    {
-        $this->set("Description", $description);
-    }
-
-    /**
-     * Enabled: 是否启用
-     *
-     * @return boolean|null
-     */
-    public function getEnabled()
-    {
-        return $this->get("Enabled");
-    }
-
-    /**
-     * Enabled: 是否启用
-     *
-     * @param boolean $enabled
-     */
-    public function setEnabled($enabled)
-    {
-        $this->set("Enabled", $enabled);
-    }
-
-    /**
-     * CreatedTime: 创建时间 时间戳
+     * CreatedTime: 创建时间
      *
      * @return integer|null
      */
@@ -113,33 +73,13 @@ class CMK extends Response
     }
 
     /**
-     * CreatedTime: 创建时间 时间戳
+     * CreatedTime: 创建时间
      *
      * @param int $createdTime
      */
     public function setCreatedTime($createdTime)
     {
         $this->set("CreatedTime", $createdTime);
-    }
-
-    /**
-     * LastModifiedTime: 最后修改时间 时间戳
-     *
-     * @return integer|null
-     */
-    public function getLastModifiedTime()
-    {
-        return $this->get("LastModifiedTime");
-    }
-
-    /**
-     * LastModifiedTime: 最后修改时间 时间戳
-     *
-     * @param int $lastModifiedTime
-     */
-    public function setLastModifiedTime($lastModifiedTime)
-    {
-        $this->set("LastModifiedTime", $lastModifiedTime);
     }
 
     /**
@@ -160,6 +100,66 @@ class CMK extends Response
     public function setAlias($alias)
     {
         $this->set("Alias", $alias);
+    }
+
+    /**
+     * Status: 密钥状态 "Pre-Active", "Active", "Deactivated", "Compromised", "Destroyed", "Destroyed Compromised"
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->get("Status");
+    }
+
+    /**
+     * Status: 密钥状态 "Pre-Active", "Active", "Deactivated", "Compromised", "Destroyed", "Destroyed Compromised"
+     *
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->set("Status", $status);
+    }
+
+    /**
+     * UpdateTime: 更新时间
+     *
+     * @return integer|null
+     */
+    public function getUpdateTime()
+    {
+        return $this->get("UpdateTime");
+    }
+
+    /**
+     * UpdateTime: 更新时间
+     *
+     * @param int $updateTime
+     */
+    public function setUpdateTime($updateTime)
+    {
+        $this->set("UpdateTime", $updateTime);
+    }
+
+    /**
+     * Description: 对密钥的描述说明
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->get("Description");
+    }
+
+    /**
+     * Description: 对密钥的描述说明
+     *
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->set("Description", $description);
     }
 
     /**

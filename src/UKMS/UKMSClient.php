@@ -714,6 +714,9 @@ class UKMSClient extends Client
      *     "KeyId" => (string) 可选：筛选指定密钥资源长 ID 的别名。
      *     "Offset" => (integer) 列表起始位置偏移量。
      *     "Limit" => (integer) 返回数据长度。
+     *     "Alias" => (string) 按完整别名（含 alias/ 前缀）进行子串模糊匹配
+     *     "OrderBy" => (string) 排序字段
+     *     "Sort" => (string) 排序方向，默认 desc
      * ]
      *
      * Outputs:
@@ -753,6 +756,9 @@ class UKMSClient extends Client
      *     "Alias" => (string) 按密钥 ID 或别名模糊过滤。
      *     "Offset" => (integer) 列表起始位置偏移量。
      *     "Limit" => (integer) 返回数据长度。最大1000
+     *     "Status" => (string) 状态筛选：Active、Deactivated、PendingDeletion
+     *     "OrderBy" => (string) 排序字段
+     *     "Sort" => (string) 排序方向，默认 desc
      * ]
      *
      * Outputs:
@@ -795,10 +801,13 @@ class UKMSClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "Offset" => (integer) 输出列表起始位置，默认从0开始
      *     "Limit" => (integer) 输出列表数量，默认返回200个
      *     "OrderBy" => (string) 列表排序方式, 可选项: "-created_time", "created_time","plan_delete_time","-plan_delete_time";默认按-plan_delete_time 计划删除时间升序返回
+     *     "Alias" => (string) 按密钥 ID 或别名模糊过滤
+     *     "ResourceId" => (string) UKMS 实例资源 ID
+     *     "Sort" => (string) 排序方向，默认 desc
      * ]
      *
      * Outputs:
@@ -807,12 +816,12 @@ class UKMSClient extends Client
      *     "Objects" => (array<object>) 主密钥信息组成的列表[
      *         [
      *             "KeyId" => (string) CMK 的唯一标识符
-     *             "Type" => (string) 密钥类型，仅支持UCloudManagedKeys、CustomerManagedKeys。默认值CustomerManagedKeys
-     *             "Description" => (string) 对密钥的描述说明
-     *             "Enabled" => (boolean) 是否启用
-     *             "CreatedTime" => (integer) 创建时间 时间戳
-     *             "LastModifiedTime" => (integer) 最后修改时间 时间戳
+     *             "KeyType" => (string) 密钥类型，如RSA、EC、DES
+     *             "CreatedTime" => (integer) 创建时间
      *             "Alias" => (string) 别名，与CMK一一对应
+     *             "Status" => (string) 密钥状态 "Pre-Active", "Active", "Deactivated", "Compromised", "Destroyed", "Destroyed Compromised"
+     *             "UpdateTime" => (integer) 更新时间
+     *             "Description" => (string) 对密钥的描述说明
      *             "PlanDeleteTime" => (integer) 计划删除时间 时间戳
      *         ]
      *     ]

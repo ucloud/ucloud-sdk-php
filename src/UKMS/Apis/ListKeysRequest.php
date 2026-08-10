@@ -147,4 +147,64 @@ class ListKeysRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+    /**
+     * Status: 状态筛选：Active、Deactivated、PendingDeletion
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->get("Status");
+    }
+
+    /**
+     * Status: 状态筛选：Active、Deactivated、PendingDeletion
+     *
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->set("Status", $status);
+    }
+
+    /**
+     * OrderBy: 排序字段
+     *
+     * @return string|null
+     */
+    public function getOrderBy()
+    {
+        return $this->get("OrderBy");
+    }
+
+    /**
+     * OrderBy: 排序字段
+     *
+     * @param string $orderBy
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->set("OrderBy", $orderBy);
+    }
+
+    /**
+     * Sort: 排序方向，默认 desc
+     *
+     * @return string|null
+     */
+    public function getSort()
+    {
+        return $this->get("Sort");
+    }
+
+    /**
+     * Sort: 排序方向，默认 desc
+     *
+     * @param string $sort
+     */
+    public function setSort($sort)
+    {
+        $this->set("Sort", $sort);
+    }
 }

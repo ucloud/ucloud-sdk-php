@@ -147,4 +147,64 @@ class ListAliasesRequest extends Request
     {
         $this->set("Limit", $limit);
     }
+
+    /**
+     * Alias: 按完整别名（含 alias/ 前缀）进行子串模糊匹配
+     *
+     * @return string|null
+     */
+    public function getAlias()
+    {
+        return $this->get("Alias");
+    }
+
+    /**
+     * Alias: 按完整别名（含 alias/ 前缀）进行子串模糊匹配
+     *
+     * @param string $alias
+     */
+    public function setAlias($alias)
+    {
+        $this->set("Alias", $alias);
+    }
+
+    /**
+     * OrderBy: 排序字段
+     *
+     * @return string|null
+     */
+    public function getOrderBy()
+    {
+        return $this->get("OrderBy");
+    }
+
+    /**
+     * OrderBy: 排序字段
+     *
+     * @param string $orderBy
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->set("OrderBy", $orderBy);
+    }
+
+    /**
+     * Sort: 排序方向，默认 desc
+     *
+     * @return string|null
+     */
+    public function getSort()
+    {
+        return $this->get("Sort");
+    }
+
+    /**
+     * Sort: 排序方向，默认 desc
+     *
+     * @param string $sort
+     */
+    public function setSort($sort)
+    {
+        $this->set("Sort", $sort);
+    }
 }
