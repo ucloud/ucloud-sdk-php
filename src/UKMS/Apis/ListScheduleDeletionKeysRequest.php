@@ -28,7 +28,7 @@ class ListScheduleDeletionKeysRequest extends Request
     
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -38,7 +38,7 @@ class ListScheduleDeletionKeysRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -105,5 +105,65 @@ class ListScheduleDeletionKeysRequest extends Request
     public function setOrderBy($orderBy)
     {
         $this->set("OrderBy", $orderBy);
+    }
+
+    /**
+     * Alias: 按密钥 ID 或别名模糊过滤
+     *
+     * @return string|null
+     */
+    public function getAlias()
+    {
+        return $this->get("Alias");
+    }
+
+    /**
+     * Alias: 按密钥 ID 或别名模糊过滤
+     *
+     * @param string $alias
+     */
+    public function setAlias($alias)
+    {
+        $this->set("Alias", $alias);
+    }
+
+    /**
+     * ResourceId: UKMS 实例资源 ID
+     *
+     * @return string|null
+     */
+    public function getResourceId()
+    {
+        return $this->get("ResourceId");
+    }
+
+    /**
+     * ResourceId: UKMS 实例资源 ID
+     *
+     * @param string $resourceId
+     */
+    public function setResourceId($resourceId)
+    {
+        $this->set("ResourceId", $resourceId);
+    }
+
+    /**
+     * Sort: 排序方向，默认 desc
+     *
+     * @return string|null
+     */
+    public function getSort()
+    {
+        return $this->get("Sort");
+    }
+
+    /**
+     * Sort: 排序方向，默认 desc
+     *
+     * @param string $sort
+     */
+    public function setSort($sort)
+    {
+        $this->set("Sort", $sort);
     }
 }
