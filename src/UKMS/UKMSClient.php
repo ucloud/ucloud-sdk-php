@@ -283,6 +283,7 @@ class UKMSClient extends Client
      *
      * $outputs = [
      *     "KeyMetadata" => (object) 密钥元数据。[
+     *         "ProjectId" => (string) 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。
      *         "KeyId" => (string) 密钥资源长 ID。
      *         "CreationDate" => (integer) 创建时间，Unix 时间戳。
      *         "Enabled" => (string) 是否启用。取值：true、false。
@@ -295,6 +296,7 @@ class UKMSClient extends Client
      *         "ResourceId" => (string) 密钥所属的 UKMS 实例资源 ID。
      *         "Description" => (string) 密钥描述。
      *         "DeletionDate" => (integer) 计划删除时间，Unix 时间戳。
+     *         "OrganizationId" => (integer) 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。
      *     ]
      * ]
      *
@@ -766,6 +768,7 @@ class UKMSClient extends Client
      * $outputs = [
      *     "Data" => (array<object>) 密钥信息数组，每项为 DEK/ListKeys item。[
      *         [
+     *             "ProjectId" => (string) 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。
      *             "KeyId" => (string) 对外主密钥 ID（ukms_key_info.key_id）。
      *             "KeySpec" => (string) 密钥规格。取值：SYMMETRIC_DEFAULT、RSA_2048、RSA_3072、RSA_4096、ECC_NIST_P256、ECC_NIST_P384、ECC_NIST_P521、HMAC_256、HMAC_384、HMAC_512。
      *             "KeyUsage" => (array<string>) 按 KeySpec 派生的密钥用途。取值：ENCRYPT_DECRYPT、SIGN_VERIFY、GENERATE_VERIFY_MAC、KEY_AGREEMENT。
@@ -779,6 +782,7 @@ class UKMSClient extends Client
      *             "Description" => (string) 密钥描述。
      *             "PlanDeleteTime" => (integer) 计划删除时间，Unix 时间戳。
      *             "NextRotationDate" => (integer) 下次自动轮转时间（Unix 时间戳，秒）；仅在已开启自动轮转时返回。
+     *             "OrganizationId" => (integer) 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。
      *         ]
      *     ]
      *     "TotalCount" => (integer) 符合条件的总数，不同于 Limit。
