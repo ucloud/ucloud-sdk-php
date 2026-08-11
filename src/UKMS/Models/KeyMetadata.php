@@ -23,6 +23,26 @@ class KeyMetadata extends Response
     
 
     /**
+     * ProjectId: 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。
+     *
+     * @return string|null
+     */
+    public function getProjectId()
+    {
+        return $this->get("ProjectId");
+    }
+
+    /**
+     * ProjectId: 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。
+     *
+     * @param string $projectId
+     */
+    public function setProjectId($projectId)
+    {
+        $this->set("ProjectId", $projectId);
+    }
+
+    /**
      * KeyId: 密钥资源长 ID。
      *
      * @return string|null
@@ -260,5 +280,25 @@ class KeyMetadata extends Response
     public function setDeletionDate($deletionDate)
     {
         $this->set("DeletionDate", $deletionDate);
+    }
+
+    /**
+     * OrganizationId: 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。
+     *
+     * @return integer|null
+     */
+    public function getOrganizationId()
+    {
+        return $this->get("OrganizationId");
+    }
+
+    /**
+     * OrganizationId: 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。
+     *
+     * @param int $organizationId
+     */
+    public function setOrganizationId($organizationId)
+    {
+        $this->set("OrganizationId", $organizationId);
     }
 }
