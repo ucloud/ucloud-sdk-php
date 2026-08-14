@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ namespace UCloud\UFile\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UFile\Models\BucketBills;
 use UCloud\UFile\Models\UFileDailyBillItem;
+use UCloud\UFile\Models\BucketLabels;
 
 class GetUFileDailyBillResponse extends Response
 {

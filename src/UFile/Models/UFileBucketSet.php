@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,26 @@ class UFileBucketSet extends Response
     public function setRegion($region)
     {
         $this->set("Region", $region);
+    }
+
+    /**
+     * StorageClass: 默认存储类型
+     *
+     * @return string|null
+     */
+    public function getStorageClass()
+    {
+        return $this->get("StorageClass");
+    }
+
+    /**
+     * StorageClass: 默认存储类型
+     *
+     * @param string $storageClass
+     */
+    public function setStorageClass($storageClass)
+    {
+        $this->set("StorageClass", $storageClass);
     }
 
     /**

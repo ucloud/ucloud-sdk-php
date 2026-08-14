@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,18 +24,24 @@ use UCloud\UFile\Apis\AddUFileSSLCertRequest;
 use UCloud\UFile\Apis\AddUFileSSLCertResponse;
 use UCloud\UFile\Apis\BindBucketDomainRequest;
 use UCloud\UFile\Apis\BindBucketDomainResponse;
+use UCloud\UFile\Apis\BuyUFilePkgRequest;
+use UCloud\UFile\Apis\BuyUFilePkgResponse;
 use UCloud\UFile\Apis\CreateBucketRequest;
 use UCloud\UFile\Apis\CreateBucketResponse;
 use UCloud\UFile\Apis\CreateUFileLifeCycleRequest;
 use UCloud\UFile\Apis\CreateUFileLifeCycleResponse;
 use UCloud\UFile\Apis\CreateUFileTokenRequest;
 use UCloud\UFile\Apis\CreateUFileTokenResponse;
+use UCloud\UFile\Apis\CreateUdsRuleRequest;
+use UCloud\UFile\Apis\CreateUdsRuleResponse;
 use UCloud\UFile\Apis\DeleteBucketRequest;
 use UCloud\UFile\Apis\DeleteBucketResponse;
 use UCloud\UFile\Apis\DeleteCORSRuleRequest;
 use UCloud\UFile\Apis\DeleteCORSRuleResponse;
 use UCloud\UFile\Apis\DeleteUFileLifeCycleRequest;
 use UCloud\UFile\Apis\DeleteUFileLifeCycleResponse;
+use UCloud\UFile\Apis\DeleteUFilePkgRequest;
+use UCloud\UFile\Apis\DeleteUFilePkgResponse;
 use UCloud\UFile\Apis\DeleteUFileSSLCertRequest;
 use UCloud\UFile\Apis\DeleteUFileSSLCertResponse;
 use UCloud\UFile\Apis\DeleteUFileTokenRequest;
@@ -44,20 +50,36 @@ use UCloud\UFile\Apis\DescribeBucketRequest;
 use UCloud\UFile\Apis\DescribeBucketResponse;
 use UCloud\UFile\Apis\DescribeCORSRuleRequest;
 use UCloud\UFile\Apis\DescribeCORSRuleResponse;
+use UCloud\UFile\Apis\DescribeUFileAvailablePkgRequest;
+use UCloud\UFile\Apis\DescribeUFileAvailablePkgResponse;
 use UCloud\UFile\Apis\DescribeUFileLifeCycleRequest;
 use UCloud\UFile\Apis\DescribeUFileLifeCycleResponse;
+use UCloud\UFile\Apis\DescribeUFilePkgRequest;
+use UCloud\UFile\Apis\DescribeUFilePkgResponse;
+use UCloud\UFile\Apis\DescribeUFilePkgUsageRequest;
+use UCloud\UFile\Apis\DescribeUFilePkgUsageResponse;
 use UCloud\UFile\Apis\DescribeUFileRefererRequest;
 use UCloud\UFile\Apis\DescribeUFileRefererResponse;
 use UCloud\UFile\Apis\DescribeUFileSSLCertRequest;
 use UCloud\UFile\Apis\DescribeUFileSSLCertResponse;
 use UCloud\UFile\Apis\DescribeUFileTokenRequest;
 use UCloud\UFile\Apis\DescribeUFileTokenResponse;
+use UCloud\UFile\Apis\DescribeUdsRuleRequest;
+use UCloud\UFile\Apis\DescribeUdsRuleResponse;
+use UCloud\UFile\Apis\GetBucketQuotaRequest;
+use UCloud\UFile\Apis\GetBucketQuotaResponse;
 use UCloud\UFile\Apis\GetBucketStaticPageRuleRequest;
 use UCloud\UFile\Apis\GetBucketStaticPageRuleResponse;
+use UCloud\UFile\Apis\GetProjectRegionQuotaRequest;
+use UCloud\UFile\Apis\GetProjectRegionQuotaResponse;
 use UCloud\UFile\Apis\GetUFileDailyBillRequest;
 use UCloud\UFile\Apis\GetUFileDailyBillResponse;
 use UCloud\UFile\Apis\GetUFileDailyReportRequest;
 use UCloud\UFile\Apis\GetUFileDailyReportResponse;
+use UCloud\UFile\Apis\GetUFileMonthlyBillRequest;
+use UCloud\UFile\Apis\GetUFileMonthlyBillResponse;
+use UCloud\UFile\Apis\GetUFilePkgPriceRequest;
+use UCloud\UFile\Apis\GetUFilePkgPriceResponse;
 use UCloud\UFile\Apis\GetUFileQuotaRequest;
 use UCloud\UFile\Apis\GetUFileQuotaResponse;
 use UCloud\UFile\Apis\GetUFileQuotaInfoRequest;
@@ -66,6 +88,12 @@ use UCloud\UFile\Apis\GetUFileQuotaPriceRequest;
 use UCloud\UFile\Apis\GetUFileQuotaPriceResponse;
 use UCloud\UFile\Apis\GetUFileReportRequest;
 use UCloud\UFile\Apis\GetUFileReportResponse;
+use UCloud\UFile\Apis\RenewUFilePkgRequest;
+use UCloud\UFile\Apis\RenewUFilePkgResponse;
+use UCloud\UFile\Apis\SetBucketQuotaRequest;
+use UCloud\UFile\Apis\SetBucketQuotaResponse;
+use UCloud\UFile\Apis\SetProjectRegionQuotaRequest;
+use UCloud\UFile\Apis\SetProjectRegionQuotaResponse;
 use UCloud\UFile\Apis\SetUFileRefererRequest;
 use UCloud\UFile\Apis\SetUFileRefererResponse;
 use UCloud\UFile\Apis\UpdateBucketRequest;
@@ -132,7 +160,7 @@ class UFileClient extends Client
      *     "Domain" => (string) 域名
      *     "CertificateName" => (string) SSL证书名称
      *     "Certificate" => (string) 填写SSL证书文件内容（PEM编码）。证书文件内容填写格式：如果您的业务场景仅需确保服务端证书可信，则证书文件需要包含服务器证书（①）和中间证书（②）。如果您的中间证书和服务器证书是两个文件，您可以在证书链配置项填写中间证书内容即可。
-     *     "CertificateKey" => (string) 填写SSL证书私钥内容（PEM编码）。
+     *     "CertificateKey" => (string) 填写SSL证书私钥内容（PEM编码）。私钥内容填写格式 RSA
      *     "USSLId" => (string) ussl证书的资源ID
      * ]
      *
@@ -177,6 +205,40 @@ class UFileClient extends Client
     {
         $resp = $this->invoke($request);
         return new BindBucketDomainResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * BuyUFilePkg - 购买流量包或存储包
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/buy_ufile_pkg
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "PkgName" => (string) 资源包名称
+     *     "PkgType" => (integer) 0: 标准存储包，1: 忙时流量包，2: 闲时流量包
+     *     "Amount" => (integer) 购买数量
+     *     "AmountUnit" => (string) 数量单位，如 GB、TB 等
+     *     "Duration" => (integer) 购买时长
+     *     "DurationUnit" => (string) 时长单位，如 Month、Year 等
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ResourceId" => (string) 购买成功返回资源包Id
+     * ]
+     *
+     * @return BuyUFilePkgResponse
+     * @throws UCloudException
+     */
+    public function buyUFilePkg(BuyUFilePkgRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new BuyUFilePkgResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -227,7 +289,12 @@ class UFileClient extends Client
      *     "Days" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动删除；参数范围：[7,36500]，0代表不启用
      *     "ArchivalDays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后，自动变为归档存储类型；参数范围：[7,36500]，0代表不启用
      *     "IADays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后，自动变为低频存储类型；参数范围：[7,36500]，0代表不启用
-     *     "Tags" => (string) Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，单个object的tag的最大数量为10
+     *     "HistVerDeleteDays" => (integer) 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *     "HistVerArchivalDays" => (integer) 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *     "HistVerIADays" => (integer) 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *     "Tags" => (string) Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，tag的最大数量为10
+     *     "MinSize" => (integer) 文件的最小size
+     *     "MaxSize" => (integer) 文件的最大size
      * ]
      *
      * Outputs:
@@ -295,6 +362,43 @@ class UFileClient extends Client
     }
 
     /**
+     * CreateUdsRule - 针对对象存储的文件，进行自动触发解压。
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/create_uds_rule
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "RuleName" => (string) 规则名称
+     *     "SrcBucket" => (string) 源Bucket名字，全局唯一
+     *     "SrcTokenId" => (string) 源bucket的token之一的tokenId
+     *     "DstBucket" => (string) 目标Bucket名字，全局唯一
+     *     "DstTokenId" => (string) 目标bucket的token之一的tokenId
+     *     "DstDirectory" => (string) 解压后的目标目录
+     *     "KeepUS3Name" => (boolean) 是否以压缩文件的前缀为最后一层目录
+     *     "Prefixes" => (string) 解压缩触发的前缀
+     *     "Ops" => (array<string>) 操作的ops数组，"Ops.0":"unzip"
+     *     "Events" => (array<string>) 通知的事件数组
+     *     "ContactGroupId" => (string) 联系的用户组ID
+     *     "NotificationTypes" => (array<string>) 通知的类型数组
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "RuleId" => (string) 创建规则的规则ID
+     * ]
+     *
+     * @return CreateUdsRuleResponse
+     * @throws UCloudException
+     */
+    public function createUdsRule(CreateUdsRuleRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new CreateUdsRuleResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DeleteBucket - 删除Bucket
      *
      * See also: https://docs.ucloud.cn/api/ufile-api/delete_bucket
@@ -302,7 +406,7 @@ class UFileClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "BucketName" => (string) 待删除Bucket的名称
      * ]
      *
@@ -378,6 +482,34 @@ class UFileClient extends Client
     }
 
     /**
+     * DeleteUFilePkg - 删除资源包(退费)
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/delete_ufile_pkg
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ResourceId" => (string) 资源ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DeleteUFilePkgResponse
+     * @throws UCloudException
+     */
+    public function deleteUFilePkg(DeleteUFilePkgRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DeleteUFilePkgResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DeleteUFileSSLCert - 删除指定域名添加证书
      *
      * See also: https://docs.ucloud.cn/api/ufile-api/delete_ufile_ssl_cert
@@ -439,7 +571,7 @@ class UFileClient extends Client
      *
      * $args = [
      *     "Region" => (string) 如果提供此参数，则获取相应地域下所有空间的空间名称(只返回空间名称信息)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "BucketName" => (string) 待获取Bucket的名称，若不提供，则获取所有Bucket
      *     "Offset" => (integer) 获取所有Bucket列表的偏移数目，默认为0
      *     "Limit" => (integer) 获取所有Bucket列表的限制数目，默认为20
@@ -451,6 +583,7 @@ class UFileClient extends Client
      *     "DataSet" => (array<object>) Bucket的描述信息 参数见 UFileBucketSet[
      *         [
      *             "Region" => (string) Bucket所属地域
+     *             "StorageClass" => (string) 默认存储类型
      *             "BucketName" => (string) Bucket名称
      *             "BucketId" => (string) Bucket的ID
      *             "Domain" => (object) Bucket的域名集合 参数见 UFileDomainSet[
@@ -518,6 +651,59 @@ class UFileClient extends Client
     }
 
     /**
+     * DescribeUFileAvailablePkg - 查询可购买的资源包列表
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/describe_ufile_available_pkg
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "PkgList" => (array<object>) 可购买的资源包规格[
+     *         [
+     *             "Type" => (integer) 资源类型ID
+     *             "Name" => (string) 资源类型名称
+     *             "Specs" => (array<object>) 支持购买的数量规格[
+     *                 [
+     *                     "Durations" => (array<object>) 仅针对当前规格生效的durations[
+     *                         [
+     *                             "Discount" => (number) 折扣
+     *                             "Duration" => (integer) 购买时长
+     *                             "Unit" => (string) 时长单位，如: Month、Year
+     *                         ]
+     *                     ]
+     *                     "Amount" => (integer) 购买数量
+     *                     "Unit" => (string) 数量的单位，如：GB，TB
+     *                 ]
+     *             ]
+     *             "CommonDurations" => (array<object>) 公共支持购买的时长，当一个Spec配了独立的Durations时，就按独立配置Durations生效；否者按CommonDurations生效[
+     *                 [
+     *                     "Discount" => (number) 折扣
+     *                     "Duration" => (integer) 购买时长
+     *                     "Unit" => (string) 时长单位，如: Month、Year
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return DescribeUFileAvailablePkgResponse
+     * @throws UCloudException
+     */
+    public function describeUFileAvailablePkg(DescribeUFileAvailablePkgRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUFileAvailablePkgResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DescribeUFileLifeCycle - 获取生命周期信息
      *
      * See also: https://docs.ucloud.cn/api/ufile-api/describe_ufile_life_cycle
@@ -557,6 +743,83 @@ class UFileClient extends Client
     {
         $resp = $this->invoke($request);
         return new DescribeUFileLifeCycleResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUFilePkg - 查询已购买的资源包列表
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/describe_ufile_pkg
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ResourceId" => (string) 查询指定的资源包，当指定ResourceId查询时，Region是必填的
+     *     "Expired" => (integer) 默认0表示查询全部已购买的资源包，1表示查询过期的，-1表示查询非过期的
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Pkgs" => (array<object>) 已购买的资源包[
+     *         [
+     *             "Region" => (string) 资源包地域
+     *             "ResourceId" => (string) 资源包ID
+     *             "PkgName" => (string) 资源包名称
+     *             "PkgType" => (integer) 资源包类型ID
+     *             "Amount" => (integer) 资源包容量
+     *             "RemainAmount" => (string) 资源包剩余容量（仅支持流量包）
+     *             "CreateTime" => (integer) 资源包创建时间
+     *             "ExpiredTime" => (integer) 资源包失效时间
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return DescribeUFilePkgResponse
+     * @throws UCloudException
+     */
+    public function describeUFilePkg(DescribeUFilePkgRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUFilePkgResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUFilePkgUsage - 查询资源包使用明细
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/describe_ufile_pkg_usage
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ResourceId" => (string) 资源包ID
+     *     "StartDate" => (string) 开始时间，如 2023-09-01
+     *     "EndDate" => (string) 结束时间，如 2023-09-01
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Usage" => (array<object>) 按天返回的使用明细[
+     *         [
+     *             "Date" => (string) 日期
+     *             "Cost" => (string) 使用量，单位为B
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return DescribeUFilePkgUsageResponse
+     * @throws UCloudException
+     */
+    public function describeUFilePkgUsage(DescribeUFilePkgUsageRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUFilePkgUsageResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -672,6 +935,63 @@ class UFileClient extends Client
     }
 
     /**
+     * DescribeUdsRule - 针对解压缩规则进行查询
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/describe_uds_rule
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "BucketName" => (string) 源BucketName
+     *     "RuleId" => (string) 规则ID，不设置时，查询改bucket的所有规则
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "TotalCount" => (integer) 此次删除的规则的ID
+     *     "DataSet" => (array<string>) 规则数组
+     * ]
+     *
+     * @return DescribeUdsRuleResponse
+     * @throws UCloudException
+     */
+    public function describeUdsRule(DescribeUdsRuleRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUdsRuleResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetBucketQuota - 获取bucket配额
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_bucket_quota
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "BucketName" => (string) bucket名称
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "QuotaLimit" => (integer) bucket配额
+     *     "BucketName" => (string) bucket名称
+     * ]
+     *
+     * @return GetBucketQuotaResponse
+     * @throws UCloudException
+     */
+    public function getBucketQuota(GetBucketQuotaRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetBucketQuotaResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * GetBucketStaticPageRule - 获取bucket静态网页配置
      *
      * See also: https://docs.ucloud.cn/api/ufile-api/get_bucket_static_page_rule
@@ -706,6 +1026,36 @@ class UFileClient extends Client
     }
 
     /**
+     * GetProjectRegionQuota - 获取项目地域配额
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_project_region_quota
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Region" => (string) 地域
+     *     "QuotaType" => (string) 配额类型
+     *     "QuotaLimit" => (integer) 配额数目
+     * ]
+     *
+     * @return GetProjectRegionQuotaResponse
+     * @throws UCloudException
+     */
+    public function getProjectRegionQuota(GetProjectRegionQuotaRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetProjectRegionQuotaResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * GetUFileDailyBill - 获取bucket每日账单
      *
      * See also: https://docs.ucloud.cn/api/ufile-api/get_ufile_daily_bill
@@ -725,8 +1075,14 @@ class UFileClient extends Client
      * $outputs = [
      *     "DataSet" => (array<object>) 消费情况[
      *         [
-     *             "BucketBills" => (array<object>) [
+     *             "BucketBills" => (array<object>) bucket账单[
      *                 [
+     *                     "Labels" => (array<object>) bucket对应的资源系统标签[
+     *                         [
+     *                             "Key" => (string) 标签对应key
+     *                             "Value" => (string) 标签对应value
+     *                         ]
+     *                     ]
      *                     "GetCountIaBill" => (number) 下载低频存储次数费用；分
      *                     "GetCountBill" => (number) 下载标准存储次数费用；分
      *                     "PutCountAcBill" => (number) 上传归档存储次数费用；分
@@ -749,6 +1105,7 @@ class UFileClient extends Client
      *                     "FlowBill" => (number) 下载流量费用：分；国内无此字段
      *                     "Date" => (integer) 配额消费时间，unix时间戳；单位s，精确到日期
      *                     "GetCountAcBill" => (number) 下载归档存储次数费用；分
+     *                     "TotalBill" => (number) 总费用;分
      *                 ]
      *             ]
      *         ]
@@ -825,6 +1182,107 @@ class UFileClient extends Client
     {
         $resp = $this->invoke($request);
         return new GetUFileDailyReportResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUFileMonthlyBill - 获取bucket月度账单
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_ufile_monthly_bill
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "StartMonth" => (string) 查询开始月份;例如"1994-07"
+     *     "EndMonth" => (string) 查询结束时间;例如"1994-07"
+     *     "BucketName" => (string) 空间名称。此字段不为空，返回此Bucket日账单,否则，返回这个项目的日账单
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "DataSet" => (array<object>) 消费情况[
+     *         [
+     *             "BucketBills" => (array<object>) bucket账单[
+     *                 [
+     *                     "Labels" => (array<object>) bucket对应的资源系统标签[
+     *                         [
+     *                             "Key" => (string) 标签对应key
+     *                             "Value" => (string) 标签对应value
+     *                         ]
+     *                     ]
+     *                     "GetCountIaBill" => (number) 下载低频存储次数费用；分
+     *                     "GetCountBill" => (number) 下载标准存储次数费用；分
+     *                     "PutCountAcBill" => (number) 上传归档存储次数费用；分
+     *                     "PutCountIaBill" => (number) 上传低频存储次数费用；分
+     *                     "PutCountBill" => (number) 上传标准存储次数费用；分
+     *                     "ObjectTagCountBill" => (number) 对象标签费用: 分
+     *                     "StorageBill" => (number) 标准-存储总容量费用；分
+     *                     "IaStorageBill" => (number) 低频-存储总容量费用；分
+     *                     "AcStorageBill" => (number) 归档-存储总容量费用；分
+     *                     "IaGetSizeBill" => (number) 低频-数据取回量，即低频文件的数据取回量费用；分
+     *                     "AcRestoreBill" => (number) 归档-标准解冻量，即归档文件的解冻类型为标准（Strandard）的解冻量费用； 分
+     *                     "AcExpeditedRetrievalBill" => (number) 归档-高优先级解冻量，即归档文件的解冻类型为高优先级（Expedited）的解冻量费用； 分
+     *                     "IaShortStorageBill" => (number) 低频-短期存储量，即补足未满最短存储期限的剩余天数的存储量费用；分
+     *                     "AcShortStorageBill" => (number) 归档-短期存储量，即补足未满最短存储期限的剩余天数的存储量费用；分
+     *                     "ImageHandleFlowBill" => (number) 基础图片处理量费用；分
+     *                     "ImageCompressCountBill" => (number) 图片高级压缩次数费用；分
+     *                     "BusyFlowBill" => (number) 忙时流量费用；分；海外无此字段
+     *                     "IdleFlowBill" => (number) 闲时流量费用；分；海外无此字段
+     *                     "CdnFlowBill" => (number) cdn回源流量费用;分
+     *                     "FlowBill" => (number) 下载流量费用：分；国内无此字段
+     *                     "Month" => (string) 配额消费月份
+     *                     "GetCountAcBill" => (number) 下载归档存储次数费用；分
+     *                     "TotalBill" => (number) 总费用;分
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUFileMonthlyBillResponse
+     * @throws UCloudException
+     */
+    public function getUFileMonthlyBill(GetUFileMonthlyBillRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUFileMonthlyBillResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUFilePkgPrice - 获取对资源进行新购、续费、升级等操作的价格
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/get_ufile_pkg_price
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "InquiryType" => (string) 操作类型，new:新购,upgrade:升级,renew:续费,delete:退费
+     *     "Amount" => (integer) 新购和升级时必填
+     *     "AmountUnit" => (string) 新购和升级时必填
+     *     "Duration" => (integer) 新购和续费时必填
+     *     "DurationUnit" => (string) 新购和续费时必填
+     *     "ResourceId" => (string) 资源id，升级续费退费时为必填
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "CustomPrice" => (integer) 实际价格
+     *     "OriginPrice" => (integer) 原始价格
+     * ]
+     *
+     * @return GetUFilePkgPriceResponse
+     * @throws UCloudException
+     */
+    public function getUFilePkgPrice(GetUFilePkgPriceRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUFilePkgPriceResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -962,6 +1420,96 @@ class UFileClient extends Client
     }
 
     /**
+     * RenewUFilePkg - 资源包续费
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/renew_ufile_pkg
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ResourceId" => (string) 资源ID
+     *     "PkgType" => (integer) 资源类型ID
+     *     "Duration" => (integer) 续费时长
+     *     "DurationUnit" => (string) 时长单位
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return RenewUFilePkgResponse
+     * @throws UCloudException
+     */
+    public function renewUFilePkg(RenewUFilePkgRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new RenewUFilePkgResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * SetBucketQuota - 设置bucket配额
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/set_bucket_quota
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "BucketName" => (string) bucket名称
+     *     "QuotaLimit" => (integer) bucket配额
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return SetBucketQuotaResponse
+     * @throws UCloudException
+     */
+    public function setBucketQuota(SetBucketQuotaRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new SetBucketQuotaResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * SetProjectRegionQuota - 设置项目地域配额
+     *
+     * See also: https://docs.ucloud.cn/api/ufile-api/set_project_region_quota
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "QuotaLimit" => (integer) 配额数目(单位是Byte)
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Region" => (string) 地域
+     *     "QuotaType" => (string) 配额类型
+     *     "QuotaLimit" => (string) 配额数目(单位是Byte)
+     * ]
+     *
+     * @return SetProjectRegionQuotaResponse
+     * @throws UCloudException
+     */
+    public function setProjectRegionQuota(SetProjectRegionQuotaRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new SetProjectRegionQuotaResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * SetUFileReferer - 设置对象存储防盗链
      *
      * See also: https://docs.ucloud.cn/api/ufile-api/set_ufile_referer
@@ -1002,9 +1550,10 @@ class UFileClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "BucketName" => (string) 待修改Bucket的名称
      *     "Type" => (string) Bucket访问类型;public或private
+     *     "StorageClass" => (string) 默认存储类型
      * ]
      *
      * Outputs:
@@ -1104,7 +1653,12 @@ class UFileClient extends Client
      *     "Days" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
      *     "ArchivalDays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为归档存储类型；范围： [7,36500]，0代表不启用
      *     "IADays" => (integer) 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为低频存储类型；范围： [7,36500]，0代表不启用
-     *     "Tags" => (string) Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，单个object的tag的最大数量为10
+     *     "HistVerDeleteDays" => (integer) 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *     "HistVerArchivalDays" => (integer) 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *     "HistVerIADays" => (integer) 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *     "Tags" => (string) Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，tag的最大数量为10
+     *     "MinSize" => (integer) 文件的最小size
+     *     "MaxSize" => (string) 文件的最大size
      * ]
      *
      * Outputs:

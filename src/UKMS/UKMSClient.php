@@ -216,7 +216,7 @@ class UKMSClient extends Client
      *     "CiphertextBlob" => (string) 待解密密文。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      *     "KeyId" => (string) 主密钥 KeyId；对称密钥可空，从 CiphertextBlob 自动识别；非对称必填。
-     *     "EncryptionContext" => (string) 加密上下文，JSON Object。
+     *     "EncryptionContext" => (string) 加密上下文，JSON Object。该参数内容会记录在日志中，请勿传入密码、密钥、令牌等敏感信息。
      *     "EncryptionAlgorithm" => (string) 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填或使用默认 RSAES_OAEP_SHA_256。
      * ]
      *
@@ -434,7 +434,7 @@ class UKMSClient extends Client
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "KeyId" => (string) 密钥资源长 ID、ARN 或别名。
      *     "Plaintext" => (string) 待加密明文，Base64 编码。
-     *     "EncryptionContext" => (string) 加密上下文，JSON Object。
+     *     "EncryptionContext" => (string) 加密上下文，JSON Object。该参数内容会记录在日志中，请勿传入密码、密钥、令牌等敏感信息。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      *     "EncryptionAlgorithm" => (string) 加密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；对称密钥默认 SYMMETRIC_DEFAULT，RSA 默认 RSAES_OAEP_SHA_256。
      * ]
