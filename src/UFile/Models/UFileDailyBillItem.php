@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,38 @@ use UCloud\Core\Response\Response;
 class UFileDailyBillItem extends Response
 {
     
+
+    /**
+     * Labels: bucket对应的资源系统标签
+     *
+     * @return BucketLabels[]|null
+     */
+    public function getLabels()
+    {
+        $items = $this->get("Labels");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new BucketLabels($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Labels: bucket对应的资源系统标签
+     *
+     * @param BucketLabels[] $labels
+     */
+    public function setLabels(array $labels)
+    {
+        $result = [];
+        foreach ($labels as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
 
     /**
      * GetCountIaBill: 下载低频存储次数费用；分
@@ -460,5 +492,25 @@ class UFileDailyBillItem extends Response
     public function setGetCountAcBill($getCountAcBill)
     {
         $this->set("GetCountAcBill", $getCountAcBill);
+    }
+
+    /**
+     * TotalBill: 总费用;分
+     *
+     * @return float|null
+     */
+    public function getTotalBill()
+    {
+        return $this->get("TotalBill");
+    }
+
+    /**
+     * TotalBill: 总费用;分
+     *
+     * @param float $totalBill
+     */
+    public function setTotalBill($totalBill)
+    {
+        $this->set("TotalBill", $totalBill);
     }
 }

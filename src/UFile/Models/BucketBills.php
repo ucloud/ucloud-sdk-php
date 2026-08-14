@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class BucketBills extends Response
     
 
     /**
-     * BucketBills:
+     * BucketBills: bucket账单
      *
      * @return UFileDailyBillItem[]|null
      */
@@ -41,7 +41,7 @@ class BucketBills extends Response
     }
 
     /**
-     * BucketBills:
+     * BucketBills: bucket账单
      *
      * @param UFileDailyBillItem[] $bucketBills
      */

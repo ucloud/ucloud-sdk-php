@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,7 +212,67 @@ class CreateUFileLifeCycleRequest extends Request
     }
 
     /**
-     * Tags: Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，单个object的tag的最大数量为10
+     * HistVerDeleteDays: 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *
+     * @return integer|null
+     */
+    public function getHistVerDeleteDays()
+    {
+        return $this->get("HistVerDeleteDays");
+    }
+
+    /**
+     * HistVerDeleteDays: 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *
+     * @param int $histVerDeleteDays
+     */
+    public function setHistVerDeleteDays($histVerDeleteDays)
+    {
+        $this->set("HistVerDeleteDays", $histVerDeleteDays);
+    }
+
+    /**
+     * HistVerArchivalDays: 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *
+     * @return integer|null
+     */
+    public function getHistVerArchivalDays()
+    {
+        return $this->get("HistVerArchivalDays");
+    }
+
+    /**
+     * HistVerArchivalDays: 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *
+     * @param int $histVerArchivalDays
+     */
+    public function setHistVerArchivalDays($histVerArchivalDays)
+    {
+        $this->set("HistVerArchivalDays", $histVerArchivalDays);
+    }
+
+    /**
+     * HistVerIADays: 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *
+     * @return integer|null
+     */
+    public function getHistVerIADays()
+    {
+        return $this->get("HistVerIADays");
+    }
+
+    /**
+     * HistVerIADays: 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500]
+     *
+     * @param int $histVerIADays
+     */
+    public function setHistVerIADays($histVerIADays)
+    {
+        $this->set("HistVerIADays", $histVerIADays);
+    }
+
+    /**
+     * Tags: Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，tag的最大数量为10
      *
      * @return string|null
      */
@@ -222,12 +282,52 @@ class CreateUFileLifeCycleRequest extends Request
     }
 
     /**
-     * Tags: Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，单个object的tag的最大数量为10
+     * Tags: Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，tag的最大数量为10
      *
      * @param string $tags
      */
     public function setTags($tags)
     {
         $this->set("Tags", $tags);
+    }
+
+    /**
+     * MinSize: 文件的最小size
+     *
+     * @return integer|null
+     */
+    public function getMinSize()
+    {
+        return $this->get("MinSize");
+    }
+
+    /**
+     * MinSize: 文件的最小size
+     *
+     * @param int $minSize
+     */
+    public function setMinSize($minSize)
+    {
+        $this->set("MinSize", $minSize);
+    }
+
+    /**
+     * MaxSize: 文件的最大size
+     *
+     * @return integer|null
+     */
+    public function getMaxSize()
+    {
+        return $this->get("MaxSize");
+    }
+
+    /**
+     * MaxSize: 文件的最大size
+     *
+     * @param int $maxSize
+     */
+    public function setMaxSize($maxSize)
+    {
+        $this->set("MaxSize", $maxSize);
     }
 }
