@@ -20,8 +20,6 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\UKMS\Apis\CancelKeyDeletionRequest;
 use UCloud\UKMS\Apis\CancelKeyDeletionResponse;
-use UCloud\UKMS\Apis\CancelScheduleKeyDeletionRequest;
-use UCloud\UKMS\Apis\CancelScheduleKeyDeletionResponse;
 use UCloud\UKMS\Apis\CreateAliasRequest;
 use UCloud\UKMS\Apis\CreateAliasResponse;
 use UCloud\UKMS\Apis\CreateKeyRequest;
@@ -111,33 +109,6 @@ class UKMSClient extends Client
     {
         $resp = $this->invoke($request);
         return new CancelKeyDeletionResponse($resp->toArray(), $resp->getRequestId());
-    }
-
-    /**
-     * CancelScheduleKeyDeletion - 取消计划删除密钥
-     *
-     * See also: https://docs.ucloud.cn/api/ukms-api/cancel_schedule_key_deletion
-     *
-     * Arguments:
-     *
-     * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "KeyId" => (string) 需要查看的主密钥对应的 KeyId
-     *     "ResourceId" => (string) 资源id
-     * ]
-     *
-     * Outputs:
-     *
-     * $outputs = [
-     * ]
-     *
-     * @return CancelScheduleKeyDeletionResponse
-     * @throws UCloudException
-     */
-    public function cancelScheduleKeyDeletion(CancelScheduleKeyDeletionRequest $request = null)
-    {
-        $resp = $this->invoke($request);
-        return new CancelScheduleKeyDeletionResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -291,7 +262,7 @@ class UKMSClient extends Client
      *         "KeyState" => (string) 密钥对外状态。取值：Enabled、Disabled、PendingDeletion、PendingImport、Unavailable。
      *         "Origin" => (string) 密钥材料来源。取值：UCLOUD_KMS、EXTERNAL；当前 CreateKey 仅支持 UCLOUD_KMS。
      *         "KeySpec" => (string) 密钥规格。取值：SYMMETRIC_DEFAULT、RSA_2048、RSA_3072、RSA_4096、ECC_NIST_P256、ECC_NIST_P384、ECC_NIST_P521、HMAC_256、HMAC_384、HMAC_512。
-     *         "DeletionProtection" => (string) 是否开启删除保护。取值：true、false。
+     *         "DeletionProtection" => (boolean) 是否开启删除保护。取值：true、false。
      *         "KeyVersion" => (integer) 当前密钥版本。
      *         "ResourceId" => (string) 密钥所属的 UKMS 实例资源 ID。
      *         "Description" => (string) 密钥描述。
@@ -470,7 +441,7 @@ class UKMSClient extends Client
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      *     "KeySpec" => (string) 数据密钥规格。可选值：AES_256、AES_128；默认 AES_256。与 NumberOfBytes 二选一，同时填写时 NumberOfBytes 优先。
      *     "NumberOfBytes" => (integer) 生成数据密钥的字节长度，取值范围 1~1024。与 KeySpec 二选一，同时填写时本字段优先。
-     *     "EncryptionContext" => (string) 加密上下文，JSON Object。
+     *     "EncryptionContext" => (string) 加密上下文，JSON Object。该参数内容会记录在日志中，请勿传入密码、密钥、令牌等敏感信息。
      * ]
      *
      * Outputs:

@@ -385,21 +385,33 @@ class ClusterInfo extends Response
     /**
      * AppConfigSet: 组件集合
      *
-     * @return string|null
+     * @return AppConfig[]|null
      */
     public function getAppConfigSet()
     {
-        return $this->get("AppConfigSet");
+        $items = $this->get("AppConfigSet");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new AppConfig($item));
+        }
+        return $result;
     }
 
     /**
      * AppConfigSet: 组件集合
      *
-     * @param string $appConfigSet
+     * @param AppConfig[] $appConfigSet
      */
-    public function setAppConfigSet($appConfigSet)
+    public function setAppConfigSet(array $appConfigSet)
     {
-        $this->set("AppConfigSet", $appConfigSet);
+        $result = [];
+        foreach ($appConfigSet as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
@@ -445,21 +457,33 @@ class ClusterInfo extends Response
     /**
      * NodeSet: 节点集合
      *
-     * @return string|null
+     * @return NodeDetail[]|null
      */
     public function getNodeSet()
     {
-        return $this->get("NodeSet");
+        $items = $this->get("NodeSet");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new NodeDetail($item));
+        }
+        return $result;
     }
 
     /**
      * NodeSet: 节点集合
      *
-     * @param string $nodeSet
+     * @param NodeDetail[] $nodeSet
      */
-    public function setNodeSet($nodeSet)
+    public function setNodeSet(array $nodeSet)
     {
-        $this->set("NodeSet", $nodeSet);
+        $result = [];
+        foreach ($nodeSet as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
@@ -480,5 +504,25 @@ class ClusterInfo extends Response
     public function setNodeCount($nodeCount)
     {
         $this->set("NodeCount", $nodeCount);
+    }
+
+    /**
+     * DataDiskKmsKeyId: 集群磁盘加密密钥ID
+     *
+     * @return string|null
+     */
+    public function getDataDiskKmsKeyId()
+    {
+        return $this->get("DataDiskKmsKeyId");
+    }
+
+    /**
+     * DataDiskKmsKeyId: 集群磁盘加密密钥ID
+     *
+     * @param string $dataDiskKmsKeyId
+     */
+    public function setDataDiskKmsKeyId($dataDiskKmsKeyId)
+    {
+        $this->set("DataDiskKmsKeyId", $dataDiskKmsKeyId);
     }
 }

@@ -97,7 +97,7 @@ class CreateUHadoopInstanceRequest extends Request
     }
 
     /**
-     * Password: 集群机器的登录密码,需要输入base64编码后的内容
+     * Password: 集群机器的登录密码,需要Base64加密。
      *
      * @return string|null
      */
@@ -107,7 +107,7 @@ class CreateUHadoopInstanceRequest extends Request
     }
 
     /**
-     * Password: 集群机器的登录密码,需要输入base64编码后的内容
+     * Password: 集群机器的登录密码,需要Base64加密。
      *
      * @param string $password
      */
@@ -474,5 +474,25 @@ class CreateUHadoopInstanceRequest extends Request
     public function setInstanceName($instanceName)
     {
         $this->set("InstanceName", $instanceName);
+    }
+
+    /**
+     * DataDiskKmsKeyId: 集群加密磁盘密钥ID
+     *
+     * @return string|null
+     */
+    public function getDataDiskKmsKeyId()
+    {
+        return $this->get("DataDiskKmsKeyId");
+    }
+
+    /**
+     * DataDiskKmsKeyId: 集群加密磁盘密钥ID
+     *
+     * @param string $dataDiskKmsKeyId
+     */
+    public function setDataDiskKmsKeyId($dataDiskKmsKeyId)
+    {
+        $this->set("DataDiskKmsKeyId", $dataDiskKmsKeyId);
     }
 }
