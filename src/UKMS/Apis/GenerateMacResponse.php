@@ -22,5 +22,43 @@ class GenerateMacResponse extends Response
 {
     
 
+    /**
+     * Mac: 针对指定消息生成的基于哈希的消息认证码 (HMAC)、HMAC KMS 密钥和 MAC 算法。
+     *
+     * @return string|null
+     */
+    public function getMac()
+    {
+        return $this->get("Mac");
+    }
 
+    /**
+     * Mac: 针对指定消息生成的基于哈希的消息认证码 (HMAC)、HMAC KMS 密钥和 MAC 算法。
+     *
+     * @param string $mac
+     */
+    public function setMac($mac)
+    {
+        $this->set("Mac", $mac);
+    }
+
+    /**
+     * MacAlgorithm: 用于生成 HMAC 的 MAC 算法。
+     *
+     * @return string|null
+     */
+    public function getMacAlgorithm()
+    {
+        return $this->get("MacAlgorithm");
+    }
+
+    /**
+     * MacAlgorithm: 用于生成 HMAC 的 MAC 算法。
+     *
+     * @param string $macAlgorithm
+     */
+    public function setMacAlgorithm($macAlgorithm)
+    {
+        $this->set("MacAlgorithm", $macAlgorithm);
+    }
 }
