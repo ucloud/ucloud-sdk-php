@@ -185,7 +185,7 @@ class KeyMetadata extends Response
     /**
      * DeletionProtection: 是否开启删除保护。取值：true、false。
      *
-     * @return string|null
+     * @return boolean|null
      */
     public function getDeletionProtection()
     {
@@ -195,7 +195,7 @@ class KeyMetadata extends Response
     /**
      * DeletionProtection: 是否开启删除保护。取值：true、false。
      *
-     * @param string $deletionProtection
+     * @param boolean $deletionProtection
      */
     public function setDeletionProtection($deletionProtection)
     {

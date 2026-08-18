@@ -24,7 +24,7 @@ class ListUHadoopInstanceResponse extends Response
     
 
     /**
-     * ClusterSet: 集群信息集合
+     * ClusterSet: 集群信息
      *
      * @return ListClusterInfo[]|null
      */
@@ -42,7 +42,7 @@ class ListUHadoopInstanceResponse extends Response
     }
 
     /**
-     * ClusterSet: 集群信息集合
+     * ClusterSet: 集群信息
      *
      * @param ListClusterInfo[] $clusterSet
      */

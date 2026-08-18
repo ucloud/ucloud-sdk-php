@@ -18,6 +18,11 @@ namespace UCloud\UHadoop\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UHadoop\Models\ClusterInfo;
+use UCloud\UHadoop\Models\AppConfig;
+use UCloud\UHadoop\Models\NodeDetail;
+use UCloud\UHadoop\Models\DiskInfo;
+use UCloud\UHadoop\Models\SecurityGroupConfig;
+use UCloud\UHadoop\Models\IPSet;
 
 class DescribeUHadoopInstanceResponse extends Response
 {
