@@ -568,6 +568,8 @@ class UKMSClient extends Client
      * Outputs:
      *
      * $outputs = [
+     *     "Mac" => (string) 针对指定消息生成的基于哈希的消息认证码 (HMAC)、HMAC KMS 密钥和 MAC 算法。
+     *     "MacAlgorithm" => (string) 用于生成 HMAC 的 MAC 算法。
      * ]
      *
      * @return GenerateMacResponse
@@ -1020,6 +1022,9 @@ class UKMSClient extends Client
      * Outputs:
      *
      * $outputs = [
+     *     "KeyId" => (string) 密钥ID
+     *     "MacAlgorithm" => (string) 验证中使用的 MAC 算法。
+     *     "MacValid" => (boolean) 一个布尔值，表示 HMAC 是否已验证。
      * ]
      *
      * @return VerifyMacResponse
