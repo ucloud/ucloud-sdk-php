@@ -43,6 +43,26 @@ class APIKey extends Response
     }
 
     /**
+     * InferenceLogEnabled: 是否开启推理日志
+     *
+     * @return integer|null
+     */
+    public function getInferenceLogEnabled()
+    {
+        return $this->get("InferenceLogEnabled");
+    }
+
+    /**
+     * InferenceLogEnabled: 是否开启推理日志
+     *
+     * @param int $inferenceLogEnabled
+     */
+    public function setInferenceLogEnabled($inferenceLogEnabled)
+    {
+        $this->set("InferenceLogEnabled", $inferenceLogEnabled);
+    }
+
+    /**
      * KeyId: 资源ID
      *
      * @return string|null

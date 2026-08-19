@@ -23,6 +23,66 @@ class SquareModel extends Response
     
 
     /**
+     * BatchSquareModelId: 关联的 batch 模型广场id
+     *
+     * @return string|null
+     */
+    public function getBatchSquareModelId()
+    {
+        return $this->get("BatchSquareModelId");
+    }
+
+    /**
+     * BatchSquareModelId: 关联的 batch 模型广场id
+     *
+     * @param string $batchSquareModelId
+     */
+    public function setBatchSquareModelId($batchSquareModelId)
+    {
+        $this->set("BatchSquareModelId", $batchSquareModelId);
+    }
+
+    /**
+     * IsHasBatch: 是否关联有可用 batch 模型
+     *
+     * @return boolean|null
+     */
+    public function getIsHasBatch()
+    {
+        return $this->get("IsHasBatch");
+    }
+
+    /**
+     * IsHasBatch: 是否关联有可用 batch 模型
+     *
+     * @param boolean $isHasBatch
+     */
+    public function setIsHasBatch($isHasBatch)
+    {
+        $this->set("IsHasBatch", $isHasBatch);
+    }
+
+    /**
+     * BatchName: 关联的 batch 模型名称
+     *
+     * @return string|null
+     */
+    public function getBatchName()
+    {
+        return $this->get("BatchName");
+    }
+
+    /**
+     * BatchName: 关联的 batch 模型名称
+     *
+     * @param string $batchName
+     */
+    public function setBatchName($batchName)
+    {
+        $this->set("BatchName", $batchName);
+    }
+
+    /**
      * Manufacturer: 制造商
      *
      * @return string|null

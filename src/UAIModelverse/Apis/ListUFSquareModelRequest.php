@@ -246,4 +246,44 @@ class ListUFSquareModelRequest extends Request
     {
         $this->set("Language", $language);
     }
+
+    /**
+     * Manufacturer: 制造商，可选值来源于ListUFSquareModelFilters枚举接口。可多选
+     *
+     * @return string[]|null
+     */
+    public function getManufacturer()
+    {
+        return $this->get("Manufacturer");
+    }
+
+    /**
+     * Manufacturer: 制造商，可选值来源于ListUFSquareModelFilters枚举接口。可多选
+     *
+     * @param string[] $manufacturer
+     */
+    public function setManufacturer(array $manufacturer)
+    {
+        $this->set("Manufacturer", $manufacturer);
+    }
+
+    /**
+     * Capabilities: 模型特性，可选值来源于ListUFSquareModelFilters枚举接口。可多选
+     *
+     * @return string[]|null
+     */
+    public function getCapabilities()
+    {
+        return $this->get("Capabilities");
+    }
+
+    /**
+     * Capabilities: 模型特性，可选值来源于ListUFSquareModelFilters枚举接口。可多选
+     *
+     * @param string[] $capabilities
+     */
+    public function setCapabilities(array $capabilities)
+    {
+        $this->set("Capabilities", $capabilities);
+    }
 }

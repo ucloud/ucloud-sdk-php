@@ -84,6 +84,7 @@ class UAIModelverseClient extends Client
      *     "GrantAllModels" => (boolean) 全部模型访问开关，开启不受 GrantedModels 参数控制，关闭只能访问 GrantedModels 中添加模型
      *     "GrantedModels" => (string) 授权模型，内容为数组格式。当 GrantAllModels 为false时 当前key只可访问数组中模型。例：["deepseek-ai/DeepSeek-V3.2-Think"]
      *     "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例:﻿192.168.1.1192.168.1.10-192.168.1.100192.168.1.10/24
+     *     "InferenceLogEnabled" => (integer) 是否开启推理日志
      * ]
      *
      * Outputs:
@@ -91,6 +92,7 @@ class UAIModelverseClient extends Client
      * $outputs = [
      *     "Data" => (object) apikey[
      *         "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
+     *         "InferenceLogEnabled" => (integer) 是否开启推理日志
      *         "KeyId" => (string) 资源ID
      *         "Name" => (string) 名称
      *         "ChannelId" => (integer) 渠道id
@@ -442,6 +444,9 @@ class UAIModelverseClient extends Client
      *
      * $outputs = [
      *     "SquareModel" => (object) 模型[
+     *         "BatchSquareModelId" => (string) 关联的 batch 模型广场id
+     *         "IsHasBatch" => (boolean) 是否关联有可用 batch 模型
+     *         "BatchName" => (string) 关联的 batch 模型名称
      *         "Manufacturer" => (string) 制造商
      *         "Id" => (string) 主键
      *         "Name" => (string) 名称
@@ -758,6 +763,8 @@ class UAIModelverseClient extends Client
      *     "Order" => (string) 排序顺序，默认倒序
      *     "MaxModelLen" => (array<integer>) 上下文长度，数组类型，可选值 [0,4096,16384,32768,131072,256000,262144,1048576]
      *     "Language" => (array<string>) 语言，数组类型，可选值 ["chinese", "english"]
+     *     "Manufacturer" => (array<string>) 制造商，可选值来源于ListUFSquareModelFilters枚举接口。可多选
+     *     "Capabilities" => (array<string>) 模型特性，可选值来源于ListUFSquareModelFilters枚举接口。可多选
      * ]
      *
      * Outputs:
@@ -766,6 +773,9 @@ class UAIModelverseClient extends Client
      *     "TotalCount" => (integer) 总数
      *     "SquareModels" => (array<object>) 广场模型[
      *         [
+     *             "BatchSquareModelId" => (string) 关联的 batch 模型广场id
+     *             "IsHasBatch" => (boolean) 是否关联有可用 batch 模型
+     *             "BatchName" => (string) 关联的 batch 模型名称
      *             "Manufacturer" => (string) 制造商
      *             "Id" => (string) 主键
      *             "Name" => (string) 名称
@@ -867,6 +877,7 @@ class UAIModelverseClient extends Client
      *     "Data" => (array<object>) apikey[
      *         [
      *             "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
+     *             "InferenceLogEnabled" => (integer) 是否开启推理日志
      *             "KeyId" => (string) 资源ID
      *             "Name" => (string) 名称
      *             "ChannelId" => (integer) 渠道id
@@ -1148,6 +1159,7 @@ class UAIModelverseClient extends Client
      *     "GrantAllModels" => (boolean) 全部模型访问开关，开启不受 GrantedModels 参数控制，关闭只能访问 GrantedModels 中添加模型
      *     "GrantedModels" => (string) 授权模型，内容为数组格式。当 GrantAllModels 为false时 当前key只可访问数组中模型。例：["deepseek-ai/DeepSeek-V3.2-Think"]
      *     "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
+     *     "InferenceLogEnabled" => (integer) 是否开启推理日志
      * ]
      *
      * Outputs:
