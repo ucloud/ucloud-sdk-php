@@ -18,13 +18,6 @@ namespace UCloud\UAIModelverse\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UAIModelverse\Models\FilterOptionString;
-use UCloud\UAIModelverse\Models\FilterOptionString;
-use UCloud\UAIModelverse\Models\FilterOptionString;
-use UCloud\UAIModelverse\Models\FilterOptionInteger;
-use UCloud\UAIModelverse\Models\FilterOptionString;
-use UCloud\UAIModelverse\Models\FilterOptionString;
-use UCloud\UAIModelverse\Models\FilterOptionInteger;
-use UCloud\UAIModelverse\Models\FilterOptionString;
 use UCloud\UAIModelverse\Models\FilterOptionInteger;
 
 class GetFilterOptionsResponse extends Response
