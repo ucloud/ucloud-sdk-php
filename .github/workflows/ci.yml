@@ -1,0 +1,97 @@
+name: CI
+
+# PR 门禁。只保两件事（详见 Makefile 的 ci-syntax）：
+#   G1 生成的代码能被编译/调用
+#   G2 生成的代码没有重复项
+# 两者都全量扫但分级判定——只对本轮变更的文件阻断，见下面 ci-syntax job 的 env 注释。
+# php 仓另外保留了 lint：phpcs 在这里是实跑且干净的（不是空壳），
+# 留着不会给 codegen PR 添无谓的红叉。
+#
+# 分支保护只需把 `ci-gate` 配成 required check，其余 job 增删都不影响它。
+#
+# 触发从旧 php.yml 的裸 `[push, pull_request]` 收窄到 master：
+# 裸写法会在每个 fork 分支的每次 push 上重复跑一遍，白烧额度。
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  ci-syntax:
+    name: ci-syntax
+    runs-on: ubuntu-latest
+    env:
+      # 语法闸全量扫 src/，但只对本轮变更的文件阻断，存量问题只告警——否则任意一个
+      # 产品的 codegen PR 都会被 12 个无关产品的存量坏文件拦红，check 变红导致
+      # mergeable_state 转 unstable，自动合并永久失效。同一决策在 python 侧已有先例，
+      # 见 ucloud-sdk-release/scripts/python-fatal-check.sh 文件头（2026-07-31）。
+      #
+      # 这里把基线 commit 喂给 scripts/ci-syntax.sh，由它算出「本轮变更」：
+      #   pull_request → base.sha，配合三点 diff 只算 PR 自己引入的改动；
+      #   push         → before，即推送前的分支位置。
+      # 三元里 base.sha 在 pull_request 事件下必然非空，不会误落到 || 的右支。
+      # 其他事件（如 workflow_dispatch）两边都取不到 → 空值 → 脚本退回整棵树严格判定。
+      CI_BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+    steps:
+      # fetch-depth: 0 是上面那个 env 能生效的前提：默认浅克隆只有一个 commit，
+      # base sha 不在本地，git diff 直接失败，脚本会 fail-closed 退回整棵树严格判定
+      # ——闸门看着还在跑，实际又变回「存量把所有 PR 拦死」，且不容易被发现。
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - run: composer install --prefer-dist --no-progress
+      - run: make ci-syntax
+
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - run: composer install --prefer-dist --no-progress
+      - run: make lint
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          # test-cov 走 XDEBUG_MODE=coverage，没有驱动就只出一行 warning、
+          # 覆盖率静默为空，所以这里必须显式装 xdebug。
+          coverage: xdebug
+      - run: composer install --prefer-dist --no-progress
+      - run: make test-cov
+      # 上传失败不参与判定：覆盖率是观测手段，不是代码正确性判据。
+      - name: Upload coverage
+        continue-on-error: true
+        uses: codecov/codecov-action@v7
+        with:
+          fail_ci_if_error: false
+
+  ci-gate:
+    name: ci-gate
+    needs: [ci-syntax, lint, test]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Aggregate
+        run: |
+          if [[ "${{ contains(needs.*.result, 'failure') }}" == "true" \
+             || "${{ contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            echo "ci-gate: 有 job 失败或被取消"
+            exit 1
+          fi
+          echo "ci-gate: 全部通过"
