@@ -60,8 +60,6 @@ use UCloud\UKMS\Apis\ListAliasesRequest;
 use UCloud\UKMS\Apis\ListAliasesResponse;
 use UCloud\UKMS\Apis\ListKeysRequest;
 use UCloud\UKMS\Apis\ListKeysResponse;
-use UCloud\UKMS\Apis\ListScheduleDeletionKeysRequest;
-use UCloud\UKMS\Apis\ListScheduleDeletionKeysResponse;
 use UCloud\UKMS\Apis\RotateKeyOnDemandRequest;
 use UCloud\UKMS\Apis\RotateKeyOnDemandResponse;
 use UCloud\UKMS\Apis\ScheduleKeyDeletionRequest;
@@ -267,7 +265,6 @@ class UKMSClient extends Client
      *         "ResourceId" => (string) 密钥所属的 UKMS 实例资源 ID。
      *         "Description" => (string) 密钥描述。
      *         "DeletionDate" => (integer) 计划删除时间，Unix 时间戳。
-     *         "OrganizationId" => (integer) 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。
      *     ]
      * ]
      *
@@ -479,6 +476,11 @@ class UKMSClient extends Client
      * Outputs:
      *
      * $outputs = [
+     *     "KeyId" => (string) 用于加密私钥的 KMS 密钥
+     *     "KeyPairSpec" => (string) 生成的数据键对类型。
+     *     "PrivateKeyCiphertextBlob" => (string) 私钥的加密副本。
+     *     "PrivateKeyPlaintext" => (string) 私钥的明文副本。
+     *     "DataPublicKey" => (string) 公钥（明文）。
      * ]
      *
      * @return GenerateDataKeyPairResponse
@@ -501,6 +503,8 @@ class UKMSClient extends Client
      *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "KeyId" => (string) 密钥ID
+     *     "KeyPairSpec" => (string) 指定生成的数据密钥对类型。
+     *     "EncryptionContext" => (string) 指定加密私钥时使用的加密上下文。
      * ]
      *
      * Outputs:
@@ -597,6 +601,7 @@ class UKMSClient extends Client
      * Outputs:
      *
      * $outputs = [
+     *     "Plaintext" => (string) 随机字节串。
      * ]
      *
      * @return GenerateRandomResponse
@@ -768,52 +773,6 @@ class UKMSClient extends Client
     {
         $resp = $this->invoke($request);
         return new ListKeysResponse($resp->toArray(), $resp->getRequestId());
-    }
-
-    /**
-     * ListScheduleDeletionKeys - 获取计划删除密钥列表，调用ScheduleKeyDeletion命令后进入此列表， 默认30天后正式删除。正式删除前可调用CancelScheduleKeyDeletion恢复
-     *
-     * See also: https://docs.ucloud.cn/api/ukms-api/list_schedule_deletion_keys
-     *
-     * Arguments:
-     *
-     * $args = [
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "Offset" => (integer) 输出列表起始位置，默认从0开始
-     *     "Limit" => (integer) 输出列表数量，默认返回200个
-     *     "OrderBy" => (string) 列表排序方式, 可选项: "-created_time", "created_time","plan_delete_time","-plan_delete_time";默认按-plan_delete_time 计划删除时间升序返回
-     *     "Alias" => (string) 按密钥 ID 或别名模糊过滤
-     *     "ResourceId" => (string) UKMS 实例资源 ID
-     *     "Sort" => (string) 排序方向，默认 desc
-     * ]
-     *
-     * Outputs:
-     *
-     * $outputs = [
-     *     "Objects" => (array<object>) 主密钥信息组成的列表[
-     *         [
-     *             "KeyId" => (string) CMK 的唯一标识符
-     *             "KeyType" => (string) 密钥类型，如RSA、EC、DES
-     *             "CreatedTime" => (integer) 创建时间
-     *             "Alias" => (string) 别名，与CMK一一对应
-     *             "Status" => (string) 密钥状态 "Pre-Active", "Active", "Deactivated", "Compromised", "Destroyed", "Destroyed Compromised"
-     *             "UpdateTime" => (integer) 更新时间
-     *             "Description" => (string) 对密钥的描述说明
-     *             "PlanDeleteTime" => (integer) 计划删除时间 时间戳
-     *         ]
-     *     ]
-     *     "Status" => (string) 操作结果
-     *     "RequestUuid" => (string) 请求唯一标识符
-     *     "TotalCount" => (integer) 符合条件的总数, 不同于Limit
-     * ]
-     *
-     * @return ListScheduleDeletionKeysResponse
-     * @throws UCloudException
-     */
-    public function listScheduleDeletionKeys(ListScheduleDeletionKeysRequest $request = null)
-    {
-        $resp = $this->invoke($request);
-        return new ListScheduleDeletionKeysResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -1004,7 +963,7 @@ class UKMSClient extends Client
     }
 
     /**
-     * VerifyMac - 验证签名
+     * VerifyMac - 验证指定消息、HMAC KMS 密钥和 MAC 算法的基于哈希的消息认证码 (HMAC)。为了验证 HMAC，VerifyMac 会使用您指定的消息、HMAC KMS 密钥和 MAC 算法计算 HMAC，并将计算出的 HMAC 与您指定的 HMAC 进行比较。如果两个 HMAC 完全相同，则验证成功；否则，验证失败。  验证结果表明，自计算 HMAC 以来，消息未发生更改，并且使用了指定的密钥来生成和验证 HMAC。
      *
      * See also: https://docs.ucloud.cn/api/ukms-api/verify_mac
      *

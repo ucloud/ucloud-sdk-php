@@ -22,5 +22,23 @@ class GenerateRandomResponse extends Response
 {
     
 
+    /**
+     * Plaintext: 随机字节串。
+     *
+     * @return string|null
+     */
+    public function getPlaintext()
+    {
+        return $this->get("Plaintext");
+    }
 
+    /**
+     * Plaintext: 随机字节串。
+     *
+     * @param string $plaintext
+     */
+    public function setPlaintext($plaintext)
+    {
+        $this->set("Plaintext", $plaintext);
+    }
 }
