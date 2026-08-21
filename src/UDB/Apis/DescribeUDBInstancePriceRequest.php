@@ -73,7 +73,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，单位为MB.目前支持：2000-96000
+     * MemoryLimit: 内存限制(MB)，目前支持2000‑96000，按1000进制(1GB=1000MB)计算
      *
      * @return integer|null
      */
@@ -83,7 +83,7 @@ class DescribeUDBInstancePriceRequest extends Request
     }
 
     /**
-     * MemoryLimit: 内存限制(MB)，单位为MB.目前支持：2000-96000
+     * MemoryLimit: 内存限制(MB)，目前支持2000‑96000，按1000进制(1GB=1000MB)计算
      *
      * @param int $memoryLimit
      */

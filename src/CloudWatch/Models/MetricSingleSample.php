@@ -45,7 +45,7 @@ class MetricSingleSample extends Response
     /**
      * TagsList: 指标标签列表
      *
-     * @return Product[]|null
+     * @return TagListItem[]|null
      */
     public function getTagsList()
     {
@@ -55,7 +55,7 @@ class MetricSingleSample extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new Product($item));
+            array_push($result, new TagListItem($item));
         }
         return $result;
     }
@@ -63,7 +63,7 @@ class MetricSingleSample extends Response
     /**
      * TagsList: 指标标签列表
      *
-     * @param Product[] $tagsList
+     * @param TagListItem[] $tagsList
      */
     public function setTagsList(array $tagsList)
     {

@@ -85,7 +85,7 @@ class ResourceSummary extends Response
     /**
      * ResourceExtendAttrList: 资源扩展属性列表
      *
-     * @return ResourceMonitorItem[]|null
+     * @return ResourceExtendAttrItem[]|null
      */
     public function getResourceExtendAttrList()
     {
@@ -95,7 +95,7 @@ class ResourceSummary extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ResourceMonitorItem($item));
+            array_push($result, new ResourceExtendAttrItem($item));
         }
         return $result;
     }
@@ -103,7 +103,7 @@ class ResourceSummary extends Response
     /**
      * ResourceExtendAttrList: 资源扩展属性列表
      *
-     * @param ResourceMonitorItem[] $resourceExtendAttrList
+     * @param ResourceExtendAttrItem[] $resourceExtendAttrList
      */
     public function setResourceExtendAttrList(array $resourceExtendAttrList)
     {
@@ -117,7 +117,7 @@ class ResourceSummary extends Response
     /**
      * LabelAttrList: 资源标签属性列表
      *
-     * @return ResourceMonitorItem[]|null
+     * @return LabelAttrItem[]|null
      */
     public function getLabelAttrList()
     {
@@ -127,7 +127,7 @@ class ResourceSummary extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ResourceMonitorItem($item));
+            array_push($result, new LabelAttrItem($item));
         }
         return $result;
     }
@@ -135,7 +135,7 @@ class ResourceSummary extends Response
     /**
      * LabelAttrList: 资源标签属性列表
      *
-     * @param ResourceMonitorItem[] $labelAttrList
+     * @param LabelAttrItem[] $labelAttrList
      */
     public function setLabelAttrList(array $labelAttrList)
     {

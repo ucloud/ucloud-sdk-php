@@ -18,7 +18,6 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UDB\Models\UDBTypeSet;
-use UCloud\UDB\Models\UDBTypeSet;
 
 class DescribeUDBTypeResponse extends Response
 {
