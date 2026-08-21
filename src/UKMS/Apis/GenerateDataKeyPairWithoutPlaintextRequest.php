@@ -25,6 +25,7 @@ class GenerateDataKeyPairWithoutPlaintextRequest extends Request
         parent::__construct(["Action" => "GenerateDataKeyPairWithoutPlaintext"]);
         $this->markRequired("Region");
         $this->markRequired("KeyId");
+        $this->markRequired("KeyPairSpec");
     }
 
     
@@ -87,5 +88,45 @@ class GenerateDataKeyPairWithoutPlaintextRequest extends Request
     public function setKeyId($keyId)
     {
         $this->set("KeyId", $keyId);
+    }
+
+    /**
+     * KeyPairSpec: 指定生成的数据密钥对类型。
+     *
+     * @return string|null
+     */
+    public function getKeyPairSpec()
+    {
+        return $this->get("KeyPairSpec");
+    }
+
+    /**
+     * KeyPairSpec: 指定生成的数据密钥对类型。
+     *
+     * @param string $keyPairSpec
+     */
+    public function setKeyPairSpec($keyPairSpec)
+    {
+        $this->set("KeyPairSpec", $keyPairSpec);
+    }
+
+    /**
+     * EncryptionContext: 指定加密私钥时使用的加密上下文。
+     *
+     * @return string|null
+     */
+    public function getEncryptionContext()
+    {
+        return $this->get("EncryptionContext");
+    }
+
+    /**
+     * EncryptionContext: 指定加密私钥时使用的加密上下文。
+     *
+     * @param string $encryptionContext
+     */
+    public function setEncryptionContext($encryptionContext)
+    {
+        $this->set("EncryptionContext", $encryptionContext);
     }
 }

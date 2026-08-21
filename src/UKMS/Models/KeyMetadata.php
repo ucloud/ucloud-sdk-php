@@ -281,24 +281,4 @@ class KeyMetadata extends Response
     {
         $this->set("DeletionDate", $deletionDate);
     }
-
-    /**
-     * OrganizationId: 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。
-     *
-     * @return integer|null
-     */
-    public function getOrganizationId()
-    {
-        return $this->get("OrganizationId");
-    }
-
-    /**
-     * OrganizationId: 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。
-     *
-     * @param int $organizationId
-     */
-    public function setOrganizationId($organizationId)
-    {
-        $this->set("OrganizationId", $organizationId);
-    }
 }
