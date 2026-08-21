@@ -63,6 +63,46 @@ class APIKey extends Response
     }
 
     /**
+     * DeniedModels: 禁止访问的模型列表。当 ModelAccessMode=blacklist 时生效。
+     *
+     * @return string[]|null
+     */
+    public function getDeniedModels()
+    {
+        return $this->get("DeniedModels");
+    }
+
+    /**
+     * DeniedModels: 禁止访问的模型列表。当 ModelAccessMode=blacklist 时生效。
+     *
+     * @param string[] $deniedModels
+     */
+    public function setDeniedModels(array $deniedModels)
+    {
+        $this->set("DeniedModels", $deniedModels);
+    }
+
+    /**
+     * ModelAccessMode: 模型访问策略。可选值：whitelist（白名单模式，默认）或 blacklist（黑名单模式）。
+     *
+     * @return string|null
+     */
+    public function getModelAccessMode()
+    {
+        return $this->get("ModelAccessMode");
+    }
+
+    /**
+     * ModelAccessMode: 模型访问策略。可选值：whitelist（白名单模式，默认）或 blacklist（黑名单模式）。
+     *
+     * @param string $modelAccessMode
+     */
+    public function setModelAccessMode($modelAccessMode)
+    {
+        $this->set("ModelAccessMode", $modelAccessMode);
+    }
+
+    /**
      * KeyId: 资源ID
      *
      * @return string|null
