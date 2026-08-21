@@ -85,7 +85,7 @@ class QueryMetricDataRespItem extends Response
     /**
      * TagEntries: 标签列表。每项为 TagEntry：TagName（标签名）和 KeyList（该标签的全部候选值）。
      *
-     * @return ObjectType[]|null
+     * @return TagEntry[]|null
      */
     public function getTagEntries()
     {
@@ -95,7 +95,7 @@ class QueryMetricDataRespItem extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new ObjectType($item));
+            array_push($result, new TagEntry($item));
         }
         return $result;
     }
@@ -103,7 +103,7 @@ class QueryMetricDataRespItem extends Response
     /**
      * TagEntries: 标签列表。每项为 TagEntry：TagName（标签名）和 KeyList（该标签的全部候选值）。
      *
-     * @param ObjectType[] $tagEntries
+     * @param TagEntry[] $tagEntries
      */
     public function setTagEntries(array $tagEntries)
     {

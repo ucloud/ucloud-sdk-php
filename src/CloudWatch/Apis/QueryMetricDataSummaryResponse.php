@@ -19,9 +19,11 @@ namespace UCloud\CloudWatch\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\CloudWatch\Models\QueryMetricDataSummaryRespData;
 use UCloud\CloudWatch\Models\ResourceSummary;
+use UCloud\CloudWatch\Models\ResourceExtendAttrItem;
+use UCloud\CloudWatch\Models\LabelAttrItem;
 use UCloud\CloudWatch\Models\ResourceMonitorItem;
 use UCloud\CloudWatch\Models\MetricSingleSample;
-use UCloud\CloudWatch\Models\Product;
+use UCloud\CloudWatch\Models\TagListItem;
 use UCloud\CloudWatch\Models\MetricSample;
 
 class QueryMetricDataSummaryResponse extends Response

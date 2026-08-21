@@ -401,7 +401,12 @@ class CloudWatchClient extends Client
      *             "Status" => (string) 告警状态
      *             "StartAt" => (integer) 告警触发时间
      *             "EndAt" => (integer) 告警结束时间
-     *             "ContentAttrList" => (array<string>) 产品相关的额外属性列表
+     *             "ContentAttrList" => (array<object>) 产品相关的额外属性列表[
+     *                 [
+     *                     "Key" => (string) 键
+     *                     "Value" => (string) 值
+     *                 ]
+     *             ]
      *         ]
      *     ]
      *     "TotalCount" => (integer) 告警记录总数
@@ -662,21 +667,20 @@ class CloudWatchClient extends Client
      *                 "ErrMsg" => (string) 该指标查询的状态说明
      *                 "TagEntries" => (array<object>) 标签列表。每项为 TagEntry：TagName（标签名）和 KeyList（该标签的全部候选值）。[
      *                     [
-     *                         "Id" => (integer) ID
-     *                         "ObjectType" => (string) 资源类型ID
-     *                         "ObjectTypeKey" => (string) 资源类型
-     *                         "ProductName" => (string) 产品名称
-     *                         "ProductName1" => (string) 产品子名称
-     *                         "ProductCNName" => (string) 产品中文名称
-     *                         "ProductENName" => (string) 产品英文名称
-     *                         "Metas" => (string) {type: spec|basic, key:string, name: string}[] -> JSON字符串
+     *                         "TagName" => (string) 标签名称
+     *                         "KeyList" => (array<string>) 标签候选值列表
      *                     ]
      *                 ]
      *                 "Results" => (array<object>) 查询到的时间序列列表[
      *                     [
      *                         "ResourceId" => (string) 资源的短id
      *                         "ResourceName" => (string) 资源名称
-     *                         "TagList" => (array<integer>) 资源标签列表。每项为 TagListItem：Tag（标签名）和 TagValue（标签值）。
+     *                         "TagList" => (array<object>) 资源标签列表。每项为 TagListItem：Tag（标签名）和 TagValue（标签值）。[
+     *                             [
+     *                                 "Tag" => (string) 标签名
+     *                                 "TagValue" => (string) 标签值
+     *                             ]
+     *                         ]
      *                         "Values" => (array<object>) 指标数据点列表，元素为 MetricPoint[
      *                             [
      *                                 "Timestamp" => (integer) 时间戳
@@ -730,56 +734,14 @@ class CloudWatchClient extends Client
      *                 "ProjectId" => (integer) 项目id
      *                 "ResourceExtendAttrList" => (array<object>) 资源扩展属性列表[
      *                     [
-     *                         "Metric" => (string) 指标名
-     *                         "MetricValues" => (array<object>) 指标数据数组[
-     *                             [
-     *                                 "Metric" => (string) 指标名
-     *                                 "TagsList" => (array<object>) 指标标签列表[
-     *                                     [
-     *                                         "Id" => (integer) ID
-     *                                         "ProductType" => (integer) 资源类型ID
-     *                                         "ProductKey" => (string) 资源类型唯一key
-     *                                         "ProductName" => (string) 产品名称
-     *                                         "ProductName1" => (string) 产品子名称
-     *                                         "ProductChName" => (string) 产品中文名称
-     *                                         "ProductEnName" => (string) 产品英文名称
-     *                                         "Metas" => (string) {Type: 1|2, Key:string, Name: string}[] -> JSON字符串
-     *                                         "ProductGroup" => (string) 产品分组
-     *                                     ]
-     *                                 ]
-     *                                 "Value" => (object) 指标单个样本点对象[
-     *                                     "Timestamp" => (integer) 时间戳
-     *                                     "Value" => (number) 样本值
-     *                                 ]
-     *                             ]
-     *                         ]
+     *                         "Key" => (string) 键
+     *                         "Value" => (string) 值
      *                     ]
      *                 ]
      *                 "LabelAttrList" => (array<object>) 资源标签属性列表[
      *                     [
-     *                         "Metric" => (string) 指标名
-     *                         "MetricValues" => (array<object>) 指标数据数组[
-     *                             [
-     *                                 "Metric" => (string) 指标名
-     *                                 "TagsList" => (array<object>) 指标标签列表[
-     *                                     [
-     *                                         "Id" => (integer) ID
-     *                                         "ProductType" => (integer) 资源类型ID
-     *                                         "ProductKey" => (string) 资源类型唯一key
-     *                                         "ProductName" => (string) 产品名称
-     *                                         "ProductName1" => (string) 产品子名称
-     *                                         "ProductChName" => (string) 产品中文名称
-     *                                         "ProductEnName" => (string) 产品英文名称
-     *                                         "Metas" => (string) {Type: 1|2, Key:string, Name: string}[] -> JSON字符串
-     *                                         "ProductGroup" => (string) 产品分组
-     *                                     ]
-     *                                 ]
-     *                                 "Value" => (object) 指标单个样本点对象[
-     *                                     "Timestamp" => (integer) 时间戳
-     *                                     "Value" => (number) 样本值
-     *                                 ]
-     *                             ]
-     *                         ]
+     *                         "Key" => (string) 键
+     *                         "Value" => (string) 值
      *                     ]
      *                 ]
      *                 "CompanyId" => (integer) 公司id
@@ -798,15 +760,8 @@ class CloudWatchClient extends Client
      *                                 "Metric" => (string) 指标名
      *                                 "TagsList" => (array<object>) 指标标签列表[
      *                                     [
-     *                                         "Id" => (integer) ID
-     *                                         "ProductType" => (integer) 资源类型ID
-     *                                         "ProductKey" => (string) 资源类型唯一key
-     *                                         "ProductName" => (string) 产品名称
-     *                                         "ProductName1" => (string) 产品子名称
-     *                                         "ProductChName" => (string) 产品中文名称
-     *                                         "ProductEnName" => (string) 产品英文名称
-     *                                         "Metas" => (string) {Type: 1|2, Key:string, Name: string}[] -> JSON字符串
-     *                                         "ProductGroup" => (string) 产品分组
+     *                                         "Tag" => (string) 标签名
+     *                                         "TagValue" => (string) 标签值
      *                                     ]
      *                                 ]
      *                                 "Value" => (object) 指标单个样本点对象[

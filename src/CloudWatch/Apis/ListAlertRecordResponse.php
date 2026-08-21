@@ -18,6 +18,7 @@ namespace UCloud\CloudWatch\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\CloudWatch\Models\AlertRecord;
+use UCloud\CloudWatch\Models\ContentAttrItem;
 
 class ListAlertRecordResponse extends Response
 {

@@ -445,20 +445,32 @@ class AlertRecord extends Response
     /**
      * ContentAttrList: 产品相关的额外属性列表
      *
-     * @return string[]|null
+     * @return ContentAttrItem[]|null
      */
     public function getContentAttrList()
     {
-        return $this->get("ContentAttrList");
+        $items = $this->get("ContentAttrList");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new ContentAttrItem($item));
+        }
+        return $result;
     }
 
     /**
      * ContentAttrList: 产品相关的额外属性列表
      *
-     * @param string[] $contentAttrList
+     * @param ContentAttrItem[] $contentAttrList
      */
     public function setContentAttrList(array $contentAttrList)
     {
-        $this->set("ContentAttrList", $contentAttrList);
+        $result = [];
+        foreach ($contentAttrList as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }

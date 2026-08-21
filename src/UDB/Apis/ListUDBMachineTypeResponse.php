@@ -18,7 +18,6 @@ namespace UCloud\UDB\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UDB\Models\MachineType;
-use UCloud\UDB\Models\MachineType;
 
 class ListUDBMachineTypeResponse extends Response
 {

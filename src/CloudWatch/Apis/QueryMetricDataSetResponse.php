@@ -19,8 +19,9 @@ namespace UCloud\CloudWatch\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\CloudWatch\Models\QueryMetricDataResp;
 use UCloud\CloudWatch\Models\QueryMetricDataRespItem;
-use UCloud\CloudWatch\Models\ObjectType;
+use UCloud\CloudWatch\Models\TagEntry;
 use UCloud\CloudWatch\Models\MetricResult;
+use UCloud\CloudWatch\Models\TagListItem;
 use UCloud\CloudWatch\Models\MetricSample;
 
 class QueryMetricDataSetResponse extends Response

@@ -65,21 +65,33 @@ class MetricResult extends Response
     /**
      * TagList: 资源标签列表。每项为 TagListItem：Tag（标签名）和 TagValue（标签值）。
      *
-     * @return int[]|null
+     * @return TagListItem[]|null
      */
     public function getTagList()
     {
-        return $this->get("TagList");
+        $items = $this->get("TagList");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new TagListItem($item));
+        }
+        return $result;
     }
 
     /**
      * TagList: 资源标签列表。每项为 TagListItem：Tag（标签名）和 TagValue（标签值）。
      *
-     * @param int[] $tagList
+     * @param TagListItem[] $tagList
      */
     public function setTagList(array $tagList)
     {
-        $this->set("TagList", $tagList);
+        $result = [];
+        foreach ($tagList as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
