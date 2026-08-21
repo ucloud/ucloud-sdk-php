@@ -248,4 +248,64 @@ class UpdateUMInferAPIKeyRequest extends Request
     {
         $this->set("InferenceLogEnabled", $inferenceLogEnabled);
     }
+
+    /**
+     * ExpireTime: API Key 过期时间，Unix 时间戳，单位为秒。传 -1 表示永不过期。
+     *
+     * @return integer|null
+     */
+    public function getExpireTime()
+    {
+        return $this->get("ExpireTime");
+    }
+
+    /**
+     * ExpireTime: API Key 过期时间，Unix 时间戳，单位为秒。传 -1 表示永不过期。
+     *
+     * @param int $expireTime
+     */
+    public function setExpireTime($expireTime)
+    {
+        $this->set("ExpireTime", $expireTime);
+    }
+
+    /**
+     * ModelAccessMode: 模型访问策略。可选值：whitelist（白名单模式，默认）或 blacklist（黑名单模式）。
+     *
+     * @return string|null
+     */
+    public function getModelAccessMode()
+    {
+        return $this->get("ModelAccessMode");
+    }
+
+    /**
+     * ModelAccessMode: 模型访问策略。可选值：whitelist（白名单模式，默认）或 blacklist（黑名单模式）。
+     *
+     * @param string $modelAccessMode
+     */
+    public function setModelAccessMode($modelAccessMode)
+    {
+        $this->set("ModelAccessMode", $modelAccessMode);
+    }
+
+    /**
+     * DeniedModels: 禁止访问的模型列表。当 ModelAccessMode=blacklist 时生效。数组类型，示例 ["gpt-4o", "sora-2"]
+     *
+     * @return string|null
+     */
+    public function getDeniedModels()
+    {
+        return $this->get("DeniedModels");
+    }
+
+    /**
+     * DeniedModels: 禁止访问的模型列表。当 ModelAccessMode=blacklist 时生效。数组类型，示例 ["gpt-4o", "sora-2"]
+     *
+     * @param string $deniedModels
+     */
+    public function setDeniedModels($deniedModels)
+    {
+        $this->set("DeniedModels", $deniedModels);
+    }
 }

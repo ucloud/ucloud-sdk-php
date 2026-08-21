@@ -228,4 +228,64 @@ class CreateUMInferAPIKeyRequest extends Request
     {
         $this->set("InferenceLogEnabled", $inferenceLogEnabled);
     }
+
+    /**
+     * ExpireTime: API Key 过期时间，Unix 时间戳，单位为秒。传 -1 表示永不过期。
+     *
+     * @return integer|null
+     */
+    public function getExpireTime()
+    {
+        return $this->get("ExpireTime");
+    }
+
+    /**
+     * ExpireTime: API Key 过期时间，Unix 时间戳，单位为秒。传 -1 表示永不过期。
+     *
+     * @param int $expireTime
+     */
+    public function setExpireTime($expireTime)
+    {
+        $this->set("ExpireTime", $expireTime);
+    }
+
+    /**
+     * ModelAccessMode: 模型访问策略：whitelist 表示白名单模式，blacklist 表示黑名单模式。
+     *
+     * @return string|null
+     */
+    public function getModelAccessMode()
+    {
+        return $this->get("ModelAccessMode");
+    }
+
+    /**
+     * ModelAccessMode: 模型访问策略：whitelist 表示白名单模式，blacklist 表示黑名单模式。
+     *
+     * @param string $modelAccessMode
+     */
+    public function setModelAccessMode($modelAccessMode)
+    {
+        $this->set("ModelAccessMode", $modelAccessMode);
+    }
+
+    /**
+     * DeniedModels: API Key 禁止访问的模型列表。内容为数组格式。
+     *
+     * @return string|null
+     */
+    public function getDeniedModels()
+    {
+        return $this->get("DeniedModels");
+    }
+
+    /**
+     * DeniedModels: API Key 禁止访问的模型列表。内容为数组格式。
+     *
+     * @param string $deniedModels
+     */
+    public function setDeniedModels($deniedModels)
+    {
+        $this->set("DeniedModels", $deniedModels);
+    }
 }

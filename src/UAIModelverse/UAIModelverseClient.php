@@ -85,6 +85,9 @@ class UAIModelverseClient extends Client
      *     "GrantedModels" => (string) 授权模型，内容为数组格式。当 GrantAllModels 为false时 当前key只可访问数组中模型。例：["deepseek-ai/DeepSeek-V3.2-Think"]
      *     "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例:﻿192.168.1.1192.168.1.10-192.168.1.100192.168.1.10/24
      *     "InferenceLogEnabled" => (integer) 是否开启推理日志
+     *     "ExpireTime" => (integer) API Key 过期时间，Unix 时间戳，单位为秒。传 -1 表示永不过期。
+     *     "ModelAccessMode" => (string) 模型访问策略：whitelist 表示白名单模式，blacklist 表示黑名单模式。
+     *     "DeniedModels" => (string) API Key 禁止访问的模型列表。内容为数组格式。
      * ]
      *
      * Outputs:
@@ -93,6 +96,8 @@ class UAIModelverseClient extends Client
      *     "Data" => (object) apikey[
      *         "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
      *         "InferenceLogEnabled" => (integer) 是否开启推理日志
+     *         "DeniedModels" => (array<string>) 禁止访问的模型列表。当 ModelAccessMode=blacklist 时生效。
+     *         "ModelAccessMode" => (string) 模型访问策略。可选值：whitelist（白名单模式，默认）或 blacklist（黑名单模式）。
      *         "KeyId" => (string) 资源ID
      *         "Name" => (string) 名称
      *         "ChannelId" => (integer) 渠道id
@@ -878,6 +883,8 @@ class UAIModelverseClient extends Client
      *         [
      *             "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
      *             "InferenceLogEnabled" => (integer) 是否开启推理日志
+     *             "DeniedModels" => (array<string>) 禁止访问的模型列表。当 ModelAccessMode=blacklist 时生效。
+     *             "ModelAccessMode" => (string) 模型访问策略。可选值：whitelist（白名单模式，默认）或 blacklist（黑名单模式）。
      *             "KeyId" => (string) 资源ID
      *             "Name" => (string) 名称
      *             "ChannelId" => (integer) 渠道id
@@ -1160,6 +1167,9 @@ class UAIModelverseClient extends Client
      *     "GrantedModels" => (string) 授权模型，内容为数组格式。当 GrantAllModels 为false时 当前key只可访问数组中模型。例：["deepseek-ai/DeepSeek-V3.2-Think"]
      *     "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
      *     "InferenceLogEnabled" => (integer) 是否开启推理日志
+     *     "ExpireTime" => (integer) API Key 过期时间，Unix 时间戳，单位为秒。传 -1 表示永不过期。
+     *     "ModelAccessMode" => (string) 模型访问策略。可选值：whitelist（白名单模式，默认）或 blacklist（黑名单模式）。
+     *     "DeniedModels" => (string) 禁止访问的模型列表。当 ModelAccessMode=blacklist 时生效。数组类型，示例 ["gpt-4o", "sora-2"]
      * ]
      *
      * Outputs:
