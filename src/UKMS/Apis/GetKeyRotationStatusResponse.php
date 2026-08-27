@@ -121,4 +121,24 @@ class GetKeyRotationStatusResponse extends Response
     {
         $this->set("OnDemandRotationStartDate", $onDemandRotationStartDate);
     }
+
+    /**
+     * LastRotationDate: 最后一次轮转时间，Unix 时间戳。
+     *
+     * @return integer|null
+     */
+    public function getLastRotationDate()
+    {
+        return $this->get("LastRotationDate");
+    }
+
+    /**
+     * LastRotationDate: 最后一次轮转时间，Unix 时间戳。
+     *
+     * @param int $lastRotationDate
+     */
+    public function setLastRotationDate($lastRotationDate)
+    {
+        $this->set("LastRotationDate", $lastRotationDate);
+    }
 }

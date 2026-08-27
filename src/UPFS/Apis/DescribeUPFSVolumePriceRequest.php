@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2025 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ class DescribeUPFSVolumePriceRequest extends Request
     {
         parent::__construct(["Action" => "DescribeUPFSVolumePrice"]);
         $this->markRequired("Region");
+        $this->markRequired("Zone");
         $this->markRequired("Size");
     }
 
@@ -47,6 +48,26 @@ class DescribeUPFSVolumePriceRequest extends Request
     public function setRegion($region)
     {
         $this->set("Region", $region);
+    }
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
     }
 
     /**
