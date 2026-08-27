@@ -25,6 +25,7 @@ class GetKeyRotationStatusRequest extends Request
         parent::__construct(["Action" => "GetKeyRotationStatus"]);
         $this->markRequired("Region");
         $this->markRequired("KeyId");
+        $this->markRequired("ResourceId");
     }
 
     

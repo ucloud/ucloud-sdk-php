@@ -635,6 +635,7 @@ class UKMSClient extends Client
      *     "RotationPeriodInDays" => (integer) 轮转周期，单位天；未开启时返回 0。
      *     "NextRotationDate" => (integer) 下次轮转时间，Unix 时间戳。
      *     "OnDemandRotationStartDate" => (integer) 按需轮转开始时间，Unix 时间戳。
+     *     "LastRotationDate" => (integer) 最后一次轮转时间，Unix 时间戳。
      * ]
      *
      * @return GetKeyRotationStatusResponse
