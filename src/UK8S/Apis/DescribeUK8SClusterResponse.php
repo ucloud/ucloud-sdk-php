@@ -20,10 +20,10 @@ use UCloud\Core\Response\Response;
 use UCloud\UK8S\Models\UhostInfo;
 use UCloud\UK8S\Models\IPSet;
 use UCloud\UK8S\Models\DiskSet;
-use UCloud\UK8S\Models\UhostInfo;
-use UCloud\UK8S\Models\IPSet;
-use UCloud\UK8S\Models\DiskSet;
+use UCloud\UK8S\Models\SecGroupId;
 use UCloud\UK8S\Models\KubeProxy;
+use UCloud\UK8S\Models\Autoscaler;
+use UCloud\UK8S\Models\LoopbackClientCert;
 
 class DescribeUK8SClusterResponse extends Response
 {
@@ -471,5 +471,345 @@ class DescribeUK8SClusterResponse extends Response
     public function setMasterResourceStatus($masterResourceStatus)
     {
         $this->set("MasterResourceStatus", $masterResourceStatus);
+    }
+
+    /**
+     * CNIMode: CNI模式，可选值VPC/Calico
+     *
+     * @return string|null
+     */
+    public function getCNIMode()
+    {
+        return $this->get("CNIMode");
+    }
+
+    /**
+     * CNIMode: CNI模式，可选值VPC/Calico
+     *
+     * @param string $cniMode
+     */
+    public function setCNIMode($cniMode)
+    {
+        $this->set("CNIMode", $cniMode);
+    }
+
+    /**
+     * MonitorType: 集群的监控类型：no无监控；cloudwatch统一监控平台；prometheus内置监控
+     *
+     * @return string|null
+     */
+    public function getMonitorType()
+    {
+        return $this->get("MonitorType");
+    }
+
+    /**
+     * MonitorType: 集群的监控类型：no无监控；cloudwatch统一监控平台；prometheus内置监控
+     *
+     * @param string $monitorType
+     */
+    public function setMonitorType($monitorType)
+    {
+        $this->set("MonitorType", $monitorType);
+    }
+
+    /**
+     * Autoscaler: 集群的节点伸缩(CA)配置
+     *
+     * @return Autoscaler|null
+     */
+    public function getAutoscaler()
+    {
+        return new Autoscaler($this->get("Autoscaler"));
+    }
+
+    /**
+     * Autoscaler: 集群的节点伸缩(CA)配置
+     *
+     * @param Autoscaler $autoscaler
+     */
+    public function setAutoscaler(array $autoscaler)
+    {
+        $this->set("Autoscaler", $autoscaler->getAll());
+    }
+
+    /**
+     * EnableUserAuth: 是否开启了授权管理功能
+     *
+     * @return boolean|null
+     */
+    public function getEnableUserAuth()
+    {
+        return $this->get("EnableUserAuth");
+    }
+
+    /**
+     * EnableUserAuth: 是否开启了授权管理功能
+     *
+     * @param boolean $enableUserAuth
+     */
+    public function setEnableUserAuth($enableUserAuth)
+    {
+        $this->set("EnableUserAuth", $enableUserAuth);
+    }
+
+    /**
+     * DedicatedPodSubnet: Pod是否使用独立子网
+     *
+     * @return boolean|null
+     */
+    public function getDedicatedPodSubnet()
+    {
+        return $this->get("DedicatedPodSubnet");
+    }
+
+    /**
+     * DedicatedPodSubnet: Pod是否使用独立子网
+     *
+     * @param boolean $dedicatedPodSubnet
+     */
+    public function setDedicatedPodSubnet($dedicatedPodSubnet)
+    {
+        $this->set("DedicatedPodSubnet", $dedicatedPodSubnet);
+    }
+
+    /**
+     * PodSubnetIds: Pod使用的独立子网列表
+     *
+     * @return string[]|null
+     */
+    public function getPodSubnetIds()
+    {
+        return $this->get("PodSubnetIds");
+    }
+
+    /**
+     * PodSubnetIds: Pod使用的独立子网列表
+     *
+     * @param string[] $podSubnetIds
+     */
+    public function setPodSubnetIds(array $podSubnetIds)
+    {
+        $this->set("PodSubnetIds", $podSubnetIds);
+    }
+
+    /**
+     * DeleteProtection: 删除保护开关。0表示不开启，1表示开启。默认不开启
+     *
+     * @return integer|null
+     */
+    public function getDeleteProtection()
+    {
+        return $this->get("DeleteProtection");
+    }
+
+    /**
+     * DeleteProtection: 删除保护开关。0表示不开启，1表示开启。默认不开启
+     *
+     * @param int $deleteProtection
+     */
+    public function setDeleteProtection($deleteProtection)
+    {
+        $this->set("DeleteProtection", $deleteProtection);
+    }
+
+    /**
+     * PodSubnetSecGroups: Pod独立子网内的ip使用的安全组
+     *
+     * @return string[]|null
+     */
+    public function getPodSubnetSecGroups()
+    {
+        return $this->get("PodSubnetSecGroups");
+    }
+
+    /**
+     * PodSubnetSecGroups: Pod独立子网内的ip使用的安全组
+     *
+     * @param string[] $podSubnetSecGroups
+     */
+    public function setPodSubnetSecGroups(array $podSubnetSecGroups)
+    {
+        $this->set("PodSubnetSecGroups", $podSubnetSecGroups);
+    }
+
+    /**
+     * NodeCIDR: 节点网段
+     *
+     * @return string|null
+     */
+    public function getNodeCIDR()
+    {
+        return $this->get("NodeCIDR");
+    }
+
+    /**
+     * NodeCIDR: 节点网段
+     *
+     * @param string $nodeCIDR
+     */
+    public function setNodeCIDR($nodeCIDR)
+    {
+        $this->set("NodeCIDR", $nodeCIDR);
+    }
+
+    /**
+     * ExternalUlb: 外部 API Server 负载均衡实例 ID
+     *
+     * @return string|null
+     */
+    public function getExternalUlb()
+    {
+        return $this->get("ExternalUlb");
+    }
+
+    /**
+     * ExternalUlb: 外部 API Server 负载均衡实例 ID
+     *
+     * @param string $externalUlb
+     */
+    public function setExternalUlb($externalUlb)
+    {
+        $this->set("ExternalUlb", $externalUlb);
+    }
+
+    /**
+     * InternalUlb: 内部 API Server 负载均衡实例 ID
+     *
+     * @return string|null
+     */
+    public function getInternalUlb()
+    {
+        return $this->get("InternalUlb");
+    }
+
+    /**
+     * InternalUlb: 内部 API Server 负载均衡实例 ID
+     *
+     * @param string $internalUlb
+     */
+    public function setInternalUlb($internalUlb)
+    {
+        $this->set("InternalUlb", $internalUlb);
+    }
+
+    /**
+     * UpdateTime: 更新时间
+     *
+     * @return integer|null
+     */
+    public function getUpdateTime()
+    {
+        return $this->get("UpdateTime");
+    }
+
+    /**
+     * UpdateTime: 更新时间
+     *
+     * @param int $updateTime
+     */
+    public function setUpdateTime($updateTime)
+    {
+        $this->set("UpdateTime", $updateTime);
+    }
+
+    /**
+     * LbClass: 负载均衡类型
+     *
+     * @return string|null
+     */
+    public function getLbClass()
+    {
+        return $this->get("LbClass");
+    }
+
+    /**
+     * LbClass: 负载均衡类型
+     *
+     * @param string $lbClass
+     */
+    public function setLbClass($lbClass)
+    {
+        $this->set("LbClass", $lbClass);
+    }
+
+    /**
+     * RuntimeName: 容器运行时名称
+     *
+     * @return string|null
+     */
+    public function getRuntimeName()
+    {
+        return $this->get("RuntimeName");
+    }
+
+    /**
+     * RuntimeName: 容器运行时名称
+     *
+     * @param string $runtimeName
+     */
+    public function setRuntimeName($runtimeName)
+    {
+        $this->set("RuntimeName", $runtimeName);
+    }
+
+    /**
+     * RuntimeVersion: 容器运行时版本
+     *
+     * @return string|null
+     */
+    public function getRuntimeVersion()
+    {
+        return $this->get("RuntimeVersion");
+    }
+
+    /**
+     * RuntimeVersion: 容器运行时版本
+     *
+     * @param string $runtimeVersion
+     */
+    public function setRuntimeVersion($runtimeVersion)
+    {
+        $this->set("RuntimeVersion", $runtimeVersion);
+    }
+
+    /**
+     * ClusterType: 集群版本
+     *
+     * @return string|null
+     */
+    public function getClusterType()
+    {
+        return $this->get("ClusterType");
+    }
+
+    /**
+     * ClusterType: 集群版本
+     *
+     * @param string $clusterType
+     */
+    public function setClusterType($clusterType)
+    {
+        $this->set("ClusterType", $clusterType);
+    }
+
+    /**
+     * LoopbackClientCert: API Server 回环客户端证书
+     *
+     * @return LoopbackClientCert|null
+     */
+    public function getLoopbackClientCert()
+    {
+        return new LoopbackClientCert($this->get("LoopbackClientCert"));
+    }
+
+    /**
+     * LoopbackClientCert: API Server 回环客户端证书
+     *
+     * @param LoopbackClientCert $loopbackClientCert
+     */
+    public function setLoopbackClientCert(array $loopbackClientCert)
+    {
+        $this->set("LoopbackClientCert", $loopbackClientCert->getAll());
     }
 }

@@ -161,4 +161,44 @@ class UHostIPSet extends Response
     {
         $this->set("Mac", $mac);
     }
+
+    /**
+     * IPMode: IP 协议类型
+     *
+     * @return string|null
+     */
+    public function getIPMode()
+    {
+        return $this->get("IPMode");
+    }
+
+    /**
+     * IPMode: IP 协议类型
+     *
+     * @param string $ipMode
+     */
+    public function setIPMode($ipMode)
+    {
+        $this->set("IPMode", $ipMode);
+    }
+
+    /**
+     * NetworkInterfaceId: 网络接口资源 ID
+     *
+     * @return string|null
+     */
+    public function getNetworkInterfaceId()
+    {
+        return $this->get("NetworkInterfaceId");
+    }
+
+    /**
+     * NetworkInterfaceId: 网络接口资源 ID
+     *
+     * @param string $networkInterfaceId
+     */
+    public function setNetworkInterfaceId($networkInterfaceId)
+    {
+        $this->set("NetworkInterfaceId", $networkInterfaceId);
+    }
 }

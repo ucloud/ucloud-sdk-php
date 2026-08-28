@@ -18,7 +18,6 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UK8S\Models\ImageInfo;
-use UCloud\UK8S\Models\ImageInfo;
 
 class DescribeUK8SImageResponse extends Response
 {
@@ -57,7 +56,7 @@ class DescribeUK8SImageResponse extends Response
     }
 
     /**
-     * PHostImageSet: 物理机可用镜像集合, 详见ImageInfo 数组
+     * PHostImageSet: 裸金属可用镜像集合, 详见ImageInfo 数组
      *
      * @return ImageInfo[]|null
      */
@@ -75,7 +74,7 @@ class DescribeUK8SImageResponse extends Response
     }
 
     /**
-     * PHostImageSet: 物理机可用镜像集合, 详见ImageInfo 数组
+     * PHostImageSet: 裸金属可用镜像集合, 详见ImageInfo 数组
      *
      * @param ImageInfo[] $pHostImageSet
      */
@@ -83,6 +82,70 @@ class DescribeUK8SImageResponse extends Response
     {
         $result = [];
         foreach ($pHostImageSet as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * CustomImageSet: 虚拟机自制可用镜像集合, 详见ImageInfo 数组
+     *
+     * @return ImageInfo[]|null
+     */
+    public function getCustomImageSet()
+    {
+        $items = $this->get("CustomImageSet");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new ImageInfo($item));
+        }
+        return $result;
+    }
+
+    /**
+     * CustomImageSet: 虚拟机自制可用镜像集合, 详见ImageInfo 数组
+     *
+     * @param ImageInfo[] $customImageSet
+     */
+    public function setCustomImageSet(array $customImageSet)
+    {
+        $result = [];
+        foreach ($customImageSet as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * CustomPHostImageSet: 裸金属自制可用镜像集合, 详见ImageInfo 数组
+     *
+     * @return ImageInfo[]|null
+     */
+    public function getCustomPHostImageSet()
+    {
+        $items = $this->get("CustomPHostImageSet");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new ImageInfo($item));
+        }
+        return $result;
+    }
+
+    /**
+     * CustomPHostImageSet: 裸金属自制可用镜像集合, 详见ImageInfo 数组
+     *
+     * @param ImageInfo[] $customPHostImageSet
+     */
+    public function setCustomPHostImageSet(array $customPHostImageSet)
+    {
+        $result = [];
+        foreach ($customPHostImageSet as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;

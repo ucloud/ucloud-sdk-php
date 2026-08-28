@@ -17,46 +17,47 @@
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
-use UCloud\UK8S\Models\NodeGroupSet;
-use UCloud\UK8S\Models\SecGroupId;
-use UCloud\UK8S\Models\NetworkInterface;
-use UCloud\UK8S\Models\EIP;
-use UCloud\UK8S\Models\KubeletConfiguration;
-use UCloud\UK8S\Models\EvictionCondition;
-use UCloud\UK8S\Models\ReservedResource;
-use UCloud\UK8S\Models\DiskSet;
+use UCloud\UK8S\Models\ULSLogConfig;
+use UCloud\UK8S\Models\ULSExtractRule;
+use UCloud\UK8S\Models\ULSInputDetail;
+use UCloud\UK8S\Models\ULSFilePaths;
+use UCloud\UK8S\Models\ULSInputMetadata;
+use UCloud\UK8S\Models\ULSMatchRule;
+use UCloud\UK8S\Models\ULSWorkloadMatch;
+use UCloud\UK8S\Models\ULSPodLabelsMatch;
+use UCloud\UK8S\Models\ULSLabels;
 
-class ListUK8SNodeGroupResponse extends Response
+class ListUK8SULSConfigResponse extends Response
 {
     
 
     /**
-     * NodeGroupList: 节点池列表
+     * LogConfig: 日志服务配置,见 ClusterLogConfig
      *
-     * @return NodeGroupSet[]|null
+     * @return ULSLogConfig[]|null
      */
-    public function getNodeGroupList()
+    public function getLogConfig()
     {
-        $items = $this->get("NodeGroupList");
+        $items = $this->get("LogConfig");
         if ($items == null) {
             return [];
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new NodeGroupSet($item));
+            array_push($result, new ULSLogConfig($item));
         }
         return $result;
     }
 
     /**
-     * NodeGroupList: 节点池列表
+     * LogConfig: 日志服务配置,见 ClusterLogConfig
      *
-     * @param NodeGroupSet[] $nodeGroupList
+     * @param ULSLogConfig[] $logConfig
      */
-    public function setNodeGroupList(array $nodeGroupList)
+    public function setLogConfig(array $logConfig)
     {
         $result = [];
-        foreach ($nodeGroupList as $i => $item) {
+        foreach ($logConfig as $i => $item) {
             array_push($result, $item->getAll());
         }
         return $result;

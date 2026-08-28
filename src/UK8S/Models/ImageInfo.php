@@ -101,4 +101,124 @@ class ImageInfo extends Response
     {
         $this->set("NotSupportGPU", $notSupportGPU);
     }
+
+    /**
+     * OsType: OS 类型
+     *
+     * @return string|null
+     */
+    public function getOsType()
+    {
+        return $this->get("OsType");
+    }
+
+    /**
+     * OsType: OS 类型
+     *
+     * @param string $osType
+     */
+    public function setOsType($osType)
+    {
+        $this->set("OsType", $osType);
+    }
+
+    /**
+     * OsName: OS 名称
+     *
+     * @return string|null
+     */
+    public function getOsName()
+    {
+        return $this->get("OsName");
+    }
+
+    /**
+     * OsName: OS 名称
+     *
+     * @param string $osName
+     */
+    public function setOsName($osName)
+    {
+        $this->set("OsName", $osName);
+    }
+
+    /**
+     * Features: 镜像支持的特性
+     *
+     * @return string[]|null
+     */
+    public function getFeatures()
+    {
+        return $this->get("Features");
+    }
+
+    /**
+     * Features: 镜像支持的特性
+     *
+     * @param string[] $features
+     */
+    public function setFeatures(array $features)
+    {
+        $this->set("Features", $features);
+    }
+
+    /**
+     * ImageSize: 镜像大小
+     *
+     * @return integer|null
+     */
+    public function getImageSize()
+    {
+        return $this->get("ImageSize");
+    }
+
+    /**
+     * ImageSize: 镜像大小
+     *
+     * @param int $imageSize
+     */
+    public function setImageSize($imageSize)
+    {
+        $this->set("ImageSize", $imageSize);
+    }
+
+    /**
+     * IntegratedSoftware: 集成软件名称, 如NV驱动版本、cuda版本
+     *
+     * @return string|null
+     */
+    public function getIntegratedSoftware()
+    {
+        return $this->get("IntegratedSoftware");
+    }
+
+    /**
+     * IntegratedSoftware: 集成软件名称, 如NV驱动版本、cuda版本
+     *
+     * @param string $integratedSoftware
+     */
+    public function setIntegratedSoftware($integratedSoftware)
+    {
+        $this->set("IntegratedSoftware", $integratedSoftware);
+    }
+
+    /**
+     * SupportedGPUTypes: 支持的GPU机型
+     *
+     * @return string[]|null
+     */
+    public function getSupportedGPUTypes()
+    {
+        return $this->get("SupportedGPUTypes");
+    }
+
+    /**
+     * SupportedGPUTypes: 支持的GPU机型
+     *
+     * @param string[] $supportedGPUTypes
+     */
+    public function setSupportedGPUTypes(array $supportedGPUTypes)
+    {
+        $this->set("SupportedGPUTypes", $supportedGPUTypes);
+    }
 }

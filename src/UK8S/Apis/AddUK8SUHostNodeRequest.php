@@ -20,6 +20,8 @@ use UCloud\Core\Request\Request;
 use UCloud\UK8S\Params\AddUK8SUHostNodeParamNetworkInterface;
 use UCloud\UK8S\Params\AddUK8SUHostNodeParamNetworkInterfaceEIP;
 use UCloud\UK8S\Params\AddUK8SUHostNodeParamSecGroupId;
+use UCloud\UK8S\Params\AddUK8SUHostNodeParamUserLabels;
+use UCloud\UK8S\Params\AddUK8SUHostNodeParamKubeletConfiguration;
 
 class AddUK8SUHostNodeRequest extends Request
 {
@@ -31,7 +33,6 @@ class AddUK8SUHostNodeRequest extends Request
         $this->markRequired("ClusterId");
         $this->markRequired("CPU");
         $this->markRequired("Count");
-        $this->markRequired("Password");
         $this->markRequired("Mem");
         $this->markRequired("ChargeType");
     }
@@ -159,26 +160,6 @@ class AddUK8SUHostNodeRequest extends Request
     }
 
     /**
-     * Password: Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 | base64
-     *
-     * @return string|null
-     */
-    public function getPassword()
-    {
-        return $this->get("Password");
-    }
-
-    /**
-     * Password: Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 | base64
-     *
-     * @param string $password
-     */
-    public function setPassword($password)
-    {
-        $this->set("Password", $password);
-    }
-
-    /**
      * Mem: 内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
      *
      * @return integer|null
@@ -216,6 +197,26 @@ class AddUK8SUHostNodeRequest extends Request
     public function setChargeType($chargeType)
     {
         $this->set("ChargeType", $chargeType);
+    }
+
+    /**
+     * Password: Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 | base64
+     *
+     * @return string|null
+     */
+    public function getPassword()
+    {
+        return $this->get("Password");
+    }
+
+    /**
+     * Password: Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 | base64
+     *
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->set("Password", $password);
     }
 
     /**
@@ -783,22 +784,74 @@ class AddUK8SUHostNodeRequest extends Request
     }
 
     /**
-     * UserLabels: UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     * UHostFamily: 主机规格族
      *
      * @return string|null
      */
-    public function getUserLabels()
+    public function getUHostFamily()
     {
-        return $this->get("UserLabels");
+        return $this->get("UHostFamily");
     }
 
     /**
-     * UserLabels: UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     * UHostFamily: 主机规格族
      *
-     * @param string $userLabels
+     * @param string $uHostFamily
      */
-    public function setUserLabels($userLabels)
+    public function setUHostFamily($uHostFamily)
     {
-        $this->set("UserLabels", $userLabels);
+        $this->set("UHostFamily", $uHostFamily);
+    }
+
+    /**
+     * UserLabels:
+     *
+     * @return AddUK8SUHostNodeParamUserLabels[]|null
+     */
+    public function getUserLabels()
+    {
+        $items = $this->get("UserLabels");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new AddUK8SUHostNodeParamUserLabels($item));
+        }
+        return $result;
+    }
+
+    /**
+     * UserLabels:
+     *
+     * @param AddUK8SUHostNodeParamUserLabels[] $userLabels
+     */
+    public function setUserLabels(array $userLabels)
+    {
+        $result = [];
+        foreach ($userLabels as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * KubeletConfiguration:
+     *
+     * @return AddUK8SUHostNodeParamKubeletConfiguration|null
+     */
+    public function getKubeletConfiguration()
+    {
+        return new AddUK8SUHostNodeParamKubeletConfiguration($this->get("KubeletConfiguration"));
+    }
+
+    /**
+     * KubeletConfiguration:
+     *
+     * @param AddUK8SUHostNodeParamKubeletConfiguration $kubeletConfiguration
+     */
+    public function setKubeletConfiguration(array $kubeletConfiguration)
+    {
+        $this->set("KubeletConfiguration", $kubeletConfiguration->getAll());
     }
 }

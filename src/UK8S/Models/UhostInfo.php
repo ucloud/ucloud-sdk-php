@@ -285,4 +285,156 @@ class UhostInfo extends Response
     {
         $this->set("NodeType", $nodeType);
     }
+
+    /**
+     * GPU: GPU 数量
+     *
+     * @return integer|null
+     */
+    public function getGPU()
+    {
+        return $this->get("GPU");
+    }
+
+    /**
+     * GPU: GPU 数量
+     *
+     * @param int $gpu
+     */
+    public function setGPU($gpu)
+    {
+        $this->set("GPU", $gpu);
+    }
+
+    /**
+     * GpuType: GPU 型号
+     *
+     * @return string|null
+     */
+    public function getGpuType()
+    {
+        return $this->get("GpuType");
+    }
+
+    /**
+     * GpuType: GPU 型号
+     *
+     * @param string $gpuType
+     */
+    public function setGpuType($gpuType)
+    {
+        $this->set("GpuType", $gpuType);
+    }
+
+    /**
+     * BasicImageName: 基础镜像名称
+     *
+     * @return string|null
+     */
+    public function getBasicImageName()
+    {
+        return $this->get("BasicImageName");
+    }
+
+    /**
+     * BasicImageName: 基础镜像名称
+     *
+     * @param string $basicImageName
+     */
+    public function setBasicImageName($basicImageName)
+    {
+        $this->set("BasicImageName", $basicImageName);
+    }
+
+    /**
+     * OsType: 操作系统类型
+     *
+     * @return string|null
+     */
+    public function getOsType()
+    {
+        return $this->get("OsType");
+    }
+
+    /**
+     * OsType: 操作系统类型
+     *
+     * @param string $osType
+     */
+    public function setOsType($osType)
+    {
+        $this->set("OsType", $osType);
+    }
+
+    /**
+     * TotalDiskSpace: 节点总磁盘空间
+     *
+     * @return integer|null
+     */
+    public function getTotalDiskSpace()
+    {
+        return $this->get("TotalDiskSpace");
+    }
+
+    /**
+     * TotalDiskSpace: 节点总磁盘空间
+     *
+     * @param int $totalDiskSpace
+     */
+    public function setTotalDiskSpace($totalDiskSpace)
+    {
+        $this->set("TotalDiskSpace", $totalDiskSpace);
+    }
+
+    /**
+     * MachineType: 主机机型类别
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 主机机型类别
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
+    }
+
+    /**
+     * SecGroupId: 节点关联的安全组列表
+     *
+     * @return SecGroupId[]|null
+     */
+    public function getSecGroupId()
+    {
+        $items = $this->get("SecGroupId");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new SecGroupId($item));
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroupId: 节点关联的安全组列表
+     *
+     * @param SecGroupId[] $secGroupId
+     */
+    public function setSecGroupId(array $secGroupId)
+    {
+        $result = [];
+        foreach ($secGroupId as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
 }

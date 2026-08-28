@@ -29,7 +29,7 @@ class DescribeUK8SImageRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -39,7 +39,7 @@ class DescribeUK8SImageRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -49,7 +49,7 @@ class DescribeUK8SImageRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -59,7 +59,7 @@ class DescribeUK8SImageRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -69,7 +69,7 @@ class DescribeUK8SImageRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -79,12 +79,92 @@ class DescribeUK8SImageRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
     public function setProjectId($projectId)
     {
         $this->set("ProjectId", $projectId);
+    }
+
+    /**
+     * ProductType: 产品类型，可选值uhost、uphost，不填则返回所有
+     *
+     * @return string|null
+     */
+    public function getProductType()
+    {
+        return $this->get("ProductType");
+    }
+
+    /**
+     * ProductType: 产品类型，可选值uhost、uphost，不填则返回所有
+     *
+     * @param string $productType
+     */
+    public function setProductType($productType)
+    {
+        $this->set("ProductType", $productType);
+    }
+
+    /**
+     * MachineType: 适用机型，如O、G、OPRO等，默认为O
+     *
+     * @return string|null
+     */
+    public function getMachineType()
+    {
+        return $this->get("MachineType");
+    }
+
+    /**
+     * MachineType: 适用机型，如O、G、OPRO等，默认为O
+     *
+     * @param string $machineType
+     */
+    public function setMachineType($machineType)
+    {
+        $this->set("MachineType", $machineType);
+    }
+
+    /**
+     * GPUType: 适用GPU类型，如1080Ti、4090、V100、A800等，MachineType为G时必须提供
+     *
+     * @return string|null
+     */
+    public function getGPUType()
+    {
+        return $this->get("GPUType");
+    }
+
+    /**
+     * GPUType: 适用GPU类型，如1080Ti、4090、V100、A800等，MachineType为G时必须提供
+     *
+     * @param string $gpuType
+     */
+    public function setGPUType($gpuType)
+    {
+        $this->set("GPUType", $gpuType);
+    }
+
+    /**
+     * K8sVersion: k8s集群版本，如1.28.15
+     *
+     * @return string|null
+     */
+    public function getK8sVersion()
+    {
+        return $this->get("K8sVersion");
+    }
+
+    /**
+     * K8sVersion: k8s集群版本，如1.28.15
+     *
+     * @param string $k8sVersion
+     */
+    public function setK8sVersion($k8sVersion)
+    {
+        $this->set("K8sVersion", $k8sVersion);
     }
 }

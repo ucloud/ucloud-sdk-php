@@ -121,4 +121,104 @@ class IPSet extends Response
     {
         $this->set("Default", $default);
     }
+
+    /**
+     * IPMode: IP 地址分配模式
+     *
+     * @return string|null
+     */
+    public function getIPMode()
+    {
+        return $this->get("IPMode");
+    }
+
+    /**
+     * IPMode: IP 地址分配模式
+     *
+     * @param string $ipMode
+     */
+    public function setIPMode($ipMode)
+    {
+        $this->set("IPMode", $ipMode);
+    }
+
+    /**
+     * VPCId: IP 所属的 VPC Id
+     *
+     * @return string|null
+     */
+    public function getVPCId()
+    {
+        return $this->get("VPCId");
+    }
+
+    /**
+     * VPCId: IP 所属的 VPC Id
+     *
+     * @param string $vpcId
+     */
+    public function setVPCId($vpcId)
+    {
+        $this->set("VPCId", $vpcId);
+    }
+
+    /**
+     * SubnetId: IP 所在的 子网 Id
+     *
+     * @return string|null
+     */
+    public function getSubnetId()
+    {
+        return $this->get("SubnetId");
+    }
+
+    /**
+     * SubnetId: IP 所在的 子网 Id
+     *
+     * @param string $subnetId
+     */
+    public function setSubnetId($subnetId)
+    {
+        $this->set("SubnetId", $subnetId);
+    }
+
+    /**
+     * Mac: 网卡的 MAC 地址
+     *
+     * @return string|null
+     */
+    public function getMac()
+    {
+        return $this->get("Mac");
+    }
+
+    /**
+     * Mac: 网卡的 MAC 地址
+     *
+     * @param string $mac
+     */
+    public function setMac($mac)
+    {
+        $this->set("Mac", $mac);
+    }
+
+    /**
+     * NetworkInterfaceId: 虚拟网卡 Id
+     *
+     * @return string|null
+     */
+    public function getNetworkInterfaceId()
+    {
+        return $this->get("NetworkInterfaceId");
+    }
+
+    /**
+     * NetworkInterfaceId: 虚拟网卡 Id
+     *
+     * @param string $networkInterfaceId
+     */
+    public function setNetworkInterfaceId($networkInterfaceId)
+    {
+        $this->set("NetworkInterfaceId", $networkInterfaceId);
+    }
 }
