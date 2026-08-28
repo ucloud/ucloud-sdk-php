@@ -18,13 +18,14 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ListUK8SClusterNodeV2Request extends Request
+class ListUK8SULSConfigRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUK8SClusterNodeV2"]);
+        parent::__construct(["Action" => "ListUK8SULSConfig"]);
         $this->markRequired("Region");
-        $this->markRequired("ClusterId");
+        $this->markRequired("Zone");
+        $this->markRequired("TopicID");
     }
 
     
@@ -50,6 +51,26 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
+    }
+
+    /**
      * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
@@ -70,7 +91,27 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
-     * ClusterId: UK8S集群ID
+     * TopicID: 日志服务中用于接收日志的目标 TopicId。
+     *
+     * @return string|null
+     */
+    public function getTopicID()
+    {
+        return $this->get("TopicID");
+    }
+
+    /**
+     * TopicID: 日志服务中用于接收日志的目标 TopicId。
+     *
+     * @param string $topicID
+     */
+    public function setTopicID($topicID)
+    {
+        $this->set("TopicID", $topicID);
+    }
+
+    /**
+     * ClusterId: 集群 Id，如果不填，返回该账号该地域所有集群的 ULSConfig
      *
      * @return string|null
      */
@@ -80,32 +121,12 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
-     * ClusterId: UK8S集群ID
+     * ClusterId: 集群 Id，如果不填，返回该账号该地域所有集群的 ULSConfig
      *
      * @param string $clusterId
      */
     public function setClusterId($clusterId)
     {
         $this->set("ClusterId", $clusterId);
-    }
-
-    /**
-     * NodeIds: 可传一个或多个节点id  不传或为空则返回所有节点
-     *
-     * @return string|null
-     */
-    public function getNodeIds()
-    {
-        return $this->get("NodeIds");
-    }
-
-    /**
-     * NodeIds: 可传一个或多个节点id  不传或为空则返回所有节点
-     *
-     * @param string $nodeIds
-     */
-    public function setNodeIds($nodeIds)
-    {
-        $this->set("NodeIds", $nodeIds);
     }
 }

@@ -143,6 +143,26 @@ class ClusterSet extends Response
     }
 
     /**
+     * CNIMode: CNI网络模式
+     *
+     * @return string|null
+     */
+    public function getCNIMode()
+    {
+        return $this->get("CNIMode");
+    }
+
+    /**
+     * CNIMode: CNI网络模式
+     *
+     * @param string $cniMode
+     */
+    public function setCNIMode($cniMode)
+    {
+        $this->set("CNIMode", $cniMode);
+    }
+
+    /**
      * MasterCount: Master 节点数量
      *
      * @return integer|null
@@ -200,6 +220,106 @@ class ClusterSet extends Response
     public function setK8sVersion($k8sVersion)
     {
         $this->set("K8sVersion", $k8sVersion);
+    }
+
+    /**
+     * DeleteProtection: 删除保护开关。0表示不开启，1表示开启。默认不开启
+     *
+     * @return integer|null
+     */
+    public function getDeleteProtection()
+    {
+        return $this->get("DeleteProtection");
+    }
+
+    /**
+     * DeleteProtection: 删除保护开关。0表示不开启，1表示开启。默认不开启
+     *
+     * @param int $deleteProtection
+     */
+    public function setDeleteProtection($deleteProtection)
+    {
+        $this->set("DeleteProtection", $deleteProtection);
+    }
+
+    /**
+     * RuntimeName: 容器运行时名称
+     *
+     * @return string|null
+     */
+    public function getRuntimeName()
+    {
+        return $this->get("RuntimeName");
+    }
+
+    /**
+     * RuntimeName: 容器运行时名称
+     *
+     * @param string $runtimeName
+     */
+    public function setRuntimeName($runtimeName)
+    {
+        $this->set("RuntimeName", $runtimeName);
+    }
+
+    /**
+     * RuntimeVersion: 容器运行时版本号，docker 或 containerd 版本
+     *
+     * @return string|null
+     */
+    public function getRuntimeVersion()
+    {
+        return $this->get("RuntimeVersion");
+    }
+
+    /**
+     * RuntimeVersion: 容器运行时版本号，docker 或 containerd 版本
+     *
+     * @param string $runtimeVersion
+     */
+    public function setRuntimeVersion($runtimeVersion)
+    {
+        $this->set("RuntimeVersion", $runtimeVersion);
+    }
+
+    /**
+     * ClusterType: 计费/管理形态，区分"专有版"和"托管版"两种售卖形态
+     *
+     * @return string|null
+     */
+    public function getClusterType()
+    {
+        return $this->get("ClusterType");
+    }
+
+    /**
+     * ClusterType: 计费/管理形态，区分"专有版"和"托管版"两种售卖形态
+     *
+     * @param string $clusterType
+     */
+    public function setClusterType($clusterType)
+    {
+        $this->set("ClusterType", $clusterType);
+    }
+
+    /**
+     * LoopbackClientCert: API Server 内部回环客户端证书
+     *
+     * @return LoopbackClientCert|null
+     */
+    public function getLoopbackClientCert()
+    {
+        return new LoopbackClientCert($this->get("LoopbackClientCert"));
+    }
+
+    /**
+     * LoopbackClientCert: API Server 内部回环客户端证书
+     *
+     * @param LoopbackClientCert $loopbackClientCert
+     */
+    public function setLoopbackClientCert(array $loopbackClientCert)
+    {
+        $this->set("LoopbackClientCert", $loopbackClientCert->getAll());
     }
 
     /**

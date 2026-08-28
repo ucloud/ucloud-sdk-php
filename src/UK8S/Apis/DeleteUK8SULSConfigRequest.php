@@ -18,19 +18,21 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
 
-class ListUK8SClusterNodeV2Request extends Request
+class DeleteUK8SULSConfigRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "ListUK8SClusterNodeV2"]);
+        parent::__construct(["Action" => "DeleteUK8SULSConfig"]);
         $this->markRequired("Region");
+        $this->markRequired("Zone");
         $this->markRequired("ClusterId");
+        $this->markRequired("Name");
     }
 
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     * Region: 地域。参见地域和可用区列表。
      *
      * @return string|null
      */
@@ -40,7 +42,7 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     * Region: 地域。参见地域和可用区列表。
      *
      * @param string $region
      */
@@ -50,7 +52,27 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * Zone: 可用区。参见可用区列表。
+     *
+     * @return string|null
+     */
+    public function getZone()
+    {
+        return $this->get("Zone");
+    }
+
+    /**
+     * Zone: 可用区。参见可用区列表。
+     *
+     * @param string $zone
+     */
+    public function setZone($zone)
+    {
+        $this->set("Zone", $zone);
+    }
+
+    /**
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。请参考GetProjectList接口。
      *
      * @return string|null
      */
@@ -60,7 +82,7 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。请参考GetProjectList接口。
      *
      * @param string $projectId
      */
@@ -70,7 +92,7 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
-     * ClusterId: UK8S集群ID
+     * ClusterId: 要操作的 UK8S 集群的 ID。
      *
      * @return string|null
      */
@@ -80,7 +102,7 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
-     * ClusterId: UK8S集群ID
+     * ClusterId: 要操作的 UK8S 集群的 ID。
      *
      * @param string $clusterId
      */
@@ -90,22 +112,22 @@ class ListUK8SClusterNodeV2Request extends Request
     }
 
     /**
-     * NodeIds: 可传一个或多个节点id  不传或为空则返回所有节点
+     * Name: 要删除的日志的采集规则的名称。
      *
      * @return string|null
      */
-    public function getNodeIds()
+    public function getName()
     {
-        return $this->get("NodeIds");
+        return $this->get("Name");
     }
 
     /**
-     * NodeIds: 可传一个或多个节点id  不传或为空则返回所有节点
+     * Name: 要删除的日志的采集规则的名称。
      *
-     * @param string $nodeIds
+     * @param string $name
      */
-    public function setNodeIds($nodeIds)
+    public function setName($name)
     {
-        $this->set("NodeIds", $nodeIds);
+        $this->set("Name", $name);
     }
 }

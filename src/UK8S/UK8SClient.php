@@ -28,10 +28,14 @@ use UCloud\UK8S\Apis\AddUK8SUHostNodeRequest;
 use UCloud\UK8S\Apis\AddUK8SUHostNodeResponse;
 use UCloud\UK8S\Apis\CreateUK8SClusterV2Request;
 use UCloud\UK8S\Apis\CreateUK8SClusterV2Response;
+use UCloud\UK8S\Apis\CreateUK8SULSConfigRequest;
+use UCloud\UK8S\Apis\CreateUK8SULSConfigResponse;
 use UCloud\UK8S\Apis\DelUK8SClusterRequest;
 use UCloud\UK8S\Apis\DelUK8SClusterResponse;
 use UCloud\UK8S\Apis\DelUK8SClusterNodeV2Request;
 use UCloud\UK8S\Apis\DelUK8SClusterNodeV2Response;
+use UCloud\UK8S\Apis\DeleteUK8SULSConfigRequest;
+use UCloud\UK8S\Apis\DeleteUK8SULSConfigResponse;
 use UCloud\UK8S\Apis\DescribeUK8SClusterRequest;
 use UCloud\UK8S\Apis\DescribeUK8SClusterResponse;
 use UCloud\UK8S\Apis\DescribeUK8SImageRequest;
@@ -48,8 +52,12 @@ use UCloud\UK8S\Apis\ListUK8SClusterV2Request;
 use UCloud\UK8S\Apis\ListUK8SClusterV2Response;
 use UCloud\UK8S\Apis\ListUK8SNodeGroupRequest;
 use UCloud\UK8S\Apis\ListUK8SNodeGroupResponse;
+use UCloud\UK8S\Apis\ListUK8SULSConfigRequest;
+use UCloud\UK8S\Apis\ListUK8SULSConfigResponse;
 use UCloud\UK8S\Apis\RemoveUK8SNodeGroupRequest;
 use UCloud\UK8S\Apis\RemoveUK8SNodeGroupResponse;
+use UCloud\UK8S\Apis\UpdateUK8SULSConfigRequest;
+use UCloud\UK8S\Apis\UpdateUK8SULSConfigResponse;
 
 /**
  * This client is used to call actions of **UK8S** service
@@ -193,9 +201,9 @@ class UK8SClient extends Client
      *     "ClusterId" => (string) UK8S集群ID。 可从UK8S控制台获取。
      *     "CPU" => (integer) 虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。默认值: 4。
      *     "Count" => (integer) 创建Node节点数量，取值范围是[1,50]。
-     *     "Password" => (string) Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 | base64
      *     "Mem" => (integer) 内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192
      *     "ChargeType" => (string) 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时预付费 \\ > Postpay，按小时后付费（支持关机不收费，目前仅部分可用区支持，请联系您的客户经理） \\ 默认为月付
+     *     "Password" => (string) Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 | base64
      *     "BootDiskType" => (string) 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
      *     "BootDiskSize" => (integer) 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
      *     "DataDiskType" => (string) 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
@@ -226,7 +234,7 @@ class UK8SClient extends Client
      *                 "Bandwidth" => (integer) 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
      *                 "PayMode" => (string) 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. "Free":免费带宽模式,默认为 "Bandwidth"
      *                 "ShareBandwidthId" => (string) 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效
-     *                 "OperatorName" => (string) 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2: Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk: International kr-seoul:International us-ws:International ge-fra:International sg:International tw-kh:International.其他海外线路均为 International
+     *                 "OperatorName" => (string) 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International，BGP: Bgp。各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2: Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk: International kr-seoul:International us-ws:International ge-fra:International sg:International tw-kh:International.其他海外线路均为 International
      *                 "CouponId" => (string) 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。
      *             ]
      *         ]
@@ -239,7 +247,16 @@ class UK8SClient extends Client
      *             "Name" => (string) 安全组名称。
      *         ]
      *     ]
-     *     "UserLabels" => (string) UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *     "UHostFamily" => (string) 主机规格族
+     *     "UserLabels" => (array<object>) [
+     *         [
+     *             "Key" => (string) UK8S用户资源标签的键值
+     *             "Value" => (string) UK8S用户资源标签的值
+     *         ]
+     *     ]
+     *     "KubeletConfiguration" => (object) [
+     *         "ContainerLogMaxFiles" => (string) 全量KubeletConfiguration.XXX定义参考AddUK8SNodeGroup接口: https://uxiao.ucloudadmin.com/#/api-manager/api/detail/UK8S/AddUK8SNodeGroup
+     *     ]
      * ]
      *
      * Outputs:
@@ -370,6 +387,90 @@ class UK8SClient extends Client
     }
 
     /**
+     * CreateUK8SULSConfig - 创建 LogConfig 自定义资源，用于声明式地定义日志采集规则
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/create_uk8s_uls_config
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "TopicID" => (string) 日志服务中用于接收日志的目标 Topic ID。
+     *     "ClusterId" => (string) UK8S 集群ID。
+     *     "Name" => (string) 要创建的日志的采集规则的名称，不能重复。总长度不能超过 253个字符。字符类型：只能包含小写字母（a-z）、数字（0-9）、破折号（-）和点（.）。开头和结尾字符：必须以小写字母或数字开头，并且也必须以小写字母或数字结尾。不允许以 - 或 . 开头或结尾。连续特殊字符：不能连续出现点（.）或破折号（-）。
+     *     "ExtractRule" => (object) [
+     *         "LogType" => (string) 日志解析类型，决定了如何结构化日志。可选值: multi_line_delimiter：多行分隔符，delimiter:分隔符，full_regex:完全正则，multi_line_full_regex:多行完全正则，minimal_list:单行全文日志,multi_line:多行全文日志
+     *         "CollectPolicy" => (string) 采集策略。可选值: full (全量采集存量日志), increment (从当前时间点增量采集)。默认为 full。
+     *         "Encode" => (string) 日志原文的编码格式。可选值: utf-8, gbk。默认为 utf-8。
+     *         "Keys" => (array<string>) 当LogType 为分隔符、正则、多行正则时可用
+     *         "Delimiter" => (string) 当 LogType 为delimiter 时可选，接收 "space"、"tab"、"|"、";"、","。
+     *         "BeginningRegex" => (string) 行首正则表达式。当 logType 为多行模式 (如 multi_line 或 multi_line_full_regex) 时，用于标识一条新日志的开始。
+     *         "LogRegex" => (string) 日志提取正则表达式。当 logType 为正则模式 (如 full_regex,multi_line_full_regex) 时，用于从日志中提取字段。
+     *         "ExtractRule" => (object) [
+     *             "LogRegexBase64" => (string) Base64 编码的日志提取正则表达式。
+     *         ]
+     *         "TimeKey" => (string) 当日志为 json 或正则提取时，指定包含日志时间的字段名 (Key)。
+     *         "TimeFormat" => (string) timeKey 对应的时间格式。
+     *         "UnMatchUpload" => (string) 是否上传解析失败的日志。true 表示上传，false 表示丢弃。默认为 false。
+     *         "UnMatchKey" => (string) 没有设置默认值；UnMatchUpload="true" 时强制要求填写
+     *         "DelimiterBase64" => (string) Base64 编码的分隔符，优先级高于 Delimiter
+     *         "BeginningRegexBase64" => (string) Base64 编码的行首正则，优先级高于 BeginningRegex
+     *     ]
+     *     "InputDetail" => (object) [
+     *         "Type" => (string) 日志输入类型。支持 container_file 和 container_stdout
+     *         "Metadata" => (object) [
+     *             "Container" => (string) 指定具体要采集元数据的容器名。如果留空，则不采集容器的元数据,可选字段：container_name,namespace,pod_name,pod_ip,pod_uid,container_id,image_name。Pod Label 元数据通过指定 InputDetail.Metadata.Labels字段。
+     *             "Labels" => (string) 定义要采集哪些 Pod 的标签 (Labels)。可选值: * (采集所有标签), "app,version" (仅采集 app 和 version), "" (不采集任何标签)。
+     *         ]
+     *         "FilePaths" => (array<object>) [
+     *             [
+     *                 "Path" => (string) 定义采集路径
+     *                 "File" => (string) 定义采集路径的文件名
+     *             ]
+     *         ]
+     *         "Stream" => (string) all、stdout、stderr，默认 all (用于 InputDetail.Type = container_stdout)
+     *     ]
+     *     "MatchRule" => (object) [
+     *         "ContainerOperator" => (string) 容器名称匹配操作符。支持：in(包含)，notin(不包含)
+     *         "Container" => (string) 要匹配的容器名称，*表示所有容器，用逗号分隔
+     *         "Workloads" => (array<object>) [
+     *             [
+     *                 "Namespace" => (string) 按工作负载匹配时，工作负载所在的命名空间。
+     *                 "Type" => (string) 按工作负载匹配时，工作负载的类型，例如 deployment, statefulset, daemonset,job, cronjob。
+     *                 "Name" => (string) 按工作负载匹配时，工作负载的名称。
+     *             ]
+     *         ]
+     *         "PodLabels" => (object) [
+     *             "NamespaceOperator" => (string) 指定/排除命名空间, 可选值: in/notin
+     *             "Namespace" => (string) 命名空间名称
+     *             "Labels" => (array<object>) [
+     *                 [
+     *                     "Key" => (string) 按 Pod 标签匹配时，要匹配的标签的 Key。
+     *                     "ValueOperator" => (string) 按 Pod 标签匹配时，标签值的匹配操作符。可选值: in, notin。
+     *                     "Value" => (string) 按 Pod 标签匹配时，要匹配的标签的值。
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return CreateUK8SULSConfigResponse
+     * @throws UCloudException
+     */
+    public function createUK8SULSConfig(CreateUK8SULSConfigRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new CreateUK8SULSConfigResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DelUK8SCluster - 删除UK8S集群
      *
      * See also: https://docs.ucloud.cn/api/uk8s-api/del_uk8s_cluster
@@ -427,6 +528,35 @@ class UK8SClient extends Client
     }
 
     /**
+     * DeleteUK8SULSConfig - 删除指定UK8S集群的日志采集规则。
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/delete_uk8s_uls_config
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。参见地域和可用区列表。
+     *     "Zone" => (string) 可用区。参见可用区列表。
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。请参考GetProjectList接口。
+     *     "ClusterId" => (string) 要操作的 UK8S 集群的 ID。
+     *     "Name" => (string) 要删除的日志的采集规则的名称。
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DeleteUK8SULSConfigResponse
+     * @throws UCloudException
+     */
+    public function deleteUK8SULSConfig(DeleteUK8SULSConfigRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DeleteUK8SULSConfigResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DescribeUK8SCluster - 获取集群信息
      *
      * See also: https://docs.ucloud.cn/api/uk8s-api/describe_uk8s_cluster
@@ -462,6 +592,11 @@ class UK8SClient extends Client
      *                     "IP" => (string) IP地址
      *                     "Bandwidth" => (integer) IP对应的带宽, 单位: Mb (内网IP不显示带宽信息)
      *                     "Default" => (string) 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。
+     *                     "IPMode" => (string) IP 地址分配模式
+     *                     "VPCId" => (string) IP 所属的 VPC Id
+     *                     "SubnetId" => (string) IP 所在的 子网 Id
+     *                     "Mac" => (string) 网卡的 MAC 地址
+     *                     "NetworkInterfaceId" => (string) 虚拟网卡 Id
      *                 ]
      *             ]
      *             "DiskSet" => (array<object>) 节点磁盘信息[
@@ -484,6 +619,19 @@ class UK8SClient extends Client
      *             "ExpireTime" => (integer) 到期时间
      *             "State" => (string) 主机状态
      *             "NodeType" => (string) 节点类型：uhost表示云主机;uphost表示物理云主机
+     *             "GPU" => (integer) GPU 数量
+     *             "GpuType" => (string) GPU 型号
+     *             "BasicImageName" => (string) 基础镜像名称
+     *             "OsType" => (string) 操作系统类型
+     *             "TotalDiskSpace" => (integer) 节点总磁盘空间
+     *             "MachineType" => (string) 主机机型类别
+     *             "SecGroupId" => (array<object>) 节点关联的安全组列表[
+     *                 [
+     *                     "Id" => (string) 安全组名称
+     *                     "Name" => (string) 安全组id
+     *                     "Priority" => (string) 安全组优先级
+     *                 ]
+     *             ]
      *         ]
      *     ]
      *     "NodeList" => (array<object>) Node节点配置信息,具体参考UhostInfo[
@@ -499,6 +647,11 @@ class UK8SClient extends Client
      *                     "IP" => (string) IP地址
      *                     "Bandwidth" => (integer) IP对应的带宽, 单位: Mb (内网IP不显示带宽信息)
      *                     "Default" => (string) 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。
+     *                     "IPMode" => (string) IP 地址分配模式
+     *                     "VPCId" => (string) IP 所属的 VPC Id
+     *                     "SubnetId" => (string) IP 所在的 子网 Id
+     *                     "Mac" => (string) 网卡的 MAC 地址
+     *                     "NetworkInterfaceId" => (string) 虚拟网卡 Id
      *                 ]
      *             ]
      *             "DiskSet" => (array<object>) 节点磁盘信息[
@@ -521,6 +674,19 @@ class UK8SClient extends Client
      *             "ExpireTime" => (integer) 到期时间
      *             "State" => (string) 主机状态
      *             "NodeType" => (string) 节点类型：uhost表示云主机;uphost表示物理云主机
+     *             "GPU" => (integer) GPU 数量
+     *             "GpuType" => (string) GPU 型号
+     *             "BasicImageName" => (string) 基础镜像名称
+     *             "OsType" => (string) 操作系统类型
+     *             "TotalDiskSpace" => (integer) 节点总磁盘空间
+     *             "MachineType" => (string) 主机机型类别
+     *             "SecGroupId" => (array<object>) 节点关联的安全组列表[
+     *                 [
+     *                     "Id" => (string) 安全组名称
+     *                     "Name" => (string) 安全组id
+     *                     "Priority" => (string) 安全组优先级
+     *                 ]
+     *             ]
      *         ]
      *     ]
      *     "CreateTime" => (integer) 创建时间
@@ -537,6 +703,34 @@ class UK8SClient extends Client
      *     "EtcdKey" => (string) 集群etcd服务密钥
      *     "CACert" => (string) 集群CA根证书
      *     "MasterResourceStatus" => (string) Master配置预警：Normal正常；Warning 需要升级；Error    需要紧急升级；
+     *     "CNIMode" => (string) CNI模式，可选值VPC/Calico
+     *     "MonitorType" => (string) 集群的监控类型：no无监控；cloudwatch统一监控平台；prometheus内置监控
+     *     "Autoscaler" => (object) 集群的节点伸缩(CA)配置[
+     *         "ScaleDownUnneededTime" => (string) 缩容触发延时
+     *         "ScaleDownUtilizationThreshold" => (string) CPU缩容阈值
+     *         "ScaleDownDelayAfterAdd" => (string) 静默时间
+     *         "Enabled" => (integer) 打开/关闭
+     *         "Version" => (string) 伸缩器版本
+     *         "UpdateTime" => (integer)
+     *         "ScaleDownGpuUtilizationThreshold" => (string) GPU缩容阈值
+     *     ]
+     *     "EnableUserAuth" => (boolean) 是否开启了授权管理功能
+     *     "DedicatedPodSubnet" => (boolean) Pod是否使用独立子网
+     *     "PodSubnetIds" => (array<string>) Pod使用的独立子网列表
+     *     "DeleteProtection" => (integer) 删除保护开关。0表示不开启，1表示开启。默认不开启
+     *     "PodSubnetSecGroups" => (array<string>) Pod独立子网内的ip使用的安全组
+     *     "NodeCIDR" => (string) 节点网段
+     *     "ExternalUlb" => (string) 外部 API Server 负载均衡实例 ID
+     *     "InternalUlb" => (string) 内部 API Server 负载均衡实例 ID
+     *     "UpdateTime" => (integer) 更新时间
+     *     "LbClass" => (string) 负载均衡类型
+     *     "RuntimeName" => (string) 容器运行时名称
+     *     "RuntimeVersion" => (string) 容器运行时版本
+     *     "ClusterType" => (string) 集群版本
+     *     "LoopbackClientCert" => (object) API Server 回环客户端证书[
+     *         "ExpireTime" => (integer) 证书到期时间
+     *         "Warn" => (boolean) 证书是否进入过期告警状态
+     *     ]
      * ]
      *
      * @return DescribeUK8SClusterResponse
@@ -556,9 +750,13 @@ class UK8SClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ProductType" => (string) 产品类型，可选值uhost、uphost，不填则返回所有
+     *     "MachineType" => (string) 适用机型，如O、G、OPRO等，默认为O
+     *     "GPUType" => (string) 适用GPU类型，如1080Ti、4090、V100、A800等，MachineType为G时必须提供
+     *     "K8sVersion" => (string) k8s集群版本，如1.28.15
      * ]
      *
      * Outputs:
@@ -570,14 +768,54 @@ class UK8SClient extends Client
      *             "ImageId" => (string) 镜像 Id
      *             "ImageName" => (string) 镜像名称
      *             "NotSupportGPU" => (boolean) 该镜像是否支持GPU机型，枚举值[true:不支持，false:支持]。
+     *             "OsType" => (string) OS 类型
+     *             "OsName" => (string) OS 名称
+     *             "Features" => (array<string>) 镜像支持的特性
+     *             "ImageSize" => (integer) 镜像大小
+     *             "IntegratedSoftware" => (string) 集成软件名称, 如NV驱动版本、cuda版本
+     *             "SupportedGPUTypes" => (array<string>) 支持的GPU机型
      *         ]
      *     ]
-     *     "PHostImageSet" => (array<object>) 物理机可用镜像集合, 详见ImageInfo 数组[
+     *     "PHostImageSet" => (array<object>) 裸金属可用镜像集合, 详见ImageInfo 数组[
      *         [
      *             "ZoneId" => (integer) 可用区 Id
      *             "ImageId" => (string) 镜像 Id
      *             "ImageName" => (string) 镜像名称
      *             "NotSupportGPU" => (boolean) 该镜像是否支持GPU机型，枚举值[true:不支持，false:支持]。
+     *             "OsType" => (string) OS 类型
+     *             "OsName" => (string) OS 名称
+     *             "Features" => (array<string>) 镜像支持的特性
+     *             "ImageSize" => (integer) 镜像大小
+     *             "IntegratedSoftware" => (string) 集成软件名称, 如NV驱动版本、cuda版本
+     *             "SupportedGPUTypes" => (array<string>) 支持的GPU机型
+     *         ]
+     *     ]
+     *     "CustomImageSet" => (array<object>) 虚拟机自制可用镜像集合, 详见ImageInfo 数组[
+     *         [
+     *             "ZoneId" => (integer) 可用区 Id
+     *             "ImageId" => (string) 镜像 Id
+     *             "ImageName" => (string) 镜像名称
+     *             "NotSupportGPU" => (boolean) 该镜像是否支持GPU机型，枚举值[true:不支持，false:支持]。
+     *             "OsType" => (string) OS 类型
+     *             "OsName" => (string) OS 名称
+     *             "Features" => (array<string>) 镜像支持的特性
+     *             "ImageSize" => (integer) 镜像大小
+     *             "IntegratedSoftware" => (string) 集成软件名称, 如NV驱动版本、cuda版本
+     *             "SupportedGPUTypes" => (array<string>) 支持的GPU机型
+     *         ]
+     *     ]
+     *     "CustomPHostImageSet" => (array<object>) 裸金属自制可用镜像集合, 详见ImageInfo 数组[
+     *         [
+     *             "ZoneId" => (integer) 可用区 Id
+     *             "ImageId" => (string) 镜像 Id
+     *             "ImageName" => (string) 镜像名称
+     *             "NotSupportGPU" => (boolean) 该镜像是否支持GPU机型，枚举值[true:不支持，false:支持]。
+     *             "OsType" => (string) OS 类型
+     *             "OsName" => (string) OS 名称
+     *             "Features" => (array<string>) 镜像支持的特性
+     *             "ImageSize" => (integer) 镜像大小
+     *             "IntegratedSoftware" => (string) 集成软件名称, 如NV驱动版本、cuda版本
+     *             "SupportedGPUTypes" => (array<string>) 支持的GPU机型
      *         ]
      *     ]
      * ]
@@ -730,6 +968,7 @@ class UK8SClient extends Client
      *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "ClusterId" => (string) UK8S集群ID
+     *     "NodeIds" => (string) 可传一个或多个节点id  不传或为空则返回所有节点
      * ]
      *
      * Outputs:
@@ -745,9 +984,11 @@ class UK8SClient extends Client
      *             "InstanceName" => (string) 资源名称，初始值等于NodeId，用户可在UHost或UPHost处修改。
      *             "InstanceId" => (string) 资源ID，如uhost-xxxx，或uphost-xxxxx。
      *             "MachineType" => (string) 机型类别，分别对应Uhost的MachineType或PHost的PHostType。
+     *             "CPUPlatform" => (string) CPU平台
+     *             "UHostFamily" => (string) 主机规格族
      *             "OsType" => (string) Node节点的操作系统类别，如Linux或Windows。
      *             "OsName" => (string) Node节点的镜像名称。
-     *             "CPU" => (integer) Node节点CPU核数，单位: 个。
+     *             "CPU" => (integer) Node节点CPU核数，单位: 核。
      *             "Memory" => (integer) 内存大小，单位: MB。
      *             "IPSet" => (array<object>) 节点IP信息，详细信息见 UHostIPSet。[
      *                 [
@@ -758,6 +999,8 @@ class UK8SClient extends Client
      *                     "VPCId" => (string) IP地址对应的VPC ID
      *                     "SubnetId" => (string) IP地址对应的子网 ID
      *                     "Mac" => (string) Mac地址
+     *                     "IPMode" => (string) IP 协议类型
+     *                     "NetworkInterfaceId" => (string) 网络接口资源 ID
      *                 ]
      *             ]
      *             "CreateTime" => (integer) 节点创建时间
@@ -768,7 +1011,30 @@ class UK8SClient extends Client
      *                 "Mode" => (string) KubeProxy模式，枚举值为[ipvs,iptables]
      *             ]
      *             "NodeLogInfo" => (string) 加节点时判断是否没有资源，如果返回NORESOURCE则代表没有资源了
+     *             "Labels" => (array<string>) 节点标签
+     *             "KubeletVersion" => (string) Kubelet版本
+     *             "MaxPod" => (integer) pod最大可用
+     *             "MaxMemory" => (integer) 内存最大可用
+     *             "MaxCPU" => (integer) CPU最大可用
+     *             "RequestPod" => (integer) 已申请的pod
+     *             "RequestMemory" => (integer) 已申请的Memory
+     *             "RequestCPU" => (integer) 已申请的CPU
+     *             "RuntimeVersion" => (string) Runtime 版本
+     *             "RuntimeName" => (string) Runtime 名字
+     *             "UsedCPU" => (integer) 已使用的CPU
+     *             "UsedMemory" => (integer) 已使用的Memory
+     *             "BootDiskSize" => (integer) 系统盘大小
+     *             "DataDiskSize" => (integer) 数据盘大小，如果有多块数据盘会汇总展示，不包括PVC
      *             "GPU" => (integer) 节点的GPU颗数。
+     *             "NodeGroupId" => (string) 节点池id
+     *             "IDCId" => (string) 边缘机房id
+     *             "IDCName" => (string) 边缘机房
+     *             "Remark" => (string) 节点主机备注信息
+     *             "GPUType" => (string) 节点GPU型号(如果为GPU机型)
+     *             "ImageAccelable" => (boolean) 是否启用了容器镜像加速
+     *             "Tag" => (string) 节点所属业务组
+     *             "PodCIDR" => (string) Pod CIDR
+     *             "NodeGroupName" => (string) 节点所属节点池名称
      *         ]
      *     ]
      *     "TotalCount" => (integer) 满足条件的节点数量，包括Master。
@@ -810,9 +1076,18 @@ class UK8SClient extends Client
      *             "SubnetId" => (string) 所属子网
      *             "PodCIDR" => (string) Pod网段
      *             "ServiceCIDR" => (string) 服务网段
+     *             "CNIMode" => (string) CNI网络模式
      *             "MasterCount" => (integer) Master 节点数量
      *             "ApiServer" => (string) 集群apiserver地址
      *             "K8sVersion" => (string) 集群版本
+     *             "DeleteProtection" => (integer) 删除保护开关。0表示不开启，1表示开启。默认不开启
+     *             "RuntimeName" => (string) 容器运行时名称
+     *             "RuntimeVersion" => (string) 容器运行时版本号，docker 或 containerd 版本
+     *             "ClusterType" => (string) 计费/管理形态，区分"专有版"和"托管版"两种售卖形态
+     *             "LoopbackClientCert" => (object) API Server 内部回环客户端证书[
+     *                 "ExpireTime" => (integer) 证书到期时间
+     *                 "Warn" => (boolean) 证书是否进入过期告警状态
+     *             ]
      *             "ClusterLogInfo" => (string) 创建集群时判断如果为NORESOURCE则为没资源，否则为空
      *             "CreateTime" => (integer) 创建时间
      *             "NodeCount" => (integer) Node节点数量
@@ -820,6 +1095,7 @@ class UK8SClient extends Client
      *             "Status" => (string) 集群状态，枚举值：初始化："INITIALIZING"；启动中："STARTING"；创建失败："CREATEFAILED"；正常运行："RUNNING"；添加节点："ADDNODE"；删除节点："DELNODE"；删除中："DELETING"；删除失败："DELETEFAILED"；错误："ERROR"；升级插件："UPDATE_PLUGIN"；更新插件信息："UPDATE_PLUGIN_INFO"；异常："ABNORMAL"；升级集群中："UPGRADING"；容器运行时切换："CONVERTING"
      *         ]
      *     ]
+     *     "TotalCount" => (integer) 总数
      * ]
      *
      * @return ListUK8SClusterV2Response
@@ -852,9 +1128,11 @@ class UK8SClient extends Client
      *             "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *             "NodeGroupId" => (string) 节点池ID
      *             "NodeGroupName" => (string) 节点池名字
+     *             "NodeNamePrefix" => (string) 自定义Uhost主机名前缀。完整的自定义Uhost主机名为{NodeNamePrefix}-{NodeIP}。
      *             "ImageId" => (string) 镜像ID
      *             "MachineType" => (string) 机型
      *             "MinimalCpuPlatform" => (string) cpu平台
+     *             "UHostFamily" => (string) 主机规格族
      *             "CPU" => (integer) 虚拟CPU核数
      *             "Mem" => (integer) 内存大小
      *             "GpuType" => (string) GPU类型
@@ -868,11 +1146,91 @@ class UK8SClient extends Client
      *             "NodeList" => (array<string>) 节点id列表
      *             "SubnetId" => (string) 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
      *             "IsolationGroupId" => (string) 硬件隔离组id。可通过DescribeIsolationGroup获取。
-     *             "MaxPods" => (string) int默认110，生产环境建议小于等于110。
+     *             "MaxPods" => (integer) int默认110，生产环境建议小于等于110。
      *             "UserData" => (string) 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。
      *             "InitScript" => (string) 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。
      *             "Taints" => (string) Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
      *             "Labels" => (string) Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *             "SecGroupId" => (array<object>) Node所属的安全组id（最多5个）[
+     *                 [
+     *                     "Id" => (string) 安全组名称
+     *                     "Name" => (string) 安全组id
+     *                     "Priority" => (string) 安全组优先级
+     *                 ]
+     *             ]
+     *             "SecurityMode" => (string) 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *             "SecurityGroupId" => (string) 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *             "NetworkInterface" => (array<object>) Node节点网卡配置[
+     *                 [
+     *                     "EIP" => (object) EIP[
+     *                         "Bandwidth" => (integer) 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
+     *                         "PayMode" => (string) 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. "Free":免费带宽模式,默认为 "Bandwidth"
+     *                         "ShareBandwidthId" => (string) 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效
+     *                         "OperatorName" => (string) 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International，BGP: Bgp。 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2: Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk: International kr-seoul:International us-ws:International ge-fra:International sg:International tw-kh:International.其他海外线路均为 International
+     *                         "CouponId" => (string) 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。
+     *                     ]
+     *                 ]
+     *             ]
+     *             "KubeletConfiguration" => (object) KubeletConfiguration[
+     *                 "ContainerLogMaxFiles" => (integer) 最大日志文件数量
+     *                 "ContainerLogMaxSize" => (string) 最大日志文件大小
+     *                 "EvictionHard" => (object) 硬性驱逐条件，EvictionCondition类型[
+     *                     "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                     "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                     "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                     "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *                 ]
+     *                 "EvictionSoft" => (object) 软性驱逐条件，EvictionCondition类型[
+     *                     "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                     "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                     "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                     "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *                 ]
+     *                 "EvictionSoftGracePeriod" => (object) 软性驱逐宽限时间，EvictionCondition类型[
+     *                     "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                     "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                     "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                     "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *                 ]
+     *                 "ImageGCHighThresholdPercent" => (integer) 镜像垃圾收集阈值
+     *                 "ImageGCLowThresholdPercent" => (integer) 停止镜像垃圾收集阈值
+     *                 "KubeReserved" => (object) kubelet预留资源，ReservedResource类型[
+     *                     "CPU" => (string) CPU
+     *                     "Memory" => (string) 内存
+     *                     "EphemeralStorage" => (string) 存储
+     *                     "Pid" => (string) Pid
+     *                 ]
+     *                 "SystemReserved" => (object) 系统预留资源，ReservedResource类型[
+     *                     "CPU" => (string) CPU
+     *                     "Memory" => (string) 内存
+     *                     "EphemeralStorage" => (string) 存储
+     *                     "Pid" => (string) Pid
+     *                 ]
+     *                 "MaxPods" => (integer) 最大Pod数量
+     *             ]
+     *             "ImageName" => (string) 镜像名称
+     *             "ImageType" => (string) 镜像类型
+     *             "OsType" => (string) 操作系统类型
+     *             "OsName" => (string) 操作系统名称
+     *             "NetCapability" => (string) 网络配置
+     *             "UNIFeature" => (boolean) 是否启用 UNI 网络特性
+     *             "Disks" => (array<object>) 磁盘列表[
+     *                 [
+     *                     "Type" => (string) 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk
+     *                     "DiskId" => (string) 磁盘长ID
+     *                     "Name" => (string) UDisk名字（仅当磁盘是UDisk时返回）
+     *                     "Drive" => (string) 磁盘盘符
+     *                     "Size" => (integer) 磁盘大小，单位: GB
+     *                     "BackupType" => (string) 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。
+     *                     "IOPS" => (integer) 当前主机的IOPS值
+     *                     "Encrypted" => (string) Yes: 加密 No: 非加密
+     *                     "DiskType" => (string) LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK
+     *                     "IsBoot" => (string) True| False
+     *                 ]
+     *             ]
+     *             "RelatedAsg" => (array<string>) 节点池关联的弹性伸缩组ID
+     *             "CreateTime" => (integer) 节点池创建时间
+     *             "UpdateTime" => (integer) 节点池更新时间
      *         ]
      *     ]
      * ]
@@ -884,6 +1242,90 @@ class UK8SClient extends Client
     {
         $resp = $this->invoke($request);
         return new ListUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ListUK8SULSConfig - 查询 UK8S 的 ULSConfig
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/list_uk8s_uls_config
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "TopicID" => (string) 日志服务中用于接收日志的目标 TopicId。
+     *     "ClusterId" => (string) 集群 Id，如果不填，返回该账号该地域所有集群的 ULSConfig
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "LogConfig" => (array<object>) 日志服务配置,见 ClusterLogConfig[
+     *         [
+     *             "ClusterId" => (string) uk8s集群id
+     *             "MachineGroup" => (string) 机器组
+     *             "ExtractRule" => (object) 定义日志的提取、解析和格式化规则。见 ULSExtractRule[
+     *                 "CollectPolicy" => (string) 采集策略。可选值: full (全量采集存量日志), increment (从当前时间点增量采集)。默认为 full。
+     *                 "Encode" => (string) 日志原文的编码格式。可选值: utf-8, gbk。默认为 utf-8。
+     *                 "LogType" => (string) 日志解析类型，决定了如何结构化日志。
+     *                 "Delimiter" => (string) 当 LogType 为delimiter_log 时可选，可选字段 ' ',' ','|',';',','
+     *                 "BeginningRegex" => (string) 行首正则表达式。当 logType 为多行模式 (如 multiline_log 或 multiline_fullregex_log) 时，用于标识一条新日志的开始。
+     *                 "LogRegex" => (string) 日志提取正则表达式。当 logType 为正则模式 (如 fullregex_log 或 multiline_fullregex_log) 时，用于从日志中提取字段。
+     *                 "TimeKey" => (string) 指定时间字段。
+     *                 "TimeFormat" => (string) timeKey 对应的时间格式。如： %Y-%m-%d %H:%M:%S
+     *                 "UnMatchUpload" => (string) 是否上传解析失败的日志。true 表示上传，false 表示丢弃。默认为 false。
+     *                 "UnMatchKey" => (string) 如果 unMatchUpload 为 true，无法解析的日志原文将被存放在此字段指定的 Key 下。默认为 LogParseFailure。
+     *             ]
+     *             "InputDetail" => (object) 定义日志的输入来源（例如容器文件）。见 ULSInputDetail[
+     *                 "FilePaths" => (array<object>) 采集路径，数组。[
+     *                     [
+     *                         "Path" => (string) 定义采集路径
+     *                         "File" => (string) 采集文件
+     *                     ]
+     *                 ]
+     *                 "Type" => (string) 日志输入类型。当前主要支持 container_file，表示采集容器标准输出或文件。
+     *                 "InputMetadata" => (object) 定义哪些容器相关的元数据需要附加到日志中。[
+     *                     "Container" => (string) 指定具体要采集元数据的容器名。如果留空，则不采集容器的元数据，可选字段：container_name,namespace,pod_name,pod_ip,pod_uid,container_id,image_name。Pod Label 元数据通过指定 InputDetail.Metadata.Labels 字段。
+     *                     "Labels" => (string) 定义要采集哪些 Pod 的标签 (Labels)。可选值：*：采集所有标签。app,version：仅采集 app 和 version 这两个标签。""（空字符串）：不采集任何标签。
+     *                 ]
+     *             ]
+     *             "MatchRule" => (object) 定义此采集规则要匹配的目标 Pod 或工作负载。见 ULSMatchRule[
+     *                 "ContainerOperator" => (string) 容器名称匹配操作符。支持：in(包含)，notin(不包含)
+     *                 "Container" => (string) 要匹配的容器名称，*表示所有容器，用逗号分隔
+     *                 "Workloads" => (array<object>) 按工作负载进行匹配。[
+     *                     [
+     *                         "Namespace" => (string) 工作负载所在的命名空间。
+     *                         "Type" => (string) 工作负载的类型，例如 deployment, statefulset, daemonset,cronjob,job。
+     *                         "Name" => (string) 工作负载的名称。
+     *                     ]
+     *                 ]
+     *                 "PodLabels" => (object) 按 Pod 的标签进行匹配，提供更灵活的选择。[
+     *                     "NamespaceOperator" => (string) 命名空间名称的匹配操作符。可选值: in, notin。
+     *                     "Namespace" => (string) 要匹配的命名空间。namespaceOperator 存在时必需。
+     *                     "Labels" => (array<object>) 一个标签选择器数组，用于定义匹配的标签条件。[
+     *                         [
+     *                             "Key" => (string) 要匹配的标签的 Key。
+     *                             "ValueOperator" => (string) 标签值的匹配操作符。可选值: in, notin。
+     *                             "Value" => (string) 要匹配的标签的值。
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "TopicID" => (string) 日志服务中用于接收日志的目标 Topic ID。
+     *             "Name" => (string) 采集配置规则名称
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return ListUK8SULSConfigResponse
+     * @throws UCloudException
+     */
+    public function listUK8SULSConfig(ListUK8SULSConfigRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new ListUK8SULSConfigResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -912,5 +1354,87 @@ class UK8SClient extends Client
     {
         $resp = $this->invoke($request);
         return new RemoveUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateUK8SULSConfig - 更新指定UK8S集群的日志采集规则。
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/update_uk8s_uls_config
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。参见地域和可用区列表：https://docs.ucloud.cn/api/summary/regionlist
+     *     "Zone" => (string) 可用区。参见地域和可用区列表：https://docs.ucloud.cn/api/summary/regionlist
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。请参考GetProjectList接口：https://docs.ucloud.cn/api/summary/get_project_list
+     *     "Name" => (string) 要修改的日志采集规则名称。名称长度不能超过253个字符，只能包含小写字母、数字、破折号和点，并且必须以字母或数字开头和结尾。
+     *     "ClusterId" => (string) UK8S集群ID。
+     *     "TopicID" => (string) 日志服务中用于接收日志的目标Topic ID。不填写时保持原Topic ID不变。
+     *     "ExtractRule" => (object) [
+     *         "CollectPolicy" => (string) 采集策略。可选值：full（全量采集存量日志）、increment（从当前时间点增量采集）。默认为full。
+     *         "Encode" => (string) 日志原文的编码格式。可选值：utf-8、gbk。默认为utf-8。
+     *         "LogType" => (string) 日志解析类型。可选值：json、delimiter、full_regex、multi_line_full_regex、multi_line_delimiter、minimal_list、multi_line。
+     *         "BeginningRegex" => (string) 行首正则表达式。multi_line、multi_line_full_regex或multi_line_delimiter模式下，BeginningRegex和BeginningRegexBase64必须至少填写一个。
+     *         "BeginningRegexBase64" => (string) Base64编码的行首正则表达式。填写时优先于BeginningRegex。
+     *         "LogRegex" => (string) 日志提取正则表达式。full_regex或multi_line_full_regex模式下，LogRegex和LogRegexBase64必须至少填写一个。
+     *         "LogRegexBase64" => (string) Base64编码的日志提取正则表达式。填写时优先于LogRegex。
+     *         "Delimiter" => (string) 分隔符。delimiter或multi_line_delimiter模式下可用。可选值：space、tab、|、;、,。
+     *         "DelimiterBase64" => (string) Base64编码的分隔符。填写时优先于Delimiter。
+     *         "TimeKey" => (string) 包含日志时间的字段名。
+     *         "TimeFormat" => (string) TimeKey对应的时间格式。json、full_regex或multi_line_full_regex模式下，填写TimeKey时必须同时填写TimeFormat。
+     *         "UnMatchUpload" => (string) 是否上传解析失败的日志。字符串true表示上传，false表示丢弃。默认为false。
+     *         "UnMatchKey" => (string) 存放无法解析的日志原文的Key。UnMatchUpload为true时必须填写。
+     *         "Keys" => (array<string>) 提取后的字段名。仅适用于delimiter、full_regex、multi_line_full_regex和multi_line_delimiter。
+     *     ]
+     *     "InputDetail" => (object) [
+     *         "Type" => (string) 日志输入类型。可选值：container_file、container_stdout。
+     *         "Stream" => (string) 容器标准输出流类型。仅适用于container_stdout，可选值：all、stdout、stderr，默认为all。
+     *         "Metadata" => (object) [
+     *             "Container" => (string) 要附加到日志中的容器元数据字段，多个字段使用逗号分隔。可选字段：container_name、namespace、pod_name、pod_ip、pod_uid、container_id、image_name。留空表示不采集容器元数据。
+     *             "Labels" => (string) 要采集的Pod标签。*表示采集所有标签，app,version表示仅采集指定标签，空字符串表示不采集标签。
+     *         ]
+     *         "FilePaths" => (array<object>) [
+     *             [
+     *                 "Path" => (string) 日志采集路径。仅适用于container_file。
+     *                 "File" => (string) 要采集的文件名。仅适用于container_file。
+     *             ]
+     *         ]
+     *     ]
+     *     "MatchRule" => (object) [
+     *         "Container" => (string) 要匹配的容器名称，*表示所有容器，多个名称使用逗号分隔。
+     *         "ContainerOperator" => (string) 容器名称匹配操作符。可选值：in、notin。填写该参数时必须同时填写MatchRule.Container。
+     *         "Workloads" => (array<object>) [
+     *             [
+     *                 "Namespace" => (string) 按工作负载匹配时，工作负载所在的命名空间。Workloads和PodLabels不能同时设置。
+     *                 "Type" => (string) 工作负载类型。可选值：deployment、statefulset、daemonset、job、cronjob。
+     *                 "Name" => (string) 工作负载名称。
+     *             ]
+     *         ]
+     *         "PodLabels" => (object) [
+     *             "NamespaceOperator" => (string) 按Pod标签匹配时，命名空间名称的匹配操作符。可选值：in、notin。填写该参数时必须同时填写MatchRule.PodLabels.Namespace。PodLabels和Workloads不能同时设置。
+     *             "Namespace" => (string) 按Pod标签匹配时要匹配的命名空间。
+     *             "Labels" => (array<object>) [
+     *                 [
+     *                     "Key" => (string) 按Pod标签匹配时，要匹配的标签Key。
+     *                     "ValueOperator" => (string) 标签值匹配操作符。可选值：in、notin。
+     *                     "Value" => (string) 要匹配的标签值。
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return UpdateUK8SULSConfigResponse
+     * @throws UCloudException
+     */
+    public function updateUK8SULSConfig(UpdateUK8SULSConfigRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdateUK8SULSConfigResponse($resp->toArray(), $resp->getRequestId());
     }
 }

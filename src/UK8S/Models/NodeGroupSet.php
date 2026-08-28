@@ -83,6 +83,26 @@ class NodeGroupSet extends Response
     }
 
     /**
+     * NodeNamePrefix: 自定义Uhost主机名前缀。完整的自定义Uhost主机名为{NodeNamePrefix}-{NodeIP}。
+     *
+     * @return string|null
+     */
+    public function getNodeNamePrefix()
+    {
+        return $this->get("NodeNamePrefix");
+    }
+
+    /**
+     * NodeNamePrefix: 自定义Uhost主机名前缀。完整的自定义Uhost主机名为{NodeNamePrefix}-{NodeIP}。
+     *
+     * @param string $nodeNamePrefix
+     */
+    public function setNodeNamePrefix($nodeNamePrefix)
+    {
+        $this->set("NodeNamePrefix", $nodeNamePrefix);
+    }
+
+    /**
      * ImageId: 镜像ID
      *
      * @return string|null
@@ -140,6 +160,26 @@ class NodeGroupSet extends Response
     public function setMinimalCpuPlatform($minimalCpuPlatform)
     {
         $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
+    }
+
+    /**
+     * UHostFamily: 主机规格族
+     *
+     * @return string|null
+     */
+    public function getUHostFamily()
+    {
+        return $this->get("UHostFamily");
+    }
+
+    /**
+     * UHostFamily: 主机规格族
+     *
+     * @param string $uHostFamily
+     */
+    public function setUHostFamily($uHostFamily)
+    {
+        $this->set("UHostFamily", $uHostFamily);
     }
 
     /**
@@ -405,7 +445,7 @@ class NodeGroupSet extends Response
     /**
      * MaxPods: int默认110，生产环境建议小于等于110。
      *
-     * @return string|null
+     * @return integer|null
      */
     public function getMaxPods()
     {
@@ -415,7 +455,7 @@ class NodeGroupSet extends Response
     /**
      * MaxPods: int默认110，生产环境建议小于等于110。
      *
-     * @param string $maxPods
+     * @param int $maxPods
      */
     public function setMaxPods($maxPods)
     {
@@ -500,5 +540,341 @@ class NodeGroupSet extends Response
     public function setLabels($labels)
     {
         $this->set("Labels", $labels);
+    }
+
+    /**
+     * SecGroupId: Node所属的安全组id（最多5个）
+     *
+     * @return SecGroupId[]|null
+     */
+    public function getSecGroupId()
+    {
+        $items = $this->get("SecGroupId");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new SecGroupId($item));
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroupId: Node所属的安全组id（最多5个）
+     *
+     * @param SecGroupId[] $secGroupId
+     */
+    public function setSecGroupId(array $secGroupId)
+    {
+        $result = [];
+        foreach ($secGroupId as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @return string|null
+     */
+    public function getSecurityMode()
+    {
+        return $this->get("SecurityMode");
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @param string $securityMode
+     */
+    public function setSecurityMode($securityMode)
+    {
+        $this->set("SecurityMode", $securityMode);
+    }
+
+    /**
+     * SecurityGroupId: 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *
+     * @return string|null
+     */
+    public function getSecurityGroupId()
+    {
+        return $this->get("SecurityGroupId");
+    }
+
+    /**
+     * SecurityGroupId: 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *
+     * @param string $securityGroupId
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->set("SecurityGroupId", $securityGroupId);
+    }
+
+    /**
+     * NetworkInterface: Node节点网卡配置
+     *
+     * @return NetworkInterface[]|null
+     */
+    public function getNetworkInterface()
+    {
+        $items = $this->get("NetworkInterface");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new NetworkInterface($item));
+        }
+        return $result;
+    }
+
+    /**
+     * NetworkInterface: Node节点网卡配置
+     *
+     * @param NetworkInterface[] $networkInterface
+     */
+    public function setNetworkInterface(array $networkInterface)
+    {
+        $result = [];
+        foreach ($networkInterface as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * KubeletConfiguration: KubeletConfiguration
+     *
+     * @return KubeletConfiguration|null
+     */
+    public function getKubeletConfiguration()
+    {
+        return new KubeletConfiguration($this->get("KubeletConfiguration"));
+    }
+
+    /**
+     * KubeletConfiguration: KubeletConfiguration
+     *
+     * @param KubeletConfiguration $kubeletConfiguration
+     */
+    public function setKubeletConfiguration(array $kubeletConfiguration)
+    {
+        $this->set("KubeletConfiguration", $kubeletConfiguration->getAll());
+    }
+
+    /**
+     * ImageName: 镜像名称
+     *
+     * @return string|null
+     */
+    public function getImageName()
+    {
+        return $this->get("ImageName");
+    }
+
+    /**
+     * ImageName: 镜像名称
+     *
+     * @param string $imageName
+     */
+    public function setImageName($imageName)
+    {
+        $this->set("ImageName", $imageName);
+    }
+
+    /**
+     * ImageType: 镜像类型
+     *
+     * @return string|null
+     */
+    public function getImageType()
+    {
+        return $this->get("ImageType");
+    }
+
+    /**
+     * ImageType: 镜像类型
+     *
+     * @param string $imageType
+     */
+    public function setImageType($imageType)
+    {
+        $this->set("ImageType", $imageType);
+    }
+
+    /**
+     * OsType: 操作系统类型
+     *
+     * @return string|null
+     */
+    public function getOsType()
+    {
+        return $this->get("OsType");
+    }
+
+    /**
+     * OsType: 操作系统类型
+     *
+     * @param string $osType
+     */
+    public function setOsType($osType)
+    {
+        $this->set("OsType", $osType);
+    }
+
+    /**
+     * OsName: 操作系统名称
+     *
+     * @return string|null
+     */
+    public function getOsName()
+    {
+        return $this->get("OsName");
+    }
+
+    /**
+     * OsName: 操作系统名称
+     *
+     * @param string $osName
+     */
+    public function setOsName($osName)
+    {
+        $this->set("OsName", $osName);
+    }
+
+    /**
+     * NetCapability: 网络配置
+     *
+     * @return string|null
+     */
+    public function getNetCapability()
+    {
+        return $this->get("NetCapability");
+    }
+
+    /**
+     * NetCapability: 网络配置
+     *
+     * @param string $netCapability
+     */
+    public function setNetCapability($netCapability)
+    {
+        $this->set("NetCapability", $netCapability);
+    }
+
+    /**
+     * UNIFeature: 是否启用 UNI 网络特性
+     *
+     * @return boolean|null
+     */
+    public function getUNIFeature()
+    {
+        return $this->get("UNIFeature");
+    }
+
+    /**
+     * UNIFeature: 是否启用 UNI 网络特性
+     *
+     * @param boolean $uniFeature
+     */
+    public function setUNIFeature($uniFeature)
+    {
+        $this->set("UNIFeature", $uniFeature);
+    }
+
+    /**
+     * Disks: 磁盘列表
+     *
+     * @return DiskSet[]|null
+     */
+    public function getDisks()
+    {
+        $items = $this->get("Disks");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new DiskSet($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Disks: 磁盘列表
+     *
+     * @param DiskSet[] $disks
+     */
+    public function setDisks(array $disks)
+    {
+        $result = [];
+        foreach ($disks as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * RelatedAsg: 节点池关联的弹性伸缩组ID
+     *
+     * @return string[]|null
+     */
+    public function getRelatedAsg()
+    {
+        return $this->get("RelatedAsg");
+    }
+
+    /**
+     * RelatedAsg: 节点池关联的弹性伸缩组ID
+     *
+     * @param string[] $relatedAsg
+     */
+    public function setRelatedAsg(array $relatedAsg)
+    {
+        $this->set("RelatedAsg", $relatedAsg);
+    }
+
+    /**
+     * CreateTime: 节点池创建时间
+     *
+     * @return integer|null
+     */
+    public function getCreateTime()
+    {
+        return $this->get("CreateTime");
+    }
+
+    /**
+     * CreateTime: 节点池创建时间
+     *
+     * @param int $createTime
+     */
+    public function setCreateTime($createTime)
+    {
+        $this->set("CreateTime", $createTime);
+    }
+
+    /**
+     * UpdateTime: 节点池更新时间
+     *
+     * @return integer|null
+     */
+    public function getUpdateTime()
+    {
+        return $this->get("UpdateTime");
+    }
+
+    /**
+     * UpdateTime: 节点池更新时间
+     *
+     * @param int $updateTime
+     */
+    public function setUpdateTime($updateTime)
+    {
+        $this->set("UpdateTime", $updateTime);
     }
 }

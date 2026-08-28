@@ -18,6 +18,7 @@ namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UK8S\Models\ClusterSet;
+use UCloud\UK8S\Models\LoopbackClientCert;
 
 class ListUK8SClusterV2Response extends Response
 {
@@ -73,5 +74,25 @@ class ListUK8SClusterV2Response extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * TotalCount: 总数
+     *
+     * @return integer|null
+     */
+    public function getTotalCount()
+    {
+        return $this->get("TotalCount");
+    }
+
+    /**
+     * TotalCount: 总数
+     *
+     * @param int $totalCount
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->set("TotalCount", $totalCount);
     }
 }
