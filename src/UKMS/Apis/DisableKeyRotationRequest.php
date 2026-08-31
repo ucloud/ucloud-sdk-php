@@ -25,6 +25,7 @@ class DisableKeyRotationRequest extends Request
         parent::__construct(["Action" => "DisableKeyRotation"]);
         $this->markRequired("Region");
         $this->markRequired("KeyId");
+        $this->markRequired("ResourceId");
     }
 
     

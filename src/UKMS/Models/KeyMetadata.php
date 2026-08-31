@@ -23,7 +23,7 @@ class KeyMetadata extends Response
     
 
     /**
-     * ProjectId: 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。
+     * ProjectId: 密钥所属项目ID。
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class KeyMetadata extends Response
     }
 
     /**
-     * ProjectId: 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。
+     * ProjectId: 密钥所属项目ID。
      *
      * @param string $projectId
      */
@@ -280,5 +280,45 @@ class KeyMetadata extends Response
     public function setDeletionDate($deletionDate)
     {
         $this->set("DeletionDate", $deletionDate);
+    }
+
+    /**
+     * Arn: ucs:ukms:{Region}:{CompanyId}:key/{KeyId}
+     *
+     * @return string|null
+     */
+    public function getArn()
+    {
+        return $this->get("Arn");
+    }
+
+    /**
+     * Arn: ucs:ukms:{Region}:{CompanyId}:key/{KeyId}
+     *
+     * @param string $arn
+     */
+    public function setArn($arn)
+    {
+        $this->set("Arn", $arn);
+    }
+
+    /**
+     * OrganizationId: 所属组织数字 ID
+     *
+     * @return integer|null
+     */
+    public function getOrganizationId()
+    {
+        return $this->get("OrganizationId");
+    }
+
+    /**
+     * OrganizationId: 所属组织数字 ID
+     *
+     * @param int $organizationId
+     */
+    public function setOrganizationId($organizationId)
+    {
+        $this->set("OrganizationId", $organizationId);
     }
 }

@@ -153,8 +153,8 @@ class UKMSClient extends Client
      *     "Alias" => (string) 可选密钥别名，格式为 alias/name。
      *     "KeySpec" => (string) 密钥规格，默认 SYMMETRIC_DEFAULT（AES_256）。可选值：SYMMETRIC_DEFAULT(AES_256)、RSA_2048、RSA_3072、RSA_4096、ECC_NIST_P256、ECC_NIST_P384、ECC_NIST_P521、HMAC_256、HMAC_384、HMAC_512。
      *     "KeyUsage" => (string) 密钥用途
-     *     "Origin" => (string) 密钥材料来源，默认 UCLOUD_KMS。当前仅支持 UCLOUD_KMS；EXTERNAL 为 BYOK 规划值，当前传入会返回 100660。
-     *     "DeletionProtection" => (string) 是否开启删除保护。可选值：true、false；默认 false。
+     *     "Origin" => (string) 密钥材料来源，默认 UCLOUD_KMS。当前仅支持 UCLOUD_KMS；EXTERNAL 为 BYOK 规划值，当前传入会返回 1230。
+     *     "DeletionProtection" => (boolean) 是否开启删除保护。可选值：true、false；默认 false。
      * ]
      *
      * Outputs:
@@ -186,7 +186,7 @@ class UKMSClient extends Client
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      *     "KeyId" => (string) 主密钥 KeyId；对称密钥可空，从 CiphertextBlob 自动识别；非对称必填。
      *     "EncryptionContext" => (string) 加密上下文，JSON Object。该参数内容会记录在日志中，请勿传入密码、密钥、令牌等敏感信息。
-     *     "EncryptionAlgorithm" => (string) 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填或使用默认 RSAES_OAEP_SHA_256。
+     *     "EncryptionAlgorithm" => (string) 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填。
      * ]
      *
      * Outputs:
@@ -252,7 +252,7 @@ class UKMSClient extends Client
      *
      * $outputs = [
      *     "KeyMetadata" => (object) 密钥元数据。[
-     *         "ProjectId" => (string) 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。
+     *         "ProjectId" => (string) 密钥所属项目ID。
      *         "KeyId" => (string) 密钥资源长 ID。
      *         "CreationDate" => (integer) 创建时间，Unix 时间戳。
      *         "Enabled" => (string) 是否启用。取值：true、false。
@@ -265,6 +265,8 @@ class UKMSClient extends Client
      *         "ResourceId" => (string) 密钥所属的 UKMS 实例资源 ID。
      *         "Description" => (string) 密钥描述。
      *         "DeletionDate" => (integer) 计划删除时间，Unix 时间戳。
+     *         "Arn" => (string) ucs:ukms:{Region}:{CompanyId}:key/{KeyId}
+     *         "OrganizationId" => (integer) 所属组织数字 ID
      *     ]
      * ]
      *
@@ -287,7 +289,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥 DB 数字 ID。
+     *     "KeyId" => (string) 密钥资源长 ID
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
      *
@@ -343,7 +345,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥 DB 数字 ID。
+     *     "KeyId" => (string) 密钥资源长 ID
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
      *
@@ -751,7 +753,7 @@ class UKMSClient extends Client
      *             "KeyId" => (string) 对外主密钥 ID（ukms_key_info.key_id）。
      *             "KeySpec" => (string) 密钥规格。取值：SYMMETRIC_DEFAULT、RSA_2048、RSA_3072、RSA_4096、ECC_NIST_P256、ECC_NIST_P384、ECC_NIST_P521、HMAC_256、HMAC_384、HMAC_512。
      *             "KeyUsage" => (array<string>) 按 KeySpec 派生的密钥用途。取值：ENCRYPT_DECRYPT、SIGN_VERIFY、GENERATE_VERIFY_MAC、KEY_AGREEMENT。
-     *             "Origin" => (string) 密钥来源，由 Origin 派生。取值：ucloud、import。当前 CreateKey 仅支持 ucloud。
+     *             "Origin" => (string) 密钥来源，由 Origin 派生。取值：UCLOUD_KMS、EXTERNAL。当前 CreateKey 仅支持 UCLOUD_KMS。
      *             "Status" => (string) 数据库密钥状态。常见取值：Active、Deactivated、PendingDeletion。
      *             "CreatedTime" => (integer) 创建时间，Unix 时间戳。
      *             "UpdateTime" => (integer) 更新时间，Unix 时间戳。
@@ -815,7 +817,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥 DB 数字 ID。
+     *     "KeyId" => (string) 密钥资源长 ID
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      *     "DeleteDay" => (integer) 删除等待天数，取值范围为 7~30 天；未填写时默认为 30 天。
      * ]

@@ -25,6 +25,7 @@ class RotateKeyOnDemandRequest extends Request
         parent::__construct(["Action" => "RotateKeyOnDemand"]);
         $this->markRequired("Region");
         $this->markRequired("KeyId");
+        $this->markRequired("ResourceId");
     }
 
     
