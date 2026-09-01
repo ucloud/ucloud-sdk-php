@@ -170,7 +170,7 @@ class CreateKeyRequest extends Request
     }
 
     /**
-     * Origin: 密钥材料来源，默认 UCLOUD_KMS。当前仅支持 UCLOUD_KMS；EXTERNAL 为 BYOK 规划值，当前传入会返回 100660。
+     * Origin: 密钥材料来源，默认 UCLOUD_KMS。当前仅支持 UCLOUD_KMS；EXTERNAL 为 BYOK 规划值，当前传入会返回 1230。
      *
      * @return string|null
      */
@@ -180,7 +180,7 @@ class CreateKeyRequest extends Request
     }
 
     /**
-     * Origin: 密钥材料来源，默认 UCLOUD_KMS。当前仅支持 UCLOUD_KMS；EXTERNAL 为 BYOK 规划值，当前传入会返回 100660。
+     * Origin: 密钥材料来源，默认 UCLOUD_KMS。当前仅支持 UCLOUD_KMS；EXTERNAL 为 BYOK 规划值，当前传入会返回 1230。
      *
      * @param string $origin
      */
@@ -192,7 +192,7 @@ class CreateKeyRequest extends Request
     /**
      * DeletionProtection: 是否开启删除保护。可选值：true、false；默认 false。
      *
-     * @return string|null
+     * @return boolean|null
      */
     public function getDeletionProtection()
     {
@@ -202,7 +202,7 @@ class CreateKeyRequest extends Request
     /**
      * DeletionProtection: 是否开启删除保护。可选值：true、false；默认 false。
      *
-     * @param string $deletionProtection
+     * @param boolean $deletionProtection
      */
     public function setDeletionProtection($deletionProtection)
     {

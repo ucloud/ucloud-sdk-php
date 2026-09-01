@@ -150,7 +150,7 @@ class DecryptRequest extends Request
     }
 
     /**
-     * EncryptionAlgorithm: 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填或使用默认 RSAES_OAEP_SHA_256。
+     * EncryptionAlgorithm: 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填。
      *
      * @return string|null
      */
@@ -160,7 +160,7 @@ class DecryptRequest extends Request
     }
 
     /**
-     * EncryptionAlgorithm: 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填或使用默认 RSAES_OAEP_SHA_256。
+     * EncryptionAlgorithm: 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填。
      *
      * @param string $encryptionAlgorithm
      */

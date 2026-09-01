@@ -103,7 +103,7 @@ class DEK extends Response
     }
 
     /**
-     * Origin: 密钥来源，由 Origin 派生。取值：ucloud、import。当前 CreateKey 仅支持 ucloud。
+     * Origin: 密钥来源，由 Origin 派生。取值：UCLOUD_KMS、EXTERNAL。当前 CreateKey 仅支持 UCLOUD_KMS。
      *
      * @return string|null
      */
@@ -113,7 +113,7 @@ class DEK extends Response
     }
 
     /**
-     * Origin: 密钥来源，由 Origin 派生。取值：ucloud、import。当前 CreateKey 仅支持 ucloud。
+     * Origin: 密钥来源，由 Origin 派生。取值：UCLOUD_KMS、EXTERNAL。当前 CreateKey 仅支持 UCLOUD_KMS。
      *
      * @param string $origin
      */

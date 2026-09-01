@@ -70,7 +70,7 @@ class EnableKeyRequest extends Request
     }
 
     /**
-     * KeyId: 密钥 DB 数字 ID。
+     * KeyId: 密钥资源长 ID
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class EnableKeyRequest extends Request
     }
 
     /**
-     * KeyId: 密钥 DB 数字 ID。
+     * KeyId: 密钥资源长 ID
      *
      * @param string $keyId
      */
