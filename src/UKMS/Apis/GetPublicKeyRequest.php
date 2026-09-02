@@ -70,7 +70,7 @@ class GetPublicKeyRequest extends Request
     }
 
     /**
-     * KeyId: 密钥 ID、ARN 或别名。
+     * KeyId: 密钥 ID 或 别名。
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class GetPublicKeyRequest extends Request
     }
 
     /**
-     * KeyId: 密钥 ID、ARN 或别名。
+     * KeyId: 密钥 ID 或 别名。
      *
      * @param string $keyId
      */

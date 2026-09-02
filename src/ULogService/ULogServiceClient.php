@@ -38,6 +38,8 @@ use UCloud\ULogService\Apis\DeleteULogServiceTopicRequest;
 use UCloud\ULogService\Apis\DeleteULogServiceTopicResponse;
 use UCloud\ULogService\Apis\DescribeULogServiceMachineGroupRequest;
 use UCloud\ULogService\Apis\DescribeULogServiceMachineGroupResponse;
+use UCloud\ULogService\Apis\GetULogServiceTopicFieldRequest;
+use UCloud\ULogService\Apis\GetULogServiceTopicFieldResponse;
 use UCloud\ULogService\Apis\ListULogServiceCollectConfRequest;
 use UCloud\ULogService\Apis\ListULogServiceCollectConfResponse;
 use UCloud\ULogService\Apis\ListULogServiceLogSetRequest;
@@ -52,6 +54,8 @@ use UCloud\ULogService\Apis\UpdateULogServiceCollectConfRequest;
 use UCloud\ULogService\Apis\UpdateULogServiceCollectConfResponse;
 use UCloud\ULogService\Apis\UpdateULogServiceMachineGroupRequest;
 use UCloud\ULogService\Apis\UpdateULogServiceMachineGroupResponse;
+use UCloud\ULogService\Apis\UpdateULogServiceTopicFieldRequest;
+use UCloud\ULogService\Apis\UpdateULogServiceTopicFieldResponse;
 
 /**
  * This client is used to call actions of **ULogService** service
@@ -381,6 +385,41 @@ class ULogServiceClient extends Client
     }
 
     /**
+     * GetULogServiceTopicField - 获取ULogService主题索引字段
+     *
+     * See also: https://docs.ucloud.cn/api/ulogservice-api/get_u_log_service_topic_field
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "TopicId" => (string) 主题Id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Data" => (array<object>) 索引字段数据，是一个数组[
+     *         [
+     *             "FieldName" => (string) 索引名称
+     *             "FieldType" => (string) 索引类型，可取的值有: long, double, text
+     *             "IsReserved" => (boolean) 是否保留字段，true表示保留字段，false表示非保留字段
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetULogServiceTopicFieldResponse
+     * @throws UCloudException
+     */
+    public function getULogServiceTopicField(GetULogServiceTopicFieldRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetULogServiceTopicFieldResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * ListULogServiceCollectConf - 查询日志主题采集配置列表
      *
      * See also: https://docs.ucloud.cn/api/ulogservice-api/list_u_log_service_collect_conf
@@ -683,5 +722,39 @@ class ULogServiceClient extends Client
     {
         $resp = $this->invoke($request);
         return new UpdateULogServiceMachineGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateULogServiceTopicField - 更新ULogService主题索引字段
+     *
+     * See also: https://docs.ucloud.cn/api/ulogservice-api/update_u_log_service_topic_field
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "TopicId" => (string) 主题Id
+     *     "FieldInfos" => (array<object>) [
+     *         [
+     *             "FieldName" => (string) 字段名称支持字母、横线(-)、斜杠(/)、特殊符号（@）、数字、下划线（_）和点（.），且不能以下划线开头，长度不超过255个字符
+     *             "FieldType" => (string) 主题字段类型（text、long、double）
+     *         ]
+     *     ]
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return UpdateULogServiceTopicFieldResponse
+     * @throws UCloudException
+     */
+    public function updateULogServiceTopicField(UpdateULogServiceTopicFieldRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdateULogServiceTopicFieldResponse($resp->toArray(), $resp->getRequestId());
     }
 }

@@ -71,7 +71,7 @@ class UpdateKeyDescriptionRequest extends Request
     }
 
     /**
-     * KeyId: 密钥资源长 ID、ARN 或别名。
+     * KeyId: 密钥资源长 ID或别名。
      *
      * @return string|null
      */
@@ -81,7 +81,7 @@ class UpdateKeyDescriptionRequest extends Request
     }
 
     /**
-     * KeyId: 密钥资源长 ID、ARN 或别名。
+     * KeyId: 密钥资源长 ID或别名。
      *
      * @param string $keyId
      */
