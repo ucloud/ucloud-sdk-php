@@ -120,7 +120,7 @@ class UKMSClient extends Client
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
      *     "AliasName" => (string) 密钥别名，格式为 alias/name。
-     *     "KeyId" => (string) 密钥 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥 ID 或别名。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
      *
@@ -317,7 +317,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥 ID或别名。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
      *
@@ -402,7 +402,7 @@ class UKMSClient extends Client
      * $args = [
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
      *     "Region" => (string) 地域。参见地域和可用区列表。
-     *     "KeyId" => (string) 密钥资源长 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥资源长 ID 或别名。
      *     "Plaintext" => (string) 待加密明文，Base64 编码。
      *     "EncryptionContext" => (string) 加密上下文，JSON Object。该参数内容会记录在日志中，请勿传入密码、密钥、令牌等敏感信息。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
@@ -533,7 +533,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥资源长 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥资源长 ID或别名。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      *     "KeySpec" => (string) 数据密钥规格。可选值：AES_256、AES_128；默认 AES_256。与 NumberOfBytes 二选一，同时填写时 NumberOfBytes 优先。
      *     "NumberOfBytes" => (integer) 生成数据密钥的字节长度，取值范围 1~1024。与 KeySpec 二选一，同时填写时本字段优先。
@@ -625,7 +625,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥资源长 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥资源长 ID 或别名。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
      *
@@ -659,7 +659,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥 ID 或 别名。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
      *
@@ -788,7 +788,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥 ID 或别名。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
      *
@@ -846,7 +846,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥资源长 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥资源长 ID 或别名。
      *     "SigningMessage" => (string) 待签名消息，Base64 编码，最大 4096 字节。
      *     "SigningAlgorithm" => (string) 签名算法。可选值：RSASSA_PSS_SHA_256、RSASSA_PSS_SHA_384、RSASSA_PSS_SHA_512、RSASSA_PKCS1_V1_5_SHA_256、RSASSA_PKCS1_V1_5_SHA_384、RSASSA_PKCS1_V1_5_SHA_512、ECDSA_SHA_256、ECDSA_SHA_384、ECDSA_SHA_512；须与密钥 KeySpec 匹配。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
@@ -881,7 +881,7 @@ class UKMSClient extends Client
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
      *     "AliasName" => (string) 密钥别名，格式为 alias/name。
-     *     "KeyId" => (string) 密钥 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥 ID 或别名。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
      *
@@ -909,7 +909,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥资源长 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥资源长 ID或别名。
      *     "Description" => (string) 新的密钥描述，最多 8192 字符；空字符串表示清空描述。
      *     "ResourceId" => (string) UKMS 实例资源 ID。
      * ]
@@ -940,7 +940,7 @@ class UKMSClient extends Client
      * $args = [
      *     "Region" => (string) 地域。参见地域和可用区列表。
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子账号必须填写。
-     *     "KeyId" => (string) 密钥 ID、ARN 或别名。
+     *     "KeyId" => (string) 密钥 ID或别名。
      *     "SigningMessage" => (string) 待验签的消息或消息摘要，Base64 编码。
      *     "SignatureResult" => (string) 待验证的签名，Base64 编码。
      *     "SigningAlgorithm" => (string) 签名时使用的算法。可选值：RSASSA_PSS_SHA_256、RSASSA_PSS_SHA_384、RSASSA_PSS_SHA_512、RSASSA_PKCS1_V1_5_SHA_256、RSASSA_PKCS1_V1_5_SHA_384、RSASSA_PKCS1_V1_5_SHA_512、ECDSA_SHA_256、ECDSA_SHA_384、ECDSA_SHA_512；须与密钥 KeySpec 匹配。

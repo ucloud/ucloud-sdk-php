@@ -71,7 +71,7 @@ class RotateKeyOnDemandRequest extends Request
     }
 
     /**
-     * KeyId: 密钥 ID、ARN 或别名。
+     * KeyId: 密钥 ID 或别名。
      *
      * @return string|null
      */
@@ -81,7 +81,7 @@ class RotateKeyOnDemandRequest extends Request
     }
 
     /**
-     * KeyId: 密钥 ID、ARN 或别名。
+     * KeyId: 密钥 ID 或别名。
      *
      * @param string $keyId
      */
