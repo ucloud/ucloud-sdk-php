@@ -1267,26 +1267,31 @@ class UK8SClient extends Client
      *             "ClusterId" => (string) uk8s集群id
      *             "MachineGroup" => (string) 机器组
      *             "ExtractRule" => (object) 定义日志的提取、解析和格式化规则。见 ULSExtractRule[
-     *                 "CollectPolicy" => (string) 采集策略。可选值: full (全量采集存量日志), increment (从当前时间点增量采集)。默认为 full。
-     *                 "Encode" => (string) 日志原文的编码格式。可选值: utf-8, gbk。默认为 utf-8。
-     *                 "LogType" => (string) 日志解析类型，决定了如何结构化日志。
-     *                 "Delimiter" => (string) 当 LogType 为delimiter_log 时可选，可选字段 ' ',' ','|',';',','
-     *                 "BeginningRegex" => (string) 行首正则表达式。当 logType 为多行模式 (如 multiline_log 或 multiline_fullregex_log) 时，用于标识一条新日志的开始。
-     *                 "LogRegex" => (string) 日志提取正则表达式。当 logType 为正则模式 (如 fullregex_log 或 multiline_fullregex_log) 时，用于从日志中提取字段。
-     *                 "TimeKey" => (string) 指定时间字段。
-     *                 "TimeFormat" => (string) timeKey 对应的时间格式。如： %Y-%m-%d %H:%M:%S
-     *                 "UnMatchUpload" => (string) 是否上传解析失败的日志。true 表示上传，false 表示丢弃。默认为 false。
-     *                 "UnMatchKey" => (string) 如果 unMatchUpload 为 true，无法解析的日志原文将被存放在此字段指定的 Key 下。默认为 LogParseFailure。
+     *                 "CollectPolicy" => (string) 采集策略。可选值：full（全量采集存量日志）、increment（从当前时间点增量采集）。默认为 full。
+     *                 "Encode" => (string) 日志原文的编码格式。可选值：utf-8、gbk。默认为 utf-8。
+     *                 "LogType" => (string) 日志解析类型。可选值：json、delimiter、full_regex、multi_line_full_regex、multi_line_delimiter、minimal_list、multi_line。
+     *                 "Delimiter" => (string) 分隔符。适用于 delimiter 或 multi_line_delimiter，可选值：space、tab、|、;、,。
+     *                 "DelimiterBase64" => (string) Base64 编码的分隔符。填写时优先于 Delimiter。
+     *                 "BeginningRegex" => (string) 行首正则表达式。在 multi_line、multi_line_full_regex 或 multi_line_delimiter 模式下，BeginningRegex 和 BeginningRegexBase64 必须至少填写一个。
+     *                 "BeginningRegexBase64" => (string) Base64 编码的行首正则表达式。填写时优先于 BeginningRegex。
+     *                 "LogRegex" => (string) 日志提取正则表达式。在 full_regex 或 multi_line_full_regex 模式下，LogRegex 和 LogRegexBase64 必须至少填写一个。
+     *                 "LogRegexBase64" => (string) Base64 编码的日志提取正则表达式。填写时优先于 LogRegex。
+     *                 "TimeKey" => (string) 包含日志时间的字段名。
+     *                 "TimeFormat" => (string) TimeKey 对应的时间格式。在 json、full_regex 或 multi_line_full_regex 模式下，填写 TimeKey 时必须同时填写 TimeFormat。
+     *                 "UnMatchUpload" => (string) 是否上传解析失败的日志。字符串 true 表示上传，false 表示丢弃。默认为 false。
+     *                 "UnMatchKey" => (string) 存放无法解析的日志原文的 Key。UnMatchUpload 为 true 时必须填写。
+     *                 "Keys" => (array<string>) 提取后的字段名列表。仅适用于 delimiter、full_regex、multi_line_full_regex 和 multi_line_delimiter。
      *             ]
      *             "InputDetail" => (object) 定义日志的输入来源（例如容器文件）。见 ULSInputDetail[
-     *                 "FilePaths" => (array<object>) 采集路径，数组。[
+     *                 "FilePaths" => (array<object>) 日志采集路径列表。仅适用于 container_file。[
      *                     [
      *                         "Path" => (string) 定义采集路径
      *                         "File" => (string) 采集文件
      *                     ]
      *                 ]
-     *                 "Type" => (string) 日志输入类型。当前主要支持 container_file，表示采集容器标准输出或文件。
-     *                 "InputMetadata" => (object) 定义哪些容器相关的元数据需要附加到日志中。[
+     *                 "Type" => (string) 日志输入类型。可选值：container_file、container_stdout。
+     *                 "Stream" => (string) 容器标准输出流类型。仅适用于 container_stdout，可选值：all、stdout、stderr，默认为 all。
+     *                 "InputMetadata" => (object) 定义需要附加到日志中的容器相关元数据。[
      *                     "Container" => (string) 指定具体要采集元数据的容器名。如果留空，则不采集容器的元数据，可选字段：container_name,namespace,pod_name,pod_ip,pod_uid,container_id,image_name。Pod Label 元数据通过指定 InputDetail.Metadata.Labels 字段。
      *                     "Labels" => (string) 定义要采集哪些 Pod 的标签 (Labels)。可选值：*：采集所有标签。app,version：仅采集 app 和 version 这两个标签。""（空字符串）：不采集任何标签。
      *                 ]

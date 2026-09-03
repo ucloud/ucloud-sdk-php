@@ -23,7 +23,7 @@ class ULSInputDetail extends Response
     
 
     /**
-     * FilePaths: 采集路径，数组。
+     * FilePaths: 日志采集路径列表。仅适用于 container_file。
      *
      * @return ULSFilePaths[]|null
      */
@@ -41,7 +41,7 @@ class ULSInputDetail extends Response
     }
 
     /**
-     * FilePaths: 采集路径，数组。
+     * FilePaths: 日志采集路径列表。仅适用于 container_file。
      *
      * @param ULSFilePaths[] $filePaths
      */
@@ -55,7 +55,7 @@ class ULSInputDetail extends Response
     }
 
     /**
-     * Type: 日志输入类型。当前主要支持 container_file，表示采集容器标准输出或文件。
+     * Type: 日志输入类型。可选值：container_file、container_stdout。
      *
      * @return string|null
      */
@@ -65,7 +65,7 @@ class ULSInputDetail extends Response
     }
 
     /**
-     * Type: 日志输入类型。当前主要支持 container_file，表示采集容器标准输出或文件。
+     * Type: 日志输入类型。可选值：container_file、container_stdout。
      *
      * @param string $type
      */
@@ -75,7 +75,27 @@ class ULSInputDetail extends Response
     }
 
     /**
-     * InputMetadata: 定义哪些容器相关的元数据需要附加到日志中。
+     * Stream: 容器标准输出流类型。仅适用于 container_stdout，可选值：all、stdout、stderr，默认为 all。
+     *
+     * @return string|null
+     */
+    public function getStream()
+    {
+        return $this->get("Stream");
+    }
+
+    /**
+     * Stream: 容器标准输出流类型。仅适用于 container_stdout，可选值：all、stdout、stderr，默认为 all。
+     *
+     * @param string $stream
+     */
+    public function setStream($stream)
+    {
+        $this->set("Stream", $stream);
+    }
+
+    /**
+     * InputMetadata: 定义需要附加到日志中的容器相关元数据。
      *
      * @return ULSInputMetadata|null
      */
@@ -85,7 +105,7 @@ class ULSInputDetail extends Response
     }
 
     /**
-     * InputMetadata: 定义哪些容器相关的元数据需要附加到日志中。
+     * InputMetadata: 定义需要附加到日志中的容器相关元数据。
      *
      * @param ULSInputMetadata $inputMetadata
      */
