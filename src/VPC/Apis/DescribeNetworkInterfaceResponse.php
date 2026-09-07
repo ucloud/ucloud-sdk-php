@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,10 @@ namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\VPC\Models\NetworkInterface;
+use UCloud\VPC\Models\FwInfo;
 use UCloud\VPC\Models\UNIIpInfo;
+use UCloud\VPC\Models\SimpleIPv6AddressInfo;
+use UCloud\VPC\Models\SecGroup;
 use UCloud\VPC\Models\UNIQuotaInfo;
 
 class DescribeNetworkInterfaceResponse extends Response

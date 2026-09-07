@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 namespace UCloud\VPC\Apis;
 
 use UCloud\Core\Request\Request;
+use UCloud\VPC\Params\CreateNetworkInterfaceParamPrioritySecGroup;
 
 class CreateNetworkInterfaceRequest extends Request
 {
@@ -209,5 +210,97 @@ class CreateNetworkInterfaceRequest extends Request
     public function setRemark($remark)
     {
         $this->set("Remark", $remark);
+    }
+
+    /**
+     * SecurityMode: 指定使用 安全组还是防火墙。为 0 时绑定防火墙，为1时绑定安全组
+     *
+     * @return integer|null
+     */
+    public function getSecurityMode()
+    {
+        return $this->get("SecurityMode");
+    }
+
+    /**
+     * SecurityMode: 指定使用 安全组还是防火墙。为 0 时绑定防火墙，为1时绑定安全组
+     *
+     * @param int $securityMode
+     */
+    public function setSecurityMode($securityMode)
+    {
+        $this->set("SecurityMode", $securityMode);
+    }
+
+    /**
+     * PrioritySecGroup:
+     *
+     * @return CreateNetworkInterfaceParamPrioritySecGroup[]|null
+     */
+    public function getPrioritySecGroup()
+    {
+        $items = $this->get("PrioritySecGroup");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateNetworkInterfaceParamPrioritySecGroup($item));
+        }
+        return $result;
+    }
+
+    /**
+     * PrioritySecGroup:
+     *
+     * @param CreateNetworkInterfaceParamPrioritySecGroup[] $prioritySecGroup
+     */
+    public function setPrioritySecGroup(array $prioritySecGroup)
+    {
+        $result = [];
+        foreach ($prioritySecGroup as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * EipDirectMode: 是否开启EIP直通，默认false
+     *
+     * @return boolean|null
+     */
+    public function getEipDirectMode()
+    {
+        return $this->get("EipDirectMode");
+    }
+
+    /**
+     * EipDirectMode: 是否开启EIP直通，默认false
+     *
+     * @param boolean $eipDirectMode
+     */
+    public function setEipDirectMode($eipDirectMode)
+    {
+        $this->set("EipDirectMode", $eipDirectMode);
+    }
+
+    /**
+     * EipDirectVersion: 枚举值1:EIP网卡可见2:EIP直通默认为1
+     *
+     * @return integer|null
+     */
+    public function getEipDirectVersion()
+    {
+        return $this->get("EipDirectVersion");
+    }
+
+    /**
+     * EipDirectVersion: 枚举值1:EIP网卡可见2:EIP直通默认为1
+     *
+     * @param int $eipDirectVersion
+     */
+    public function setEipDirectVersion($eipDirectVersion)
+    {
+        $this->set("EipDirectVersion", $eipDirectVersion);
     }
 }

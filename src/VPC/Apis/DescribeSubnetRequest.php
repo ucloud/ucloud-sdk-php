@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ class DescribeSubnetRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -39,7 +39,7 @@ class DescribeSubnetRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -49,7 +49,7 @@ class DescribeSubnetRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -59,7 +59,7 @@ class DescribeSubnetRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -226,5 +226,25 @@ class DescribeSubnetRequest extends Request
     public function setShowAvailableIPs($showAvailableIPs)
     {
         $this->set("ShowAvailableIPs", $showAvailableIPs);
+    }
+
+    /**
+     * IgnoreResource: 默认为 false针对控制台调用，可设置为true，不进行控制台非必要数据的查询
+     *
+     * @return boolean|null
+     */
+    public function getIgnoreResource()
+    {
+        return $this->get("IgnoreResource");
+    }
+
+    /**
+     * IgnoreResource: 默认为 false针对控制台调用，可设置为true，不进行控制台非必要数据的查询
+     *
+     * @param boolean $ignoreResource
+     */
+    public function setIgnoreResource($ignoreResource)
+    {
+        $this->set("IgnoreResource", $ignoreResource);
     }
 }

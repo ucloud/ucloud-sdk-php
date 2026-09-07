@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,5 +40,25 @@ class CreateSubnetResponse extends Response
     public function setSubnetId($subnetId)
     {
         $this->set("SubnetId", $subnetId);
+    }
+
+    /**
+     * IPv6Network: IPv6网段
+     *
+     * @return string|null
+     */
+    public function getIPv6Network()
+    {
+        return $this->get("IPv6Network");
+    }
+
+    /**
+     * IPv6Network: IPv6网段
+     *
+     * @param string $iPv6Network
+     */
+    public function setIPv6Network($iPv6Network)
+    {
+        $this->set("IPv6Network", $iPv6Network);
     }
 }

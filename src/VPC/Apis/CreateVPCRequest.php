@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ class CreateVPCRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class CreateVPCRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class CreateVPCRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class CreateVPCRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -148,5 +148,45 @@ class CreateVPCRequest extends Request
     public function setRemark($remark)
     {
         $this->set("Remark", $remark);
+    }
+
+    /**
+     * AssociateIPv6: 是否关联IPv6
+     *
+     * @return boolean|null
+     */
+    public function getAssociateIPv6()
+    {
+        return $this->get("AssociateIPv6");
+    }
+
+    /**
+     * AssociateIPv6: 是否关联IPv6
+     *
+     * @param boolean $associateIPv6
+     */
+    public function setAssociateIPv6($associateIPv6)
+    {
+        $this->set("AssociateIPv6", $associateIPv6);
+    }
+
+    /**
+     * OperatorName: IPv6网段类型
+     *
+     * @return string|null
+     */
+    public function getOperatorName()
+    {
+        return $this->get("OperatorName");
+    }
+
+    /**
+     * OperatorName: IPv6网段类型
+     *
+     * @param string $operatorName
+     */
+    public function setOperatorName($operatorName)
+    {
+        $this->set("OperatorName", $operatorName);
     }
 }

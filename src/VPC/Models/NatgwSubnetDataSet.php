@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,26 +21,6 @@ use UCloud\Core\Response\Response;
 class NatgwSubnetDataSet extends Response
 {
     
-
-    /**
-     * SubnetId: 子网id
-     *
-     * @return string|null
-     */
-    public function getSubnetId()
-    {
-        return $this->get("SubnetId");
-    }
-
-    /**
-     * SubnetId: 子网id
-     *
-     * @param string $subnetId
-     */
-    public function setSubnetId($subnetId)
-    {
-        $this->set("SubnetId", $subnetId);
-    }
 
     /**
      * Subnet: 子网网段
@@ -83,26 +63,6 @@ class NatgwSubnetDataSet extends Response
     }
 
     /**
-     * SubnetName: 子网名字
-     *
-     * @return string|null
-     */
-    public function getSubnetName()
-    {
-        return $this->get("SubnetName");
-    }
-
-    /**
-     * SubnetName: 子网名字
-     *
-     * @param string $subnetName
-     */
-    public function setSubnetName($subnetName)
-    {
-        $this->set("SubnetName", $subnetName);
-    }
-
-    /**
      * HasNATGW: 是否绑定NATGW
      *
      * @return boolean|null
@@ -120,5 +80,45 @@ class NatgwSubnetDataSet extends Response
     public function setHasNATGW($hasNATGW)
     {
         $this->set("HasNATGW", $hasNATGW);
+    }
+
+    /**
+     * SubnetId: 子网id
+     *
+     * @return string|null
+     */
+    public function getSubnetId()
+    {
+        return $this->get("SubnetId");
+    }
+
+    /**
+     * SubnetId: 子网id
+     *
+     * @param string $subnetId
+     */
+    public function setSubnetId($subnetId)
+    {
+        $this->set("SubnetId", $subnetId);
+    }
+
+    /**
+     * SubnetName: 子网名字
+     *
+     * @return string|null
+     */
+    public function getSubnetName()
+    {
+        return $this->get("SubnetName");
+    }
+
+    /**
+     * SubnetName: 子网名字
+     *
+     * @param string $subnetName
+     */
+    public function setSubnetName($subnetName)
+    {
+        $this->set("SubnetName", $subnetName);
     }
 }
