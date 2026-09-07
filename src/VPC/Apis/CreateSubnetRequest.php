@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ class CreateSubnetRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class CreateSubnetRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class CreateSubnetRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class CreateSubnetRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -188,5 +188,65 @@ class CreateSubnetRequest extends Request
     public function setRemark($remark)
     {
         $this->set("Remark", $remark);
+    }
+
+    /**
+     * AssociateIPv6: 是否关联IPv6
+     *
+     * @return boolean|null
+     */
+    public function getAssociateIPv6()
+    {
+        return $this->get("AssociateIPv6");
+    }
+
+    /**
+     * AssociateIPv6: 是否关联IPv6
+     *
+     * @param boolean $associateIPv6
+     */
+    public function setAssociateIPv6($associateIPv6)
+    {
+        $this->set("AssociateIPv6", $associateIPv6);
+    }
+
+    /**
+     * VPCIPv6Network: 所属VPC的IPv6网段，可选，不填默认从VPC IPv6网段中选择一个进行分配
+     *
+     * @return string|null
+     */
+    public function getVPCIPv6Network()
+    {
+        return $this->get("VPCIPv6Network");
+    }
+
+    /**
+     * VPCIPv6Network: 所属VPC的IPv6网段，可选，不填默认从VPC IPv6网段中选择一个进行分配
+     *
+     * @param string $vpciPv6Network
+     */
+    public function setVPCIPv6Network($vpciPv6Network)
+    {
+        $this->set("VPCIPv6Network", $vpciPv6Network);
+    }
+
+    /**
+     * IPv6Network: IPv6网段
+     *
+     * @return string|null
+     */
+    public function getIPv6Network()
+    {
+        return $this->get("IPv6Network");
+    }
+
+    /**
+     * IPv6Network: IPv6网段
+     *
+     * @param string $iPv6Network
+     */
+    public function setIPv6Network($iPv6Network)
+    {
+        $this->set("IPv6Network", $iPv6Network);
     }
 }

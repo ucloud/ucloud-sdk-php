@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,5 +300,45 @@ class NetworkInterfaceInfo extends Response
     public function setTag($tag)
     {
         $this->set("Tag", $tag);
+    }
+
+    /**
+     * EipDirectMode: 是否开启EIP直通模式
+     *
+     * @return boolean|null
+     */
+    public function getEipDirectMode()
+    {
+        return $this->get("EipDirectMode");
+    }
+
+    /**
+     * EipDirectMode: 是否开启EIP直通模式
+     *
+     * @param boolean $eipDirectMode
+     */
+    public function setEipDirectMode($eipDirectMode)
+    {
+        $this->set("EipDirectMode", $eipDirectMode);
+    }
+
+    /**
+     * EipDirectVersion: EIP直通版本
+     *
+     * @return integer|null
+     */
+    public function getEipDirectVersion()
+    {
+        return $this->get("EipDirectVersion");
+    }
+
+    /**
+     * EipDirectVersion: EIP直通版本
+     *
+     * @param int $eipDirectVersion
+     */
+    public function setEipDirectVersion($eipDirectVersion)
+    {
+        $this->set("EipDirectVersion", $eipDirectVersion);
     }
 }

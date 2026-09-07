@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,45 +88,5 @@ class DescribeWhiteListResourceRequest extends Request
     public function setNATGWIds(array $natgwIds)
     {
         $this->set("NATGWIds", $natgwIds);
-    }
-
-    /**
-     * Offset: 数据偏移量, 默认为0
-     *
-     * @return integer|null
-     */
-    public function getOffset()
-    {
-        return $this->get("Offset");
-    }
-
-    /**
-     * Offset: 数据偏移量, 默认为0
-     *
-     * @param int $offset
-     */
-    public function setOffset($offset)
-    {
-        $this->set("Offset", $offset);
-    }
-
-    /**
-     * Limit: 数据分页值, 默认为20
-     *
-     * @return integer|null
-     */
-    public function getLimit()
-    {
-        return $this->get("Limit");
-    }
-
-    /**
-     * Limit: 数据分页值, 默认为20
-     *
-     * @param int $limit
-     */
-    public function setLimit($limit)
-    {
-        $this->set("Limit", $limit);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,26 +23,6 @@ class NatGatewaySubnetSet extends Response
     
 
     /**
-     * SubnetworkId: 子网id
-     *
-     * @return string|null
-     */
-    public function getSubnetworkId()
-    {
-        return $this->get("SubnetworkId");
-    }
-
-    /**
-     * SubnetworkId: 子网id
-     *
-     * @param string $subnetworkId
-     */
-    public function setSubnetworkId($subnetworkId)
-    {
-        $this->set("SubnetworkId", $subnetworkId);
-    }
-
-    /**
      * Subnet: 子网网段
      *
      * @return string|null
@@ -60,6 +40,26 @@ class NatGatewaySubnetSet extends Response
     public function setSubnet($subnet)
     {
         $this->set("Subnet", $subnet);
+    }
+
+    /**
+     * SubnetworkId: 子网id
+     *
+     * @return string|null
+     */
+    public function getSubnetworkId()
+    {
+        return $this->get("SubnetworkId");
+    }
+
+    /**
+     * SubnetworkId: 子网id
+     *
+     * @param string $subnetworkId
+     */
+    public function setSubnetworkId($subnetworkId)
+    {
+        $this->set("SubnetworkId", $subnetworkId);
     }
 
     /**

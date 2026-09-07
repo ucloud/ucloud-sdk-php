@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ class SubnetInfo extends Response
     }
 
     /**
-     * IPv6Network: 子网关联的IPv6网段
+     * IPv6Network: IPv6网段
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class SubnetInfo extends Response
     }
 
     /**
-     * IPv6Network: 子网关联的IPv6网段
+     * IPv6Network: IPv6网段
      *
      * @param string $iPv6Network
      */
@@ -340,5 +340,25 @@ class SubnetInfo extends Response
     public function setAvailableIPs($availableIPs)
     {
         $this->set("AvailableIPs", $availableIPs);
+    }
+
+    /**
+     * AvailableIPv6Count: 可用IPv6数量
+     *
+     * @return integer|null
+     */
+    public function getAvailableIPv6Count()
+    {
+        return $this->get("AvailableIPv6Count");
+    }
+
+    /**
+     * AvailableIPv6Count: 可用IPv6数量
+     *
+     * @param int $availableIPv6Count
+     */
+    public function setAvailableIPv6Count($availableIPv6Count)
+    {
+        $this->set("AvailableIPv6Count", $availableIPv6Count);
     }
 }

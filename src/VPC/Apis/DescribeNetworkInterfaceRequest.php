@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -227,5 +227,25 @@ class DescribeNetworkInterfaceRequest extends Request
     public function setOffset($offset)
     {
         $this->set("Offset", $offset);
+    }
+
+    /**
+     * WithSecGroup: 是否展示安全组信息
+     *
+     * @return boolean|null
+     */
+    public function getWithSecGroup()
+    {
+        return $this->get("WithSecGroup");
+    }
+
+    /**
+     * WithSecGroup: 是否展示安全组信息
+     *
+     * @param boolean $withSecGroup
+     */
+    public function setWithSecGroup($withSecGroup)
+    {
+        $this->set("WithSecGroup", $withSecGroup);
     }
 }
