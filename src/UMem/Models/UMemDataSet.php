@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -335,7 +335,7 @@ class UMemDataSet extends Response
     }
 
     /**
-     * State: 实例状态                                  Starting                  // 创建中       Creating                  // 初始化中     CreateFail                // 创建失败     Fail                      // 创建失败     Deleting                  // 删除中       DeleteFail                // 删除失败     Running                   // 运行         Resizing                  // 容量调整中   ResizeFail                // 容量调整失败 Configing                 // 配置中       ConfigFail                // 配置失败Restarting                // 重启中SetPasswordFail    //设置密码失败
+     * State: 实例状态Starting                     // 创建中Creating                    // 初始化中Deleting                    // 删除中CreateFail                 // 创建失败DeleteFail                 // 删除失败Resizing                   // 容量调整中ResizeFail                // 容量调整失败Disasting                 // 容灾中Running                   // 运行SetPassword           // 设置密码SetPasswordFail     // 设置密码失败ISolation                  // 关闭Replicating              // 同步中ReplicateDone        //  数据同步完成ExecTimeout           // 待重试SlaveRecovering     // 备库恢复中ReplicateFail           // 同步失败DelayUpgrade         // 待扩容迁移 VersionUpgrading   // 升级中VersionUpgradeFail // 升级失败UpgradeMemInit     // 任务初始化ClusterUpgrading    // 规格调整中SSLSwitching         // 修改TLS中SSLSwitchFail        // 修改TLS失败
      *
      * @return string|null
      */
@@ -345,7 +345,7 @@ class UMemDataSet extends Response
     }
 
     /**
-     * State: 实例状态                                  Starting                  // 创建中       Creating                  // 初始化中     CreateFail                // 创建失败     Fail                      // 创建失败     Deleting                  // 删除中       DeleteFail                // 删除失败     Running                   // 运行         Resizing                  // 容量调整中   ResizeFail                // 容量调整失败 Configing                 // 配置中       ConfigFail                // 配置失败Restarting                // 重启中SetPasswordFail    //设置密码失败
+     * State: 实例状态Starting                     // 创建中Creating                    // 初始化中Deleting                    // 删除中CreateFail                 // 创建失败DeleteFail                 // 删除失败Resizing                   // 容量调整中ResizeFail                // 容量调整失败Disasting                 // 容灾中Running                   // 运行SetPassword           // 设置密码SetPasswordFail     // 设置密码失败ISolation                  // 关闭Replicating              // 同步中ReplicateDone        //  数据同步完成ExecTimeout           // 待重试SlaveRecovering     // 备库恢复中ReplicateFail           // 同步失败DelayUpgrade         // 待扩容迁移 VersionUpgrading   // 升级中VersionUpgradeFail // 升级失败UpgradeMemInit     // 任务初始化ClusterUpgrading    // 规格调整中SSLSwitching         // 修改TLS中SSLSwitchFail        // 修改TLS失败
      *
      * @param string $state
      */
@@ -564,5 +564,265 @@ class UMemDataSet extends Response
     public function setSlaveZone($slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
+    }
+
+    /**
+     * ProxyName: URedis是否开启读写分离
+     *
+     * @return string|null
+     */
+    public function getProxyName()
+    {
+        return $this->get("ProxyName");
+    }
+
+    /**
+     * ProxyName: URedis是否开启读写分离
+     *
+     * @param string $proxyName
+     */
+    public function setProxyName($proxyName)
+    {
+        $this->set("ProxyName", $proxyName);
+    }
+
+    /**
+     * ProductType: 判断后端是否快杰资源（非快杰:  0或者1   快杰:  2或者3）
+     *
+     * @return integer|null
+     */
+    public function getProductType()
+    {
+        return $this->get("ProductType");
+    }
+
+    /**
+     * ProductType: 判断后端是否快杰资源（非快杰:  0或者1   快杰:  2或者3）
+     *
+     * @param int $productType
+     */
+    public function setProductType($productType)
+    {
+        $this->set("ProductType", $productType);
+    }
+
+    /**
+     * DefaultConfigId: 是否是默认配置文件，true表示默认；false表示非默认
+     *
+     * @return string|null
+     */
+    public function getDefaultConfigId()
+    {
+        return $this->get("DefaultConfigId");
+    }
+
+    /**
+     * DefaultConfigId: 是否是默认配置文件，true表示默认；false表示非默认
+     *
+     * @param string $defaultConfigId
+     */
+    public function setDefaultConfigId($defaultConfigId)
+    {
+        $this->set("DefaultConfigId", $defaultConfigId);
+    }
+
+    /**
+     * IsHighPerformance: 是否是高性能Redis，true表示是；false表示否
+     *
+     * @return boolean|null
+     */
+    public function getIsHighPerformance()
+    {
+        return $this->get("IsHighPerformance");
+    }
+
+    /**
+     * IsHighPerformance: 是否是高性能Redis，true表示是；false表示否
+     *
+     * @param boolean $isHighPerformance
+     */
+    public function setIsHighPerformance($isHighPerformance)
+    {
+        $this->set("IsHighPerformance", $isHighPerformance);
+    }
+
+    /**
+     * SupportAofRollback: 实例是否支持回档
+     *
+     * @return boolean|null
+     */
+    public function getSupportAofRollback()
+    {
+        return $this->get("SupportAofRollback");
+    }
+
+    /**
+     * SupportAofRollback: 实例是否支持回档
+     *
+     * @param boolean $supportAofRollback
+     */
+    public function setSupportAofRollback($supportAofRollback)
+    {
+        $this->set("SupportAofRollback", $supportAofRollback);
+    }
+
+    /**
+     * AofRollbackEnable: 实例是否开启了回档
+     *
+     * @return boolean|null
+     */
+    public function getAofRollbackEnable()
+    {
+        return $this->get("AofRollbackEnable");
+    }
+
+    /**
+     * AofRollbackEnable: 实例是否开启了回档
+     *
+     * @param boolean $aofRollbackEnable
+     */
+    public function setAofRollbackEnable($aofRollbackEnable)
+    {
+        $this->set("AofRollbackEnable", $aofRollbackEnable);
+    }
+
+    /**
+     * IsRWMode: 是否是读写分离
+     *
+     * @return boolean|null
+     */
+    public function getIsRWMode()
+    {
+        return $this->get("IsRWMode");
+    }
+
+    /**
+     * IsRWMode: 是否是读写分离
+     *
+     * @param boolean $isRWMode
+     */
+    public function setIsRWMode($isRWMode)
+    {
+        $this->set("IsRWMode", $isRWMode);
+    }
+
+    /**
+     * SSLVersion: SSL版本
+     *
+     * @return string|null
+     */
+    public function getSSLVersion()
+    {
+        return $this->get("SSLVersion");
+    }
+
+    /**
+     * SSLVersion: SSL版本
+     *
+     * @param string $sslVersion
+     */
+    public function setSSLVersion($sslVersion)
+    {
+        $this->set("SSLVersion", $sslVersion);
+    }
+
+    /**
+     * SSLEnable: 实例是否开启SSL
+     *
+     * @return boolean|null
+     */
+    public function getSSLEnable()
+    {
+        return $this->get("SSLEnable");
+    }
+
+    /**
+     * SSLEnable: 实例是否开启SSL
+     *
+     * @param boolean $sslEnable
+     */
+    public function setSSLEnable($sslEnable)
+    {
+        $this->set("SSLEnable", $sslEnable);
+    }
+
+    /**
+     * SSLCertExpireTime: 证书过期时间
+     *
+     * @return integer|null
+     */
+    public function getSSLCertExpireTime()
+    {
+        return $this->get("SSLCertExpireTime");
+    }
+
+    /**
+     * SSLCertExpireTime: 证书过期时间
+     *
+     * @param int $sslCertExpireTime
+     */
+    public function setSSLCertExpireTime($sslCertExpireTime)
+    {
+        $this->set("SSLCertExpireTime", $sslCertExpireTime);
+    }
+
+    /**
+     * SecPolicy: 安全策略。1:内网隔离，2:加密通信，3:内网隔离+加密通信
+     *
+     * @return integer|null
+     */
+    public function getSecPolicy()
+    {
+        return $this->get("SecPolicy");
+    }
+
+    /**
+     * SecPolicy: 安全策略。1:内网隔离，2:加密通信，3:内网隔离+加密通信
+     *
+     * @param int $secPolicy
+     */
+    public function setSecPolicy($secPolicy)
+    {
+        $this->set("SecPolicy", $secPolicy);
+    }
+
+    /**
+     * HasPassword: 实例是否设置密码
+     *
+     * @return boolean|null
+     */
+    public function getHasPassword()
+    {
+        return $this->get("HasPassword");
+    }
+
+    /**
+     * HasPassword: 实例是否设置密码
+     *
+     * @param boolean $hasPassword
+     */
+    public function setHasPassword($hasPassword)
+    {
+        $this->set("HasPassword", $hasPassword);
+    }
+
+    /**
+     * UDACEnable: 实例是否有加入到自治中心
+     *
+     * @return boolean|null
+     */
+    public function getUDACEnable()
+    {
+        return $this->get("UDACEnable");
+    }
+
+    /**
+     * UDACEnable: 实例是否有加入到自治中心
+     *
+     * @param boolean $udacEnable
+     */
+    public function setUDACEnable($udacEnable)
+    {
+        $this->set("UDACEnable", $udacEnable);
     }
 }

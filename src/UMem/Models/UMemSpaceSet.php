@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * Tag:
+     * Tag: 实例tag
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * Tag:
+     * Tag: 实例tag
      *
      * @param string $tag
      */
@@ -103,7 +103,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * SubnetId:
+     * SubnetId: 子网ID
      *
      * @return string|null
      */
@@ -113,7 +113,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * SubnetId:
+     * SubnetId: 子网ID
      *
      * @param string $subnetId
      */
@@ -123,7 +123,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * VPCId:
+     * VPCId: VPC ID
      *
      * @return string|null
      */
@@ -133,7 +133,7 @@ class UMemSpaceSet extends Response
     }
 
     /**
-     * VPCId:
+     * VPCId: VPC ID
      *
      * @param string $vpcId
      */
@@ -352,5 +352,45 @@ class UMemSpaceSet extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * SupportAofRollback: 实例是否支持回档
+     *
+     * @return boolean|null
+     */
+    public function getSupportAofRollback()
+    {
+        return $this->get("SupportAofRollback");
+    }
+
+    /**
+     * SupportAofRollback: 实例是否支持回档
+     *
+     * @param boolean $supportAofRollback
+     */
+    public function setSupportAofRollback($supportAofRollback)
+    {
+        $this->set("SupportAofRollback", $supportAofRollback);
+    }
+
+    /**
+     * AofRollbackEnable: 实例是否开启了回档
+     *
+     * @return boolean|null
+     */
+    public function getAofRollbackEnable()
+    {
+        return $this->get("AofRollbackEnable");
+    }
+
+    /**
+     * AofRollbackEnable: 实例是否开启了回档
+     *
+     * @param boolean $aofRollbackEnable
+     */
+    public function setAofRollbackEnable($aofRollbackEnable)
+    {
+        $this->set("AofRollbackEnable", $aofRollbackEnable);
     }
 }

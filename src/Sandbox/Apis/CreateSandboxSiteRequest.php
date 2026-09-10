@@ -29,6 +29,7 @@ class CreateSandboxSiteRequest extends Request
         $this->markRequired("APIKey");
         $this->markRequired("KeyID");
         $this->markRequired("AccessCode");
+        $this->markRequired("TemplateName");
     }
 
     
@@ -171,6 +172,26 @@ class CreateSandboxSiteRequest extends Request
     public function setAccessCode($accessCode)
     {
         $this->set("AccessCode", $accessCode);
+    }
+
+    /**
+     * TemplateName: 站点空间空间模版，格式：site-nc-ng,n为偶数
+     *
+     * @return string|null
+     */
+    public function getTemplateName()
+    {
+        return $this->get("TemplateName");
+    }
+
+    /**
+     * TemplateName: 站点空间空间模版，格式：site-nc-ng,n为偶数
+     *
+     * @param string $templateName
+     */
+    public function setTemplateName($templateName)
+    {
+        $this->set("TemplateName", $templateName);
     }
 
     /**

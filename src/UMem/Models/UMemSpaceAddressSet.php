@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class UMemSpaceAddressSet extends Response
     
 
     /**
-     * IP: UMem实例访问IP
+     * IP: UMem实例内网访问IP
      *
      * @return string|null
      */
@@ -33,13 +33,53 @@ class UMemSpaceAddressSet extends Response
     }
 
     /**
-     * IP: UMem实例访问IP
+     * IP: UMem实例内网访问IP
      *
      * @param string $ip
      */
     public function setIP($ip)
     {
         $this->set("IP", $ip);
+    }
+
+    /**
+     * PrivateDomain: UMem实例内网访问域名地址，未开启状态下返回为空
+     *
+     * @return string|null
+     */
+    public function getPrivateDomain()
+    {
+        return $this->get("PrivateDomain");
+    }
+
+    /**
+     * PrivateDomain: UMem实例内网访问域名地址，未开启状态下返回为空
+     *
+     * @param string $privateDomain
+     */
+    public function setPrivateDomain($privateDomain)
+    {
+        $this->set("PrivateDomain", $privateDomain);
+    }
+
+    /**
+     * PublicIp: 开启外网状态下外网IP，否则为空
+     *
+     * @return string|null
+     */
+    public function getPublicIp()
+    {
+        return $this->get("PublicIp");
+    }
+
+    /**
+     * PublicIp: 开启外网状态下外网IP，否则为空
+     *
+     * @param string $publicIp
+     */
+    public function setPublicIp($publicIp)
+    {
+        $this->set("PublicIp", $publicIp);
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class DescribeURedisUpgradePriceResponse extends Response
     
 
     /**
-     * Price: 扩容差价，单位: 元，保留小数点后两位有效数字
+     * Price: 价格
      *
      * @return float|null
      */
@@ -33,12 +33,32 @@ class DescribeURedisUpgradePriceResponse extends Response
     }
 
     /**
-     * Price: 扩容差价，单位: 元，保留小数点后两位有效数字
+     * Price: 价格
      *
      * @param float $price
      */
     public function setPrice($price)
     {
         $this->set("Price", $price);
+    }
+
+    /**
+     * OriginalPrice: 原价
+     *
+     * @return integer|null
+     */
+    public function getOriginalPrice()
+    {
+        return $this->get("OriginalPrice");
+    }
+
+    /**
+     * OriginalPrice: 原价
+     *
+     * @param int $originalPrice
+     */
+    public function setOriginalPrice($originalPrice)
+    {
+        $this->set("OriginalPrice", $originalPrice);
     }
 }

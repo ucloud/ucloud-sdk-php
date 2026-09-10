@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ class DescribeUMemcacheUpgradePriceResponse extends Response
     
 
     /**
-     * Price: 价格，单位：元
+     * Price: 价格
      *
-     * @return float|null
+     * @return integer|null
      */
     public function getPrice()
     {
@@ -33,12 +33,52 @@ class DescribeUMemcacheUpgradePriceResponse extends Response
     }
 
     /**
-     * Price: 价格，单位：元
+     * Price: 价格
      *
-     * @param float $price
+     * @param int $price
      */
     public function setPrice($price)
     {
         $this->set("Price", $price);
+    }
+
+    /**
+     * OriginalPrice: 原价
+     *
+     * @return integer|null
+     */
+    public function getOriginalPrice()
+    {
+        return $this->get("OriginalPrice");
+    }
+
+    /**
+     * OriginalPrice: 原价
+     *
+     * @param int $originalPrice
+     */
+    public function setOriginalPrice($originalPrice)
+    {
+        $this->set("OriginalPrice", $originalPrice);
+    }
+
+    /**
+     * ListPrice: 列表价格
+     *
+     * @return integer|null
+     */
+    public function getListPrice()
+    {
+        return $this->get("ListPrice");
+    }
+
+    /**
+     * ListPrice: 列表价格
+     *
+     * @param int $listPrice
+     */
+    public function setListPrice($listPrice)
+    {
+        $this->set("ListPrice", $listPrice);
     }
 }

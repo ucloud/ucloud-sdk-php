@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ class CreateURedisGroupRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -42,7 +42,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -52,7 +52,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -72,7 +72,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -82,7 +82,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -192,7 +192,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * ConfigId: 配置ID,目前支持 3.0版本配置ID:"03f58ca9-b64d-4bdd-abc7-c6b9a46fd801",3.2版本配置ID:"3e45ac48-f8a2-a9q2-261d-l342dab130gf", 4.0版本配置ID:"6c9298a3-9d7f-428c-b1d0-e87ab3b8a1ea",默认版本3.0,从备份创建为必传项
+     * ConfigId: 配置ID,目前支持 4.0版本配置ID:"6c9298a3-9d7f-428c-b1d0-e87ab3b8a1ea", 5.0版本配置ID:"3cdeeb90-dcbf-46e8-95cd-a05d8860a22c",6.0版本配置ID:"1d990520-aac8-4e0f-9384-f58611e8eb28",7.0版本配置ID:"48dcf534-db41-11ec-a1a6-52670028d520",默认版本4.0,从备份创建为必传项
      *
      * @return string|null
      */
@@ -202,7 +202,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * ConfigId: 配置ID,目前支持 3.0版本配置ID:"03f58ca9-b64d-4bdd-abc7-c6b9a46fd801",3.2版本配置ID:"3e45ac48-f8a2-a9q2-261d-l342dab130gf", 4.0版本配置ID:"6c9298a3-9d7f-428c-b1d0-e87ab3b8a1ea",默认版本3.0,从备份创建为必传项
+     * ConfigId: 配置ID,目前支持 4.0版本配置ID:"6c9298a3-9d7f-428c-b1d0-e87ab3b8a1ea", 5.0版本配置ID:"3cdeeb90-dcbf-46e8-95cd-a05d8860a22c",6.0版本配置ID:"1d990520-aac8-4e0f-9384-f58611e8eb28",7.0版本配置ID:"48dcf534-db41-11ec-a1a6-52670028d520",默认版本4.0,从备份创建为必传项
      *
      * @param string $configId
      */
@@ -212,7 +212,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * Version: Redis版本信息(详见DescribeURedisVersion返回结果),默认版本3.0
+     * Version: Redis版本信息(详见DescribeURedisVersion返回结果),默认版本4.0
      *
      * @return string|null
      */
@@ -222,7 +222,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * Version: Redis版本信息(详见DescribeURedisVersion返回结果),默认版本3.0
+     * Version: Redis版本信息(详见DescribeURedisVersion返回结果),默认版本4.0
      *
      * @param string $version
      */
@@ -372,7 +372,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * EnableIpV6: 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true
+     * EnableIpV6: 【即将下线,请勿使用】是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true
      *
      * @return boolean|null
      */
@@ -382,7 +382,7 @@ class CreateURedisGroupRequest extends Request
     }
 
     /**
-     * EnableIpV6: 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true
+     * EnableIpV6: 【即将下线,请勿使用】是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true
      *
      * @param boolean $enableIpV6
      */
@@ -429,6 +429,106 @@ class CreateURedisGroupRequest extends Request
     public function setVPCId($vpcId)
     {
         $this->set("VPCId", $vpcId);
+    }
+
+    /**
+     * HighPerformance: 是否创建高性能Redis， 默认为false， 或者不填， 创建高性能为true
+     *
+     * @return boolean|null
+     */
+    public function getHighPerformance()
+    {
+        return $this->get("HighPerformance");
+    }
+
+    /**
+     * HighPerformance: 是否创建高性能Redis， 默认为false， 或者不填， 创建高性能为true
+     *
+     * @param boolean $highPerformance
+     */
+    public function setHighPerformance($highPerformance)
+    {
+        $this->set("HighPerformance", $highPerformance);
+    }
+
+    /**
+     * Port: 端口
+     *
+     * @return integer|null
+     */
+    public function getPort()
+    {
+        return $this->get("Port");
+    }
+
+    /**
+     * Port: 端口
+     *
+     * @param int $port
+     */
+    public function setPort($port)
+    {
+        $this->set("Port", $port);
+    }
+
+    /**
+     * RollbackGroupId: 如果是通过回档创建实例，需要传回档实例的GroupId
+     *
+     * @return string|null
+     */
+    public function getRollbackGroupId()
+    {
+        return $this->get("RollbackGroupId");
+    }
+
+    /**
+     * RollbackGroupId: 如果是通过回档创建实例，需要传回档实例的GroupId
+     *
+     * @param string $rollbackGroupId
+     */
+    public function setRollbackGroupId($rollbackGroupId)
+    {
+        $this->set("RollbackGroupId", $rollbackGroupId);
+    }
+
+    /**
+     * AOFID: 回档的AOF文件ID
+     *
+     * @return string|null
+     */
+    public function getAOFID()
+    {
+        return $this->get("AOFID");
+    }
+
+    /**
+     * AOFID: 回档的AOF文件ID
+     *
+     * @param string $aofid
+     */
+    public function setAOFID($aofid)
+    {
+        $this->set("AOFID", $aofid);
+    }
+
+    /**
+     * RollbackTime: 回档时间点
+     *
+     * @return integer|null
+     */
+    public function getRollbackTime()
+    {
+        return $this->get("RollbackTime");
+    }
+
+    /**
+     * RollbackTime: 回档时间点
+     *
+     * @param int $rollbackTime
+     */
+    public function setRollbackTime($rollbackTime)
+    {
+        $this->set("RollbackTime", $rollbackTime);
     }
 
     /**

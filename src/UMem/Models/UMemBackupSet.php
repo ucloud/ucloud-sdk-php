@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,5 +140,25 @@ class UMemBackupSet extends Response
     public function setBlockCount($blockCount)
     {
         $this->set("BlockCount", $blockCount);
+    }
+
+    /**
+     * BlockSize: 备份大小
+     *
+     * @return integer|null
+     */
+    public function getBlockSize()
+    {
+        return $this->get("BlockSize");
+    }
+
+    /**
+     * BlockSize: 备份大小
+     *
+     * @param int $blockSize
+     */
+    public function setBlockSize($blockSize)
+    {
+        $this->set("BlockSize", $blockSize);
     }
 }

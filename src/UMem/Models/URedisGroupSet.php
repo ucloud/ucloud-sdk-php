@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,7 +203,7 @@ class URedisGroupSet extends Response
     }
 
     /**
-     * MemorySize: 容量单位GB
+     * MemorySize: [即将下线,请使用Size] 容量单位GB
      *
      * @return integer|null
      */
@@ -213,7 +213,7 @@ class URedisGroupSet extends Response
     }
 
     /**
-     * MemorySize: 容量单位GB
+     * MemorySize: [即将下线,请使用Size] 容量单位GB
      *
      * @param int $memorySize
      */
@@ -223,7 +223,7 @@ class URedisGroupSet extends Response
     }
 
     /**
-     * GroupName: 组名称
+     * GroupName: [即将下线,请使用Name] 组名称
      *
      * @return string|null
      */
@@ -233,7 +233,7 @@ class URedisGroupSet extends Response
     }
 
     /**
-     * GroupName: 组名称
+     * GroupName: [即将下线,请使用Name] 组名称
      *
      * @param string $groupName
      */
@@ -463,7 +463,7 @@ class URedisGroupSet extends Response
     }
 
     /**
-     * State: 状态标记 Creating // 初始化中 CreateFail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败
+     * State: 状态标记 Creating // 初始化中 CreateFail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败// 修改SSL中SSLSwitching //SSLSwitchFail修改SSL失败
      *
      * @return string|null
      */
@@ -473,7 +473,7 @@ class URedisGroupSet extends Response
     }
 
     /**
-     * State: 状态标记 Creating // 初始化中 CreateFail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败
+     * State: 状态标记 Creating // 初始化中 CreateFail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败// 修改SSL中SSLSwitching //SSLSwitchFail修改SSL失败
      *
      * @param string $state
      */
@@ -560,5 +560,125 @@ class URedisGroupSet extends Response
     public function setSlaveZone($slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
+    }
+
+    /**
+     * IsHighPerformance: 是否是高性能Redis， true表示是； false表示否
+     *
+     * @return boolean|null
+     */
+    public function getIsHighPerformance()
+    {
+        return $this->get("IsHighPerformance");
+    }
+
+    /**
+     * IsHighPerformance: 是否是高性能Redis， true表示是； false表示否
+     *
+     * @param boolean $isHighPerformance
+     */
+    public function setIsHighPerformance($isHighPerformance)
+    {
+        $this->set("IsHighPerformance", $isHighPerformance);
+    }
+
+    /**
+     * SSLVersion: SSL版本
+     *
+     * @return string|null
+     */
+    public function getSSLVersion()
+    {
+        return $this->get("SSLVersion");
+    }
+
+    /**
+     * SSLVersion: SSL版本
+     *
+     * @param string $sslVersion
+     */
+    public function setSSLVersion($sslVersion)
+    {
+        $this->set("SSLVersion", $sslVersion);
+    }
+
+    /**
+     * SSLEnable: 实例是否开启SSL
+     *
+     * @return boolean|null
+     */
+    public function getSSLEnable()
+    {
+        return $this->get("SSLEnable");
+    }
+
+    /**
+     * SSLEnable: 实例是否开启SSL
+     *
+     * @param boolean $sslEnable
+     */
+    public function setSSLEnable($sslEnable)
+    {
+        $this->set("SSLEnable", $sslEnable);
+    }
+
+    /**
+     * SSLCertExpireTime: 证书过期时间
+     *
+     * @return integer|null
+     */
+    public function getSSLCertExpireTime()
+    {
+        return $this->get("SSLCertExpireTime");
+    }
+
+    /**
+     * SSLCertExpireTime: 证书过期时间
+     *
+     * @param int $sslCertExpireTime
+     */
+    public function setSSLCertExpireTime($sslCertExpireTime)
+    {
+        $this->set("SSLCertExpireTime", $sslCertExpireTime);
+    }
+
+    /**
+     * SecPolicy: 安全策略。1:内网隔离，2:加密通信，3:内网隔离+加密通信
+     *
+     * @return integer|null
+     */
+    public function getSecPolicy()
+    {
+        return $this->get("SecPolicy");
+    }
+
+    /**
+     * SecPolicy: 安全策略。1:内网隔离，2:加密通信，3:内网隔离+加密通信
+     *
+     * @param int $secPolicy
+     */
+    public function setSecPolicy($secPolicy)
+    {
+        $this->set("SecPolicy", $secPolicy);
+    }
+
+    /**
+     * UDACEnable: 实例是否有加入到自治中心
+     *
+     * @return boolean|null
+     */
+    public function getUDACEnable()
+    {
+        return $this->get("UDACEnable");
+    }
+
+    /**
+     * UDACEnable: 实例是否有加入到自治中心
+     *
+     * @param boolean $udacEnable
+     */
+    public function setUDACEnable($udacEnable)
+    {
+        $this->set("UDACEnable", $udacEnable);
     }
 }

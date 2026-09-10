@@ -54,6 +54,8 @@ use UCloud\UK8S\Apis\ListUK8SNodeGroupRequest;
 use UCloud\UK8S\Apis\ListUK8SNodeGroupResponse;
 use UCloud\UK8S\Apis\ListUK8SULSConfigRequest;
 use UCloud\UK8S\Apis\ListUK8SULSConfigResponse;
+use UCloud\UK8S\Apis\ModifyUK8SClusterNameRequest;
+use UCloud\UK8S\Apis\ModifyUK8SClusterNameResponse;
 use UCloud\UK8S\Apis\RemoveUK8SNodeGroupRequest;
 use UCloud\UK8S\Apis\RemoveUK8SNodeGroupResponse;
 use UCloud\UK8S\Apis\UpdateUK8SNodeGroupRequest;
@@ -1401,6 +1403,34 @@ class UK8SClient extends Client
     {
         $resp = $this->invoke($request);
         return new ListUK8SULSConfigResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * ModifyUK8SClusterName - 修改k8s集群名称
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/modify_uk8s_cluster_name
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID
+     *     "Region" => (string) 所在地域
+     *     "ClusterId" => (string) 集群ID
+     *     "ClusterName" => (string) 集群名称
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return ModifyUK8SClusterNameResponse
+     * @throws UCloudException
+     */
+    public function modifyUK8SClusterName(ModifyUK8SClusterNameRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new ModifyUK8SClusterNameResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**

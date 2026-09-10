@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,5 +100,25 @@ class UDRedisSlowlogSet extends Response
     public function setBlockId($blockId)
     {
         $this->set("BlockId", $blockId);
+    }
+
+    /**
+     * Client: 慢日志的的客户信息
+     *
+     * @return string|null
+     */
+    public function getClient()
+    {
+        return $this->get("Client");
+    }
+
+    /**
+     * Client: 慢日志的的客户信息
+     *
+     * @param string $client
+     */
+    public function setClient($client)
+    {
+        $this->set("Client", $client);
     }
 }
