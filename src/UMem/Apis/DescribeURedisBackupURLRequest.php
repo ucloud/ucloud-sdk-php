@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ class DescribeURedisBackupURLRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class DescribeURedisBackupURLRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -50,7 +50,7 @@ class DescribeURedisBackupURLRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -60,7 +60,7 @@ class DescribeURedisBackupURLRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -70,7 +70,7 @@ class DescribeURedisBackupURLRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class DescribeURedisBackupURLRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -130,7 +130,7 @@ class DescribeURedisBackupURLRequest extends Request
     }
 
     /**
-     * GroupId: 实例名称
+     * GroupId: 实例ID
      *
      * @return string|null
      */
@@ -140,7 +140,7 @@ class DescribeURedisBackupURLRequest extends Request
     }
 
     /**
-     * GroupId: 实例名称
+     * GroupId: 实例ID
      *
      * @param string $groupId
      */
@@ -167,5 +167,25 @@ class DescribeURedisBackupURLRequest extends Request
     public function setSlaveZone($slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
+    }
+
+    /**
+     * IsCrossRegion: 默认为false,true时代表查询跨地域备份URL
+     *
+     * @return boolean|null
+     */
+    public function getIsCrossRegion()
+    {
+        return $this->get("IsCrossRegion");
+    }
+
+    /**
+     * IsCrossRegion: 默认为false,true时代表查询跨地域备份URL
+     *
+     * @param boolean $isCrossRegion
+     */
+    public function setIsCrossRegion($isCrossRegion)
+    {
+        $this->set("IsCrossRegion", $isCrossRegion);
     }
 }

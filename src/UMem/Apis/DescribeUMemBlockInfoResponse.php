@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,5 +53,25 @@ class DescribeUMemBlockInfoResponse extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * ReadMode: 集群读写分离策略。 枚举值[ "Custom": 用户自定义节点权重， "Uniform": 包括主节点在内的所有节点平均读请求， "ReadOnly": 读请求均分至只读节点]
+     *
+     * @return string|null
+     */
+    public function getReadMode()
+    {
+        return $this->get("ReadMode");
+    }
+
+    /**
+     * ReadMode: 集群读写分离策略。 枚举值[ "Custom": 用户自定义节点权重， "Uniform": 包括主节点在内的所有节点平均读请求， "ReadOnly": 读请求均分至只读节点]
+     *
+     * @param string $readMode
+     */
+    public function setReadMode($readMode)
+    {
+        $this->set("ReadMode", $readMode);
     }
 }

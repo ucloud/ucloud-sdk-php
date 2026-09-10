@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,26 +23,6 @@ class URedisBackupSet extends Response
     
 
     /**
-     * BackupId: 备份ID
-     *
-     * @return string|null
-     */
-    public function getBackupId()
-    {
-        return $this->get("BackupId");
-    }
-
-    /**
-     * BackupId: 备份ID
-     *
-     * @param string $backupId
-     */
-    public function setBackupId($backupId)
-    {
-        $this->set("BackupId", $backupId);
-    }
-
-    /**
      * Zone: 可用区，参见[可用区列表](../summary/regionlist.html)
      *
      * @return string|null
@@ -60,6 +40,26 @@ class URedisBackupSet extends Response
     public function setZone($zone)
     {
         $this->set("Zone", $zone);
+    }
+
+    /**
+     * BackupId: 备份ID
+     *
+     * @return string|null
+     */
+    public function getBackupId()
+    {
+        return $this->get("BackupId");
+    }
+
+    /**
+     * BackupId: 备份ID
+     *
+     * @param string $backupId
+     */
+    public function setBackupId($backupId)
+    {
+        $this->set("BackupId", $backupId);
     }
 
     /**
@@ -200,5 +200,85 @@ class URedisBackupSet extends Response
     public function setState($state)
     {
         $this->set("State", $state);
+    }
+
+    /**
+     * SrcRegionName: 跨地域备份源地域
+     *
+     * @return string|null
+     */
+    public function getSrcRegionName()
+    {
+        return $this->get("SrcRegionName");
+    }
+
+    /**
+     * SrcRegionName: 跨地域备份源地域
+     *
+     * @param string $srcRegionName
+     */
+    public function setSrcRegionName($srcRegionName)
+    {
+        $this->set("SrcRegionName", $srcRegionName);
+    }
+
+    /**
+     * DstRegionName: 跨地域备份目标地域
+     *
+     * @return string|null
+     */
+    public function getDstRegionName()
+    {
+        return $this->get("DstRegionName");
+    }
+
+    /**
+     * DstRegionName: 跨地域备份目标地域
+     *
+     * @param string $dstRegionName
+     */
+    public function setDstRegionName($dstRegionName)
+    {
+        $this->set("DstRegionName", $dstRegionName);
+    }
+
+    /**
+     * MemorySize: 源实例容量大小
+     *
+     * @return integer|null
+     */
+    public function getMemorySize()
+    {
+        return $this->get("MemorySize");
+    }
+
+    /**
+     * MemorySize: 源实例容量大小
+     *
+     * @param int $memorySize
+     */
+    public function setMemorySize($memorySize)
+    {
+        $this->set("MemorySize", $memorySize);
+    }
+
+    /**
+     * RedisVersion: 源实例Redis版本
+     *
+     * @return string|null
+     */
+    public function getRedisVersion()
+    {
+        return $this->get("RedisVersion");
+    }
+
+    /**
+     * RedisVersion: 源实例Redis版本
+     *
+     * @param string $redisVersion
+     */
+    public function setRedisVersion($redisVersion)
+    {
+        $this->set("RedisVersion", $redisVersion);
     }
 }

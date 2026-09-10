@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ class ResizeURedisGroupRequest extends Request
     {
         parent::__construct(["Action" => "ResizeURedisGroup"]);
         $this->markRequired("Region");
+        $this->markRequired("Zone");
         $this->markRequired("GroupId");
         $this->markRequired("Size");
     }
@@ -31,7 +32,7 @@ class ResizeURedisGroupRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +42,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +52,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -61,7 +62,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -71,7 +72,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -81,7 +82,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -131,7 +132,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * ChargeType:
+     * ChargeType: 计费类型
      *
      * @return string|null
      */
@@ -141,7 +142,7 @@ class ResizeURedisGroupRequest extends Request
     }
 
     /**
-     * ChargeType:
+     * ChargeType: 计费类型
      *
      * @param string $chargeType
      */
@@ -168,6 +169,46 @@ class ResizeURedisGroupRequest extends Request
     public function setType($type)
     {
         $this->set("Type", $type);
+    }
+
+    /**
+     * StartTime: 任务执行时间戳，默认为0或者不传时，为立即执行，传入时间需满足未来一天范围
+     *
+     * @return integer|null
+     */
+    public function getStartTime()
+    {
+        return $this->get("StartTime");
+    }
+
+    /**
+     * StartTime: 任务执行时间戳，默认为0或者不传时，为立即执行，传入时间需满足未来一天范围
+     *
+     * @param int $startTime
+     */
+    public function setStartTime($startTime)
+    {
+        $this->set("StartTime", $startTime);
+    }
+
+    /**
+     * HighPerformance: 高性能Redis， 默认为false， 或者不填， 高性能为true
+     *
+     * @return boolean|null
+     */
+    public function getHighPerformance()
+    {
+        return $this->get("HighPerformance");
+    }
+
+    /**
+     * HighPerformance: 高性能Redis， 默认为false， 或者不填， 高性能为true
+     *
+     * @param boolean $highPerformance
+     */
+    public function setHighPerformance($highPerformance)
+    {
+        $this->set("HighPerformance", $highPerformance);
     }
 
     /**

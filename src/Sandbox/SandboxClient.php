@@ -85,6 +85,7 @@ class SandboxClient extends Client
      *     "APIKey" => (string) 密钥
      *     "KeyID" => (string) 密钥ID
      *     "AccessCode" => (string) 访问码
+     *     "TemplateName" => (string) 站点空间空间模版，格式：site-nc-ng,n为偶数
      *     "Envs" => (string) 环境变量，格式：["key=value"]
      * ]
      *

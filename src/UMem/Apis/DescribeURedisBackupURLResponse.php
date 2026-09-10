@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ class DescribeURedisBackupURLResponse extends Response
     
 
     /**
-     * BackupURL: 备份文件公网的地址
+     * BackupURL: [即将下线,请使用BackupPath]
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class DescribeURedisBackupURLResponse extends Response
     }
 
     /**
-     * BackupURL: 备份文件公网的地址
+     * BackupURL: [即将下线,请使用BackupPath]
      *
      * @param string $backupURL
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ class GetUMemSpaceStateResponse extends Response
     /**
      * State: Starting:创建中 Running:运行中 Fail:失败
      *
-     * @return string|null
+     * @return string[]|null
      */
     public function getState()
     {
@@ -35,9 +35,9 @@ class GetUMemSpaceStateResponse extends Response
     /**
      * State: Starting:创建中 Running:运行中 Fail:失败
      *
-     * @param string $state
+     * @param string[] $state
      */
-    public function setState($state)
+    public function setState(array $state)
     {
         $this->set("State", $state);
     }

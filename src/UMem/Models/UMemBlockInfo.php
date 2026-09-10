@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ class UMemBlockInfo extends Response
     }
 
     /**
-     * BlockState: 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败
+     * BlockState: 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败UpgradeMemInit  //任务初始化
      *
      * @return string|null
      */
@@ -93,7 +93,7 @@ class UMemBlockInfo extends Response
     }
 
     /**
-     * BlockState: 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败
+     * BlockState: 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败UpgradeMemInit  //任务初始化
      *
      * @param string $blockState
      */
@@ -180,5 +180,65 @@ class UMemBlockInfo extends Response
     public function setBlockUsedSize($blockUsedSize)
     {
         $this->set("BlockUsedSize", $blockUsedSize);
+    }
+
+    /**
+     * BlockType: 分片类型，master 或者 slave
+     *
+     * @return string|null
+     */
+    public function getBlockType()
+    {
+        return $this->get("BlockType");
+    }
+
+    /**
+     * BlockType: 分片类型，master 或者 slave
+     *
+     * @param string $blockType
+     */
+    public function setBlockType($blockType)
+    {
+        $this->set("BlockType", $blockType);
+    }
+
+    /**
+     * BlockReadWeight: 分片读权重
+     *
+     * @return integer|null
+     */
+    public function getBlockReadWeight()
+    {
+        return $this->get("BlockReadWeight");
+    }
+
+    /**
+     * BlockReadWeight: 分片读权重
+     *
+     * @param int $blockReadWeight
+     */
+    public function setBlockReadWeight($blockReadWeight)
+    {
+        $this->set("BlockReadWeight", $blockReadWeight);
+    }
+
+    /**
+     * BlockName: 分片名称
+     *
+     * @return string|null
+     */
+    public function getBlockName()
+    {
+        return $this->get("BlockName");
+    }
+
+    /**
+     * BlockName: 分片名称
+     *
+     * @param string $blockName
+     */
+    public function setBlockName($blockName)
+    {
+        $this->set("BlockName", $blockName);
     }
 }

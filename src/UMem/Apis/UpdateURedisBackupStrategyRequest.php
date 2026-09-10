@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,13 +25,12 @@ class UpdateURedisBackupStrategyRequest extends Request
         parent::__construct(["Action" => "UpdateURedisBackupStrategy"]);
         $this->markRequired("Region");
         $this->markRequired("GroupId");
-        $this->markRequired("BackupTime");
     }
 
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +40,7 @@ class UpdateURedisBackupStrategyRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +50,7 @@ class UpdateURedisBackupStrategyRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -61,7 +60,7 @@ class UpdateURedisBackupStrategyRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -71,7 +70,7 @@ class UpdateURedisBackupStrategyRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -81,7 +80,7 @@ class UpdateURedisBackupStrategyRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -168,5 +167,65 @@ class UpdateURedisBackupStrategyRequest extends Request
     public function setSlaveZone($slaveZone)
     {
         $this->set("SlaveZone", $slaveZone);
+    }
+
+    /**
+     * OperationType: 操作类型，不传默认为normal(即操控自动备份打开以及时间)，modify（修改跨地域备份策略）,close(关闭跨地域备份策略)
+     *
+     * @return string|null
+     */
+    public function getOperationType()
+    {
+        return $this->get("OperationType");
+    }
+
+    /**
+     * OperationType: 操作类型，不传默认为normal(即操控自动备份打开以及时间)，modify（修改跨地域备份策略）,close(关闭跨地域备份策略)
+     *
+     * @param string $operationType
+     */
+    public function setOperationType($operationType)
+    {
+        $this->set("OperationType", $operationType);
+    }
+
+    /**
+     * DstRegion: 跨可用备份目标地域（当Operation为modify时必选）
+     *
+     * @return string|null
+     */
+    public function getDstRegion()
+    {
+        return $this->get("DstRegion");
+    }
+
+    /**
+     * DstRegion: 跨可用备份目标地域（当Operation为modify时必选）
+     *
+     * @param string $dstRegion
+     */
+    public function setDstRegion($dstRegion)
+    {
+        $this->set("DstRegion", $dstRegion);
+    }
+
+    /**
+     * SaveDays: 保存天数（当Operation为modify时必选）
+     *
+     * @return integer|null
+     */
+    public function getSaveDays()
+    {
+        return $this->get("SaveDays");
+    }
+
+    /**
+     * SaveDays: 保存天数（当Operation为modify时必选）
+     *
+     * @param int $saveDays
+     */
+    public function setSaveDays($saveDays)
+    {
+        $this->set("SaveDays", $saveDays);
     }
 }

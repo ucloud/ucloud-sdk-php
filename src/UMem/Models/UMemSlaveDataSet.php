@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -480,5 +480,65 @@ class UMemSlaveDataSet extends Response
     public function setVersion($version)
     {
         $this->set("Version", $version);
+    }
+
+    /**
+     * DefaultConfigId: 是否是默认配置文件；true表示默认；false表示非默认
+     *
+     * @return string|null
+     */
+    public function getDefaultConfigId()
+    {
+        return $this->get("DefaultConfigId");
+    }
+
+    /**
+     * DefaultConfigId: 是否是默认配置文件；true表示默认；false表示非默认
+     *
+     * @param string $defaultConfigId
+     */
+    public function setDefaultConfigId($defaultConfigId)
+    {
+        $this->set("DefaultConfigId", $defaultConfigId);
+    }
+
+    /**
+     * HasPassword: 实例是否设置密码
+     *
+     * @return boolean|null
+     */
+    public function getHasPassword()
+    {
+        return $this->get("HasPassword");
+    }
+
+    /**
+     * HasPassword: 实例是否设置密码
+     *
+     * @param boolean $hasPassword
+     */
+    public function setHasPassword($hasPassword)
+    {
+        $this->set("HasPassword", $hasPassword);
+    }
+
+    /**
+     * UDACEnable: 实例是否有加入到自治中心
+     *
+     * @return boolean|null
+     */
+    public function getUDACEnable()
+    {
+        return $this->get("UDACEnable");
+    }
+
+    /**
+     * UDACEnable: 实例是否有加入到自治中心
+     *
+     * @param boolean $udacEnable
+     */
+    public function setUDACEnable($udacEnable)
+    {
+        $this->set("UDACEnable", $udacEnable);
     }
 }

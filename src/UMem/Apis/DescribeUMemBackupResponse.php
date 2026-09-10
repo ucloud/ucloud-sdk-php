@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,5 +53,25 @@ class DescribeUMemBackupResponse extends Response
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * TotalCount: 备份总数
+     *
+     * @return integer|null
+     */
+    public function getTotalCount()
+    {
+        return $this->get("TotalCount");
+    }
+
+    /**
+     * TotalCount: 备份总数
+     *
+     * @param int $totalCount
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->set("TotalCount", $totalCount);
     }
 }

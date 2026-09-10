@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,5 +170,125 @@ class DescribeUMemPriceRequest extends Request
     public function setQuantity($quantity)
     {
         $this->set("Quantity", $quantity);
+    }
+
+    /**
+     * HighPerformance: 实例类型是否为性能增强型。默认为false，或者不填，true为性能增强型。
+     *
+     * @return boolean|null
+     */
+    public function getHighPerformance()
+    {
+        return $this->get("HighPerformance");
+    }
+
+    /**
+     * HighPerformance: 实例类型是否为性能增强型。默认为false，或者不填，true为性能增强型。
+     *
+     * @param boolean $highPerformance
+     */
+    public function setHighPerformance($highPerformance)
+    {
+        $this->set("HighPerformance", $highPerformance);
+    }
+
+    /**
+     * BlockCnt: umem 分片个数
+     *
+     * @return integer|null
+     */
+    public function getBlockCnt()
+    {
+        return $this->get("BlockCnt");
+    }
+
+    /**
+     * BlockCnt: umem 分片个数
+     *
+     * @param int $blockCnt
+     */
+    public function setBlockCnt($blockCnt)
+    {
+        $this->set("BlockCnt", $blockCnt);
+    }
+
+    /**
+     * ProxySize: umem 代理CPU核心数
+     *
+     * @return integer|null
+     */
+    public function getProxySize()
+    {
+        return $this->get("ProxySize");
+    }
+
+    /**
+     * ProxySize: umem 代理CPU核心数
+     *
+     * @param int $proxySize
+     */
+    public function setProxySize($proxySize)
+    {
+        $this->set("ProxySize", $proxySize);
+    }
+
+    /**
+     * UlbMode: umem分布式代理类型，默认false，true为负载均衡型代理
+     *
+     * @return string|null
+     */
+    public function getUlbMode()
+    {
+        return $this->get("UlbMode");
+    }
+
+    /**
+     * UlbMode: umem分布式代理类型，默认false，true为负载均衡型代理
+     *
+     * @param string $ulbMode
+     */
+    public function setUlbMode($ulbMode)
+    {
+        $this->set("UlbMode", $ulbMode);
+    }
+
+    /**
+     * ClusterMode: 数据库类型，RWMode为读写分离
+     *
+     * @return string|null
+     */
+    public function getClusterMode()
+    {
+        return $this->get("ClusterMode");
+    }
+
+    /**
+     * ClusterMode: 数据库类型，RWMode为读写分离
+     *
+     * @param string $clusterMode
+     */
+    public function setClusterMode($clusterMode)
+    {
+        $this->set("ClusterMode", $clusterMode);
+    }
+
+    /**
+     * ProxyCnt: umem 代理个数
+     *
+     * @return integer|null
+     */
+    public function getProxyCnt()
+    {
+        return $this->get("ProxyCnt");
+    }
+
+    /**
+     * ProxyCnt: umem 代理个数
+     *
+     * @param int $proxyCnt
+     */
+    public function setProxyCnt($proxyCnt)
+    {
+        $this->set("ProxyCnt", $proxyCnt);
     }
 }

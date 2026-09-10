@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,5 +149,145 @@ class DescribeUMemUpgradePriceRequest extends Request
     public function setSpaceId($spaceId)
     {
         $this->set("SpaceId", $spaceId);
+    }
+
+    /**
+     * HighPerformance: 是否为性能增强型。默认为false，或者不填，true为性能增强型。
+     *
+     * @return string|null
+     */
+    public function getHighPerformance()
+    {
+        return $this->get("HighPerformance");
+    }
+
+    /**
+     * HighPerformance: 是否为性能增强型。默认为false，或者不填，true为性能增强型。
+     *
+     * @param string $highPerformance
+     */
+    public function setHighPerformance($highPerformance)
+    {
+        $this->set("HighPerformance", $highPerformance);
+    }
+
+    /**
+     * IsSplit: 如果是拆分按钮查询价格就填 true, 否则就填 false,默认为 false
+     *
+     * @return string|null
+     */
+    public function getIsSplit()
+    {
+        return $this->get("IsSplit");
+    }
+
+    /**
+     * IsSplit: 如果是拆分按钮查询价格就填 true, 否则就填 false,默认为 false
+     *
+     * @param string $isSplit
+     */
+    public function setIsSplit($isSplit)
+    {
+        $this->set("IsSplit", $isSplit);
+    }
+
+    /**
+     * BlockIds: 进行容量调整分片的分片ID(性能增强型不需要传入)
+     *
+     * @return string[]|null
+     */
+    public function getBlockIds()
+    {
+        return $this->get("BlockIds");
+    }
+
+    /**
+     * BlockIds: 进行容量调整分片的分片ID(性能增强型不需要传入)
+     *
+     * @param string[] $blockIds
+     */
+    public function setBlockIds(array $blockIds)
+    {
+        $this->set("BlockIds", $blockIds);
+    }
+
+    /**
+     * BlockSize: 进行容量调整的分片的目标容量,单位 GB(性能增强型不需要传入)
+     *
+     * @return int[]|null
+     */
+    public function getBlockSize()
+    {
+        return $this->get("BlockSize");
+    }
+
+    /**
+     * BlockSize: 进行容量调整的分片的目标容量,单位 GB(性能增强型不需要传入)
+     *
+     * @param int[] $blockSize
+     */
+    public function setBlockSize(array $blockSize)
+    {
+        $this->set("BlockSize", $blockSize);
+    }
+
+    /**
+     * ProxyId:  代理id
+     *
+     * @return string|null
+     */
+    public function getProxyId()
+    {
+        return $this->get("ProxyId");
+    }
+
+    /**
+     * ProxyId:  代理id
+     *
+     * @param string $proxyId
+     */
+    public function setProxyId($proxyId)
+    {
+        $this->set("ProxyId", $proxyId);
+    }
+
+    /**
+     * NewCPU: 代理升级后CPU核数
+     *
+     * @return integer|null
+     */
+    public function getNewCPU()
+    {
+        return $this->get("NewCPU");
+    }
+
+    /**
+     * NewCPU: 代理升级后CPU核数
+     *
+     * @param int $newCPU
+     */
+    public function setNewCPU($newCPU)
+    {
+        $this->set("NewCPU", $newCPU);
+    }
+
+    /**
+     * ReplicaSize: 新增读写分离节点容量大小
+     *
+     * @return integer|null
+     */
+    public function getReplicaSize()
+    {
+        return $this->get("ReplicaSize");
+    }
+
+    /**
+     * ReplicaSize: 新增读写分离节点容量大小
+     *
+     * @param int $replicaSize
+     */
+    public function setReplicaSize($replicaSize)
+    {
+        $this->set("ReplicaSize", $replicaSize);
     }
 }
