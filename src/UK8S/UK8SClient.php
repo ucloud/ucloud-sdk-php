@@ -56,6 +56,8 @@ use UCloud\UK8S\Apis\ListUK8SULSConfigRequest;
 use UCloud\UK8S\Apis\ListUK8SULSConfigResponse;
 use UCloud\UK8S\Apis\RemoveUK8SNodeGroupRequest;
 use UCloud\UK8S\Apis\RemoveUK8SNodeGroupResponse;
+use UCloud\UK8S\Apis\UpdateUK8SNodeGroupRequest;
+use UCloud\UK8S\Apis\UpdateUK8SNodeGroupResponse;
 use UCloud\UK8S\Apis\UpdateUK8SULSConfigRequest;
 use UCloud\UK8S\Apis\UpdateUK8SULSConfigResponse;
 
@@ -117,18 +119,86 @@ class UK8SClient extends Client
      *     "ClusterId" => (string) 集群ID
      *     "ImageId" => (string) 镜像ID
      *     "MachineType" => (string) 云主机机型。枚举值["N", "C", "G", "O", "OS"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
-     *     "MinimalCpuPlatform" => (string) 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
-     *     "CPU" => (integer) GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     *     "CPU" => (integer) CPU个数
      *     "Mem" => (integer) 内存大小。单位：MB
-     *     "GpuType" => (string) GPU类型
-     *     "GPU" => (integer) GPU卡核心数
      *     "BootDiskType" => (string) 磁盘类型
+     *     "BootDiskSize" => (integer) 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *     "SubnetId" => (string) 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
+     *     "MinimalCpuPlatform" => (string) 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
+     *     "GpuType" => (string) GPU类型
+     *     "GPU" => (integer) GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *     "DataDiskSize" => (integer) 数据磁盘大小
      *     "DataDiskType" => (string) 磁盘类型
      *     "Tag" => (string) 业务组
      *     "ChargeType" => (string) 计费模式
-     *     "BootDiskSize" => (integer) 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
-     *     "SubnetId" => (string) 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
+     *     "UHostFamily" => (string) 主机规格族
+     *     "SecurityMode" => (string) 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *     "NodeNamePrefix" => (string) 自定义Uhost主机名前缀。完整的自定义Uhost主机名为{NodeNamePrefix}-{NodeIP}。
+     *     "ZoneBaned" => (string) 重复 待删除 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "IsolationGroupId" => (string) 硬件隔离组id。可通过DescribeIsolationGroup获取。
+     *     "MaxPods" => (string) 默认110，生产环境建议小于等于110。
+     *     "UserData" => (string) 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。
+     *     "InitScript" => (string) 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。
+     *     "Taints" => (string) Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *     "Labels" => (string) Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *     "NetCapability" => (string) 网络增强特性。枚举值：Normal，不开启; Super，开启网络增强1.0； Ultra，开启网络增强2.0；Extreme，开启网络增强3.0; Infiniband, 开启网络增强4.0（详情参考主机官网文档）
+     *     "UNIFeature" => (boolean) 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。
+     *     "SecGroupId" => (array<object>) [
+     *         [
+     *             "Id" => (string) 安全组 ID。至多可以同时绑定5个安全组。
+     *             "Priority" => (string) 安全组优先级。取值范围[1, 5]
+     *             "Name" => (string) 安全组名称。
+     *         ]
+     *     ]
+     *     "SecurityGroupId" => (string) 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *     "NetworkInterface" => (array<object>) [
+     *         [
+     *             "EIP" => (object) [
+     *                 "Bandwidth" => (integer) 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
+     *                 "PayMode" => (string) 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. "Free":免费带宽模式,默认为 "Bandwidth"
+     *                 "ShareBandwidthId" => (string) 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效
+     *                 "OperatorName" => (string) 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International,BGP: Bgp.各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2: Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk: International kr-seoul:International us-ws:International ge-fra:International sg:International tw-kh:International.其他海外线路均为 International
+     *                 "CouponId" => (string) 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。
+     *             ]
+     *         ]
+     *     ]
+     *     "KubeletConfiguration" => (object) [
+     *         "ContainerLogMaxFiles" => (integer) 容器的日志文件个数上限，需大于等于2。控制台展示为containerLogMaxFiles
+     *         "ContainerLogMaxSize" => (string) 容器日志文件轮换生成新文件的最大阈值，需以Mi结尾。控制台展示为containerLogMaxSize
+     *         "ImageGCHighThresholdPercent" => (integer) 配置镜像的磁盘用量百分比阈值，一旦镜像用量超过此阈值，镜像垃圾收集会一直运行。取值范围[1, 100], 同时需大于ImageGCLowThresholdPercent取值。控制台展示为imageGCHighThresholdPercent
+     *         "ImageGCLowThresholdPercent" => (integer) 配置镜像的磁盘用量百分比阈值，镜像用量低于此阈值时不会执行镜像垃圾收集操作。取值范围[1, 100], 同时需小于imageGCHighThresholdPercent取值。控制台展示为imageGCLowThresholdPercent
+     *         "MaxPods" => (integer) Node能运行的Pod最大数量。需大于0。控制台展示为maxPods
+     *         "EvictionHard" => (object) [
+     *             "MemoryAvailable" => (string) 触发Pod驱逐操作的硬性门限之内存用量: 需以Mi或Gi结尾。控制台展示为evictionHard - memory.available
+     *             "ImagefsAvailable" => (string) 触发Pod驱逐操作的硬性门限之容器镜像剩余空间: 需以%结尾。控制台展示为evictionHard - imagefs.available
+     *             "NodefsAvailable" => (string) 触发Pod驱逐操作的硬性门限之节点存储剩余空间: 需以%结尾。控制台展示为evictionHard - nodefs.available
+     *             "NodefsInodesFree" => (string) 触发Pod驱逐操作的硬性门限节点inode剩余量: 需以%结尾。控制台展示为evictionHard - nodefs.inodesFree
+     *         ]
+     *         "EvictionSoft" => (object) [
+     *             "MemoryAvailable" => (string) 触发Pod驱逐操作的软性门限之内存用量: 需以Mi或Gi结尾。配置此值时必须同时配置EvictionSoftGracePeriod.MemoryAvailable。控制台展示为evictionSoft - memory.available
+     *             "ImagefsAvailable" => (string) 触发Pod驱逐操作的软性门限之容器镜像剩余空间: 需以%结尾。配置此值时必须同时配置EvictionSoftGracePeriod.ImagefsAvailable。控制台展示为evictionSoft - imagefs.available
+     *             "NodefsAvailable" => (string) 触发Pod驱逐操作的软性门限之节点存储剩余空间: 需以%结尾。配置此值时必须同时配置EvictionSoftGracePeriod.NodefsAvailable。控制台展示为evictionSoft - nodefs.available
+     *             "NodefsInodesFree" => (string) 触发Pod驱逐操作的软性门限节点inode剩余量: 需以%结尾。配置此值时必须同时配置EvictionSoftGracePeriod.NodefsInodesFree。控制台展示为evictionSoft - nodefs.inodesFree
+     *         ]
+     *         "EvictionSoftGracePeriod" => (object) [
+     *             "MemoryAvailable" => (string) MemoryAvailable软性门限的宽限时间，必须以s结尾。控制台展示为evictionSoftGracePeriod - memory.available
+     *             "ImagefsAvailable" => (string) ImagefsAvailable软性门限的宽限时间，必须以s结尾。控制台展示为evictionSoftGracePeriod - imagefs.available
+     *             "NodefsAvailable" => (string) NodefsAvailable软性门限的宽限时间，必须以s结尾。控制台展示为evictionSoftGracePeriod - nodefs.available
+     *             "NodefsInodesFree" => (string) NodefsInodesFree软性门限的宽限时间，必须以s结尾。控制台展示为evictionSoftGracePeriod - nodefs.inodesFree
+     *         ]
+     *         "KubeReserved" => (object) [
+     *             "CPU" => (string) kubelet预留CPU资源，以m结尾。控制台展示为kubeReserved - cpu
+     *             "Memory" => (string) kubelet预留内存资源，以Mi结尾。控制台展示为kubeReserved - memory
+     *             "EphemeralStorage" => (string) kubelet预留存储空间，以Gi结尾。控制台展示为kubeReserved - ephemeral-storage
+     *             "Pid" => (string) kubelet预留pid数量，必须大于等于500, string方式提供。控制台展示为kubeReserved - pid
+     *         ]
+     *         "SystemReserved" => (object) [
+     *             "CPU" => (string) 系统预留CPU资源，以m结尾。控制台展示为systemReserved - cpu
+     *             "Memory" => (string) 系统预留内存资源，以Mi结尾。控制台展示为systemReserved - memory
+     *             "EphemeralStorage" => (string) 系统预留存储空间，以Gi结尾。控制台展示为systemReserved - ephemeral-storage
+     *             "Pid" => (string) 系统预留pid数量，必须大于等于500, string方式提供。控制台展示为systemReserved - pid
+     *         ]
+     *     ]
      * ]
      *
      * Outputs:
@@ -1359,6 +1429,85 @@ class UK8SClient extends Client
     {
         $resp = $this->invoke($request);
         return new RemoveUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateUK8SNodeGroup - 修改UK8S节点池
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/update_uk8s_node_group
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "NodeGroupId" => (string) 要修改的节点池Id
+     *     "ClusterId" => (string) 要修改的集群ID
+     *     "NodeGroupName" => (string) 节点池名字
+     *     "ImageId" => (string) 镜像ID
+     *     "MachineType" => (string) 云主机机型。枚举值["N", "C", "G", "O", "OS"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     *     "MinimalCpuPlatform" => (string) 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
+     *     "UHostFamily" => (string) 主机规格族
+     *     "CPU" => (integer) GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     *     "Mem" => (integer) 内存大小。单位：MB
+     *     "GpuType" => (string) GPU类型
+     *     "GPU" => (integer) GPU卡核心数
+     *     "BootDiskType" => (string) 磁盘类型
+     *     "DataDiskSize" => (integer) 数据磁盘大小
+     *     "DataDiskType" => (string) 磁盘类型
+     *     "Tag" => (string) 业务组
+     *     "ChargeType" => (string) 计费模式
+     *     "BootDiskSize" => (integer) 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *     "SubnetId" => (string) 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
+     *     "ZoneBaned" => (string) 重复 待删除 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "IsolationGroupId" => (string) 硬件隔离组id。可通过DescribeIsolationGroup获取。
+     *     "MaxPods" => (string) 默认110，生产环境建议小于等于110。
+     *     "UserData" => (string) 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。
+     *     "InitScript" => (string) 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。
+     *     "Taints" => (string) Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *     "Labels" => (string) Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *     "NetCapability" => (string) 网络增强特性。枚举值：Normal，不开启; Super，开启网络增强1.0； Ultra，开启网络增强2.0；Extreme，开启网络增强3.0; Infiniband, 开启网络增强4.0（详情参考主机官网文档）
+     *     "UNIFeature" => (boolean) 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。
+     *     "SecurityMode" => (string) 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *     "NodeNamePrefix" => (string) 自定义主机名前缀。完整的自定义主机名为{NodeNamePrefix}-{NodeIP}。
+     *     "SecGroupId" => (array<object>) [
+     *         [
+     *             "Id" => (string) 安全组 ID。至多可以同时绑定5个安全组。
+     *             "Priority" => (string) 安全组优先级。取值范围[1, 5]
+     *             "Name" => (string) 安全组名称。
+     *         ]
+     *     ]
+     *     "SecurityGroupId" => (string) 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *     "NetworkInterface" => (array<object>) [
+     *         [
+     *             "EIP" => (object) [
+     *                 "Bandwidth" => (integer) 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
+     *                 "PayMode" => (string) 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. "Free":免费带宽模式,默认为 "Bandwidth"
+     *                 "ShareBandwidthId" => (string) 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效
+     *                 "OperatorName" => (string) 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International, BGP: Bgp。 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2: Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk: International kr-seoul:International us-ws:International ge-fra:International sg:International tw-kh:International.其他海外线路均为 International
+     *                 "CouponId" => (string) 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。
+     *             ]
+     *         ]
+     *     ]
+     *     "KubeletConfiguration" => (object) [
+     *         "ContainerLogMaxFiles" => (integer) 全量KubeletConfiguration.XXX定义参考AddUK8SNodeGroup接口: https://uxiao.ucloudadmin.com/#/api-manager/api/detail/UK8S/AddUK8SNodeGroup
+     *     ]
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "NodeGroupId" => (string) 节点池ID
+     * ]
+     *
+     * @return UpdateUK8SNodeGroupResponse
+     * @throws UCloudException
+     */
+    public function updateUK8SNodeGroup(UpdateUK8SNodeGroupRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdateUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**

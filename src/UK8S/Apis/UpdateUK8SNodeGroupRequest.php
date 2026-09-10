@@ -17,31 +17,19 @@
 namespace UCloud\UK8S\Apis;
 
 use UCloud\Core\Request\Request;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamSecGroupId;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamNetworkInterface;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamNetworkInterfaceEIP;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamKubeletConfiguration;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamKubeletConfigurationEvictionHard;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamKubeletConfigurationEvictionSoft;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamKubeletConfigurationEvictionSoftGracePeriod;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamKubeletConfigurationKubeReserved;
-use UCloud\UK8S\Params\AddUK8SNodeGroupParamKubeletConfigurationSystemReserved;
+use UCloud\UK8S\Params\UpdateUK8SNodeGroupParamSecGroupId;
+use UCloud\UK8S\Params\UpdateUK8SNodeGroupParamNetworkInterface;
+use UCloud\UK8S\Params\UpdateUK8SNodeGroupParamNetworkInterfaceEIP;
+use UCloud\UK8S\Params\UpdateUK8SNodeGroupParamKubeletConfiguration;
 
-class AddUK8SNodeGroupRequest extends Request
+class UpdateUK8SNodeGroupRequest extends Request
 {
     public function __construct()
     {
-        parent::__construct(["Action" => "AddUK8SNodeGroup"]);
+        parent::__construct(["Action" => "UpdateUK8SNodeGroup"]);
         $this->markRequired("Region");
-        $this->markRequired("NodeGroupName");
+        $this->markRequired("NodeGroupId");
         $this->markRequired("ClusterId");
-        $this->markRequired("ImageId");
-        $this->markRequired("MachineType");
-        $this->markRequired("CPU");
-        $this->markRequired("Mem");
-        $this->markRequired("BootDiskType");
-        $this->markRequired("BootDiskSize");
-        $this->markRequired("SubnetId");
     }
 
     
@@ -107,6 +95,46 @@ class AddUK8SNodeGroupRequest extends Request
     }
 
     /**
+     * NodeGroupId: 要修改的节点池Id
+     *
+     * @return string|null
+     */
+    public function getNodeGroupId()
+    {
+        return $this->get("NodeGroupId");
+    }
+
+    /**
+     * NodeGroupId: 要修改的节点池Id
+     *
+     * @param string $nodeGroupId
+     */
+    public function setNodeGroupId($nodeGroupId)
+    {
+        $this->set("NodeGroupId", $nodeGroupId);
+    }
+
+    /**
+     * ClusterId: 要修改的集群ID
+     *
+     * @return string|null
+     */
+    public function getClusterId()
+    {
+        return $this->get("ClusterId");
+    }
+
+    /**
+     * ClusterId: 要修改的集群ID
+     *
+     * @param string $clusterId
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->set("ClusterId", $clusterId);
+    }
+
+    /**
      * NodeGroupName: 节点池名字
      *
      * @return string|null
@@ -124,26 +152,6 @@ class AddUK8SNodeGroupRequest extends Request
     public function setNodeGroupName($nodeGroupName)
     {
         $this->set("NodeGroupName", $nodeGroupName);
-    }
-
-    /**
-     * ClusterId: 集群ID
-     *
-     * @return string|null
-     */
-    public function getClusterId()
-    {
-        return $this->get("ClusterId");
-    }
-
-    /**
-     * ClusterId: 集群ID
-     *
-     * @param string $clusterId
-     */
-    public function setClusterId($clusterId)
-    {
-        $this->set("ClusterId", $clusterId);
     }
 
     /**
@@ -187,7 +195,47 @@ class AddUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * CPU: CPU个数
+     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
+     *
+     * @return string|null
+     */
+    public function getMinimalCpuPlatform()
+    {
+        return $this->get("MinimalCpuPlatform");
+    }
+
+    /**
+     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
+     *
+     * @param string $minimalCpuPlatform
+     */
+    public function setMinimalCpuPlatform($minimalCpuPlatform)
+    {
+        $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
+    }
+
+    /**
+     * UHostFamily: 主机规格族
+     *
+     * @return string|null
+     */
+    public function getUHostFamily()
+    {
+        return $this->get("UHostFamily");
+    }
+
+    /**
+     * UHostFamily: 主机规格族
+     *
+     * @param string $uHostFamily
+     */
+    public function setUHostFamily($uHostFamily)
+    {
+        $this->set("UHostFamily", $uHostFamily);
+    }
+
+    /**
+     * CPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *
      * @return integer|null
      */
@@ -197,7 +245,7 @@ class AddUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * CPU: CPU个数
+     * CPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
      *
      * @param int $cpu
      */
@@ -227,86 +275,6 @@ class AddUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * BootDiskType: 磁盘类型
-     *
-     * @return string|null
-     */
-    public function getBootDiskType()
-    {
-        return $this->get("BootDiskType");
-    }
-
-    /**
-     * BootDiskType: 磁盘类型
-     *
-     * @param string $bootDiskType
-     */
-    public function setBootDiskType($bootDiskType)
-    {
-        $this->set("BootDiskType", $bootDiskType);
-    }
-
-    /**
-     * BootDiskSize: 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
-     *
-     * @return integer|null
-     */
-    public function getBootDiskSize()
-    {
-        return $this->get("BootDiskSize");
-    }
-
-    /**
-     * BootDiskSize: 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
-     *
-     * @param int $bootDiskSize
-     */
-    public function setBootDiskSize($bootDiskSize)
-    {
-        $this->set("BootDiskSize", $bootDiskSize);
-    }
-
-    /**
-     * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
-     *
-     * @return string|null
-     */
-    public function getSubnetId()
-    {
-        return $this->get("SubnetId");
-    }
-
-    /**
-     * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
-     *
-     * @param string $subnetId
-     */
-    public function setSubnetId($subnetId)
-    {
-        $this->set("SubnetId", $subnetId);
-    }
-
-    /**
-     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
-     *
-     * @return string|null
-     */
-    public function getMinimalCpuPlatform()
-    {
-        return $this->get("MinimalCpuPlatform");
-    }
-
-    /**
-     * MinimalCpuPlatform: 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR"; “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
-     *
-     * @param string $minimalCpuPlatform
-     */
-    public function setMinimalCpuPlatform($minimalCpuPlatform)
-    {
-        $this->set("MinimalCpuPlatform", $minimalCpuPlatform);
-    }
-
-    /**
      * GpuType: GPU类型
      *
      * @return string|null
@@ -327,7 +295,7 @@ class AddUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     * GPU: GPU卡核心数
      *
      * @return integer|null
      */
@@ -337,13 +305,33 @@ class AddUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * GPU: GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关）
+     * GPU: GPU卡核心数
      *
      * @param int $gpu
      */
     public function setGPU($gpu)
     {
         $this->set("GPU", $gpu);
+    }
+
+    /**
+     * BootDiskType: 磁盘类型
+     *
+     * @return string|null
+     */
+    public function getBootDiskType()
+    {
+        return $this->get("BootDiskType");
+    }
+
+    /**
+     * BootDiskType: 磁盘类型
+     *
+     * @param string $bootDiskType
+     */
+    public function setBootDiskType($bootDiskType)
+    {
+        $this->set("BootDiskType", $bootDiskType);
     }
 
     /**
@@ -427,63 +415,43 @@ class AddUK8SNodeGroupRequest extends Request
     }
 
     /**
-     * UHostFamily: 主机规格族
+     * BootDiskSize: 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @return integer|null
+     */
+    public function getBootDiskSize()
+    {
+        return $this->get("BootDiskSize");
+    }
+
+    /**
+     * BootDiskSize: 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *
+     * @param int $bootDiskSize
+     */
+    public function setBootDiskSize($bootDiskSize)
+    {
+        $this->set("BootDiskSize", $bootDiskSize);
+    }
+
+    /**
+     * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
      *
      * @return string|null
      */
-    public function getUHostFamily()
+    public function getSubnetId()
     {
-        return $this->get("UHostFamily");
+        return $this->get("SubnetId");
     }
 
     /**
-     * UHostFamily: 主机规格族
+     * SubnetId: 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
      *
-     * @param string $uHostFamily
+     * @param string $subnetId
      */
-    public function setUHostFamily($uHostFamily)
+    public function setSubnetId($subnetId)
     {
-        $this->set("UHostFamily", $uHostFamily);
-    }
-
-    /**
-     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
-     *
-     * @return string|null
-     */
-    public function getSecurityMode()
-    {
-        return $this->get("SecurityMode");
-    }
-
-    /**
-     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
-     *
-     * @param string $securityMode
-     */
-    public function setSecurityMode($securityMode)
-    {
-        $this->set("SecurityMode", $securityMode);
-    }
-
-    /**
-     * NodeNamePrefix: 自定义Uhost主机名前缀。完整的自定义Uhost主机名为{NodeNamePrefix}-{NodeIP}。
-     *
-     * @return string|null
-     */
-    public function getNodeNamePrefix()
-    {
-        return $this->get("NodeNamePrefix");
-    }
-
-    /**
-     * NodeNamePrefix: 自定义Uhost主机名前缀。完整的自定义Uhost主机名为{NodeNamePrefix}-{NodeIP}。
-     *
-     * @param string $nodeNamePrefix
-     */
-    public function setNodeNamePrefix($nodeNamePrefix)
-    {
-        $this->set("NodeNamePrefix", $nodeNamePrefix);
+        $this->set("SubnetId", $subnetId);
     }
 
     /**
@@ -667,9 +635,49 @@ class AddUK8SNodeGroupRequest extends Request
     }
 
     /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @return string|null
+     */
+    public function getSecurityMode()
+    {
+        return $this->get("SecurityMode");
+    }
+
+    /**
+     * SecurityMode: 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *
+     * @param string $securityMode
+     */
+    public function setSecurityMode($securityMode)
+    {
+        $this->set("SecurityMode", $securityMode);
+    }
+
+    /**
+     * NodeNamePrefix: 自定义主机名前缀。完整的自定义主机名为{NodeNamePrefix}-{NodeIP}。
+     *
+     * @return string|null
+     */
+    public function getNodeNamePrefix()
+    {
+        return $this->get("NodeNamePrefix");
+    }
+
+    /**
+     * NodeNamePrefix: 自定义主机名前缀。完整的自定义主机名为{NodeNamePrefix}-{NodeIP}。
+     *
+     * @param string $nodeNamePrefix
+     */
+    public function setNodeNamePrefix($nodeNamePrefix)
+    {
+        $this->set("NodeNamePrefix", $nodeNamePrefix);
+    }
+
+    /**
      * SecGroupId:
      *
-     * @return AddUK8SNodeGroupParamSecGroupId[]|null
+     * @return UpdateUK8SNodeGroupParamSecGroupId[]|null
      */
     public function getSecGroupId()
     {
@@ -679,7 +687,7 @@ class AddUK8SNodeGroupRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new AddUK8SNodeGroupParamSecGroupId($item));
+            array_push($result, new UpdateUK8SNodeGroupParamSecGroupId($item));
         }
         return $result;
     }
@@ -687,7 +695,7 @@ class AddUK8SNodeGroupRequest extends Request
     /**
      * SecGroupId:
      *
-     * @param AddUK8SNodeGroupParamSecGroupId[] $secGroupId
+     * @param UpdateUK8SNodeGroupParamSecGroupId[] $secGroupId
      */
     public function setSecGroupId(array $secGroupId)
     {
@@ -721,7 +729,7 @@ class AddUK8SNodeGroupRequest extends Request
     /**
      * NetworkInterface:
      *
-     * @return AddUK8SNodeGroupParamNetworkInterface[]|null
+     * @return UpdateUK8SNodeGroupParamNetworkInterface[]|null
      */
     public function getNetworkInterface()
     {
@@ -731,7 +739,7 @@ class AddUK8SNodeGroupRequest extends Request
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new AddUK8SNodeGroupParamNetworkInterface($item));
+            array_push($result, new UpdateUK8SNodeGroupParamNetworkInterface($item));
         }
         return $result;
     }
@@ -739,7 +747,7 @@ class AddUK8SNodeGroupRequest extends Request
     /**
      * NetworkInterface:
      *
-     * @param AddUK8SNodeGroupParamNetworkInterface[] $networkInterface
+     * @param UpdateUK8SNodeGroupParamNetworkInterface[] $networkInterface
      */
     public function setNetworkInterface(array $networkInterface)
     {
@@ -753,17 +761,17 @@ class AddUK8SNodeGroupRequest extends Request
     /**
      * KubeletConfiguration:
      *
-     * @return AddUK8SNodeGroupParamKubeletConfiguration|null
+     * @return UpdateUK8SNodeGroupParamKubeletConfiguration|null
      */
     public function getKubeletConfiguration()
     {
-        return new AddUK8SNodeGroupParamKubeletConfiguration($this->get("KubeletConfiguration"));
+        return new UpdateUK8SNodeGroupParamKubeletConfiguration($this->get("KubeletConfiguration"));
     }
 
     /**
      * KubeletConfiguration:
      *
-     * @param AddUK8SNodeGroupParamKubeletConfiguration $kubeletConfiguration
+     * @param UpdateUK8SNodeGroupParamKubeletConfiguration $kubeletConfiguration
      */
     public function setKubeletConfiguration(array $kubeletConfiguration)
     {
