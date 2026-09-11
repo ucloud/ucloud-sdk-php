@@ -24,8 +24,6 @@ use UCloud\UHost\Models\FamiliesBootDiskInfo;
 use UCloud\UHost\Models\DiskFeature;
 use UCloud\UHost\Models\NameOperationStatus;
 use UCloud\UHost\Models\FamiliesDataDiskInfo;
-use UCloud\UHost\Models\DiskFeature;
-use UCloud\UHost\Models\NameOperationStatus;
 use UCloud\UHost\Models\MachineSizes;
 use UCloud\UHost\Models\Collection;
 use UCloud\UHost\Models\Features;

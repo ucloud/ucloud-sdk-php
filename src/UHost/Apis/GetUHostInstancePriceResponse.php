@@ -19,7 +19,6 @@ namespace UCloud\UHost\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UHost\Models\UHostPriceSet;
 use UCloud\UHost\Models\PriceDetail;
-use UCloud\UHost\Models\PriceDetail;
 
 class GetUHostInstancePriceResponse extends Response
 {

@@ -18,8 +18,6 @@ namespace UCloud\UHost\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UHost\Models\DiskUpgradePriceDetail;
-use UCloud\UHost\Models\DiskUpgradePriceDetail;
-use UCloud\UHost\Models\DiskUpgradePriceDetail;
 
 class GetAttachedDiskUpgradePriceResponse extends Response
 {
