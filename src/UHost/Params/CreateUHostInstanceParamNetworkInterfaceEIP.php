@@ -103,6 +103,26 @@ class CreateUHostInstanceParamNetworkInterfaceEIP extends Request
     }
 
     /**
+     * ExistEIPId: 指定EIP Id进行绑定
+     *
+     * @return string|null
+     */
+    public function getExistEIPId()
+    {
+        return $this->get("ExistEIPId");
+    }
+
+    /**
+     * ExistEIPId: 指定EIP Id进行绑定
+     *
+     * @param string $existEIPId
+     */
+    public function setExistEIPId($existEIPId)
+    {
+        $this->set("ExistEIPId", $existEIPId);
+    }
+
+    /**
      * CouponId: 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。
      *
      * @return string|null
