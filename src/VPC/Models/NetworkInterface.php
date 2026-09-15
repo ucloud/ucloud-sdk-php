@@ -613,32 +613,20 @@ class NetworkInterface extends Response
     /**
      * PrivateIpLimit: 私有 IP 配额
      *
-     * @return UNIQuotaInfo[]|null
+     * @return UNIQuotaInfo|null
      */
     public function getPrivateIpLimit()
     {
-        $items = $this->get("PrivateIpLimit");
-        if ($items == null) {
-            return [];
-        }
-        $result = [];
-        foreach ($items as $i => $item) {
-            array_push($result, new UNIQuotaInfo($item));
-        }
-        return $result;
+        return new UNIQuotaInfo($this->get("PrivateIpLimit"));
     }
 
     /**
      * PrivateIpLimit: 私有 IP 配额
      *
-     * @param UNIQuotaInfo[] $privateIpLimit
+     * @param UNIQuotaInfo $privateIpLimit
      */
     public function setPrivateIpLimit(array $privateIpLimit)
     {
-        $result = [];
-        foreach ($privateIpLimit as $i => $item) {
-            array_push($result, $item->getAll());
-        }
-        return $result;
+        $this->set("PrivateIpLimit", $privateIpLimit->getAll());
     }
 }

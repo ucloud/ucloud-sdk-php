@@ -2123,11 +2123,9 @@ class VPCClient extends Client
      *             "CreateTime" => (integer) 创建时间
      *             "Remark" => (string) 备注
      *             "Tag" => (string) 业务组
-     *             "PrivateIpLimit" => (array<object>) 私有 IP 配额[
-     *                 [
-     *                     "PrivateIpCount" => (integer) 网卡拥有的内网IP数量
-     *                     "PrivateIpQuota" => (integer) 网卡内网IP配额
-     *                 ]
+     *             "PrivateIpLimit" => (object) 私有 IP 配额[
+     *                 "PrivateIpCount" => (integer) 网卡拥有的内网IP数量
+     *                 "PrivateIpQuota" => (integer) 网卡内网IP配额
      *             ]
      *         ]
      *     ]

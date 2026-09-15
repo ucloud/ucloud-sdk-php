@@ -203,6 +203,26 @@ class Site extends Response
     }
 
     /**
+     * Resource: 计算资源
+     *
+     * @return SiteResource|null
+     */
+    public function getResource()
+    {
+        return new SiteResource($this->get("Resource"));
+    }
+
+    /**
+     * Resource: 计算资源
+     *
+     * @param SiteResource $resource
+     */
+    public function setResource(array $resource)
+    {
+        $this->set("Resource", $resource->getAll());
+    }
+
+    /**
      * Envs: 站点环境变量。格式：["key=value"]
      *
      * @return string[]|null
