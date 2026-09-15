@@ -14,34 +14,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace UCloud\Sandbox\Apis;
+namespace UCloud\Sandbox\Models;
 
 use UCloud\Core\Response\Response;
-use UCloud\Sandbox\Models\Site;
-use UCloud\Sandbox\Models\SiteResource;
-use UCloud\Sandbox\Models\SiteIPAccess;
 
-class GetSandboxSiteResponse extends Response
+class SiteResource extends Response
 {
     
 
     /**
-     * Site: 站点
+     * CPU: CPU核心
      *
-     * @return Site|null
+     * @return integer|null
      */
-    public function getSite()
+    public function getCPU()
     {
-        return new Site($this->get("Site"));
+        return $this->get("CPU");
     }
 
     /**
-     * Site: 站点
+     * CPU: CPU核心
      *
-     * @param Site $site
+     * @param int $cpu
      */
-    public function setSite(array $site)
+    public function setCPU($cpu)
     {
-        $this->set("Site", $site->getAll());
+        $this->set("CPU", $cpu);
+    }
+
+    /**
+     * MemoryMB: 内存占用MB
+     *
+     * @return integer|null
+     */
+    public function getMemoryMB()
+    {
+        return $this->get("MemoryMB");
+    }
+
+    /**
+     * MemoryMB: 内存占用MB
+     *
+     * @param int $memoryMB
+     */
+    public function setMemoryMB($memoryMB)
+    {
+        $this->set("MemoryMB", $memoryMB);
     }
 }

@@ -158,6 +158,10 @@ class SandboxClient extends Client
      *         "UpdateTime" => (integer) 更新时间
      *         "AccessCode" => (string) 访问码
      *         "ConnectKey" => (string) 连接密钥
+     *         "Resource" => (object) 计算资源[
+     *             "CPU" => (integer) CPU核心
+     *             "MemoryMB" => (integer) 内存占用MB
+     *         ]
      *         "Envs" => (array<string>) 站点环境变量。格式：["key=value"]
      *         "CustomDomain" => (string) 自定义域名
      *         "CustomDomainStatus" => (string) 自定义域名签发状态
@@ -205,6 +209,10 @@ class SandboxClient extends Client
      *             "UpdateTime" => (integer) 更新时间
      *             "AccessCode" => (string) 访问码
      *             "ConnectKey" => (string) 连接密钥
+     *             "Resource" => (object) 计算资源[
+     *                 "CPU" => (integer) CPU核心
+     *                 "MemoryMB" => (integer) 内存占用MB
+     *             ]
      *             "Envs" => (array<string>) 站点环境变量。格式：["key=value"]
      *             "CustomDomain" => (string) 自定义域名
      *             "CustomDomainStatus" => (string) 自定义域名签发状态

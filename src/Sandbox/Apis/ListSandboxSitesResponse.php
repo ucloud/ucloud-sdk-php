@@ -18,6 +18,7 @@ namespace UCloud\Sandbox\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\Sandbox\Models\Site;
+use UCloud\Sandbox\Models\SiteResource;
 use UCloud\Sandbox\Models\SiteIPAccess;
 
 class ListSandboxSitesResponse extends Response
