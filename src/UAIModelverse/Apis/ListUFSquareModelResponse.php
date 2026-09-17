@@ -18,6 +18,10 @@ namespace UCloud\UAIModelverse\Apis;
 
 use UCloud\Core\Response\Response;
 use UCloud\UAIModelverse\Models\SquareModel;
+use UCloud\UAIModelverse\Models\InferenceRegionInfo;
+use UCloud\UAIModelverse\Models\ModelTypeMap;
+use UCloud\UAIModelverse\Models\ModelCapabilities;
+use UCloud\UAIModelverse\Models\ApiProtocols;
 use UCloud\UAIModelverse\Models\Pricing;
 use UCloud\UAIModelverse\Models\PriceTier;
 use UCloud\UAIModelverse\Models\PriceRate;

@@ -43,6 +43,46 @@ class SquareModel extends Response
     }
 
     /**
+     * ModelCategory: 一级分类
+     *
+     * @return string|null
+     */
+    public function getModelCategory()
+    {
+        return $this->get("ModelCategory");
+    }
+
+    /**
+     * ModelCategory: 一级分类
+     *
+     * @param string $modelCategory
+     */
+    public function setModelCategory($modelCategory)
+    {
+        $this->set("ModelCategory", $modelCategory);
+    }
+
+    /**
+     * ModelSubCategories: 二级分类列表
+     *
+     * @return string|null
+     */
+    public function getModelSubCategories()
+    {
+        return $this->get("ModelSubCategories");
+    }
+
+    /**
+     * ModelSubCategories: 二级分类列表
+     *
+     * @param string $modelSubCategories
+     */
+    public function setModelSubCategories($modelSubCategories)
+    {
+        $this->set("ModelSubCategories", $modelSubCategories);
+    }
+
+    /**
      * IsHasBatch: 是否关联有可用 batch 模型
      *
      * @return boolean|null
@@ -80,6 +120,58 @@ class SquareModel extends Response
     public function setBatchName($batchName)
     {
         $this->set("BatchName", $batchName);
+    }
+
+    /**
+     * IsHasInferenceRegions: 是否有关联的推理地域模型
+     *
+     * @return boolean|null
+     */
+    public function getIsHasInferenceRegions()
+    {
+        return $this->get("IsHasInferenceRegions");
+    }
+
+    /**
+     * IsHasInferenceRegions: 是否有关联的推理地域模型
+     *
+     * @param boolean $isHasInferenceRegions
+     */
+    public function setIsHasInferenceRegions($isHasInferenceRegions)
+    {
+        $this->set("IsHasInferenceRegions", $isHasInferenceRegions);
+    }
+
+    /**
+     * InferenceRegions: 推理地域模型列表
+     *
+     * @return InferenceRegionInfo[]|null
+     */
+    public function getInferenceRegions()
+    {
+        $items = $this->get("InferenceRegions");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new InferenceRegionInfo($item));
+        }
+        return $result;
+    }
+
+    /**
+     * InferenceRegions: 推理地域模型列表
+     *
+     * @param InferenceRegionInfo[] $inferenceRegions
+     */
+    public function setInferenceRegions(array $inferenceRegions)
+    {
+        $result = [];
+        foreach ($inferenceRegions as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
@@ -203,7 +295,7 @@ class SquareModel extends Response
     }
 
     /**
-     * MaxModelLen: 模型长度
+     * MaxModelLen: 模型长度，单位 token
      *
      * @return integer|null
      */
@@ -213,13 +305,93 @@ class SquareModel extends Response
     }
 
     /**
-     * MaxModelLen: 模型长度
+     * MaxModelLen: 模型长度，单位 token
      *
      * @param int $maxModelLen
      */
     public function setMaxModelLen($maxModelLen)
     {
         $this->set("MaxModelLen", $maxModelLen);
+    }
+
+    /**
+     * MaxModelLenNew: 模型长度，单位 K tokens
+     *
+     * @return integer|null
+     */
+    public function getMaxModelLenNew()
+    {
+        return $this->get("MaxModelLenNew");
+    }
+
+    /**
+     * MaxModelLenNew: 模型长度，单位 K tokens
+     *
+     * @param int $maxModelLenNew
+     */
+    public function setMaxModelLenNew($maxModelLenNew)
+    {
+        $this->set("MaxModelLenNew", $maxModelLenNew);
+    }
+
+    /**
+     * MaxInputTokens: 最大输入token数
+     *
+     * @return integer|null
+     */
+    public function getMaxInputTokens()
+    {
+        return $this->get("MaxInputTokens");
+    }
+
+    /**
+     * MaxInputTokens: 最大输入token数
+     *
+     * @param int $maxInputTokens
+     */
+    public function setMaxInputTokens($maxInputTokens)
+    {
+        $this->set("MaxInputTokens", $maxInputTokens);
+    }
+
+    /**
+     * MaxOutputTokens: 最大输出token数
+     *
+     * @return integer|null
+     */
+    public function getMaxOutputTokens()
+    {
+        return $this->get("MaxOutputTokens");
+    }
+
+    /**
+     * MaxOutputTokens: 最大输出token数
+     *
+     * @param int $maxOutputTokens
+     */
+    public function setMaxOutputTokens($maxOutputTokens)
+    {
+        $this->set("MaxOutputTokens", $maxOutputTokens);
+    }
+
+    /**
+     * ModelTypeMap: 模型类型映射
+     *
+     * @return ModelTypeMap|null
+     */
+    public function getModelTypeMap()
+    {
+        return new ModelTypeMap($this->get("ModelTypeMap"));
+    }
+
+    /**
+     * ModelTypeMap: 模型类型映射
+     *
+     * @param ModelTypeMap $modelTypeMap
+     */
+    public function setModelTypeMap(array $modelTypeMap)
+    {
+        $this->set("ModelTypeMap", $modelTypeMap->getAll());
     }
 
     /**
@@ -240,6 +412,26 @@ class SquareModel extends Response
     public function setModelType($modelType)
     {
         $this->set("ModelType", $modelType);
+    }
+
+    /**
+     * CoverUrl: 模型封面链接
+     *
+     * @return string|null
+     */
+    public function getCoverUrl()
+    {
+        return $this->get("CoverUrl");
+    }
+
+    /**
+     * CoverUrl: 模型封面链接
+     *
+     * @param string $coverUrl
+     */
+    public function setCoverUrl($coverUrl)
+    {
+        $this->set("CoverUrl", $coverUrl);
     }
 
     /**
@@ -320,6 +512,106 @@ class SquareModel extends Response
     public function setSupportedCapabilities(array $supportedCapabilities)
     {
         $this->set("SupportedCapabilities", $supportedCapabilities);
+    }
+
+    /**
+     * Capabilities: 模型能力详细映射
+     *
+     * @return ModelCapabilities|null
+     */
+    public function getCapabilities()
+    {
+        return new ModelCapabilities($this->get("Capabilities"));
+    }
+
+    /**
+     * Capabilities: 模型能力详细映射
+     *
+     * @param ModelCapabilities $capabilities
+     */
+    public function setCapabilities(array $capabilities)
+    {
+        $this->set("Capabilities", $capabilities->getAll());
+    }
+
+    /**
+     * ExtraModelTags: 模型额外标签
+     *
+     * @return string[]|null
+     */
+    public function getExtraModelTags()
+    {
+        return $this->get("ExtraModelTags");
+    }
+
+    /**
+     * ExtraModelTags: 模型额外标签
+     *
+     * @param string[] $extraModelTags
+     */
+    public function setExtraModelTags(array $extraModelTags)
+    {
+        $this->set("ExtraModelTags", $extraModelTags);
+    }
+
+    /**
+     * ApiProtocols: api协议映射
+     *
+     * @return ApiProtocols|null
+     */
+    public function getApiProtocols()
+    {
+        return new ApiProtocols($this->get("ApiProtocols"));
+    }
+
+    /**
+     * ApiProtocols: api协议映射
+     *
+     * @param ApiProtocols $apiProtocols
+     */
+    public function setApiProtocols(array $apiProtocols)
+    {
+        $this->set("ApiProtocols", $apiProtocols->getAll());
+    }
+
+    /**
+     * InputModalities: 输入模态
+     *
+     * @return string[]|null
+     */
+    public function getInputModalities()
+    {
+        return $this->get("InputModalities");
+    }
+
+    /**
+     * InputModalities: 输入模态
+     *
+     * @param string[] $inputModalities
+     */
+    public function setInputModalities(array $inputModalities)
+    {
+        $this->set("InputModalities", $inputModalities);
+    }
+
+    /**
+     * OutputModalities: 输出模态
+     *
+     * @return string[]|null
+     */
+    public function getOutputModalities()
+    {
+        return $this->get("OutputModalities");
+    }
+
+    /**
+     * OutputModalities: 输出模态
+     *
+     * @param string[] $outputModalities
+     */
+    public function setOutputModalities(array $outputModalities)
+    {
+        $this->set("OutputModalities", $outputModalities);
     }
 
     /**
