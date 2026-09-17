@@ -450,20 +450,65 @@ class UAIModelverseClient extends Client
      * $outputs = [
      *     "SquareModel" => (object) 模型[
      *         "BatchSquareModelId" => (string) 关联的 batch 模型广场id
+     *         "ModelCategory" => (string) 一级分类
+     *         "ModelSubCategories" => (string) 二级分类列表
      *         "IsHasBatch" => (boolean) 是否关联有可用 batch 模型
      *         "BatchName" => (string) 关联的 batch 模型名称
+     *         "IsHasInferenceRegions" => (boolean) 是否有关联的推理地域模型
+     *         "InferenceRegions" => (array<object>) 推理地域模型列表[
+     *             [
+     *                 "RegionCode" => (string) 地域代码: sg(新加坡)/us(美国)/hk(香港)
+     *                 "RegionName" => (string) 地域名称: 新加坡/美国/香港
+     *                 "RegionNameEn" => (string) 地域名称(英文): Singapore/United States/Hong Kong
+     *                 "ModelId" => (string) 地域模型ID (例如: deepseek-v4-flash-sg)
+     *                 "SquareModelId" => (string) 广场模型ID (umodel-xxx)
+     *                 "Status" => (string) 状态: published(已发布)/unpublished(未发布)
+     *             ]
+     *         ]
      *         "Manufacturer" => (string) 制造商
      *         "Id" => (string) 主键
      *         "Name" => (string) 名称
      *         "SimpleDescribe" => (string) 简要描述
      *         "Describe" => (string) 详细描述
      *         "Language" => (array<string>) 语言
-     *         "MaxModelLen" => (integer) 模型长度
+     *         "MaxModelLen" => (integer) 模型长度，单位 token
+     *         "MaxModelLenNew" => (integer) 模型长度，单位 K tokens
+     *         "MaxInputTokens" => (integer) 最大输入token数
+     *         "MaxOutputTokens" => (integer) 最大输出token数
+     *         "ModelTypeMap" => (object) 模型类型映射[
+     *             "TextGeneration" => (boolean) 文生文模型，true 表示是文生文模型，下同
+     *             "ImageToImage" => (boolean) 图生图模型
+     *             "TextToImage" => (boolean) 文生图模型
+     *             "TextToVideo" => (boolean) 文生视频模型
+     *             "ImageToVideo" => (boolean) 图生视频模型
+     *             "Sensitive" => (boolean) 海外模型
+     *             "Inference" => (boolean) 微调模型
+     *         ]
      *         "ModelType" => (string) 模型类型
+     *         "CoverUrl" => (string) 模型封面链接
      *         "HfUpdateTime" => (integer) HuggingFace 更新时间
      *         "CreateAt" => (integer) 创建时间
      *         "UpdateAt" => (integer) 更新时间
      *         "SupportedCapabilities" => (array<string>) 模型能力
+     *         "Capabilities" => (object) 模型能力详细映射[
+     *             "ContextCaching" => (boolean) 是否支持上下文缓存
+     *             "BatchInference" => (boolean) 是否支持批量推理
+     *             "StructuredOutput" => (boolean) 是否支持结构化输出
+     *             "FunctionCall" => (boolean) 是否支持函数调用
+     *             "WebSearch" => (boolean) 是否支持联网搜索
+     *             "KnowledgeBase" => (boolean) 是否支持知识库
+     *             "Mcp" => (boolean) 是否支持MCP
+     *             "Experience" => (boolean) 是否支持体验
+     *         ]
+     *         "ExtraModelTags" => (array<string>) 模型额外标签
+     *         "ApiProtocols" => (object) api协议映射[
+     *             "ChatCompletions" => (boolean) 是否支持chat协议
+     *             "Responses" => (boolean) 是否支持responses协议
+     *             "Gemini" => (boolean) 是否支持gemini协议
+     *             "Anthropic" => (boolean) 是否支持Anthropic协议
+     *         ]
+     *         "InputModalities" => (array<string>) 输入模态
+     *         "OutputModalities" => (array<string>) 输出模态
      *         "Icon" => (string) 图标
      *         "Pricing" => (object) 定价策略[
      *             "Completion" => (number) 输出定价
@@ -779,20 +824,65 @@ class UAIModelverseClient extends Client
      *     "SquareModels" => (array<object>) 广场模型[
      *         [
      *             "BatchSquareModelId" => (string) 关联的 batch 模型广场id
+     *             "ModelCategory" => (string) 一级分类
+     *             "ModelSubCategories" => (string) 二级分类列表
      *             "IsHasBatch" => (boolean) 是否关联有可用 batch 模型
      *             "BatchName" => (string) 关联的 batch 模型名称
+     *             "IsHasInferenceRegions" => (boolean) 是否有关联的推理地域模型
+     *             "InferenceRegions" => (array<object>) 推理地域模型列表[
+     *                 [
+     *                     "RegionCode" => (string) 地域代码: sg(新加坡)/us(美国)/hk(香港)
+     *                     "RegionName" => (string) 地域名称: 新加坡/美国/香港
+     *                     "RegionNameEn" => (string) 地域名称(英文): Singapore/United States/Hong Kong
+     *                     "ModelId" => (string) 地域模型ID (例如: deepseek-v4-flash-sg)
+     *                     "SquareModelId" => (string) 广场模型ID (umodel-xxx)
+     *                     "Status" => (string) 状态: published(已发布)/unpublished(未发布)
+     *                 ]
+     *             ]
      *             "Manufacturer" => (string) 制造商
      *             "Id" => (string) 主键
      *             "Name" => (string) 名称
      *             "SimpleDescribe" => (string) 简要描述
      *             "Describe" => (string) 详细描述
      *             "Language" => (array<string>) 语言
-     *             "MaxModelLen" => (integer) 模型长度
+     *             "MaxModelLen" => (integer) 模型长度，单位 token
+     *             "MaxModelLenNew" => (integer) 模型长度，单位 K tokens
+     *             "MaxInputTokens" => (integer) 最大输入token数
+     *             "MaxOutputTokens" => (integer) 最大输出token数
+     *             "ModelTypeMap" => (object) 模型类型映射[
+     *                 "TextGeneration" => (boolean) 文生文模型，true 表示是文生文模型，下同
+     *                 "ImageToImage" => (boolean) 图生图模型
+     *                 "TextToImage" => (boolean) 文生图模型
+     *                 "TextToVideo" => (boolean) 文生视频模型
+     *                 "ImageToVideo" => (boolean) 图生视频模型
+     *                 "Sensitive" => (boolean) 海外模型
+     *                 "Inference" => (boolean) 微调模型
+     *             ]
      *             "ModelType" => (string) 模型类型
+     *             "CoverUrl" => (string) 模型封面链接
      *             "HfUpdateTime" => (integer) HuggingFace 更新时间
      *             "CreateAt" => (integer) 创建时间
      *             "UpdateAt" => (integer) 更新时间
      *             "SupportedCapabilities" => (array<string>) 模型能力
+     *             "Capabilities" => (object) 模型能力详细映射[
+     *                 "ContextCaching" => (boolean) 是否支持上下文缓存
+     *                 "BatchInference" => (boolean) 是否支持批量推理
+     *                 "StructuredOutput" => (boolean) 是否支持结构化输出
+     *                 "FunctionCall" => (boolean) 是否支持函数调用
+     *                 "WebSearch" => (boolean) 是否支持联网搜索
+     *                 "KnowledgeBase" => (boolean) 是否支持知识库
+     *                 "Mcp" => (boolean) 是否支持MCP
+     *                 "Experience" => (boolean) 是否支持体验
+     *             ]
+     *             "ExtraModelTags" => (array<string>) 模型额外标签
+     *             "ApiProtocols" => (object) api协议映射[
+     *                 "ChatCompletions" => (boolean) 是否支持chat协议
+     *                 "Responses" => (boolean) 是否支持responses协议
+     *                 "Gemini" => (boolean) 是否支持gemini协议
+     *                 "Anthropic" => (boolean) 是否支持Anthropic协议
+     *             ]
+     *             "InputModalities" => (array<string>) 输入模态
+     *             "OutputModalities" => (array<string>) 输出模态
      *             "Icon" => (string) 图标
      *             "Pricing" => (object) 定价策略[
      *                 "Completion" => (number) 输出定价
@@ -850,6 +940,78 @@ class UAIModelverseClient extends Client
      * Outputs:
      *
      * $outputs = [
+     *     "ModalTypes" => (array<object>) 模型类型筛选（一级/二级分类树）[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
+     *     "Manufacturers" => (array<object>) 厂商选项[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
+     *     "MaxModelLens" => (array<object>) 最大上下文长度选项[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
+     *     "Capabilities" => (array<object>) 能力选项[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
+     *     "InputModalities" => (array<object>) 输入模态选项[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
+     *     "OutputModalities" => (array<object>) 输出模态选项[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
+     *     "ApiProtocols" => (array<object>) API协议选项[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
+     *     "InferenceRegions" => (array<object>) 推理地域选项[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
+     *     "IsComingOffline" => (array<object>) 模型状态选项[
+     *         [
+     *             "Children" => (string)
+     *             "Label" => (string) 显示标签
+     *             "LabelEn" => (string) 英文标签
+     *             "Value" => (string) 枚举值
+     *         ]
+     *     ]
      * ]
      *
      * @return ListUFSquareModelFiltersAuthResponse
