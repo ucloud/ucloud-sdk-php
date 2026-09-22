@@ -145,7 +145,7 @@ class PriceRate extends Response
     /**
      * Price: 价格
      *
-     * @return string|null
+     * @return integer|null
      */
     public function getPrice()
     {
@@ -155,7 +155,7 @@ class PriceRate extends Response
     /**
      * Price: 价格
      *
-     * @param string $price
+     * @param int $price
      */
     public function setPrice($price)
     {

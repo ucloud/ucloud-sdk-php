@@ -72,7 +72,7 @@ class UpdateSecGroupRequest extends Request
     /**
      * SecGroupId: 安全组资源ID数组。不支持 .n 格式。Type 为 string 数组。
      *
-     * @return string|null
+     * @return string[]|null
      */
     public function getSecGroupId()
     {
@@ -82,9 +82,9 @@ class UpdateSecGroupRequest extends Request
     /**
      * SecGroupId: 安全组资源ID数组。不支持 .n 格式。Type 为 string 数组。
      *
-     * @param string $secGroupId
+     * @param string[] $secGroupId
      */
-    public function setSecGroupId($secGroupId)
+    public function setSecGroupId(array $secGroupId)
     {
         $this->set("SecGroupId", $secGroupId);
     }
