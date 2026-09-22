@@ -529,7 +529,7 @@ class UAIModelverseClient extends Client
      *                         "UnitEn" => (string) 计价单位英文
      *                         "ChargeItem" => (string) 收费项：input/output/thinking/tool...
      *                         "ChargeItemDescription" => (string) 收费项描述
-     *                         "Price" => (string) 价格
+     *                         "Price" => (integer) 价格
      *                     ]
      *                 ]
      *                 "DescriptionEn" => (string) 档位描述（例如 "标准上下文 32k"）
@@ -580,7 +580,7 @@ class UAIModelverseClient extends Client
      *                             "UnitEn" => (string) 计价单位英文
      *                             "ChargeItem" => (string) 收费项：input/output/thinking/tool...
      *                             "ChargeItemDescription" => (string) 收费项描述
-     *                             "Price" => (string) 价格
+     *                             "Price" => (integer) 价格
      *                         ]
      *                     ]
      *                     "DescriptionEn" => (string) 档位描述（例如 "标准上下文 32k"）
@@ -903,7 +903,7 @@ class UAIModelverseClient extends Client
      *                             "UnitEn" => (string) 计价单位英文
      *                             "ChargeItem" => (string) 收费项：input/output/thinking/tool...
      *                             "ChargeItemDescription" => (string) 收费项描述
-     *                             "Price" => (string) 价格
+     *                             "Price" => (integer) 价格
      *                         ]
      *                     ]
      *                     "DescriptionEn" => (string) 档位描述（例如 "标准上下文 32k"）
