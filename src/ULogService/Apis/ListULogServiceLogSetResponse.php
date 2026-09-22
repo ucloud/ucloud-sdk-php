@@ -54,4 +54,24 @@ class ListULogServiceLogSetResponse extends Response
         }
         return $result;
     }
+
+    /**
+     * TotalCount: 日志集数量
+     *
+     * @return integer|null
+     */
+    public function getTotalCount()
+    {
+        return $this->get("TotalCount");
+    }
+
+    /**
+     * TotalCount: 日志集数量
+     *
+     * @param int $totalCount
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->set("TotalCount", $totalCount);
+    }
 }

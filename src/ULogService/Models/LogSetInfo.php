@@ -43,6 +43,26 @@ class LogSetInfo extends Response
     }
 
     /**
+     * LogSetId: 日志集ID
+     *
+     * @return string|null
+     */
+    public function getLogSetId()
+    {
+        return $this->get("LogSetId");
+    }
+
+    /**
+     * LogSetId: 日志集ID
+     *
+     * @param string $logSetId
+     */
+    public function setLogSetId($logSetId)
+    {
+        $this->set("LogSetId", $logSetId);
+    }
+
+    /**
      * LogSetRemark: 日志集备注
      *
      * @return string|null
