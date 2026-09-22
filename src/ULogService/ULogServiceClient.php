@@ -498,12 +498,14 @@ class ULogServiceClient extends Client
      *     "Data" => (array<object>) 返回日志主题数据，是一个数组[
      *         [
      *             "TopicCount" => (integer) 日志集下主题数量
+     *             "LogSetId" => (string) 日志集ID
      *             "LogSetRemark" => (string) 日志集备注
      *             "LogSetName" => (string) 日志集名称
      *             "CreateTime" => (integer) 创建时间
      *             "UpdateTime" => (integer) 更新时间
      *         ]
      *     ]
+     *     "TotalCount" => (integer) 日志集数量
      * ]
      *
      * @return ListULogServiceLogSetResponse
