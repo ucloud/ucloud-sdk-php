@@ -30,6 +30,8 @@ use UCloud\CloudWatch\Apis\EnableAlertStrategyRequest;
 use UCloud\CloudWatch\Apis\EnableAlertStrategyResponse;
 use UCloud\CloudWatch\Apis\GetMetricDataAggregationMethodRequest;
 use UCloud\CloudWatch\Apis\GetMetricDataAggregationMethodResponse;
+use UCloud\CloudWatch\Apis\GetProductHighPrecisionMetricsRequest;
+use UCloud\CloudWatch\Apis\GetProductHighPrecisionMetricsResponse;
 use UCloud\CloudWatch\Apis\GetProductMetricsRequest;
 use UCloud\CloudWatch\Apis\GetProductMetricsResponse;
 use UCloud\CloudWatch\Apis\ListAlertRecordRequest;
@@ -46,6 +48,8 @@ use UCloud\CloudWatch\Apis\QueryMetricDataSetRequest;
 use UCloud\CloudWatch\Apis\QueryMetricDataSetResponse;
 use UCloud\CloudWatch\Apis\QueryMetricDataSummaryRequest;
 use UCloud\CloudWatch\Apis\QueryMetricDataSummaryResponse;
+use UCloud\CloudWatch\Apis\QueryMetricDenseDataRequest;
+use UCloud\CloudWatch\Apis\QueryMetricDenseDataResponse;
 use UCloud\CloudWatch\Apis\UnBindAlertStrategyRequest;
 use UCloud\CloudWatch\Apis\UnBindAlertStrategyResponse;
 use UCloud\CloudWatch\Apis\UpdateAlertStrategyRequest;
@@ -278,6 +282,79 @@ class CloudWatchClient extends Client
     {
         $resp = $this->invoke($request);
         return new GetMetricDataAggregationMethodResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetProductHighPrecisionMetrics - 获取云产品关联的高精度指标列表
+     *
+     * See also: https://docs.ucloud.cn/api/cloudwatch-api/get_product_high_precision_metrics
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProductKey" => (string) 产品唯一标识，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro)
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Data" => (object) 返回数据[
+     *         "Total" => (integer) 查询结果总数
+     *         "List" => (array<object>) 指标列表[
+     *             [
+     *                 "ProductType" => (integer) 云产品ID
+     *                 "UnitID" => (integer) 单位ID
+     *                 "MetricID" => (integer) 指标ID
+     *                 "Metric" => (string) 指标唯一标识 (uhost_cpu_usage)
+     *                 "MetricEnName" => (string) 指标英文名称
+     *                 "MetricChName" => (string) 指标中文名称
+     *                 "MetricEnDesc" => (string) 指标英文描述
+     *                 "MetricChDesc" => (string) 指标中文描述
+     *                 "MetricGroup" => (string) 指标分类/指标组
+     *                 "FrequencyMs" => (integer) 上报频率毫秒
+     *                 "Unit" => (object) 单位[
+     *                     "UnitID" => (integer) 单位id
+     *                     "GroupId" => (integer) GroupId
+     *                     "UnitEnName" => (string) 单位英文名称
+     *                     "UnitChName" => (string) 单位中文名称
+     *                     "UnitDesc" => (string) 单位描述
+     *                     "ConversionFactor" => (integer) 转换因子
+     *                     "CreatedBy" => (string) 创建人
+     *                     "UpdatedBy" => (string) 修改人
+     *                     "CreatedAt" => (string) 创建时间
+     *                     "UpdatedAt" => (string) 修改时间
+     *                     "DeletedAt" => (integer) 删除时间
+     *                 ]
+     *                 "CreatedBy" => (string) 创建者
+     *                 "CreatedAt" => (string) 创建时间
+     *                 "UpdatedBy" => (string) 修改者
+     *                 "UpdatedAt" => (string) 修改时间
+     *             ]
+     *         ]
+     *         "UnitConfigs" => (array<object>) 单位转换信息[
+     *             [
+     *                 "UnitCnNames" => (array<string>) 指标中文名列表
+     *                 "UnitEnNames" => (array<string>) 指标英文名列表
+     *                 "ConversionFactor" => (integer) 转换因子
+     *                 "ConversionRules" => (array<object>) 转换规则[
+     *                     [
+     *                         "From" => (string) 来源
+     *                         "To" => (string) 目标
+     *                         "ConversionFactor" => (integer) 转换因子
+     *                     ]
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetProductHighPrecisionMetricsResponse
+     * @throws UCloudException
+     */
+    public function getProductHighPrecisionMetrics(GetProductHighPrecisionMetricsRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetProductHighPrecisionMetricsResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -784,6 +861,78 @@ class CloudWatchClient extends Client
     {
         $resp = $this->invoke($request);
         return new QueryMetricDataSummaryResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * QueryMetricDenseData - 获取高精度指标样本数据
+     *
+     * See also: https://docs.ucloud.cn/api/cloudwatch-api/query_metric_dense_data
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 全局产品可不传，其他类型必传。
+     *     "ProjectId" => (string) 项目ID
+     *     "ProductKey" => (string) 资源类型
+     *     "StartTime" => (integer) 开始时间戳
+     *     "EndTime" => (integer) 截止时间戳
+     *     "MetricInfos" => (array<object>) [
+     *         [
+     *             "Metric" => (string) 指标名
+     *             "ResourceId" => (string) 资源id
+     *             "Tags" => (object) [
+     *                 "AnyKey" => (string) AnyKey：代表任意一个用户自定义的key。Tags是一个用户自定义对象map，是要查询指标的tag的key和value。用户自定义的Tags对象里的key和value，它们分别是要查询的tag的key和value。如："Tags":{  "tag1":"value1",  "tag2":"value2",  "tag3":"value3"}
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Data" => (object) 返回高精度指标监控数据[
+     *         "InvalidResourceIds" => (array<string>) 无效或无权限资源的 ID 列表
+     *         "List" => (array<object>) 查询的结果集[
+     *             [
+     *                 "Metric" => (string) 指标名
+     *                 "ErrCode" => (integer) 该指标查询的处理状态码
+     *                 "ErrMsg" => (string) 该指标查询的状态说明
+     *                 "TagEntries" => (array<object>) 标签列表。每项为 TagEntry：TagName（标签名）和 KeyList（该标签的全部候选值）。[
+     *                     [
+     *                         "TagName" => (string) 标签名称
+     *                         "KeyList" => (array<string>) 标签候选值列表
+     *                     ]
+     *                 ]
+     *                 "Results" => (array<object>) 查询到的时间序列列表[
+     *                     [
+     *                         "ResourceId" => (string) 资源的短id
+     *                         "ResourceName" => (string) 资源名称
+     *                         "TagList" => (array<object>) 资源标签列表。每项为 TagListItem：Tag（标签名）和 TagValue（标签值）。[
+     *                             [
+     *                                 "Tag" => (string) 标签名
+     *                                 "TagValue" => (string) 标签值
+     *                             ]
+     *                         ]
+     *                         "Values" => (array<object>) 指标数据点列表，元素为 MetricPoint[
+     *                             [
+     *                                 "Timestamp" => (integer) 时间戳
+     *                                 "Value" => (number) 样本值
+     *                             ]
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return QueryMetricDenseDataResponse
+     * @throws UCloudException
+     */
+    public function queryMetricDenseData(QueryMetricDenseDataRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new QueryMetricDenseDataResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
