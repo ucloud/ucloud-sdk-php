@@ -23,7 +23,9 @@ use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodes;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodesNetworkInterface;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodesNetworkInterfaceEIP;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodesSecGroupId;
+use UCloud\UK8S\Params\CreateUK8SClusterV2ParamNodesKubeletConfiguration;
 use UCloud\UK8S\Params\CreateUK8SClusterV2ParamKubeProxy;
+use UCloud\UK8S\Params\CreateUK8SClusterV2ParamUserLabels;
 
 class CreateUK8SClusterV2Request extends Request
 {
@@ -40,6 +42,8 @@ class CreateUK8SClusterV2Request extends Request
         $this->markRequired("MasterMachineType");
         $this->markRequired("MasterCPU");
         $this->markRequired("MasterMem");
+        $this->markRequired("K8sVersion");
+        $this->markRequired("ImageId");
     }
 
     
@@ -185,38 +189,6 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * Master:
-     *
-     * @return CreateUK8SClusterV2ParamMaster[]|null
-     */
-    public function getMaster()
-    {
-        $items = $this->get("Master");
-        if ($items == null) {
-            return [];
-        }
-        $result = [];
-        foreach ($items as $i => $item) {
-            array_push($result, new CreateUK8SClusterV2ParamMaster($item));
-        }
-        return $result;
-    }
-
-    /**
-     * Master:
-     *
-     * @param CreateUK8SClusterV2ParamMaster[] $master
-     */
-    public function setMaster(array $master)
-    {
-        $result = [];
-        foreach ($master as $i => $item) {
-            array_push($result, $item->getAll());
-        }
-        return $result;
-    }
-
-    /**
      * MasterMachineType: Master节点的云主机机型（V2.0），如["N", "C", "O", "OS"]，具体请参照云主机机型。
      *
      * @return string|null
@@ -277,6 +249,38 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
+     * Master:
+     *
+     * @return CreateUK8SClusterV2ParamMaster[]|null
+     */
+    public function getMaster()
+    {
+        $items = $this->get("Master");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUK8SClusterV2ParamMaster($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Master:
+     *
+     * @param CreateUK8SClusterV2ParamMaster[] $master
+     */
+    public function setMaster(array $master)
+    {
+        $result = [];
+        foreach ($master as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
      * Nodes:
      *
      * @return CreateUK8SClusterV2ParamNodes[]|null
@@ -306,6 +310,46 @@ class CreateUK8SClusterV2Request extends Request
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * K8sVersion: k8s集群的版本，版本信息请参考UK8S集群创建页。
+     *
+     * @return string|null
+     */
+    public function getK8sVersion()
+    {
+        return $this->get("K8sVersion");
+    }
+
+    /**
+     * K8sVersion: k8s集群的版本，版本信息请参考UK8S集群创建页。
+     *
+     * @param string $k8sVersion
+     */
+    public function setK8sVersion($k8sVersion)
+    {
+        $this->set("K8sVersion", $k8sVersion);
+    }
+
+    /**
+     * ImageId: Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。
+     *
+     * @return string|null
+     */
+    public function getImageId()
+    {
+        return $this->get("ImageId");
+    }
+
+    /**
+     * ImageId: Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。
+     *
+     * @param string $imageId
+     */
+    public function setImageId($imageId)
+    {
+        $this->set("ImageId", $imageId);
     }
 
     /**
@@ -409,26 +453,6 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * K8sVersion: k8s集群的版本，版本信息请参考UK8S集群创建页，不指定的话默认为当前支持的最高版本。
-     *
-     * @return string|null
-     */
-    public function getK8sVersion()
-    {
-        return $this->get("K8sVersion");
-    }
-
-    /**
-     * K8sVersion: k8s集群的版本，版本信息请参考UK8S集群创建页，不指定的话默认为当前支持的最高版本。
-     *
-     * @param string $k8sVersion
-     */
-    public function setK8sVersion($k8sVersion)
-    {
-        $this->set("K8sVersion", $k8sVersion);
-    }
-
-    /**
      * Quantity: 购买时长。默认为1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。
      *
      * @return integer|null
@@ -506,26 +530,6 @@ class CreateUK8SClusterV2Request extends Request
     public function setKubeProxy(array $kubeProxy)
     {
         $this->set("KubeProxy", $kubeProxy->getAll());
-    }
-
-    /**
-     * ImageId: Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。
-     *
-     * @return string|null
-     */
-    public function getImageId()
-    {
-        return $this->get("ImageId");
-    }
-
-    /**
-     * ImageId: Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。
-     *
-     * @param string $imageId
-     */
-    public function setImageId($imageId)
-    {
-        $this->set("ImageId", $imageId);
     }
 
     /**
@@ -689,22 +693,114 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
-     * UserLabels: UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     * MasterUHostFamily: Master节点规格族，如o1a, o1i
      *
      * @return string|null
      */
-    public function getUserLabels()
+    public function getMasterUHostFamily()
     {
-        return $this->get("UserLabels");
+        return $this->get("MasterUHostFamily");
     }
 
     /**
-     * UserLabels: UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     * MasterUHostFamily: Master节点规格族，如o1a, o1i
      *
-     * @param string $userLabels
+     * @param string $masterUHostFamily
      */
-    public function setUserLabels($userLabels)
+    public function setMasterUHostFamily($masterUHostFamily)
     {
-        $this->set("UserLabels", $userLabels);
+        $this->set("MasterUHostFamily", $masterUHostFamily);
+    }
+
+    /**
+     * KmsPluginKeyId: 开启 kms 插件的 key id
+     *
+     * @return string|null
+     */
+    public function getKmsPluginKeyId()
+    {
+        return $this->get("KmsPluginKeyId");
+    }
+
+    /**
+     * KmsPluginKeyId: 开启 kms 插件的 key id
+     *
+     * @param string $kmsPluginKeyId
+     */
+    public function setKmsPluginKeyId($kmsPluginKeyId)
+    {
+        $this->set("KmsPluginKeyId", $kmsPluginKeyId);
+    }
+
+    /**
+     * MasterDataDiskKmsKeyId: master 节点数据盘使用的 kms key id
+     *
+     * @return string|null
+     */
+    public function getMasterDataDiskKmsKeyId()
+    {
+        return $this->get("MasterDataDiskKmsKeyId");
+    }
+
+    /**
+     * MasterDataDiskKmsKeyId: master 节点数据盘使用的 kms key id
+     *
+     * @param string $masterDataDiskKmsKeyId
+     */
+    public function setMasterDataDiskKmsKeyId($masterDataDiskKmsKeyId)
+    {
+        $this->set("MasterDataDiskKmsKeyId", $masterDataDiskKmsKeyId);
+    }
+
+    /**
+     * KmsPluginResource: kms 加密的资源
+     *
+     * @return string[]|null
+     */
+    public function getKmsPluginResource()
+    {
+        return $this->get("KmsPluginResource");
+    }
+
+    /**
+     * KmsPluginResource: kms 加密的资源
+     *
+     * @param string[] $kmsPluginResource
+     */
+    public function setKmsPluginResource(array $kmsPluginResource)
+    {
+        $this->set("KmsPluginResource", $kmsPluginResource);
+    }
+
+    /**
+     * UserLabels:
+     *
+     * @return CreateUK8SClusterV2ParamUserLabels[]|null
+     */
+    public function getUserLabels()
+    {
+        $items = $this->get("UserLabels");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUK8SClusterV2ParamUserLabels($item));
+        }
+        return $result;
+    }
+
+    /**
+     * UserLabels:
+     *
+     * @param CreateUK8SClusterV2ParamUserLabels[] $userLabels
+     */
+    public function setUserLabels(array $userLabels)
+    {
+        $result = [];
+        foreach ($userLabels as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }

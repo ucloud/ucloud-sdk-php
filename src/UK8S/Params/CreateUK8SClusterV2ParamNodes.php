@@ -203,23 +203,23 @@ class CreateUK8SClusterV2ParamNodes extends Request
     }
 
     /**
-     * BootDiskSIze: Node节点的系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。
+     * BootDiskSize: Node节点的系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。
      *
      * @return integer|null
      */
-    public function getBootDiskSIze()
+    public function getBootDiskSize()
     {
-        return $this->get("BootDiskSIze");
+        return $this->get("BootDiskSize");
     }
 
     /**
-     * BootDiskSIze: Node节点的系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。
+     * BootDiskSize: Node节点的系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。
      *
-     * @param int $bootDiskSIze
+     * @param int $bootDiskSize
      */
-    public function setBootDiskSIze($bootDiskSIze)
+    public function setBootDiskSize($bootDiskSize)
     {
-        $this->set("BootDiskSIze", $bootDiskSIze);
+        $this->set("BootDiskSize", $bootDiskSize);
     }
 
     /**
@@ -240,6 +240,26 @@ class CreateUK8SClusterV2ParamNodes extends Request
     public function setDataDiskType($dataDiskType)
     {
         $this->set("DataDiskType", $dataDiskType);
+    }
+
+    /**
+     * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
+     *
+     * @return integer|null
+     */
+    public function getDataDiskSize()
+    {
+        return $this->get("DataDiskSize");
+    }
+
+    /**
+     * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
+     *
+     * @param int $dataDiskSize
+     */
+    public function setDataDiskSize($dataDiskSize)
+    {
+        $this->set("DataDiskSize", $dataDiskSize);
     }
 
     /**
@@ -280,26 +300,6 @@ class CreateUK8SClusterV2ParamNodes extends Request
     public function setGPU($gpu)
     {
         $this->set("GPU", $gpu);
-    }
-
-    /**
-     * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
-     *
-     * @return integer|null
-     */
-    public function getDataDiskSize()
-    {
-        return $this->get("DataDiskSize");
-    }
-
-    /**
-     * DataDiskSize: 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
-     *
-     * @param int $dataDiskSize
-     */
-    public function setDataDiskSize($dataDiskSize)
-    {
-        $this->set("DataDiskSize", $dataDiskSize);
     }
 
     /**
@@ -504,5 +504,65 @@ class CreateUK8SClusterV2ParamNodes extends Request
             array_push($result, $item->getAll());
         }
         return $result;
+    }
+
+    /**
+     * UHostFamily: Node节点规格族
+     *
+     * @return string|null
+     */
+    public function getUHostFamily()
+    {
+        return $this->get("UHostFamily");
+    }
+
+    /**
+     * UHostFamily: Node节点规格族
+     *
+     * @param string $uHostFamily
+     */
+    public function setUHostFamily($uHostFamily)
+    {
+        $this->set("UHostFamily", $uHostFamily);
+    }
+
+    /**
+     * KubeletConfiguration:
+     *
+     * @return CreateUK8SClusterV2ParamNodesKubeletConfiguration|null
+     */
+    public function getKubeletConfiguration()
+    {
+        return new CreateUK8SClusterV2ParamNodesKubeletConfiguration($this->get("KubeletConfiguration"));
+    }
+
+    /**
+     * KubeletConfiguration:
+     *
+     * @param CreateUK8SClusterV2ParamNodesKubeletConfiguration $kubeletConfiguration
+     */
+    public function setKubeletConfiguration(array $kubeletConfiguration)
+    {
+        $this->set("KubeletConfiguration", $kubeletConfiguration->getAll());
+    }
+
+    /**
+     * DataDiskKmsKeyId: 节点数据盘加密使用的 key id
+     *
+     * @return string|null
+     */
+    public function getDataDiskKmsKeyId()
+    {
+        return $this->get("DataDiskKmsKeyId");
+    }
+
+    /**
+     * DataDiskKmsKeyId: 节点数据盘加密使用的 key id
+     *
+     * @param string $dataDiskKmsKeyId
+     */
+    public function setDataDiskKmsKeyId($dataDiskKmsKeyId)
+    {
+        $this->set("DataDiskKmsKeyId", $dataDiskKmsKeyId);
     }
 }
