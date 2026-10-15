@@ -1,0 +1,52 @@
+<?php
+/**
+ * Copyright 2026 UCloud Technology Co., Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+namespace UCloud\UK8S\Apis;
+
+use UCloud\Core\Response\Response;
+use UCloud\UK8S\Models\NodeGroupSet;
+use UCloud\UK8S\Models\SecGroupId;
+use UCloud\UK8S\Models\NetworkInterface;
+use UCloud\UK8S\Models\EIP;
+use UCloud\UK8S\Models\KubeletConfiguration;
+use UCloud\UK8S\Models\EvictionCondition;
+use UCloud\UK8S\Models\ReservedResource;
+use UCloud\UK8S\Models\NodeGroupDiskConfig;
+
+class GetUK8SNodeGroupResponse extends Response
+{
+    
+
+    /**
+     * NodeGroup: 指定节点池的配置与关联信息
+     *
+     * @return NodeGroupSet|null
+     */
+    public function getNodeGroup()
+    {
+        return new NodeGroupSet($this->get("NodeGroup"));
+    }
+
+    /**
+     * NodeGroup: 指定节点池的配置与关联信息
+     *
+     * @param NodeGroupSet $nodeGroup
+     */
+    public function setNodeGroup(array $nodeGroup)
+    {
+        $this->set("NodeGroup", $nodeGroup->getAll());
+    }
+}

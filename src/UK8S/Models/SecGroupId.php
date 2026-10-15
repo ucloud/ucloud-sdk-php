@@ -23,7 +23,7 @@ class SecGroupId extends Response
     
 
     /**
-     * Id: 安全组名称
+     * Id: 安全组 ID
      *
      * @return string|null
      */
@@ -33,7 +33,7 @@ class SecGroupId extends Response
     }
 
     /**
-     * Id: 安全组名称
+     * Id: 安全组 ID
      *
      * @param string $id
      */
@@ -43,7 +43,7 @@ class SecGroupId extends Response
     }
 
     /**
-     * Name: 安全组id
+     * Name: 安全组名称
      *
      * @return string|null
      */
@@ -53,7 +53,7 @@ class SecGroupId extends Response
     }
 
     /**
-     * Name: 安全组id
+     * Name: 安全组名称
      *
      * @param string $name
      */

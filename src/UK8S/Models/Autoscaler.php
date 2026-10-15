@@ -23,9 +23,9 @@ class Autoscaler extends Response
     
 
     /**
-     * ScaleDownUnneededTime: 缩容触发延时
+     * ScaleDownUnneededTime: 节点持续不需要后触发缩容的等待时间，单位分钟。
      *
-     * @return string|null
+     * @return integer|null
      */
     public function getScaleDownUnneededTime()
     {
@@ -33,9 +33,9 @@ class Autoscaler extends Response
     }
 
     /**
-     * ScaleDownUnneededTime: 缩容触发延时
+     * ScaleDownUnneededTime: 节点持续不需要后触发缩容的等待时间，单位分钟。
      *
-     * @param string $scaleDownUnneededTime
+     * @param int $scaleDownUnneededTime
      */
     public function setScaleDownUnneededTime($scaleDownUnneededTime)
     {
@@ -43,9 +43,9 @@ class Autoscaler extends Response
     }
 
     /**
-     * ScaleDownUtilizationThreshold: CPU缩容阈值
+     * ScaleDownUtilizationThreshold: 节点缩容利用率阈值，单位百分比，范围 0–100。
      *
-     * @return string|null
+     * @return integer|null
      */
     public function getScaleDownUtilizationThreshold()
     {
@@ -53,9 +53,9 @@ class Autoscaler extends Response
     }
 
     /**
-     * ScaleDownUtilizationThreshold: CPU缩容阈值
+     * ScaleDownUtilizationThreshold: 节点缩容利用率阈值，单位百分比，范围 0–100。
      *
-     * @param string $scaleDownUtilizationThreshold
+     * @param int $scaleDownUtilizationThreshold
      */
     public function setScaleDownUtilizationThreshold($scaleDownUtilizationThreshold)
     {
@@ -63,9 +63,9 @@ class Autoscaler extends Response
     }
 
     /**
-     * ScaleDownDelayAfterAdd: 静默时间
+     * ScaleDownDelayAfterAdd: 添加节点后等待缩容的时间，单位分钟。
      *
-     * @return string|null
+     * @return integer|null
      */
     public function getScaleDownDelayAfterAdd()
     {
@@ -73,9 +73,9 @@ class Autoscaler extends Response
     }
 
     /**
-     * ScaleDownDelayAfterAdd: 静默时间
+     * ScaleDownDelayAfterAdd: 添加节点后等待缩容的时间，单位分钟。
      *
-     * @param string $scaleDownDelayAfterAdd
+     * @param int $scaleDownDelayAfterAdd
      */
     public function setScaleDownDelayAfterAdd($scaleDownDelayAfterAdd)
     {
@@ -123,7 +123,7 @@ class Autoscaler extends Response
     }
 
     /**
-     * UpdateTime:
+     * UpdateTime: 配置更新时间，Unix 时间戳，单位秒。
      *
      * @return integer|null
      */
@@ -133,7 +133,7 @@ class Autoscaler extends Response
     }
 
     /**
-     * UpdateTime:
+     * UpdateTime: 配置更新时间，Unix 时间戳，单位秒。
      *
      * @param int $updateTime
      */
@@ -143,9 +143,9 @@ class Autoscaler extends Response
     }
 
     /**
-     * ScaleDownGpuUtilizationThreshold: GPU缩容阈值
+     * ScaleDownGpuUtilizationThreshold: GPU 缩容利用率阈值，单位百分比，范围 0–100。
      *
-     * @return string|null
+     * @return integer|null
      */
     public function getScaleDownGpuUtilizationThreshold()
     {
@@ -153,9 +153,9 @@ class Autoscaler extends Response
     }
 
     /**
-     * ScaleDownGpuUtilizationThreshold: GPU缩容阈值
+     * ScaleDownGpuUtilizationThreshold: GPU 缩容利用率阈值，单位百分比，范围 0–100。
      *
-     * @param string $scaleDownGpuUtilizationThreshold
+     * @param int $scaleDownGpuUtilizationThreshold
      */
     public function setScaleDownGpuUtilizationThreshold($scaleDownGpuUtilizationThreshold)
     {
