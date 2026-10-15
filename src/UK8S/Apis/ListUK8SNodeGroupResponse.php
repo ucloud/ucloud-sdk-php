@@ -24,7 +24,7 @@ use UCloud\UK8S\Models\EIP;
 use UCloud\UK8S\Models\KubeletConfiguration;
 use UCloud\UK8S\Models\EvictionCondition;
 use UCloud\UK8S\Models\ReservedResource;
-use UCloud\UK8S\Models\DiskSet;
+use UCloud\UK8S\Models\NodeGroupDiskConfig;
 
 class ListUK8SNodeGroupResponse extends Response
 {

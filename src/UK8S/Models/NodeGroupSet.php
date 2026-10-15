@@ -43,6 +43,46 @@ class NodeGroupSet extends Response
     }
 
     /**
+     * ImageStatus: 镜像状态：Unknown、Normal、Deleted、NotLatest
+     *
+     * @return string|null
+     */
+    public function getImageStatus()
+    {
+        return $this->get("ImageStatus");
+    }
+
+    /**
+     * ImageStatus: 镜像状态：Unknown、Normal、Deleted、NotLatest
+     *
+     * @param string $imageStatus
+     */
+    public function setImageStatus($imageStatus)
+    {
+        $this->set("ImageStatus", $imageStatus);
+    }
+
+    /**
+     * DataDiskKmsKeyId: 数据盘加密密钥 ID
+     *
+     * @return string|null
+     */
+    public function getDataDiskKmsKeyId()
+    {
+        return $this->get("DataDiskKmsKeyId");
+    }
+
+    /**
+     * DataDiskKmsKeyId: 数据盘加密密钥 ID
+     *
+     * @param string $dataDiskKmsKeyId
+     */
+    public function setDataDiskKmsKeyId($dataDiskKmsKeyId)
+    {
+        $this->set("DataDiskKmsKeyId", $dataDiskKmsKeyId);
+    }
+
+    /**
      * NodeGroupId: 节点池ID
      *
      * @return string|null
@@ -789,7 +829,7 @@ class NodeGroupSet extends Response
     /**
      * Disks: 磁盘列表
      *
-     * @return DiskSet[]|null
+     * @return NodeGroupDiskConfig[]|null
      */
     public function getDisks()
     {
@@ -799,7 +839,7 @@ class NodeGroupSet extends Response
         }
         $result = [];
         foreach ($items as $i => $item) {
-            array_push($result, new DiskSet($item));
+            array_push($result, new NodeGroupDiskConfig($item));
         }
         return $result;
     }
@@ -807,7 +847,7 @@ class NodeGroupSet extends Response
     /**
      * Disks: 磁盘列表
      *
-     * @param DiskSet[] $disks
+     * @param NodeGroupDiskConfig[] $disks
      */
     public function setDisks(array $disks)
     {

@@ -18,6 +18,8 @@ namespace UCloud\UK8S;
 
 use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
+use UCloud\UK8S\Apis\AddUK8SAutoScalingGroupV2Request;
+use UCloud\UK8S\Apis\AddUK8SAutoScalingGroupV2Response;
 use UCloud\UK8S\Apis\AddUK8SExistingUHostRequest;
 use UCloud\UK8S\Apis\AddUK8SExistingUHostResponse;
 use UCloud\UK8S\Apis\AddUK8SNodeGroupRequest;
@@ -34,16 +36,34 @@ use UCloud\UK8S\Apis\DelUK8SClusterRequest;
 use UCloud\UK8S\Apis\DelUK8SClusterResponse;
 use UCloud\UK8S\Apis\DelUK8SClusterNodeV2Request;
 use UCloud\UK8S\Apis\DelUK8SClusterNodeV2Response;
+use UCloud\UK8S\Apis\DeleteUK8SAutoScalingGroupRequest;
+use UCloud\UK8S\Apis\DeleteUK8SAutoScalingGroupResponse;
 use UCloud\UK8S\Apis\DeleteUK8SULSConfigRequest;
 use UCloud\UK8S\Apis\DeleteUK8SULSConfigResponse;
+use UCloud\UK8S\Apis\DescribeUK8SAutoscalerGroupRequest;
+use UCloud\UK8S\Apis\DescribeUK8SAutoscalerGroupResponse;
 use UCloud\UK8S\Apis\DescribeUK8SClusterRequest;
 use UCloud\UK8S\Apis\DescribeUK8SClusterResponse;
 use UCloud\UK8S\Apis\DescribeUK8SImageRequest;
 use UCloud\UK8S\Apis\DescribeUK8SImageResponse;
 use UCloud\UK8S\Apis\DescribeUK8SNodeRequest;
 use UCloud\UK8S\Apis\DescribeUK8SNodeResponse;
+use UCloud\UK8S\Apis\EnableUK8SAutoscalerRequest;
+use UCloud\UK8S\Apis\EnableUK8SAutoscalerResponse;
 use UCloud\UK8S\Apis\GetClusterConfigRequest;
 use UCloud\UK8S\Apis\GetClusterConfigResponse;
+use UCloud\UK8S\Apis\GetUK8SAvailableInstanceTypesRequest;
+use UCloud\UK8S\Apis\GetUK8SAvailableInstanceTypesResponse;
+use UCloud\UK8S\Apis\GetUK8SCNINodeInfoRequest;
+use UCloud\UK8S\Apis\GetUK8SCNINodeInfoResponse;
+use UCloud\UK8S\Apis\GetUK8SIpamdStatusRequest;
+use UCloud\UK8S\Apis\GetUK8SIpamdStatusResponse;
+use UCloud\UK8S\Apis\GetUK8SLoadBalancerControllerRequest;
+use UCloud\UK8S\Apis\GetUK8SLoadBalancerControllerResponse;
+use UCloud\UK8S\Apis\GetUK8SNodeGroupRequest;
+use UCloud\UK8S\Apis\GetUK8SNodeGroupResponse;
+use UCloud\UK8S\Apis\GetUK8SPluginInfoRequest;
+use UCloud\UK8S\Apis\GetUK8SPluginInfoResponse;
 use UCloud\UK8S\Apis\GetUK8SVersionsRequest;
 use UCloud\UK8S\Apis\GetUK8SVersionsResponse;
 use UCloud\UK8S\Apis\ListUK8SClusterNodeV2Request;
@@ -58,6 +78,10 @@ use UCloud\UK8S\Apis\ModifyUK8SClusterNameRequest;
 use UCloud\UK8S\Apis\ModifyUK8SClusterNameResponse;
 use UCloud\UK8S\Apis\RemoveUK8SNodeGroupRequest;
 use UCloud\UK8S\Apis\RemoveUK8SNodeGroupResponse;
+use UCloud\UK8S\Apis\UpdateUK8SAutoScalingGroupV2Request;
+use UCloud\UK8S\Apis\UpdateUK8SAutoScalingGroupV2Response;
+use UCloud\UK8S\Apis\UpdateUK8SAutoscalerRequest;
+use UCloud\UK8S\Apis\UpdateUK8SAutoscalerResponse;
 use UCloud\UK8S\Apis\UpdateUK8SNodeGroupRequest;
 use UCloud\UK8S\Apis\UpdateUK8SNodeGroupResponse;
 use UCloud\UK8S\Apis\UpdateUK8SULSConfigRequest;
@@ -68,6 +92,63 @@ use UCloud\UK8S\Apis\UpdateUK8SULSConfigResponse;
  */
 class UK8SClient extends Client
 {
+
+    /**
+     * AddUK8SAutoScalingGroupV2 - 创建绑定已有节点池的自动伸缩组。当前请求校验仍要求提供 CPU、Mem、MachineType 和 Zone。
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/add_uk8s_auto_scaling_group_v2
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Zone" => (string) 可用区
+     *     "ProjectId" => (string) 项目ID
+     *     "Region" => (string) 地域
+     *     "ClusterId" => (string) 集群ID
+     *     "Name" => (string) 伸缩组名字
+     *     "CPU" => (integer) 节点CPU大小
+     *     "Mem" => (integer) 节点Mem大小
+     *     "MachineType" => (string) 云主机机型。该参数仍需传入；实际节点规格取自绑定的节点池。
+     *     "Min" => (integer) 最小节点数，范围 0–100，且不得大于 Max。必须显式传入，允许为 0。
+     *     "Max" => (integer) 最大节点数，范围 1–100，且不得小于 Min。
+     *     "NodeGroupId" => (string) 伸缩组绑定的有效节点池 ID。当前实现必须提供，节点配置取自该节点池。
+     *     "Password" => (string) Base64 编码的节点登录密码。LoginMode 为 Password（默认）时必填，不会自动生成随机密码；KeyPair 模式下可不填。
+     *     "BootDiskType" => (string) 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
+     *     "DataDiskType" => (string) 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
+     *     "DataDiskSize" => (integer) 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]
+     *     "MinmalCpuPlatform" => (string) 最低 CPU 平台的兼容字段；同时提供 MinimalCpuPlatform 时以其为准。
+     *     "GpuType" => (string) GPU 类型；实际节点规格取自绑定的节点池。
+     *     "GPU" => (integer) GPU卡核心数。仅GPU机型支持此字段
+     *     "Labels" => (string) key=value,多组用”,“隔开，最多5组
+     *     "MaxPods" => (integer) 默认110, 支持16-512
+     *     "BootDiskSize" => (integer) 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。
+     *     "ImageId" => (string) 镜像 Id，不填时后台程序会自动选用一个可用的镜像 Id，不支持用户自定义镜像，传入自定义镜像 Id 将报错
+     *     "UserData" => (string) Base64 编码的 cloud-init 用户数据。
+     *     "InitScript" => (string) Base64 编码的用户脚本，在 UK8S 节点初始化完成后执行。
+     *     "ChargeType" => (string) 计费模式：Year、Month、Dynamic、Postpay，默认 Dynamic。此接口不接受 Preemptive。
+     *     "IsolationGroup" => (string) 硬件隔离组id。可通过DescribeIsolationGroup获取。
+     *     "Taints" => (string) Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *     "Tag" => (string) 业务组
+     *     "Priority" => (integer) 伸缩组的优先级，取值[1, 100]，数值越大优先级越高，在扩容的时候会被更优先考虑。
+     *     "LoginMode" => (string) 节点登录方式：Password 或 KeyPair，默认 Password。
+     *     "KeyPairId" => (string) 登录密钥对 ID。LoginMode 为 KeyPair 时必填。
+     *     "MinimalCpuPlatform" => (string) 最低 CPU 平台；优先于兼容字段 MinmalCpuPlatform。
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "AsgId" => (string) 创建的伸缩组 ID。
+     * ]
+     *
+     * @return AddUK8SAutoScalingGroupV2Response
+     * @throws UCloudException
+     */
+    public function addUK8SAutoScalingGroupV2(AddUK8SAutoScalingGroupV2Request $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new AddUK8SAutoScalingGroupV2Response($resp->toArray(), $resp->getRequestId());
+    }
 
     /**
      * AddUK8SExistingUHost - 将预先创建好的云主机加入到UK8S集群，需要注意的是，该云主机依然会执行重装系统的操作。
@@ -614,6 +695,34 @@ class UK8SClient extends Client
     }
 
     /**
+     * DeleteUK8SAutoScalingGroup - 删除伸缩组
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/delete_uk8s_auto_scaling_group
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Id" => (string) 伸缩组ID
+     *     "ClusterId" => (string) 集群ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DeleteUK8SAutoScalingGroupResponse
+     * @throws UCloudException
+     */
+    public function deleteUK8SAutoScalingGroup(DeleteUK8SAutoScalingGroupRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DeleteUK8SAutoScalingGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DeleteUK8SULSConfig - 删除指定UK8S集群的日志采集规则。
      *
      * See also: https://docs.ucloud.cn/api/uk8s-api/delete_uk8s_uls_config
@@ -640,6 +749,147 @@ class UK8SClient extends Client
     {
         $resp = $this->invoke($request);
         return new DeleteUK8SULSConfigResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUK8SAutoscalerGroup - 获取autoscaler与auto scaling group信息
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/describe_uk8s_autoscaler_group
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区，可选。此接口按集群 ID 查询。
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) 集群id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Autoscaler" => (object) 伸缩器[
+     *         "ScaleDownUnneededTime" => (integer) 节点持续不需要后触发缩容的等待时间，单位分钟。
+     *         "ScaleDownUtilizationThreshold" => (integer) 节点缩容利用率阈值，单位百分比，范围 0–100。
+     *         "ScaleDownDelayAfterAdd" => (integer) 添加节点后等待缩容的时间，单位分钟。
+     *         "Enabled" => (integer) 打开/关闭
+     *         "Version" => (string) 伸缩器版本
+     *         "UpdateTime" => (integer) 配置更新时间，Unix 时间戳，单位秒。
+     *         "ScaleDownGpuUtilizationThreshold" => (integer) GPU 缩容利用率阈值，单位百分比，范围 0–100。
+     *     ]
+     *     "AutoScalingGroup" => (array<object>) 伸缩组列表[
+     *         [
+     *             "Zone" => (string) 可用区
+     *             "Id" => (string) 伸缩组ID
+     *             "Name" => (string) 伸缩组名字
+     *             "CPU" => (integer) 节点CPU
+     *             "Mem" => (integer) 节点内存
+     *             "DataDiskType" => (string) 节点数据盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
+     *             "DataDiskSize" => (integer) 节点数据盘大小
+     *             "BootDiskType" => (string) 节点系统盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘
+     *             "BootDiskSize" => (integer) 节点系统盘大小
+     *             "MachineType" => (string) 云主机机型。
+     *             "GPU" => (integer) GPU 数量。
+     *             "GpuType" => (string) GPU 类型。
+     *             "Labels" => (string) 节点标签 key=value,多组用”,“隔开，最多5组
+     *             "MaxPods" => (integer) Pods数量 默认110, 支持16-512
+     *             "MinmalCpuPlatform" => (string) 最低 CPU 平台的兼容字段，与 MinimalCpuPlatform 相同。
+     *             "UHostFamily" => (string) 主机规格族
+     *             "Min" => (integer) 最小node数量
+     *             "Max" => (integer) 最大node数量
+     *             "CurrentNodeNum" => (integer) 当前该伸缩组管理的node数量
+     *             "CreateTime" => (integer) 创建时间，Unix 时间戳，单位秒。
+     *             "UpdateTime" => (integer) 更新时间，Unix 时间戳，单位秒。
+     *             "ChargeType" => (string) 伸缩组的计费模式。
+     *             "IsolationGroup" => (string) 硬件隔离组id。可通过DescribeIsolationGroup获取。
+     *             "Priority" => (integer) 优先级
+     *             "NodeCPU" => (integer) 节点CPU【兼容】
+     *             "NodeMem" => (integer) 节点内存【兼容】
+     *             "NodeDataDiskType" => (string) 节点数据盘类型【兼容】
+     *             "NodeDataDiskSize" => (integer) 节点数据盘大小【兼容】
+     *             "NodeBootDiskType" => (string) 旧伸缩组的系统盘类型。
+     *             "NodeUHostType" => (string) 节点云主机机型【兼容】
+     *             "NodeGroupId" => (string) 节点所属节点池id
+     *             "SubnetId" => (string) 节点子网id【兼容】
+     *             "LoginMode" => (string) 节点登录方式：Password 或 KeyPair。
+     *             "KeyPairId" => (string) 登录密钥对 ID。
+     *             "MinimalCpuPlatform" => (string) 最低 CPU 平台。
+     *             "Taints" => (string) 节点污点配置。
+     *             "Tag" => (string) 业务组。
+     *             "ImageId" => (string) 镜像 ID。
+     *             "OsName" => (string) 操作系统名称。
+     *             "UserData" => (string) Base64 编码的 cloud-init 用户数据。
+     *             "InitScript" => (string) Base64 编码的节点初始化后脚本。
+     *             "SecurityMode" => (string) 节点安全模式：Firewall 或 SecGroup。
+     *             "SecGroupId" => (array<object>) 安全组配置列表。[
+     *                 [
+     *                     "Id" => (string) 安全组 ID
+     *                     "Name" => (string) 安全组名称
+     *                     "Priority" => (string) 安全组优先级
+     *                 ]
+     *             ]
+     *             "SecurityGroupId" => (string) 防火墙 ID。
+     *             "NetworkInterface" => (array<object>) 网卡配置列表。[
+     *                 [
+     *                     "EIP" => (object) EIP[
+     *                         "Bandwidth" => (integer) 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
+     *                         "PayMode" => (string) 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. "Free":免费带宽模式,默认为 "Bandwidth"
+     *                         "ShareBandwidthId" => (string) 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效
+     *                         "OperatorName" => (string) 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International，BGP: Bgp。 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2: Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk: International kr-seoul:International us-ws:International ge-fra:International sg:International tw-kh:International.其他海外线路均为 International
+     *                         "CouponId" => (string) 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。
+     *                     ]
+     *                 ]
+     *             ]
+     *             "KubeletConfiguration" => (object) Kubelet 自定义配置。[
+     *                 "ContainerLogMaxFiles" => (integer) 最大日志文件数量
+     *                 "ContainerLogMaxSize" => (string) 最大日志文件大小
+     *                 "EvictionHard" => (object) 硬性驱逐条件，EvictionCondition类型[
+     *                     "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                     "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                     "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                     "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *                 ]
+     *                 "EvictionSoft" => (object) 软性驱逐条件，EvictionCondition类型[
+     *                     "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                     "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                     "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                     "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *                 ]
+     *                 "EvictionSoftGracePeriod" => (object) 软性驱逐宽限时间，EvictionCondition类型[
+     *                     "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                     "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                     "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                     "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *                 ]
+     *                 "ImageGCHighThresholdPercent" => (integer) 镜像垃圾收集阈值
+     *                 "ImageGCLowThresholdPercent" => (integer) 停止镜像垃圾收集阈值
+     *                 "KubeReserved" => (object) kubelet预留资源，ReservedResource类型[
+     *                     "CPU" => (string) CPU
+     *                     "Memory" => (string) 内存
+     *                     "EphemeralStorage" => (string) 存储
+     *                     "Pid" => (string) Pid
+     *                 ]
+     *                 "SystemReserved" => (object) 系统预留资源，ReservedResource类型[
+     *                     "CPU" => (string) CPU
+     *                     "Memory" => (string) 内存
+     *                     "EphemeralStorage" => (string) 存储
+     *                     "Pid" => (string) Pid
+     *                 ]
+     *                 "MaxPods" => (integer) 最大Pod数量
+     *             ]
+     *             "Password" => (string) Base64 编码的节点登录密码。
+     *         ]
+     *     ]
+     *     "Update" => (integer) 0:无需更新1:有更新2:强制更新
+     * ]
+     *
+     * @return DescribeUK8SAutoscalerGroupResponse
+     * @throws UCloudException
+     */
+    public function describeUK8SAutoscalerGroup(DescribeUK8SAutoscalerGroupRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUK8SAutoscalerGroupResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -713,8 +963,8 @@ class UK8SClient extends Client
      *             "MachineType" => (string) 主机机型类别
      *             "SecGroupId" => (array<object>) 节点关联的安全组列表[
      *                 [
-     *                     "Id" => (string) 安全组名称
-     *                     "Name" => (string) 安全组id
+     *                     "Id" => (string) 安全组 ID
+     *                     "Name" => (string) 安全组名称
      *                     "Priority" => (string) 安全组优先级
      *                 ]
      *             ]
@@ -768,8 +1018,8 @@ class UK8SClient extends Client
      *             "MachineType" => (string) 主机机型类别
      *             "SecGroupId" => (array<object>) 节点关联的安全组列表[
      *                 [
-     *                     "Id" => (string) 安全组名称
-     *                     "Name" => (string) 安全组id
+     *                     "Id" => (string) 安全组 ID
+     *                     "Name" => (string) 安全组名称
      *                     "Priority" => (string) 安全组优先级
      *                 ]
      *             ]
@@ -792,13 +1042,13 @@ class UK8SClient extends Client
      *     "CNIMode" => (string) CNI模式，可选值VPC/Calico
      *     "MonitorType" => (string) 集群的监控类型：no无监控；cloudwatch统一监控平台；prometheus内置监控
      *     "Autoscaler" => (object) 集群的节点伸缩(CA)配置[
-     *         "ScaleDownUnneededTime" => (string) 缩容触发延时
-     *         "ScaleDownUtilizationThreshold" => (string) CPU缩容阈值
-     *         "ScaleDownDelayAfterAdd" => (string) 静默时间
+     *         "ScaleDownUnneededTime" => (integer) 节点持续不需要后触发缩容的等待时间，单位分钟。
+     *         "ScaleDownUtilizationThreshold" => (integer) 节点缩容利用率阈值，单位百分比，范围 0–100。
+     *         "ScaleDownDelayAfterAdd" => (integer) 添加节点后等待缩容的时间，单位分钟。
      *         "Enabled" => (integer) 打开/关闭
      *         "Version" => (string) 伸缩器版本
-     *         "UpdateTime" => (integer)
-     *         "ScaleDownGpuUtilizationThreshold" => (string) GPU缩容阈值
+     *         "UpdateTime" => (integer) 配置更新时间，Unix 时间戳，单位秒。
+     *         "ScaleDownGpuUtilizationThreshold" => (integer) GPU 缩容利用率阈值，单位百分比，范围 0–100。
      *     ]
      *     "EnableUserAuth" => (boolean) 是否开启了授权管理功能
      *     "DedicatedPodSubnet" => (boolean) Pod是否使用独立子网
@@ -981,6 +1231,34 @@ class UK8SClient extends Client
     }
 
     /**
+     * EnableUK8SAutoscaler - 开启/关闭伸缩器
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/enable_uk8s_autoscaler
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) 集群ID
+     *     "Enabled" => (integer) 1开启；0关闭
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return EnableUK8SAutoscalerResponse
+     * @throws UCloudException
+     */
+    public function enableUK8SAutoscaler(EnableUK8SAutoscalerRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new EnableUK8SAutoscalerResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * GetClusterConfig - 获取集群配置文件，管理集群的凭证
      *
      * See also: https://docs.ucloud.cn/api/uk8s-api/get_cluster_config
@@ -1008,6 +1286,470 @@ class UK8SClient extends Client
     {
         $resp = $this->invoke($request);
         return new GetClusterConfigResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUK8SAvailableInstanceTypes - 获取uk8s节点可用机型
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/get_uk8s_available_instance_types
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Status" => (string) 当前区域是否可售
+     *     "AvailableInstanceTypes" => (array<object>) UK8S 支持的可用机型列表[
+     *         [
+     *             "Zone" => (string) 可用区
+     *             "Name" => (string) 机型名称
+     *             "Status" => (string) 机型状态
+     *             "Description" => (string) 机型描述
+     *             "UHostFamilies" => (array<object>) 主机系列列表[
+     *                 [
+     *                     "Name" => (string) 规格族名称
+     *                     "CpuFrequency" => (string) CPU 频率
+     *                     "CpuPlatforms" => (array<object>) 支持的 CPU 平台[
+     *                         [
+     *                             "Name" => (string) CPU 平台名称
+     *                             "CpuModels" => (array<string>) CPU 型号列表
+     *                             "CpuFrequency" => (string) CPU 频率
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "Disks" => (array<object>) 支持的磁盘配置[
+     *                 [
+     *                     "Name" => (string) 磁盘配置名称
+     *                     "BootDisk" => (array<object>) 支持的系统盘配置[
+     *                         [
+     *                             "Name" => (string) 系统盘类型名称
+     *                             "InstantResize" => (boolean) 是否支持即时扩容
+     *                             "MaximalSize" => (integer) 最大磁盘容量
+     *                             "Features" => (array<string>) 磁盘特性列表
+     *                         ]
+     *                     ]
+     *                     "DataDisk" => (array<object>) 支持的数据盘配置[
+     *                         [
+     *                             "Name" => (string) 数据盘类型名称
+     *                             "MinimalSize" => (integer) 最小磁盘容量
+     *                             "MaximalSize" => (integer) 最大磁盘容量
+     *                             "Features" => (array<string>) 磁盘特性列表
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "MachineSizes" => (array<object>) 支持的机型规格[
+     *                 [
+     *                     "Gpu" => (integer) GPU 数量
+     *                     "Collection" => (array<object>) CPU 与内存规格组合[
+     *                         [
+     *                             "Cpu" => (integer) CPU 核数
+     *                             "Memory" => (array<integer>) 可用内存容量列表
+     *                             "MinimalCpuPlatform" => (array<string>) 最低 CPU 平台列表
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "Features" => (array<object>) 机型特性列表[
+     *                 [
+     *                     "Name" => (string) 特性名称
+     *                     "Modes" => (array<object>) 特性模式列表[
+     *                         [
+     *                             "Name" => (string) 模式名称
+     *                             "RelatedToImageFeature" => (array<string>) 关联的镜像特性
+     *                             "MinimalCpuPlatform" => (array<string>) 最低 CPU 平台列表
+     *                         ]
+     *                     ]
+     *                 ]
+     *             ]
+     *             "MachineClass" => (string) 机型类别
+     *             "InstanceType" => (string) 实例类型
+     *             "ParentType" => (string) 父机型类型
+     *             "GraphicsMemory" => (object) 显存信息[
+     *                 "Value" => (number) 数值
+     *                 "Rate" => (integer) 评分
+     *             ]
+     *             "Performance" => (object) 性能信息[
+     *                 "Value" => (number) 数值
+     *                 "Rate" => (integer) 评分
+     *             ]
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUK8SAvailableInstanceTypesResponse
+     * @throws UCloudException
+     */
+    public function getUK8SAvailableInstanceTypes(GetUK8SAvailableInstanceTypesRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUK8SAvailableInstanceTypesResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUK8SCNINodeInfo - 获取 UK8S 集群各节点的 CNI 版本、状态及版本同步情况。
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/get_uk8s_cni_node_info
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区，可选。
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) UK8S 集群 ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "NodeInfoSet" => (array<object>) 节点 CNI 信息列表[
+     *         [
+     *             "Node" => (string) Node节点名称
+     *             "Version" => (string) 插件版本
+     *             "Status" => (integer) 插件工作状态，0：未知，1：正常，2：异常, 3: 升级中
+     *             "UpdateTime" => (integer) 插件信息更新时间
+     *             "OperationResult" => (integer) 上次插件操作结果，0：没有上次操作结果，或当前正在执行升级或查询 1：获取成功 2 获取失败  3 升级成功 4 升级失败
+     *             "IP" => (string) Node节点IP
+     *         ]
+     *     ]
+     *     "DataSource" => (string) 数据来源：database 表示数据库记录，ipamd_http 表示通过 ipamd 实时查询。
+     *     "Partial" => (boolean) 是否存在部分节点实时查询失败
+     *     "HighestVersion" => (string) 节点中的最高有效 CNI 版本
+     *     "AllNodesSynced" => (boolean) 是否所有节点实时查询成功且 CNI 版本一致。数据来源为 database 时返回 false。
+     * ]
+     *
+     * @return GetUK8SCNINodeInfoResponse
+     * @throws UCloudException
+     */
+    public function getUK8SCNINodeInfo(GetUK8SCNINodeInfoRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUK8SCNINodeInfoResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUK8SIpamdStatus - 查询 ipamd 插件的安装状态、版本、CNI 初始化模式及模式切换能力。
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/get_uk8s_ipamd_status
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区，可选。
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) 集群id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Installed" => (boolean) 是否已经安装
+     *     "Version" => (string) 当前ipamd的版本
+     *     "LastVersion" => (string) ipamd可用最新版本
+     *     "ReleaseDate" => (integer) 最新版本的发布日期
+     *     "OpenTime" => (integer) 当前 ipamd 插件的创建时间，Unix 时间戳，单位秒。
+     *     "CNIInitMode" => (string) 当前 CNI 初始化模式。
+     *     "CNIInitVersionReady" => (boolean) 当前已安装的 ipamd 版本是否支持切换 CNI 初始化模式。
+     * ]
+     *
+     * @return GetUK8SIpamdStatusResponse
+     * @throws UCloudException
+     */
+    public function getUK8SIpamdStatus(GetUK8SIpamdStatusRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUK8SIpamdStatusResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUK8SLoadBalancerController - 获取 uk8s  LoadBalancerController 信息
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/get_uk8s_load_balancer_controller
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区，可选。
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) 集群 id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "LastVersion" => (string) 最新可用版本。
+     *     "Version" => (string) 当前安装版本。
+     *     "Installed" => (boolean) 是否安装
+     *     "CreateTime" => (integer) 安装时间，Unix 时间戳，单位秒。
+     *     "Status" => (string) 运行状态：unknown、running、notReady。
+     * ]
+     *
+     * @return GetUK8SLoadBalancerControllerResponse
+     * @throws UCloudException
+     */
+    public function getUK8SLoadBalancerController(GetUK8SLoadBalancerControllerRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUK8SLoadBalancerControllerResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUK8SNodeGroup - 列出某个UK8S节点池
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/get_uk8s_node_group
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) 集群ID
+     *     "NodeGroupId" => (string) 节点池Id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "NodeGroup" => (object) 指定节点池的配置与关联信息[
+     *         "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *         "ImageStatus" => (string) 镜像状态：Unknown、Normal、Deleted、NotLatest
+     *         "DataDiskKmsKeyId" => (string) 数据盘加密密钥 ID
+     *         "NodeGroupId" => (string) 节点池ID
+     *         "NodeGroupName" => (string) 节点池名字
+     *         "NodeNamePrefix" => (string) 自定义Uhost主机名前缀。完整的自定义Uhost主机名为{NodeNamePrefix}-{NodeIP}。
+     *         "ImageId" => (string) 镜像ID
+     *         "MachineType" => (string) 机型
+     *         "MinimalCpuPlatform" => (string) cpu平台
+     *         "UHostFamily" => (string) 主机规格族
+     *         "CPU" => (integer) 虚拟CPU核数
+     *         "Mem" => (integer) 内存大小
+     *         "GpuType" => (string) GPU类型
+     *         "GPU" => (integer) GPU卡核心数
+     *         "BootDiskType" => (string) 系统盘类型
+     *         "BootDiskSize" => (integer) 系统盘大小
+     *         "DataDiskSize" => (integer) 数据盘大小
+     *         "DataDiskType" => (string) 数据盘类型
+     *         "Tag" => (string) 业务组
+     *         "ChargeType" => (string) 付费方式
+     *         "NodeList" => (array<string>) 节点id列表
+     *         "SubnetId" => (string) 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。
+     *         "IsolationGroupId" => (string) 硬件隔离组id。可通过DescribeIsolationGroup获取。
+     *         "MaxPods" => (integer) int默认110，生产环境建议小于等于110。
+     *         "UserData" => (string) 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。
+     *         "InitScript" => (string) 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。
+     *         "Taints" => (string) Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。
+     *         "Labels" => (string) Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
+     *         "SecGroupId" => (array<object>) Node所属的安全组id（最多5个）[
+     *             [
+     *                 "Id" => (string) 安全组 ID
+     *                 "Name" => (string) 安全组名称
+     *                 "Priority" => (string) 安全组优先级
+     *             ]
+     *         ]
+     *         "SecurityMode" => (string) 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。
+     *         "SecurityGroupId" => (string) 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见 [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     *         "NetworkInterface" => (array<object>) Node节点网卡配置[
+     *             [
+     *                 "EIP" => (object) EIP[
+     *                     "Bandwidth" => (integer) 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
+     *                     "PayMode" => (string) 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. "Free":免费带宽模式,默认为 "Bandwidth"
+     *                     "ShareBandwidthId" => (string) 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效
+     *                     "OperatorName" => (string) 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International，BGP: Bgp。 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2: Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk: International kr-seoul:International us-ws:International ge-fra:International sg:International tw-kh:International.其他海外线路均为 International
+     *                     "CouponId" => (string) 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。
+     *                 ]
+     *             ]
+     *         ]
+     *         "KubeletConfiguration" => (object) KubeletConfiguration[
+     *             "ContainerLogMaxFiles" => (integer) 最大日志文件数量
+     *             "ContainerLogMaxSize" => (string) 最大日志文件大小
+     *             "EvictionHard" => (object) 硬性驱逐条件，EvictionCondition类型[
+     *                 "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                 "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                 "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                 "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *             ]
+     *             "EvictionSoft" => (object) 软性驱逐条件，EvictionCondition类型[
+     *                 "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                 "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                 "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                 "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *             ]
+     *             "EvictionSoftGracePeriod" => (object) 软性驱逐宽限时间，EvictionCondition类型[
+     *                 "MemoryAvailable" => (string) 内存相关驱逐条件或宽限时间。
+     *                 "ImagefsAvailable" => (string) 镜像文件系统存储相关驱逐条件或宽限时间。
+     *                 "NodefsAvailable" => (string) 节点存储余量相关驱逐条件或宽限时间。
+     *                 "NodefsInodesFree" => (string) 节点剩余inodes驱逐条件或宽限时间。
+     *             ]
+     *             "ImageGCHighThresholdPercent" => (integer) 镜像垃圾收集阈值
+     *             "ImageGCLowThresholdPercent" => (integer) 停止镜像垃圾收集阈值
+     *             "KubeReserved" => (object) kubelet预留资源，ReservedResource类型[
+     *                 "CPU" => (string) CPU
+     *                 "Memory" => (string) 内存
+     *                 "EphemeralStorage" => (string) 存储
+     *                 "Pid" => (string) Pid
+     *             ]
+     *             "SystemReserved" => (object) 系统预留资源，ReservedResource类型[
+     *                 "CPU" => (string) CPU
+     *                 "Memory" => (string) 内存
+     *                 "EphemeralStorage" => (string) 存储
+     *                 "Pid" => (string) Pid
+     *             ]
+     *             "MaxPods" => (integer) 最大Pod数量
+     *         ]
+     *         "ImageName" => (string) 镜像名称
+     *         "ImageType" => (string) 镜像类型
+     *         "OsType" => (string) 操作系统类型
+     *         "OsName" => (string) 操作系统名称
+     *         "NetCapability" => (string) 网络配置
+     *         "UNIFeature" => (boolean) 是否启用 UNI 网络特性
+     *         "Disks" => (array<object>) 磁盘列表[
+     *             [
+     *                 "IsBoot" => (boolean) 是否为系统盘
+     *                 "Type" => (string) 磁盘类型
+     *                 "Size" => (integer) 磁盘大小，单位 GB
+     *                 "KmsKeyId" => (string) 磁盘加密密钥 ID
+     *             ]
+     *         ]
+     *         "RelatedAsg" => (array<string>) 节点池关联的弹性伸缩组ID
+     *         "CreateTime" => (integer) 节点池创建时间
+     *         "UpdateTime" => (integer) 节点池更新时间
+     *     ]
+     * ]
+     *
+     * @return GetUK8SNodeGroupResponse
+     * @throws UCloudException
+     */
+    public function getUK8SNodeGroup(GetUK8SNodeGroupRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUK8SPluginInfo - 查询集群插件信息
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/get_uk8s_plugin_info
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) 集群ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ClusterId" => (string) 集群ID
+     *     "CNIInfoSet" => (object) CNI插件信息, 参看NodePlugin[
+     *         "Name" => (string) 插件名称, 如 CNI, CSI, Flexv, CloudProvider
+     *         "PluginInfoSet" => (array<object>) 各个节点插件信息, 参照NodePluginInfo[
+     *             [
+     *                 "Node" => (string) Node节点名称
+     *                 "Version" => (string) 插件版本
+     *                 "Status" => (integer) 插件工作状态，0：未知，1：正常，2：异常, 3: 升级中
+     *                 "UpdateTime" => (integer) 插件信息更新时间
+     *                 "OperationResult" => (integer) 上次插件操作结果，0：没有上次操作结果，或当前正在执行升级或查询 1：获取成功 2 获取失败  3 升级成功 4 升级失败
+     *                 "IP" => (string) Node节点IP
+     *             ]
+     *         ]
+     *         "AvailableVersion" => (string) 最新插件版本
+     *         "ReleaseTime" => (string) 最新插件发布时间
+     *         "ManageEnabled" => (boolean) 插件管理是否开启
+     *     ]
+     *     "ClusterStatus" => (string) 集群状态信息
+     *     "ClusterUpgradeInfo" => (object) 集群升级相关信息[
+     *         "UpdateTime" => (integer) 集群信息更新时间戳，单位 s
+     *         "Stage" => (string) string，集群升级所处阶段 Unknown、Precheck、MasterUpdating、NodeUpdating、Failed、Success集群从未进行过升级则返回 Unknown集群开始升级过程几个阶段 Precheck->MasterUpdating->NodeUpdating→Success如果升级失败则为 Failed
+     *         "Version" => (string) string， 集群当前版本
+     *         "TargetVersion" => (string) string，集群升级目标版本
+     *         "AvailableVersions" => (array<string>) string 数组，可用新版本，例如  ["1.15.12","1.16.15","1.17.4","1.18.9"]
+     *         "NodeInfoSet" => (array<object>) 各个节点升级信息, 参照  ClusterUpdateNodeInfo[
+     *             [
+     *                 "Node" => (string) Node节点名称
+     *                 "Version" => (string) 插件版本
+     *                 "Status" => (integer) 插件工作状态，0：未知，1：正常，2：异常, 3: 升级中
+     *                 "UpdateTime" => (integer) 插件信息更新时间
+     *                 "OperationResult" => (integer) 上次插件操作结果，0：没有上次操作结果，或当前正在执行升级或查询 1：获取成功 2 获取失败  3 升级成功 4 升级失败
+     *                 "IP" => (string) Node节点IP
+     *                 "Role" => (string) 节点角色， master 或者 node
+     *             ]
+     *         ]
+     *     ]
+     *     "RuntimeConvertInfo" => (object) 集群容器运行时转换信息。[
+     *         "NodeInfoSet" => (array<object>) 各节点的运行时转换状态。[
+     *             [
+     *                 "Node" => (string) Node节点名称
+     *                 "Version" => (string) 插件版本
+     *                 "Status" => (integer) 插件工作状态，0：未知，1：正常，2：异常, 3: 升级中
+     *                 "UpdateTime" => (integer) 插件信息更新时间
+     *                 "OperationResult" => (integer) 上次插件操作结果，0：没有上次操作结果，或当前正在执行升级或查询 1：获取成功 2 获取失败  3 升级成功 4 升级失败
+     *                 "IP" => (string) Node节点IP
+     *             ]
+     *         ]
+     *         "Stage" => (string) 集群从未进行过运行时转换则返回 Unknown集群运行时转换几个阶段 Precheck->Updating→Success如果转换失败则为 Failed
+     *         "UpdateTime" => (integer) 运行时转换信息更新时间，Unix 时间戳，单位秒。
+     *         "RuntimeName" => (string) 容器运行时名称。
+     *         "RuntimeVersion" => (string) 容器运行时版本。
+     *     ]
+     *     "VKInfo" => (object) vk插件信息[
+     *         "Name" => (string) 插件名称
+     *         "PluginInfoSet" => (array<object>) 各虚拟节点的插件信息。[
+     *             [
+     *                 "Node" => (string) 节点 ID。
+     *                 "Version" => (string) 插件版本。
+     *                 "Status" => (integer) 插件状态：0 未知，1 正常，2 异常，3 升级中。
+     *                 "UpdateTime" => (integer) 更新时间，Unix 时间戳，单位秒。
+     *                 "OperationResult" => (integer) 上次插件操作结果：0 无结果，1 查询成功，2 查询失败，3 升级成功，4 升级失败。
+     *             ]
+     *         ]
+     *         "AvailableVersion" => (string) 最新版本
+     *         "ReleaseTime" => (string) 发布时间
+     *         "ManageEnabled" => (boolean) 插件管理是否开启
+     *     ]
+     *     "CSIInfo" => (object) CSI 插件版本与状态。[
+     *         "Name" => (string) 插件名称。
+     *         "AvailableVersion" => (string) 最新可用插件版本。
+     *         "ReleaseTime" => (string) 最新可用版本的发布时间。
+     *         "ManageEnabled" => (boolean) 是否开启插件托管。
+     *         "Version" => (string) 当前插件版本。
+     *         "Status" => (integer) 插件状态。
+     *         "UpdateTime" => (integer) 更新时间，Unix 时间戳，单位秒。
+     *         "OperationResult" => (integer) 上次插件操作结果。
+     *     ]
+     *     "CloudProviderInfo" => (object) CloudProvider 插件版本与状态。[
+     *         "Name" => (string) 插件名称。
+     *         "AvailableVersion" => (string) 最新可用插件版本。
+     *         "ReleaseTime" => (string) 最新可用版本的发布时间。
+     *         "ManageEnabled" => (boolean) 是否开启插件托管。
+     *         "Version" => (string) 当前插件版本。
+     *         "Status" => (integer) 插件状态。
+     *         "UpdateTime" => (integer) 更新时间，Unix 时间戳，单位秒。
+     *         "OperationResult" => (integer) 上次插件操作结果。
+     *     ]
+     *     "MonitorInfo" => (object) 监控插件信息。[
+     *         "AvailableVersion" => (string) 最新可用监控插件版本。
+     *     ]
+     * ]
+     *
+     * @return GetUK8SPluginInfoResponse
+     * @throws UCloudException
+     */
+    public function getUK8SPluginInfo(GetUK8SPluginInfoRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUK8SPluginInfoResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -1212,6 +1954,8 @@ class UK8SClient extends Client
      *     "NodeGroupList" => (array<object>) 节点池列表[
      *         [
      *             "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *             "ImageStatus" => (string) 镜像状态：Unknown、Normal、Deleted、NotLatest
+     *             "DataDiskKmsKeyId" => (string) 数据盘加密密钥 ID
      *             "NodeGroupId" => (string) 节点池ID
      *             "NodeGroupName" => (string) 节点池名字
      *             "NodeNamePrefix" => (string) 自定义Uhost主机名前缀。完整的自定义Uhost主机名为{NodeNamePrefix}-{NodeIP}。
@@ -1239,8 +1983,8 @@ class UK8SClient extends Client
      *             "Labels" => (string) Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game
      *             "SecGroupId" => (array<object>) Node所属的安全组id（最多5个）[
      *                 [
-     *                     "Id" => (string) 安全组名称
-     *                     "Name" => (string) 安全组id
+     *                     "Id" => (string) 安全组 ID
+     *                     "Name" => (string) 安全组名称
      *                     "Priority" => (string) 安全组优先级
      *                 ]
      *             ]
@@ -1302,16 +2046,10 @@ class UK8SClient extends Client
      *             "UNIFeature" => (boolean) 是否启用 UNI 网络特性
      *             "Disks" => (array<object>) 磁盘列表[
      *                 [
-     *                     "Type" => (string) 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk
-     *                     "DiskId" => (string) 磁盘长ID
-     *                     "Name" => (string) UDisk名字（仅当磁盘是UDisk时返回）
-     *                     "Drive" => (string) 磁盘盘符
-     *                     "Size" => (integer) 磁盘大小，单位: GB
-     *                     "BackupType" => (string) 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。
-     *                     "IOPS" => (integer) 当前主机的IOPS值
-     *                     "Encrypted" => (string) Yes: 加密 No: 非加密
-     *                     "DiskType" => (string) LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK
-     *                     "IsBoot" => (string) True| False
+     *                     "IsBoot" => (boolean) 是否为系统盘
+     *                     "Type" => (string) 磁盘类型
+     *                     "Size" => (integer) 磁盘大小，单位 GB
+     *                     "KmsKeyId" => (string) 磁盘加密密钥 ID
      *                 ]
      *             ]
      *             "RelatedAsg" => (array<string>) 节点池关联的弹性伸缩组ID
@@ -1473,6 +2211,70 @@ class UK8SClient extends Client
     {
         $resp = $this->invoke($request);
         return new RemoveUK8SNodeGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateUK8SAutoScalingGroupV2 - 更新伸缩组的名称、节点数上下限和优先级。节点规格等配置请通过关联节点池修改。
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/update_uk8s_auto_scaling_group_v2
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Zone" => (string) 可用区，可选。此接口按集群和伸缩组 ID 更新配置。
+     *     "ProjectId" => (string) 项目ID
+     *     "Region" => (string) 地域
+     *     "ClusterId" => (string) 集群ID
+     *     "Id" => (string) 伸缩组ID
+     *     "Name" => (string) 伸缩组名称
+     *     "Min" => (integer) 最小节点数，范围 0–100。
+     *     "Max" => (integer) 最大节点数，范围 1–100。
+     *     "Priority" => (integer) 伸缩组优先级，范围 1–100，值越大越优先。省略或传 0 时保持原优先级。
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return UpdateUK8SAutoScalingGroupV2Response
+     * @throws UCloudException
+     */
+    public function updateUK8SAutoScalingGroupV2(UpdateUK8SAutoScalingGroupV2Request $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdateUK8SAutoScalingGroupV2Response($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateUK8SAutoscaler - 更新集群级缩容阈值和等待时间。调用前必须关闭 cluster-autoscaler；修改后重新开启，使新配置生效。
+     *
+     * See also: https://docs.ucloud.cn/api/uk8s-api/update_uk8s_autoscaler
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "ClusterId" => (string) 集群ID
+     *     "ScaleDownUnneededTime" => (integer) 节点持续不需要后触发缩容的等待时间，单位分钟，范围 1–1440。
+     *     "ScaleDownUtilizationThreshold" => (integer) 节点缩容利用率阈值，单位百分比，范围 0–100。例如 50 表示 50%。
+     *     "ScaleDownDelayAfterAdd" => (integer) 添加节点后等待缩容的时间，单位分钟，范围 1–1440。
+     *     "ScaleDownGPUUtilizationThreshold" => (integer) GPU 缩容利用率阈值，单位百分比，范围 0–100。省略时使用 ScaleDownUtilizationThreshold。
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return UpdateUK8SAutoscalerResponse
+     * @throws UCloudException
+     */
+    public function updateUK8SAutoscaler(UpdateUK8SAutoscalerRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdateUK8SAutoscalerResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
