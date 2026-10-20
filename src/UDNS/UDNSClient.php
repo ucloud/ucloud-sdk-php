@@ -26,12 +26,18 @@ use UCloud\UDNS\Apis\CreateUDNSZoneRequest;
 use UCloud\UDNS\Apis\CreateUDNSZoneResponse;
 use UCloud\UDNS\Apis\DeleteUDNSRecordRequest;
 use UCloud\UDNS\Apis\DeleteUDNSRecordResponse;
+use UCloud\UDNS\Apis\DeleteUDNSZoneRequest;
+use UCloud\UDNS\Apis\DeleteUDNSZoneResponse;
 use UCloud\UDNS\Apis\DescribeUDNSDomainRequest;
 use UCloud\UDNS\Apis\DescribeUDNSDomainResponse;
 use UCloud\UDNS\Apis\DescribeUDNSRecordRequest;
 use UCloud\UDNS\Apis\DescribeUDNSRecordResponse;
 use UCloud\UDNS\Apis\DescribeUDNSZoneRequest;
 use UCloud\UDNS\Apis\DescribeUDNSZoneResponse;
+use UCloud\UDNS\Apis\DescribeUDNSZoneByVPCRequest;
+use UCloud\UDNS\Apis\DescribeUDNSZoneByVPCResponse;
+use UCloud\UDNS\Apis\DescribeUDNSZoneForwardRequest;
+use UCloud\UDNS\Apis\DescribeUDNSZoneForwardResponse;
 use UCloud\UDNS\Apis\DisassociateUDNSZoneVPCRequest;
 use UCloud\UDNS\Apis\DisassociateUDNSZoneVPCResponse;
 use UCloud\UDNS\Apis\ModifyUDNSRecordRequest;
@@ -169,6 +175,33 @@ class UDNSClient extends Client
     {
         $resp = $this->invoke($request);
         return new DeleteUDNSRecordResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DeleteUDNSZone - 删除域名
+     *
+     * See also: https://docs.ucloud.cn/api/udns-api/delete_udns_zone
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "DNSZoneId" => (string) 域名资源ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DeleteUDNSZoneResponse
+     * @throws UCloudException
+     */
+    public function deleteUDNSZone(DeleteUDNSZoneRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DeleteUDNSZoneResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -324,6 +357,61 @@ class UDNSClient extends Client
     }
 
     /**
+     * DescribeUDNSZoneByVPC - 根据VPC id 查询绑定的UDNSZone
+     *
+     * See also: https://docs.ucloud.cn/api/udns-api/describe_udns_zone_by_vpc
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "VPCId" => (string) VPC id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DescribeUDNSZoneByVPCResponse
+     * @throws UCloudException
+     */
+    public function describeUDNSZoneByVPC(DescribeUDNSZoneByVPCRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUDNSZoneByVPCResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeUDNSZoneForward - 获取域名转发配置
+     *
+     * See also: https://docs.ucloud.cn/api/udns-api/describe_udns_zone_forward
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "DNSZoneId" => (string) 域名ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "VPCProjectId" => (string) 转发目标VPC所属VPC
+     *     "VPCRegion" => (string) 转发目标VPC所属地域
+     *     "VPCId" => (string) 转发目标VPC的ID
+     *     "Servers" => (array<string>) 转发目标DNS 服务器地址
+     * ]
+     *
+     * @return DescribeUDNSZoneForwardResponse
+     * @throws UCloudException
+     */
+    public function describeUDNSZoneForward(DescribeUDNSZoneForwardRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeUDNSZoneForwardResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DisassociateUDNSZoneVPC - 解绑域名和VPC
      *
      * See also: https://docs.ucloud.cn/api/udns-api/disassociate_udns_zone_vpc
@@ -397,7 +485,7 @@ class UDNSClient extends Client
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "DNSZoneId" => (string) 域名资源ID
      *     "Remark" => (string) 备注
-     *     "IsRecursionEnabled" => (string) 是否支持迭代。枚举值,"enable",支持迭代; "disable",不支持迭代
+     *     "IsRecursionEnabled" => (string) 是否支持递归。枚举值,"enable",支持; "disable",不支持
      * ]
      *
      * Outputs:
