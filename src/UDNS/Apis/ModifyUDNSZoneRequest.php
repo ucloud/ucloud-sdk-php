@@ -110,7 +110,7 @@ class ModifyUDNSZoneRequest extends Request
     }
 
     /**
-     * IsRecursionEnabled: 是否支持迭代。枚举值,"enable",支持迭代; "disable",不支持迭代
+     * IsRecursionEnabled: 是否支持递归。枚举值,"enable",支持; "disable",不支持
      *
      * @return string|null
      */
@@ -120,7 +120,7 @@ class ModifyUDNSZoneRequest extends Request
     }
 
     /**
-     * IsRecursionEnabled: 是否支持迭代。枚举值,"enable",支持迭代; "disable",不支持迭代
+     * IsRecursionEnabled: 是否支持递归。枚举值,"enable",支持; "disable",不支持
      *
      * @param string $isRecursionEnabled
      */
