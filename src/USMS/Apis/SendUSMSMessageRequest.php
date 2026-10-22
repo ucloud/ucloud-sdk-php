@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ class SendUSMSMessageRequest extends Request
     }
 
     /**
-     * SigContent: 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
+     * SigContent: 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；（注：国内短信为必选参数、国际短信为可选参数）
      *
      * @return string|null
      */
@@ -101,7 +101,7 @@ class SendUSMSMessageRequest extends Request
     }
 
     /**
-     * SigContent: 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
+     * SigContent: 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；（注：国内短信为必选参数、国际短信为可选参数）
      *
      * @param string $sigContent
      */

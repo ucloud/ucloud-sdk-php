@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -230,5 +230,25 @@ class UpdateUSMSSignatureRequest extends Request
     public function setProxyDoc($proxyDoc)
     {
         $this->set("ProxyDoc", $proxyDoc);
+    }
+
+    /**
+     * SceneDesc: 短信签名对应的场景说明
+     *
+     * @return string|null
+     */
+    public function getSceneDesc()
+    {
+        return $this->get("SceneDesc");
+    }
+
+    /**
+     * SceneDesc: 短信签名对应的场景说明
+     *
+     * @param string $sceneDesc
+     */
+    public function setSceneDesc($sceneDesc)
+    {
+        $this->set("SceneDesc", $sceneDesc);
     }
 }

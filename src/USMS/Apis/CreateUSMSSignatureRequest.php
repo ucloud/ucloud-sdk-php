@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,6 @@ class CreateUSMSSignatureRequest extends Request
         $this->markRequired("SigPurpose");
         $this->markRequired("CertificateType");
         $this->markRequired("Description");
-        $this->markRequired("File");
     }
 
     
@@ -212,5 +211,45 @@ class CreateUSMSSignatureRequest extends Request
     public function setProxyFile($proxyFile)
     {
         $this->set("ProxyFile", $proxyFile);
+    }
+
+    /**
+     * QualificationId: 资质ID
+     *
+     * @return string|null
+     */
+    public function getQualificationId()
+    {
+        return $this->get("QualificationId");
+    }
+
+    /**
+     * QualificationId: 资质ID
+     *
+     * @param string $qualificationId
+     */
+    public function setQualificationId($qualificationId)
+    {
+        $this->set("QualificationId", $qualificationId);
+    }
+
+    /**
+     * SceneDesc: 短信签名对应的场景说明
+     *
+     * @return string|null
+     */
+    public function getSceneDesc()
+    {
+        return $this->get("SceneDesc");
+    }
+
+    /**
+     * SceneDesc: 短信签名对应的场景说明
+     *
+     * @param string $sceneDesc
+     */
+    public function setSceneDesc($sceneDesc)
+    {
+        $this->set("SceneDesc", $sceneDesc);
     }
 }
