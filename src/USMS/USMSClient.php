@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2023 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,18 +20,30 @@ use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
 use UCloud\USMS\Apis\AddBackfillRequest;
 use UCloud\USMS\Apis\AddBackfillResponse;
+use UCloud\USMS\Apis\AddUSMSSignatureQualificationRequest;
+use UCloud\USMS\Apis\AddUSMSSignatureQualificationResponse;
 use UCloud\USMS\Apis\CreateUSMSSignatureRequest;
 use UCloud\USMS\Apis\CreateUSMSSignatureResponse;
 use UCloud\USMS\Apis\CreateUSMSTemplateRequest;
 use UCloud\USMS\Apis\CreateUSMSTemplateResponse;
 use UCloud\USMS\Apis\DeleteUSMSSignatureRequest;
 use UCloud\USMS\Apis\DeleteUSMSSignatureResponse;
+use UCloud\USMS\Apis\DeleteUSMSSignatureQualificationRequest;
+use UCloud\USMS\Apis\DeleteUSMSSignatureQualificationResponse;
 use UCloud\USMS\Apis\DeleteUSMSTemplateRequest;
 use UCloud\USMS\Apis\DeleteUSMSTemplateResponse;
 use UCloud\USMS\Apis\GetUSMSSendReceiptRequest;
 use UCloud\USMS\Apis\GetUSMSSendReceiptResponse;
+use UCloud\USMS\Apis\GetUSMSSendStatisticsRequest;
+use UCloud\USMS\Apis\GetUSMSSendStatisticsResponse;
+use UCloud\USMS\Apis\GetUSMSSignatureQualificationRequest;
+use UCloud\USMS\Apis\GetUSMSSignatureQualificationResponse;
+use UCloud\USMS\Apis\GetUSMSTemplateSendStatisticsRequest;
+use UCloud\USMS\Apis\GetUSMSTemplateSendStatisticsResponse;
 use UCloud\USMS\Apis\QueryUSMSSignatureRequest;
 use UCloud\USMS\Apis\QueryUSMSSignatureResponse;
+use UCloud\USMS\Apis\QueryUSMSSignatureQualificationRequest;
+use UCloud\USMS\Apis\QueryUSMSSignatureQualificationResponse;
 use UCloud\USMS\Apis\QueryUSMSTemplateRequest;
 use UCloud\USMS\Apis\QueryUSMSTemplateResponse;
 use UCloud\USMS\Apis\SendBatchUSMSMessageRequest;
@@ -40,8 +52,12 @@ use UCloud\USMS\Apis\SendUSMSMessageRequest;
 use UCloud\USMS\Apis\SendUSMSMessageResponse;
 use UCloud\USMS\Apis\UpdateUSMSSignatureRequest;
 use UCloud\USMS\Apis\UpdateUSMSSignatureResponse;
+use UCloud\USMS\Apis\UpdateUSMSSignatureQualificationRequest;
+use UCloud\USMS\Apis\UpdateUSMSSignatureQualificationResponse;
 use UCloud\USMS\Apis\UpdateUSMSTemplateRequest;
 use UCloud\USMS\Apis\UpdateUSMSTemplateResponse;
+use UCloud\USMS\Apis\UploadUSMSFileRequest;
+use UCloud\USMS\Apis\UploadUSMSFileResponse;
 
 /**
  * This client is used to call actions of **USMS** service
@@ -82,6 +98,48 @@ class USMSClient extends Client
     }
 
     /**
+     * AddUSMSSignatureQualification - 添加短信签名资质申请记录
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/add_usms_signature_qualification
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Name" => (string) 资质名称
+     *     "Attr" => (integer) 资质属性，0-自用 1-他用
+     *     "Status" => (integer) 状态：0-草稿，1-提交审核
+     *     "HandlerPhone" => (string) 经办人手机号
+     *     "CompanyName" => (string) 公司名称，长度限制100
+     *     "CompanyCreditCode" => (string) 公司统一社会信用代码
+     *     "CompanyCertificateFileId" => (string) 公司证件文件FileId
+     *     "CompanyWorkScenePhotosFileId" => (string) 公司工作现场照片FileId
+     *     "HandlerName" => (string) 经办人姓名
+     *     "HandlerIDNumber" => (string) 经办人身份证号码
+     *     "HandlerIDCardFrontImageFileId" => (string) 经办人身份证人像面图片FileId
+     *     "HandlerIDCardBackImageFileId" => (string) 经办人身份证国徽面图片FileId
+     *     "HandlerHandHeldImageFileId" => (string) 经办人手持身份证图片FileId
+     *     "ManagerName" => (string) 法人姓名
+     *     "ManagerPhone" => (string) 法人手机号
+     *     "ManagerIDNumber" => (string) 法人身份证号码
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "QualificationId" => (string) 资质Id
+     * ]
+     *
+     * @return AddUSMSSignatureQualificationResponse
+     * @throws UCloudException
+     */
+    public function addUSMSSignatureQualification(AddUSMSSignatureQualificationRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new AddUSMSSignatureQualificationResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * CreateUSMSSignature - 调用接口CreateUSMSSignature申请短信签名
      *
      * See also: https://docs.ucloud.cn/api/usms-api/create_usms_signature
@@ -98,6 +156,8 @@ class USMSClient extends Client
      *     "File" => (string) 短信签名的资质证明文件，需先进行base64编码格式转换，此处填写转换后的字符串。文件大小不超过4 MB
      *     "International" => (boolean) 国内/国际短信。true:国际短信，false:国内短信，若不传值则默认该值为false
      *     "ProxyFile" => (string) 短信签名授权委托文件，需先进行base64编码格式转换，此处填写转换后的字符串。文件大小不超过4 MB；当您是代理并使用第三方的签名时（也即SigPurpose为1-他用），该项为必填项；
+     *     "QualificationId" => (string) 资质ID
+     *     "SceneDesc" => (string) 短信签名对应的场景说明
      * ]
      *
      * Outputs:
@@ -129,7 +189,7 @@ class USMSClient extends Client
      *     "Template" => (string) 短信模板内容，说明如下：字数不超过500，每个中文、符号、英文、数组等都计为一个字；模板中的变量填写格式：{N}，其中N为大于1的整数，有多个参数时，建议N从1开始顺次，例如：{1}、{2}等；短信模板禁止仅包括变量的情况；
      *     "International" => (boolean) 标记是否为国际短信。true:国际短信，false:国内短信，若不传值则默认该值为false
      *     "Remark" => (string) 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。
-     *     "UnsubscribeInfo" => (string) 当Purpose为3时，也即会员推广类短信模板，该项必填。枚举值：TD退订、回T退订、回N退订、回TD退订、退订回T、退订回D、退订回TD、退订回复T、退订回复D、退订回复N、退订回复TD、拒收回T
+     *     "UnsubscribeInfo" => (string) 当Purpose=3并且International=false时，也即国内会员推广类短信模板，该项必填。枚举值：【拒收请回复R】
      *     "Instruction" => (string) 模板变量属性说明
      * ]
      *
@@ -172,6 +232,32 @@ class USMSClient extends Client
     {
         $resp = $this->invoke($request);
         return new DeleteUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DeleteUSMSSignatureQualification - 删除短信签名资质申请记录
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/delete_usms_signature_qualification
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "QualificationIds" => (array<string>) 签名资质Id，支持以数组的方式，举例，以QualificationIds.0、QualificationIds.1...QualificationIds.N方式传入
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     * ]
+     *
+     * @return DeleteUSMSSignatureQualificationResponse
+     * @throws UCloudException
+     */
+    public function deleteUSMSSignatureQualification(DeleteUSMSSignatureQualificationRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DeleteUSMSSignatureQualificationResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -245,6 +331,186 @@ class USMSClient extends Client
     }
 
     /**
+     * GetUSMSSendStatistics - 获取发送统计数据
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/get_usms_send_statistics
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID，不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Page" => (integer) 页编号，从0开始
+     *     "NumPerPage" => (integer) 每页记录个数
+     *     "OrderBy" => (string) 排序字段，如BrevityCode表示按照BrevityCode排列，配合OrderType使用。目前支持SendDate、BrevityCode
+     *     "OrderType" => (string) 排序方式，asc-正序 desc-倒序
+     *     "StartDate" => (string) 开始日期，格式为YYYY-MM-DD
+     *     "EndDate" => (string) 结束日期，格式为YYYY-MM-DD
+     *     "Domestic" => (integer) 国内标记，0-国际短信 1-国内短信
+     *     "BrevityCode" => (string) 国际简码，如CN表示中国，当需要查询多个国家时，使用-分割，如CN-ID。
+     *     "Purpose" => (integer) 短信类型，1-验证码 2-通知类 3-营销类
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Total" => (integer) 返回记录数
+     *     "StatisticsData" => (object) 符合查询条件的发送数据统计求和集，具体字段信息见StatisticsData模型[
+     *         "UnknownCount" => (integer) 状态未知数（提交条数）
+     *         "SuccessCount" => (integer) 发送成功数（提交条数）
+     *         "SendCostCount" => (integer) 发送总数（拆分条数）
+     *         "FailCount" => (integer) 发送失败数（提交条数）
+     *         "SendCount" => (integer) 发送总数（提交条数）
+     *         "SuccessCostCount" => (integer) 发送成功数（拆分条数）
+     *         "FailCostCount" => (integer) 发送失败数（拆分条数）
+     *         "UnknownCostCount" => (integer) 状态未知数（拆分条数）
+     *         "SubmitFailCount" => (integer) 提交失败数（提交条数）
+     *         "SubmitFailCostCount" => (integer) 提交失败数（拆分条数）
+     *     ]
+     *     "Data" => (array<object>) 以天为统计维度的发送数据统计集合，每天的统计数据字段详见StatisticsDataInfo模型[
+     *         [
+     *             "Count" => (integer) 发送总数（提交条数）
+     *             "FailedCostCount" => (integer) 发送失败数（拆分条数）
+     *             "BrevityCode" => (string) 国际/地区标识码
+     *             "CostCount" => (integer) 发送总数（拆分条数）
+     *             "SendDate" => (string) 发送时间
+     *             "FailedCount" => (integer) 发送失败数（提交条数）
+     *             "SuccessRate" => (number) 发送成功率
+     *             "SuccessCount" => (integer) 发送成功数（提交条数）
+     *             "UnknownCount" => (integer) 状态未知数（提交条数）
+     *             "SuccessCostCount" => (integer) 发送成功数（拆分条数）
+     *             "UnknownCostCount" => (integer) 状态未知数（拆分条数）
+     *             "UserId" => (string) UserId
+     *             "SubmitFailedCount" => (integer) 提交失败数（提交条数）
+     *             "SubmitFailedCostCount" => (integer) 提交失败数（拆分条数）
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUSMSSendStatisticsResponse
+     * @throws UCloudException
+     */
+    public function getUSMSSendStatistics(GetUSMSSendStatisticsRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUSMSSendStatisticsResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUSMSSignatureQualification - 获取短信签名资质申请记录列表
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/get_usms_signature_qualification
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Page" => (integer) 页索引
+     *     "NumPerPage" => (integer) 每页个数
+     *     "OrderBy" => (string) 排序字段，QualificationId/CreateTime
+     *     "OrderType" => (string) 排序类型: desc、asc
+     *     "QualificationAttr" => (integer) 签名资质属性: 0-自用，1-他用
+     *     "Status" => (integer) 签名资质状态: 0-草稿 1-审核中 2-审核通过 3-审核未通过 4-人工禁用
+     *     "InAccountIds" => (array<string>) 项目ID列表
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Total" => (integer) 签名资质总个数
+     *     "Data" => (array<object>) 签名资质结果集合[
+     *         [
+     *             "QualificationId" => (string) 资质Id
+     *             "AccountId" => (integer) 项目Id
+     *             "Name" => (string) 资质名称
+     *             "Attr" => (integer) 资质属性: 0-自用 1-他用
+     *             "CompanyName" => (string) 公司名称
+     *             "ManagerName" => (string) 负责人姓名
+     *             "HandlerName" => (string) 经办人姓名
+     *             "Status" => (integer) 状态:0-草稿 1-审核中 2-审核通过 3-审核未通过 4-人工禁用
+     *             "ErrCode" => (integer) 审核未通过错误码
+     *             "ErrDesc" => (string) 审核未通过错误原因
+     *             "CreateTime" => (integer) 创建时间戳
+     *             "ModifyTime" => (integer) 修改时间戳
+     *             "ReviewStartTime" => (integer) 审核开始时间戳
+     *             "ReviewEndTime" => (integer) 审核完成时间戳
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUSMSSignatureQualificationResponse
+     * @throws UCloudException
+     */
+    public function getUSMSSignatureQualification(GetUSMSSignatureQualificationRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUSMSSignatureQualificationResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUSMSTemplateSendStatistics - 获取模板发送统计数据
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/get_usms_template_send_statistics
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Page" => (integer) 页编号，从0开始
+     *     "NumPerPage" => (integer) 每页记录个数
+     *     "OrderBy" => (string) 排序字段，如BrevityCode表示按照BrevityCode排列，配合OrderType使用。目前支持SendDate、BrevityCode
+     *     "OrderType" => (string) 排序方式，asc-正序 desc-倒序
+     *     "StartDate" => (string) 开始日期，格式为YYYY-MM-DD
+     *     "EndDate" => (string) 结束日期，格式为YYYY-MM-DD
+     *     "Domestic" => (integer) 国内标记，0-国际短信 1-国内短信
+     *     "BrevityCode" => (string) 国际简码，如CN表示中国，当需要查询多个国家时，使用-分割，如CN-ID。
+     *     "TemplateId" => (string) 短信模板ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Total" => (integer) 返回记录数
+     *     "StatisticsData" => (object) 符合查询条件的发送数据统计求和集，具体字段信息见StatisticsData模型[
+     *         "UnknownCount" => (integer) 状态未知数（提交条数）
+     *         "SuccessCount" => (integer) 发送成功数（提交条数）
+     *         "SendCostCount" => (integer) 发送总数（拆分条数）
+     *         "FailCount" => (integer) 发送失败数（提交条数）
+     *         "SendCount" => (integer) 发送总数（提交条数）
+     *         "SuccessCostCount" => (integer) 发送成功数（拆分条数）
+     *         "FailCostCount" => (integer) 发送失败数（拆分条数）
+     *         "UnknownCostCount" => (integer) 状态未知数（拆分条数）
+     *         "SubmitFailCount" => (integer) 提交失败数（提交条数）
+     *         "SubmitFailCostCount" => (integer) 提交失败数（拆分条数）
+     *     ]
+     *     "Data" => (array<object>) 以天为统计维度的发送数据统计集合，每天的统计数据字段详见TemplateStatisticsDataInfo模型[
+     *         [
+     *             "SendDate" => (string) 发送时间
+     *             "BrevityCode" => (string) 国际/地区标识码
+     *             "TemplateId" => (string) 短信模板ID
+     *             "Count" => (integer) 发送总数（提交条数）
+     *             "CostCount" => (integer) 发送总数（拆分条数）
+     *             "SuccessCount" => (integer) 发送成功数（提交条数）
+     *             "SuccessCostCount" => (integer) 发送成功数（拆分条数）
+     *             "FailedCount" => (integer) 发送失败数（提交条数）
+     *             "FailedCostCount" => (integer) 发送失败数（拆分条数）
+     *             "UnknownCount" => (integer) 状态未知数（提交条数）
+     *             "UnknownCostCount" => (integer) 状态未知数（拆分条数）
+     *             "SubmitFailedCount" => (integer) 提交失败数（提交条数）
+     *             "SubmitFailedCostCount" => (integer) 提交失败数（拆分条数）
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUSMSTemplateSendStatisticsResponse
+     * @throws UCloudException
+     */
+    public function getUSMSTemplateSendStatistics(GetUSMSTemplateSendStatisticsRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUSMSTemplateSendStatisticsResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * QueryUSMSSignature - 调用接口QueryUSMSSignature查询短信签名申请状态
      *
      * See also: https://docs.ucloud.cn/api/usms-api/query_usms_signature
@@ -275,6 +541,58 @@ class USMSClient extends Client
     {
         $resp = $this->invoke($request);
         return new QueryUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * QueryUSMSSignatureQualification - 获取短信签名资质申请记录详情
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/query_usms_signature_qualification
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "QualificationId" => (string) 签名资质Id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Data" => (object) 签名资质详细信息[
+     *         "QualificationId" => (string) 资质Id
+     *         "Name" => (string) 资质名称
+     *         "Attr" => (integer) 资质属性：0-自用，1-他用
+     *         "CompanyName" => (string) 公司名称
+     *         "CompanyCreditCode" => (string) 统一社会信用代码
+     *         "CompanyCertificateFile" => (string) 公司证件文件链接
+     *         "ManagerName" => (string) 负责人姓名
+     *         "ManagerPhone" => (string) 负责人手机号
+     *         "ManagerIDNumber" => (string) 负责人证件号码
+     *         "HandlerName" => (string) 经办人姓名
+     *         "HandlerPhone" => (string) 经办人手机号
+     *         "HandlerIDNumber" => (string) 经办人证件号码
+     *         "HandlerIDCardFrontImage" => (string) 经办人身份证人像面图片链接
+     *         "HandlerIDCardBackImage" => (string) 经办人身份证国徽面图片链接
+     *         "HandlerHandHeldImage" => (string) 经办人手持身份证图片链接
+     *         "CompanyWorkScenePhotos" => (string) 工作现场照片链接
+     *         "PowerOfAttorney" => (string) 授权委托书文件链接
+     *         "Status" => (integer) 状态:0-草稿 1-审核中 2-审核通过 3-审核未通过 4-人工禁用
+     *         "ErrCode" => (integer) 审核未通过错误码
+     *         "ErrDesc" => (string) 审核未通过错误原因
+     *         "CreateTime" => (integer) 创建时间戳
+     *         "ModifyTime" => (integer) 修改时间戳
+     *         "ReviewStartTime" => (integer) 审核开始时间戳
+     *         "ReviewEndTime" => (integer) 审核完成时间戳
+     *     ]
+     * ]
+     *
+     * @return QueryUSMSSignatureQualificationResponse
+     * @throws UCloudException
+     */
+    public function queryUSMSSignatureQualification(QueryUSMSSignatureQualificationRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new QueryUSMSSignatureQualificationResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -371,7 +689,7 @@ class USMSClient extends Client
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "PhoneNumbers" => (array<string>) 电话号码数组，电话号码格式为(60)1xxxxxxxx，()中为国际长途区号(如中国为86或0086，两种格式都支持)，后面为电话号码.若不传入国际区号，如1851623xxxx，则默认为国内手机号
      *     "TemplateId" => (string) 模板ID（也即短信模板申请时的工单ID），请到[USMS控制台](https://console.ucloud.cn/usms)的模板管理页面查看；使用的短信模板必须是已申请并通过审核；
-     *     "SigContent" => (string) 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；
+     *     "SigContent" => (string) 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；（注：国内短信为必选参数、国际短信为可选参数）
      *     "TemplateParams" => (array<string>) 模板可变参数，以数组的方式填写，举例，TemplateParams.0，TemplateParams.1，... 若模板中无可变参数，则该项可不填写；若模板中有可变参数，则该项为必填项，参数个数需与变量个数保持一致，否则无法发送；
      *     "ExtendCode" => (string) 短信扩展码，格式为阿拉伯数字串，默认不开通，如需开通请联系 UCloud技术支持
      *     "UserId" => (string) 自定义的业务标识ID，字符串（ 长度不能超过32 位），不支持 单引号、表情包符号等特殊字符
@@ -411,6 +729,7 @@ class USMSClient extends Client
      *     "ProxyFile" => (string) 短信签名授权委托文件内容，需先进行base64编码格式转换，此处填写转换后的字符串。文件大小不超过4 MB；当您是代理并使用第三方的签名时（也即SigPurpose为1-他用），该项为必填项；格式和File类似。
      *     "Document" => (string) 短信签名的资质证明文件URL，若未更改审核材料，则该处使用已上传审核材料的URL链接，否则使用File参数
      *     "ProxyDoc" => (string) 短信签名授权委托文件URL，若未更改授权委托文件，则该处填写已上传的授权委托文件的URL链接，否则使用ProxyFile参数
+     *     "SceneDesc" => (string) 短信签名对应的场景说明
      * ]
      *
      * Outputs:
@@ -425,6 +744,49 @@ class USMSClient extends Client
     {
         $resp = $this->invoke($request);
         return new UpdateUSMSSignatureResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UpdateUSMSSignatureQualification - 修改短信签名资质申请记录
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/update_usms_signature_qualification
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "QualificationId" => (string) 资质Id
+     *     "Status" => (integer) 状态：0-草稿，1-提交审核
+     *     "Name" => (string) 资质名称
+     *     "Attr" => (integer) 资质属性，0-自用 1-他用
+     *     "CompanyName" => (string) 公司名称，长度限制100
+     *     "CompanyCreditCode" => (string) 公司统一社会信用代码
+     *     "CompanyCertificateFileId" => (string) 公司证件文件FileId
+     *     "CompanyWorkScenePhotosFileId" => (string) 公司工作现场照片FileId
+     *     "HandlerName" => (string) 经办人姓名
+     *     "HandlerPhone" => (string) 经办人手机号
+     *     "HandlerIDNumber" => (string) 经办人身份证号码
+     *     "HandlerIDCardFrontImageFileId" => (string) 经办人身份证人像面图片FileId
+     *     "HandlerIDCardBackImageFileId" => (string) 经办人身份证国徽面图片FileId
+     *     "HandlerHandHeldImageFileId" => (string) 经办人手持身份证图片FileId
+     *     "ManagerName" => (string) 法人姓名
+     *     "ManagerPhone" => (string) 法人手机号
+     *     "ManagerIDNumber" => (string) 法人身份证号码
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "QualificationId" => (string) 资质Id
+     * ]
+     *
+     * @return UpdateUSMSSignatureQualificationResponse
+     * @throws UCloudException
+     */
+    public function updateUSMSSignatureQualification(UpdateUSMSSignatureQualificationRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UpdateUSMSSignatureQualificationResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -455,5 +817,35 @@ class USMSClient extends Client
     {
         $resp = $this->invoke($request);
         return new UpdateUSMSTemplateResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * UploadUSMSFile - 上传文件
+     *
+     * See also: https://docs.ucloud.cn/api/usms-api/upload_usms_file
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "FileName" => (string) 文件名称，携带文件后缀
+     *     "FileContent" => (string) 文件内容，base64编码
+     *     "Source" => (integer) 文件来源，0-签名资质
+     *     "FileType" => (string) 文件类型，mime格式
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "FileId" => (string) 文件FileId
+     * ]
+     *
+     * @return UploadUSMSFileResponse
+     * @throws UCloudException
+     */
+    public function uploadUSMSFile(UploadUSMSFileRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new UploadUSMSFileResponse($resp->toArray(), $resp->getRequestId());
     }
 }
