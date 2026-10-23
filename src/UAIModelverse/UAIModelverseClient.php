@@ -48,8 +48,8 @@ use UCloud\UAIModelverse\Apis\ListUFSquareModelRequest;
 use UCloud\UAIModelverse\Apis\ListUFSquareModelResponse;
 use UCloud\UAIModelverse\Apis\ListUFSquareModelFiltersAuthRequest;
 use UCloud\UAIModelverse\Apis\ListUFSquareModelFiltersAuthResponse;
-use UCloud\UAIModelverse\Apis\ListUMInferAPIKeyRequest;
-use UCloud\UAIModelverse\Apis\ListUMInferAPIKeyResponse;
+use UCloud\UAIModelverse\Apis\ListUMInferAPIKeyV2Request;
+use UCloud\UAIModelverse\Apis\ListUMInferAPIKeyV2Response;
 use UCloud\UAIModelverse\Apis\ListUMInferRequestLogsRequest;
 use UCloud\UAIModelverse\Apis\ListUMInferRequestLogsResponse;
 use UCloud\UAIModelverse\Apis\ListUnpaidOrderSummaryRequest;
@@ -105,7 +105,7 @@ class UAIModelverseClient extends Client
      *         "OrganizationId" => (integer) 项目id
      *         "Status" => (integer) 状态，1 正常
      *         "CreateTime" => (integer) 创建时间
-     *         "Key" => (string) 密钥值
+     *         "Key" => (string) 密钥值，前四后四，中间*掩码展示
      *         "ExpireTime" => (integer) 过期时间的unix时间戳，-1 用不过期
      *         "ModelverseDisabled" => (integer) 是否modelverse可用 0: 启用 1: 禁用
      *         "SandBoxDisabled" => (integer) 是否沙盒可用 0: 启用 1: 禁用(astraflow 沙盒控制未上线，暂时无效)
@@ -1024,24 +1024,29 @@ class UAIModelverseClient extends Client
     }
 
     /**
-     * ListUMInferAPIKey - 列表查询apikey
+     * ListUMInferAPIKeyV2 - 获取modelverse apikey，密钥掩码返回
      *
-     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/list_um_infer_api_key
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/list_um_infer_api_key_v2
      *
      * Arguments:
      *
      * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     *     "Offset" => (integer) 列表起始位置偏移量，默认为0
-     *     "Limit" => (integer) 返回数据长度，默认为20，最大100
-     *     "ModelverseDisabled" => (integer) 是否modelverse可用 0: 启用 1: 禁用
-     *     "SandBoxDisabled" => (integer) 是否沙盒可用 0: 启用 1: 禁用(astraflow 沙盒控制未上线，暂时无效)
+     *     "KeyId" => (string) 按 API Key 资源 ID 精确过滤；为空不限制
+     *     "Offset" => (string) 从 0 开始的页号，默认 0；不是记录偏移量
+     *     "Limit" => (integer) 每页条数；0 表示不限制条数
+     *     "AllStatus" => (integer) 默认 false，排除已删除记录；true 包含已删除记录
+     *     "SandBoxDisabled" => (string) 不传不限制；0 启用，1 禁用
+     *     "SortByCreateTimeAsc" => (boolean) true 按创建时间升序，false 降序
+     *     "SortByUpdateTimeAsc" => (boolean) true 按更新时间升序，false 降序；优先于创建时间排序
      * ]
      *
      * Outputs:
      *
      * $outputs = [
-     *     "Data" => (array<object>) apikey[
+     *     "Data" => (array<object>) data[
      *         [
      *             "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
      *             "InferenceLogEnabled" => (integer) 是否开启推理日志
@@ -1054,7 +1059,7 @@ class UAIModelverseClient extends Client
      *             "OrganizationId" => (integer) 项目id
      *             "Status" => (integer) 状态，1 正常
      *             "CreateTime" => (integer) 创建时间
-     *             "Key" => (string) 密钥值
+     *             "Key" => (string) 密钥值，前四后四，中间*掩码展示
      *             "ExpireTime" => (integer) 过期时间的unix时间戳，-1 用不过期
      *             "ModelverseDisabled" => (integer) 是否modelverse可用 0: 启用 1: 禁用
      *             "SandBoxDisabled" => (integer) 是否沙盒可用 0: 启用 1: 禁用(astraflow 沙盒控制未上线，暂时无效)
@@ -1066,15 +1071,17 @@ class UAIModelverseClient extends Client
      *             "GrantedModels" => (array<string>) 授权的模型，英文逗号分隔，all表示所有模型都有权限
      *         ]
      *     ]
+     *     "Timestamp" => (integer) 时间戳
+     *     "TotalCount" => (integer) 数据量
      * ]
      *
-     * @return ListUMInferAPIKeyResponse
+     * @return ListUMInferAPIKeyV2Response
      * @throws UCloudException
      */
-    public function listUMInferAPIKey(ListUMInferAPIKeyRequest $request = null)
+    public function listUMInferAPIKeyV2(ListUMInferAPIKeyV2Request $request = null)
     {
         $resp = $this->invoke($request);
-        return new ListUMInferAPIKeyResponse($resp->toArray(), $resp->getRequestId());
+        return new ListUMInferAPIKeyV2Response($resp->toArray(), $resp->getRequestId());
     }
 
     /**
