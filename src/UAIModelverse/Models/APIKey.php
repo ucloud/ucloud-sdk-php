@@ -243,7 +243,7 @@ class APIKey extends Response
     }
 
     /**
-     * Key: 密钥值
+     * Key: 密钥值，前四后四，中间*掩码展示
      *
      * @return string|null
      */
@@ -253,7 +253,7 @@ class APIKey extends Response
     }
 
     /**
-     * Key: 密钥值
+     * Key: 密钥值，前四后四，中间*掩码展示
      *
      * @param string $key
      */
