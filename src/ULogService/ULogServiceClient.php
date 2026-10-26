@@ -36,8 +36,12 @@ use UCloud\ULogService\Apis\DeleteULogServiceMachineGroupRequest;
 use UCloud\ULogService\Apis\DeleteULogServiceMachineGroupResponse;
 use UCloud\ULogService\Apis\DeleteULogServiceTopicRequest;
 use UCloud\ULogService\Apis\DeleteULogServiceTopicResponse;
+use UCloud\ULogService\Apis\DescribeULogServiceLogSetRequest;
+use UCloud\ULogService\Apis\DescribeULogServiceLogSetResponse;
 use UCloud\ULogService\Apis\DescribeULogServiceMachineGroupRequest;
 use UCloud\ULogService\Apis\DescribeULogServiceMachineGroupResponse;
+use UCloud\ULogService\Apis\DescribeULogServiceTopicRequest;
+use UCloud\ULogService\Apis\DescribeULogServiceTopicResponse;
 use UCloud\ULogService\Apis\GetULogServiceTopicFieldRequest;
 use UCloud\ULogService\Apis\GetULogServiceTopicFieldResponse;
 use UCloud\ULogService\Apis\ListULogServiceCollectConfRequest;
@@ -342,6 +346,43 @@ class ULogServiceClient extends Client
     }
 
     /**
+     * DescribeULogServiceLogSet - 获取日志集信息
+     *
+     * See also: https://docs.ucloud.cn/api/ulogservice-api/describe_u_log_service_log_set
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "LogSetId" => (string) 日志集ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "TotalCount" => (integer) 日志集总数
+     *     "LogSetInfo" => (object) 日志集信息[
+     *         "TopicCount" => (integer) 日志集下主题数量
+     *         "LogSetId" => (string) 日志集ID
+     *         "LogSetRemark" => (string) 日志集备注
+     *         "LogSetName" => (string) 日志集名称
+     *         "CreateTime" => (integer) 创建时间
+     *         "UpdateTime" => (integer) 更新时间
+     *     ]
+     * ]
+     *
+     * @return DescribeULogServiceLogSetResponse
+     * @throws UCloudException
+     */
+    public function describeULogServiceLogSet(DescribeULogServiceLogSetRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeULogServiceLogSetResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * DescribeULogServiceMachineGroup - 查询日志采集机器组
      *
      * See also: https://docs.ucloud.cn/api/ulogservice-api/describe_u_log_service_machine_group
@@ -382,6 +423,41 @@ class ULogServiceClient extends Client
     {
         $resp = $this->invoke($request);
         return new DescribeULogServiceMachineGroupResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * DescribeULogServiceTopic - 获取ULogService主题详情
+     *
+     * See also: https://docs.ucloud.cn/api/ulogservice-api/describe_u_log_service_topic
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "TopicId" => (string) 主题Id
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Data" => (object) 主题详情[
+     *         "TopicName" => (string) 主题名称
+     *         "TopicId" => (string) 主题ID
+     *         "TopicShardNum" => (integer) 分区数量，固定是2
+     *         "ReserveAge" => (integer) 保存时间 1~730 天
+     *         "IsReserved" => (integer) 是否保留：0 - NORMAL, 1 - RESERVED
+     *         "State" => (string) 日志主题状态
+     *     ]
+     * ]
+     *
+     * @return DescribeULogServiceTopicResponse
+     * @throws UCloudException
+     */
+    public function describeULogServiceTopic(DescribeULogServiceTopicRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new DescribeULogServiceTopicResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
@@ -578,7 +654,7 @@ class ULogServiceClient extends Client
      *             "TopicShardNum" => (integer) 分区数量，固定是2
      *             "ReserveAge" => (integer) 保存时间 1~730 天
      *             "IsReserved" => (integer) 是否保留：0 - NORMAL, 1 - RESERVED
-     *             "TopicDesc" => (string) 主题描述
+     *             "State" => (string) 日志主题状态
      *         ]
      *     ]
      *     "TotalCount" => (integer) 主题总数
