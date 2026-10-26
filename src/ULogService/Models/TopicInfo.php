@@ -123,22 +123,22 @@ class TopicInfo extends Response
     }
 
     /**
-     * TopicDesc: 主题描述
+     * State: 日志主题状态
      *
      * @return string|null
      */
-    public function getTopicDesc()
+    public function getState()
     {
-        return $this->get("TopicDesc");
+        return $this->get("State");
     }
 
     /**
-     * TopicDesc: 主题描述
+     * State: 日志主题状态
      *
-     * @param string $topicDesc
+     * @param string $state
      */
-    public function setTopicDesc($topicDesc)
+    public function setState($state)
     {
-        $this->set("TopicDesc", $topicDesc);
+        $this->set("State", $state);
     }
 }
