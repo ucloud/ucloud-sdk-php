@@ -26,7 +26,6 @@ class CreateSandboxSiteRequest extends Request
         $this->markRequired("Region");
         $this->markRequired("Zone");
         $this->markRequired("Name");
-        $this->markRequired("APIKey");
         $this->markRequired("KeyID");
         $this->markRequired("AccessCode");
         $this->markRequired("TemplateName");
@@ -112,26 +111,6 @@ class CreateSandboxSiteRequest extends Request
     public function setName($name)
     {
         $this->set("Name", $name);
-    }
-
-    /**
-     * APIKey: 密钥
-     *
-     * @return string|null
-     */
-    public function getAPIKey()
-    {
-        return $this->get("APIKey");
-    }
-
-    /**
-     * APIKey: 密钥
-     *
-     * @param string $apiKey
-     */
-    public function setAPIKey($apiKey)
-    {
-        $this->set("APIKey", $apiKey);
     }
 
     /**
