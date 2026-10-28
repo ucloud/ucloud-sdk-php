@@ -132,26 +132,6 @@ class UpdateSandboxSiteRequest extends Request
     }
 
     /**
-     * APIKey: 更新站点空间API Key
-     *
-     * @return string|null
-     */
-    public function getAPIKey()
-    {
-        return $this->get("APIKey");
-    }
-
-    /**
-     * APIKey: 更新站点空间API Key
-     *
-     * @param string $apiKey
-     */
-    public function setAPIKey($apiKey)
-    {
-        $this->set("APIKey", $apiKey);
-    }
-
-    /**
      * KeyID: 更新站点空间Key ID（需要和APIKey一起传）
      *
      * @return string|null

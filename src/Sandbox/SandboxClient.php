@@ -82,7 +82,6 @@ class SandboxClient extends Client
      *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "Name" => (string) 站点空间名称
-     *     "APIKey" => (string) 密钥
      *     "KeyID" => (string) 密钥ID
      *     "AccessCode" => (string) 访问码
      *     "TemplateName" => (string) 站点空间空间模版，格式：site-nc-ng,n为偶数
@@ -248,7 +247,6 @@ class SandboxClient extends Client
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "SandboxID" => (string) 站点沙箱ID
      *     "Name" => (string) 更新站点空间名称
-     *     "APIKey" => (string) 更新站点空间API Key
      *     "KeyID" => (string) 更新站点空间Key ID（需要和APIKey一起传）
      *     "Envs" => (string) 更新站点空间环境变量，格式为["Key=Value"]
      *     "AccessCode" => (string) 访问码
