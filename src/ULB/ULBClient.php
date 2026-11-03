@@ -2204,6 +2204,15 @@ class ULBClient extends Client
      *         "Enabled" => (boolean) （应用型专用）是否开启访问日志记录功能
      *         "US3BucketName" => (string) （应用型专用）用于存储访问日志的bucket
      *         "US3TokenId" => (string) （应用型专用）上传访问日志到bucket所需的token
+     *         "Destination" => (string) （应用型专用）上传访问日志的目标；us3,elasticsearch,logstash,kafka,uls
+     *         "EnableCustomLog" => (boolean) （应用型专用）是否开启自定义日志功能
+     *         "Params" => (array<string>) （应用型专用）日志参数列表
+     *         "ContentType" => (string) （应用型专用）日志内容格式，space,json;
+     *         "EnableAggregate" => (boolean) （应用型专用）是否开启日志聚合功能
+     *         "Frequency" => (integer) （应用型专用）日志聚合频率
+     *         "DestinationAddrs" => (string) （应用型专用）日志上传目标地址；仅对elasticsearch,logstash,kafka生效，最多支持五个
+     *         "Topic" => (string) （应用型专用）kafka topic；仅对kafka生效
+     *         "ULSTopic" => (string) （应用型专用）uls topic；仅对上传目标为uls生效
      *     ]
      * ]
      *
