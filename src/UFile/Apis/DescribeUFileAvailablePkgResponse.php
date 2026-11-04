@@ -20,7 +20,6 @@ use UCloud\Core\Response\Response;
 use UCloud\UFile\Models\AvailablePkg;
 use UCloud\UFile\Models\AvailablePkgSpecs;
 use UCloud\UFile\Models\AvailablePkgDurations;
-use UCloud\UFile\Models\AvailablePkgDurations;
 
 class DescribeUFileAvailablePkgResponse extends Response
 {

@@ -599,6 +599,9 @@ class UFileClient extends Client
      *             "Biz" => (string) Bucket所属业务, general或vod或udb general: 普通业务； vod: 视频云业务; udb: 云数据库业务
      *             "Tag" => (string) 所属业务组
      *             "HasUserDomain" => (integer) 是否存在自定义域名。0不存在，1存在，2错误
+     *             "Storage" => (integer) 标准存储量,单位Byte
+     *             "IaStorage" => (integer) 低频存储量,单位Byte
+     *             "AcStorage" => (integer) 归档存储量,单位Byte
      *         ]
      *     ]
      * ]

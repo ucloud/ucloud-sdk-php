@@ -261,4 +261,64 @@ class UFileBucketSet extends Response
     {
         $this->set("HasUserDomain", $hasUserDomain);
     }
+
+    /**
+     * Storage: 标准存储量,单位Byte
+     *
+     * @return integer|null
+     */
+    public function getStorage()
+    {
+        return $this->get("Storage");
+    }
+
+    /**
+     * Storage: 标准存储量,单位Byte
+     *
+     * @param int $storage
+     */
+    public function setStorage($storage)
+    {
+        $this->set("Storage", $storage);
+    }
+
+    /**
+     * IaStorage: 低频存储量,单位Byte
+     *
+     * @return integer|null
+     */
+    public function getIaStorage()
+    {
+        return $this->get("IaStorage");
+    }
+
+    /**
+     * IaStorage: 低频存储量,单位Byte
+     *
+     * @param int $iaStorage
+     */
+    public function setIaStorage($iaStorage)
+    {
+        $this->set("IaStorage", $iaStorage);
+    }
+
+    /**
+     * AcStorage: 归档存储量,单位Byte
+     *
+     * @return integer|null
+     */
+    public function getAcStorage()
+    {
+        return $this->get("AcStorage");
+    }
+
+    /**
+     * AcStorage: 归档存储量,单位Byte
+     *
+     * @param int $acStorage
+     */
+    public function setAcStorage($acStorage)
+    {
+        $this->set("AcStorage", $acStorage);
+    }
 }
