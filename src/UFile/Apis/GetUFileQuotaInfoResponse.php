@@ -19,8 +19,6 @@ namespace UCloud\UFile\Apis;
 use UCloud\Core\Response\Response;
 use UCloud\UFile\Models\UFileQuotaDataSetItem;
 use UCloud\UFile\Models\UFileQuotaLeft;
-use UCloud\UFile\Models\UFileQuotaLeft;
-use UCloud\UFile\Models\UFileQuotaLeft;
 
 class GetUFileQuotaInfoResponse extends Response
 {
