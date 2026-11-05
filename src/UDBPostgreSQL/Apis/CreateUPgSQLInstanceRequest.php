@@ -17,6 +17,8 @@
 namespace UCloud\UDBPostgreSQL\Apis;
 
 use UCloud\Core\Request\Request;
+use UCloud\UDBPostgreSQL\Params\CreateUPgSQLInstanceParamLabels;
+use UCloud\UDBPostgreSQL\Params\CreateUPgSQLInstanceParamSecGroupId;
 
 class CreateUPgSQLInstanceRequest extends Request
 {
@@ -279,6 +281,26 @@ class CreateUPgSQLInstanceRequest extends Request
     }
 
     /**
+     * BackupZone: 高可用实例的备库可用区
+     *
+     * @return string|null
+     */
+    public function getBackupZone()
+    {
+        return $this->get("BackupZone");
+    }
+
+    /**
+     * BackupZone: 高可用实例的备库可用区
+     *
+     * @param string $backupZone
+     */
+    public function setBackupZone($backupZone)
+    {
+        $this->set("BackupZone", $backupZone);
+    }
+
+    /**
      * InstanceMode: UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal"
      *
      * @return string|null
@@ -296,5 +318,69 @@ class CreateUPgSQLInstanceRequest extends Request
     public function setInstanceMode($instanceMode)
     {
         $this->set("InstanceMode", $instanceMode);
+    }
+
+    /**
+     * Labels:
+     *
+     * @return CreateUPgSQLInstanceParamLabels[]|null
+     */
+    public function getLabels()
+    {
+        $items = $this->get("Labels");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUPgSQLInstanceParamLabels($item));
+        }
+        return $result;
+    }
+
+    /**
+     * Labels:
+     *
+     * @param CreateUPgSQLInstanceParamLabels[] $labels
+     */
+    public function setLabels(array $labels)
+    {
+        $result = [];
+        foreach ($labels as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroupId:
+     *
+     * @return CreateUPgSQLInstanceParamSecGroupId[]|null
+     */
+    public function getSecGroupId()
+    {
+        $items = $this->get("SecGroupId");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new CreateUPgSQLInstanceParamSecGroupId($item));
+        }
+        return $result;
+    }
+
+    /**
+     * SecGroupId:
+     *
+     * @param CreateUPgSQLInstanceParamSecGroupId[] $secGroupId
+     */
+    public function setSecGroupId(array $secGroupId)
+    {
+        $result = [];
+        foreach ($secGroupId as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 }

@@ -171,7 +171,20 @@ class UDBPostgreSQLClient extends Client
      *     "MachineType" => (string) 机器配置类型，2核4G的机器:o.pgsql2m.medium
      *     "SubnetID" => (string) 子网ID
      *     "VPCID" => (string) VPC的ID
+     *     "BackupZone" => (string) 高可用实例的备库可用区
      *     "InstanceMode" => (string) UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal"
+     *     "Labels" => (array<object>) [
+     *         [
+     *             "Key" => (string) 用户资源标签的键值
+     *             "Value" => (string) 用户资源标签的键名
+     *         ]
+     *     ]
+     *     "SecGroupId" => (array<object>) [
+     *         [
+     *             "Id" => (string) 安全组id
+     *             "Priority" => (integer) 安全组优先级
+     *         ]
+     *     ]
      * ]
      *
      * Outputs:
