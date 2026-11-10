@@ -653,6 +653,66 @@ class CreateUK8SClusterV2Request extends Request
     }
 
     /**
+     * DedicatedPodSubnet: Pod是否使用独立子网
+     *
+     * @return boolean|null
+     */
+    public function getDedicatedPodSubnet()
+    {
+        return $this->get("DedicatedPodSubnet");
+    }
+
+    /**
+     * DedicatedPodSubnet: Pod是否使用独立子网
+     *
+     * @param boolean $dedicatedPodSubnet
+     */
+    public function setDedicatedPodSubnet($dedicatedPodSubnet)
+    {
+        $this->set("DedicatedPodSubnet", $dedicatedPodSubnet);
+    }
+
+    /**
+     * PodSubnetId: Pod独立子网模式下的子网Id
+     *
+     * @return string|null
+     */
+    public function getPodSubnetId()
+    {
+        return $this->get("PodSubnetId");
+    }
+
+    /**
+     * PodSubnetId: Pod独立子网模式下的子网Id
+     *
+     * @param string $podSubnetId
+     */
+    public function setPodSubnetId($podSubnetId)
+    {
+        $this->set("PodSubnetId", $podSubnetId);
+    }
+
+    /**
+     * PodSubnetSecGroup: Pod独立子网模式下使用的安全组，如不配置则使用防火墙模式
+     *
+     * @return string|null
+     */
+    public function getPodSubnetSecGroup()
+    {
+        return $this->get("PodSubnetSecGroup");
+    }
+
+    /**
+     * PodSubnetSecGroup: Pod独立子网模式下使用的安全组，如不配置则使用防火墙模式
+     *
+     * @param string $podSubnetSecGroup
+     */
+    public function setPodSubnetSecGroup($podSubnetSecGroup)
+    {
+        $this->set("PodSubnetSecGroup", $podSubnetSecGroup);
+    }
+
+    /**
      * LbClass: master lb 类型默认ulb，可选ulb nlb
      *
      * @return string|null
