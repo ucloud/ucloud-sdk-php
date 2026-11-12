@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,7 +203,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * ExpiredTime: 过期时间
+     * ExpiredTime: 【已废弃】过期时间
      *
      * @return integer|null
      */
@@ -213,7 +213,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * ExpiredTime: 过期时间
+     * ExpiredTime: 【已废弃】过期时间
      *
      * @param int $expiredTime
      */
@@ -303,7 +303,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * UKmsMode: 是否是加密盘快照，是:"Yes", 否:"No"
+     * UKmsMode: 【已废弃】是否是加密盘快照，是:"Yes", 否:"No"
      *
      * @return string|null
      */
@@ -313,7 +313,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * UKmsMode: 是否是加密盘快照，是:"Yes", 否:"No"
+     * UKmsMode: 【已废弃】是否是加密盘快照，是:"Yes", 否:"No"
      *
      * @param string $uKmsMode
      */
@@ -323,7 +323,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * CmkId: 该快照的cmk id
+     * CmkId: 【已废弃】该快照的cmk id
      *
      * @return string|null
      */
@@ -333,7 +333,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * CmkId: 该快照的cmk id
+     * CmkId: 【已废弃】该快照的cmk id
      *
      * @param string $cmkId
      */
@@ -343,7 +343,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * DataKey: 该快照的密文密钥
+     * DataKey: 【已废弃】该快照的密文密钥
      *
      * @return string|null
      */
@@ -353,7 +353,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * DataKey: 该快照的密文密钥
+     * DataKey: 【已废弃】该快照的密文密钥
      *
      * @param string $dataKey
      */
@@ -363,7 +363,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * CmkIdStatus: 该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘)
+     * CmkIdStatus: 【已废弃】该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘)
      *
      * @return string|null
      */
@@ -373,7 +373,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * CmkIdStatus: 该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘)
+     * CmkIdStatus: 【已废弃】该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘)
      *
      * @param string $cmkIdStatus
      */
@@ -383,7 +383,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * CmkIdAlias: cmk id 别名
+     * CmkIdAlias: 【已废弃】cmk id 别名
      *
      * @return string|null
      */
@@ -393,7 +393,7 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
-     * CmkIdAlias: cmk id 别名
+     * CmkIdAlias: 【已废弃】cmk id 别名
      *
      * @param string $cmkIdAlias
      */

@@ -698,12 +698,14 @@ class ULogServiceClient extends Client
      *         "TopicId" => (string) 所属日志ID
      *         "TopicName" => (string) 所属日志名称
      *         "IsOver" => (boolean) 检索结果是否到底
-     *         "Contents" => (object) 日志内容[
-     *             "LogId" => (string) 日志标识ID
-     *             "HostName" => (string) 日志来源主机
-     *             "FileName" => (string) 日志文件路径
-     *             "Timestamp" => (integer) 日志时间
-     *             "LogJson" => (string) JSON格式的日志内容
+     *         "Contents" => (array<object>) 日志内容[
+     *             [
+     *                 "LogId" => (string) 日志标识ID
+     *                 "HostName" => (string) 日志来源主机
+     *                 "FileName" => (string) 日志文件路径
+     *                 "Timestamp" => (integer) 日志时间
+     *                 "LogJson" => (string) JSON格式的日志内容
+     *             ]
      *         ]
      *         "ScrollId" => (string) 滚动检索Id Deprecated
      *         "LastId" => (string) 滚动检索,当前页最后一条数据ID

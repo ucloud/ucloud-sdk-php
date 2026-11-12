@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ class DescribeUDiskPriceRequest extends Request
     }
 
     /**
-     * Size: 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘：范围[1~4000]；RSSD数据盘：范围[1~32000]；RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
+     * Size: 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘、经济型SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘、经济型SSD系统盘：范围[1~4000]；RSSD数据盘、经济型RSSD数据盘：范围[1~32000]；RSSD系统盘、经济型RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
      *
      * @return integer|null
      */
@@ -101,7 +101,7 @@ class DescribeUDiskPriceRequest extends Request
     }
 
     /**
-     * Size: 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘：范围[1~4000]；RSSD数据盘：范围[1~32000]；RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
+     * Size: 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘、经济型SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘、经济型SSD系统盘：范围[1~4000]；RSSD数据盘、经济型RSSD数据盘：范围[1~32000]；RSSD系统盘、经济型RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
      *
      * @param int $size
      */
@@ -191,7 +191,7 @@ class DescribeUDiskPriceRequest extends Request
     }
 
     /**
-     * DiskType: UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），RSSDDataDisk(RSSD数据盘)，EfficiencyDataDisk（高效数据盘），SystemDisk（普通系统盘），SSDSystemDisk（SSD系统盘），RSSDSystemDisk(RSSD系统盘)，EfficiencySystemDisk（高效系统盘），默认值（DataDisk）
+     * DiskType: UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），ESSDDataDisk（经济型SSD数据盘），RSSDDataDisk(RSSD数据盘)，ERSSDDataDisk(经济型RSSD数据盘)，EfficiencyDataDisk（高效数据盘），SystemDisk（普通系统盘），SSDSystemDisk（SSD系统盘），ESSDSystemDisk（经济型SSD系统盘），RSSDSystemDisk(RSSD系统盘)，ERSSDSystemDisk(经济型RSSD系统盘)，EfficiencySystemDisk（高效系统盘），默认值（DataDisk）
      *
      * @return string|null
      */
@@ -201,7 +201,7 @@ class DescribeUDiskPriceRequest extends Request
     }
 
     /**
-     * DiskType: UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），RSSDDataDisk(RSSD数据盘)，EfficiencyDataDisk（高效数据盘），SystemDisk（普通系统盘），SSDSystemDisk（SSD系统盘），RSSDSystemDisk(RSSD系统盘)，EfficiencySystemDisk（高效系统盘），默认值（DataDisk）
+     * DiskType: UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），ESSDDataDisk（经济型SSD数据盘），RSSDDataDisk(RSSD数据盘)，ERSSDDataDisk(经济型RSSD数据盘)，EfficiencyDataDisk（高效数据盘），SystemDisk（普通系统盘），SSDSystemDisk（SSD系统盘），ESSDSystemDisk（经济型SSD系统盘），RSSDSystemDisk(RSSD系统盘)，ERSSDSystemDisk(经济型RSSD系统盘)，EfficiencySystemDisk（高效系统盘），默认值（DataDisk）
      *
      * @param string $diskType
      */
@@ -248,5 +248,85 @@ class DescribeUDiskPriceRequest extends Request
     public function setMachineType($machineType)
     {
         $this->set("MachineType", $machineType);
+    }
+
+    /**
+     * BackupMode: 快照服务备份策略。普通云盘，SSD云盘，RSSD云盘套餐选择：“Base”：基础版，“ Ultimate”：旗舰版，“ Custom”：自定义备份链，默认采用基础版套餐开通；ESSD云盘，ERSSD云盘套餐：“Lite”：精简版，默认采用精简版套餐开通。
+     *
+     * @return string|null
+     */
+    public function getBackupMode()
+    {
+        return $this->get("BackupMode");
+    }
+
+    /**
+     * BackupMode: 快照服务备份策略。普通云盘，SSD云盘，RSSD云盘套餐选择：“Base”：基础版，“ Ultimate”：旗舰版，“ Custom”：自定义备份链，默认采用基础版套餐开通；ESSD云盘，ERSSD云盘套餐：“Lite”：精简版，默认采用精简版套餐开通。
+     *
+     * @param string $backupMode
+     */
+    public function setBackupMode($backupMode)
+    {
+        $this->set("BackupMode", $backupMode);
+    }
+
+    /**
+     * Journal: BackupMode为Custom时，进行设置, 以12小时秒级为基础进行倍数扩增，如12、24、36、48
+     *
+     * @return integer|null
+     */
+    public function getJournal()
+    {
+        return $this->get("Journal");
+    }
+
+    /**
+     * Journal: BackupMode为Custom时，进行设置, 以12小时秒级为基础进行倍数扩增，如12、24、36、48
+     *
+     * @param int $journal
+     */
+    public function setJournal($journal)
+    {
+        $this->set("Journal", $journal);
+    }
+
+    /**
+     * Hour: BackupMode为Custom时，进行设置, 以24小时级为基础进行倍数扩增，如24、48、72、96
+     *
+     * @return integer|null
+     */
+    public function getHour()
+    {
+        return $this->get("Hour");
+    }
+
+    /**
+     * Hour: BackupMode为Custom时，进行设置, 以24小时级为基础进行倍数扩增，如24、48、72、96
+     *
+     * @param int $hour
+     */
+    public function setHour($hour)
+    {
+        $this->set("Hour", $hour);
+    }
+
+    /**
+     * Day: BackupMode为Custom时，进行设置, 以5天级为基础进行倍数扩增，如5、10、15、20、25、30
+     *
+     * @return integer|null
+     */
+    public function getDay()
+    {
+        return $this->get("Day");
+    }
+
+    /**
+     * Day: BackupMode为Custom时，进行设置, 以5天级为基础进行倍数扩增，如5、10、15、20、25、30
+     *
+     * @param int $day
+     */
+    public function setDay($day)
+    {
+        $this->set("Day", $day);
     }
 }
