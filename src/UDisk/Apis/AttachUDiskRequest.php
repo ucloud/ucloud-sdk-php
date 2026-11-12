@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2022 UCloud Technology Co., Ltd.
+ * Copyright 2026 UCloud Technology Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ class AttachUDiskRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class AttachUDiskRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -50,7 +50,7 @@ class AttachUDiskRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -60,7 +60,7 @@ class AttachUDiskRequest extends Request
     }
 
     /**
-     * Zone: 可用区。参见 [可用区列表](../summary/regionlist.html)
+     * Zone: 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $zone
      */
@@ -70,7 +70,7 @@ class AttachUDiskRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class AttachUDiskRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -150,7 +150,7 @@ class AttachUDiskRequest extends Request
     }
 
     /**
-     * HostId: Host实例ID
+     * HostId: Host实例ID。
      *
      * @return string|null
      */
@@ -160,12 +160,52 @@ class AttachUDiskRequest extends Request
     }
 
     /**
-     * HostId: Host实例ID
+     * HostId: Host实例ID。
      *
      * @param string $hostId
      */
     public function setHostId($hostId)
     {
         $this->set("HostId", $hostId);
+    }
+
+    /**
+     * EnableCrossPodAttach: 是否允许跨pod挂载（Yes：允许跨pod挂载，No：不允许跨pod挂载，不填默认No）
+     *
+     * @return string|null
+     */
+    public function getEnableCrossPodAttach()
+    {
+        return $this->get("EnableCrossPodAttach");
+    }
+
+    /**
+     * EnableCrossPodAttach: 是否允许跨pod挂载（Yes：允许跨pod挂载，No：不允许跨pod挂载，不填默认No）
+     *
+     * @param string $enableCrossPodAttach
+     */
+    public function setEnableCrossPodAttach($enableCrossPodAttach)
+    {
+        $this->set("EnableCrossPodAttach", $enableCrossPodAttach);
+    }
+
+    /**
+     * Lable: 用户标签
+     *
+     * @return string|null
+     */
+    public function getLable()
+    {
+        return $this->get("Lable");
+    }
+
+    /**
+     * Lable: 用户标签
+     *
+     * @param string $lable
+     */
+    public function setLable($lable)
+    {
+        $this->set("Lable", $lable);
     }
 }

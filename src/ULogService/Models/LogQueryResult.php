@@ -85,21 +85,33 @@ class LogQueryResult extends Response
     /**
      * Contents: 日志内容
      *
-     * @return LogContent|null
+     * @return LogContent[]|null
      */
     public function getContents()
     {
-        return new LogContent($this->get("Contents"));
+        $items = $this->get("Contents");
+        if ($items == null) {
+            return [];
+        }
+        $result = [];
+        foreach ($items as $i => $item) {
+            array_push($result, new LogContent($item));
+        }
+        return $result;
     }
 
     /**
      * Contents: 日志内容
      *
-     * @param LogContent $contents
+     * @param LogContent[] $contents
      */
     public function setContents(array $contents)
     {
-        $this->set("Contents", $contents->getAll());
+        $result = [];
+        foreach ($contents as $i => $item) {
+            array_push($result, $item->getAll());
+        }
+        return $result;
     }
 
     /**
