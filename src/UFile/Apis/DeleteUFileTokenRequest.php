@@ -24,14 +24,13 @@ class DeleteUFileTokenRequest extends Request
     {
         parent::__construct(["Action" => "DeleteUFileToken"]);
         $this->markRequired("Region");
-        $this->markRequired("ProjectId");
         $this->markRequired("TokenId");
     }
 
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +40,7 @@ class DeleteUFileTokenRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +50,7 @@ class DeleteUFileTokenRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,7 +60,7 @@ class DeleteUFileTokenRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -88,5 +87,25 @@ class DeleteUFileTokenRequest extends Request
     public function setTokenId($tokenId)
     {
         $this->set("TokenId", $tokenId);
+    }
+
+    /**
+     * FakeRegion: bucket的可用区
+     *
+     * @return string|null
+     */
+    public function getFakeRegion()
+    {
+        return $this->get("FakeRegion");
+    }
+
+    /**
+     * FakeRegion: bucket的可用区
+     *
+     * @param string $fakeRegion
+     */
+    public function setFakeRegion($fakeRegion)
+    {
+        $this->set("FakeRegion", $fakeRegion);
     }
 }

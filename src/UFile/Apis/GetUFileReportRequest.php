@@ -31,7 +31,7 @@ class GetUFileReportRequest extends Request
     
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @return string|null
      */
@@ -41,7 +41,7 @@ class GetUFileReportRequest extends Request
     }
 
     /**
-     * Region: 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     * Region: 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *
      * @param string $region
      */
@@ -51,7 +51,7 @@ class GetUFileReportRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @return string|null
      */
@@ -61,7 +61,7 @@ class GetUFileReportRequest extends Request
     }
 
     /**
-     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     * ProjectId: 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *
      * @param string $projectId
      */
@@ -71,7 +71,7 @@ class GetUFileReportRequest extends Request
     }
 
     /**
-     * StartTime: 查询开始时间
+     * StartTime: 查询开始时间，单位 s
      *
      * @return integer|null
      */
@@ -81,7 +81,7 @@ class GetUFileReportRequest extends Request
     }
 
     /**
-     * StartTime: 查询开始时间
+     * StartTime: 查询开始时间，单位 s
      *
      * @param int $startTime
      */
@@ -91,7 +91,7 @@ class GetUFileReportRequest extends Request
     }
 
     /**
-     * EndTime: 查询结束时间
+     * EndTime: 查询结束时间, 单位 s
      *
      * @return integer|null
      */
@@ -101,12 +101,32 @@ class GetUFileReportRequest extends Request
     }
 
     /**
-     * EndTime: 查询结束时间
+     * EndTime: 查询结束时间, 单位 s
      *
      * @param int $endTime
      */
     public function setEndTime($endTime)
     {
         $this->set("EndTime", $endTime);
+    }
+
+    /**
+     * FakeRegion: bucket的可用区
+     *
+     * @return string|null
+     */
+    public function getFakeRegion()
+    {
+        return $this->get("FakeRegion");
+    }
+
+    /**
+     * FakeRegion: bucket的可用区
+     *
+     * @param string $fakeRegion
+     */
+    public function setFakeRegion($fakeRegion)
+    {
+        $this->set("FakeRegion", $fakeRegion);
     }
 }
