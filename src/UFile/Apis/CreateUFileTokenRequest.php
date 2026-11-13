@@ -207,4 +207,24 @@ class CreateUFileTokenRequest extends Request
     {
         $this->set("WhiteIPList", $whiteIPList);
     }
+
+    /**
+     * FakeRegion: bucket的可用区
+     *
+     * @return string|null
+     */
+    public function getFakeRegion()
+    {
+        return $this->get("FakeRegion");
+    }
+
+    /**
+     * FakeRegion: bucket的可用区
+     *
+     * @param string $fakeRegion
+     */
+    public function setFakeRegion($fakeRegion)
+    {
+        $this->set("FakeRegion", $fakeRegion);
+    }
 }

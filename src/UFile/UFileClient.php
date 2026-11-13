@@ -254,6 +254,7 @@ class UFileClient extends Client
      *     "BucketName" => (string) 待创建Bucket的名称，具有全局唯一性
      *     "Type" => (string) Bucket访问类型，public或private; 默认为private
      *     "Tag" => (string) Bucket所属业务组，默认为default
+     *     "FakeRegion" => (string) bucket的可用区
      * ]
      *
      * Outputs:
@@ -329,6 +330,7 @@ class UFileClient extends Client
      *     "ExpireTime" => (integer) Unix 时间戳，精确到秒，为令牌过期时间点。默认过期时间为一天（即当前Unix时间戳+86400）；注意：过期时间不能超过 4102416000
      *     "BlackIPList" => (array<string>) 令牌黑名单，支持ipv4，ipv6格式。
      *     "WhiteIPList" => (array<string>) 令牌白名单，支持ipv4，ipv6格式。
+     *     "FakeRegion" => (string) bucket的可用区
      * ]
      *
      * Outputs:
@@ -543,9 +545,10 @@ class UFileClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "TokenId" => (string) 令牌ID
+     *     "FakeRegion" => (string) bucket的可用区
      * ]
      *
      * Outputs:
@@ -575,6 +578,7 @@ class UFileClient extends Client
      *     "BucketName" => (string) 待获取Bucket的名称，若不提供，则获取所有Bucket
      *     "Offset" => (integer) 获取所有Bucket列表的偏移数目，默认为0
      *     "Limit" => (integer) 获取所有Bucket列表的限制数目，默认为20
+     *     "FakeRegion" => (string) bucket可用区
      * ]
      *
      * Outputs:
@@ -899,11 +903,12 @@ class UFileClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "TokenId" => (string) 令牌ID，只返回指定ID信息，否则拉取所有令牌
      *     "TokenName" => (string) 令牌名称，只返回指定令牌名称信息，否则拉取所有令牌
      *     "Display" => (integer) 0表示显示部分token信息；不传递和其他情况表示显示全部token信息
+     *     "FakeRegion" => (string) bucket的可用区
      * ]
      *
      * Outputs:
@@ -1039,6 +1044,7 @@ class UFileClient extends Client
      *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "FakeRegion" => (string) bucket可用区
      * ]
      *
      * Outputs:
@@ -1071,6 +1077,7 @@ class UFileClient extends Client
      *     "StartTime" => (integer) 查询开始时间;unix时间戳，单位s
      *     "EndTime" => (integer) 查询结束时间;unix时间戳,单位s
      *     "BucketName" => (string) 空间名称。此字段不为空，返回此Bucket日账单,否则，返回这个项目的日账单
+     *     "FakeRegion" => (string) bucket的可用区
      * ]
      *
      * Outputs:
@@ -1137,6 +1144,7 @@ class UFileClient extends Client
      *     "StartTime" => (integer) 查询开始时间;unix时间戳，单位s
      *     "EndTime" => (integer) 查询结束时间;unix时间戳,单位s
      *     "BucketName" => (string) 空间名称。此字段不为空，返回此Bucket日使用量；否则，返回这个项目的日使用量
+     *     "FakeRegion" => (string) bucket可用区
      * ]
      *
      * Outputs:
@@ -1200,6 +1208,7 @@ class UFileClient extends Client
      *     "StartMonth" => (string) 查询开始月份;例如"1994-07"
      *     "EndMonth" => (string) 查询结束时间;例如"1994-07"
      *     "BucketName" => (string) 空间名称。此字段不为空，返回此Bucket日账单,否则，返回这个项目的日账单
+     *     "FakeRegion" => (string) bucket可用区
      * ]
      *
      * Outputs:
@@ -1394,10 +1403,11 @@ class UFileClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
-     *     "StartTime" => (integer) 查询开始时间
-     *     "EndTime" => (integer) 查询结束时间
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "StartTime" => (integer) 查询开始时间，单位 s
+     *     "EndTime" => (integer) 查询结束时间, 单位 s
+     *     "FakeRegion" => (string) bucket的可用区
      * ]
      *
      * Outputs:
@@ -1493,6 +1503,7 @@ class UFileClient extends Client
      *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
      *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "QuotaLimit" => (integer) 配额数目(单位是Byte)
+     *     "FakeRegion" => (string) bucket的可用区
      * ]
      *
      * Outputs:
@@ -1715,14 +1726,17 @@ class UFileClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "TokenId" => (string) 令牌ID
      *     "TokenName" => (string) 令牌名称
-     *     "AllowedOps" => (array<string>) 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]
+     *     "AllowedOps" => (array<string>) 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ，TOKEN_DENY_UPDATE]
      *     "AllowedPrefixes" => (array<string>) 令牌允许操作的key前缀
      *     "AllowedBuckets" => (array<string>) 令牌允许操作的bucket
      *     "ExpireTime" => (integer) 令牌的超时时间点（时间戳）;注意：过期时间不能超过 4102416000
+     *     "BlackIPList" => (array<string>) 令牌黑名单，支持ipv4，ipv6格式。
+     *     "WhiteIPList" => (array<string>) 令牌黑名单，支持ipv4，ipv6格式。
+     *     "FakeRegion" => (string) bucket的可用区
      * ]
      *
      * Outputs:
