@@ -303,6 +303,26 @@ class UDiskSnapshotSet extends Response
     }
 
     /**
+     * ImageId: 绑定镜像ID
+     *
+     * @return string|null
+     */
+    public function getImageId()
+    {
+        return $this->get("ImageId");
+    }
+
+    /**
+     * ImageId: 绑定镜像ID
+     *
+     * @param string $imageId
+     */
+    public function setImageId($imageId)
+    {
+        $this->set("ImageId", $imageId);
+    }
+
+    /**
      * UKmsMode: 【已废弃】是否是加密盘快照，是:"Yes", 否:"No"
      *
      * @return string|null
