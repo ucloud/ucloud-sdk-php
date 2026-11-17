@@ -368,10 +368,11 @@ class UDiskClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "UDiskId" => (string) 要删除的UDisk的Id
+     *     "DeleteSnapshotService" => (string) 是否删除快照服务。Yes：删除，No：不删除，默认值：Yes。
      * ]
      *
      * Outputs:
@@ -396,11 +397,12 @@ class UDiskClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "SnapshotId" => (string) 快照Id(填写后不能填写UDisk Id)
      *     "UDiskId" => (string) UDisk Id,删除该盘所创建出来的所有快照(填写后不能填写SnapshotId)
+     *     "BindImage" => (integer) 是否是绑定整机镜像的快照，0：不绑定，1：绑定
      * ]
      *
      * Outputs:
@@ -582,6 +584,7 @@ class UDiskClient extends Client
      *             "IsUDiskAvailable" => (boolean) 对应磁盘是否处于可用状态
      *             "Version" => (string) 快照版本
      *             "UHostId" => (string) 对应磁盘制作快照时所挂载的主机
+     *             "ImageId" => (string) 绑定镜像ID
      *             "UKmsMode" => (string) 【已废弃】是否是加密盘快照，是:"Yes", 否:"No"
      *             "CmkId" => (string) 【已废弃】该快照的cmk id
      *             "DataKey" => (string) 【已废弃】该快照的密文密钥
@@ -682,9 +685,9 @@ class UDiskClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "UDiskId" => (string) 需要卸载的UDisk实例ID
      *     "UHostId" => (string) UHost实例ID。【UHostId和HostId必须选填一个，本字段即将废弃，建议使用HostId】
      *     "HostId" => (string) Host实例ID
@@ -715,9 +718,9 @@ class UDiskClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "UDiskId" => (string) 重命名的UDisk的Id
      *     "UDiskName" => (string) 重命名UDisk的name
      * ]
@@ -775,9 +778,9 @@ class UDiskClient extends Client
      * Arguments:
      *
      * $args = [
-     *     "Region" => (string) 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
-     *     "Zone" => (string) 可用区。参见 [可用区列表](../summary/regionlist.html)
-     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      *     "UDiskId" => (string) 需要恢复的盘ID
      *     "SnapshotId" => (string) 从指定的快照恢复
      *     "SnapshotTime" => (integer) 指定从方舟恢复的备份时间点
