@@ -108,6 +108,8 @@ use UCloud\UDB\Apis\ExtractUDBParamGroupRequest;
 use UCloud\UDB\Apis\ExtractUDBParamGroupResponse;
 use UCloud\UDB\Apis\FetchUDBInstanceEarliestRecoverTimeRequest;
 use UCloud\UDB\Apis\FetchUDBInstanceEarliestRecoverTimeResponse;
+use UCloud\UDB\Apis\GetUDBAccessInfoRequest;
+use UCloud\UDB\Apis\GetUDBAccessInfoResponse;
 use UCloud\UDB\Apis\GetUDBClientConnNumRequest;
 use UCloud\UDB\Apis\GetUDBClientConnNumResponse;
 use UCloud\UDB\Apis\GetUDBInstanceSSLCertURLRequest;
@@ -1928,6 +1930,54 @@ class UDBClient extends Client
     {
         $resp = $this->invoke($request);
         return new FetchUDBInstanceEarliestRecoverTimeResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
+     * GetUDBAccessInfo - 查询 UDB 实例的内网与外网访问信息，包含外网地址端口、带宽、白名单，以及内网 VPC、子网、内网 IP、内网域名与端口1
+     *
+     * See also: https://docs.ucloud.cn/api/udb-api/get_udb_access_info
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "DBId" => (string) 实例ID
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "ExternalInfo" => (array<object>) 实例外网访问信息，含状态、地址、端口、带宽与白名单[
+     *         [
+     *             "Status" => (string) 外网访问状态，字符串枚举，取值见下表
+     *             "ExternalAddress" => (string) 外网访问地址；未开通外网访问时为空字符串
+     *             "ExternalPort" => (integer) 外网访问端口；未开通时为 0
+     *             "Bindwidth" => (integer) 外网带宽，单位 Mbps，取自 EIP 带宽；无 EIP 时为 0
+     *             "WhiteList" => (string) 外网访问白名单，多个 IP 以逗号分隔，取自 NLB 白名单
+     *             "Support" => (integer) 实例是否支持外网访问能力：1 支持；当前实现恒返回 1
+     *         ]
+     *     ]
+     *     "PrivateInfo" => (array<object>) 实例内网访问信息，含 VPC、子网、内网 IP、内网域名与端口[
+     *         [
+     *             "VPCId" => (string) 实例内网所在的 VPC ID
+     *             "SubnetId" => (string) 实例内网所在的子网 ID
+     *             "PrivateIP" => (string) 实例内网服务地址（VIP）
+     *             "PrivateDomain" => (string) 实例的内网域名；未开通内网域名时为空字符串
+     *             "PrivatePort" => (integer) 内网域名状态，字符串枚举，取值与 Status 同源；未开通内网域名时返回NetworkConnectionDisabled
+     *             "PrivateDomainStatus" => (string) 实例内网服务端口
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return GetUDBAccessInfoResponse
+     * @throws UCloudException
+     */
+    public function getUDBAccessInfo(GetUDBAccessInfoRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new GetUDBAccessInfoResponse($resp->toArray(), $resp->getRequestId());
     }
 
     /**
