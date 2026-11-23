@@ -441,4 +441,44 @@ class APIKey extends Response
     {
         $this->set("GrantedModels", $grantedModels);
     }
+
+    /**
+     * CreatorUserName: key的创建者用户名
+     *
+     * @return string|null
+     */
+    public function getCreatorUserName()
+    {
+        return $this->get("CreatorUserName");
+    }
+
+    /**
+     * CreatorUserName: key的创建者用户名
+     *
+     * @param string $creatorUserName
+     */
+    public function setCreatorUserName($creatorUserName)
+    {
+        $this->set("CreatorUserName", $creatorUserName);
+    }
+
+    /**
+     * IsOwner: key是否属于调用改接口的用户
+     *
+     * @return integer|null
+     */
+    public function getIsOwner()
+    {
+        return $this->get("IsOwner");
+    }
+
+    /**
+     * IsOwner: key是否属于调用改接口的用户
+     *
+     * @param int $isOwner
+     */
+    public function setIsOwner($isOwner)
+    {
+        $this->set("IsOwner", $isOwner);
+    }
 }

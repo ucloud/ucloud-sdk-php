@@ -366,6 +366,19 @@ class UHostClient extends Client
      *     ]
      *     "DeletionProtection" => (boolean) 删除保护，设置删除保护参数，true表示不允许控制台删除
      *     "UHostFamily" => (string) 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"\"OM"\"OPRO"\"OPROG"（快杰系列）时，支持以下取值：- o1i：快杰型 O1 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台- o1r：快杰型 O1 代，ARM 平台 - o1h：快杰型 O1 代，Hygon 平台- o2i：快杰型 O2 代，Intel 平台 - o2a：快杰型 O2 代，AMD 平台默认值：o1i 或 o1a当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台- om1a：快杰内存增强型 OM1 代，Amd 平台默认值：om1i 或 om1a当 MachineType 为 "OPROG"（快杰PRO通用型）时，支持以下取值： - oprog1i：快杰PRO通用型 OPROG1 代，Intel 平台 - oprog2i：快杰PRO通用型 OPROG2 代，Intel 平台 - oprog1a：快杰PRO通用型 OPROG1 代，Amd 平台 当 MachineType 为 "OPRO"（快杰PRO增强型）时，支持以下取值： - opro1a：快杰PRO增强型 OPRO1 代，Amd 平台 - opro2a：快杰PRO增强型 OPRO2 代，Amd 平台 注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     *     "SecurityReinforce" => (boolean) 安全加固（VendorShellScript）。True 为开启，False 为未开启，默认 False。
+     *     "AutoConfigUni" => (boolean) 辅助 IP（UNI）自动配置。True 为开启，False 为未开启，默认 False。
+     *     "UboltAgent" => (boolean) 主机监控（Ubolt Agent）。True 为安装/开启，False 为未开启，默认 False。
+     *     "InstallGpuDriver" => (boolean) 是否安装 GPU/CUDA 驱动。True 为安装，False 为不安装，默认 False。开启后可配合驱动相关参数使用。
+     *     "GpuDriverConfigId" => (string) GPU 驱动安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *     "DriverInstaller" => (string) GPU 驱动安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *     "DriverVersion" => (string) GPU 驱动版本。当 InstallGpuDriver 为 True 时可填写。
+     *     "CUDAInstaller" => (string) CUDA 安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *     "CUDAVersion" => (string) CUDA 版本。当 InstallGpuDriver 为 True 时可填写。
+     *     "CUDNNInstaller" => (string) cuDNN 安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *     "CUDNNVersion" => (string) cuDNN 版本。当 InstallGpuDriver 为 True 时可填写。
+     *     "OSName" => (string) GPU 驱动脚本模板变量（对应模板中的 OSName）。用于驱动安装脚本按操作系统匹配安装逻辑。
+     *     "RequireMetadataToken" => (boolean) 是否强制要求 Metadata Token。True 表示创建时写入并强制要求镜像支持 MetadataToken（NewCloudinitFeature >= 2）；未传则按默认策略处理
      *     "CouponId" => (string) 主机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看
      * ]
      *
