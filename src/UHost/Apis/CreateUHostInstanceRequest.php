@@ -941,6 +941,266 @@ class CreateUHostInstanceRequest extends Request
     }
 
     /**
+     * SecurityReinforce: 安全加固（VendorShellScript）。True 为开启，False 为未开启，默认 False。
+     *
+     * @return boolean|null
+     */
+    public function getSecurityReinforce()
+    {
+        return $this->get("SecurityReinforce");
+    }
+
+    /**
+     * SecurityReinforce: 安全加固（VendorShellScript）。True 为开启，False 为未开启，默认 False。
+     *
+     * @param boolean $securityReinforce
+     */
+    public function setSecurityReinforce($securityReinforce)
+    {
+        $this->set("SecurityReinforce", $securityReinforce);
+    }
+
+    /**
+     * AutoConfigUni: 辅助 IP（UNI）自动配置。True 为开启，False 为未开启，默认 False。
+     *
+     * @return boolean|null
+     */
+    public function getAutoConfigUni()
+    {
+        return $this->get("AutoConfigUni");
+    }
+
+    /**
+     * AutoConfigUni: 辅助 IP（UNI）自动配置。True 为开启，False 为未开启，默认 False。
+     *
+     * @param boolean $autoConfigUni
+     */
+    public function setAutoConfigUni($autoConfigUni)
+    {
+        $this->set("AutoConfigUni", $autoConfigUni);
+    }
+
+    /**
+     * UboltAgent: 主机监控（Ubolt Agent）。True 为安装/开启，False 为未开启，默认 False。
+     *
+     * @return boolean|null
+     */
+    public function getUboltAgent()
+    {
+        return $this->get("UboltAgent");
+    }
+
+    /**
+     * UboltAgent: 主机监控（Ubolt Agent）。True 为安装/开启，False 为未开启，默认 False。
+     *
+     * @param boolean $uboltAgent
+     */
+    public function setUboltAgent($uboltAgent)
+    {
+        $this->set("UboltAgent", $uboltAgent);
+    }
+
+    /**
+     * InstallGpuDriver: 是否安装 GPU/CUDA 驱动。True 为安装，False 为不安装，默认 False。开启后可配合驱动相关参数使用。
+     *
+     * @return boolean|null
+     */
+    public function getInstallGpuDriver()
+    {
+        return $this->get("InstallGpuDriver");
+    }
+
+    /**
+     * InstallGpuDriver: 是否安装 GPU/CUDA 驱动。True 为安装，False 为不安装，默认 False。开启后可配合驱动相关参数使用。
+     *
+     * @param boolean $installGpuDriver
+     */
+    public function setInstallGpuDriver($installGpuDriver)
+    {
+        $this->set("InstallGpuDriver", $installGpuDriver);
+    }
+
+    /**
+     * GpuDriverConfigId: GPU 驱动安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @return string|null
+     */
+    public function getGpuDriverConfigId()
+    {
+        return $this->get("GpuDriverConfigId");
+    }
+
+    /**
+     * GpuDriverConfigId: GPU 驱动安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @param string $gpuDriverConfigId
+     */
+    public function setGpuDriverConfigId($gpuDriverConfigId)
+    {
+        $this->set("GpuDriverConfigId", $gpuDriverConfigId);
+    }
+
+    /**
+     * DriverInstaller: GPU 驱动安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @return string|null
+     */
+    public function getDriverInstaller()
+    {
+        return $this->get("DriverInstaller");
+    }
+
+    /**
+     * DriverInstaller: GPU 驱动安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @param string $driverInstaller
+     */
+    public function setDriverInstaller($driverInstaller)
+    {
+        $this->set("DriverInstaller", $driverInstaller);
+    }
+
+    /**
+     * DriverVersion: GPU 驱动版本。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @return string|null
+     */
+    public function getDriverVersion()
+    {
+        return $this->get("DriverVersion");
+    }
+
+    /**
+     * DriverVersion: GPU 驱动版本。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @param string $driverVersion
+     */
+    public function setDriverVersion($driverVersion)
+    {
+        $this->set("DriverVersion", $driverVersion);
+    }
+
+    /**
+     * CUDAInstaller: CUDA 安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @return string|null
+     */
+    public function getCUDAInstaller()
+    {
+        return $this->get("CUDAInstaller");
+    }
+
+    /**
+     * CUDAInstaller: CUDA 安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @param string $cudaInstaller
+     */
+    public function setCUDAInstaller($cudaInstaller)
+    {
+        $this->set("CUDAInstaller", $cudaInstaller);
+    }
+
+    /**
+     * CUDAVersion: CUDA 版本。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @return string|null
+     */
+    public function getCUDAVersion()
+    {
+        return $this->get("CUDAVersion");
+    }
+
+    /**
+     * CUDAVersion: CUDA 版本。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @param string $cudaVersion
+     */
+    public function setCUDAVersion($cudaVersion)
+    {
+        $this->set("CUDAVersion", $cudaVersion);
+    }
+
+    /**
+     * CUDNNInstaller: cuDNN 安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @return string|null
+     */
+    public function getCUDNNInstaller()
+    {
+        return $this->get("CUDNNInstaller");
+    }
+
+    /**
+     * CUDNNInstaller: cuDNN 安装包标识/名称。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @param string $cudnnInstaller
+     */
+    public function setCUDNNInstaller($cudnnInstaller)
+    {
+        $this->set("CUDNNInstaller", $cudnnInstaller);
+    }
+
+    /**
+     * CUDNNVersion: cuDNN 版本。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @return string|null
+     */
+    public function getCUDNNVersion()
+    {
+        return $this->get("CUDNNVersion");
+    }
+
+    /**
+     * CUDNNVersion: cuDNN 版本。当 InstallGpuDriver 为 True 时可填写。
+     *
+     * @param string $cudnnVersion
+     */
+    public function setCUDNNVersion($cudnnVersion)
+    {
+        $this->set("CUDNNVersion", $cudnnVersion);
+    }
+
+    /**
+     * OSName: GPU 驱动脚本模板变量（对应模板中的 OSName）。用于驱动安装脚本按操作系统匹配安装逻辑。
+     *
+     * @return string|null
+     */
+    public function getOSName()
+    {
+        return $this->get("OSName");
+    }
+
+    /**
+     * OSName: GPU 驱动脚本模板变量（对应模板中的 OSName）。用于驱动安装脚本按操作系统匹配安装逻辑。
+     *
+     * @param string $osName
+     */
+    public function setOSName($osName)
+    {
+        $this->set("OSName", $osName);
+    }
+
+    /**
+     * RequireMetadataToken: 是否强制要求 Metadata Token。True 表示创建时写入并强制要求镜像支持 MetadataToken（NewCloudinitFeature >= 2）；未传则按默认策略处理
+     *
+     * @return boolean|null
+     */
+    public function getRequireMetadataToken()
+    {
+        return $this->get("RequireMetadataToken");
+    }
+
+    /**
+     * RequireMetadataToken: 是否强制要求 Metadata Token。True 表示创建时写入并强制要求镜像支持 MetadataToken（NewCloudinitFeature >= 2）；未传则按默认策略处理
+     *
+     * @param boolean $requireMetadataToken
+     */
+    public function setRequireMetadataToken($requireMetadataToken)
+    {
+        $this->set("RequireMetadataToken", $requireMetadataToken);
+    }
+
+    /**
      * CouponId: 主机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看
      *
      * @return string|null

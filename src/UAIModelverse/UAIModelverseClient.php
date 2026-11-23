@@ -18,6 +18,8 @@ namespace UCloud\UAIModelverse;
 
 use UCloud\Core\Client;
 use UCloud\Core\Exception\UCloudException;
+use UCloud\UAIModelverse\Apis\BatchCreateUMInferAPIKeyRequest;
+use UCloud\UAIModelverse\Apis\BatchCreateUMInferAPIKeyResponse;
 use UCloud\UAIModelverse\Apis\CreateUMInferAPIKeyRequest;
 use UCloud\UAIModelverse\Apis\CreateUMInferAPIKeyResponse;
 use UCloud\UAIModelverse\Apis\DeleteUMInferAPIKeyRequest;
@@ -68,6 +70,65 @@ class UAIModelverseClient extends Client
 {
 
     /**
+     * BatchCreateUMInferAPIKey - 批量创建api key
+     *
+     * See also: https://docs.ucloud.cn/api/uai-modelverse-api/batch_create_um_infer_api_key
+     *
+     * Arguments:
+     *
+     * $args = [
+     *     "Region" => (string) 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "Zone" => (string) 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     *     "ProjectId" => (string) 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     *     "Prefix" => (string) 名称前缀
+     *     "Start" => (integer) 开始序号
+     *     "Count" => (integer) 创建个数
+     *     "ModelverseDisabled" => (integer) 是否modelverse可用 0: 启用 1: 禁用
+     *     "SandBoxDisabled" => (integer) 是否沙盒可用 0: 启用 1: 禁用(astraflow 沙盒控制未上线，暂时无效)
+     *     "DailyLimitAmount" => (string) 日限额，单位随用户所在渠道。126渠道单位为美元
+     *     "MonthlyLimitAmount" => (string) 月限额，单位随用户所在渠道。126渠道单位为美元
+     *     "GrantAllModels" => (boolean) 全部模型访问开关，开启不受 GrantedModels 参数控制，关闭只能访问 GrantedModels 中添加模型
+     *     "GrantedModels" => (string) 授权模型，内容为数组格式。当 GrantAllModels 为false时 当前key只可访问数组中模型。例：["deepseek-ai/DeepSeek-V3.2-Think"]
+     *     "IPWhitelist" => (string) ip白名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
+     *     "InferenceLogEnabled" => (integer) 是否开启推理日志
+     *     "TotalLimitAmount" => (string) 总限额，单位随用户所在渠道。126渠道单位为美元
+     *     "ExpireTime" => (integer) 过期时间（秒级 Unix 时间戳）。缺省 = -1 永不过期；必须为 -1 或未来时间，且 ≤ 253402300799（9999-12-31 23:59:59 UTC）
+     *     "ModelAccessMode" => (string) 访问模式：whitelist（默认）/ blacklist
+     *     "DeniedModels" => (string) 黑名单模型，仅 blacklist 模式生效，["deepseek-ai/DeepSeek-V3.2-Think"，"gemini-4-neon"]
+     *     "IPBlacklist" => (string) ip黑名单，换行分割的多组ip。支持IPv4和网段,输入后回车生效,最多100个, 示例: ﻿ 192.168.1.1 192.168.1.10-192.168.1.100 192.168.1.10/24
+     *     "DailyQuotaAlertThreshold" => (integer) 日配额告警阈值 0~100（百分比）
+     *     "MonthlyQuotaAlertThreshold" => (integer) 月配额告警阈值 0~100
+     *     "TotalQuotaAlertThreshold" => (integer) 总配额告警阈值 0~100
+     *     "QuotaAlertChannels" => (string) []string；告警渠道：email / sms / phone（去重、转小写）。任一阈值 >0 时必填
+     *     "QuotaAlertEmail" => (string) 渠道含 email 时必填且需合法邮箱
+     *     "QuotaAlertPhone" => (string) 渠道含 sms/phone 时必填
+     *     "QuotaAlertEmailVerificationToken" => (string) 启用 email 渠道时必填，需先调验证码接口获取，服务端校验并一次性消费
+     *     "QuotaAlertPhoneVerificationToken" => (string) 启用 sms/phone 渠道时必填，同上
+     * ]
+     *
+     * Outputs:
+     *
+     * $outputs = [
+     *     "Data" => (array<object>) 创建的key列表[
+     *         [
+     *             "KeyId" => (string) KeyId
+     *             "Name" => (string) 名称
+     *             "APIKey" => (string) 密钥
+     *             "Success" => (boolean) 是否成功
+     *         ]
+     *     ]
+     * ]
+     *
+     * @return BatchCreateUMInferAPIKeyResponse
+     * @throws UCloudException
+     */
+    public function batchCreateUMInferAPIKey(BatchCreateUMInferAPIKeyRequest $request = null)
+    {
+        $resp = $this->invoke($request);
+        return new BatchCreateUMInferAPIKeyResponse($resp->toArray(), $resp->getRequestId());
+    }
+
+    /**
      * CreateUMInferAPIKey - 创建apikey
      *
      * See also: https://docs.ucloud.cn/api/uai-modelverse-api/create_um_infer_api_key
@@ -115,6 +176,8 @@ class UAIModelverseClient extends Client
      *         "MonthlyUsedAmount" => (string) 月已使用额，单位随用户所在渠道。126渠道单位为美元
      *         "GrantAllModels" => (boolean) 全部模型访问开关，开启不受 GrantedModels 参数控制，关闭只能访问 GrantedModels 中添加模型
      *         "GrantedModels" => (array<string>) 授权的模型，英文逗号分隔，all表示所有模型都有权限
+     *         "CreatorUserName" => (string) key的创建者用户名
+     *         "IsOwner" => (integer) key是否属于调用改接口的用户
      *     ]
      *     "TotalCount" => (integer) 总条数
      * ]
@@ -1069,6 +1132,8 @@ class UAIModelverseClient extends Client
      *             "MonthlyUsedAmount" => (string) 月已使用额，单位随用户所在渠道。126渠道单位为美元
      *             "GrantAllModels" => (boolean) 全部模型访问开关，开启不受 GrantedModels 参数控制，关闭只能访问 GrantedModels 中添加模型
      *             "GrantedModels" => (array<string>) 授权的模型，英文逗号分隔，all表示所有模型都有权限
+     *             "CreatorUserName" => (string) key的创建者用户名
+     *             "IsOwner" => (integer) key是否属于调用改接口的用户
      *         ]
      *     ]
      *     "Timestamp" => (integer) 时间戳
